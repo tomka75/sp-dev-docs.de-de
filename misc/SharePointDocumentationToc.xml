@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SupportedProduct="|SharePoint" SupportedVersion="|V1.0|">
+	<Item text="SharePoint Framework" url="spfx" SEODescription="">
+		<Item text="Übersicht" url="spfx/sharepoint-framework-overview" SEODescription="Das SharePoint Framework bietet moderne Entwicklertools für die Erweiterung von SharePoint." />
+		<Item text="Übersicht" url="spfx/roadmap" SEODescription="Geplante Übersicht für die zukünftigen Versionen von SharePoint Framework." />
+		<Item text="Tools und Bibliotheken" url="spfx/tools-and-libraries" SEODescription="Erhalten Sie Informationen zu den Tools und Bibliotheken, die Sie verwenden müssen, um Ihre SharePoint Framework-Lösungen zu erstellen." />
+		<Item text="Einrichten Ihres Office 365-Mandanten" url="spfx/set-up-your-developer-tenant" SEODescription="Richten Sie einen Office 365-Mandant ein, damit Sie Ihre clientseitigen SharePoint-Webparts testen und debuggen können." />
+		<Item text="Einrichten der Entwicklungsumgebung" url="spfx/set-up-your-development-environment" SEODescription="Richten Sie Ihre Entwicklungsumgebung ein, und konfigurieren Sie sie, um clientseitige SharePoint-Webparts zu erstellen." />
+		<Item text="Enterprise-Leitfaden" url="spfx/enterprise-guidance" SEODescription="Architektur- und Entwicklungsleitfaden zu SharePoint Framework Enterprise" />
+		<Item text="Teambasierte Entwicklung" url="spfx/team-based-development-on-sharepoint-framework" SEODescription="Teambasierte Entwicklung mit SharePoint Framework" />
+		<Item text="Toolkette" url="spfx/toolchain/sharepoint-framework-toolchain" SEODescription="">
+			<Item text="SharePoint Framework-Toolkette" url="spfx/toolchain/sharepoint-framework-toolchain" SEODescription="Die SharePoint Framework-Toolkette ist eine Sammlung von Buildtools, Frameworkpaketen und anderen Elementen, mit denen Sie clientseitige Projekte erstellen und bereitstellen können." />
+			<Item text="Yeoman SharePoint-Generator" url="spfx/toolchain/scaffolding-projects-using-yeoman-sharepoint-generator" SEODescription="Erstellen Sie neue clientseitige Lösungsprojekte unter Verwendung des Yeoman-Generators von SharePoint." />
+			<Item text="Aktualisieren von SharePoint Framework-Paketen" url="spfx/toolchain/update-latest-packages" SEODescription="Prozess zum Aktualisieren von SharePoint Framework-Paketen auf die neuesten Versionen in Ihren Lösungen." />
+			<Item text="Optimieren von Builds für die Produktion" url="spfx/toolchain/optimize-builds-for-production" SEODescription="Optimieren von SharePoint Framework-Builds für die Produktionsbereitstellung." />
+			<Item text="Integrieren von gulp-Tasks in die SharePoint Framework-Toolkette" url="spfx/toolchain/integrate-gulp-tasks-in-build-pipeline" SEODescription="Integrieren von benutzerdefinierten gulp-Tasks in die für SharePoint Framework-Lösungen verwendete Buildpipeline." />
+			<Item text="Erweitern von webpack in der SharePoint Framework-Toolkette" url="spfx/toolchain/extending-webpack-in-build-pipeline" SEODescription="Erweitern von Webpack in der für SharePoint Framework-Lösungen verwendeten Buildpipeline." />
+			<Item text="Bereitstellen von SharePoint-Objekten" url="spfx/toolchain/provision-sharepoint-assets" SEODescription="Mit der SharePoint Framework-Toolkette können Sie SharePoint-Felder, Inhaltstypen und Listeninstanzen mit ihrem clientseitigen Lösungspaket verpacken und bereitstellen." />
+		</Item>
+		<Item text="Webparts" url="spfx/web-parts" SEODescription="">
+			<Item text="Übersicht" url="spfx/web-parts/overview-client-side-web-parts" SEODescription="Entwickeln Sie clientseitige SharePoint-Webparts, um eine bessere angepasste Erfahrung für SharePoint bereitzustellen." />
+			<Item text="Erste Schritte" url="spfx/web-parts/get-started">
+				<Item text="Erstellen des ersten Webparts" url="spfx/web-parts/get-started/build-a-hello-world-web-part" SEODescription="Erstellen Sie das clientseitige SharePoint-Webpart „Hello World“." />
+				<Item text="Verbinden mit SharePoint" url="spfx/web-parts/get-started/connect-to-sharepoint" SEODescription="Verbinden Sie Ihren clientseitiges SharePoint-Webpart mithilfe des Seitenkontextes mit SharePoint." />
+				<Item text="Bereitstellen des Webparts auf einer SharePoint-Seite" url="spfx/web-parts/get-started/serve-your-web-part-in-a-sharepoint-page" SEODescription="Stellen Sie Ihren clientseitigen SharePoint-Webpart auf einer SharePoint-Seite bereit." />
+				<Item text="Bereitstellen für einen CDN" url="spfx/web-parts/get-started/deploy-web-part-to-cdn" SEODescription="Stellen Sie die Objekte Ihres clientseitigen SharePoint-Webparts für einen CDN statt mithilfe eines lokalen Hosts bereit." />
+				<Item text="Hinzufügen von „jQueryUI Accordion“" url="spfx/web-parts/get-started/add-jqueryui-accordion-to-web-part" SEODescription="Fügen Sie „jQueryUI Accordion“ zu Ihrem clientseitigen SharePoint-Webpart-Projekt hinzu." />
+				<Item text="Verwenden von Office UI Fabric React-Komponenten " url="spfx/web-parts/get-started/use-fabric-react-components" SEODescription="Erstellen Sie ein clientseitiges SharePoint-Webpart, das die DocumentCard-Office-UI-Fabric-Komponente verwendet." />
+				<Item text="Bereitstellen von Objekten aus der Lösung" url="spfx/web-parts/get-started/provision-sp-assets-from-package" SEODescription="Informationen zum Verwenden von SharePoint Framework, um SharePoint-Objekte für Websites bei der Installation der Lösung bereitzustellen." />
+			</Item>
+			<Item text="Grundlagen" url="spfx/web-parts/basics" SEODescription="">
+				<Item text="Überlegungen zum Entwurf" url="spfx/web-parts/basics/design-considerations-for-web-parts" SEODescription="Entwerfen Sie Ihre clientseitigen SharePoint-Webparts für die Verwendung von Office UI Fabric React-Komponenten so, dass sie schnell reagieren und Modi verarbeiten, veröffentlichen und bearbeiten können." />
+				<Item text="Hinzufügen von Eigenschaften zum Eigenschaftenbereich" url="spfx/web-parts/basics/integrate-with-property-pane" SEODescription="Richten Sie die Eigenschaften für Ihr clientseitiges SharePoint-Webpart ein, und verwalten Sie sie über den Eigenschaftenbereich." />
+				<Item text="Hinzufügen einer externen Bibliothek" url="spfx/web-parts/basics/add-an-external-library" SEODescription="Fügen Sie eine externe JavaScript-Bibliothek zu Ihrem clientseitigen SharePoint-Webpart hinzu, z. B. kleine Bibliotheken, AMD-fremde Module und lokalisierte Ressourcen." />
+				<Item text="Arbeiten mit dem ursprünglichen __RequestDigest" url="spfx/web-parts/basics/working-with-requestdigest" SEODescription="Erfahren Sie, wie das Formularfeld __REQUESTDIGEST in einem Webpart im SharePoint Framework verwenden." />
+				<Item text="Hinweise zu Lösungspaketen" url="spfx/web-parts/basics/notes-on-solution-packaging" SEODescription="Grundlegendes zu Details der Definition für Dateien zum Packen von Webparts in Lösungen im SharePoint Framework" />				
+			</Item>
+			<Item text="Hilfestellung" url="spfx/web-parts/guidance" SEODescription="">
+				<Item text="Sharepoint Framework-Lösungen – Überlegungen zum Thema Governance" url="spfx/web-parts/guidance/governance-considerations" SEODescription="Governanceüberlegungen für Organisationen im Zusammenhang mit Sharepoint Framework." />
+				<Item text="Verwenden von vorhandenen JavaScript-Bibliotheken" url="spfx/web-parts/guidance/use-existing-javascript-libraries" SEODescription="Bewährte Methoden für die Verwendung von vorhandenen JavaScript-Bibliotheken in Ihren clientseitigen SharePoint-Webparts." />
+				<Item text="Verweisen auf Drittanbieter-CSS-Formatvorlagen" url="spfx/web-parts/guidance/reference-third-party-css-styles" SEODescription="Verweisen Sie in Ihren clientseitigen SharePoint Framework-Webparts auf CSS-Formatvorlagen von Drittanbietern." />
+				<Item text="Verwenden vorkonfigurierter Einträge" url="spfx/web-parts/guidance/simplify-adding-web-parts-with-preconfigured-entries" SEODescription="Vereinfachen Sie das Hinzufügen von Webparts mit vorkonfigurierten Einträgen." />
+				<Item text="Mithilfe von JSOM-Webpart" url="spfx/web-parts/guidance/connect-to-sharepoint-using-jsom" SEODescription="Stellen Sie eine Verbindung zu SharePoint mit dem JavaScript-Objektmodell (JSOM) her." />
+				<Item text="Überprüfen von Einträgen im Eigenschaftenbereich" url="spfx/web-parts/guidance/validate-web-part-property-values" SEODescription="Überprüfen Sie Einträge von Endbenutzern im Eigenschaftenbereich." />
+				<Item text="Verwenden von kaskadierenden Dropdownmenüs im Eigenschaftenbereich" url="spfx/web-parts/guidance/use-cascading-dropdowns-in-web-part-properties" SEODescription="Verwenden Sie kaskadierende Dropdownmenüs im Eigenschaftenbereich Ihres clientseitigen SharePoint Framework-Webparts." />
+				<Item text="Erstellen benutzerdefinierter Steuerelemente für den Eigenschaftenbereich" url="spfx/web-parts/guidance/build-custom-property-pane-controls" SEODescription="Erstellen Sie benutzerdefinierte Steuerelemente, die den Eigenschaftenbereich Ihres clientseitigen SharePoint Framework-Webparts um zusätzliche Funktionen erweitern." />
+				<Item text="Gemeinsame Verwendung von Daten zwischen Webparts" url="spfx/web-parts/guidance/share-data-between-web-parts" SEODescription="Optionen und Methoden für die gemeinsame Verwendung von Daten zwischen mehreren Webparts auf einer einzigen Seite." />
+				<Item text="Gemeinsame Verwendung von Daten zwischen Webparts (Lernprogramm)" url="spfx/web-parts/guidance/tutorial-share-data-between-web-parts-global-variable" SEODescription="Geben Sie Daten zwischen Webparts unter Verwendung einer globalen Variablen frei (Lernprogramm)." />
+				<Item text="Erstellen von Webparts mit SP PnP JS" url="spfx/web-parts/guidance/use-sp-pnp-js-with-spfx-web-parts" SEODescription="Verwenden Sie die SharePoint PnP JS-Bibliothek bei der clientseitigen SharePoint Framework-Webpartimplementierung." />
+				<Item text="Erstellen von Webparts mit Angular v1.x" url="spfx/web-parts/guidance/build-client-side-web-parts-with-angular-1-x" SEODescription="Verwenden Sie Angular v1.x zum Erstellen eines einfachen clientseitigen SharePoint Framework-Webparts." />
+				<Item text="Migrieren von Winkel Applikationen" url="spfx/web-parts/guidance/migrate-angular-1-x-applications-to-sharepoint-framework" SEODescription="Migrieren Sie vorhandene Angular v1.x-Anwendungen zu clientseitigen SharePoint Framework-Webparts." />
+				<Item text="Lokalisierung" url="spfx/web-parts/guidance/localize-web-parts" SEODescription="Lokalisieren von clientseitigen SharePoint Framework-Webparts" />
+				<Item text="Aufrufen der Microsoft Graph-API" url="spfx/web-parts/guidance/call-microsoft-graph-from-your-web-part" SEODescription="Rufen Sie die Microsoft Graph-API aus Ihrem clientseitigen SharePoint Framework-Webpart mithilfe von OAuth auf." />
+			</Item>
+		</Item>
+	</Item>
+	<Item text="SharePoint-APIs" url="apis" SEODescription="">
+		<Item text="REST" url="apis/rest" SEODescription="">
+			<Item text="SharePoint REST-Dienst" url="apis/rest/get-to-know-the-sharepoint-rest-service" SEODescription="Grundlegendes zum SharePoint REST-Dienst" />
+			<Item text="Grundlegende Vorgänge" url="apis/rest/complete-basic-operations-using-sharepoint-rest-endpoints" SEODescription="Führen Sie grundlegende Vorgänge unter Verwendung von SharePoint REST-Endpunkten aus." />
+			<Item text="Listen und Listenelemente" url="apis/rest/working-with-lists-and-list-items-with-rest" SEODescription="Arbeiten mit Listen und Listenelementen unter Verwendung von SharePoint REST." />
+			<Item text="Ordner und Dateien" url="apis/rest/working-with-folders-and-files-with-rest" SEODescription="Arbeiten mit Ordnern und Dateien unter Verwendung von SharePoint REST." />
+			<Item text="REST-Endpunkt-URIs" url="apis/rest/determine-sharepoint-rest-service-endpoint-uris" SEODescription="Ermitteln Sie URIs von SharePoint-REST-Dienstendpunkten." />
+			<Item text="OData-Abfragevorgänge" url="apis/rest/use-odata-query-operations-in-sharepoint-rest-requests" SEODescription="Verwenden Sie OData-Abfragevorgänge in SharePoint REST-Anforderungen." />
+			<Item text="Navigieren in der Datenstruktur" url="apis/rest/navigate-the-sharepoint-data-structure-represented-in-the-rest-service" SEODescription="Navigieren Sie in der im REST-Dienst dargestellten SharePoint-Datenstruktur." />
+			<Item text="Synchronisieren von SharePoint-Elementen" url="apis/rest/synchronize-sharepoint-items-using-the-rest-service" SEODescription="Synchronisieren Sie SharePoint-Elemente mit dem REST-Dienst." />
+			<Item text="Hochladen einer Datei" url="apis/rest/upload-a-file-by-using-the-rest-api-and-jquery" SEODescription="Laden Sie Dateien mithilfe der REST-API und jQuery hoch." />
+			<Item text="Berechtigungen verwalten" url="apis/rest/set-custom-permissions-on-a-list-by-using-the-rest-interface" SEODescription="Legen Sie mit der REST-Schnittstelle benutzerdefinierte Berechtigungen in einer Liste fest." />
+			<Item text="Batchanforderungen" url="apis/rest/make-batch-requests-with-the-rest-apis" SEODescription="Führen Sie Batchanforderungen mit den SharePoint REST-APIs durch." />					
+		</Item>
+		<Item text="Webhooks" url="apis/webhooks" SEODescription="">
+			<Item text="Übersicht" url="apis/webhooks/overview-sharepoint-webhooks" SEODescription="SharePoint-Webhooks ermöglichen Entwicklern das Erstellen von Dienstintegrationen, die den Empfang von Benachrichtigungen für bestimmte Ereignisse, die in SharePoint auftreten, abonnieren." />
+			<Item text="Erste Schritte" url="apis/webhooks/get-started-webhooks" SEODescription="Unternehmen Sie die ersten Schritte beim Erstellen Ihrer eigenen Anwendung, die SharePoint-Webhook-Anforderungen hinzufügen und verarbeiten kann." />
+			<Item text="Referenzimplementierung" url="apis/webhooks/webhooks-reference-implementation" SEODescription="Eine SharePoint PnP-Referenzimplementierung, die die Verwendung von SharePoint-Webhooks mithilfe verschiedener Azure-Komponenten zeigt, z. B. Azure-Webaufträge, Azure SQL Server und Azure Storage-Warteschlangen." />
+			<Item text="Azure-Funktionen und SharePoint-Webhooks" url="apis/webhooks/sharepoint-webhooks-using-azure-functions" SEODescription="Erläutert, wie Sie Azure-Funktionen für das Hosting Ihrer SharePoint-Webhooks verwenden." />
+			<Item text="SharePoint-Listen" url="apis/webhooks/lists">
+				<Item text="Übersicht" url="apis/webhooks/lists/overview-sharepoint-list-webhooks" SEODescription="SharePoint-Listen-Webhooks benachrichtigen Ihre Anwendung über die Ereignisse, die Listenelementänderungen für eine angegeben SharePoint-Liste oder Dokumentbibliothek entspricht." />
+				<Item text="Erstellen eines Abonnements" url="apis/webhooks/lists/create-subscription" SEODescription="Erstellen Sie ein SharePoint-Webhook-Abonnement mithilfe einer HTTP POST-Anforderung." />
+				<Item text="Aktualisieren eines Abonnements" url="apis/webhooks/lists/update-subscription" SEODescription="Aktualisieren Sie ein SharePoint-Webhook-Abonnement mithilfe einer HTTP PATCH-Anforderung." />
+				<Item text="Löschen eines Abonnements" url="apis/webhooks/lists/delete-subscription" SEODescription="Löschen Sie ein SharePoint-Webhook-Abonnement mithilfe einer HTTP DELETE-Anforderung." />
+				<Item text="Abrufen von Abonnements" url="apis/webhooks/lists/get-subscription" SEODescription="Rufen Sie ein oder mehrere SharePoint-Webhook-Abonnements mithilfe einer HTTP GET-Anforderung ab." />
+			</Item>
+		</Item>
+	</Item>
+	<Item text="Weitere SharePoint-Ressourcen" url="external" SEODescription="">
+		<Item text="Dokumente zu SharePoint-Add-Ins" url="https://msdn.microsoft.com/en-us/library/office/fp179930.aspx" IsExternal="true" SEODescription="" />
+	</Item>
+	<Item text="SharePoint Framework-Referenz" url="https://dev.office.com/sharepoint/reference/spfx/sharepoint-framework-reference-overview" IsExternal="true" SEODescription="SharePoint Framework-API-Referenz" />
+	<Item text="SharePoint Framework-Codebeispiele" url="http://aka.ms/spfx-samples" IsExternal="true" SEODescription="SharePoint Framework-Codebeispiele" />
+</Menu>
