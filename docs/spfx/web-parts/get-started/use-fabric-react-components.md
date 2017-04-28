@@ -1,8 +1,10 @@
-# <a name="use-office-ui-fabric-react-components-in-your-sharepoint-client-side-web-part"></a>Verwenden von React-Komponenten der Office UI Fabric in Ihrem clientseitigen SharePoint-Webpart
+# <a name="use-office-ui-fabric-react-components-in-your-sharepoint-client-side-web-part"></a>Verwenden von Office UI Fabric React-Komponenten in clientseitigen SharePoint-Webparts
 
-Dieser Artikel beschreibt, wie ein einfaches Webpart erstellt wird, das die DocumentCard-Komponente der [Office UI Fabric](https://github.com/OfficeDev/office-ui-fabric-react) verwendet. Office UI Fabric React ist das Front-End-Framework zum Erstellen von Oberflächen für Office und Office 365. Fabric React umfasst eine robuste Sammlung dynamischer Mobilitätskomponenten, die Ihnen das Erstellen von Weboberflächen mithilfe der Office-Entwurfssprache erleichtern.
+#### **Wichtig:** Sie müssen vorhandene Projekte auf „@microsoft/sp-build-web@1.0.1“ oder höher aktualisieren, um Office UI Fabric React verwenden zu können. Lesen Sie hierzu die Anweisungen am Ende dieses Artikels.
 
-Die folgende Abbildung zeigt eine DocumentCard-Komponente, die mit Office UI Fabric React erstellt wurde.
+In diesem Artikel wird die Erstellung eines einfachen Webparts beschrieben, das die DocumentCard-Komponente von [Office UI Fabric React](https://github.com/OfficeDev/office-ui-fabric-react) verwendet. Office UI Fabric React ist das Front-End-Framework zur Erstellung von Oberflächen für Office und Office 365. Fabric React umfasst eine Sammlung stabiler, dynamischer und für die Darstellung auf Mobilgeräten optimierter Komponenten zur unkomplizierten Erstellung von Weboberflächen mithilfe der Office-Entwurfssprache.
+
+Die folgende Abbildung zeigt eine DocumentCard-Komponente, die mit Office UI Fabric React erstellt wurde:
 
 ![Abbildung der Fabric-Komponente „DocumentCard“ in einer SharePoint Workbench](../../../../images/fabric-components-doc-card-view-ex.png)
 
@@ -13,7 +15,9 @@ Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in 
 </a>
 
 
-## <a name="create-a-new-web-part-project"></a>Erstellen eines neuen Webpart-Projekts
+## <a name="creating-a-new-web-part-project"></a>Erstellen eines neuen Webpartprojekts
+
+Stellen Sie sicher, dass Sie die aktuelle Version von X verwenden. Führen Sie `yo` aus, und befolgen Sie die Anweisungen, um ein Projektgerüst zu erstellen.
 
 Erstellen Sie an einem Speicherort Ihrer Wahl ein neues Projektverzeichnis:
 
@@ -27,7 +31,7 @@ Wechseln Sie in das Projektverzeichnis:
 cd documentcardexample-webpart
 ```
 
-Führen Sie den Yeoman-SharePoint-Generator aus, um ein neues Webpart zu erstellen:
+Stellen Sie sicher, dass die aktuelle Version von `@microsoft/generator-sharepoint` installiert ist, und führen Sie den Yeoman-SharePoint-Generator aus, um ein neues Webpart zu erstellen:
 
 ```
 yo @microsoft/sharepoint
@@ -92,7 +96,7 @@ export default class DocumentCardExample extends React.Component<IDocumentCardEx
 }
 ```
 
-## <a name="add-an-office-ui-fabric-component"></a>Hinzufügen einer Office UI Fabric-Komponente
+### <a name="add-an-office-ui-fabric-component"></a>Hinzufügen einer Office UI Fabric-Komponente
 
 Die *neuen modernen Benutzeroberflächen* in SharePoint verwenden die Office UI Fabric sowie Office UI Fabric React als standardmäßiges Front-End-Framework zur Erstellung neuer Benutzeroberflächen. SharePoint Framework enthält daher bei Auslieferung eine Standardversion der Office UI Fabric sowie eine Standardversion von Fabric React, die jeweils der in SharePoint verfügbaren Version entsprechen. Dadurch wird sichergestellt, dass das Webpart, das Sie erstellen, bei der Bereitstellung in SharePoint die richtige Version der Fabric-Formatvorlagen und -Komponenten verwendet. 
 
@@ -168,7 +172,7 @@ require('set-webpack-public-path!');
     
 Speichern Sie die Datei.
 
-## <a name="copy-the-image-assets"></a>Kopieren der Bildanlagen
+### <a name="copy-the-image-assets"></a>Kopieren der Bildanlagen
 
 Kopieren Sie die folgenden Bilder in den Ordner **src\webparts\documentCardExample**:
 
@@ -176,7 +180,7 @@ Kopieren Sie die folgenden Bilder in den Ordner **src\webparts\documentCardExamp
 * [icon-ppt.png](https://github.com/SharePoint/sp-dev-docs/tree/master/assets/icon-ppt.png)
 * [document-preview.png](https://github.com/SharePoint/sp-dev-docs/tree/master/assets/document-preview.png)
 
-## <a name="preview-the-web-part-in-workbench"></a>Anzeigen der Webpart-Vorschau in der Workbench
+### <a name="preview-the-web-part-in-workbench"></a>Anzeigen der Webpart-Vorschau in der Workbench
 
 Geben Sie in der Konsole Folgendes ein, um das Webpart in der Workbench der Vorschau anzuzeigen:
     
@@ -186,5 +190,9 @@ gulp serve
     
 Wählen Sie in der Toolbox Ihr `DocumentCardExample`-Webpart aus, das hinzugefügt werden soll:
     
-![Abbildung der Fabric-Komponente „DocumentCard“ in einer SharePoint Workbench](../../../../images/fabric-components-doc-card-view-ex.png)
+![Abbildung der Fabric-Komponente „DocumentCard“ in einer SharePoint-Workbench](../../../../images/fabric-components-doc-card-view-ex.png)
 
+
+## <a name="updating-an-existing-project"></a>Aktualisieren vorhandener Projekte
+
+Aktualisieren Sie in der Datei `package.json` Ihres Projekts die Abhängigkeit `@microsoft/sp-build-web` mindestens auf Version 1.0.1, löschen Sie das Verzeichnis `node_modules` Ihres Projekts, und führen Sie den Befehl `npm install` aus.

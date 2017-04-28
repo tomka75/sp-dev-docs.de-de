@@ -1,4 +1,6 @@
-# <a name="using-office-ui-fabric-core-and-fabric-react-in-spfx-client-side-web-parts"></a>Verwenden von Office UI Fabric Core und von Fabric React in clientseitigen SPFx-Webparts
+# <a name="using-office-ui-fabric-core-and-fabric-react-in-spfx-client-side-web-parts"></a>Verwenden von Office UI Fabric Core und Fabric React in clientseitigen SPFx-Webparts
+
+#### **Wichtig:** Sie müssen vorhandene Projekte auf „@microsoft/sp-build-web@1.0.1“ oder höher aktualisieren, um Office UI Fabric React verwenden zu können. Lesen Sie hierzu die Anweisungen am Ende dieses Artikels.
 
 Office UI Fabric ist das offizielle Front-End-Framework zum Erstellen von Oberflächen in Office 365 und SharePoint. SharePoint bietet eine nahtlose Integration in Fabric, sodass Microsoft eine robuste und konsistente Entwurfssprache über verschiedene SharePoint-Oberflächen hinweg bereitstellen kann, z. B. moderne Teamwebsites, moderne Seiten und moderne Listen. Darüber hinaus soll Office UI Fabric für Entwickler in SharePoint Framework zum Erstellen benutzerdefinierter SharePoint-Lösungen zur Verfügung stehen.
 
@@ -25,9 +27,9 @@ Microsoft verwendet Fabric Core und Fabric React in SharePoint. Microsoft veröf
 
 Um Zuverlässigkeit zu erreichen, ist das Problem der **globalen CSS-Formatvorlagen** das wichtigste Problem, das gelöst werden muss. Sowohl Fabric Core als auch „fabric.component.css“ verwenden derzeit globale Formatvorlagen.
 
-Aus den oben genannten Gründen können Kundenlösungen derzeit jedoch noch keine Teile von Fabric verwenden. Wir sind uns bewusst, dass Entwickler Fabric Core und Fabric React zum Erstellen ihrer Lösungen benötigen. Wir arbeiten daran, dies so schnell wie möglich zu beheben.
+Aus den oben genannten Gründen können Kundenlösungen derzeit Fabric-Komponenten noch nicht sicher verwenden. Natürlich sind wir uns bewusst, dass Entwickler Fabric Core und Fabric React zum Erstellen ihrer Lösungen benötigen. Wir arbeiten daran, dies so schnell wie möglich zu beheben.
 
-Nachfolgend finden Sie eine Zusammenfassung derzeit unterstützter Optionen zur Verwendung von Office UI Fabric mit SharePoint Framework-Lösungen basierend auf dem verwendeten JavaScript-Framework.
+Nachfolgend finden Sie eine Zusammenfassung derzeit unterstützter Optionen zur Verwendung von Office-UI-Fabric mit SharePoint Framework-Lösungen basierend auf dem verwendeten JavaScript-Framework.
 
 - React – Office UI Fabric kann nur über die **statische Verknüpfung** mit den Fabric React-Komponenten sicher verwendet werden.
 - Andere JS-Bibliotheken – Die Verwendung von Office UI Fabric mit SharePoint Framework-Lösungen wird **nicht** unterstützt.
@@ -70,7 +72,7 @@ Der folgende Codeausschnitt zeigt, wie die statische und dynamische Verknüpfung
 ***Grundlegendes zu diesem Ansatz und Nachteile***
 
 - Komponenten im Webpart sind auf eine Version von Fabric React beschränkt, die Sie beim Erstellen des Webparts verwendet haben. Diese werden nicht automatisch mit der umgebenden Seite weiterentwickelt. Sie müssen Ihr Webpart manuell aktualisieren, um eine Anpassung an neuere Versionen von Fabric React vorzunehmen.
-- Die Seite reagiert möglicherweise langsamer, da mehr CSS-Formatvorlagen geladen werden, aber sie funktioniert zuverlässig.
+- Die Seite reagiert möglicherweise langsamer, da unter Umständen mehr CSS geladen wird, funktioniert aber zuverlässig.
 - Die statische Verknüpfung bläht Ihr Webpartpaket auf, die dynamische Verknüpfung ist jedoch angesichts künftiger Updates, die in SharePoint Online eingeführt werden, nicht stabil genug. Die statische Verknüpfung ist der einzige Ansatz, der offiziell bei der Verwendung von Office UI Fabric React in den SharePoint Framework-Lösungen unterstützt wird.
 
 ### <a name="currently-unsupported-features"></a>Derzeit nicht unterstützte Features
@@ -80,11 +82,11 @@ Der folgende Codeausschnitt zeigt, wie die statische und dynamische Verknüpfung
 - **fabric.components.css**: Diese Datei enthält globale Klassen, die mit Fabric React in Konflikt stehen, „ms-Button“ in „fabric.component.css“ setzt beispielsweise die Button-Formatvorlagen in der Button-Komponente von Fabric React außer Kraft. Das Einbinden von „fabric.component.css“ führt dazu, dass die umgebende Seite oder andere Webparts auf der Seite beschädigt werden. Wir arbeiten an einer Lösung und werden in Kürze ein Update veröffentlichen.
 
 
-## <a name="using-office-ui-fabric-with-non-react-based-web-parts"></a>Verwenden von Office UI Fabric mit Webparts, die nicht auf React basieren
+## <a name="using-office-ui-fabric-with-non-react-based-web-parts"></a>Verwenden von Office UI Fabric mit Webparts, die nicht auf React basieren
 
-Dies wird derzeit nicht unterstützt, und mögliche Implementierungen können unerwartete Probleme verursachen, wenn eine neuere Version der Office UI Fabric veröffentlicht wird. Wir arbeiten daran, eine zuverlässige Integration für **Office UI Fabric Core**, **fabric.component.css** und **nicht auf React basierende Webparts** zu erstellen. 
+Dies wird derzeit nicht unterstützt, und mögliche Implementierungen können unerwartete Probleme verursachen, wenn eine neuere Version von Office UI Fabric veröffentlicht wird. Wir arbeiten derzeit an einer zuverlässigen Integration von **Office UI Fabric Core**, **fabric.component.css** und **nicht auf React basierenden Webparts**. 
 
-## <a name="additional-details-on-the-css-challenge-with-office-ui-fabric"></a>Weitere Informationen zu dem CSS-Problem in Office UI Fabric
+## <a name="additional-details-on-the-css-challenge-with-office-ui-fabric"></a>Weitere Informationen zu dem CSS-Problem in Office UI Fabric
 Folgende Konzepte und Verweise liefern Einblicke in das Problem bei der Verwendung von Office UI Fabric im Kontext clientseitiger Webparts. 
 
 **Globale CSS-Formatvorlagen** und wie diese unbedingt vermieden werden: Dies stellt ein großes Problem dar. Heute weisen sowohl Fabric Core als auch Fabric React Formatvorlagen auf. Aufgrund eines Mangels systemeigener Lösungen vom Browser zum Verwalten der Bereichsdefinition der Formatvorlagen ist dies ein schwerwiegendes Problem.
@@ -122,13 +124,13 @@ Nachfolgend finden Sie weitere Informationen zu den anderen Ansätzen, die in Be
 
 Der Webpartentwickler muss nicht explizit etwas tun, damit die Bereichsdefinition funktioniert. Wir planen, dieses Problem über die CSS-Genauigkeit und einen Nachfolgerselektor zu beheben. Das Fabric Core-Team wird mehrere Kopien von Fabric Core-CSS-Dateien ausliefern, z. B. `fabric-6.css`, `fabric-6-scoped.css`, `fabric-6.0.0.css`, `fabric-6.0.0-scoped.css`.
 
-Alle Formatvorlagen in den bereichsbezogenen CSS-Dateien befinden sich innerhalb eines Nachfolgerselektors, z. B. „ms-Fabric-core--v6 ms-Icon--list“. Zur Kompilierzeit erfassen die Tools die Version von Office UI Fabric Core, mit der das Webpart erstellt wurde. Bei dieser Version kann es sich um die Version handeln, die mit SPFx geliefert wird. Webpartentwickler können alternativ eine explizite Abhängigkeit von einer bestimmten Version von Office UI Fabric Core in ihrer package.json-Datei verwenden.
+Alle Formatvorlagen in den bereichsbezogenen CSS-Dateien befinden sich innerhalb eines Nachfolgerselektors, z. B. „ms-Fabric-core--v6 ms-Icon--list“. Zur Kompilierzeit erfassen die Tools die Version von Office UI Fabric Core, mit der das Webpart erstellt wurde. Bei dieser Version kann es sich um die Version handeln, die mit SPFx geliefert wird. Webpartentwickler können alternativ eine explizite Abhängigkeit von einer bestimmten Version von Office-UI-Fabric Core in ihrer package.json-Datei verwenden.
 
-Das Webpart-Div wird diesem Bereich zugewiesen, d. h. `<div data-sp-webpart class="ms-Fabric-core--v6">`. Das Framework lädt die spezifische Hauptversion der bereichsbezogenen CSS-Datei von Fabric Core. Wenn das Webpart mit Version 6.0.0 von Fabric Core-CSS erstellt wird, lädt das Framework „fabric-6-scoped.css“ zur Ladezeit des Webparts herunter.
+Das Webpart-Div wird diesem Bereich zugewiesen, d. h. `<div data-sp-webpart class="ms-Fabric-core--v6">`. Das Framework lädt die spezifische Hauptversion der bereichsbezogenen Fabric Core-CSS-Datei. Wenn das Webpart mit Version 6.0.0 von Fabric Core-CSS erstellt wird, lädt das Framework „fabric-6-scoped.css“ zur Ladezeit des Webparts herunter.
 
-Der Rest der Seite enthält die nicht bereichsbezogene Office UI Fabric Core. Auf diese Weise erhält die bereichsbezogene CSS gemäß den CSS-Genauigkeitsregeln Vorrang innerhalb der Webpart-Div. Das ganze Webpart und seine Inhalte werden an einer bestimmten Version von Office UI Fabric Core ausgerichtet, die der Entwickler ausgewählt hat.
+Der Rest der Seite enthält nicht bereichsbezogenen Office UI Fabric Core-Code. Auf diese Weise erhält das bereichsbezogene CSS Vorrang innerhalb des Webpart-Div, wie in den CSS-Genauigkeitsregeln festgelegt. Das gesamte Webpart und sein Inhalt werden auf die Version von Office UI Fabric Core abgestimmt, die der Entwickler ausgewählt hat.
 
-Das **Außerkraftsetzen** der Fabric Core-Formatvorlagen wird nicht unterstützt.  
+Das **Außerkraftsetzen** von Fabric Core-Formatvorlagen wird nicht unterstützt.  
 
 ```Javascript
 // Sample of how the scoping would work.
@@ -151,7 +153,7 @@ protected render(): void {
 
 Nach längerer Analyse haben wir festgestellt, dass der Ansatz mit dem Nachfolgerselektor zwei wesentliche Nachteile hat, aufgrund derer es nicht möglich ist, ein Webpart zu erstellen, das niemals beschädigt wird.
 
-**Fehlende zuverlässige Verschachtelungsunterstützung** – Dieser Ansatz funktioniert nur, wenn die Microsoft-Benutzeroberfläche (d. h. Seite und Erstanbieter-Webparts) eine nicht bereichsbezogene Version von Office UI Fabric Core verwenden, z. B. „ms-Icon--list“, und wenn die Drittanbieter-Webparts nur die bereichsbezogene Office UI Fabric Core-CSS, wie oben erläutert, verwenden. Der Grund hierfür ist, dass die Genauigkeit der bereichsbezogenen CSS, die auf das Webpart angewendet wird, die nicht bereichsbezogene CSS auf der Seite außer Kraft setzt. Beachten Sie, wie oben erläutert, dass, wenn die CSS-Genauigkeit von zwei Klassen gleich ist, ihre Ladereihenfolge eine Rolle dahingehend spielt, wie die CSS-Klassen angewendet werden. Die Klasse, die später geladen wird, hat Vorrang. Die höhere Genauigkeit der bereichsbezogenen CSS ist daher wichtig, um eine konsistente Oberfläche zu erhalten.
+**Keine zuverlässige Unterstützung für Schachtelung** – Dieser Ansatz funktioniert nur, wenn die Microsoft-Benutzeroberfläche (d. h. die Seite und alle Erstanbieter-Webparts) eine nicht bereichsbezogene Version von Office UI Fabric Core verwenden (z. B. „ms-Icon--list“) und wenn die Drittanbieter-Webparts nur bereichsbezogenes Office UI Fabric Core-CSS wie oben erläutert verwenden. Der Grund hierfür ist, dass die Genauigkeit des bereichsbezogenen CSS, das auf das Webpart angewendet wird, das nicht bereichsbezogene CSS auf der Seite außer Kraft setzt. Beachten Sie: Wie oben erläutert gilt, dass, wenn die CSS-Genauigkeit von zwei Klassen gleich ist, ihre Ladereihenfolge eine Rolle für die Anwendung der CSS-Klassen spielt. Die Klasse, die später geladen wird, hat Vorrang. Die höhere Genauigkeit des bereichsbezogenen CSS ist daher wichtig, um eine konsistente Oberfläche zu erhalten.
 
 Darüber hinaus können mehrere Erweiterungen, von denen eine jeweils in der anderen enthalten ist, nicht unterschiedliche Fabric Core-Versionen verwenden, d. h. im folgenden Beispiel wird nur „ms-Fabric-core--v6“ angewendet.
 
@@ -204,7 +206,7 @@ Nachfolgend finden Sie ein einfacheres Beispiel, in dem das Problem erläutert w
     <div>
       <br/>
       <span>This test depicts that a descendant selector with the same specificity do not allow nesting.
-      All buttons below do not take the innermost scope i.e. they should be different colors but they are red.
+      All buttons below do not take the innermost scope i.e. they should be different colors, but they are red.
       Further, if you change the ordering of the style tags, the colors will change. i.e. the UI is load order dependant.</span> 
       <div class='scope1'>
         <button class='myButton'</button>
@@ -222,3 +224,8 @@ Nachfolgend finden Sie ein einfacheres Beispiel, in dem das Problem erläutert w
 ```
 
 **Offenlegung von nicht bereichsbezogenen Klassen** – Es gibt ein weiteres Problem mit Nachfolgerselektoren. Beachten Sie im obigen Beispiel, dass die Formatvorlagen für Höhe und Breite aus der nicht bereichsbezogenen myButton-Klasse auf alle Schaltflächen angewendet werden. Dies impliziert, dass eine Änderung in dieser Formatvorlage die HTML, die das bereichsbezogene Markup verwendet, versehentlich beschädigen könnte. Nehmen wir beispielsweise an, dass wir die Höhe auf App-Ebene auf 0px in der myButton-Klasse festlegen. Dies führt dazu, dass alle Drittanbieter-Webparts, die die myButton-Klasse verwenden, eine Höhe von 0 haben, also eine wesentliche Regression in der Benutzeroberfläche.
+
+## <a name="updating-an-existing-project"></a>Aktualisieren bereits vorhandener Projekte
+
+Aktualisieren Sie in der Datei `package.json` Ihres Projekts die Abhängigkeit `@microsoft/sp-build-web` mindestens auf Version 1.0.1, löschen Sie das Verzeichnis `node_modules` Ihres Projekts, und führen Sie den Befehl `npm install` aus.
+
