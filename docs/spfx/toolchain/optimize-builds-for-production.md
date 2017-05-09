@@ -24,11 +24,11 @@ Beim Verweisen auf Drittanbieterbibliotheken schließt SharePoint Framework dies
 
 Beim Arbeiten mit Drittanbieterbibliotheken sollten Sie immer in Betracht ziehen, diese von einem externen Speicherort zu laden: entweder aus einem öffentlichen CDN oder von einem Hostingspeicherort im Besitz Ihrer Organisation. Erst einmal können Sie auf diese Weise die Bibliothek aus dem Bundle ausschließen, wodurch die Größe wesentlich reduziert wird. Wenn der Hostingspeicherort, von dem Sie die Bibliothek laden, für statische Ressourcen optimiert ist, müssen Benutzer, die mit Ihrer Lösung arbeiten, die Bibliothek außerdem nur einmal laden.  Bei nachfolgenden Anforderungen oder auch, wenn die Lösung in der Zukunft verwendet wird, verwendet der Webbrowser die zuvor zwischengespeicherte Kopie der Bibliothek wieder und lädt diese nicht erneut herunter. Dementsprechend wird die Seite mit der Lösung wesentlich schneller geladen.
 
-## <a name="verify-the-contents-of-your-bundle"></a>Überprüfen des Inhalts des Bundles
+## <a name="verify-the-contents-of-your-bundle"></a>Überprüfen des Bundleinhalts
 
-Beim Erstellen des Projekts im Debugmodus liefert SharePoint Framework Ihnen das Diagramm [Webpack-Schnellansicht](https://chrisbateman.github.io/webpack-visualizer/), in dem die unterschiedlichen Skripts dargestellt sind, die in dem generierten Bundle enthalten sind. Sie finden dieses Diagramm in der Datei **./dist/[solution-name].stats.html**.
+Beim Erstellen des Projekts im Debugmodus liefert SharePoint Framework Ihnen das Diagramm [Webpack-Schnellansicht](https://chrisbateman.github.io/webpack-visualizer/), in dem die unterschiedlichen Skripts dargestellt sind, die in dem generierten Bundle enthalten sind. Sie finden dieses Diagramm in der Datei **./temp/stats/[solution-name].stats.html**.
 
-![In dem Diagramm „Webpack-Schnellansicht“ sind die Inhalte eines SharePoint Framwork-Bundles dargestellt](../../../images/guidance-productionbuilds-webpack-visualizer-angular.png)
+![Diagramm „Webpack-Schnellansicht“ mit den Inhalten eines SharePoint Framework-Beispielbundles](../../../images/guidance-productionbuilds-webpack-visualizer-angular.png)
 
 Mit der Webpack-Schnellansicht können Sie ganz einfach überprüfen, ob das generierte Bundle unnötige Skripts enthält und wie sich die enthaltenen Skripts auf die Gesamtgröße des Bundles auswirken. Bedenken Sie, dass die angezeigte Größe den Debugbuild widerspiegelt und bei einem Releasebuild wesentlich kleiner wäre.
 

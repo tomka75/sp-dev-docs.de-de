@@ -70,6 +70,8 @@ Um eine Vorschau Ihres Webparts anzuzeigen, erstellen Sie es und führen es auf 
 
 Wechseln Sie zur Installation des Entwicklerzertifikats für die SPFx-Entwicklung auf die Konsole, vergewissern Sie sich, dass Sie noch im Verzeichnis **helloworld-webpart** sind, und geben Sie den folgenden Befehl ein:
 
+> Beachten Sie: Wenn Sie Chrome v58 oder eine neuere Chrome-Version als Browser verwenden, generiert der Befehl unten kein gültiges Zertifikat für Ihre Umgebung, und in der lokalen Workbench wird eine Zertifikatausnahme angezeigt.
+
 ```
 gulp trust-dev-cert
 ```

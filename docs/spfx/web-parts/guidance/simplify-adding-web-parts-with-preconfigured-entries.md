@@ -1,7 +1,5 @@
 # <a name="simplify-adding-web-parts-with-preconfigured-entries"></a>Vereinfachen des Hinzufügens von Webparts mit vorkonfigurierten Einträgen
 
-> Hinweis:  Dieser Artikel wurde noch nicht mit der SPFx-GA-Version überprüft, möglicherweise treten daher Probleme auf, wenn Sie versuchen, dies mit der neuesten Version durchzuführen.
-
 Komplexere clientseitige SharePoint Framework-Webparts können zahlreiche Eigenschaften haben, die vom Benutzer konfiguriert werden müssen. Sie können Benutzer unterstützen, indem Sie vorkonfigurierte Eigenschafteneinträge für bestimmte Szenarien hinzufügen. Ein vorkonfigurierte Eintrag initialisiert das Webpart mit vordefinierten Werten. In diesem Artikel erfahren Sie, wie Sie vorkonfigurierte Einträge in einem clientseitigen SharePoint Framework-Webpart verwenden, um Benutzern vorkonfigurierte Versionen Ihres Webparts bereitzustellen.
 
 > **Hinweis:** Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment).
@@ -173,14 +171,9 @@ Aktualisieren Sie React-Hauptkomponente so, dass die Werte der Eigenschaften ang
 
 ```ts
 import * as React from 'react';
-import { css } from 'office-ui-fabric-react';
+import styles from './Gallery.module.scss';
+import { IGalleryProps } from './IGalleryProps';
 import { Placeholder } from '@microsoft/sp-webpart-base';
-
-import styles from '../Gallery.module.scss';
-import { IGalleryWebPartProps } from '../IGalleryWebPartProps';
-
-export interface IGalleryProps extends IGalleryWebPartProps {
-}
 
 export default class Gallery extends React.Component<IGalleryProps, {}> {
   public render(): JSX.Element {
@@ -192,27 +185,24 @@ export default class Gallery extends React.Component<IGalleryProps, {}> {
     }
     else {
       return (
-        <div className={styles.gallery}>
+        <div className={styles.helloWorld}>
           <div className={styles.container}>
-            <div className={css('ms-Grid-row ms-bgColor-themeDark ms-fontColor-white', styles.row)}>
+            <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
               <div className='ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1'>
-                <span className='ms-font-xl ms-fontColor-white'>
+                <span className="ms-font-xl ms-fontColor-white">
                   Welcome to SharePoint!
-              </span>
+                </span>
                 <p className='ms-font-l ms-fontColor-white'>
                   Customize SharePoint experiences using Web Parts.
-              </p>
+                </p>
                 <p className='ms-font-l ms-fontColor-white'>
                   List: {this.props.listName}<br />
                   Order: {this.props.order}<br />
                   Number of items: {this.props.numberOfItems}<br />
                   Style: {this.props.style}
                 </p>
-                <a
-                  className={css('ms-Button', styles.button)}
-                  href='https://github.com/SharePoint/sp-dev-docs/wiki'
-                  >
-                  <span className='ms-Button-label'>Learn more</span>
+                <a href="https://aka.ms/spfx" className={styles.button}>
+                  <span className={styles.label}>Learn more</span>
                 </a>
               </div>
             </div>
@@ -236,6 +226,15 @@ export default class Gallery extends React.Component<IGalleryProps, {}> {
 }
 ```
 
+Aktualisieren Sie die Schnittstelle der zentralen React-Komponente so, dass sie der Schnittstelle der Webparteigenschaften entspricht. Dies ist nötig, da alle Webparteigenschaften an diese Komponente umgeleitet werden. Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/components/IGalleryProps.ts**, und ändern Sie den Code wie folgt:
+
+```ts
+import { IGalleryWebPartProps } from '../IGalleryWebPartProps';
+
+export interface IGalleryProps extends IGalleryWebPartProps {
+}
+```
+
 ### <a name="render-web-part-properties-in-the-property-pane"></a>Rendern von Webparteigenschaften im Eigenschaftenbereich
 
 Damit Benutzer die neu definierten Eigenschaft verwenden können, um das Webpart zu konfigurieren, müssen die Eigenschaften im Webparteigenschaftenbereich angezeigt werden. Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/galleryWebPart.ts**. Ändern Sie im oberen Bereich der Datei die **@microsoft/sp-webpart-base**-Anweisung zum Importieren in Folgendes:
@@ -243,8 +242,7 @@ Damit Benutzer die neu definierten Eigenschaft verwenden können, um das Webpart
 ```ts
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
-  IWebPartContext,
+  IPropertyPaneConfiguration,
   PropertyPaneDropdown,
   PropertyPaneSlider,
   PropertyPaneChoiceGroup
@@ -256,7 +254,7 @@ Aktualisieren Sie dann den Code des **propertyPaneSettings**-Getters auf Folgend
 ```ts
 export default class GalleryWebPart extends BaseClientSideWebPart<IGalleryWebPartProps> {
   // ...
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

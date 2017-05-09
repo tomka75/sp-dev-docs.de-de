@@ -1,7 +1,5 @@
 # <a name="localize-sharepoint-framework-client-side-web-parts"></a>Lokalisieren von clientseitigen SharePoint Framework-Webparts
 
-> Hinweis:  Dieser Artikel wurde noch nicht mit der SPFx-GA-Version überprüft, möglicherweise treten daher Probleme auf, wenn Sie versuchen, dies mit der neuesten Version durchzuführen.
-
 Sie können die Darstellung Ihres SharePoint Framework mithilfe des clientseitigen-Webparts erweitern, indem Sie ihn für die verschiedenen Sprachen lokalisieren, die von SharePoint-Benutzern weltweit gesprochen werden. In diesem Artikel lokalisieren Sie einen Webpart für das Gebietsschema Niederländisch (Niederlande), und stellen Sie sicher, dass die lokalisierten Werte ordnungsgemäß angezeigt werden.
 
 > **Hinweis:** Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment).
@@ -57,19 +55,22 @@ export interface IGreetingWebPartProps {
 ```ts
 export default class GreetingWebPart extends BaseClientSideWebPart<IGreetingWebPartProps> {
 
-  public constructor(context: IWebPartContext) {
-    super(context);
-  }
-
   public render(): void {
-    const element: React.ReactElement<IGreetingProps> = React.createElement(Greeting, {
-      greeting: this.properties.greeting
-    });
+    const element: React.ReactElement<IGreetingProps > = React.createElement(
+      Greeting,
+      {
+        greeting: this.properties.greeting
+      }
+    );
 
     ReactDom.render(element, this.domElement);
   }
 
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
+  }
+
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {
@@ -93,25 +94,21 @@ export default class GreetingWebPart extends BaseClientSideWebPart<IGreetingWebP
 }
 ```
 
-Aktualisieren Sie die zentrale React-Komponente, indem Sie die **./src/webparts/greeting/components/Greeting.tsx**-Datei öffnen und den Code folgendermaßen ändern:
+Aktualisieren Sie die zentrale React-Komponente, indem Sie die Datei **./src/webparts/greeting/components/Greeting.tsx** öffnen und den Code folgendermaßen ändern:
 
-```tsx
+```ts
 import * as React from 'react';
-import { css } from 'office-ui-fabric-react';
-
-import styles from '../Greeting.module.scss';
-import { IGreetingWebPartProps } from '../IGreetingWebPartProps';
-
-export interface IGreetingProps extends IGreetingWebPartProps {
-}
+import styles from './Greeting.module.scss';
+import { IGreetingProps } from './IGreetingProps';
+import { escape } from '@microsoft/sp-lodash-subset';
 
 export default class Greeting extends React.Component<IGreetingProps, {}> {
   public render(): JSX.Element {
     return (
-      <div className={styles.greeting}>
+      <div className={styles.helloWorld}>
         <div className={styles.container}>
-          <div className={css('ms-Grid-row ms-bgColor-themeDark ms-fontColor-white', styles.row)}>
-            <div className='ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1'>
+          <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
+            <div className="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
               <span className='ms-font-xl ms-fontColor-white'>
                 Welcome to SharePoint!
               </span>
@@ -119,13 +116,10 @@ export default class Greeting extends React.Component<IGreetingProps, {}> {
                 Customize SharePoint experiences using Web Parts.
               </p>
               <p className='ms-font-l ms-fontColor-white'>
-                {this.props.greeting}
+                {escape(this.props.greeting)}
               </p>
-              <a
-                className={css('ms-Button', styles.button)}
-                href='https://github.com/SharePoint/sp-dev-docs/wiki'
-              >
-                <span className='ms-Button-label'>Learn more</span>
+              <a href="https://aka.ms/spfx" className={styles.button}>
+                <span className={styles.label}>Learn more</span>
               </a>
             </div>
           </div>
@@ -136,7 +130,16 @@ export default class Greeting extends React.Component<IGreetingProps, {}> {
 }
 ```
 
-Aktualisieren Sie die TypeScript-Typ-Definitionsdatei der Lokalisierung, indem Sie die **./src/webparts/greeting/loc/mystrings.d.ts**-Datei öffnen und den Code darin folgendermaßen ändern:
+Aktualisieren Sie die Schnittstelle der zentralen React-Komponente, indem Sie die Datei **./src/webparts/greeting/components/IGreetingProps.tsx** öffnen und den Code folgendermaßen ändern:
+
+```tsx
+import { IGreetingWebPartProps } from '../IGreetingWebPartProps';
+
+export interface IGreetingProps extends IGreetingWebPartProps {
+}
+```
+
+Aktualisieren Sie die Lokalisierungsdatei mit den TypeScript-Typdefinitionen, indem Sie die Datei **./src/webparts/greeting/loc/mystrings.d.ts** öffnen und den Code folgendermaßen ändern:
 
 ```ts
 declare interface IGreetingStrings {
@@ -317,17 +320,17 @@ Bei dem mit dem erstellten SharePoint Framework-Projekt angegebenen Standard-Web
 import * as strings from 'greetingStrings';
 ```
 
-Im nächsten Schritt ersetzen Sie den Inhalt der **render**Methode durch folgenden Code:
+Im nächsten Schritt ersetzen Sie den Inhalt der Klasse **Greeting** durch den folgenden Code:
 
 ```ts
 // ...
 export default class Greeting extends React.Component<IGreetingProps, {}> {
   public render(): JSX.Element {
     return (
-      <div className={styles.greeting}>
+      <div className={styles.helloWorld}>
         <div className={styles.container}>
-          <div className={css('ms-Grid-row ms-bgColor-themeDark ms-fontColor-white', styles.row)}>
-            <div className='ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1'>
+          <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
+            <div className="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
               <span className='ms-font-xl ms-fontColor-white'>
                 Welcome to SharePoint!
               </span>
@@ -335,13 +338,10 @@ export default class Greeting extends React.Component<IGreetingProps, {}> {
                 Customize SharePoint experiences using Web Parts.
               </p>
               <p className='ms-font-l ms-fontColor-white'>
-                {this.props.description}
+                {escape(this.props.greeting)}
               </p>
-              <a
-                className={css('ms-Button', styles.button)}
-                href='https://github.com/SharePoint/sp-dev-docs/wiki'
-              >
-                <span className='ms-Button-label'>{strings.LearnMoreButtonLabel}</span>
+              <a href="https://aka.ms/spfx" className={styles.button}>
+                <span className={styles.label}>{strings.LearnMoreButtonLabel}</span>
               </a>
             </div>
           </div>
@@ -352,7 +352,7 @@ export default class Greeting extends React.Component<IGreetingProps, {}> {
 }
 ```
 
-### <a name="add-the-new-string-to-the-localization-typescript-type-definition-file"></a>Hinzufügen der neuen Zeichenfolge zur Lokalisierung der TypeScript-Typ-Definitionsdatei
+### <a name="add-the-new-string-to-the-localization-typescript-type-definition-file"></a>Hinzufügen der neuen Zeichenfolge zur Lokalisierungsdatei mit den TypeScript-Typdefinitionen
 
 Nach dem Ersetzen der Zeichenfolge durch einen Verweis besteht der nächste Schritt darin, die Zeichenfolge mit den Lokalisierungsdateien zu ersetzen, die vom Webpart verwendet werden. Öffnen Sie im Code-Editor die Datei **./src/webparts/greetings/loc/mystrings.d.ts**, und ändern Sie den Code in der Datei wie folgt:
 
@@ -360,7 +360,7 @@ Nach dem Ersetzen der Zeichenfolge durch einen Verweis besteht der nächste Schr
 declare interface IGreetingStrings {
   PropertyPaneDescription: string;
   DisplayGroupName: string;
-  DescriptionFieldLabel: string;
+  GreetingFieldLabel: string;
   LearnMoreButtonLabel: string;
 }
 
@@ -368,6 +368,7 @@ declare module 'greetingStrings' {
   const strings: IGreetingStrings;
   export = strings;
 }
+
 ```
 
 ### <a name="add-localized-values-for-the-new-string"></a>Hinzufügen von lokalisierten Werte für die neue Zeichenfolge
@@ -469,7 +470,7 @@ Mit vom SharePoint Framework bereitgestellten Bausteinen können Sie Ihren Webpa
 
 Die Liste der Sprachen, die bei einer mehrsprachigen SharePoint-Website aktiviert sind, wird als Array von Gebietsschema-IDs (LCIDS) zurückgegeben. Beispielsweise **1033** für Englisch (USA). Die aktuell verwendete Sprache wird jedoch als Zeichenfolge zurückgegeben. Beispielsweise **en-US** für Englisch (USA). Da JavaScript über keine systemeigene Methode zum Konvertieren der LCID-Nummer des Gebietsschemanamens verfügt und umgekehrt, müssen Sie dies manuell vornehmen.
 
-Öffnen Sie im Code-Editor Die Datei **./src/webparts/greeting/GreetingWebPart.ts** und fügen Sie eine neue Klassenvariable namens **Gebietsschemas** mit dem folgenden Code hinzu:
+Öffnen Sie im Code-Editor die Datei **./src/webparts/greeting/GreetingWebPart.ts**, und fügen Sie eine neue Klassenvariable namens **locales** unter **GreetingWebPart** hinzu, mit dem folgenden Code:
 
 ```ts
 export default class GreetingWebPart extends BaseClientSideWebPart<IGreetingWebPartProps> {
@@ -531,7 +532,7 @@ export default class GreetingWebPart extends BaseClientSideWebPart<IGreetingWebP
 }
 ```
 
-Die **Gebietsschemas**-Variablenlisten führen alle Sprachen auf, die von SharePoint Online unterstützt werden.
+Die Variable **locales** führt alle Sprachen auf, die von SharePoint Online unterstützt werden.
 
 Fügen Sie als Nächstes zwei Klassenmethoden hinzu, mit denen Sie die LCID aus den Gebietsschemanamen und den Gebietsschemaname der LCID abrufen können:
 
@@ -583,14 +584,14 @@ Ursprünglich war in dem Begrüßung-Webpart die **greeting**-Eigenschaft defini
 }
 ```
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/greeting/IGreetingWebPartProps.ts** und entfernen Sie die **greeting**-Eigenschaft aus der Schnittstellendefinition:
+Öffnen Sie nun im Code-Editor die Datei **./src/webparts/greeting/IGreetingWebPartProps.ts**, und entfernen Sie die Eigenschaft **greeting** aus der Schnittstellendefinition:
 
 ```ts
 export interface IGreetingWebPartProps {
 }
 ```
 
-Da die zentrale React-Komponente eine Begrüßung anzeigen sollte, öffnen Sie die Datei **./src/webparts/greeting/components/Greeting.tsx** und ändern Sie die Schnittstelle **IGreetingProps** folgendermaßen:
+Da die zentrale React-Komponente eine Begrüßung anzeigen sollte, öffnen Sie jetzt die Datei **./src/webparts/greeting/components/IGreetingProps.ts** und ändern die Schnittstelle **IGreetingProps** wie folgt:
 
 ```ts
 export interface IGreetingProps extends IGreetingWebPartProps {
@@ -616,7 +617,16 @@ export default class GreetingWebPart extends BaseClientSideWebPart<IGreetingWebP
 }
 ```
 
-Fügen Sie als Nächstes in der **GreetingWebPart**-Klasse eine neue Methode mit dem Namen **getSupportedLanguageIds** hinzu:
+Da wir Daten aus SharePoint abfragen werden, verwenden wir für die Vorgänge den SharePoint-HTTP-Client. Fügen Sie die nachfolgend aufgeführten Importe direkt über **GreetingWebPart** ein.
+
+```ts
+import {
+  SPHttpClient,
+  SPHttpClientResponse   
+} from '@microsoft/sp-http';
+```
+
+Fügen Sie als Nächstes in der Klasse **GreetingWebPart** eine neue Methode mit dem Namen **getSupportedLanguageIds** hinzu:
 
 ```ts
 export default class GreetingWebPart extends BaseClientSideWebPart<IGreetingWebPartProps> {
@@ -629,12 +639,8 @@ export default class GreetingWebPart extends BaseClientSideWebPart<IGreetingWebP
         return;
       }
 
-      this.context.httpClient.get(this.context.pageContext.web.absoluteUrl + '/_api/web?$select=SupportedUILanguageIds', {
-        headers: {
-          'Accept': 'application/json;odata=nometadata',
-          'odata-version': ''
-        }
-      }).then((response: Response): Promise<{ SupportedUILanguageIds: number[] }> => {
+      this.context.spHttpClient.get(this.context.pageContext.web.absoluteUrl + '/_api/web?$select=SupportedUILanguageIds', SPHttpClient.configurations.v1)
+      .then((response: SPHttpClientResponse): Promise<{ SupportedUILanguageIds: number[] }> => {
         return response.json();
       }).then((siteInfo: { SupportedUILanguageIds: number[] }): void => {
         this.supportedLanguageIds = siteInfo.SupportedUILanguageIds;
@@ -668,10 +674,9 @@ export default class GreetingWebPart extends BaseClientSideWebPart<IGreetingWebP
 ```ts
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
-  IWebPartContext,
+  IPropertyPaneConfiguration,
   PropertyPaneTextField,
-  IPropertyPaneField
+   IPropertyPaneField
 } from '@microsoft/sp-webpart-base';
 ```
 
@@ -681,7 +686,7 @@ import {
 export default class GreetingWebPart extends BaseClientSideWebPart<IGreetingWebPartProps> {
   // ...
 
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+    protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

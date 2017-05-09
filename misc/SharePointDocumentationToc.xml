@@ -2,7 +2,8 @@
 <Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SupportedProduct="|SharePoint" SupportedVersion="|V1.0|">
 	<Item text="SharePoint Framework" url="spfx" SEODescription="">
 		<Item text="Übersicht" url="spfx/sharepoint-framework-overview" SEODescription="Das SharePoint Framework bietet moderne Entwicklertools für die Erweiterung von SharePoint." />
-		<Item text="Übersicht" url="spfx/roadmap" SEODescription="Geplante Übersicht für die zukünftigen Versionen von SharePoint Framework." />
+		<Item text="Übersicht" url="spfx/roadmap" SEODescription="Geplante Roadmap für die zukünftigen Versionen von SharePoint Framework" />
+		<Item text="Bekannte Probleme und FAQ" url="spfx/known-issues-and-common-questions" SEODescription="Bekannte Probleme mit SharePoint Framework sowie häufig gestellte Fragen" />
 		<Item text="Tools und Bibliotheken" url="spfx/tools-and-libraries" SEODescription="Erhalten Sie Informationen zu den Tools und Bibliotheken, die Sie verwenden müssen, um Ihre SharePoint Framework-Lösungen zu erstellen." />
 		<Item text="Einrichten Ihres Office 365-Mandanten" url="spfx/set-up-your-developer-tenant" SEODescription="Richten Sie einen Office 365-Mandant ein, damit Sie Ihre clientseitigen SharePoint-Webparts testen und debuggen können." />
 		<Item text="Einrichten der Entwicklungsumgebung" url="spfx/set-up-your-development-environment" SEODescription="Erfahren Sie, wie Sie Ihre Entwicklungsumgebung einrichten und konfigurieren müssen, um clientseitige SharePoint-Webparts erstellen zu können." />
@@ -23,11 +24,12 @@
 			<Item text="Erste Schritte" url="spfx/web-parts/get-started">
 				<Item text="Erstellen des ersten Webparts" url="spfx/web-parts/get-started/build-a-hello-world-web-part" SEODescription="Erstellen Sie das clientseitige SharePoint-Webpart „Hello World“." />
 				<Item text="Verbinden mit SharePoint" url="spfx/web-parts/get-started/connect-to-sharepoint" SEODescription="Verbinden Sie Ihren clientseitiges SharePoint-Webpart mithilfe des Seitenkontextes mit SharePoint." />
-				<Item text="Bereitstellen des Webparts auf einer SharePoint-Seite" url="spfx/web-parts/get-started/serve-your-web-part-in-a-sharepoint-page" SEODescription="Stellen Sie Ihren clientseitigen SharePoint-Webpart auf einer SharePoint-Seite bereit." />
-				<Item text="Bereitstellen für einen CDN" url="spfx/web-parts/get-started/deploy-web-part-to-cdn" SEODescription="Stellen Sie die Objekte Ihres clientseitigen SharePoint-Webparts für einen CDN statt mithilfe eines lokalen Hosts bereit." />
+				<Item text="Bereitstellen des Webparts auf einer SharePoint-Seite" url="spfx/web-parts/get-started/serve-your-web-part-in-a-sharepoint-page" SEODescription="Erfahren Sie, wie Sie Ihr clientseitiges SharePoint-Webpart auf einer SharePoint-Seite bereitstellen können." />
+				<Item text="Bereitstellen in einem Azure-CDN" url="spfx/web-parts/get-started/deploy-web-part-to-cdn" SEODescription="Erfahren Sie, wie Sie die Ressourcen Ihres clientseitigen SharePoint-Webparts in einem CDN statt auf einem lokalen Host bereitstellen können." />
 				<Item text="Hinzufügen von „jQueryUI Accordion“" url="spfx/web-parts/get-started/add-jqueryui-accordion-to-web-part" SEODescription="Fügen Sie „jQueryUI Accordion“ zu Ihrem clientseitigen SharePoint-Webpart-Projekt hinzu." />
 				<Item text="Verwenden von Office-UI-Fabric-React-Komponenten " url="spfx/web-parts/get-started/use-fabric-react-components" SEODescription="Erstellen Sie ein clientseitiges SharePoint-Webpart, das die DocumentCard-Office-UI-Fabric-Komponente verwendet." />
-				<Item text="Bereitstellen von Objekten aus der Lösung" url="spfx/web-parts/get-started/provision-sp-assets-from-package" SEODescription="Informationen zum Verwenden von SharePoint Framework, um SharePoint-Objekte für Websites bei der Installation der Lösung bereitzustellen." />
+				<Item text="Bereitstellen von Objekten aus der Lösung" url="spfx/web-parts/get-started/provision-sp-assets-from-package" SEODescription="Erfahren Sie, wie Sie SharePoint-Ressourcen mithilfe von SharePoint Framework bei der Lösungsinstallation auf Websites bereitstellen können." />
+				<Item text="Bereitstellen in Office 365 CDN" url="spfx/web-parts/get-started/hosting-webpart-from-office-365-cdn" SEODescription="Erfahren Sie, wie Sie clientseitige SharePoint Framework-Webparts in Office 365 CDN hosten können." />
 			</Item>
 			<Item text="Grundlagen" url="spfx/web-parts/basics" SEODescription="">
 				<Item text="Überlegungen zum Entwurf" url="spfx/web-parts/basics/design-considerations-for-web-parts" SEODescription="Entwerfen Sie Ihre clientseitigen SharePoint-Webparts für die Verwendung von Office-UI-Fabric-React-Komponenten so, dass sie schnell reagieren und Modi verarbeiten, veröffentlichen und bearbeiten können." />

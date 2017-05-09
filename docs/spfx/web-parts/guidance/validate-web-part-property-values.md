@@ -1,7 +1,5 @@
 # <a name="validate-web-part-property-values"></a>Überprüfen von Webpart-Eigenschaftswerten
 
-> Hinweis:  Dieser Artikel wurde noch nicht mit der SPFx-GA-Version überprüft, möglicherweise treten daher Probleme auf, wenn Sie versuchen, dies mit der neuesten Version durchzuführen.
-
 Wenn Sie mit Webparts arbeiten, können Benutzer diese mithilfe der Eigenschaften entsprechend der jeweiligen Bedürfnisse konfigurieren. Überprüfen Sie die bereitgestellten Konfigurationswerte und erleichtern Sie es Benutzern auf diese Weise, den Webpart zu konfigurieren und das Arbeiten mit dem Webpart insgesamt zu verbessern. In diesem Artikel erfahren Sie, wie Sie Eigenschaftswerte in clientseitigen Webparts in SharePoint Framework überprüfen.
 
 > **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment), in der Sie SharePoint Framework-Lösungen erstellen können.
@@ -30,9 +28,9 @@ Geben Sie die folgenden Werte ein, wenn Sie dazu aufgefordert werden:
 
 - **react-listinfo** als Name der Lösung
 - **Use the current folder** als Speicherort für die Dateien
-- **List info** als Name des Webparts
+- **React** als Startpunkt für die Webparterstellung
+- **List Info** als Namen des Webparts
 - **Shows information about the selected list** als Beschreibung Ihres Webparts
-- **React** als Eintrittspunkt für die Webpart-Erstellung
 
 ![SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../../images/property-validation-yeoman-generator.png)
 
@@ -50,7 +48,7 @@ Um den Wert einer Webpart-Eigenschaft zu überprüfen, müssen Sie den Ereignish
 
 In diesem Schritt überprüfen Sie, dass die Webpart-Eigenschaft einer Beschreibung angegeben ist und ihr Wert nicht mehr als 40 Zeichen beträgt. Dazu verwenden Sie das Inline-Überprüfungsverfahren.
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/listInfo/ListInfoWebPart.ts**. Fügen Sie in der Klasse **ListInfo** die Methode **validateDescription** mit dem folgenden Code hinzu:
+Öffnen Sie im Code-Editor die Datei **./src/webparts/listInfo/ListInfoWebPart.ts**. Fügen Sie in der Klasse **ListInfoWebPart** die Methode **validateDescription** mit dem folgenden Code hinzu:
 
 ```ts
 export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {

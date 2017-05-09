@@ -2,7 +2,7 @@
 
 Visual Studio Code ist eine beliebter Code-Editor, der häufig zur Erstellung von SharePoint Framework-Lösungen verwendet wird. Wenn Sie Ihre SharePoint Framework-Lösung in Visual Studio Code debuggen, können Sie Ihren Code effizienter durcharbeiten und Fehler beheben. In diesem Artikel werden die Komponenten und Konfigurationsschritte beschrieben, die erforderlich sind, um Visual Studio Code für das Debuggen von SharePoint Framework-Lösungen zu konfigurieren.
 
-## <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Voraussetzungen
 
 Am einfachsten lässt sich Visual Studio Code mit Google Chrome und der Visual Studio Code-Extension „Debugger for Chrome“ für das Debuggen von SharePoint Framework-Lösungen konfigurieren.
 
@@ -56,7 +56,9 @@ Ersetzen Sie den Inhalt der generierten Datei **launch.json** durch:
             "webRoot": "${workspaceRoot}",
             "sourceMaps": true,
             "sourceMapPathOverrides": {
-                "webpack:///../../../../*": "${webRoot}/*"
+                "webpack:///../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../../src/*": "${webRoot}/src/*"
             },
             "runtimeArgs": [
                 "--remote-debugging-port=9222"
@@ -132,7 +134,9 @@ Wenn Sie SharePoint Framework-Lösungen erstellen, die mit SharePoint kommunizi
             "webRoot": "${workspaceRoot}",
             "sourceMaps": true,
             "sourceMapPathOverrides": {
-                "webpack:///../../../../*": "${webRoot}/*"
+                "webpack:///../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../../src/*": "${webRoot}/src/*"
             },
             "runtimeArgs": [
                 "--remote-debugging-port=9222"
@@ -146,7 +150,9 @@ Wenn Sie SharePoint Framework-Lösungen erstellen, die mit SharePoint kommunizi
             "webRoot": "${workspaceRoot}",
             "sourceMaps": true,
             "sourceMapPathOverrides": {
-                "webpack:///../../../../*": "${webRoot}/*"
+                "webpack:///../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../../src/*": "${webRoot}/src/*"
             },
             "runtimeArgs": [
                 "--remote-debugging-port=9222"
