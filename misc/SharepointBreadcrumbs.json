@@ -5,25 +5,30 @@
     {
       "Title": "SharePoint Framework",
       "URL": "/sharepoint/docs/spfx/sharepoint-framework-overview",
-      "Index": "/sharepoint/docs"
+      "Index": "/sharepoint/docs/spfx"
     },
     {
-      "Title": "SharePoint Framework-Referenz",
+      "Title": "SharePoint Framework Reference",
       "URL": "https://dev.office.com/sharepoint/reference/spfx/sharepoint-framework-reference-overview",
       "Index": "external"
     },
     {
-      "Title": "SharePoint Framework-Codebeispiele",
+      "Title": "SharePoint Framework Code Samples",
       "URL": "http://aka.ms/spfx-samples",
       "Index": "external"
     },      
     {
-      "Title": "SharePoint-Add-Ins",
-      "URL": "https://msdn.microsoft.com/en-us/library/office/fp179930.aspx",
-      "Index": "external"
+      "Title": "SharePoint General Development",
+      "URL": "/sharepoint/docs/general-development/sharepoint-development-overview",
+      "Index": "/sharepoint/docs/general-development"
     },
     {
-      "Title": "SharePoint-REST-APIs",
+      "Title": "SharePoint Add-ins",
+      "URL": "/sharepoint/docs/sp-add-ins/sharepoint-add-ins",
+      "Index": "/sharepoint/docs/sp-add-ins"
+    },
+    {
+      "Title": "SharePoint REST APIs",
       "URL": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx",
       "Index": "external"
     },

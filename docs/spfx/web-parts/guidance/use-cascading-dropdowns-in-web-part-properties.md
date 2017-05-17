@@ -1,7 +1,5 @@
 # <a name="use-cascading-dropdowns-in-web-part-properties"></a>Verwenden von kaskadierenden Dropdowns in Webparteigenschaften
 
-> Hinweis:  Dieser Artikel wurde noch nicht mit der SPFx-GA-Version überprüft, möglicherweise treten daher Probleme auf, wenn Sie versuchen, dies mit der neuesten Version durchzuführen.
-
 Beim Entwerfen des Eigenschaftenbereichs für Ihre clientseitigen SharePoint-Webparts gibt es vielleicht eine Webparteigenschaft, deren Optionen basierend auf dem in einer anderen Eigenschaft ausgewählten Wert angezeigt werden. Dieses Szenario tritt in der Regel bei der Implementierung von kaskadierenden Dropdownsteuerelementen auf. In diesem Artikel erfahren Sie, wie kaskadierende Dropdownsteuerelemente im Webpart-Eigenschaftenbereich erstellt werden, ohne ein benutzerdefiniertes Steuerelement für den Eigenschaftenbereich zu entwickeln.
 
 ![Deaktiviertes Elementdropdown und Webpartplatzhalter, die beim Laden der aktualisierten Liste von Elementoptionen kommunizieren](../../../../images/react-cascading-dropdowns-loading-indicator-when-loading-items.png)
@@ -34,9 +32,9 @@ Geben Sie die folgenden Werte ein, wenn Sie dazu aufgefordert werden:
 
 - **react-cascadingdropdowns** als Lösungsname
 - **Aktuellen Ordner verwenden** als Speicherort für die Dateien
+- **React** als Eintrittspunkt für die Webpart-Erstellung
 - **Listenelemente** als Namen des Webparts
 - **Zeigt Listenelemente aus der ausgewählten Liste an** als Beschreibung Ihres Webparts
-- **React** als Eintrittspunkt für die Webpart-Erstellung
 
 ![SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../../images/react-cascading-dropdowns-yo-sharepoint.png)
 
@@ -81,7 +79,7 @@ Aktualisieren Sie den **propertyPaneSettings**-Getter auf Folgendes:
 ```ts
 export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
   // ...
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {
@@ -132,26 +130,17 @@ define([], function() {
 
 ```tsx
 export default class ListItems extends React.Component<IListItemsProps, {}> {
-  public render(): JSX.Element {
+ public render(): JSX.Element {
     return (
-      <div className={styles.listItems}>
+        <div className={styles.helloWorld}>
         <div className={styles.container}>
-          <div className={css('ms-Grid-row ms-bgColor-themeDark ms-fontColor-white', styles.row)}>
-            <div className='ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1'>
-              <span className='ms-font-xl ms-fontColor-white'>
-                Welcome to SharePoint!
-              </span>
-              <p className='ms-font-l ms-fontColor-white'>
-                Customize SharePoint experiences using web parts.
-              </p>
-              <p className='ms-font-l ms-fontColor-white'>
-                {this.props.listName}
-              </p>
-              <a
-                className={css('ms-Button', styles.button)}
-                href='https://github.com/SharePoint/sp-dev-docs/wiki'
-              >
-                <span className='ms-Button-label'>Learn more</span>
+          <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
+            <div className="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
+              <span className="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
+              <p className="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
+              <p className="ms-font-l ms-fontColor-white">{escape(this.props.listName)}</p>
+              <a href="https://aka.ms/spfx" className={styles.button}>
+                <span className={styles.label}>Learn more</span>
               </a>
             </div>
           </div>
@@ -159,6 +148,13 @@ export default class ListItems extends React.Component<IListItemsProps, {}> {
       </div>
     );
   }
+}
+```
+Ändern Sie in der Datei **src/webparts/listItems/components/IListItemsProps.ts** die **IListItemsProps**-Oberfläche in:
+
+```ts
+export interface IListItemsProps {
+  listName: string;
 }
 ```
 
@@ -183,23 +179,18 @@ Fügen Sie in der **ListItemsWebPart**-Klasse einen Verweis zu der **PropertyPan
 ```ts
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
-  IWebPartContext,
-  PropertyPaneDropdown
+  IPropertyPaneConfiguration,
+  PropertyPaneTextField,
+  PropertyPaneDropdown,
+  IPropertyPaneDropdownOption
 } from '@microsoft/sp-webpart-base';
-```
-
-Fügen Sie direkt nach dieser Import-Anweisung einen Verweis zu der **IDropdownOption**-Schnittstelle hinzu.
-
-```ts
-import { IDropdownOption } from 'office-ui-fabric-react';
 ```
 
 Fügen Sie in der **ListItemsWebPart**-Klasse eine neue Variable mit dem Namen **lists** hinzu, um Informationen zu allen verfügbaren Listen in der aktuellen Website zu speichern.
 
 ```ts
 export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
-  private lists: IDropdownOption[];
+  private lists: IPropertyPaneDropdownOption[];
   // ...
 }
 ```
@@ -233,7 +224,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
                 PropertyPaneDropdown('listName', {
                   label: strings.ListNameFieldLabel,
                   options: this.lists,
-                  isDisabled: this.listsDropdownDisabled
+                  disabled: this.listsDropdownDisabled
                 })
               ]
             }
@@ -264,17 +255,17 @@ Fügen Sie in der **ListItemsWebPart**-Klasse eine Methode zum Laden der verfüg
 ```ts
 export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
   // ...
-  private loadLists(): Promise<IDropdownOption[]> {
-    return new Promise<IDropdownOption[]>((resolve: (options: IDropdownOption[]) => void, reject: (error: any) => void) => {
+  private loadLists(): Promise<IPropertyPaneDropdownOption[]> {
+    return new Promise<IPropertyPaneDropdownOption[]>((resolve: (options: IPropertyPaneDropdownOption[]) => void, reject: (error: any) => void) => {
       setTimeout((): void => {
         resolve([{
           key: 'sharedDocuments',
           text: 'Shared Documents'
         },
-          {
-            key: 'myDocuments',
-            text: 'My Documents'
-          }]);
+        {
+          key: 'myDocuments',
+          text: 'My Documents'
+        }]);
       }, 2000);
     });
   }
@@ -298,10 +289,10 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
     this.context.statusRenderer.displayLoadingIndicator(this.domElement, 'lists');
 
     this.loadLists()
-      .then((listOptions: IDropdownOption[]): void => {
+      .then((listOptions: IPropertyPaneDropdownOption[]): void => {
         this.lists = listOptions;
         this.listsDropdownDisabled = false;
-        this.refreshPropertyPane();
+        this.context.propertyPane.refresh();
         this.context.statusRenderer.clearLoadingIndicator(this.domElement);
         this.render();
       });
@@ -314,7 +305,7 @@ Die **onPropertyPaneConfigurationStart**-Methode wird vom SharePoint Framework a
 
 ![Die während des Ladens von Informationen zu verfügbaren Listen angezeigte Ladeanzeige im Webpart](../../../../images/react-cascading-dropdowns-loading-indicator-when-loading-list-info.png)
 
-Nachdem die Informationen zu den verfügbaren Listen geladen wurden, weist die Methode die abgerufenen Daten der **lists-Klassenvariablen zu, von der aus sie vom Listendropdown verwendet werden können. Als Nächstes wird das Dropdown aktiviert, sodass der Benutzer eine Liste auswählen kann. Durch Aufrufen der refreshPropertyPane-Methode wird der Webpart-Eigenschaftenbereich aktualisiert und spiegelt die letzten Änderungen am Listendropdown wider. Nachdem Listeninformationen geladen wurden, wird die Ladeanzeige durch Aufrufen der clearLoadingIndicator-Methode entfernt. Da durch Aufrufen dieser Methode die Benutzeroberfläche des Webparts gelöscht wird, wird die render-Methode aufgerufen, um das erneute Rendern des Webparts zu erzwingen.
+Nachdem die Informationen zu den verfügbaren Listen geladen wurden, weist die Methode die abgerufenen Daten der **lists**-Klassenvariablen zu, von der aus sie vom Listendropdown verwendet werden können. Als Nächstes wird das Dropdown aktiviert, sodass der Benutzer eine Liste auswählen kann. Durch Aufrufen von **this.context.propertyPane.refresh()** wird der Webpart-Eigenschaftenbereich aktualisiert und spiegelt die letzten Änderungen am Listendropdown wider. Nachdem Listeninformationen geladen wurden, wird die Ladeanzeige durch Aufrufen der **clearLoadingIndicator**-Methode entfernt. Da durch Aufrufen dieser Methode die Benutzeroberfläche des Webparts gelöscht wird, wird die **render**-Methode aufgerufen, um das erneute Rendern des Webparts zu erzwingen.
 
 Überprüfen Sie mit dem folgenden Befehl, ob alles wie erwartet funktioniert:
 
@@ -353,6 +344,15 @@ Beim Erstellen von Webparts müssen Sie Benutzern häufig ermöglichen, eine Opt
 
 ```ts
 export interface IListItemsWebPartProps {
+  listName: string;
+  itemName: string;
+}
+```
+
+Ändern Sie den Code in der Datei **src/webparts/listItems/components/IListItemsProps.ts** in Folgendes:
+
+```ts
+export interface IListItemsProps {
   listName: string;
   itemName: string;
 }
@@ -407,27 +407,16 @@ define([], function() {
 export default class ListItems extends React.Component<IListItemsProps, {}> {
   public render(): JSX.Element {
     return (
-      <div className={styles.listItems}>
+        <div className={styles.helloWorld}>
         <div className={styles.container}>
-          <div className={css('ms-Grid-row ms-bgColor-themeDark ms-fontColor-white', styles.row)}>
-            <div className='ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1'>
-              <span className='ms-font-xl ms-fontColor-white'>
-                Welcome to SharePoint!
-              </span>
-              <p className='ms-font-l ms-fontColor-white'>
-                Customize SharePoint experiences using web parts.
-              </p>
-              <p className='ms-font-l ms-fontColor-white'>
-                {this.props.listName}
-              </p>
-              <p className='ms-font-l ms-fontColor-white'>
-                {this.props.itemName}
-              </p>
-              <a
-                className={css('ms-Button', styles.button)}
-                href='https://github.com/SharePoint/sp-dev-docs/wiki'
-              >
-                <span className='ms-Button-label'>Learn more</span>
+          <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
+            <div className="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
+              <span className="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
+              <p className="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
+              <p className="ms-font-l ms-fontColor-white">{escape(this.props.listName)}</p>
+              <p className="ms-font-l ms-fontColor-white">{escape(this.props.itemName)}</p>
+              <a href="https://aka.ms/spfx" className={styles.button}>
+                <span className={styles.label}>Learn more</span>
               </a>
             </div>
           </div>
@@ -447,7 +436,7 @@ Fügen Sie in der **ListItemsWebPart**-Klasse eine neue Variable mit dem Namen *
 ```ts
 export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
   // ...
-  private items: IDropdownOption[];
+  private items: IPropertyPaneDropdownOption[];
   // ...
 }
 ```
@@ -467,7 +456,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 ```ts
 export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
   // ...
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {
@@ -481,12 +470,12 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
                 PropertyPaneDropdown('listName', {
                   label: strings.ListNameFieldLabel,
                   options: this.lists,
-                  isDisabled: this.listsDropdownDisabled
+                  disabled: this.listsDropdownDisabled
                 }),
                 PropertyPaneDropdown('itemName', {
                   label: strings.ItemNameFieldLabel,
                   options: this.items,
-                  isDisabled: this.itemsDropdownDisabled
+                  disabled: this.itemsDropdownDisabled
                 })
               ]
             }
@@ -517,7 +506,7 @@ Fügen Sie in der Datei **src/webparts/listItems/ListItemsWebPart.ts** in der **
 ```ts
 export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
   // ...
-  private loadItems(): Promise<IDropdownOption[]> {
+    private loadItems(): Promise<IPropertyPaneDropdownOption[]> {
     if (!this.properties.listName) {
       // resolve to empty options since no list has been selected
       return Promise.resolve();
@@ -525,7 +514,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 
     const wp: ListItemsWebPart = this;
 
-    return new Promise<IDropdownOption[]>((resolve: (options: IDropdownOption[]) => void, reject: (error: any) => void) => {
+    return new Promise<IPropertyPaneDropdownOption[]>((resolve: (options: IPropertyPaneDropdownOption[]) => void, reject: (error: any) => void) => {
       setTimeout(() => {
         const items = {
           sharedDocuments: [
@@ -579,13 +568,13 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
       .then((listOptions: IDropdownOption[]): Promise<IDropdownOption[]> => {
         this.lists = listOptions;
         this.listsDropdownDisabled = false;
-        this.refreshPropertyPane();
+        this.context.propertyPane.refresh();
         return this.loadItems();
       })
       .then((itemOptions: IDropdownOption[]): void => {
         this.items = itemOptions;
         this.itemsDropdownDisabled = !this.properties.listName;
-        this.refreshPropertyPane();
+        this.context.propertyPane.refresh();
         this.context.statusRenderer.clearLoadingIndicator(this.domElement);
         this.render();
       });
@@ -631,7 +620,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
       // disable item selector until new items are loaded
       this.itemsDropdownDisabled = true;
       // refresh the item selector control by repainting the property pane
-      this.refreshPropertyPane();
+      this.context.propertyPane.refresh();
       // communicate loading items
       this.context.statusRenderer.displayLoadingIndicator(this.domElement, 'items');
 
@@ -646,7 +635,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
           // re-render the web part as clearing the loading indicator removes the web part body
           this.render();
           // refresh the item selector control by repainting the property pane
-          this.refreshPropertyPane();
+          this.context.propertyPane.refresh();
         });
     }
     else {

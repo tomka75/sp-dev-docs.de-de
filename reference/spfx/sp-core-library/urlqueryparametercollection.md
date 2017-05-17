@@ -27,12 +27,23 @@ Keine
 
 ## <a name="methods"></a>Methoden
 
-| Methode       | Zugriffsmodifizierer | Rückgabewerte  | Beschreibung|
+| Methode       | Zugriffsmodifizierer | Rückgabewerte    | Beschreibung|
 |:-------------|:----|:-------|:-----------|
 |[`getValue(param)`](getvalue-urlqueryparametercollection.md)     | `public` | `string` | Gibt den Wert für den ersten übereinstimmenden Abfrageparameter oder undefiniert zurück, wenn der Schlüssel nicht vorhanden ist. Beispiele: this._queryParameterList = [ {key: TEST, value: done}, {key: DEBUG, value: false}, {key: TEST, value: notdone}] getValue('TEST') ---> 'done' getValue('debug') ---> 'false' getValue('lost') ---> undefined |
 |[`getValues(param)`](getvalues-urlqueryparametercollection.md)     | `public` | `string[]` | Gibt die Werte für alle übereinstimmenden Abfrageparameter oder undefiniert zurück, wenn der Schlüssel nicht vorhanden ist. Beispiele: this._queryParameterList = [ {key: TEST, value: done}, {key: DEBUG, value: false}, {key: TEST, value: notdone}] getValues('TEST') ---> ['done', 'notdone'] getValues('debug') ---> ['false'] getValues('lost') ---> undefined |
 
+## <a name="sample"></a>Beispiel
 
+```ts
+import {
+  UrlQueryParameterCollection
+} from '@microsoft/sp-core-library';
+
+// ...
+let queryParameterCollection = new UrlQueryParameterCollection(document.URL);
+let idValue = queryParameterCollection.getValue("id");
+// ...
+```
 
 
 

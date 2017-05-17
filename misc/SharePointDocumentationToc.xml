@@ -36,7 +36,7 @@
 				<Item text="Hinzufügen von Eigenschaften zum Eigenschaftenbereich" url="spfx/web-parts/basics/integrate-with-property-pane" SEODescription="Richten Sie die Eigenschaften für Ihr clientseitiges SharePoint-Webpart ein, und verwalten Sie sie über den Eigenschaftenbereich." />
 				<Item text="Hinzufügen einer externen Bibliothek" url="spfx/web-parts/basics/add-an-external-library" SEODescription="Fügen Sie eine externe JavaScript-Bibliothek zu Ihrem clientseitigen SharePoint-Webpart hinzu, z. B. kleine Bibliotheken, AMD-fremde Module und lokalisierte Ressourcen." />
 				<Item text="Arbeiten mit dem ursprünglichen __RequestDigest" url="spfx/web-parts/basics/working-with-requestdigest" SEODescription="Erfahren Sie, wie das Formularfeld __REQUESTDIGEST in einem Webpart im SharePoint Framework verwenden." />
-				<Item text="Hinweise zu Lösungspaketen" url="spfx/web-parts/basics/notes-on-solution-packaging" SEODescription="Grundlegendes zu Details der Definition für Dateien zum Packen von Webparts in Lösungen im SharePoint Framework" />				
+				<Item text="Hinweise zu Lösungspaketen" url="spfx/web-parts/basics/notes-on-solution-packaging" SEODescription="Grundlegendes zu Details der Definition für Dateien zum Packen von Webparts in Lösungen im SharePoint Framework" />
 			</Item>
 			<Item text="Hilfestellung" url="spfx/web-parts/guidance" SEODescription="">
 				<Item text="Sharepoint Framework-Lösungen – Überlegungen zum Thema Governance" url="spfx/web-parts/guidance/governance-considerations" SEODescription="Governanceüberlegungen für Organisationen im Zusammenhang mit Sharepoint Framework." />
@@ -71,7 +71,7 @@
 			<Item text="Synchronisieren von SharePoint-Elementen" url="apis/rest/synchronize-sharepoint-items-using-the-rest-service" SEODescription="Synchronisieren Sie SharePoint-Elemente mit dem REST-Dienst." />
 			<Item text="Hochladen einer Datei" url="apis/rest/upload-a-file-by-using-the-rest-api-and-jquery" SEODescription="Laden Sie Dateien mithilfe der REST-API und jQuery hoch." />
 			<Item text="Berechtigungen verwalten" url="apis/rest/set-custom-permissions-on-a-list-by-using-the-rest-interface" SEODescription="Legen Sie mit der REST-Schnittstelle benutzerdefinierte Berechtigungen in einer Liste fest." />
-			<Item text="Batchanforderungen" url="apis/rest/make-batch-requests-with-the-rest-apis" SEODescription="Führen Sie Batchanforderungen mit den SharePoint REST-APIs durch." />					
+			<Item text="Batchanforderungen" url="apis/rest/make-batch-requests-with-the-rest-apis" SEODescription="Führen Sie Batchanforderungen mit den SharePoint REST-APIs durch." />
 		</Item>
 		<Item text="Webhooks" url="apis/webhooks" SEODescription="">
 			<Item text="Übersicht" url="apis/webhooks/overview-sharepoint-webhooks" SEODescription="SharePoint-Webhooks ermöglichen Entwicklern das Erstellen von Dienstintegrationen, die den Empfang von Benachrichtigungen für bestimmte Ereignisse, die in SharePoint auftreten, abonnieren." />
@@ -92,4 +92,548 @@
 	</Item>
 	<Item text="SharePoint Framework-Referenz" url="https://dev.office.com/sharepoint/reference/spfx/sharepoint-framework-reference-overview" IsExternal="true" SEODescription="SharePoint Framework-API-Referenz" />
 	<Item text="SharePoint Framework-Codebeispiele" url="http://aka.ms/spfx-samples" IsExternal="true" SEODescription="SharePoint Framework-Codebeispiele" />
+	<Item text="Übersicht über die SharePoint-Entwicklung" url="general-development/sharepoint-development-overview" SEODescription="">
+		<Item text="Neuerungen für Entwickler in SharePoint" url="general-development/what-s-new-for-developers-in-sharepoint" SEODescription="" />
+		<Item text="Protokollhandlerfehler aufgrund von nicht mehr unterstützter SharePoint 2016-Oberfläche" url="general-development/protocol-handler-error-due-to-deprecated-interface-in-sharepoint-2016" SEODescription="" />
+		<Item text="Programmiermodelle" url="general-development/programming-models-in-sharepoint" SEODescription="">
+			<Item text="SharePoint-Add-Ins im Vergleich mit SharePoint-Lösungen" url="general-development/sharepoint-add-ins-compared-with-sharepoint-solutions" SEODescription="" />
+			<Item text="Erstellen von Farmlösungen" url="general-development/build-farm-solutions-in-sharepoint" SEODescription="">
+				<Item text="Gewusst wie: Anpassen eines Feldtyps mithilfe vom clientseitigem Rendering" url="general-development/how-to-customize-a-field-type-using-client-side-rendering" SEODescription="" />
+				<Item text="URLs und Tokens in SharePoint" url="general-development/urls-and-tokens-in-sharepoint" SEODescription="" />
+				<Item text="Virtuelle Verzeichnisse in SharePoint-Lösungen" url="general-development/virtual-directories-in-sharepoint-solutions" SEODescription="" />
+			</Item>
+			<Item text="SharePoint-Zugriff von mobilen und systemeigenen Geräte-Apps" url="general-development/access-sharepoint-from-mobile-and-native-device-apps" SEODescription="" />
+			<Item text="Erstellen von Windows Phone-Apps, die auf SharePoint zugreifen" url="general-development/build-windows-phone-apps-that-access-sharepoint" SEODescription="">
+				<Item text="Gewusst wie: Einrichten einer Umgebung für die Entwicklung mobiler Apps für SharePoint" url="general-development/how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint" SEODescription="" />
+				<Item text="Übersicht über Windows Phone SharePoint-Anwendungsvorlagen in Visual Studio" url="general-development/overview-of-windows-phone-sharepoint-application-templates-in-visual-studio" SEODescription="" />
+				<Item text="Architektur der Windows Phone SharePoint-Listenanwendungsvorlage" url="general-development/architecture-of-the-windows-phone-sharepoint-list-application-template" SEODescription="" />
+				<Item text="Gewusst wie: Erstellen einer Windows Phone SharePoint-Listen-App" url="general-development/how-to-create-a-windows-phone-sharepoint-list-app" SEODescription="" />
+				<Item text="Gewusst wie: Speichern und Abrufen von SharePoint-Listenelementen auf einem Windows Phone" url="general-development/how-to-store-and-retrieve-sharepoint-list-items-on-a-windows-phone" SEODescription="" />
+				<Item text="Gewusst wie: Implementieren von Geschäftslogik und Datenüberprüfung in einer Windows Phone-App für SharePoint" url="general-development/how-to-implement-business-logic-and-data-validation-in-a-windows-phone-app-for-s" SEODescription="" />
+				<Item text="Gewusst wie: Unterstützen und Konvertieren von SharePoint-Feldtypen für Windows Phone-Apps" url="general-development/how-to-support-and-convert-sharepoint-field-types-for-windows-phone-apps" SEODescription="" />
+				<Item text="Gewusst wie: Anpassen von Listenelementabfragen und Filtern von Daten für Windows Phone-Apps" url="general-development/how-to-customize-list-item-queries-and-filter-data-for-windows-phone-apps" SEODescription="" />
+				<Item text="Gewusst wie: Anpassen der Benutzeroberfläche einer SharePoint-Listen-App für Windows Phone" url="general-development/how-to-customize-the-user-interface-of-a-sharepoint-list-app-for-windows-ph" SEODescription="" />
+				<Item text="Gewusst wie: Verwenden mehrerer SharePoint-Listen in einer Windows Phone-App" url="general-development/how-to-use-multiple-sharepoint-lists-in-a-windows-phone-app" SEODescription="" />
+				<Item text="Gewusst wie: Konfigurieren und Verwenden von Pushbenachrichtigungen in SharePoint-Apps für Windows Phone" url="general-development/how-to-configure-and-use-push-notifications-in-sharepoint-apps-for-windows" SEODescription="" />
+				<Item text="Gewusst wie: Erstellen einer mobilen App in SharePoint, die Daten aus einer externen Datenquelle enthält" url="general-development/how-to-create-a-mobile-app-in-sharepoint-that-contains-data-from-an-externa" SEODescription="" />
+				<Item text="Gewusst wie: Integrieren von Karten in Apps mit Windows Phone-Apps und SharePoint-Listen" url="general-development/how-to-integrate-maps-with-windows-phone-apps-and-sharepoint-lists" SEODescription="" />
+				<Item text="Gewusst wie: Erstellen von suchgesteuerten mobilen Apps mit den REST-Schnittstellen für Navigation und Ereignisprotokollierung" url="general-development/how-to-build-search-driven-mobile-apps-with-the-navigation-and-event-logging-res" SEODescription="" />
+				<Item text="Übersicht über das mobile SharePoint-Objektmodell" url="general-development/overview-of-the-sharepoint-mobile-object-model" SEODescription="" />
+				<Item text="Übersicht über das SharePoint-Objektmodell für die mobile Clientauthentifizierung" url="general-development/overview-of-the-sharepoint-mobile-client-authentication-object-model" SEODescription="" />
+				<Item text="Gewusst wie: Exportieren des Namensfelds einer Dokumentbibliotheksliste in eine mobile App" url="general-development/how-to-export-the-name-field-in-a-document-library-list-to-a-mobile-app" SEODescription="" />
+				<Item text="Erstellen lokalisierter Anwendungen für Windows Phone basierend auf den SharePoint-Vorlagen" url="general-development/build-localized-applications-for-windows-phone-based-on-the-sharepoint-templates" SEODescription="" />
+				<Item text="Sprachenunterstützung für Windows Phone in SharePoint" url="general-development/language-support-for-windows-phone-in-sharepoint" SEODescription="" />
+				<Item text="Erstellen von mobilen Apps für andere Plattformen mit SharePoint" url="general-development/build-mobile-apps-for-other-platforms-using-sharepoint" SEODescription="" />
+			</Item>
+			<Item text="Erstellen von wiederverwendbaren Komponenten für SharePoint" url="general-development/build-reusable-components-for-sharepoint" SEODescription="" />
+			<Item text="Erstellen von Websites für SharePoint" url="general-development/build-sites-for-sharepoint" SEODescription="">
+				<Item text="Neuigkeiten in der SharePoint-Websiteentwicklung" url="general-development/what-s-new-with-sharepoint-site-development" SEODescription="" />
+				<Item text="Entwickeln des Websitedesigns in SharePoint" url="general-development/develop-the-site-design-in-sharepoint" SEODescription="">
+					<Item text="Übersicht über den Entwurfs-Manager" url="general-development/overview-of-design-manager-in-sharepoint" SEODescription="" />
+					<Item text="Übersicht über das SharePoint-Seitenmodell" url="general-development/overview-of-the-sharepoint-page-model" SEODescription="" />
+					<Item text="Masterseiten, Gestaltungsvorlagenkatalog und Seitenlayouts" url="general-development/master-pages-the-master-page-gallery-and-page-layouts-in-sharepoint" SEODescription="">
+						<Item text="Gewusst wie: Verbinden eines Netzlaufwerks mit dem Gestaltungsvorlagenkatalog" url="general-development/how-to-map-a-network-drive-to-the-sharepoint-master-page-gallery" SEODescription="" />
+						<Item text="Gewusst wie: Anwenden einer Gestaltungsvorlage auf eine Website" url="general-development/how-to-apply-a-master-page-to-a-site-in-sharepoint" SEODescription="" />
+						<Item text="Gewusst wie: Erstellen eines Seitenlayouts" url="general-development/how-to-create-a-page-layout-in-sharepoint" SEODescription="" />
+						<Item text="Gewusst wie: Anpassen der Seitenlayouts für eine katalogbasierte Website" url="general-development/how-to-customize-page-layouts-for-a-catalog-based-site-in-sharepoint" SEODescription="" />
+						<Item text="Gewusst wie: Anwenden von Formatvorlagen auf Seitenfelder" url="general-development/how-to-apply-styles-to-page-fields-in-sharepoint" SEODescription="" />
+						<Item text="Gewusst wie: Beheben von Fehlern und Warnungen bei der Vorschau einer Seite" url="general-development/how-to-resolve-errors-and-warnings-when-previewing-a-page-in-sharepoint" SEODescription="" />
+						<Item text="Gewusst wie: Konvertieren einer HTML-Datei in eine Gestaltungsvorlage" url="general-development/how-to-convert-an-html-file-into-a-master-page-in-sharepoint" SEODescription="" />
+						<Item text="Gewusst wie: Erstellen einer minimalen Masterseite" url="general-development/how-to-create-a-minimal-master-page-in-sharepoint" SEODescription="" />
+						<Item text="Gewusst wie: Ändern der Vorschauseite im Entwurfs-Manager" url="general-development/how-to-change-the-preview-page-in-sharepoint-design-manager" SEODescription="" />
+						<Item text="Navigationssteuerelement SharePoint Online-Suite" url="general-development/sharepoint-online-suite-navigation-control" SEODescription="" />
+					</Item>
+					<Item text="Gewusst wie: Abrufen der URL einer Seitenbibliothek" url="general-development/how-to-retrieve-the-url-of-a-pages-library" SEODescription="" />
+					<Item text="Branding- und Designfunktionen" url="general-development/sharepoint-design-manager-branding-and-design-capabilities" SEODescription="">
+						<Item text="Designpakete" url="general-development/sharepoint-design-manager-design-packages" SEODescription="" />
+						<Item text="Gerätekanäle" url="general-development/sharepoint-design-manager-device-channels" SEODescription="" />
+						<Item text="Anzeigevorlagen" url="general-development/sharepoint-design-manager-display-templates" SEODescription="" />
+						<Item text="Bilddarstellungen" url="general-development/sharepoint-design-manager-image-renditions" SEODescription="" />
+						<Item text="Codeausschnitte" url="general-development/sharepoint-design-manager-snippets" SEODescription="">
+							<Item text="Gewusst wie: Hinzufügen eines Gerätekanalbereichs-Codeausschnitts" url="general-development/how-to-add-a-device-channel-panel-snippet-in-sharepoint" SEODescription="" />
+							<Item text="Gewusst wie: Hinzufügen eines Bearbeitungsmodusbereichs-Codeausschnitts" url="general-development/how-to-add-an-edit-mode-panel-snippet-in-sharepoint" SEODescription="" />
+							<Item text="Gewusst wie: Hinzufügen eines Webpartzone-Codeausschnitts" url="general-development/how-to-add-a-web-part-zone-snippet-in-sharepoint" SEODescription="" />
+							<Item text="Gewusst wie: Hinzufügen eines Sicherheitstrim-Codeausschnitts" url="general-development/how-to-add-a-security-trim-snippet-in-sharepoint" SEODescription="" />
+							<Item text="Gewusst wie: Branding von Codeausschnitten mithilfe von CSS" url="general-development/how-to-brand-snippets-by-using-css-in-sharepoint" SEODescription="" />
+						</Item>
+						<Item text="Designs" url="general-development/themes-overview-for-sharepoint" SEODescription="">
+							<Item text="Gewusst wie: Erstellen einer Gestaltungsvorlagen-Vorschaudatei" url="general-development/how-to-create-a-master-page-preview-file-in-sharepoint" SEODescription="" />
+							<Item text="Gewusst wie: Bereitstellen eines benutzerdefinierten Designs" url="general-development/how-to-deploy-a-custom-theme-in-sharepoint" SEODescription="" />
+							<Item text="Gewusst wie: Gestalten von flexiblen benutzerdefinierten CSS-Dateien" url="general-development/how-to-make-custom-css-files-themable-in-sharepoint" SEODescription="" />
+							<Item text="Aktualisieren benutzerdefinierter Designs und CSS-Dateien" url="general-development/upgrade-custom-themes-and-css-to-sharepoint" SEODescription="" />
+							<Item text="Farbpaletten und Schriftarten" url="general-development/color-palettes-and-fonts-in-sharepoint" SEODescription="" />
+						</Item>
+					</Item>
+				</Item>
+				<Item text="Verwaltete Metadaten und Navigation in SharePoint" url="general-development/managed-metadata-and-navigation-in-sharepoint" SEODescription="">
+					<Item text="Verwaltete Navigation in SharePoint" url="general-development/managed-navigation-in-sharepoint" SEODescription="" />
+					<Item text="Inhaltssuche-Webpart in SharePoint" url="general-development/content-search-web-part-in-sharepoint" SEODescription="" />
+					<Item text="Gewusst wie: Verwenden von Code zum Anheften von Ausdrücken zu Ausdruckssätzen in SharePoint" url="general-development/how-to-use-code-to-pin-terms-to-navigation-term-sets-in-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Veröffentlichen von SharePoint-Websites" url="general-development/publish-sharepoint-sites" SEODescription="">
+					<Item text="Websiteübergreifende Veröffentlichung in SharePoint" url="general-development/cross-site-publishing-in-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Benutzersegmentierung in SharePoint" url="general-development/user-segmentation-in-sharepoint" SEODescription="" />
+				<Item text="Minimale Downloadstrategie – Übersicht" url="general-development/minimal-download-strategy-overview" SEODescription="" />
+				<Item text="Ändern der SharePoint-Komponenten für MDS" url="general-development/modify-sharepoint-components-for-mds" SEODescription="" />
+				<Item text="Optimieren der Seitenleistung" url="general-development/optimize-page-performance-in-sharepoint" SEODescription="" />
+				<Item text="Optimieren der Barrierefreiheit für SharePoint-Websites" url="general-development/optimize-sharepoint-site-accessibility" SEODescription="" />
+			</Item>
+		</Item>
+		<Item text="Hinzufügen von SharePoint-Funktionen" url="general-development/add-sharepoint-capabilities" SEODescription="">
+			<Item text="Workflows" url="general-development/workflows-in-sharepoint" SEODescription="">
+				<Item text="Erste Schritte mit Workflows in SharePoint" url="general-development/get-started-with-workflows-in-sharepoint" SEODescription="" />
+				<Item text="SharePoint-Workflow-Grundlagen" url="general-development/sharepoint-workflow-fundamentals" SEODescription="" />
+				<Item text="Neuerungen in Workflows für SharePoint" url="general-development/what-s-new-in-workflows-for-sharepoint" SEODescription="" />
+				<Item text="Ausführen vorbereitender Schritte zum Einrichten und Konfigurieren einer Entwicklungsumgebung für SharePoint-Workflows" url="general-development/prepare-to-set-up-and-configure-a-sharepoint-workflow-development-environment" SEODescription="" />
+				<Item text="Gewusst wie: Konfigurieren von MSMQ für SharePoint-Workflows" url="general-development/how-to-configure-msmq-for-sharepoint-workflows" SEODescription="" />
+				<Item text="Workflow-Initiierung und Konfigurationseigenschaften" url="general-development/workflow-initiation-and-configuration-properties" SEODescription="" />
+				<Item text="Bewährte Methoden für die SharePoint-Workflow-Entwicklung" url="general-development/sharepoint-workflow-development-best-practices" SEODescription="" />
+				<Item text="Debuggen von SharePoint Server-Workflows" url="general-development/debugging-sharepoint-server-workflows" SEODescription="" />
+				<Item text="Verwenden des passenden Register-SPWorkflowService-Cmdlets" url="general-development/using-the-pairing-cmdlet-register-spworkflowservice" SEODescription="" />
+				<Item text="SharePoint-Workflowbeispiele" url="general-development/sharepoint-workflow-samples" SEODescription="" />
+				<Item text="Entwickeln von SharePoint-Workflows mit Visual Studio" url="general-development/develop-sharepoint-workflows-using-visual-studio" SEODescription="">
+					<Item text="Erstellen einer SharePoint-Workflow-App mit Visual Studio 2012" url="general-development/create-a-sharepoint-workflow-app-using-visual-studio-2012" SEODescription="" />
+					<Item text="Gewusst wie: Erstellen von SharePoint-Workflows mit Visual Studio" url="general-development/how-to-create-sharepoint-workflows-using-visual-studio" SEODescription="" />
+					<Item text="Arbeiten mit dem clientseitigen Objektmodell für SharePoint-Workflow-Dienste" url="general-development/working-with-the-sharepoint-workflow-services-client-side-object-model" SEODescription="" />
+					<Item text="Arbeiten mit Webdiensten in SharePoint-Workflows mit Visual Studio 2012" url="general-development/working-with-web-services-in-sharepoint-workflows-using-visual-studio-2012" SEODescription="" />
+					<Item text="Arbeiten mit Aufgaben  in SharePoint-Workflows mit Visual Studio 2012" url="general-development/working-with-tasks-in-sharepoint-workflows-using-visual-studio-2012" SEODescription="" />
+					<Item text="Gewusst wie: Erstellen von benutzerdefinierten SharePoint Server-Workflowformularen mit Visual Studio 2012" url="general-development/how-to-create-custom-sharepoint-server-workflow-forms-with-visual-studio-20" SEODescription="" />
+					<Item text="Gewusst wie: Erstellen und Bereitstellen von benutzerdefinierten Workflowaktionen" url="general-development/how-to-build-and-deploy-workflow-custom-actions" SEODescription="" />
+					<Item text="Verwenden von Workflow-Interop für SharePoint" url="general-development/use-workflow-interop-for-sharepoint" SEODescription="" />
+					<Item text="Allgemeine Fehlermeldungen bei der SharePoint-Workflowentwicklung" url="general-development/common-error-messages-in-sharepoint-workflow-development" SEODescription="" />
+					<Item text="SharePoint-Workflow-Objektmodell" url="general-development/sharepoint-workflow-object-model" SEODescription="" />
+				</Item>
+				<Item text="Workflowentwicklung in SharePoint Designer und Visio" url="general-development/workflow-development-in-sharepoint-designer-and-visio" SEODescription="">
+					<Item text="Änderungen in SharePoint Designer" url="general-development/what-s-changed-in-sharepoint-designer" SEODescription="" />
+					<Item text="Erstellen eines Workflows mithilfe von SharePoint Designer und der SharePoint-Workflowplattform" url="general-development/creating-a-workflow-by-using-sharepoint-designer-and-the-sharepoint-wo" SEODescription="" />
+					<Item text="Formen in der SharePoint Server-Workflowvorlage in Visio" url="general-development/shapes-in-the-sharepoint-server-workflow-template-in-visio" SEODescription="" />
+					<Item text="Problembehandlung bei SharePoint Server-Workflow-Überprüfungsfehlern in Visio" url="general-development/troubleshooting-sharepoint-server-workflow-validation-errors-in-visio" SEODescription="" />
+					<Item text="Verstehen von Wörterbuchaktionen in SharePoint Designer 2013" url="general-development/understanding-dictionary-actions-in-sharepoint-designer" SEODescription="" />
+					<Item text="Verstehen von Koordinationsaktionen in SharePoint Designer 2013" url="general-development/understanding-coordination-actions-in-sharepoint-designer" SEODescription="" />
+					<Item text="Verstehen von Aufgabenaktionen in SharePoint Designer 2013" url="general-development/understanding-task-actions-in-sharepoint-designer" SEODescription="" />
+					<Item text="Verstehen von Ereignisaktionen in SharePoint Designer 2013" url="general-development/understanding-eventing-actions-in-sharepoint-designer" SEODescription="" />
+					<Item text="Vertraut werden mit Visual Designer für Workflows in SharePoint Designer 2013" url="general-development/getting-familiar-with-visual-designer-for-workflow-in-sharepoint-designer" SEODescription="" />
+					<Item text="Arbeiten mit Webdiensten in SharePoint-Workflows mit SharePoint Designer 2013" url="general-development/working-with-web-services-in-sharepoint-workflows-using-sharepoint-designer" SEODescription="" />
+					<Item text="Grundlegendes zum Packen und Verteilen von Workflows in SharePoint" url="general-development/understanding-how-to-package-and-deploy-workflow-in-sharepoint" SEODescription="" />
+					<Item text="Erstellen eines Workflows mit erweiterten Berechtigungen mithilfe der SharePoint-Workflow-Plattform" url="general-development/create-a-workflow-with-elevated-permissions-by-using-the-sharepoint-workflo" SEODescription="" />
+					<Item text="Abgleichen der SharePoint Designer-Version mit der Farmversion" url="general-development/matching-the-sharepoint-designer-version-with-the-farm-version" SEODescription="" />
+					<Item text="Übertragen eines Workflows zwischen SharePoint Designer 2013 und Visio Professional 2013 (SharePoint 2010-Workflow-Plattform)" url="general-development/transfer-a-workflow-between-sharepoint-designer-and-visio-professional" SEODescription="" />
+				</Item>
+				<Item text="Workflow-Aktionen und Aktivitätsbezug" url="general-development/workflow-actions-and-activities-reference-for-sharepoint" SEODescription="">
+					<Item text="Workflowaktivitätsklassen" url="general-development/workflow-activity-classes-in-sharepoint" SEODescription="" />
+					<Item text="Kurzübersicht zu Workflowaktionen (SharePoint-Workflowplattform)" url="general-development/workflow-actions-quick-reference-sharepoint-workflow-platform" SEODescription="" />
+					<Item text="Verfügbare Workflowaktionen mit der Workflow-Interopbrücke" url="general-development/workflow-actions-available-using-the-workflow-interop-bridge" SEODescription="" />
+					<Item text="Kurzübersicht zu Workflowbedingungen (SharePoint 2010-Workflowplattform)" url="general-development/workflow-conditions-quick-reference-sharepoint-2010-workflow-platform" SEODescription="" />
+					<Item text="Kurzübersicht zu Workflowaktionen (SharePoint 2010-Workflowplattform)" url="general-development/workflow-actions-quick-reference-sharepoint-2010-workflow-platform" SEODescription="" />
+					<Item text="Visio-Formen in SharePoint Designer 2013: Eine Kurzübersicht (SharePoint 2010-Workflowplattform)" url="general-development/visio-shapes-in-sharepoint-designer-a-quick-reference-guide-sharepoint-2010" SEODescription="" />
+					<Item text="Probleme bei der Überprüfung in Visio (SharePoint 2010-Workflowplattform)" url="general-development/validation-issues-in-visio-sharepoint-2010-workflow-platform" SEODescription="" />
+				</Item>
+			</Item>
+			<Item text="Soziale Netzwerke und Zusammenarbeit" url="general-development/social-and-collaboration-features-in-sharepoint" SEODescription="">
+				<Item text="Neuigkeiten für Entwickler hinsichtlich sozialer Netzwerken und Zusammenarbeitsfunktionen" url="general-development/what-s-new-for-developers-in-social-and-collaboration-features-in-sharepoint-201" SEODescription="" />
+				<Item text="Erste Schritte zur Entwicklung mit Features für soziale Netzwerke" url="general-development/get-started-developing-with-social-features-in-sharepoint" SEODescription="">
+					<Item text="Gewusst wie: Informationen zum Lesen und Schreiben in den Feed für soziale Netzwerke mithilfe des .NET Clientobjektmodells" url="general-development/how-to-learn-to-read-and-write-to-the-social-feed-by-using-the-net-client-object" SEODescription="" />
+					<Item text="Gewusst wie: Informationen zum Lesen und Schreiben in den Feed für soziale Netzwerke mithilfe des REST-Diensts" url="general-development/how-to-learn-to-read-and-write-to-the-social-feed-by-using-the-rest-service-in-s" SEODescription="" />
+					<Item text="REST-API-Referenz für sozialen Feed" url="general-development/social-feed-rest-api-reference-for-sharepoint" SEODescription="" />
+					<Item text="REST-API-Referenz zum Folgen von Personen und Inhalten" url="general-development/following-people-and-content-rest-api-reference-for-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Arbeiten mit sozialen Feeds" url="general-development/work-with-social-feeds-in-sharepoint" SEODescription="">
+					<Item text="Gewusst wie: Erstellen und Löschen von Beiträgen und Abrufen des sozialen Feeds über das .NET-Clientobjektmodell" url="general-development/how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-net-cli" SEODescription="" />
+					<Item text="Gewusst wie: Erstellen und Löschen von Beiträgen und Abrufen des sozialen Feeds über das JavaScript-Objektmodell" url="general-development/how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-javascr" SEODescription="" />
+					<Item text="Gewusst wie: Einschließen von Erwähnungen, Tags und Links zu Websites und Dokumenten in Beiträgen" url="general-development/how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharep" SEODescription="" />
+					<Item text="Gewusst wie: Einbetten von Bildern, Videos und Dokumenten in Beiträgen" url="general-development/how-to-embed-images-videos-and-documents-in-posts-in-sharepoint-server" SEODescription="" />
+					<Item text="Referenzthreads und Digest-Threads in sozialen Feeds" url="general-development/reference-threads-and-digest-threads-in-sharepoint-server-social-feeds" SEODescription="" />
+				</Item>
+				<Item text="Folgen von Personen" url="general-development/follow-people-in-sharepoint" SEODescription="">
+					<Item text="Gewusst wie: Folgen von Personen mithilfe des .NET-Clientobjektmodells" url="general-development/how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint" SEODescription="" />
+					<Item text="Gewusst wie: Folgen von Personen mithilfe des JavaScript-Objektmodells" url="general-development/how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Folgen von Inhalten" url="general-development/follow-content-in-sharepoint" SEODescription="">
+					<Item text="Gewusst wie: Folgen von Dokumenten und Websites mithilfe des .NET-Clientobjektmodells" url="general-development/how-to-follow-documents-and-sites-by-using-the-net-client-object-model-in-sharep" SEODescription="" />
+					<Item text="Gewusst wie: Folgen von Dokumenten, Websites und Kategorien mithilfe des REST-Diensts" url="general-development/how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2" SEODescription="" />
+				</Item>
+				<Item text="Arbeiten mit Benutzerprofilen" url="general-development/work-with-user-profiles-in-sharepoint" SEODescription="">
+					<Item text="Gewusst wie: Abrufen der Benutzerprofileigenschaften über das .NET-Clientobjektmodell" url="general-development/how-to-retrieve-user-profile-properties-by-using-the-net-client-object-model-in" SEODescription="" />
+					<Item text="Gewusst wie: Abrufen der Benutzerprofileigenschaften über das JavaScript-Clientobjektmodell" url="general-development/how-to-retrieve-user-profile-properties-by-using-the-javascript-object-model-in" SEODescription="" />
+					<Item text="Gewusst wie: Arbeiten mit Benutzerprofilen mithilfe des Serverobjektmodells" url="general-development/how-to-work-with-user-profiles-and-organization-profiles-by-using-the-server-obj" SEODescription="" />
+				</Item>
+			</Item>
+			<Item text="Integrieren von Standort- und Kartenfunktionen" url="general-development/integrating-location-and-map-functionality-in-sharepoint" SEODescription="">
+				<Item text="Gewusst wie: Programmgesteuertes Hinzufügen einer Geolocation-Spalte zu einer Liste in SharePoint" url="general-development/how-to-add-a-geolocation-column-to-a-list-programmatically-in-sharepoint" SEODescription="" />
+				<Item text="Erstellen einer Kartenansicht für das Geolocation-Feld in SharePoint" url="general-development/create-a-map-view-for-the-geolocation-field-in-sharepoint" SEODescription="" />
+				<Item text="Gewusst wie: Festlegen des Bing Maps-Schlüssels auf Web- und Farmebene in SharePoint" url="general-development/how-to-set-the-bing-maps-key-at-the-web-and-farm-level-in-sharepoint" SEODescription="" />
+				<Item text="Gewusst wie: Erweitern des Geolocation-Feldtyps mithilfe von clientseitigem Rendering" url="general-development/how-to-extend-the-geolocation-field-type-using-client-side-rendering" SEODescription="" />
+			</Item>
+			<Item text="Suche in SharePoint" url="general-development/search-in-sharepoint" SEODescription="">
+				<Item text="Neuerungen für Entwickler bei der SharePoint-Suche" url="general-development/what-s-new-in-sharepoint-search-for-developers" SEODescription="" />
+				<Item text="Durchsuchen von neuen Inhalten mit der SharePoint-Suche" url="general-development/searching-new-content-with-sharepoint-search" SEODescription="">
+					<Item text="Suchconnector-Framework" url="general-development/search-connector-framework-in-sharepoint" SEODescription="">
+						<Item text="Verbessern der BDC-Modelldatei für die Suche" url="general-development/enhancing-the-bdc-model-file-for-search-in-sharepoint" SEODescription="" />
+						<Item text="Gewusst wie: Durchforsten zugehöriger externer Inhaltstypen" url="general-development/how-to-crawl-associated-external-content-types-in-sharepoint" SEODescription="" />
+						<Item text="Gewusst wie: Durchforsten binärer großer Objekte (BLOBs)" url="general-development/how-to-crawl-binary-large-objects-blobs-in-sharepoint" SEODescription="" />
+						<Item text="Gewusst wie: Konfigurieren der Sicherheit auf Elementebene" url="general-development/how-to-configure-item-level-security-in-sharepoint" SEODescription="" />
+					</Item>
+				</Item>
+				<Item text="Konfigurieren der Suche in SharePoint" url="general-development/configure-search-in-sharepoint" SEODescription="">
+					<Item text="Benutzerdefinierte Wörtertrennung in SharePoint Server" url="general-development/custom-word-breakers-in-sharepoint-server" SEODescription="" />
+					<Item text="Benutzerdefinierte Inhaltsverarbeitung mit der Content Enrichment-Webdienstlegende" url="general-development/custom-content-processing-with-the-content-enrichment-web-service-callout" SEODescription="">
+						<Item text="Gewusst wie: Verwenden der Content Enrichment-Webdienstlegende für SharePoint Server" url="general-development/how-to-use-the-content-enrichment-web-service-callout-for-sharepoint-server" SEODescription="" />
+						<Item text="Auslösen von Ausdruckssyntax" url="general-development/trigger-expressions-syntax-in-sharepoint" SEODescription="" />
+					</Item>
+				</Item>
+				<Item text="Erstellen von Suchabfragen in SharePoint" url="general-development/building-search-queries-in-sharepoint" SEODescription="">
+					<Item text="Syntaxreferenz für die Keyword Query Language (KQL)" url="general-development/keyword-query-language-kql-syntax-reference" SEODescription="" />
+					<Item text="Syntaxreferenz für die FAST Query Language (FQL)" url="general-development/fast-query-language-fql-syntax-reference" SEODescription="" />
+					<Item text="Verwenden der SharePoint-Suchabfrage-APIs" url="general-development/using-the-sharepoint-search-query-apis" SEODescription="" />
+				</Item>
+				<Item text="Übersicht über die REST-API der SharePoint-Suche" url="general-development/sharepoint-search-rest-api-overview" SEODescription="">
+					<Item text="Abrufen von Abfragevorschläge mithilfe des Such-REST-Diensts" url="general-development/retrieving-query-suggestions-using-the-search-rest-service" SEODescription="" />
+				</Item>
+				<Item text="Such-Add-Ins in SharePoint" url="general-development/search-add-ins-in-sharepoint" SEODescription="" />
+				<Item text="Anpassen von Suchergebnissen in SharePoint" url="general-development/customizing-search-results-in-sharepoint" SEODescription="" />
+				<Item text="Sortieren von Suchergebnissen in SharePoint" url="general-development/sorting-search-results-in-sharepoint" SEODescription="" />
+				<Item text="Anpassen von Bewertungsmodellen zur Verbesserung der Relevanz" url="general-development/customizing-ranking-models-to-improve-relevance-in-sharepoint" SEODescription="" />
+				<Item text="Benutzerdefinierte Sicherheitskürzung für die Suche in SharePoint Server" url="general-development/custom-security-trimming-for-search-in-sharepoint-server" SEODescription="">
+					<Item text="Gewusst wie: Verwenden eines benutzerdefinierten Security Trimmer für Suchergebnisse für SharePoint Server" url="general-development/how-to-use-a-custom-security-trimmer-for-sharepoint-server-search-results" SEODescription="" />
+				</Item>
+				<Item text="Programmgesteuertes Importieren und Exportieren von Suchkonfigurationseinstellungen" url="general-development/exporting-and-importing-search-configuration-settings-in-sharepoint" SEODescription="" />
+				<Item text="Abfrageverfeinerung in SharePoint" url="general-development/query-refinement-in-sharepoint" SEODescription="" />
+			</Item>
+			<Item text="Business Connectivity Services" url="general-development/business-connectivity-services-in-sharepoint" SEODescription="">
+				<Item text="Neuigkeiten der Business Connectivity Services" url="general-development/what-s-new-in-business-connectivity-services-in-sharepoint" SEODescription="" />
+				<Item text="Erste Schritte mit den Business Connectivity Services" url="general-development/get-started-with-business-connectivity-services-in-sharepoint" SEODescription="">
+					<Item text="Einrichten einer Entwicklungsumgebung für BCS" url="general-development/setting-up-a-development-environment-for-bcs-in-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Externe Inhaltstypen" url="general-development/external-content-types-in-sharepoint" SEODescription="">
+					<Item text="Gewusst wie: Erstellen externer Inhaltstypen für SQL Server" url="general-development/how-to-create-external-content-types-for-sql-server-in-sharepoint" SEODescription="" />
+					<Item text="Erstellen von Zuordnungen in SharePoint" url="general-development/create-associations-in-sharepoint" SEODescription="" />
+					<Item text="Externe Inhaltstypen auf Add-In-Ebene" url="general-development/add-in-scoped-external-content-types-in-sharepoint" SEODescription="">
+						<Item text="Gewusst wie: Erstellen externer Inhaltstypen auf Add-In-Ebene" url="general-development/how-to-create-an-add-in-scoped-external-content-type-in-sharepoint" SEODescription="" />
+						<Item text="Gewusst wie: Konvertieren eines externen Inhaltstyps auf Add-In-Ebene auf Mandantenbereich" url="general-development/how-to-convert-an-add-in-scoped-external-content-type-to-tenant-scoped" SEODescription="" />
+						<Item text="Gewusst wie: Zugriff auf externe Daten mithilfe von REST" url="general-development/how-to-access-external-data-with-rest-in-sharepoint" SEODescription="" />
+					</Item>
+				</Item>
+				<Item text="Verwenden von OData-Quellen mit Business Connectivity Services" url="general-development/using-odata-sources-with-business-connectivity-services-in-sharepoint" SEODescription="">
+					<Item text="Gewusst wie: Erstellen eines externen Inhaltstyps von einer OData-Quelle" url="general-development/how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint" SEODescription="" />
+					<Item text="Gewusst wie: Erstellen eines OData-Datendiensts für die Verwendung als BCS-externes System" url="general-development/how-to-create-an-odata-data-service-for-use-as-a-bcs-external-system" SEODescription="" />
+					<Item text="Gewusst wie: Erstellen einer externen Liste mithilfe einer OData-Datenquelle" url="general-development/how-to-create-an-external-list-using-an-odata-data-source-in-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Externe Ereignisse und Benachrichtigungen" url="general-development/external-events-and-alerts-in-sharepoint" SEODescription="">
+					<Item text="Gewusst wie: Erstellen von externen Ereignisempfängern" url="general-development/how-to-create-external-event-receivers" SEODescription="" />
+				</Item>
+				<Item text="Erste Schritte bei der Verwendung des Clientobjektmodells mit externen Daten" url="general-development/get-started-using-the-client-object-model-with-external-data-in-sharepoint" SEODescription="">
+					<Item text="Gewusst wie: Verwenden der Clientcodebibliothek zum Zugriff auf externe Daten" url="general-development/how-to-use-the-client-code-library-to-access-external-data-in-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Programmiererreferenz für Business Connectivity Services" url="general-development/business-connectivity-services-programmers-reference-for-sharepoint" SEODescription="">
+					<Item text="BCS-REST-API-Referenz" url="general-development/bcs-rest-api-reference-for-sharepoint" SEODescription="" />
+					<Item text="BCS-Clientojektmodellreferenz" url="general-development/bcs-client-object-model-reference-for-sharepoint" SEODescription="" />
+					<Item text="Änderungen im BDC-Modellschema für SharePoint" url="general-development/changes-in-the-bdc-model-schema-for-sharepoint" SEODescription="" />
+					<Item text="BDC-Modellschemareferenz" url="general-development/bdc-model-schema-reference-for-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Erstellen von Hybridkonnektivitäts-Apps für SharePoint" url="general-development/create-hybrid-connectivity-apps-for-sharepoint" SEODescription="" />
+				<Item text="Entwickeln mit Duet Enterprise 2.0" url="general-development/developing-with-duet-enterprise-2-0" SEODescription="">
+					<Item text="Gewusst wie: Verwenden von SAP-Workflows mit Duet Enterprise 2.0" url="general-development/how-to-use-sap-workflow-with-duet-enterprise-2-0" SEODescription="" />
+					<Item text="Gewusst wie: Verwenden von SAP-Berichterstellung mit Duet Enterprise 2.0" url="general-development/how-to-use-sap-reporting-with-duet-enterprise-2-0" SEODescription="" />
+				</Item>
+			</Item>
+			<Item text="Office und SharePoint-Anwendungsdienste" url="general-development/office-and-sharepoint-application-services" SEODescription="">
+				<Item text="Excel Services in SharePoint" url="general-development/excel-services-in-sharepoint" SEODescription="">
+					<Item text="Erste Schritte mit Excel Services" url="general-development/getting-started-with-excel-services" SEODescription="">
+						<Item text="Übersicht über Excel Services" url="general-development/excel-services-overview" SEODescription="" />
+						<Item text="Excel Services-Architektur" url="general-development/excel-services-architecture" SEODescription="" />
+						<Item text="Excel Services-Entwicklungsroadmap" url="general-development/excel-services-development-roadmap" SEODescription="" />
+						<Item text="Unterstützte und nicht unterstützte Features" url="general-development/supported-and-unsupported-features" SEODescription="" />
+						<Item text="Blogs, Foren und Ressourcen für Excel Services" url="general-development/excel-services-blogs-forums-and-resources" SEODescription="" />
+					</Item>
+					<Item text="Excel Web Services" url="general-development/excel-web-services" SEODescription="">
+						<Item text="Neuigkeiten in Excel Web Services" url="general-development/what-s-new-in-excel-web-services" SEODescription="" />
+						<Item text="Zugriff auf die SOAP-API" url="general-development/accessing-the-soap-api" SEODescription="" />
+						<Item text="Zurückschleifen von SOAP-Aufrufen und Direct Linking" url="general-development/loop-back-soap-calls-and-direct-linking" SEODescription="" />
+						<Item text="Exemplarische Vorgehensweise: Entwickeln einer benutzerdefinierten Anwendung mit Excel Web Services" url="general-development/walkthrough-developing-a-custom-application-using-excel-web-services" SEODescription="">
+							<Item text="Schritt 1: Erstellen des Web Service-Clientprojekts" url="general-development/step-1-creating-the-web-service-client-project" SEODescription="" />
+							<Item text="Schritt 2: Hinzufügen eines Webverweises" url="general-development/step-2-adding-a-web-reference" SEODescription="" />
+							<Item text="Schritt 3: Zugreifen auf den Webdienst" url="general-development/step-3-accessing-the-web-service" SEODescription="" />
+							<Item text="Schritt 4: Erstellen und Testen der Anwendung" url="general-development/step-4-building-and-testing-the-application" SEODescription="" />
+						</Item>
+						<Item text="Excel Services-Fehlercodes" url="general-development/excel-services-error-codes" SEODescription="" />
+						<Item text="Gewusst wie: Abrufen von Werten aus Bereichen" url="general-development/how-to-get-values-from-ranges" SEODescription="" />
+						<Item text="Gewusst wie: Festlegen von Werten aus Bereichen" url="general-development/how-to-set-values-of-ranges" SEODescription="" />
+						<Item text="Gewusst wie: Eingeben einer Bereichsadresse und eines Blattnamens" url="general-development/how-to-specify-a-range-address-and-sheet-name" SEODescription="" />
+						<Item text="Gewusst wie: Abrufen einer kompletten Arbeitsmappe oder einer Momentaufnahme" url="general-development/how-to-get-an-entire-workbook-or-a-snapshot" SEODescription="" />
+						<Item text="Gewusst wie: Asynchrones Verwenden des CloseWorkbook-Methodenaufrufs" url="general-development/how-to-use-the-closeworkbook-method-call-asynchronously" SEODescription="" />
+						<Item text="Gewusst wie: Festlegen von verschiedenen Anmeldeinformationen" url="general-development/how-to-set-various-credentials" SEODescription="" />
+						<Item text="Gewusst wie: Aktualisieren von Daten" url="general-development/how-to-refresh-data" SEODescription="" />
+						<Item text="Gewusst wie: Verwenden der SubCode-Eigenschaft zum Erfassen von Fehlercodes" url="general-development/how-to-use-the-subcode-property-to-capture-error-codes" SEODescription="" />
+					</Item>
+					<Item text="Benutzerdefinierte Funktionen für Excel Services" url="general-development/excel-services-user-defined-functions" SEODescription="">
+						<Item text="Grundlegendes zu Excel Services-UDFs" url="general-development/understanding-excel-services-udfs" SEODescription="" />
+						<Item text="Exemplarische Vorgehensweise: Entwickeln eines UDF mit verwaltetem Code" url="general-development/walkthrough-developing-a-managed-code-udf" SEODescription="">
+							<Item text="Schritt 1: Erstellen eines Projekts und Hinzufügen einer UDF-Referenz" url="general-development/step-1-creating-a-project-and-adding-a-udf-reference" SEODescription="" />
+							<Item text="Schritt 2: Erstellen eines UDF mit verwaltetem Code" url="general-development/step-2-creating-a-managed-code-udf" SEODescription="" />
+							<Item text="Schritt 3: Bereitstellen und Aktivieren von UDFs" url="general-development/step-3-deploying-and-enabling-udfs" SEODescription="" />
+							<Item text="Schritt 4: Testen und Aufrufen von UDFs in Zellen" url="general-development/step-4-testing-and-calling-udfs-from-cells" SEODescription="" />
+						</Item>
+						<Item text="Häufig gestellte Fragen zu Excel Services-UDFs" url="general-development/frequently-asked-questions-about-excel-services-udfs" SEODescription="" />
+						<Item text="Gewusst wie: Aktivieren von UDFs" url="general-development/how-to-enable-udfs" SEODescription="" />
+						<Item text="Gewusst wie: Erstellen eines UDF, das einen Webdienst aufruft" url="general-development/how-to-create-a-udf-that-calls-a-web-service" SEODescription="" />
+						<Item text="Gewusst wie: Zugriff auf eine externe Datenquelle aus einem UDF" url="general-development/how-to-access-an-external-data-source-from-a-udf" SEODescription="" />
+						<Item text="Gewusst wie: Bereitstellen von UDFs mit SharePoint Foundation-Lösungen" url="general-development/how-to-deploy-udfs-using-sharepoint-foundation-solutions" SEODescription="" />
+						<Item text="Gewusst wie: Einschränken von Sicherheitsberechtigungen für UDF-Code" url="general-development/how-to-restrict-udf-code-access-security-permissions" SEODescription="" />
+					</Item>
+					<Item text="Excel Web Access" url="general-development/excel-web-access" SEODescription="">
+						<Item text="Gewusst wie: Programmgesteuertes Hinzufügen eines Excel Web Access-Webparts zu einer Seite" url="general-development/how-to-programmatically-add-an-excel-web-access-web-part-to-a-page" SEODescription="" />
+						<Item text="Gewusst wie: Suchen und Kopieren von Microsoft.Office.Excel.WebUI.dll und Microsoft.Office.Excel.WebUI.Internal.dll" url="general-development/how-to-locate-and-copy-microsoft-office-excel-webui-dll-and-microsoft-office-exc" SEODescription="" />
+					</Item>
+					<Item text="Excel Services-ECMAScript (JavaScript, JScript)" url="general-development/excel-services-ecmascript-javascript-jscript" SEODescription="">
+						<Item text="Exemplarische Vorgehensweise: Entwickeln mithilfe des Inhalts-Editor-Webpart" url="general-development/walkthrough-developing-using-the-content-editor-web-part" SEODescription="">
+							<Item text="Schritt 1: Erstellen einer Textdatei mit ECMAScript" url="general-development/step-1-creating-a-ecmascript-text-file" SEODescription="" />
+							<Item text="Schritt 2: Hinzufügen des Inhalts-Editor und Excel Services-Webparts" url="general-development/step-2-adding-the-content-editor-and-excel-services-web-parts" SEODescription="" />
+						</Item>
+						<Item text="Übersicht über Excel Services-ECMAScript" url="general-development/excel-services-ecmascript-overview" SEODescription="" />
+						<Item text="Benutzerdefinierte JavaScript-Funktionen (Übersicht)" url="general-development/javascript-user-defined-functions-overview" SEODescription="" />
+						<Item text="Arbeiten mit dem Excel Services-JavaScript-Objektmodell" url="general-development/working-with-the-excel-services-javascript-object-model" SEODescription="" />
+						<Item text="Gewusst wie: Erstellen eines Mashups, das eine eingebettete Arbeitsmappe und Bing Maps verwendet" url="general-development/how-to-create-a-mashup-that-uses-an-embedded-workbook-and-bing-maps" SEODescription="" />
+					</Item>
+					<Item text="Excel Services-REST-API" url="general-development/excel-services-rest-api" SEODescription="">
+						<Item text="Excel Services-REST-API (Übersicht)" url="general-development/excel-services-rest-api-overview" SEODescription="" />
+						<Item text="Grundlegende URI-Struktur und Pfad" url="general-development/basic-uri-structure-and-path" SEODescription="" />
+						<Item text="Suche in Excel Services-REST-API" url="general-development/discovery-in-excel-services-rest-api" SEODescription="" />
+						<Item text="Ressourcen-URI für Excel Services-REST-API" url="general-development/resources-uri-for-excel-services-rest-api" SEODescription="" />
+						<Item text="Abrufen von Bereichen mithilfe von Atom-Feed und HTML-Fragment" url="general-development/getting-ranges-using-atom-feed-and-html-fragment" SEODescription="" />
+						<Item text="Beispiel-URI für Excel Services-REST-API" url="general-development/sample-uri-for-excel-services-rest-api" SEODescription="" />
+						<Item text="Zugreifen auf ein Schema" url="general-development/accessing-a-schema" SEODescription="" />
+						<Item text="Nicht unterstützte Features in Excel Services-REST-API" url="general-development/unsupported-features-in-excel-services-rest-api" SEODescription="" />
+						<Item text="Erweiterte Szenarien und weitere Beispiele" url="general-development/advanced-scenarios-and-additional-samples" SEODescription="" />
+						<Item text="Verwenden von OData mit Excel Services-REST in SharePoint" url="general-development/using-odata-with-excel-services-rest-in-sharepoint" SEODescription="" />
+						<Item text="Anfordern von Excel-Arbeitsmappendaten von SharePoint Server mithilfe von OData" url="general-development/requesting-excel-workbook-data-from-sharepoint-server-using-odata" SEODescription="" />
+					</Item>
+					<Item text="Allgemeine Richtlinien" url="general-development/general-guidelines" SEODescription="">
+						<Item text="Excel Services-Benachrichtigungen" url="general-development/excel-services-alerts" SEODescription="" />
+						<Item text="Bekannte Probleme und Tipps für Excel Services" url="general-development/excel-services-known-issues-and-tips" SEODescription="" />
+						<Item text="Bewährte Methoden für Excel Services" url="general-development/excel-services-best-practices" SEODescription="" />
+						<Item text="Gewusst wie: Vertrauen zu einem Speicherort" url="general-development/how-to-trust-a-location" SEODescription="" />
+						<Item text="Gewusst wie: Von Excel-Client auf dem Server speichern" url="general-development/how-to-save-from-excel-client-to-the-server" SEODescription="" />
+						<Item text="Gewusst wie: Speichern auf dem Server zur Vorbereitung auf programmgesteuerten Zugriff" url="general-development/how-to-save-to-the-server-to-prepare-for-programmatic-access" SEODescription="" />
+						<Item text="Gewusst wie: Erfassen von Ausnahmen" url="general-development/how-to-catch-exceptions" SEODescription="" />
+					</Item>
+					<Item text="Entfernen einer interaktiven Excel-Ansicht von einer Webseite" url="general-development/removing-excel-interactive-view-from-a-webpage" SEODescription="" />
+				</Item>
+				<Item text="Dienste für maschinelle Übersetzung in SharePoint" url="general-development/machine-translation-services-in-sharepoint" SEODescription="" />
+				<Item text="PerformancePoint-Dienste in SharePoint" url="general-development/performancepoint-services-in-sharepoint" SEODescription="">
+					<Item text="Gewusst wie: Erstellen von Bericht-Renderern für PerformancePoint-Dienste" url="general-development/how-to-create-report-renderers-for-performancepoint-services-in-sharepoint" SEODescription="" />
+					<Item text="Gewusst wie: Erstellen von Berichts-Editoren für PerformancePoint-Dienste" url="general-development/how-to-create-report-editors-for-performancepoint-services-in-sharepoint" SEODescription="" />
+					<Item text="Gewusst wie: Erstellen von Filterdatenanbietern für PerformancePoint-Dienste" url="general-development/how-to-create-filter-data-providers-for-performancepoint-services-in-sharepoint" SEODescription="" />
+					<Item text="Gewusst wie: Erstellen von Filter-Editoren für PerformancePoint-Dienste" url="general-development/how-to-create-filter-editors-for-performancepoint-services-in-sharepoint" SEODescription="" />
+					<Item text="Gewusst wie: Erstellen von tabularen Datenquellenanbietern für PerformancePoint-Dienste" url="general-development/how-to-create-tabular-data-source-providers-for-performancepoint-services-in-sha" SEODescription="" />
+					<Item text="Gewusst wie: Erstellen von tabularen Datenquellen-Editoren für PerformancePoint-Dienste" url="general-development/how-to-create-tabular-data-source-editors-for-performancepoint-services-in-share" SEODescription="" />
+					<Item text="Gewusst wie: Erstellen der Scorecard-Transformationen für PerformancePoint-Dienste" url="general-development/how-to-create-scorecard-transforms-for-performancepoint-services-in-sharepoint-2" SEODescription="" />
+				</Item>
+				<Item text="PowerPoint-Automatisierungsdienste in SharePoint" url="general-development/powerpoint-automation-services-in-sharepoint" SEODescription="" />
+				<Item text="Entwickeln von Access-Web-Apps" url="general-development/develop-access-web-apps" SEODescription="">
+					<Item text="Neuigkeiten in Access" url="general-development/what-s-new-in-access" SEODescription="" />
+				</Item>
+				<Item text="Visio Services in SharePoint" url="general-development/visio-services-in-sharepoint" SEODescription="" />
+				<Item text="Neuigkeiten in Word Automation Services für Entwickler" url="general-development/what-s-new-in-word-automation-services-for-developers" SEODescription="" />
+				<Item text="Erweitern der Exportfunktion mit festgelegtem Format in Word Automation Services" url="general-development/extend-the-fixed-format-export-feature-in-word-automation-services" SEODescription="" />
+			</Item>
+			<Item text="Authentifizierung, Autorisierung und Sicherheit in SharePoint" url="general-development/authentication-authorization-and-security-in-sharepoint" SEODescription="">
+				<Item text="Autorisierung, Benutzer, Gruppen und das Objektmodell in SharePoint" url="general-development/authorization-users-groups-and-the-object-model-in-sharepoint" SEODescription="" />
+				<Item text="Rolle, Vererbung, Erhöhung von Berechtigungen und Kennwortänderungen in SharePoint" url="general-development/role-inheritance-elevation-of-privilege-and-password-changes-in-sharepoint" SEODescription="" />
+				<Item text="Anspruchsbasierte Identität in SharePoint" url="general-development/claims-based-identity-in-sharepoint" SEODescription="">
+					<Item text="Eingehende Ansprüche: Anmelden bei SharePoint" url="general-development/incoming-claims-signing-into-sharepoint" SEODescription="" />
+					<Item text="Anspruchsanbieter in SharePoint" url="general-development/claims-provider-in-sharepoint" SEODescription="" />
+					<Item text="Gewusst wie: Erstellen eines Anspruchsanbieters in SharePoint" url="general-development/how-to-create-a-claims-provider-in-sharepoint" SEODescription="" />
+					<Item text="Gewusst wie: Bereitstellen eines Anspruchsanbieters in SharePoint" url="general-development/how-to-deploy-a-claims-provider-in-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Anspruchsbasierte Identität und Konzepte in SharePoint" url="general-development/claims-based-identity-and-concepts-in-sharepoint" SEODescription="">
+					<Item text="Beispieldelegierung-, Verbund- und Authentifizierungsszenario in SharePoint" url="general-development/sample-delegation-federation-and-authentication-scenario-in-sharepoint" SEODescription="" />
+					<Item text="Anspruchsbasierte Identität: Begriffsdefinitionen" url="general-development/claims-based-identity-term-definitions" SEODescription="" />
+				</Item>
+				<Item text="Konfiguration, Verwaltung und Ressourcen in SharePoint" url="general-development/configuration-administration-and-resources-in-sharepoint" SEODescription="" />
+			</Item>
+			<Item text="eDiscovery" url="general-development/ediscovery-in-sharepoint" SEODescription="">
+				<Item text="Neuigkeiten in SharePoint-eDiscovery und Compliance" url="general-development/what-s-new-in-sharepoint-ediscovery-and-compliance" SEODescription="" />
+			</Item>
+			<Item text="CMIS in SharePoint" url="general-development/content-management-interoperability-services-cmis-in-sharepoint" SEODescription="" />
+			<Item text="Das XLIFF-Interchange-Dateiformat in SharePoint" url="general-development/the-xliff-interchange-file-format-in-sharepoint" SEODescription="" />
+		</Item>
+		<Item text="Erstellen von SharePoint-Lösungen ohne Code" url="general-development/create-sharepoint-no-code-solutions" SEODescription="">
+			<Item text="SharePoint Composites-Handbuch" url="general-development/sharepoint-composites-handbook" SEODescription="" />
+			<Item text="Speichern, Herunter- und Hochladen einer SharePoint-Website als Vorlage" url="general-development/save-download-and-upload-a-sharepoint-site-as-a-template" SEODescription="" />
+		</Item>
+		<Item text="Aktualisieren von Website-Anpassungen" url="general-development/upgrade-site-customizations-for-sharepoint" SEODescription="">
+			<Item text="Aktualisieren von Webvorlagen" url="general-development/upgrade-web-templates-for-sharepoint" SEODescription="" />
+			<Item text="Verwenden eines Featureupgrades für das Anwenden neue SharePoint-Gestaltungsvorlagen bei einem Upgrade von SharePoint 2010" url="general-development/use-feature-upgrade-to-apply-new-sharepoint-master-pages-when-upgrading-fro" SEODescription="" />
+		</Item>
+		<Item text="Einrichten einer allgemeinen Entwicklungsumgebung für SharePoint" url="general-development/set-up-a-general-development-environment-for-sharepoint" SEODescription="" />
+		<Item text="Vorgehensweisen für SharePoint" url="general-development/how-tos-for-sharepoint" SEODescription="" />
+		<Item text="Codebeispiele für SharePoint" url="general-development/code-samples-for-sharepoint" SEODescription="" />
+		<Item text="Auswählen des richtigen API-Satzes in SharePoint" url="general-development/choose-the-right-api-set-in-sharepoint" SEODescription="" />
+		<Item text="Einrichten und Konfigurieren von SharePoint-Workflow-Manager" url="general-development/set-up-and-configure-sharepoint-workflow-manager" SEODescription="" />
+		<Item text="Anwendungslebenszyklus-Verwaltung für SharePoint Server" url="general-development/sharepoint-server-application-lifecycle-management" SEODescription="" />
+		<Item text="Barrierefreiheit in SharePoint" url="general-development/accessibility-in-sharepoint" SEODescription="" />
+		<Item text="Gewusst wie: Ermitteln der installierten SKU von SharePoint" url="general-development/how-to-detect-the-installed-sku-of-sharepoint" SEODescription="" />
+		<Item text="Gewusst wie: Vermeiden von Einschränkungen oder Sperren in SharePoint Online" url="general-development/how-to-avoid-getting-throttled-or-blocked-in-sharepoint-online" SEODescription="" />
+		<Item text="Übersicht über SharePoint und den Volumeschattenkopie-Dienst" url="general-development/overview-of-sharepoint-and-the-volume-shadow-copy-service" SEODescription="">
+			<Item text="SharePoint VSS Writer" url="general-development/sharepoint-vss-writer" SEODescription="" />
+			<Item text="VSS-Anforderer und SharePoint" url="general-development/vss-requestors-and-sharepoint" SEODescription="" />
+			<Item text="Gewusst wie: Erstellen eines VSS-Anforderers für die Verwendung mit SharePoint" url="general-development/how-to-create-a-vss-requestor-for-use-with-sharepoint" SEODescription="" />
+			<Item text="Gewusst wie: Sichern und Wiederherstellen von SharePoint unter Verwendung eines VSS-Anforderers" url="general-development/how-to-back-up-and-restore-sharepoint-using-a-vss-requestor" SEODescription="" />
+			<Item text="Gewusst wie: Sichern und Wiederherstellen einer Suchdienstanwendung in SharePoint mit VSS" url="general-development/how-to-back-up-and-restore-a-search-service-application-in-sharepoint-using" SEODescription="" />
+		</Item>
+	</Item>
+	<Item text="SharePoint-Add-Ins" url="sp-add-ins/sharepoint-add-ins" SEODescription="">
+		<Item text="Neuer Name für Apps für SharePoint" url="sp-add-ins/new-name-for-apps-for-sharepoint" SEODescription="" />
+		<Item text="Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins" url="sp-add-ins/get-started-creating-sharepoint-hosted-sharepoint-add-ins" SEODescription="">
+			<Item text="1. Bereitzustellen und Installieren eines SharePoint-gehosteten SharePoint-Add-Ins" url="sp-add-ins/deploy-and-install-a-sharepoint-hosted-sharepoint-add-in" SEODescription="" />
+			<Item text="2. Hinzufügen von Spalten zu einem SharePoint-gehosteten SharePoint-Add-In" url="sp-add-ins/add-custom-columns-to-a-sharepoint-hostedsharepoint-add-in" SEODescription="" />
+			<Item text="3. Hinzufügen eines benutzerdefinierten Inhaltstyps zu einem SharePoint-gehosteten SharePoint-Add-In" url="sp-add-ins/add-a-custom-content-type-to-a-sharepoint-hostedsharepoint-add-in" SEODescription="" />
+			<Item text="4. Hinzufügen eines Webparts zu einem SharePoint-gehosteten SharePoint-Add-In" url="sp-add-ins/add-a-web-part-to-a-page-in-a-sharepoint-hosted-sharepoint-add-in" SEODescription="" />
+			<Item text="5. Hinzufügen eines Workflows zu einem SharePoint-gehosteten SharePoint-Add-In" url="sp-add-ins/add-a-workflow-to-a-sharepoint-hosted-sharepoint-add-in" SEODescription="" />
+			<Item text="6. Hinzufügen einer benutzerdefinierten Seite und eines Stils zu einem SharePoint-gehosteten SharePoint-Add-In" url="sp-add-ins/add-a-custom-page-and-style-to-a-sharepoint-hosted-sharepoint-add-in" SEODescription="" />
+			<Item text="7. Hinzufügen eines benutzerdefinierten clientseitigem Rendering zu einem SharePoint-gehosteten SharePoint-Add-In" url="sp-add-ins/add-custom-client-side-rendering-to-a-sharepoint-hosted-sharepoint-add-in" SEODescription="" />
+			<Item text="8. Erstellen einer benutzerdefinierten Menübandschaltfläche im Hostweb eines SharePoint-Add-Ins" url="sp-add-ins/create-a-custom-ribbon-button-in-the-host-web-of-a-sharepoint-add-in" SEODescription="" />
+			<Item text="9. Verwenden von SharePoint-JavaScript-APIs zum Arbeiten mit SharePoint-Daten" url="sp-add-ins/use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data" SEODescription="" />
+			<Item text="10. Arbeiten mit Hostweb-Daten von JavaScript im Web-Add-In" url="sp-add-ins/work-with-host-web-data-from-javascript-in-the-add-in-web" SEODescription="" />
+		</Item>
+		<Item text="Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins" url="sp-add-ins/get-started-creating-provider-hosted-sharepoint-add-ins" SEODescription="">
+			<Item text="1. Übertragen des SharePoint-Aussehens und -Verhaltens auf Ihr vom Anbieter gehostetes Add-In" url="sp-add-ins/give-your-provider-hosted-add-in-the-sharepoint-look-and-feel" SEODescription="" />
+			<Item text="2. Einschließen einer benutzerdefinierten Schaltfläche im vom Anbieter gehosteten Add-In" url="sp-add-ins/include-a-custom-button-in-the-provider-hosted-add-in" SEODescription="" />
+			<Item text="3. Übersicht über das SharePoint-Objektmodell" url="sp-add-ins/get-a-quick-overview-of-the-sharepoint-object-model" SEODescription="" />
+			<Item text="4. Hinzufügen von SharePoint-Schreibvorgängen zum vom Anbieter gehosteten Add-In" url="sp-add-ins/add-sharepoint-write-operations-to-the-provider-hosted-add-in" SEODescription="" />
+			<Item text="5. Einschließen eines Add-In-Teils im vom Anbieter gehosteten Add-In" url="sp-add-ins/include-an-add-in-part-in-the-provider-hosted-add-in" SEODescription="" />
+			<Item text="6. Verarbeiten von Add-In-Ereignissen im vom Anbieter gehosteten Add-In" url="sp-add-ins/handle-add-in-events-in-the-provider-hosted-add-in" SEODescription="" />
+			<Item text="7. Hinzufügen der first-run-Logik zu dem vom Anbieter gehosteten Add-In" url="sp-add-ins/add-first-run-logic-to-the-provider-hosted-add-in" SEODescription="" />
+			<Item text="8. Programmgesteuertes Bereitstellen einer benutzerdefinierten Schaltfläche im vom Anbieter gehosteten Add-In" url="sp-add-ins/programmatically-deploy-a-custom-button-in-the-provider-hosted-add-in" SEODescription="" />
+			<Item text="9. Verarbeiten von Listenelementereignissen im vom Anbieter gehosteten Add-In" url="sp-add-ins/handle-list-item-events-in-the-provider-hosted-add-in" SEODescription="" />
+		</Item>
+		<Item text="Design" url="sp-add-ins/design-sharepoint-add-ins" SEODescription="">
+			<Item text="Drei Methoden für Entwurfsoptionen für SharePoint-Add-Ins" url="sp-add-ins/three-ways-to-think-about-design-options-for-sharepoint-add-ins" SEODescription="" />
+			<Item text="Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins" url="sp-add-ins/important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap" SEODescription="">
+				<Item text="Auswählen von Mustern für die Entwicklung und das Hosten Ihres SharePoint-Add-Ins" url="sp-add-ins/choose-patterns-for-developing-and-hosting-your-sharepoint-add-in" SEODescription="" />
+				<Item text="Hostwebs, Add-In-Webs und SharePoint-Komponenten" url="sp-add-ins/host-webs-add-in-webs-and-sharepoint-components-in-sharepoint" SEODescription="" />
+			</Item>
+			<Item text="Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins" url="sp-add-ins/secure-data-access-and-client-object-models-for-sharepoint-add-ins" SEODescription="" />
+			<Item text="Design für die Benutzerfreundlichkeit für Add-Ins in SharePoint" url="sp-add-ins/ux-design-for-sharepoint-add-ins" SEODescription="">
+				<Item text="Designrichtlinien für die Benutzerfreundlichkeit von Add-Ins für SharePoint" url="sp-add-ins/sharepoint-add-ins-ux-design-guidelines" SEODescription="" />
+			</Item>
+		</Item>
+		<Item text="Entwickeln" url="sp-add-ins/develop-sharepoint-add-ins" SEODescription="">
+			<Item text="Durchsuchen der App Manifestdatei-Struktur und des Pakets eines SharePoint-Add-Ins" url="sp-add-ins/explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in" SEODescription="">
+				<Item text="URL-Zeichenfolgen und Tokens in SharePoint-Add-Ins" url="sp-add-ins/url-strings-and-tokens-in-sharepoint-add-ins" SEODescription="" />
+			</Item>
+			<Item text="Index für SharePoint .NET Server, CSOM, JSOM und REST-API" url="sp-add-ins/sharepoint-net-server-csom-jsom-and-rest-api-index" SEODescription="" />
+			<Item text="Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode" url="sp-add-ins/complete-basic-operations-using-sharepoint-client-library-code" SEODescription="" />
+			<Item text="Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint" url="sp-add-ins/complete-basic-operations-using-javascript-library-code-in-sharepoint" SEODescription="" />
+			<Item text="Grundlegendes zum SharePoint REST-Dienst" url="sp-add-ins/get-to-know-the-sharepoint-rest-service" SEODescription="">
+				<Item text="Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten" url="sp-add-ins/complete-basic-operations-using-sharepoint-rest-endpoints" SEODescription="" />
+				<Item text="Arbeiten mit Listen und Listenelementen unter Verwendung von REST" url="sp-add-ins/working-with-lists-and-list-items-with-rest" SEODescription="" />
+				<Item text="Arbeiten mit Ordnern und Dateien unter Verwendung von REST" url="sp-add-ins/working-with-folders-and-files-with-rest" SEODescription="" />
+				<Item text="Ermitteln von URIs von SharePoint-REST-Dienstendpunkten" url="sp-add-ins/determine-sharepoint-rest-service-endpoint-uris" SEODescription="" />
+				<Item text="Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen" url="sp-add-ins/use-odata-query-operations-in-sharepoint-rest-requests" SEODescription="" />
+				<Item text="Navigieren in der im REST-Dienst dargestellten SharePoint-Datenstruktur" url="sp-add-ins/navigate-the-sharepoint-data-structure-represented-in-the-rest-service" SEODescription="" />
+				<Item text="Synchronisieren von SharePoint-Elementen mithilfe des REST-Diensts" url="sp-add-ins/synchronize-sharepoint-items-using-the-rest-service" SEODescription="" />
+				<Item text="Hochladen von Dateien mithilfe der REST-API und jQuery" url="sp-add-ins/upload-a-file-by-using-the-rest-api-and-jquery" SEODescription="" />
+				<Item text="Festlegen von benutzerdefinierten Berechtigungen in einer Liste mithilfe der REST-Schnittstelle" url="sp-add-ins/set-custom-permissions-on-a-list-by-using-the-rest-interface" SEODescription="" />
+				<Item text="Durchführen von Batchanforderungen mit den REST-APIs" url="sp-add-ins/make-batch-requests-with-the-rest-apis" SEODescription="" />
+			</Item>
+			<Item text="Erstellen von Benutzerfreundlichkeitskomponenten in SharePoint" url="sp-add-ins/create-ux-components-in-sharepoint" SEODescription="">
+				<Item text="Verwenden des Stylesheets einer SharePoint-Website in Add-Ins" url="sp-add-ins/use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins" SEODescription="" />
+				<Item text="Verwenden des Client-Chromsteuerelements in Add-Ins" url="sp-add-ins/use-the-client-chrome-control-in-sharepoint-add-ins" SEODescription="" />
+				<Item text="Erstellen von Add-In-Webparts zur Installation mit Ihrem SharePoint-Add-In" url="sp-add-ins/create-add-in-parts-to-install-with-your-sharepoint-add-in" SEODescription="" />
+				<Item text="Erstellen benutzerdefinierter Aktionen zur Bereitstellung mit SharePoint-Add-Ins" url="sp-add-ins/create-custom-actions-to-deploy-with-sharepoint-add-ins" SEODescription="" />
+				<Item text="Anpassen einer Listenansicht in Add-Ins für SharePoint durch clientseitiges Rendering" url="sp-add-ins/customize-a-list-view-in-sharepoint-add-ins-using-client-side-rendering" SEODescription="" />
+				<Item text="Verwenden des clientseitigen Personenauswahl-Steuerelement in von SharePoint gehosteten SharePoint-Add-Ins" url="sp-add-ins/use-the-client-side-people-picker-control-in-sharepoint-hosted-sharepoint-add-in" SEODescription="" />
+				<Item text="Hervorheben von Inhalt und Verbessern der Funktionalität von SharePoint-gehosteten SharePoint-Add-Ins mit dem Legenden-Steuerelement" url="sp-add-ins/highlight-content-and-enhance-the-functionality-of-sharepoint-hosted-sharepoint" SEODescription="" />
+				<Item text="Einschließen eines Webparts auf einer Webseite im Add-In-Web" url="sp-add-ins/include-a-web-part-in-a-webpage-on-the-add-in-web" SEODescription="" />
+				<Item text="Office Web Widgets – Experimentelle Übersicht" url="sp-add-ins/office-web-widgetsexperimental-overview" SEODescription="">
+					<Item text="Verwenden des experimentellen Personenauswahl-Widgets in SharePoint-Add-Ins" url="sp-add-ins/use-the-experimental-people-picker-widget-in-sharepoint-add-ins" SEODescription="" />
+					<Item text="Verwenden des experimentellen Desktoplistenansicht-Widgets in SharePoint-Add-Ins" url="sp-add-ins/use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins" SEODescription="" />
+					<Item text="Office Web Widgets – Experimentelle Lizenzbedingungen" url="sp-add-ins/office-web-widgetsexperimental-license-terms" SEODescription="" />
+				</Item>
+			</Item>
+			<Item text="Arbeiten mit externen Daten in SharePoint" url="sp-add-ins/work-with-external-data-in-sharepoint" SEODescription="">
+				<Item text="Erstellen einer benutzerdefinierten Proxy-Seite für die domänenübergreifende Bibliothek" url="sp-add-ins/create-a-custom-proxy-page-for-the-cross-domain-library-in-sharepoint" SEODescription="" />
+				<Item text="Abfragen eines Remotediensts mithilfe des Webproxys" url="sp-add-ins/query-a-remote-service-using-the-web-proxy-in-sharepoint" SEODescription="" />
+			</Item>
+			<Item text="Behandeln von Ereignissen in SharePoint-Add-Ins" url="sp-add-ins/handle-events-in-sharepoint-add-ins" SEODescription="">
+				<Item text="Erstellen eines Remoteereignisempfängers" url="sp-add-ins/create-a-remote-event-receiver-in-sharepoint-add-ins" SEODescription="" />
+				<Item text="Erstellen eines Add-In-Ereignisempfängers" url="sp-add-ins/create-an-add-in-event-receiver-in-sharepoint-add-ins" SEODescription="" />
+				<Item text="Debuggen von und Problembehandlung bei einem Remoteereignisempfänger" url="sp-add-ins/debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in" SEODescription="" />
+			</Item>
+			<Item text="Erstellen eines von einem Anbieter gehosteten Add-In, das eine benutzerdefinierte SharePoint-Liste und einen benutzerdefinierten Inhaltstyp enthält" url="sp-add-ins/create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-conte" SEODescription="" />
+			<Item text="Abrufen von Benutzeridentitäten und Eigenschaften in SharePoint" url="sp-add-ins/get-user-identity-and-properties-in-sharepoint" SEODescription="" />
+			<Item text="Lokalisieren von Add-Ins für SharePoint" url="sp-add-ins/localize-sharepoint-add-ins" SEODescription="" />
+			<Item text="Autorisierung und Authentifizierung für SharePoint-Add-Ins" url="sp-add-ins/authorization-and-authentication-of-sharepoint-add-ins" SEODescription="">
+				<Item text="Add-In-Berechtigungen in SharePoint" url="sp-add-ins/add-in-permissions-in-sharepoint" SEODescription="" />
+				<Item text="Registrieren von SharePoint-Add-Ins" url="sp-add-ins/register-sharepoint-add-ins" SEODescription="" />
+				<Item text="Add-In-Autorisierungsrichtlinientypen in SharePoint" url="sp-add-ins/add-in-authorization-policy-types-in-sharepoint" SEODescription="" />
+				<Item text="Drei Autorisierungssysteme für SharePoint-Add-Ins" url="sp-add-ins/three-authorization-systems-for-sharepoint-add-ins" SEODescription="">
+					<Item text="Erstellen von SharePoint-Add-Ins, die wenig vertrauenswürdigen Autorisierung verwenden" url="sp-add-ins/creating-sharepoint-add-ins-that-use-low-trust-authorization" SEODescription="">
+						<Item text="Kontext-Token-OAuth-Fluss für SharePoint-Add-Ins" url="sp-add-ins/context-token-oauth-flow-for-sharepoint-add-ins" SEODescription="" />
+						<Item text="Autorisierungscode-OAuth-Fluss für SharePoint-Add-Ins" url="sp-add-ins/authorization-code-oauth-flow-for-sharepoint-add-ins" SEODescription="" />
+						<Item text="Behandeln von Sicherheitstokens in vom Anbieter gehosteten wenig vertrauenswürdigen SharePoint-Add-Ins" url="sp-add-ins/handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins" SEODescription="" />
+						<Item text="Verwenden einer Office 365 SharePoint-Website, um vom Anbieter gehostete Add-Ins auf einer lokalen SharePoint-Website zu autorisieren" url="sp-add-ins/use-an-office-365-sharepoint-site-to-authorize-provider-hosted-add-ins-on-an-on" SEODescription="" />
+						<Item text="Austauschen eines ablaufenden geheimen Clientschlüssels in einem Add-In für SharePoint" url="sp-add-ins/replace-an-expiring-client-secret-in-a-sharepoint-add-in" SEODescription="" />
+					</Item>
+					<Item text="Erstellen von SharePoint-Add-Ins, die sehr vertrauenswürdigen Autorisierung verwenden" url="sp-add-ins/creating-sharepoint-add-ins-that-use-high-trust-authorization" SEODescription="">
+						<Item text="Registrieren von besonders vertrauenswürdigen Add-Ins" url="sp-add-ins/create-high-trust-sharepoint-add-ins" SEODescription="" />
+						<Item text="Erstellen und Verwenden von Zugriffs-Tokens in vom Anbieter gehosteten SharePoint-Add-Ins mit hoher Vertrauenswürdigkeit" url="sp-add-ins/create-and-use-access-tokens-in-provider-hosted-high-trust-sharepoint-add-ins" SEODescription="" />
+						<Item text="Problembehandlung besonders vertrauenswürdiger Add-Ins für SharePoint" url="sp-add-ins/troubleshooting-high-trust-sharepoint-add-ins" SEODescription="" />
+						<Item text="Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint" url="sp-add-ins/package-and-publish-high-trust-sharepoint-add-ins" SEODescription="">
+							<Item text="Konfigurationsskripts mit hoher Vertrauenswürdigkeit für SharePoint" url="sp-add-ins/high-trust-configuration-scripts-for-sharepoint" SEODescription="" />
+						</Item>
+					</Item>
+					<Item text="Erstellen von SharePoint-Add-Ins, die die domänenübergreifende Bibliothek verwenden" url="sp-add-ins/creating-sharepoint-add-ins-that-use-the-cross-domain-library" SEODescription="">
+						<Item text="Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek" url="sp-add-ins/access-sharepoint-data-from-add-ins-using-the-cross-domain-library" SEODescription="" />
+						<Item text="Arbeiten mit der domänenübergreifenden Bibliothek in verschiedenen Internet Explorer-Sicherheitszonen in Add-Ins für SharePoint" url="sp-add-ins/work-with-the-cross-domain-library-across-different-internet-explorer-security-z" SEODescription="" />
+					</Item>
+				</Item>
+			</Item>
+			<Item text="Erstellen von SharePoint-Add-Ins, die von anonymen Benutzern verwendet werden können" url="sp-add-ins/create-sharepoint-add-ins-that-can-be-used-by-anonymous-users" SEODescription="" />
+			<Item text="Konvertieren eines automatisch gehosteten Add-Ins für SharePoint in ein vom Anbieter gehostetes Add-In" url="sp-add-ins/convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in" SEODescription="" />
+			<Item text="Erstellen von SharePoint-Add-Ins für das SAP-Gateway für Microsoft" url="sp-add-ins/create-provider-hosted-sharepoint-add-ins-to-access-sap-data-by-using-the-sap-ga" SEODescription="" />
+			<Item text="Erstellen eines SharePoint-Add-Ins, das eine Dokumentvorlage und ein Aufgabenbereich-Add-In enthält" url="sp-add-ins/create-a-sharepoint-add-in-that-contains-a-document-template-and-a-task-pane-add" SEODescription="" />
+		</Item>
+		<Item text="Veröffentlichen" url="sp-add-ins/publish-sharepoint-add-ins" SEODescription="">
+			<Item text="Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen" url="sp-add-ins/deploying-and-installing-sharepoint-add-ins-methods-and-options" SEODescription="" />
+			<Item text="Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint" url="sp-add-ins/tenancies-and-deployment-scopes-for-sharepoint-add-ins" SEODescription="" />
+			<Item text="Aktualisiersprozess von Add-Ins für SharePoint" url="sp-add-ins/sharepoint-add-ins-update-process" SEODescription="">
+				<Item text="Aktualisieren von Add-Ins für SharePoint" url="sp-add-ins/update-sharepoint-add-ins" SEODescription="">
+					<Item text="Aktualisieren von SharePoint-Add-In-Webkomponenten" url="sp-add-ins/update-add-in-web-components-in-sharepoint" SEODescription="" />
+					<Item text="Aktualisieren von SharePoint-Hostwebkomponenten" url="sp-add-ins/update-host-web-components-in-sharepoint" SEODescription="" />
+					<Item text="Aktualisieren von Remotekomponenten in SharePoint-Add-Ins" url="sp-add-ins/update-remote-components-in-sharepoint-add-ins" SEODescription="" />
+					<Item text="Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins" url="sp-add-ins/create-a-handler-for-the-update-event-in-sharepoint-add-ins" SEODescription="" />
+				</Item>
+			</Item>
+			<Item text="Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio" url="sp-add-ins/publish-sharepoint-add-ins-by-using-visual-studio" SEODescription="" />
+		</Item>
+		<Item text="Tools" url="sp-add-ins/tools-and-environments-for-developing-sharepoint-add-ins" SEODescription="">
+			<Item text="Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365" url="sp-add-ins/set-up-a-development-environment-for-sharepoint-add-ins-on-office-365" SEODescription="" />
+			<Item text="Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnement" url="sp-add-ins/create-a-developer-site-on-an-existing-office-365-subscription" SEODescription="" />
+			<Item text="Einrichten einer lokalen Entwicklungsumgebung für Add-Ins" url="sp-add-ins/set-up-an-on-premises-development-environment-for-sharepoint-add-ins" SEODescription="" />
+			<Item text="Erstellen von  SharePoint-Add-Ins in Visual Studio" url="sp-add-ins/create-sharepoint-add-ins-in-visual-studio" SEODescription="" />
+			<Item text="Erstellen eines einfachen in SharePoint gehosteten Add-Ins mithilfe von Napa" url="sp-add-ins/create-a-basic-sharepoint-hosted-add-in-by-using-napa-office-365-development-too" SEODescription="" />
+			<Item text="Neuigkeiten in Office Developer Tools für Visual Studio 2013" url="sp-add-ins/what-s-new-in-office-developer-tools-for-visual-studio-2013" SEODescription="" />
+		</Item>
+		<Item text="Erstellen von Cloud Business-Add-Ins" url="sp-add-ins/create-cloud-business-add-ins" SEODescription="">
+			<Item text="Erste Schritte" url="sp-add-ins/get-started-developing-cloud-business-add-ins" SEODescription="">
+				<Item text="Vorfall-Manager: Ein Cloud-Business-Add-In-Lernprogramm" url="sp-add-ins/incident-manager-a-cloud-business-add-in-tutorial" SEODescription="" />
+				<Item text="Erstellen eines Cloud-Business-Add-Ins mit einem sozialen Newsfeed" url="sp-add-ins/create-a-cloud-business-add-in-with-a-social-newsfeed" SEODescription="" />
+			</Item>
+			<Item text="Entwickeln" url="sp-add-ins/develop-cloud-business-add-ins" SEODescription="">
+				<Item text="Erstellen eines Cloud-Business-Add-Ins" url="sp-add-ins/create-a-cloud-business-add-in" SEODescription="" />
+				<Item text="Zuordnen einer Dokumentbibliothek zu einer Entität" url="sp-add-ins/associate-a-document-library-with-an-entity" SEODescription="">
+					<Item text="Problembehandlung bei Dokumentbibliotheken" url="sp-add-ins/troubleshooting-document-libraries" SEODescription="" />
+				</Item>
+				<Item text="Aktivieren eines Newsfeesd für ein Cloud-Business-Add-In" url="sp-add-ins/enable-a-newsfeed-for-a-cloud-business-add-in" SEODescription="" />
+				<Item text="Angeben einer Vorlage für eine Dokumentbibliothek in einem Cloud-Business-Add-In" url="sp-add-ins/provide-a-template-for-a-document-library-in-a-cloud-business-add-in" SEODescription="" />
+				<Item text="Erstellen eines Cloud-Business-Add-ins, welches das SAP-Gateway verwendet" url="sp-add-ins/create-a-cloud-business-add-in-that-uses-the-sap-gateway" SEODescription="" />
+			</Item>
+			<Item text="Veröffentlichen" url="sp-add-ins/publish-cloud-business-add-ins" SEODescription="">
+				<Item text="Veröffentlichen eines Cloud-Business-Add-Ins in SharePoint" url="sp-add-ins/publish-a-cloud-business-add-in-to-sharepoint" SEODescription="" />
+			</Item>
+		</Item>
+	</Item>
 </Menu>
