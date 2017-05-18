@@ -129,11 +129,10 @@ Fügen Sie die folgende Felddefinition zu einem **groupFields**-Array hinzu.
 }
 ```
 
-Fügen Sie die folgenden Typen zu den **@microsoft/sp-client-platform**-Importen hinzu.
+Fügen Sie die folgenden Typen zu den **@microsoft/sp-webpart-base**-Importen hinzu.
 
 ```ts
-IPropertyPaneFieldType,
-IOnCustomPropertyFieldChanged
+IPropertyPaneFieldType
 ```
 
 Fügen Sie die folgende private Methode zum Rendern des benutzerdefinierten Felds hinzu.

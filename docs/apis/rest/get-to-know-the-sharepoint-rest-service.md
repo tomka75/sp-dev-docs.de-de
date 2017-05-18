@@ -71,10 +71,10 @@ Die folgende Tabelle enthält Beispiele für typische REST-Endpunkt-URLs, um Ihn
 
 |**Beschreibung**|**URL-Endpunkt**|**HTTP-Methode**|**Textkörper**|
 |:-----|:-----|:-----|:-----|
-|Ruft den Titel einer Liste ab| `web/title`|GET|–|
+|Ruft den Titel einer Website ab| `web/title`|GET|–|
 |Ruft alle Listen auf einer Website| `lists`|GET|–|
 |Ruft die Metadaten einer einzelnen Liste ab| `lists/getbytitle('listname')`|GET|–|
-|Ruft Elemente in einer Liste ab| `lists/getbytitle('listname')/items`|GET|–|
+|Ruft Elemente in einer Liste ab| `lists/getbytitle('listname')/items`|GET|Nicht zutreffend|
 |Ruft eine bestimmte Eigenschaft eines Dokuments ab. (In diesem Fall den Titel des Dokuments.)| `lists/getbytitle('listname')?select=Title`|GET|–|
 |Erstellt eine Liste| `lists`|POST|
 ```
