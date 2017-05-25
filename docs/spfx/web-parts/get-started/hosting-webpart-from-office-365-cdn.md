@@ -18,11 +18,11 @@ Get-SPOTenantCdnEnabled -CdnType Public
 Get-SPOTenantCdnOrigins -CdnType Public
 Get-SPOTenantCdnPolicies -CdnType Public
 ```
-Aktivieren Sie öffentliche CDNs im Mandanten:
+Aktivieren Sie öffentliche CDNs im Mandanten
 ```
 Set-SPOTenantCdnEnabled -CdnType Public
 ```
-Jetzt sind öffentliche CDNs im Mandanten aktiviert, mit der Standardkonfiguration für zulässige Dateitypen. Das bedeutet, dass die folgenden Dateitypen unterstützt werden: CSS, EOT, GIF, ICO, JPEG, JPG, JS, MAP, PNG, SVG, TTF und WOFF.
+Jetzt sind öffentliche CDNs im Mandanten aktiviert, mit der Standardkonfiguration für zulässige Dateitypen. Dies bedeutet, dass die folgenden Dateitypen unterstützt werden: CSS, EOT, GIF, ICO, JPEG, JPG, JS, MAP, PNG, SVG, TTF und WOFF.
 
 Öffnen Sie einen Browser, und navigieren Sie zu der Websitesammlung, in der Sie Ihre CDN-Bibliothek hosten möchten. Das kann jede beliebige Websitesammlung in Ihrem Mandanten sein. In diesem Tutorial erstellen Sie eine spezifische Bibliothek, die als Ihre CDN-Bibliothek fungiert. Sie können aber auch einen spezifischen Ordner in einer beliebigen bereits vorhandenen Dokumentbibliothek als CDN-Endpunkt nutzen.
 
@@ -30,7 +30,7 @@ Erstellen Sie in Ihrer Websitesammlung eine neue Dokumentbibliothek namens **CDN
 
 ![Webpartordner „helloworld“ in der CDN-Bibliothek](../../../../images/cdn-helloworld-folder.png) 
 
-Wechseln Sie wieder zur PowerShell-Konsole, und fügen Sie einen neuen CDN-Ursprung hinzu. Aktualisieren Sie die angegebene URL gemäß Ihrer Umgebung: 
+Wechseln Sie wieder zur PowerShell-Konsole, und fügen Sie einen neuen CDN-Ursprung hinzu. Aktualisieren Sie die unten angegebene URL gemäß Ihrer Umgebung: 
 ```
 Add-SPOTenantCdnOrigin -CdnType Public -OriginUrl sites/cdn/cdn
 ```
@@ -42,7 +42,7 @@ Sie sehen, dass der neu hinzugefügte Ursprung als gültiger CDN-Ursprung aufgef
 
 ![Liste der öffentlichen Ursprünge im Mandanten](../../../../images/cdn-public-origins.png)
 
-> Sobald ein Ursprung nicht mehr als *(configuration pending)* gekennzeichnet ist, kann er in Ihrem Mandanten verwendet werden. Dieser Text weist auf laufende Konfigurationsaktivitäten zwischen SharePoint Online und dem CDN-System hin. 
+> Sobald ein Ursprung nicht mehr mit *(Konfiguration steht aus)* gekennzeichnet ist, kann er in Ihrem Mandanten verwendet werden. Dieser Text weist auf laufende Konfigurationsaktivitäten zwischen SharePoint Online und dem CDN-System hin. 
 
 ## <a name="creating-a-new-web-part-project"></a>Erstellen eines neuen Webpartprojekts
 
@@ -74,7 +74,7 @@ Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
 ![Yeoman-Generator-Fragen für das neu erstellte Webpart](../../../../images/cdn-create-webpart-yo.png)
 
-An diesem Punkt installiert Yeoman die erforderlichen Abhängigkeiten und erstellt ein Gerüst für die Lösungsdateien. Das kann einige Minuten dauern. Yeoman nimmt auch Ihr benutzerdefiniertes Webpart in das Projektgerüst auf.
+An diesem Punkt erstellt Yeoman ein Gerüst für die Lösungsdateien und installiert die erforderlichen Abhängigkeiten. Das kann einige Minuten dauern. Yeoman nimmt auch Ihr benutzerdefiniertes Webpart in das Projektgerüst auf.
     
 Geben Sie nach Abschluss der Gerüsterstellung den folgenden Befehl ein, um das Webpartprojekt in Visual Studio Code zu öffnen:
 
@@ -92,20 +92,20 @@ https://publiccdn.sharepointonline.com/<tenant host name>/sites/site/library/fol
 
 Speichern Sie Ihre Änderungen.
 
-Führen Sie die nachfolgenden Befehle aus, um Ihre Lösung in einem Bundle zu verpacken.
-* Es wird ein Releasebuild Ihres Projekts ausgeführt, unter Verwendung der in der Datei **write-manifests.json** angegebenen CDN-URL. Die Ausgabe der Ausführung finden Sie im Ordner **./temp/deploy**. Dies sind die Dateien, die Sie in den SharePoint-Ordner hochladen müssen, der als CDN-Endpunkt fungieren wird. 
+Führen Sie die folgenden Aufgaben aus, um Ihre Lösung in einem Bundle zu verpacken.
+* Es wird ein Releasebuild Ihres Projekts ausgeführt, unter Verwendung der in der Datei **write-manifests.json** angegebenen CDN-URL. Die Ausgabe der Ausführung finden Sie im Ordner **./temp/deploy**. Dies sind die Dateien, die Sie in den SharePoint-Ordner hochladen müssen, der als CDN-Endpunkt fungiert. 
 
 ```
 gulp bundle --ship
 ```
 
-Führen Sie den folgenden Befehl aus, um Ihre Lösung zu packen und die Dateien vorzubereiten:
+Führen Sie die folgende Aufgaben aus, um Ihre Lösung zu packen.
 
 ```
 gulp package-solution --ship
 ```
 
-Dieser Befehl erstellt ein Paket namens **sphosted-webpart.sppkg** im Ordner **sharepoint/solution** und bereitet die Ressourcen, die im CDN bereitgestellt werden sollen, im Ordner **temp/deploy** vor.
+Dieser Befehl erstellt ein Paket namens **sphosted-webpart.sppkg** im Ordner **sharepoint/solution** und bereitet außerdem die Ressourcen im Ordner **temp/deploy** für die Bereitstellung im CDN vor.
 
 Laden Sie das neu erstellte Paket mit ihrer clientseitigen Lösung in den App-Katalog in Ihrem Mandanten hoch. Alternativ können Sie es auch per Drag & Drop verschieben. 
 
@@ -121,19 +121,13 @@ Laden Sie alle Dateien aus dem Ordner **temp/deploy** in den Ordner **CDN/hellow
 
 An diesem Punkt kann das Webpart auf der Seite verwendet werden.
 
-Wechseln Sie zu einer Website, auf der Sie das Webpart testen möchten.
+Öffnen Sie eine Website, auf der Sie das Webpart testen möchten, und wechseln Sie zur Seite **Websiteinhalte** der Website.
 
-Wechseln Sie zur Seite **Websiteinhalte** der Website.
-
-Wählen Sie in der Symbolleiste **Add – App** aus.
-
-Wählen Sie **sphosted-webpart-client-side-solution** zur Installation auf der Website aus.
+Wählen Sie **Hinzufügen – App** in der Symbolleiste, und wählen Sie die App **sphosted-webpart-client-side-solution** zur Installation auf der Website aus.
 
 ![Hinzufügen der Webpartlösung zur Website](../../../../images/cdn-add-webpart-to-site.png)
 
-Wählen Sie nach der Installation der Lösung **Seite hinzufügen** aus dem *Zahnradmenü* aus.
-
-Wählen Sie aus der Webpartauswahl für die moderne Seite **HelloWorld** aus.
+Nachdem die Lösung installiert wurde, wählen Sie **Seite hinzufügen** im Menü mit dem *Zahnradsymbol*, und wählen Sie **HelloWorld** in der Webpartauswahl für die moderne Seite aus.
 
 ![HelloWorld-Webpart in der Webpartauswahl für die moderne Seite](../../../../images/cdn-web-part-picker.png)
 

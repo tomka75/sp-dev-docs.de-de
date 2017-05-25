@@ -33,7 +33,9 @@ Wählen Sie **OK** aus, um die App-Katalogwebsite zu erstellen.
 SharePoint erstellt die App-Katalogwebsite. Den Fortschritt können Sie im SharePoint Admin Center ablesen.
 
 ## <a name="create-a-new-developer-site-collection"></a>Erstellen einer neuen Entwicklerwebsitesammlung
-Sie benötigen auch eine Entwicklerwebsite. Wenn Sie bereits eine Entwicklerwebsitesammlung haben, finden Sie Informationen unter [Einrichten einer Dokumentbibliothek](#set-up-a-document-library).
+Sie benötigen ferner eine Websitesammlung und eine Website zum Testen. Sie können eine neue Websitesammlung mit jeder der verfügbaren Vorlagen erstellen. Sie können die **Entwicklerwebsitesammlung** verwenden, dies hat aber nicht wirklich einen Mehrwert, da Workbench- und Basistests mit einer beliebigen Website ausgeführt werden können.
+
+Im Folgenden sind die Schritte zum Erstellen einer neuen Entwicklerwebsitesammlung aufgeführt.
 
  Wechseln Sie zum **SharePoint Admin Center**, indem Sie die folgende URL in den Browser eingeben. Ersetzen Sie **yourtenantprefix** durch das Präfix Ihres Office 365-Entwicklermandanten.
     
