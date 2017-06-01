@@ -224,7 +224,7 @@ Um die Ressourcen auf Ihrem bevorzugten CDN-Anbieter bereitzustellen, können Si
 gulp --ship
 ```
 
-Solange Sie die **CdnBasePath** entsprechend aktualisieren, werden Ihre Dateien ordnungsgemäß geladen.
+Solange Sie die **cdnBasePath**-Eigenschaft entsprechend aktualisieren, werden Ihre Dateien ordnungsgemäß geladen.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
