@@ -14,7 +14,7 @@ Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in 
 Führen Sie die folgenden Schritte aus, bevor Sie starten:
 
 * [Erstellen des ersten Webparts](build-a-hello-world-web-part.md)
-* [Verbinden mit SharePoint](connect-to-sharepoint.md) 
+* [Verbinden mit SharePoint](connect-to-sharepoint.md)
 
 Die Entwicklertoolkette verwendet Webpack, SystemJS und CommonJS zum Bündeln der Webparts. Dies schließt das Laden externer Abhängigkeiten, z. B. jQuery oder jQueryUI, ein. Um externe Abhängigkeiten zu laden, müssen Sie folgende Schritte ausführen:
 
@@ -312,9 +312,9 @@ Stellen Sie in der Konsole sicher, dass Sie sich immer noch im Ordner „jquery-
 gulp serve
 ```
 
-> **Hinweis:** Visual Studio Code bietet integrierte Unterstützung für gulp und andere Tools zur Taskausführung. Sie können STRG + UMSCHALT + B unter Windows oder **BEFEHL + UMSCHALT + B** auf dem Mac drücken, um Ihr Webpart zu debuggen und eine Vorschau anzuzeigen.
+> **Hinweis:** Visual Studio Code bietet integrierte Unterstützung für gulp und andere Tools zur Taskausführung. Sie können **STRG + UMSCHALT + B** unter Windows oder **BEFEHL + UMSCHALT + B** auf dem Mac drücken, um Ihr Webpart zu debuggen und eine Vorschau anzuzeigen.
 
-Gulp führt die Aufgaben aus und öffnet die lokale SharePoint-Webpart Workbench.
+Gulp führt die Aufgaben aus und öffnet die lokale SharePoint-Webpart-Workbench.
 
 Drücken Sie im Seitenbereich auf das **+** (Pluszeichen), um die Liste von Webparts anzuzeigen, und führen Sie das jQuery-Webpart hinzu. Jetzt sollte das jQueryUI Accordion angezeigt werden.
 

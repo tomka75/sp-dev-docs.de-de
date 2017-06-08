@@ -79,17 +79,14 @@ Sie können auch festlegen, dass das hinzugefügte benutzerdefinierte Task vor o
 Die SharePoint Framework-Tasks stehen in der Standard-Buildrig zur Verfügung. Die Buildrig ist eine Sammlung von Tasks, die für einen bestimmten Zweck definiert wurden, in unserem Fall also für die Erstellung clientseitiger Pakete. Sie können über das Objekt `build.rig` auf diese Standardrig sowie die Pre-Task- und Post-Task-Funktionen zugreifen:
  
 ```js
+//execute before the typescript subtask
+build.rig.addPreBuildTask(helloWorldTask);
+
 // execute after TypeScript task
 build.rig.addPostTypescriptTask(helloWorldTask);
 
-//execute before TypeScript task
-build.rig.addBuildTasks(helloWorldTask);
-
 //execute after all tasks
 build.rig.addPostBuildTask(helloWorldTask);
-
-//execute before all tasks
-build.rig.addPreBuildTask(helloWorldTask);
 ```
 
 ## <a name="example-custom-image-resize-task"></a>Beispiel: Benutzerdefiniertes Task „image-resize“
