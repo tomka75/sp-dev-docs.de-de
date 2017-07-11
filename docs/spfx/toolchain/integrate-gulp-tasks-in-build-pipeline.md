@@ -1,4 +1,6 @@
-# <a name="integrate-gulp-tasks-in-sharepoint-framework-toolchain"></a>Integrieren von gulp-Tasks in die SharePoint Framework-Toolkette
+<a id="integrate-gulp-tasks-in-sharepoint-framework-toolchain" class="xliff"></a>
+
+# Integrieren von gulp-Tasks in die SharePoint Framework-Toolkette
 
 Die SharePoint-Tools für clientseitige Entwicklung verwenden [gulp](http://gulpjs.com/) zur Ausführung von Tasks im Buildprozess, so beispielsweise für folgende Tasks:
 
@@ -9,7 +11,9 @@ Die SharePoint-Tools für clientseitige Entwicklung verwenden [gulp](http://gulp
 
 Eine gängige Aufgabe, die Sie zu Ihrer SharePoint Framework-Toolkette hinzufügen sollten, ist die Integration von benutzerdefinierten gulp-Tasks in die Buildpipeline.
 
-## <a name="gulp-tasks"></a>gulp-Tasks
+<a id="gulp-tasks" class="xliff"></a>
+
+## gulp-Tasks
 In der Regel werden gulp-Tasks wie folgt in der Datei `gulpfile.js` definiert:
 
 ```js
@@ -28,12 +32,16 @@ gulp --tasks
 
 Der Befehl oben listet alle verfügbaren Tasks auf.
 
-![Verfügbare gulp-Tasks](../../images/gulp-tasks-available.png)
+![Verfügbare gulp-Tasks](../../../images/gulp-tasks-available.png)
 
-## <a name="custom-gulp-tasks"></a>Benutzerdefinierte gulp-Tasks
+<a id="custom-gulp-tasks" class="xliff"></a>
+
+## Benutzerdefinierte gulp-Tasks
 Benutzerdefinierte Tasks, die Sie hinzufügen möchten, werden in der Datei `gulpfile.js` definiert. Öffnen Sie die Datei `gulpfile.js` in einem Code-Editor. Der Standardcode initialisiert die SharePoint Framework-Toolkette sowie die globale `gulp`-Instanz für die Toolkette. Die Definitionen aller hinzugefügten benutzerdefinierten Tasks müssen vor dem Code zur Initialisierung der globalen `gulp`-Instanz stehen.
 
-### <a name="add-your-custom-task"></a>Hinzufügen eines benutzerdefinierten Tasks
+<a id="add-your-custom-task" class="xliff"></a>
+
+### Hinzufügen eines benutzerdefinierten Tasks
 Wenn Sie ein benutzerdefiniertes gulp-Task hinzufügen möchten, müssen Sie der SharePoint Framework-Buildpipeline ein neues Untertask hinzufügen. Dazu verwenden Sie die Funktion [`build.subTask`](https://github.com/Microsoft/gulp-core-build#defining-a-custom-task):
 
 ```js
@@ -52,7 +60,9 @@ let helloWorldSubtask = build.subTask('log-hello-world-subtask', function(gulp, 
 });
 ```
 
-### <a name="register-your-task-with-gulp-command-line"></a>Registrieren des Tasks über die gulp-Befehlszeile
+<a id="register-your-task-with-gulp-command-line" class="xliff"></a>
+
+### Registrieren des Tasks über die gulp-Befehlszeile
 Sobald Sie das benutzerdefinierte Task definiert haben, können Sie es über die gulp-Befehlszeile registrieren. Dazu verwenden Sie die Funktion `build.task`:
 
 ```js
@@ -70,7 +80,9 @@ gulp hello-world
 
 >Hinweis: Sie können das mit der Funktion `build.subTask` registrierte Untertask nicht direkt über die Befehlszeile ausführen. Sie können nur das mit der Funktion `build.task` registrierte Task ausführen.
 
-### <a name="execute-your-custom-task-before-or-after-available-tasks"></a>Ausführen des benutzerdefinierten Tasks vor oder nach verfügbaren Tasks
+<a id="execute-your-custom-task-before-or-after-available-tasks" class="xliff"></a>
+
+### Ausführen des benutzerdefinierten Tasks vor oder nach verfügbaren Tasks
 Sie können auch festlegen, dass das hinzugefügte benutzerdefinierte Task vor oder nach bestimmten verfügbaren gulp-Tasks ausgeführt wird. Benutzerdefinierte Tasks können vor oder nach den folgenden gulp-Tasks ausgeführt werden:
 
 - Allgemeines Build-Task (bestehend aus allen verfügbaren Tasks)
@@ -89,7 +101,9 @@ build.rig.addPostTypescriptTask(helloWorldTask);
 build.rig.addPostBuildTask(helloWorldTask);
 ```
 
-## <a name="example-custom-image-resize-task"></a>Beispiel: Benutzerdefiniertes Task „image-resize“
+<a id="example-custom-image-resize-task" class="xliff"></a>
+
+## Beispiel: Benutzerdefiniertes Task „image-resize“
 Verwenden wir als Beispiel das [gulp-Task „image-resize“](https://www.npmjs.com/package/gulp-image-resize).  Hierbei handelt es sich um ein einfaches Task, mit dem sich die Größe eines Bildes ändern lässt.
 
 Sie können das vollständige Beispiel [hier](https://aka.ms/spfx-extend-gulp-sample) herunterladen.
@@ -138,11 +152,11 @@ Nun können Sie das Task wie folgt über die gulp-Befehlszeile ausführen:
 gulp resize-images
 ```
 
-![Task „image-resize“](../../images/gulp-extend-image-resize-task.png)
+![Task „image-resize“](../../../images/gulp-extend-image-resize-task.png)
 
 Außerdem wird das Task `resize-images` in den für Ihr Projekt verfügbaren Tasks aufgeführt, wenn Sie `gulp --tasks` ausführen:
 
-![Task „image-resize“ in der Liste der verfügbaren Tasks](../../images/gulp-extend-image-resize-available-tasks.png)
+![Task „image-resize“ in der Liste der verfügbaren Tasks](../../../images/gulp-extend-image-resize-available-tasks.png)
 
 
 
