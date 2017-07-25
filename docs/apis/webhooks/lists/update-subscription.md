@@ -1,61 +1,11 @@
-# <a name="update-a-subscription"></a>Aktualisieren eines Abonnements
-
-Aktualisiert ein Webhook-Abonnement in einer SharePoint-Liste.
-
-## <a name="permissions"></a>Berechtigungen
-
-Die Anwendung muss mindestens Bearbeitenberechtigungen für die SharePoint-Liste haben, in der das Abonnement aktualisiert wird.  
-
-**Wenn es sich bei Ihrer Anwendung um eine Microsoft Azure Active Directory (AD)-Anwendung handelt:**
-
-Sie müssen der Azure AD-Anwendung die in der folgenden Tabelle angegebenen Berechtigungen erteilen. Ein Abonnement kann nur von der Azure AD-Anwendung, die es erstellt hat, aktualisiert werden.
-
-Anwendung | Berechtigung 
-------------|------------
-Office 365 SharePoint Online|Lese-/Schreibzugriff auf Elemente und Listen in allen Websitesammlungen. 
-
-**Wenn es sich bei Ihrer Anwendung um ein SharePoint-Add-In handelt:**
-
-Sie müssen dem SharePoint-Add-In mindestens die folgenden Berechtigungen erteilen. Ein Abonnement kann nur von dem SharePoint-Add-In, das es erstellt hat, aktualisiert werden.
-
-Umfang | Berechtigungen 
-------|------------
-Liste|Verwalten
-
-## <a name="http-request"></a>HTTP-Anforderung
-
-```
-PATCH _api/web/lists('list-id')/subscriptions('id')
-```
-
-### <a name="example"></a>Beispiel
-
-```http
-PATCH _api/web/lists('5C77031A-9621-4DFC-BB5D-57803A94E91D')/subscriptions('6D77031A-2345-5GRT-BV3D-55234B56FR43')
-Content-Type: application/json
-
-{
-  "notificationUrl": "https://contoso.azurewebsites.net/api/v2/webhook-receiver",
-  "expirationDateTime": "2016-01-03T11:23:00.000Z"
-}
-```
-
-## <a name="request-body"></a>Anforderungstext
-
-Schließen Sie die folgenden Eigenschaften in die Anforderung ein.
-
-Name | Typ | Beschreibung 
------|------|------------
-notificationUrl|string|Die Dienst-URL, an den Benachrichtigungen gesendet werden.
-expirationDateTime|date|Das Datum, an dem die Benachrichtigung abläuft und gelöscht wird.
-client-clientState|Zeichenfolge|Optional. Verschlüsselte Zeichenfolge, die bei allen Benachrichtigungen zurück an den Client übergeben wird. Dies können Sie zum Überprüfen von Benachrichtigungen oder zum Kategorisieren unterschiedlicher Abonnements verwenden.
+<span data-ttu-id="b77a0-p103">Optional. Verschlüsselte Zeichenfolge, die bei allen Benachrichtigungen zurück an den Client übergeben wird. Dies können Sie zum Überprüfen von Benachrichtigungen oder zum Kategorisieren unterschiedlicher Abonnements verwenden.</span><span class="sxs-lookup"><span data-stu-id="b77a0-p103">Optional. Opaque string passed back to the client on all notifications. You can use this for validating notifications, or tagging different subscriptions.</span></span>|Optional. Verschlüsselte Zeichenfolge, die bei allen Benachrichtigungen zurück an den Client übergeben wird. Dies können Sie zum Überprüfen von Benachrichtigungen oder zum Kategorisieren unterschiedlicher Abonnements verwenden.
 
 
-## <a name="response"></a>Antwort
+## <a name="response"></a><span data-ttu-id="b77a0-137">Antwort</span><span class="sxs-lookup"><span data-stu-id="b77a0-137">Response</span></span>
 
-Wenn das Abonnement gefunden und erfolgreich aktualisiert wird, wird eine `204 No Content`-Antwort zurückgegeben.
+<span data-ttu-id="b77a0-138">Wenn das Abonnement gefunden und erfolgreich aktualisiert wird, wird eine `204 No Content`-Antwort zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="b77a0-138">If the subscription is found and successfully updated, then a `204 No Content` response is returned:</span></span>
 
-### <a name="example"></a>Beispiel
+### <a name="example"></a><span data-ttu-id="b77a0-139">Beispiel</span><span class="sxs-lookup"><span data-stu-id="b77a0-139">Example</span></span>
 
 ```http
 HTTP/1.1 204 No Content

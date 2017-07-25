@@ -1,79 +1,18 @@
-<a id="synchronize-sharepoint-items-using-the-rest-service" class="xliff"></a>
+<span data-ttu-id="2dea1-p105">Eine Zeichenfolge, die das Änderungstoken für die Anforderung enthält. Eine Beschreibung des Formats, das in dieser Zeichenfolge verwendet wird, finden Sie unter [Übersicht über das Änderungsprotokoll](http://msdn.microsoft.com/en-us/library/bb417456.aspx). Wenn Null übergeben wird, werden alle Elemente in der Liste zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="2dea1-p105">A string that contains the change token for the request. For a description of the format that is used in this string, see  [Overview of the Change Log](http://msdn.microsoft.com/en-us/library/bb417456.aspx). If null is passed, all items in the list are returned.</span></span>|Eine Zeichenfolge, die das Änderungstoken für die Anforderung enthält. Eine Beschreibung des Formats, das in dieser Zeichenfolge verwendet wird, finden Sie unter [Übersicht über das Änderungsprotokoll](http://msdn.microsoft.com/en-us/library/bb417456.aspx). Wenn Null übergeben wird, werden alle Elemente in der Liste zurückgegeben.|
+|<span data-ttu-id="2dea1-132">**Contains**</span><span class="sxs-lookup"><span data-stu-id="2dea1-132">**Contains**</span></span>|<span data-ttu-id="2dea1-133">Ein [Contains](http://msdn.microsoft.com/en-us/library/ms196501.aspx)-Element, das das benutzerdefinierte Filtern für die Abfrage definiert.</span><span class="sxs-lookup"><span data-stu-id="2dea1-133">A  [Contains](http://msdn.microsoft.com/en-us/library/ms196501.aspx) element that defines custom filtering for the query.</span></span>|
 
-# Synchronisieren von SharePoint-Elementen mithilfe des REST-Diensts
-Erfahren Sie, wie Sie mit der Ressource **GetListItemChangesSinceToken**, die Teil des SharePoint REST-Diensts ist, Elemente zwischen SharePoint und Ihren Add-ins oder Diensten synchronisieren.
+## <a name="additional-resources"></a><span data-ttu-id="2dea1-134">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="2dea1-134">Additional resources</span></span>
+<span data-ttu-id="2dea1-135"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="2dea1-135"></span></span>
 
-<a id="synchronizing-sharepoint-items-using-the-getlistitemchangessincetoken-resource" class="xliff"></a>
-
-## Synchronisieren von SharePoint-Elementen mithilfe der Ressource GetListItemChangesSinceToken
-Zum Synchronisieren von Elementen zwischen SharePoint und Ihren Add-ins oder Diensten können Sie die Ressource **GetListItemChangesSinceToken** verwenden. **GetListItemChangesSinceToken** ist Teil des SharePoint REST-Diensts und entspricht dem Webdienstaufruf **Lists.GetListItemChangesSinceToken**.
- 
-Führen Sie eine **POST**-Anforderung aus, die ein Objekt [SP.ChangeLogItemQuery object properties](#bk_props) im Hauptteil enthält.
- 
-Die Anforderung gibt ADO **rowset** XML mit den Zeilen zurück, die alle mit der Abfrage übereinstimmenden Änderungen an Listenelementen enthalten. Weitere Informationen zu diesen Eigenschaften, einschließlich Eigenschaftendatenstrukturen, CAML-Elementbeschreibungen und Rückgabewerten finden Sie unter **Lists.GetListItemChangesSinceToken**.
- 
-||
-|:-----|
-|**Beispielanforderung**|
-| `POST http://server/site/_api/web/Lists/GetByTitle('Announcements')/GetListItemChangesSinceToken`|
-|**Beispiel für POST-Text**|
-|
-```XML
-{ 'd' : { 
-  'query': { 
-    '__metadata': { 'type': 'SP.ChangeLogItemQuery'}, 
-    'ViewName': '', 
-    'Query': '<Where>
-      <Contains>
-         <FieldRef Name="Title" />
-         <Value Type='Text'>Te</Value>
-      </Contains></Where>',
-    'QueryOptions': '<QueryOptions>
-      <IncludeMandatoryColumns>FALSE</IncludeMandatoryColumns>
-      <DateInUtc>False</DateInUtc>
-      <IncludePermissions>TRUE</IncludePermissions>
-      <IncludeAttachmentUrls>FALSE</IncludeAttachmentUrls>
-      <Folder>Shared Documents/Test1</Folder></QueryOptions>', 
-    'ChangeToken':'1;3;eee4c6d5-f88a-42c4-8ce1-685122984870;634397182229400000;3710', 
-    'Contains':'<Contains>
-      <FieldRef Name="Title"/>
-      <Value Type="Text">Testing</Value></Contains>' } 
-  } 
-}
-
-```
-
-|
-
-<a id="spchangelogitemquery-object-properties" class="xliff"></a>
-
-## Objekteigenschaften SP.ChangeLogItemQuery
-<a name="bk_props"> </a>
-****
-
-|**Property**|**Description**|
-|:-----|:-----|
-|**ListName**|Eine Zeichenfolge, die entweder Titel oder GUID der Liste enthält. Bei Abruf der Tabelle "UserInfo" enthält die Zeichenfolge UserInfo. Die Verwendung der GUID führt zu einer besseren Leistung.|
-|**ViewName**|Eine Zeichenfolge mit der GUID für die Ansicht, die für die durch die Parameter _query_,  _viewFields_ und  _rowLimit_ dargestellten Standard-Ansichtattribute zu verwenden ist. Wird dieses Argument nicht angegeben, so wird die Standardansicht verwendet. Wird das Argument angegeben, so setzt der Wert der Parameter _query_,  _viewFields_ oder  _rowLimit_ die entsprechende Einstellung in der Ansicht außer Kraft. Weist z. B. die durch den Parameter _viewFields_ angegebene Ansicht ein Zeilenlimit von 100 auf, während der Parameter _rowLimit_ den Wert 1000 enthält, dann werden in der Antwort 1000 Zeilen zurückgegeben.|
-|**Query**|Ein [Query](http://msdn.microsoft.com/en-us/library/ms471093.aspx)-Element mit der Abfrage, die festlegt, welche Datensätze in welcher Reihenfolge zurückgegeben werden.|
-|**QueryOptions**|Ein XML-Fragment in der folgenden Form, das separate Knoten für die verschiedenen Eigenschaften des Objekts **SPQuery** enthält.|
-|**ChangeToken**|Eine Zeichenfolge, die das Änderungstoken für die Anforderung enthält. Eine Beschreibung des Formats, das in dieser Zeichenfolge verwendet wird, finden Sie unter [Übersicht über das Änderungsprotokoll](http://msdn.microsoft.com/en-us/library/bb417456.aspx). Wenn Null übergeben wird, werden alle Elemente in der Liste zurückgegeben.|
-|**Contains**|Ein [Contains](http://msdn.microsoft.com/en-us/library/ms196501.aspx)-Element, das das benutzerdefinierte Filtern für die Abfrage definiert.|
-
-<a id="additional-resources" class="xliff"></a>
-
-## Zusätzliche Ressourcen
-<a name="bk_addresources"> </a>
-
--  [Grundlegendes zum SharePoint REST-Dienst](get-to-know-the-sharepoint-rest-service.md)
--  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten](complete-basic-operations-using-sharepoint-rest-endpoints.md)
--  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest.md)
--  [Arbeiten mit Ordnern und Dateien unter Verwendung von REST](working-with-folders-and-files-with-rest.md)
--  [Navigieren in der im REST-Dienst dargestellten SharePoint-Datenstruktur](navigate-the-sharepoint-data-structure-represented-in-the-rest-service.md)
--  [Ermitteln von URIs von SharePoint REST-Dienstendpunkten](determine-sharepoint-rest-service-endpoint-uris.md)
--  [Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen](use-odata-query-operations-in-sharepoint-rest-requests.md)
--  [REST-API-Referenz und Beispiele](http://msdn.microsoft.com/library/02128c70-9d27-4388-9374-a11bce68fdb8%28Office.15%29.aspx)
--  [Verwenden von ETag-Werten zum Bestimmen der Version von Dokument- und Listenelementen über den REST-Dienst](http://msdn.microsoft.com/library/use-etag-values-through-the-rest-service-to-get-document-list-item-versioning%28Office.15%29.aspx)
+-  [<span data-ttu-id="2dea1-136">Grundlegendes zum SharePoint REST-Dienst</span><span class="sxs-lookup"><span data-stu-id="2dea1-136">Get to know the SharePoint REST service</span></span>](get-to-know-the-sharepoint-rest-service.md)
+-  [<span data-ttu-id="2dea1-137">Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten</span><span class="sxs-lookup"><span data-stu-id="2dea1-137">Complete basic operations using SharePoint REST endpoints</span></span>](complete-basic-operations-using-sharepoint-rest-endpoints.md)
+-  [<span data-ttu-id="2dea1-138">Arbeiten mit Listen und Listenelementen unter Verwendung von REST</span><span class="sxs-lookup"><span data-stu-id="2dea1-138">Working with lists and list items with REST</span></span>](working-with-lists-and-list-items-with-rest.md)
+-  [<span data-ttu-id="2dea1-139">Arbeiten mit Ordnern und Dateien unter Verwendung von REST</span><span class="sxs-lookup"><span data-stu-id="2dea1-139">Working with folders and files with REST</span></span>](working-with-folders-and-files-with-rest.md)
+-  [<span data-ttu-id="2dea1-140">Navigieren in der im REST-Dienst dargestellten SharePoint-Datenstruktur</span><span class="sxs-lookup"><span data-stu-id="2dea1-140">Navigate the SharePoint data structure represented in the REST service</span></span>](navigate-the-sharepoint-data-structure-represented-in-the-rest-service.md)
+-  [<span data-ttu-id="2dea1-141">Ermitteln von URIs von SharePoint REST-Dienstendpunkten</span><span class="sxs-lookup"><span data-stu-id="2dea1-141">Determine SharePoint REST service endpoint URIs</span></span>](determine-sharepoint-rest-service-endpoint-uris.md)
+-  [<span data-ttu-id="2dea1-142">Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen</span><span class="sxs-lookup"><span data-stu-id="2dea1-142">Use OData query operations in SharePoint REST requests</span></span>](use-odata-query-operations-in-sharepoint-rest-requests.md)
+-  [<span data-ttu-id="2dea1-143">REST-API-Referenz und Beispiele</span><span class="sxs-lookup"><span data-stu-id="2dea1-143">REST API reference and samples</span></span>](http://msdn.microsoft.com/library/02128c70-9d27-4388-9374-a11bce68fdb8%28Office.15%29.aspx)
+-  [<span data-ttu-id="2dea1-144">Verwenden von ETag-Werten zum Bestimmen der Version von Dokument- und Listenelementen über den REST-Dienst</span><span class="sxs-lookup"><span data-stu-id="2dea1-144">Use ETag values through the REST service to get document list item versioning</span></span>](http://msdn.microsoft.com/library/use-etag-values-through-the-rest-service-to-get-document-list-item-versioning%28Office.15%29.aspx)
     
  
 

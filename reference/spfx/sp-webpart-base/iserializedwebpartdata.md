@@ -1,0 +1,9 @@
+<span data-ttu-id="651a8-p103">Definition: Webpartspezifische Eigenschaften. Jedes einzelne Webpart besitzt die Definition dieser Eigenschaften. Verwendung: Wird vom Webpart zum Verwalten seiner internen Metadaten und Konfigurationsdaten verwendet. Der Frameworkcode kommt nie in Kontakt mit diesen Eigenschaften. Erforderlich: ja Typ: beliebig Unterstützte Werte: beliebige, in einer Zeichenfolge darstellbare JSON-Objekthierarchie. Beispiel: { 'value': 'text value' }</span><span class="sxs-lookup"><span data-stu-id="651a8-p103">Definition: Web part specific properties. The individual web part owns the definition of these properties. Usage: used by the web part to manage its internal metadata and config data. The framework code never touches these properties. Required: yes Type: any Supported values: any JSON stringifiable object hierarchy. Example: { 'value': 'text value' }</span></span> |
+|`properties`      | `any` | Definition: Webpartspezifische Eigenschaften. Jedes einzelne Webpart besitzt die Definition dieser Eigenschaften. Verwendung: Wird vom Webpart zum Verwalten seiner internen Metadaten und Konfigurationsdaten verwendet. Der Frameworkcode kommt nie in Kontakt mit diesen Eigenschaften. Erforderlich: ja Typ: beliebig Unterstützte Werte: beliebige, in einer Zeichenfolge darstellbare JSON-Objekthierarchie. Beispiel: { 'value': 'text value' } |
+|`serverProcessedContent`      | [`ISerializedServerProcessedData`](../sp-webpart-base/iserializedserverprocesseddata.md) | <span data-ttu-id="651a8-119">Definition: Die Datensammlungen, die von serverseitigen Diensten wie Suchindex und Linkkorrektur verarbeitet werden können.</span><span class="sxs-lookup"><span data-stu-id="651a8-119">Definition: The collections of data that can be processed by server side services like search index and link fixup Required: no</span></span> |
+
+
+
+
+
+

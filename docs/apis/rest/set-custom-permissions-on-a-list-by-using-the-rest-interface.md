@@ -1,39 +1,8 @@
-# <a name="set-custom-permissions-on-a-list-by-using-the-rest-interface"></a>Festlegen von benutzerdefinierten Berechtigungen in einer Liste mithilfe der REST-Schnittstelle
-Informationen zum Definieren von benutzerdefinierten abgestimmten Berechtigungen in einer SharePoint-Liste mithilfe der REST-Schnittstelle und JavaScript.
-
-SharePoint-Websites, Listen und Listenelemente sind Typen von **SecurableObject**. Standardmäßig erbt ein sicherungsfähiges Objekt die übergeordneten Berechtigungen. Wenn Sie benutzerdefinierte Berechtigungen für ein Objekt festlegen möchten, müssen Sie die Vererbung der Berechtigungen unterbrechen und dann durch Hinzufügen oder Entfernen von Rollenzuweisungen neue Berechtigungen definieren.
- 
- **Hinweis**  Links zu Artikeln zum Festlegen abgestimmter Berechtigungen finden Sie unter [zusätzliche Ressourcen](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources).
- 
-In dem Codebeispiel in diesem Artikel werden benutzerdefinierte Berechtigungen in einer Liste zugewiesen, anschließend werden die Gruppenberechtigungen für die Liste geändert. In dem Beispiel wird die REST-Schnittstelle für folgende Vorgänge verwendet:
- 
-
-- Zum Abrufen der ID der Zielgruppe. In dem Beispiel wird die Gruppen-ID verwendet, um die aktuellen Rollenbindungen für die Gruppe in der Liste abzurufen, und um der Liste die neue Rolle hinzuzufügen.
-
-- Zum Abrufen der ID der Rollendefinition, die die neuen Berechtigungen für die Gruppe definiert. Die ID wird verwendet, um der Liste die neue Rolle hinzuzufügen. In diesem Beispiel wird die vorhandene Rollendefinition für die neue Rolle verwendet, Sie können optional jedoch auch eine neue Rollendefinition erstellen.
- 
-- Unterbrechen Sie die Vererbung von Rollen in der Liste mithilfe der Methode `BreakRoleInheritance`. Im Beispiel wird die Rollenvererbung unterbrochen, der aktuelle Rollensatz jedoch beibehalten. (Alternativ können Sie darauf verzichten, Rollenzuweisungen zu kopieren und den aktuellen Benutzer zur Stufe der Berechtigungsverwaltung hinzuzufügen.)
- 
-- Entfernen Sie die aktuelle Rollenzuweisung der Gruppe in der Liste, indem Sie eine DELETE-Anforderung an den Rollenzuweisungsendpunkt senden. (Wenn Sie vorsehen, keine Rollenzuweisungen zu kopieren, können Sie diesen Schritt überspringen).
- 
-- Fügen Sie eine Rollenzuweisung für die Gruppe mithilfe der Methode `AddRoleAssignment` hinzu, die die Gruppe an die Rollendefinition bindet und die Rolle zu der Liste hinzufügt.
-    
-## <a name="prerequisites-for-using-the-example-in-this-article"></a>Voraussetzungen für die Verwendung des Beispiels in diesem Artikel
-<a name="SP15Accessdatafromremoteapp_Prereq"> </a> Um das Beispiel in diesem Artikel verwenden zu können, benötigen Sie:
-
-- Eine SharePoint-Entwicklungsumgebung (App-Isolierung für lokale Szenarien erforderlich)
-- Visual Studio 2013 oder höher mit Office Developer Tools
-    
-Außerdem müssen Sie Add-in-Berechtigungen mit **Vollzugriff** für den **Web**-Bereich festlegen. Nur Benutzer, die über ausreichende Berechtigungen zum Ändern von Listenberechtigungen verfügen (z. B. Websitebesitzer), können dieses Add-in ausführen.
-
-## <a name="example-set-custom-permissions-on-a-list-by-using-the-rest-interface"></a>Beispiel: Festlegen von benutzerdefinierten Berechtigungen in einer Liste mithilfe der REST-Schnittstelle
-<a name="bk_example1"> </a>
-
-In den folgenden Beispielen ist der Inhalt der Datei „App.js“ in einem auf SharePoint gehosteten Add-in dargestellt. Im ersten Beispiel wird die domainübergreifende JavaScript-Bibliothek zu Erstellen und Senden der HTTP-Anfragen verwendet. Im zweiten Beispiel werden jQuery AJAX-Anfragen verwendet.
+<span data-ttu-id="905c6-p109">Bevor Sie den Code ausführen, ersetzen Sie die Platzhalterwerte mit tatsächlichen Werten. Wenn Sie eine andere Sprache oder Umgebung verwenden, müssen Sie einige Komponenten der Anforderung hinzufügen oder ändern. Weitere Informationen finden Sie unter [How REST requests differ by environment](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#bk_HowRequestsDiffer) (So unterscheiden sich REST-Anforderungen je nach Umgebung).</span><span class="sxs-lookup"><span data-stu-id="905c6-p109">Before you run the code, replace the placeholder values with actual values. If you're using a different language or environment, you'll need to add or change some request components. See  [How REST requests differ by environment](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#bk_HowRequestsDiffer) for more information.</span></span>
  
 Bevor Sie den Code ausführen, ersetzen Sie die Platzhalterwerte mit tatsächlichen Werten. Wenn Sie eine andere Sprache oder Umgebung verwenden, müssen Sie einige Komponenten der Anforderung hinzufügen oder ändern. Weitere Informationen finden Sie unter [How REST requests differ by environment](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#bk_HowRequestsDiffer) (So unterscheiden sich REST-Anforderungen je nach Umgebung).
  
- **Beispiel 1: Domänenübergreifende Bibliotheksanforderungen**
+ <span data-ttu-id="905c6-134">**Beispiel 1: Domänenübergreifende Bibliotheksanforderungen**</span><span class="sxs-lookup"><span data-stu-id="905c6-134">**Example 1: Cross-domain library requests**</span></span>
  
 ```javascript
 'use strict';
@@ -162,7 +131,7 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
 }
 ```
 
- **Beispiel 2: jQuery AJAX-Anforderungen**
+ <span data-ttu-id="905c6-135">**Beispiel 2: jQuery AJAX-Anforderungen**</span><span class="sxs-lookup"><span data-stu-id="905c6-135">**Example 2: jQuery AJAX requests**</span></span>
  
 ```javascript
 // Change placeholder values before you run this code.
@@ -257,26 +226,26 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
-<a name="bk_addresources"> </a>
+## <a name="additional-resources"></a><span data-ttu-id="905c6-136">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="905c6-136">Additional resources</span></span>
+<span data-ttu-id="905c6-137"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="905c6-137"></span></span>
 
--  [Grundlegendes zum SharePoint REST-Dienst](get-to-know-the-sharepoint-rest-service.md) 
--  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten](complete-basic-operations-using-sharepoint-rest-endpoints.md)
--  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest.md)
+-  [<span data-ttu-id="905c6-138">Grundlegendes zum SharePoint REST-Dienst</span><span class="sxs-lookup"><span data-stu-id="905c6-138">Get to know the SharePoint REST service</span></span>](get-to-know-the-sharepoint-rest-service.md) 
+-  [<span data-ttu-id="905c6-139">Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten</span><span class="sxs-lookup"><span data-stu-id="905c6-139">Complete basic operations using SharePoint REST endpoints</span></span>](complete-basic-operations-using-sharepoint-rest-endpoints.md)
+-  [<span data-ttu-id="905c6-140">Arbeiten mit Listen und Listenelementen unter Verwendung von REST</span><span class="sxs-lookup"><span data-stu-id="905c6-140">Working with lists and list items with REST</span></span>](working-with-lists-and-list-items-with-rest.md)
 
-- REST-Ressourcen:
-     - [Ressource GroupCollection](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_GroupCollection)
-     - [Ressource Group](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_Group) 
-     - [Ressource RoleAssignmentCollection](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_RoleAssignmentCollection)
-     - [Ressource RoleAssignment](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_RoleAssignment)
-     - [Ressource RoleDefinitionCollection](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_RoleDefinitionCollection)
-     - [Ressource RoleDefinition](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_RoleDefinition)
+- <span data-ttu-id="905c6-141">REST-Ressourcen:</span><span class="sxs-lookup"><span data-stu-id="905c6-141">REST resources:</span></span>
+     - [<span data-ttu-id="905c6-142">Ressource GroupCollection</span><span class="sxs-lookup"><span data-stu-id="905c6-142">GroupCollection resource</span></span>](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_GroupCollection)
+     - [<span data-ttu-id="905c6-143">Ressource Group</span><span class="sxs-lookup"><span data-stu-id="905c6-143">Group resource</span></span>](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_Group) 
+     - [<span data-ttu-id="905c6-144">Ressource RoleAssignmentCollection</span><span class="sxs-lookup"><span data-stu-id="905c6-144">RoleAssignmentCollection resource</span></span>](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_RoleAssignmentCollection)
+     - [<span data-ttu-id="905c6-145">Ressource RoleAssignment</span><span class="sxs-lookup"><span data-stu-id="905c6-145">RoleAssignment resource</span></span>](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_RoleAssignment)
+     - [<span data-ttu-id="905c6-146">Ressource RoleDefinitionCollection</span><span class="sxs-lookup"><span data-stu-id="905c6-146">RoleDefinitionCollection resource</span></span>](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_RoleDefinitionCollection)
+     - [<span data-ttu-id="905c6-147">Ressource RoleDefinition</span><span class="sxs-lookup"><span data-stu-id="905c6-147">RoleDefinition resource</span></span>](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_RoleDefinition)
     
  
-- TechNet-Artikel:
-     - [Referenz zu abgestimmten Berechtigungen für SharePoint Server 2013](http://technet.microsoft.com/en-us/library/dn169567.aspx)
-     - [Bewährte Methoden für die Verwendung abgestimmter Berechtigungen in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/gg128955.aspx)
-     - [Benutzerberechtigungen und Berechtigungsstufen in SharePoint 2013](http://technet.microsoft.com/en-us/library/cc721640.aspx)
+- <span data-ttu-id="905c6-148">TechNet-Artikel:</span><span class="sxs-lookup"><span data-stu-id="905c6-148">TechNet articles:</span></span>
+     - [<span data-ttu-id="905c6-149">Referenz zu abgestimmten Berechtigungen für SharePoint Server 2013</span><span class="sxs-lookup"><span data-stu-id="905c6-149">Fine-grained permission reference for SharePoint Server 2013</span></span>](http://technet.microsoft.com/en-us/library/dn169567.aspx)
+     - [<span data-ttu-id="905c6-150">Bewährte Methoden für die Verwendung abgestimmter Berechtigungen in SharePoint Server 2013</span><span class="sxs-lookup"><span data-stu-id="905c6-150">Best practices for using fine-grained permissions in SharePoint Server 2013</span></span>](http://technet.microsoft.com/en-us/library/gg128955.aspx)
+     - [<span data-ttu-id="905c6-151">Benutzerberechtigungen und Berechtigungsstufen in SharePoint 2013</span><span class="sxs-lookup"><span data-stu-id="905c6-151">User permissions and permission levels in SharePoint 2013</span></span>](http://technet.microsoft.com/en-us/library/cc721640.aspx)
     
  
 

@@ -1,105 +1,51 @@
-# <a name="navigate-the-sharepoint-data-structure-represented-in-the-rest-service"></a>Navigieren in der im REST-Dienst dargestellten SharePoint-Datenstruktur
-Informationen zum Starten von einem REST-Endpunkt für einen gegebenen SharePoint-Element und Navigieren zu und Zugreifen auf dazugehörige Elemente, z. B. übergeordnete Standorte oder die Bibliotheksstruktur, in der sich das jeweilige Element befindet. 
- 
-## <a name="navigate-from-a-given-url-to-reach-other-sharepoint-resources"></a>Navigieren von einer bestimmten URL zu anderen SharePoint-Ressourcen
-Wenn Sie mit dem SharePoint REST-Dienst arbeiten, kennen Sie häufig die URL eines bestimmten SharePoint-Elements, möchten aber auf dazugehörige Elemente zugreifen, z. B. den Ordner oder die Bibliotheksstruktur, in dem/der sich das jeweilige Element befindet. Angenommen, Sie erstellen ein Add-In, bei dem die Benutzer die URL eines Dokuments in eine SharePoint-Bibliothek eingeben. Ihr Add-In muss dann die URL aufgliedern, um die tatsächliche URL der SharePoint-Website zu bestimmen. Anschließend kann das Add-In im Auftrag des Benutzers weitere Anforderungen an die Website stellen, z. B. zum Erstellen, Aktualisieren oder Löschen verwandter Elemente oder Ressourcen. 
- 
-Zu diesem Zweck muss das Add-in folgende Informationen von SharePoint abfragen:
- 
-- Die serverrelativen URLs der Website und die Websitesammlung, die die Ressource enthält   
- 
-- Ein Formulardigest, mit dem Sie Abfragen ausführen können, die den Status der Ressource ändern. Beispiel:  **POST**,  **PUT**,  **MERGE** und  **DELETE**.
-    
-Das grundlegende Verfahren:
-
-1. Verwenden Sie den Operator `/contextinfo` mit der angegebenen URL, um auf die Adressen der Website und der Websitesammlung und den Formulardigest zuzugreifen. Verwenden Sie den Operator `/contextinfo` in folgendem Format:
-    
-     `http://server/web/doclib/forms/_api/contextinfo`
-    
-    Zur Verbesserung der Sicherheit gegenüber websiteübergreifenden Scriptingversuchen akzeptiert der `/contextinfo`-Operator nur **POST**-Anforderungen.
-    
- 
-2. Verwenden Sie für den Zugriff auf zusätzliche Ressourcen bei Bedarf die Objekteigenschaften [SPContextWebInformation](#bk_props), die der `/contextinfo`-Operator zurückgibt.
-    
- 
- **Verwenden**
- 
-
-1. Beginnen Sie mit einer URL zu einem SharePoint-Element. Beispiel:
-    
-     `http://site/web/doclib/myDocument.docx`
-     
-2. Entfernen Sie den Namen der spezifischen Ressource vom Ende der URL, damit die URL auf eine Dokumentbibliothek, einen Ordner oder eine Liste verweist. In diesem Fall:
-    
-     `http://site/web/doclib/`
-    
-3. Fügen Sie den Zeiger des REST-Dienstes und den `/contextinfo`-Operator an die URL an:
-    
-     `http://site/web/doclib/_api/contextinfo`
-    
-4. Lesen Sie den Formulardigest und die Eigenschaften **WebFullUrl** aus der Antwort aus.
-    
-5. Fügen Sie den Zeiger des REST-Dienstes `_api` an die Web-URL an:
-    
-6. Verwenden Sie die resultierende URL und den Formulardigest für Anforderungen nach anderen Ressourcen, die Sie benötigen.
-    
-Sie müssen den Formulardigest nicht übergeben, wenn Sie **GET**-Anforderungen oder Anforderungen mit einem überprüften OAuth-Token ausführen möchten.
- 
-## <a name="navigate-parent-and-child-sites"></a>Navigieren durch über- und untergeordnete Websites
-<a name="bk_sites"> </a> Wenn Sie mithilfe des SharePoint Serverobjektmodells durch die Websitestruktur navigieren, verwenden Sie für den Zugriff auf Objekte, die übergeordnete und untergeordnete Websites darstellen, die Eigenschaften **SPWeb.ParentWeb** und **SPWeb.Webs**.
-
-Die entsprechenden REST Ressourcen – `web/parentweb` und `web/webs`– geben keine Objekte zurück, die Websites darstellen. Der Grund ist, dass der REST-Dienst OData-Standards entspricht und solche Anforderungen durch das Zurückgeben vollständiger Websitedarstellungen ineffizient würden. Stattdessen geben sie ein [WebInfo-Objekt](#bk_webinfo) mit den skalaren Eigenschaften der Website, aber ohne zugehörige Entitätenmengen wie Sammlungen oder Feldsammlungen zurück.
-  
-Um zu einer bestimmten übergeordneten oder untergeordneten Website zu navigieren, erstellen Sie die entsprechende REST-URL zu dieser Website und verwenden Sie dabei **Id** oder **Title**. Hier können Sie auf die mit der Website verknüpften Entitätenmengen zugreifen.
- 
-## <a name="navigating-folder-structure"></a>Navigieren durch die Datei- und Ordnerstruktur
+<span data-ttu-id="dbbef-p107"><a name="bk_folders"> </a> Der SharePoint REST-Dienst bietet keine Unterstützung für das Durchsuchen der Ordnerhierarchie einer Website über die URL-Konstruktion. Verwenden Sie stattdessen das REST-Äquivalent der Methode **Web.GetFolderByServerRelativeUrl**. Beispiel:</span><span class="sxs-lookup"><span data-stu-id="dbbef-p107"><a name="bk_folders"> </a> The SharePoint REST service does not support traversing the folder hierarchy of a site through the URL construction. Instead, use the REST equivalent of the  **Web.GetFolderByServerRelativeUrl** method. For example:</span></span>
 <a name="bk_folders"> </a> Der SharePoint REST-Dienst bietet keine Unterstützung für das Durchsuchen der Ordnerhierarchie einer Website über die URL-Konstruktion. Verwenden Sie stattdessen das REST-Äquivalent der Methode **Web.GetFolderByServerRelativeUrl**. Beispiel:
  
- *Durch den REST-Dienst nicht unterstützte Navigation:* 
+ <span data-ttu-id="dbbef-137">*Durch den REST-Dienst nicht unterstützte Navigation:*</span><span class="sxs-lookup"><span data-stu-id="dbbef-137">*Navigation not supported through the REST service:*</span></span> 
   
  `/_vti_bin/client.svc/web/lists/SharedDocuments/folder1/stuff/things/Recycle`
  
-Durch den REST-Dienst unterstützte Navigation: 
+<span data-ttu-id="dbbef-138">Durch den REST-Dienst unterstützte Navigation:</span><span class="sxs-lookup"><span data-stu-id="dbbef-138">Navigation that is supported by the REST service:</span></span> 
  
- `/_vti_bin/client.svc/web/GetFolderByServerRelativeUrl('SharedDocuments/folder1/stuff/things')/Recycle`.
+ <span data-ttu-id="dbbef-139">`/_vti_bin/client.svc/web/GetFolderByServerRelativeUrl('SharedDocuments/folder1/stuff/things')/Recycle`.</span><span class="sxs-lookup"><span data-stu-id="dbbef-139"></span></span>
  
 
-## <a name="spcontextwebinformation-object-properties"></a>SPContextWebInformation-Objekteigenschaften
-<a name="bk_props"> </a>
+## <a name="spcontextwebinformation-object-properties"></a><span data-ttu-id="dbbef-140">SPContextWebInformation-Objekteigenschaften</span><span class="sxs-lookup"><span data-stu-id="dbbef-140">SPContextWebInformation object properties</span></span>
+<span data-ttu-id="dbbef-141"><a name="bk_props"> </a></span><span class="sxs-lookup"><span data-stu-id="dbbef-141"></span></span>
 
-|**Eigenschaft SPContextWebInformation**|**Beschreibung**|
+|<span data-ttu-id="dbbef-142">**Eigenschaft SPContextWebInformation**</span><span class="sxs-lookup"><span data-stu-id="dbbef-142">**SPContextWebInformation Property**</span></span>|<span data-ttu-id="dbbef-143">**Beschreibung**</span><span class="sxs-lookup"><span data-stu-id="dbbef-143">**Description**</span></span>|
 |:-----|:-----|
-|**webFullUrl**|Ruft die serverrelative URL der nächstgelegenen Website ab.|
-|**siteFullUrl**|Ruft die serverrelative URL des Stamms der Websitesammlung ab, in der die Website enthalten ist. Wenn der Stamm einer Websitesammlung am nächsten gelegen ist, dann entspricht der Wert der Eigenschaft **webFullUrl** der Eigenschaft **siteFullUrl**.|
-|**formDigestValue**|Ruft den Formulardigest der Serveranforderung ab.|
-|**LibraryVersion**|Ruft die aktuelle Version der REST-Bibliothek ab.|
-|**SupportedSchemaVersions**|Ruft die Versionen des Schemas der REST-/CSOM-Bibliothek ab, die unterstützt werden.|
+|<span data-ttu-id="dbbef-144">**webFullUrl**</span><span class="sxs-lookup"><span data-stu-id="dbbef-144">**webFullUrl**</span></span>|<span data-ttu-id="dbbef-145">Ruft die serverrelative URL der nächstgelegenen Website ab.</span><span class="sxs-lookup"><span data-stu-id="dbbef-145">Gets the server-relative URL of the nearest site.</span></span>|
+|<span data-ttu-id="dbbef-146">**siteFullUrl**</span><span class="sxs-lookup"><span data-stu-id="dbbef-146">**siteFullUrl**</span></span>|<span data-ttu-id="dbbef-147">Ruft die serverrelative URL des Stamms der Websitesammlung ab, in der die Website enthalten ist. Wenn der Stamm einer Websitesammlung am nächsten gelegen ist, dann entspricht der Wert der Eigenschaft **webFullUrl** der Eigenschaft **siteFullUrl**.</span><span class="sxs-lookup"><span data-stu-id="dbbef-147">Gets the server-relative URL of the root of the site collection that the site is contained within.If the nearest web is the root of a site collection, then the value of the  **webFullUrl** property is equal to the **siteFullUrl** property.</span></span>|
+|<span data-ttu-id="dbbef-148">**formDigestValue**</span><span class="sxs-lookup"><span data-stu-id="dbbef-148">**formDigestValue**</span></span>|<span data-ttu-id="dbbef-149">Ruft den Formulardigest der Serveranforderung ab.</span><span class="sxs-lookup"><span data-stu-id="dbbef-149">Gets the server's request form digest.</span></span>|
+|<span data-ttu-id="dbbef-150">**LibraryVersion**</span><span class="sxs-lookup"><span data-stu-id="dbbef-150">**LibraryVersion**</span></span>|<span data-ttu-id="dbbef-151">Ruft die aktuelle Version der REST-Bibliothek ab.</span><span class="sxs-lookup"><span data-stu-id="dbbef-151">Gets the current version of the REST library.</span></span>|
+|<span data-ttu-id="dbbef-152">**SupportedSchemaVersions**</span><span class="sxs-lookup"><span data-stu-id="dbbef-152">**SupportedSchemaVersions**</span></span>|<span data-ttu-id="dbbef-153">Ruft die Versionen des Schemas der REST-/CSOM-Bibliothek ab, die unterstützt werden.</span><span class="sxs-lookup"><span data-stu-id="dbbef-153">Gets the versions of the schema of the REST/CSOM library that are supported.</span></span>|
 
-## <a name="webinfo-object"></a>WebInfo-Objekt
-<a name="bk_webinfo"> </a>
+## <a name="webinfo-object"></a><span data-ttu-id="dbbef-154">WebInfo-Objekt</span><span class="sxs-lookup"><span data-stu-id="dbbef-154">WebInfo object</span></span>
+<span data-ttu-id="dbbef-155"><a name="bk_webinfo"> </a></span><span class="sxs-lookup"><span data-stu-id="dbbef-155"></span></span>
 
-|**WebInfo-Eigenschaft**|**Beschreibung**|
+|<span data-ttu-id="dbbef-156">**WebInfo-Eigenschaft**</span><span class="sxs-lookup"><span data-stu-id="dbbef-156">**WebInfo property**</span></span>|<span data-ttu-id="dbbef-157">**Beschreibung**</span><span class="sxs-lookup"><span data-stu-id="dbbef-157">**Description**</span></span>|
 |:-----|:-----|
-|**Created**|Ruft einen Wert ab, der angibt, wann die Website erstellt wurde.|
-|**Beschreibung**|Dient zum Abrufen oder Festlegen der Beschreibung der Website.|
-|**Id**|Ruft einen Wert ab, der den Websitebezeichner angibt.|
-|**Language**|Ruft einen Wert ab, der die Gebietsschema-ID (LCID) für die Sprache angibt, die auf der Website verwendet wird.|
-|**LastItemModifiedDate**|Ruft einen Wert ab, der angibt, wann ein Element in der Website zuletzt geändert wurde.|
-|**Title**|Dient zum Abrufen oder Festlegen des Titels der Website.|
-|**WebTemplateId**|Ruft den Bezeichner der Websitevorlage ab.|
+|<span data-ttu-id="dbbef-158">**Created**</span><span class="sxs-lookup"><span data-stu-id="dbbef-158">**Created**</span></span>|<span data-ttu-id="dbbef-159">Ruft einen Wert ab, der angibt, wann die Website erstellt wurde.</span><span class="sxs-lookup"><span data-stu-id="dbbef-159">Gets a value that specifies when the site was created.</span></span>|
+|<span data-ttu-id="dbbef-160">**Beschreibung**</span><span class="sxs-lookup"><span data-stu-id="dbbef-160">**Description**</span></span>|<span data-ttu-id="dbbef-161">Dient zum Abrufen oder Festlegen der Beschreibung der Website.</span><span class="sxs-lookup"><span data-stu-id="dbbef-161">Gets or sets the description for the site.</span></span>|
+|<span data-ttu-id="dbbef-162">**Id**</span><span class="sxs-lookup"><span data-stu-id="dbbef-162">**Id**</span></span>|<span data-ttu-id="dbbef-163">Ruft einen Wert ab, der den Websitebezeichner angibt.</span><span class="sxs-lookup"><span data-stu-id="dbbef-163">Gets a value that specifies the site identifier.</span></span>|
+|<span data-ttu-id="dbbef-164">**Language**</span><span class="sxs-lookup"><span data-stu-id="dbbef-164">**Language**</span></span>|<span data-ttu-id="dbbef-165">Ruft einen Wert ab, der die Gebietsschema-ID (LCID) für die Sprache angibt, die auf der Website verwendet wird.</span><span class="sxs-lookup"><span data-stu-id="dbbef-165">Gets a value that specifies the locale ID (LCID) for the language that is used on the site.</span></span>|
+|<span data-ttu-id="dbbef-166">**LastItemModifiedDate**</span><span class="sxs-lookup"><span data-stu-id="dbbef-166">**lastItemModifiedDate**</span></span>|<span data-ttu-id="dbbef-167">Ruft einen Wert ab, der angibt, wann ein Element in der Website zuletzt geändert wurde.</span><span class="sxs-lookup"><span data-stu-id="dbbef-167">Gets a value that specifies when an item was last modified in the site.</span></span>|
+|<span data-ttu-id="dbbef-168">**Title**</span><span class="sxs-lookup"><span data-stu-id="dbbef-168">**Title**</span></span>|<span data-ttu-id="dbbef-169">Dient zum Abrufen oder Festlegen des Titels der Website.</span><span class="sxs-lookup"><span data-stu-id="dbbef-169">Gets or sets the title for the site.</span></span>|
+|<span data-ttu-id="dbbef-170">**WebTemplateId**</span><span class="sxs-lookup"><span data-stu-id="dbbef-170">**WebTemplateId**</span></span>|<span data-ttu-id="dbbef-171">Ruft den Bezeichner der Websitevorlage ab.</span><span class="sxs-lookup"><span data-stu-id="dbbef-171">Gets the identifier of the site template.</span></span>|
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
-<a name="bk_addresources"> </a>
+## <a name="additional-resources"></a><span data-ttu-id="dbbef-172">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="dbbef-172">Additional resources</span></span>
+<span data-ttu-id="dbbef-173"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="dbbef-173"></span></span>
 
--  [Grundlegendes zum SharePoint REST-Dienst](get-to-know-the-sharepoint-rest-service.md)
--  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten](complete-basic-operations-using-sharepoint-rest-endpoints.md)
--  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest.md)
--  [Arbeiten mit Ordnern und Dateien unter Verwendung von REST](working-with-folders-and-files-with-rest.md)
--  [Ermitteln von URIs von SharePoint REST-Dienstendpunkten](determine-sharepoint-rest-service-endpoint-uris.md)
--  [Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen](use-odata-query-operations-in-sharepoint-rest-requests.md)
--  [REST-API-Referenz und Beispiele](http://msdn.microsoft.com/library/02128c70-9d27-4388-9374-a11bce68fdb8%28Office.15%29.aspx)
--  [Synchronisieren von SharePoint-Elementen mit dem REST-Dienst](synchronize-sharepoint-items-using-the-rest-service.md)
--  [Verwenden von ETag-Werten zum Bestimmen der Version von Dokument- und Listenelementen über den REST-Dienst](http://msdn.microsoft.com/library/use-etag-values-through-the-rest-service-to-get-document-list-item-versioning%28Office.15%29.aspx)
+-  [<span data-ttu-id="dbbef-174">Grundlegendes zum SharePoint REST-Dienst</span><span class="sxs-lookup"><span data-stu-id="dbbef-174">Get to know the SharePoint REST service</span></span>](get-to-know-the-sharepoint-rest-service.md)
+-  [<span data-ttu-id="dbbef-175">Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten</span><span class="sxs-lookup"><span data-stu-id="dbbef-175">Complete basic operations using SharePoint REST endpoints</span></span>](complete-basic-operations-using-sharepoint-rest-endpoints.md)
+-  [<span data-ttu-id="dbbef-176">Arbeiten mit Listen und Listenelementen unter Verwendung von REST</span><span class="sxs-lookup"><span data-stu-id="dbbef-176">Working with lists and list items with REST</span></span>](working-with-lists-and-list-items-with-rest.md)
+-  [<span data-ttu-id="dbbef-177">Arbeiten mit Ordnern und Dateien unter Verwendung von REST</span><span class="sxs-lookup"><span data-stu-id="dbbef-177">Working with folders and files with REST</span></span>](working-with-folders-and-files-with-rest.md)
+-  [<span data-ttu-id="dbbef-178">Ermitteln von URIs von SharePoint REST-Dienstendpunkten</span><span class="sxs-lookup"><span data-stu-id="dbbef-178">Determine SharePoint REST service endpoint URIs</span></span>](determine-sharepoint-rest-service-endpoint-uris.md)
+-  [<span data-ttu-id="dbbef-179">Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen</span><span class="sxs-lookup"><span data-stu-id="dbbef-179">Use OData query operations in SharePoint REST requests</span></span>](use-odata-query-operations-in-sharepoint-rest-requests.md)
+-  [<span data-ttu-id="dbbef-180">REST-API-Referenz und Beispiele</span><span class="sxs-lookup"><span data-stu-id="dbbef-180">REST API reference and samples</span></span>](http://msdn.microsoft.com/library/02128c70-9d27-4388-9374-a11bce68fdb8%28Office.15%29.aspx)
+-  [<span data-ttu-id="dbbef-181">Synchronisieren von SharePoint-Elementen mit dem REST-Dienst</span><span class="sxs-lookup"><span data-stu-id="dbbef-181">Synchronize SharePoint items using the REST service</span></span>](synchronize-sharepoint-items-using-the-rest-service.md)
+-  [<span data-ttu-id="dbbef-182">Verwenden von ETag-Werten zum Bestimmen der Version von Dokument- und Listenelementen über den REST-Dienst</span><span class="sxs-lookup"><span data-stu-id="dbbef-182">Use ETag values through the REST service to get document list item versioning</span></span>](http://msdn.microsoft.com/library/use-etag-values-through-the-rest-service-to-get-document-list-item-versioning%28Office.15%29.aspx)
     
  
 
