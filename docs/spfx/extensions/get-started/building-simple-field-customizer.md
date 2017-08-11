@@ -1,0 +1,5 @@
+<span data-ttu-id="dcbd3-p131">Das Verfahren für die Veröffentlichung der App ist für die verschiedenen Erweiterungstypen identisch. Sie können die folgenden Veröffentlichungsschritte verwenden, um die Objekte so zu aktualisieren, dass Sie von einem CDN gehostet werden.</span><span class="sxs-lookup"><span data-stu-id="dcbd3-p131">The process for publishing your app is identical among the different extension types. You can follow the following publishing steps to update the assets to be hosted from a CDN.</span></span> 
+
+Das Verfahren für die Veröffentlichung der App ist für die verschiedenen Erweiterungstypen identisch. Sie können die folgenden Veröffentlichungsschritte verwenden, um die Objekte so zu aktualisieren, dass Sie von einem CDN gehostet werden.
+
+* <span data-ttu-id="dcbd3-268">[Bereitstellen der Erweiterung im Office 365-CDN](./hosting-extension-from-office365-cdn.md).</span><span class="sxs-lookup"><span data-stu-id="dcbd3-268">[Deploy extension to Office 365 CDN](./hosting-extension-from-office365-cdn.md).</span></span>
