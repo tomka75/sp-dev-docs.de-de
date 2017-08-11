@@ -17,19 +17,9 @@ Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in 
 Installieren Sie [NodeJS](https://nodejs.org/en/) Long Term Support (LTS).
 
 * Wenn Sie NodeJS bereits installiert haben, überprüfen Sie mit `node -v`, ob Sie die neueste Version verwenden. Es sollte die aktuelle [LTS-Version](https://nodejs.org/en/download/) zurückgegeben werden. 
-* Wenn Sie einen Mac-Rechner verwenden, sollten Sie [Homebrew](http://brew.sh/) zum Installieren und Verwalten von NodeJS verwenden. 
+* Wenn Sie mit einem Mac arbeiten, empfehlen wir [Homebrew](http://brew.sh/) zur Installation und Verwaltung von NodeJS. 
 
-Nach der Installation von Node, stellen Sie sicher, dass Npm auf dem neuesten Stand ist, indem Sie folgenden Befehl ausführen:
-    
-```
-npm install -g npm
-```
-
-Bei Ubuntu Linux führt der vorherige Befehl möglicherweise zur Meldung „Berechtigung verweigert“ und sollte daher stattdessen ausgeführt werden als 
-
-```
-sudo npm install -g npm
-```
+> Beachten Sie: Die SPFx-Buildpipeline unterstützt npm v5.x derzeit **NICHT**. Sie müssen daher entweder v3 oder v4 verwenden. Als dieser Artikel verfasst wurde, installierte die LTS-Version von NodeJS (v6.11.0) die Version 3.10.10 von npm. Wir werden diesen Abschnitt aktualisieren, sobald sich Änderungen bei der Unterstützung ergeben. Ein Downgrade auf eine ältere npm-Version können Sie über den Befehl `npm install -g npm@3` durchführen.
 
 ### <a name="code-editors"></a>Code-Editoren
 Installieren Sie einen Code-Editor. Sie können einen beliebigen Code-Editor oder eine beliebige IDE verwenden, der bzw. die die clientseitige Entwicklung unterstützt, um Ihren Webpart zu erstellen, z. B.:

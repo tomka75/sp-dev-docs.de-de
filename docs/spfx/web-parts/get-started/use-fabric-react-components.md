@@ -1,6 +1,6 @@
 # <a name="use-office-ui-fabric-react-components-in-your-sharepoint-client-side-web-part"></a>Verwenden von Office UI Fabric React-Komponenten in clientseitigen SharePoint-Webparts
 
-#### **Wichtig:** Sie müssen vorhandene Projekte auf „@microsoft/sp-build-web@1.0.1“ oder höher aktualisieren, um Office UI Fabric React verwenden zu können. Lesen Sie hierzu die Anweisungen am Ende dieses Artikels.
+> **Wichtig:** Um Office UI Fabric React verwenden zu können, müssen Sie vorhandene Projekte auf @microsoft/sp-build-web@1.0.1 oder höher aktualisieren. Am einfachsten gelingt das, wenn Sie vor dem Durchspielen dieser Anleitung `npm install -g @microsoft/generator-sharepoint` in der Konsole ausführen, um sicherzustellen, dass Sie das neueste Paket haben. 
 
 In diesem Artikel wird die Erstellung eines einfachen Webparts beschrieben, das die DocumentCard-Komponente von [Office UI Fabric React](https://github.com/OfficeDev/office-ui-fabric-react) verwendet. Office UI Fabric React ist das Front-End-Framework zur Erstellung von Oberflächen für Office und Office 365. Fabric React umfasst eine Sammlung stabiler, dynamischer und für die Darstellung auf Mobilgeräten optimierter Komponenten zur unkomplizierten Erstellung von Weboberflächen mithilfe der Office-Entwurfssprache.
 
@@ -39,11 +39,11 @@ yo @microsoft/sharepoint
     
 Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
-* Akzeptieren Sie den Standardnamen **documentcardexample-webpart** als Lösungsnamen, und drücken Sie die **EINGABETASTE**.
-* Wählen Sie **Aktuellen Ordner verwenden** als Speicherort für die Dateien aus.
-* Wählen Sie **React** als Framework aus, und drücken Sie die**EINGABETASTE**.
+* Übernehmen Sie den Standardnamen **documentcardexample-webpart** als Lösungsnamen, und drücken Sie die **EINGABETASTE**.
+* Wählen Sie als Typ von clientseitiger Komponente **WebPart** aus, und drücken Sie die **EINGABETASTE**.
 * Verwenden Sie **DocumentCardExample** als Namen des Webparts, und drücken Sie die **EINGABETASTE**.
 * Akzeptieren Sie den Standardnamen **DocumentCardExample - Beschreibung**, und drücken Sie die **EINGABETASTE**.
+* Wählen Sie **React** als Framework aus, und drücken Sie die**EINGABETASTE**.
 
 An diesem Punkt installiert Yeoman die erforderlichen Abhängigkeiten und erstellt ein Gerüst für die Lösungsdateien. Das kann einige Minuten dauern. Yeoman erstellt ein Gerüst für das Projekt, um auch das DocumentCardExample-Webpart einzuschließen.
     
@@ -102,9 +102,9 @@ Die *neuen modernen Benutzeroberflächen* in SharePoint verwenden die Office UI 
 
 Da wir bei der Erstellung der Lösung React als Framework ausgewählt haben, hat der Generator auch die richtige Version von Office UI Fabric React installiert. Sie können die Fabric-Komponenten ohne weiteren Aufwand direkt in Ihre React-Komponenten importieren. 
 
->**Hinweis:** Bei der Erstveröffentlichung von SharePoint Framework empfehlen wir, jeweils die Office UI Fabric- und Fabric React-Version zu verwenden, die mit dem Generator ausgeliefert wird. Von einer separaten Aktualisierung der Office UI Fabric- und Fabric React-Pakete raten wir ab. Sie könnte zu Konflikten mit der jeweils bereits in SharePoint verfügbaren Version führen. In einem solchen Fall würde Ihr Webpart möglicherweise nicht wie erwartet arbeiten. Nach GA werden Updates für diesen Bereich veröffentlicht.
+>**Hinweis:** Wir empfehlen, mit der Erstversion von SharePoint Framework jeweils die Version von Office UI Fabric und Fabric React zu verwenden, die mit dem Generator ausgeliefert wird. Von einer separaten Aktualisierung der Pakete von Office UI Fabric und Fabric React raten wir ab. Sie könnte zu Konflikten mit der jeweils bereits in SharePoint verfügbaren Version führen. In einem solchen Fall würde Ihr Webpart möglicherweise nicht wie erwartet arbeiten.
 
-Öffnen Sie **DocumentCardExample.tsx** im Ordner **src\webparts\documentCardExample\components**. 
+Öffnen Sie die Datei **DocumentCardExample.tsx** im Ordner **src\webparts\documentCardExample\components**. 
 
 Fügen Sie die folgende `import`-Anweisung am Anfang der Datei hinzu, um React-Komponenten der Fabric zu importieren, die verwendet werden sollen.
 
@@ -121,34 +121,34 @@ import {
 Löschen Sie die aktuelle `render`-Methode, und fügen Sie die folgende aktualisierte `render`-Methode hinzu:
 
 ```ts
-public render(): JSX.Element {
+  public render(): JSX.Element {
     const previewProps: IDocumentCardPreviewProps = {
-        previewImages: [
+      previewImages: [
         {
-            previewImageSrc: String(require('document-preview.png')),
-            iconSrc: String(require('icon-ppt.png')),
-            width: 318,
-            height: 196,
-            accentColor: '#ce4b1f'
+          previewImageSrc: String(require('./document-preview.png')),
+          iconSrc: String(require('./icon-ppt.png')),
+          width: 318,
+          height: 196,
+          accentColor: '#ce4b1f'
         }
-        ],
+      ],
     };
 
     return (
-        <DocumentCard onClickHref='http://bing.com'>
+      <DocumentCard onClickHref='http://bing.com'>
         <DocumentCardPreview { ...previewProps } />
         <DocumentCardTitle title='Revenue stream proposal fiscal year 2016 version02.pptx' />
         <DocumentCardActivity
-            activity='Created Feb 23, 2016'
-            people={
+          activity='Created Feb 23, 2016'
+          people={
             [
-                { name: 'Kat Larrson', profileImageSrc: String(require('avatar-kat.png')) }
+              { name: 'Kat Larrson', profileImageSrc: String(require('./avatar-kat.png')) }
             ]
-            }
-            />
-        </DocumentCard>
+          }
+        />
+      </DocumentCard>
     );
-}
+  }
 ```
 Speichern Sie die Datei.
 
@@ -158,23 +158,65 @@ In diesem Code enthält die DocumentCard-Komponente einige zusätzliche Abschnit
 * DocumentCardTitle
 * DocumentCardActivity
 
-Die `previewProps`-Eigenschaft enthält einige Eigenschaften der DocumentCardPreview.
+Die Eigenschaft `previewProps` enthält einige Eigenschaften von DocumentCardPreview.
 
-Beachten Sie die Verwendung des relativen Pfads mit einer `require`-Anweisung, um Bilder zu laden. Derzeit müssen Sie das Plug-In für den öffentlichen Pfad von webpack verwenden und den relativen Pfad der Datei aus der Quelldatei oder aus dem Quellordner in den `lib`-Ordner eingeben. Dies sollte derselbe Speicherort wie die aktuelle Arbeitsquelle sein.
+Wie Sie sehen, wird hier ein relativer Pfad mit einer Anweisung des Typs `require` verwendet, um Bilder zu laden. Derzeit sind einige kleinere Konfigurationsanpassungen in der Datei „gulpfile.js“ nötig, damit diese Bilder korrekt von webpack verarbeitet werden.
     
-Öffnen Sie **DocumentCardExampleWebPart.ts** im Ordner **src\webparts\documentCardExample**. 
+Öffnen Sie die Datei **gulpfile.js** im Ordner **root**. 
     
-Fügen Sie den folgenden Code am Anfang der Datei hinzu, um das Plug-In für den öffentlichen Pfad von webpack anzufordern.
+Fügen Sie den folgenden Code direkt über der Codezeile `build.initialize(gulp);` ein:
     
-```ts
-require('set-webpack-public-path!');
+```js
+build.configureWebpack.mergeConfig({  
+    additionalConfiguration: (generatedConfiguration) => {
+        if (build.getConfig().production) {
+            var basePath = build.writeManifests.taskConfig.cdnBasePath;
+            if (!basePath.endsWith('/')) {
+                basePath += '/';
+            }
+            generatedConfiguration.output.publicPath = basePath;
+        }
+        else {
+            generatedConfiguration.output.publicPath = "/dist/";
+        }
+        return generatedConfiguration;
+    }
+});
 ```
     
 Speichern Sie die Datei.
 
-### <a name="copy-the-image-assets"></a>Kopieren der Bildanlagen
+Die vollständige Datei **gulpfile.js** sollte wie folgt aussehen:
 
-Kopieren Sie die folgenden Bilder in den Ordner **src\webparts\documentCardExample**:
+```js
+'use strict';
+
+const gulp = require('gulp');
+const build = require('@microsoft/sp-build-web');
+
+build.configureWebpack.mergeConfig({  
+    additionalConfiguration: (generatedConfiguration) => {
+        if (build.getConfig().production) {
+            var basePath = build.writeManifests.taskConfig.cdnBasePath;
+            if (!basePath.endsWith('/')) {
+                basePath += '/';
+            }
+            generatedConfiguration.output.publicPath = basePath;
+        }
+        else {
+            generatedConfiguration.output.publicPath = "/dist/";
+        }
+        return generatedConfiguration;
+    }
+});
+
+build.initialize(gulp);
+
+```
+
+### <a name="copy-the-image-assets"></a>Kopieren der Bildobjekte
+
+Kopieren Sie die folgenden Bilder in den Ordner **src\webparts\documentCardExample\components**:
 
 * [avatar-kat.png](https://github.com/SharePoint/sp-dev-docs/blob/master/assets/avatar-kat.png)
 * [icon-ppt.png](https://github.com/SharePoint/sp-dev-docs/tree/master/assets/icon-ppt.png)
@@ -190,9 +232,4 @@ gulp serve
     
 Wählen Sie in der Toolbox Ihr `DocumentCardExample`-Webpart aus, das hinzugefügt werden soll:
     
-![Abbildung der Fabric-Komponente „DocumentCard“ in einer SharePoint-Workbench](../../../../images/fabric-components-doc-card-view-ex.png)
-
-
-## <a name="updating-an-existing-project"></a>Aktualisieren vorhandener Projekte
-
-Aktualisieren Sie in der Datei `package.json` Ihres Projekts die Abhängigkeit `@microsoft/sp-build-web` mindestens auf Version 1.0.1, löschen Sie das Verzeichnis `node_modules` Ihres Projekts, und führen Sie den Befehl `npm install` aus.
+![Abbildung der Fabric-Komponente „DocumentCard“ in einer SharePoint Workbench](../../../../images/fabric-components-doc-card-view-ex.png)

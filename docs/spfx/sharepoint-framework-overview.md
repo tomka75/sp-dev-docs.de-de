@@ -2,9 +2,9 @@
 
 Das SharePoint Framework (SPFx) ist ein Seiten- und Webpart-Modell, das vollständige Unterstützung für die clientseitige SharePoint-Entwicklung, einfache Integration in SharePoint-Daten und Unterstützung für Open-Source-Tools bietet. Mit dem SharePoint Framework können Sie moderne Webtechnologien und -tools in Ihrer bevorzugten Entwicklungsumgebung verwenden, um produktive Erfahrungen zu ermöglichen und Apps zu erstellen, die vom ersten Tag an schnell reagieren und für Mobilgeräte geeignet sind. Das SharePoint Framework funktioniert für das lokale SharePoint und SharePoint Online.
  
-Zu den wichtigsten Features von SharePoint Framework gehören:
+Zu den wichtigsten Features von SharePoint Framework zählen:
 
-* Wird im Kontext des aktuellen Benutzers und der aktuellen Verbindung im Browser ausgeführt. Es gibt keine iFrames.
+* Es wird im Kontext des aktuellen Benutzers und der aktuellen Verbindung im Browser ausgeführt. Die Anpassung läuft nicht über iFrames (JavaScript wird direkt in die Seite eingebettet).
 * Die Steuerelemente werden im normalen Seiten-DOM gerendert.
 * Die Steuerelemente reagieren von sich aus, und der Zugriff ist sofort möglich.
 * Ermöglicht dem Entwickler den Zugriff auf den Lebenszyklus – einschließlich, zusätzlich zu **Rendern** -  **Laden**, **Serialisieren** und **Deserialisieren**, **Konfigurationsänderungen** und vieles mehr.
