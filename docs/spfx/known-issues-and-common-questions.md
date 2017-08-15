@@ -17,15 +17,17 @@ Sie sollten Ihre Yeoman-Vorlagenpakete aktualisieren. Wir haben die Zertifizieru
 
 **Ab wann werden benutzerdefinierte Aktionen und JSLink im SharePoint Framework verfügbar sein?**
 
-- *Datum – 28. April*
+- *Datum - 6. Juni*
 
-Aktuell können wir noch kein Datum für die öffentliche Verfügbarkeit nennen. Wir arbeiten daran, moderne Anpassungsfunktionen für benutzerdefinierte Benutzeraktionen und JSLink-Funktionen zu implementieren, die sowohl in der klassischen als auch in der modernen Oberfläche unterstützt werden. 
+SharePoint Extensions mit weiteren anpassbaren Funktionen für SharePoint Online sind nun für die Entwicklervorschau verfügbar. Derzeit ist noch kein Datum für die allgemeine Verfügbarkeit (GA) festgelegt. Mithilfe der folgenden Lernprogramme können Sie sich mit dem Erstellen von Erweiterungen vertraut machen.
+
+* [Erste Schritte mit SharePoint Framework Extensions](http://aka.ms/spfx-extensions)
 
 **Wird SharePoint Framework auch in lokalen Bereitstellungen verfügbar sein?**
 
-- *Datum – 28. April*
+- *Datum - 6. Juni*
 
-Wir arbeiten derzeit daran, SharePoint Framework noch im Laufe des Kalenderjahres 2017 für SharePoint 2016 zu veröffentlichen. Aktuell können wir keine weiteren Veröffentlichungsdaten nennen. 
+Die clientseitigen Webparts von SharePoint-Framework werden im Rahmen des Feature Pack 2 (FP2) mit SharePoint 2016 veröffentlicht. 
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 Verwenden Sie die folgenden Ressourcen, um den SharePoint-Entwicklern Feedback, Kommentare und Fragen zukommen zu lassen: 
