@@ -128,7 +128,7 @@ Die Toolkette besteht aus den folgenden gulp-Tasks, die im Paket [@microsoft/sp-
   * Bündelt den Einstiegspunkt des clientseitigen Lösungsprojekts sowie alle seine Abhängigkeiten in einer einzigen JavaScript-Datei.
 * serve
   * Liefert das clientseitige Lösungsprojekt sowie andere Objekte vom lokalen Rechner aus.
-* nuke
+* clean
   * Löscht die Buildartefakte des clientseitigen Lösungsprojekts aus dem vorherigen Build und den Buildzielverzeichnissen („lib“ und „dist“).
 * test
   * Führt Einheitentests für das clientseitige Lösungsprojekt durch (falls verfügbar). 
@@ -147,7 +147,7 @@ gulp serve
 
 `serve` führt die verschiedenen Tasks aus und startet im Anschluss SharePoint Workbench.
 
-![Task „gulp serve“](../../images/toolchain-gulp-serve-task.png)
+![Task „gulp serve“](../../../images/toolchain-gulp-serve-task.png)
 
 ### <a name="build-targets"></a>Buildziele
 Im Screenshot oben sehen Sie, dass der Task folgendes Buildziel setzt:

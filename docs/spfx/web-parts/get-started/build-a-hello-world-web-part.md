@@ -351,7 +351,7 @@ SharePoint Workbench lässt sich auch in SharePoint hosten, um während der Entw
 
 Rufen Sie die folgende URL auf: „https://your-sharepoint-site/_layouts/workbench.aspx“.
 
->**Hinweis:** Wenn Sie das SPFx-Entwicklerzertifikat noch nicht installiert haben, meldet Workbench, dass das Laden von Skripts von „localhost“ nicht konfiguriert ist. Führen Sie im Projektverzeichnis den Befehl `gulp trust-dev-cert` in der Konsole aus, um das Entwicklerzertifikat zu installieren.
+>**Hinweis:** Wenn Sie das SPFx-Entwicklerzertifikat noch nicht installiert haben, meldet Workbench, dass das Laden von Skripts von „localhost“ nicht konfiguriert ist. Halten Sie den aktuell ausgeführten Prozess im Konsolenfenster an, und führen Sie in der Konsole des Projektverzeichnisses den Befehl `gulp trust-dev-cert` aus, um das Entwicklerzertifikat zu installieren, bevor Sie den `gulp serve`-Befehl erneut ausführen.
 
 ![SharePoint Workbench, ausgeführt auf einer SharePoint Online-Website](../../../../images/sp-workbench-o365.png)
 
