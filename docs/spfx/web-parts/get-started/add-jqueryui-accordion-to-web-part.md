@@ -68,7 +68,7 @@ code .
 Geben Sie in der Konsole Folgendes ein, um das Paket „jQuery npm“ zu installieren:
 
 ```
-npm install --save jquery
+npm install --save jquery@2
 ```
 
  Geben Sie nun Folgendes ein, um das Paket „jQueryUI npm“ zu installieren:
@@ -82,7 +82,7 @@ Als Nächstes müssen die Eingaben für unser Projekt installiert werden. Ab Typ
 Öffnen Sie Ihre Konsole, und installieren Sie die erforderlichen Eingaben:
 
 ```
-npm install --save @types/jquery
+npm install --save @types/jquery@2
 npm install --save @types/jqueryui
 ```
 

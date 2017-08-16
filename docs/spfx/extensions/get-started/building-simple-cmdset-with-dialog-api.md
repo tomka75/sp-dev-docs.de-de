@@ -46,7 +46,7 @@ Nach Abschluss der Gerüsterstellung sollte folgende Erfolgsmeldung angezeigt we
 
 ![Erfolgreiche Erstellung eines Gerüsts für die clientseitige SharePoint-Lösung](../../../../images/ext-com-yeoman-complete.png)
 
-Details zur Behebung etwaiger Fehler finden Sie unter [Known issues](../basics/known-issues).
+Details zur Behebung etwaiger Fehler finden Sie unter [Known issues](../../web-parts/basics/known-issues).
 
 Geben Sie nach der Erstellung des Lösungsgerüsts Folgendes in die Konsole ein, um Visual Studio Code zu starten:
 
@@ -284,7 +284,7 @@ Um sicherzustellen, dass die neu hinzugefügte Datei **elements.xml** beim Verpa
     "features": [{
       "title": "ListView Command Set - Deployment of custom action.",
       "description": "Deploys a custom action with ClientSideComponentId association",
-      "id": "456da147-ced2-3036-b564-8dad5c1c2e34",
+      "id": "456da147-ced2-3036-b564-8dad5c1c2e35",
       "version": "1.0.0.0",
       "assets": {        
         "elementManifests": [
@@ -321,7 +321,7 @@ Der Befehl erstellt das Paket im Ordner **sharepoint/solution**:
 command-extension.sppkg
 ```
 
-Im nächsten Schritt müssen Sie das generierte Paket im App-Katalog bereitstellen.
+Als Nächstes müssen Sie das Paket, das generiert wurde, im App-Katalog bereitstellen.
 
 Wechseln Sie zum **App-Katalog** Ihres Mandanten, und öffnen Sie die Bibliothek **Apps für SharePoint**.
 
