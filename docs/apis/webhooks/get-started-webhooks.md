@@ -465,7 +465,7 @@ Nun fügen Sie eine Datei zur Bibliothek „Dokumente“ hinzu und testen, ob Si
 
 Dieses Projekt schreibt die Informationen nur ins Ablaufprotokoll. Im Empfänger werden die Informationen jedoch an eine Tabelle oder eine Warteschlange gesendet, die die empfangenen Daten verarbeiten und die von SharePoint gesendeten Informationen auswerten kann. 
 
-Mit diesen Daten können Sie die URL erstellen und über die [GetChanges](https://msdn.microsoft.com/EN-US/library/office/dn531433.aspx#bk_ListGetChanges)-API die neuesten Änderungen abrufen.
+Mit diesen Daten können Sie die URL erstellen und über die [GetChanges](https://msdn.microsoft.com/de-de/library/office/dn531433.aspx#bk_ListGetChanges)-API die neuesten Änderungen abrufen.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

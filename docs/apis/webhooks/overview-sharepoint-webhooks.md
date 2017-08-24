@@ -118,7 +118,7 @@ Der Hauptteil der HTTP-Anforderung an die Dienstbenachrichtigungs-URL enthält e
 }
 ```
 
-Die Benachrichtigung umfasst keine Informationen zu den Änderungen, durch die sie ausgelöst wurde. Ihre Anwendung verwendet die [GetChanges-API](https://msdn.microsoft.com/EN-US/library/office/dn531433.aspx#bk_ListGetChanges) in der Liste, um die Sammlung von Änderungen aus dem Änderungsprotokoll abzufragen und den Änderungstokenwert für alle nachfolgenden Aufrufe zu speichern, wenn die Anwendung benachrichtigt wird.
+Die Benachrichtigung umfasst keine Informationen zu den Änderungen, durch die sie ausgelöst wurde. Ihre Anwendung verwendet die [GetChanges-API](https://msdn.microsoft.com/de-de/library/office/dn531433.aspx#bk_ListGetChanges) in der Liste, um die Sammlung von Änderungen aus dem Änderungsprotokoll abzufragen und den Änderungstokenwert für alle nachfolgenden Aufrufe zu speichern, wenn die Anwendung benachrichtigt wird.
 
 ## <a name="event-types"></a>Ereignistypen
 SharePoint-Webhooks unterstützen nur asynchrone Ereignisse. Das bedeutet, dass Webhooks nur nach einer Änderung ausgelöst werden (ähnlich wie **-ed**-Ereignisse). Somit sind synchrone Ereignisse (**-ing**-Ereignisse) nicht möglich.

@@ -136,7 +136,7 @@ Beachten Sie zu der eingefügten XML-Struktur Folgendes:
 * Auf benutzerdefinierte Felder wird in dem eingeführten Inhaltstyp verwiesen.
 * Wir verwenden das **CustomSchema**-Attribut im **ListInstance**-Element, um die Bereitstellungszeit der schema.xml-Datei für die Liste zu definieren. Auf diese Weise basiert die Liste immer noch auf der einsatzbereiten Listenvorlage (die normale benutzerdefinierte Liste „100“ in diesem Fall), es kann jedoch während der anfänglichen Bereitstellung eine alternative Bereitstellungsdefinition definiert werden.
 
-> Weitere Einzelheiten zu den verwendeten Schemastrukturen finden sie in der [Featureframeworkdokumentation](https://msdn.microsoft.com/en-us/library/office/ms460318(v=office.14).aspx) auf MSDN.
+> Weitere Einzelheiten zu den verwendeten Schemastrukturen finden sie in der [Featureframeworkdokumentation](https://msdn.microsoft.com/de-de/library/office/ms460318(v=office.14).aspx) auf MSDN.
 
 ### <a name="add-schemaxml-file-for-defining-list-structure"></a>Hinzufügen der Datei „schema.xml“ zum Definieren der Listenstruktur
 Im vorherigen Schritt haben wir auf die Datei **schema.xml** im **CustomSchema**-Attribut des **ListInstance**-Elements verwiesen, dies muss also in das Paket eingeschlossen werden. 
@@ -183,7 +183,7 @@ Beachten Sie in der enthaltenen XML-Struktur Folgendes:
 * Auf den benutzerdefinierten Inhaltstyp, der unter Verwendung der Datei **elements.xml** bereitgestellt wird, wird im **ContentTypeRef**-Element verwiesen.
 * Auf benutzerdefinierte Felder mit dem Namen **SPFxAmount** und **SPFxCostCenter**wird im **FieldRef**-Element verwiesen.
 
-> Weitere Einzelheiten zu den verwendeten Schemastrukturen finden Sie im Artikel [Grundlegendes zu Schema.xml-Dateien](https://msdn.microsoft.com/en-us/library/office/ms459356(v=office.14).aspx) auf MSDN.
+> Weitere Einzelheiten zu den verwendeten Schemastrukturen finden Sie im Artikel [Grundlegendes zu Schema.xml-Dateien](https://msdn.microsoft.com/de-de/library/office/ms459356(v=office.14).aspx) auf MSDN.
 
 ## <a name="ensure-that-definitions-are-taken-into-use-in-build-pipeline"></a>Sicherstellen, dass Definitionen in der Buildpipeline verwendet werden
 Nun haben wir die erforderlichen Strukturen für das Bereitstellen von SharePoint-Ressourcen automatisch aus der Lösung erstellt, wenn diese bereitgestellt wird. Der nächste Schritt besteht darin, sicherzustellen, dass diese XML-Dateien als Teil der Lösungsdatei verpackt werden.
@@ -297,7 +297,7 @@ SharePoint Framework-Lösungen unterstützen die folgenden Upgradeaktionsdefinit
 * ApplyElementManifest
 * AddContentTypeField
 
-> Weitere Informationen zu den Upgradeaktionsdefinitionen für das Featureframework finden Sie im Artikel [Aktualisierungsverfahren für Add-Ins für SharePoint](https://msdn.microsoft.com/en-us/library/office/fp179904.aspx) auf MSDN.
+> Weitere Informationen zu den Upgradeaktionsdefinitionen für das Featureframework finden Sie im Artikel [Aktualisierungsverfahren für Add-Ins für SharePoint](https://msdn.microsoft.com/de-de/library/office/fp179904.aspx) auf MSDN.
 
 ### <a name="add-new-elementxml-file-for-the-new-version"></a>Hinzufügen einer neuen „element.xml“-Datei für die neue Version
 Wechseln Sie zurück zu Ihrer Lösung in Visual Studio Code.

@@ -88,7 +88,7 @@ Nachfolgend wird eine andere Möglichkeit zum Abrufen des Anmeldenamens des Benu
 
  
 
- **Hinweis** Die APIs befinden sich im Namespace „Microsoft.SharePoint.Client.Utilities“ in der Assembly [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx).
+ **Hinweis** Die APIs befinden sich im Namespace „Microsoft.SharePoint.Client.Utilities“ in der Assembly [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/de-de/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx).
  
 
 Nachfolgend finden Sie einen Beispielcode, anhand dessen erläutert wird, wie Sie die Anmeldeinformationen des Benutzers abrufen.

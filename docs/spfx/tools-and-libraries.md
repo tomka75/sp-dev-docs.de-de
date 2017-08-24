@@ -113,7 +113,7 @@ Das SharePoint Framework ermöglicht wichtige Integrationen in SharePoint-Oberfl
 
 Es wird empfohlen, dass Sie sich mit den folgenden REST-APIs vertraut machen:
 
-* [REST-APIs von SharePoint-Listen](https://msdn.microsoft.com/EN-US/library/office/dn292552.aspx)
+* [REST-APIs von SharePoint-Listen](https://msdn.microsoft.com/de-de/library/office/dn292552.aspx)
 
 <a id="patterns-and-practices" class="xliff"></a>
 

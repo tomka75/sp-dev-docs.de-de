@@ -325,11 +325,11 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
  
 - TechNet-Artikel:
     
-     [Referenz zu abgestimmten Berechtigungen für SharePoint Server 2013](http://technet.microsoft.com/en-us/library/dn169567.aspx)
+     [Referenz zu abgestimmten Berechtigungen für SharePoint Server 2013](http://technet.microsoft.com/de-de/library/dn169567.aspx)
     
-     [Bewährte Methoden für die Verwendung abgestimmter Berechtigungen in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/gg128955.aspx)
+     [Bewährte Methoden für die Verwendung abgestimmter Berechtigungen in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/gg128955.aspx)
     
-     [Benutzerberechtigungen und Berechtigungsstufen in SharePoint](http://technet.microsoft.com/en-us/library/cc721640.aspx)
+     [Benutzerberechtigungen und Berechtigungsstufen in SharePoint](http://technet.microsoft.com/de-de/library/cc721640.aspx)
     
  
 

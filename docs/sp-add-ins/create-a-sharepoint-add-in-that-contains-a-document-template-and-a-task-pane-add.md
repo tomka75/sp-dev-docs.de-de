@@ -26,10 +26,10 @@ Installieren Sie die folgenden Komponenten, bevor Sie beginnen:
 
 - Eine SharePoint-Entwicklungsumgebung:
     
-      - To develop SharePoint-Add-Ins that target SharePoint in Office 365, see  [How to: Set up an environment for developing SharePoint Add-ins on Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
+      - To develop SharePoint-Add-Ins that target SharePoint in Office 365, see  [How to: Set up an environment for developing SharePoint Add-ins on Office 365](http://msdn.microsoft.com/de-de/library/office/apps/fp161179%28v=office.15%29).
     
  
-  - Informationen zum Entwickeln von SharePoint-Add-Ins für eine lokale SharePoint-Installation finden Sie unter [Vorgehensweise: Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](http://msdn.microsoft.com/en-us/library/office/apps/fp179923%28v=office.15%29).
+  - Informationen zum Entwickeln von SharePoint-Add-Ins für eine lokale SharePoint-Installation finden Sie unter [Vorgehensweise: Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](http://msdn.microsoft.com/de-de/library/office/apps/fp179923%28v=office.15%29).
     
  
 -  [Visual Studio 2015 und die Microsoft Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs)
@@ -292,7 +292,7 @@ Sie können Ihr Aufgabenbereich-Add-in debuggen, indem Sie das Dokument starten 
 
  
 
- **Hinweis** Dieser Vorgang öffnet Excel Online. Dies funktioniert nur mit einem Office 365-Konto. Weitere Informationen finden Sie unter [Vorgehensweise: Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
+ **Hinweis** Dieser Vorgang öffnet Excel Online. Dies funktioniert nur mit einem Office 365-Konto. Weitere Informationen finden Sie unter [Vorgehensweise: Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365](http://msdn.microsoft.com/de-de/library/office/apps/fp161179%28v=office.15%29).
  
 
 

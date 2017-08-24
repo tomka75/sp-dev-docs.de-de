@@ -66,7 +66,7 @@ Zum Hosten des Newsfeeds benötigen Sie in Office 365 eine SharePoint-Entwickler
 -  [Entwickeln von Cloud-Business-Add-Ins](develop-cloud-business-add-ins)
     
  
--  [Soziale Funktionen und Zusammenarbeit in SharePoint](http://msdn.microsoft.com/en-us/library/office/jj163280.aspx)
+-  [Soziale Funktionen und Zusammenarbeit in SharePoint](http://msdn.microsoft.com/de-de/library/office/jj163280.aspx)
     
  
 -  [Erstellen eines Cloud-Business-Add-Ins mit einem sozialen Newsfeed](create-a-cloud-business-add-in-with-a-social-newsfeed)
