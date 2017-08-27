@@ -25,46 +25,46 @@
 ## <a name="html-client-developer-tasks"></a>Entwickleraufgaben für HTML-Client
 
 
-- Beim Entwerfen von HTML-Bildschirmen verwenden Sie hauptsächlich die Designer- und Tool-Fenster, Sie können die Bildschirme jedoch auch mithilfe von Code auf bestimmte Weise ändern. Mit den LightSwitch JavaScript-APIs können viele Aufgaben ausgeführt werden. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Ändern eines HTML-Bildschirms mithilfe von Code](http://msdn.microsoft.com/de-de/library/jj733572.aspx).
+- Beim Entwerfen von HTML-Bildschirmen verwenden Sie hauptsächlich die Designer- und Tool-Fenster, Sie können die Bildschirme jedoch auch mithilfe von Code auf bestimmte Weise ändern. Mit den LightSwitch JavaScript-APIs können viele Aufgaben ausgeführt werden. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Ändern eines HTML-Bildschirms mithilfe von Code](http://msdn.microsoft.com/en-us/library/jj733572.aspx).
     
  
-- Wenn Sie ein HTML-Client-Add-In entwickeln, können Sie mehrere Typen von Bildschirmen erstellen. Weitere Informationen finden Sie unter [Auswählen eines Bildschirmtyps für einen HTML-Client](http://msdn.microsoft.com/de-de/library/jj713590.aspx).
+- Wenn Sie ein HTML-Client-Add-In entwickeln, können Sie mehrere Typen von Bildschirmen erstellen. Weitere Informationen finden Sie unter [Auswählen eines Bildschirmtyps für einen HTML-Client](http://msdn.microsoft.com/en-us/library/jj713590.aspx).
     
  
-- Erstellen Sie einen Bildschirm, um Informationen auf einem Mobilgerät anzuzeigen oder zu sammeln. Weitere Informationen finden Sie unter [Gewusst wie: Erstellen eines HTML-Clientbildschirms](http://msdn.microsoft.com/de-de/library/jj713589.aspx).
+- Erstellen Sie einen Bildschirm, um Informationen auf einem Mobilgerät anzuzeigen oder zu sammeln. Weitere Informationen finden Sie unter [Gewusst wie: Erstellen eines HTML-Clientbildschirms](http://msdn.microsoft.com/en-us/library/jj713589.aspx).
     
  
-- Wenn Sie ein Dialogfeld oder ein Popup für Ihr Add-In erstellen, können Benutzer Informationen auf einem Telefon, Tablet oder einem anderen mobilen Gerät anzeigen oder angeben, auf dem ein Client des Add-Ins läuft. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Erstellen eines Dialogfelds oder Popups](http://msdn.microsoft.com/de-de/library/jj713587.aspx).
+- Wenn Sie ein Dialogfeld oder ein Popup für Ihr Add-In erstellen, können Benutzer Informationen auf einem Telefon, Tablet oder einem anderen mobilen Gerät anzeigen oder angeben, auf dem ein Client des Add-Ins läuft. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Erstellen eines Dialogfelds oder Popups](http://msdn.microsoft.com/en-us/library/jj713587.aspx).
     
  
-- Mit dem Bildschirm-Designer können Sie die Darstellung der Bildschirme in einem HTML-Client ändern. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Entwerfen eines HTML-Bildschirms mit dem Bildschirm-Designer](http://msdn.microsoft.com/de-de/library/jj733575.aspx).
+- Mit dem Bildschirm-Designer können Sie die Darstellung der Bildschirme in einem HTML-Client ändern. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Entwerfen eines HTML-Bildschirms mit dem Bildschirm-Designer](http://msdn.microsoft.com/en-us/library/jj733575.aspx).
     
  
-- Wenn Sie ein HTML Mobile Client-Add-In entwickeln, können Sie Code hinzufügen, der ausgeführt wird, wenn der Benutzer auf einem Bildschirm im Client auf eine Schaltfläche tippt. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Hinzufügen einer Schaltfläche](http://msdn.microsoft.com/de-de/library/jj733573.aspx).
+- Wenn Sie ein HTML Mobile Client-Add-In entwickeln, können Sie Code hinzufügen, der ausgeführt wird, wenn der Benutzer auf einem Bildschirm im Client auf eine Schaltfläche tippt. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Hinzufügen einer Schaltfläche](http://msdn.microsoft.com/en-us/library/jj733573.aspx).
     
  
-- Sie können einen Eingabewert sammeln oder einen berechneten Wert anzeigen, indem Sie ein lokales Eigenschaftsfeld zu einem Bildschirm hinzufügen. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Hinzufügen einer lokalen Eigenschaft zu einem Bildschirm](http://msdn.microsoft.com/de-de/library/jj733571.aspx).
+- Sie können einen Eingabewert sammeln oder einen berechneten Wert anzeigen, indem Sie ein lokales Eigenschaftsfeld zu einem Bildschirm hinzufügen. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Hinzufügen einer lokalen Eigenschaft zu einem Bildschirm](http://msdn.microsoft.com/en-us/library/jj733571.aspx).
     
  
-- Sie können benutzerdefinierte HTML-Steuerelemente zum Bildschirm hinzufügen. Durch die Verwendung der benutzerdefinierten Steuerelemente können Sie Informationen anzeigen und sammeln, die über die Funktionen der integrierten HTML-Steuerelemente hinausgehen. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Hinzufügen eines benutzerdefinierten Steuerelements zu einem HTML-Bildschirm](http://msdn.microsoft.com/de-de/library/jj733569.aspx).
+- Sie können benutzerdefinierte HTML-Steuerelemente zum Bildschirm hinzufügen. Durch die Verwendung der benutzerdefinierten Steuerelemente können Sie Informationen anzeigen und sammeln, die über die Funktionen der integrierten HTML-Steuerelemente hinausgehen. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Hinzufügen eines benutzerdefinierten Steuerelements zu einem HTML-Bildschirm](http://msdn.microsoft.com/en-us/library/jj733569.aspx).
     
  
-- Durch Filtern der Daten, die im HTML-Client angezeigt werden, können Sie den Benutzern helfen, die relevantesten Daten für ihre Aufgaben zu ermitteln. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Filtern von Daten in einem HTML-Client](http://msdn.microsoft.com/de-de/library/jj733574.aspx).
+- Durch Filtern der Daten, die im HTML-Client angezeigt werden, können Sie den Benutzern helfen, die relevantesten Daten für ihre Aufgaben zu ermitteln. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Filtern von Daten in einem HTML-Client](http://msdn.microsoft.com/en-us/library/jj733574.aspx).
     
  
-- Beim Entwerfen eines HTML-Client-Add-Ins geben Sie an, wie Benutzer einen Bildschirm öffnen. Sie können einen Bildschirm öffnen, indem Sie auf ein Listenelement auf einem anderen Bildschirm oder eine Schaltfläche in der Befehlsleiste tippen. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Steuernavigation zwischen HTML-Bildschirmen](http://msdn.microsoft.com/de-de/library/jj733570.aspx).
+- Beim Entwerfen eines HTML-Client-Add-Ins geben Sie an, wie Benutzer einen Bildschirm öffnen. Sie können einen Bildschirm öffnen, indem Sie auf ein Listenelement auf einem anderen Bildschirm oder eine Schaltfläche in der Befehlsleiste tippen. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Steuernavigation zwischen HTML-Bildschirmen](http://msdn.microsoft.com/en-us/library/jj733570.aspx).
     
  
-- Zusätzlich zur Standardnavigation können Sie ein Navigationsmenü bereitstellen, mit dem Benutzer direkt auf einen anderen Bildschirm springen können. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Erstellen eines Navigationsmenüs](http://msdn.microsoft.com/de-de/library/dn546744.aspx).
+- Zusätzlich zur Standardnavigation können Sie ein Navigationsmenü bereitstellen, mit dem Benutzer direkt auf einen anderen Bildschirm springen können. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Erstellen eines Navigationsmenüs](http://msdn.microsoft.com/en-us/library/dn546744.aspx).
     
  
-- Beim Entwickeln eines HTML Mobile Client-Add-Ins können Sie JavaScript-Code schreiben, der ausgeführt wird, wenn der Benutzer ein bestimmtes Ereignis auslöst. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Verarbeiten von Bildschirm-Ereignissen in einem Mobile Client](http://msdn.microsoft.com/de-de/library/jj863131.aspx).
+- Beim Entwickeln eines HTML Mobile Client-Add-Ins können Sie JavaScript-Code schreiben, der ausgeführt wird, wenn der Benutzer ein bestimmtes Ereignis auslöst. Weitere Informationen dazu finden Sie unter  [Vorgehensweise: Verarbeiten von Bildschirm-Ereignissen in einem Mobile Client](http://msdn.microsoft.com/en-us/library/jj863131.aspx).
     
  
-- Sie können mobile Add-Ins erstellen, die auf SharePoint-Workflows zugreifen und sie aktualisieren. Dadurch wird sichergestellt, dass Geschäftsprozesse in einer bestimmten Abfolge durchgeführt werden. Sie können beispielsweise einen Workflow zum Weiterleiten eines Dokuments zur Genehmigung oder zum Verarbeiten einer Gehaltsliste. Weitere Informationen finden Sie unter  [Exemplarische Vorgehensweise: Zugreifen auf einen SharePoint-Workflow](http://msdn.microsoft.com/de-de/library/dn282437.aspx).
+- Sie können mobile Add-Ins erstellen, die auf SharePoint-Workflows zugreifen und sie aktualisieren. Dadurch wird sichergestellt, dass Geschäftsprozesse in einer bestimmten Abfolge durchgeführt werden. Sie können beispielsweise einen Workflow zum Weiterleiten eines Dokuments zur Genehmigung oder zum Verarbeiten einer Gehaltsliste. Weitere Informationen finden Sie unter  [Exemplarische Vorgehensweise: Zugreifen auf einen SharePoint-Workflow](http://msdn.microsoft.com/en-us/library/dn282437.aspx).
     
  
-- Mit LightSwitch können Sie einen HTML-Client erstellen, in dem mobile Benutzer Daten mit modernen berührungsgesteuerten Geräten wie Smartphones und Tablets von Remotespeicherorten anzeigen, hinzufügen und aktualisieren können. In dieser exemplarischen Vorgehensweise erstellen Sie einen Client für eine fiktive Spedition, Contoso Spedition, mit dem die Mitarbeiter des Kundendiensts leichter einschätzen können, wie viele Mitarbeiter, LKWs und Kisten für einen Auftrag erforderlich sind. Weitere Informationen finden Sie unter  [Exemplarische Vorgehensweise: Erstellen eines Clients für mobile Benutzer](http://msdn.microsoft.com/de-de/library/jj674624.aspx).
+- Mit LightSwitch können Sie einen HTML-Client erstellen, in dem mobile Benutzer Daten mit modernen berührungsgesteuerten Geräten wie Smartphones und Tablets von Remotespeicherorten anzeigen, hinzufügen und aktualisieren können. In dieser exemplarischen Vorgehensweise erstellen Sie einen Client für eine fiktive Spedition, Contoso Spedition, mit dem die Mitarbeiter des Kundendiensts leichter einschätzen können, wie viele Mitarbeiter, LKWs und Kisten für einen Auftrag erforderlich sind. Weitere Informationen finden Sie unter  [Exemplarische Vorgehensweise: Erstellen eines Clients für mobile Benutzer](http://msdn.microsoft.com/en-us/library/jj674624.aspx).
     
  
 
@@ -75,7 +75,7 @@
 -  [Erstellen von Cloud-Business-Add-Ins](create-cloud-business-add-ins)
     
  
--  [HTML-Clientbildschirme für LightSwitch-Anwendungen](http://msdn.microsoft.com/de-de/library/jj674623.aspx)
+-  [HTML-Clientbildschirme für LightSwitch-Anwendungen](http://msdn.microsoft.com/en-us/library/jj674623.aspx)
     
  
 

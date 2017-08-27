@@ -345,7 +345,7 @@ Die unten stehende Abbildung zeigt die REST-Dienstsyntax für Parameter in Abfra
 
 ## <a name="specifying-static-methods-and-properties-as-rest-service-uris"></a>Angeben von statischen Methoden und Eigenschaften als REST-Dienst-URIs
 
-Verwenden Sie zum Erstellen von URIs, die statischen Methoden oder Eigenschaften entsprechen, den entsprechenden API-Namen aus dem Objektmodell „ECMAScript“, beginnend mit der Namespace-Deklaration und dargestellt mit Punkt. Zum Beispiel würde das REST-Äquivalent von [SP.Utilities.Utility.getImageUrl(imageName)](http://msdn.microsoft.com/de-de/library/ee658947.aspx) im Clientobjektmodell ECMAScript wie folgt lauten:
+Verwenden Sie zum Erstellen von URIs, die statischen Methoden oder Eigenschaften entsprechen, den entsprechenden API-Namen aus dem Objektmodell „ECMAScript“, beginnend mit der Namespace-Deklaration und dargestellt mit Punkt. Zum Beispiel würde das REST-Äquivalent von [SP.Utilities.Utility.getImageUrl(imageName)](http://msdn.microsoft.com/en-us/library/ee658947.aspx) im Clientobjektmodell ECMAScript wie folgt lauten:
  
 
  

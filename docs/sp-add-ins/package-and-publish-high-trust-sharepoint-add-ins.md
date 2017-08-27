@@ -104,7 +104,7 @@ Das Zertifikat sollte in zwei Formaten, PFX (Personal Information Exchange) und 
  
 
  
-Wenn das Zertifikat ursprünglich im CER-Format erstellt wurde, enthält es den privaten und den öffentlichen Schlüssel. Grundsätzlich sollte die von SharePoint verwendete CER-Datei den privaten Schlüssel nicht enthalten. Ziehen Sie es in Betracht, das ursprüngliche Zertifikat in IIS zu importieren und dann eine neue CER-Version zu exportieren, die den privaten Schlüssel nicht enthält. Diese Vorgehensweise ist unten beschrieben. Weitere Informationen zu PFX- und CER-Dateien finden Sie unter  [Softwareherausgeberzertifikat](http://msdn.microsoft.com/de-de/library/windows/hardware/ff552299%28v=vs.85%29.aspx).
+Wenn das Zertifikat ursprünglich im CER-Format erstellt wurde, enthält es den privaten und den öffentlichen Schlüssel. Grundsätzlich sollte die von SharePoint verwendete CER-Datei den privaten Schlüssel nicht enthalten. Ziehen Sie es in Betracht, das ursprüngliche Zertifikat in IIS zu importieren und dann eine neue CER-Version zu exportieren, die den privaten Schlüssel nicht enthält. Diese Vorgehensweise ist unten beschrieben. Weitere Informationen zu PFX- und CER-Dateien finden Sie unter  [Softwareherausgeberzertifikat](http://msdn.microsoft.com/en-us/library/windows/hardware/ff552299%28v=vs.85%29.aspx).
  
 
  
@@ -124,7 +124,7 @@ Die folgenden Verfahren werden auf dem Remotewebserver ausgeführt, der die Remo
 ### <a name="to-configure-the-remote-web-server-and-pfx-certificate"></a>So konfigurieren Sie den Remotewebserver und das PFX-Zertifikat
 
 
-1. Weisen Sie dem PFX-Zertifikat ein sicheres Kennwort zu. Weitere Informationen finden Sie unter [Richtlinien für die Erstellung sicherer Kennwörter](http://msdn.microsoft.com/de-de/library/bb416446.aspx) und [Sichere Kennwörter](http://msdn.microsoft.com/de-de/library/ms161962.aspx).
+1. Weisen Sie dem PFX-Zertifikat ein sicheres Kennwort zu. Weitere Informationen finden Sie unter [Richtlinien für die Erstellung sicherer Kennwörter](http://msdn.microsoft.com/en-us/library/bb416446.aspx) und [Sichere Kennwörter](http://msdn.microsoft.com/en-us/library/ms161962.aspx).
     
  
 2. Importieren Sie das Zertifikat mit den folgenden Schritten in IIS auf dem Remotewebserver:
@@ -154,10 +154,10 @@ Die folgenden Verfahren werden auf dem Remotewebserver ausgeführt, der die Remo
 ### <a name="to-open-the-windows-certificate-store"></a>So öffnen Sie den Windows-Zertifikatspeicher
 
 
-1. Öffnen Sie auf demselben Server die **Microsoft Management Console** gemäß der Beschreibung in [Öffnen von MMC 3.0](http://technet.microsoft.com/de-de/library/cc766121.aspx).
+1. Öffnen Sie auf demselben Server die **Microsoft Management Console** gemäß der Beschreibung in [Öffnen von MMC 3.0](http://technet.microsoft.com/en-us/library/cc766121.aspx).
     
  
-2. Fügen Sie das **Zertifikat**-Snap-In für das Computerkonto hinzu, wie unter [Hinzufügen des Zertifikat-Snap-Ins zu einer MMC-Konsole](http://technet.microsoft.com/de-de/library/cc754431.aspx) beschrieben. Achten Sie darauf, dass Sie das Verfahren für den *Computer* verwenden, nicht für einen Benutzer oder Dienst. Wählen Sie bei der entsprechenden Aufforderung *lokaler* Computer und nicht „anderer“ Computer.
+2. Fügen Sie das **Zertifikat**-Snap-In für das Computerkonto hinzu, wie unter [Hinzufügen des Zertifikat-Snap-Ins zu einer MMC-Konsole](http://technet.microsoft.com/en-us/library/cc754431.aspx) beschrieben. Achten Sie darauf, dass Sie das Verfahren für den *Computer* verwenden, nicht für einen Benutzer oder Dienst. Wählen Sie bei der entsprechenden Aufforderung *lokaler* Computer und nicht „anderer“ Computer.
     
  
 Überspringen Sie das nächste Verfahren, wenn Sie ISS-Manager 8 verwenden.
@@ -192,7 +192,7 @@ Die folgenden Verfahren werden auf dem Remotewebserver ausgeführt, der die Remo
 5. Exportieren Sie die Datei in den erstellten Ordner, und geben Sie das Kennwort für die Datei ein.
     
  
-6. Importieren Sie in der **Microsoft Management Console** das Zertifikat, wie unter [Importieren eines Zertifikats](http://technet.microsoft.com/de-de/library/cc754489.aspx) beschrieben. Geben Sie dabei unbedingt den **persönlichen** Speicher an.
+6. Importieren Sie in der **Microsoft Management Console** das Zertifikat, wie unter [Importieren eines Zertifikats](http://technet.microsoft.com/en-us/library/cc754489.aspx) beschrieben. Geben Sie dabei unbedingt den **persönlichen** Speicher an.
     
  
 7. Lassen Sie die Konsole für das nächste Verfahren geöffnet.
@@ -575,10 +575,10 @@ private static X509Certificate2 GetCertificateFromStore()
 ### <a name="to-upload-and-install-the-sharepoint-add-in"></a>So laden Sie das SharePoint-Add-In hoch und installieren es
 
 
-1. Laden Sie die Paketdatei "*.app" der SharePoint-Add-In in den Add-In-Katalog des Unternehmens hoch. (Besonders vertrauenswürdige SharePoint-Add-Ins können nicht über den Office Store verteilt werden.) Details finden Sie unter  [Hinzufügen von Add-Ins zum Add-In-Katalog](http://technet.microsoft.com/de-de/library/fp161234.aspx#AddApps).
+1. Laden Sie die Paketdatei "*.app" der SharePoint-Add-In in den Add-In-Katalog des Unternehmens hoch. (Besonders vertrauenswürdige SharePoint-Add-Ins können nicht über den Office Store verteilt werden.) Details finden Sie unter  [Hinzufügen von Add-Ins zum Add-In-Katalog](http://technet.microsoft.com/en-us/library/fp161234.aspx#AddApps).
     
  
-2. Installieren Sie das Add-In auf einer Website in derselben übergeordneten SharePoint-Webanwendung, die den Add-In-Katalog enthält. Details zum Hochladen und Installieren der SharePoint-Add-In finden Sie unter  [Hinzufügen von Add-Ins für SharePoint auf einer SharePoint-Website](http://technet.microsoft.com/de-de/library/fp161231).
+2. Installieren Sie das Add-In auf einer Website in derselben übergeordneten SharePoint-Webanwendung, die den Add-In-Katalog enthält. Details zum Hochladen und Installieren der SharePoint-Add-In finden Sie unter  [Hinzufügen von Add-Ins für SharePoint auf einer SharePoint-Website](http://technet.microsoft.com/en-us/library/fp161231).
     
  
 

@@ -205,7 +205,7 @@ Verwenden Sie die unten aufgeführten Ressourcen, um weitere Informationen zum V
 -  [Einführung OData](http://msdn.microsoft.com/en-us/data/hh237663)
     
  
--  [Open Data Protocol – Beispiel](http://msdn.microsoft.com/de-de/library/ff478141.aspx)
+-  [Open Data Protocol – Beispiel](http://msdn.microsoft.com/en-us/library/ff478141.aspx)
     
  
 -  [Open Data Protocol](http://www.odata.org/)
