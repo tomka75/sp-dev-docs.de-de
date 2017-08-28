@@ -1,15 +1,14 @@
 # <a name="sharepoint-framework-toolchain"></a>SharePoint Framework-Toolkette
 
-## <a name="overview"></a>Übersicht
 Die SharePoint Framework-Toolkette ist eine Sammlung von Buildtools, Frameworkpaketen und anderen Elementen, mit denen Sie clientseitige Projekte erstellen und bereitstellen können. Die Toolkette unterstützt Sie bei der Erstellung clientseitiger Komponenten wie Webparts. Außerdem ermöglicht sie es Ihnen mit Tools wie der SharePoint Workbench, diese Komponenten in Ihrer lokalen Entwicklungsumgebung zu testen. Auch zum Packen und Bereitstellen auf SharePoint lässt sich die Toolkette nutzen. Darüber hinaus stellt sie verschiedene Buildbefehle für wichtige Buildtasks zur Verfügung, darunter unter anderem Befehle für die Codekompilierung und für das Packen clientseitiger Projekte in SharePoint-App-Pakete. 
 
 ## <a name="npm"></a>npm
 Bevor wir auf die verschiedenen Komponenten der Toolkette eingehen, ist es wichtig, dass Sie verstehen, wie das SharePoint Framework [npm](https://www.npmjs.com/) zur Verwaltung der verschiedenen Module innerhalb eines Projekts verwendet. npm ist einer der bevorzugten Open Source-Paket-Manager für clientseitige JavaScript-Entwicklung. 
 
-Ein typisches npm-Paket besteht aus einer oder mehreren wiederverwendbaren JavaScript-Codedateien (Modulen) sowie einer Liste von Abhängigkeitspaketen, von denen es abhängt. Wenn Sie ein solches Paket installieren, installiert npm auch diese Abhängigkeiten. Das offizielle [npm-Repository](https://www.npmjs.com/) enthält Hunderte Pakete, die Sie herunterladen und zur Erstellung von Anwendungen verwenden können. Sie können auch [eigene Pakete auf npm veröffentlichen](https://docs.npmjs.com/getting-started/what-is-npm) und damit anderen Entwicklern zur Verfügung stellen. Das SharePoint Framework verwendet verschiedene npm-Pakete in der Toolkette und veröffentlicht auch [eigene Pakete im npm-Repository](https://www.npmjs.com/search?q=%40microsoft%2Fsp-). 
+Ein typisches npm-Paket besteht aus einer oder mehreren wiederverwendbaren JavaScript-Codedateien (Modulen) sowie einer Liste von Abhängigkeitspaketen. Wenn Sie ein solches Paket installieren, installiert npm auch diese Abhängigkeiten. Die offizielle [npm-Registrierung](https://www.npmjs.com/) enthält Hunderte Pakete, die Sie herunterladen und zur Erstellung von Anwendungen verwenden können. Sie können auch [eigene Pakete auf npm veröffentlichen](https://docs.npmjs.com/getting-started/what-is-npm) und damit anderen Entwicklern zur Verfügung stellen. Das SharePoint Framework verwendet verschiedene npm-Pakete in der Toolkette und veröffentlicht auch [eigene Pakete in der npm-Registrierung](https://www.npmjs.com/search?q=%40microsoft%2Fsp-). 
 
 ### <a name="sharepoint-framework-packages"></a>SharePoint Framework-Pakete
-Das SharePoint Framework besteht aus mehreren npm-Paketen, die ineinandergreifen und Entwickler bei der Erstellung clientseitiger Lösungen für SharePoint unterstützen. 
+Das SharePoint Framework besteht aus mehreren npm-Paketen, die ineinandergreifen und Sie bei der Erstellung clientseitiger Lösungen für SharePoint unterstützen. 
 
 Folgende Pakete sind im SharePoint Framework enthalten:
 
@@ -29,8 +28,8 @@ Folgende Pakete sind im SharePoint Framework enthalten:
 
 * [@microsoft/office-ui-fabric-react-bundle](https://www.npmjs.com/package/@microsoft/office-ui-fabric-react-bundle): Stellt ein benutzerdefiniertes [office-ui-fabric-react](https://www.npmjs.com/package/office-ui-fabric-react)-Bundle bereit, das für die Verwendung mit dem SharePoint Framework-Modulladeprogramm optimiert wurde.
 
-### <a name="common-build-tools-packages"></a>Gängige Buildtoolpakete
-Neben den oben beschriebenen SharePoint Framework-Paketen werden für Buildtasks wie die Kompilierung von TypeScript-Code in JavaScript und die Konvertierung von SCSS in CSS auch verschiedene weitere gängige Buildtools verwendet.
+### <a name="common-build-tool-packages"></a>Gängige Buildtoolpakete
+Neben den SharePoint Framework-Paketen werden für Buildtasks wie die Kompilierung von TypeScript-Code in JavaScript und die Konvertierung von SCSS in CSS auch verschiedene weitere gängige Buildtools verwendet.
 
 Die folgenden Pakete gängiger Buildtools sind im SharePoint Framework enthalten:
 
@@ -67,7 +66,7 @@ Immer, wenn ein neues Projekt mit dem Generator erstellt wird, installiert der G
 ### <a name="packagejson"></a>package.json
 Die Datei `package.json` im clientseitigen Projekt enthält eine Liste der Abhängigkeiten des Projekts. Diese Liste definiert, welche Abhängigkeiten installiert werden müssen. Wie oben erwähnt kann jede Abhängigkeit wiederum weitere Abhängigkeiten enthalten. In npm können Sie über die Eigenschaften `dependencies` und `devDependencies` sowohl Laufzeit- als auch Buildabhängigkeiten definieren. Die Eigenschaft `devDependencies` kommt zum Einsatz, wenn das jeweilige Modul im Code verwendet werden soll. Das ist beispielsweise bei der Erstellung von Webparts der Fall.
 
-Unten sehen Sie die Datei `package.json` für das [helloworld-Webpart](web-parts/get-started/build-a-hello-world-web-part):
+Nachfolgend sehen Sie die Datei `package.json` für das [helloworld-Webpart](web-parts/get-started/build-a-hello-world-web-part):
 
 ```json 
 {

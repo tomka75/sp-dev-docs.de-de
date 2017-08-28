@@ -1,24 +1,24 @@
 # <a name="connect-to-sharepoint-using-the-javascript-object-model-jsom"></a>Verbinden mit SharePoint mithilfe des JavaScript-Objektmodells (JSOM)
 
-In der Vergangenheit haben Sie vielleicht beim Erstellen von SharePoint-Anpassungen, das SharePoint JavaScript-Objektmodell (JSOM) zur Kommunikation mit SharePoint verwendet. Dieser Artikel veranschaulicht, wie SharePoint JSOM beim Erstellen von Lösungen auf dem SharePoint Framework verwendet wird.
+In der Vergangenheit haben Sie vielleicht beim Erstellen von SharePoint-Anpassungen, das SharePoint JavaScript-Objektmodell (JSOM) zur Kommunikation mit SharePoint verwendet. Dies wird nicht mehr empfohlen (siehe **Empfehlungen** unten), es gibt jedoch nach wie vor gültige Anwendungsfälle, z. B. die Codemigration. Dieser Artikel veranschaulicht, wie SharePoint JSOM beim Erstellen von Lösungen auf dem SharePoint Framework verwendet wird.
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment).
+> **Hinweis:** Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für SharePoint Framework einrichten](../../set-up-your-development-environment).
 
 ## <a name="create-a-new-project"></a>Erstellen eines neuen Projekts
 
-Erstellen Sie zunächst einen neuen Ordner für Ihr Projekt.
+Erstellen Sie in der Konsole einen neuen Ordnern für Ihr Projekt:
 
 ```sh
 md react-sharepointlists
 ```
 
-Wechseln Sie zum Projektordner.
+Wechseln Sie zum Projektordner:
 
 ```sh
 cd react-sharepointlists
 ```
 
-Führen Sie im Projektordner den SharePoint Framework-Yeoman-Generator aus, um ein Gerüst für ein neues SharePoint Framework-Projekt zu erstellen.
+Führen Sie im Projektordner den SharePoint Framework-Yeoman-Generator aus, um ein Gerüst für ein neues SharePoint Framework-Projekt zu erstellen:
 
 ```sh
 yo @microsoft/sharepoint
@@ -27,8 +27,9 @@ yo @microsoft/sharepoint
 Geben Sie die folgenden Werte ein, wenn Sie dazu aufgefordert werden:
 
 - **react-sharepointlists** als Lösungsname.
-- **Verwenden des aktuellen Ordners** als Speicherort für die Dateien.
-- **React** als Startpunkt für die Webparterstellung.
+- Wählen Sie **Webpart** als den zu erstellenden Typ von clientseitiger Komponente aus.
+- **Verwenden Sie den aktuellen Ordner** als Speicherort für die Dateien.
+- **React** als Ausgangs-Framework für die Webpart-Erstellung.
 - **SharePoint-Listen** als Webpartname.
 - **Zeigt die Namen von Listen auf der aktuellen Website an** als Webpartbeschreibung.
 
@@ -36,17 +37,25 @@ Geben Sie die folgenden Werte ein, wenn Sie dazu aufgefordert werden:
 
 Öffnen Sie den Projektordner in Ihrem Code-Editor, sobald die Gerüsterstellung abgeschlossen ist. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
 
-![Das SharePoint Framework-Projekt wird in Visual Studio Code geöffnet](../../../../images/tutorial-spjsom-vscode.png)
+![Das SharePoint Framework-Projekt in Visual Studio-Code](../../../../images/tutorial-spjsom-vscode.png)
+
+Gehen Sie folgendermaßen vor, um das Verzeichnis in Visual Studio-Code vom Konsolentyp aus zu öffnen:
+```sh
+code .
+```
+
+## <a name="referencing-jsom"></a>Verweisen auf JSOM
+Um SharePoint JSOM in Ihrer SharePoint Framework-Komponente verwenden zu können, müssen Sie zunächst darauf verweisen. In der Vergangenheit stand es bereits auf der Seite zu Ihrer Verfügung, um es aber in SharePoint-Framework zu verwenden, muss es explizit geladen werden.
+
+Es gibt zwei Methoden, um in SharePoint Framework auf SharePoint JSOM zu verweisen: 
+- **Deklarativ** – über die Konfiguration
+- **Imperativ** – über Code
+
+Jeder dieser Ansätze hat seine Vor- und Nachteile, die Sie unbedingt kennen sollten.
 
 ## <a name="reference-jsom-declaratively"></a>Deklaratives Referenzieren von JSOM
 
-Um SharePoint JSOM im clientseitigen SharePoint Framework-Webpart verwenden zu können, müssen Sie es zunächst referenzieren. In der Vergangenheit stand es bereits auf der Seite zu Ihrer Verfügung, um es aber in SharePoint-Framework-Lösungen zu verwenden, muss es explizit geladen werden.
-
-Es gibt zwei Möglichkeiten, um in SharePoint Framework auf SharePoint JSOM zu verweisen: deklarativ über die Konfiguration und imperativ im Webpartcode. Jeder dieser Ansätze hat seine Vor- und Nachteile, die Sie unbedingt kennen sollten.
-
-### <a name="register-sharepoint-jsom-api-as-external-scripts"></a>Registrieren von SharePoint JSOM-API als externe Skripts
-
-Der erste Schritt besteht dari, die SharePoint JSOM-API als externe Skripts in Ihrem SharePoint Framework-Projekt zu registrieren. Öffnen Sie im Code-Editor die Datei **./config/config.json** und fügen dem Abschnitt **externals** Folgendes hinzu:
+Der erste Schritt beim deklarativen Referenzieren von JSOM besteht darin, die SharePoint JSOM-API als externe Skripts in Ihrem SharePoint Framework-Projekt zu registrieren. Öffnen Sie im Code-Editor die Datei **./config/config.json**, und fügen Sie dem Abschnitt **externals** Folgendes hinzu:
 
 ```json
 {
@@ -82,19 +91,21 @@ Der erste Schritt besteht dari, die SharePoint JSOM-API als externe Skripts in I
 }
 ```
 
-Jeden Eintrag verweist auf eine andere Skriptdatei, die Ihnen zusammen die Verwendung von SharePoint JSOM im clientseitigen Webpart ermöglichen. Alle diese Skripts werden als Nicht-Modul-Skripts verteilt. Daher erfordert jeder Registrierungseintrag eine URL, die mit der **path**-Eigenschaft spezifiziert wird, sowie einen vom Skript verwendeten Namen, der in der **globalName**-Eigenschaft angegeben ist. Um sicherzustellen, dass diese Skripts in der richtigen Reihenfolge laden, werden die Abhängigkeiten zwischen diesen Skripts mit der **globalDependencies**-Eigenschaft angegeben.
+Jeder Eintrag verweist auf unterschiedliche Skriptdateien, die Ihnen zusammen die Verwendung von SharePoint JSOM in Ihrer SPFx-Komponente ermöglichen. Alle diese Skripts werden als Nicht-Modul-Skripts verteilt. Daher erfordert jeder Registrierungseintrag eine URL (die mit der `path`-Eigenschaft angegeben wird) sowie einen vom Skript verwendeten Namen (der in der `globalName`-Eigenschaft angegeben ist). Um sicherzustellen, dass diese Skripts in der richtigen Reihenfolge geladen werden, werden die Abhängigkeiten zwischen diesen Skripts mit der `globalDependencies`-Eigenschaft angegeben.
+
+In Abhängigkeit von der JSOM-Funktionalität, die Sie verwenden, müssen möglicherweise weitere Skripts hinzugefügt werden (z. B.sp.taxonomy.js).
 
 ### <a name="install-typescript-typings-for-sharepoint-jsom"></a>Installieren von TypeScript-Eingaben für SharePoint JSOM
 
 Der nächste Schritt besteht darin, TypeScript-Eingaben für SharePoint JSOM zu installieren und zu konfigurieren. So profitieren Sie von den Sicherheitsfunktionen der TypeScript-Typen, wenn Sie mit SharePoint JSOM arbeiten.
 
-Führen Sie in der Befehlszeile den folgenden Befehl aus:
+Führen Sie den folgenden Befehl in Ihrem Projektverzeichnis von der Konsole aus:
 
 ```sh
 npm install @types/microsoft-ajax @types/sharepoint --save-dev
 ```
 
-Da SharePoint JSOM nicht als Modul verteilt ist und Sie es nicht direkt in Ihren Code importiert können, müssen Sie dessen TypeScript-Typen global registrieren. Öffnen Sie im Code-Editor die Datei **./tsconfig.json** und fügen Sie in der **types**-Eigenschaft, gleich hinter dem Eintrag **webpack-env** Verweise auf **microsoft-ajax** und **sharepoint** hinzu.
+Da SharePoint JSOM nicht als Modul verteilt ist und Sie es nicht direkt in Ihren Code importieren können, müssen Sie seine TypeScript-Eingaben global registrieren. Öffnen Sie im Code-Editor die Datei **./tsconfig.json**, und fügen Sie in der `types`-Eigenschaft, gleich hinter dem Eintrag **webpack-env** Verweise auf **microsoft-ajax** und **sharepoint** hinzu.
 
 ```json
 {
@@ -111,11 +122,11 @@ Da SharePoint JSOM nicht als Modul verteilt ist und Sie es nicht direkt in Ihren
 }
 ```
 
-### <a name="reference-sharepoint-jsom-scripts-in-the-react-component"></a>Referenzieren von SharePoint JSOM-Skripts in der React-Komponente
+### <a name="reference-sharepoint-jsom-scripts-in-a-react-component"></a>Referenzieren von SharePoint JSOM-Skripts in einer React-Komponente
 
-Um die SharePoint JSOM-Skripts in das clientseitige Webpart zu laden, müssen Sie diese im Webpartcode referenzieren. In diesem Beispiel fügen Sie die Verweise in der React-Komponente hinzu, in der JSOM zur Kommunikation mit SharePoint verwendet wird.
+Um die SharePoint JSOM-Skripts in Ihrer SPFx-Komponente zu laden, müssen Sie im Code der Komponente darauf verweisen. In diesem Beispiel fügen Sie die Verweise in der React-Komponente hinzu, in der JSOM zur Kommunikation mit SharePoint verwendet wird.
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Fügen nach der letzten **import**-Anweisung folgenden Code hinzu:
+Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Fügen nach der letzten `import`-Anweisung folgenden Code hinzu:
 
 ```ts
 require('sp-init');
@@ -130,11 +141,11 @@ Da diese Namen den zuvor hinzugefügten externen Verweisen entsprechen, wird Sha
 
 Zur Veranschaulichung, wie SharePoint JSOM zur Kommunikation mit SharePoint beiträgt, rufen Sie die Titel aller SharePoint-Listen ab, die sich auf der aktuellen Website befinden, und geben Sie sie wieder.
 
-#### <a name="add-siteurl-to-components-properties"></a>Hinzufügen von siteUrl zu Komponenteneigenschaften
+#### <a name="add-siteurl-to-the-react-components-properties"></a>Hinzufügen von _siteUrl_ zu Komponenteneigenschaften
 
 Damit Sie sich mit SharePoint verbunden können, muss die React-Komponente die URL der aktuellen Website kennen. Die URL ist im übergeordneten Webpart verfügbar und kann über ihre Eigenschaften an die Komponente übergeben werden.
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/ISharePointListsProps.ts** und fügen Sie der Schnittstelle **ISharePointListsProps** die **siteUrl**-Eigenschaft hinzu:
+Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/ISharePointListsProps.ts** und fügen Sie der Schnittstelle `ISharePointListsProps` die `siteUrl`-Eigenschaft hinzu:
 
 ```ts
 export interface ISharePointListsProps {
@@ -143,7 +154,7 @@ export interface ISharePointListsProps {
 }
 ```
 
-Um die URL der aktuellen Website an die Komponente zu übergeben, öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/SharePointListsWebPart.ts** und ändern Sie die **render**-Methode in:
+Um die URL der aktuellen Website an die Komponente zu übergeben, öffnen Sie die Datei **./src/webparts/sharePointLists/SharePointListsWebPart.ts** im Code-Editor, und ändern Sie die `render`-Methode in:
 
 ```ts
 export default class SharePointListsWebPart extends BaseClientSideWebPart<ISharePointListsWebPartProps> {
@@ -163,11 +174,11 @@ export default class SharePointListsWebPart extends BaseClientSideWebPart<IShare
 }
 ```
 
-#### <a name="define-components-state"></a>Definieren des Komponentenstatus
+#### <a name="define-the-react-components-state"></a>Definieren des Status der React-Komponente
 
-Die React-Komponente lädt Daten aus SharePoint, um sie für den Benutzer wiederzugeben. Der aktuelle Status der React-Komponente wird mit der state-Schnittstelle modelliert.
+Die React-Komponente lädt Daten aus SharePoint, um sie für den Benutzer wiederzugeben. Der aktuelle Status der React-Komponente wird mit einer state-Schnittstelle modelliert, die wir hinzufügen.
 
-Erstellen Sie im Code-Editor im Ordner **./src/webparts/sharePointLists/components** eine neue Daten namens **ISharePointListsState.ts**und fügen Sie folgenden Inhalt ein:
+Erstellen Sie im Code-Editor im Ordner **./src/webparts/sharePointLists/components** eine neue Daten namens **ISharePointListsState.ts**, und fügen Sie folgenden Inhalt ein:
 
 ```ts
 export interface ISharePointListsState {
@@ -181,13 +192,13 @@ export interface ISharePointListsState {
 
 Nachdem Sie die Schnittstelle definiert haben, indem Sie die Form des Komponentenstatus beschrieben haben, muss die React-Komponente als Nächstes die state-Schnittstelle verwenden.
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Fügen Sie der Liste der import Anweisungen Folgendes hinzu:
+Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Fügen Sie unter den vorhandenen `import`-Anweisungen Folgendes hinzu:
 
 ```ts
 import { ISharePointListsState } from './ISharePointListsState';
 ```
 
-Im nächsten Schritt ändern Sie die Signatur der **SharePointLists**-Klasse in:
+Im nächsten Schritt ändern Sie die Signatur der `SharePointLists`-Klasse in:
 
 ```ts
 export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
@@ -195,7 +206,7 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-Fügen Sie in der **SharePointLists**-Klasse einen Konstruktor mit dem Standardstatuswert hinzu.
+Fügen Sie in der `SharePointLists`-Klasse einen Konstruktor mit dem Standardstatuswert hinzu:
 
 ```ts
 export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
@@ -213,13 +224,13 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-#### <a name="load-information-about-sharepoint-lists-from-the-current-site-using-jsom"></a>Herunterladen von Informationen zu SharePoint-Listen von der aktuellen Website mit JSOM
+#### <a name="load-information-about-sharepoint-lists-from-the-current-site-using-jsom"></a>Laden von Informationen zu SharePoint-Listen von der aktuellen Website mit JSOM
 
 Das clientseitige Webpart, das in diesem Artikel als Beispiel verwendet wurde, lädt per Klick Informationen zu SharePoint-Listen in die aktuelle Website.
 
 ![Das clientseitige SharePoint Framework-Webpart zeigt Titel von SharePoint-Listen in der aktuellen Website an](../../../../images/tutorial-spjsom-web-part-list-titles.png)
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Fügen Sie in der **SharePointLists**-Klasse eine neue Methode namens **getListsTitles** hinzu:
+Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Fügen Sie in der `SharePointLists`-Klasse eine neue Methode namens `getListsTitles` hinzu:
 
 ```ts
 export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
@@ -242,9 +253,9 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-Um die richtigen Bereichsdefinition der Methode sicherzustellen, binden Sie sie im Konstruktor an das Webpart.
+Um die richtigen Bereichsdefinition der Methode sicherzustellen, binden wir sie im Konstruktor an das Webpart.
 
-Verwenden Sie in der **getListsTitles**-Methode SharePoint JSOM, um die Titel der SharePoint-Listen auf die aktuelle Website zu laden:
+Verwenden Sie in der `getListsTitles`-Methode SharePoint JSOM, um die Titel der SharePoint-Listen auf die aktuelle Website zu laden:
 
 ```ts
 export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
@@ -284,11 +295,11 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-Setzen Sie zunächst den Status der Komponente zurück, um dem Benutzer mitzuteilen, dass die Komponente Informationen aus SharePoint laden wird. Verwenden Sie dann die URL der aktuellen Website, die der Komponente über ihre Eigenschaften übergeben wurde, um einen neuen SharePoint-Kontext zu instanziieren. Laden Sie Listen von der aktuellen Website mit SharePoint JSOM, und um die Leistungsanforderung zu optimieren, geben Sie an, dass nur die **Title**-Eigenschaft geladen werden soll. Im nächsten Schritt führen Sie die Abfrage durch Aufruf der **ExecuteQueryAsync**-Methode und Übergabe zweier Rückruffunktionen aus. Nach Abschluss der Abfrage durchlaufen Sie die Sammlung der abgerufenen Listen, speichern deren Titel in einem Array und aktualisieren den Status der Komponente.
+Setzen Sie zunächst den Status der Komponente zurück, um dem Benutzer mitzuteilen, dass die Komponente Informationen aus SharePoint laden wird. Verwenden Sie dann die URL der aktuellen Website, die der Komponente über ihre Eigenschaften übergeben wurde, um einen neuen SharePoint-Kontext zu instanziieren. Laden Sie Listen von der aktuellen Website mit SharePoint JSOM, und um die Leistungsanforderung zu optimieren, geben Sie an, dass nur die `Title`-Eigenschaft geladen werden soll. Im nächsten Schritt führen Sie die Abfrage durch Aufruf der `executeQueryAsync`-Methode und Übergabe zweier Rückruffunktionen aus. Nach Abschluss der Abfrage durchlaufen Sie die Sammlung der abgerufenen Listen, speichern deren Titel in einem Array und aktualisieren den Status der Komponente.
 
 #### <a name="render-the-titles-of-sharepoint-lists-in-the-current-site"></a>Wiedergeben der Titel von SharePoint-Listen auf der aktuellen Website
 
-Nachdem Sie die Titel von SharePoint-Listen auf die aktuelle Website geladen haben, müssen Sie sie nur noch in der Komponente wiedergeben. Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx** und aktualisieren Sie die **render**-Methode:
+Nachdem Sie die Titel von SharePoint-Listen in der aktuellen Website geladen haben, müssen Sie sie nur noch in der Komponente wiedergeben. Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx**, und aktualisieren Sie die `render`-Methode:
 
 ```tsx
 export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
@@ -327,25 +338,29 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-Jetzt sollten Sie Ihr Webpart der Seite hinzufügen und die Titel der SharePoint-Listen auf der aktuellen Website anzeigen können. Für eine Überprüfung, dass das Projekt korrekt funktioniert, führen Sie folgenden Befehl aus:
+Jetzt sollten Sie Ihr Webpart der Seite hinzufügen und die Titel der SharePoint-Listen auf der aktuellen Website anzeigen können. Für eine Überprüfung, dass das Projekt korrekt funktioniert, führen Sie auf der Konsole den folgenden Befehl aus:
 
 ```sh
 gulp serve --nobrowser
 ```
 
-Da Sie SharePoint JSOM zur Kommunikation mit SharePoint verwenden, müssen Sie das Webpart mit der gehosteten SharePoint-Workbench-Version testen.
+Da Sie SharePoint JSOM zur Kommunikation mit SharePoint verwenden, müssen Sie das Webpart mit der gehosteten SharePoint-Workbench-Version testen. (Deshalb wird der `--nobrowser`-Parameter angegeben, um zu verhindern, dass die lokale Workbench automatisch geladen wird).
 
 ![Das clientseitige SharePoint Framework-Webpart zeigt Titel von SharePoint-Listen in der aktuellen Website an](../../../../images/tutorial-spjsom-web-part-list-titles.png)
 
-Das deklarative Referenzieren von SharePoint JSOM-Skripts als externe Skripts ist bequem und Sie können so den Code übersichtlich halten. Ein Nachteil besteht aber darin, dass Sie absolute URLs zum Speicherort angeben müssen, aus dem SharePoint JSOM-Skripts geladen werden sollen. Wenn Sie für Entwicklung, Prüfung und Produktion separate SharePoint-Mandanten verwenden, wird zusätzliche Arbeit erforderlich, um die folgenden URLs für die verschiedenen Umgebungen entsprechend zu ändern. In solchen Fällen Sie könnten auch erwägen, den [SPComponentLoader](https://dev.office.com/sharepoint/reference/spfx/sp-loader/spcomponentloader) zu verwenden, um die Skripts in den Webpartcode zu laden.
+Das deklarative Referenzieren von SharePoint JSOM-Skripts als externe Skripts ist bequem, und Sie können so den Code übersichtlich halten. Ein Nachteil besteht aber darin, dass Sie absolute URLs zum Speicherort angeben müssen, aus dem SharePoint JSOM-Skripts geladen werden sollen. Wenn Sie für Entwicklung, Prüfung und Produktion separate SharePoint-Mandanten verwenden, wird zusätzliche Arbeit erforderlich, um die folgenden URLs für die verschiedenen Umgebungen entsprechend zu ändern. In solchen Fällen könnten Sie auch erwägen, mithilfe von [SPComponentLoader](https://dev.office.com/sharepoint/reference/spfx/sp-loader/spcomponentloader) imperativ auf JSOM zu verweisen, um die Skripts im Code der SPFx-Komponenten zu laden.
 
 ## <a name="reference-jsom-imperatively"></a>Imperatives Referenzieren von JSOM
 
-Eine andere Möglichkeit zum Laden von JavaScript-Bibliotheken in SharePoint Framework-Projekt besteht darin, den SPComponentLoader zu verwenden. SPComponentLoader ist eine Dienstprogrammklasse, die mit dem SharePoint Framework bereitgestellt wird und Ihnen helfen soll, die Skripts und andere Ressourcen in die Komponenten zu laden. Ein Vorteil der Verwendung des SPComponentLoader gegenüber dem deklarativen Laden von Skripts ist, dass Sie serverrelative URLs verwenden können, die bequemer sind, wenn Sie mehrere SharePoint-Mandanten für die verschiedenen Phasen des Entwicklungsprozesses verwenden.
+Eine andere Möglichkeit zum Laden von JavaScript-Bibliotheken in SharePoint Framework-Projekt besteht darin, den `SPComponentLoader` zu verwenden. `SPComponentLoader` ist eine Dienstprogrammklasse, die mit dem SharePoint Framework bereitgestellt wird und Ihnen helfen soll, die Skripts und andere Ressourcen in die Komponenten zu laden. Ein Vorteil der Verwendung des `SPComponentLoader` gegenüber dem deklarativen Laden von Skripts ist, dass Sie serverrelative URLs verwenden können, die bequemer sind, wenn Sie mehrere SharePoint-Mandanten für die verschiedenen Phasen des Entwicklungsprozesses verwenden.
 
-### <a name="remove-external-references"></a>Entfernen externer Referenzen
+> Für diesen Teil des Lernprogramms passen wir den zuvor im Abschnitt zum deklarativen Referenzieren weiter oben erstellten Code an.
 
-Bevor Sie fortfahren, entfernen Sie vorhandene externe Skriptverweise. Öffnen Sie dazu im Code-Editor die Datei **config/config.json**, und entfernen Sie aus der **externals**-Eigenschaft alle Einträge:
+### <a name="declarative-reference-cleanup"></a>Bereinigung durch deklaratives Verweisen
+
+Wenn Sie die Schritte in den Abschnitten weiter oben zum deklarativen Verweisen befolgt haben, müssen Sie diese Verweise entfernen.
+
+Entfernen Sie zuerst vorhandene externe Skriptverweise. Öffnen Sie dazu im Code-Editor die Datei **config/config.json**, und entfernen Sie aus der **externals**-Eigenschaft alle Einträge:
 
 ```json
 {
@@ -363,17 +378,15 @@ Bevor Sie fortfahren, entfernen Sie vorhandene externe Skriptverweise. Öffnen S
 }
 ```
 
-### <a name="remove-references-in-code"></a>Entfernen von Referenzen aus dem Code
-
 Wenn SharePoint JSOM-Skripts nicht mehr als externe Skripts registriert sind, können Sie nicht direkt im Code darauf verweisen.
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx** und entfernen Sie die **require**-Anweisungen, die auf die verschiedenen SharePoint JSOM-Skripts verweisen.
+Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx** und entfernen Sie die `require`-Anweisungen, die auf die verschiedenen SharePoint JSOM-Skripts verweisen.
 
-### <a name="wait-with-loading-data-until-the-jsom-scripts-are-loaded"></a>Erst Daten laden, wenn die JSOM-Skripts geladen sind
+### <a name="wait-to-load-data-until-the-jsom-scripts-are-loaded"></a>Warten Sie mit den Laden der Daten, bis die JSOM-Skripts geladen sind
 
-Die Hauptfunktion des clientseitigen Webparts, das Sie erstellen, hängt von SharePoint JSOM ab. Je nach Anzahl der Faktoren kann das Laden der Skripts einige Zeit dauern, und wenn Sie ein Webpart erstellen, sollten Sie diese Verzögerung berücksichtigen. Wenn das Webpart einer Seite hinzugefügt worden ist, sollte es dem Benutzer mitteilen, dass es seine Voraussetzungen lädt, und melden, wann es einsatzbereit ist. Um dies zu unterstützen, erweitern Sie den Status der React-Komponente um eine zusätzliche Eigenschaft, damit Sie den Ladestatus der JSOM-Skripts verfolgen können.
+Die Hauptfunktion des clientseitigen Webparts, das wir in diesem Lernprogramm erstellen, hängt von SharePoint JSOM ab. Je nach Anzahl der Faktoren kann das Laden der Skripts einige Zeit dauern, und wenn Sie SPFx-Komponenten erstellen, die JSOM verwenden, sollten Sie diese Verzögerung berücksichtigen. Wenn das Webpart einer Seite hinzugefügt worden ist, sollte es dem Benutzer mitteilen, dass es seine Voraussetzungen lädt, und melden, wann es einsatzbereit ist. Um dies zu unterstützen, erweitern Sie den Status der React-Komponente um eine zusätzliche Eigenschaft, damit Sie den Ladestatus der JSOM-Skripts verfolgen können.
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/ISharePointListsState.ts** und fügen Sie folgenden Code ein:
+Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/ISharePointListsState.ts**, und fügen Sie folgenden Code ein:
 
 ```ts
 export interface ISharePointListsState {
@@ -404,7 +417,7 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-Aktualisieren Sie in der gleichen Datei, die **getListsTitles**-Methode auf den folgenden Code:
+Aktualisieren Sie in der gleichen Datei, die `getListsTitles`-Methode auf den folgenden Code:
 
 ```ts
 export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
@@ -446,7 +459,7 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-Um dem Benutzer den Ladestatus der SharePoint JSOM-Skripts zu melden, fügen Sie die **import**-Anweisung hinzu, um damit die **Placeholder**-Komponente zu referenzieren und die **render**-Methode auf folgenden Code zu aktualisieren:
+Um dem Benutzer den Ladestatus der SharePoint JSOM-Skripts zu melden, fügen Sie die `import`-Anweisung hinzu, um damit auf die `Placeholder`-Komponente zu verweisen und die `render`-Methode auf folgenden Code zu aktualisieren:
 
 ```tsx
 import { Placeholder } from '@microsoft/sp-webpart-base';
@@ -494,13 +507,13 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-Wenn die React-Komponente meldet, dass die SharePoint-Skripts geladen werden, zeigt sie den standardmäßigen SharePoint Framework-Platzhalter an. Nachdem die Skripts geladen wurden, wird das Webpart den Standardinhalt mit der Schaltfläche anzeigen, damit der Benutzer die Informationen zu SharePoint-Listen auf die aktuelle Website laden kann.
+Wenn die React-Komponente meldet, dass die SharePoint JSOM-Skripts geladen werden, zeigt sie den standardmäßigen SharePoint Framework-Platzhalter an. Nachdem die Skripts geladen wurden, wird das Webpart den erwarteten Inhalt mit der Schaltfläche anzeigen, damit der Benutzer die Informationen zu SharePoint-Listen auf die aktuelle Website laden kann.
 
 ### <a name="load-sharepoint-jsom-scripts-using-spcomponentloader"></a>Laden von SharePoint JSOM-Skripts mit SPComponentLoader
 
-Das clientseitige Webpart darf SharePoint JSOM-Skripts nur einmal laden. In diesem Beispiel – vorausgesetzt das Webpart besteht aus einer einzigen React-Komponente – sollten Sie die SharePoint JSOM-Skripts am besten in der **componentDidMount**-Methode der React-Komponente laden, da diese Methode erst ausgeführt wird, wenn die Komponente instanziiert wurde.
+SPFx-Komponenten sollten SharePoint JSOM-Skripts nur einmal laden. In diesem Beispiel – vorausgesetzt, das Webpart besteht aus einer einzigen React-Komponente – sollten Sie die SharePoint JSOM-Skripts am besten in der `componentDidMount`-Methode der React-Komponente laden, da diese Methode erst ausgeführt wird, wenn die Komponente instanziiert wurde.
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Fügen Sie im oberen Bereich der Datei eine **import**-Anweisung hinzu, die auf **SPComponentLoader** verweist. Fügen Sie dann in der **SharePointLists**-Klasse die **ComponentDidMount**-Methode hinzu:
+Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Fügen Sie im oberen Bereich der Datei eine `import`-Anweisung hinzu, die auf `SPComponentLoader` verweist. Fügen Sie dann in der `SharePointLists`-Klasse die `componentDidMount`-Methode hinzu:
 
 ```ts
 import { SPComponentLoader } from '@microsoft/sp-loader';
@@ -537,9 +550,9 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-Unter Verwendung einer Reihe von verketteten Zusagen laden Sie die verschiedenen Skripts, mit zusammen die Verwendung von SharePoint JSOM in Ihrem clientseitigen SharePoint Framework-Webpart ermöglichen. Beachten Sie, wie Sie dank Verwendung des SPComponentLoader serverrelative URLs verwenden können, die Skripts aus dem aktuellen SharePoint-Mandanten laden. Nachdem alle Skripts geladen wurden, aktualisieren Sie den Status der React-Komponente, indem Sie bestätigen, dass alle Voraussetzungen geladen wurden und das Webpart einsatzbereit ist.
+Unter Verwendung einer Reihe von verketteten Zusagen laden Sie die verschiedenen Skripts, die zusammen die Verwendung von SharePoint JSOM in Ihrer SharePoint Framework-Komponente ermöglichen. Beachten Sie, wie Sie dank Verwendung des `SPComponentLoader` serverrelative URLs verwenden können, die Skripts aus dem aktuellen SharePoint-Mandanten laden. Nachdem alle Skripts geladen wurden, aktualisieren Sie den Status der React-Komponente, indem Sie bestätigen, dass alle Voraussetzungen geladen wurden und das Webpart einsatzbereit ist.
 
-Bestätigen Sie, dass das Webpart wie erwartet funktioniert, indem Sie folgenden Befehl ausführen:
+Bestätigen Sie, dass das Webpart wie erwartet funktioniert, indem Sie auf der Konsole den folgenden Befehl ausführen:
 
 ```sh
 gulp serve --nobrowser
@@ -549,14 +562,14 @@ Wie zuvor sollte das Webpart die Titel der SharePoint-Listen auf der aktuellen W
 
 ![Das clientseitige SharePoint Framework-Webpart zeigt Titel von SharePoint-Listen in der aktuellen Website an](../../../../images/tutorial-spjsom-web-part-list-titles.png)
 
-Obwohl die Verwendung des SPComponentLoader einigen Aufwand erfordert, ermöglicht er Ihnen, serverrelative URLs zu verwenden, die in Szenarien nützlich sind, in denen Sie unterschiedliche Mandanten für Entwicklung, Prüfung und Produktion einsetzen.
+Obwohl die Verwendung des `SPComponentLoader` einigen Aufwand erfordert, ermöglicht er Ihnen, serverrelative URLs zu verwenden, die in Szenarien nützlich sind, in denen Sie unterschiedliche Mandanten für Entwicklung, Prüfung und Produktion einsetzen.
 
 ## <a name="considerations"></a>Überlegungen
 
-In der Vergangenheit haben Sie vielleicht beim Erstellen von clientseitigen Anpassungen auf SharePoint-Plattformen SharePoint JSOM zur Kommunikation mit SharePoint verwendet. Jetzt ist die empfohlene Vorgehensweise entweder die Verwendung der SharePoint REST-API oder der [PnP JavaScript-Core-Bibliothek](https://github.com/SharePoint/PnP-JS-Core).
+In der Vergangenheit haben Sie vielleicht beim Erstellen von clientseitigen Anpassungen auf SharePoint SharePoint JSOM zur Kommunikation mit SharePoint verwendet. Jetzt ist die empfohlene Vorgehensweise jedoch entweder die Verwendung der SharePoint REST-API (direkt oder über die [PnP JavaScript-Core-Bibliothek](https://github.com/SharePoint/PnP-JS-Core)).
 
-SharePoint JSOM wurde vor einigen Jahren eingeführt und war der erste Schritt zur Unterstützung von clientseitigen Lösungen auf SharePoint-Plattformen. Derzeit wird SharePoint JSOM nicht mehr aktiv verwaltet und bietet Ihnen möglicherweise keinen Zugriff auf alle Funktionen, die über die REST-API oder die PnP JavaScript-Core-Bibliothek.
+Als SharePoint JSOM eingeführt wurde, stellte dies den ersten Schritt im Hinblick auf eine Unterstützung clientseitiger Lösungen auf SharePoint dar. Es wird jedoch nicht mehr aktiv verwaltet und bietet möglicherweise keinen Zugriff auf alle Funktionen, die über die REST-API verfügbar sind. Außerdem können Sie, unabhängig davon, ob Sie die SharePoint-REST-API direkt oder über die PnP JavaScript-Core-Bibliothek verwenden, Zusagen verwenden, die das Schreiben von asynchronem Code erheblich erleichtern (ein häufig auftretendes Problem bei der Verwendung von JSOM).
 
-Ein weiterer Vorteil der Verwendung der SharePoint REST-API oder der PnP JavaScript-Core-Bibliothek liegt darin, dass Sie in beiden Fällen Zusagen verwenden können, die das Schreiben von asynchronem Code erheblich vereinfachen.
+Es gibt zwar immer noch Fälle, in denen SharePoint JSOM Zugriff auf Daten und Methoden bietet, die noch nicht von der SharePoint-REST-API abgedeckt sind, wenn möglich sollte aber die REST-API verwendet werden.
 
-Wenn Sie vorhandene Anpassungen haben, die SharePoint JSOM verwenden und in Erwägung ziehen, diese zu SharePoint Framework zu migrieren, sollte dieser Artikel Ihnen die erforderlichen Informationen zur Verwendung von SharePoint JSOM in SharePoint Framework-Lösungen liefern. Langfristig sollten die Art und Weise ändern, wie Sie mit SharePoint kommunizieren, entweder unter Verwendung der SharePoint-REST-API oder der PnP JavaScript-Core-Bibliothek.
+Wenn Sie vorhandene Anpassungen haben, die SharePoint JSOM verwenden, und in Erwägung ziehen, diese zu SharePoint Framework zu migrieren, sollte dieser Artikel Ihnen die erforderlichen Informationen zur Verwendung von SharePoint JSOM in SharePoint Framework-Lösungen liefern. Langfristig sollten Sie jedoch die Art und Weise ändern, wie Sie mit SharePoint kommunizieren, entweder unter Verwendung der SharePoint-REST-API (direkt) oder über die PnP JavaScript-Core-Bibliothek.
