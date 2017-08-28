@@ -1,63 +1,64 @@
-# <a name="share-data-between-web-parts-using-a-global-variable-tutorial"></a>Gemeinsame Verwendung von Daten zwischen Webparts unter Verwendung einer globalen Variablen (Lernprogramm).
+# <a name="share-data-between-web-parts-using-a-global-variable-tutorial"></a>Gemeinsame Verwendung von Daten zwischen Webparts mithilfe einer globalen Variable (Tutorial)
 
-> Hinweis:  Dieser Artikel wurde noch nicht mit der SPFx-GA-Version überprüft, möglicherweise treten daher Probleme auf, wenn Sie versuchen, dies mit der neuesten Version durchzuführen.
+> Hinweis: Wir konnten noch nicht überprüfen, ob sich die Anleitung in diesem Artikel mit der allgemein verfügbaren SPFx-Version (GA-Version) umsetzen lässt. Möglicherweise treten Probleme auf, wenn Sie die neueste Version für dieses Tutorial verwenden.
 
-Wenn Sie bei der Erstellung von clientseitigen Webparts Daten nur einmal laden und anschließend in den verschiedenen Webparts jeweils wiederverwenden, verbessert das die Leistung Ihrer Seiten und reduziert die Last in Ihrem Netzwerk. Dieses Lernprogramm veranschaulicht schrittweise, wie Daten zwischen Webparts unter Verwendung einer globalen Variablen freigegeben werden.
+Wenn Sie bei der Erstellung von clientseitigen Webparts Daten nur einmal laden und anschließend in den verschiedenen Webparts jeweils wiederverwenden, verbessert das die Leistung Ihrer Seiten und reduziert die Last in Ihrem Netzwerk. In diesem Tutorial beschreiben wir Schritt für Schritt, wie Webparts Daten mithilfe einer globalen Variable gemeinsam verwenden können.
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment).
+> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen können, müssen Sie [Ihre Entwicklungsumgebung für die Erstellung clientseitiger SharePoint-Webparts einrichten](../../set-up-your-development-environment).
 
 ## <a name="prepare-the-project"></a>Vorbereiten des Projekts
 
 ### <a name="create-a-new-project"></a>Erstellen eines neuen Projekts
 
-Erstellen Sie zunächst einen neuen Ordner für Ihr Projekt.
+Erstellen Sie über eine Eingabeaufforderung einen Ordner für Ihr Projekt:
 
 ```sh
 md react-recentdocuments
 ```
 
-Wechseln Sie zum Projektordner.
+Wechseln Sie in den Projektordner:
 
 ```sh
 cd react-recentdocuments
 ```
 
-Führen Sie im Projektordner den SharePoint Framework-Yeoman-Generator aus, um ein Gerüst für ein neues SharePoint Framework-Projekt zu erstellen.
+Führen Sie im Projektordner den SharePoint Framework-Yeoman-Generator aus, um ein Gerüst für ein neues SharePoint Framework-Projekt zu erstellen:
 
 ```sh
 yo @microsoft/sharepoint
 ```
 
-Geben Sie die folgenden Werte ein, wenn Sie dazu aufgefordert werden:
+Es werden verschiedene Eingabeaufforderungen angezeigt. Geben Sie jeweils die folgenden Werte an:
 
-- **react-recentdocuments** als Name der Lösung.
+- **WebPart** als den Typ von zu erstellender clientseitiger Komponente
+- **react-recentdocuments** als Namen der Lösung
 - **Verwenden Sie den aktuellen Ordner** als Speicherort für die Dateien.
 - **Zuletzt verwendete Dokumente** als Name des Webparts.
-- **Zeigt kürzlich geänderte Dokumente** als Beschreibung Ihres Webparts.
-- **React** als Startpunkt für die Webpart-Erstellung.
+- **Shows recently modified documents** als Beschreibung Ihres Webparts
+- **React** als das zu verwendende Framework
 
-![Der SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../../images/tutorial-sharingdata-yo-sharepoint-recent-documents.png)
+![SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../../images/tutorial-sharingdata-yo-sharepoint-recent-documents.png)
 
-Öffnen Sie den Projektordner in Ihrem Code-Editor, sobald die Gerüsterstellung abgeschlossen ist. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+Öffnen Sie nach Abschluss der Gerüsterstellung den Projektordner in Ihrem Code-Editor. Für die Anleitung in diesem Artikel haben wir Visual Studio Code verwendet; auch die Screenshots entstammen diesem Editor. Sie können jedoch auch jeden beliebigen anderen Editor verwenden.
 
-![Das SharePoint Framework-Projekt wird in Visual Studio Code geöffnet.](../../../../images/tutorial-sharingdata-vscode.png)
+![SharePoint Framework-Projekt in Visual Studio Code](../../../../images/tutorial-sharingdata-vscode.png)
 
 ## <a name="show-the-recently-modified-documents"></a>Anzeigen der kürzlich geänderten Dokumente
 
-Das Webpart „Zuletzt verwendete Dokumente“ zeigt Informationen zu den zuletzt geänderten Dokumenten an, die als Karten mithilfe von Office UI Fabric angezeigt werden.
+Das Webpart „Zuletzt verwendete Dokumente“ zeigt Informationen zu den zuletzt geänderten Dokumenten an, die jeweils als Office UI Fabric-Karte dargestellt werden.
 
-![Das Webpart „Zuletzt verwendete Dokumente“ mit drei kleinen Dokumentkarten, die die drei zuletzt geänderten Dokumente darstellen](../../../../images/tutorial-sharingdata-recent-documents.png)
+![Webpart „Zuletzt verwendete Dokumente“ mit drei kleinen Dokumentkarten für die drei zuletzt geänderten Dokumente](../../../../images/tutorial-sharingdata-recent-documents.png)
 
-### <a name="remove-the-standard-description-property"></a>Entfernen der standardmäßigen _description_-Eigenschaft
+### <a name="remove-the-standard-description-property"></a>Entfernen der Standardeigenschaft _description_
 
-Beginnen Sie, indem Sie die standardmäßige **description**-Eigenschaft aus der **IRecentDocumentsWebPartProps**-Schnittstelle entfernen. Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocuments/IRecentDocumentsWebPartProps.ts**, und fügen Sie den folgenden Code ein:
+Im ersten Schritt entfernen Sie die Standardeigenschaft `description` aus der Schnittstelle `IRecentDocumentsWebPartProps`. Öffnen Sie hierzu im Code-Editor die Datei **./src/webparts/recentDocuments/IRecentDocumentsWebPartProps.ts**, und fügen Sie den folgenden Code ein:
 
 ```ts
 export interface IRecentDocumentsWebPartProps {
 }
 ```
 
-Entfernen Sie die standardmäßige **description**-Eigenschaft aus dem Webpartmanifest. Öffnen Sie die Datei ./src/webparts/recentDocuments/RecentDocumentsWebPart.manifest.json, und entfernen Sie die **description**-Eigenschaft aus der **properties**-Eigenschaft:
+Entfernen Sie nun die Standardeigenschaft `description` aus dem Webpartmanifest. Öffnen Sie hierzu die Datei **./src/webparts/recentDocuments/RecentDocumentsWebPart.manifest.json**, und entfernen Sie aus der Eigenschaft `properties` die Eigenschaft `description`:
 
 ```json
 {
@@ -81,7 +82,7 @@ Entfernen Sie die standardmäßige **description**-Eigenschaft aus dem Webpartma
 }
 ```
 
-Entfernen Sie schließlich die standardmäßige **description**-Eigenschaft aus dem Webpart. Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Ersetzen Sie die **render**-Methode durch den folgenden Code:
+Entfernen Sie anschließend die Standardeigenschaft `description` aus dem Webpart. Öffnen Sie dazu im Code-Editor die Datei **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**, und ersetzen Sie die Methode `render` durch den folgenden Code:
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -99,7 +100,7 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
-Ersetzen Sie dann die **getPropertyPaneConfiguration**-Methode durch den folgenden Code:
+Ersetzen Sie nun die Methode `getPropertyPaneConfiguration` durch den folgenden Code:
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -125,9 +126,9 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
-### <a name="create-the-idocumentactivity-interface"></a>Erstellen der IDocumentActivity-Schnittstelle
+### <a name="create-the-idocumentactivity-interface"></a>Erstellen der Schnittstelle „IDocumentActivity“
 
-Erstellen Sie im Ordner **./src/webparts/recentDocuments** eine neue Datei namens **IDocumentActivity.ts**, und fügen Sie den folgenden Code ein:
+Erstellen Sie im Ordner **./src/webparts/recentDocuments** eine neue Datei mit dem Namen **IDocumentActivity.ts**, und fügen Sie den folgenden Code in die Datei ein:
 
 ```ts
 export interface IDocumentActivity {
@@ -137,11 +138,11 @@ export interface IDocumentActivity {
 }
 ```
 
-Diese Schnittstelle wird verwendet, um die Aktivitätsinformationen eines bestimmten Dokuments auf einer Karte anzuzeigen.
+Diese Schnittstelle wird verwendet, um die Aktivitätsinformationen eines gegebenen Dokuments auf einer Karte anzuzeigen.
 
-### <a name="create-the-idocument-interface"></a>Erstellen der IDocument-Schnittstelle
+### <a name="create-the-idocument-interface"></a>Erstellen der Schnittstelle „IDocument“
 
-Erstellen Sie im Ordner **./src/webparts/recentDocuments** eine neue Datei namens **IDocument.ts**, und fügen Sie den folgenden Code ein:
+Erstellen Sie im Ordner **./src/webparts/recentDocuments** eine neue Datei mit dem Namen **IDocument.ts**, und fügen Sie den folgenden Code in die Datei ein:
 
 ```ts
 import { IDocumentActivity } from './IDocumentActivity';
@@ -155,9 +156,9 @@ export interface IDocument {
 }
 ```
 
-Diese Schnittstelle stellt ein Dokument mit allen erforderlichen Informationen zum Anzeigen des Dokuments als Karte dar.
+Diese Schnittstelle repräsentiert ein Dokument samt allen Informationen, die erforderlich sind, um es als Karte anzeigen zu können.
 
-### <a name="show-recent-documents-in-the-recentdocuments-react-component"></a>Anzeigen zuletzt verwendeter Dokumente in der React-Komponente „RecentDocuments“ 
+### <a name="show-recent-documents-in-the-recentdocuments-react-component"></a>Anzeigen zuletzt verwendeter Dokumente in der React-Komponente „RecentDocuments“
 
 Fügen Sie die **documents**-Eigenschaft zu der **IRecentDocumentsProps**-Schnittstelle hinzu. Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts**, und fügen Sie den folgenden Code ein:
 
@@ -169,7 +170,7 @@ export interface IRecentDocumentsProps {
 }
 ```
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocuments/components/RecentDocuments.tsx**, und fügen Sie den folgenden Code ein:
+Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocuments/components/RecentDocuments.tsx**, und fügen Sie den folgenden Code in die Datei ein:
 
 ```tsx
 import * as React from 'react';
@@ -221,19 +222,19 @@ export default class RecentDocuments extends React.Component<IRecentDocumentsPro
 }
 ```
 
-Die Komponente durchläuft zunächst die Dokumente, die unter Verwendung der **documents**-Eigenschaft übergeben wurden. Für jedes Dokument wird eine [Office UI Fabric-Dokumentkarte](https://dev.office.com/fabric#/components/documentcard) erstellt, mit der die Eigenschaften mit den relevanten Informationen zu dem jeweiligen Dokument gefüllt werden. Wenn Karten für alle Dokumente erstellt wurden, fügt die Komponente diese schließlich zu ihrem Text hinzu und gibt das gesamte Markup zurück.
+Die Komponente durchläuft zunächst die Dokumente, die in der Komponenteneigenschaft `documents` übergeben wurden. Dabei erstellt sie für jedes Dokument eine [Office UI Fabric-Dokumentkarte](https://dev.office.com/fabric#/components/documentcard) und trägt als deren Eigenschaften die entsprechenden Informationen zu dem jeweiligen Dokument ein. Sobald für jedes Dokument eine Karte erstellt wurde, fügt die Komponente diese Karten ihrem Textkörper hinzu und gibt das vollständige Markup zurück.
 
 ### <a name="load-the-information-about-the-recent-documents"></a>Laden der Informationen zu den zuletzt verwendeten Dokumenten
 
-In diesem Beispiel werden die Informationen zu den zuletzt geänderten Dokumenten aus einem statischen Dataset geladen. Sie könnten diese Implementierung jedoch ganz einfach ändern, um die Daten stattdessen aus einer SharePoint-Dokumentbibliothek zu laden.
+In diesem Beispiel werden die Informationen zu den zuletzt geänderten Dokumenten aus einem statischen Dataset geladen. Sie können die Implementierung jedoch auch mühelos so abändern, dass die Daten stattdessen aus einer SharePoint-Dokumentbibliothek geladen werden.
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Fügen Sie den import-Anweisungen im oberen Abschnitt der Datei einen Verweis auf die **IDocument**-Schnittstelle mithilfe des folgenden Codes hinzu:
+Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Fügen Sie eine Importanweisung für die Schnittstelle `IDocument` unterhalb der anderen Importanweisungen am Anfang der Datei ein. Verwenden Sie hierzu den folgenden Code:
 
 ```ts
 import { IDocument } from './IDocument';
 ```
 
-Fügen Sie in der **RecentDocumentsWebPart**-Klasse eine neue private Variable mit dem Namen **Dokumente** mithilfe des folgenden Codes hinzu:
+Fügen Sie in der Klasse `RecentDocumentsWebPart` eine neue private Variable mit dem Namen `documents` ein. Verwenden Sie hierzu den folgenden Code:
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -299,7 +300,7 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
-Ändern Sie die **render**-Methode so, dass die Informationen zu den zuletzt geänderten Dokumenten geladen und gerendert werden:
+Ändern Sie die Methode `render` so, dass die Informationen zu den zuletzt geänderten Dokumenten geladen und gerendert werden:
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -323,49 +324,51 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
-Überprüfen Sie, dass das Webpart korrekt funktioniert und Informationen zu den drei zuletzt geänderten Dokumenten anzeigt, indem Sie den folgenden Befehl ausführen:
+Überprüfen Sie nun, ob das Webpart korrekt funktioniert und Informationen zu den drei zuletzt geänderten Dokumenten anzeigt. Führen Sie dazu den folgenden Befehl über eine Eingabeaufforderung in Ihrem Projektverzeichnis aus:
 
 ```sh
 gulp serve
 ```
 
-Fügen Sie in der SharePoint Workbench das Webpart „Zuletzt verwendete Dokumente“ dem Zeichenbereich hinzu.
+Fügen Sie in SharePoint Workbench das Webpart „Zuletzt verwendete Dokumente“ zur Canvas hinzu.
 
-![Das Webpart „Zuletzt verwendete Dokumente“, das die drei zuletzt geänderten Dokumente als Dokumentkarten anzeigt](../../../../images/tutorial-sharingdata-recent-documents.png)
+![Webpart „Zuletzt verwendete Dokumente“ mit Dokumentkarten für die drei zuletzt geänderten Dokumente](../../../../images/tutorial-sharingdata-recent-documents.png)
 
-## <a name="show-the-most-recently-modified-document"></a>Anzeigen des kürzlich geänderten Dokuments
+## <a name="show-the-most-recently-modified-document"></a>Anzeigen des zuletzt geänderten Dokuments
 
-Das Webpart „Zuletzt verwendetes Dokument“ zeigt Informationen zu dem zuletzt geänderten Dokument an.
+Das Webpart „Recent document“ zeigt Informationen zu dem zuletzt geänderten Dokument an.
 
-![Das Webpart „Zuletzt verwendetes Dokument“ zeigt eine große Dokumentkarte mit Informationen zu dem zuletzt geänderten Dokument an]()
+![Webpart „Recent document“ mit einer großen Dokumentkarte mit Informationen zu dem zuletzt geänderten Dokument](../../../../images/tutorial-sharingdata-recent-document.png)
 
-### <a name="add-the-second-web-part"></a>Hinzufügen des zweiten Webpart
+### <a name="add-the-second-web-part"></a>Hinzufügen des zweiten Webparts
 
-Um die Freigabe von Daten zwischen Webparts zu veranschaulichen, fügen Sie dem Projekt ein zweites Webpart hinzu.
+Nun fügen wir dem Projekt ein zweites Webpart hinzu, um zu veranschaulichen, wie Webparts Daten gemeinsam verwenden können.
 
-Führen Sie im Projektordner den Yeoman-Generator von SharePoint Framework aus.
+Führen Sie über eine Eingabeaufforderung im Projektordner den SharePoint Framework-Yeoman-Generator aus.
 
 ```sh
 yo @microsoft/sharepoint
 ```
 
-Geben Sie die folgenden Werte ein, wenn Sie dazu aufgefordert werden:
+Es werden verschiedene Eingabeaufforderungen angezeigt. Geben Sie jeweils die folgenden Werte an:
 
-- **Zuletzt verwendetes Dokument** als Name des Webparts.
+
+- **WebPart** als den Typ von zu erstellender clientseitiger Komponente
+- **Recent document** als Namen des Webparts
 - **Zeigt Informationen zu dem zuletzt geänderten Dokumentinformation** als Beschreibung des Webparts.
 
-![Der Yeoman-Generator von SharePoint Framework mit Informationen zum Erstellen eines Gerüsts für das zweite Webpart.](../../../../images/tutorial-sharingdata-yo-sharepoint-recent-document.png)
+![SharePoint Framework-Yeoman-Generator mit Informationen zum Erstellen eines Gerüsts für das zweite Webpart](../../../../images/tutorial-sharingdata-yo-sharepoint-recent-document.png)
 
-### <a name="remove-the-standard-description-property"></a>Entfernen der standardmäßigen _description_-Eigenschaft
+### <a name="remove-the-standard-description-property"></a>Entfernen der Standardeigenschaft _description_
 
-Beginnen Sie, indem Sie die **description**-Eigenschaft aus der **IRecentDocumentsWebPartProps**-Schnittstelle entfernen. Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocument/IRecentDocumentWebPartProps.ts**, und fügen Sie den folgenden Code ein:
+Im ersten Schritt entfernen Sie die Eigenschaft `description` aus der Schnittstelle `IRecentDocumentWebPartProps`. Öffnen Sie hierzu im Code-Editor die Datei **./src/webparts/recentDocument/IRecentDocumentWebPartProps.ts**, und fügen Sie den folgenden Code in die Datei ein:
 
 ```ts
 export interface IRecentDocumentWebPartProps {
 }
 ```
 
-Entfernen Sie die standardmäßige **description**-Eigenschaft aus dem Webpartmanifest. Öffnen Sie die Datei **./src/webparts/recentDocument/RecentDocumentWebPart.manifest.json**, und entfernen Sie die **description**-Eigenschaft aus der **properties**-Eigenschaft:
+Entfernen Sie die Standardeigenschaft `description` aus dem Webpartmanifest. Öffnen Sie hierzu die Datei **./src/webparts/recentDocument/RecentDocumentWebPart.manifest.json**, und entfernen Sie aus der Eigenschaft `properties` die Eigenschaft `description`:
 
 ```json
 {
@@ -389,7 +392,7 @@ Entfernen Sie die standardmäßige **description**-Eigenschaft aus dem Webpartma
 }
 ```
 
-Entfernen Sie schließlich die standardmäßige **description**-Eigenschaft aus dem Eigenschaftenbereich des Webparts. Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Ersetzen Sie die **render**-Methode durch den folgenden Code:
+Entfernen Sie nun die Standardeigenschaft `description` aus dem Eigenschaftenbereich des Webparts. Öffnen Sie hierzu im Code-Editor die Datei **./src/webparts/recentDocument/RecentDocumentWebPart.ts**, und ersetzen Sie die Methode `render` durch den folgenden Code:
 
 ```ts
 export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecentDocumentWebPartProps> {
@@ -407,7 +410,7 @@ export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecent
 }
 ```
 
-Ersetzen Sie dann die **getPropertyPaneConfiguration**-Methode durch den folgenden Code:
+Im nächsten Schritt ersetzen Sie die Methode `getPropertyPaneConfiguration` durch den folgenden Code:
 
 ```ts
 export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecentDocumentWebPartProps> {
@@ -433,19 +436,19 @@ export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecent
 }
 ```
 
-### <a name="reuse-the-idocument-and-idocumentactivity-interfaces"></a>Wiederverwenden der _IDocument_- und _IDocumentActivity_-Schnittstellen
+### <a name="reuse-the-idocument-and-idocumentactivity-interfaces"></a>Wiederverwenden der Schnittstellen _IDocument_ und _IDocumentActivity_
 
-Das Webpart „Zuletzt verwendetes Dokument“ zeigt Informationen zu dem zuletzt geänderten Dokument anders als das Webpart „Zuletzt verwendete Dokumente“ an, beide Webparts verwenden aber dieselbe Datenstruktur, die ein Dokument darstellt. Anstatt die Schnittstellen **IDocument** und **IDocumentActivity** zu duplizieren, können Sie sie in beiden Webparts wiederverwenden.
+Das Webpart „Recent document“ zeigt Informationen zu dem zuletzt geänderten Dokument an, tut das jedoch anders als das Webpart „Zuletzt verwendete Dokumente“. Die Datenstruktur, die die Dokumente repräsentiert, ist bei beiden Webparts jedoch dieselbe. Statt die Schnittstellen `IDocument` und `IDocumentActivity` zu duplizieren, können Sie sie einmal implementieren und im zweiten Webpart wiederverwenden.
 
 Aktivieren Sie in Visual Studio Code das Explorer-Fenster aus dem Ordner **./src/webparts/recentDocuments**, und verschieben Sie die Dateien **IDocument.ts** und **IDocumentActivity.ts** eine Ebene nach oben zum Ordner **./src/webparts**.
 
-![Explorer-Fenster in Visual Studio Code, in dem die Dateien „IDocument.ts“ und „ IDocumentActivity.ts“ hervorgehoben sind](../../../../images/tutorial-sharingdata-interfaces.png)
+![Explorer-Fenster in Visual Studio Code mit den Dateien „IDocument.ts“ und „IDocumentActivity.ts“ (hervorgehoben)](../../../../images/tutorial-sharingdata-interfaces.png)
 
 #### <a name="update-references-to-the-moved-files"></a>Aktualisieren der Verweise auf die verschobenen Dateien
 
-Da Sie die Dateien an einen anderen Ort in Ihrem Projekt verschoben haben, müssen Sie die Pfade in ihren Verweisen aktualisieren.
+Da Sie die Dateien an einen anderen Speicherort innerhalb Ihres Projekts verschoben haben, müssen Sie überall dort, wo die Dateien referenziert werden, den Pfad entsprechend aktualisieren.
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts**, und ändern Sie ihren Code folgendermaßen:
+Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts**, und ändern Sie den Code in der Datei wie folgt:
 
 ```ts
 import { IDocument } from '../../IDocument';
@@ -455,21 +458,21 @@ export interface IRecentDocumentsProps {
 }
 ```
 
-Öffnen Sie als Nächstes die **./src/webparts/recentDocuments/components/RecentDocuments.tsx**-Datei, und aktualisieren Sie die **import**-Anweisung der **IDocument**-Schnittstelle folgendermaßen:
+Öffnen Sie nun die Datei **./src/webparts/recentDocuments/components/RecentDocuments.tsx**, und aktualisieren Sie die `import`-Anweisung der Schnittstelle `IDocument` wie folgt:
 
 ```ts
 import { IDocument } from '../../IDocument';
 ```
 
-Öffnen Sie schließlich die Datei **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**, und aktualisieren Sie die **import**-Anweisung der **IDocument**-Schnittstelle folgendermaßen:
+Öffnen Sie anschließend die Datei **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**, und aktualisieren Sie die `import`-Anweisung der Schnittstelle `IDocument` wie folgt:
 
 ```ts
 import { IDocument } from '../IDocument';
 ```
 
-### <a name="show-the-most-recent-document-in-the-recentdocument-react-component"></a>Anzeigen des zuletzt verwendeten Dokuments in der React-Komponente „RecentDocuments“
+### <a name="show-the-most-recent-document-in-the-recentdocument-react-component"></a>Anzeigen des zuletzt verwendeten Dokuments in der React-Komponente „RecentDocument“
 
-Fügen Sie die **document**-Eigenschaft zu der **IRecentDocumentProps**-Schnittstelle hinzu. Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocument/components/IRecentDocumentprops.ts**, und fügen Sie den folgenden Code ein:
+Fügen Sie die Eigenschaft `document` der Schnittstelle `IRecentDocumentProps` hinzu. Öffnen Sie hierzu im Code-Editor die Datei **./src/webparts/recentDocument/components/IRecentDocumentProps.ts**, und fügen Sie den folgenden Code in die Datei ein:
 
 ```ts
 import { IDocument } from '../../IDocument';
@@ -529,19 +532,19 @@ export default class RecentDocument extends React.Component<IRecentDocumentProps
 }
 ```
 
-Die React-Komponente **RecentDocument** verwendet die Informationen zu dem zuletzt geänderten Dokument, das an die **document**-Eigenschaft übergeben wurde, und verwendet dieses zum Rendern einer Office UI Fabric-Dokumentkarte.
+Die React-Komponente `RecentDocument` verwendet die Informationen zu dem in der Eigenschaft `document` übergebenen zuletzt geänderten Dokument zum Rendern einer Office UI Fabric-Dokumentkarte.
 
 ### <a name="load-the-information-about-the-recent-document"></a>Laden der Informationen zu dem zuletzt verwendeten Dokument
 
-In diesem Beispiel werden die Informationen zu dem zuletzt geänderten Dokument aus einem statischen Dataset geladen. Sie könnten diese Implementierung jedoch ganz einfach ändern, um die Daten stattdessen aus einer SharePoint-Dokumentbibliothek zu laden.
+In diesem Beispiel werden die Informationen zu dem zuletzt geänderten Dokument aus einem statischen Dataset geladen.  Sie können die Implementierung jedoch auch mühelos so abändern, dass die Daten stattdessen aus einer SharePoint-Dokumentbibliothek geladen werden.
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Fügen Sie den import-Anweisungen im oberen Abschnitt der Datei einen Verweis auf die **IDocument**-Schnittstelle mithilfe des folgenden Codes hinzu:
+Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Fügen Sie eine Importanweisung für die Schnittstelle `IDocument` unterhalb der anderen Importanweisungen am Anfang der Datei ein. Verwenden Sie hierzu den folgenden Code:
 
 ```ts
 import { IDocument } from '../IDocument';
 ```
 
-Fügen Sie in der **RecentDocumentWebPart**-Klasse eine neue private Variable mit dem Namen **Dokument** mithilfe des folgenden Codes hinzu:
+Fügen Sie in der Klasse `RecentDocumentWebPart` eine neue private Variable mit dem Namen `document` ein. Verwenden Sie hierzu den folgenden Code:
 
 ```ts
 export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecentDocumentWebPartProps> {
@@ -561,7 +564,7 @@ export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecent
 }
 ```
 
-Ändern Sie die **render**-Methode so, dass die Informationen zu dem zuletzt geänderten Dokument geladen und gerendert werden:
+Ändern Sie die Methode `render` so, dass die Informationen zu dem zuletzt geänderten Dokument geladen und gerendert werden:
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -585,31 +588,31 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
-Überprüfen Sie, dass das Webpart korrekt funktioniert und Informationen zu dem zuletzt geänderten Dokument anzeigt, indem Sie den folgenden Befehl ausführen:
+Überprüfen Sie nun, ob das Webpart korrekt funktioniert und Informationen zu dem zuletzt geänderten Dokument anzeigt. Führen Sie dazu den folgenden Befehl über eine Eingabeaufforderung in Ihrem Projektordner aus:
 
 ```sh
 gulp serve
 ```
 
-Fügen Sie in der SharePoint Workbench das Webpart „Zuletzt verwendetes Dokument“ dem Zeichenbereich hinzu.
+Fügen Sie in SharePoint Workbench das Webpart „Recent document“ zur Canvas hinzu.
 
-![Das Webpart „Zuletzt verwendetes Dokument“ zeigt eine Dokumentkarte mit Informationen zu dem zuletzt geänderten Dokument an](../../../../images/tutorial-sharingdata-recent-document.png)
+![Webpart „Recent document“ mit einer Dokumentkarte mit Informationen zu dem zuletzt geänderten Dokument](../../../../images/tutorial-sharingdata-recent-document.png)
 
-Die aktuelle Implementierung ist ein typisches Beispiel für zwei Webparts, die unabhängig voneinander entwickelt werden. Wenn sie beide auf derselben Seite platziert und Daten aus SharePoint laden würden, würden sie zwei separate Anforderungen zum Abrufen ähnlicher Informationen ausführen. Wenn Sie zu einem bestimmten Zeitpunkt den Ort ändern müssten, von dem die Informationen zu den zuletzt geänderten Dokumente ändern müssten, müssten Sie beide Webparts aktualisieren. Um die Leistung beim Laden der Seite zu verbessern und die Verwaltung des Webpartcodes zu vereinfachen, können Sie die Logik des Abrufens von Daten zentralisieren und die einmal abgerufenen Daten für beide Webparts verfügbar machen.
+Diese Implementierung ist ein typisches Beispiel für zwei Webparts, die unabhängig voneinander entwickelt werden. Würden beide Webparts auf derselben Seite platziert und würden beide Webparts Daten aus SharePoint laden, würden sie zwei separate Anforderungen ausführen, um einander ähnliche Informationen abzurufen. Angenommen, Sie müssten zu einem späteren Zeitpunkt die Quelle für die Informationen zu den zuletzt geänderten Dokumenten ändern. Dann müssten Sie beide Webparts aktualisieren. Damit die Seite schneller lädt und der Webpartcode einfacher zu pflegen ist, können Sie die zum Abrufen der Daten genutzte Logik zentralisieren und einmal abgerufene Daten für beide Webparts verfügbar machen.
 
 ## <a name="centralize-loading-data"></a>Zentralisieren des Ladens von Daten
 
-Um das Laden der Informationen zu den zuletzt geänderten Dokumenten zu zentralisieren, erstellen Sie einen Dienst, auf den von beiden Webparts verwiesen wird.
+Zur Zentralisierung des Ladens der Informationen zu den zuletzt geänderten Dokumenten erstellen Sie einen Dienst, der von beiden Webparts referenziert wird.
 
-### <a name="move-data-model-interfaces"></a>Verschieben von Datenmodellschnittstellen
+### <a name="move-the-data-model-interfaces"></a>Verschieben der Datenmodellschnittstellen
 
-Erstellen Sie im Projektordner den Ordnerpfad **./src/services/documentsService**. Verschieben Sie die Dateien IDocument.ts und IDocumentActivity.ts aus dem Ordner**./src/webparts** in den Ordner ./src/services/documentsService Ordner.
+Erstellen Sie im Projektordner den Ordnerpfad **./src/services/documentsService**. Verschieben Sie die Dateien **IDocument.ts** und **IDocumentActivity.ts** aus dem Ordner **./src/webparts** in den Ordner **./src/services/documentsService**.
 
-![Die Dateien „IDocument.ts“ und „IDocumentActivity.ts“ sind im Explorer-Fenster in Visual Studio Code hervorgehoben](../../../../images/tutorial-sharingdata-interfaces-documentsservice.png)
+![Dateien „IDocument.ts“ und „IDocumentActivity.ts“ im Explorer-Fenster in Visual Studio Code](../../../../images/tutorial-sharingdata-interfaces-documentsservice.png)
 
 ### <a name="build-the-data-access-service"></a>Erstellen des Datenzugriffsdiensts
 
-Erstellen Sie im Ordner **./src/services/documentsService** eine neue Datei namens **DocumentsService.ts**, und fügen Sie den folgenden Code ein:
+Erstellen Sie im Ordner **./src/services/documentsService** eine neue Datei namens **DocumentsService.ts**, und fügen Sie den folgenden Code in die Datei ein:
 
 ```ts
 import { IDocument } from './IDocument';
@@ -691,15 +694,15 @@ export class DocumentsService {
 }
 ```
 
-Die DocumentsService-Klasse ist ein Beispieldienst, der Informationen zu den zuletzt verwendeten Dokumenten lädt. In diesem Beispiel wird ein statisches Dataset verwendet, Sie können aber dessen Implementierung einfach ändern, um die Daten aus einer SharePoint-Dokumentbibliothek zu laden. In dieser Phase bietet die DocumentsService-Klasse einen zentralen Punkt für alle Webparts zum Zugriff auf ihre Daten, die zuvor geladenen Daten werden jedoch nicht gespeichert. Dies wird später in diesem Lernprogramm implementiert.
+Die Klasse `DocumentsService` ist ein Beispieldienst, der Informationen zu den zuletzt verwendeten Dokumenten lädt. In diesem Beispiel wird ein statisches Dataset verwendet. Sie können die Implementierung jedoch mühelos so abändern, dass die Daten aus einer SharePoint-Dokumentbibliothek geladen werden. Zu diesem Zeitpunkt stellt die Klasse `DocumentsService` eine zentrale Schnittstelle bereit, über die alle Webparts auf ihre Daten zugreifen können. Sie speichert die zuvor geladenen Daten jedoch nicht. Diese Funktion wird im weiteren Verlauf dieses Tutorials implementiert.
 
-### <a name="create-barrel-for-the-service-files"></a>Erstellen eines Barrels für die Dienstdateien
+### <a name="create-a-barrel-for-the-service-files"></a>Erstellen eines Barrels für die Dienstdateien
 
-Wenn Sie in einem Projekt auf Dateien verweisen, zeigen Sie auf ihren relativen Pfad. Jedes Mal, wenn sich der Pfad ändert, müssen Sie alle Verweise auf diese bestimmte Datei aktualisieren. Solche Änderungen sind zu Beginn des Projekts sehr wahrscheinlich, wenn die unterschiedlichen Elemente hinzugefügt werden und die finale Projektstruktur noch unklar ist. Zur Vermeidung häufiger Änderungen an Dateiverweisen in einem Projekt können Sie Barrels verwenden. 
+Wenn Sie Dateien in einem Projekt referenzieren, verweisen Sie auf ihren relativen Pfad. Jedes Mal, wenn sich dieser Pfad ändert, müssen Sie alle Verweise auf die betreffende Datei aktualisieren. Gerade am Anfang eines Projekts werden solche Änderungen wahrscheinlich sehr häufig notwendig sein, da Sie kontinuierlich neue Elemente hinzufügen und die endgültige Projektstruktur noch nicht feststeht. Um häufige Änderungen an den Dateiverweisen innerhalb eines Projekts zu vermeiden, können Sie Barrels nutzen.
 
-Bei einem Barrel handelt es sich um einen Container, der mehrere exportierte Objekte kombiniert. Mithilfe von Barrels können Sie die genaue Position von Dateien von anderen Elementen im Projekt, die diese verwenden, abstrahieren.
+Bei einem Barrel handelt es sich um einen Container, der mehrere exportierte Objekte kombiniert. Mithilfe von Barrels können Sie den genauen Speicherort der Dateien eines Projektes und die Projektelemente, die die Dateien verwenden, voneinander abstrahieren.
 
-Erstellen Sie im Ordner **./src/services/documentsService** eine neue Datei mti dem Name **index.ts**, und fügen Sie den folgenden Code ein:
+Erstellen Sie im Ordner **./src/services/documentsService** eine neue Datei mit dem Namen **index.ts**, und fügen Sie den folgenden Code in die Datei ein:
 
 ```ts
 export { IDocument } from './IDocument';
@@ -707,27 +710,27 @@ export { IDocumentActivity } from './IDocumentActivity';
 export { DocumentsService } from './DocumentsService';
 ```
 
-Wenn Sie ein solches Barrel definiert haben, können andere Elemente in dem Projekt auf einen der exportierten Typen anhand des relativen Pfads zum Ordner **./src/services/documentsService** anstelle des genauen Pfads zur Datei **IDocument.ts** verweisen. Zum Beispiel:
+Sobald Sie dieses Barrel definiert haben, können andere Elemente in Ihrem Projekt alle exportierten Typen über den relativen Pfad zum Ordner **./src/services/documentsService** referenzieren statt über den exakten Pfad zu den einzelnen Dateien. Die Schnittstelle `IDocument` kann dann beispielsweise wie folgt referenziert werden:
 
 ```ts
 import { IDocument } from '../services/documentsService';
 ```
 
-anstelle von:
+Ein Verweis wie der unten gezeigte ist nicht mehr nötig:
 
 ```ts
 import { IDocument } from '../services/documentsService/IDocument.ts';
 ```
 
-Wenn Sie sich irgendwann einmal entscheiden, dass es besser wäre, die Datei **IDocument.ts** in einen Unterordner zu verschieben oder einige Dateien zusammenzuführen, müssten Sie nur den Pfad in der Barrel-Definition (**./src/services/documentsService/index.ts**) ändern. Alle Elemente im Projekt könnten weiterhin denselben relativen Pfad zum Ordner **documentsService** verwenden, um auf die **IDocument**-Schnittstelle zu verweisen.
+Sollten Sie sich zu einem späteren Zeitpunkt dazu entscheiden, die Datei **IDocument.ts** in einen Unterordner zu verschieben oder verschiedene Dateien zusammenzuführen, müssten Sie lediglich den Pfad in der Barreldefinition (**./src/services/documentsService/index.ts**) ändern. Alle Elemente in Ihrem Projekt hingegen könnten weiterhin denselben relativen Pfad zum Ordner **documentsService** verwenden, um die Schnittstelle `IDocument` zu referenzieren.
 
-### <a name="update-references-to-the-moved-files-using-the-barrel"></a>Aktualisieren der Verweise auf die verschobenen Dateien mithilfe des Barrels
+### <a name="update-references-to-the-moved-files-to-use-the-barrel"></a>Aktualisieren der Verweise auf die verschobenen Dateien zur Verwendung das Barrels
 
-Da Sie die Dateien **IDocument.ts** und **IDocumentActivity.ts** an einen anderen Ort verschoben haben, müssen Sie ihre Verweise aktualisieren. Dank des Barrels ist dies das letzte Mal, das Sie das tun müssen.
+Da Sie die Dateien **IDocument.ts** und **IDocumentActivity.ts** an einen anderen Speicherort verschoben haben, müssen Sie alle Verweise auf diese Dateien aktualisieren. Dank des Barrels ist das nur noch dieses eine Mal notwendig.
 
 #### <a name="update-references-in-the-recent-documents-web-part"></a>Aktualisieren der Verweise im Webpart „Zuletzt verwendete Dokumente“
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts**, und ändern Sie ihren Code folgendermaßen:
+Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts**, und ändern Sie den Code in der Datei wie folgt:
 
 ```ts
 import { IDocument } from '../../../services/documentsService';
@@ -737,21 +740,21 @@ export interface IRecentDocumentsProps {
 }
 ```
 
-Öffnen Sie als Nächstes die **./src/webparts/recentDocuments/components/RecentDocuments.tsx**-Datei, und ändern Sie die **import**-Anweisung der **IDocument**-Schnittstelle folgendermaßen:
+Öffnen Sie nun die Datei **./src/webparts/recentDocuments/components/RecentDocuments.tsx**, und aktualisieren Sie die `import`-Anweisung der Schnittstelle `IDocument` wie folgt:
 
 ```ts
 import { IDocument } from '../../../services/documentsService';
 ```
 
-Öffnen Sie dann die Datei **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**, und ändern Sie die **import**-Anweisung der **IDocument**-Schnittstelle folgendermaßen:
+Öffnen Sie anschließend die Datei **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**, und aktualisieren Sie die `import`-Anweisung der Schnittstelle `IDocument` wie folgt:
 
 ```ts
 import { IDocument } from '../../services/documentsService';
 ```
 
-#### <a name="update-references-in-the-recent-document-web-part"></a>Aktualisieren der Verweise im Webpart „Zuletzt verwendetes Dokument“
+#### <a name="update-references-in-the-recent-document-web-part"></a>Aktualisieren der Verweise im Webpart „Recent document“
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocument/components/IRecentDocumentProps.ts**, und ändern Sie ihren Code folgendermaßen:
+Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocument/components/IRecentDocumentProps.ts**, und ändern Sie den Code wie folgt:
 
 ```ts
 import { IDocument } from '../../../services/documentsService';
@@ -761,39 +764,39 @@ export interface IRecentDocumentProps {
 }
 ```
 
-Öffnen Sie als Nächstes die **./src/webparts/recentDocument/components/RecentDocument.tsx**-Datei, und ändern Sie die **import**-Anweisung der **IDocument**-Schnittstelle folgendermaßen:
+Öffnen Sie nun die Datei **./src/webparts/recentDocument/components/RecentDocument.tsx**, und ändern Sie die `import`-Anweisung der Schnittstelle `IDocument` wie folgt:
 
 ```ts
 import { IDocument } from '../../../services/documentsService';
 ```
 
-Öffnen Sie dann die Datei **./src/webparts/recentDocument/RecentDocumentWebPart.ts**, und ändern Sie die **import**-Anweisung der **IDocument**-Schnittstelle folgendermaßen:
+Öffnen Sie anschließend die Datei **./src/webparts/recentDocument/RecentDocumentWebPart.t**, und ändern Sie die `import`-Anweisung der Schnittstelle `IDocument` wie folgt:
 
 ```ts
 import { IDocument } from '../../services/documentsService';
 ```
 
-Überprüfen Sie, ob Ihre Änderungen wie erwartet funktionieren, indem Sie den folgenden Befehl ausführen:
+Führen Sie den folgenden Befehl über eine Eingabeaufforderung in Ihrem Projektordner aus, um zu überprüfen, ob Ihre Änderungen wie erwartet funktionieren:
 
 ```sh
 gulp serve
 ```
 
-![Die Webparts „Zuletzt verwendetes Dokument“ und „Zuletzt verwendete Dokumente“ zeigen Informationen zu den zuletzt geänderten Dokumenten an](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
+![Webparts „Recent document“ und „Zuletzt verwendete Dokumente“ mit Informationen zu den zuletzt geänderten Dokumenten](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
 
 ### <a name="load-web-part-data-using-the-data-service"></a>Laden von Webpartdaten mithilfe des Datendiensts
 
-Wenn der Datendienst bereit ist, besteht der nächste Schritt darin, beide Webparts so umzugestalten, dass der Datendienst zum Laden ihrer Daten verwendet wird.
+Der Datendienst ist nun einsatzbereit. Jetzt gestalten Sie beide Webparts so um, dass sie ihre Daten über den Datendienst laden.
 
 #### <a name="load-information-about-the-recently-modified-documents"></a>Laden der Informationen zu den zuletzt geänderten Dokumenten
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Ändern Sie die **import**-Anweisung, die auf die **IDocument**-Schnittstelle verweist, folgendermaßen:
+Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Ergänzen Sie die `import`-Anweisung, die die Schnittstelle `IDocument` referenziert, wie folgt:
 
 ```ts
 import { IDocument, DocumentsService } from '../../services/documentsService';
 ```
 
-Aktualisieren Sie als Nächstes die **render**-Methode mit dem folgenden Code:
+Aktualisieren Sie anschließend die Methode `render` mit dem folgenden Code:
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -820,13 +823,13 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 
 #### <a name="load-information-about-the-most-recently-modified-document"></a>Laden der Informationen zu dem zuletzt geänderten Dokument
 
-Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Ändern Sie die **import**-Anweisung, die auf die **IDocument**-Schnittstelle verweist, folgendermaßen:
+Öffnen Sie im Code-Editor die Datei **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Ergänzen Sie die `import`-Anweisung, die die Schnittstelle `IDocument` referenziert, wie folgt:
 
 ```ts
 import { IDocument, DocumentsService } from '../../services/documentsService';
 ```
 
-Aktualisieren Sie als Nächstes die **render**-Methode mit dem folgenden Code:
+Aktualisieren Sie anschließend die Methode `render` mit dem folgenden Code:
 
 ```ts
 export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecentDocumentWebPartProps> {
@@ -851,19 +854,19 @@ export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecent
 }
 ```
 
-Bestätigen Sie, dass beide Webparts ordnungsgemäß arbeiten, indem Sie den folgenden Befehl ausführen:
+Führen Sie über eine Eingabeaufforderung im Projektordner den folgenden Befehl aus, um sich zu vergewissern, dass beide Webparts korrekt funktionieren:
 
 ```sh
 gulp serve
 ```
 
-![Die Webparts „Zuletzt verwendetes Dokument“ und „Zuletzt verwendete Dokumente“ zeigen Informationen zu den zuletzt geänderten Dokumenten an](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
+![Webparts „Recent document“ und „Zuletzt verwendete Dokumente“ mit Informationen zu den zuletzt geänderten Dokumenten](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
 
-### <a name="share-the-data-between-web-parts"></a>Freigeben der Daten zwischen Webparts
+### <a name="share-data-between-web-parts"></a>Gemeinsame Verwendung von Daten zwischen Webparts
 
 Da nun beide Webparts den Datendienst zum Laden der Daten verwenden, besteht der nächste Schritt darin, den Datendienst so zu erweitern, dass dieser die Daten nur einmal lädt und diese für beide Webparts wiederverwendet.
 
-Öffnen Sie im Code-Editor die Datei **./src/services/documentsService/DocumentsService.ts**, und fügen Sie den folgenden Code ein:
+Öffnen Sie im Code-Editor die Datei **./src/services/documentsService/DocumentsService.ts**, und fügen Sie den folgenden Code in die Datei ein:
 
 ```ts
 import { IDocument } from './IDocument';
@@ -976,22 +979,22 @@ export class DocumentsService {
 }
 ```
 
-Wenn ein Webpart den Datendienst zum Laden der Daten das erste Mal aufruft, legt der Dienst die globale Variable **loadingData** auf **true** fest. Dies deutet darauf hin, dass derzeit Daten geladen werden. Dies ist erforderlich, um zu verhindern, dass die Daten mehrmals geladen werden, falls ein anderes Webpart auch das Laden seiner Daten anfordern sollte, während die anfängliche Anforderung zum Laden der Daten noch nicht abgeschlossen wurde. In diesem Beispiel werden die Daten aus einem statischen Dataset geladen, Sie können aber die Implementierung einfach ändern, um die Daten aus einer SharePoint-Dokumentbibliothek zu laden.
+Sobald ein Webpart erstmals den Datendienst aufruft, um Daten zu laden, setzt der Dienst die globale Variable `loadingData` auf `true`. So wird angezeigt, dass aktuell Daten geladen werden. Das ist erforderlich, damit Daten nicht mehrfach geladen werden, beispielsweise wenn ein anderes Webpart seine Daten laden möchte, bevor die ursprüngliche Anforderung zum Laden der Daten abgeschlossen wurde. In unserem Beispiel werden die Daten aus einem statischen Dataset geladen. Sie können die Implementierung jedoch mühelos so abändern, dass die Daten aus einer SharePoint-Dokumentbibliothek geladen werden.
 
-Nachdem die Daten geladen wurden, werden sie in der globalen Variable **loadedData** gespeichert. Der Wert der Variablen **loadingData** wird auf **false** festgelegt, und das Versprechen wird mit den abgerufenen Daten aufgelöst. Das nächste Mal, wenn ein Webpart seine Daten anfordert, gibt der Datendienst die zuvor geladenen Daten zurück, wodurch alle Anforderungen an die Remote-APIs gelöscht werden.
+Nachdem die Daten geladen wurden, werden sie in der globalen Variable `loadedData` gespeichert. Der Wert der Variable `loadingData` wird auf `false` festgelegt, und die Zusage wird mit den abgerufenen Daten aufgelöst. Bei der nächsten Datenanforderung durch ein Webpart gibt der Datendienst die zuvor bereits geladenen Daten zurück. Alle zusätzlichen Anforderungen an die Remote-APIs fallen dadurch weg.
 
-Bestätigen Sie, dass beide Webparts ordnungsgemäß arbeiten, indem Sie den folgenden Befehl ausführen:
+Führen Sie über eine Eingabeaufforderung im Projektordner den folgenden Befehl aus, um sich zu vergewissern, dass beide Webparts korrekt funktionieren:
 
 ```sh
 gulp serve
 ```
 
-![Die Webparts „Zuletzt verwendetes Dokument“ und „Zuletzt verwendete Dokumente“ zeigen Informationen zu den zuletzt geänderten Dokumenten an](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
+![Webparts „Recent document“ und „Zuletzt verwendete Dokumente“ mit Informationen zu den zuletzt geänderten Dokumenten](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
 
-Wenn Sie in den verschiedenen Bereichen der **DocumentsService.ensureRecentDocuments**-Methode Protokollierungsanweisungen hinzugefügt haben, würden Sie sehen, dass die Daten einmal geladen und für das zweite Webpart wiederverwendet werden.
+Wenn Sie den verschiedenen Abschnitten der Methode `DocumentsService.ensureRecentDocuments` Protokollierungsanweisungen hinzufügen, können Sie nachverfolgen, wie die Daten einmalig geladen und anschließend für das zweite Webpart wiederverwendet werden.
 
-![Entwicklerkonsole, in der unterschiedliche Protokollierungsanweisungen in Microsoft Edge angezeigt werden](../../../../images/tutorial-sharingdata-console-log.png)
+![Entwicklerkonsole mit verschiedenen Protokollierungsmeldungen in Microsoft Edge](../../../../images/tutorial-sharingdata-console-log.png)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Artikel
 
 - [Gemeinsame Verwendung von Daten zwischen clientseitigen Webparts](./share-data-between-web-parts)

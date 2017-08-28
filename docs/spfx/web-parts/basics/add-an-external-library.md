@@ -19,9 +19,9 @@ npm install validator --save
     
 >**Hinweis:** Da Sie TypeScript verwenden, benötigen Sie für das Paket, das Sie hinzufügen, Eingaben. Dies ist wichtig, wenn Sie Code schreiben, da TypeScript nur eine Obermenge von JavaScript ist. Der gesamte TypeScript-Code wird beim Kompilieren nach wie vor in JavaScript-Code konvertiert. Sie können mithilfe des **tsd**-Pakets nach Eingaben suchen, beispielsweise: `tsd install {package} --save`
     
-Erstellen Sie eine Datei im Wepartordner mit dem Namen `validator.d.ts`, und fügen Sie Folgendes hinzu:
+Erstellen Sie im Ordner Ihres Webparts eine Datei mit dem Namen `validator.d.ts`, und fügen Sie den nachfolgenden Code in die Datei ein.
     
->**Hinweis:** Manche Bibliotheken verfügen nicht über Eingaben. Die validator-Bibliothek ist eine davon. In diesem Fall müssen Sie Ihre eigene `.d.ts`-Datei für die Eingabedefinition für die Bibliothek definieren. Im folgenden Code ist ein Beispiel dargestellt:
+>**Hinweis:** Einige Bibliotheken verfügen nicht über Eingaben. Zwar gibt es für die Bibliothek „Validator“ eine [von der Community bereitgestellte Eingabendatei](https://www.npmjs.com/package/@types/validator); in diesem Artikel gehen wir aber davon aus, dass keine solche Datei existiert. In einem solchen Fall müssen Sie eine eigene Eingabendefinitionsdatei `.d.ts` für die Bibliothek erstellen. Der Code unten ist hierfür ein Beispiel.
     
 ```typescript
 declare module "validator" {
@@ -59,7 +59,7 @@ npm install marked --save
 Herunterladen der Eingaben:
     
 ```
-tsd install marked --save
+npm install @types/marked --save
 ```
     
 Bearbeiten Sie **config/config.json**, und fügen Sie einen Eintrag zur Zuordnung **externals** hinzu. Dadurch wird dem Bundler mitgeteilt, dies in einer separaten Datei zu platzieren. Dadurch wird verhindert, dass der Bundler diese Bibliothek bündelt:
@@ -198,7 +198,7 @@ Contoso.EventList = {
 ```javascript
 var Contoso = {
     getEvents: function() {
-        return ['A', 'B', 'C'];   
+        return ['A', 'B', 'C'];
     }
 };
 ```
@@ -209,15 +209,15 @@ Fügen Sie Eingaben für diese Klasse hinzu, oder erstellen Sie sie. In diesem F
 
 ```typescript
 declare module "contoso" {
-interface IEventList {
- alert(): void;
-}
-interface IContoso {
- getEvents(): string[];
- EventList: IEventList;
-}
-var contoso: IContoso;
-export = contoso;
+    interface IEventList {
+        alert(): void;
+    }
+    interface IContoso {
+        getEvents(): string[];
+        EventList: IEventList;
+    }
+    var contoso: IContoso;
+    export = contoso;
 }
 ```
 
@@ -257,38 +257,38 @@ Das Laden von SharePoint JSOM ist im Wesentlichen das gleiche Szenario wie das L
 Installieren von Eingaben für Microsoft Ajax (Abhängigkeit für JSOM-Eingaben):
 
 ```
-tsd install microsoft.ajax --save
+npm install @types/microsoft-ajax --save
 ```
 
 Installieren von Eingaben für JSOM:
 
 ```
-tsd install sharepoint --save
+npm install @types/sharepoint --save
 ``` 
 
 Hinzufügen von Einträgen zu `config.json`:
 
 ```json
 {
-"sp-init": {
- "path": "https://CONTOSO.sharepoint.com/_layouts/15/init.js",
- "globalName": "$_global_init"
-},
-"microsoft-ajax": {
- "path": "https://CONTOSO.sharepoint.com/_layouts/15/MicrosoftAjax.js",
- "globalName": "Sys",
- "globalDependencies": [ "sp-init" ]
-},
-"sp-runtime": {
- "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.Runtime.js",
- "globalName": "SP",
- "globalDependencies": [ "microsoft-ajax" ]
-},
-"sharepoint": {
- "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.js",
- "globalName": "SP",
- "globalDependencies": [ "sp-runtime" ]
-}
+    "sp-init": {
+        "path": "https://CONTOSO.sharepoint.com/_layouts/15/init.js",
+        "globalName": "$_global_init"
+    },
+    "microsoft-ajax": {
+        "path": "https://CONTOSO.sharepoint.com/_layouts/15/MicrosoftAjax.js",
+        "globalName": "Sys",
+        "globalDependencies": [ "sp-init" ]
+    },
+    "sp-runtime": {
+        "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.Runtime.js",
+        "globalName": "SP",
+        "globalDependencies": [ "microsoft-ajax" ]
+    },
+    "sharepoint": {
+        "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.js",
+        "globalName": "SP",
+        "globalDependencies": [ "sp-runtime" ]
+    }
 }
 ```
 
@@ -321,7 +321,7 @@ Bearbeiten Sie die **config.json**-Datei. Fügen Sie einen Eintrag zu **localize
 
 ```json
 {
-"strings": "strings/{locale}.js"
+    "strings": "strings/{locale}.js"
 }
 ```
     
@@ -329,14 +329,14 @@ Fügen Sie Eingaben für Ihre Zeichenfolgen hinzu. In diesem Fall haben Sie die 
 
 ```typescript
 declare interface IStrings {
-webpartTitle: string;
-initialPrompt: string;
-exitPrompt: string;
+    webpartTitle: string;
+    initialPrompt: string;
+    exitPrompt: string;
 }
 
 declare module 'mystrings' {
-const strings: IStrings;
-export = strings;
+    const strings: IStrings;
+    export = strings;
 }
 ```
     

@@ -15,7 +15,8 @@ Die Erstveröffentlichung von SharePoint Framework enthält Unterstützung für 
 ## <a name="general-improvements"></a>Allgemeine Verbesserungen
 
 - Einfacher Zugriff auf die Graph-API zum Zugreifen auf benutzerspezifische Informationen (GraphHttpClient in der Entwicklervorschau)
-- Websitesammlungs-App-Katalog mit Steuerung auf Mandantenebene für die einfachere Lösungsbereitstellung 
+- Websitesammlungs-App-Katalog mit Steuerung auf Mandantenebene für eine einfachere Bereitstellung von Lösungen 
+- Webhooks auf Website-Ebene
 
 ## <a name="client-side-web-parts-and-add-ins"></a>Clientseitige Webparts und Add-Ins
 

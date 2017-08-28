@@ -109,11 +109,17 @@ Der Eigenschaftenbereich besteht aus zwei Interaktionsmodi:
 * Reaktiv
 * Nicht reaktiv
 
-Im reaktiven Modus wird bei jeder Änderung ein change-Ereignis ausgelöst. Durch das reaktive Verhalten wird das Webpart automatisch mit den neuen Werten aktualisiert.
+Im reaktiven Modus wird bei jeder Änderung ein Änderungsereignis ausgelöst. Durch das reaktive Verhalten wird das Webpart automatisch mit den neuen Werten aktualisiert.
 
-Der reaktive Modus ist zwar für viele Szenarios ausreichend, manchmal benötigen Sie aber das nicht reaktive Verhalten. Beim nicht reaktiven Verhalten wird das Webpart nicht automatisch aktualisiert, es sei denn, der Benutzer bestätigt die Änderungen.
+Der reaktive Modus ist zwar für viele Szenarien ausreichend, manchmal benötigen Sie aber das nicht reaktive Verhalten. Beim nicht reaktiven Verhalten wird das Webpart nicht automatisch aktualisiert, es sei denn, der Benutzer bestätigt die Änderungen. Fügen Sie Ihrem Webpart den folgenden Code hinzu, um den nicht reaktiven Modus zu aktivieren:
 
-## <a name="custom-field-example"></a>Beispiele für das benutzerdefinierte Feld
+```ts 
+protected get disableReactivePropertyChanges(): boolean { 
+  return true; 
+}
+```
+
+## <a name="custom-field-example"></a>Beispiel für ein benutzerdefiniertes Feld
 
 Fügen Sie die folgende Felddefinition zu einem **groupFields**-Array hinzu.
 

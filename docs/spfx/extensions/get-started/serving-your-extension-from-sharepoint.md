@@ -23,9 +23,9 @@ Im Gegensatz zum **Debug**-Modus müssen Sie zur Verwendung einer Erweiterung au
 Bevor wir die Lösung packen, müssen wir den Code, der zur Automatisierung der Erweiterungsaktivierung auf der Website bei jeder Installation der Lösung auf der Website erforderlich ist, einbeziehen. In diesem Fall verwenden wir Feature-Frameworkelemente direkt im Lösungspaket, um diese Aktionen auszuführen. Sie könnten jedoch auch den Anwendungsanpasser mit einer SharePoint-Website anhand von REST oder CSOM als Teil der Websitebereitstellung zuordnen.
 
 1. Installieren Sie das Lösungspaket auf der Website, auf der es installiert werden soll, damit das Erweiterungsmanifest für die Ausführung freigegeben wird.
-2. Ordnen Sie den Anwendungsanpasser dem geplanten Bereich zu. Dies kann programmgesteuert erfolgen (CSOM/REST) oder durch die Verwendung des Feature-Frameworks innerhalb des SharePoint-Framework-Lösungspakets. Sie müssen die folgenden Eigenschaften im `UserCustomAction`-Objekt auf Website- oder Listenebene verknüpfen.
+2. Ordnen Sie den Anwendungsanpasser dem geplanten Bereich zu. Dies kann programmgesteuert erfolgen (CSOM/REST) oder durch die Verwendung des Featureframeworks innerhalb des SharePoint Framework-Lösungspakets. Sie müssen die folgenden Eigenschaften im Objekt `UserCustomAction` auf Websitesammlungsebene, auf Website-Ebene oder auf Listenebene zuordnen:
     * **ClientSiteComponentId:** Dies ist der Bezeichner (GUID) für den Field Customizer, der im App-Katalog installiert wurde. 
-    * **ClientSideComponentProperties:** Dies ist ein optionaler Parameter, der zum Bereitstellen von Eigenschaften für die Field Customizer-Instanz verwendet werden kann.
+    * **ClientSideComponentProperties:** Dies ist ein optionaler Parameter, über den Eigenschaften für die Field Customizer-Instanz bereitgestellt werden können.
 
 > Beachten Sie, dass Sie Lösungspakete derzeit explizit auf den Websites installieren müssen, um sicherzustellen, dass die Erweiterung ordnungsgemäß ausgeführt wird. Künftig wird es alternative Verfahren geben, um dies ohne Bereitstellung Website für Website zu erreichen. 
 

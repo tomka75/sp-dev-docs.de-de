@@ -1,36 +1,41 @@
-# <a name="using-custom-dialogs-with-sharepoint-framework-extensions"></a>Verwenden von benutzerdefinierten Dialogfeldern mit SharePoint Framework Extensions
+# <a name="use-custom-dialog-boxes-with-sharepoint-framework-extensions"></a>Verwenden von benutzerdefinierten Dialogfeldern mit SharePoint Framework-Erweiterungen
 
-Im Paket `@microsoft/sp-dialog` stehen benutzerdefinierte Dialogfelder zur Verfügung, die im Kontext von SharePoint Framework Extensions oder clientseitigen Webparts verwendet werden können. 
+Benutzerdefinierte Dialogfelder können im Kontext von SharePoint Framework-Erweiterungen oder im Kontext von clientseitigen Webparts verwendet werden. Sie sind über das Paket **@microsoft/sp-dialog** verfügbar. 
 
-Dieses Lernprogramm demonstriert die Erstellung eines benutzerdefinierten Dialogfelds und dessen Verwendung im Kontext der ListView-Befehlssatzerweiterung.
+In diesem Artikel wird beschrieben, wie Sie ein benutzerdefiniertes Dialogfeld erstellen und im Kontext einer Erweiterung des Typs „ListView Command Set“ verwenden können.
 
-> Beachten Sie, dass sich das SharePoint Framework-Dialogfeld derzeit in der Vorschauphase befindet und wir Feedback sammeln, bevor es offiziell veröffentlicht wird. Übermitteln Sie uns Ihr Feedback anhand der [sp-dev-docs-Repository-Problemliste](https://github.com/SharePoint/sp-dev-docs/issues).
+>**Hinweis:** Das Feature zur Erstellung benutzerdefinierter Dialogfelder befindet sich derzeit in der Preview-Phase. Wir würden uns vor der Freigabe über Ihr Feedback freuen. Wenn Sie uns Feedback senden möchten, können Sie [ein Ticket in unserem GitHub-Repository erstellen](https://github.com/SharePoint/sp-dev-docs/issues).
 
-> Beachten Sie, dass das Debuggen von benutzerdefinierten ListView-Sätzen in SharePoint Online derzeit nur in der modernen Listenoberfläche auf klassischen Teamwebsites verfügbar ist, die auf einem Entwicklungsmandanten gehostet werden. 
+> Beachten Sie, dass das Debuggen von benutzerdefinierten Erweiterungen des Typs „ListView Command Set“ in SharePoint Online derzeit nur über die moderne Listenoberfläche auf klassischen Teamwebsites möglich ist, die in einem **Entwicklermandanten** gehostet werden.
 
-> Das Endergebnis dieses Lernprogramms ist ebenfalls als Quellcode unter https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-command-dialog verfügbar.  
 
-## <a name="setup-your-environment"></a>Einrichten der Umgebung
+Den Beispielcode, auf den in diesem Artikel Bezug genommen wird, finden Sie in unserem [Repository](https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-command-dialog).
 
-Bevor Sie diesen Leitfaden durcharbeiten können, müssen Sie sicherstellen, dass Sie [Ihre Umgebung](https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment) für die Entwicklung mithilfe von SharePoint-Framework eingerichtet haben und dass Sie die aktuellen Yeoman-Vorlagen für das SharePoint-Framework verwenden. 
+## <a name="set-up-your-development-environment"></a>Einrichten der Entwicklungsumgebung
 
-> Sie können Ihre SharePoint-Framework-Yeoman-Vorlagen aktualisieren, indem Sie den folgenden Befehl ausführen: `npm install -g @microsoft/generator-sharepoint`. 
+Zur Erstellung eines benutzerdefinierten Dialogfelds müssen Sie zunächst die Schritt-für-Schritt-Anleitung im Artikel zum Thema [Einrichten Ihrer Entwicklungsumgebung](https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment) befolgen. Stellen Sie sicher, dass Sie die neuesten SharePoint Framework-Yeoman-Vorlagen verwenden. 
+
+Aktualisieren können Sie Ihre SharePoint Framework-Yeoman-Vorlagen mit dem folgenden Befehl:
+
+```sh
+npm install -g @microsoft/generator-sharepoint`
+```
 
 ## <a name="create-a-new-project"></a>Erstellen eines neuen Projekts
 
-Erstellen Sie zunächst einen neuen Ordners für das Projekt über eine Konsole Ihrer Wahl:
+Erstellen Sie über eine Konsole Ihrer Wahl einen neuen Ordner für das Projekt:
 
 ```sh
 md dialog-cmd
 ```
 
-Geben Sie diesen Ordner ein
+Wechseln Sie nun in diesen Ordner:
 
 ```sh
 cd dialog-cmd
 ```
 
-Führen Sie dann den Yeoman-Generator für das SharePoint-Framework aus.
+Führen Sie den Yeoman-Generator für SharePoint Framework aus:
 
 ```sh
 yo @microsoft/sharepoint
@@ -44,30 +49,30 @@ Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
 Über die nächsten Eingabeaufforderungen werden spezifische Informationen zu der Erweiterung abgefragt:
 
-* Übernehmen Sie den Standardwert **DialogDemo** als Namen für Ihre Erweiterung, und drücken Sie die **EINGABETASTE**.
+* Übernehmen Sie den Wert **DialogDemo** als Namen für Ihre Erweiterung, und drücken Sie die **EINGABETASTE**.
 * Übernehmen Sie den Standardwert **DialogDemo description** als Beschreibung Ihrer Erweiterung, und drücken Sie die **EINGABETASTE**.
 
 ![Yeoman-SharePoint-Generator mit Eingabeaufforderungen zur Erstellung einer Erweiterungslösung](../../../../images/ext-com-dialog-yeoman-prompts.png)
 
-An diesem Punkt installiert Yeoman die erforderlichen Abhängigkeiten und erstellt ein Gerüst für die Lösungsdateien sowie die *HelloWorld*-Erweiterung. Das kann einige Minuten dauern. 
+An diesem Punkt installiert Yeoman die erforderlichen Abhängigkeiten und erstellt ein Gerüst für die Lösungsdateien sowie die *DialogDemo*-Erweiterung. Das kann einige Minuten dauern. 
 
 Nach Abschluss der Gerüsterstellung sollte folgende Erfolgsmeldung angezeigt werden:
 
 ![Erfolgreiche Erstellung eines Gerüsts für die clientseitige SharePoint-Lösung](../../../../images/ext-com-dialog-yeoman-complete.png)
 
-Details zur Behebung etwaiger Fehler finden Sie unter [Known issues](../basics/known-issues).
+>**Hinweis:** Details zur Behebung etwaiger Fehler finden Sie unter [Known issues](../basics/known-issues).
 
-Öffnen Sie den Projektordner in Ihrem Code-Editor, sobald die Gerüsterstellung abgeschlossen ist. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+Öffnen Sie nach dem Abschluss der Gerüsterstellung den Projektordner in Ihrem Code-Editor. Für die Anleitung in diesem Artikel haben wir Visual Studio Code verwendet; auch die Screenshots entstammen diesem Editor. Sie können jedoch auch jeden beliebigen anderen Editor verwenden. Führen Sie den folgenden Befehl in der Konsole aus, um den Ordner in Visual Studio Code zu öffnen:
 
-```
+```sh
 code .
 ```
 
-![Anfängliche Visual Studio Code-Struktur nach dem Bau des Gerüsts](../../../../images/ext-com-dialog-vs-code-initial.png)
+![Anfängliche Visual Studio Code-Struktur nach der Gerüsterstellung](../../../../images/ext-com-dialog-vs-code-initial.png)
 
-## <a name="modify-extension-manifest-based-on-requirements"></a>Ändern des Erweiterungsmanifests basierend auf Anforderungen 
+## <a name="modify-the-extension-manifest"></a>Ändern des Erweiterungsmanifests
 
-Konfigurieren Sie im Erweiterungsmanifest die Erweiterung so, dass sie nur eine Schaltfläche hat. Öffnen Sie im Code-Editor die Datei **./src/extensions/dialogDemo/DialogDemoCommandSet.manifest.json**. Ersetzen Sie den Befehlsabschnitt mit dem folgenden JSON-Code:
+Konfigurieren Sie die Erweiterung im Erweiterungsmanifest so, dass sie nur eine Schaltfläche hat. Öffnen Sie dazu im Code-Editor die Datei **./src/extensions/dialogDemo/DialogDemoCommandSet.manifest.json**, und ersetzen Sie den Befehlsabschnitt durch den folgenden JSON-Code:
 
 ```json
 {
@@ -79,26 +84,27 @@ Konfigurieren Sie im Erweiterungsmanifest die Erweiterung so, dass sie nur eine 
     }
   }
 }
-
 ```
 
-## <a name="adding-sp-dialog-package-to-solution"></a>Hinzufügen des sp-dialog-Pakets zur Lösung
-Wechseln Sie wieder zur Konsole, und führen Sie den folgenden Befehl aus, um die Dialogfeld-API in die Lösung einzuschließen: 
+## <a name="add-the-sp-dialog-package-to-the-solution"></a>Hinzufügen des Pakets „sp-dialog“ zur Lösung
 
-```
+Wechseln Sie wieder zur Konsole, und führen Sie den folgenden Befehl aus, um die Dialogfeld-API in die Lösung einzuschließen:
+
+```sh
 npm install @microsoft/sp-dialog --save
 ```
 
-Da wir die Option `--save` verwenden, wird diese Abhängigkeit zur Datei *package.json* hinzugefügt und automatisch installiert, wenn der Befehl `npm install` ausgeführt wird.
+Da Sie die Option `--save` verwenden, wird diese Abhängigkeit der Datei **package.json** hinzugefügt. Dadurch wird sichergestellt, dass sie automatisch installiert wird, sobald der Befehl `npm install` ausgeführt wird. (Das ist wichtig, wenn Sie das Projekt an einen anderen Speicherort wiederherstellen oder klonen möchten.)
 
 Wechseln Sie wieder zu Visual Studio Code (oder Ihrem bevorzugten Editor).
 
-## <a name="creating-your-custom-dialog"></a>Erstellen des benutzerdefinierten Dialogfelds
+## <a name="create-a-custom-dialog-box"></a>Erstellen eines benutzerdefinierten Dialogfelds
+
 Erstellen Sie eine neue Datei mit dem Namen **ColorPickerDialog.tsx** im Ordner **./src/extensions/dialogDemo/**.
 
-Fügen Sie die folgenden Importanweisungen am Anfang der neu erstellten Datei hinzu. Wir erstellen unser benutzerdefiniertes Dialogfeld mit Office UI Fabric React-Komponenten, sodass die Implementierung in React erfolgt. 
+Fügen Sie die folgenden Importanweisungen am Anfang der neu erstellten Datei ein. Da Sie das benutzerdefinierte Dialogfeld mithilfe von [Office UI Fabric React-Komponenten](https://dev.office.com/fabric#/components) erstellen, nutzen Sie React zur Implementierung. 
 
-> Beachten Sie, dass die DialogContent-Komponente derzeit aus `@microsoft/sp-dialog` stammt. Sie wird jedoch in Kürze in die Office UI Fabric React Komponenten aufgenommen, wie bereits in den Codekommentaren erwähnt. 
+> **Hinweis:** Die Komponente `DialogContent` wird derzeit über `@microsoft/sp-dialog` bereitgestellt, sie wird jedoch in Kürze in die Office UI Fabric React-Komponenten aufgenommen. 
 
 ```ts
 import * as React from 'react';
@@ -117,7 +123,7 @@ import {
 import { DialogContent } from '@microsoft/sp-dialog';
 ```
 
-Fügen Sie die folgende Schnittstellendefinition direkt unterhalb der Importanweisungen ein. Dies wird verwendet, um benötigte Informationen und Funktionen zwischen der ListView-Befehlssatzerweiterung und dem benutzerdefinierten Dialogfeld zu umgehen.
+Fügen Sie die nachfolgende Schnittstellendefinition direkt unterhalb der Importanweisungen ein. Sie regelt die Übergabe von Informationen und Funktionen zwischen Ihrer Erweiterung des Typs „ListView Command Set“ und Ihrem benutzerdefinierten Dialogfeld.
 
 ```ts
 interface IColorPickerDialogContentProps {
@@ -128,7 +134,7 @@ interface IColorPickerDialogContentProps {
 }
 ```
 
-Fügen Sie die folgende Klasse direkt unter der Schnittstellendefinition ein. Diese React-Klasse ist für das Rendern der Benutzeroberfläche im benutzerdefinierten Dialogfeld zuständig. Beachten Sie, dass wir die Office UI Fabric React-Komponenten für das eigentliche Rendern verwenden und die erforderlichen Eigenschaften umgehen.  
+Fügen Sie die nachfolgende Klasse direkt unterhalb der Schnittstellendefinition ein. Diese React-Klasse ist für das Rendern der Benutzeroberfläche im benutzerdefinierten Dialogfeld zuständig. Wie Sie sehen, werden zum eigentlichen Rendern die Office UI Fabric React-Komponenten verwendet. Die erforderlichen Eigenschaften werden lediglich übergeben.  
 
 ```ts
 class ColorPickerDialogContent extends React.Component<IColorPickerDialogContentProps, {}> {
@@ -161,7 +167,7 @@ class ColorPickerDialogContent extends React.Component<IColorPickerDialogContent
   }
 }
 ```
-Fügen Sie die folgende Klassendefinition für das benutzerdefinierte Dialogfeld direkt unter dem soeben hinzugefügten Klassencode hinzu. Dies ist das eigentliche benutzerdefinierte Dialogfeld, das durch Klicken auf die Schaltfläche aufgerufen wird und das von **BaseDialog** geerbt wird.
+Fügen Sie die nachfolgende Klassendefinition für das benutzerdefinierte Dialogfeld direkt unterhalb der Klasse `ColorPickerDialogContent` ein, die Sie soeben hinzugefügt haben. Hierbei handelt es sich um das eigentliche benutzerdefinierte Dialogfeld, das über einen Klick auf die durch die Erweiterung des Typs „ListView Command Set“ implementierte Schaltfläche aufgerufen wird und von `BaseDialog` vererbt wird.
 
 ```ts
 export default class ColorPickerDialog extends BaseDialog {
@@ -191,32 +197,32 @@ export default class ColorPickerDialog extends BaseDialog {
 }
 ```
 
-## <a name="associating-custom-dialog-to-button-click"></a>Zuordnen des benutzerdefinierten Dialogfelds zur Schaltflächen-Klickaktion
-Um das benutzerdefinierte Dialogfeld dem benutzerdefinierten ListView-Befehlssatz zuzuordnen, muss der Code zum Initiieren des Dialogfelds für die Schaltflächen-Klickaktion hinzugefügt werden.
+## <a name="associate-the-custom-dialog-box-with-the-listview-command-set-button-click"></a>Verknüpfen des benutzerdefinierten Dialogfelds mit dem Klickereignis für die per „ListView Command Set“ implementierte Schaltfläche
+Zur Verknüpfung des benutzerdefinierten Dialogfelds mit Ihrer benutzerdefinierten Erweiterung des Typs „ListView Command Set“ fügen Sie nun den zur Initiierung des Dialogfelds erforderlichen Code in die Klickoperation der Schaltfläche ein.
 
-Öffnen Sie im Code-Editor die Datei **DialogDemoCommandSet.ts** aus dem Ordner **./src/extensions/dialogDemo/**.
+Öffnen Sie im Code-Editor die Datei **DialogDemoCommandSet.ts** im Ordner **./src/extensions/dialogDemo/**.
 
-Fügen Sie die folgenden Importanweisungen unter dem vorhandenen **strings**-Import hinzu. Diese dienen zur Verwendung des gerade erstellten benutzerdefinierten Dialogfelds im Kontext des ListView-Befehlssatzes. 
+Fügen Sie die nachfolgenden Importanweisungen unter der bereits vorhandenen **strings**-Importanweisung hinzu. Über die neuen Importanweisungen kann das benutzerdefinierte Dialogfeld im Kontext der Erweiterung des Typs „ListView Command Set“ verwendet werden. 
 
 ```ts
 import { Dialog } from '@microsoft/sp-dialog';
 import ColorPickerDialog from './ColorPickerDialog';
 ```
 
-Fügen Sei die folgende **_colorCode**-Variablendefinition oberhalb der **onInit**-Funktion in der **DialogDemoCommandSet**-Klasse hinzu. Dies wird zum Speichern des Ergebnisses für das Farbauswahl-Dialogfeld verwendet.
+Fügen Sie die nachfolgende Variablendefinition `_colorCode` oberhalb der Funktion `onInit` in die Klasse `DialogDemoCommandSet` ein. Sie speichert den Rückgabewert aus dem Farbauswahl-Dialogfeld.
 
 ```ts
   private _colorCode: string;
 ```
 
-Aktualisieren Sie die **OnExecute**-Funktion wie folgt. In diesem Code führen wir die folgenden Schritte durch.
+Aktualisieren Sie die Funktion `onExecute` wie unten dargestellt. Dieser Code führt folgende Aktionen durch:
 
-* Initiieren des benutzerdefinierten Dialogfelds
-* Umgehen der Meldung für das Dialogfeld, die als Titel verwendet wird
-* Umgehen des Farbcodes für das Dialogfeld mit dem Standardwert, wenn noch nicht festgelegt
-* Anzeigen des benutzerdefinierten Dialogfelds
-* Empfangen und Speichern des vom Dialogfeld zurückgegebenen Werts
-* Anzeigen des erhaltenen Werts im vordefinierten Dialogfeld mit der `Dialog.alert()`-Funktion
+* Er initiiert das benutzerdefinierte Dialogfeld.
+* Er übergibt eine Nachricht an das Dialogfeld, die als Titel verwendet wird.
+* Er übergibt einen Farbcode an das Dialogfeld (den Standardwert, falls nicht anders festgelegt).
+* Er rendert das benutzerdefinierte Dialogfeld.
+* Er empfängt und speichert den Rückgabewert des Dialogfelds.
+* Er zeigt den empfangenen Wert mithilfe der Funktion `Dialog.alert()` in einem Standarddialogfeld an.
 
 ```ts
   @override
@@ -238,41 +244,44 @@ Aktualisieren Sie die **OnExecute**-Funktion wie folgt. In diesem Code führen w
   }
 ```
 
-## <a name="testing-custom-dialog-in-your-tenant"></a>Testen des benutzerdefinierten Dialogfelds im Mandanten
-Gehen Sie zur Datei **DialogDemoCommandSet.manifest.json** im Ordner **./src/extensions/dialogDemo/**, und kopieren Sie den **id**-Wert, der im Debugging-Abfrageparameter verwendet wird.
+## <a name="test-the-custom-dialog-box-in-your-tenant"></a>Testen des benutzerdefinierten Dialogfelds im Mandanten
 
-Wechseln Sie zur Konsole, und führen Sie den folgenden Befehl aus. Wir verwenden die Option `--nobrowser`, da die lokale Workbench derzeit nicht für das Debuggen verwendet werden kann. Daher ist es nicht notwendig, sie zu starten. 
+Öffnen Sie die Datei **DialogDemoCommandSet.manifest.json** im Ordner **./src/extensions/dialogDemo/**, und kopieren Sie den **id**-Wert. Ihn müssen Sie im Abfrageparameter für das Debuggen angeben.
+
+Wechseln Sie zurück zur Konsole, und führen Sie den folgenden Befehl aus:
 
 ```sh
 gulp serve --nobrowser
 ```
 
-Hierdurch wird die Bündelung gestartet, und es dient als das sich aus der `localhost`-Adresse ergebende Manifest.
+Wie Sie sehen, verwenden Sie die Option `--nobrowser`. Ein Aufrufen der lokalen Workbench ist nicht nötig, da Erweiterungen derzeit nicht lokal debuggt werden können.
 
-![Anfängliche Visual Studio Code-Struktur nach dem Bau des Gerüsts](../../../../images/ext-com-dialog-gulp-serve.png)
+Nun wird die Bündelung der Lösung angestoßen, und das resultierende Manifest wird von der `localhost`-Adresse ausgeliefert.
 
-Um die Erweiterung zu testen, navigieren Sie zu einer Website in Ihrem SharePoint Online-Mandanten.
+![Anfängliche Visual Studio Code-Struktur nach der Gerüsterstellung](../../../../images/ext-com-dialog-gulp-serve.png)
 
-Gehen Sie zu einer vorhandenen benutzerdefinierten Liste auf der Website, die einige Elemente enthält, oder erstellen Sie eine neue Liste, und fügen Sie ihr einige Elemente zu Testzwecken hinzu. 
+Navigieren Sie nun zu einer Website in Ihrem SharePoint Online-Entwicklermandanten, um Ihre Erweiterung zu testen.
 
-Fügen Sie die folgende Abfragezeichenfolgenparameter an die URL an. Beachten Sie, dass Sie die **ID** aktualisieren müssen, damit diese Ihrer Erweiterungs-ID entspricht, die in der Datei **DialogDemoCommandSet.manifest.json** verfügbar ist:
+Rufen Sie auf der Website eine bereits vorhandene benutzerdefinierte Liste mit Elementen auf. Sie können auch eine neue Liste erstellen und ihr zu Testzwecken einige Elemente hinzufügen. 
+
+Fügen Sie die nachfolgenden Abfragezeichenfolgenparameter an die URL an. Beachten Sie, dass Sie den **id**-Wert mit dem Bezeichner Ihrer Erweiterung aus der Datei **DialogDemoCommandSet.manifest.json** aktualisieren müssen:
 
 ```
 ?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"8701f44c-8c81-4e54-999d-62763e8f34d2":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
 ```
 
-Klicken Sie bei Aufforderung auf **Load debug scripts**, um das Laden der Debugmanifeste zu akzeptieren:
+Klicken Sie bei Aufforderung auf **Load debug scripts**, um das Laden der Debugmanifeste zu akzeptieren.
 
 ![Warnung zum Zulassen von Debugskripts](../../../../images/ext-com-dialog-debug-scripts.png)
 
-Beachten Sie, dass die neue Schaltfläche in der Symbolleiste der Liste mit dem *Open Custom Dialog* zu Testzwecken angezeigt wird.
+Sie sehen: Die neue Schaltfläche wird jetzt auf der Symbolleiste der Liste angezeigt, mit dem Text *Open Custom Dialog*.
 
 ![Warnung zum Zulassen von Debugskripts](../../../../images/ext-com-dialog-button-in-toolbar.png)
 
-Klicken Sie auf die Schaltfläche *Open Custom Dialog*, um das in der Listenansicht gerenderte benutzerdefinierte Dialogfeld anzuzeigen. 
+Klicken Sie auf die Schaltfläche *Open Custom Dialog*. Ihr benutzerdefiniertes Dialogfeld wird nun in der Listenansicht gerendert. 
 
 ![Warnung zum Zulassen von Debugskripts](../../../../images/ext-com-dialog-visible-dialog.png)
 
-Wählen Sie in der *Farbauswahl* eine Farbe, und klicken Sie auf **OK**, um zu testen, wie der Code den ausgewählten Wert an den Aufrufer zurückgibt, der dann im vordefinierten Warnungsdialogfeld angezeigt wird.
+Wählen Sie in der *Farbauswahl* eine Farbe aus, und klicken Sie auf **OK**, um zu testen, wie der Code den ausgewählten Wert an den Aufrufer zurückgibt. Die Auswahl wird anschließend in einem Standarddialogfeld „Alert“ angezeigt.
 
-![Vordefiniertes Warnungsdialogfeld](../../../../images/ext-com-dialog-oob-alert-dialog.png)
+![Standarddialogfeld „Alert“](../../../../images/ext-com-dialog-oob-alert-dialog.png)
