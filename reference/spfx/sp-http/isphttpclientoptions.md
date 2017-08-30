@@ -1,9 +1,0 @@
-<span data-ttu-id="121d0-p101">Für einen Schreibvorgang fügt SPHttpClient automatisch die Kopfzeile „X-RequestDigest“ hinzu, die möglicherweise mithilfe einer separaten Anforderung wie z. B. „https://example.com/sites/sample/_api/contextinfo“ abgerufen werden muss. In der Regel kann die SPWeb-URL (in diesem Beispiel „https://example.com/sites/sample“) erraten werden, indem in der ursprünglichen REST-Abfrage nach einem reservierten URL-Segment gesucht wird, z. B. „_api“. Bestimmte REST-Endpunkte enthalten jedoch kein reserviertes URL-Segment; in diesem Fall kann die webUrl explizit von dieser Option angegeben werden.</span><span class="sxs-lookup"><span data-stu-id="121d0-p101">For a write operation, SPHttpClient will automatically add the "X-RequestDigest" header, which may need to be fetched using a seperate request such as "https://example.com/sites/sample/_api/contextinfo". Typically the SPWeb URL ("https://example.com/sites/sample" in this example) can be guessed by looking for a reserved URL segment such as "_api" in the original REST query, however certain REST endpoints do not contain a reserved URL segment; in this case, the webUrl can be explicitly specified using this option.</span></span>|
-|:-------------|:-------|:-----------|
-|`webUrl`      | `string` | Für einen Schreibvorgang fügt SPHttpClient automatisch die Kopfzeile „X-RequestDigest“ hinzu, die möglicherweise mithilfe einer separaten Anforderung wie z. B. „https://example.com/sites/sample/_api/contextinfo“ abgerufen werden muss. In der Regel kann die SPWeb-URL (in diesem Beispiel „https://example.com/sites/sample“) erraten werden, indem in der ursprünglichen REST-Abfrage nach einem reservierten URL-Segment gesucht wird, z. B. „_api“. Bestimmte REST-Endpunkte enthalten jedoch kein reserviertes URL-Segment; in diesem Fall kann die webUrl explizit von dieser Option angegeben werden. |
-
-
-
-
-
-
