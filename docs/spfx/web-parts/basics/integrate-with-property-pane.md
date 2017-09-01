@@ -1,4 +1,4 @@
-# <a name="integrate-your-sharepoint-client-side-web-part-with-the-property-pane"></a>Integrieren Ihres clientseitigen SharePoint-Webparts in den Eigenschaftenbereich
+# <a name="make-your-sharepoint-client-side-web-part-configurable"></a>Machen Sie Ihr clientseitiges SharePoint-Webpart konfigurierbar
 
 Im Eigenschaftenbereich können Endbenutzer das Webpart mit einer Reihe von Eigenschaften konfigurieren. Im Artikel [Erstellen Ihres ersten Webparts](../get-started/build-a-hello-world-web-part) wird beschrieben, wie der Eigenschaftenbereich in der **HelloWorldWebPart**-Klasse definiert ist. Die Eigenschaften des Eigenschaftenbereichs sind in**PropertyPaneSettings** definiert.
 
@@ -20,12 +20,12 @@ Eine Eigenschaftenbereich sollte eine Seite, einen optionalen Header und mindest
 
 Eigenschaftenfelder werden dann innerhalb einer Gruppe definiert. 
 
-## <a name="using-the-property-pane"></a>Verwenden der Eigenschaftenbereichs
+## <a name="using-the-property-pane"></a>Verwenden des Eigenschaftenbereichs
 
-Im folgenden Codebeispiel wird der Eigenschaftenbereich in Ihrem Webpart initialisiert und konfiguriert. Sie erstellen eine Methode des Typs **IPropertyPaneSettings** und geben eine Auflistung der Eigenschaftbereichsseite(n) zurück.
+Im folgenden Codebeispiel wird der Eigenschaftenbereich in Ihrem Webpart initialisiert und konfiguriert. Sie setzen die Methode **getPropertyPaneConfiguration** außer Kraft und geben eine Auflistung der Eigenschaftbereichsseite(n) zurück.
 
 ```ts
-protected get propertyPaneSettings(): IPropertyPaneSettings {
+protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
   return {
     pages: [
       {
@@ -52,17 +52,20 @@ protected get propertyPaneSettings(): IPropertyPaneSettings {
 
 Die folgenden Feldtypen werden unterstützt:
 
-* Beschriftung
-* Textfeld
-* Mehrzeiliges Textfeld
+* Schaltfläche
 * Kontrollkästchen
+* Auswahlgruppe
 * Dropdown
+* Horizontales Lineal
+* Beschriftung
 * Link
 * Schieberegler
+* Textfeld
+* Mehrzeiliges Textfeld
 * Umschaltfläche
 * Benutzerdefiniert
 
-Die Feldtypen sind in der **sp-clent-Plattform** als Module verfügbar. Bevor sie im Code verwendet werden können, müssen sie importiert werden:
+Die Feldtypen sind in **sp-client-platform** als Module verfügbar. Bevor sie im Code verwendet werden können, müssen sie importiert werden:
 
 ```ts
 import {
@@ -76,7 +79,7 @@ import {
 } from '@microsoft/sp-client-preview';
 ```
 
-Jeder Feldtypkonstruktor ist wie folgt definiert, wobei **PropertyPaneTextField** als Beispiel verwendet wird:
+Jede Feldtypmethode ist wie folgt definiert, wobei **PropertyPaneTextField** als Beispiel verwendet wird:
 
 ```ts
 PropertyPaneTextField('targetProperty',{
@@ -100,7 +103,7 @@ Diese steht dann in Ihrem Webpart über die **this.properties.targetProperty** z
 <p class="ms-font-l ms-fontColor-white">${this.properties.description}</p>
 ```
 
-Wenn die Eigenschaften definiert sind, können Sie in Ihrem Webpart mit dem **this.properties.<Eigenschaftswert>** darauf zugreifen. Details finden Sie unter [**Render**-Methode von **HelloWorldWebPart**](../get-started/build-a-hello-world-web-part#web-part-render-method):
+Wenn die Eigenschaften definiert sind, können Sie in Ihrem Webpart mit dem **this.properties.[Eigenschaftsname** darauf zugreifen. Details finden Sie unter [**Render**-Methode von **HelloWorldWebPart**](../get-started/build-a-hello-world-web-part#web-part-render-method):
 
 ## <a name="handling-field-changes"></a>Behandeln von Feldänderungen
 
@@ -119,32 +122,6 @@ protected get disableReactivePropertyChanges(): boolean {
 }
 ```
 
-## <a name="custom-field-example"></a>Beispiel für ein benutzerdefiniertes Feld
+## <a name="custom-property-pane-controls"></a>Benutzerdefinierte Eigenschaftenbereich-Steuerelemente
 
-Fügen Sie die folgende Felddefinition zu einem **groupFields**-Array hinzu.
-
-```ts
-{
-  type: IPropertyPaneFieldType.Custom,
-  targetProperty: 'custom',
-  properties: {
-    onRender: this._customFieldRender.bind(this),
-    value: undefined,
-    context: undefined
-  }
-}
-```
-
-Fügen Sie die folgenden Typen zu den **@microsoft/sp-webpart-base**-Importen hinzu.
-
-```ts
-IPropertyPaneFieldType
-```
-
-Fügen Sie die folgende private Methode zum Rendern des benutzerdefinierten Felds hinzu.
-
-```ts
-private _customFieldRender(elem: HTMLElement, context: any, onChanged?: IOnCustomPropertyFieldChanged): void {
-    elem.innerHTML = '<input id="password" type="password" name="password" class="ms-TextField-field">';
-}
-```
+SharePoint Framework enthält eine Reihe von Standardsteuerelementen für den Eigenschaftenbereich. Doch manchmal benötigen Sie zusätzliche Funktionen, die über die grundlegenden Steuerelemente hinausgehen. Mit SharePoint Framework können Sie benutzerdefinierte Steuerelemente erstellen, um die erforderliche Funktionalität bereitzustellen. Weitere Informationen finden Sie im Leitfaden zum [Erstellen benutzerdefinierter Steuerelemente für den Eigenschaftenbereich](../guidance/build-custom-property-pane-controls).

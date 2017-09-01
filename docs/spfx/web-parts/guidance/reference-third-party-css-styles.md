@@ -120,7 +120,7 @@ npm install jquery jquery-ui --save
 Da Sie Ihr Webpart in TypeScript erstellen, benötigen Sie auch TypeScript-Typisierungen für jQuery, die Sie durch Ausführen des folgenden Befehls installieren können:
 
 ```sh
-npm install @types/jquery --save-dev
+npm install @types/jquery --save
 ```
 
 ### <a name="reference-libraries-in-the-web-part"></a>Verweisen auf Bibliotheken im Webpart
@@ -195,7 +195,7 @@ Wenn Sie von einer URL aus auf Drittanbieterbibliotheken verweisen, müssen Sie 
 Angenommen, Sie beginnen mit einem leeren Projekt, das Sie wie zuvor in diesem Artikel beschrieben erstellt haben: Installieren Sie TypeScript-Typisierungen für jQuery, indem Sie den folgenden Befehl ausführen:
 
 ```sh
-npm install @types/jquery --save-dev
+npm install @types/jquery --save
 ```
 
 ### <a name="specify-urls-of-libraries"></a>Angeben der URLs von Bibliotheken
@@ -248,7 +248,7 @@ An diesem Punkt haben Sie nur auf die jQuery UI-Skripts verwiesen, was erklärt,
 
 ### <a name="reference-third-party-css-stylesheets-from-url-in-the-web-part"></a>Verweisen auf CSS-Formatvorlagen von Drittanbietern von der URL im Webpart
 
-Das Hinzufügen von Verweisen auf CSS-Formatvorlagen von Drittanbietern von einer URL unterscheidet sich vom Verweisen auf Ressourcen von Projektpaketen. In der Projektkonfiguration in der Datei **config.json** können Sie zwar externe Ressourcen angeben, dies gilt abr nur für Skripts. Um auf CSS-Formatvorlagen von einer URL aus zu verweisen, müssen Sie stattdessen den **SPModuleLoader** verweden.
+Das Hinzufügen von Verweisen auf CSS-Formatvorlagen von Drittanbietern von einer URL unterscheidet sich vom Verweisen auf Ressourcen von Projektpaketen. In der Projektkonfiguration in der Datei **config.json** können Sie zwar externe Ressourcen angeben, dies gilt aber nur für Skripts. Um auf CSS-Formatvorlagen von einer URL aus zu verweisen, müssen Sie stattdessen den **SPComponentLoader** verwenden.
 
 #### <a name="load-css-from-the-url-using-the-spcomponentloader"></a>Laden von CSS von der URL mithilfe von SPComponentLoader
 
@@ -258,15 +258,13 @@ Das Hinzufügen von Verweisen auf CSS-Formatvorlagen von Drittanbietern von eine
 import { SPComponentLoader } from '@microsoft/sp-loader';
 ```
 
-Fügen Sie in derselben Datei den Webpartkonstruktor wie folgt hinzu:
+Überschreiben Sie die Methode onInit() in derselben Datei wie folgt:
 
 ```ts
 export default class JQueryAccordionWebPart extends BaseClientSideWebPart<IJQueryAccordionWebPartProps> {
-
-  public constructor() {
-    super();
-
+  protected onInit(): Promise<void> {
     SPComponentLoader.loadCss('https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css');
+    return super.onInit();
   }
 
   // ...
