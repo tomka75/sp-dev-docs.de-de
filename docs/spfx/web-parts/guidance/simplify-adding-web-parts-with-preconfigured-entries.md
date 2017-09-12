@@ -46,10 +46,11 @@ Eigenschaftsname           |Werttyp      |Erforderlich|Zweck                    
 title                   |ILocalizedString|ja     |Der Webparttitel, der in der Toolbox angezeigt wird.              |`"title": { "default": "Weather", "nl-nl": "Weerbericht" }`
 description             |ILocalizedString|ja     |Die Webpartbeschreibung, die in den Toolbox-QuickInfos angezeigt wird.|`"description": { "default": "Shows weather in the given location", "nl-nl": "Toont weerbericht voor de opgegeven locatie" } `
 officeFabricIconFontName|string          |nein      |Das Symbol für das Webpart, das in der Toolbox angezeigt wird. Dessen Wert muss einer der [Office UI Fabric-Symbolnamen](https://dev.office.com/fabric#/styles/icons) sein. Wenn diese Eigenschaft einen Wert hat, wird die **iconImageUrl**-Eigenschaft ignoriert.|`"officeFabricIconFontName": "Sunny"`
-iconImageUrl            |string          |nein      |Das Symbol für das Webpart, das in der Toolbox angezeigt und von einer Bild-URL dargestellt wird. Das Bild an der URL muss genau 38x38 px sein. Wenn die **officeFabricIconName**-Eigenschaft nicht über einen Wert verfügt, muss diese Eigenschaft einen Wert aufweisen.|`"iconImageUrl": "https://cdn.contoso.com/weather.png"`
+iconImageUrl            |string          |nein      |Das Symbol für das Webpart, das in der Toolbox angezeigt und von einer Bild-URL dargestellt wird. Das Bild an der URL muss genau 40x28 px sein. Wenn die **officeFabricIconName**-Eigenschaft nicht über einen Wert verfügt, muss diese Eigenschaft einen Wert aufweisen.|`"iconImageUrl": "https://cdn.contoso.com/weather.png"`
 groupId                 |string          |ja     |Die Gruppen-ID bestimmt, welche Toolboxgruppe das Webpart enthalten soll. Das SharePoint Framework reserviert Gruppen-IDs für Standardgruppen. Der Entwickler kann eine dieser Gruppen auswählen. Wenn eine Gruppen-ID angegeben ist, wird die **group**-Eigenschaft ignoriert. Alternativ kann der Entwickler eine eindeutige ID und einen eindeutigen Gruppennamen auswählen. In der Toolbox wird das Webpart dann in seiner eigenen Gruppe angezeigt.|`"groupId": "6737645a-4443-4210-a70e-e5e2a219133a"`
 Gruppe                   |ILocalizedString|nein      |Der Name der Gruppe in der Toolbox, in der das Webpart angezeigt werden soll. Wenn kein Wert angegeben ist, wird das Webpart in der **Custom**-Gruppe angezeigt.|`"group": { "default": "Content", "nl-nl": "Inhoud" }`
-Eigenschaften              |TProperties     |ja     |Ein Schlüssel-Wert-Paarobjekt mit Standardwerten für Webparteigenschaften.|`"properties": { "location": "Redmond", "numberOfDays": 3, "showIcon": true }`
+dataVersion             |Zeichenfolge          |nein      |Verwenden Sie dieses Feld, um die Datenversion der vorkonfigurierten Daten anzugeben, die dem Webpart bereitgestellt werden. Beachten Sie, dass sich die Datenversion vom Versionsfeld im Manifest unterscheidet. Die Manifestversion wird zum Steuern der Versionsverwaltung des Webpartcodes verwendet, die Datenversion wird hingegen zum Steuern der Versionsverwaltung der serialisierten Daten des Webparts verwendet. Weitere Informationen finden Sie im dataVersion-Feld Ihres Webparts. Unterstützte Werte: MAJOR.MINOR Version.|`"dataVersion": "1.0"`
+properties              |TProperties     |ja     |Ein Schlüssel-Wert-Paarobjekt mit Standardwerten für Webparteigenschaften.|`"properties": { "location": "Redmond", "numberOfDays": 3, "showIcon": true }`
 
 Einige Webparteigenschaften weisen einen Wert vom Typ **ILocalizedString** auf. Dieser Typ ist ein Schlüssel-Wert-Paarobjekt, mit dem Entwickler Zeichenfolgen für die unterschiedlichen Gebietsschemas angeben können. Mindestens ein Wert vom Typ **ILocalizedString** muss den **Standardwert** enthalten. Entwickler können optional die Übersetzungen dieses Werts in die unterschiedlichen Gebietsschemas bereitstellen, die ihr Webpart unterstützt. Wenn das Webpart auf einer Seite in einem Gebietsschema platziert wird, das nicht in der lokalisierten Zeichenfolge aufgeführt ist, wird stattdessen der Standardwert verwendet.
 
@@ -173,19 +174,27 @@ Aktualisieren Sie React-Hauptkomponente so, dass die Werte der Eigenschaften ang
 import * as React from 'react';
 import styles from './Gallery.module.scss';
 import { IGalleryProps } from './IGalleryProps';
-import { Placeholder } from '@microsoft/sp-webpart-base';
 
-export default class Gallery extends React.Component<IGalleryProps, {}> {
+export default class Gallery extends React.Component<IGalleryProps, void> {
   public render(): JSX.Element {
     if (this.needsConfiguration()) {
-      return <Placeholder
-        icon="ms-Icon--ThumbnailView"
-        iconText="Gallery"
-        description="Show items from the selected list" />;
+      return <div className="ms-Grid" style={{ color: "#666", backgroundColor: "#f4f4f4", padding: "80px 0", alignItems: "center", boxAlign: "center" }}>
+        <div className="ms-Grid-row" style={{ color: "#333" }}>
+          <div className="ms-Grid-col ms-u-hiddenSm ms-u-md3"></div>
+          <div className="ms-Grid-col ms-u-sm12 ms-u-md6" style={{ height: "100%", whiteSpace: "nowrap", textAlign: "center" }}>
+            <i className="ms-fontSize-su ms-Icon ms-Icon--ThumbnailView" style={{ display: "inline-block", verticalAlign: "middle", whiteSpace: "normal" }}></i><span className="ms-fontWeight-light ms-fontSize-xxl" style={{ paddingLeft: "20px", display: "inline-block", verticalAlign: "middle", whiteSpace: "normal" }}>Gallery</span>
+          </div>
+          <div className="ms-Grid-col ms-u-hiddenSm ms-u-md3"></div>
+        </div>
+        <div className="ms-Grid-row" style={{ width: "65%", verticalAlign: "middle", margin: "0 auto", textAlign: "center" }}>
+          <span style={{ color: "#666", fontSize: "17px", display: "inline-block", margin: "24px 0", fontWeight: 100 }}>Show items from the selected list</span>
+        </div>
+        <div className="ms-Grid-row"></div>
+      </div>;
     }
     else {
       return (
-        <div className={styles.helloWorld}>
+        <div className={styles.gallery}>
           <div className={styles.container}>
             <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
               <div className='ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1'>

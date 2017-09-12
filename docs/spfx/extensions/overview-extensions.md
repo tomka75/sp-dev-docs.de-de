@@ -1,6 +1,8 @@
 # <a name="overview-of-sharepoint-framework-extensions-preview"></a>Übersicht über SharePoint Framework-Erweiterungen (Preview)
 
-SharePoint Framework-Erweiterungen sind Erweiterungen der SharePoint-Benutzeroberfläche. Mit ihnen können Sie mehr Aspekte der SharePoint-Oberfläche individuell anpassen, beispielsweise Infobereiche, Symbolleisten und Listenansichten von Daten. SharePoint Framework-Erweiterungen können während der Preview-Phase in Office 365-Entwicklermandanten getestet werden. 
+SharePoint Framework-Erweiterungen sind Erweiterungen der SharePoint-Benutzeroberfläche. Mit ihnen können Sie mehr Aspekte der SharePoint-Oberfläche individuell anpassen, beispielsweise Infobereiche, Symbolleisten und Listenansichten von Daten. SharePoint Framework-Erweiterungen können als Teil der Release Candidate-Version in Mandanten der Erstversion und in Office 365-Entwicklermandanten getestet werden. 
+
+>**Hinweis:** Die SharePoint Framework-Erweiterungen befinden sich derzeit in der Preview-Phase. Änderungen sind vorbehalten. Die Verwendung von SharePoint Framework-Erweiterungen in Produktionsumgebungen wird aktuell nicht unterstützt.
 
 > **Hinweis:** Sie erhalten einen kostenlosen Office 365-Entwicklermandanten, wenn Sie sich für das [Office 365 Developer Program](http://dev.office.com/devprogram) registrieren.
 

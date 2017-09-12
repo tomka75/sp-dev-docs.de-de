@@ -44,6 +44,8 @@ yo @microsoft/sharepoint
 Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
 * Übernehmen Sie den Standardwert **dialog-cmd** als Namen der Lösung, und drücken Sie die **EINGABETASTE**.
+* Wählen Sie **Use the current folder (Aktuellen Ordner verwenden)** aus, und drücken Sie die **EINGABETASTE**.
+* Wählen Sie **N**, damit die Erweiterung auf jeder Website explizit installiert werden muss, wenn diese verwendet wird.
 * Wählen Sie **Extension (Preview)** als den zu erstellenden Typ von clientseitiger Komponente aus. 
 * Wählen Sie **ListView Command Set (Preview)** als den zu erstellenden Typ von Erweiterung aus.
 
@@ -77,10 +79,11 @@ Konfigurieren Sie die Erweiterung im Erweiterungsmanifest so, dass sie nur eine 
 ```json
 {
   //...
-  "commands": {
+  "items": {
     "COMMAND_1": {
-      "title": "Open Custom Dialog",
-      "iconImageUrl": "icons/request.png"
+      "title": { "default": "Open Custom Dialog" },
+      "iconImageUrl": "icons/request.png",
+      "type": "command"
     }
   }
 }
@@ -104,7 +107,6 @@ Erstellen Sie eine neue Datei mit dem Namen **ColorPickerDialog.tsx** im Ordner 
 
 Fügen Sie die folgenden Importanweisungen am Anfang der neu erstellten Datei ein. Da Sie das benutzerdefinierte Dialogfeld mithilfe von [Office UI Fabric React-Komponenten](https://dev.office.com/fabric#/components) erstellen, nutzen Sie React zur Implementierung. 
 
-> **Hinweis:** Die Komponente `DialogContent` wird derzeit über `@microsoft/sp-dialog` bereitgestellt, sie wird jedoch in Kürze in die Office UI Fabric React-Komponenten aufgenommen. 
 
 ```ts
 import * as React from 'react';
@@ -115,12 +117,10 @@ import {
   ColorPicker,
   PrimaryButton,
   Button,
-  DialogFooter
-  // DialogContent <- This should be imported here for third parties
+  DialogFooter,
+  DialogContent
 } from 'office-ui-fabric-react';
-// Note: DialogContent is available in v2.32.0 of office-ui-fabric-react
-// As a workaround we're importing it from sp-dialog until the next version bump
-import { DialogContent } from '@microsoft/sp-dialog';
+
 ```
 
 Fügen Sie die nachfolgende Schnittstellendefinition direkt unterhalb der Importanweisungen ein. Sie regelt die Übergabe von Informationen und Funktionen zwischen Ihrer Erweiterung des Typs „ListView Command Set“ und Ihrem benutzerdefinierten Dialogfeld.
@@ -258,8 +258,6 @@ Wie Sie sehen, verwenden Sie die Option `--nobrowser`. Ein Aufrufen der lokalen 
 
 Nun wird die Bündelung der Lösung angestoßen, und das resultierende Manifest wird von der `localhost`-Adresse ausgeliefert.
 
-![Anfängliche Visual Studio Code-Struktur nach der Gerüsterstellung](../../../../images/ext-com-dialog-gulp-serve.png)
-
 Navigieren Sie nun zu einer Website in Ihrem SharePoint Online-Entwicklermandanten, um Ihre Erweiterung zu testen.
 
 Rufen Sie auf der Website eine bereits vorhandene benutzerdefinierte Liste mit Elementen auf. Sie können auch eine neue Liste erstellen und ihr zu Testzwecken einige Elemente hinzufügen. 
@@ -276,12 +274,12 @@ Klicken Sie bei Aufforderung auf **Load debug scripts**, um das Laden der Debugm
 
 Sie sehen: Die neue Schaltfläche wird jetzt auf der Symbolleiste der Liste angezeigt, mit dem Text *Open Custom Dialog*.
 
-![Warnung zum Zulassen von Debugskripts](../../../../images/ext-com-dialog-button-in-toolbar.png)
+![Die Schaltfläche „Open Cusotm Dialog“ wird auf der Symbolleiste angezeigt](../../../../images/ext-com-dialog-button-in-toolbar.png)
 
 Klicken Sie auf die Schaltfläche *Open Custom Dialog*. Ihr benutzerdefiniertes Dialogfeld wird nun in der Listenansicht gerendert. 
 
-![Warnung zum Zulassen von Debugskripts](../../../../images/ext-com-dialog-visible-dialog.png)
+![Im Dialogmodus gerenderte Farbauswahl](../../../../images/ext-com-dialog-visible-dialog.png)
 
 Wählen Sie in der *Farbauswahl* eine Farbe aus, und klicken Sie auf **OK**, um zu testen, wie der Code den ausgewählten Wert an den Aufrufer zurückgibt. Die Auswahl wird anschließend in einem Standarddialogfeld „Alert“ angezeigt.
 
-![Standarddialogfeld „Alert“](../../../../images/ext-com-dialog-oob-alert-dialog.png)
+![Dialogfeld mit Details zur ausgewählten Farbe](../../../../images/ext-com-dialog-oob-alert-dialog.png)

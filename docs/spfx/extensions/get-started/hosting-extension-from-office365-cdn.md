@@ -10,6 +10,12 @@ Achten Sie darauf, dass Sie die Verfahren in den folgenden Artikeln abgeschlosse
 * [Verbinden des clientseitigen Webparts mit SharePoint (Hello World, Teil 2)](./using-page-placeholder-with-extensions.md)
 * [Bereitstellen Ihrer Erweiterung in SharePoint (Hello World, Teil 3)](./serving-your-extension-from-sharepoint.md)
 
+Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=oOIHWamPr34&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV) nachvollziehen: 
+
+<a href="https://www.youtube.com/watch?v=oOIHWamPr34&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV">
+<img src="../../../../images/spfx-ext-youtube-tutorial4.png" alt="Screenshot of the YouTube video player for this tutorial" />
+</a>
+
 ## <a name="using-the-cdn-in-your-office-365-tenant"></a>Verwenden von CDN in Ihrem Office 365-Mandanten
 Office 365 CDN ist die einfachste Möglichkeit, SharePoint-Framework-Lösungen direkt von Ihrem Mandanten aus zu hosten und dabei weiterhin die Vorteile des CDN (Content Delivery Network) zum schnelleren Laden der Objekte zu nutzen.
 

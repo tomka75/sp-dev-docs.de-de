@@ -10,6 +10,12 @@ Stellen Sie sicher, dass Sie die Verfahren in den folgenden Artikeln abgeschloss
 * [Erstellen Ihrer ersten SharePoint-Framework-Erweiterung (Hello World, Teil 1)](./build-a-hello-world-extension.md)
 * [Verwenden von Seitenplatzhaltern aus dem Anwendungsanpasser (Hello World, Teil 2)](./using-page-placeholder-with-extensions.md)
 
+Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=P_yWI0WVQIg&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV) nachvollziehen: 
+
+<a href="https://www.youtube.com/watch?v=P_yWI0WVQIg&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV">
+<img src="../../../../images/spfx-ext-youtube-tutorial3.png" alt="Screenshot of the YouTube video player for this tutorial" />
+</a>
+
 ## <a name="package-the-helloworld-application-customizer"></a>Packen des helloWorld-Anwendungsanpassers
 Wechseln Sie im Konsolenfenster zum Projektverzeichnis der Erweiterung, die Sie in [Erstellen Ihrer ersten SharePoint-Framework-Erweiterung (Hello World, Teil 1)](./build-a-hello-world-extension.md) erstellt haben.
 
@@ -27,7 +33,7 @@ Bevor wir die Lösung packen, müssen wir den Code, der zur Automatisierung der 
     * **ClientSiteComponentId:** Dies ist der Bezeichner (GUID) für den Field Customizer, der im App-Katalog installiert wurde. 
     * **ClientSideComponentProperties:** Dies ist ein optionaler Parameter, über den Eigenschaften für die Field Customizer-Instanz bereitgestellt werden können.
 
-> Beachten Sie, dass Sie Lösungspakete derzeit explizit auf den Websites installieren müssen, um sicherzustellen, dass die Erweiterung ordnungsgemäß ausgeführt wird. Künftig wird es alternative Verfahren geben, um dies ohne Bereitstellung Website für Website zu erreichen. 
+> Wie Sie sehen, können Sie die Anforderung steuern, dass eine Lösung mit Ihrer Erweiterung der Website hinzugefügt wird, indem Sie `skipFeatureDeployment` in **solution.json-Paket** festlegen. Obwohl Sie nicht erfordern würden, dass die Lösung auf der Website installiert wird, müssen Sie **ClientSideComponentId** bestimmten Objekten zuordnen, damit die Erweiterung sichtbar ist. 
 
 In den folgenden Schritten erstellen wir eine neue `CustomAction`-Definition, die dann automatisch mit den erforderlichen Konfigurationen bereitgestellt wird, sobald das Lösungspaket auf einer Website installiert wird. 
 
@@ -60,7 +66,7 @@ Beachten Sie auch, dass wir den spezifischen Speicherort von `ClientSideExtensio
         Title="SPFxApplicationCustomizer"
         Location="ClientSideExtension.ApplicationCustomizer"
         ClientSideComponentId="46606aa6-5dd8-4792-b017-1555ec0a43a4"
-        ClientSideComponentProperties="{&quot;Header&quot;:&quot;Header area of the page&quot;,&quot;Footer&quot;:&quot;Footer area in the page&quot;}">
+        ClientSideComponentProperties="{&quot;Top&quot;:&quot;Top area of the page&quot;,&quot;Bottom&quot;:&quot;Bottom area in the page&quot;}">
 
     </CustomAction>
 
@@ -76,7 +82,8 @@ Beachten Sie auch, dass wir den spezifischen Speicherort von `ClientSideExtensio
   "solution": {
     "name": "app-extension-client-side-solution",
     "id": "02d35a3e-5896-4664-874f-9fe9fdfe8408",
-    "version": "1.0.0.0"
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": false
   },
   "paths": {
     "zippedPackage": "solution/app-extension.sppkg"
@@ -93,6 +100,7 @@ Um sicherzustellen, dass die neu hinzugefügte Datei **element.xml** beim Verpac
     "name": "app-extension-client-side-solution",
     "id": "02d35a3e-5896-4664-874f-9fe9fdfe8408",
     "version": "1.0.0.0",
+    "skipFeatureDeployment": false,
     "features": [{
       "title": "Application Extension - Deployment of custom action.",
       "description": "Deploys a custom action with ClientSideComponentId association",

@@ -4,9 +4,11 @@
 
 Erweiterungen sind clientseitige Komponenten, die im Kontext einer SharePoint-Seite ausgeführt werden. Sie lassen sich in SharePoint Online bereitstellen und mithilfe aktueller JavaScript-Tools und -Bibliotheken erstellen.
 
->**Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [Ihre Entwicklungsumgebung einrichten](../../set-up-your-development-environment). Beachten Sie, dass Erweiterungen derzeit **AUSSCHLIESSLICH** über Office 365-Entwicklermandanten verfügbar sind.
+Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=iW0LQQqAY0Y&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV) nachvollziehen: 
 
->**Hinweis:** Erweiterungen des Typs „ListView Command Set“ lassen sich derzeit nur mit der modernen Oberfläche auf klassischen SharePoint-Websites debuggen. Stellen Sie sicher, dass Sie für die Tests eine klassische Teamwebsite mit moderner Listenoberfläche verwenden.
+<a href="https://www.youtube.com/watch?v=iW0LQQqAY0Y&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV">
+<img src="../../../../images/spfx-ext-youtube-tutorialcommand.png" alt="Screenshot of the YouTube video player for this tutorial" />
+</a>
 
 ## <a name="create-an-extension-project"></a>Erstellen eines Erweiterungsprojekts
 Erstellen Sie an einem Speicherort Ihrer Wahl ein neues Projektverzeichnis:
@@ -30,6 +32,8 @@ yo @microsoft/sharepoint
 Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
 * Übernehmen Sie den Standardwert **command-extension** als Namen der Lösung, und drücken Sie die **EINGABETASTE**.
+* Wählen Sie **Use the current folder (Aktuellen Ordner verwenden)** aus, und drücken Sie die **EINGABETASTE**.
+* Wählen Sie **N**, damit die Erweiterung auf jeder Website explizit installiert werden muss, wenn diese verwendet wird. 
 * Wählen Sie **Extension (Preview)** als den zu erstellenden Typ von clientseitiger Komponente aus. 
 * Wählen Sie **ListView Command Set (Preview)** als den zu erstellenden Typ von Erweiterung aus.
 
@@ -56,7 +60,7 @@ code .
 
 > Beachten Sie: Da die clientseitige SharePoint-Lösung auf HTML/TypeScript basiert, können Sie zur Erstellung Ihrer Erweiterung jeden Code-Editor verwenden, der clientseitige Entwicklung unterstützt.
 
-Wie Sie sehen, entspricht die Standardlösungsstruktur der Lösungsstruktur clientseitiger Webparts. Hierbei handelt es sich um die grundlegende SharePoint Framework-Lösungsstruktur, die für alle Lösungstypen vergleichbare Konfigurationsoptionen bereitstellt.
+Wie Sie sehen, entspricht die Standardlösungsstruktur der Lösungsstruktur clientseitiger Webparts. Hierbei handelt es sich um die grundlegende SharePoint-Framework-Lösungsstruktur, die für alle Lösungstypen vergleichbare Konfigurationsoptionen bereitstellt.
 
 ![SharePoint Framework-Lösung nach der Erstellung des anfänglichen Gerüsts](../../../../images/ext-com-vscode-solution-structure.png)
 
@@ -75,21 +79,33 @@ In der Manifestdatei finden Sie auch die tatsächlichen Befehlsdefinitionen. Hie
 
 Wie Sie sehen, wird die Basisklasse Ihrer Erweiterung des Typs „ListView Command Set“ aus dem Paket **sp-listview-extensibility** importiert. Es enthält SharePoint Framework-Code, der von „ListView Command Set“ benötigt wird.
 
-![Importanweisung zum Importieren von „BaseListViewCommandSet“ aus „@microsoft/sp-listview-extensibility“](../../../../images/ext-com-vscode-base.png)
+```ts
+import { override } from '@microsoft/decorators';
+import { Log } from '@microsoft/sp-core-library';
+import {
+  BaseListViewCommandSet,
+  Command,
+  IListViewCommandSetListViewUpdatedParameters,
+  IListViewCommandSetExecuteEventParameters
+} from '@microsoft/sp-listview-extensibility';
+```
 
-Das Verhalten Ihrer benutzerdefinierten Schaltflächen wird in den Methoden **onRefreshCommand()** und **OnExecute()** definiert.
+Das Verhalten Ihrer benutzerdefinierten Schaltflächen wird in den Methoden **onListViewUpdated()** und **OnExecute()** definiert.
 
-Das Ereignis **onRefreshCommand()** tritt für jeden Befehl (d. h. für jedes Menüelement) separat ein, und zwar immer dann, wenn die Anwendung versucht, den Befehl auf der Benutzeroberfläche anzuzeigen. Der Funktionsparameter `“event”` enthält Informationen über den zu rendernden Befehl. Anhand dieser Informationen kann der Handler den Titel und die Sichtbarkeit anpassen. Soll ein Befehl beispielsweise nur angezeigt werden, wenn eine bestimmte Anzahl von Elementen in der Listenansicht ausgewählt wurde, würde das standardmäßig wie folgt implementiert:
+Das Ereignis **onListViewUpdated()** tritt für jeden Befehl (d. h. für jedes Menüelement) separat ein, und zwar immer dann, wenn eine Änderung in der ListView vorgenommen wird und die Benutzeroberfläche erneut gerendert werden muss. Der Funktionsparameter `“event”` enthält Informationen über den zu rendernden Befehl. Anhand dieser Informationen kann der Handler den Titel und die Sichtbarkeit anpassen. Soll ein Befehl beispielsweise nur angezeigt werden, wenn eine bestimmte Anzahl von Elementen in der Listenansicht ausgewählt wurde, würde das standardmäßig wie folgt implementiert:
+
+Wenn Sie die `“tryGetCommand”`-Methode verwenden, erhalten Sie ein Command-Objekt, bei dem es sich um eine Darstellung des Befehls handelt, der in der Benutzeroberfläche angezeigt wird. Sie können die Werte ändern, z. B. `“title”` oder `“visible”` ändern, um das Benutzeroberflächenelement zu ändern. SPFx verwendet diese Informationen beim erneuten Rendern der Befehle. Diese Objekte behalten den Status des letzten Renderns bei, wenn ein Befehl also auf `“visible = false”` festgelegt wird, bleibt dieser unsichtbar, bis er wieder auf `“visible = true”` festgelegt wird.
 
 ```ts
   @override
-  public onRefreshCommand(event: IListViewCommandSetRefreshEventParameters): void {
-    event.visible = true; // assume true by default
-
+  public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void {
     if (this.properties.disabledCommandIds) {
-      if (this.properties.disabledCommandIds.indexOf(event.commandId) >= 0) {
-        Log.info(LOG_SOURCE, 'Hiding command ' + event.commandId);
-        event.visible = false;
+      for (const commandId of this.properties.disabledCommandIds) {
+        const command: Command | undefined = this.tryGetCommand(commandId);
+        if (command && command.visible) {
+          Log.info(LOG_SOURCE, `Hiding command ${commandId}`);
+          command.visible = false;
+        }
       }
     }
   }
@@ -132,7 +148,7 @@ Da unsere Erweiterung des Typs „ListView Command Set“ auf Localhost gehost
 Fügen Sie die folgenden Abfragezeichenfolgeparameter an die URL an. Dabei müssen Sie die GUID durch die ID Ihrer Erweiterung des Typs „ListView Command Set“ aus der Datei **HelloWorldCommandSet.manifest.json** ersetzen:
 
 ```
-?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"81b6a3d7-e408-43a4-8ef1-180d0f2582cc":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
+?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"6a6ac29e-258e-4a2c-8de3-6bdd358cdb54":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
 ```
 
 * **loadSPFX=true:** Dieser Parameter stellt sicher, dass SharePoint Framework auf der Seite geladen wird. Aus Leistungsgründen wird das Framework normalerweise erst geladen, wenn mindestens eine Erweiterung registriert ist. Da aktuell noch keine Komponenten registriert sind, müssen Sie das Framework explizit laden.
@@ -148,7 +164,7 @@ Fügen Sie die folgenden Abfragezeichenfolgeparameter an die URL an. Dabei müss
 Die vollständige URL sollte in etwa wie folgt aussehen, abhängig von der URL Ihres Mandanten und der Position der Liste.
 
 ```
-contoso.sharepoint.com/Lists/Orders/AllItems.aspx?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"81b6a3d7-e408-43a4-8ef1-180d0f2582cc":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
+contoso.sharepoint.com/Lists/Orders/AllItems.aspx?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"6a6ac29e-258e-4a2c-8de3-6bdd358cdb54":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
 ```
 
 Klicken Sie bei Aufforderung auf **Load debug scripts**, um das Laden der Debugmanifeste zu akzeptieren.
@@ -172,10 +188,10 @@ Wechseln Sie wieder zu Visual Studio Code (oder Ihrem bevorzugten Editor).
 
 Öffnen Sie die Datei **HelloWorldCommandSet.ts** im Ordner **src\extensions\helloWorld**.
 
-Fügen Sie hinter den bereits vorhandenen Importanweisungen die folgende Importanweisung für den Import der Klasse `Dialog` aus `@microsoft/sp-dialog/lib/index` ein. 
+Fügen Sie hinter den bereits vorhandenen Importanweisungen die folgende Importanweisung für den Import der Klasse `Dialog` aus `@microsoft/sp-dialog` ein. 
 
 ```ts
-import { Dialog } from '@microsoft/sp-dialog/lib/index';
+import { Dialog } from '@microsoft/sp-dialog';
 ``` 
 
 Aktualisieren Sie die Methode **onExecute** wie folgt:
@@ -224,7 +240,7 @@ Hier müssen Sie zunächst einen Ordner **assets** erstellen, in dem Sie alle Fe
 
 Die Lösungsstruktur sollte in etwa wie folgt aussehen:
 
-![Ordner „assets“ in der Lösungsstruktur](../../../../images/ext-app-assets-folder.png)
+![Ordner „assets“ in der Lösungsstruktur](../../../../images/ext-com-assets-folder.png)
 
 ### <a name="add-an-elementsxml-file-for-sharepoint-definitions"></a>Hinzufügen einer Datei „elements.xml“ mit SharePoint-Definitionen
 
@@ -265,7 +281,8 @@ Für eine Erweiterung des Typs „ListView Command Set“ können Sie folgende
   "solution": {
     "name": "command-extension-client-side-solution",
     "id": "dfffbe21-e422-4c0f-a302-d7d62a30c1bf",
-    "version": "1.0.0.0"
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": false,
   },
   "paths": {
     "zippedPackage": "solution/command-extension.sppkg"
@@ -281,6 +298,7 @@ Um sicherzustellen, dass die neu hinzugefügte Datei **elements.xml** beim Verpa
     "name": "command-extension-client-side-solution",
     "id": "dfffbe21-e422-4c0f-a302-d7d62a30c1bf",
     "version": "1.0.0.0",
+    "skipFeatureDeployment": false,    
     "features": [{
       "title": "ListView Command Set - Deployment of custom action.",
       "description": "Deploys a custom action with ClientSideComponentId association",
@@ -341,7 +359,7 @@ Wechseln Sie zu der Website, auf der Sie die Bereitstellung der SharePoint-Resso
 
 Klicken Sie auf der oberen Navigationsleiste rechts auf das Zahnradsymbol und anschließend auf **App hinzufügen**, um Ihre Apps-Seite aufzurufen.
 
-Geben Sie in das **Suchfeld** die Zeichenfolge **command** ein, und drücken Sie die *EINGABETASTE*, um Ihre Apps zu filtern.
+Geben Sie in das **Suchfeld** die Zeichenfolge **extension** ein, und drücken Sie die *EINGABETASTE*, um Ihre Apps zu filtern.
 
 ![Installieren einer Erweiterung des Typs „ListView Command Set“ auf einer Website](../../../../images/ext-com-install-solution-to-site.png)
 
@@ -349,7 +367,7 @@ Wählen Sie die App **command-extension-client-side-solution** aus, um die Lösu
 
 Klicken Sie nach der Installation der Anwendung auf **Neu** auf der Symbolleiste auf der Seite **Websiteinhalte**, und wählen Sie die Option **Liste** aus.
 
-![Erstellen einer neuen Liste](../../../../images/ext-field-create-new-list.png)
+![Erstellen einer neuen Liste](../../../../images/ext-com-create-new-list.png)
 
 Geben Sie als Namen **Sample** ein, und klicken Sie auf **Erstellen**.
 

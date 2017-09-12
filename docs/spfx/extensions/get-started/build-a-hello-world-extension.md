@@ -5,22 +5,26 @@
 
 Erweiterungen sind clientseitige Komponenten, die im Kontext einer SharePoint-Seite ausgeführt werden. Sie lassen sich in SharePoint Online bereitstellen und auch mithilfe aktueller JavaScript-Tools und -Bibliotheken erstellen.
 
->**Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [Ihre Entwicklungsumgebung einrichten](../../set-up-your-development-environment). Beachten Sie, dass Erweiterungen derzeit **AUSSCHLIESSLICH** über Office 365-Entwicklermandanten verfügbar sind.
+Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=0BeS0HukW24&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV) nachvollziehen: 
+
+<a href="https://www.youtube.com/watch?v=0BeS0HukW24&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV">
+<img src="../../../../images/spfx-ext-youtube-tutorial1.png" alt="Screenshot of the YouTube video player for this tutorial" />
+</a>
 
 ## <a name="create-an-extension-project"></a>Erstellen eines Erweiterungsprojekts
-Erstellen Sie an einem Speicherort Ihrer Wahl ein neues Projektverzeichnis.
+Erstellen Sie an einem Speicherort Ihrer Wahl ein neues Projektverzeichnis:
 
 ```
 md app-extension
 ```
 
-Wechseln Sie in das Projektverzeichnis.
+Wechseln Sie in das Projektverzeichnis:
 
 ```
 cd app-extension
 ```
 
-Führen Sie den Yeoman-SharePoint-Generator aus, um eine neue HelloWorld-Erweiterung zu erstellen.
+Führen Sie den Yeoman-SharePoint-Generator aus, um eine neue HelloWorld-Erweiterung zu erstellen:
 
 ```
 yo @microsoft/sharepoint
@@ -29,6 +33,8 @@ yo @microsoft/sharepoint
 Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
 * Übernehmen Sie den Standardwert **app-extension** als Lösungsnamen, und drücken Sie die **EINGABETASTE**.
+* Wählen Sie **Use the current folder (Aktuellen Ordner verwenden)** aus, und drücken Sie die **EINGABETASTE**.
+* Wählen Sie **N**, damit die Erweiterung auf jeder Website explizit installiert werden muss, wenn diese verwendet wird. 
 * Wählen Sie **Extension (Preview)** als den zu erstellenden Typ von clientseitiger Komponente aus. 
 * Wählen Sie **Application Customizer (Preview)** als den zu erstellenden Erweiterungstyp aus.
 
@@ -74,16 +80,15 @@ Beachten Sie, dass die Basisklasse für den Application Customizer aus dem **sp-
 
 ![Import-Anweisung für BaseApplicationCustomizer von @microsoft/sp-application-base](../../../../images/ext-app-vscode-app-base.png)
 
-Die Logik für den Application Customizer ist in den beiden Methoden **onInit** und **onRender** enthalten.
+Die Logik für den Application Customizer ist in der **onInit**-Methode enthalten
 
-- In **onInit():** müssen Sie jegliches Setup vornehmen, das für die Erweiterung erforderlich ist. Dieses Ereignis tritt auf, nachdem ```this.context``` und ```this.properties``` zugewiesen wurden, jedoch bevor das Seiten-DOM bereit ist. Wie bei Webparts gibt ```onInit()``` eine Zusage zurück, die Sie verwenden können, um asynchrone Vorgänge durchzuführen; ```onRender()``` wird erst dann aufgerufen, wenn die Zusage erfüllt wurde. Wenn Sie dies nicht benötigen, geben Sie einfach ```super.onInit()``` zurück.
-- In **onRender()** kann die Erweiterung mit der Benutzeroberfläche interagieren. Dieses Ereignis tritt auf, nachdem die DOM-Struktur der Startseite der Anwendung erstellt wurde (obwohl einige Teile der Benutzeroberfläche möglicherweise noch nicht fertig gerendert sind).
+- **onInit()** wird aufgerufen, wenn die clientseitige Erweiterung das erste Mal auf der Seite aktiviert wird. Dieses Ereignis tritt auf, nachdem ```this.context``` und ```this.properties``` zugeordnet wurden. Wie bei Webparts gibt ```onInit()``` eine Zusage zurück, die Sie zum Ausführen von asynchronen Vorgängen verwenden können.
 
 > Beachten Sie: Der Klassenkonstruktor wird in einer frühen Phase aufgerufen, wenn ```this.context``` und ```this.properties``` noch nicht definiert sind. Das Einschließen benutzerdefinierter Initiierungslogik wird an dieser Stelle nicht unterstützt.
 
-Im Folgenden sind die Inhalte von **onInit()** und **onRender()** in der Standardlösung aufgelistet. Die Standardlösung schreibt einfach ein Protokoll in das Dev Dashboard und zeigt dann beim Rendern der Seite eine einfache JavaScript-Warnung an.
+Im Folgenden sind die Inhalte von **onInit()** in der Standardlösung aufgelistet. Die Standardlösung schreibt einfach ein Protokoll in das Dev Dashboard und zeigt dann beim Rendern der Seite eine einfache JavaScript-Warnung an.
 
-![Standardmethoden „onInit“ und „onRender“ im Code](../../../../images/ext-app-vscode-methods.png)
+![Standardmäßige onInit-Methode im code](../../../../images/ext-app-vscode-methods.png)
 
 >  Wenn die Anpassung Ihrer Anwendung die JSON-Eingabe ClientSideComponentProperties verwendet, wird sie in das Objekt BaseExtension.properties deserialisiert. Sie können eine Benutzeroberfläche definieren, um sie zu beschreiben. Die Standardvorlage sucht nach einer Eigenschaft mit dem Namen testMessage und gibt sie, wenn sie bereitgestellt wird, in einer Warnmeldung aus.
 
@@ -103,9 +108,9 @@ Sobald der Code ohne Fehler kompiliert wurde, wird das resultierende Manifest vo
 
 ![gulp serve](../../../../images/ext-app-gulp-serve.png)
 
-Zum Testen der Erweiterung navigieren Sie zu einer Seite mit der modernen Listenansicht in Ihrer SharePoint-Umgebung, und fügen Sie die folgenden Abfragezeichenfolgen-Parameter an die URL an:
+Um die Erweiterung zu testen, navigieren Sie zu einer modernen Seite mit Listenansicht in Ihrer SharePoint-Umgebung und fügen die folgenden Zeichenfolgen-Abfrageparameter an die URL an. Beachten Sie, dass Sie die ID aktualisieren müssen, damit diese Ihrer Erweiterungs-ID entspricht, die in **HelloWorldApplicationCustomizer.manifest.json** verfügbar ist:
 ```
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"d03ae0c2-bbbf-4cf5-9ff7-0986904553da":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"testMessage":"Hello as property!"}}}
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"e5625e23-5c5a-4007-a335-e6c2c3afa485":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"testMessage":"Hello as property!"}}}
 ```
 
 Weitere Details zu den URL-Abfrageparametern:
@@ -115,7 +120,7 @@ Weitere Details zu den URL-Abfrageparametern:
 * **debugManifestsFile:** Dieser Parameter gibt an, dass lokal ausgelieferte SPFx-Komponenten geladen werden sollen. Normalerweise sucht das Ladeprogramm nur an zwei Orten nach Komponenten: im App-Katalog (nach Komponenten der bereitgestellten Lösung) und auf dem SharePoint-Manifestserver (nach den Systembibliotheken).
 
 * **customActions:** Dieser URL-Abfrageparameter simuliert eine benutzerdefinierte Aktion. Wenn wir diese Komponente später in diesem Kurs tatsächlich bereitstellen und auf einer Website registrieren, erstellen wir dieses CustomAction-Objekt tatsächlich und beschreiben alle anderen Eigenschaften, die Sie dafür festlegen können. 
-    * **Key:** Verwenden Sie die GUID der Erweiterung als Schlüssel, der der benutzerdefinierten Aktion zuordnen ist.
+    * **Key:** Verwenden Sie die GUID der Erweiterung als Schlüssel, der der benutzerdefinierten Aktion zuzuordnen ist. Diese muss mit dem ID-Wert der Erweiterung übereinstimmen, die in „manifest.json“ der Erweiterung verfügbar ist.
     * **Location:** Der Typ der benutzerdefinierten Aktion, verwenden Sie "ClientSideExtension.ApplicationCustomizer" für die Application Customizer-Erweiterung.
     * **Properties:** Ein optionales JSON-Objekt mit Eigenschaften, die über das Mitglied this.properties zur Verfügung stehen. In diesem „HelloWorld“-Beispiel definiert es eine „testMessage“-Eigenschaft.
 
@@ -127,14 +132,14 @@ Erweitern Sie die URL mit den oben definierten zusätzlichen Abfrageparametern. 
 Die vollständige URL sollte abhängig von der URL Ihres Mandanten in etwa wie folgt aussehen:
 
 ```
-contoso.sharepoint.com/Lists/Contoso/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"5fc73e12-8085-4a4b-8743-f6d02ffe1240":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"testMessage":"Hello as property!"}}}
+contoso.sharepoint.com/Lists/Contoso/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"e5625e23-5c5a-4007-a335-e6c2c3afa485":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"testMessage":"Hello as property!"}}}
 ```
 
 ![Abfragen des Debugging-Manifests für die Seite zulassen](../../../../images/ext-app-debug-manifest-message.png)
 
 Klicken Sie auf die Schaltfläche zum **Laden von Debugging-Skripts**, um weiter Skripts von Ihrem lokalen Host zu laden.
 
-Die Warnmeldung sollte nun auf Ihrer Seite angezeigt werden. 
+Die Warnmeldung sollte nun auf Ihrer Seite angezeigt werden.
 
 ![Abfragen des Debugging-Manifests für die Seite zulassen](../../../../images/ext-app-alert-sp-page.png)
 
