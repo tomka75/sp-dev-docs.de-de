@@ -185,9 +185,9 @@ Es werden mehrere Eingabeaufforderungen angezeigt. Definieren Sie die Werte jewe
 - **WebPart** als die zu erstellende clientseitige Komponente
 - **Aufgabenkalender** als Name des Webparts
 - **Zeigt Aufgaben in der Kalenderansicht** als Beschreibung des Webparts
-- **No javaScript web framework** als Eintrittspunkt für die Webpart-Erstellung
+- **Kein JavaScript-Webframework** als Ausgangspunkt für die Webpart-Erstellung
 
-![SharePoint-Framework-Yeoman-Generator mit den Standardoptionen](../../../../images/fullcalendar-yeoman.png)
+![SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../../images/fullcalendar-yeoman.png)
 
 Öffnen Sie den Projektordner in Ihrem Code-Editor, sobald die Gerüsterstellung abgeschlossen ist. In diesem Tutorial verwenden Sie Visual Studio Code.
 
@@ -365,7 +365,7 @@ function updateTask(id, startDate, dueDate) {
 }
 ```
 
-Dieser Code ist fast identisch mit dem ursprünglichen Code der Script Editor-Webpart-Anpassung. Der einzige Unterschied besteht darin, dass dort, wo der ursprüngliche Code die URL des aktuellen Webs aus der von SharePoint festgelegten globalen Variablen **\_spPageContextInfo** abgerufen hat (Zeilen 8, 45, 96 und 104), der Code im SharePoint-Framework eine benutzerdefinierte Variable verwendet, die Sie in dem Webpart festlegen müssen. Clientseitige Webparts des SharePoint-Frameworks können sowohl auf klassischen als auch auf modernen Seiten verwendet werden. Während die Variable **_spPageContextInfo** auf klassischen Seiten vorhanden ist, fehlt sie auf modernen Seiten. Deshalb können Sie sich nicht darauf verlassen und benötigen eine benutzerdefinierte Eigenschaft, die Sie stattdessen selbst steuern können.
+Dieser Code ist fast identisch mit dem ursprünglichen Code der Script Editor-Webpart-Anpassung. Der einzige Unterschied besteht darin, dass dort, wo der ursprüngliche Code die URL des aktuellen Webs aus der von SharePoint festgelegten globalen Variablen **\_spPageContextInfo** abgerufen hat (Zeilen 8, 45, 96 und 104), der Code im SharePoint-Framework eine benutzerdefinierte Variable verwendet, die Sie in dem Webpart festlegen müssen. Clientseitige Webparts des SharePoint-Frameworks können sowohl auf klassischen als auch auf modernen Seiten verwendet werden. Während die Variable **\_spPageContextInfo** auf klassischen Seiten vorhanden ist, fehlt sie auf modernen Seiten. Deshalb können Sie sich nicht darauf verlassen und benötigen stattdessen eine benutzerdefinierte Eigenschaft, die Sie selbst steuern können.
 
 Um diese Datei im Webpart zu referenzieren, öffnen Sie im Code-Editor die Datei **./src/webparts/tasksCalendar/TasksCalendarWebPart.ts**, und ändern Sie die **render**-Methode in:
 

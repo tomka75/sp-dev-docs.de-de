@@ -154,7 +154,7 @@ Es werden mehrere Eingabeaufforderungen angezeigt. Definieren Sie die Werte jewe
 
 Öffnen Sie den Projektordner in Ihrem Code-Editor, sobald die Gerüsterstellung abgeschlossen ist. In diesem Tutorial verwenden Sie Visual Studio Code.
 
-![SharePoint Framework-Projekt in Visual Studio Code](../../../../images/datatables-vscode.png)
+![SharePoint-Framework-Projekt in Visual Studio Code](../../../../images/datatables-vscode.png)
 
 ### <a name="load-javascript-libraries"></a>Laden von JavaScript-Bibliotheken
 
@@ -189,7 +189,7 @@ export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequests
   public render(): void {
     this.domElement.innerHTML = `
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" />
-      <table id="requests" class="display ${styles.helloWorld}" cellspacing="0" width="100%">
+      <table id="requests" class="display ${styles.itRequests}" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>ID</th>
@@ -505,7 +505,7 @@ Um ordnungsgemäß zu funktionieren, erfordert TypeScript Typdefinitionen für d
 Beginnen Sie, indem Sie die Typdefinitionen für jQuery und DataTables installieren, indem Sie in der Befehlszeile Folgendes ausführen:
 
 ```sh
-npm install --save-dev @types/jquery @types/jquery.datatables
+npm install --save-dev @types/jquery@1 @types/datatables.net
 ```
 
 Typdefinitionen für Moment.js werden zusammen mit dem Moment.js-Paket bereitgestellt. Obwohl Sie Moment.js über eine URL laden, müssen das Moment.js-Paket trotzdem noch im Projekt installieren, um ihre Eingaben verwenden zu können.
@@ -530,7 +530,7 @@ Da Sie **$** als jQuery definiert haben, können Sie nun die lokale Definition v
 var $: any = (window as any).$;
 ```
 
-Da DataTables ein jQuery-Plug-In ist, das sich selbst an jQuery anfügt, können Sie die Typdefinition nicht direkt laden. Stattdessen müssen Sie sie zur Liste der global geladenen Typen hinzufügen. Öffnen Sie im Code-Editor die Datei **./tsconfig.json**, und fügen Sie zum Array **types** **jquery.datatables** hinzu:
+Da DataTables ein jQuery-Plug-In ist, das sich selbst an jQuery anfügt, können Sie die Typdefinition nicht direkt laden. Stattdessen müssen Sie sie zur Liste der global geladenen Typen hinzufügen. Öffnen Sie im Code-Editor die Datei **./tsconfig.json**, und fügen Sie **datatables.net** zum Array **types**hinzu:
 
 ```json
 {
@@ -544,14 +544,14 @@ Da DataTables ein jQuery-Plug-In ist, das sich selbst an jQuery anfügt, können
     "types": [
       "es6-promise",
       "es6-collections",
-      "jquery.datatables",
+      "datatables.net",
       "webpack-env"
     ]
   }
 }
 ```
 
-### <a name="update-main-web-part-files-to-typescript"></a>Aktualisieren der Haupt-Webpartdatei in TypeScript
+### <a name="update-main-web-part-files-to-typescript"></a>Aktualisieren der Haupt-Webpartdateien in TypeScript
 
 Da jetzt die Typdefinitionen für alle im Projekt installierten Bibliotheken vorhanden sind, können Sie beginnen mit dem Transformieren des einfachen JavaScript-Codes in TypeScript beginnen.
 
@@ -607,7 +607,7 @@ export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequests
       },
       columnDefs: [{
         targets: 4,
-        render: $.fn.dataTable.render.moment('YYYY/MM/DD')
+        render: ($.fn as any).dataTable.render.moment('YYYY/MM/DD')
       }]
     });
   }
@@ -629,7 +629,7 @@ import * as $ from 'jquery';
 import * as moment from 'moment';
 
 /* tslint:disable:no-function-expression */
-$.fn.dataTable.render.moment = function (from: string, to: string, locale: string): (d: any, type: string, row: any) => string {
+($.fn as any).dataTable.render.moment = function (from: string, to: string, locale: string): (d: any, type: string, row: any) => string {
 /* tslint:enable */
     // Argument shifting
     if (arguments.length === 1) {
