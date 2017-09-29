@@ -1,3 +1,0 @@
-<span data-ttu-id="b7a09-p101">Das SharePoint Framework-Objektmodell ist in TypeScript integriert. Verwenden Sie diesen  Abschnitt, um mehr über die Klassen, Methoden und anderen Typen zu erfahren, die zum Erstellen von SharePoint Framework-Lösungen verfügbar sind.</span><span class="sxs-lookup"><span data-stu-id="b7a09-p101">The SharePoint Framework object model is built in TypeScript. Use this section to learn more about the classes, methods, and other types available for building your SharePoint Framework solutions.</span></span>
-
-Das SharePoint Framework-Objektmodell ist in TypeScript integriert. Verwenden Sie diesen  Abschnitt, um mehr über die Klassen, Methoden und anderen Typen zu erfahren, die zum Erstellen von SharePoint Framework-Lösungen verfügbar sind.
