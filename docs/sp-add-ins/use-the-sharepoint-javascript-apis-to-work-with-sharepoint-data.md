@@ -1,39 +1,48 @@
-
+---
+title: Verwenden von SharePoint-JavaScript-APIs zum Arbeiten mit SharePoint-Daten
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 75716bd2be1793b8df91e7d9bdac06b762d622fb
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data"></a>Verwenden von SharePoint-JavaScript-APIs zum Arbeiten mit SharePoint-Daten
 Verwenden Sie das SharePoint-JavaScript-Objektmodell, um mit SharePoint-Daten aus JavaScript auf Seiten im Add-In-Web zu arbeiten.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
-Dies ist der zehnte in einer Reihe von Artikeln über die Grundlagen der Entwicklung von von SharePoint gehosteten SharePoint-Add-Ins. Machen Sie sich zunächst mit [SharePoint-Add-Ins](sharepoint-add-ins) und den vorherigen Artikeln in dieser Reihe vertraut:
+Dies ist der zehnte in einer Reihe von Artikeln über die Grundlagen der Entwicklung von von SharePoint gehosteten SharePoint-Add-Ins. Machen Sie sich zunächst mit [SharePoint-Add-Ins](sharepoint-add-ins.md) und den vorherigen Artikeln in dieser Reihe vertraut:
  
 
--  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins)
+-  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
     
  
--  [Bereitstellung und Installation eines von SharePoint gehosteten Add-Ins für SharePoint](deploy-and-install-a-sharepoint-hosted-sharepoint-add-in)
+-  [Bereitstellung und Installation eines von SharePoint gehosteten Add-Ins für SharePoint](deploy-and-install-a-sharepoint-hosted-sharepoint-add-in.md)
     
  
--  [Hinzufügen von benutzerdefinierten Spalten zu einem von SharePoint gehosteten Add-In für SharePoint](add-custom-columns-to-a-sharepoint-hostedsharepoint-add-in)
+-  [Hinzufügen von benutzerdefinierten Spalten zu einem von SharePoint gehosteten Add-In für SharePoint](add-custom-columns-to-a-sharepoint-hostedsharepoint-add-in.md)
     
  
--  [Hinzufügen eines benutzerdefinierten Inhaltstyps zu einem von SharePoint gehosteten Add-In für SharePoint](add-a-custom-content-type-to-a-sharepoint-hostedsharepoint-add-in)
+-  [Hinzufügen eines benutzerdefinierten Inhaltstyps zu einem von SharePoint gehosteten Add-In für SharePoint](add-a-custom-content-type-to-a-sharepoint-hostedsharepoint-add-in.md)
     
  
--  [Hinzufügen eines Webparts zu einer Seite in einem von SharePoint gehosteten Add-In für SharePoint](add-a-web-part-to-a-page-in-a-sharepoint-hosted-sharepoint-add-in)
+-  [Hinzufügen eines Webparts zu einer Seite in einem von SharePoint gehosteten Add-In für SharePoint](add-a-web-part-to-a-page-in-a-sharepoint-hosted-sharepoint-add-in.md)
     
  
--  [Hinzufügen eines Workflows zu einem von SharePoint gehosteten Add-In für SharePoint](add-a-workflow-to-a-sharepoint-hosted-sharepoint-add-in)
+-  [Hinzufügen eines Workflows zu einem von SharePoint gehosteten Add-In für SharePoint](add-a-workflow-to-a-sharepoint-hosted-sharepoint-add-in.md)
     
  
--  [Hinzufügen einer benutzerdefinierten Seite und Formatvorlage zu einem von SharePoint gehosteten Add-In für SharePoint](add-a-custom-page-and-style-to-a-sharepoint-hosted-sharepoint-add-in)
+-  [Hinzufügen einer benutzerdefinierten Seite und Formatvorlage zu einem von SharePoint gehosteten Add-In für SharePoint](add-a-custom-page-and-style-to-a-sharepoint-hosted-sharepoint-add-in.md)
     
  
--  [Hinzufügen des benutzerdefinierten clientseitigen Renderings für ein von SharePoint-gehostetes SharePoint Add-In](add-custom-client-side-rendering-to-a-sharepoint-hosted-sharepoint-add-in)
+-  [Hinzufügen des benutzerdefinierten clientseitigen Renderings für ein von SharePoint-gehostetes SharePoint Add-In](add-custom-client-side-rendering-to-a-sharepoint-hosted-sharepoint-add-in.md)
     
  
--  [Erstellen einer benutzerdefinierten Menübandschaltfläche im Hostweb eines SharePoint-Add-Ins](create-a-custom-ribbon-button-in-the-host-web-of-a-sharepoint-add-in)
+-  [Erstellen einer benutzerdefinierten Menübandschaltfläche im Hostweb eines SharePoint-Add-Ins](create-a-custom-ribbon-button-in-the-host-web-of-a-sharepoint-add-in.md)
     
  
 
@@ -249,7 +258,7 @@ function onDeleteCompletedItemsFail(sender, args) {
 
  
 
-  ![Die Liste "Neue Mitarbeiter in Seattle", in der die Spalten "Orientierungsphase" für zwei Elemente auf "Abgeschlossen" festgelegt ist. Unter der Liste befindet sich eine Schaltfläche "Abgeschlossene Elemente löschen".](../../images/e5e4eef8-a218-4797-aabc-c52adbd2d96d.PNG)
+  ![Die Liste "Neue Mitarbeiter in Seattle", in der die Spalten "Orientierungsphase" für zwei Elemente auf "Abgeschlossen" festgelegt ist. Unter der Liste befindet sich eine Schaltfläche "Abgeschlossene Elemente löschen".](../images/e5e4eef8-a218-4797-aabc-c52adbd2d96d.PNG)
  
 
  
@@ -264,7 +273,7 @@ function onDeleteCompletedItemsFail(sender, args) {
 
  
 
-  ![Die Liste "Neue Mitarbeiter in Seattle" mit zwei Elementen weniger als zuvor. Für keines ist "Orientierungsphase" auf "Abgeschlossen" festgelegt.](../../images/a0330fad-1473-4fde-9df2-8be0b37df1a1.PNG)
+  ![Die Liste "Neue Mitarbeiter in Seattle" mit zwei Elementen weniger als zuvor. Für keines ist "Orientierungsphase" auf "Abgeschlossen" festgelegt.](../images/a0330fad-1473-4fde-9df2-8be0b37df1a1.PNG)
  
 
  
@@ -280,7 +289,7 @@ function onDeleteCompletedItemsFail(sender, args) {
 ## 
 <a name="Nextsteps"> </a>
 
-Im nächsten Artikel dieser Reihe fügen Sie JavaScript zu einer Seite im Add-In-Web hinzu, das mit SharePoint-Daten im Hostweb arbeitet:  [Arbeiten mit Hostwebdaten aus JavaScript im Add-In-Webpart](work-with-host-web-data-from-javascript-in-the-add-in-web).
+Im nächsten Artikel dieser Reihe fügen Sie JavaScript zu einer Seite im Add-In-Web hinzu, das mit SharePoint-Daten im Hostweb arbeitet:  [Arbeiten mit Hostwebdaten aus JavaScript im Add-In-Webpart](work-with-host-web-data-from-javascript-in-the-add-in-web.md).
  
 
  

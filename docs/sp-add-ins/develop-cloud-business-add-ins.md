@@ -1,24 +1,34 @@
+---
+title: "Entwickeln von Cloud-Geschäfts-Add-Ins"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 9fea6e5b8133cceabfbb280af38d26078bc8dab3
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="develop-cloud-business-add-ins"></a>Entwickeln von Cloud-Geschäfts-Add-Ins
  Cloud-Geschäfts-Add-Ins basieren auf Visual Studio LightSwitch-Technologien. Einige der Aufgaben zum Entwickeln von Cloud-Geschäfts-Add-Ins betreffen nur die Cloud-Geschäfts-Add-In-Vorlage, die meisten sind jedoch die gleichen wie für LightSwitch-HTML-Client-Add-Ins.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
 ## <a name="cloud-business-add-in-developer-tasks"></a>Entwickleraufgaben für Cloud-Business-Add-Ins
 
 
-- Cloud-Business-Add-Ins werden mithilfe der Vorlage für Cloud-Business-Add-Ins in Visual Studio erstellt. Weitere Informationen finden Sie unter [Erstellen eines Cloud-Business-Add-Ins](create-a-cloud-business-add-in).
+- Cloud-Business-Add-Ins werden mithilfe der Vorlage für Cloud-Business-Add-Ins in Visual Studio erstellt. Weitere Informationen finden Sie unter [Erstellen eines Cloud-Business-Add-Ins](create-a-cloud-business-add-in.md).
     
  
-- Mit der Dokumentbibliothek-Funktion in SharePoint können Sie Dokumente erstellen oder hochladen, die mit einzelnen Elementen in einer List oder Entität verknüpft sind. Weitere Informationen dazu finden Sie unter  [Zuordnen einer Dokumentbibliothek zu einer Entität](associate-a-document-library-with-an-entity).
+- Mit der Dokumentbibliothek-Funktion in SharePoint können Sie Dokumente erstellen oder hochladen, die mit einzelnen Elementen in einer List oder Entität verknüpft sind. Weitere Informationen dazu finden Sie unter  [Zuordnen einer Dokumentbibliothek zu einer Entität](associate-a-document-library-with-an-entity.md).
     
  
-- Zusätzlich zu den Office-Vorlagen, die beim Hinzufügen eines Dokuments zu einer SharePoint-Dokumentbibliothek verfügbar sind, können Sie Ihre eigenen Vorlagen verwenden. Weitere Informationen finden Sie unter  [Bereitstellen einer Vorlage für eine Dokumentbibliothek in einem Cloud-Geschäfts-Add-In](provide-a-template-for-a-document-library-in-a-cloud-business-add-in).
+- Zusätzlich zu den Office-Vorlagen, die beim Hinzufügen eines Dokuments zu einer SharePoint-Dokumentbibliothek verfügbar sind, können Sie Ihre eigenen Vorlagen verwenden. Weitere Informationen finden Sie unter  [Bereitstellen einer Vorlage für eine Dokumentbibliothek in einem Cloud-Geschäfts-Add-In](provide-a-template-for-a-document-library-in-a-cloud-business-add-in.md).
     
  
-- Mit den Features für soziale Netzwerk und die Zusammenarbeit in SharePoint for Office 365 können Benutzer Aktivitäten in einer Liste verfolgen und Kommentare hinzufügen. Sie können mühelos einen Newsfeed für Ihre Cloud-Geschäfts-Add-Ins erstellen, indem Sie einige Eigenschaften aktivieren. Weitere Informationen dazu finden Sie unter  [Aktivieren eines Newsfeeds für ein Cloud-Geschäfts-Add-In](enable-a-newsfeed-for-a-cloud-business-add-in).
+- Mit den Features für soziale Netzwerk und die Zusammenarbeit in SharePoint for Office 365 können Benutzer Aktivitäten in einer Liste verfolgen und Kommentare hinzufügen. Sie können mühelos einen Newsfeed für Ihre Cloud-Geschäfts-Add-Ins erstellen, indem Sie einige Eigenschaften aktivieren. Weitere Informationen dazu finden Sie unter  [Aktivieren eines Newsfeeds für ein Cloud-Geschäfts-Add-In](enable-a-newsfeed-for-a-cloud-business-add-in.md).
     
  
 
@@ -72,7 +82,7 @@
 <a name="bk_addresources"> </a>
 
 
--  [Erstellen von Cloud-Business-Add-Ins](create-cloud-business-add-ins)
+-  [Erstellen von Cloud-Business-Add-Ins](create-cloud-business-add-ins.md)
     
  
 -  [HTML-Clientbildschirme für LightSwitch-Anwendungen](http://msdn.microsoft.com/en-us/library/jj674623.aspx)

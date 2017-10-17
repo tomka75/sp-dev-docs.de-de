@@ -1,8 +1,18 @@
+---
+title: "Erstellen von SharePoint-Add-Ins, die die domänenübergreifende Bibliothek verwenden"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 3c4b4bd3ff1cd8aa9fecf524f70f745af6222cf2
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="creating-sharepoint-add-ins-that-use-the-cross-domain-library"></a>Erstellen von SharePoint-Add-Ins, die die domänenübergreifende Bibliothek verwenden
 Erfahren Sie mehr über die domänenübergreifende JavaScript-Bibliothek in SharePoint.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Es gibt einige Szenarios, in denen weder das Autorisierungssystem mit niedriger Vertrauensebene noch das besonders vertrauenswürdige Autorisierungssystem von einem SharePoint-Add-In verwendet werden kann oder sie keine gute Wahl als einzige Methode sind, mit der das Add-In die Autorisierung für SharePoint-Ressourcen erhält. Beispiele:
@@ -43,7 +53,7 @@ Die Remotekomponenten des SharePoint-Add-Ins benötigen natürlich dennoch autor
 
  
 
-- Legen Sie den Prinzipaltyp des Add-Ins auf **RemoteWebApplication** (der Standard für von einem Anbieter gehostete Add-Ins) im Add-In-Manifest fest. Wenn das Add-In bei ACS registriert ist, schließt die Registrierung die Domäne der Remotewebanwendung ein. SharePoint vertraut bei ACS registrierten Domänen, auch wenn es in diesem Szenario keine der Tokenübergabeabläufe verwendet, die Teil des serverseitigen Systems mit niedriger Vertrauensebene sind. Ausführliche Informationen zum Registrieren von Add-Ins finden Sie unter [Registrieren von SharePoint-Add-Ins 2013](register-sharepoint-add-ins-2013). 
+- Legen Sie den Prinzipaltyp des Add-Ins auf **RemoteWebApplication** (der Standard für von einem Anbieter gehostete Add-Ins) im Add-In-Manifest fest. Wenn das Add-In bei ACS registriert ist, schließt die Registrierung die Domäne der Remotewebanwendung ein. SharePoint vertraut bei ACS registrierten Domänen, auch wenn es in diesem Szenario keine der Tokenübergabeabläufe verwendet, die Teil des serverseitigen Systems mit niedriger Vertrauensebene sind. Ausführliche Informationen zum Registrieren von Add-Ins finden Sie unter [Registrieren von SharePoint-Add-Ins 2013](register-sharepoint-add-ins.md). 
     
  
 - Bei einem von SharePoint gehosteten Add-In können Sie für den Prinzipaltyp des Add-Ins den Standardwert **Internal** übernehmen. Legen Sie anschließend für das **AllowedRemoteHostUrl**-Attribut des **Internal**-Elements die URL der Remotewebanwendung fest, wie im folgenden Beispiel gezeigt.
@@ -58,7 +68,7 @@ Die Remotekomponenten des SharePoint-Add-Ins benötigen natürlich dennoch autor
  **Hinweis** Wenn Sie die zweite Option verwenden (einen **Internal**-Add-In-Prinzipal), können Sie nur JavaScript und die domänenübergreifende Bibliothek zum Zugreifen auf SharePoint verwenden. Das SharePoint-Clientobjektmodell ist für **Internal**-SharePoint-Add-Ins gesperrt, Sie können also kein duales Autorisierungssystem nutzen, das die domänenübergreifende Bibliothek und Systeme mit niedriger Vertrauensebene oder besonders vertrauenswürdige Systeme verwendet.
  
 
-Details zur Verwendung der Bibliothek finden Sie unter [Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library).
+Details zur Verwendung der Bibliothek finden Sie unter [Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md).
  
 
  
@@ -66,7 +76,7 @@ Details zur Verwendung der Bibliothek finden Sie unter [Zugreifen auf SharePoint
 ## <a name="access-remote-data-from-a-sharepoint-page"></a>Zugreifen auf Remotedaten von einer SharePoint-Seite
 <a name="ReverseDirection"> </a>
 
-Die SharePoint domänenübergreifende Bibliothek kann ebenfalls in die umgekehrte Richtung verwendet werden; d. h., JavaScript auf einer SharePoint-Seite kann die Bibliothek verwenden, um Daten von den Remotekomponenten des Add-Ins abzurufen. Dazu müssen Sie die domänenübergreifende Architektur umkehren: Erstellen Sie eine Proxyseite in der Remotewebanwendung. Die Bibliothek wird von einer SharePoint-Seite aufgerufen, auf der sie einen iFrame erstellt, um die Proxyseite zu hosten. Details zur Verwendung der Bibliothek auf diese Weise finden Sie unter  [Erstellen einer benutzerdefinierten Proxyseite für die domänenübergreifende Bibliothek in SharePoint](create-a-custom-proxy-page-for-the-cross-domain-library-in-sharepoint-2013).
+Die SharePoint domänenübergreifende Bibliothek kann ebenfalls in die umgekehrte Richtung verwendet werden; d. h., JavaScript auf einer SharePoint-Seite kann die Bibliothek verwenden, um Daten von den Remotekomponenten des Add-Ins abzurufen. Dazu müssen Sie die domänenübergreifende Architektur umkehren: Erstellen Sie eine Proxyseite in der Remotewebanwendung. Die Bibliothek wird von einer SharePoint-Seite aufgerufen, auf der sie einen iFrame erstellt, um die Proxyseite zu hosten. Details zur Verwendung der Bibliothek auf diese Weise finden Sie unter  [Erstellen einer benutzerdefinierten Proxyseite für die domänenübergreifende Bibliothek in SharePoint](create-a-custom-proxy-page-for-the-cross-domain-library-in-sharepoint.md).
  
 
  
@@ -75,10 +85,10 @@ Die SharePoint domänenübergreifende Bibliothek kann ebenfalls in die umgekehrt
 <a name="ReverseDirection"> </a>
 
 
--  [Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library)
+-  [Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md)
     
  
--  [Arbeiten mit der domänenübergreifenden Bibliothek in verschiedenen Internet Explorer-Sicherheitszonen in SharePoint-Add-Ins](work-with-the-cross-domain-library-across-different-internet-explorer-security-zones-in-sharepoint-add-ins)
+-  [Arbeiten mit der domänenübergreifenden Bibliothek in verschiedenen Internet Explorer-Sicherheitszonen in SharePoint-Add-Ins](work-with-the-cross-domain-library-across-different-internet-explorer-security-z.md)
     
  
 

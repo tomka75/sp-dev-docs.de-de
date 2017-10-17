@@ -1,13 +1,22 @@
-
+---
+title: "Office Web Widgets – Experimentelle Übersicht"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 40770129baa7606b7e3ebf6fb7d99cefabf51df7
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="office-web-widgets---experimental-overview"></a>Office Web Widgets – Experimentelle Übersicht
 Erfahren Sie mehr über die Office Web Widgets - Experimental, die Sie in Office-Add-Ins, SharePoint-Add-Ins und auf Websites verwenden können.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
- **Vorsicht** Die Office Web Widgets - Experimental werden nur zu Recherche- und Feedbackzwecken bereitgestellt. Verwenden Sie sie nicht in Produktionsszenarios. Das Verhalten von Office Web Widgets kann sich in künftigen Versionen erheblich ändern. Lesen und prüfen Sie die  [Lizenzbedingungen für Office Web Widgets - Experimental](office-web-widgets--experimental-license-terms).
+ **Vorsicht** Die Office Web Widgets - Experimental werden nur zu Recherche- und Feedbackzwecken bereitgestellt. Verwenden Sie sie nicht in Produktionsszenarios. Das Verhalten von Office Web Widgets kann sich in künftigen Versionen erheblich ändern. Lesen und prüfen Sie die  [Lizenzbedingungen für Office Web Widgets - Experimental](office-web-widgetsexperimental-license-terms.md).
  
 
 
@@ -36,13 +45,13 @@ Clientsteuerelemente wie die Office Web Widgets - Experimental können den Arbei
  
 
  
-![Demo zu Office Web Widgets - Experimental](../../images/OfficeWebWidgetsOverview_demo.png)
+![Demo zu Office Web Widgets - Experimental](../images/OfficeWebWidgetsOverview_demo.png)
  
 Sie können die Widgets verwenden, indem Sie das **Office Web Widgets – Experimental**-NuGet-Paket von Visual Studio installieren. Weitere Informationen finden Sie unter [Verwalten von NuGet-Paketen mithilfe des Dialogfelds](http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog). Sie können auch die [NuGet-Galerieseite](http://www.nuget.org/packages/Microsoft.Office.WebWidgets.Experimental/) durchsuchen.
  
 Ihr Feedback und Ihre Kommentare haben uns bei der Auswahl bereitgestellter Widgets geholfen. Wie Sie in Abbildung 1 sehen können, können Sie jetzt das (1) Personenauswahl- und das (2) Desktoplistenansichts-Widget ausprobieren und damit experimentieren. Bitte geben Sie auf der [Office Developer Platform UserVoice](http://officespdev.uservoice.com/).
  
-Sie können außerdem im Codebeispiel [Demo zu Office Web Widgets - Experimental](http://code.msdn.microsoft.com/SharePoint-2013-Office-Web-6d44aa9e) sehen, wie die Widgets eingesetzt werden.
+Sie können außerdem im Codebeispiel [Demo zu Office Web Widgets - Experimental](http://code.msdn.microsoft.com/SharePoint-Office-Web-6d44aa9e) sehen, wie die Widgets eingesetzt werden.
  
 
 ## <a name="people-picker-widget"></a>Personenauswahl-Widget
@@ -57,7 +66,7 @@ Sie können das experimentelle Personenauswahl-Widget in Add-Ins verwenden, um I
  
 
  
-![Personenauswahl – Experimentelles Steuerelement auf einer Seite](../../images/PeoplePicker_basic.png)
+![Personenauswahl – Experimentelles Steuerelement auf einer Seite](../images/PeoplePicker_basic.png)
  
 Sie können das Widget im HTML-Markup oder programmgesteuert mithilfe von JavaScript deklarieren. In beiden Fällen können Sie ein **div**-Element als Platzhalter für das Widget verwenden. Sie können auch Eigenschaften und Ereignishandler für das Personenauswahl-Widget festlegen. Die folgende Tabelle zeigt die im Personenauswahl-Widget verfügbaren Eigenschaften und Ereignisse.
  
@@ -83,7 +92,7 @@ Die CSS-Klassen für das Personenauswahl-Widget sind im Stylesheet **Office.Cont
  
 
  
-Weitere Informationen finden Sie unter  [Verwenden des experimentellen Personenauswahl-Widgets in SharePoint-Add-Ins](use-the-experimental-people-picker-widget-in-sharepoint-add-ins) und im Codebeispiel [Use the People Picker experimental widget in an add-in](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-57859f85).
+Weitere Informationen finden Sie unter  [Verwenden des experimentellen Personenauswahl-Widgets in SharePoint-Add-Ins](use-the-experimental-people-picker-widget-in-sharepoint-add-ins.md) und im Codebeispiel [Use the People Picker experimental widget in an add-in](http://code.msdn.microsoft.com/SharePoint-Use-the-57859f85.md).
  
 
  
@@ -100,7 +109,7 @@ Ihre Benutzer können vom Desktoplistenansichts-Widget profitieren und die Daten
  
 
  
-![Desktoplistenansicht – Experimentelles Steuerelement auf einer Seite](../../images/DesktopListView_basic.png)
+![Desktoplistenansicht – Experimentelles Steuerelement auf einer Seite](../images/DesktopListView_basic.png)
  
 Sie können eine vorhandene Ansicht für die Liste festlegen. Das Widget gibt die Felder in der Reihenfolge wieder, in der sie in der Ansicht angezeigt werden.
  
@@ -129,11 +138,11 @@ Sie können außerdem Eigenschaften oder Ereignishandler für das Desktoplistena
 |**onItemAdded**|Funktion|Ereignis, das ausgelöst wird, wenn der Liste ein neues Objekt hinzugefügt wird.|
 |**onItemRemoved**|Funktion|Ereignis, das ausgelöst wird, wenn ein Element aus der Liste entfernt wird.|
 |**selectedItems**|Bereich|Liste ausgewählter Elemente im JSON-Format.|
-Das Widget erfordert das SharePoint-Website-Stylesheet. Sie können direkt auf das SharePoint-Stylesheet verweisen oder das Chrome-Widget verwenden. Weitere Informationen zum Stylesheet finden Sie unter  [Verwenden des Stylesheets einer SharePoint-Website in Add-Ins für SharePoint](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins) und [Verwenden des Client-Chromsteuerelements in Add-Ins für SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins). 
+Das Widget erfordert das SharePoint-Website-Stylesheet. Sie können direkt auf das SharePoint-Stylesheet verweisen oder das Chrome-Widget verwenden. Weitere Informationen zum Stylesheet finden Sie unter  [Verwenden des Stylesheets einer SharePoint-Website in Add-Ins für SharePoint](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins.md) und [Verwenden des Client-Chromsteuerelements in Add-Ins für SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins.md). 
  
 
  
-Erfahren Sie im Codebeispiel  [Use the Desktop List View experimental widget in an add-in](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-c3edb076), wie das Listenansichts-Widget eingesetzt wird. Lesen Sie außerdem  [Verwenden des experimentellen Desktoplistenansichts-Widgets in Add-Ins für SharePoint](use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins).
+Erfahren Sie im Codebeispiel  [Use the Desktop List View experimental widget in an add-in](http://code.msdn.microsoft.com/SharePoint-Use-the-c3edb076), wie das Listenansichts-Widget eingesetzt wird. Lesen Sie außerdem  [Verwenden des experimentellen Desktoplistenansichts-Widgets in Add-Ins für SharePoint](use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins.md).
  
 
  
@@ -149,24 +158,24 @@ Widgets können Ihnen helfen, den Entwicklungsprozess zu beschleunigen, die Kost
 <a name="bk_addresources"> </a>
 
 
--  [Lizenzbedingungen für Office Web Widgets - Experimental](office-web-widgets--experimental-license-terms)
+-  [Lizenzbedingungen für Office Web Widgets - Experimental](office-web-widgetsexperimental-license-terms.md)
     
  
 -  [Office Web Widgets - Experimental – NuGet-Galerieseite](http://www.nuget.org/packages/Microsoft.Office.WebWidgets.Experimental/)
     
  
--  [Verwenden des experimentellen Personenauswahl-Widgets in SharePoint-Add-Ins](use-the-experimental-people-picker-widget-in-sharepoint-add-ins)
+-  [Verwenden des experimentellen Personenauswahl-Widgets in SharePoint-Add-Ins](use-the-experimental-people-picker-widget-in-sharepoint-add-ins.md)
     
  
--  [Codebeispiel: Office Web Widgets - Experimentelle Demo](http://code.msdn.microsoft.com/SharePoint-2013-Office-Web-6d44aa9e)
+-  [Codebeispiel: Office Web Widgets - Experimentelle Demo](http://code.msdn.microsoft.com/SharePoint-Office-Web-6d44aa9e)
     
  
--  [Verwenden des experimentellen Desktoplistenansichts-Widgets in SharePoint-Add-Ins](use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins)
+-  [Verwenden des experimentellen Desktoplistenansichts-Widgets in SharePoint-Add-Ins](use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins.md)
     
  
--  [Codebeispiel: Verwenden des experimentellen Personenauswahl-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-57859f85)
+-  [Codebeispiel: Verwenden des experimentellen Personenauswahl-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-Use-the-57859f85)
     
  
--  [Codebeispiel: Verwenden des experimentellen Desktoplistenansichts-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-c3edb076)
+-  [Codebeispiel: Verwenden des experimentellen Desktoplistenansichts-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-Use-the-c3edb076)
     
  

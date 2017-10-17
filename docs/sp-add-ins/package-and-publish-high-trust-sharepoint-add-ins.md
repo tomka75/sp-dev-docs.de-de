@@ -1,9 +1,18 @@
-
+---
+title: "Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: dd83c3e9ba352eaf10818781bc5ad52f23e1bcf6
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="package-and-publish-high-trust-sharepoint-add-ins"></a>Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint
 Hier erfahren Sie, wie eine besonders vertrauenswürdige SharePoint-Add-Ins für die lokale Nutzung packen und veröffentlichen.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -15,7 +24,7 @@ Sie benötigen Folgendes:
 
  
 
-- Eine lokale SharePoint-Entwicklungsumgebung. Anweisungen zur Einrichtung finden Sie unter [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins).
+- Eine lokale SharePoint-Entwicklungsumgebung. Anweisungen zur Einrichtung finden Sie unter [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md).
     
  
 - Einen IIS-Webserver zum Hosten der Remotewebanwendung. Der IIS-Manager sollte installiert sein.
@@ -40,8 +49,8 @@ Tabelle 1 enthält eine Liste einiger hilfreicher Artikel, die zum Verständnis
 
 |**Titel des Artikels**|**Beschreibung**|
 |:-----|:-----|
-| [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins)|Erfahren Sie, wie Sie ein einfaches von einem Anbieter gehostetes SharePoint-Add-In mit Office Developer Tools für Visual Studio erstellen.|
-| [Erstellen von besonders vertrauenswürdigen SharePoint-Add-Ins](create-high-trust-sharepoint-add-ins)|Erfahren Sie, wie Sie eine einfache besonders vertrauenswürdige SharePoint-Add-In mit den Office-Entwicklertools für Visual Studio erstellen, indem Sie ein selbstsigniertes Zertifikat und eine dazugehörige Aussteller-ID verwenden.|
+| [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)|Erfahren Sie, wie Sie ein einfaches von einem Anbieter gehostetes SharePoint-Add-In mit Office Developer Tools für Visual Studio erstellen.|
+| [Erstellen von besonders vertrauenswürdigen SharePoint-Add-Ins](create-high-trust-sharepoint-add-ins.md)|Erfahren Sie, wie Sie eine einfache besonders vertrauenswürdige SharePoint-Add-In mit den Office-Entwicklertools für Visual Studio erstellen, indem Sie ein selbstsigniertes Zertifikat und eine dazugehörige Aussteller-ID verwenden.|
 | [Web Deploy](http://www.iis.net/downloads/microsoft/web-deploy)|Web Deploy vereinfacht die Bereitstellung von Webanwendungen und Websites auf IIS-Servern.|
 | [Digitale Zertifikate](http://msdn.microsoft.com/library/e523b335-0156-4f47-b55c-b80495587c4f.aspx) und [Arbeiten mit Zertifikaten](http://msdn.microsoft.com/library/6ffb8682-8f07-4a45-afbb-8d2487e9dbc3.aspx)|Lernen Sie die grundlegenden Ideen hinter digitalen Zertifikaten kennen.|
 
@@ -62,7 +71,7 @@ Bevor Sie das Add-In veröffentlichen können, muss es beim Add-In-Verwaltungsdi
 
 1. Navigieren Sie zur Seite „http:// _SharePoint-Website_/_layouts/15/appregnew.aspx“. Verwenden Sie die Schaltflächen zum **Generieren**, um Werte für die Add-In-ID und den geheimen Schlüssel zu erzeugen. (Der geheime Schlüssel wird nicht wirklich in besonders vertrauenswürdigen SharePoint-Add-Ins verwendet, aber er ist für das Formular erforderlich.) Geben Sie die Basis-URL der Domäne an, in der die Remotewebanwendung des Add-Ins ausgeführt wird. Geben Sie die Domäne ohne das Protokoll (HTTPS) an, aber fügen Sie den Port an, den die Remotekomponenten für HTTPS-Anforderungen verwenden sollen, falls nicht 443 verwendet wird (Beispiel: www.contoso.com:5555 oderMyAppServer:4444).
     
-    Falls Sie einen Umleitungs-URI benötigen, können Sie dafür auch einen Wert eingeben. Eine Erklärung der Verwendung eines Umleitungs-URI finden Sie unter  [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins).
+    Falls Sie einen Umleitungs-URI benötigen, können Sie dafür auch einen Wert eingeben. Eine Erklärung der Verwendung eines Umleitungs-URI finden Sie unter  [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins.md).
     
     Das Formular auf der Seite sollte Abbildung 1 ähneln. In diesem Beispiel lauscht der Remote-Webanwendungsserver am Standardport 443 auf HTTPS-Anforderungen. Daher muss der Port nicht in der Add-In-Domäne angegeben werden.
     
@@ -71,7 +80,7 @@ Bevor Sie das Add-In veröffentlichen können, muss es beim Add-In-Verwaltungsdi
 
  
 
-  ![Registrieren der App auf „appregnew.aspx“](../../images/SP15_RegisterApp.png)
+  ![Registrieren der App auf „appregnew.aspx“](../images/SP15_RegisterApp.png)
  
 
  
@@ -84,7 +93,7 @@ Bevor Sie das Add-In veröffentlichen können, muss es beim Add-In-Verwaltungsdi
 ## <a name="choose-a-strategy-for-obtaining-maintaining-and-deploying-certificates-for-high-trust-sharepoint-add-ins"></a>Wählen einer Strategie für die Beschaffung, Pflege und Bereitstellung von Zertifikaten für besonders vertrauenswürdige SharePoint-Add-Ins
 <a name="Certificate"> </a>
 
-Wenn ein Entwickler unter Verwendung von **F5** in Visual Studio ein besonders vertrauenswürdiges SharePoint-Add-In entwickelt und debuggt, kann er ein selbstsigniertes Zertifikat verwenden, wie in [Erstellen besonders vertrauenswürdiger SharePoint-Add-Ins](create-high-trust-sharepoint-add-ins) beschrieben. Wird das Add-In jedoch *veröffentlicht*, hat die Verwendung eines selbstsignierten Zertifikats zur Folge, dass im Browser vor dem Öffnen der Startseite der Remotewebanwendung eine Warnseite angezeigt wird. Der Benutzer muss wählen, ob der Vorgang fortgesetzt werden soll. Abbildung 2 zeigt Beispiele solcher Warnungen.
+Wenn ein Entwickler unter Verwendung von **F5** in Visual Studio ein besonders vertrauenswürdiges SharePoint-Add-In entwickelt und debuggt, kann er ein selbstsigniertes Zertifikat verwenden, wie in [Erstellen besonders vertrauenswürdiger SharePoint-Add-Ins](create-high-trust-sharepoint-add-ins.md) beschrieben. Wird das Add-In jedoch *veröffentlicht*, hat die Verwendung eines selbstsignierten Zertifikats zur Folge, dass im Browser vor dem Öffnen der Startseite der Remotewebanwendung eine Warnseite angezeigt wird. Der Benutzer muss wählen, ob der Vorgang fortgesetzt werden soll. Abbildung 2 zeigt Beispiele solcher Warnungen.
  
 
  
@@ -94,7 +103,7 @@ Wenn ein Entwickler unter Verwendung von **F5** in Visual Studio ein besonders v
  
 
  
-![IE- und Chrome-Warnmeldungen bei selbstsigniertem Zertifikat](../../images/BrowserWarnings4SelfSignedCerts.png)
+![IE- und Chrome-Warnmeldungen bei selbstsigniertem Zertifikat](../images/BrowserWarnings4SelfSignedCerts.png)
  
 Dieses Ärgernis ist möglicherweise akzeptabel für Entwickler, aber nicht für Kunden. Daher muss der Kunde vor der endgültigen Veröffentlichung in einer Produktionsumgebung ein Zertifikat anfordern, das von einem vertrauenswürdigen Drittanbieter signiert ist. Der Drittanbieter kann eine kommerzielle Zertifizierungsstelle (CA) oder eine lokale Zertifizierungsstelle sein. Beachten Sie bei kommerziellen Zertifizierungsstellen, dass in der Branche "Nur Intranet"-Zertifikate für Webserver schrittweise abgeschafft werden. Sie können weiterhin erworben werden, aber alle diese Zertifikate laufen im November 2016 oder früher ab. Ein solches Zertifikat ist für eine besonders vertrauenswürdige SharePoint-Add-In nicht notwendig, da für Internet-Webserver verwendete Zertifikate auch für Intranet-Webserver verwendet werden können. Diese kosten jedoch normalerweise mehr. 
  
@@ -108,7 +117,7 @@ Wenn das Zertifikat ursprünglich im CER-Format erstellt wurde, enthält es den 
  
 
  
-Außerdem muss sich der Kunde überlegen, ob er ein Zertifikat für alle besonders vertrauenswürdigen SharePoint-Add-Ins oder ein separates Zertifikat für jedes Add-In verwenden möchte. Weitere Informationen zu dieser Entscheidung finden Sie unter  [Entscheiden zwischen der Verwendung eines oder mehrerer Zertifikate für besonders vertrauenswürdige SharePoint-Add-Ins](creating-sharepoint-add-ins-that-use-high-trust-authorization#Deciding).
+Außerdem muss sich der Kunde überlegen, ob er ein Zertifikat für alle besonders vertrauenswürdigen SharePoint-Add-Ins oder ein separates Zertifikat für jedes Add-In verwenden möchte. Weitere Informationen zu dieser Entscheidung finden Sie unter  [Entscheiden zwischen der Verwendung eines oder mehrerer Zertifikate für besonders vertrauenswürdige SharePoint-Add-Ins](creating-sharepoint-add-ins-that-use-high-trust-authorization.md#Deciding).
  
 
  
@@ -183,7 +192,7 @@ Die folgenden Verfahren werden auf dem Remotewebserver ausgeführt, der die Remo
 
  
 
-  ![Exportieren eines Testzertifikats](../../images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
+  ![Exportieren eines Testzertifikats](../images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
  
 
  
@@ -286,7 +295,7 @@ Mit dem folgenden Verfahren wird das Zertifikat als vertrauenswürdiger Tokenaus
 ### <a name="to-configure-the-certificate"></a>So konfigurieren Sie das Zertifikat
 
 
-1. Erstellen Sie ggf. die benötigten besonders vertrauenswürdigen Windows PowerShell-Konfigurationsskripts, wie in  [Besonders vertrauenswürdige Konfigurationsskripts für SharePoint](high-trust-configuration-scripts-for-sharepoint-2013) beschrieben.
+1. Erstellen Sie ggf. die benötigten besonders vertrauenswürdigen Windows PowerShell-Konfigurationsskripts, wie in  [Besonders vertrauenswürdige Konfigurationsskripts für SharePoint](high-trust-configuration-scripts-for-sharepoint.md) beschrieben.
     
  
 2. Kopieren Sie die Skripts auf den SharePoint-Server.
@@ -329,7 +338,7 @@ Bearbeiten Sie die Datei „web.config“ so, dass sie die neuen Werte für die 
       - Wenn die besonders vertrauenswürdige SharePoint-Add-In über ein eigenes Zertifikat verfügt, das nicht von anderen SharePoint-Add-Ins verwendet wird, ist die  `IssuerId` mit der `ClientId` identisch.
     
  
-  - Wenn die SharePoint-Add-In das gleiche Zertifikat wie andere SharePoint-Add-Ins verwendet, ist die  `IssuerId` eine beliebige GUID. Das Skript für dieses Szenario, das Sie in [Besonders vertrauenswürdige Konfigurationsskripts für SharePoint](high-trust-configuration-scripts-for-sharepoint-2013) finden, generiert eine Textdatei mit dieser GUID. IT-Mitarbeiter können die ausgegebene Datei an den Add-In-Entwickler weitergeben, damit er sie als `IssuerId` in die Datei "web.config" einfügen kann.
+  - Wenn die SharePoint-Add-In das gleiche Zertifikat wie andere SharePoint-Add-Ins verwendet, ist die  `IssuerId` eine beliebige GUID. Das Skript für dieses Szenario, das Sie in [Besonders vertrauenswürdige Konfigurationsskripts für SharePoint](high-trust-configuration-scripts-for-sharepoint.md) finden, generiert eine Textdatei mit dieser GUID. IT-Mitarbeiter können die ausgegebene Datei an den Add-In-Entwickler weitergeben, damit er sie als `IssuerId` in die Datei "web.config" einfügen kann.
     
  
 
@@ -586,16 +595,16 @@ private static X509Certificate2 GetCertificateFromStore()
 <a name="bk_addresources"> </a>
 
 
--  [Erstellen von besonders vertrauenswürdigen SharePoint-Add-Ins](create-high-trust-sharepoint-add-ins)
+-  [Erstellen von besonders vertrauenswürdigen SharePoint-Add-Ins](create-high-trust-sharepoint-add-ins.md)
     
  
--  [Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio](publish-sharepoint-add-ins-by-using-visual-studio)
+-  [Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio](publish-sharepoint-add-ins-by-using-visual-studio.md)
     
  
--  [Registrieren von SharePoint 2013-Add-Ins](register-sharepoint-add-ins-2013)
+-  [Registrieren von SharePoint-Add-Ins 2013](register-sharepoint-add-ins.md)
     
  
--  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins)
+-  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
 

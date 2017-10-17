@@ -1,15 +1,24 @@
-
+---
+title: "Angeben einer Vorlage für eine Dokumentbibliothek in einem Cloud-Business-Add-In"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: b9505ee15250d4a69a3a79b8d3a4e4893ff5e298
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="provide-a-template-for-a-document-library-in-a-cloud-business-add-in"></a>Angeben einer Vorlage für eine Dokumentbibliothek in einem Cloud-Business-Add-In
 Zusätzlich zu den Office-Vorlagen, die beim Hinzufügen eines Dokuments zu einer SharePoint-Dokumentbibliothek verfügbar sind, können Sie auch Ihre eigenen Vorlagen verwenden. Sie haben möglicherweise Ihre eigene Verkaufsangebotsvorlage, die Sie verwenden möchten, wenn neue Aufträge hinzugefügt werden.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
 ## 
 
-Wenn Sie dies noch nicht getan haben, ordnen Sie Ihrem Cloud-Business-Add-In eine Dokumentbibliothek hinzu. Weitere Informationen finden Sie unter [Zuordnen einer Dokumentbibliothek zu einer Entität](associate-a-document-library-with-an-entity).
+Wenn Sie dies noch nicht getan haben, ordnen Sie Ihrem Cloud-Business-Add-In eine Dokumentbibliothek hinzu. Weitere Informationen finden Sie unter [Zuordnen einer Dokumentbibliothek zu einer Entität](associate-a-document-library-with-an-entity.md).
  
 
  
@@ -26,7 +35,7 @@ Wenn Sie dies noch nicht getan haben, ordnen Sie Ihrem Cloud-Business-Add-In ein
 
  
 
-  ![Link zu Websiteeinstellungen](../../images/CBA_IM_8b.PNG)
+  ![Link zu Websiteeinstellungen](../images/CBA_IM_8b.PNG)
  
 
  
@@ -38,7 +47,7 @@ Wenn Sie dies noch nicht getan haben, ordnen Sie Ihrem Cloud-Business-Add-In ein
 
  
 
-  ![Link „Websiteinhaltstypen“](../../images/CBA_IM_26.PNG)
+  ![Link „Websiteinhaltstypen“](../images/CBA_IM_26.PNG)
  
 
  
@@ -50,7 +59,7 @@ Wenn Sie dies noch nicht getan haben, ordnen Sie Ihrem Cloud-Business-Add-In ein
 
  
 
-  ![Link „Erstellen“](../../images/CBA_IM_27.PNG)
+  ![Link „Erstellen“](../images/CBA_IM_27.PNG)
  
 
  
@@ -62,7 +71,7 @@ Wenn Sie dies noch nicht getan haben, ordnen Sie Ihrem Cloud-Business-Add-In ein
 
  
 
-  ![Auswahloptionen für „Übergeordneter Inhaltstyp“](../../images/CBA_IM_28.PNG)
+  ![Auswahloptionen für „Übergeordneter Inhaltstyp“](../images/CBA_IM_28.PNG)
  
 
  
@@ -74,7 +83,7 @@ Wenn Sie dies noch nicht getan haben, ordnen Sie Ihrem Cloud-Business-Add-In ein
 
  
 
-  ![Gruppeneinstellung](../../images/CBA_IM_28a.PNG)
+  ![Gruppeneinstellung](../images/CBA_IM_28a.PNG)
  
 
  
@@ -89,7 +98,7 @@ Wenn Sie dies noch nicht getan haben, ordnen Sie Ihrem Cloud-Business-Add-In ein
 
  
 
-  ![Angeben der Dokumentvorlage](../../images/CBA_IM_29.PNG)
+  ![Angeben der Dokumentvorlage](../images/CBA_IM_29.PNG)
  
 
  
@@ -107,7 +116,7 @@ Wenn Sie dies noch nicht getan haben, ordnen Sie Ihrem Cloud-Business-Add-In ein
 
  
 
-  ![Hinzufügen der Vorlage](../../images/CBA_IM_29a.PNG)
+  ![Hinzufügen der Vorlage](../images/CBA_IM_29a.PNG)
  
 
  
@@ -119,7 +128,7 @@ Wenn Sie dies noch nicht getan haben, ordnen Sie Ihrem Cloud-Business-Add-In ein
 
  
 
-  ![Das Dialogfeld „Neue Datei erstellen“ mit der neuen Vorlage](../../images/CBA_IM_30.PNG)
+  ![Das Dialogfeld „Neue Datei erstellen“ mit der neuen Vorlage](../images/CBA_IM_30.PNG)
  
 
  
@@ -130,10 +139,10 @@ Wenn Sie dies noch nicht getan haben, ordnen Sie Ihrem Cloud-Business-Add-In ein
 <a name="bk_addresources"> </a>
 
 
--  [Entwickeln von Cloud-Business-Add-Ins](develop-cloud-business-add-ins)
+-  [Entwickeln von Cloud-Business-Add-Ins](develop-cloud-business-add-ins.md)
     
  
--  [Zuordnen einer Dokumentbibliothek zu einer Entität](associate-a-document-library-with-an-entity)
+-  [Zuordnen einer Dokumentbibliothek zu einer Entität](associate-a-document-library-with-an-entity.md)
     
  
 

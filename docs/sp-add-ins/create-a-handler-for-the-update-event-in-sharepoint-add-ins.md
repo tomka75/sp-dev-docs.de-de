@@ -1,15 +1,25 @@
+---
+title: "Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: d647c85975b0b94e6265e60ee8463cbadf57df57
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-a-handler-for-the-update-event-in-sharepoint-add-ins"></a>Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins
 Erstellen und verwenden Sie einen Handler für das Ereignis zum Aktualisieren eines SharePoint-Add-Ins.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
 ## <a name="prerequisites-for-creating-a-handler-for-the-add-in-update-event"></a>Voraussetzungen für das Erstellen eines Handlers für das Add-In-Updateereignis
 <a name="Prerequisites"> </a>
 
-Sie sollten umfassend mit den Themen [Behandeln von Add-In-Ereignissen](handle-events-in-sharepoint-add-ins#HandlingAppEvents) und [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins) sowie den darin aufgeführten Voraussetzungen und Kernkonzepten vertraut sein.
+Sie sollten umfassend mit den Themen [Behandeln von Add-In-Ereignissen](handle-events-in-sharepoint-add-ins.md#HandlingAppEvents) und [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins.md) sowie den darin aufgeführten Voraussetzungen und Kernkonzepten vertraut sein.
  
 
  
@@ -21,7 +31,7 @@ Sie sollten umfassend mit den Themen [Behandeln von Add-In-Ereignissen](handle-e
  **HINWEIS**   **Versionsnummerierungssystem:** Aus Konsistenzgründen wird bei diesem Thema davon ausgegangen, dass die App-Versionsnummern 1.0.0.0, 2.0.0.0, 3.0.0.0 usw.lauten. Die Logik und Anweisungen gelten jedoch unabhängig vom Nummerierungssystem, das Sie verwenden.
  
 
-Für benutzerdefinierte Updatelogik können Sie einen SharePoint-Remoteereignisempfänger erstellen, der das AppUpdated-Ereignis verarbeitet. Sie sollten diese Technik allerdings sparsam einsetzen. Verwenden Sie sie nur für Aktualisierungsschritte, die nicht anderweitig durchgeführt werden können. Außerdem gelten die Hinweise in  [Behandeln von Add-In-Ereignissen](handle-events-in-sharepoint-add-ins#HandlingAppEvents) für das AppUpdated-Ereignis ebenso wie für die Ereignisse AppInstalled und AppUninstalling. Dies umfasst Folgendes:
+Für benutzerdefinierte Updatelogik können Sie einen SharePoint-Remoteereignisempfänger erstellen, der das AppUpdated-Ereignis verarbeitet. Sie sollten diese Technik allerdings sparsam einsetzen. Verwenden Sie sie nur für Aktualisierungsschritte, die nicht anderweitig durchgeführt werden können. Außerdem gelten die Hinweise in  [Behandeln von Add-In-Ereignissen](handle-events-in-sharepoint-add-ins.md#HandlingAppEvents) für das AppUpdated-Ereignis ebenso wie für die Ereignisse AppInstalled und AppUninstalling. Dies umfasst Folgendes:
  
 
  
@@ -39,7 +49,7 @@ Ein Szenario, in dem ein **UpgradedEventEndpoint**-Handler nützlich ist, ist da
  
 
  
-Ausführliche Informationen dazu, wie Sie einen Handler für das Add-In-Ereignis erstellen, finden Sie unter [Behandeln von Ereignissen in SharePoint-Add-Ins](handle-events-in-sharepoint-add-ins) und [Erstellen eines Add-In-Ereignisempfängers in SharePoint-Add-Ins](create-an-add-in-event-receiver-in-sharepoint-add-ins). Bei den folgenden Verfahren wird davon ausgegangen, dass Sie das Add-In-Ereignisempfänger-Element zu Ihrem SharePoint-Add-In-Projekt in Visual Studio hinzugefügt haben. 
+Ausführliche Informationen dazu, wie Sie einen Handler für das Add-In-Ereignis erstellen, finden Sie unter [Behandeln von Ereignissen in SharePoint-Add-Ins](handle-events-in-sharepoint-add-ins.md) und [Erstellen eines Add-In-Ereignisempfängers in SharePoint-Add-Ins](create-an-add-in-event-receiver-in-sharepoint-add-ins.md). Bei den folgenden Verfahren wird davon ausgegangen, dass Sie das Add-In-Ereignisempfänger-Element zu Ihrem SharePoint-Add-In-Projekt in Visual Studio hinzugefügt haben. 
  
 
  
@@ -77,7 +87,7 @@ Ausführliche Informationen dazu, wie Sie einen Handler für das Add-In-Ereignis
 
 ```
 
-4. Um die REST-Schnittstelle zu verwenden, verwendet Ihr Code andere Methoden in der **TokenHelper**-Klasse, um ein Zugriffstoken abzurufen, das dann in die Anforderungen eingefügt wird, die an SharePoint gesendet werden. Weitere Informationen finden Sie unter [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten](complete-basic-operations-using-sharepoint-2013-rest-endpoints). Ihr Code sollte in etwa folgendermaßen strukturiert sein.
+4. Um die REST-Schnittstelle zu verwenden, verwendet Ihr Code andere Methoden in der **TokenHelper**-Klasse, um ein Zugriffstoken abzurufen, das dann in die Anforderungen eingefügt wird, die an SharePoint gesendet werden. Weitere Informationen finden Sie unter [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten](complete-basic-operations-using-sharepoint-rest-endpoints.md). Ihr Code sollte in etwa folgendermaßen strukturiert sein.
     
 ```C#
   if (properties.EventType == SPRemoteEventType.AppUpgraded)
@@ -228,7 +238,7 @@ catch (Exception e)
 
 ### <a name="use-the-handler-delegation-strategy"></a>Verwenden der Handlerdelegierungsstrategie
 
-Die Handlerdelegierungsstrategie, die in  [Behandeln von Add-In-Ereignissen](handle-events-in-sharepoint-add-ins#HandlingAppEvents) beschrieben ist, kann ebenfalls in einem **UpdatedEventHandler** verwendet werden. Nicht nur Ihre Rollback- und "Bereits erledigt"-Logik sind gebündelt und werden auf der Remotekomponente ausgeführt, sondern auch Ihre Logik für die Versionsverwaltung. Die Einschränkungen der Strategie gelten hier ebenfalls: In der Regel können Sie damit nicht mehr als ein Remotesystem aktualisieren.
+Die Handlerdelegierungsstrategie, die in  [Behandeln von Add-In-Ereignissen](handle-events-in-sharepoint-add-ins.md#HandlingAppEvents) beschrieben ist, kann ebenfalls in einem **UpdatedEventHandler** verwendet werden. Nicht nur Ihre Rollback- und "Bereits erledigt"-Logik sind gebündelt und werden auf der Remotekomponente ausgeführt, sondern auch Ihre Logik für die Versionsverwaltung. Die Einschränkungen der Strategie gelten hier ebenfalls: In der Regel können Sie damit nicht mehr als ein Remotesystem aktualisieren.
  
 
  
@@ -236,18 +246,18 @@ Die Handlerdelegierungsstrategie, die in  [Behandeln von Add-In-Ereignissen](han
 ## <a name="next-steps"></a>Nächste Schritte
 <a name="Next"> </a>
 
-Kehren Sie zu  [Wichtige Schritte beim Aktualisieren eines Add-Ins](update-sharepoint-add-ins#MajorAppUpgradeSteps) zurück, oder rufen Sie direkt einen der folgenden Artikel auf, um zu erfahren, wie Sie die nächste Hauptkomponente Ihres SharePoint-Add-Ins aktualisieren.
+Kehren Sie zu  [Wichtige Schritte beim Aktualisieren eines Add-Ins](update-sharepoint-add-ins.md#MajorAppUpgradeSteps) zurück, oder rufen Sie direkt einen der folgenden Artikel auf, um zu erfahren, wie Sie die nächste Hauptkomponente Ihres SharePoint-Add-Ins aktualisieren.
  
 
  
 
--  [Aktualisieren von Add-In-Webkomponenten in SharePoint](update-add-in-web-components-in-sharepoint-2013)
+-  [Aktualisieren von Add-In-Webkomponenten in SharePoint](update-add-in-web-components-in-sharepoint.md)
     
  
--  [Aktualisieren von Hostwebkomponenten in SharePoint](update-host-web-components-in-sharepoint-2013)
+-  [Aktualisieren von Hostwebkomponenten in SharePoint](update-host-web-components-in-sharepoint.md)
     
  
--  [Aktualisieren von Remotekomponenten in SharePoint-Add-Ins](update-remote-components-in-sharepoint-add-ins)
+-  [Aktualisieren von Remotekomponenten in SharePoint-Add-Ins](update-remote-components-in-sharepoint-add-ins.md)
     
  
 
@@ -255,16 +265,16 @@ Kehren Sie zu  [Wichtige Schritte beim Aktualisieren eines Add-Ins](update-share
 <a name="bk_addresources"> </a>
 
 
--  [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins)
+-  [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins.md)
     
  
 -  [UpgradedEventEndpoint-Element (PropertiesDefinition ComplexType) (SharePoint-Add-In-Manifest)](http://msdn.microsoft.com/library/09a93d44-d295-47bb-f91c-d243178b0f53%28Office.15%29.aspx)
     
  
--  [Behandeln von Ereignissen in SharePoint-Add-Ins](handle-events-in-sharepoint-add-ins)
+-  [Behandeln von Ereignissen in SharePoint-Add-Ins](handle-events-in-sharepoint-add-ins.md)
     
  
--  [Erstellen eines Add-In-Ereignisempfängers in SharePoint-Add-Ins](create-an-add-in-event-receiver-in-sharepoint-add-ins)
+-  [Erstellen eines Add-In-Ereignisempfängers in SharePoint-Add-Ins](create-an-add-in-event-receiver-in-sharepoint-add-ins.md)
     
  
 

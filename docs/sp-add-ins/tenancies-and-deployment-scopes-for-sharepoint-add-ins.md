@@ -1,9 +1,18 @@
-
+---
+title: "Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 9a2114067ed7782188a4efd91bfe26c709b0777e
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="tenancies-and-deployment-scopes-for-sharepoint-add-ins"></a>Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint
  Lernen Sie das Konzept von Mandantschaften und die Unterschiede zwischen der Bereitstellung von SharePoint-Add-Ins im Mandantenbereich und im Webbereich kennen.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -27,7 +36,7 @@ Wenn neue Websitesammlungen in der Mandantschaft erstellt werden, werden Add-Ins
 
  
 
- **Hinweis** Der Add-In-Bereich sollte nicht mit dem Featurebereich verwechselt werden. Der Featurebereich bestimmt, wo die Elemente in einem Feature bereitgestellt werden. Mögliche Werte sind z. B. **Farm**, **WebApplication**, **Website** (d. h. Websitesammlung) und **Web**. Nur **Web** ist für Features in SharePoint-Add-Ins zulässig (sowohl Hostweb-Features als auch Features in einer WSP-Datei in einem Add-In-Paket). Der Add-In-Bereich sollte ebenfalls nicht mit den Add-In-Berechtigungsstufen verwechselt werden. SharePoint-Add-Ins können Berechtigungen für alle oder ausgewählte Teile von SharePoint-Inhalten auf der Listen-, Web-, Websitesammlungs- und Mandantenebene anfordern. Durch das Installieren eines Add-Ins mit Mandantenbereich erhält das Add-In weder zusätzliche Berechtigungen noch werden wesentliche Bedingungen des SharePoint-Sicherheitsmodells außer Kraft gesetzt. Weitere Informationen zu Add-In-Berechtigungen finden Sie unter [Add-In Berechtigungen in SharePoint](add-in-permissions-in-sharepoint-2013).
+ **Hinweis** Der Add-In-Bereich sollte nicht mit dem Featurebereich verwechselt werden. Der Featurebereich bestimmt, wo die Elemente in einem Feature bereitgestellt werden. Mögliche Werte sind z. B. **Farm**, **WebApplication**, **Website** (d. h. Websitesammlung) und **Web**. Nur **Web** ist für Features in SharePoint-Add-Ins zulässig (sowohl Hostweb-Features als auch Features in einer WSP-Datei in einem Add-In-Paket). Der Add-In-Bereich sollte ebenfalls nicht mit den Add-In-Berechtigungsstufen verwechselt werden. SharePoint-Add-Ins können Berechtigungen für alle oder ausgewählte Teile von SharePoint-Inhalten auf der Listen-, Web-, Websitesammlungs- und Mandantenebene anfordern. Durch das Installieren eines Add-Ins mit Mandantenbereich erhält das Add-In weder zusätzliche Berechtigungen noch werden wesentliche Bedingungen des SharePoint-Sicherheitsmodells außer Kraft gesetzt. Weitere Informationen zu Add-In-Berechtigungen finden Sie unter [Add-In Berechtigungen in SharePoint](add-in-permissions-in-sharepoint.md).
  
 
 
@@ -116,16 +125,16 @@ Add-Ins aus dem Office Store oder aus einem Add-In-Katalog können von Mandanten
 <a name="SP15tenancies_addlresources"> </a>
 
 
--  [Veröffentlichen von SharePoint-Add-Ins](publish-sharepoint-add-ins)
+-  [Veröffentlichen von SharePoint-Add-Ins](publish-sharepoint-add-ins.md)
     
  
--  [Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape)
+-  [Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)
     
  
--  [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](deploying-and-installing-sharepoint-add-ins-methods-and-options)
+-  [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](deploying-and-installing-sharepoint-add-ins-methods-and-options.md)
     
  
--  [Aktualisierungsverfahren für SharePoint-Add-Ins](sharepoint-add-ins-update-process)
+-  [Aktualisierungsverfahren für SharePoint-Add-Ins](sharepoint-add-ins-update-process.md)
     
  
 

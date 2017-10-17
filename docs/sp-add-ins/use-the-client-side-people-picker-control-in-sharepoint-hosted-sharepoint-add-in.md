@@ -1,13 +1,22 @@
-
+---
+title: Verwenden des clientseitigen Personenauswahl-Steuerelement in von SharePoint gehosteten SharePoint-Add-Ins
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: ab5c3d1cb7c47518a4806af2fc075f1730e53399
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="use-the-client-side-people-picker-control-in-sharepoint-hosted-sharepoint-add-ins"></a>Verwenden des clientseitigen Personenauswahl-Steuerelement in von SharePoint gehosteten SharePoint-Add-Ins
 Erfahren Sie, wie das clientseitige Personenauswahl-Steuerelement in von SharePoint gehosteten SharePoint-Add-Ins verwendet wird.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
- **Wichtig** In diesem Thema wird davon ausgegangen, dass Sie wissen, wie ein von SharePoint gehostetes SharePoint-Add-In erstellt wird. Wenn Sie mehr über das Erstellen erfahren möchten, beginnen Sie mit [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins).
+ **Wichtig** In diesem Thema wird davon ausgegangen, dass Sie wissen, wie ein von SharePoint gehostetes SharePoint-Add-In erstellt wird. Wenn Sie mehr über das Erstellen erfahren möchten, beginnen Sie mit [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md).
  
 
 
@@ -52,7 +61,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie die SharePoint-Add-In mithilf
 
  
 
- **Hinweis** Unter [Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365) erhalten Sie Informationen zur Registrierung für eine Entwicklerwebsite und zu den ersten Schritten mit Napa.
+ **Hinweis** Unter [Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365.md) erhalten Sie Informationen zur Registrierung für eine Entwicklerwebsite und zu den ersten Schritten mit Napa.
  
 
 Wenn Sie nicht mit Napa auf einer Entwicklerwebsite arbeiten, benötigen Sie Folgendes:
@@ -73,7 +82,7 @@ Wenn Sie nicht mit Napa auf einer Entwicklerwebsite arbeiten, benötigen Sie Fol
  **Hinweis** Anweisungen zum Einrichten einer Entwicklungsumgebung, die Ihren Anforderungen entspricht, finden Sie unter [Erste Schritte beim Erstellen von Add-Ins für Office und SharePoint](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea.aspx).
  
 
-Es folgen die allgemeinen Schritte zum Hinzufügen der Auswahl zu Ihrer App und zum Abrufen von Benutzerinformationen von einem anderen clientseitigen Steuerelement. Den entsprechenden Code finden Sie im  [ Codebeispiel: Verwendung der clientseitigen Personenauswahl](use-the-client-side-people-picker-control-in-sharepoint-hosted-sharepoint-add-ins#bk_example).
+Es folgen die allgemeinen Schritte zum Hinzufügen der Auswahl zu Ihrer App und zum Abrufen von Benutzerinformationen von einem anderen clientseitigen Steuerelement. Den entsprechenden Code finden Sie im  [ Codebeispiel: Verwendung der clientseitigen Personenauswahl](use-the-client-side-people-picker-control-in-sharepoint-hosted-sharepoint-add-in.md#bk_example).
  
 
  
@@ -246,7 +255,7 @@ function onFail(sender, args) {
 <a name="bk_addresources"> </a>
 
 
--  [Erstellen von UX-Komponenten in SharePoint](create-ux-components-in-sharepoint-2013)
+-  [Erstellen von UX-Komponenten in SharePoint](create-ux-components-in-sharepoint.md)
     
  
 -  [Überblick über die Personenauswahl und Anspruchsanbieter (SharePoint)](http://technet.microsoft.com/library/gg602078.aspx)

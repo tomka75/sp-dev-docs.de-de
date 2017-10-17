@@ -1,9 +1,18 @@
-
+---
+title: URL-Zeichenfolgen und Tokens in SharePoint-Add-Ins
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: f72b508740db3653cc9515fe3eb9800a0038b1aa
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="url-strings-and-tokens-in-sharepoint-add-ins"></a>URL-Zeichenfolgen und Tokens in SharePoint-Add-Ins
 Erfahren Sie, welche URL-Tokens für die Verwendung in SharePoint-Add-Ins verfügbar sind.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 

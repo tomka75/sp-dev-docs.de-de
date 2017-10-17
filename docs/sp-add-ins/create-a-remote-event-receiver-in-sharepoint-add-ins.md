@@ -1,15 +1,25 @@
+---
+title: "Erstellen eines Remoteereignisempfängers in Add-Ins für SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 1d513a5a15d691a8e7932cdd246a6afd3faac60d
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-a-remote-event-receiver-in-sharepoint-add-ins"></a>Erstellen eines Remoteereignisempfängers in Add-Ins für SharePoint
 Erstellen Sie einen Remoteereignisempfängers (RER), der Listen- und Listenelementereignisse in einem SharePoint-Add-In verarbeitet.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
 ## <a name="prerequisites"></a>Voraussetzungen
 <a name="SP15appevent_prereq"> </a>
 
-Sie sollten die Grundlagen vom Anbieter gehosteter SharePoint-Add-Ins verstehen und bereits ein paar entwickelt haben, die wenigstens geringfügig über die Komplexität von "Hello World" hinausgehen. Ferner sollten Sie mit dem  [Behandeln von Ereignissen in SharePoint-Add-Ins](handle-events-in-sharepoint-add-ins) vertraut sein. 
+Sie sollten die Grundlagen vom Anbieter gehosteter SharePoint-Add-Ins verstehen und bereits ein paar entwickelt haben, die wenigstens geringfügig über die Komplexität von "Hello World" hinausgehen. Ferner sollten Sie mit dem  [Behandeln von Ereignissen in SharePoint-Add-Ins](handle-events-in-sharepoint-add-ins.md) vertraut sein. 
  
 
  
@@ -94,7 +104,7 @@ Um diesem Artikel zu folgen und den Code selbst einzugeben, laden Sie das Beispi
 ### <a name="to-add-functionality-to-the-remote-event-receiver"></a>So fügen Sie dem Remoteereignisempfänger Funktionen hinzu
 
 
-1. Wenn sich die SharePoint-Testfarm nicht auf dem Computer mit Visual Studio befindet (oder Sie einen SharePoint Online-Mandanten als SharePoint-Testwebsite verwenden), konfigurieren Sie das Projekt für das Debuggen mit dem Microsoft Azure Service Bus. Weitere Informationen finden Sie unter  [Debugging und Problembehandlung eines Remoteereignisempfängers in einem Add-In für SharePoint](debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in). 
+1. Wenn sich die SharePoint-Testfarm nicht auf dem Computer mit Visual Studio befindet (oder Sie einen SharePoint Online-Mandanten als SharePoint-Testwebsite verwenden), konfigurieren Sie das Projekt für das Debuggen mit dem Microsoft Azure Service Bus. Weitere Informationen finden Sie unter  [Debugging und Problembehandlung eines Remoteereignisempfängers in einem Add-In für SharePoint](debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in.md). 
     
  
 2. Ersetzen Sie den Inhalt der Codedatei für den Dienst des Remoteereignisempfängers (d. h. RemoteEventReceiver1.svc.cs) durch den folgenden Code.
@@ -300,7 +310,7 @@ Testen Sie den Handler mit dem folgenden Verfahren.
 
  
 
-  ![SharePoint-Remoteereignisse in Visual Studio](../../images/SP_VS_Properties_Window_RemoteEvents.PNG)
+  ![SharePoint-Remoteereignisse in Visual Studio](../images/SP_VS_Properties_Window_RemoteEvents.PNG)
  
 
  
@@ -343,13 +353,13 @@ https://github.com/OfficeDev/PnP/tree/master/Samples/Provisioning.ReR)
 <a name="Additional"> </a>
 
 
--  [Behandeln von Ereignissen in SharePoint-Add-Ins](handle-events-in-sharepoint-add-ins)
+-  [Behandeln von Ereignissen in SharePoint-Add-Ins](handle-events-in-sharepoint-add-ins.md)
     
  
--  [Debugging und Problembehandlung eines Remoteereignisempfängers in einem SharePoint-Add-In](debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in)
+-  [Debugging und Problembehandlung eines Remoteereignisempfängers in einem SharePoint-Add-In](debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in.md)
     
  
--  [FAQ für Remoteereignisempfänger](handle-events-in-sharepoint-add-ins#RERFAQ)
+-  [FAQ für Remoteereignisempfänger](handle-events-in-sharepoint-add-ins.md#RERFAQ)
     
  
 

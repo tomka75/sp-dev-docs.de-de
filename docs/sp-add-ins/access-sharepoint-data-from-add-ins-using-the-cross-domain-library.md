@@ -1,8 +1,18 @@
+---
+title: "Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: e7b5afc5617df0998f34dc2d6e353ffd8a4d4998
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="access-sharepoint-data-from-add-ins-using-the-cross-domain-library"></a>Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek
 In diesem Artikel erfahren Sie, wie Sie von Ihrem Add-In aus mithilfe der domänenübergreifenden Bibliothek in SharePoint auf Daten einer SharePoint-Website zugreifen können.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Beim Erstellen von SharePoint Add-Ins müssen Sie in der Regel Daten aus verschiedenen Quellen einbinden. Aus [Sicherheitsgründen](http://msdn.microsoft.com/library/cc709423.aspx) gibt es jedoch Blockierungsmechanismen, die die Kommunikation mit mehr als einer Domäne zur gleichen Zeit verhindern. Diese Sicherheitsmechanismen sind in den meisten Browsern implementiert und unterbinden clientseitige domänenübergreifende Aufrufe nahezu.
@@ -23,7 +33,7 @@ Wenn Sie die domänenübergreifende Bibliothek verwenden, können die Webseiten 
  **Hinweis** In diesem Thema bezieht sich **Add-In-Domäne** auf die Domäne, die die Add-In-Seiten hostet. Dies kann die Domäne einer Remote-Webanwendung in einem Add-In, die vom Anbieter gehostet wird, sein, oder Add-In-Seiten können sich auch in SharePoint im Add-In-Web befinden und Aufrufe an die Hostwebdomäne machen. In diesem Fall ist die Add-In-Domäne die Domäne des Add-In-Webs.
  
 
-Das Hauptbeispiel in diesem Artikel zeigt Ihnen, wie Sie ein Add-In erstellen können, die Daten im Add-In-Web liest und diese in einer Webseite anzeigt. Der Abschnitt  [Nächste Schritte](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library#SP15Accessdatafromremoteapp_Next) zeigt weitere Szenarien an, die auf dem Hauptbeispiel aufbauen.
+Das Hauptbeispiel in diesem Artikel zeigt Ihnen, wie Sie ein Add-In erstellen können, die Daten im Add-In-Web liest und diese in einer Webseite anzeigt. Der Abschnitt  [Nächste Schritte](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Next) zeigt weitere Szenarien an, die auf dem Hauptbeispiel aufbauen.
  
 
 ## <a name="prerequisites-for-using-the-examples-in-this-article"></a>Voraussetzungen für die Verwendung der Beispiele in diesem Artikel
@@ -75,7 +85,7 @@ Abbildung 2 zeigt eine Webseite, die Daten im Add-In-Web anzeigt.
  
 
  
-![Beispielergebnisbildschirm für domänenübergreifende Leseelemente](../../images/CrossDomainReadItemsResult.png)
+![Beispielergebnisbildschirm für domänenübergreifende Leseelemente](../images/CrossDomainReadItemsResult.png)
  
 
 ### <a name="create-a-sharepoint-add-in-and-web-projects"></a>Erstellen eines SharePoint-Add-In- und Web-Projekts
@@ -94,7 +104,7 @@ Abbildung 2 zeigt eine Webseite, die Daten im Add-In-Web anzeigt.
  
 4. Wählen Sie als Hostingoption für Ihr Add-In **Von Anbieter gehostet** aus.
     
-     **Hinweis** Sie können die domänenübergreifende Bibliothek auch in einem von SharePoint gehosteten Add-In verwenden. In einem von SharePoint gehosteten Add-In befindet sich die Add-In-Seite jedoch bereits im Add-In-Web. In diesem Fall benötigt sie nicht die domänenübergreifende Bibliothek zum Lesen von Listenelementen. Ein Beispiel zu einem von SharePoint gehosteten Add-In, das Daten im Hostweb lesen kann, finden Sie unter [Verwenden der domänenübergreifenden Bibliothek in einem von SharePoint gehosteten Add-In (REST)](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-00c37814) oder unter [Zugreifen auf Daten in einem Hostweb](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library#SP15Accessdatafromremoteapp_Hostweb) später in diesem Artikel.
+     **Hinweis** Sie können die domänenübergreifende Bibliothek auch in einem von SharePoint gehosteten Add-In verwenden. In einem von SharePoint gehosteten Add-In befindet sich die Add-In-Seite jedoch bereits im Add-In-Web. In diesem Fall benötigt sie nicht die domänenübergreifende Bibliothek zum Lesen von Listenelementen. Ein Beispiel zu einem von SharePoint gehosteten Add-In, das Daten im Hostweb lesen kann, finden Sie unter [Verwenden der domänenübergreifenden Bibliothek in einem von SharePoint gehosteten Add-In (REST)](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-00c37814) oder unter [Zugreifen auf Daten in einem Hostweb](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) später in diesem Artikel.
 
 ### <a name="create-list-items-on-the-add-in-web"></a>Erstellen von Listenelementen im Add-In-Web
 
@@ -147,7 +157,7 @@ Abbildung 2 zeigt eine Webseite, die Daten im Add-In-Web anzeigt.
  
   - Instantiiert das **RequestExecutor**-Objekt. Standardmäßig verwendet RequestExecutor das Add-In-Web als Kontextwebsite.
     
-     **Hinweis** Sie können die Kontextwebsite durch andere Websites, die sich vom Add-In-Web unterscheiden, mithilfe des **AppContextSite**-Endpunkts (REST) oder -Objekts (JSOM) ersetzen. Weitere Informationen zu AppContextSite finden Sie unter [Zugreifen auf Daten in einem Hostweb](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library#SP15Accessdatafromremoteapp_Hostweb) weiter unten in diesem Artikel.
+     **Hinweis** Sie können die Kontextwebsite durch andere Websites, die sich vom Add-In-Web unterscheiden, mithilfe des **AppContextSite**-Endpunkts (REST) oder -Objekts (JSOM) ersetzen. Weitere Informationen zu AppContextSite finden Sie unter [Zugreifen auf Daten in einem Hostweb](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) weiter unten in diesem Artikel.
   - Gibt einen REST-Aufruf an den Listenelementendpunkt aus.
     
  
@@ -287,7 +297,7 @@ Falls Sie herunterladbare Codebeispiele bevorzugen, rufen Sie diese aus der Code
 
 |**Wird diese Fehlermeldung angezeigt...**|**Versuchen Sie Folgendes...**|
 |:-----|:-----|
-|Fehlermeldung: Zugriff auf Ihre Website nicht möglich. Es gibt zwar eine Schaltfläche zur Fehlerbehebung, aber sie löst nicht das Problem.|Möglicherweise haben Sie ein bekanntes Problem mit Sicherheitszonen in Internet Explorer. Weitere Informationen dazu finden Sie unter  [Arbeiten mit der domänenübergreifenden Bibliothek in verschiedenen Internet Explorer-Sicherheitszonen in Add-Ins für SharePoint](work-with-the-cross-domain-library-across-different-internet-explorer-security-zones-in-sharepoint-add-ins).|
+|Fehlermeldung: Zugriff auf Ihre Website nicht möglich. Es gibt zwar eine Schaltfläche zur Fehlerbehebung, aber sie löst nicht das Problem.|Möglicherweise haben Sie ein bekanntes Problem mit Sicherheitszonen in Internet Explorer. Weitere Informationen dazu finden Sie unter  [Arbeiten mit der domänenübergreifenden Bibliothek in verschiedenen Internet Explorer-Sicherheitszonen in Add-Ins für SharePoint](work-with-the-cross-domain-library-across-different-internet-explorer-security-z.md).|
 |Fehlermeldung: Die erforderlichen Funktionen werden von Ihrem Browser nicht unterstützt. Stellen Sie bitte sicher, dass Sie IE8 oder höher bzw. einen anderen modernen Browser verwenden. Stellen Sie bitte ferner sicher, dass das Metatag "X-UA-Compatible" auf "IE = 8" oder höher festgelegt ist.|Die domänenübergreifende Bibliothek erfordert den Dokumentmodus **IE8** oder höher. In einigen Fällen ist der Dokumentmodus standardmäßig auf **IE7** festgelegt. Sie können die Internet Explorer-Entwicklertools verwenden, um den Dokumentmodus der Seite zu ermitteln bzw. zu ändern. Weitere Informationen finden Sie unter [Definieren der Dokumentkompatibilität](http://msdn.microsoft.com/library/cc288325.aspx).|
 |Fehlermeldung: „Typ“ wurde nicht definiert. Ihr Add-In verwendet auch das JavaScript-Objektmodell (JSOM).|Das JSOM verwendet die **Type.registerNamespace**-Methode in der Microsoft Ajax-Bibliothek, um den **SP**-Namespace zu registrieren. Verwenden Sie den folgenden Code, um einen Verweis von Ihrer Webseite auf die Microsoft Ajax-Bibliothek zu erstellen:```HTML<script  type="text/javascript"  src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>```|
 
@@ -432,7 +442,7 @@ Ihr Add-In benötigt auch Zugriffsberechtigungen für Daten aus dem Mandanten. D
 </AppPermissionRequests>
 ```
 
-Wenn Sie die Kontextwebsite in Ihrem Code wechseln möchten, verwenden Sie den **AppContextSite**-Endpunkt (REST) oder das Objekt (JSOM), genau so wie im Abschnitt [Zugreifen auf Daten in einem Hostweb](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library#SP15Accessdatafromremoteapp_Hostweb) beschrieben. Hier finden Sie zur Erinnerung Informationen zum REST-Endpunkt: /_api/SP.AppContextSite(@target)/web/title?@target='weburl' und ein Beispiel zum Instanziieren des Objekts in JSOM: `appContextSite = new SP.AppContextSite(context, weburl);`.
+Wenn Sie die Kontextwebsite in Ihrem Code wechseln möchten, verwenden Sie den **AppContextSite**-Endpunkt (REST) oder das Objekt (JSOM), genau so wie im Abschnitt [Zugreifen auf Daten in einem Hostweb](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) beschrieben. Hier finden Sie zur Erinnerung Informationen zum REST-Endpunkt: /_api/SP.AppContextSite(@target)/web/title?@target='weburl' und ein Beispiel zum Instanziieren des Objekts in JSOM: `appContextSite = new SP.AppContextSite(context, weburl);`.
  
 
  
@@ -456,7 +466,7 @@ Die domänenübergreifende Bibliothek verwendet eine Proxyseite, die auf einem *
  
 
  
-Es gibt aber eine Lösung für diesen Fall. Die Lösung ist das **apphost-Muster**, das darin besteht, die Add-In-Seiten in einer Seite zu verpacken, die im Add-In-Web gehostet ist. Das apphost-Muster eignet sich gut in Add-Ins, die die domänenübergreifende Bibliothek verwenden, selbst wenn keine offensichtlichen Sicherheitsgrenzen vorhanden sind. Weitere Informationen finden Sie unter [Arbeiten mit der domänenübergreifenden Bibliothek in verschiedenen Internet Explorer-Sicherheitszonen in SharePoint-Add-Ins](work-with-the-cross-domain-library-across-different-internet-explorer-security-zones-in-sharepoint-add-ins).
+Es gibt aber eine Lösung für diesen Fall. Die Lösung ist das **apphost-Muster**, das darin besteht, die Add-In-Seiten in einer Seite zu verpacken, die im Add-In-Web gehostet ist. Das apphost-Muster eignet sich gut in Add-Ins, die die domänenübergreifende Bibliothek verwenden, selbst wenn keine offensichtlichen Sicherheitsgrenzen vorhanden sind. Weitere Informationen finden Sie unter [Arbeiten mit der domänenübergreifenden Bibliothek in verschiedenen Internet Explorer-Sicherheitszonen in SharePoint-Add-Ins](work-with-the-cross-domain-library-across-different-internet-explorer-security-z.md).
  
 
  
@@ -504,18 +514,18 @@ Wenn Sie ein Codebeispiel eines Von SharePoint gehostetes Add-In herunterladen m
 -  [Codebeispiel: Verwenden von benutzerdefinierten Aktionen und der domänenübergreifenden Bibliothek zum Bestellen von Büchern](http://code.msdn.microsoft.com/SharePoint-2013-Open-a-36d1598d)
     
  
--  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins)
+-  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
     
  
--  [Arbeiten mit der domänenübergreifenden Bibliothek in verschiedenen Internet Explorer-Sicherheitszonen in SharePoint-Add-Ins](work-with-the-cross-domain-library-across-different-internet-explorer-security-zones-in-sharepoint-add-ins)
+-  [Arbeiten mit der domänenübergreifenden Bibliothek in verschiedenen Internet Explorer-Sicherheitszonen in SharePoint-Add-Ins](work-with-the-cross-domain-library-across-different-internet-explorer-security-z.md)
     
  
--  [Erstellen einer benutzerdefinierten Proxyseite für die domänenübergreifende Bibliothek in SharePoint](create-a-custom-proxy-page-for-the-cross-domain-library-in-sharepoint-2013)
+-  [Erstellen einer benutzerdefinierten Proxyseite für die domänenübergreifende Bibliothek in SharePoint](create-a-custom-proxy-page-for-the-cross-domain-library-in-sharepoint.md)
     
  
--  [Abfragen eines Remotediensts mithilfe des Webproxys in SharePoint](query-a-remote-service-using-the-web-proxy-in-sharepoint-2013)
+-  [Abfragen eines Remotediensts mithilfe des Webproxys in SharePoint](query-a-remote-service-using-the-web-proxy-in-sharepoint.md)
     
  
--  [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins)
+-  [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md)
     
  

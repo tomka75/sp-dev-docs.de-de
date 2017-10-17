@@ -1,14 +1,24 @@
+---
+title: Erstellen eines einfachen von SharePoint gehosteten Add-Ins mithilfe von Napa Office 365-Entwicklungstools
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 1551c0a7d5cb453a5093563298c9afb9225f7997
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-a-basic-sharepoint-hosted-add-in-by-using-napa-office-365-development-tools"></a>Erstellen eines einfachen von SharePoint gehosteten Add-Ins mithilfe von Napa Office 365-Entwicklungstools
 Erfahren Sie, wie Sie ein einfaches von SharePoint gehostetes SharePoint-Add-In mithilfe von Napa Office 365-Entwicklungstools erstellen.
  
 
  
-![Schaltfläche „Ausführen“](../../images/Apps_NAPA_Run_Button.png)
+![Schaltfläche „Ausführen“](../images/Apps_NAPA_Run_Button.png)
  
  [Führen Sie jetzt dieses Beispiel aus!](http://go.microsoft.com/fwlink/?LinkId=313212)
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Napa ist ein Tool, mit dem Sie von SharePoint gehostete SharePoint-Add-Ins erstellen können. Napa selbst wird als ein (vom Anbieter gehostetes) SharePoint-Add-In implementiert, das auf SharePoint Online-Websites installiert werden kann, die mit der Vorlage **Entwicklerwebsite** erstellt werden. SharePoint-Entwicklerwebsites verfügen über eine Bibliothek namens **Add-Ins im Test** auf der Startseite. Anweisungen zum Erstellen einer Entwicklerwebsite und Installieren von Napa finden Sie weiter unten in diesem Artikel.
@@ -22,7 +32,7 @@ Durch die Verwendung von Napa können Sie Ihr SharePoint-Add-Ins im Browser stat
 Durch Befolgen der Schritte in diesem Artikel erfahren Sie, wie Sie ein einfaches in SharePoint gehostetes SharePoint-Add-In mithilfe von Napa erstellen. Das von Ihnen erstellte Add-In enhält Steuerelemente und Code für das Verwalten von Listen und Listenelementen. 
  
 
- **Hinweis** Sie können mit Napa nur von SharePoint gehostete SharePoint-Add-Ins erstellen, keine vom Anbieter gehosteten. Informationen zu den Unterschieden finden Sie unter [SharePoint-Add-Ins](sharepoint-add-ins). Sie können in Napa nicht die Aktualisierungssemantik für SharePoint-Add-Ins verwenden, die in [Aktualisieren von Add-In-Webkomponenten in SharePoint](update-add-in-web-components-in-sharepoint-2013) beschrieben wird. Wenn Sie also ein in Napa erstelltes Add-In aktualisieren müssen, müssen Sie es zuerst in Visual Studio exportieren. Anweisungen hierzu finden Sie weiter unten in diesem Artikel. Sie können auch mit Visual Studio ein SharePoint-Add-In erstellen. Weitere Informationen finden Sie unter [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins).
+ **Hinweis** Sie können mit Napa nur von SharePoint gehostete SharePoint-Add-Ins erstellen, keine vom Anbieter gehosteten. Informationen zu den Unterschieden finden Sie unter [SharePoint-Add-Ins](sharepoint-add-ins.md). Sie können in Napa nicht die Aktualisierungssemantik für SharePoint-Add-Ins verwenden, die in [Aktualisieren von Add-In-Webkomponenten in SharePoint](update-add-in-web-components-in-sharepoint.md) beschrieben wird. Wenn Sie also ein in Napa erstelltes Add-In aktualisieren müssen, müssen Sie es zuerst in Visual Studio exportieren. Anweisungen hierzu finden Sie weiter unten in diesem Artikel. Sie können auch mit Visual Studio ein SharePoint-Add-In erstellen. Weitere Informationen finden Sie unter [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md).
  
 
 
@@ -34,7 +44,7 @@ Wenn Sie noch kein SharePoint Online-Abonnement haben, das Sie für die Entwicku
 
  
 
- **Hinweis** Sie haben möglicherweise bereits Zugriff auf eine Office 365-Entwicklerwebsite: **Sind Sie MSDN-Abonnent?** Visual Studio Ultimate und Visual Studio Premium mit MSDN-Abonnenten erhalten ein Office 365-Entwicklerabonnement als Vorteil. [Lösen Sie Ihren Vorteil noch heute ein. ](https://msdn.microsoft.com/subscriptions/manage/default.aspx) **Haben Sie einen der folgenden Office 365-Abonnementpläne?** **Wenn ja, kann ein Administrator des Office 365-Abonnements eine Entwicklerwebsite erstellen**, und zwar im [Office 365 Admin Center](https://portal.microsoftonline.com/admin/default.aspx). Weitere Informationen finden Sie unter [Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnement](create-a-developer-site-on-an-existing-office-365-subscription). 
+ **Hinweis** Sie haben möglicherweise bereits Zugriff auf eine Office 365-Entwicklerwebsite: **Sind Sie MSDN-Abonnent?** Visual Studio Ultimate und Visual Studio Premium mit MSDN-Abonnenten erhalten ein Office 365-Entwicklerabonnement als Vorteil. [Lösen Sie Ihren Vorteil noch heute ein. ](https://msdn.microsoft.com/subscriptions/manage/default.aspx) **Haben Sie einen der folgenden Office 365-Abonnementpläne?** **Wenn ja, kann ein Administrator des Office 365-Abonnements eine Entwicklerwebsite erstellen**, und zwar im [Office 365 Admin Center](https://portal.microsoftonline.com/admin/default.aspx). Weitere Informationen finden Sie unter [Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnement](create-a-developer-site-on-an-existing-office-365-subscription.md). 
  
 
 Es gibt zwei Wege zu einem Office 365-Plan. 
@@ -58,7 +68,7 @@ Es gibt zwei Wege zu einem Office 365-Plan.
  
 
  
-![Seite 2 des Registrierungsformulars für das Office 365-Konto](../../images/ff384c69-56bf-4ceb-81c3-8b874e2407f0.png)
+![Seite 2 des Registrierungsformulars für das Office 365-Konto](../images/ff384c69-56bf-4ceb-81c3-8b874e2407f0.png)
  
 
  
@@ -96,7 +106,7 @@ Nachdem Sie die Registrierung abgeschlossen haben, wird in Ihrem Browser die Off
  
 
  
-![Screenshot mit dem Office 365 Admin Center](../../images/SP15_Office365AdminInset_border.png)
+![Screenshot mit dem Office 365 Admin Center](../images/SP15_Office365AdminInset_border.png)
  
 
  
@@ -116,7 +126,7 @@ Nachdem Sie die Registrierung abgeschlossen haben, wird in Ihrem Browser die Off
  
 
  
-![Screenshot, auf dem die Entwicklerwebsite-Startseite angezeigt ist](../../images/SP15_DeveloperSiteHome_border.png)
+![Screenshot, auf dem die Entwicklerwebsite-Startseite angezeigt ist](../images/SP15_DeveloperSiteHome_border.png)
  
 
  
@@ -126,7 +136,7 @@ Nachdem Sie die Registrierung abgeschlossen haben, wird in Ihrem Browser die Off
 ## <a name="install-napa"></a>Installieren von Napa
 <a name="Overview"> </a>
 
-Wenn Ihr -Abonnement ursprünglich nicht als eine Website für Office 365-Entwickler erstellt wurde, müssen Sie in der Verwaltungsbenutzeroberfläche des -Abonnements eine Entwicklerwebsite erstellen und dann Napa darin installieren. Anweisungen für das Erstellen der Website finden Sie unter  [Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnement](create-a-developer-site-on-an-existing-office-365-subscription).
+Wenn Ihr -Abonnement ursprünglich nicht als eine Website für Office 365-Entwickler erstellt wurde, müssen Sie in der Verwaltungsbenutzeroberfläche des -Abonnements eine Entwicklerwebsite erstellen und dann Napa darin installieren. Anweisungen für das Erstellen der Website finden Sie unter  [Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnement](create-a-developer-site-on-an-existing-office-365-subscription.md).
  
 
  
@@ -376,7 +386,7 @@ Der erste Teil der Benutzeroberfläche und des Codes ist jetzt fertig. Sie sollt
 
 1. Wählen Sie unten auf der Seite die Ausführungsschaltfläche (
  
-![Schaltfläche "Ausführen"](../../images/Apps_NAPA_Run_Button.png)
+![Schaltfläche "Ausführen"](../images/Apps_NAPA_Run_Button.png)
  
 Ausführen).
     
@@ -626,7 +636,7 @@ Die gesamte Benutzeroberfläche und der gesamte Code ist jetzt fertig. Sie sollt
  
 
  
-![Schaltfläche „In Visual Studio öffnen“](../../images/Apps_Napa_OpenInVS.png)
+![Schaltfläche „In Visual Studio öffnen“](../images/Apps_Napa_OpenInVS.png)
  
 
  
@@ -640,7 +650,7 @@ Die gesamte Benutzeroberfläche und der gesamte Code ist jetzt fertig. Sie sollt
 -  [Übersicht über die SharePoint-Entwicklung](http://msdn.microsoft.com/library/f86e2695-4d7a-4fc5-bc23-689de96c4b06%28Office.15%29.aspx)
     
  
--  [SharePoint-Add-Ins](sharepoint-add-ins)
+-  [SharePoint-Add-Ins](sharepoint-add-ins.md)
     
  
 

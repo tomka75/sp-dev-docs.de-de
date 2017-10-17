@@ -1,12 +1,22 @@
+---
+title: "Lokalisieren von Add-Ins für SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 2203f26ffd261166e71c02b012216008480f21ae
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="localize-sharepoint-add-ins"></a>Lokalisieren von Add-Ins für SharePoint
 Lokalisieren Sie ein SharePoint-Add-In mithilfe von Ressourcendateien, JavaScript-Ressourcendateien und anderen Techniken.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
- **Hinweis** In diesem Thema wird davon ausgegangen, dass Sie mit der grundlegenden Erstellung von SharePoint-Add-Ins ebenso vertraut sind wie mit SharePoint-Features, dem Unterschied zwischen Add-In-Webs und Hostwebs,  [welche Arten von SharePoint-Komponenten in einem Add-In enthalten sein können](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013#TypesOfSPComponentsInApps) und den Grundlagen der Lokalisierung mit RESX-Dateien.
+ **Hinweis** In diesem Thema wird davon ausgegangen, dass Sie mit der grundlegenden Erstellung von SharePoint-Add-Ins ebenso vertraut sind wie mit SharePoint-Features, dem Unterschied zwischen Add-In-Webs und Hostwebs,  [welche Arten von SharePoint-Komponenten in einem Add-In enthalten sein können](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#TypesOfSPComponentsInApps) und den Grundlagen der Lokalisierung mit RESX-Dateien.
  
 
 
@@ -39,7 +49,7 @@ Achten Sie auch auf Folgendes:
 ## <a name="localize-the-add-in-web-components"></a>Lokalisieren der Add-In-Web-Komponenten
 <a name="LocalizingAppWeb"> </a>
 
-Ein Add-In-Web kann bestimmte Arten von SP-Komponenten enthalten. Weitere Informationen zu den verschiedenen Arten von SharePoint-Komponenten, die in einem SharePoint-Add-In enthalten sein können, finden Sie unter  [Typen von SharePoint-Komponenten, die in einem SharePoint-Add-In enthalten sein können](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013#TypesOfSPComponentsInApps). Zum Lokalisieren von Komponenten, die für ein Add-In-Web bereitgestellt werden, fügen Sie RESX-Dateien in Modulen im selben Feature hinzu, das die Add-In-Web-Komponente enthält. Sie verweisen im Markup der Komponente auf die Ressource. Wie das geht, wird weiter unten in diesem Artikel erläutert. Auf benutzerdefinierten Websiteseiten in einem SharePoint-Add-In werden anstelle von RESX-Dateien jedoch JavaScript-Zeichenfolgenvariablendateien verwendet, wie weiter unten in diesem Abschnitt beschrieben.
+Ein Add-In-Web kann bestimmte Arten von SP-Komponenten enthalten. Weitere Informationen zu den verschiedenen Arten von SharePoint-Komponenten, die in einem SharePoint-Add-In enthalten sein können, finden Sie unter  [Typen von SharePoint-Komponenten, die in einem SharePoint-Add-In enthalten sein können](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#TypesOfSPComponentsInApps). Zum Lokalisieren von Komponenten, die für ein Add-In-Web bereitgestellt werden, fügen Sie RESX-Dateien in Modulen im selben Feature hinzu, das die Add-In-Web-Komponente enthält. Sie verweisen im Markup der Komponente auf die Ressource. Wie das geht, wird weiter unten in diesem Artikel erläutert. Auf benutzerdefinierten Websiteseiten in einem SharePoint-Add-In werden anstelle von RESX-Dateien jedoch JavaScript-Zeichenfolgenvariablendateien verwendet, wie weiter unten in diesem Abschnitt beschrieben.
  
 
  
@@ -125,7 +135,7 @@ Ein Add-In-Web kann bestimmte Arten von SP-Komponenten enthalten. Weitere Inform
 
  
 
-  ![Eine lokalisierte benutzerdefinierte Liste](../../images/LocSPApp_AppwebList.png)
+  ![Eine lokalisierte benutzerdefinierte Liste](../images/LocSPApp_AppwebList.png)
  
 
  
@@ -281,7 +291,7 @@ var step07 = "Review the localized <a href=\"../Lists/Orders\">Orders</a>" +
 
  
 
-  ![Eine SharePoint-Seite mit lokalisierten Zeichenfolgen](../../images/LocSPApp_AppwebPage.png)
+  ![Eine SharePoint-Seite mit lokalisierten Zeichenfolgen](../images/LocSPApp_AppwebPage.png)
  
 
  
@@ -382,7 +392,7 @@ protected override void InitializeCulture()
 ## <a name="localize-remote-javascript-and-the-sharepoint-chrome-control"></a>Lokalisieren des Remote-JavaScript- und des SharePoint-Chromsteuerelements
 <a name="JSandChrome"> </a>
 
-Wenn lokalisierbare Zeichenfolgenwerte im JavaScript Ihrer Webanwendung vorhanden sind, können Sie sie mithilfe der JavaScript-Ressourcendateien lokalisieren. Ein besonders wichtiges Beispiel eines lokalisierbaren JavaScript ist das  [SharePoint-Chromsteuerelement](use-the-client-chrome-control-in-sharepoint-add-ins), das dazu verwendet werden kann, Remoteseiten das Design von SharePoint-Seiten zu verleihen. Wir verwenden die Lokalisierung des Chromsteuerelements in diesem Abschnitt als Beispiel.
+Wenn lokalisierbare Zeichenfolgenwerte im JavaScript Ihrer Webanwendung vorhanden sind, können Sie sie mithilfe der JavaScript-Ressourcendateien lokalisieren. Ein besonders wichtiges Beispiel eines lokalisierbaren JavaScript ist das  [SharePoint-Chromsteuerelement](use-the-client-chrome-control-in-sharepoint-add-ins.md), das dazu verwendet werden kann, Remoteseiten das Design von SharePoint-Seiten zu verleihen. Wir verwenden die Lokalisierung des Chromsteuerelements in diesem Abschnitt als Beispiel.
  
 
  
@@ -525,7 +535,7 @@ Testen Sie Ihr Add-In, indem Sie es für eine SharePoint-Website bereitstellen, 
  
 
  
-![Seite „Websitesammlung erstellen“](../../images/LocSPApp_TestCreatesite.png)
+![Seite „Websitesammlung erstellen“](../images/LocSPApp_TestCreatesite.png)
  
 
 ### <a name="to-test-your-add-in-an-on-premises-website"></a>So testen Sie Ihr Add-In auf einer lokalen Website
@@ -556,7 +566,7 @@ Testen Sie Ihr Add-In, indem Sie es für eine SharePoint-Website bereitstellen, 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 <a name="SP15Localizeapp_addlresources"> </a>
 
--  [Entwickeln von SharePoint-Add-Ins](develop-sharepoint-add-ins)
+-  [Entwickeln von SharePoint-Add-ins](develop-sharepoint-add-ins.md)
 -  [Lokalisierung für Office-Add-Ins](http://msdn.microsoft.com/library/5a1a1cd7-b716-4597-b51f-fa70357d0833%28Office.15%29.aspx)
 -  [ASP.NET-Globalisierung und -Lokalisierung](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d.aspx)
 -  [SharePoint-Add-in-Localization](https://github.com/OfficeDev/SharePoint-Add-in-Localization)

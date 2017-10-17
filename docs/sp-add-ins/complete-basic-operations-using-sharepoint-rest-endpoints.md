@@ -1,23 +1,33 @@
+---
+title: "Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 8123b3bfa78cd43f337633618c3ed0453c396702
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="complete-basic-operations-using-sharepoint-rest-endpoints"></a>Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten
 In diesem Artikel erfahren Sie, wie Sie grundlegende Erstellungs-, Lese-, Aktualisierungs- und Löschoperationen, auch als CRUD-Operationen (Create, Read, Update, Delete) bezeichnet, mit der SharePoint REST-Schnittstelle durchführen.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
 ## <a name="developing-with-the-sharepoint-client-apis-and-rest"></a>Entwickeln mit SharePoint-Client-APIs und REST
 <a name="ClientAPIs"> </a>
 
-Sie können grundlegende Erstellungs-, Lese-, Aktualisierungs- und Löschoperationen (Create, Read, Update, Delete: CRUD) durchführen, indem Sie die von SharePoint bereitgestellte REST (Representational State Transfer)-Schnittstelle verwenden. Die REST-Schnittstelle macht alle SharePoint-Entitäten und -Operationen verfügbar, die in den anderen SharePoint-Client-APIs verfügbar sind. Ein Vorteil bei der Verwendung von REST besteht darin, dass Sie keine Verweise auf SharePoint-Bibliotheken oder Client-Assemblys hinzufügen müssen. Statt dessen führen Sie HTTP-Anforderungen an die entsprechenden Endpunkte durch, um SharePoint-Entitäten wie Websites, Listen und Listenelemente abzurufen oder zu aktualisieren. Unter  [Einführung in den SharePoint REST-Dienst](get-to-know-the-sharepoint-2013-rest-service) finden Sie eine ausführliche Einführung zur SharePoint-REST-Schnittstelle und ihrer Architektur.
+Sie können grundlegende Erstellungs-, Lese-, Aktualisierungs- und Löschoperationen (Create, Read, Update, Delete: CRUD) durchführen, indem Sie die von SharePoint bereitgestellte REST (Representational State Transfer)-Schnittstelle verwenden. Die REST-Schnittstelle macht alle SharePoint-Entitäten und -Operationen verfügbar, die in den anderen SharePoint-Client-APIs verfügbar sind. Ein Vorteil bei der Verwendung von REST besteht darin, dass Sie keine Verweise auf SharePoint-Bibliotheken oder Client-Assemblys hinzufügen müssen. Statt dessen führen Sie HTTP-Anforderungen an die entsprechenden Endpunkte durch, um SharePoint-Entitäten wie Websites, Listen und Listenelemente abzurufen oder zu aktualisieren. Unter  [Einführung in den SharePoint REST-Dienst](get-to-know-the-sharepoint-rest-service.md) finden Sie eine ausführliche Einführung zur SharePoint-REST-Schnittstelle und ihrer Architektur.
  
 
  
- Unter  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest) und [Arbeiten mit Ordnern und Dateien mit REST](working-with-folders-and-files-with-rest) wird die Verwendung von SharePoint-Kernentitäten ausführlich erläutert. Unter [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations) ist ein Beispiel enthalten, das Ihnen zeigt, wie Sie viele dieser Operationen im Kontext einer in C# geschriebenen ASP.NET-Webanwendung durchführen können.
+ Unter  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest.md) und [Arbeiten mit Ordnern und Dateien mit REST](working-with-folders-and-files-with-rest.md) wird die Verwendung von SharePoint-Kernentitäten ausführlich erläutert. Unter [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations.md) ist ein Beispiel enthalten, das Ihnen zeigt, wie Sie viele dieser Operationen im Kontext einer in C# geschriebenen ASP.NET-Webanwendung durchführen können.
  
 
  
-Weitere Einzelheiten über die Gruppen von APIs, die auf der SharePoint-Plattform verfügbar sind, finden Sie unter  [Auswählen des richtigen API-Satzes in SharePoint](http://msdn.microsoft.com/library/f36645da-77c5-47f1-a2ca-13d4b62b320d%28Office.15%29.aspx). Informationen über die Verwendung der anderen Client-APIs finden Sie unter  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013),  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013) und [Erstellen von Windows Phone-Apps, die auf SharePoint zugreifen](http://msdn.microsoft.com/library/36681335-f772-4499-8445-f94481bc18e7%28Office.15%29.aspx).
+Weitere Einzelheiten über die Gruppen von APIs, die auf der SharePoint-Plattform verfügbar sind, finden Sie unter  [Auswählen des richtigen API-Satzes in SharePoint](http://msdn.microsoft.com/library/f36645da-77c5-47f1-a2ca-13d4b62b320d%28Office.15%29.aspx). Informationen über die Verwendung der anderen Client-APIs finden Sie unter  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md),  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md) und [Erstellen von Windows Phone-Apps, die auf SharePoint zugreifen](http://msdn.microsoft.com/library/36681335-f772-4499-8445-f94481bc18e7%28Office.15%29.aspx).
  
 
  
@@ -65,7 +75,7 @@ Um Informationen aus einem REST-Endpunkt zu lesen, müssen Sie die URL des Endpu
  
 
  
-Der folgende C#-Code zeigt die Vorgehensweise zum Durchführen der **GET**-Anforderung, die eine JSON-Darstellung aller Listen einer Website mithilfe von JQuery zurückgibt. Dabei wird auch davon ausgegangen, dass Sie einen gültigen OAuth-Zugriffstoken installiert haben, der in der **accessToken**-Variablen gespeichert ist. Sie benötigen den Zugriffstoken nicht, wenn Sie den Aufruf, wie bei einem in SharePoint gehosteten Add-In, innerhalb einer Add-In-Website vornehmen. Beachten Sie, dass Sie den Zugriffstoken nicht aus Code abrufen können, der auf einem Browserclient ausgeführt wird. Sie müssen den Zugriffstoken aus Code abrufen, der auf einem Server ausgeführt wird. Unter  [OAuth-Ablauf mit Kontexttoken für Add-Ins in SharePoint](context-token-oauth-flow-for-sharepoint-add-ins) und [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins) wird erläutert, wie Sie einen Zugriffstoken abrufen können.
+Der folgende C#-Code zeigt die Vorgehensweise zum Durchführen der **GET**-Anforderung, die eine JSON-Darstellung aller Listen einer Website mithilfe von JQuery zurückgibt. Dabei wird auch davon ausgegangen, dass Sie einen gültigen OAuth-Zugriffstoken installiert haben, der in der **accessToken**-Variablen gespeichert ist. Sie benötigen den Zugriffstoken nicht, wenn Sie den Aufruf, wie bei einem in SharePoint gehosteten Add-In, innerhalb einer Add-In-Website vornehmen. Beachten Sie, dass Sie den Zugriffstoken nicht aus Code abrufen können, der auf einem Browserclient ausgeführt wird. Sie müssen den Zugriffstoken aus Code abrufen, der auf einem Server ausgeführt wird. Unter  [OAuth-Ablauf mit Kontexttoken für Add-Ins in SharePoint](context-token-oauth-flow-for-sharepoint-add-ins.md) und [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins.md) wird erläutert, wie Sie einen Zugriffstoken abrufen können.
  
 
  
@@ -86,7 +96,7 @@ HttpWebResponse endpointResponse =
 
 ```
 
-Diese Anforderung würde etwas anders aussehen, wenn Sie Ihr Add-In in JavaScript schreiben, jedoch die domänenübergreifende SharePoint-Bibliothek verwenden. In diesem Fall müssen Sie keinen Zugriffstoken zur Verfügung stellen. Der folgende Code zeigt, wie die Anforderung aussehen würde, wenn Sie die domänenübergreifende Bibliothek verwenden und die OData-Darstellung der Listen im XML-Format anstatt im JSON-Format erfolgen soll. (Da Atom das Standardantwortformat ist, müssen Sie keinen **Accept**-Header einfügen.) Weitere Informationen über die Verwendung der domänenübergreifenden Bibliothek finden Sie unter  [Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library).
+Diese Anforderung würde etwas anders aussehen, wenn Sie Ihr Add-In in JavaScript schreiben, jedoch die domänenübergreifende SharePoint-Bibliothek verwenden. In diesem Fall müssen Sie keinen Zugriffstoken zur Verfügung stellen. Der folgende Code zeigt, wie die Anforderung aussehen würde, wenn Sie die domänenübergreifende Bibliothek verwenden und die OData-Darstellung der Listen im XML-Format anstatt im JSON-Format erfolgen soll. (Da Atom das Standardantwortformat ist, müssen Sie keinen **Accept**-Header einfügen.) Weitere Informationen über die Verwendung der domänenübergreifenden Bibliothek finden Sie unter  [Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md).
  
 
  
@@ -171,7 +181,7 @@ HttpWebResponse endpointResponse =
 
 ```
 
-Wenn Sie den unter  [Autorisierung und Authentifizierung für Add-Ins in SharePoint](authorization-and-authentication-of-sharepoint-add-ins) beschriebenen Authentifizierungs- und Autorisierungsablauf verwenden, müssen Sie den Anforderungsdigest nicht in Ihre Anforderungen einschließen.
+Wenn Sie den unter  [Autorisierung und Authentifizierung für Add-Ins in SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md) beschriebenen Authentifizierungs- und Autorisierungsablauf verwenden, müssen Sie den Anforderungsdigest nicht in Ihre Anforderungen einschließen.
  
 
  
@@ -307,7 +317,7 @@ Wenn Sie eine POST-Anforderung senden, muss die Anforderung im **X-RequestDigest
  "X-RequestDigest": $("#__REQUESTDIGEST").val()
     
  
-- Rufen Sie in Cloud-gehosteten Add-Ins, die OAuth verwenden, zuerst den Formulardigestwert ab, indem sie eine Anforderung an den **contextinfo**-Endpunkt senden, und dann der Anforderung den Wert hinzufügen, wie unter  [Schreiben von Daten unter Verwendung der REST-Schnittstelle](complete-basic-operations-using-sharepoint-2013-rest-endpoints#WritingData) gezeigt.
+- Rufen Sie in Cloud-gehosteten Add-Ins, die OAuth verwenden, zuerst den Formulardigestwert ab, indem sie eine Anforderung an den **contextinfo**-Endpunkt senden, und dann der Anforderung den Wert hinzufügen, wie unter [Schreiben von Daten unter Verwendung der REST-Schnittstelle](complete-basic-operations-using-sharepoint-rest-endpoints.md#WritingData) gezeigt.
     
  
 - In Cloud-gehosteten Add-Ins, welche die domänenübergreifende JavaScript-Bibliothek verwenden, müssen Sie den Formulardigestwert nicht angeben. SP.RequestExecutor gibt diesen automatisch für Sie an (ebenso wie den Inhalt-Länge-Wert).
@@ -317,7 +327,7 @@ Wenn Sie eine POST-Anforderung senden, muss die Anforderung im **X-RequestDigest
 ### <a name="add-ins-that-use-oauth-must-pass-access-tokens-in-requests"></a>Add-Ins, die OAuth verwenden, müssen Zugriffstoken in Anforderungen übergeben
 <a name="OAuthTokens"> </a>
 
-In der Cloud gehostete Add-Ins autorisieren den Zugriff auf SharePoint-Daten entweder mit OAuth oder mit der domänenübergreifenden Bibliothek. Add-In-Komponenten mit auf einem Remotewebserver ausgeführtem Code müssen OAuth verwenden, um den Zugriff auf SharePoint-Daten zu autorisieren. In diesem Fall müssen Sie einen **Authorization**-Header zum Senden des Zugriffstokens einbeziehen. Unter [Lesen von Daten mit der SharePoint REST-Schnittstelle](complete-basic-operations-using-sharepoint-2013-rest-endpoints#ReadingData) finden Sie ein Beispiel, in dem einem **HTTPWebRequest**-Objekt ein Autorisierungsheader hinzugefügt wird.
+In der Cloud gehostete Add-Ins autorisieren den Zugriff auf SharePoint-Daten entweder mit OAuth oder mit der domänenübergreifenden Bibliothek. Add-In-Komponenten mit auf einem Remotewebserver ausgeführtem Code müssen OAuth verwenden, um den Zugriff auf SharePoint-Daten zu autorisieren. In diesem Fall müssen Sie einen **Authorization**-Header zum Senden des Zugriffstokens einbeziehen. Unter [Lesen von Daten mit der SharePoint REST-Schnittstelle](complete-basic-operations-using-sharepoint-rest-endpoints.md#ReadingData) finden Sie ein Beispiel, in dem einem **HTTPWebRequest**-Objekt ein Autorisierungsheader hinzugefügt wird.
  
 
  
@@ -325,7 +335,7 @@ In der Cloud gehostete Add-Ins autorisieren den Zugriff auf SharePoint-Daten ent
  **Hinweis** In der Cloud gehostete Add-In-Komponenten, die in JavaScript geschrieben wurden, müssen zum Zugreifen auf SharePoint-Daten das **SP.RequestExecutor**-Objekt in der domänenübergreifenden Bibliothek verwenden. Domänenübergreifende Bibliotheksanforderungen müssen kein Zugriffstoken enthalten.
  
 
-Weitere Informationen zu OAuth-Zugriffstoken und zum Abrufen dieser Token finden Sie unter  [OAuth-Ablauf mit Kontexttoken für Add-Ins in SharePoint](context-token-oauth-flow-for-sharepoint-add-ins) und [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins).
+Weitere Informationen zu OAuth-Zugriffstoken und zum Abrufen dieser Token finden Sie unter  [OAuth-Ablauf mit Kontexttoken für Add-Ins in SharePoint](context-token-oauth-flow-for-sharepoint-add-ins.md) und [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins.md).
  
 
  
@@ -359,10 +369,10 @@ Domänenübergreifende Bibliotheksanforderungen verwenden dieses Format für den
 |In der Cloud gehostet|JavaScript-Add-In-Komponente, die mithilfe der domänenübergreifenden Bibliothek auf Daten zugreift, die sich in einer anderen Websitesammlung als dem Hostweb befinden (gilt nur für Add-Ins mit Mandantenbereich)| _<app web url>_/_api/SP.AppContextSite(@target)/web/title?@target=' _<target site url>_'|
 |Auf SharePoint gehostet|Add-In-Webkomponente, die auf Daten einer anderen Websitesammlung zugreift (gilt nur für Add-Ins mit Mandantenbereich)| _<app web url>_/_api/SP.AppContextSite(@target)/web/title?@target=' _<target site url>_'|
 
- **Hinweis** In Szenarien für den domänenübergreifenden Datenzugriff sind auch die entsprechenden Add-In-Berechtigungen erforderlich. Weitere Informationen finden Sie unter  [Zugreifen auf Daten in einem Hostweb](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library#SP15Accessdatafromremoteapp_Hostweb) und [Zugreifen auf Daten in allen Websitesammlungen](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library#SP15Accessdatafromremoteapp_TenantScope).
+ **Hinweis** In Szenarien für den domänenübergreifenden Datenzugriff sind auch die entsprechenden Add-In-Berechtigungen erforderlich. Weitere Informationen finden Sie unter  [Zugreifen auf Daten in einem Hostweb](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) und [Zugreifen auf Daten in allen Websitesammlungen](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_TenantScope).
  
 
-SharePoint-Add-Ins können die Add-In-Web-URL und die Hostweb-URL aus der Abfragezeichenfolge der Add-In-Seite abrufen. Dies wird im folgenden Codebeispiel gezeigt. Aus dem Beispiel geht außerdem hervor, wie auf die domänenübergreifende Bibliothek verwiesen wird, die im Hostweb in der Datei "SP.RequestExecutor.js" definiert ist. In dem Beispiel wird davon ausgegangen, dass Ihr Add-In über SharePoint gestartet wird. Unter  [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins) finden Sie Anleitungen, wie Sie Ihren SharePoint-Kontext richtig festlegen, wenn das Add-In nicht über SharePoint gestartet wird.
+SharePoint-Add-Ins können die Add-In-Web-URL und die Hostweb-URL aus der Abfragezeichenfolge der Add-In-Seite abrufen. Dies wird im folgenden Codebeispiel gezeigt. Aus dem Beispiel geht außerdem hervor, wie auf die domänenübergreifende Bibliothek verwiesen wird, die im Hostweb in der Datei "SP.RequestExecutor.js" definiert ist. In dem Beispiel wird davon ausgegangen, dass Ihr Add-In über SharePoint gestartet wird. Unter  [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins.md) finden Sie Anleitungen, wie Sie Ihren SharePoint-Kontext richtig festlegen, wenn das Add-In nicht über SharePoint gestartet wird.
  
 
  
@@ -438,7 +448,7 @@ In Tabelle 2 sind häufig in HTTP-Anforderungen für den SharePoint-REST-Dienst
 ## <a name="batch-job-support"></a>Unterstützung für Batchaufträge
 <a name="batch"> </a>
 
-Der SharePoint Online-REST-Dienst unterstützt die Kombination mehrerer Anforderungen in einem einzelnen Dienstaufruf mithilfe der OData-Abfrageoption  `$batch`. Einzelheiten und Links zu Codebeispielen finden Sie unter  [Erstellen von Batchanforderungen mit den REST-APIs](make-batch-requests-with-the-rest-apis).
+Der SharePoint Online-REST-Dienst unterstützt die Kombination mehrerer Anforderungen in einem einzelnen Dienstaufruf mithilfe der OData-Abfrageoption  `$batch`. Einzelheiten und Links zu Codebeispielen finden Sie unter  [Erstellen von Batchanforderungen mit den REST-APIs](make-batch-requests-with-the-rest-apis.md).
  
 
  
@@ -447,31 +457,31 @@ Der SharePoint Online-REST-Dienst unterstützt die Kombination mehrerer Anforder
 <a name="bk_addresources"> </a>
 
 
--  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest)
+-  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest.md)
     
  
--  [Arbeiten mit Ordnern und Dateien mit REST](working-with-folders-and-files-with-rest)
+-  [Arbeiten mit Ordnern und Dateien unter Verwendung von REST](working-with-folders-and-files-with-rest.md)
     
  
 -  [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
     
  
--  [SharePoint: Ausführen grundlegender Datenzugriffsvorgänge für Dateien und Ordner mithilfe von REST](http://code.msdn.microsoft.com/SharePoint-2013-Perform-ab9c4ae5)
+-  [SharePoint: Ausführen grundlegender Datenzugriffsvorgänge für Dateien und Ordner mithilfe von REST](http://code.msdn.microsoft.com/SharePoint-Perform-ab9c4ae5)
     
  
--  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode](complete-basic-operations-using-sharepoint-2013-client-library-code)
+-  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode](complete-basic-operations-using-sharepoint-client-library-code.md)
     
  
--  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013)
+-  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md)
     
  
--  [Entwickeln von Add-Ins für SharePoint](develop-sharepoint-add-ins)
+-  [Entwickeln von SharePoint-Add-ins](develop-sharepoint-add-ins.md)
     
  
--  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins)
+-  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
     
  
--  [Arbeiten mit externen Daten in SharePoint](work-with-external-data-in-sharepoint-2013)
+-  [Arbeiten mit externen Daten in SharePoint](work-with-external-data-in-sharepoint.md)
     
  
 -  [Open Data Protocol](http://www.odata.org/)
@@ -480,7 +490,7 @@ Der SharePoint Online-REST-Dienst unterstützt die Kombination mehrerer Anforder
 -  [OData: JSON(JavaScript Object Notation)-Format](http://www.odata.org/documentation/odata-version-2-0/JSON-format/)
     
  
--  [Festlegen von benutzerdefinierten Berechtigungen in einer Liste mit der REST-Schnittstelle](set-custom-permissions-on-a-list-by-using-the-rest-interface)
+-  [Festlegen von benutzerdefinierten Berechtigungen in einer Liste mit der REST-Schnittstelle](set-custom-permissions-on-a-list-by-using-the-rest-interface.md)
     
  
 

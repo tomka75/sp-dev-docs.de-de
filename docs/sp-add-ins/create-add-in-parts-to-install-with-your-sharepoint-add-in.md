@@ -1,20 +1,30 @@
+---
+title: Erstellen von Add-In-Webparts zur Installation mit Ihrem SharePoint-Add-In
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 8e92869e62750e342019f106825df1eace09d0b9
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-add-in-parts-to-install-with-your-sharepoint-add-in"></a>Erstellen von Add-In-Webparts zur Installation mit Ihrem SharePoint-Add-In
 In diesem Artikel erfahren Sie, wie Sie ein Add-In-Webpart in SharePoint erstellen, das im Webpartkatalog des Hostwebs verfügbar ist, wenn Sie das SharePoint-Add-In bereitstellen.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Mit Add-In-Webparts können Sie die Benutzererfahrung Ihres Add-Ins direkt auf den SharePoint-Websiteseiten anzeigen. Ein Add-In-Webpart zeigt die von Ihnen angegebene Webseite (normalerweise ein interaktives Formular oder eine dynamische Anzeige von Daten) mithilfe eines **IFrame** (der auch als Frame bezeichnet wird) auf einer Seite im [Hostweb](http://msdn.microsoft.com/library/fp179925.aspx) an. Weitere Informationen zu Add-In-Webparts finden Sie in den folgenden Artikeln:
  
 
--  [Zugreifen auf das Add-In über die Benutzeroberfläche](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape#AccessingApp)
+-  [Zugreifen auf das Add-In über die Benutzeroberfläche](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md#AccessingApp)
     
  
--  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins)
+-  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins.md)
     
  
--  [Erweitern der SharePoint-Benutzeroberfläche in Add-Ins](sharepoint-add-ins-ux-design-guidelines#UXGuide_Extending)
+-  [Erweitern der SharePoint-Benutzeroberfläche in Add-Ins](sharepoint-add-ins-ux-design-guidelines.md#UXGuide_Extending)
     
  
 In Abbildung 1 ist gezeigt, wie der Inhalt des Add-In-Webparts auf einer SharePoint-Seite angezeigt wird.
@@ -25,7 +35,7 @@ In Abbildung 1 ist gezeigt, wie der Inhalt des Add-In-Webparts auf einer SharePo
  
 
  
-![Inhalt des Add-In-Webparts dargestellt auf einer SharePoint-Seite](../../images/AppParts_ConceptualArchitecture.png)
+![Inhalt des Add-In-Webparts dargestellt auf einer SharePoint-Seite](../images/AppParts_ConceptualArchitecture.png)
  
 Ein Add-In-Webpart wird mit der Klasse **ClientWebPart** implementiert und steht wie alle Webparts im Add-In-Webpartkatalog zur Verfügung, wenn ein Benutzer das SharePoint Add-In installiert, in dem es enthalten ist. Ihre Benutzer können das Add-In-Webpart mit den von Ihnen bereitgestellten Eigenschaften weiter anpassen. (Ein Beispiel für konfigurierbare Eigenschaften in einem Add-In-Webpart finden Sie in Abbildung 2 unten.)
  
@@ -46,7 +56,7 @@ Um die Schritte in diesem Beispiel auszuführen, benötigen Sie Folgendes:
 - Microsoft Office Developer Tools für Visual Studio
     
  
-- Eine SharePoint-Entwicklungsumgebung. Wenn Sie Hilfe beim Einrichten einer Entwicklungsumgebung benötigen, finden Sie weitere Informationen unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins).
+- Eine SharePoint-Entwicklungsumgebung. Wenn Sie Hilfe beim Einrichten einer Entwicklungsumgebung benötigen, finden Sie weitere Informationen unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md).
     
  
 
@@ -81,13 +91,13 @@ Wenn Sie die Aufgaben abgeschlossen haben, sollte Ihr Add-In-Webpart ähnlich au
  
 
  
-![Webpart-Seite, auf der ein Add-In-Basiswebpart gehostet wird](../../images/BasicAppPart_result.png)
+![Webpart-Seite, auf der ein Add-In-Basiswebpart gehostet wird](../images/BasicAppPart_result.png)
  
 
 ### <a name="add-a-form-for-the-add-in-part-content"></a>Hinzufügen eines Formulars für den Inhalt des Add-In-Webparts
 
 
-1. Erstellen Sie ein vom Anbieter gehostetes Add-In, wie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins) beschrieben, aber geben Sie dem Projekt den Namen TestAppPart.
+1. Erstellen Sie ein vom Anbieter gehostetes Add-In, wie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md) beschrieben, aber geben Sie dem Projekt den Namen TestAppPart.
     
  
 2. Klicken Sie nach dem Erstellen der Visual Studio-Lösung mit der rechten Maustaste auf das Webanwendungsprojekt (nicht das SharePoint-Add-In-Projekt), und fügen Sie ein neues Webformular hinzu, indem Sie **Hinzufügen** > **Neues Element** > **Web** > **Webformular** auswählen. Geben Sie dem Formular den Namen „AppPartContent.aspx“.
@@ -208,7 +218,7 @@ Wenn Sie die Aufgaben abgeschlossen haben, sollte Ihr Add-In-Webpart ähnlich au
     
  **Dialogfeld „Benutzerdefinierte Eigenschaften“ für Clientwebpart**
 
-![Das Dialogfeld "Benutzerdefinierte Eigenschaften" des Clientwebparts mit 4 Eigenschaften auf der linken Seite und jeweils 5 festgelegten Attributen auf der rechten Seite.](../../images/6a0f0a56-3184-490a-af19-b51b7545671d.PNG)
+![Das Dialogfeld "Benutzerdefinierte Eigenschaften" des Clientwebparts mit 4 Eigenschaften auf der linken Seite und jeweils 5 festgelegten Attributen auf der rechten Seite.](../images/6a0f0a56-3184-490a-af19-b51b7545671d.PNG)
  
 
 8. Wählen Sie die Eigenschaft **EnumProp**, dann das Attribut **EnumItems** und schließlich die Popupschaltfläche ( **...**) aus. 
@@ -246,7 +256,7 @@ Das Dialogfeld sollte wie folgt aussehen, wenn Sie fertig sind:
 
  
 
-![Der Elementauflistungs-Editor der Clientwebpart-Enumeration mit 3 aufgeführten Elementen und jeweils mit einem "Value"-Attribut und einem "Web Display Name"-Attribut.](../../images/1b21d968-bd58-4f30-a019-84df6181b81a.PNG)
+![Der Elementauflistungs-Editor der Clientwebpart-Enumeration mit 3 aufgeführten Elementen und jeweils mit einem "Value"-Attribut und einem "Web Display Name"-Attribut.](../images/1b21d968-bd58-4f30-a019-84df6181b81a.PNG)
  
 
  
@@ -350,7 +360,7 @@ Das Dialogfeld sollte wie folgt aussehen, wenn Sie fertig sind:
 
  
 
-  ![Add-In-Basiswebpart im Webpart-Katalog](../../images/BasicAppPart_gallery.jpg)
+  ![Add-In-Basiswebpart im Webpart-Katalog](../images/BasicAppPart_gallery.jpg)
  
 
  
@@ -402,7 +412,7 @@ In den meisten Fällen kann eine Webseite nicht in einem Frame angezeigt werden,
  
 
  
-![Add-In Webpart, dessen Inhalt nicht in einem Frame angezeigt werden kann](../../images/AppParts_IFrameError.png)
+![Add-In Webpart, dessen Inhalt nicht in einem Frame angezeigt werden kann](../images/AppParts_IFrameError.png)
  
 Bedenken Sie, dass bestimmte Szenarien anfällig für „[ClickJacking](http://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx)“-Angriffe sind, wenn die Webseiten in einem Frame angezeigt werden. Überprüfen Sie sorgfältig, ob Ihre Szenarien vor **ClickJacking**-Angriffen sicher sind.
  
@@ -419,7 +429,7 @@ Wenn Ihre im Add-In-Web gehostete Seite nicht für ClickJacking-Angriffe anfäll
 <WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
 ```
 
-Sie können ein [Codebeispiel für ein Add-In-Webpart](http://code.msdn.microsoft.com/SharePoint-2013-Display-be8dac16) herunterladen, das zeigt, wie Sie eine SharePoint-Seite als Inhaltsseite verwenden.
+Sie können ein [Codebeispiel für ein Add-In-Webpart](http://code.msdn.microsoft.com/SharePoint-Display-be8dac16) herunterladen, das zeigt, wie Sie eine SharePoint-Seite als Inhaltsseite verwenden.
  
 
  
@@ -430,7 +440,7 @@ Wenn Sie in Ihrem Add-In-Webpart dynamische Inhalte verwenden, ändern sich mög
  
 
  
-Sie können POST-Meldungen von Ihrer Inhaltswebseite verwenden, um die Größe des Frames anzugeben. Das folgende JavaScript-Beispiel zeigt, wie Sie eine POST-Meldung senden, um die Größe des Frames zu ändern, in dem Ihr Add-In-Webpart gehostet wird. In der Regel verwenden Sie dafür eine JavaScript-Methode in einer JavaScript-Datei, die Sie von der Seite aufrufen. Die Seite könnte z. B. über ein Steuerelement verfügen, in dem der Benutzer die Größe des Add-In-Webpartfensters angibt. Die benutzerdefinierte Methode wird dann vom **onchange**-Handler des Steuerelements aufgerufen. Ein vollständiges Beispiel finden Sie unter [Codebeispiel: Dynamisches Ändern der Größe von Add-In-Webparts in SharePoint-Add-Ins](http://code.msdn.microsoft.com/officeapps/SharePoint-2013-Resize-app-594acc88). 
+Sie können POST-Meldungen von Ihrer Inhaltswebseite verwenden, um die Größe des Frames anzugeben. Das folgende JavaScript-Beispiel zeigt, wie Sie eine POST-Meldung senden, um die Größe des Frames zu ändern, in dem Ihr Add-In-Webpart gehostet wird. In der Regel verwenden Sie dafür eine JavaScript-Methode in einer JavaScript-Datei, die Sie von der Seite aufrufen. Die Seite könnte z. B. über ein Steuerelement verfügen, in dem der Benutzer die Größe des Add-In-Webpartfensters angibt. Die benutzerdefinierte Methode wird dann vom **onchange**-Handler des Steuerelements aufgerufen. Ein vollständiges Beispiel finden Sie unter [Codebeispiel: Dynamisches Ändern der Größe von Add-In-Webparts in SharePoint-Add-Ins](http://code.msdn.microsoft.com/officeapps/SharePoint-Resize-app-594acc88). 
  
 
  
@@ -441,7 +451,7 @@ Sie können POST-Meldungen von Ihrer Inhaltswebseite verwenden, um die Größe d
 window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</message>", {hostweburl});
 ```
 
-In dem Beispiel oben wird der **senderId**-Wert vom Add-In-Webpartcode automatisch auf die Abfragezeichenfolge gesetzt, sobald die Seite gerendert wird. Ihre Seite muss nur den **SenderId**-Wert aus der Abfragezeichenfolge auslesen und bei der Anforderung einer Größenänderung verwenden. Sie können die Hostweb-URL aus der Abfragezeichenfolge abrufen und die Token **StandardTokens** oder **HostUrl** an das **Src**-Attribut in Ihrer Add-In-Webpartdefinition anhängen. Wenn Sie [Beispielcode für die Größenänderung von Add-In-Webparts](http://code.msdn.microsoft.com/officeapps/SharePoint-2013-Resize-app-594acc88) herunterladen, sehen Sie ein Add-In-Webpart, das dynamisch seine Größe ändert.
+In dem Beispiel oben wird der **senderId**-Wert vom Add-In-Webpartcode automatisch auf die Abfragezeichenfolge gesetzt, sobald die Seite gerendert wird. Ihre Seite muss nur den **SenderId**-Wert aus der Abfragezeichenfolge auslesen und bei der Anforderung einer Größenänderung verwenden. Sie können die Hostweb-URL aus der Abfragezeichenfolge abrufen und die Token **StandardTokens** oder **HostUrl** an das **Src**-Attribut in Ihrer Add-In-Webpartdefinition anhängen. Wenn Sie [Beispielcode für die Größenänderung von Add-In-Webparts](http://code.msdn.microsoft.com/officeapps/SharePoint-Resize-app-594acc88) herunterladen, sehen Sie ein Add-In-Webpart, das dynamisch seine Größe ändert.
  
 
  
@@ -452,7 +462,7 @@ Da Ihr Add-In-Webpart auf einer SharePoint-Seite gehostet wird, soll der Add-In-
  
 
  
-Unter  [Verwenden des Stylesheets einer SharePoint-Website in Add-Ins für SharePoint](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins) finden Sie eine Erläuterung, wie Sie in Ihren SharePoint-Add-Ins auf die Datei **defaultcss.ashx** verweisen. Sie können auch das [coffeemaker-Codebeispiel](http://code.msdn.microsoft.com/office/SharePoint-2013-App-part-9d83703c) herunterladen, um ein Add-In-Webpart zu sehen, das auf das Stylesheet verweist.
+Unter  [Verwenden des Stylesheets einer SharePoint-Website in Add-Ins für SharePoint](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins.md) finden Sie eine Erläuterung, wie Sie in Ihren SharePoint-Add-Ins auf die Datei **defaultcss.ashx** verweisen. Sie können auch das [coffeemaker-Codebeispiel](http://code.msdn.microsoft.com/office/SharePoint-App-part-9d83703c.md) herunterladen, um ein Add-In-Webpart zu sehen, das auf das Stylesheet verweist.
  
 
  
@@ -483,33 +493,33 @@ Um das **_editMode_**-Token zu verwenden, fügen Sie in der Add-In-Webpart-Dekla
 <a name="SP15Createappparts_AddResources"> </a>
 
 
--  [Codebeispiel: Anzeigen von Remote-Add-In-Inhalten im Hostweb mit einem Add-In-Webpart](http://code.msdn.microsoft.com/SharePoint-2013-Display-03c28286)
+-  [Codebeispiel: Anzeigen von Remote-Add-In-Inhalten im Hostweb mit einem Add-In-Webpart](http://code.msdn.microsoft.com/SharePoint-Display-03c28286)
     
  
--  [Codebeispiel: Anzeigen von Add-In-Web-Inhalten im Hostweb mithilfe eines Add-In-Webparts](http://code.msdn.microsoft.com/SharePoint-2013-Display-be8dac16)
+-  [Codebeispiel: Anzeigen von Add-In-Web-Inhalten im Hostweb mithilfe eines Add-In-Webparts](http://code.msdn.microsoft.com/SharePoint-Display-be8dac16)
     
  
--  [Codebeispiel: Dynamisches Anpassen der Größe von Add-In-Webparts in SharePoint-Add-Ins](http://code.msdn.microsoft.com/officeapps/SharePoint-2013-Resize-app-594acc88)
+-  [Codebeispiel: Dynamisches Anpassen der Größe von Add-In-Webparts in SharePoint-Add-Ins](http://code.msdn.microsoft.com/officeapps/SharePoint-Resize-app-594acc88)
     
  
--  [Codebeispiel: Anzeigen des Inhalts einer Remotewebseite mit dem Coffeemaker-Add-In-Webpart](http://code.msdn.microsoft.com/SharePoint-2013-App-part-9d83703c)
+-  [Codebeispiel: Anzeigen des Inhalts einer Remotewebseite mit dem Coffeemaker-Add-In-Webpart](http://code.msdn.microsoft.com/SharePoint-App-part-9d83703c)
     
  
--  [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins)
+-  [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md)
     
  
--  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins)
+-  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins.md)
     
  
--  [Designrichtlinien für die Benutzerfreundlichkeit von SharePoint-Add-Ins](sharepoint-add-ins-ux-design-guidelines)
+-  [Designrichtlinien für die Benutzerfreundlichkeit von Add-Ins für SharePoint](sharepoint-add-ins-ux-design-guidelines.md)
     
  
--  [Erstellen von UX-Komponenten in SharePoint](create-ux-components-in-sharepoint-2013)
+-  [Erstellen von UX-Komponenten in SharePoint](create-ux-components-in-sharepoint.md)
     
  
--  [Drei Ansätze, um Entwurfsentscheidungen für SharePoint-Add-Ins zu treffen](three-ways-to-think-about-design-options-for-sharepoint-add-ins)
+-  [Drei Ansätze, um Entwurfsentscheidungen für SharePoint-Add-Ins zu treffen](three-ways-to-think-about-design-options-for-sharepoint-add-ins.md)
     
  
--  [Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape)
+-  [Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)
     
  

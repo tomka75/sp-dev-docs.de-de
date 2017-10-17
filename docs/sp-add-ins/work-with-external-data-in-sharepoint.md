@@ -1,9 +1,18 @@
-
+---
+title: Arbeiten mit externen Daten in SharePoint
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: a3d356feac69517b2d0f0e443460ea984605f8fe
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="work-with-external-data-in-sharepoint"></a>Arbeiten mit externen Daten in SharePoint
 In diesem Artikel finden Sie Ressourcen und Anweisungen für das Zugreifen auf und das Bearbeiten von externen Daten mit JavaScript auf Seiten in SharePoint-Add-Ins.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -21,12 +30,12 @@ Sie können mit der domänenübergreifenden Bibliothek auf Daten in Ihrer Remote
  
 
  
-Details zur Verwendung der Bibliothek auf diese Weise finden Sie unter [Erstellen einer benutzerdefinierten Proxyseite für die domänenübergreifende Bibliothek in SharePoint](create-a-custom-proxy-page-for-the-cross-domain-library-in-sharepoint-2013).
+Details zur Verwendung der Bibliothek auf diese Weise finden Sie unter [Erstellen einer benutzerdefinierten Proxyseite für die domänenübergreifende Bibliothek in SharePoint](create-a-custom-proxy-page-for-the-cross-domain-library-in-sharepoint.md).
  
 
  
 
- **Hinweis** Die domänenübergreifende SharePoint-Bibliothek kann auch in die andere Richtung verwendet werden; d. h. JavaScript auf Remotewebseiten kann die Bibliothek verwenden, um auf Daten aus SharePoint zuzugreifen. Weitere Informationen zu dieser Verwendung der Bibliothek finden Sie unter [Erstellen von SharePoint-Add-Ins, die die domänenübergreifende Bibliothek verwenden](creating-sharepoint-add-ins-that-use-the-cross-domain-library).
+ **Hinweis** Die domänenübergreifende SharePoint-Bibliothek kann auch in die andere Richtung verwendet werden; d. h. JavaScript auf Remotewebseiten kann die Bibliothek verwenden, um auf Daten aus SharePoint zuzugreifen. Weitere Informationen zu dieser Verwendung der Bibliothek finden Sie unter [Erstellen von SharePoint-Add-Ins, die die domänenübergreifende Bibliothek verwenden](creating-sharepoint-add-ins-that-use-the-cross-domain-library.md).
  
 
 
@@ -36,7 +45,7 @@ Sie können den Webproxy verwenden, der in dem JavaScript-Clientobjektmodell fü
  
 
  
-Details zum Verwenden des Proxys finden Sie unter [Abfragen eines Remotediensts mithilfe des Webproxys in SharePoint](query-a-remote-service-using-the-web-proxy-in-sharepoint-2013).
+Details zum Verwenden des Proxys finden Sie unter [Abfragen eines Remotediensts mithilfe des Webproxys in SharePoint](query-a-remote-service-using-the-web-proxy-in-sharepoint.md).
  
 
  
@@ -45,10 +54,10 @@ Details zum Verwenden des Proxys finden Sie unter [Abfragen eines Remotediensts 
 <a name="SP15Workdata_AddRes"> </a>
 
 
--  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins)
+-  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
     
  
--  [Entwickeln von SharePoint-Add-Ins](develop-sharepoint-add-ins)
+-  [Entwickeln von SharePoint-Add-ins](develop-sharepoint-add-ins.md)
     
  
 

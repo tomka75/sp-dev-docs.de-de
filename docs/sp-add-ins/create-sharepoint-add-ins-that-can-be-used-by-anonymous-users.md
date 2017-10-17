@@ -1,8 +1,18 @@
+---
+title: "Erstellen von SharePoint-Add-Ins, die von anonymen Benutzern verwendet werden können"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 55d3a96a340e62ae27fbcd89dca3e9edc57d116b
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-sharepoint-add-ins-that-can-be-used-by-anonymous-users"></a>Erstellen von SharePoint-Add-Ins, die von anonymen Benutzern verwendet werden können
 Erfahren Sie, wie Sie SharePoint-Add-Ins erstellen, die von anonymen Benutzern auf öffentlich zugänglichen Microsoft SharePoint-Websites verwendet werden können.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -14,9 +24,9 @@ Erfahren Sie, wie Sie SharePoint-Add-Ins erstellen, die von anonymen Benutzern a
 
 Anonymer Zugriff ist für in SharePoint gehostete und vom Anbieter gehostete SharePoint-Add-Ins möglich. Je nach Art der App, die Sie erstellen, sollten Sie einen der folgenden Sätze von Voraussetzungen prüfen:
  
--  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins#SP15SPhostedapps_bk_prereqs)
+-  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
     
--  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins#SP15createselfhostapp_bk_prereq)
+-  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
 Sie benötigen in Ihrer SharePoint-Testinstallation eine Websitesammlung, die für anonymen Zugriff konfiguriert ist. Wenn Sie eine Website für Office 365-Entwickler haben, ist damit bereits eine öffentliche Websitesammlung verknüpft, die eine spezielle "Public Website"-Websitedefinition verwendet. (Weitere Informationen zur Verwendung von öffentlichen Websites in Microsoft SharePoint Online finden Sie unter  [Hilfe zu öffentlichen Websites für Office 365](http://office.microsoft.com/en-gb/office365-sharepoint-online-enterprise-help/public-website-help-for-office-365-HA102891740.aspx?CTT=1).) Diese Websitedefinition ist für lokale SharePoint-Installationen nicht verfügbar. Wenn Ihre Testinstallation lokal ist, benötigen Sie Folgendes:
@@ -88,20 +98,20 @@ Details zur Nur-Add-In-Richtlinie (mit Codeausschnitten), zu Add-In-Berechtigung
 
  
 
--  [Add-In-Autorisierungsrichtlinientypen in SharePoint](add-in-authorization-policy-types-in-sharepoint-2013)
+-  [Add-In-Autorisierungsrichtlinientypen in SharePoint](add-in-authorization-policy-types-in-sharepoint.md)
     
  
--  [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint-2013)
+-  [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint.md)
     
  
--  [Hinweise zur App-Manifeststruktur und zum Paket eines SharePoint-Add-Ins](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in)
+-  [Hinweise zur App-Manifeststruktur und zum Paket eines SharePoint-Add-Ins](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md)
     
  
 
 ## <a name="creating-sharepoint-hosted-add-ins-that-are-anonymously-accessible"></a>Erstellen von in SharePoint gehosteten Add-Ins, die anonym zugänglich sind
 <a name="SP-hosted"> </a>
 
-Um ein in SharePoint gehostetes Add-In zu erstellen, das von anonymen Benutzern ausgeführt werden kann, sind keine speziellen Techniken erforderlich. Es wird genauso erstellt wie jedes andere in SharePoint gehostete Add-In. Nähere Informationen finden Sie unter  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins) und [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013).
+Um ein in SharePoint gehostetes Add-In zu erstellen, das von anonymen Benutzern ausgeführt werden kann, sind keine speziellen Techniken erforderlich. Es wird genauso erstellt wie jedes andere in SharePoint gehostete Add-In. Nähere Informationen finden Sie unter  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md) und [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md).
  
 
  
@@ -250,7 +260,7 @@ Wenn Sie ein in SharePoint gehostetes Add-In entwickeln und es auf eine SharePoi
 <a name="bk_addresources"> </a>
 
 
--  [Entwickeln von SharePoint-Add-Ins](develop-sharepoint-add-ins)
+-  [Entwickeln von SharePoint-Add-ins](develop-sharepoint-add-ins.md)
     
  
 

@@ -1,11 +1,21 @@
+---
+title: Add-In-Autorisierungsrichtlinientypen in SharePoint
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 1a5d59656cb15f023b57b912c0cd248352931b2e
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="add-in-authorization-policy-types-in-sharepoint"></a>Add-In-Autorisierungsrichtlinientypen in SharePoint
 Erfahren Sie mehr über die verschiedenen Autorisierungsrichtlinien für Add-Ins in SharePoint: Nur-Add-In-Richtlinie, Benutzer-und-Add-In-Richtlinie und Nur-Benutzer-Richtlinie. Außerdem werden Richtlinien für die Verwendung der Nur-Add-In-Richtlinie bereitgestellt.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
-Bevor Sie diesen Artikel lesen, sollten Sie sich zuerst mit den Artikeln [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint-2013) und [OAuth-Ablauf mit Kontexttoken für SharePoint-Add-Ins](context-token-oauth-flow-for-sharepoint-add-ins) vertraut machen.
+Bevor Sie diesen Artikel lesen, sollten Sie sich zuerst mit den Artikeln [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint.md) und [OAuth-Ablauf mit Kontexttoken für SharePoint-Add-Ins](context-token-oauth-flow-for-sharepoint-add-ins.md) vertraut machen.
  
 
 ## <a name="get-an-overview-of-add-in-authorization-policies-types"></a>Übersicht über Add-In-Autorisierungsrichtlinientypen
@@ -70,7 +80,7 @@ Um Nur-Add-In-Aufrufe an SharePoint ausführen zu können, muss Ihr Add-In die B
  **Hinweis** SharePoint-Add-Ins hießen ursprünglich „Apps für SharePoint“. Damit eine Abwärtskompatibilität gewährleistet werden kann, wurde das App-Manifestschema nicht geändert, sodass möglicherweise die Zeichenfolge „App“ in Elementen und Attributnamen angezeigt wird.
  
 
-Ein Benutzer wird bei der Installation des Add-Ins dazu aufgefordert, diese Anforderung zu genehmigen. Wenn das Add-In nach den Mandanten-Berechtigungen fragt, kann nur ein Mandanten-Administrator die Verwendung der Nur-Add-In-Richtlinie genehmigen, also kann nur ein Mandanten-Administrator das Add-In installieren. Wenn das Add-In keine höheren Berechtigungen erfordert als die auf der Ebene der Websitesammlung fragt das Add-In nach keinen Berechtigungen dafür, anschließend kann ein Website-Administrator das Add-In installieren. Weitere Informationen zu Berechtigungsbereichen finden Sie unter  [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint-2013).
+Ein Benutzer wird bei der Installation des Add-Ins dazu aufgefordert, diese Anforderung zu genehmigen. Wenn das Add-In nach den Mandanten-Berechtigungen fragt, kann nur ein Mandanten-Administrator die Verwendung der Nur-Add-In-Richtlinie genehmigen, also kann nur ein Mandanten-Administrator das Add-In installieren. Wenn das Add-In keine höheren Berechtigungen erfordert als die auf der Ebene der Websitesammlung fragt das Add-In nach keinen Berechtigungen dafür, anschließend kann ein Website-Administrator das Add-In installieren. Weitere Informationen zu Berechtigungsbereichen finden Sie unter  [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint.md).
  
 
  
@@ -139,19 +149,19 @@ Da durch Nur-Add-In-Aufrufe die Benutzerrechte erhöht werden, sollten Sie hinsi
 <a name="AR"> </a>
 
 
--  [Autorisierung und Authentifizierung von SharePoint-Add-Ins](authorization-and-authentication-of-sharepoint-add-ins)
+-  [Autorisierung und Authentifizierung für Add-Ins in SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md)
     
  
--  [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint-2013)
+-  [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint.md)
     
  
--  [OAuth-Ablauf mit Kontexttoken für SharePoint-Add-In](context-token-oauth-flow-for-sharepoint-add-ins)
+-  [OAuth-Ablauf mit Kontexttoken für SharePoint-Add-In](context-token-oauth-flow-for-sharepoint-add-ins.md)
     
  
--  [SharePoint-Add-Ins](sharepoint-add-ins)
+-  [SharePoint-Add-Ins](sharepoint-add-ins.md)
     
  
--  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins)
+-  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
 

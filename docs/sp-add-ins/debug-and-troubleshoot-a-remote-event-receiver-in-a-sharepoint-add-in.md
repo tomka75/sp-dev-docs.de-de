@@ -1,8 +1,18 @@
+---
+title: "Debugging und Problembehandlung eines Remoteereignisempfängers in einem Add-In für SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 4e378b17fccf84f9d9321b1953d7a3d8f09dc5b7
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in"></a>Debugging und Problembehandlung eines Remoteereignisempfängers in einem Add-In für SharePoint
 Richten Sie die Entwicklungsumgebung zum Debuggen von Remoteereignissen mithilfe von Visual Studio ein.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -69,7 +79,7 @@ Verwenden Sie die Verfahren in diesem Abschnitt, um sicherzustellen, dass Sie ei
 
 1. Erstellen Sie in Visual Studio ein vom Anbieter gehostetes SharePoint-Add-In.
     
-    Weitere Informationen dazu finden Sie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins).
+    Weitere Informationen dazu finden Sie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md).
     
  
 2. Wählen Sie im **Projektmappen-Explorer** den Knoten des Add-In-Projekts aus.
@@ -146,7 +156,7 @@ Wenn Ihr Projekt ein Remoteereignis umfasst und Sie das Remotedebugging nicht ko
  
 
  
-![Benachrichtigungen in Remoteereignisempfängern](../../images/SP15Con_Remote_Event_Receivers_FAQ_fig3.png)
+![Benachrichtigungen in Remoteereignisempfängern](../images/SP15Con_Remote_Event_Receivers_FAQ_fig3.png)
  
 
  
@@ -166,7 +176,7 @@ Nachdem Sie F5 gedrückt und dem Add-In vertraut haben, wechseln Sie in Ihrem Br
  
 
  
-![Navigieren zum Servicebus-Namespace](../../images/SP15Con_Remote_Event_Receivers_FAQ_fig4.PNG)
+![Navigieren zum Servicebus-Namespace](../images/SP15Con_Remote_Event_Receivers_FAQ_fig4.PNG)
  
 
  
@@ -217,10 +227,10 @@ Wenn sich das Add-In in Microsoft SharePoint Online befindet, der Remoteereignis
 <a name="Additional"> </a>
 
 
--  [Behandeln von Ereignissen in SharePoint-Add-Ins](handle-events-in-sharepoint-add-ins)
+-  [Behandeln von Ereignissen in SharePoint-Add-Ins](handle-events-in-sharepoint-add-ins.md)
     
  
--  [Debuggen von SharePoint-Remoteereignissen mit Visual Studio 2012](http://blogs.msdn.com/b/officeapps/archive/2013/03/21/update-to-debugging-sharepoint-2013-remote-events-using-visual-studio-2012.aspx)
+-  [Debuggen von SharePoint-Remoteereignissen mit Visual Studio 2012](http://blogs.msdn.com/b/officeapps/archive/2013/03/21/update-to-debugging-sharepoint-remote-events-using-visual-studio-2012.aspx)
     
  
 

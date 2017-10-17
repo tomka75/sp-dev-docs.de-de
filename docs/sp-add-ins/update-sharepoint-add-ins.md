@@ -1,9 +1,18 @@
-
+---
+title: "Aktualisieren von Add-Ins für SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 27e3287c837c69f6246c68e292f1a6c6b56487c5
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="update-sharepoint-add-ins"></a>Aktualisieren von Add-Ins für SharePoint
 Erfahren Sie, wie Sie ein Update für ein SharePoint-Add-In erstellen und bereitstellen.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Sie können Ihr SharePoint-Add-In mithilfe der in SharePoint integrierten Updateunterstützung aktualisieren. Innerhalb von 24 Stunden, nachdem Sie eine aktualisierte Version des Add-Ins in den Add-In-Katalog eines Unternehmens hochgeladen haben oder das Add-In im Office Store angenommen wurde, wird auf der Seite **Websiteinhalte** jeder Website, auf der das Add-In installiert ist, neben dem Add-In angezeigt, dass ein Update verfügbar ist. Wie Sie in Abbildung 1 sehen können, wird Benutzern ein Link angezeigt, um das Update sofort zu installieren.
@@ -14,13 +23,13 @@ Sie können Ihr SharePoint-Add-In mithilfe der in SharePoint integrierten Update
  
 
  
-![Die Schritte auf der Benutzeroberfläche zum Aktualisieren einer App](../../images/UpdatingApp_AppTileUpdateNotice.png)
+![Die Schritte auf der Benutzeroberfläche zum Aktualisieren einer App](../images/UpdatingApp_AppTileUpdateNotice.png)
  
 Ein Benutzer kann das Update installieren, ohne vorher die frühere Version zu deinstallieren. Die Updateinfrastruktur testet die Updateinstallation und setzt sie zurück, falls Fehler auftreten.
  
 
     
- **Wichtig** Sie können den *Add-In-Typ* nicht über ein Update des Systems ändern. Sie können beispielsweise nicht ein in SharePoint gehostetes Add-In durch ein Update in ein vom Anbieter gehostetes Add-In ändern. Um den Add-In-Typ zu ändern, müssen Sie [von einem alten Add-In zu einem neuen Add-In migrieren](sharepoint-add-ins-update-process#Major). Insbesondere da [das Vorabprogramm für automatisch gehostete Add-Ins beendet wurde](http://blogs.office.com/2014/05/16/update-on-autohosted-apps-preview-program/), sollten Sie beachten, dass ein automatisch gehostetes Add-In nicht durch ein Update in ein vom Anbieter gehostetes Add-In geändert werden kann. Sie müssen das Add-In wie in [Konvertieren eines automatisch gehosteten SharePoint-Add-Ins in ein vom Anbieter gehostetes Add-In](convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in) erklärt konvertieren.
+ **Wichtig** Sie können den *Add-In-Typ* nicht über ein Update des Systems ändern. Sie können beispielsweise nicht ein in SharePoint gehostetes Add-In durch ein Update in ein vom Anbieter gehostetes Add-In ändern. Um den Add-In-Typ zu ändern, müssen Sie [von einem alten Add-In zu einem neuen Add-In migrieren](sharepoint-add-ins-update-process.md#Major). Insbesondere da [das Vorabprogramm für automatisch gehostete Add-Ins beendet wurde](http://blogs.office.com/2014/05/16/update-on-autohosted-apps-preview-program/.md), sollten Sie beachten, dass ein automatisch gehostetes Add-In nicht durch ein Update in ein vom Anbieter gehostetes Add-In geändert werden kann. Sie müssen das Add-In wie in [Konvertieren eines automatisch gehosteten SharePoint-Add-Ins in ein vom Anbieter gehostetes Add-In](convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in.md) erklärt konvertieren.
  
 
 
@@ -32,7 +41,7 @@ Ein Benutzer kann das Update installieren, ohne vorher die frühere Version zu d
 
  
 
-- Eine für die Add-In-Isolation konfigurierte SharePoint-Testinstallation. Weitere Informationen zum Einrichten einer Website für Office 365-Entwickler finden Sie unter  [Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365).
+- Eine für die Add-In-Isolation konfigurierte SharePoint-Testinstallation. Weitere Informationen zum Einrichten einer Website für Office 365-Entwickler finden Sie unter  [Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365.md).
     
  
 - Die zum Erstellen einer SharePoint-Add-In verwendeten Tools werden normalerweise auch zum Aktualisieren des Add-Ins verwendet. Die meisten Entwickler verwenden beispielsweise Visual Studio und Microsoft Office-Entwicklertools für Visual Studio zum Erstellen von SharePoint-Add-Ins.
@@ -51,11 +60,11 @@ Ein Benutzer kann das Update installieren, ohne vorher die frühere Version zu d
 
 |**Titel des Artikels**|**Beschreibung**|
 |:-----|:-----|
-| [Auswählen von Mustern für die Entwicklung und das Hosten Ihres SharePoint-Add-Ins](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in)|Informieren Sie sich über die verschiedenen Typen von SharePoint-Add-Ins. Der Updateprozess variiert je nach Typ.|
-| [Aktualisierungsverfahren für SharePoint-Add-Ins](sharepoint-add-ins-update-process)|Informieren Sie sich über das Verfahren zum Aktualisieren von SharePoint-Add-Ins.|
+| [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in.md)|Informieren Sie sich über die verschiedenen Typen von SharePoint-Add-Ins. Der Updateprozess variiert je nach Typ.|
+| [Aktualisierungsverfahren für SharePoint-Add-Ins](sharepoint-add-ins-update-process.md)|Informieren Sie sich über das Verfahren zum Aktualisieren von SharePoint-Add-Ins.|
 | [Aktualisieren von Features](http://msdn.microsoft.com/library/e917f709-6491-4d50-adbe-2ab8f35da990%28Office.15%29.aspx)|Informieren Sie sich über das Aktualisieren von Features (SharePoint 2010 SDK).|
-| [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](deploying-and-installing-sharepoint-add-ins-methods-and-options)|Informieren Sie sich über die Methoden zum Veröffentlichen, Installieren und Deinstallieren eines SharePoint-Add-Ins.|
-| [Behandeln von Ereignissen in SharePoint-Add-Ins](handle-events-in-sharepoint-add-ins)|Informieren Sie sich über Remoteereignisempfänger in SharePoint.|
+| [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](deploying-and-installing-sharepoint-add-ins-methods-and-options.md)|Informieren Sie sich über die Methoden zum Veröffentlichen, Installieren und Deinstallieren eines SharePoint-Add-Ins.|
+| [Behandeln von Ereignissen in SharePoint-Add-Ins](handle-events-in-sharepoint-add-ins.md)|Informieren Sie sich über Remoteereignisempfänger in SharePoint.|
 
 ## <a name="major-steps-in-updating-an-add-in"></a>Wichtige Schritte beim Aktualisieren eines Add-Ins
 <a name="MajorAppUpgradeSteps"> </a>
@@ -80,13 +89,13 @@ Im Folgenden werden die wichtigsten Schritte beschrieben, die beim Erstellen ein
     Weitere Informationen finden Sie unter [Aktualisieren von Add-In-Version, Berechtigungsanforderungen und Voraussetzungen](#UpdateManifest).
     
  
-- Fügen Sie das Markup für Add-In-Web-Komponenten hinzu, oder aktualisieren Sie es. Weitere Informationen finden Sie unter [Aktualisieren von Add-In-Webkomponenten in SharePoint](update-add-in-web-components-in-sharepoint-2013).
+- Fügen Sie das Markup für Add-In-Web-Komponenten hinzu, oder aktualisieren Sie es. Weitere Informationen finden Sie unter [Aktualisieren von Add-In-Webkomponenten in SharePoint](update-add-in-web-components-in-sharepoint.md).
     
  
-- Fügen Sie das Markup für Hostwebkomponenten hinzu, oder aktualisieren Sie es. Weitere Informationen finden Sie unter [Aktualisieren von Hostwebkomponenten in SharePoint](update-host-web-components-in-sharepoint-2013).
+- Fügen Sie das Markup für Hostwebkomponenten hinzu, oder aktualisieren Sie es. Weitere Informationen finden Sie unter [Aktualisieren von Hostwebkomponenten in SharePoint](update-host-web-components-in-sharepoint.md).
     
  
-- Fügen Sie einem  [UpgradedEventEndpoint](http://msdn.microsoft.com/library/09a93d44-d295-47bb-f91c-d243178b0f53%28Office.15%29.aspx) benutzerdefinierte Logik hinzu, und registrieren Sie ihn in der appmanifest.xml-Datei. Weitere Informationen finden Sie unter [Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins](create-a-handler-for-the-update-event-in-sharepoint-add-ins).
+- Fügen Sie einem  [UpgradedEventEndpoint](http://msdn.microsoft.com/library/09a93d44-d295-47bb-f91c-d243178b0f53%28Office.15%29.aspx) benutzerdefinierte Logik hinzu, und registrieren Sie ihn in der appmanifest.xml-Datei. Weitere Informationen finden Sie unter [Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md).
     
  
 - Aktualisieren Sie die Remotekomponenten:
@@ -95,7 +104,7 @@ Im Folgenden werden die wichtigsten Schritte beschrieben, die beim Erstellen ein
     
  
 
-    Weitere Informationen finden Sie unter [Aktualisieren von Remotekomponenten in SharePoint-Add-Ins](update-remote-components-in-sharepoint-add-ins).
+    Weitere Informationen finden Sie unter [Aktualisieren von Remotekomponenten in SharePoint-Add-Ins](update-remote-components-in-sharepoint-add-ins.md).
     
  
 -  ***** Laden Sie das Add-In-Paket in den Office Store oder den Add-In-Katalog des Unternehmens hoch.
@@ -143,7 +152,7 @@ Wenn die neue Version des Add-Ins als ein "neues" Add-In korrekt funktioniert, s
  
 
  
-Wenn Sie zum Testen Ihres Updates bereit sind, entfernen Sie die neue Version auf der Testwebsite, und stellen Sie die frühere Version erneut bereit, damit Sie die Updatelogik testen können. Wenn Sie mehrere frühere Versionen des Add-Ins bereitgestellt haben, installieren Sie jede frühere Version auf einer anderen Unterwebsite Ihrer Testwebsite. Laden Sie dann die neueste Version des Add-Ins in den Add-In-Katalog Ihrer Testwebsite hoch, und aktualisieren Sie jede Instanz des Add-Ins. Stellen Sie sicher, dass jede Instanz die neueste Add-In-Versionsnummer und die neuste Version aller Komponenten aufweist. Wenn das Add-In ein Add-In-Web enthält, stellen Sie sicher, dass die Add-In-Web-Komponenten mithilfe des Verfahrens in  [Überprüfen der Bereitstellung von Add-In-Web-Komponenten](update-add-in-web-components-in-sharepoint-2013#VerifyDeployAppWebComp) bereitgestellt wurden.
+Wenn Sie zum Testen Ihres Updates bereit sind, entfernen Sie die neue Version auf der Testwebsite, und stellen Sie die frühere Version erneut bereit, damit Sie die Updatelogik testen können. Wenn Sie mehrere frühere Versionen des Add-Ins bereitgestellt haben, installieren Sie jede frühere Version auf einer anderen Unterwebsite Ihrer Testwebsite. Laden Sie dann die neueste Version des Add-Ins in den Add-In-Katalog Ihrer Testwebsite hoch, und aktualisieren Sie jede Instanz des Add-Ins. Stellen Sie sicher, dass jede Instanz die neueste Add-In-Versionsnummer und die neuste Version aller Komponenten aufweist. Wenn das Add-In ein Add-In-Web enthält, stellen Sie sicher, dass die Add-In-Web-Komponenten mithilfe des Verfahrens in  [Überprüfen der Bereitstellung von Add-In-Web-Komponenten](update-add-in-web-components-in-sharepoint.md#VerifyDeployAppWebComp) bereitgestellt wurden.
  
 
  
@@ -178,11 +187,11 @@ Abbildung 2 illustriert diese Schritte.
  
 
  
-![Unmittelbarer App-Upgradeprozess](../../images/UpdatingApp_ImmediateUpgradeProcess.png)
+![Unmittelbarer App-Upgradeprozess](../images/UpdatingApp_ImmediateUpgradeProcess.png)
  
 
     
- **Hinweis** Wenn Sie den Hinweis auf der Kachel des Add-Ins, dass ein Update verfügbar ist, häufiger als alle 24 Stunden anzeigen müssen, können Sie die unter [Aktualisierungsverfahren für einSharePoint-Add-In](sharepoint-add-ins-update-process#Minor) beschriebene Methode verwenden, um den Hinweis sofort anzuzeigen.
+ **Hinweis** Wenn Sie den Hinweis auf der Kachel des Add-Ins, dass ein Update verfügbar ist, häufiger als alle 24 Stunden anzeigen müssen, können Sie die unter [Aktualisierungsverfahren für einSharePoint-Add-In](sharepoint-add-ins-update-process.md#Minor) beschriebene Methode verwenden, um den Hinweis sofort anzuzeigen.
  
 
 
@@ -210,16 +219,16 @@ Fahren Sie mit dem nächsten Aufzählungspunkt im Abschnitt [Wichtige Schritte b
 
  
 
--  [Aktualisieren von Add-In-Webkomponenten in SharePoint](update-add-in-web-components-in-sharepoint-2013)
+-  [Aktualisieren von Add-In-Webkomponenten in SharePoint](update-add-in-web-components-in-sharepoint.md)
     
  
--  [Aktualisieren von Hostwebkomponenten in SharePoint](update-host-web-components-in-sharepoint-2013)
+-  [Aktualisieren von Hostwebkomponenten in SharePoint](update-host-web-components-in-sharepoint.md)
     
  
--  [Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins](create-a-handler-for-the-update-event-in-sharepoint-add-ins)
+-  [Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md)
     
  
--  [Aktualisieren von Remotekomponenten in SharePoint-Add-Ins](update-remote-components-in-sharepoint-add-ins)
+-  [Aktualisieren von Remotekomponenten in SharePoint-Add-Ins](update-remote-components-in-sharepoint-add-ins.md)
     
  
 
@@ -227,10 +236,10 @@ Fahren Sie mit dem nächsten Aufzählungspunkt im Abschnitt [Wichtige Schritte b
 <a name="bk_addresources"> </a>
 
 
--  [Entwickeln von SharePoint-Add-Ins](develop-sharepoint-add-ins)
+-  [Entwickeln von SharePoint-Add-ins](develop-sharepoint-add-ins.md)
     
  
--  [Aktualisierungsverfahren für SharePoint-Add-Ins](sharepoint-add-ins-update-process)
+-  [Aktualisierungsverfahren für SharePoint-Add-Ins](sharepoint-add-ins-update-process.md)
     
  
 

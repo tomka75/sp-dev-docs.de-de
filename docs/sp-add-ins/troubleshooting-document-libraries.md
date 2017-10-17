@@ -1,9 +1,18 @@
-
+---
+title: Problembehandlung bei Dokumentbibliotheken
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 1629b514a8fa4a84d7d916214d89501f24d6a25b
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="troubleshooting-document-libraries"></a>Problembehandlung bei Dokumentbibliotheken
 In diesem Thema erfahren Sie von Problemen, die auftreten können, wenn Sie von einem Cloud-Geschäfts-Add-In auf eine SharePoint-Dokumentbibliothek zugreifen, und mit welchen Techniken Sie diese Probleme beheben können.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -28,7 +37,7 @@ Wenn Sie ein Dokument in eine verbundene Dokumentbibliothek in einem Cloud-Gesch
 
  
 
-  ![Auswahloptionen im Dialogfeld „NuGet-Pakete verwalten“](../../images/NuGet.PNG)
+  ![Auswahloptionen im Dialogfeld „NuGet-Pakete verwalten“](../images/NuGet.PNG)
  
 
  
@@ -53,7 +62,7 @@ Wenn Sie ein Dokument in eine verbundene Dokumentbibliothek in einem Cloud-Gesch
 <a name="bk_addresources"> </a>
 
 
--  [Zuordnen einer Dokumentbibliothek zu einer Entität](associate-a-document-library-with-an-entity)
+-  [Zuordnen einer Dokumentbibliothek zu einer Entität](associate-a-document-library-with-an-entity.md)
     
  
 

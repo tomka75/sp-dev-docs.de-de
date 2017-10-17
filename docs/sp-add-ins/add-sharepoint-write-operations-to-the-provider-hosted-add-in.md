@@ -1,23 +1,33 @@
+---
+title: "Hinzufügen von SharePoint-Schreibvorgängen zum vom Anbieter gehosteten Add-In"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 2a236873641467329df57d21101efedf3a98577a
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="add-sharepoint-write-operations-to-the-provider-hosted-add-in"></a>Hinzufügen von SharePoint-Schreibvorgängen zum vom Anbieter gehosteten Add-In
 Erfahren Sie, wie Sie in einem vom Anbieter gehosteten SharePoint-Add-In Daten an SharePoint schreiben.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
-Dies ist der fünfte in einer Reihe von Artikeln über die Grundlagen der Entwicklung von vom Anbieter gehosteten SharePoint-Add-Ins. Sie sollten sich zuerst mit [SharePoint Add-Ins](sharepoint-add-ins) und den vorherigen Artikeln in dieser Reihe vertraut machen:
+Dies ist der fünfte in einer Reihe von Artikeln über die Grundlagen der Entwicklung von vom Anbieter gehosteten SharePoint-Add-Ins. Sie sollten sich zuerst mit [SharePoint Add-Ins](sharepoint-add-ins.md) und den vorherigen Artikeln in dieser Reihe vertraut machen:
  
 
--  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins)
+-  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
--  [Übertragen des SharePoint-Aussehens und -Verhaltens auf Ihr vom Anbieter gehostetes Add-In](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel)
+-  [Übertragen des SharePoint-Aussehens und -Verhaltens auf Ihr vom Anbieter gehostetes Add-In](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md)
     
  
--  [Einfügen einer benutzerdefinierten Schaltfläche in das vom Anbieter gehostete Add-In](include-a-custom-button-in-the-provider-hosted-add-in)
+-  [Einfügen einer benutzerdefinierten Schaltfläche in das vom Anbieter gehostete Add-In](include-a-custom-button-in-the-provider-hosted-add-in.md)
     
  
--  [Schnelle Übersicht über das SharePoint-Objektmodell](get-a-quick-overview-of-the-sharepoint-object-model)
+-  [Schnelle Übersicht über das SharePoint-Objektmodell](get-a-quick-overview-of-the-sharepoint-object-model.md)
     
  
 
@@ -175,7 +185,7 @@ Die nächste Verbesserung am ChainStore-Add-In besteht darin, neue Elemente in e
  
 10. Klicken Sie auf **Neues Element**. Das Formular für das Erstellen von Elementen sollte genau wie folgt aussehen, einschließlich der zwei Sternchen, die erforderliche Felder angeben:
     
-  ![The item creation form for the Expected Shipments list. With fields for Product, Supplier, Quantity, Arrived, and "Added to Inventory". Asterisks by the titles of Product and Quantity and default value of one for Quantity.](../../images/e552b5c9-8baa-4e53-9295-4d85a79d7734.PNG)
+  ![The item creation form for the Expected Shipments list. With fields for Product, Supplier, Quantity, Arrived, and "Added to Inventory". Asterisks by the titles of Product and Quantity and default value of one for Quantity.](../images/e552b5c9-8baa-4e53-9295-4d85a79d7734.PNG)
  
 
  
@@ -252,7 +262,7 @@ Möglicherweise sollten Sie die Methode  `expectedShipmentsList` auf Nichtigkeit
  
 
  
-Stattdessen müssen Sie eine spezielle CSOM-Klasse verwenden, die als **ConditionalScope** bezeichnet wird. Die Gründe hierfür hängen mit dem Batchverarbeitungssystem von CSOM zusammen, das im vorherigen Artikel dieser Reihe erwähnt wurde. (Siehe [Clientseitige Laufzeit und Batchverarbeitung](get-a-quick-overview-of-the-sharepoint-object-model#CSOMBatching)). **ConditionalScope** und das Batchverarbeitungssystem sind fortgeschrittene Themen, die über den Umfang dieser Reihe für die ersten Schritte hinausgeht, aber Sie sollten einen Blick in die MSDN-Dokumentation dazu werfen, wenn Sie diese Reihe von Lernprogrammen abgeschlossen haben.
+Stattdessen müssen Sie eine spezielle CSOM-Klasse verwenden, die als **ConditionalScope** bezeichnet wird. Die Gründe hierfür hängen mit dem Batchverarbeitungssystem von CSOM zusammen, das im vorherigen Artikel dieser Reihe erwähnt wurde. (Siehe [Clientseitige Laufzeit und Batchverarbeitung](get-a-quick-overview-of-the-sharepoint-object-model.md#CSOMBatching)). **ConditionalScope** und das Batchverarbeitungssystem sind fortgeschrittene Themen, die über den Umfang dieser Reihe für die ersten Schritte hinausgeht, aber Sie sollten einen Blick in die MSDN-Dokumentation dazu werfen, wenn Sie diese Reihe von Lernprogrammen abgeschlossen haben.
  
 
  
@@ -327,7 +337,7 @@ Sie erinnern sich, dass SharePoint, wenn ein Add-In Lese- oder Schreibberechtigu
  
 5. Navigieren Sie von der Startseite des Hongkong-Stores zur Seite **Websiteinhalte**, und öffnen Sie die Liste **Erwartete Lieferungen**. Es befindet sich jetzt ein Element in der Liste, das der Bestellung entspricht. Der folgende Screenshot ist ein Beispiel.
     
-  ![The Expected Shipments list with a single item. There Product and Supplier fields have names. The Quantity field has a number. The two Yes/No fields are both set to "No".](../../images/e4285084-d31e-4e79-a469-ddebbc7dfb18.PNG)
+  ![The Expected Shipments list with a single item. There Product and Supplier fields have names. The Quantity field has a number. The two Yes/No fields are both set to "No".](../images/e4285084-d31e-4e79-a469-ddebbc7dfb18.PNG)
  
 
  
@@ -343,7 +353,7 @@ Sie erinnern sich, dass SharePoint, wenn ein Add-In Lese- oder Schreibberechtigu
 ## 
 <a name="Nextsteps"> </a>
 
- Im nächsten Artikel erfahren Sie, wie Sie das Remotebestellformular als Webpart auf einer SharePoint-Seite anzeigen: [Einfügen eines Add-In-Webparts in das vom Anbieter gehostete Add-In](include-an-add-in-part-in-the-provider-hosted-add-in)
+ Im nächsten Artikel erfahren Sie, wie Sie das Remotebestellformular als Webpart auf einer SharePoint-Seite anzeigen: [Einfügen eines Add-In-Webparts in das vom Anbieter gehostete Add-In](include-an-add-in-part-in-the-provider-hosted-add-in.md)
  
 
  

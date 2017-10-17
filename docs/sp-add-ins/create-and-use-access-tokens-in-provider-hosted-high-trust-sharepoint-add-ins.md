@@ -1,3 +1,13 @@
+---
+title: "Erstellen und Verwenden von Zugriffs-Tokens in vom Anbieter gehosteten SharePoint-Add-Ins mit hoher Vertrauenswürdigkeit"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: ff6e28f143eda7eb9f8a088dceb6807964ab586d
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-and-use-access-tokens-in-provider-hosted-high-trust-sharepoint-add-ins"></a>Erstellen und Verwenden von Zugriffs-Tokens in vom Anbieter gehosteten SharePoint-Add-Ins mit hoher Vertrauenswürdigkeit
 Erfahren Sie mehr über die Rolle von Zugriffstoken in SharePoint-Add-Ins mit hoher Vertrauensstufe und wie Ihr Code hiermit verwendet wird.
  
@@ -28,11 +38,11 @@ Die folgenden wichtigen **Dinge muss Ihr Code übernehmen**:
 
  
 
-1.  **Erstellen eines Zugriffstokens.** Die Teilaufgaben für das Erstellen dieses Tokens sind unterschiedlich, je nachdem, ob die RemotewebanwendungNur-Add-In-Aufrufe an SharePoint, Benutzer-und-Add-In-Aufrufe oder beides durchführt. (Informationen zu den zwei Arten von Aufrufen finden Sie unter  [Add-In-Autorisierungsrichtlinientypen in SharePoint 2013](add-in-authorization-policy-types-in-sharepoint-2013.md).) 
+1.  **Erstellen eines Zugriffstokens.** Die Teilaufgaben für das Erstellen dieses Tokens sind unterschiedlich, je nachdem, ob die RemotewebanwendungNur-Add-In-Aufrufe an SharePoint, Benutzer-und-Add-In-Aufrufe oder beides durchführt. (Informationen zu den zwei Arten von Aufrufen finden Sie unter  [Add-In-Autorisierungsrichtlinientypen in SharePoint 2013](add-in-authorization-policy-types-in-sharepoint.md).) 
     
     Wenn das Add-In Benutzer-und-Add-In-Aufrufe durchführt, umfasst das Erstellen des Zugriffstokens die folgenden Teilaufgaben:
     
-      1. Erstellen eines Actor-Tokens, das das SharePoint-Add-In identifiziert und SharePoint mitteilt, die Benutzerauthentifizierung und -autorisierung an das Add-In zu delegieren und es in der Base64-Codierung zu codieren. Ausführliche Informationen zu den Ansprüchen und der Struktur des Actor-Tokens finden Sie in Tabelle 2 unten. Details zum Codieren und Signieren des Tokens finden Sie unter  [Codieren und Signieren von Token](#EncodingTokens) weiter unten.
+      1. Erstellen eines Actor-Tokens, das das SharePoint-Add-In identifiziert und SharePoint mitteilt, die Benutzerauthentifizierung und -autorisierung an das Add-In zu delegieren und es in der Base64-Codierung zu codieren. Ausführliche Informationen zu den Ansprüchen und der Struktur des Actor-Tokens finden Sie in Tabelle 2 unten. Details zum Codieren und Signieren des Tokens finden Sie unter  [Codieren und Signieren von Token](#EncodeTokens) weiter unten.
     
  
   2. Signieren Sie das Actor-Token mit Anmeldeinformationen aus einem x509-Zertifikat, das ein SharePoint-Farmadministrator so konfiguriert hat, dass SharePoint ihm vertraut.
@@ -44,7 +54,7 @@ Die folgenden wichtigen **Dinge muss Ihr Code übernehmen**:
   4. Fügen Sie dem Zugriffstoken weitere erforderliche Ansprüche hinzu. Ausführliche Informationen zu den Ansprüchen und der Struktur des Tokens finden Sie in Tabelle 1 unten.
     
  
-  5. Codieren Sie das Zugriffstoken mit Base64. Details zum Codieren und Signieren des Tokens finden Sie unter  [Codieren und Signieren von Token](#EncodingTokens) weiter unten.
+  5. Codieren Sie das Zugriffstoken mit Base64. Details zum Codieren und Signieren des Tokens finden Sie unter  [Codieren und Signieren von Token](#EncodeTokens) weiter unten.
     
  
 
@@ -111,7 +121,7 @@ Im Folgenden finden Sie ein **Beispiel für ein Zugriffstoken, das von einem bes
  
 
  
- **Dieses Zugriffstoken wird generiert, wenn das Add-In einen Aufruf an SharePoint unter Verwendung der  [Benutzer-und-Add-In-Richtlinie](add-in-authorization-policy-types-in-sharepoint-2013.md) durchführt.** Wenn das Add-In die [Nur-Add-In-Richtlinie](add-in-authorization-policy-types-in-sharepoint-2013.md) verwendet und einen Nur-Add-In-Aufruf an SharePoint durchführt, wird das Actor-Token (das ein untergeordnetes Token innerhalb eines Benutzer-und-Add-In-Zugriffstokens ist und weiter unten beschrieben wird) zum Zugriffstoken (und es gibt kein übergeordnetes Token).
+ **Dieses Zugriffstoken wird generiert, wenn das Add-In einen Aufruf an SharePoint unter Verwendung der  [Benutzer-und-Add-In-Richtlinie](add-in-authorization-policy-types-in-sharepoint.md) durchführt.** Wenn das Add-In die [Nur-Add-In-Richtlinie](add-in-authorization-policy-types-in-sharepoint.md) verwendet und einen Nur-Add-In-Aufruf an SharePoint durchführt, wird das Actor-Token (das ein untergeordnetes Token innerhalb eines Benutzer-und-Add-In-Zugriffstokens ist und weiter unten beschrieben wird) zum Zugriffstoken (und es gibt kein übergeordnetes Token).
  
 
  
@@ -194,7 +204,7 @@ Tabelle 2 beschreibt die Ansprüche, die der Code im Hauptteil des Tokens einsch
 ```
 
 
- **Hinweis** Wenn das besonders vertrauenswürdige Add-In die [Nur-Add-In-Richtlinie](add-in-authorization-policy-types-in-sharepoint-2013.md) verwendet und einen Nur-Add-In-Aufruf an SharePoint durchführt, ist das hier gezeigte Token tatsächlich das Zugriffstoken. Es gibt kein äußeres Token. Darüber hinaus gibt es keinen **trustedfordelegation**-Anspruch, da die Berechtigungen des Benutzers für einen Nur-Add-In-Aufruf irrelevant sind.
+ **Hinweis** Wenn das besonders vertrauenswürdige Add-In die [Nur-Add-In-Richtlinie](add-in-authorization-policy-types-in-sharepoint.md) verwendet und einen Nur-Add-In-Aufruf an SharePoint durchführt, ist das hier gezeigte Token tatsächlich das Zugriffstoken. Es gibt kein äußeres Token. Darüber hinaus gibt es keinen **trustedfordelegation**-Anspruch, da die Berechtigungen des Benutzers für einen Nur-Add-In-Aufruf irrelevant sind.
  
 
 

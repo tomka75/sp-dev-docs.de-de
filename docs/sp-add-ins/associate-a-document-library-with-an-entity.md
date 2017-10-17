@@ -1,8 +1,18 @@
+---
+title: "Zuordnen einer Dokumentbibliothek zu einer Entität"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 770b85777e274ca3e1a633d6d018d3ba114ce031
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="associate-a-document-library-with-an-entity"></a>Zuordnen einer Dokumentbibliothek zu einer Entität
 Mit dem Dokumentbibliothek-Feature in SharePoint können Sie mit einzelnen Elementen in einer Liste oder Entität verknüpfte Dokumente erstellen oder hochladen. Sie können beispielsweise eine Dokumentbibliothek zum Speichern von Vertriebsdokumentationen und Produkthandbüchern für jedes Produkt in einer Liste verwenden. In einem Cloud-Geschäfts-Add-In können Sie einer Dokumentbibliothek eine Entität zuordnen, indem Sie eine Beziehung erstellen.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -41,7 +51,7 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
 
  
 
-  ![Auswählen der Dokumentbibliothek](../../images/CBADocLibrary.PNG)
+  ![Auswählen der Dokumentbibliothek](../images/CBADocLibrary.PNG)
  
 
     Abbildung 2 zeigt die Dokumentbibliothek auf der SharePoint-Website.
@@ -51,7 +61,7 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
 
  
 
-  ![Dokumentbibliothek mit benutzerdefinierter Spalte „ProductName“](../../images/CBADocLibrary2.PNG)
+  ![Dokumentbibliothek mit benutzerdefinierter Spalte „ProductName“](../images/CBADocLibrary2.PNG)
  
 
     
@@ -75,7 +85,7 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
 
  
 
-  ![Erstellen einer Beziehung](../../images/CBARelationship.PNG)
+  ![Erstellen einer Beziehung](../images/CBARelationship.PNG)
  
 
  
@@ -90,7 +100,7 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
 
  
 
-  ![Festlegen der zugehörigen Eigenschaften](../../images/CBARelationship2.PNG)
+  ![Festlegen der zugehörigen Eigenschaften](../images/CBARelationship2.PNG)
  
 
     
@@ -120,7 +130,7 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
 
  
 
-  ![Das Dialogfeld „Neuen Bildschirm hinzufügen“](../../images/CBAScreenSet.PNG)
+  ![Das Dialogfeld „Neuen Bildschirm hinzufügen“](../images/CBAScreenSet.PNG)
  
 
     Der für die Entität erstellte Bildschirm **Ansicht** enthält eine Registerkarte **Dokumente** mit einer Schaltfläche **Dokument hinzufügen**. Die Schaltfläche zeigt ein Popup zum Hinzufügen oder Hochladen von Dokumenten an.
@@ -139,7 +149,7 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
 
  
 
-  ![Hinzufügen einer neuen Registerkarte](../../images/CBAAddTab.PNG)
+  ![Hinzufügen einer neuen Registerkarte](../images/CBAAddTab.PNG)
  
 
  
@@ -154,7 +164,7 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
 
  
 
-  ![Hinzufügen der Entität „Dokumente“](../../images/CBAAddDoc.PNG)
+  ![Hinzufügen der Entität „Dokumente“](../images/CBAAddDoc.PNG)
  
 
  
@@ -169,7 +179,7 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
 
  
 
-  ![Hinzufügen einer Schaltfläche](../../images/CBAAddButton.PNG)
+  ![Hinzufügen einer Schaltfläche](../images/CBAAddButton.PNG)
  
 
  
@@ -184,7 +194,7 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
 
  
 
-  ![Das Dialogfeld „Schaltfläche hinzufügen“](../../images/CBAAddDialog.PNG)
+  ![Das Dialogfeld „Schaltfläche hinzufügen“](../images/CBAAddDialog.PNG)
  
 
  
@@ -200,10 +210,10 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
 <a name="bk_addresources"> </a>
 
 
--  [Entwickeln von Cloud-Business-Add-Ins](develop-cloud-business-add-ins)
+-  [Entwickeln von Cloud-Business-Add-Ins](develop-cloud-business-add-ins.md)
     
  
--  [Vorfallverwaltung: Lernprogramm für das Cloud-Business-Add-In](incident-manager-a-cloud-business-add-in-tutorial)
+-  [Vorfallverwaltung: Lernprogramm für das Cloud-Business-Add-In](incident-manager-a-cloud-business-add-in-tutorial.md)
     
  
 

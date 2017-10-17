@@ -1,8 +1,18 @@
+---
+title: Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnement
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 78b8b7813b7d21a2a197c5975472e07f5efc7613
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-a-developer-site-on-an-existing-office-365-subscription"></a>Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnement
 Eine Office 365-Entwicklerwebsite erleichtert Ihnen die Einrichtung und den Einstieg in das Erstellen, Testen und Bereitstellen Ihrer Office- und SharePoint-Add-Ins. Viele Office 365 Business-, Enterprise-, Education- und Government-Abonnements enthalten eine Websitevorlage, die Sie zum Erstellen einer Entwicklerwebsite verwenden können.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
  **Bevor Sie beginnen**
@@ -54,7 +64,7 @@ Eine Office 365-Entwicklerwebsite erleichtert Ihnen die Einrichtung und den Eins
  
 5. Klicken Sie im **SharePoint Admin Center** auf der Registerkarte **Websitesammlungen** auf **Neu > Private Websitesammlung**.
     
-  ![Option für neue Websitesammlung im SharePoint Admin Center](../../images/SPAdminCenter_newSiteCollection.png)
+  ![Option für neue Websitesammlung im SharePoint Admin Center](../images/SPAdminCenter_newSiteCollection.png)
  
 
  
@@ -76,7 +86,7 @@ Eine Office 365-Entwicklerwebsite erleichtert Ihnen die Einrichtung und den Eins
     
     Die URL der neuen Entwicklerwebsite wird in der Liste **Websitesammlungen** angezeigt. Wenn die Erstellung der Website abgeschlossen ist, können Sie zur URL navigieren, um Ihre Entwicklerwebsite zu öffnen.
     
-  ![Bereitstellung der neuen Websitesammlung](../../images/SPAdminCenter_newSiteCollection_provisioning.png)
+  ![Bereitstellung der neuen Websitesammlung](../images/SPAdminCenter_newSiteCollection_provisioning.png)
  
 
  
@@ -87,7 +97,7 @@ Eine Office 365-Entwicklerwebsite erleichtert Ihnen die Einrichtung und den Eins
 <a name="bk_addresources"> </a>
 
 
--  [SharePoint-Add-Ins](sharepoint-add-ins)
+-  [SharePoint-Add-Ins](sharepoint-add-ins.md)
     
  
 -  [Erstellen oder Löschen einer Websitesammlung](http://office.microsoft.com/en-us/office365-sharepoint-online-enterprise-help/create-or-delete-a-site-collection-HA102772354.aspx?CTT=1)

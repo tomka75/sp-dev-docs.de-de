@@ -1,8 +1,18 @@
+---
+title: Erstellen eines Cloud-Business-Add-Ins
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: dd7c03e54da77a99f96e206844ca934de758ea8b
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-a-cloud-business-add-in"></a>Erstellen eines Cloud-Business-Add-Ins
 Mit der Cloud-Geschäfts-Add-In-Vorlage in Visual Studio können Sie Add-Ins für SharePoint oder SharePoint in Office 365 erstellen, die für das Hinzufügen und Verwalten von Daten optimiert sind.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -24,7 +34,7 @@ Mit der Cloud-Geschäfts-Add-In-Vorlage in Visual Studio können Sie Add-Ins fü
 
  
 
-  ![Vorlage zum Erstellen einer Cloud-Business-App](../../images/CloudBusinessApptemplate.PNG)
+  ![Vorlage zum Erstellen einer Cloud-Business-App](../images/CloudBusinessApptemplate.PNG)
  
 
  
@@ -41,7 +51,7 @@ Mit der Cloud-Geschäfts-Add-In-Vorlage in Visual Studio können Sie Add-Ins fü
 
  
 
-  ![SharePoint-URL](../../images/SiteURL.PNG)
+  ![SharePoint-URL](../images/SiteURL.PNG)
  
 
     Die URL sollte das Format „https://_MeineWebsite_.sharepoint.com/sites/Developer/“ haben.
@@ -59,7 +69,7 @@ Mit der Cloud-Geschäfts-Add-In-Vorlage in Visual Studio können Sie Add-Ins fü
 
  
 
-  ![Der Projektknoten auf oberster Ebene](../../images/Top-levelprojectnode.PNG)
+  ![Der Projektknoten auf oberster Ebene](../images/Top-levelprojectnode.PNG)
  
 
     Der Anwendungs-Designer wird geöffnet.
@@ -71,7 +81,7 @@ Mit der Cloud-Geschäfts-Add-In-Vorlage in Visual Studio können Sie Add-Ins fü
 
  
 
-  ![Die SharePoint-Registerkarte „Eigenschaften“](../../images/SharePointtab.PNG)
+  ![Die SharePoint-Registerkarte „Eigenschaften“](../images/SharePointtab.PNG)
  
 
  
@@ -88,10 +98,10 @@ Mit der Cloud-Geschäfts-Add-In-Vorlage in Visual Studio können Sie Add-Ins fü
 <a name="bk_addresources"> </a>
 
 
--  [Entwickeln von Cloud-Business-Add-Ins](develop-cloud-business-add-ins)
+-  [Entwickeln von Cloud-Business-Add-Ins](develop-cloud-business-add-ins.md)
     
  
--  [Erstellen von Cloud-Business-Add-Ins](create-cloud-business-add-ins)
+-  [Erstellen von Cloud-Business-Add-Ins](create-cloud-business-add-ins.md)
     
  
 

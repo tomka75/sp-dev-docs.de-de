@@ -1,9 +1,18 @@
-
+---
+title: "Veröffentlichen von SharePoint-Add-Ins"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 760c56cd4fcca1e998fd908a7c0dda44baddd228
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="publish-sharepoint-add-ins"></a>Veröffentlichen von SharePoint-Add-Ins
 In diesem Thema geht es um Artikel und Ressourcen, die Ihnen bei der Veröffentlichung Ihrer SharePoint-Add-Ins helfen.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -21,7 +30,7 @@ Nachdem Sie Ihr SharePoint-Add-In fertig gestellt haben, besteht der letzte Schr
 -  **Im internen Add-In-Katalog einer Organisation.** Wenn Sie Ihre Add-Ins im internen Add-In-Katalog einer Organisation veröffentlichen, der in Ihrer SharePoint-Bereitstellung gehostet wird, machen Sie sie für Benutzer verfügbar, die auf diese SharePoint-Bereitstellung zugreifen können.
     
  
-Informationen darüber, wie Sie Ihr Add-In zur Veröffentlichung mit Visual Studio 2012 verpacken, finden Sie unter [Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio](publish-sharepoint-add-ins-by-using-visual-studio).
+Informationen darüber, wie Sie Ihr Add-In zur Veröffentlichung mit Visual Studio 2012 verpacken, finden Sie unter [Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio](publish-sharepoint-add-ins-by-using-visual-studio.md).
  
 
  
@@ -100,13 +109,13 @@ In der folgenden Tabelle wird die Veröffentlichung im Office Store mit der Ver�
 -  [Lizenzieren von Office- und SharePoint-Add-Ins](http://msdn.microsoft.com/library/license-your-office-and-sharepoint-add-ins%28Office.15%29.aspx)
     
  
--  [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](deploying-and-installing-sharepoint-add-ins-methods-and-options)
+-  [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](deploying-and-installing-sharepoint-add-ins-methods-and-options.md)
     
  
--  [Mandantschaften und Bereitstellungsbereiche von SharePoint- Add-Ins](tenancies-and-deployment-scopes-for-sharepoint-add-ins)
+-  [Mandantschaften und Bereitstellungsbereiche von SharePoint- Add-Ins](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md)
     
  
--  [Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio](publish-sharepoint-add-ins-by-using-visual-studio)
+-  [Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio](publish-sharepoint-add-ins-by-using-visual-studio.md)
     
  
 -  [Veröffentlichen von Add-Ins für den Office Store](http://social.msdn.microsoft.com/Forums/en-US/officestore)

@@ -1,9 +1,18 @@
-
+---
+title: Verwenden einer Office 365 SharePoint-Website, um vom Anbieter gehostete Add-Ins auf einer lokalen SharePoint-Website zu autorisieren
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 7bd39ae974d2c11bf403216f9bb08a7573a17b5b
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="use-an-office-365-sharepoint-site-to-authorize-provider-hosted-add-ins-on-an-on-premises-sharepoint-site"></a>Verwenden einer Office 365 SharePoint-Website, um vom Anbieter gehostete Add-Ins auf einer lokalen SharePoint-Website zu autorisieren
 Verwenden Sie eine Office 365-SharePoint-Website, um eine Umgebung zu erstellen, in der Sie ACS zur Einrichtung einer Vertrauensstellung zwischen einem vom Anbieter gehosteten Add-In und einer lokalen SharePoint-Farm verwenden, wie Sie dies tun würden, wenn Sie Add-Ins für eine Office 365-SharePoint-Website entwickeln würden.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -15,10 +24,10 @@ Sorgen Sie dafür, dass Sie über Folgendes verfügen.
 
  
 
-- Eine lokale SharePoint-Entwicklungsumgebung. Siehe [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins).
+- Eine lokale SharePoint-Entwicklungsumgebung. Siehe [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md).
     
  
-- Eine Office 365-SharePoint-Website. Wenn Sie noch keine haben und schnell eine Entwicklungsumgebung einrichten möchten, finden Sie Hilfe unter  [Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365).
+- Eine Office 365-SharePoint-Website. Wenn Sie noch keine haben und schnell eine Entwicklungsumgebung einrichten möchten, finden Sie Hilfe unter  [Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365.md).
     
  
 -  [Visual Studio 2012](https://www.microsoft.com/en-us/download/details.aspx?id=30682), entweder remote oder auf dem Computer installiert, auf dem Sie SharePoint installiert haben.
@@ -62,7 +71,7 @@ Sie müssen das standardmäßige Sicherheitstokendienst-Zertifikat Ihrer lokalen
 
  
 
-  ![Option „Serverzertifikate“ in IIS](../../images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
+  ![Option „Serverzertifikate“ in IIS](../images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
  
 
  
@@ -74,7 +83,7 @@ Sie müssen das standardmäßige Sicherheitstokendienst-Zertifikat Ihrer lokalen
 
  
 
-  ![Link „Selbstsigniertes Zertifikat erstellen“](../../images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
+  ![Link „Selbstsigniertes Zertifikat erstellen“](../images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
  
 
  
@@ -89,7 +98,7 @@ Sie müssen das standardmäßige Sicherheitstokendienst-Zertifikat Ihrer lokalen
 
  
 
-  ![Exportieren eines Testzertifikats](../../images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
+  ![Exportieren eines Testzertifikats](../images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
  
 
  
@@ -122,7 +131,7 @@ Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -conf
 ```
 
 
- **Hinweis** Im Dokument [Configure a one-way hybrid environment with SharePoint Server 2013 and Office 365](http://download.microsoft.com/download/6/4/4/644BA525-96CB-4739-B08F-18949A9BDADC/sps-2013-config-one-way-hybrid-environment.docx), das auf der [Seite mit SharePoint-Hybridressourcen](http://www.microsoft.com/en-us/download/details.aspx?id=35593) zum Download verfügbar ist, wird ausführlicher erläutert, wie Sie das standardmäßige Sicherheitstokendienst-Zertifikat Ihrer lokalen Farm durch ein Zertifikat von einer bekannten Zertifikatsstelle oder ein selbstsigniertes Zertifikat ersetzen.
+ **Hinweis** Im Dokument [Configure a one-way hybrid environment with SharePoint Server 2013 and Office 365](http://download.microsoft.com/download/6/4/4/644BA525-96CB-4739-B08F-18949A9BDADC/sps-config-one-way-hybrid-environment.docx), das auf der [Seite mit SharePoint-Hybridressourcen](http://www.microsoft.com/en-us/download/details.aspx?id=35593) zum Download verfügbar ist, wird ausführlicher erläutert, wie Sie das standardmäßige Sicherheitstokendienst-Zertifikat Ihrer lokalen Farm durch ein Zertifikat von einer bekannten Zertifikatsstelle oder ein selbstsigniertes Zertifikat ersetzen.
  
 
 
@@ -139,7 +148,7 @@ Abbildung 4 zeigt die vier Schritte, um die Verbindungen zu aktivieren, die Sie 
  
 
  
-![Verwenden von ACS mit einer lokalen Installation von SharePoint mithilfe einer Office 365-Website](../../images/SP15_OnPremACSArchitecture.png)
+![Verwenden von ACS mit einer lokalen Installation von SharePoint mithilfe einer Office 365-Website](../images/SP15_OnPremACSArchitecture.png)
  
 
  
@@ -462,7 +471,7 @@ Get-SPWebApplication | ForEach-Object {
 ## <a name="next-steps"></a>Nächste Schritte
 <a name="CreateApp"> </a>
 
-Befolgen Sie die Schritte in  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins), um ein einfaches vom Anbieter gehostete "Hello World"-Add-In zu erstellen, das ACS als Tokenaussteller verwendet.
+Befolgen Sie die Schritte in  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md), um ein einfaches vom Anbieter gehostete "Hello World"-Add-In zu erstellen, das ACS als Tokenaussteller verwendet.
  
 
  
@@ -471,6 +480,6 @@ Befolgen Sie die Schritte in  [Erste Schritte beim Erstellen von von einem Anbie
 <a name="bk_addresources"> </a>
 
 
--  [Autorisierung und Authentifizierung von SharePoint-Add-Ins](authorization-and-authentication-of-sharepoint-add-ins)
+-  [Autorisierung und Authentifizierung für Add-Ins in SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md)
     
  

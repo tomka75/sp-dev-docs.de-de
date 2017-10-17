@@ -1,11 +1,21 @@
+---
+title: "Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 70ba831e46f14cd0010acff774be7e07d21fd804
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="set-up-a-development-environment-for-sharepoint-add-ins-on-office-365"></a>Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365
 Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins auf einer Office 365-Entwicklerwebsite
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
-Lesen Sie [Tools und Umgebungen für die Entwicklung von Add-Ins für SharePoint](tools-and-environments-for-developing-sharepoint-add-ins), um Ihre Optionen zu verstehen, bevor Sie die Verfahren in diesem Artikel ausführen. Sie finden weitere Informationen unter  [SharePoint-Add-Ins](sharepoint-add-ins), wenn Sie nicht sicher sind, welche Arten von SharePoint-Add-Ins Sie erstellen möchten.
+Lesen Sie [Tools und Umgebungen für die Entwicklung von Add-Ins für SharePoint](tools-and-environments-for-developing-sharepoint-add-ins.md), um Ihre Optionen zu verstehen, bevor Sie die Verfahren in diesem Artikel ausführen. Sie finden weitere Informationen unter  [SharePoint-Add-Ins](sharepoint-add-ins.md), wenn Sie nicht sicher sind, welche Arten von SharePoint-Add-Ins Sie erstellen möchten.
  
 
 ## <a name="install-visual-studio-and-tools-on-your-computer"></a>Installieren von Visual Studio und Tools auf Ihrem Computer
@@ -44,7 +54,7 @@ Der Registrierungspfad wird sich in kommenden Versionen von Visual Studio änder
 <a name="o365_signup"> </a>
 
 
- **Hinweis** Sie haben möglicherweise bereits Zugriff auf eine Office 365-Entwicklerwebsite: **Sind Sie MSDN-Abonnent?** Visual Studio Enterprise mit MSDN-Abonnenten erhalten ein Office 365-Entwicklerabonnement als Vorteil. [Lösen Sie Ihren Vorteil noch heute ein. ](https://msdn.microsoft.com/subscriptions/manage/default.aspx) **Haben Sie einen der folgenden Office 365-Abonnementpläne?** **Wenn ja, kann ein Administrator des Office 365-Abonnements eine Entwicklerwebsite erstellen**, und zwar im [Office 365 Admin Center](https://portal.microsoftonline.com/admin/default.aspx). Weitere Informationen finden Sie unter [Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnement](create-a-developer-site-on-an-existing-office-365-subscription). 
+ **Hinweis** Sie haben möglicherweise bereits Zugriff auf eine Office 365-Entwicklerwebsite: **Sind Sie MSDN-Abonnent?** Visual Studio Enterprise mit MSDN-Abonnenten erhalten ein Office 365-Entwicklerabonnement als Vorteil. [Lösen Sie Ihren Vorteil noch heute ein. ](https://msdn.microsoft.com/subscriptions/manage/default.aspx) **Haben Sie einen der folgenden Office 365-Abonnementpläne?** **Wenn ja, kann ein Administrator des Office 365-Abonnements eine Entwicklerwebsite erstellen**, und zwar im [Office 365 Admin Center](https://portal.microsoftonline.com/admin/default.aspx). Weitere Informationen finden Sie unter [Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnement](create-a-developer-site-on-an-existing-office-365-subscription.md). 
  
 
 Es gibt drei Wege, um einen Office 365-Plan zu erhalten. 
@@ -71,7 +81,7 @@ Es gibt drei Wege, um einen Office 365-Plan zu erhalten.
  
 
  
-![Seite 2 des Registrierungsformulars für das Office 365-Konto](../../images/ff384c69-56bf-4ceb-81c3-8b874e2407f0.png)
+![Seite 2 des Registrierungsformulars für das Office 365-Konto](../images/ff384c69-56bf-4ceb-81c3-8b874e2407f0.png)
  
 
  
@@ -109,7 +119,7 @@ Nachdem Sie die Registrierung abgeschlossen haben, wird in Ihrem Browser die Off
  
 
  
-![Screenshot mit dem Office 365 Admin Center](../../images/SP15_Office365AdminInset_border.png)
+![Screenshot mit dem Office 365 Admin Center](../images/SP15_Office365AdminInset_border.png)
  
 
  
@@ -129,7 +139,7 @@ Nachdem Sie die Registrierung abgeschlossen haben, wird in Ihrem Browser die Off
  
 
  
-![Screenshot, auf dem die Entwicklerwebsite-Startseite angezeigt ist](../../images/SP15_DeveloperSiteHome_border.png)
+![Screenshot, auf dem die Entwicklerwebsite-Startseite angezeigt ist](../images/SP15_DeveloperSiteHome_border.png)
  
 
  
@@ -140,13 +150,13 @@ Nachdem Sie die Registrierung abgeschlossen haben, wird in Ihrem Browser die Off
 <a name="SP15SetupSPO365_bk_addlresources"> </a>
 
 
--  [SharePoint-Add-Ins](sharepoint-add-ins)
+-  [SharePoint-Add-Ins](sharepoint-add-ins.md)
     
  
--  [Erste Schritte beim Erstellen von Anbieter-gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins)
+-  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
--  [Erste Schritte beim Erstellen von SharePoint-gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins)
+-  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
     
  
 

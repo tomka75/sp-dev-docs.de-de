@@ -1,13 +1,22 @@
-
+---
+title: Verwenden des experimentellen Personenauswahl-Widgets in SharePoint-Add-Ins
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 72a0ff7295ff45f13c46d56ae448ca0b4f806ab0
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="use-the-experimental-people-picker-widget-in-sharepoint-add-ins"></a>Verwenden des experimentellen Personenauswahl-Widgets in SharePoint-Add-Ins
 Erfahren Sie, wie Sie das Personenauswahl-Widget auf einer Webseite verwenden, auch wenn die Seite nicht in SharePoint gehostet wird. Verwenden Sie das Personenauswahl-Widget in Ihren Add-Ins, um Benutzern das Suchen und Auswählen von Personen und Gruppen zu erleichtern.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
- **Vorsicht** Die Office Web Widgets - Experimental werden nur zu Recherche- und Feedbackzwecken bereitgestellt. Verwenden Sie sie nicht in Produktionsszenarios. Das Verhalten von Office Web Widgets kann sich in künftigen Versionen erheblich ändern. Lesen und prüfen Sie die  [Lizenzbedingungen für Office Web Widgets - Experimental](office-web-widgets--experimental-license-terms).
+ **Vorsicht** Die Office Web Widgets - Experimental werden nur zu Recherche- und Feedbackzwecken bereitgestellt. Verwenden Sie sie nicht in Produktionsszenarios. Das Verhalten von Office Web Widgets kann sich in künftigen Versionen erheblich ändern. Lesen und prüfen Sie die  [Lizenzbedingungen für Office Web Widgets - Experimental](office-web-widgetsexperimental-license-terms.md).
  
 
 
@@ -20,7 +29,7 @@ Sie können das experimentelle Personenauswahl-Widget in Add-Ins verwenden, um I
  
 
  
-![Personenauswahl – Experimentelles Steuerelement auf einer Seite](../../images/PeoplePicker_basic.png)
+![Personenauswahl – Experimentelles Steuerelement auf einer Seite](../images/PeoplePicker_basic.png)
  
 
  
@@ -68,7 +77,7 @@ Um die Beispiele in diesem Artikel zu verwenden, benötigen Sie Folgendes:
 
 ## <a name="use-the-people-picker-widget-in-a-provider-hosted-sharepoint-add-in"></a>Verwenden des Personenauswahl-Widgets in einem vom Anbieter gehosteten SharePoint-Add-In
 
-Dieses Beispiel enthält eine einfache Seite, die außerhalb von SharePoint gehostet wird und ein Personenauswahl-Widget mithilfe von Markup deklariert. Aus Gründen der Einfachheit werden in diesem Beispiel keine Optionen deklariert. Im Abschnitt  [Nächste Schritte](use-the-experimental-people-picker-widget-in-sharepoint-add-ins#NextSteps) finden Sie allerdings ein Beispiel mit Optionen.
+Dieses Beispiel enthält eine einfache Seite, die außerhalb von SharePoint gehostet wird und ein Personenauswahl-Widget mithilfe von Markup deklariert. Aus Gründen der Einfachheit werden in diesem Beispiel keine Optionen deklariert. Im Abschnitt  [Nächste Schritte](use-the-experimental-people-picker-widget-in-sharepoint-add-ins.md#NextSteps) finden Sie allerdings ein Beispiel mit Optionen.
  
 
  
@@ -264,7 +273,7 @@ Office.Controls.Runtime.initialize({});
 3. Wählen Sie auf der Seite **Websiteinhalte** das Add-In-Symbol.
     
  
-Sie können dieses Beispiel auch in der Codegalerie herunterladen: siehe Codebeispiel [Verwenden des experimentellen Personenauswahl-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-57859f85).
+Sie können dieses Beispiel auch in der Codegalerie herunterladen: siehe Codebeispiel [Verwenden des experimentellen Personenauswahl-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-Use-the-57859f85).
  
 
  
@@ -300,7 +309,7 @@ new Office.Controls.PeoplePicker(
     document.getElementById("PeoplePickerDiv"), {});
 ```
 
-Ein Codebeispiel, das zeigt, wie die Aufgaben durchgeführt werden, finden Sie auf der Seite **JSSimple.html** im Codebeispiel [Verwenden des experimentellen Personenauswahl-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-57859f85).
+Ein Codebeispiel, das zeigt, wie die Aufgaben durchgeführt werden, finden Sie auf der Seite **JSSimple.html** im Codebeispiel [Verwenden des experimentellen Personenauswahl-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-Use-the-57859f85).
  
 
  
@@ -346,7 +355,7 @@ Sie können auch Ereignishandler für die Ereignisse **onChange**, **onAdded** u
  
 
  
-Ein Beispiel dafür, wie Sie Optionen festlegen, finden Sie auf den Seiten **MarkupOptions.html** und **JSOptions.html** im Codebeispiel [Verwenden des experimentellen Personenauswahl-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-57859f85).
+Ein Beispiel dafür, wie Sie Optionen festlegen, finden Sie auf den Seiten **MarkupOptions.html** und **JSOptions.html** im Codebeispiel [Verwenden des experimentellen Personenauswahl-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-Use-the-57859f85).
  
 
  
@@ -399,7 +408,7 @@ var principal = pplPicker.selectedItems[i];
 $("#msg").text(principal.text + " is selected in the control.");
 ```
 
-Ein Beispiel dafür, wie Sie die ausgewählten Personen oder Gruppen im Widget abrufen, finden Sie auf der Seite **demo.html** des Codebeispiels [Office Web Widgets - Experimentelle Demo](http://code.msdn.microsoft.com/SharePoint-2013-Office-Web-6d44aa9e).
+Ein Beispiel dafür, wie Sie die ausgewählten Personen oder Gruppen im Widget abrufen, finden Sie auf der Seite **demo.html** des Codebeispiels [Office Web Widgets - Experimentelle Demo](http://code.msdn.microsoft.com/SharePoint-Office-Web-6d44aa9e).
  
 
  
@@ -416,7 +425,7 @@ Als Entwickler möchten Sie vielleicht das Erscheinungsbild des Widgets anpassen
  
 
  
-![HTML-Hierarchie im Personenauswahl-Widget](../../images/PeoplePicker_HTMLHierarchy.png)
+![HTML-Hierarchie im Personenauswahl-Widget](../images/PeoplePicker_HTMLHierarchy.png)
  
 Das Widget definiert viele Klassen mit dem Präfix **office-peoplepicker**, die Sie im Stylesheet **Office.Controls.css** finden und anpassen können.
  
@@ -435,19 +444,19 @@ Sie können das experimentelle Personenauswahl-Widget verwenden, um Personen und
 <a name="bk_addresources"> </a>
 
 
--  [Übersicht über Office Web Widgets – Experimental](office-web-widgets--experimental-overview)
+-  [Übersicht über Office Web Widgets – Experimental](office-web-widgetsexperimental-overview.md)
     
  
--  [Lizenzbedingungen für Office Web Widgets – Experimental](office-web-widgets--experimental-license-terms)
+-  [Lizenzbedingungen für Office Web Widgets – Experimental](office-web-widgetsexperimental-license-terms.md)
     
  
 -  [Office Web Widgets – Experimental: NuGet-Galerieseite](http://www.nuget.org/packages/Microsoft.Office.WebWidgets.Experimental/)
     
  
--  [Codebeispiel: Verwenden des experimentellen Personenauswahl-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-57859f85).
+-  [Codebeispiel: Verwenden des experimentellen Personenauswahl-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-Use-the-57859f85).
     
  
--  [Verwenden des experimentellen Desktoplistenansichts-Widgets in Add-Ins für SharePoint](use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins) .
+-  [Verwenden des experimentellen Desktoplistenansichts-Widgets in Add-Ins für SharePoint](use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins.md) .
     
  
 

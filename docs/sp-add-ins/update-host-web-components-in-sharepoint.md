@@ -1,16 +1,25 @@
-
+---
+title: Aktualisieren von SharePoint-Hostwebkomponenten
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 24d1752c1618551b85fa63fbab7ef747a4873bc6
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="update-host-web-components-in-sharepoint"></a>Aktualisieren von SharePoint-Hostwebkomponenten
 Aktualisieren von Add-In-Webparts und benutzerdefinierten Aktionen im Hostweb eines SharePoint-Add-Ins
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
 ## <a name="prerequisites-for-updating-host-web-components"></a>Voraussetzungen für die Aktualisierung von Hostwebkomponenten
 <a name="Prerequisites"> </a>
 
-Kenntnisse des Themas [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins) und der darin aufgeführten erforderlichen Komponenten und Kernkonzepte.
+Kenntnisse des Themas [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins.md) und der darin aufgeführten erforderlichen Komponenten und Kernkonzepte.
  
 
  
@@ -30,7 +39,7 @@ Wenn Sie die Eigenschaft **Name** unverändert lassen, bleibt die alte Version a
  
 
  
-Sie können andere Hostwebkomponenten programmgesteuert bereitstellen, indem Sie einen Remoteereignisempfänger verwenden, den Sie im App-Manifest mit einem  [InstalledEventEndpoint](http://msdn.microsoft.com/library/af9f83d8-8325-3ede-d7b0-bb82c0445eb9%28Office.15%29.aspx)-Element registrieren. Sie sollten einen  [UpgradedEventEndpoint](http://msdn.microsoft.com/library/09a93d44-d295-47bb-f91c-d243178b0f53%28Office.15%29.aspx)-Empfänger verwenden, um Komponenten zu aktualisieren, die ursprünglich mit einem **InstalledEventEndpoint**-Empfänger bereitgestellt wurden. Weitere Informationen zu  [UpgradedEventEndpoint](http://msdn.microsoft.com/library/09a93d44-d295-47bb-f91c-d243178b0f53%28Office.15%29.aspx)-Empfängern finden Sie unter  [Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins](create-a-handler-for-the-update-event-in-sharepoint-add-ins).
+Sie können andere Hostwebkomponenten programmgesteuert bereitstellen, indem Sie einen Remoteereignisempfänger verwenden, den Sie im App-Manifest mit einem  [InstalledEventEndpoint](http://msdn.microsoft.com/library/af9f83d8-8325-3ede-d7b0-bb82c0445eb9%28Office.15%29.aspx)-Element registrieren. Sie sollten einen  [UpgradedEventEndpoint](http://msdn.microsoft.com/library/09a93d44-d295-47bb-f91c-d243178b0f53%28Office.15%29.aspx)-Empfänger verwenden, um Komponenten zu aktualisieren, die ursprünglich mit einem **InstalledEventEndpoint**-Empfänger bereitgestellt wurden. Weitere Informationen zu  [UpgradedEventEndpoint](http://msdn.microsoft.com/library/09a93d44-d295-47bb-f91c-d243178b0f53%28Office.15%29.aspx)-Empfängern finden Sie unter  [Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md).
  
 
  
@@ -38,18 +47,18 @@ Sie können andere Hostwebkomponenten programmgesteuert bereitstellen, indem Sie
 ## <a name="next-steps"></a>Nächste Schritte
 <a name="Next"> </a>
 
-Wechseln Sie zu  [Wichtige Schritte beim Aktualisieren eines Add-Ins](update-sharepoint-add-ins#MajorAppUpgradeSteps), oder rufen Sie direkt einen der folgenden Artikel auf, um zu erfahren, wie Sie die nächste Hauptkomponente Ihres SharePoint-Add-Ins aktualisieren.
+Wechseln Sie zu  [Wichtige Schritte beim Aktualisieren eines Add-Ins](update-sharepoint-add-ins.md#MajorAppUpgradeSteps), oder rufen Sie direkt einen der folgenden Artikel auf, um zu erfahren, wie Sie die nächste Hauptkomponente Ihres SharePoint-Add-Ins aktualisieren.
  
 
  
 
--  [Aktualisieren von Add-In-Webkomponenten in SharePoint](update-add-in-web-components-in-sharepoint-2013)
+-  [Aktualisieren von Add-In-Webkomponenten in SharePoint](update-add-in-web-components-in-sharepoint.md)
     
  
--  [Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins](create-a-handler-for-the-update-event-in-sharepoint-add-ins)
+-  [Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md)
     
  
--  [Aktualisieren von Remotekomponenten in SharePoint-Add-Ins](update-remote-components-in-sharepoint-add-ins)
+-  [Aktualisieren von Remotekomponenten in SharePoint-Add-Ins](update-remote-components-in-sharepoint-add-ins.md)
     
  
 
@@ -57,10 +66,10 @@ Wechseln Sie zu  [Wichtige Schritte beim Aktualisieren eines Add-Ins](update-sha
 <a name="bk_addresources"> </a>
 
 
--  [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins)
+-  [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins.md)
     
  
--  [Hostwebs, Add-In-Webs und SharePoint-Komponenten in SharePoint 2013](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013)
+-  [Hostwebs, Add-In-Webs und SharePoint-Komponenten in SharePoint 2013](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md)
     
  
 

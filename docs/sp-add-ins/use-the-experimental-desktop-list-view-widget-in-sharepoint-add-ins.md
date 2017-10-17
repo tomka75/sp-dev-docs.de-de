@@ -1,14 +1,22 @@
-
-
+---
+title: Verwenden des experimentellen Desktoplistenansicht-Widgets in SharePoint-Add-Ins
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: af3a9523637300e5fd658afbe4aeffe29625e7f3
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins"></a>Verwenden des experimentellen Desktoplistenansicht-Widgets in SharePoint-Add-Ins
 Erfahren Sie, wie Sie das Desktoplistenansichts-Widget auf jeder Webseite verwenden, auch wenn die Seite nicht in SharePoint gehostet wird. Verwenden Sie das Listenansichts-Widget in Ihren Add-Ins, um Daten in Listen anzuzeigen, die in einer SharePoint-Website gehostet werden.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
- **Hinweis** Die Office Web Widgets - Experimental werden nur zu Recherche- und Feedbackzwecken bereitgestellt. Verwenden Sie sie nicht in Produktionsszenarios. Das Verhalten von Office Web Widgets kann sich in künftigen Versionen erheblich ändern. Lesen und prüfen Sie die  [Lizenzbedingungen für Office Web Widgets - Experimental](office-web-widgets--experimental-license-terms).
+ **Hinweis** Die Office Web Widgets - Experimental werden nur zu Recherche- und Feedbackzwecken bereitgestellt. Verwenden Sie sie nicht in Produktionsszenarios. Das Verhalten von Office Web Widgets kann sich in künftigen Versionen erheblich ändern. Lesen und prüfen Sie die  [Lizenzbedingungen für Office Web Widgets - Experimental](office-web-widgetsexperimental-license-terms.md).
  
 
 
@@ -21,7 +29,7 @@ Sie können das Listenansichts-Widget ähnlich dem herkömmlichen Listenansichts
  
 
  
-![Desktoplistenansicht – Experimentelles Steuerelement auf einer Seite](../../images/DesktopListView_basic.png)
+![Desktoplistenansicht – Experimentelles Steuerelement auf einer Seite](../images/DesktopListView_basic.png)
  
 
  
@@ -331,7 +339,7 @@ Office.Controls.Runtime.initialize({});
 3. Wählen Sie auf der Seite **Websiteinhalte** das Add-In-Symbol.
     
  
-Sie können dieses Beispiel auch in der Codegalerie herunterladen: siehe [Codebeispiel Verwenden des experimentellen Desktoplistenansichts-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-c3edb076).
+Sie können dieses Beispiel auch in der Codegalerie herunterladen: siehe [Codebeispiel Verwenden des experimentellen Desktoplistenansichts-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-Use-the-c3edb076).
  
 
  
@@ -368,7 +376,7 @@ new Office.Controls.ListView(
     });
 ```
 
-Ein Beispiel dafür, wie die Aufgaben durchgeführt werden, finden Sie auf der Seite **JSSimple.html** im Codebeispiel [Verwenden des experimentellen Desktoplistenansichts-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-c3edb076).
+Ein Beispiel dafür, wie die Aufgaben durchgeführt werden, finden Sie auf der Seite **JSSimple.html** im Codebeispiel [Verwenden des experimentellen Desktoplistenansichts-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-Use-the-c3edb076).
  
 
  
@@ -423,19 +431,19 @@ Sie können das experimentelle Desktoplistenansichts-Widget zum Anzeigen von Dat
 <a name="bk_addresources"> </a>
 
 
--  [Übersicht über Office Web Widgets – Experimental](office-web-widgets--experimental-overview)
+-  [Übersicht über Office Web Widgets – Experimental](office-web-widgetsexperimental-overview.md)
     
  
--  [Lizenzbedingungen für Office Web Widgets - Experimental](office-web-widgets--experimental-license-terms)
+-  [Lizenzbedingungen für Office Web Widgets – Experimental](office-web-widgetsexperimental-license-terms.md)
     
  
 -  [Office Web Widgets - Experimental – NuGet-Galerieseite](http://www.nuget.org/packages/Microsoft.Office.WebWidgets.Experimental/)
     
  
--  [Codebeispiel: Verwenden des experimentellen Desktoplistenansichts-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-c3edb076)
+-  [Codebeispiel: Verwenden des experimentellen Desktoplistenansichts-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-Use-the-c3edb076)
     
  
--  [Verwenden des experimentellen Desktoplistenansichts-Widgets in SharePoint-Add-Ins](use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins)
+-  [Verwenden des experimentellen Desktoplistenansichts-Widgets in SharePoint-Add-Ins](use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins.md)
     
  
 

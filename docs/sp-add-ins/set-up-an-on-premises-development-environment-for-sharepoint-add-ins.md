@@ -1,9 +1,18 @@
-
+---
+title: "Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 9d84d130cc12e7784aa7b87fecd268acc1e6b7c5
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="set-up-an-on-premises-development-environment-for-sharepoint-add-ins"></a>Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins
 Erfahren Sie, wie eine Entwicklungsumgebung einrichten, die speziell für die Entwicklung von SharePoint-Add-Ins mit einer lokalen Installation von SharePoint geeignet ist.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -53,7 +62,7 @@ Je nach Ihren spezifischen Anforderungen und Ihrem Budget können Sie unter folg
 
  
 
-  ![SharePoint-Installationsservertyp](../../images/SP15_app_ServerType.gif)
+  ![SharePoint-Installationsservertyp](../images/SP15_app_ServerType.gif)
  
 
  
@@ -75,7 +84,7 @@ dir /od *.log
 
  
 
-  ![Websitevorlagenseite](../../images/SP15_appChooseSiteTemplate.gif)
+  ![Websitevorlagenseite](../images/SP15_appChooseSiteTemplate.gif)
  
 
  
@@ -85,7 +94,7 @@ dir /od *.log
 ## <a name="configure-services-in-sharepoint-for-server-to-server-add-in-use"></a>Konfigurieren von Diensten in SharePoint für die Verwendung in Server-zu-Server-Add-Ins
 <a name="Servertoserver"> </a>
 
-IIn diesem Schritt konfigurieren Sie Dienste in SharePoint für die Verwendung in Server-zu-Server-Add-Ins. Mit diesen Schritten wird sichergestellt, dass Sie mit Ihrer Installation besonders vertrauenswürdige vom Anbieter gehostete Add-Ins erstellen können. Weitere Informationen zur Erstellung dieser Art von Add-In finden Sie unter  [Erstellen besonders vertrauenswürdiger Add-Ins für SharePoint](create-high-trust-sharepoint-add-ins).
+IIn diesem Schritt konfigurieren Sie Dienste in SharePoint für die Verwendung in Server-zu-Server-Add-Ins. Mit diesen Schritten wird sichergestellt, dass Sie mit Ihrer Installation besonders vertrauenswürdige vom Anbieter gehostete Add-Ins erstellen können. Weitere Informationen zur Erstellung dieser Art von Add-In finden Sie unter  [Erstellen besonders vertrauenswürdiger Add-Ins für SharePoint](create-high-trust-sharepoint-add-ins.md).
  
 
  
@@ -170,7 +179,7 @@ Der Registrierungspfad wird sich in kommenden Versionen von Visual Studio änder
 ## <a name="configure-an-isolated-add-in-domain-in-sharepoint"></a>Konfigurieren einer isolierten Add-In-Domäne in SharePoint
 <a name="SP15appdevonprem_bk_configure"> </a>
 
-Lesen Sie zunächst [Hostwebs, Add-In-Webs und die isolierte Domäne](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013#IsolatedDomain), bevor Sie Verfahren dieses Abschnitts ausführen.
+Lesen Sie zunächst [Hostwebs, Add-In-Webs und die isolierte Domäne](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#IsolatedDomain), bevor Sie Verfahren dieses Abschnitts ausführen.
  
 
  
@@ -242,7 +251,7 @@ $proxyAppSvc = New-SPAppManagementServiceApplicationProxy -ServiceApplication $a
 
 ```
 
-7. Geben Sie Ihr Add-In-Präfix an (siehe [Hostwebs, Add-In-Webs und die isolierte Domäne](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013#IsolatedDomain)), indem Sie folgenden Code in der SharePoint-Verwaltungsshell eingeben.
+7. Geben Sie Ihr Add-In-Präfix an (siehe [Hostwebs, Add-In-Webs und die isolierte Domäne](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#IsolatedDomain)), indem Sie folgenden Code in der SharePoint-Verwaltungsshell eingeben.
     
 ```
   Set-SPAppSiteSubscriptionName -Name "add-in" -Confirm:$false
@@ -283,7 +292,7 @@ $proxyAppSvc = New-SPAppManagementServiceApplicationProxy -ServiceApplication $a
 9. Klicken Sie auf **OK**, um das Dialogfeld **Internetoptionen** zu schließen.
     
  
-Unter [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](deploying-and-installing-sharepoint-add-ins-methods-and-options) finden Sie weitere Informationen über die verfügbaren Optionen für die Bereitstellung Ihrer Add-Ins.
+Unter [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](deploying-and-installing-sharepoint-add-ins-methods-and-options.md) finden Sie weitere Informationen über die verfügbaren Optionen für die Bereitstellung Ihrer Add-Ins.
  
 
  
@@ -296,13 +305,13 @@ Unter [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optio
 <a name="SP15SetupSPO365_bk_addlresources"> </a>
 
 
--  [SharePoint-Add-Ins](sharepoint-add-ins)
+-  [SharePoint-Add-Ins](sharepoint-add-ins.md)
     
  
--  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins)
+-  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
--  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins)
+-  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
     
  
 

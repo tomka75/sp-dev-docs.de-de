@@ -1,20 +1,29 @@
-
+---
+title: Aktualisieren von SharePoint-Add-In-Webkomponenten
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: ad72f237e3c6ddb9d45c723a65c6225b02119314
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="update-add-in-web-components-in-sharepoint"></a>Aktualisieren von SharePoint-Add-In-Webkomponenten
 Aktualisieren von Seiten, Listen, Inhaltstypen und anderen Add-In-Webkomponenten in einem SharePoint-Add-In.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
 ## <a name="prerequisites-for-updating-the-add-in-web-components"></a>Voraussetzungen für die Aktualisierung der Add-In-Webkomponenten
 <a name="Prerequisites"> </a>
 
-Kenntnisse des Themas [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins) und der darin aufgeführten erforderlichen Komponenten und Kernkonzepte.
+Kenntnisse des Themas [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins.md) und der darin aufgeführten erforderlichen Komponenten und Kernkonzepte.
  
 
  
-In diesem Thema wird davon ausgegangen, dass Sie die neueste Version des Add-Ins entwickelt und getestet haben, wie unter  [Erstellen und Debuggen Sie die neue Version, als ob es ein ganz neues Add-In wäre](update-sharepoint-add-ins#DebugFirst) beschrieben.
+In diesem Thema wird davon ausgegangen, dass Sie die neueste Version des Add-Ins entwickelt und getestet haben, wie unter  [Erstellen und Debuggen Sie die neue Version, als ob es ein ganz neues Add-In wäre](update-sharepoint-add-ins.md#DebugFirst) beschrieben.
  
 
  
@@ -29,11 +38,11 @@ Alle SharePoint-Komponenten, die im Add-In-Web bereitgestellt werden, sind in Fe
 
 ### <a name="what-can-and-cannot-be-done-declaratively"></a>Welche Aufgaben deklarativ ausgeführt werden können und welche nicht
 
-Bei einem SharePoint-gehosteten Add-In können Sie nur XML-Markup zum Aktualisieren eines Add-Ins verwenden, und es gelten einige Einschränkungen, wie Sie ein Add-In in einem Update deklarativ ändern können. In einem vom Anbieter gehosteten Add-In können Sie einen  [UpdatedEventEndpoint Handler](create-a-handler-for-the-update-event-in-sharepoint-add-ins) implementieren, um Aktionen auszuführen, die nicht deklarativ ausgeführt werden können.
+Bei einem SharePoint-gehosteten Add-In können Sie nur XML-Markup zum Aktualisieren eines Add-Ins verwenden, und es gelten einige Einschränkungen, wie Sie ein Add-In in einem Update deklarativ ändern können. In einem vom Anbieter gehosteten Add-In können Sie einen  [UpdatedEventEndpoint Handler](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md) implementieren, um Aktionen auszuführen, die nicht deklarativ ausgeführt werden können.
  
 
  
-Das Hinzufügen von Komponenten zu einem Add-In ist einfach. Alle Komponenten, die zum Einfügen in ein Add-In berechtigt sind, können auch in einem Update hinzugefügt werden. (Informationen zu den Komponenten, die in einem Add-In enthalten sein können, finden Sie unter  [Typen von SharePoint-Komponenten, die in einem SharePoint-Add-In enthalten sein können](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013#TypesOfSPComponentsInApps).) Wenn Sie eine vorhandene Komponente deklarativ ändern möchten, sollten Sie die folgenden Punkte in Betracht ziehen. 
+Das Hinzufügen von Komponenten zu einem Add-In ist einfach. Alle Komponenten, die zum Einfügen in ein Add-In berechtigt sind, können auch in einem Update hinzugefügt werden. (Informationen zu den Komponenten, die in einem Add-In enthalten sein können, finden Sie unter  [Typen von SharePoint-Komponenten, die in einem SharePoint-Add-In enthalten sein können](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#TypesOfSPComponentsInApps).) Wenn Sie eine vorhandene Komponente deklarativ ändern möchten, sollten Sie die folgenden Punkte in Betracht ziehen. 
  
 
  
@@ -83,7 +92,7 @@ Die Microsoft Office-Entwicklertools für Visual Studio sind darauf ausgelegt, n
 
  
 
-  ![Schritte zum Öffnen des Feature-XML-Editors](../../images/UpdateAppOpenFeatureXML.png)
+  ![Schritte zum Öffnen des Feature-XML-Editors](../images/UpdateAppOpenFeatureXML.png)
  
 
  
@@ -231,14 +240,14 @@ Verwenden Sie die folgenden Schritte zum Aktualisieren des Add-In-Web-Features.
 </Module>
 ```
 
-3. In Seiten können Webparts eingebettet werden, wie in [Einschließen eines Webparts auf einer Webseite im Add-In-Web](include-a-web-part-in-a-webpage-on-the-add-in-web) erläutert. Wenn Sie eine Seite mit einem Webpart ändern (oder die Eigenschaften des Webparts ändern), ist ein zusätzlicher Schritt erforderlich: Sie müssen das folgende Markup zur Seite hinzufügen, um zu verhindern, dass SharePoint eine zweite Kopie des Webparts auf der Seite hinzufügt. Das Markup sollte zum **asp:Content**-Element mit der ID `PlaceHolderAdditionalPageHead` hinzugefügt werden. (Die Office Developer Tools für Visual Studio haben es möglicherweise beim ersten Erstellen der Seite bereits hinzugefügt, aber Sie sollten überprüfen, ob es vorhanden ist.)
+3. In Seiten können Webparts eingebettet werden, wie in [Einschließen eines Webparts auf einer Webseite im Add-In-Web](include-a-web-part-in-a-webpage-on-the-add-in-web.md) erläutert. Wenn Sie eine Seite mit einem Webpart ändern (oder die Eigenschaften des Webparts ändern), ist ein zusätzlicher Schritt erforderlich: Sie müssen das folgende Markup zur Seite hinzufügen, um zu verhindern, dass SharePoint eine zweite Kopie des Webparts auf der Seite hinzufügt. Das Markup sollte zum **asp:Content**-Element mit der ID `PlaceHolderAdditionalPageHead` hinzugefügt werden. (Die Office Developer Tools für Visual Studio haben es möglicherweise beim ersten Erstellen der Seite bereits hinzugefügt, aber Sie sollten überprüfen, ob es vorhanden ist.)
     
 ```XML
   <meta name="WebPartPageExpansion" content="full" />
 ```
 
 
-     **Note**   If the page was configured to allow users to customize it, then this markup has the side effect of removing those customizations. Users will have to repeat them. If the Web Part was added to the page following the guidance in [Include a Web Part in a webpage on the add-in web](include-a-web-part-in-a-webpage-on-the-add-in-web), then the Web Part markup is in the elements manifest, so changing the Web Part's properties is an exception to the general rule that you should not edit an element manifest file as part of an add-in update. 
+     **Note**   If the page was configured to allow users to customize it, then this markup has the side effect of removing those customizations. Users will have to repeat them. If the Web Part was added to the page following the guidance in [Include a Web Part in a webpage on the add-in web](include-a-web-part-in-a-webpage-on-the-add-in-web.md), then the Web Part markup is in the elements manifest, so changing the Web Part's properties is an exception to the general rule that you should not edit an element manifest file as part of an add-in update. 
 4. Anstatt eine Seite zu ändern, können Sie alternativ auch eine Umleitung zu einer neuen Seite vornehmen; führen Sie hierfür die folgenden Schritte aus. 
     
       1. Erstellen Sie die neue Seite, und konfigurieren Sie das Updatemarkup wie weiter oben im Verfahren **So fügen Sie dem Add-In Komponenten hinzu** beschrieben.
@@ -416,18 +425,18 @@ Führen Sie die folgenden Schritte aus, um die Bereitstellung des Add-In-Web-Fea
 ## <a name="next-steps"></a>Nächste Schritte
 <a name="Next"> </a>
 
-Kehren Sie zu  [Wichtige Schritte beim Aktualisieren eines Add-Ins](update-sharepoint-add-ins#MajorAppUpgradeSteps) zurück, oder rufen Sie direkt einen der folgenden Artikel auf, um zu erfahren, wie Sie die nächste Hauptkomponente Ihres SharePoint-Add-Ins aktualisieren.
+Kehren Sie zu  [Wichtige Schritte beim Aktualisieren eines Add-Ins](update-sharepoint-add-ins.md#MajorAppUpgradeSteps) zurück, oder rufen Sie direkt einen der folgenden Artikel auf, um zu erfahren, wie Sie die nächste Hauptkomponente Ihres SharePoint-Add-Ins aktualisieren.
  
 
  
 
--  [Aktualisieren von Hostwebkomponenten in SharePoint](update-host-web-components-in-sharepoint-2013)
+-  [Aktualisieren von Hostwebkomponenten in SharePoint](update-host-web-components-in-sharepoint.md)
     
  
--  [Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins](create-a-handler-for-the-update-event-in-sharepoint-add-ins)
+-  [Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md)
     
  
--  [Aktualisieren von Remotekomponenten in SharePoint-Add-Ins](update-remote-components-in-sharepoint-add-ins)
+-  [Aktualisieren von Remotekomponenten in SharePoint-Add-Ins](update-remote-components-in-sharepoint-add-ins.md)
     
  
 
@@ -435,7 +444,7 @@ Kehren Sie zu  [Wichtige Schritte beim Aktualisieren eines Add-Ins](update-share
 <a name="bk_addresources"> </a>
 
 
--  [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins)
+-  [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins.md)
     
  
 -  [Vorgehensweise: Hinzufügen von Elementen zu einem vorhandenen Feature](http://msdn.microsoft.com/library/b007f419-e0d6-4e3a-a3ae-b8e448656d02%28Office.15%29.aspx) im Microsoft SharePoint 2010-Software Development Kit (SDK).

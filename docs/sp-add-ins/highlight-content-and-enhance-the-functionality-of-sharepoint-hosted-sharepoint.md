@@ -1,4 +1,13 @@
-
+---
+title: Hervorheben von Inhalten und Erweitern der Funktionen in von SharePoint gehosteten SharePoint-Add-Ins mithilfe des Popupsteuerelements
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: c58c5b988eb2aa65ca6f6efe4945e974bdd83059
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="highlight-content-and-enhance-the-functionality-of-sharepoint-hosted-sharepoint-add-ins-with-the-callout-control"></a>Hervorheben von Inhalten und Erweitern der Funktionen in von SharePoint gehosteten SharePoint-Add-Ins mithilfe des Popupsteuerelements
 Das Popupsteuerelement von SharePoint ermöglicht eine flexible Interaktion mit dem Benutzer sowie die Präsentation der Funktionen Ihres von SharePoint gehosteten Add-Ins. Das Steuerelement kann auf vielfältige Weise konfiguriert werden, um es auf die UI Ihres Add-Ins zuzuschneiden. In diesem Artikel erfahren Sie, wie Sie dieses Steuerelement erstellen und Ihrer Seite hinzufügen sowie Darstellung und Verhalten des Steuerelements anpassen.
  
@@ -10,14 +19,14 @@ Bei Suchvorgängen auf einer SharePoint-Website sehen Sie das Popupsteuerelement
  
 
  
-![Beispiel für das Popupsteuerelement auf einer SharePoint-Suchergebnisseite](../../images/S15_CalloutControlExample.png)
+![Beispiel für das Popupsteuerelement auf einer SharePoint-Suchergebnisseite](../images/S15_CalloutControlExample.png)
  
 
  
 
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -94,7 +103,7 @@ Die folgenden Elemente können zum Steuern der Anzeige des Popups verwendet werd
 |content|Zeigt HTML-Code innerhalb des Steuerelements an, wenn kein Wert für das Element `contentElement` vorhanden ist.|Zeichenfolge mit HTML, **NULL**, muss NULL sein, wenn `contentElement` einen Wert besitzt|
 |contentElement|Zeigt ein HTML-Element innerhalb des Steuerelements an, wenn kein Wert für das Element `content` vorhanden ist.|Beliebiges HTML-Element, **NULL**, muss NULL sein, wenn `content` einen Wert besitzt|
 |contentWidth|Dient zum Angeben der Breite (in Pixel) des Popuptextcontainers. Dieser Container besitzt einen Rand mit einer Breite von einem Pixel sowie einen Abstand mit einer Breite von 15 Pixeln an jeder Seite, wodurch die Breite des Steuerelements die angegebene Textbreite um 32 Pixel übersteigt. Die CSS-Eigenschaft  `overflow` des Steuerelements ist auf `hidden` festgelegt, sodass der Inhalt abgeschnitten wird, falls er nicht in die angegebene Breite passt. Falls Sie dieses Element für ein geöffnetes Popup festlegen, wird die Änderung umgehend wirksam. Bei den anderen Elementen ist dies nicht der Fall. |Beliebige Zahl zwischen 240 und 610, **350** (wodurch die Breite des Steuerelements standardmäßig 382 Pixel beträgt)|
-|beakOrientation|Gibt die Ausrichtung der Spitze oder des Zeigers des Popupsteuerelements an.|**topBottom**, siehe Abbildung 2:**Abbildung 2: Position der Spitze des Popupsteuerelements bei Verwendung der Ausrichtung „topBottom“** ![Wo die Spitze des Popupsteuerelements nach oben/unten zeigt](../../images/SP15_CalloutTopBottom.png) **leftRight**, siehe Abbildung 3:**Abbildung 3: Position der Spitze des Popupsteuerelements bei Verwendung der Ausrichtung „leftRight“** ![Wo die Spitze des Popupsteuerelements nach links/rechts zeigt](../../images/SP15_CalloutLeftRight.png)|
+|beakOrientation|Gibt die Ausrichtung der Spitze oder des Zeigers des Popupsteuerelements an.|**topBottom**, siehe Abbildung 2:**Abbildung 2: Position der Spitze des Popupsteuerelements bei Verwendung der Ausrichtung „topBottom“** ![Wo die Spitze des Popupsteuerelements nach oben/unten zeigt](../images/SP15_CalloutTopBottom.png) **leftRight**, siehe Abbildung 3:**Abbildung 3: Position der Spitze des Popupsteuerelements bei Verwendung der Ausrichtung „leftRight“** ![Wo die Spitze des Popupsteuerelements nach links/rechts zeigt](../images/SP15_CalloutLeftRight.png)|
 
 ## <a name="how-to-customize-the-behavior-of-the-callout-control"></a>Anpassen des Verhaltens des Popupsteuerelements
 <a name="Behavior"> </a>
@@ -212,7 +221,7 @@ Wenn eine Popupaktion anstelle einer einzelnen Aktion ein Menü enthält, wird d
  
 
  
-![Eine Popupaktion zeigt ein Menü an, wenn ein Benutzer auf den Pfeil neben der Aktionsbeschriftung klickt.](../../images/SP15_CalloutMenu.png)
+![Eine Popupaktion zeigt ein Menü an, wenn ein Benutzer auf den Pfeil neben der Aktionsbeschriftung klickt.](../images/SP15_CalloutMenu.png)
  
 Sie können beliebig viele Menüeinträge erstellen und der Popupaktion hinzufügen, indem Sie sie in einem Array als Wert des Elements  `menuEntries` des Objekts `CalloutAction` übergeben.
  
@@ -400,13 +409,13 @@ callout.set({positionAlgorithm: tryDownAndRightThenGoDefault});
 <a name="bk_addresources"> </a>
 
 
--  [SharePoint: Verwenden von Listenansichten, Popups und Dialogfeldern in von SharePoint gehosteten Add-Ins](http://code.msdn.microsoft.com/officeapps/SharePoint-2013-Use-list-cb3e4e14)
+-  [SharePoint: Verwenden von Listenansichten, Popups und Dialogfeldern in von SharePoint gehosteten Add-Ins](http://code.msdn.microsoft.com/officeapps/SharePoint-Use-list-cb3e4e14)
     
  
--  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins)
+-  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
     
  
--  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins)
+-  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins.md)
     
  
 

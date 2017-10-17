@@ -1,8 +1,18 @@
+---
+title: Entwerfen von SharePoint-Add-Ins
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 92272154b37b9a02ed0a2b3ab73d7cdb57054087
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="design-sharepoint-add-ins"></a>Entwerfen von SharePoint-Add-Ins
 In diesem Artikel erhalten Sie einen Überblick über die in SharePoint-Add-Ins verfügbaren Entwurfs- und Architekturoptionen und erfahren, wie Sie die richtigen Entscheidungen treffen, um die Entwicklung Ihrer Add-Ins in SharePoint zu erleichtern.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Angenommen, Sie haben eine großartige Idee für ein Add-In. In diesem Abschnitt führen wir Sie durch die erforderlichen Entwurfsentscheidungen und stellen bewährte Methoden für die Erstellung Ihres Add-Ins bereit. Was macht zum Beispiel eine gute Benutzeroberfläche aus? Welche Add-In-"Formen" sind verfügbar? Nach welchen Kriterien sollten diese ausgewählt werden? Welche Optionen stehen für den Datenzugriff zur Verfügung? 
@@ -15,7 +25,7 @@ Da das Cloud-Add-In-Modell in SharePoint so viele Designoptionen ermöglicht, k�
  
 
  
-Eine Übersicht über die Design- und Architekturoptionen für SharePoint-Add-Ins finden Sie unter  [Drei Ansätze, um Entwurfsentscheidungen für Add-Ins für SharePoint zu treffen](three-ways-to-think-about-design-options-for-sharepoint-add-ins). Worum es sich bei den SharePoint-Add-Ins handelt, erfahren Sie unter  [SharePoint-Add-Ins](sharepoint-add-ins).
+Eine Übersicht über die Design- und Architekturoptionen für SharePoint-Add-Ins finden Sie unter  [Drei Ansätze, um Entwurfsentscheidungen für Add-Ins für SharePoint zu treffen](three-ways-to-think-about-design-options-for-sharepoint-add-ins.md). Worum es sich bei den SharePoint-Add-Ins handelt, erfahren Sie unter  [SharePoint-Add-Ins](sharepoint-add-ins.md).
  
 
  
@@ -33,7 +43,7 @@ SharePoint-Add-Ins unterstützen mehrere Hostingoptionen. Sie können Ihren eige
 
 |**Artikel**|**Beschreibung**|
 |:-----|:-----|
-| [Auswählen von Mustern für die Entwicklung und das Hosten Ihres SharePoint-Add-Ins](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in)|Lernen Sie die verschiedenen Methoden zum Hosten der Komponenten von SharePoint-Add-Ins kennen.|
+| [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in.md)|Lernen Sie die verschiedenen Methoden zum Hosten der Komponenten von SharePoint-Add-Ins kennen.|
 
 ## <a name="choose-the-right-data-access-technologies-for-your-add-in"></a>Wählen der richtigen Datenzugriffstechnologien für Ihr Add-In
 <a name="SP15Design_Dataaccess"> </a>
@@ -48,7 +58,7 @@ Sie müssen sicherstellen, dass Ihr Add-In effizient und sicher auf Daten zugrei
 
 |**Artikel**|**Beschreibung**|
 |:-----|:-----|
-| [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins)| In diesem Artikel erfahren Sie, welche Datenzugriffsoptionen Sie bei der Erstellung von SharePoint-Add-Ins haben. Erläutert werden auch die Datenkonnektivitätsoptionen für eingehende und ausgehende Daten sowie die APIs, die für den Zugriff auf SharePoint von Ihrem Add-In aus zur Verfügung stehen.|
+| [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)| In diesem Artikel erfahren Sie, welche Datenzugriffsoptionen Sie bei der Erstellung von SharePoint-Add-Ins haben. Erläutert werden auch die Datenkonnektivitätsoptionen für eingehende und ausgehende Daten sowie die APIs, die für den Zugriff auf SharePoint von Ihrem Add-In aus zur Verfügung stehen.|
 
 ## <a name="design-the-ux-for-your-add-in"></a>Entwerfen der Benutzeroberfläche für Ihr Add-In
 <a name="SP15Design_UX"> </a>
@@ -63,12 +73,12 @@ Bei der Entwicklung eines Add-Ins sollte es Ihnen vor allem darauf ankommen, das
 
 |**Artikel**|**Beschreibung**|
 |:-----|:-----|
-| [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins)|Hier erfahren Sie mehr über die UX (User Experience)-Optionen, die Ihnen beim Erstellen von SharePoint-Add-Ins zur Verfügung stehen.|
+| [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins.md)|Hier erfahren Sie mehr über die UX (User Experience)-Optionen, die Ihnen beim Erstellen von SharePoint-Add-Ins zur Verfügung stehen.|
 
 ## <a name="design-with-update-in-mind"></a>Berücksichtigen späterer Updates beim Entwurf
 <a name="Upgrade"> </a>
 
-Irgendwann möchten Sie ein Update Ihres Add-Ins erstellen und in den Office Store oder den Add-In-Katalog eines Unternehmens hochladen. Dies ist erheblich einfacher, wenn Sie spätere Updates des Add-Ins bereits beim Entwurf der ersten Version berücksichtigen. Daher sollten Sie die folgenden Artikel zu einem frühen Zeitpunkt in der Entwurfsphase lesen:  [Aktualisierungsverfahren für Add-Ins für SharePoint](sharepoint-add-ins-update-process) und [Aktualisieren von Add-Ins für SharePoint](update-sharepoint-add-ins). 
+Irgendwann möchten Sie ein Update Ihres Add-Ins erstellen und in den Office Store oder den Add-In-Katalog eines Unternehmens hochladen. Dies ist erheblich einfacher, wenn Sie spätere Updates des Add-Ins bereits beim Entwurf der ersten Version berücksichtigen. Daher sollten Sie die folgenden Artikel zu einem frühen Zeitpunkt in der Entwurfsphase lesen:  [Aktualisierungsverfahren für Add-Ins für SharePoint](sharepoint-add-ins-update-process.md) und [Aktualisieren von Add-Ins für SharePoint](update-sharepoint-add-ins.md). 
  
 
  
@@ -86,8 +96,8 @@ Haben Sie ein solides Konzept für Ihr Add-In? Dann können Sie direkt mit der E
 
 |**Artikel**|**Beschreibung**|
 |:-----|:-----|
-| [Entwickeln von SharePoint-Add-Ins](develop-sharepoint-add-ins)|Erläutert erweiterte Konzepte und Funktionen des Add-In-Modells.|
-| [Veröffentlichen von SharePoint-Add-Ins](publish-sharepoint-add-ins)|Beschreibt das Verfahren und die Anforderungen für die Veröffentlichung von SharePoint-Add-Ins.|
+| [Entwickeln von SharePoint-Add-ins](develop-sharepoint-add-ins.md)|Erläutert erweiterte Konzepte und Funktionen des Add-In-Modells.|
+| [Veröffentlichen von SharePoint-Add-Ins](publish-sharepoint-add-ins.md)|Beschreibt das Verfahren und die Anforderungen für die Veröffentlichung von SharePoint-Add-Ins.|
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 <a name="SP15Design_AddRes"> </a>
@@ -99,10 +109,10 @@ Haben Sie ein solides Konzept für Ihr Add-In? Dann können Sie direkt mit der E
 -  [Reimagine SharePoint development](http://msdn.microsoft.com/en-US/office/apps/dn133840)
     
  
--  [SharePoint-Add-Ins](sharepoint-add-ins)
+-  [SharePoint-Add-Ins](sharepoint-add-ins.md)
     
  
--  [Entwickeln von SharePoint-Add-Ins](develop-sharepoint-add-ins)
+-  [Entwickeln von SharePoint-Add-ins](develop-sharepoint-add-ins.md)
     
  
 -  [Blog für Add-Ins](http://blogs.msdn.com/b/spoffapps)

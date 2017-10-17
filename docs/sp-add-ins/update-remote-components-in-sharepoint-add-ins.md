@@ -1,16 +1,25 @@
-
+---
+title: Aktualisieren von Remotekomponenten in SharePoint-Add-Ins
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: a15890881bb4269ef21e5a2f22865509e9834750
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="update-remote-components-in-sharepoint-add-ins"></a>Aktualisieren von Remotekomponenten in SharePoint-Add-Ins
 Aktualisieren Sie die Remotewebanwendungen und -datenbanken in einem SharePoint-Add-In.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
 ## <a name="prerequisites-for-updating-the-remote-components-of-a-sharepoint-add-in"></a>Voraussetzungen für die Aktualisierung der Remotekomponenten eines SharePoint-Add-Ins
 <a name="Prerequistes"> </a>
 
-Kenntnisse des Themas [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins) und der darin aufgeführten erforderlichen Komponenten und Kernkonzepte.
+Kenntnisse des Themas [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins.md) und der darin aufgeführten erforderlichen Komponenten und Kernkonzepte.
  
 
  
@@ -45,18 +54,18 @@ Für ein vom Anbieter gehostetes SharePoint-Add-In, das Microsoft Azure SQL-Date
 ## <a name="next-steps"></a>Nächste Schritte
 <a name="Next"> </a>
 
-Kehren Sie zu  [Wichtige Schritte beim Aktualisieren eines Add-Ins](update-sharepoint-add-ins#MajorAppUpgradeSteps) zurück, oder rufen Sie direkt einen der folgenden Artikel auf, um zu erfahren, wie Sie die nächste Hauptkomponente Ihres SharePoint-Add-Ins aktualisieren.
+Kehren Sie zu  [Wichtige Schritte beim Aktualisieren eines Add-Ins](update-sharepoint-add-ins.md#MajorAppUpgradeSteps) zurück, oder rufen Sie direkt einen der folgenden Artikel auf, um zu erfahren, wie Sie die nächste Hauptkomponente Ihres SharePoint-Add-Ins aktualisieren.
  
 
  
 
--  [Aktualisieren von Add-In-Webkomponenten in SharePoint](update-add-in-web-components-in-sharepoint-2013)
+-  [Aktualisieren von Add-In-Webkomponenten in SharePoint](update-add-in-web-components-in-sharepoint.md)
     
  
--  [Aktualisieren von Hostwebkomponenten in SharePoint](update-host-web-components-in-sharepoint-2013)
+-  [Aktualisieren von Hostwebkomponenten in SharePoint](update-host-web-components-in-sharepoint.md)
     
  
--  [Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins](create-a-handler-for-the-update-event-in-sharepoint-add-ins)
+-  [Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md)
     
  
 
@@ -64,10 +73,10 @@ Kehren Sie zu  [Wichtige Schritte beim Aktualisieren eines Add-Ins](update-share
 <a name="bk_addresources"> </a>
 
 
--  [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins)
+-  [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins.md)
     
  
--  [Aktualisierungsverfahren für SharePoint-Add-Ins](sharepoint-add-ins-update-process)
+-  [Aktualisierungsverfahren für SharePoint-Add-Ins](sharepoint-add-ins-update-process.md)
     
  
 

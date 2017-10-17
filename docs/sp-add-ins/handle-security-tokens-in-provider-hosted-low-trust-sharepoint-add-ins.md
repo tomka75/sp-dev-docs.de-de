@@ -1,24 +1,33 @@
-
+---
+title: "Behandeln von Sicherheitstokens in vom Anbieter gehosteten wenig vertrauenswürdigen SharePoint-Add-Ins"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: eee92f719ac3747f845f4aea807f71356f982fdb
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins"></a>Behandeln von Sicherheitstokens in vom Anbieter gehosteten wenig vertrauenswürdigen SharePoint-Add-Ins
 Erfahren Sie mehr über die Kontext-, Zugriffs- und Aktualisierungstoken, die für die Autorisierung der vom Anbieter gehosteten SharePoint-Add-Ins mit niedriger Vertrauensebene verwendet werden, und wie Sie mit diesen in Ihrem Code arbeiten können.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
- **WICHTIG**   **In diesem Artikel geht es um die Verwendung von Sicherheitstoken im Autorisierungssystem mit niedriger Vertrauensebene, nicht um das besonders vertrauenswürdige System.** Informationen zur Verwendung von Token im besonders vertrauenswürdigen System finden Sie unter [Erstellen und Verwenden von Zugriffstoken in vom Anbieter gehostete besonders vertrauenswürdige SharePoint-Add-Ins](create-and-use-access-tokens-in-provider-hosted-high-trust-sharepoint-add-ins).
+ **WICHTIG**   **In diesem Artikel geht es um die Verwendung von Sicherheitstoken im Autorisierungssystem mit niedriger Vertrauensebene, nicht um das besonders vertrauenswürdige System.** Informationen zur Verwendung von Token im besonders vertrauenswürdigen System finden Sie unter [Erstellen und Verwenden von Zugriffstoken in vom Anbieter gehostete besonders vertrauenswürdige SharePoint-Add-Ins](create-and-use-access-tokens-in-provider-hosted-high-trust-sharepoint-add-ins.md).
  
 
 
- **SharePoint-Add-Ins, die das  [Autorisierungssystem mit niedriger Vertrauensebene](creating-sharepoint-add-ins-that-use-low-trust-authorization) verwenden, um Zugriff auf SharePoint-Daten zu erhalten, nehmen an einem OAuth-Ablauf teil, der die Übergabe von Sicherheitstoken (im [JSON Web Token](http://datatracker.ietf.org/doc/draft-ietf-oauth-json-web-token/)-Format) unter SharePoint, Microsoft Azure Access Control Service (ACS), den Remotekomponenten der SharePoint-Add-In und, in einigen Fällen, dem Browser des Benutzers beinhaltet.** Je nach Design des Add-Ins gibt es verschiedene Abläufe, aber beinhalten mindestens zwei der folgenden Tokentypen:
+ **SharePoint-Add-Ins, die das  [Autorisierungssystem mit niedriger Vertrauensebene](creating-sharepoint-add-ins-that-use-low-trust-authorization.md) verwenden, um Zugriff auf SharePoint-Daten zu erhalten, nehmen an einem OAuth-Ablauf teil, der die Übergabe von Sicherheitstoken (im [JSON Web Token](http://datatracker.ietf.org/doc/draft-ietf-oauth-json-web-token/)-Format) unter SharePoint, Microsoft Azure Access Control Service (ACS), den Remotekomponenten der SharePoint-Add-In und, in einigen Fällen, dem Browser des Benutzers beinhaltet.** Je nach Design des Add-Ins gibt es verschiedene Abläufe, aber beinhalten mindestens zwei der folgenden Tokentypen:
  
 
 
 -  **Zugriffstoken:** Enthalten in jeder CRUD-Anforderung (Erstellen, Lesen, Aktualisieren oder Löschen) von den Remotekomponenten des Add-Ins an SharePoint. SharePoint überprüft das Token und verarbeitet die Anforderung.
     
  
--  **Aktualisierungstoken:** Verwendet zum Abrufen des ersten Zugriffstokens im [Kontexttokenablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization#Flows) und zum Ersetzen ablaufender Zugriffstoken sowohl im Kontexttoken- als auch im [Autorisierungscodeablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization#Flows) des Autorisierungssystems mit niedriger Vertrauensebene.
+-  **Aktualisierungstoken:** Verwendet zum Abrufen des ersten Zugriffstokens im [Kontexttokenablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization.md#Flows) und zum Ersetzen ablaufender Zugriffstoken sowohl im Kontexttoken- als auch im [Autorisierungscodeablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization.md#Flows) des Autorisierungssystems mit niedriger Vertrauensebene.
     
  
 Je nachdem, welchen OAuth-Ablauf das Add-In verwendet, ist eine der folgenden beiden Optionen Teil des Prozesses:
@@ -83,7 +92,7 @@ Je nach der Architektur Ihres SharePoint-Add-Ins und der Hosting-Plattform gibt 
     
  
 
- **Hinweis** In den meisten Szenarien können Sie nicht so einfache Begriffe wie „Zugriffstoken“ als Cacheschlüssel verwenden, weil Ihr Add-In die Token für verschiedene Benutzer und SharePoint-Farmen/-Mandanten voneinander unterscheiden können muss. Wenn Ihr Add-In den [Kontexttokenablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization#Flows) verwendet, wird ein spezieller **CacheKey** von SharePoint bereitgestellt, der verwendet werden kann, um zwischengespeicherte Token zu unterscheiden. In diesem Abschnitt wird erklärt, worin die Probleme liegen und was Sie tun können, wenn Ihre Anwendung nicht den Kontexttokenablauf verwendet.
+ **Hinweis** In den meisten Szenarien können Sie nicht so einfache Begriffe wie „Zugriffstoken“ als Cacheschlüssel verwenden, weil Ihr Add-In die Token für verschiedene Benutzer und SharePoint-Farmen/-Mandanten voneinander unterscheiden können muss. Wenn Ihr Add-In den [Kontexttokenablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization.md#Flows) verwendet, wird ein spezieller **CacheKey** von SharePoint bereitgestellt, der verwendet werden kann, um zwischengespeicherte Token zu unterscheiden. In diesem Abschnitt wird erklärt, worin die Probleme liegen und was Sie tun können, wenn Ihre Anwendung nicht den Kontexttokenablauf verwendet.
  
 
 Das Zwischenspeichern des Zugriffstokens in Sitzungszustand ist für die meisten Szenarien angemessen. Wenn die Remotewebanwendung auf andere Dienste zugreift, die OAuth (zusätzlich zu SharePoint) verwenden und sie die verschiedenen Zugriffstoken im Sitzungsstatus zwischenspeichert, müssen Sie sicherstellen, dass Sie eindeutige Cacheschlüssel für die Token verwenden. Verwenden Sie beispielsweise anstelle von "AccessToken" die Bezeichnungen "SharePoint_AccessToken", "Facebook_AccessToken", "SAP_Gateway_AccessToken" usw. (Wenn Sie keinen Sitzungsstatus oder eine andere Methode zum Zwischenspeichern verwenden, die den jeweiligen Cache aller Benutzer automatisch trennt, müssten Sie auch Ihre Schlüssel für Benutzer relativieren.)
@@ -126,7 +135,7 @@ Ein SharePoint-Add-In hat möglicherweise Back-End-Server, die nicht in derselbe
 ### <a name="handle-expired-access-tokens"></a>Umgang mit abgelaufenen Zugriffstoken
 <a name="Expired"> </a>
 
-Ein Zugriffstoken läuft nach einigen Stunden ab (zwölf Stunden zu dem Zeitpunkt, an dem der Artikel geschrieben wurde, aber das kann sich geändert haben). Wenn die Anwendung immer noch auf SharePoint zugreift, nachdem das Zugriffstoken abgelaufen ist, führt die erste Anforderung an SharePoint nach dem Ablaufzeitpunkt zu einem **401 Unauthorized**-Fehler. Ihr Code muss diese Antwort verarbeiten. Alternativ kann der Code den Ablaufzeitpunkt des Zugriffstokens testen, bevor es verwendet wird. **Ihr Code verwendet das Aktualisierungstoken, um ein anderes Zugriffstoken von ACS abzurufen.** Im Kontexttokenablauf ist das Aktualisierungstoken im Kontexttoken enthalten, das Ihr Add-In zu Beginn der ersten Sitzung mit SharePoint von SharePoint erhält. Im Autorisierungscodeablauf wird es zusammen mit dem ersten Zugriffstoken an die Anwendung übergeben. Ihr Code muss es zwischenspeichern, damit es bei Bedarf verfügbar ist. Das Aktualisierungstoken ist für einige Monate gültig und kann in einem Cookie oder in serverseitigem Speicher beibehalten werden. Weitere Informationen finden Sie unter [Überblick über die Handhabung und das Zwischenspeichern von Aktualisierungstoken](#RefreshToken).
+Ein Zugriffstoken läuft nach einigen Stunden ab (zwölf Stunden zu dem Zeitpunkt, an dem der Artikel geschrieben wurde, aber das kann sich geändert haben). Wenn die Anwendung immer noch auf SharePoint zugreift, nachdem das Zugriffstoken abgelaufen ist, führt die erste Anforderung an SharePoint nach dem Ablaufzeitpunkt zu einem **401 Unauthorized**-Fehler. Ihr Code muss diese Antwort verarbeiten. Alternativ kann der Code den Ablaufzeitpunkt des Zugriffstokens testen, bevor es verwendet wird. **Ihr Code verwendet das Aktualisierungstoken, um ein anderes Zugriffstoken von ACS abzurufen.** Im Kontexttokenablauf ist das Aktualisierungstoken im Kontexttoken enthalten, das Ihr Add-In zu Beginn der ersten Sitzung mit SharePoint von SharePoint erhält. Im Autorisierungscodeablauf wird es zusammen mit dem ersten Zugriffstoken an die Anwendung übergeben. Ihr Code muss es zwischenspeichern, damit es bei Bedarf verfügbar ist. Das Aktualisierungstoken ist für einige Monate gültig und kann in einem Cookie oder in serverseitigem Speicher beibehalten werden. Weitere Informationen finden Sie unter [Überblick über die Handhabung und das Zwischenspeichern von Aktualisierungstoken](#RefreshTokens).
  
 
  
@@ -145,7 +154,7 @@ In diesem Abschnitt werden Zugriffstoken anhand von Beispielen beschrieben, und 
  
 
  
-Im Folgenden sehen Sie ein decodiertes **Beispiel für ein Benutzer-und-Add-In-Token, das von ACS** für Aufrufe an SharePoint unter Verwendung der [Benutzer-und-Add-In-Richtlinie](add-in-authorization-policy-types-in-sharepoint-2013) erstellt wurde. Zur besseren Lesbarkeit wurden Leerzeichen eingefügt. Das Token entspricht dem [JSON Web Token](http://datatracker.ietf.org/doc/draft-ietf-oauth-json-web-token/?include_text=1)-Protokoll. Das JavaScript Object Notation (JSON)-Objekt im Token wird als „Anspruchssatz“ bezeichnet. Ausführliche Informationen zu den Eigenschaften im Anspruchssatz finden Sie in Tabelle 1. Beachten Sie, dass alle Werte klein geschrieben werden müssen. (Benutzer-und-Add-In-Zugriffscodes sind im [Kontexttokenablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization#Flows) und im [Autorisierungscodeablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization#Flows) identisch.)
+Im Folgenden sehen Sie ein decodiertes **Beispiel für ein Benutzer-und-Add-In-Token, das von ACS** für Aufrufe an SharePoint unter Verwendung der [Benutzer-und-Add-In-Richtlinie](add-in-authorization-policy-types-in-sharepoint.md) erstellt wurde. Zur besseren Lesbarkeit wurden Leerzeichen eingefügt. Das Token entspricht dem [JSON Web Token](http://datatracker.ietf.org/doc/draft-ietf-oauth-json-web-token/?include_text=1)-Protokoll. Das JavaScript Object Notation (JSON)-Objekt im Token wird als „Anspruchssatz“ bezeichnet. Ausführliche Informationen zu den Eigenschaften im Anspruchssatz finden Sie in Tabelle 1. Beachten Sie, dass alle Werte klein geschrieben werden müssen. (Benutzer-und-Add-In-Zugriffscodes sind im [Kontexttokenablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization.md#Flows) und im [Autorisierungscodeablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization.md#Flows) identisch.)
  
 
  
@@ -181,7 +190,7 @@ Im Folgenden sehen Sie ein decodiertes **Beispiel für ein Benutzer-und-Add-In-T
  
 
  
-Im Folgenden sehen Sie ein decodiertes **Beispiel für ein Nur-Add-In-Zugriffstoken, das von ACS** für Aufrufe an SharePoint unter Verwendung der [Nur-Add-In-Richtlinie](add-in-authorization-policy-types-in-sharepoint-2013) erstellt wurde. Zur besseren Lesbarkeit wurden Leerzeichen eingefügt. Das Token entspricht dem [JSON Web Token](http://datatracker.ietf.org/doc/draft-ietf-oauth-json-web-token/?include_text=1)-Protokoll. Einzelheiten zu den Eigenschaften im Anspruchssatz finden Sie in Tabelle 2. (Die Nur-Add-In-Richtlinie ist nicht für Anwendungen verfügbar, die den [Autorisierungscodeablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization#Flows) verwenden, weil diese nicht über eine Add-In-Manifestdatei verfügen und deshalb keine Berechtigung für die Verwendung von Nur-Add-In-Aufrufen anfordern können.)
+Im Folgenden sehen Sie ein decodiertes **Beispiel für ein Nur-Add-In-Zugriffstoken, das von ACS** für Aufrufe an SharePoint unter Verwendung der [Nur-Add-In-Richtlinie](add-in-authorization-policy-types-in-sharepoint.md) erstellt wurde. Zur besseren Lesbarkeit wurden Leerzeichen eingefügt. Das Token entspricht dem [JSON Web Token](http://datatracker.ietf.org/doc/draft-ietf-oauth-json-web-token/?include_text=1)-Protokoll. Einzelheiten zu den Eigenschaften im Anspruchssatz finden Sie in Tabelle 2. (Die Nur-Add-In-Richtlinie ist nicht für Anwendungen verfügbar, die den [Autorisierungscodeablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization.md#Flows) verwenden, weil diese nicht über eine Add-In-Manifestdatei verfügen und deshalb keine Berechtigung für die Verwendung von Nur-Add-In-Aufrufen anfordern können.)
  
 
  
@@ -221,7 +230,7 @@ Im Folgenden sehen Sie ein decodiertes **Beispiel für ein Nur-Add-In-Zugriffsto
 ## <a name="understand-the-structure-and-handling-of-context-tokens"></a>Grundlegendes zur Struktur und der Handhabung von Kontexttoken
 <a name="ContextTokens"> </a>
 
-Ein Kontexttoken wird nur im  [Kontexttokenablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization#Flows) des Autorisierungssystems mit niedriger Vertrauensebene verwendet. **Wenn die SharePoint-Add-In in SharePoint gestartet wird, fordert SharePoint an, dass Azure ACS ein Kontexttoken erstellt, das SharePoint dann an die Remotekomponente der SharePoint-Add-In übergibt.** Das Token wird als ausgeblendeter Parameter namens **SPAppToken** in einer Anforderung von SharePoint für die Startseite der Remotekomponente übergeben. Das Token wird mit einem geheimen Clientschlüssel signiert, der nur ACS und der SharePoint-Add-In bekannt ist. Das **Kontexttoken enthält ein Aktualisierungstoken, das das Add-In**, zusammen mit anderen Informationen aus dem Kontexttoken, **verwendet, um ein Zugriffstoken** von ACS anzufordern. (Zum Zeitpunkt, an dem dieser Artikel geschrieben wurde, hatten von ACS ausgestellte Kontexttoken für SharePoint eine Lebensspanne von 12 Stunden, das kann sich aber geändert haben.) Die **Hauptaufgaben für den Code in der SharePoint-Add-In** sind die folgenden:
+Ein Kontexttoken wird nur im  [Kontexttokenablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization.md#Flows) des Autorisierungssystems mit niedriger Vertrauensebene verwendet. **Wenn die SharePoint-Add-In in SharePoint gestartet wird, fordert SharePoint an, dass Azure ACS ein Kontexttoken erstellt, das SharePoint dann an die Remotekomponente der SharePoint-Add-In übergibt.** Das Token wird als ausgeblendeter Parameter namens **SPAppToken** in einer Anforderung von SharePoint für die Startseite der Remotekomponente übergeben. Das Token wird mit einem geheimen Clientschlüssel signiert, der nur ACS und der SharePoint-Add-In bekannt ist. Das **Kontexttoken enthält ein Aktualisierungstoken, das das Add-In**, zusammen mit anderen Informationen aus dem Kontexttoken, **verwendet, um ein Zugriffstoken** von ACS anzufordern. (Zum Zeitpunkt, an dem dieser Artikel geschrieben wurde, hatten von ACS ausgestellte Kontexttoken für SharePoint eine Lebensspanne von 12 Stunden, das kann sich aber geändert haben.) Die **Hauptaufgaben für den Code in der SharePoint-Add-In** sind die folgenden:
  
 
  
@@ -255,7 +264,7 @@ SharePointContextToken contextToken =
     Request.Url.Authority);
 ```
 
-Ein Beispiel, wie Sie einige dieser Aufgaben mit PHP erledigen können, finden im Beispiel  [SharePoint: Durchführen von Vorgängen in der SharePoint-Dokumentbibliothek von einer PHP-Website](https://code.msdn.microsoft.com/SharePoint-2013-Perform-8a78b8ef).
+Ein Beispiel, wie Sie einige dieser Aufgaben mit PHP erledigen können, finden im Beispiel  [SharePoint: Durchführen von Vorgängen in der SharePoint-Dokumentbibliothek von einer PHP-Website](https://code.msdn.microsoft.com/SharePoint-Perform-8a78b8ef).
  
 
  
@@ -325,7 +334,7 @@ Ihre Anwendung muss natürlich nicht denselben Cache für alles verwenden, was s
 - Die Bereich-GUID der SharePoint-Farm oder des SharePoint Online-Mandanten, auf die bzw. den das Add-In Zugriff erlangen möchte.
     
  
-Die Datei TokenHelper.cs (oder .vb) enthält Code, der diese Anforderung erstellt. Einen Beispiel-PHP-Code für diese Aufgabe finden Sie unter  [SharePoint: Durchführen von Vorgängen in der SharePoint-Dokumentbibliothek von einer PHP-Website](http://code.msdn.microsoft.com/office/SharePoint-2013-Perform-8a78b8ef/sourcecode?fileId=117521&amp;pathId=1932320454).
+Die Datei TokenHelper.cs (oder .vb) enthält Code, der diese Anforderung erstellt. Einen Beispiel-PHP-Code für diese Aufgabe finden Sie unter  [SharePoint: Durchführen von Vorgängen in der SharePoint-Dokumentbibliothek von einer PHP-Website](http://code.msdn.microsoft.com/office/SharePoint-Perform-8a78b8ef/sourcecode?fileId=117521&amp;pathId=1932320454).
  
 
  
@@ -433,7 +442,7 @@ Wenn Sie den Zugriff auf Ihre Remotekomponente wie einen WCF-Dienst auf SharePoi
 ## <a name="understand-the-handling-and-caching-of-refresh-tokens"></a>Grundlegendes zur Handhabung und zum Zwischenspeichern Aktualisierungstoken
 <a name="RefreshTokens"> </a>
 
- **Ein Aktualisierungstoken ist im Kontexttoken enthalten, das SharePoint an Ihre Webanwendung veröffentlicht, wenn sie gestartet wird.** Das Aktualisierungstoken ist ein verschlüsseltes Token, das Ihre SharePoint-Add-In nicht entschlüsseln kann. **Ihr Code verwendet es**, zusammen mit anderen Informationen, **um ein neues Zugriffstoken abzurufen, wenn das aktuelle Zugriffstoken abgelaufen ist.**. Es wird auch verwendet, um das *erste*  Zugriffstoken im [Kontexttokenablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization#Flows) abzurufen. (Zum Zeitpunkt, an dem dieser Artikel geschrieben wurde, hatten von ACS ausgestellte Aktualisierungstoken für SharePoint eine Lebensspanne von 6 Monaten, das kann sich aber geändert haben.)
+ **Ein Aktualisierungstoken ist im Kontexttoken enthalten, das SharePoint an Ihre Webanwendung veröffentlicht, wenn sie gestartet wird.** Das Aktualisierungstoken ist ein verschlüsseltes Token, das Ihre SharePoint-Add-In nicht entschlüsseln kann. **Ihr Code verwendet es**, zusammen mit anderen Informationen, **um ein neues Zugriffstoken abzurufen, wenn das aktuelle Zugriffstoken abgelaufen ist.**. Es wird auch verwendet, um das *erste*  Zugriffstoken im [Kontexttokenablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization.md#Flows) abzurufen. (Zum Zeitpunkt, an dem dieser Artikel geschrieben wurde, hatten von ACS ausgestellte Aktualisierungstoken für SharePoint eine Lebensspanne von 6 Monaten, das kann sich aber geändert haben.)
  
 
  
@@ -448,7 +457,7 @@ Da ein Zugriffstoken für Stunden gültig ist (derzeit 12) und ein Endbenutzer j
 - Das Design des Add-Ins ermöglicht Benutzern, den Zugriff des Add-Ins auf SharePoint für einen Zeitpunkt nach dem Beenden der Sitzung zu planen.
     
  
-Für beide **Szenarien muss Ihr Add-In das Aktualisierungstoken zwischenspeichern**, und im zweiten Szenario ist ein serverseitiger Cache erforderlich, der über Sitzungen hinweg dauerhaft ist. Ihre Optionen zum Zwischenspeichern sind dieselben wie für das [Zugriffstoken](#CacheAccessToken), und im Kontexttokenablauf können Sie [den Cacheschlüssel im Kontexttoken verwenden](#CacheKey). (Im Kontexttokenablauf speichern Sie für gewöhnlich das Kontexttoken nur zwischen. Es enthält das Aktualisierungstoken und andere Informationen, die Sie benötigen, um ein neues Zugriffstoken zu erhalten. Im [Autorisierungscodeablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization#Flows) gibt es kein Kontexttoken, deshalb speichern Sie das Aktualisierungstoken selbst zwischen.)
+Für beide **Szenarien muss Ihr Add-In das Aktualisierungstoken zwischenspeichern**, und im zweiten Szenario ist ein serverseitiger Cache erforderlich, der über Sitzungen hinweg dauerhaft ist. Ihre Optionen zum Zwischenspeichern sind dieselben wie für das [Zugriffstoken](#CacheAccessToken), und im Kontexttokenablauf können Sie [den Cacheschlüssel im Kontexttoken verwenden](#CacheKey). (Im Kontexttokenablauf speichern Sie für gewöhnlich das Kontexttoken nur zwischen. Es enthält das Aktualisierungstoken und andere Informationen, die Sie benötigen, um ein neues Zugriffstoken zu erhalten. Im [Autorisierungscodeablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization.md#Flows) gibt es kein Kontexttoken, deshalb speichern Sie das Aktualisierungstoken selbst zwischen.)
  
 
  
@@ -456,7 +465,7 @@ Wenn Sie das Aktualisierungstoken in einem Speicher zwischenspeichern, der über
  
 
  
-Wenn das Aktualisierungstoken abgelaufen ist, führt eine Anforderung an ACS für ein neues Zugriffstoken zu einem **401 Unauthorized**-Fehler. Ihr Add-In sollte auf diesen Fehler reagieren, indem es ein neues Aktualisierungstoken abruft und es verwendet, um ein neues Zugriffstoken zu erhalten. (Da das Aktualisierungstoken verschlüsselt ist, kann ihr Code den Ablaufzeitpunkt nicht überprüfen, bevor er es verwendet.) Im Kontexttokenablauf erhält Ihr Add-In ein neues Aktualisierungstoken, indem es [ein neues Kontexttoken abruft](#GetNewContextToken). Im Autorisierungscodeablauf erhält Ihr Add-In ein neues Aktualisierungstoken, indem es den Ablauf neu startet. Ihr Code sollte spezifisch auf den Fehler reagieren, indem er den Benutzer zur SharePoint OAuthAuthorize.aspx-Seite umleitet, wie unter [Informationen zum OAuth-Ablauf für Add-Ins, die dynamisch Berechtigungen anfordern](authorization-code-oauth-flow-for-sharepoint-add-ins#Flow) beschrieben.
+Wenn das Aktualisierungstoken abgelaufen ist, führt eine Anforderung an ACS für ein neues Zugriffstoken zu einem **401 Unauthorized**-Fehler. Ihr Add-In sollte auf diesen Fehler reagieren, indem es ein neues Aktualisierungstoken abruft und es verwendet, um ein neues Zugriffstoken zu erhalten. (Da das Aktualisierungstoken verschlüsselt ist, kann ihr Code den Ablaufzeitpunkt nicht überprüfen, bevor er es verwendet.) Im Kontexttokenablauf erhält Ihr Add-In ein neues Aktualisierungstoken, indem es [ein neues Kontexttoken abruft](#GetNewContextToken). Im Autorisierungscodeablauf erhält Ihr Add-In ein neues Aktualisierungstoken, indem es den Ablauf neu startet. Ihr Code sollte spezifisch auf den Fehler reagieren, indem er den Benutzer zur SharePoint OAuthAuthorize.aspx-Seite umleitet, wie unter [Informationen zum OAuth-Ablauf für Add-Ins, die dynamisch Berechtigungen anfordern](authorization-code-oauth-flow-for-sharepoint-add-ins.md#Flow) beschrieben.
  
 
  
@@ -464,7 +473,7 @@ Wenn das Aktualisierungstoken abgelaufen ist, führt eine Anforderung an ACS fü
 ## <a name="understanding-the-handling-authorization-codes"></a>Grundlegendes zum Umgang mit Autorisierungscodes
 <a name="Authcodes"> </a>
 
- **Im Autorisierungscodeablauf beginnt der Autorisierungsprozess mit einem Autorisierungscode, den ACS auf Anforderung von SharePoint ausstellt und den SharePoint dann** als Abfrageparameter an die Remoteanwendung übergibt. Der Autorisierungscode ist für jede Paarung aus Benutzer und Remoteanwendung eindeutig. (Zum Zeitpunkt, an dem dieser Artikel geschrieben wurde, hatten von ACS ausgestellte Autorisierungscodes für SharePoint eine Lebensspanne von 5 Minuten, das kann sich aber geändert haben.) Die Logik in **Ihrer Anwendung muss den Autorisierungscode aus dem Abfrageparameter abrufen und ihn in einer Anforderung an ACS für ein Zugriffstoken verwenden**. Wenn Sie verwalteten Code verwenden, finden Sie Beispielcode für das Erstellen des Tokens in der Datei TokenHelper.cs (und .vb). Beispielcode für das Lesen des Abfrageparameters finden Sie unter [Beispielcode für eine Seite, die auf SharePoint zugreift](authorization-code-oauth-flow-for-sharepoint-add-ins#Default). ACS macht den Autorisierungscode direkt nach der Ausgabe des Zugriffscodes ungültig, damit er nur einmal verwendet werden kann. Außerdem macht es keinen Sinn, ihn zwischenzuspeichern.
+ **Im Autorisierungscodeablauf beginnt der Autorisierungsprozess mit einem Autorisierungscode, den ACS auf Anforderung von SharePoint ausstellt und den SharePoint dann** als Abfrageparameter an die Remoteanwendung übergibt. Der Autorisierungscode ist für jede Paarung aus Benutzer und Remoteanwendung eindeutig. (Zum Zeitpunkt, an dem dieser Artikel geschrieben wurde, hatten von ACS ausgestellte Autorisierungscodes für SharePoint eine Lebensspanne von 5 Minuten, das kann sich aber geändert haben.) Die Logik in **Ihrer Anwendung muss den Autorisierungscode aus dem Abfrageparameter abrufen und ihn in einer Anforderung an ACS für ein Zugriffstoken verwenden**. Wenn Sie verwalteten Code verwenden, finden Sie Beispielcode für das Erstellen des Tokens in der Datei TokenHelper.cs (und .vb). Beispielcode für das Lesen des Abfrageparameters finden Sie unter [Beispielcode für eine Seite, die auf SharePoint zugreift](authorization-code-oauth-flow-for-sharepoint-add-ins.md#Default). ACS macht den Autorisierungscode direkt nach der Ausgabe des Zugriffscodes ungültig, damit er nur einmal verwendet werden kann. Außerdem macht es keinen Sinn, ihn zwischenzuspeichern.
  
 
  
@@ -495,13 +504,13 @@ Das kostenlose  [Fiddler-Tool](http://www.telerik.com/fiddler) kann verwendet we
 <a name="bk_addresources"> </a>
 
 
--  [Erstellen von SharePoint-Add-Ins, die die Autorisierung mit niedriger Vertrauensebene verwenden](creating-sharepoint-add-ins-that-use-low-trust-authorization)
+-  [Erstellen von SharePoint-Add-Ins, die die Autorisierung mit niedriger Vertrauensebene verwenden](creating-sharepoint-add-ins-that-use-low-trust-authorization.md)
     
  
-- Codebeispiele, die verwalteten Code und TokenHelper verwenden, finden Sie unter [SharePoint: Remote-Add-In „Hello World“ mit CSOM](http://code.msdn.microsoft.com/SharePoint-2013-Hello-0fd15fbf) und [SharePoint-Add-Ins - Paket mit Beispielen](http://code.msdn.microsoft.com/office/Apps-for-SharePoint-sample-64c80184)
+- Codebeispiele, die verwalteten Code und TokenHelper verwenden, finden Sie unter [SharePoint: Remote-Add-In „Hello World“ mit CSOM](http://code.msdn.microsoft.com/SharePoint-Hello-0fd15fbf) und [SharePoint-Add-Ins - Paket mit Beispielen](http://code.msdn.microsoft.com/office/Apps-for-SharePoint-sample-64c80184)
     
  
-- Ein Codebeispiel, in dem REST-Aufrufe von einem PHP-Add-In verwendet werden, finden Sie unter: [SharePoint: Durchführen von Vorgängen in der SharePoint-Dokumentbibliothek von einer PHP-Website](https://code.msdn.microsoft.com/SharePoint-2013-Perform-8a78b8ef)
+- Ein Codebeispiel, in dem REST-Aufrufe von einem PHP-Add-In verwendet werden, finden Sie unter: [SharePoint: Durchführen von Vorgängen in der SharePoint-Dokumentbibliothek von einer PHP-Website](https://code.msdn.microsoft.com/SharePoint-Perform-8a78b8ef)
     
  
 

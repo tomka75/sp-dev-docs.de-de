@@ -1,9 +1,18 @@
-
+---
+title: "Wichtige Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: bdc7c2f6954931f3af8cc8e539b973a1ba238bb6
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape"></a>Wichtige Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins
-Dieser Artikel enthält Informationen zur Architektur von SharePoint-Add-Ins und zum Modell für SharePoint-Add-Ins, einschließlich Add-In-Hostingoptionen, Benutzeroberflächenoptionen, Bereitstellungssystem, Sicherheitssystem und Lebenszyklus. Dieser Artikel ergänzt den Inhalt des Artikels  [SharePoint-Add-Ins](sharepoint-add-ins).
+Dieser Artikel enthält Informationen zur Architektur von SharePoint-Add-Ins und zum Modell für SharePoint-Add-Ins, einschließlich Add-In-Hostingoptionen, Benutzeroberflächenoptionen, Bereitstellungssystem, Sicherheitssystem und Lebenszyklus. Dieser Artikel ergänzt den Inhalt des Artikels  [SharePoint-Add-Ins](sharepoint-add-ins.md).
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -21,7 +30,7 @@ Das SharePoint-Add-In-Modell bietet folgende Möglichkeiten zum Hosten der Kompo
 -  **Von SharePoint-gehostet:** Add-Ins, die nur SharePoint-Komponenten und -Logik enthalten, die auf dem Client ausgeführt werden.
     
  
-Ausführlichere Informationen über Hostingoptionen sowie Anleitungen für die Wahl der geeigneten Option finden Sie unter  [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in).
+Ausführlichere Informationen über Hostingoptionen sowie Anleitungen für die Wahl der geeigneten Option finden Sie unter  [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in.md).
  
 
  
@@ -33,7 +42,7 @@ Die Website, auf der ein SharePoint-Add-In installiert wird, wird als Hostwebsit
  
 
  
-Als allgemeine Regel gilt: Jede SharePoint-Komponente, die keinen benutzerdefinierten Code enthält, der auf SharePoint-Servern ausgeführt wird, kann einem SharePoint-Add-In hinzugefügt werden (und für die Add-In-Website bereitgestellt werden). Es gibt jedoch einige Ausnahmen und Feinheiten im Hinblick darauf, wie und wo die Komponenten bereitgestellt werden. Weitere Informationen zu diesen Feinheiten sowie über Hostwebsites, die isolierten Add-In-Websites und Features in Add-Ins finden Sie unter  [Hostwebsites, Add-In-Websites und SharePoint-Komponenten in SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013).
+Als allgemeine Regel gilt: Jede SharePoint-Komponente, die keinen benutzerdefinierten Code enthält, der auf SharePoint-Servern ausgeführt wird, kann einem SharePoint-Add-In hinzugefügt werden (und für die Add-In-Website bereitgestellt werden). Es gibt jedoch einige Ausnahmen und Feinheiten im Hinblick darauf, wie und wo die Komponenten bereitgestellt werden. Weitere Informationen zu diesen Feinheiten sowie über Hostwebsites, die isolierten Add-In-Websites und Features in Add-Ins finden Sie unter  [Hostwebsites, Add-In-Websites und SharePoint-Komponenten in SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md).
  
 
  
@@ -53,7 +62,7 @@ Eine andere Möglichkeit zum Anzeigen eines SharePoint-Add-In ist über ein Add-
  **Hinweis** Sie können Add-In-Parts auch für die Add-In-Website bereitstellen. Dazu muss das Markup für das Webpart Teil eines Features in einer WSP-Datei im Add-In-Paket sein, nicht im Hostweb-Feature.
  
 
-Es wird empfohlen, dass Sie das Erscheinungsbild Ihrer Add-Ins so weit wie möglich an SharePoint orientieren. Dies ist jedoch nicht zwingend erforderlich und möglicherweise nicht immer die beste Möglichkeit.Weitere Informationen zu den UX-Richtlinien finden Sie unter  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins). 
+Es wird empfohlen, dass Sie das Erscheinungsbild Ihrer Add-Ins so weit wie möglich an SharePoint orientieren. Dies ist jedoch nicht zwingend erforderlich und möglicherweise nicht immer die beste Möglichkeit.Weitere Informationen zu den UX-Richtlinien finden Sie unter  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins.md). 
  
 
  
@@ -61,7 +70,7 @@ Beispielsweise gibt es eine spezielle Masterseite mit dem Namen app.master. Dies
  
 
  
-Ein anderes Tool, das Sie verwenden können, um für Ihre Add-Ins ein einheitliches Aussehen und Verhalten mit SharePoint zu erreichen, ist das Chromsteuerelement, das im Lieferumfang von SharePoint enthalten ist. Dieses Steuerelement ermöglicht es Ihnen, Ihren Add-In-Seiten den SharePoint-Navigationsheaderbereich hinzuzufügen, dies gilt auch für extern gehostete Seiten. Weitere Informationen zum UX-Design in SharePoint-Add-Ins finden Sie unter  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins). Weitere Informationen über das Chromsteuerelement finden Sie unter  [Verwenden des Client-Chromsteuerelements in Add-Ins für SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins).
+Ein anderes Tool, das Sie verwenden können, um für Ihre Add-Ins ein einheitliches Aussehen und Verhalten mit SharePoint zu erreichen, ist das Chromsteuerelement, das im Lieferumfang von SharePoint enthalten ist. Dieses Steuerelement ermöglicht es Ihnen, Ihren Add-In-Seiten den SharePoint-Navigationsheaderbereich hinzuzufügen, dies gilt auch für extern gehostete Seiten. Weitere Informationen zum UX-Design in SharePoint-Add-Ins finden Sie unter  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins.md). Weitere Informationen über das Chromsteuerelement finden Sie unter  [Verwenden des Client-Chromsteuerelements in Add-Ins für SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins.md).
  
 
  
@@ -69,7 +78,7 @@ Ein anderes Tool, das Sie verwenden können, um für Ihre Add-Ins ein einheitlic
 ## <a name="add-in-package-structure"></a>Add-In-Paketstruktur
 <a name="SPAppModelArch_Package"> </a>
 
-Ein SharePoint-Add-In-Paket ist eine Datei, die die Erweiterung „.app" hat und mit  [OPC (Open Packaging Conventions)](http://msdn.microsoft.com/en-us/magazine/cc163372.aspx) kompatibel ist. (Sie können die Datei öffnen, indem Sie „.zip" als zusätzliche Erweiterung zum Dateinamen hinzufügen und die Datei dann im Windows Explorer öffnen.) Das Paket enthält ein Add-In-Manifest, das bestimmte Eigenschaften des Add-Ins und Anweisungen für die SharePoint-Installationsinfrastruktur spezifiziert. Weitere Informationen über das Add-In-Manifest und -Paket finden Sie unter [Hinweise zur App-Manifeststruktur und zum Paket eines SharePoint-Add-Ins](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in).
+Ein SharePoint-Add-In-Paket ist eine Datei, die die Erweiterung „.app" hat und mit  [OPC (Open Packaging Conventions)](http://msdn.microsoft.com/en-us/magazine/cc163372.aspx) kompatibel ist. (Sie können die Datei öffnen, indem Sie „.zip" als zusätzliche Erweiterung zum Dateinamen hinzufügen und die Datei dann im Windows Explorer öffnen.) Das Paket enthält ein Add-In-Manifest, das bestimmte Eigenschaften des Add-Ins und Anweisungen für die SharePoint-Installationsinfrastruktur spezifiziert. Weitere Informationen über das Add-In-Manifest und -Paket finden Sie unter [Hinweise zur App-Manifeststruktur und zum Paket eines SharePoint-Add-Ins](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md).
  
 
  
@@ -93,7 +102,7 @@ Sie müssen in der Add-In-Manifest-Datei die Berechtigungen anfordern, die ein A
  
 
  
-Weitere Informationen über Add-In-Berechtigungen finden Sie unter [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint-2013).
+Weitere Informationen über Add-In-Berechtigungen finden Sie unter [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint.md).
  
 
  
@@ -101,7 +110,7 @@ Weitere Informationen über Add-In-Berechtigungen finden Sie unter [Add-In-Berec
 ### <a name="selective-delegation-and-authorization"></a>Selektive Delegierung und Autorisierung
 <a name="SelectiveAuthorization"> </a>
 
-Weder Benutzer, die ein Add-In starten, noch Ressourcenbesitzer, die einem Add-In Zugriffsrechte für eine Ressource erteilen, benötigen für das Add-In Anmeldeinformationen oder ein Kennwort. Stattdessen ermöglicht SharePoint Benutzern und Ressourcenbesitzern, nur die spezifischen Berechtigungen zu erteilen, welche das Add-In anfordert. Möglich wird dies, weil SharePoint das Transaktionsprotokoll  [OAuth 2.0](http://tools.ietf.org/html/draft-ietf-oauth-v2-22) verwendet. Weitere Informationen über OAuth in SharePoint finden Sie unter [OAuth-Ablauf mit Kontexttoken für Add-Ins in SharePoint](context-token-oauth-flow-for-sharepoint-add-ins).
+Weder Benutzer, die ein Add-In starten, noch Ressourcenbesitzer, die einem Add-In Zugriffsrechte für eine Ressource erteilen, benötigen für das Add-In Anmeldeinformationen oder ein Kennwort. Stattdessen ermöglicht SharePoint Benutzern und Ressourcenbesitzern, nur die spezifischen Berechtigungen zu erteilen, welche das Add-In anfordert. Möglich wird dies, weil SharePoint das Transaktionsprotokoll  [OAuth 2.0](http://tools.ietf.org/html/draft-ietf-oauth-v2-22) verwendet. Weitere Informationen über OAuth in SharePoint finden Sie unter [OAuth-Ablauf mit Kontexttoken für Add-Ins in SharePoint](context-token-oauth-flow-for-sharepoint-add-ins.md).
  
 
  
@@ -109,7 +118,7 @@ Weder Benutzer, die ein Add-In starten, noch Ressourcenbesitzer, die einem Add-I
 ### <a name="cross-domain-access"></a>Domainübergreifender Zugriff
 <a name="SelectiveAuthorization"> </a>
 
-Ein SharePoint-Add-In, das eine Remote-Webanwendung umfasst, welche JavaScript für seine Datenzugriffslogik verwendet, kann eine domänenübergreifende JavaScript-Bibliothek nutzen, um autorisierten Zugriff auf SharePoint-Daten innerhalb der Mandanteneinheit zu erhalten, in der das Add-In installiert ist. Weitere Informationen finden Sie unter  [Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library).
+Ein SharePoint-Add-In, das eine Remote-Webanwendung umfasst, welche JavaScript für seine Datenzugriffslogik verwendet, kann eine domänenübergreifende JavaScript-Bibliothek nutzen, um autorisierten Zugriff auf SharePoint-Daten innerhalb der Mandanteneinheit zu erhalten, in der das Add-In installiert ist. Weitere Informationen finden Sie unter  [Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md).
  
 
  
@@ -117,7 +126,7 @@ Ein SharePoint-Add-In, das eine Remote-Webanwendung umfasst, welche JavaScript f
 ## <a name="add-in-lifecycle"></a>Add-In-Lebenszyklus
 <a name="SPAppModelArch_Lifecycle"> </a>
 
-Der Lebenszyklus eines SharePoint-Add-In umfasst die Schritte der Veröffentlichung, Installation, Aktualisierung und Deinstallation. Weitere Informationen über diese Themen finden Sie unter  [Veröffentlichen von SharePoint-Add-Ins](publish-sharepoint-add-ins),  [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](deploying-and-installing-sharepoint-add-ins-methods-and-options) und [Aktualisierungsverfahren für Add-Ins für SharePoint](sharepoint-add-ins-update-process). Beachten Sie außerdem, dass es einen Mechanismus gibt, der Mandantenadministratoren die Stapelinstallation eines SharePoint-Add-In für mehrere Websites ermöglicht. Weitere Informationen finden Sie unter  [Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins).
+Der Lebenszyklus eines SharePoint-Add-In umfasst die Schritte der Veröffentlichung, Installation, Aktualisierung und Deinstallation. Weitere Informationen über diese Themen finden Sie unter  [Veröffentlichen von SharePoint-Add-Ins](publish-sharepoint-add-ins.md),  [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](deploying-and-installing-sharepoint-add-ins-methods-and-options.md) und [Aktualisierungsverfahren für Add-Ins für SharePoint](sharepoint-add-ins-update-process.md). Beachten Sie außerdem, dass es einen Mechanismus gibt, der Mandantenadministratoren die Stapelinstallation eines SharePoint-Add-In für mehrere Websites ermöglicht. Weitere Informationen finden Sie unter  [Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md).
  
 
  
@@ -181,7 +190,7 @@ Metadaten für ein SharePoint-Add-In, wie z. B. Benutzereinstellungen, Standorti
 ### <a name="secure-data-access-options"></a>Optionen für den sichere Datenzugriff
 <a name="DataAccess"> </a>
 
-Ihre Optionen für den sicheren Datenzugriff hängen natürlich von der Speicherwahl ab. Der Datenzugriff und die Suche weren detalliert in verschiedenen anderen Artikeln behandelt. Weitere Informationen finden Sie unter  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins).
+Ihre Optionen für den sicheren Datenzugriff hängen natürlich von der Speicherwahl ab. Der Datenzugriff und die Suche weren detalliert in verschiedenen anderen Artikeln behandelt. Weitere Informationen finden Sie unter  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md).
  
 
  
@@ -352,10 +361,10 @@ Dies ist ein Beispiel für eine Rohversion des **AppPrerequisites**-Markups, mit
 <a name="RegisterDependency"> </a>
 
 
--  [Auswählen von Mustern für die Entwicklung und das Hosten Ihres SharePoint-Add-Ins](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in)
+-  [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in.md)
     
  
--  [Hostwebs, Add-In-Webs und SharePoint-Komponenten in SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013)
+-  [Hostwebs, Add-In-Webs und SharePoint-Komponenten in SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md)
     
  
 
@@ -363,34 +372,34 @@ Dies ist ein Beispiel für eine Rohversion des **AppPrerequisites**-Markups, mit
 <a name="SPAppModelArch_AdditionalResources"> </a>
 
 
--  [SharePoint-Add-Ins](sharepoint-add-ins)
+-  [SharePoint-Add-Ins](sharepoint-add-ins.md)
     
  
 -  [SharePoint-Add-Ins im Vergleich zu SharePoint-Lösungen](http://msdn.microsoft.com/library/0e9efadb-aaf2-4c0d-afd5-d6cf25c4e7a8%28Office.15%29.aspx)
     
  
--  [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint-2013)
+-  [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint.md)
     
  
--  [OAuth-Ablauf mit Kontexttoken für SharePoint-Add-Ins](context-token-oauth-flow-for-sharepoint-add-ins)
+-  [OAuth-Ablauf mit Kontexttoken für SharePoint-Add-Ins](context-token-oauth-flow-for-sharepoint-add-ins.md)
     
  
--  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins)
+-  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins.md)
     
  
 -  [IFrame](http://www.w3schools.com/tags/tag_iframe.asp)
     
  
--  [Hinweise zur App-Manifeststruktur und zum Paket eines SharePoint-Add-Ins](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in)
+-  [Hinweise zur App-Manifeststruktur und zum Paket eines SharePoint-Add-Ins](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md)
     
  
--  [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](deploying-and-installing-sharepoint-add-ins-methods-and-options)
+-  [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](deploying-and-installing-sharepoint-add-ins-methods-and-options.md)
     
  
--  [Aktualisierungsverfahren für SharePoint-Add-Ins](sharepoint-add-ins-update-process)
+-  [Aktualisierungsverfahren für SharePoint-Add-Ins](sharepoint-add-ins-update-process.md)
     
  
--  [Mandantschaften und Bereitstellungsbereiche von SharePoint- Add-Ins](tenancies-and-deployment-scopes-for-sharepoint-add-ins)
+-  [Mandantschaften und Bereitstellungsbereiche von SharePoint- Add-Ins](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md)
     
  
 

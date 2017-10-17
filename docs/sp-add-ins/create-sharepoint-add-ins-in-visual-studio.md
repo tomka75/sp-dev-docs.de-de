@@ -1,8 +1,18 @@
+---
+title: Erstellen von SharePoint-Add-Ins in Visual Studio
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: ef06e1e32cbdafb36b2ff074dacd0d528f6a656f
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-sharepoint-add-ins-in-visual-studio"></a>Erstellen von SharePoint-Add-Ins in Visual Studio
 Erfahren Sie, wie Sie SharePoint-Add-Ins mithilfe von Vorlagen für Projekte und Projektelemente in Visual Studio entwickeln.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Sie können SharePoint Add-Ins mithilfe neuer Vorlagen für Projekte und Projektelemente in **vsnv** erstellen. 
@@ -39,14 +49,14 @@ Erstellt ein SharePoint-Add-In basierend auf den Informationen, die Sie in einem
 - Der Typ des Add-Ins, das Sie erstellen möchten: von einem Provider gehostet oder von SharePoint gehostet. 
     
  
-Weitere Informationen finden Sie unter [SharePoint-Add-Ins](sharepoint-add-ins).
+Weitere Informationen finden Sie unter [SharePoint-Add-Ins](sharepoint-add-ins.md).
  
 
  
 
 ### <a name="cloud-business-add-in"></a>Cloud-Business-Add-In
 
-Mithilfe der Vorlage **Cloud-Business-Add-In** in Visual Studio können Sie ein in SharePoint gehostetes Add-In erstellen, in dem mobile Benutzer an einem Remotestandort mithilfe moderner Geräte wie Smartphones und Tablet-PCs mit Toucheingabe Daten anzeigen, hinzufügen und aktualisieren können. Weitere Informationen finden Sie unter [Erstellen von Cloud-Geschäfts-Add-Ins](create-cloud-business-add-ins).
+Mithilfe der Vorlage **Cloud-Business-Add-In** in Visual Studio können Sie ein in SharePoint gehostetes Add-In erstellen, in dem mobile Benutzer an einem Remotestandort mithilfe moderner Geräte wie Smartphones und Tablet-PCs mit Toucheingabe Daten anzeigen, hinzufügen und aktualisieren können. Weitere Informationen finden Sie unter [Erstellen von Cloud-Geschäfts-Add-Ins](create-cloud-business-add-ins.md).
  
 
  
@@ -77,7 +87,7 @@ Fügt Ihrem SharePoint-Add-In ein Clientwebpart hinzu. Durch Hinzufügen eines C
 |**Eigenschaftenname**|**Beschreibung**|
 |:-----|:-----|
 |ClientWebPart|Gibt den Namen, den Titel, die Beschreibung und die Dimensionen des Clientwebparts an.|
-|Content|Definiert den Speicherort der Seite, die innerhalb des Clientwebparts gerendert wird. Das Element verfügt über zwei Eigenschaften: `Type` und `Src`. `Type` gibt den Typ des Webparts an, das Sie erstellen, beispielsweise HTML. `Src` definiert den Speicherort der Seite, die innerhalb des Clientwebparts gerendert wird. Die Vorlage verweist unter Verwendung des Schemas _ _Eigenschaftsname__ auf Eigenschaften in der Abfragezeichenfolge. Beispiel: `Src="~addinWebUrl/Pages/ClientWebPart1.aspx?Property1=_property1_"`Weitere Informationen finden Sie unter [Erstellen von Add-In-Webparts zur Installation mit Ihrem SharePoint-Add-In](create-add-in-parts-to-install-with-your-sharepoint-add-in).|
+|Content|Definiert den Speicherort der Seite, die innerhalb des Clientwebparts gerendert wird. Das Element verfügt über zwei Eigenschaften: `Type` und `Src`. `Type` gibt den Typ des Webparts an, das Sie erstellen, beispielsweise HTML. `Src` definiert den Speicherort der Seite, die innerhalb des Clientwebparts gerendert wird. Die Vorlage verweist unter Verwendung des Schemas _ _Eigenschaftsname__ auf Eigenschaften in der Abfragezeichenfolge. Beispiel: `Src="~addinWebUrl/Pages/ClientWebPart1.aspx?Property1=_property1_"`Weitere Informationen finden Sie unter [Erstellen von Add-In-Webparts zur Installation mit Ihrem SharePoint-Add-In](create-add-in-parts-to-install-with-your-sharepoint-add-in.md).|
 
 ### <a name="content-type"></a>Inhaltstyp
 
@@ -106,7 +116,7 @@ Fügt Ihrem SharePoint-Add-In zwei Projektelemente hinzu: eine Listendefinition 
 
 ### <a name="menu-item-custom-action"></a>Benutzerdefinierte Aktion für Menüelement
 
-Fügt ein Projektelement hinzu, das die Benutzeroberfläche der entsprechenden Hostwebsite erweitert, indem einem Listenmenü eine Aktion hinzugefügt wird. Die benutzerdefinierte Menüaktion umfasst eine Datei vom Typ "Elements.xml", in der die Eigenschaften der Aktion definiert werden. Weitere Informationen finden Sie unter  [Gewusst wie: Erstellen benutzerdefinierter Aktionen zur Bereitstellung mit Add-Ins für SharePoint](create-custom-actions-to-deploy-with-sharepoint-add-ins).
+Fügt ein Projektelement hinzu, das die Benutzeroberfläche der entsprechenden Hostwebsite erweitert, indem einem Listenmenü eine Aktion hinzugefügt wird. Die benutzerdefinierte Menüaktion umfasst eine Datei vom Typ "Elements.xml", in der die Eigenschaften der Aktion definiert werden. Weitere Informationen finden Sie unter  [Gewusst wie: Erstellen benutzerdefinierter Aktionen zur Bereitstellung mit Add-Ins für SharePoint](create-custom-actions-to-deploy-with-sharepoint-add-ins.md).
  
 
  
@@ -120,14 +130,14 @@ Fügt Ihrem SharePoint-Add-In ein Modul-Projektelement hinzu. Module sind einfac
 
 ### <a name="remote-event-receiver"></a>Remoteereignisempfänger
 
-Fügt Ihrer SharePoint-Add-In ein Projektelement für einen Remoteereignisempfänger und Ihrer Lösung ein Webanwendungsprojekt hinzu, sofern noch kein solches Projekt vorhanden ist. Die Webanwendung enthält einen Webdienst, der dem Remoteereignisempfänger in Ihrer SharePoint-Add-In zugeordnet ist. Der Webdienst enthält eine Visual Basic- oder Visual C#-Codedatei, deren Code ausgeführt wird, wenn in der SharePoint-Add-In ein Listen-, ein Listenelement- oder ein Webelementereignis auftritt. Wenn eine Webanwendung vorhanden ist, wird sie der SharePoint-Add-In zugeordnet, und der Webdienst wird der Anwendung hinzugefügt. Weitere Informationen finden Sie unter  [Behandeln von Ereignissen in SharePoint-Add-Ins](handle-events-in-sharepoint-add-ins).
+Fügt Ihrer SharePoint-Add-In ein Projektelement für einen Remoteereignisempfänger und Ihrer Lösung ein Webanwendungsprojekt hinzu, sofern noch kein solches Projekt vorhanden ist. Die Webanwendung enthält einen Webdienst, der dem Remoteereignisempfänger in Ihrer SharePoint-Add-In zugeordnet ist. Der Webdienst enthält eine Visual Basic- oder Visual C#-Codedatei, deren Code ausgeführt wird, wenn in der SharePoint-Add-In ein Listen-, ein Listenelement- oder ein Webelementereignis auftritt. Wenn eine Webanwendung vorhanden ist, wird sie der SharePoint-Add-In zugeordnet, und der Webdienst wird der Anwendung hinzugefügt. Weitere Informationen finden Sie unter  [Behandeln von Ereignissen in SharePoint-Add-Ins](handle-events-in-sharepoint-add-ins.md).
  
 
  
 
 ### <a name="ribbon-custom-action"></a>Benutzerdefinierte Menübandaktion
 
-Fügt ein Projektelement hinzu, das die Benutzeroberfläche der entsprechenden Hostwebsite erweitert, indem einem Menüband eine Aktion hinzugefügt wird. Die benutzerdefinierte Menübandaktion umfasst eine Datei vom Typ "Elements.xml", in der die Eigenschaften der Aktion definiert werden. Weitere Informationen finden Sie unter  [Gewusst wie: Erstellen benutzerdefinierter Aktionen zur Bereitstellung mit Add-Ins für SharePoint](create-custom-actions-to-deploy-with-sharepoint-add-ins).
+Fügt ein Projektelement hinzu, das die Benutzeroberfläche der entsprechenden Hostwebsite erweitert, indem einem Menüband eine Aktion hinzugefügt wird. Die benutzerdefinierte Menübandaktion umfasst eine Datei vom Typ "Elements.xml", in der die Eigenschaften der Aktion definiert werden. Weitere Informationen finden Sie unter  [Gewusst wie: Erstellen benutzerdefinierter Aktionen zur Bereitstellung mit Add-Ins für SharePoint](create-custom-actions-to-deploy-with-sharepoint-add-ins.md).
  
 
  
@@ -189,6 +199,6 @@ Fügt Ihrer SharePoint-Add-In ein Projektelement für eine benutzerdefinierte Wo
 <a name="SP15Projecttemplates_addlresources"> </a>
 
 
--  [Tools und Umgebungen für die Entwicklung von SharePoint-Add-Ins](tools-and-environments-for-developing-sharepoint-add-ins)
+-  [Tools und Umgebungen für die Entwicklung von SharePoint-Add-Ins](tools-and-environments-for-developing-sharepoint-add-ins.md)
     
  

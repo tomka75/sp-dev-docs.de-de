@@ -1,8 +1,18 @@
+---
+title: "Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 6d6856643f6dfb8501478f0d8384445900d03679
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="complete-basic-operations-using-sharepoint-client-library-code"></a>Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode
 In diesem Artikel erfahren Sie, wie Sie Code zum Ausführen grundlegender Vorgänge mit dem SharePoint .NET Framework-Clientobjektmodell (CSOM) schreiben.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -33,7 +43,7 @@ Weitere Informationen zu den Gruppen von APIs, die auf der SharePoint-Plattform 
  
 
  
-In diesem Artikel wird beschrieben, wie Sie grundlegende Vorgänge mithilfe des .NET Framework-Objektmodells ausführen, das als weitervertreibbares Paket im Microsoft Download Center verfügbar ist. Suchen Sie nach „SDKs für SharePoint Server 2013-Clientkomponenten" oder „SKDs für SharePoint Online-Clientkomponenten". Informationen zur Verwendung der anderen Client-APIs finden Sie unter  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013),  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten](complete-basic-operations-using-sharepoint-2013-rest-endpoints),  [Erstellen von Windows Phone-Apps, die auf SharePoint zugreifen](http://msdn.microsoft.com/library/36681335-f772-4499-8445-f94481bc18e7%28Office.15%29.aspx) und [Verwenden des Silverlight-Objektmodells](http://msdn.microsoft.com/library/cea7829d-f360-4052-8b76-91d90bcefd2a%28Office.15%29.aspx) im SharePoint 2010 SDK.
+In diesem Artikel wird beschrieben, wie Sie grundlegende Vorgänge mithilfe des .NET Framework-Objektmodells ausführen, das als weitervertreibbares Paket im Microsoft Download Center verfügbar ist. Suchen Sie nach „SDKs für SharePoint Server 2013-Clientkomponenten" oder „SKDs für SharePoint Online-Clientkomponenten". Informationen zur Verwendung der anderen Client-APIs finden Sie unter  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md),  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten](complete-basic-operations-using-sharepoint-rest-endpoints.md),  [Erstellen von Windows Phone-Apps, die auf SharePoint zugreifen](http://msdn.microsoft.com/library/36681335-f772-4499-8445-f94481bc18e7%28Office.15%29.aspx) und [Verwenden des Silverlight-Objektmodells](http://msdn.microsoft.com/library/cea7829d-f360-4052-8b76-91d90bcefd2a%28Office.15%29.aspx) im SharePoint 2010 SDK.
  
 
  
@@ -1039,10 +1049,10 @@ context.ExecuteQuery();
 <a name="bk_addresources"> </a>
 
 
--  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013)
+-  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md)
     
  
--  [Entwickeln von SharePoint-Add-Ins](develop-sharepoint-add-ins)
+-  [Entwickeln von SharePoint-Add-ins](develop-sharepoint-add-ins.md)
     
  
 -  [Erstellen von Websites für SharePoint](http://msdn.microsoft.com/library/3b372a63-7cdf-462a-abb4-750e611e967d%28Office.15%29.aspx)

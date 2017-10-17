@@ -1,9 +1,18 @@
-
+---
+title: "Drei Ansätze, um Entwurfsentscheidungen für SharePoint-Add-Ins zu treffen"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: f7806b40dd1c4d53da8c44bfd70bb6785a8b3a55
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="three-ways-to-think-about-design-options-for-sharepoint-add-ins"></a>Drei Ansätze, um Entwurfsentscheidungen für SharePoint-Add-Ins zu treffen
-Der Artikel enthält eine Übersicht über die verfügbaren Entwurfs- und Architekturoptionen für SharePoint-Add-Ins. Zuvor sollten Sie sich mit dem Artikel  [SharePoint-Add-Ins](sharepoint-add-ins) vertraut machen.
+Der Artikel enthält eine Übersicht über die verfügbaren Entwurfs- und Architekturoptionen für SharePoint-Add-Ins. Zuvor sollten Sie sich mit dem Artikel  [SharePoint-Add-Ins](sharepoint-add-ins.md) vertraut machen.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -32,31 +41,31 @@ Beim Entwerfen einer SharePoint-Add-In sind im Wesentlichen drei Kategorien von 
       -  Bei **vom Anbieter gehosteten** Add-Ins werden der primäre Datenspeicher und die Geschäftslogik von Ihnen als dem Entwickler außerhalb von SharePoint auf von Ihnen bereitgestellten Servern oder in einem Cloudkonto bereitgestellt und gehostet. Sie sind zuständig für die Isolation zwischen den Konten der Kunden, die Ihr Add-In erwerben. Solche Add-Ins können auch SharePoint-Komponenten enthalten. Diese werden in der SharePoint-Farm des Kunden gehostet. Dieser Add-In-Typ bietet Ihnen in den anderen Kategorien von Entwurfsentscheidungen die meiste Flexibilität. Zudem können Sie nicht von Microsoft stammende Plattformen für die externen Daten, die Logik und die Webbenutzeroberfläche verwenden. (Innerhalb der Kategorie der vom Anbieter gehosteten Add-Ins müssen Sie unterscheiden zwischen Add-Ins, deren Remotekomponenten innerhalb derselben Unternehmensfirewall wie die SharePoint-Farm liegen, und solchen, deren Remotekomponenten außerhalb dieser Firewall liegen. Bei diesen beiden Szenarien werden unterschiedliche Autorisierungssysteme verwendet. Dies hat wiederum Auswirkungen auf die verwendbare Programmiersprache für den Zugriff auf die SharePoint-Daten.)
     
  
-  -  In **SharePoint gehostete** Add-Ins bestehen ausschließlich aus SharePoint-Komponenten, wie Listen, Inhaltstypen, Workflows und Webparts. Es gibt keine externen Komponenten. Weitere Informationen zu den Arten von SharePoint-Komponenten, die in SharePoint-Add-Ins enthalten sein können, finden Sie unter [Hostwebsites, Add-In-Websites und SharePoint-Komponenten in SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013).
+  -  In **SharePoint gehostete** Add-Ins bestehen ausschließlich aus SharePoint-Komponenten, wie Listen, Inhaltstypen, Workflows und Webparts. Es gibt keine externen Komponenten. Weitere Informationen zu den Arten von SharePoint-Komponenten, die in SharePoint-Add-Ins enthalten sein können, finden Sie unter [Hostwebsites, Add-In-Websites und SharePoint-Komponenten in SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md).
     
  
 
-    Ausführlichere Informationen zu den Hostingoptionen von SharePoint-Add-Ins finden Sie unter [Auswählen von Mustern für die Entwicklung und das Hosting Ihres SharePoint-Add-Ins](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in).
+    Ausführlichere Informationen zu den Hostingoptionen von SharePoint-Add-Ins finden Sie unter [Auswählen von Mustern für die Entwicklung und das Hosting Ihres SharePoint-Add-Ins](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in.md).
     
  
 -  **Konnektivität:** In SharePoint werden drei Arten von sicherem Zugriff zum Erstellen/Lesen/Aktualisieren/Löschen (Create/Read/Update/Delete, CRUD) auf Daten unterstützt.
     
-      - Externe Webanwendungen in einem Add-In verwenden das OAuth-Protokoll zum Zugriff auf SharePoint-Daten. Weitere Informationen finden Sie unter  [Autorisierung und Authentifizierung für Add-Ins in SharePoint](authorization-and-authentication-of-sharepoint-add-ins).
+      - Externe Webanwendungen in einem Add-In verwenden das OAuth-Protokoll zum Zugriff auf SharePoint-Daten. Weitere Informationen finden Sie unter  [Autorisierung und Authentifizierung für Add-Ins in SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md).
     
  
-  - Der Zugriff von JavaScript auf Daten in einem SharePoint-Add-In-Web und Daten auf anderen Websites innerhalb desselben Mandanten erfolgt mithilfe einer besonderen JavaScript-Bibliothek, die sicheres domänenübergreifendes Skripting ermöglicht. Weitere Informationen finden Sie unter  [Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library).
+  - Der Zugriff von JavaScript auf Daten in einem SharePoint-Add-In-Web und Daten auf anderen Websites innerhalb desselben Mandanten erfolgt mithilfe einer besonderen JavaScript-Bibliothek, die sicheres domänenübergreifendes Skripting ermöglicht. Weitere Informationen finden Sie unter  [Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md).
     
  
-  - Eine SharePoint-Add-In kann auch über Business Connectivity Services (BCS) oder einen Webdienstproxy auf externe Daten zugreifen. Weitere Informationen finden Sie unter  [Business Connectivity Services in SharePoint](http://msdn.microsoft.com/library/64b7d032-4b83-4e9e-bc08-f0a161af5457%28Office.15%29.aspx) and [Abfragen eines Remotediensts mithilfe des Webproxys in SharePoint](query-a-remote-service-using-the-web-proxy-in-sharepoint-2013).
+  - Eine SharePoint-Add-In kann auch über Business Connectivity Services (BCS) oder einen Webdienstproxy auf externe Daten zugreifen. Weitere Informationen finden Sie unter  [Business Connectivity Services in SharePoint](http://msdn.microsoft.com/library/64b7d032-4b83-4e9e-bc08-f0a161af5457%28Office.15%29.aspx) and [Abfragen eines Remotediensts mithilfe des Webproxys in SharePoint](query-a-remote-service-using-the-web-proxy-in-sharepoint.md).
     
  
 
-    Weitere Informationen zu Datenspeicherung und -zugriff in SharePoint-Add-Ins finden Sie unter  [Datenspeicher in Add-Ins für SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape#Data),  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins) und [Arbeiten mit externen Daten in SharePoint](work-with-external-data-in-sharepoint-2013).
+    Weitere Informationen zu Datenspeicherung und -zugriff in SharePoint-Add-Ins finden Sie unter  [Datenspeicher in Add-Ins für SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape#Data.md),  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md) und [Arbeiten mit externen Daten in SharePoint](work-with-external-data-in-sharepoint.md).
     
  
--  **Benutzeroberfläche:** Eine SharePoint-Add-In kann auf drei Arten in SharePoint dargestellt werden: Alle Add-Ins werden zumindest auf einer vollständigen Webseite dargestellt. Optional kann ein Add-In auch durch ein Add-In-Webpart und durch ein Menüelement oder eine Menübandschaltfläche dargestellt werden. Weitere Informationen finden Sie unter [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins).
+-  **Benutzeroberfläche:** Eine SharePoint-Add-In kann auf drei Arten in SharePoint dargestellt werden: Alle Add-Ins werden zumindest auf einer vollständigen Webseite dargestellt. Optional kann ein Add-In auch durch ein Add-In-Webpart und durch ein Menüelement oder eine Menübandschaltfläche dargestellt werden. Weitere Informationen finden Sie unter [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins.md).
     
-     **Hinweis** SharePoint-Add-Ins können von den Kunden in mehreren Websitesammlungen eines Mandanten oder auf einzelnen Websites installiert werden. Erstere werden als Add-Ins mit Mandantenbereich bezeichnet. Wenn Sie den Kunden die Option des Mandantenbereichs bieten möchten, können Sie keine benutzerdefinierte Menübandschaltfläche und kein Add-In-Webpart einschließen. Weitere Informationen finden Sie unter [Mandantschaften und Bereitstellungsbereiche von SharePoint-Add-Ins](tenancies-and-deployment-scopes-for-sharepoint-add-ins).
+     **Hinweis** SharePoint-Add-Ins können von den Kunden in mehreren Websitesammlungen eines Mandanten oder auf einzelnen Websites installiert werden. Erstere werden als Add-Ins mit Mandantenbereich bezeichnet. Wenn Sie den Kunden die Option des Mandantenbereichs bieten möchten, können Sie keine benutzerdefinierte Menübandschaltfläche und kein Add-In-Webpart einschließen. Weitere Informationen finden Sie unter [Mandantschaften und Bereitstellungsbereiche von SharePoint-Add-Ins](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md).
 
 ## <a name="architectural-tiers"></a>Architekturebenen
 <a name="Tiers"> </a>
@@ -123,10 +132,10 @@ Das SharePoint-Add-In-Modell bietet so viele Entwurfsmöglichkeiten, dass sich k
 <a name="AdditionalResources"> </a>
 
 
--  [Entwerfen von SharePoint-Add-Ins](design-sharepoint-add-ins)
+-  [Entwerfen von SharePoint-Add-Ins](design-sharepoint-add-ins.md)
     
  
--  [Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape)
+-  [Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)
     
  
 

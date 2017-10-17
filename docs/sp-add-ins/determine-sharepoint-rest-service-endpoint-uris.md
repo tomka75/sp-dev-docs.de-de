@@ -1,23 +1,33 @@
+---
+title: Ermitteln von URIs von SharePoint-REST-Dienstendpunkten
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 317700095442c710882e288a92d1c8e37650722b
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="determine-sharepoint-rest-service-endpoint-uris"></a>Ermitteln von URIs von SharePoint-REST-Dienstendpunkten
 Informieren Sie sich über allgemeine Richtlinien zur Ermittlung von URIs von SharePoint REST-Endpunkten mithilfe der Signatur der entsprechenden Clientobjektmodell-APIs.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
  **Bevor Sie beginnen**
  
 
--  [Grundlegendes zum SharePoint REST-Dienst](get-to-know-the-sharepoint-2013-rest-service)
+-  [Grundlegendes zum SharePoint REST-Dienst](get-to-know-the-sharepoint-rest-service.md)
     
  
--  [Navigieren in der im REST-Dienst dargestellten SharePoint-Datenstruktur](navigate-the-sharepoint-data-structure-represented-in-the-rest-service)
+-  [Navigieren in der im REST-Dienst dargestellten SharePoint-Datenstruktur](navigate-the-sharepoint-data-structure-represented-in-the-rest-service.md)
     
  
 **Nächste Schritte**
  
 
--  [Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen](use-odata-query-operations-in-sharepoint-rest-requests)
+-  [Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen](use-odata-query-operations-in-sharepoint-rest-requests.md)
     
  
 
@@ -57,7 +67,7 @@ Die folgende Abbildung zeigt die allgemeine Syntaxstruktur von SharePoint REST-
  
 
  
-![SharePoint REST-Anforderungssyntax](../../images/SPF15Con_REST_OverallSyntax.png)
+![SharePoint REST-Anforderungssyntax](../images/SPF15Con_REST_OverallSyntax.png)
  
 Einige Endpunkte für SharePoint-Ressourcen weichen von dieser Syntaxstruktur ab:
  
@@ -196,7 +206,7 @@ Die folgende Abbildung zeigt die Syntax von SharePoint REST-Parametern.
  
 
  
-![Syntax von Methodenparametern des SharePoint REST-Diensts](../../images/SPF15Con_REST_parameterSyntax.png)
+![Syntax von Methodenparametern des SharePoint REST-Diensts](../images/SPF15Con_REST_parameterSyntax.png)
  
 
 ### <a name="complex-types-as-parameters-for-the-rest-service"></a>Komplexe Typen als Parameter für den REST-Dienst
@@ -278,7 +288,7 @@ Das Übergeben von komplexen Typen per Parameteraliasing wird vom SharePoint-RES
  
 
  
-![Parameter-Aliasing-Syntax des SharePoint REST-Diensts](../../images/SPF15Con_REST_parameterAliasSyntax.png)
+![Parameter-Aliasing-Syntax des SharePoint REST-Diensts](../images/SPF15Con_REST_parameterAliasSyntax.png)
  
 
  
@@ -297,7 +307,7 @@ Bei REST-Endpunkten, die Methoden entsprechen, die `Dictionary<String, String>`-
  
 
  
-![REST-Dienstsyntax für Wörterbuchparameter](../../images/SPF15Con_REST_parameterDictionarySyntax.png)
+![REST-Dienstsyntax für Wörterbuchparameter](../images/SPF15Con_REST_parameterDictionarySyntax.png)
  
 Ein `Dictionary<String, object>` wird als Mehrfachwertobjekt namens „KeyedPropertyValue“ mit den folgenden Zeichenfolgeneigenschaften dargestellt:
  
@@ -336,7 +346,7 @@ Die unten stehende Abbildung zeigt die REST-Dienstsyntax für Parameter in Abfra
  
 
  
-![REST-Dienstsyntax für Parameter in Abfragezeichenfolgen](../../images/SPF15Con_REST_parameterQuerySyntax.png)
+![REST-Dienstsyntax für Parameter in Abfragezeichenfolgen](../images/SPF15Con_REST_parameterQuerySyntax.png)
  
 
  
@@ -379,7 +389,7 @@ Die unten stehende Abbildung zeigt die Syntax von statischen Membern des SharePo
  
 
  
-![REST-Dienstsyntax für Parameter in Abfragezeichenfolgen](../../images/SPF15Con_REST_parameterQuerySyntax.png)
+![REST-Dienstsyntax für Parameter in Abfragezeichenfolgen](../images/SPF15Con_REST_parameterQuerySyntax.png)
  
 
  
@@ -397,28 +407,28 @@ Wenn Sie die von einem Endpunkt angeforderten Daten auswählen, filtern oder sor
 <a name="bk_addresources"> </a>
 
 
--  [Grundlegendes zum SharePoint REST-Dienst](get-to-know-the-sharepoint-2013-rest-service)
+-  [Grundlegendes zum SharePoint REST-Dienst](get-to-know-the-sharepoint-rest-service.md)
     
  
--  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten](complete-basic-operations-using-sharepoint-2013-rest-endpoints)
+-  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten](complete-basic-operations-using-sharepoint-rest-endpoints.md)
     
  
--  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest)
+-  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest.md)
     
  
--  [Arbeiten mit Ordnern und Dateien unter Verwendung von REST](working-with-folders-and-files-with-rest)
+-  [Arbeiten mit Ordnern und Dateien unter Verwendung von REST](working-with-folders-and-files-with-rest.md)
     
  
--  [Navigieren in der im REST-Dienst dargestellten SharePoint-Datenstruktur](navigate-the-sharepoint-data-structure-represented-in-the-rest-service)
+-  [Navigieren in der im REST-Dienst dargestellten SharePoint-Datenstruktur](navigate-the-sharepoint-data-structure-represented-in-the-rest-service.md)
     
  
--  [Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen](use-odata-query-operations-in-sharepoint-rest-requests)
+-  [Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen](use-odata-query-operations-in-sharepoint-rest-requests.md)
     
  
 -  [REST-API-Referenz und Beispiele](http://msdn.microsoft.com/library/rest-api-reference-and-samples%28Office.15%29.aspx)
     
  
--  [Synchronisieren von SharePoint-Elementen mit dem REST-Dienst](synchronize-sharepoint-items-using-the-rest-service)
+-  [Synchronisieren von SharePoint-Elementen mit dem REST-Dienst](synchronize-sharepoint-items-using-the-rest-service.md)
     
  
 -  [Verwenden von ETag-Werten zum Bestimmen der Version von Dokument- und Listenelementen über den REST-Dienst](http://msdn.microsoft.com/library/5f7e0579-46b7-44ab-b3b4-cdbc622dcd98%28Office.15%29.aspx)

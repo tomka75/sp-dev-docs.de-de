@@ -1,16 +1,25 @@
-
+---
+title: "Konfigurationsskripts mit hoher Vertrauenswürdigkeit für SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 24dd5cb063c9d1119b692496210bacbb47e075c2
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="high-trust-configuration-scripts-for-sharepoint"></a>Konfigurationsskripts mit hoher Vertrauenswürdigkeit für SharePoint
 Anpassbare Windows PowerShell-Skripts, die eine Microsoft SharePoint-Farm so konfigurieren, dass sie ein besonders vertrauenswürdiges SharePoint-Add-In verwendet.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
 ## <a name="how-to-use-the-scripts"></a>Informationen zur Verwendung der Skripts
 <a name="Usage"> </a>
 
-Die unten aufgeführten Skripts werden verwendet, um ein oder mehrere digitale X.509-Zertifikate als Aussteller von Zugriffstoken in einer Staging- oder ProduktionsMicrosoft SharePoint-Farm zu definieren. (Ein geeigneteres Skript für eine SharePoint-Add-Ins-Entwicklungsumgebung finden Sie unter  [Erstellen besonders vertrauenswürdiger Add-Ins für SharePoint](create-high-trust-sharepoint-add-ins).) Es gibt keine einzelne Skriptgruppe, die für jede SharePoint-Farm funktioniert, da es zu viele Optionen gibt, wie das Zertifikat bezogen und gespeichert wird. Beachten Sie deshalb Folgendes:
+Die unten aufgeführten Skripts werden verwendet, um ein oder mehrere digitale X.509-Zertifikate als Aussteller von Zugriffstoken in einer Staging- oder ProduktionsMicrosoft SharePoint-Farm zu definieren. (Ein geeigneteres Skript für eine SharePoint-Add-Ins-Entwicklungsumgebung finden Sie unter  [Erstellen besonders vertrauenswürdiger Add-Ins für SharePoint](create-high-trust-sharepoint-add-ins.md).) Es gibt keine einzelne Skriptgruppe, die für jede SharePoint-Farm funktioniert, da es zu viele Optionen gibt, wie das Zertifikat bezogen und gespeichert wird. Beachten Sie deshalb Folgendes:
  
 
  
@@ -21,7 +30,7 @@ Die unten aufgeführten Skripts werden verwendet, um ein oder mehrere digitale X
 - Diese Skripts sollten als Entwürfe betrachtet werden, die ggf. angepasst werden müssen.
     
  
-- Sie werden als Teil des gesamten Veröffentlichungsvorgangs einer besonders vertrauenswürdigen SharePoint-Add-In verwendet. Sie sollten nur von jemandem verwendet werden, der mit den Themen  [Erstellen von Add-Ins für SharePoint, die eine Autorisierung mit hoher Vertrauenswürdigkeit verwenden](creating-sharepoint-add-ins-that-use-high-trust-authorization) und [Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint](package-and-publish-high-trust-sharepoint-add-ins) und den darin aufgeführten Voraussetzungen vertraut ist.
+- Sie werden als Teil des gesamten Veröffentlichungsvorgangs einer besonders vertrauenswürdigen SharePoint-Add-In verwendet. Sie sollten nur von jemandem verwendet werden, der mit den Themen  [Erstellen von Add-Ins für SharePoint, die eine Autorisierung mit hoher Vertrauenswürdigkeit verwenden](creating-sharepoint-add-ins-that-use-high-trust-authorization.md) und [Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint](package-and-publish-high-trust-sharepoint-add-ins.md) und den darin aufgeführten Voraussetzungen vertraut ist.
     
  
 - Sie sollten außerdem von jemandem geprüft und angepasst werden, der mit den Kundenzertifikatsrichtlinien des Add-Ins vertraut ist.
@@ -39,7 +48,7 @@ Die unten aufgeführten Skripts werden verwendet, um ein oder mehrere digitale X
     Um das Benutzerkonto zu finden, das ein Anwendungspool verwendet, öffnen Sie den IIS-Manager auf einem SharePoint-Server, und doppelklicken Sie im Bereich **Verbindungen** auf **Anwendungspools**. Die Spalte **Identität** in der Liste **Anwendungspools** zeigt die Benutzer für die Anwendungspools an.
     
  
-- In den Anweisungen zu den zwei Hauptskripts wird außerdem davon ausgegangen, dass die Zertifikate im IIS auf den Servern installiert sind, die die Remoteanwendungen hosten. Die Anweisungen finden Sie unter  [Konfigurieren des Remotewebservers mit dem Zertifikat](package-and-publish-high-trust-sharepoint-add-ins#ConfigureRemote).
+- In den Anweisungen zu den zwei Hauptskripts wird außerdem davon ausgegangen, dass die Zertifikate im IIS auf den Servern installiert sind, die die Remoteanwendungen hosten. Die Anweisungen finden Sie unter  [Konfigurieren des Remotewebservers mit dem Zertifikat](package-and-publish-high-trust-sharepoint-add-ins.md#ConfigureRemote).
     
  
 Verwendungshinweise zu den Skripts finden Sie in den weiter unten aufgeführten Abschnitten.

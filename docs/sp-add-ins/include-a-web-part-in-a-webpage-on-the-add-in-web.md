@@ -1,9 +1,18 @@
-
+---
+title: "Einschließen eines Webparts auf einer Webseite im Add-In-Web"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 16a1d546cb1093be30012bc343f15b3a09ad23c5
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="include-a-web-part-in-a-webpage-on-the-add-in-web"></a>Einschließen eines Webparts auf einer Webseite im Add-In-Web
 Erfahren Sie, wie Sie ein Webpart auf einer Seite in einem SharePoint-Add-In einschließen.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Sie können ein standardmäßiges Webpart auf einer Seite im Add-In-Web eines SharePoint-Add-Ins einschließen, aber Sie müssen dies so tun, dass dadurch bei einer späteren Aktualisierung des Add-Ins keine Probleme verursacht werden.
@@ -15,7 +24,7 @@ Hier finden Sie ein Codebeispiel, in dem die Anweisungen aus diesem Thema verans
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-Voraussetzungen finden Sie unter [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins).
+Voraussetzungen finden Sie unter [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md).
  
 
  
@@ -27,7 +36,7 @@ Voraussetzungen finden Sie unter [Erste Schritte beim Erstellen von von SharePoi
 
  
 
-1. Erstellen Sie ein von SharePoint gehostetes SharePoint-Add-In in Visual Studio. Weitere Informationen finden Sie unter [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins).
+1. Erstellen Sie ein von SharePoint gehostetes SharePoint-Add-In in Visual Studio. Weitere Informationen finden Sie unter [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md).
     
  
 2. Öffnen Sie die ASPX-Datei, der Sie ein Webpart hinzufügen möchten. In diesem Thema wird „Default.aspx“ als Beispiel verwendet. 
@@ -75,7 +84,7 @@ Voraussetzungen finden Sie unter [Erste Schritte beim Erstellen von von SharePoi
 </AllUsersWebPart>
 ```
 
-7. Fügen Sie **webPart**-Markup als untergeordnetes Element des **webParts**-Elements hinzu. Im folgenden Beispiel wird ein **XsltListViewWebPart** hinzugefügt. Es setzt voraus, dass eine benutzerdefinierte Liste „Test List“ Teil desselben Add-In-Projekts ist. Weitere Informationen zum Hinzufügen einer benutzerdefinierten Liste zu einem Add-In-Web finden Sie unter [Gewusst wie: Erstellen eines von einem Anbieter gehosteten Add-Ins, das eine benutzerdefinierte SharePoint-Liste und einen benutzerdefinierten Inhaltstyp enthält](create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-content-type). 
+7. Fügen Sie **webPart**-Markup als untergeordnetes Element des **webParts**-Elements hinzu. Im folgenden Beispiel wird ein **XsltListViewWebPart** hinzugefügt. Es setzt voraus, dass eine benutzerdefinierte Liste „Test List“ Teil desselben Add-In-Projekts ist. Weitere Informationen zum Hinzufügen einer benutzerdefinierten Liste zu einem Add-In-Web finden Sie unter [Gewusst wie: Erstellen eines von einem Anbieter gehosteten Add-Ins, das eine benutzerdefinierte SharePoint-Liste und einen benutzerdefinierten Inhaltstyp enthält](create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-conte.md). 
     
      **Hinweis** Beachten Sie, dass das Webpart keine ID-Eigenschaft hat. Es ist eine bewährte Methode, eine explizite ID für das Webpart nur in den zwei Fällen hinzufügen, in denen es unbedingt erforderlich ist: Das Webpart wird zu einer SharePoint-Wiki-Seite hinzugefügt. Das Webpart ist eins von zwei oder mehr Webparts, die verbunden werden.
 

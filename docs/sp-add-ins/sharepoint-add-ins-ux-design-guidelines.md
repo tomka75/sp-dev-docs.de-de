@@ -1,8 +1,18 @@
+---
+title: "Designrichtlinien für die Benutzerfreundlichkeit von Add-Ins für SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: eaca30dd2bc29024ede688183cc6fd1fa5c34e7d
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="sharepoint-add-ins-ux-design-guidelines"></a>Designrichtlinien für die Benutzerfreundlichkeit von Add-Ins für SharePoint
 Hier erhalten Sie Informationen über allgemeine, auf das Benutzungserlebnis bzw. die User Experience (UX) ausgerichtete Entwurfsrichtlinien für Add-Ins in SharePoint, darunter die Wahl des Chrom, die Verwendung des CSS, das Verwalten von Benutzerlizenzen und andere Entwurfsaufgaben.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Add-Ins sind ein neues Konzept für SharePoint und ermöglichen Endbenutzern, ihren Websites neue Funktionen hinzuzufügen und dabei die Zuverlässigkeit der SharePoint-Site weiterhin zu gewährleisten. Zum Erstellen eines guten Add-Ins gehört nicht nur, interessante Funktionen bereitzustellen (obwohl dies ebenfalls wichtig ist), sondern auch sicherzustellen, dass das Add-In gut aussieht und sich nahtlos in die Website, auf der es installiert wird, einfügt.
@@ -39,7 +49,7 @@ Die Add-In-Vorlage kann nur für in SharePoint gehostete ASPX-Seiten verwendet w
  
 
  
-![Eine in SharePoint gehostete Seite, die die App-Vorlage verwendet](../../images/AppUXGuidelines_AppTemplate.png)
+![Eine in SharePoint gehostete Seite, die die App-Vorlage verwendet](../images/AppUXGuidelines_AppTemplate.png)
  
 Die Add-In-Vorlage ist die Standardvorlage in Visual Studio, wenn Sie eine Add-In-Website und Seiten innerhalb dieser Website erstellen.
  
@@ -59,7 +69,7 @@ Wenn Sie keine in SharePoint gehosteten ASPX-Seiten erstellen, Ihr Add-In sich j
  
 
  
-![Chromsteuerelement auf einer Webseite](../../images/AppUXGuidelines_ChromeControl.png)
+![Chromsteuerelement auf einer Webseite](../images/AppUXGuidelines_ChromeControl.png)
  
 
  
@@ -71,7 +81,7 @@ Wenn Sie keine in SharePoint gehosteten ASPX-Seiten erstellen, Ihr Add-In sich j
  
 
  
-![Videos](../../images/mod_icon_video.png)
+![Videos](../images/mod_icon_video.png)
  
 
  
@@ -126,7 +136,7 @@ Wenn Sie keine in SharePoint gehosteten ASPX-Seiten erstellen, Ihr Add-In sich j
   nav.setBottomHeaderVisible(false);
 ```
 
-Das Chromsteuerelement bietet zwei optionale Add-In-Symbole: Eines in der oberen Navigationsleiste und eines im Titelbereich. Das Add-In-Symbol in der oberen Navigationsleiste umfasst 24 x 24 Pixel (px), das Symbol im Titelbereich hat die gleiche Größe wie SharePoint-Website-Symbole - max. 64 px auf 180 px. Es wird empfohlen, ein auf einem weißen, schwarzen, grauen, hellen und gedeckten Hintergrund getestetes PNG-Bild zu verwenden, da Benutzer und Administratoren das Websitedesign ändern können. Weitere Informationen über die Verwendung des Chromsteuerelements finden Sie unter  [Verwenden des Client-Chromsteuerelements in Add-Ins für SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins).
+Das Chromsteuerelement bietet zwei optionale Add-In-Symbole: Eines in der oberen Navigationsleiste und eines im Titelbereich. Das Add-In-Symbol in der oberen Navigationsleiste umfasst 24 x 24 Pixel (px), das Symbol im Titelbereich hat die gleiche Größe wie SharePoint-Website-Symbole - max. 64 px auf 180 px. Es wird empfohlen, ein auf einem weißen, schwarzen, grauen, hellen und gedeckten Hintergrund getestetes PNG-Bild zu verwenden, da Benutzer und Administratoren das Websitedesign ändern können. Weitere Informationen über die Verwendung des Chromsteuerelements finden Sie unter  [Verwenden des Client-Chromsteuerelements in Add-Ins für SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins.md).
  
 
  
@@ -185,98 +195,98 @@ Als erstes sollten Sie beim Formatieren Ihres Add-Ins möglichst viel semantisch
 
 |**Beispiel**|**Verwendet für**|**Format**|
 |:-----|:-----|:-----|
-|![ms-textXLarge](../../images/AppUXGuidelines_ms-textxlarge.png)|Besonders großer Textkörper|.ms-textXLarge|
-|![ms-textlarge](../../images/AppUXGuidelines_ms-textlarge.png)|Großer Textkörper|.ms-textLarge|
-|![body](../../images/AppUXGuidelines_body.png)|Normaler Textkörper|Wird automatisch geerbt|
-|![ms-textsmall](../../images/AppUXGuidelines_ms-textsmall.png)|Kleiner Textkörper|.ms-textSmall|
-|![ms-metadata](../../images/AppUXGuidelines_ms-metadata.png)|Metadatentext|.ms-metadata|
+|![ms-textXLarge](../images/AppUXGuidelines_ms-textxlarge.png)|Besonders großer Textkörper|.ms-textXLarge|
+|![ms-textlarge](../images/AppUXGuidelines_ms-textlarge.png)|Großer Textkörper|.ms-textLarge|
+|![body](../images/AppUXGuidelines_body.png)|Normaler Textkörper|Wird automatisch geerbt|
+|![ms-textsmall](../images/AppUXGuidelines_ms-textsmall.png)|Kleiner Textkörper|.ms-textSmall|
+|![ms-metadata](../images/AppUXGuidelines_ms-metadata.png)|Metadatentext|.ms-metadata|
 
 **Tabelle 2. Titel- und Überschriftenformatvorlagen**
 
 
 |**Beispiel**|**Verwendet für**|**Format**|
 |:-----|:-----|:-----|
-|![ms-core-pagetitle](../../images/AppUXGuidelines_ms-core-pagetitle.png)|Haupttitel auf der Seite|.ms-core-pageTitle|
-|![h1](../../images/AppUXGuidelines_h1.png)|Titel für Dialogfelder, Formulare, Blogs und Diskussionsbeiträge. Ein alternativer „primärer“ Titel für spezielle Inhaltstypen oder Add-Ins, die die ganze Seite einnehmen und sich von einer regulären Wiki- oder Webparts-Seite unterscheiden sollen.|H1|
-|![h2](../../images/AppUXGuidelines_h2.png)|Sekundäre Überschrift im Verhältnis zu H1. Zum Beispiel verwendet Communitys H1 Accent für den Titel eines Beitrags und H2 Accent für die beste "Antwort" auf den Beitrag.|H2|
-|![h3](../../images/AppUXGuidelines_h3.png)|In der Regel eine Unterüberschrift unter H2.|H3|
-|![h4](../../images/AppUXGuidelines_h4.png)|Unterüberschriften unter H3.|H4|
-|![ms-webpart-titletext](../../images/AppUXGuidelines_ms-webpart-titletext.png)|Titel des Haupt- bzw. primären Webparts auf einer Seite oder für Hauptabschnittsüberschriften.|.ms-webpart-titleText|
-|![ms-dlg-heading](../../images/AppUXGuidelines_ms-dlg-heading.png)|Titel für Überschriften in Dialogfeldern oder Legenden.|.ms-dlg-heading|
+|![ms-core-pagetitle](../images/AppUXGuidelines_ms-core-pagetitle.png)|Haupttitel auf der Seite|.ms-core-pageTitle|
+|![h1](../images/AppUXGuidelines_h1.png)|Titel für Dialogfelder, Formulare, Blogs und Diskussionsbeiträge. Ein alternativer „primärer“ Titel für spezielle Inhaltstypen oder Add-Ins, die die ganze Seite einnehmen und sich von einer regulären Wiki- oder Webparts-Seite unterscheiden sollen.|H1|
+|![h2](../images/AppUXGuidelines_h2.png)|Sekundäre Überschrift im Verhältnis zu H1. Zum Beispiel verwendet Communitys H1 Accent für den Titel eines Beitrags und H2 Accent für die beste "Antwort" auf den Beitrag.|H2|
+|![h3](../images/AppUXGuidelines_h3.png)|In der Regel eine Unterüberschrift unter H2.|H3|
+|![h4](../images/AppUXGuidelines_h4.png)|Unterüberschriften unter H3.|H4|
+|![ms-webpart-titletext](../images/AppUXGuidelines_ms-webpart-titletext.png)|Titel des Haupt- bzw. primären Webparts auf einer Seite oder für Hauptabschnittsüberschriften.|.ms-webpart-titleText|
+|![ms-dlg-heading](../images/AppUXGuidelines_ms-dlg-heading.png)|Titel für Überschriften in Dialogfeldern oder Legenden.|.ms-dlg-heading|
 
 **Tabelle 3. Formatvorlagen für die Navigation**
 
 
 |**Beispiel**|**Verwendet für**|**Format**|
 |:-----|:-----|:-----|
-|![QuickLaunchHeading](../../images/AppUXGuidelines_QuickLaunchHeading.png)|Überschrift der linken Navigationsleiste.|.ms-core-listMenu-verticalBox > .ms-core-listMenu-root > li > .ms-core-listMenu-item|
-|![QuickLaunchLink](../../images/AppUXGuidelines_QuickLaunchLink.png)|Link in der linken Navigationsleiste.|.ms-core-listMenu-verticalBox|
-|![QuickLaunchSelected](../../images/AppUXGuidelines_QuickLaunchSelected.png)|Ausgewähltes Element in der linken Navigationsleiste.|.ms-core-listMenu-verticalBox + .ms-accentText|
-|![TopNav](../../images/AppUXGuidelines_TopNav.png)|Element in der oberen Navigationsleiste.||
-|![TopNavSelected](../../images/AppUXGuidelines_TopNavSelected.png)|Ausgewähltes Element in der oberen Navigationsleiste.||
+|![QuickLaunchHeading](../images/AppUXGuidelines_QuickLaunchHeading.png)|Überschrift der linken Navigationsleiste.|.ms-core-listMenu-verticalBox > .ms-core-listMenu-root > li > .ms-core-listMenu-item|
+|![QuickLaunchLink](../images/AppUXGuidelines_QuickLaunchLink.png)|Link in der linken Navigationsleiste.|.ms-core-listMenu-verticalBox|
+|![QuickLaunchSelected](../images/AppUXGuidelines_QuickLaunchSelected.png)|Ausgewähltes Element in der linken Navigationsleiste.|.ms-core-listMenu-verticalBox + .ms-accentText|
+|![TopNav](../images/AppUXGuidelines_TopNav.png)|Element in der oberen Navigationsleiste.||
+|![TopNavSelected](../images/AppUXGuidelines_TopNavSelected.png)|Ausgewähltes Element in der oberen Navigationsleiste.||
 
 **Tabelle 4. Formatvorlagen für Befehle**
 
 
 |**Beispiel**|**Verwendet für**|**Format**|
 |:-----|:-----|:-----|
-|![ms-commandlink](../../images/AppUXGuidelines_ms-commandlink.png)|Links für primäre Aktionen, die der Benutzer innerhalb eines bestimmten Containers oder einer Seite durchführen soll. Wird z. B. verwendet, um die Befehle unter einer Legende zu formatieren. Zeigt immer die gleiche Farbe für besuchte und nicht besuchte Befehle an.|.ms-commandLink|
-|![ms-secondarycommandlink](../../images/AppUXGuidelines_ms-secondarycommandlink.png)|Wird auch zum Formatieren von Aktions-Links verwendet, jedoch für Aktionen, die für den Inhalt sekundär sind. Diese Formatvorlage wird für sekundäre Aktionen verwendet, damit sie nicht die Aufmerksamkeit vom Inhalt ablenken.|.ms-secondaryCommandLink|
-|![ms-calloutlink](../../images/AppUXGuidelines_ms-calloutlink.png)|Links in der Legende.|.ms-calloutLink|
+|![ms-commandlink](../images/AppUXGuidelines_ms-commandlink.png)|Links für primäre Aktionen, die der Benutzer innerhalb eines bestimmten Containers oder einer Seite durchführen soll. Wird z. B. verwendet, um die Befehle unter einer Legende zu formatieren. Zeigt immer die gleiche Farbe für besuchte und nicht besuchte Befehle an.|.ms-commandLink|
+|![ms-secondarycommandlink](../images/AppUXGuidelines_ms-secondarycommandlink.png)|Wird auch zum Formatieren von Aktions-Links verwendet, jedoch für Aktionen, die für den Inhalt sekundär sind. Diese Formatvorlage wird für sekundäre Aktionen verwendet, damit sie nicht die Aufmerksamkeit vom Inhalt ablenken.|.ms-secondaryCommandLink|
+|![ms-calloutlink](../images/AppUXGuidelines_ms-calloutlink.png)|Links in der Legende.|.ms-calloutLink|
 
 **Tabelle 5. Formatvorlagen für Modifzierer**
 
 
 |**Beispiel**|**Verwendet für**|**Format**|
 |:-----|:-----|:-----|
-|![ms-accenttext](../../images/AppUXGuidelines_ms-accenttext.png)|Hilfsklasse, die die Akzentfarbe aus dem aktuellen Design für Text bereitstellt.|.ms-accentText|
-|![Link](../../images/AppUXGuidelines_hyperlink.png)|Links im Inhalt sollten vom Hyperlinkformat und -verhalten erben. Das Hyperlinkformat wendet eine Farbe und einen Hover-Effekt an, um anzugeben, dass es sich um einen Link und nicht um normalen Text handelt.|Durch Verwenden von <a> geerbt.|
-|![ms-error](../../images/AppUXGuidelines_ms-error.png)|Fehlermeldungen in Formularen.|.ms-error|
-|![ms-soften](../../images/AppUXGuidelines_ms-soften.png)|Hilfsklasse, die ein schattiertes Grau für Text bereitstellt, der weniger hervorgehoben sein soll wie der normale Textkörper.|.ms-soften|
-|![ms-disabled](../../images/AppUXGuidelines_ms-disabled.png)|Hilfsklasse, welche die "deaktivierte" Farbe auf Text anwendet, der zur Kennzeichnung von deaktivierten Stati verwendet wird.|.ms-disabled|
-|![ms-uppercase](../../images/AppUXGuidelines_ms-uppercase.png)|Hilfsklasse, die den Text vollständig in Großbuchstaben umwandelt.|.ms-uppercase|
-|![ms-helper](../../images/AppUXGuidelines_ms-helper.png)|Hilfsklasse zum Formatieren von Text wie Formulare.|.ms-helper|
-|![hr](../../images/AppUXGuidelines_hr.png)|Gestrichelte Trennlinie, die verwendet wird, um Abschnitte im Schnellstartbereich und in Menüs zu trennen.|HR|
+|![ms-accenttext](../images/AppUXGuidelines_ms-accenttext.png)|Hilfsklasse, die die Akzentfarbe aus dem aktuellen Design für Text bereitstellt.|.ms-accentText|
+|![Link](../images/AppUXGuidelines_hyperlink.png)|Links im Inhalt sollten vom Hyperlinkformat und -verhalten erben. Das Hyperlinkformat wendet eine Farbe und einen Hover-Effekt an, um anzugeben, dass es sich um einen Link und nicht um normalen Text handelt.|Durch Verwenden von <a> geerbt.|
+|![ms-error](../images/AppUXGuidelines_ms-error.png)|Fehlermeldungen in Formularen.|.ms-error|
+|![ms-soften](../images/AppUXGuidelines_ms-soften.png)|Hilfsklasse, die ein schattiertes Grau für Text bereitstellt, der weniger hervorgehoben sein soll wie der normale Textkörper.|.ms-soften|
+|![ms-disabled](../images/AppUXGuidelines_ms-disabled.png)|Hilfsklasse, welche die "deaktivierte" Farbe auf Text anwendet, der zur Kennzeichnung von deaktivierten Stati verwendet wird.|.ms-disabled|
+|![ms-uppercase](../images/AppUXGuidelines_ms-uppercase.png)|Hilfsklasse, die den Text vollständig in Großbuchstaben umwandelt.|.ms-uppercase|
+|![ms-helper](../images/AppUXGuidelines_ms-helper.png)|Hilfsklasse zum Formatieren von Text wie Formulare.|.ms-helper|
+|![hr](../images/AppUXGuidelines_hr.png)|Gestrichelte Trennlinie, die verwendet wird, um Abschnitte im Schnellstartbereich und in Menüs zu trennen.|HR|
 
 **Tabelle 6. Formatvorlagen für Part-Benutzeroberflächen**
 
 
 |**Beispiel**|**Verwendet für**|**Format**|
 |:-----|:-----|:-----|
-|![Dateien ziehen](../../images/AppUXGuidelines_dragfiles.png)|Inline-Haupttext am Anfang eines Parts.|.ms-textXLarge + .ms-soften|
-|![ms-herocommandlink](../../images/AppUXGuidelines_ms-herocommandlink.png)|Befehle in der obersten Zeile eines Parts; pro Part sollten maximal ein oder zwei enthalten sein.|.ms-heroCommandLink|
-|![ms-attractmode](../../images/AppUXGuidelines_ms-attractmode.png)|Text, der angezeigt wird, um dem Benutzer einen Anreiz zur Interaktion mit dem Part zu geben, wenn dieser keine Daten enthält.|.ms-attractMode|
-|![ms-emptymode](../../images/AppUXGuidelines_ms-emptymode.png)|Text, der für den Benutzer angezeigt wird, wenn keine Daten verfügbar sind.|.ms-emptyMode|
-|![mspivotlink](../../images/AppUXGuidelines_mspivotlink.png)|Ansicht-Steuerelemente, wie z. B. ein Pivot-Element.|.ms-pivot-link|
-|![ms-listlink](../../images/AppUXGuidelines_ms-listlink.png)|Listenelemente, die auch Links sind.|.ms-listLink|
+|![Dateien ziehen](../images/AppUXGuidelines_dragfiles.png)|Inline-Haupttext am Anfang eines Parts.|.ms-textXLarge + .ms-soften|
+|![ms-herocommandlink](../images/AppUXGuidelines_ms-herocommandlink.png)|Befehle in der obersten Zeile eines Parts; pro Part sollten maximal ein oder zwei enthalten sein.|.ms-heroCommandLink|
+|![ms-attractmode](../images/AppUXGuidelines_ms-attractmode.png)|Text, der angezeigt wird, um dem Benutzer einen Anreiz zur Interaktion mit dem Part zu geben, wenn dieser keine Daten enthält.|.ms-attractMode|
+|![ms-emptymode](../images/AppUXGuidelines_ms-emptymode.png)|Text, der für den Benutzer angezeigt wird, wenn keine Daten verfügbar sind.|.ms-emptyMode|
+|![mspivotlink](../images/AppUXGuidelines_mspivotlink.png)|Ansicht-Steuerelemente, wie z. B. ein Pivot-Element.|.ms-pivot-link|
+|![ms-listlink](../images/AppUXGuidelines_ms-listlink.png)|Listenelemente, die auch Links sind.|.ms-listLink|
 
 **Tabelle 7. Hintergrund- und Rahmenformatvorlagen**
 
 
 |**Beispiel**|**Verwendet für**|**Format**|
 |:-----|:-----|:-----|
-|![ms-emphasis](../../images/AppUXGuidelines_ms-emphasis.png)|Zum Formatieren eines Rechtecks, das auf der Seite stark hervorgehoben werden soll.|.ms-emphasis|
-|![ms-emphasisborder](../../images/AppUXGuidelines_ms-emphasisborder.png)|Rahmen zum Hervorheben eines Elements.|.ms-emphasisBorder|
-|![ms-subtleemphasis](../../images/AppUXGuidelines_ms-subtleemphasis.png)|Eine schwächere Hervorhebung eines Elements.|.ms-subtleEmphasis|
-|![ms-subtleemphasiscommand](../../images/AppUXGuidelines_ms-subtleemphasiscommand.png)|Befehle in einem Element, mit ms-subtleEmphasis formatiert.|.ms-subtleEmphasisCommand|
-|![ms-subtleemphasiscommand-disabled](../../images/AppUXGuidelines_ms-subtleemphasiscommand-disabled.png)|Deaktivierter Befehl in einem Element, mit ms-subtleEmphasis formatiert.|.ms-subtleEmphasisCommand-disabled|
-|![ms-sidenav](../../images/AppUXGuidelines_ms-sidenav.png)|Seitliche Navigationselemente.|.ms-sideNav|
-|![ms-sidenav-selected](../../images/AppUXGuidelines_ms-sidenav-selected.png)|Zum Formatieren des ausgewählten seitlichen Navigationselements.|.ms-sideNav-selected|
-|![ms-lines](../../images/AppUXGuidelines_ms-lines.png)|Zum Hervorheben eines Elements durch einen Rahmen.|.ms-lines|
-|![ms-subtlelines](../../images/AppUXGuidelines_ms-subtlelines.png)|Zum Hervorheben eines Elements durch einen feinen Rahmen.|.ms-subtleLines|
-|![ms-stronglines](../../images/AppUXGuidelines_ms-stronglines.png)|Zum Hervorheben eines Elements durch einen starken oder farbigen Rahmen.|.ms-strongLines|
-|![ms-disabledlines](../../images/AppUXGuidelines_ms-disabledlines.png)|Zum Hervorheben eines deaktivierten Elements durch einen Rahmen.|.ms-disabledLines|
-|![ms-accentlines](../../images/AppUXGuidelines_ms-accentlines.png)|Zum Hervorheben eines Elements durch einen Akzentuierungsrahmen.|.ms-accentLines|
-|![ms-popupborder](../../images/AppUXGuidelines_ms-popupborder.png)|Zum Begrenzen eines Popupfensters.|.ms-popupBorder|
-|![ms-bgoverlay](../../images/AppUXGuidelines_ms-bgoverlay.png)|Zum Anwenden einer Überlagerung auf das Hintergrundelement.|.ms-bgOverlay|
-|![bgdisabled](../../images/AppUXGuidelines_bgdisabled.png)|Um den Hintergrund eines Elements deaktiviert erscheinen zu lassen.|.ms-bgDisabled|
-|![ms-bgheader](../../images/AppUXGuidelines_ms-bgheader.png)|Zum Anwenden der Kopfzeilen-Hintergrundfarbe.|.ms-bgHeader|
-|![ms-bgfooter](../../images/AppUXGuidelines_ms-bgfooter.png)|Zum Anwenden der Fußzeilen-Hintergrundfarbe.|.ms-bgFooter|
-|![md-bghoverable normal](../../images/AppUXGuidelines_md-bghoverable-normal.png)|Elemente, die farblich hervorgehoben werden sollen, wenn mit dem Mauszeiger darauf gezeigt wird. Das Beispiel zeigt das Element, wenn nicht mit dem Mauszeiger darauf gezeigt wird.|.ms-bgHoverable|
-|![ms-bghoverable-onhover](../../images/AppUXGuidelines_ms-bghoverable-onhover.png)|Elemente, die farblich hervorgehoben werden sollen, wenn mit dem Mauszeiger darauf gezeigt wird. Das Beispiel zeigt das Element, wenn mit dem Mauszeiger darauf gezeigt wird.|.ms-bgHoverable|
-|![ms-bgselected](../../images/AppUXGuidelines_ms-bgselected.png)|Zum Anzeigen der Auswahl eines Elements.|.ms-bgSelected|
-|![ms-topbar](../../images/AppUXGuidelines_ms-topbar.png)|Elemente in der obersten Leiste der Seite.|.ms-topBar|
-Weitere Informationen finden Sie unter [Verwenden einer SharePoint-Formatvorlage in SharePoint Add-Ins](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins).
+|![ms-emphasis](../images/AppUXGuidelines_ms-emphasis.png)|Zum Formatieren eines Rechtecks, das auf der Seite stark hervorgehoben werden soll.|.ms-emphasis|
+|![ms-emphasisborder](../images/AppUXGuidelines_ms-emphasisborder.png)|Rahmen zum Hervorheben eines Elements.|.ms-emphasisBorder|
+|![ms-subtleemphasis](../images/AppUXGuidelines_ms-subtleemphasis.png)|Eine schwächere Hervorhebung eines Elements.|.ms-subtleEmphasis|
+|![ms-subtleemphasiscommand](../images/AppUXGuidelines_ms-subtleemphasiscommand.png)|Befehle in einem Element, mit ms-subtleEmphasis formatiert.|.ms-subtleEmphasisCommand|
+|![ms-subtleemphasiscommand-disabled](../images/AppUXGuidelines_ms-subtleemphasiscommand-disabled.png)|Deaktivierter Befehl in einem Element, mit ms-subtleEmphasis formatiert.|.ms-subtleEmphasisCommand-disabled|
+|![ms-sidenav](../images/AppUXGuidelines_ms-sidenav.png)|Seitliche Navigationselemente.|.ms-sideNav|
+|![ms-sidenav-selected](../images/AppUXGuidelines_ms-sidenav-selected.png)|Zum Formatieren des ausgewählten seitlichen Navigationselements.|.ms-sideNav-selected|
+|![ms-lines](../images/AppUXGuidelines_ms-lines.png)|Zum Hervorheben eines Elements durch einen Rahmen.|.ms-lines|
+|![ms-subtlelines](../images/AppUXGuidelines_ms-subtlelines.png)|Zum Hervorheben eines Elements durch einen feinen Rahmen.|.ms-subtleLines|
+|![ms-stronglines](../images/AppUXGuidelines_ms-stronglines.png)|Zum Hervorheben eines Elements durch einen starken oder farbigen Rahmen.|.ms-strongLines|
+|![ms-disabledlines](../images/AppUXGuidelines_ms-disabledlines.png)|Zum Hervorheben eines deaktivierten Elements durch einen Rahmen.|.ms-disabledLines|
+|![ms-accentlines](../images/AppUXGuidelines_ms-accentlines.png)|Zum Hervorheben eines Elements durch einen Akzentuierungsrahmen.|.ms-accentLines|
+|![ms-popupborder](../images/AppUXGuidelines_ms-popupborder.png)|Zum Begrenzen eines Popupfensters.|.ms-popupBorder|
+|![ms-bgoverlay](../images/AppUXGuidelines_ms-bgoverlay.png)|Zum Anwenden einer Überlagerung auf das Hintergrundelement.|.ms-bgOverlay|
+|![bgdisabled](../images/AppUXGuidelines_bgdisabled.png)|Um den Hintergrund eines Elements deaktiviert erscheinen zu lassen.|.ms-bgDisabled|
+|![ms-bgheader](../images/AppUXGuidelines_ms-bgheader.png)|Zum Anwenden der Kopfzeilen-Hintergrundfarbe.|.ms-bgHeader|
+|![ms-bgfooter](../images/AppUXGuidelines_ms-bgfooter.png)|Zum Anwenden der Fußzeilen-Hintergrundfarbe.|.ms-bgFooter|
+|![md-bghoverable normal](../images/AppUXGuidelines_md-bghoverable-normal.png)|Elemente, die farblich hervorgehoben werden sollen, wenn mit dem Mauszeiger darauf gezeigt wird. Das Beispiel zeigt das Element, wenn nicht mit dem Mauszeiger darauf gezeigt wird.|.ms-bgHoverable|
+|![ms-bghoverable-onhover](../images/AppUXGuidelines_ms-bghoverable-onhover.png)|Elemente, die farblich hervorgehoben werden sollen, wenn mit dem Mauszeiger darauf gezeigt wird. Das Beispiel zeigt das Element, wenn mit dem Mauszeiger darauf gezeigt wird.|.ms-bgHoverable|
+|![ms-bgselected](../images/AppUXGuidelines_ms-bgselected.png)|Zum Anzeigen der Auswahl eines Elements.|.ms-bgSelected|
+|![ms-topbar](../images/AppUXGuidelines_ms-topbar.png)|Elemente in der obersten Leiste der Seite.|.ms-topBar|
+Weitere Informationen finden Sie unter [Verwenden einer SharePoint-Formatvorlage in SharePoint Add-Ins](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins.md).
  
 
  
@@ -446,7 +456,7 @@ Parts bieten für Ihr Add-In eine Möglichkeit, Informationen oder einen kleinen
  
 
  
-![Das Part Tag-Cloud](../../images/AppUXGuidelines_part.png)
+![Das Part Tag-Cloud](../images/AppUXGuidelines_part.png)
  
 Der Titel des Parts in Abbildung 3 ist **Tag-Cloud aus Add-In UX Design**. Die Tag-Cloud selbst wird vom Add-In-Inhalt bereitgestellt. Sie ist in einem **iframe**-Element gehostet und von der Hostingseite vollständig isoliert. Da der Add-In-Inhalt die CSS-Datei der Hostwebsite verwendet, fügt sie sich nahtlos in die Hostseite ein.
  
@@ -456,7 +466,7 @@ Einige Benutzeroberflächenarten eignen sich gut für die Bereitstellung durch P
  
 
  
-Die Seite, die Sie innerhalb des Parts anzeigen, wird in einem **iframe**-Element gehostet. Stellen Sie daher sicher, dass dies dem von Ihnen geschriebenen JavaScript bekannt ist und es auf Objekte, wie z. B. das Fensterobjekt, zugreifen kann. Selbst wenn der Rest Ihres Add-Ins durch ausgeprägtes Branding gekennzeichnet ist, sollten Sie in Betracht ziehen, für Ihr Part die Formate der Hostwebsite zu übernehmen. Denn dieses wird in die Seiten der Hostwebsite integriert und sieht weder harmonisch noch ansprechend aus, wenn es nicht dazu passt. Um die Formate der Hostwebsite zu übernehmen, müssen Sie den Link zur CSS-Standarddatei manuell erstellen. Weitere Informationen finden Sie unter  [Vorgehensweise: Verweisen auf die CSS-Datei der Hostwebsite](sharepoint-add-ins-ux-design-guidelines#UXGuide_CSSHowto) in diesem Artikel. Auf der Seite darf sich auch kein Chromsteuerelement befinden, denn es wird in eine Seite integriert, die bereits über ein Chromsteuerelement verfügt.
+Die Seite, die Sie innerhalb des Parts anzeigen, wird in einem **iframe**-Element gehostet. Stellen Sie daher sicher, dass dies dem von Ihnen geschriebenen JavaScript bekannt ist und es auf Objekte, wie z. B. das Fensterobjekt, zugreifen kann. Selbst wenn der Rest Ihres Add-Ins durch ausgeprägtes Branding gekennzeichnet ist, sollten Sie in Betracht ziehen, für Ihr Part die Formate der Hostwebsite zu übernehmen. Denn dieses wird in die Seiten der Hostwebsite integriert und sieht weder harmonisch noch ansprechend aus, wenn es nicht dazu passt. Um die Formate der Hostwebsite zu übernehmen, müssen Sie den Link zur CSS-Standarddatei manuell erstellen. Weitere Informationen finden Sie unter  [Vorgehensweise: Verweisen auf die CSS-Datei der Hostwebsite](#UXGuide_CSS) in diesem Artikel. Auf der Seite darf sich auch kein Chromsteuerelement befinden, denn es wird in eine Seite integriert, die bereits über ein Chromsteuerelement verfügt.
  
 
  
@@ -601,7 +611,7 @@ Wenn das Part der Seite hinzugefügt wird, werden alle Zeichenfolgen in der Abfr
  
 
  
-Sie können auch veranlassen, dass die Webpart-ID in der Abfragezeichenfolge gesendet wird, indem Sie mithilfe der Zeichenfolge _wpid_ darstellen, wo in der Abfragezeichenfolge sie ersetzt werden soll. Dies kann bei der Unterscheidung verschiedener Part-Instanzen hilfreich sein, wenn Sie Informationen über Benutzerauswahlen oder -interaktionen auf einer Pro-Instanz-Basis speichern möchten. Weitere Informationen finden Sie unter  [Erstellen von Add-In-Webparts zur Installation mit Ihrem SharePoint-Add-In](create-add-in-parts-to-install-with-your-sharepoint-add-in).
+Sie können auch veranlassen, dass die Webpart-ID in der Abfragezeichenfolge gesendet wird, indem Sie mithilfe der Zeichenfolge _wpid_ darstellen, wo in der Abfragezeichenfolge sie ersetzt werden soll. Dies kann bei der Unterscheidung verschiedener Part-Instanzen hilfreich sein, wenn Sie Informationen über Benutzerauswahlen oder -interaktionen auf einer Pro-Instanz-Basis speichern möchten. Weitere Informationen finden Sie unter  [Erstellen von Add-In-Webparts zur Installation mit Ihrem SharePoint-Add-In](create-add-in-parts-to-install-with-your-sharepoint-add-in.md).
  
 
  
@@ -618,7 +628,7 @@ Wenn Sie über Funktionen verfügen, die sinnvoll im Kontext von Listenelementen
  
 
  
-![Eine benutzerdefinierte Aktion im Kontextmenü](../../images/AppUXGuidelines_ECBcustomaction.png)
+![Eine benutzerdefinierte Aktion im Kontextmenü](../images/AppUXGuidelines_ECBcustomaction.png)
  
 Der Code für benutzerdefinierte Aktionen, die in der Hostwebsite angezeigt werden, ist gleich wie in früheren Versionen von SharePoint, jedoch mit folgenden Einschränkungen:
  
@@ -675,7 +685,7 @@ Sie können dem Menüband der Hostwebsite von Ihrem Add-In aus keine benutzerdef
  
 
  
-Wenn einige Ihrer Steuerelemente in einem Zusammenhang miteinander stehen oder der Benutzer sie in Zusammenhang mit der Verwendung Ihres Add-Ins empfindet, sollten Sie diese in einer eigenen benutzerdefinierten Gruppe zusammenfassen, damit der Benutzer sie leichter finden kann. Wenn dagegen die von Ihnen hinzugefügten Funktionen mit großer Wahrscheinlichkeit vom Benutzer als Teil der Gesamtwirkung seiner Website betrachtet, sollten Sie versuchen, das betreffende Steuerelement an einer logischen Position in den bestehenden Menübandpositionen einzufügen. Weitere Informationen finden Sie unter  [Gewusst wie: Erstellen benutzerdefinierter Aktionen zur Bereitstellung mit Add-Ins für SharePoint](create-custom-actions-to-deploy-with-sharepoint-add-ins).
+Wenn einige Ihrer Steuerelemente in einem Zusammenhang miteinander stehen oder der Benutzer sie in Zusammenhang mit der Verwendung Ihres Add-Ins empfindet, sollten Sie diese in einer eigenen benutzerdefinierten Gruppe zusammenfassen, damit der Benutzer sie leichter finden kann. Wenn dagegen die von Ihnen hinzugefügten Funktionen mit großer Wahrscheinlichkeit vom Benutzer als Teil der Gesamtwirkung seiner Website betrachtet, sollten Sie versuchen, das betreffende Steuerelement an einer logischen Position in den bestehenden Menübandpositionen einzufügen. Weitere Informationen finden Sie unter  [Gewusst wie: Erstellen benutzerdefinierter Aktionen zur Bereitstellung mit Add-Ins für SharePoint](create-custom-actions-to-deploy-with-sharepoint-add-ins.md).
  
 
  
@@ -687,7 +697,7 @@ In vielen Fällen ist sinnvoll, Ihr Add-In über Konfigurationsinformationen ver
  
 
  
-Fügen Sie ggf. die URL der Einstellungsseite im rechten oberen Menü dem Add-In hinzu, damit Benutzer sie problemlos finden können. Wenn Ihr Add-In über eine Erste Schritte-Funktion oder andere Einstellungen verfügt, können Sie diese ebenfalls hinzufügen. Weitere Informationen finden Sie unter  [Verwenden des Client-Chromsteuerelements in Add-Ins für SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins).
+Fügen Sie ggf. die URL der Einstellungsseite im rechten oberen Menü dem Add-In hinzu, damit Benutzer sie problemlos finden können. Wenn Ihr Add-In über eine Erste Schritte-Funktion oder andere Einstellungen verfügt, können Sie diese ebenfalls hinzufügen. Weitere Informationen finden Sie unter  [Verwenden des Client-Chromsteuerelements in Add-Ins für SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins.md).
  
 
  
@@ -795,25 +805,25 @@ Aufgrund von Aktualisierungen oder Wartungsarbeiten an der Website kann sich Sha
 <a name="bk_addresources"> </a>
 
 
--  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins)
+-  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins.md)
     
  
--  [Erstellen von UX-Komponenten in SharePoint](create-ux-components-in-sharepoint-2013)
+-  [Erstellen von UX-Komponenten in SharePoint](create-ux-components-in-sharepoint.md)
     
  
--  [Verwenden des Stylesheets einer SharePoint-Website in SharePoint-Add-Ins](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins)
+-  [Verwenden des Stylesheets einer SharePoint-Website in SharePoint-Add-Ins](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins.md)
     
  
--  [Verwenden des Client-Chromsteuerelements in SharePoint-Add-Ins](use-the-client-chrome-control-in-sharepoint-add-ins)
+-  [Verwenden des Client-Chromsteuerelements in SharePoint-Add-Ins](use-the-client-chrome-control-in-sharepoint-add-ins.md)
     
  
--  [Erstellen von Add-In-Webparts zur Installation mit Ihrem SharePoint-Add-In](create-add-in-parts-to-install-with-your-sharepoint-add-in)
+-  [Erstellen von Add-In-Webparts zur Installation mit Ihrem SharePoint-Add-In](create-add-in-parts-to-install-with-your-sharepoint-add-in.md)
     
  
--  [Erstellen benutzerdefinierter Aktionen zur Bereitstellung mit SharePoint-Add-Ins](create-custom-actions-to-deploy-with-sharepoint-add-ins)
+-  [Erstellen benutzerdefinierter Aktionen zur Bereitstellung mit SharePoint-Add-Ins](create-custom-actions-to-deploy-with-sharepoint-add-ins.md)
     
  
--  [Anpassen einer Listenansicht in SharePoint-Add-Ins durch clientseitiges Rendering](customize-a-list-view-in-sharepoint-add-ins-using-client-side-rendering)
+-  [Anpassen einer Listenansicht in SharePoint-Add-Ins durch clientseitiges Rendering](customize-a-list-view-in-sharepoint-add-ins-using-client-side-rendering.md)
     
  
 

@@ -1,12 +1,22 @@
+---
+title: "Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 555ff88386166d381d7ff4c6f3d56f30e5a645e1
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="complete-basic-operations-using-javascript-library-code-in-sharepoint"></a>Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint
 In diesem Artikel erfahren Sie, wie Sie Code zum Ausführen grundlegender Vorgänge unter Verwendung des JavaScript-Clientobjektmodells in SharePoint schreiben.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
- **Hinweis** Ein Beispiel-SharePoint-Add-In mit der Komplexität von „Hello World“, das die JavaScript-Bibliothek verwendet, finden Sie unter [Verwenden von SharePoint-JavaScript-APIs zum Arbeiten mit SharePoint-Daten](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data).
+ **Hinweis** Ein Beispiel-SharePoint-Add-In mit der Komplexität von „Hello World“, das die JavaScript-Bibliothek verwendet, finden Sie unter [Verwenden von SharePoint-JavaScript-APIs zum Arbeiten mit SharePoint-Daten](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data.md).
  
 
 
@@ -42,10 +52,10 @@ In diesem Artikel wird erklärt, wie Sie mithilfe des JavaScript-Objektmodells g
 
  
 
--  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode](complete-basic-operations-using-sharepoint-2013-client-library-code)
+-  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode](complete-basic-operations-using-sharepoint-client-library-code.md)
     
  
--  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten](complete-basic-operations-using-sharepoint-2013-rest-endpoints)
+-  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten](complete-basic-operations-using-sharepoint-rest-endpoints.md)
     
  
 -  [Erstellen von Windows Phone-Apps, die auf SharePoint zugreifen](http://msdn.microsoft.com/library/36681335-f772-4499-8445-f94481bc18e7%28Office.15%29.aspx)
@@ -766,7 +776,7 @@ Sie können Dateien mithilfe des JavaScript-Objektmodells anpassen. In den folge
 
  
 
- **Hinweis** Sie können nur Dateien mit einer Größe von bis zu 1,5 MB verwenden, wenn Sie das JavaScript-Objektmodell nutzen. Um größere Dateien hochzuladen, müssen Sie REST (Representational State Transfer) nutzen. Weitere Informationen finden Sie unter [](complete-basic-operations-using-sharepoint-2013-rest-endpoints#LargeFiles).
+ **Hinweis** Sie können nur Dateien mit einer Größe von bis zu 1,5 MB verwenden, wenn Sie das JavaScript-Objektmodell nutzen. Um größere Dateien hochzuladen, müssen Sie REST (Representational State Transfer) nutzen. Weitere Informationen finden Sie unter [](complete-basic-operations-using-sharepoint-rest-endpoints#LargeFiles.md).
  
 
 
@@ -1239,7 +1249,7 @@ function onQueryFailed(sender, args) {
 ## <a name="access-objects-in-the-host-web"></a>Zugreifen auf Objekte im Hostweb
 <a name="BasicOps_AccessHostweb"> </a>
 
-Beim Entwickeln des Add-Ins müssen Sie möglicherweise auf das Hostweb zugreifen, um mit den darin enthaltenen Elementen zu interagieren. Verwenden Sie das **AppContextSite**-Objekt, um auf das Hostweb oder andere SharePoint-Websites zu verweisen. Dies ist im folgenden Beispiel dargestellt. Ein vollständiges Codebeispiel finden Sie unter [Abrufen des Hostwebtitels mithilfe der domänenübergreifenden Bibliothek (JSOM)](http://code.msdn.microsoft.com/office/SharePoint-2013-Get-the-563f2a3d).
+Beim Entwickeln des Add-Ins müssen Sie möglicherweise auf das Hostweb zugreifen, um mit den darin enthaltenen Elementen zu interagieren. Verwenden Sie das **AppContextSite**-Objekt, um auf das Hostweb oder andere SharePoint-Websites zu verweisen. Dies ist im folgenden Beispiel dargestellt. Ein vollständiges Codebeispiel finden Sie unter [Abrufen des Hostwebtitels mithilfe der domänenübergreifenden Bibliothek (JSOM)](http://code.msdn.microsoft.com/office/SharePoint-Get-the-563f2a3d).
  
 
  
@@ -1283,7 +1293,7 @@ function execCrossDomainRequest(appweburl, hostweburl) {
 }
 ```
 
-Im vorherigen Beispiel wird die domänenübergreifende Bibliothek in SharePoint zum Zugreifen auf das Hostweb verwendet. Weitere Informationen finden Sie unter  [Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library).
+Im vorherigen Beispiel wird die domänenübergreifende Bibliothek in SharePoint zum Zugreifen auf das Hostweb verwendet. Weitere Informationen finden Sie unter  [Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md).
  
 
  
@@ -1292,19 +1302,19 @@ Im vorherigen Beispiel wird die domänenübergreifende Bibliothek in SharePoint 
 <a name="BasicOps_AddRes"> </a>
 
 
--  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode](complete-basic-operations-using-sharepoint-2013-client-library-code)
+-  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode](complete-basic-operations-using-sharepoint-client-library-code.md)
     
  
--  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten](complete-basic-operations-using-sharepoint-2013-rest-endpoints)
+-  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten](complete-basic-operations-using-sharepoint-rest-endpoints.md)
     
  
--  [Entwickeln von SharePoint-Add-Ins](develop-sharepoint-add-ins)
+-  [Entwickeln von SharePoint-Add-ins](develop-sharepoint-add-ins.md)
     
  
--  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins)
+-  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
     
  
--  [Arbeiten mit externen Daten in SharePoint](work-with-external-data-in-sharepoint-2013)
+-  [Arbeiten mit externen Daten in SharePoint](work-with-external-data-in-sharepoint.md)
     
  
 
