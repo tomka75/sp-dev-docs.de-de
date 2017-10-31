@@ -8,23 +8,23 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/13/2017
 ---
-# <a name="use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins"></a><span data-ttu-id="466c5-102">Verwenden des experimentellen Desktoplistenansicht-Widgets in SharePoint-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="466c5-102">Use the experimental Desktop List View widget in SharePoint Add-ins</span></span>
-<span data-ttu-id="466c5-p101">Erfahren Sie, wie Sie das Desktoplistenansichts-Widget auf jeder Webseite verwenden, auch wenn die Seite nicht in SharePoint gehostet wird. Verwenden Sie das Listenansichts-Widget in Ihren Add-Ins, um Daten in Listen anzuzeigen, die in einer SharePoint-Website gehostet werden.</span><span class="sxs-lookup"><span data-stu-id="466c5-p101">Learn how to use the Desktop List View widget on any web page, even if the page is not hosted in SharePoint. Use the List View widget in your add-ins to display data in lists that are hosted in a SharePoint site.</span></span>
+# <a name="use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins"></a><span data-ttu-id="6f588-102">Verwenden des experimentellen Desktoplistenansicht-Widgets in SharePoint-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="6f588-102">Use the experimental Desktop List View widget in SharePoint Add-ins</span></span>
+<span data-ttu-id="6f588-p101">Erfahren Sie, wie Sie das Desktoplistenansichts-Widget auf jeder Webseite verwenden, auch wenn die Seite nicht in SharePoint gehostet wird. Verwenden Sie das Listenansichts-Widget in Ihren Add-Ins, um Daten in Listen anzuzeigen, die in einer SharePoint-Website gehostet werden.</span><span class="sxs-lookup"><span data-stu-id="6f588-p101">Learn how to use the Desktop List View widget on any web page, even if the page is not hosted in SharePoint. Use the List View widget in your add-ins to display data in lists that are hosted in a SharePoint site.</span></span>
  
 
- <span data-ttu-id="466c5-p102">**Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).</span><span class="sxs-lookup"><span data-stu-id="466c5-p102">**Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).</span></span>
- 
-
-
- <span data-ttu-id="466c5-p103">**Hinweis** Die Office Web Widgets - Experimental werden nur zu Recherche- und Feedbackzwecken bereitgestellt. Verwenden Sie sie nicht in Produktionsszenarios. Das Verhalten von Office Web Widgets kann sich in künftigen Versionen erheblich ändern. Lesen und prüfen Sie die  [Lizenzbedingungen für Office Web Widgets - Experimental](office-web-widgetsexperimental-license-terms.md).</span><span class="sxs-lookup"><span data-stu-id="466c5-p103">**Note**  The Office Web Widgets - Experimental are only provided for research and feedback purposes. Do not use in production scenarios. The Office Web Widgets behavior may change significantly in future releases. Read and review the  [Office Web Widgets - Experimental License Terms](office-web-widgetsexperimental-license-terms.md).</span></span>
+ <span data-ttu-id="6f588-p102">**Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).</span><span class="sxs-lookup"><span data-stu-id="6f588-p102">**Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).</span></span>
  
 
 
-<span data-ttu-id="466c5-112">Sie können das Listenansichts-Widget ähnlich dem herkömmlichen Listenansichts-Widget verwenden, um die Daten in einer SharePoint-Liste anzuzeigen. Der Unterschied ist, dass Sie es in Ihren Add-Ins und Websites verwenden können, die nicht unbedingt in SharePoint gehostet werden.</span><span class="sxs-lookup"><span data-stu-id="466c5-112">You can use the List View widget to display the data in a SharePoint list similar to the regular List View widget, but you can use it in your add-ins and websites that are not necessarily hosted in SharePoint.</span></span>
+ <span data-ttu-id="6f588-p103">**Hinweis** Die Office Web Widgets - Experimental werden nur zu Recherche- und Feedbackzwecken bereitgestellt. Verwenden Sie sie nicht in Produktionsszenarios. Das Verhalten von Office Web Widgets kann sich in künftigen Versionen erheblich ändern. Lesen und prüfen Sie die  [Lizenzbedingungen für Office Web Widgets - Experimental](office-web-widgetsexperimental-license-terms.md).</span><span class="sxs-lookup"><span data-stu-id="6f588-p103">**Note**  The Office Web Widgets - Experimental are only provided for research and feedback purposes. Do not use in production scenarios. The Office Web Widgets behavior may change significantly in future releases. Read and review the  [Office Web Widgets - Experimental License Terms](office-web-widgetsexperimental-license-terms.md).</span></span>
  
 
 
-<span data-ttu-id="466c5-113">**Abbildung 1: Desktoplistenansichts-Widget zeigt Daten in einer Liste an**</span><span class="sxs-lookup"><span data-stu-id="466c5-113">**Figure 1. Desktop List View widget displaying data in a list**</span></span>
+<span data-ttu-id="6f588-112">Sie können das Listenansichts-Widget ähnlich dem herkömmlichen Listenansichts-Widget verwenden, um die Daten in einer SharePoint-Liste anzuzeigen. Der Unterschied ist, dass Sie es in Ihren Add-Ins und Websites verwenden können, die nicht unbedingt in SharePoint gehostet werden.</span><span class="sxs-lookup"><span data-stu-id="6f588-112">You can use the List View widget to display the data in a SharePoint list similar to the regular List View widget, but you can use it in your add-ins and websites that are not necessarily hosted in SharePoint.</span></span>
+ 
+
+
+<span data-ttu-id="6f588-113">**Abbildung 1: Desktoplistenansichts-Widget zeigt Daten in einer Liste an**</span><span class="sxs-lookup"><span data-stu-id="6f588-113">**Figure 1. Desktop List View widget displaying data in a list**</span></span>
 
  
 
@@ -36,144 +36,144 @@ ms.lasthandoff: 10/13/2017
 
  
 
-## <a name="introduction"></a><span data-ttu-id="466c5-115">Einführung</span><span class="sxs-lookup"><span data-stu-id="466c5-115">Introduction</span></span>
+## <a name="introduction"></a><span data-ttu-id="6f588-115">Einführung</span><span class="sxs-lookup"><span data-stu-id="6f588-115">Introduction</span></span>
 
-<span data-ttu-id="466c5-p104">Sie können die Ansicht in der SharePoint-Liste angeben, die Sie zum Anzeigen der Daten verwenden möchten. Das Listenansichts-Widget zeigt die Spalten und Elemente in der durch die Ansicht festgelegten Reihenfolge an.</span><span class="sxs-lookup"><span data-stu-id="466c5-p104">You can specify the view in the SharePoint list that you want to use to display the data. The List View widget displays the columns and items in the order specified by the view.</span></span>
+<span data-ttu-id="6f588-p104">Sie können die Ansicht in der SharePoint-Liste angeben, die Sie zum Anzeigen der Daten verwenden möchten. Das Listenansichts-Widget zeigt die Spalten und Elemente in der durch die Ansicht festgelegten Reihenfolge an.</span><span class="sxs-lookup"><span data-stu-id="6f588-p104">You can specify the view in the SharePoint list that you want to use to display the data. The List View widget displays the columns and items in the order specified by the view.</span></span>
  
 
  
-<span data-ttu-id="466c5-p105">Das Listenansichts-Widget verwendet die domänenübergreifende Bibliothek, um die Listendaten abzurufen. Daher erfolgt die Kommunikation auf der Clientebene.</span><span class="sxs-lookup"><span data-stu-id="466c5-p105">The List View widget uses the cross-domain library to get the list data. For this reason, communication happens at the client level.</span></span>
- 
-
- 
-
- <span data-ttu-id="466c5-120">**Vorsicht** Das Desktoplistenansichts-Widget ermöglicht nicht alle Szenarios der nativen Listenansicht.</span><span class="sxs-lookup"><span data-stu-id="466c5-120">**Caution**  The Desktop List View widget doesn't enable all the scenarios of the native List View.</span></span>
- 
-
-<span data-ttu-id="466c5-121">Die folgenden Szenarios wurden in der aktuellen Version des Widgets nicht aktiviert:</span><span class="sxs-lookup"><span data-stu-id="466c5-121">The following scenarios have not been enabled in the current version of the widget:</span></span>
+<span data-ttu-id="6f588-p105">Das Listenansichts-Widget verwendet die domänenübergreifende Bibliothek, um die Listendaten abzurufen. Daher erfolgt die Kommunikation auf der Clientebene.</span><span class="sxs-lookup"><span data-stu-id="6f588-p105">The List View widget uses the cross-domain library to get the list data. For this reason, communication happens at the client level.</span></span>
  
 
  
 
-- <span data-ttu-id="466c5-122">Verwenden des Widgets in Authentifizierungsschemas, die von der domänenübergreifenden Bibliothek nicht nativ unterstützt werden.</span><span class="sxs-lookup"><span data-stu-id="466c5-122">Use the widget on authentication schemes that aren't natively supported by the cross-domain library.</span></span>
-    
- 
-- <span data-ttu-id="466c5-123">Verwenden des Widgets mit anderen Datenquellen als SharePoint-Listen oder -Bibliotheken.</span><span class="sxs-lookup"><span data-stu-id="466c5-123">Use the widget with data sources other than SharePoint lists or libraries.</span></span>
-    
- 
-- <span data-ttu-id="466c5-124">Herstellen einer Datenbindung mit dem Widget.</span><span class="sxs-lookup"><span data-stu-id="466c5-124">Data bind the widget.</span></span>
-    
- 
-- <span data-ttu-id="466c5-125">Ansichten mit Toucheingabe.</span><span class="sxs-lookup"><span data-stu-id="466c5-125">User touch-friendly views.</span></span>
-    
- 
-- <span data-ttu-id="466c5-126">Inlinebearbeitung für Benutzer.</span><span class="sxs-lookup"><span data-stu-id="466c5-126">User inline-editing.</span></span>
-    
- 
-- <span data-ttu-id="466c5-127">Anzeigen von Anwesenheitsinformationen.</span><span class="sxs-lookup"><span data-stu-id="466c5-127">Show presence information.</span></span>
-    
- 
-- <span data-ttu-id="466c5-128">Bereitstellen benutzerdefinierter Wiedergabevorlagen.</span><span class="sxs-lookup"><span data-stu-id="466c5-128">Provide custom rendering templates.</span></span>
-    
- 
-- <span data-ttu-id="466c5-p106">Lokale Szenarios. Derzeit kann das Widget nur in SharePoint Online verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="466c5-p106">On-premises scenarios. At this moment, the widget only works on SharePoint Online.</span></span>
-    
+ <span data-ttu-id="6f588-120">**Vorsicht** Das Desktoplistenansichts-Widget ermöglicht nicht alle Szenarios der nativen Listenansicht.</span><span class="sxs-lookup"><span data-stu-id="6f588-120">**Caution**  The Desktop List View widget doesn't enable all the scenarios of the native List View.</span></span>
  
 
-## <a name="prerequisites-for-using-the-examples-in-this-article"></a><span data-ttu-id="466c5-131">Voraussetzungen für die Verwendung der Beispiele in diesem Artikel</span><span class="sxs-lookup"><span data-stu-id="466c5-131">Prerequisites for using the examples in this article</span></span>
-
-<span data-ttu-id="466c5-132">Um diese Beispiele auszuführen, benötigen Sie Folgendes:</span><span class="sxs-lookup"><span data-stu-id="466c5-132">To follow the examples in this article, you need the following:</span></span>
+<span data-ttu-id="6f588-121">Die folgenden Szenarios wurden in der aktuellen Version des Widgets nicht aktiviert:</span><span class="sxs-lookup"><span data-stu-id="6f588-121">The following scenarios have not been enabled in the current version of the widget:</span></span>
  
 
  
 
-- <span data-ttu-id="466c5-133">Visual Studio 2013</span><span class="sxs-lookup"><span data-stu-id="466c5-133">Visual Studio 2013</span></span>
+- <span data-ttu-id="6f588-122">Verwenden des Widgets in Authentifizierungsschemas, die von der domänenübergreifenden Bibliothek nicht nativ unterstützt werden.</span><span class="sxs-lookup"><span data-stu-id="6f588-122">Use the widget on authentication schemes that aren't natively supported by the cross-domain library.</span></span>
     
  
-- <span data-ttu-id="466c5-p107">NuGet-Paket-Manager. Weitere Informationen finden Sie unter [Installieren von NuGet](http://go.microsoft.com/fwlink/?LinkId=271465).</span><span class="sxs-lookup"><span data-stu-id="466c5-p107">NuGet Package Manager. For more information, see  [Installing NuGet](http://go.microsoft.com/fwlink/?LinkId=271465).</span></span>
+- <span data-ttu-id="6f588-123">Verwenden des Widgets mit anderen Datenquellen als SharePoint-Listen oder -Bibliotheken.</span><span class="sxs-lookup"><span data-stu-id="6f588-123">Use the widget with data sources other than SharePoint lists or libraries.</span></span>
     
  
-- <span data-ttu-id="466c5-136">Eine SharePoint-Entwicklungsumgebung (für lokale Szenarios App-Isolierung erforderlich).</span><span class="sxs-lookup"><span data-stu-id="466c5-136">A SharePoint development environment (app isolation required for on-premises scenarios).</span></span> 
+- <span data-ttu-id="6f588-124">Herstellen einer Datenbindung mit dem Widget.</span><span class="sxs-lookup"><span data-stu-id="6f588-124">Data bind the widget.</span></span>
     
  
-- <span data-ttu-id="466c5-p108">Office Web Widgets - Experimental - NuGet-Paket. Weitere Informationen dazu, wie Sie ein NuGet-Paket installieren, finden Sie unter  [Verwalten von NuGet-Paketen mithilfe des Dialogfelds](http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog). Sie können auch die  [NuGet-Galerieseite](http://www.nuget.org/packages/Microsoft.Office.WebWidgets.Experimental/) durchsuchen.</span><span class="sxs-lookup"><span data-stu-id="466c5-p108">Office Web Widgets - Experimental NuGet package. For more information about how to install a NuGet package, see  [Managing NuGet Packages Using the Dialog](http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog). You can also browse the  [NuGet gallery page](http://www.nuget.org/packages/Microsoft.Office.WebWidgets.Experimental/).</span></span>
+- <span data-ttu-id="6f588-125">Ansichten mit Toucheingabe.</span><span class="sxs-lookup"><span data-stu-id="6f588-125">User touch-friendly views.</span></span>
     
  
-
-## <a name="use-the-desktop-list-view-widget-in-a-provider-hosted-sharepoint-add-in"></a><span data-ttu-id="466c5-140">Verwenden des Desktoplistenansichts-Widgets in einem vom Anbieter gehosteten SharePoint-Add-In</span><span class="sxs-lookup"><span data-stu-id="466c5-140">Use the Desktop List View widget in a provider-hosted SharePoint Add-in</span></span>
-
-<span data-ttu-id="466c5-141">Dieses Beispiel enthält eine einfache Seite, die außerhalb von SharePoint gehostet wird und ein Desktoplistenansichts-Widget deklariert.</span><span class="sxs-lookup"><span data-stu-id="466c5-141">In this example, there is a simple page hosted outside of SharePoint that declares a Desktop List View widget.</span></span>
- 
-
- 
-<span data-ttu-id="466c5-142">Sie müssen Folgendes tun, um das Listenansichts-Widget zu verwenden:</span><span class="sxs-lookup"><span data-stu-id="466c5-142">To use the List View widget, you must do the following:</span></span>
- 
-
- 
-
-- <span data-ttu-id="466c5-143">Erstellen Sie SharePoint-Add-In- und Webprojekte.</span><span class="sxs-lookup"><span data-stu-id="466c5-143">Create SharePoint Add-in and web projects.</span></span>
+- <span data-ttu-id="6f588-126">Inlinebearbeitung für Benutzer.</span><span class="sxs-lookup"><span data-stu-id="6f588-126">User inline-editing.</span></span>
     
  
-- <span data-ttu-id="466c5-p109">Erstellen Sie im Add-In-Web eine Liste. Mit diesem Schritt wird außerdem sichergestellt, dass ein Add-In-Web erstellt wird, wenn Benutzer das Add-In bereitstellen.</span><span class="sxs-lookup"><span data-stu-id="466c5-p109">Create a list on the add-in web. This step also ensures that an add-in web is created when users deploy the add-in.</span></span>
+- <span data-ttu-id="6f588-127">Anzeigen von Anwesenheitsinformationen.</span><span class="sxs-lookup"><span data-stu-id="6f588-127">Show presence information.</span></span>
     
-     <span data-ttu-id="466c5-p110">**Hinweis** Für die domänenübergreifende Bibliothek muss ein Add-Ins-Web vorhanden sein. Das Listenansichts-Widget kommuniziert mit SharePoint mithilfe der domänenübergreifenden Bibliothek.</span><span class="sxs-lookup"><span data-stu-id="466c5-p110">**Note**  The cross-domain library requires the existence of an add-in web. The List View widget communicates with SharePoint by using the cross-domain library.</span></span>
-- <span data-ttu-id="466c5-148">Erstellen Sie eine Add-In-Seite, die mithilfe von HTML-Markup eine Listenansichts-Widget-Instanz deklariert.</span><span class="sxs-lookup"><span data-stu-id="466c5-148">Create an add-in page that declares a List View widget instance using HTML markup.</span></span>
+ 
+- <span data-ttu-id="6f588-128">Bereitstellen benutzerdefinierter Wiedergabevorlagen.</span><span class="sxs-lookup"><span data-stu-id="6f588-128">Provide custom rendering templates.</span></span>
+    
+ 
+- <span data-ttu-id="6f588-p106">Lokale Szenarios. Derzeit kann das Widget nur in SharePoint Online verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="6f588-p106">On-premises scenarios. At this moment, the widget only works on SharePoint Online.</span></span>
     
  
 
-### <a name="to-create-a-sharepoint-add-in-and-web-projects"></a><span data-ttu-id="466c5-149">So erstellen Sie ein SharePoint-Add-In und Webprojekte</span><span class="sxs-lookup"><span data-stu-id="466c5-149">To create a SharePoint Add-in and web projects</span></span>
+## <a name="prerequisites-for-using-the-examples-in-this-article"></a><span data-ttu-id="6f588-131">Voraussetzungen für die Verwendung der Beispiele in diesem Artikel</span><span class="sxs-lookup"><span data-stu-id="6f588-131">Prerequisites for using the examples in this article</span></span>
 
+<span data-ttu-id="6f588-132">Um diese Beispiele auszuführen, benötigen Sie Folgendes:</span><span class="sxs-lookup"><span data-stu-id="6f588-132">To follow the examples in this article, you need the following:</span></span>
+ 
 
-1. <span data-ttu-id="466c5-p111">Öffnen Sie Visual Studio 2013 als Administrator. (Wählen Sie dazu im Menü **Start** das Symbol für Visual Studio 2013 aus, und wählen Sie **Als Administrator ausführen** aus.)</span><span class="sxs-lookup"><span data-stu-id="466c5-p111">Open Visual Studio 2013 as administrator. (To do this, choose the Visual Studio 2013 icon on the  **Start** menu, and choose **Run as administrator**.)</span></span>
+ 
+
+- <span data-ttu-id="6f588-133">Visual Studio 2013</span><span class="sxs-lookup"><span data-stu-id="6f588-133">Visual Studio 2013</span></span>
     
  
-2. <span data-ttu-id="466c5-p112">Erstellen Sie mithilfe der SharePoint-Add-In 2013-Vorlage ein neues Projekt. Die **SharePoint-Add-In 2013**-Vorlage befindet sich unter **Vorlagen**> **Visual C#**, **Office/SharePoint**> **Add-Ins**.</span><span class="sxs-lookup"><span data-stu-id="466c5-p112">Create a new project using the  **SharePoint Add-in 2013** template. The SharePoint Add-in 2013 template is located under **Templates**> **Visual C#**,  **Office/SharePoint**> **Add-ins**.</span></span>
+- <span data-ttu-id="6f588-p107">NuGet-Paket-Manager. Weitere Informationen finden Sie unter [Installieren von NuGet](http://go.microsoft.com/fwlink/?LinkId=271465).</span><span class="sxs-lookup"><span data-stu-id="6f588-p107">NuGet Package Manager. For more information, see  [Installing NuGet](http://go.microsoft.com/fwlink/?LinkId=271465).</span></span>
     
  
-3. <span data-ttu-id="466c5-154">Geben Sie die URL der SharePoint-Website an, die Sie für das Debugging verwenden möchten.</span><span class="sxs-lookup"><span data-stu-id="466c5-154">Provide the SharePoint website URL that you want to use for debugging.</span></span>
+- <span data-ttu-id="6f588-136">Eine SharePoint-Entwicklungsumgebung (für lokale Szenarios App-Isolierung erforderlich).</span><span class="sxs-lookup"><span data-stu-id="6f588-136">A SharePoint development environment (app isolation required for on-premises scenarios).</span></span> 
     
  
-4. <span data-ttu-id="466c5-155">Wählen Sie als Hostingoption für Ihr Add-In **Von Anbieter gehostet** aus.</span><span class="sxs-lookup"><span data-stu-id="466c5-155">Select  **Provider-hosted** as the hosting option for your add-in.</span></span>
-    
-     <span data-ttu-id="466c5-156">**Hinweis** Sie können das Desktoplistenansichts-Widget auch mit anderen Hostingoptionen oder sogar mit Add-Ins für Office oder Ihrer eigenen Website verwenden.</span><span class="sxs-lookup"><span data-stu-id="466c5-156">**Note**  You can also use the Desktop List View widget with other hosting options or even with Office Add-ins or your own website.</span></span>
-5. <span data-ttu-id="466c5-157">Wählen Sie als Typ des Webanwendungsprojekts **ASP.NET Webformular-Anwendung** aus.</span><span class="sxs-lookup"><span data-stu-id="466c5-157">Select  **ASP.NET Web Forms Application** as the type of web application project.</span></span>
-    
- 
-6. <span data-ttu-id="466c5-158">Wählen Sie als Authentifizierungsoption **Windows Azure-Zugriffssteuerungsdienst** aus.</span><span class="sxs-lookup"><span data-stu-id="466c5-158">Select  **Windows Azure Access Control Service** as the authentication option.</span></span>
+- <span data-ttu-id="6f588-p108">Office Web Widgets - Experimental - NuGet-Paket. Weitere Informationen dazu, wie Sie ein NuGet-Paket installieren, finden Sie unter  [Verwalten von NuGet-Paketen mithilfe des Dialogfelds](http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog). Sie können auch die  [NuGet-Galerieseite](http://www.nuget.org/packages/Microsoft.Office.WebWidgets.Experimental/) durchsuchen.</span><span class="sxs-lookup"><span data-stu-id="6f588-p108">Office Web Widgets - Experimental NuGet package. For more information about how to install a NuGet package, see  [Managing NuGet Packages Using the Dialog](http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog). You can also browse the  [NuGet gallery page](http://www.nuget.org/packages/Microsoft.Office.WebWidgets.Experimental/).</span></span>
     
  
 
-### <a name="to-create-a-list-on-the-add-in-web"></a><span data-ttu-id="466c5-159">So erstellen Sie eine Liste im Add-In-Web</span><span class="sxs-lookup"><span data-stu-id="466c5-159">To create a list on the add-in web</span></span>
+## <a name="use-the-desktop-list-view-widget-in-a-provider-hosted-sharepoint-add-in"></a><span data-ttu-id="6f588-140">Verwenden des Desktoplistenansichts-Widgets in einem vom Anbieter gehosteten SharePoint-Add-In</span><span class="sxs-lookup"><span data-stu-id="6f588-140">Use the Desktop List View widget in a provider-hosted SharePoint Add-in</span></span>
 
-
-1. <span data-ttu-id="466c5-p113">Wählen Sie das SharePoint-Add-In-Projekt im **Projektmappen-Explorer** aus. Wählen Sie **Hinzufügen**> **Neues Element** aus.</span><span class="sxs-lookup"><span data-stu-id="466c5-p113">Choose the SharePoint Add-in project in  **Solution Explorer**. Choose  **Add**> **New Item…**</span></span>
-    
- 
-2. <span data-ttu-id="466c5-p114">Wählen Sie **Visual C#-Elemente**> **Office/SharePoint**> **Liste** aus. Geben Sie im Textfeld **Name****Ankündigungen** ein. Wählen Sie **Hinzufügen** aus.</span><span class="sxs-lookup"><span data-stu-id="466c5-p114">Choose  **Visual C# Items**> **Office/SharePoint**> **List**. Type  **Announcements** in the **Name** textbox. Choose **Add**.</span></span>
-    
- 
-3. <span data-ttu-id="466c5-p115">Wählen Sie **Listeninstanz basierend auf einer bestehenden Listenvorlage erstellen** aus. Wählen Sie die Vorlage **Ankündigungen** aus. Wählen Sie **Fertig stellen** aus.</span><span class="sxs-lookup"><span data-stu-id="466c5-p115">Choose  **Create a list instance based on an existing list template**.Choose the  **Announcements** template. Choose **Finish**.</span></span>
-    
+<span data-ttu-id="6f588-141">Dieses Beispiel enthält eine einfache Seite, die außerhalb von SharePoint gehostet wird und ein Desktoplistenansichts-Widget deklariert.</span><span class="sxs-lookup"><span data-stu-id="6f588-141">In this example, there is a simple page hosted outside of SharePoint that declares a Desktop List View widget.</span></span>
  
 
-### <a name="to-add-a-new-page-that-uses-the-desktop-list-view-widget"></a><span data-ttu-id="466c5-167">So fügen Sie eine neue Seite hinzu, die das Desktoplistenansichts-Widget verwendet</span><span class="sxs-lookup"><span data-stu-id="466c5-167">To add a new page that uses the Desktop List View widget</span></span>
+ 
+<span data-ttu-id="6f588-142">Sie müssen Folgendes tun, um das Listenansichts-Widget zu verwenden:</span><span class="sxs-lookup"><span data-stu-id="6f588-142">To use the List View widget, you must do the following:</span></span>
+ 
+
+ 
+
+- <span data-ttu-id="6f588-143">Erstellen Sie SharePoint-Add-In- und Webprojekte.</span><span class="sxs-lookup"><span data-stu-id="6f588-143">Create SharePoint Add-in and web projects.</span></span>
+    
+ 
+- <span data-ttu-id="6f588-p109">Erstellen Sie im Add-In-Web eine Liste. Mit diesem Schritt wird außerdem sichergestellt, dass ein Add-In-Web erstellt wird, wenn Benutzer das Add-In bereitstellen.</span><span class="sxs-lookup"><span data-stu-id="6f588-p109">Create a list on the add-in web. This step also ensures that an add-in web is created when users deploy the add-in.</span></span>
+    
+     <span data-ttu-id="6f588-p110">**Hinweis** Für die domänenübergreifende Bibliothek muss ein Add-Ins-Web vorhanden sein. Das Listenansichts-Widget kommuniziert mit SharePoint mithilfe der domänenübergreifenden Bibliothek.</span><span class="sxs-lookup"><span data-stu-id="6f588-p110">**Note**  The cross-domain library requires the existence of an add-in web. The List View widget communicates with SharePoint by using the cross-domain library.</span></span>
+- <span data-ttu-id="6f588-148">Erstellen Sie eine Add-In-Seite, die mithilfe von HTML-Markup eine Listenansichts-Widget-Instanz deklariert.</span><span class="sxs-lookup"><span data-stu-id="6f588-148">Create an add-in page that declares a List View widget instance using HTML markup.</span></span>
+    
+ 
+
+### <a name="to-create-a-sharepoint-add-in-and-web-projects"></a><span data-ttu-id="6f588-149">So erstellen Sie ein SharePoint-Add-In und Webprojekte</span><span class="sxs-lookup"><span data-stu-id="6f588-149">To create a SharePoint Add-in and web projects</span></span>
 
 
-1. <span data-ttu-id="466c5-168">Wählen Sie im **Projektmappen-Explorer** im Webprojekt den Ordner **Seiten** aus.</span><span class="sxs-lookup"><span data-stu-id="466c5-168">Choose the  **Pages** folder in the web project in **Solution Explorer**.</span></span>
+1. <span data-ttu-id="6f588-p111">Öffnen Sie Visual Studio 2013 als Administrator. (Wählen Sie dazu im Menü **Start** das Symbol für Visual Studio 2013 aus, und wählen Sie **Als Administrator ausführen** aus.)</span><span class="sxs-lookup"><span data-stu-id="6f588-p111">Open Visual Studio 2013 as administrator. (To do this, choose the Visual Studio 2013 icon on the  **Start** menu, and choose **Run as administrator**.)</span></span>
     
  
-2. <span data-ttu-id="466c5-p116">Kopieren Sie den folgenden Code, und fügen Sie ihn in eine **ASPX** -Datei im Projekt ein. Der Code führt die folgenden Aufgaben durch:</span><span class="sxs-lookup"><span data-stu-id="466c5-p116">Copy the following code and paste it in an  **ASPX** file in the project. The code performs the following tasks:</span></span>
-    
-      - <span data-ttu-id="466c5-171">Fügt Referenzen zu den erforderlichen Office-Bibliotheken und -Ressourcen hinzu.</span><span class="sxs-lookup"><span data-stu-id="466c5-171">Adds references to the required Office libraries and resources.</span></span>
+2. <span data-ttu-id="6f588-p112">Erstellen Sie mithilfe der SharePoint-Add-In 2013-Vorlage ein neues Projekt. Die **SharePoint-Add-In 2013**-Vorlage befindet sich unter **Vorlagen**> **Visual C#**, **Office/SharePoint**> **Add-Ins**.</span><span class="sxs-lookup"><span data-stu-id="6f588-p112">Create a new project using the  **SharePoint Add-in 2013** template. The SharePoint Add-in 2013 template is located under **Templates**> **Visual C#**,  **Office/SharePoint**> **Add-ins**.</span></span>
     
  
-  - <span data-ttu-id="466c5-172">Stellt einen Platzhalter für das Listenansichts-Widget bereit.</span><span class="sxs-lookup"><span data-stu-id="466c5-172">Provides a placeholder for the List View widget.</span></span>
+3. <span data-ttu-id="6f588-154">Geben Sie die URL der SharePoint-Website an, die Sie für das Debugging verwenden möchten.</span><span class="sxs-lookup"><span data-stu-id="6f588-154">Provide the SharePoint website URL that you want to use for debugging.</span></span>
     
  
-  - <span data-ttu-id="466c5-173">Initialisiert die Steuerelementelaufzeit.</span><span class="sxs-lookup"><span data-stu-id="466c5-173">Initializes the controls runtime.</span></span>
+4. <span data-ttu-id="6f588-155">Wählen Sie als Hostingoption für Ihr Add-In **Von Anbieter gehostet** aus.</span><span class="sxs-lookup"><span data-stu-id="6f588-155">Select  **Provider-hosted** as the hosting option for your add-in.</span></span>
+    
+     <span data-ttu-id="6f588-156">**Hinweis** Sie können das Desktoplistenansichts-Widget auch mit anderen Hostingoptionen oder sogar mit Add-Ins für Office oder Ihrer eigenen Website verwenden.</span><span class="sxs-lookup"><span data-stu-id="6f588-156">**Note**  You can also use the Desktop List View widget with other hosting options or even with Office Add-ins or your own website.</span></span>
+5. <span data-ttu-id="6f588-157">Wählen Sie als Typ des Webanwendungsprojekts **ASP.NET Webformular-Anwendung** aus.</span><span class="sxs-lookup"><span data-stu-id="6f588-157">Select  **ASP.NET Web Forms Application** as the type of web application project.</span></span>
     
  
-  - <span data-ttu-id="466c5-174">Führt die Methode **renderAll** der Office-Steuerelementelaufzeit aus.</span><span class="sxs-lookup"><span data-stu-id="466c5-174">Runs the  **renderAll** method of the Office Controls runtime.</span></span>
+6. <span data-ttu-id="6f588-158">Wählen Sie als Authentifizierungsoption **Windows Azure-Zugriffssteuerungsdienst** aus.</span><span class="sxs-lookup"><span data-stu-id="6f588-158">Select  **Windows Azure Access Control Service** as the authentication option.</span></span>
+    
+ 
+
+### <a name="to-create-a-list-on-the-add-in-web"></a><span data-ttu-id="6f588-159">So erstellen Sie eine Liste im Add-In-Web</span><span class="sxs-lookup"><span data-stu-id="6f588-159">To create a list on the add-in web</span></span>
+
+
+1. <span data-ttu-id="6f588-p113">Wählen Sie das SharePoint-Add-In-Projekt im **Projektmappen-Explorer** aus. Wählen Sie **Hinzufügen**> **Neues Element** aus.</span><span class="sxs-lookup"><span data-stu-id="6f588-p113">Choose the SharePoint Add-in project in  **Solution Explorer**. Choose  **Add**> **New Item…**</span></span>
+    
+ 
+2. <span data-ttu-id="6f588-p114">Wählen Sie **Visual C#-Elemente**> **Office/SharePoint**> **Liste** aus. Geben Sie im Textfeld **Name****Ankündigungen** ein. Wählen Sie **Hinzufügen** aus.</span><span class="sxs-lookup"><span data-stu-id="6f588-p114">Choose  **Visual C# Items**> **Office/SharePoint**> **List**. Type  **Announcements** in the **Name** textbox. Choose **Add**.</span></span>
+    
+ 
+3. <span data-ttu-id="6f588-p115">Wählen Sie **Listeninstanz basierend auf einer bestehenden Listenvorlage erstellen** aus. Wählen Sie die Vorlage **Ankündigungen** aus. Wählen Sie **Fertig stellen** aus.</span><span class="sxs-lookup"><span data-stu-id="6f588-p115">Choose  **Create a list instance based on an existing list template**.Choose the  **Announcements** template. Choose **Finish**.</span></span>
+    
+ 
+
+### <a name="to-add-a-new-page-that-uses-the-desktop-list-view-widget"></a><span data-ttu-id="6f588-167">So fügen Sie eine neue Seite hinzu, die das Desktoplistenansichts-Widget verwendet</span><span class="sxs-lookup"><span data-stu-id="6f588-167">To add a new page that uses the Desktop List View widget</span></span>
+
+
+1. <span data-ttu-id="6f588-168">Wählen Sie im **Projektmappen-Explorer** im Webprojekt den Ordner **Seiten** aus.</span><span class="sxs-lookup"><span data-stu-id="6f588-168">Choose the  **Pages** folder in the web project in **Solution Explorer**.</span></span>
+    
+ 
+2. <span data-ttu-id="6f588-p116">Kopieren Sie den folgenden Code, und fügen Sie ihn in eine **ASPX** -Datei im Projekt ein. Der Code führt die folgenden Aufgaben durch:</span><span class="sxs-lookup"><span data-stu-id="6f588-p116">Copy the following code and paste it in an  **ASPX** file in the project. The code performs the following tasks:</span></span>
+    
+      - <span data-ttu-id="6f588-171">Fügt Referenzen zu den erforderlichen Office-Bibliotheken und -Ressourcen hinzu.</span><span class="sxs-lookup"><span data-stu-id="6f588-171">Adds references to the required Office libraries and resources.</span></span>
+    
+ 
+  - <span data-ttu-id="6f588-172">Stellt einen Platzhalter für das Listenansichts-Widget bereit.</span><span class="sxs-lookup"><span data-stu-id="6f588-172">Provides a placeholder for the List View widget.</span></span>
+    
+ 
+  - <span data-ttu-id="6f588-173">Initialisiert die Steuerelementelaufzeit.</span><span class="sxs-lookup"><span data-stu-id="6f588-173">Initializes the controls runtime.</span></span>
+    
+ 
+  - <span data-ttu-id="6f588-174">Führt die Methode **renderAll** der Office-Steuerelementelaufzeit aus.</span><span class="sxs-lookup"><span data-stu-id="6f588-174">Runs the  **renderAll** method of the Office Controls runtime.</span></span>
     
  
 
@@ -309,10 +309,10 @@ ms.lasthandoff: 10/13/2017
 ```
 
 
- <span data-ttu-id="466c5-p117">**Hinweis** Das obige Codebeispiel gibt die URLs des Hostwebs und des Add-In-Webs explizit an, um die Office-Steuerelementelaufzeit zu initialisieren. Wenn die URLs des Hostwebs und des Add-In-Webs allerdings im Abfragezeichenfolgenparameter **SPAppWebUrl** bzw. **SPHostUrl** angegeben werden, können Sie ein leeres Objekt übergeben. Der Code wird dann versuchen, die Parameter automatisch abzurufen. Die Parameter **SPAppWebUrl** und **SPHostUrl** sind in der Abfragezeichenfolge enthalten, wenn Sie das Token **{StandardTokens}** verwenden.</span><span class="sxs-lookup"><span data-stu-id="466c5-p117">**Note**  The code example above explicitly specifies the host web and add-in web URLs to initialize the Office controls runtime. However, if the add-in web and host web URLs are specified in the  **SPAppWebUrl** and **SPHostUrl** query string parameters, respectively; you can pass an empty object and the code will attempt to get the parameters automatically. The **SPAppWebUrl** and **SPHostUrl** parameters are included in the query string when you use the **{StandardTokens}** token.</span></span>
+ <span data-ttu-id="6f588-p117">**Hinweis** Das obige Codebeispiel gibt die URLs des Hostwebs und des Add-In-Webs explizit an, um die Office-Steuerelementelaufzeit zu initialisieren. Wenn die URLs des Hostwebs und des Add-In-Webs allerdings im Abfragezeichenfolgenparameter **SPAppWebUrl** bzw. **SPHostUrl** angegeben werden, können Sie ein leeres Objekt übergeben. Der Code wird dann versuchen, die Parameter automatisch abzurufen. Die Parameter **SPAppWebUrl** und **SPHostUrl** sind in der Abfragezeichenfolge enthalten, wenn Sie das Token **{StandardTokens}** verwenden.</span><span class="sxs-lookup"><span data-stu-id="6f588-p117">**Note**  The code example above explicitly specifies the host web and add-in web URLs to initialize the Office controls runtime. However, if the add-in web and host web URLs are specified in the  **SPAppWebUrl** and **SPHostUrl** query string parameters, respectively; you can pass an empty object and the code will attempt to get the parameters automatically. The **SPAppWebUrl** and **SPHostUrl** parameters are included in the query string when you use the **{StandardTokens}** token.</span></span>
  
 
-<span data-ttu-id="466c5-178">Das folgende Beispiel zeigt, wie Sie ein leeres Objekt übergeben, um die Methode zu initialisieren:</span><span class="sxs-lookup"><span data-stu-id="466c5-178">The following example shows you how to pass an empty object to the initialize method:</span></span>
+<span data-ttu-id="6f588-178">Das folgende Beispiel zeigt, wie Sie ein leeres Objekt übergeben, um die Methode zu initialisieren:</span><span class="sxs-lookup"><span data-stu-id="6f588-178">The following example shows you how to pass an empty object to the initialize method:</span></span>
  
 
  
@@ -327,33 +327,33 @@ Office.Controls.Runtime.initialize({});
 ```
 
 
-### <a name="to-build-and-run-the-solution"></a><span data-ttu-id="466c5-179">So erstellen Sie die Lösung und führen sie aus</span><span class="sxs-lookup"><span data-stu-id="466c5-179">To build and run the solution</span></span>
+### <a name="to-build-and-run-the-solution"></a><span data-ttu-id="6f588-179">So erstellen Sie die Lösung und führen sie aus</span><span class="sxs-lookup"><span data-stu-id="6f588-179">To build and run the solution</span></span>
 
 
-1. <span data-ttu-id="466c5-180">Drücken Sie F5.</span><span class="sxs-lookup"><span data-stu-id="466c5-180">Press the F5 key.</span></span>
+1. <span data-ttu-id="6f588-180">Drücken Sie F5.</span><span class="sxs-lookup"><span data-stu-id="6f588-180">Press the F5 key.</span></span>
     
-     <span data-ttu-id="466c5-181">**Hinweis** Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, stellt das Add-In bereit und öffnet die Berechtigungsseite für das Add-In.</span><span class="sxs-lookup"><span data-stu-id="466c5-181">**Note**  When you press F5, Visual Studio builds the solution, deploys the add-in, and opens the permissions page for the add-in.</span></span>
-2. <span data-ttu-id="466c5-182">Klicken Sie auf die Schaltfläche **Vertrauen**.</span><span class="sxs-lookup"><span data-stu-id="466c5-182">Choose the  **Trust It** button.</span></span>
-    
- 
-3. <span data-ttu-id="466c5-183">Wählen Sie auf der Seite **Websiteinhalte** das Add-In-Symbol.</span><span class="sxs-lookup"><span data-stu-id="466c5-183">Choose the add-in icon on the  **Site Contents** page.</span></span>
+     <span data-ttu-id="6f588-181">**Hinweis** Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, stellt das Add-In bereit und öffnet die Berechtigungsseite für das Add-In.</span><span class="sxs-lookup"><span data-stu-id="6f588-181">**Note**  When you press F5, Visual Studio builds the solution, deploys the add-in, and opens the permissions page for the add-in.</span></span>
+2. <span data-ttu-id="6f588-182">Klicken Sie auf die Schaltfläche **Vertrauen**.</span><span class="sxs-lookup"><span data-stu-id="6f588-182">Choose the  **Trust It** button.</span></span>
     
  
-<span data-ttu-id="466c5-184">Sie können dieses Beispiel auch in der Codegalerie herunterladen: siehe [Codebeispiel Verwenden des experimentellen Desktoplistenansichts-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-Use-the-c3edb076).</span><span class="sxs-lookup"><span data-stu-id="466c5-184">You can also download this sample from code gallery, see the  [Use the Desktop List View experimental widget in an add-in](http://code.msdn.microsoft.com/SharePoint-Use-the-c3edb076) code sample.</span></span>
+3. <span data-ttu-id="6f588-183">Wählen Sie auf der Seite **Websiteinhalte** das Add-In-Symbol.</span><span class="sxs-lookup"><span data-stu-id="6f588-183">Choose the add-in icon on the  **Site Contents** page.</span></span>
+    
+ 
+<span data-ttu-id="6f588-184">Sie können dieses Beispiel auch in der Codegalerie herunterladen: siehe [Codebeispiel Verwenden des experimentellen Desktoplistenansichts-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-Use-the-c3edb076).</span><span class="sxs-lookup"><span data-stu-id="6f588-184">You can also download this sample from code gallery, see the  [Use the Desktop List View experimental widget in an add-in](http://code.msdn.microsoft.com/SharePoint-Use-the-c3edb076) code sample.</span></span>
  
 
  
 
 ## 
 
-<span data-ttu-id="466c5-p118">In diesem Artikel wird gezeigt, wie Sie das Desktoplistenansichts-Widget in Ihrem Add-In mithilfe von HTML verwenden. Sie können sich auch mit den folgenden Szenarios und Details zum Widget vertraut machen.</span><span class="sxs-lookup"><span data-stu-id="466c5-p118">This article shows how to use the Desktop List View widget in your add-in by using HTML. You can also explore the following scenarios and details about the widget.</span></span>
+<span data-ttu-id="6f588-p118">In diesem Artikel wird gezeigt, wie Sie das Desktoplistenansichts-Widget in Ihrem Add-In mithilfe von HTML verwenden. Sie können sich auch mit den folgenden Szenarios und Details zum Widget vertraut machen.</span><span class="sxs-lookup"><span data-stu-id="6f588-p118">This article shows how to use the Desktop List View widget in your add-in by using HTML. You can also explore the following scenarios and details about the widget.</span></span>
  
 
  
 
-### <a name="use-javascript-to-declare-the-desktop-list-view-widget"></a><span data-ttu-id="466c5-187">Verwenden von JavaScript zum Deklarieren des Desktoplistenansichts-Widgets</span><span class="sxs-lookup"><span data-stu-id="466c5-187">Use JavaScript to declare the Desktop List View widget</span></span>
+### <a name="use-javascript-to-declare-the-desktop-list-view-widget"></a><span data-ttu-id="6f588-187">Verwenden von JavaScript zum Deklarieren des Desktoplistenansichts-Widgets</span><span class="sxs-lookup"><span data-stu-id="6f588-187">Use JavaScript to declare the Desktop List View widget</span></span>
 
-<span data-ttu-id="466c5-p119">Möglicherweise verwenden Sie zum Deklarieren des Widgets anstatt HTML lieber das JavaScript. Ist dies der Fall, können Sie das folgende Markup als Platzhalter für das Widget verwenden.</span><span class="sxs-lookup"><span data-stu-id="466c5-p119">Depending on your preference, you might want to use the JavaScript instead of HTML to declare the widget. If this is the case you can use the following markup as the placeholder for the widget.</span></span>
+<span data-ttu-id="6f588-p119">Möglicherweise verwenden Sie zum Deklarieren des Widgets anstatt HTML lieber das JavaScript. Ist dies der Fall, können Sie das folgende Markup als Platzhalter für das Widget verwenden.</span><span class="sxs-lookup"><span data-stu-id="6f588-p119">Depending on your preference, you might want to use the JavaScript instead of HTML to declare the widget. If this is the case you can use the following markup as the placeholder for the widget.</span></span>
  
 
  
@@ -362,7 +362,7 @@ Office.Controls.Runtime.initialize({});
 <div id="ListViewDiv"></div>
 ```
 
-<span data-ttu-id="466c5-190">Verwenden Sie den folgenden JavaScript-Code, um die Listenansicht zu instanziieren.</span><span class="sxs-lookup"><span data-stu-id="466c5-190">Use the following JavaScript code to instantiate the List View.</span></span>
+<span data-ttu-id="6f588-190">Verwenden Sie den folgenden JavaScript-Code, um die Listenansicht zu instanziieren.</span><span class="sxs-lookup"><span data-stu-id="6f588-190">Use the following JavaScript code to instantiate the List View.</span></span>
  
 
  
@@ -376,18 +376,18 @@ new Office.Controls.ListView(
     });
 ```
 
-<span data-ttu-id="466c5-191">Ein Beispiel dafür, wie die Aufgaben durchgeführt werden, finden Sie auf der Seite **JSSimple.html** im Codebeispiel [Verwenden des experimentellen Desktoplistenansichts-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-Use-the-c3edb076).</span><span class="sxs-lookup"><span data-stu-id="466c5-191">For an example that shows how to perform the tasks, see the  **JSSimple.html** page in the [Use the Desktop List View experimental widget in an add-in](http://code.msdn.microsoft.com/SharePoint-Use-the-c3edb076) code sample.</span></span>
+<span data-ttu-id="6f588-191">Ein Beispiel dafür, wie die Aufgaben durchgeführt werden, finden Sie auf der Seite **JSSimple.html** im Codebeispiel [Verwenden des experimentellen Desktoplistenansichts-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-Use-the-c3edb076).</span><span class="sxs-lookup"><span data-stu-id="6f588-191">For an example that shows how to perform the tasks, see the  **JSSimple.html** page in the [Use the Desktop List View experimental widget in an add-in](http://code.msdn.microsoft.com/SharePoint-Use-the-c3edb076) code sample.</span></span>
  
 
  
 
-### <a name="specify-a-view-to-display-the-data"></a><span data-ttu-id="466c5-192">Festlegen einer Ansicht zur Anzeige der Daten</span><span class="sxs-lookup"><span data-stu-id="466c5-192">Specify a view to display the data</span></span>
+### <a name="specify-a-view-to-display-the-data"></a><span data-ttu-id="6f588-192">Festlegen einer Ansicht zur Anzeige der Daten</span><span class="sxs-lookup"><span data-stu-id="6f588-192">Specify a view to display the data</span></span>
 
-<span data-ttu-id="466c5-193">Sie können in Ihrer SharePoint-Liste eine vorhandene Ansicht festlegen, die das Listenansichts-Widget dann zur Anzeige der Daten verwendet.</span><span class="sxs-lookup"><span data-stu-id="466c5-193">You can specify an existent view in your SharePoint list, the List View widget displays the data using the view specification.</span></span>
+<span data-ttu-id="6f588-193">Sie können in Ihrer SharePoint-Liste eine vorhandene Ansicht festlegen, die das Listenansichts-Widget dann zur Anzeige der Daten verwendet.</span><span class="sxs-lookup"><span data-stu-id="6f588-193">You can specify an existent view in your SharePoint list, the List View widget displays the data using the view specification.</span></span>
  
 
  
-<span data-ttu-id="466c5-194">Wenn Sie zum Deklarieren des Widgets HTML-Markup verwenden, können Sie zum Festlegen einer Ansicht die folgende Syntax verwenden.</span><span class="sxs-lookup"><span data-stu-id="466c5-194">If you're using HTML markup to declare the widget, you can use the following syntax to specify a view.</span></span>
+<span data-ttu-id="6f588-194">Wenn Sie zum Deklarieren des Widgets HTML-Markup verwenden, können Sie zum Festlegen einer Ansicht die folgende Syntax verwenden.</span><span class="sxs-lookup"><span data-stu-id="6f588-194">If you're using HTML markup to declare the widget, you can use the following syntax to specify a view.</span></span>
  
 
  
@@ -404,7 +404,7 @@ new Office.Controls.ListView(
 
 ```
 
-<span data-ttu-id="466c5-195">Wenn Sie das Widget mit JavaScript deklarieren, verwenden Sie zum Festlegen einer Ansicht die folgende Syntax.</span><span class="sxs-lookup"><span data-stu-id="466c5-195">If you're declaring the widget using JavaScript, use the following syntax to specify a view.</span></span>
+<span data-ttu-id="6f588-195">Wenn Sie das Widget mit JavaScript deklarieren, verwenden Sie zum Festlegen einer Ansicht die folgende Syntax.</span><span class="sxs-lookup"><span data-stu-id="6f588-195">If you're declaring the widget using JavaScript, use the following syntax to specify a view.</span></span>
  
 
  
@@ -420,30 +420,30 @@ new Office.Controls.ListView(
 ```
 
 
-## <a name="conclusion"></a><span data-ttu-id="466c5-196">Schlussbemerkung</span><span class="sxs-lookup"><span data-stu-id="466c5-196">Conclusion</span></span>
+## <a name="conclusion"></a><span data-ttu-id="6f588-196">Schlussbemerkung</span><span class="sxs-lookup"><span data-stu-id="6f588-196">Conclusion</span></span>
 
-<span data-ttu-id="466c5-p120">Sie können das experimentelle Desktoplistenansichts-Widget zum Anzeigen von Daten in SharePoint-Listen verwenden. Das Widget zeigt Daten im schreibgeschützten Modus an. Wir freuen uns über Ihre Ideen und Kommentare auf der  [Office Developer Platform UserVoice-Website](http://officespdev.uservoice.com/).</span><span class="sxs-lookup"><span data-stu-id="466c5-p120">You can use the experimental Desktop List View widget to display data in SharePoint lists. The widget displays data in read-only mode. Please provide ideas and comments in the  [Office Developer Platform UserVoice site](http://officespdev.uservoice.com/).</span></span>
+<span data-ttu-id="6f588-p120">Sie können das experimentelle Desktoplistenansichts-Widget zum Anzeigen von Daten in SharePoint-Listen verwenden. Das Widget zeigt Daten im schreibgeschützten Modus an. Wir freuen uns über Ihre Ideen und Kommentare auf der  [Office Developer Platform UserVoice-Website](http://officespdev.uservoice.com/).</span><span class="sxs-lookup"><span data-stu-id="6f588-p120">You can use the experimental Desktop List View widget to display data in SharePoint lists. The widget displays data in read-only mode. Please provide ideas and comments in the  [Office Developer Platform UserVoice site](http://officespdev.uservoice.com/).</span></span>
  
 
  
 
-## <a name="additional-resources"></a><span data-ttu-id="466c5-200">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="466c5-200">Additional resources</span></span>
-<span data-ttu-id="466c5-201"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="466c5-201"></span></span>
+## <a name="additional-resources"></a><span data-ttu-id="6f588-200">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="6f588-200">Additional resources</span></span>
+<span data-ttu-id="6f588-201"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="6f588-201"><a name="bk_addresources"> </a></span></span>
 
 
--  [<span data-ttu-id="466c5-202">Übersicht über Office Web Widgets – Experimental</span><span class="sxs-lookup"><span data-stu-id="466c5-202">Office Web Widgets - Experimental overview</span></span>](office-web-widgetsexperimental-overview.md)
+-  [<span data-ttu-id="6f588-202">Übersicht über Office Web Widgets – Experimental</span><span class="sxs-lookup"><span data-stu-id="6f588-202">Office Web Widgets - Experimental overview</span></span>](office-web-widgetsexperimental-overview.md)
     
  
--  [<span data-ttu-id="466c5-203">Lizenzbedingungen für Office Web Widgets – Experimental</span><span class="sxs-lookup"><span data-stu-id="466c5-203">Office Web Widgets - Experimental License Terms</span></span>](office-web-widgetsexperimental-license-terms.md)
+-  [<span data-ttu-id="6f588-203">Lizenzbedingungen für Office Web Widgets – Experimental</span><span class="sxs-lookup"><span data-stu-id="6f588-203">Office Web Widgets - Experimental License Terms</span></span>](office-web-widgetsexperimental-license-terms.md)
     
  
--  [<span data-ttu-id="466c5-204">Office Web Widgets - Experimental – NuGet-Galerieseite</span><span class="sxs-lookup"><span data-stu-id="466c5-204">Office Web Widgets - Experimental NuGet gallery page</span></span>](http://www.nuget.org/packages/Microsoft.Office.WebWidgets.Experimental/)
+-  [<span data-ttu-id="6f588-204">Office Web Widgets - Experimental – NuGet-Galerieseite</span><span class="sxs-lookup"><span data-stu-id="6f588-204">Office Web Widgets - Experimental NuGet gallery page</span></span>](http://www.nuget.org/packages/Microsoft.Office.WebWidgets.Experimental/)
     
  
--  [<span data-ttu-id="466c5-205">Codebeispiel: Verwenden des experimentellen Desktoplistenansichts-Widgets in einem Add-In</span><span class="sxs-lookup"><span data-stu-id="466c5-205">Code sample: Use the Desktop List View experimental widget in an add-in</span></span>](http://code.msdn.microsoft.com/SharePoint-Use-the-c3edb076)
+-  [<span data-ttu-id="6f588-205">Codebeispiel: Verwenden des experimentellen Desktoplistenansichts-Widgets in einem Add-In</span><span class="sxs-lookup"><span data-stu-id="6f588-205">Code sample: Use the Desktop List View experimental widget in an add-in</span></span>](http://code.msdn.microsoft.com/SharePoint-Use-the-c3edb076)
     
  
--  [<span data-ttu-id="466c5-206">Verwenden des experimentellen Desktoplistenansichts-Widgets in SharePoint-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="466c5-206">Use the experimental Desktop List View widget in SharePoint Add-ins</span></span>](use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins.md)
+-  [<span data-ttu-id="6f588-206">Verwenden des experimentellen Desktoplistenansichts-Widgets in SharePoint-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="6f588-206">Use the experimental Desktop List View widget in SharePoint Add-ins</span></span>](use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins.md)
     
  
 
