@@ -9,12 +9,12 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/13/2017
 ---
-# <a name="how-to-detect-the-installed-sku-of-sharepoint"></a><span data-ttu-id="e8376-102">Vorgehensweise: Erkennen von SharePoint installierte SKU</span><span class="sxs-lookup"><span data-stu-id="e8376-102">How to: Detect the installed SKU of SharePoint</span></span>
-<span data-ttu-id="e8376-103">Wenn das Verhalten von Lösungen der lokal installierten SKU von SharePoint oder Project Server 2013 abhängt, verwenden Sie das Codebeispiel in diesem Artikel die SKU-Informationen zu suchen, die Sie benötigen.</span><span class="sxs-lookup"><span data-stu-id="e8376-103">If the behavior of your solutions depends on the locally installed SKU of SharePoint or Project Server 2013, use the code example in this article to find the SKU information you need.</span></span>
-## <a name="detect-the-installed-sku-of-sharepoint-or-project-server-2013-by-using-code"></a><span data-ttu-id="e8376-104">Bestimmen der installierten SKU von SharePoint oder Project Server 2013 mithilfe von code</span><span class="sxs-lookup"><span data-stu-id="e8376-104">Detect the installed SKU of SharePoint or Project Server 2013 by using code</span></span>
-<span data-ttu-id="e8376-105"><a name="SP15DetectSKU_detect"> </a></span><span class="sxs-lookup"><span data-stu-id="e8376-105"></span></span>
+# <a name="how-to-detect-the-installed-sku-of-sharepoint"></a><span data-ttu-id="eefbd-102">Vorgehensweise: Erkennen von SharePoint installierte SKU</span><span class="sxs-lookup"><span data-stu-id="eefbd-102">How to: Detect the installed SKU of SharePoint</span></span>
+<span data-ttu-id="eefbd-103">Wenn das Verhalten von Lösungen der lokal installierten SKU von SharePoint oder Project Server 2013 abhängt, verwenden Sie das Codebeispiel in diesem Artikel die SKU-Informationen zu suchen, die Sie benötigen.</span><span class="sxs-lookup"><span data-stu-id="eefbd-103">If the behavior of your solutions depends on the locally installed SKU of SharePoint or Project Server 2013, use the code example in this article to find the SKU information you need.</span></span>
+## <a name="detect-the-installed-sku-of-sharepoint-or-project-server-2013-by-using-code"></a><span data-ttu-id="eefbd-104">Bestimmen der installierten SKU von SharePoint oder Project Server 2013 mithilfe von code</span><span class="sxs-lookup"><span data-stu-id="eefbd-104">Detect the installed SKU of SharePoint or Project Server 2013 by using code</span></span>
+<span data-ttu-id="eefbd-105"><a name="SP15DetectSKU_detect"> </a></span><span class="sxs-lookup"><span data-stu-id="eefbd-105"><a name="SP15DetectSKU_detect"> </a></span></span>
 
-<span data-ttu-id="e8376-p101">Im folgenden Codebeispiel wird veranschaulicht, wie die Registrierungsschlüssel von der installierten SKU von SharePoint, Microsoft Project Server 2013 und anderen Office Server-Produkten und wie Sie die SKU mit einer Hashtabelle übereinstimmen, die die Namen speichert und Schlüssel für alle bekannten SKUs dieser Produkte abgerufen. Die Ausgabe in der Konsole zeigt den Namen der installierten SKU.</span><span class="sxs-lookup"><span data-stu-id="e8376-p101">The following code example demonstrates how to retrieve the registry key of the installed SKU of SharePoint, Microsoft Project Server 2013, and other Office server products, and how to match the SKU with a hash table that stores the names and keys for all of the known SKUs of these products. The console output displays the name of the installed SKU.</span></span>
+<span data-ttu-id="eefbd-p101">Im folgenden Codebeispiel wird veranschaulicht, wie die Registrierungsschlüssel von der installierten SKU von SharePoint, Microsoft Project Server 2013 und anderen Office Server-Produkten und wie Sie die SKU mit einer Hashtabelle übereinstimmen, die die Namen speichert und Schlüssel für alle bekannten SKUs dieser Produkte abgerufen. Die Ausgabe in der Konsole zeigt den Namen der installierten SKU.</span><span class="sxs-lookup"><span data-stu-id="eefbd-p101">The following code example demonstrates how to retrieve the registry key of the installed SKU of SharePoint, Microsoft Project Server 2013, and other Office server products, and how to match the SKU with a hash table that stores the names and keys for all of the known SKUs of these products. The console output displays the name of the installed SKU.</span></span>
   
     
     
@@ -100,20 +100,20 @@ namespace GetInstalledSharePointSku
 ```
 
 
-## <a name="additional-resources"></a><span data-ttu-id="e8376-108">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="e8376-108">Additional resources</span></span>
-<span data-ttu-id="e8376-109"><a name="bk_SP15DetectSKUaddresources"> </a></span><span class="sxs-lookup"><span data-stu-id="e8376-109"></span></span>
+## <a name="additional-resources"></a><span data-ttu-id="eefbd-108">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="eefbd-108">Additional resources</span></span>
+<span data-ttu-id="eefbd-109"><a name="bk_SP15DetectSKUaddresources"> </a></span><span class="sxs-lookup"><span data-stu-id="eefbd-109"><a name="bk_SP15DetectSKUaddresources"> </a></span></span>
 
 
--  [<span data-ttu-id="e8376-110">Übersicht über die SharePoint-Entwicklung</span><span class="sxs-lookup"><span data-stu-id="e8376-110">SharePoint development overview</span></span>](sharepoint-development-overview.md)
+-  [<span data-ttu-id="eefbd-110">Übersicht über die SharePoint-Entwicklung</span><span class="sxs-lookup"><span data-stu-id="eefbd-110">SharePoint development overview</span></span>](sharepoint-development-overview.md)
     
   
--  [<span data-ttu-id="e8376-111">Neuerungen für Entwickler in SharePoint</span><span class="sxs-lookup"><span data-stu-id="e8376-111">What's new for developers in SharePoint</span></span>](what-s-new-for-developers-in-sharepoint.md)
+-  [<span data-ttu-id="eefbd-111">Neuerungen für Entwickler in SharePoint</span><span class="sxs-lookup"><span data-stu-id="eefbd-111">What's new for developers in SharePoint</span></span>](what-s-new-for-developers-in-sharepoint.md)
     
   
--  [<span data-ttu-id="e8376-112">Blog des SharePoint-Entwickler</span><span class="sxs-lookup"><span data-stu-id="e8376-112">SharePoint Developer Blog</span></span>](http://blogs.msdn.com/b/sharepointdev/)
+-  [<span data-ttu-id="eefbd-112">Blog des SharePoint-Entwickler</span><span class="sxs-lookup"><span data-stu-id="eefbd-112">SharePoint Developer Blog</span></span>](http://blogs.msdn.com/b/sharepointdev/)
     
   
--  [<span data-ttu-id="e8376-113">SharePoint-Stack Exchange</span><span class="sxs-lookup"><span data-stu-id="e8376-113">SharePoint Stack Exchange</span></span>](http://sharepoint.stackexchange.com/)
+-  [<span data-ttu-id="eefbd-113">SharePoint-Stack Exchange</span><span class="sxs-lookup"><span data-stu-id="eefbd-113">SharePoint Stack Exchange</span></span>](http://sharepoint.stackexchange.com/)
     
   
 
