@@ -9,16 +9,16 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/13/2017
 ---
-# <a name="how-to-deploy-a-claims-provider-in-sharepoint"></a><span data-ttu-id="b5097-102">Vorgehensweise: POST eines anspruchsanbieters in SharePoint</span><span class="sxs-lookup"><span data-stu-id="b5097-102">How to: Deploy a claims provider in SharePoint</span></span>
-<span data-ttu-id="b5097-103">In diesem Artikel erfahren Sie, wie Sie einen SharePoint-Anspruchsanbieter mithilfe der Featureinfrastruktur und durch Erstellen einer Klasse, die von  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) erbt, bereitstellen.</span><span class="sxs-lookup"><span data-stu-id="b5097-103">Learn how to deploy a SharePoint claims provider by using the features infrastructure and creating a class that inherits from  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) .</span></span>
-## <a name="deploying-a-claims-provider-as-part-of-a-setup"></a><span data-ttu-id="b5097-104">Bereitstellen eines Anspruchsanbieters im Rahmen einer Installation</span><span class="sxs-lookup"><span data-stu-id="b5097-104">Deploying a claims provider as part of a setup</span></span>
-<span data-ttu-id="b5097-105"><a name="SP15_HowToDeployClaimsProvider_DeployingClaimsSetup"> </a></span><span class="sxs-lookup"><span data-stu-id="b5097-105"></span></span>
+# <a name="how-to-deploy-a-claims-provider-in-sharepoint"></a><span data-ttu-id="b1df1-102">Vorgehensweise: POST eines anspruchsanbieters in SharePoint</span><span class="sxs-lookup"><span data-stu-id="b1df1-102">How to: Deploy a claims provider in SharePoint</span></span>
+<span data-ttu-id="b1df1-103">In diesem Artikel erfahren Sie, wie Sie einen SharePoint-Anspruchsanbieter mithilfe der Featureinfrastruktur und durch Erstellen einer Klasse, die von  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) erbt, bereitstellen.</span><span class="sxs-lookup"><span data-stu-id="b1df1-103">Learn how to deploy a SharePoint claims provider by using the features infrastructure and creating a class that inherits from  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) .</span></span>
+## <a name="deploying-a-claims-provider-as-part-of-a-setup"></a><span data-ttu-id="b1df1-104">Bereitstellen eines Anspruchsanbieters im Rahmen einer Installation</span><span class="sxs-lookup"><span data-stu-id="b1df1-104">Deploying a claims provider as part of a setup</span></span>
+<span data-ttu-id="b1df1-105"><a name="SP15_HowToDeployClaimsProvider_DeployingClaimsSetup"> </a></span><span class="sxs-lookup"><span data-stu-id="b1df1-105"><a name="SP15_HowToDeployClaimsProvider_DeployingClaimsSetup"> </a></span></span>
 
-<span data-ttu-id="b5097-p101">Die einfachste Möglichkeit zum Bereitstellen eines Anspruchsanbieters wird mithilfe der Features-Infrastruktur. Zu diesem Zweck zunächst definieren Sie ein Feature und ein Featureempfänger, der von der  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) -Klasse abgeleitet ist, und überschreiben Sie die Basiseigenschaften.</span><span class="sxs-lookup"><span data-stu-id="b5097-p101">The easiest way to deploy a claims provider is by using the features infrastructure. To do this, first define a feature and a feature receiver that derives from the  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) class, and override the base properties.</span></span>
+<span data-ttu-id="b1df1-p101">Die einfachste Möglichkeit zum Bereitstellen eines Anspruchsanbieters wird mithilfe der Features-Infrastruktur. Zu diesem Zweck zunächst definieren Sie ein Feature und ein Featureempfänger, der von der  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) -Klasse abgeleitet ist, und überschreiben Sie die Basiseigenschaften.</span><span class="sxs-lookup"><span data-stu-id="b1df1-p101">The easiest way to deploy a claims provider is by using the features infrastructure. To do this, first define a feature and a feature receiver that derives from the  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) class, and override the base properties.</span></span>
   
     
     
-<span data-ttu-id="b5097-108">Der folgende Code bietet ein Beispiel für diese Vorgehensweise.</span><span class="sxs-lookup"><span data-stu-id="b5097-108">The following is an example of how to do this.</span></span>
+<span data-ttu-id="b1df1-108">Der folgende Code bietet ein Beispiel für diese Vorgehensweise.</span><span class="sxs-lookup"><span data-stu-id="b1df1-108">The following is an example of how to do this.</span></span>
   
     
     
@@ -49,10 +49,10 @@ public class MyClaimProviderFeatureReceiver : SPClaimProviderFeatureReceiver
 ```
 
 
-## <a name="deploying-a-claims-provider-using-the-feature-infrastructure"></a><span data-ttu-id="b5097-109">Bereitstellen eines Forderungsanbieters mithilfe der Featureinfrastruktur</span><span class="sxs-lookup"><span data-stu-id="b5097-109">Deploying a claims provider using the feature infrastructure</span></span>
-<span data-ttu-id="b5097-110"><a name="SP15_HowToDeployClaimsProvider_DeployingClaimsFeature"> </a></span><span class="sxs-lookup"><span data-stu-id="b5097-110"></span></span>
+## <a name="deploying-a-claims-provider-using-the-feature-infrastructure"></a><span data-ttu-id="b1df1-109">Bereitstellen eines Forderungsanbieters mithilfe der Featureinfrastruktur</span><span class="sxs-lookup"><span data-stu-id="b1df1-109">Deploying a claims provider using the feature infrastructure</span></span>
+<span data-ttu-id="b1df1-110"><a name="SP15_HowToDeployClaimsProvider_DeployingClaimsFeature"> </a></span><span class="sxs-lookup"><span data-stu-id="b1df1-110"><a name="SP15_HowToDeployClaimsProvider_DeployingClaimsFeature"> </a></span></span>
 
-<span data-ttu-id="b5097-111">Es folgt ein Beispiel, das veranschaulicht, wie ein Feature und ein Featureempfänger, der von  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) abgeleitet wird, und überschreiben die Basiseigenschaften definieren.</span><span class="sxs-lookup"><span data-stu-id="b5097-111">The following is a sample that demonstrates how to define a feature and a feature receiver that derives from  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) and override the base properties.</span></span>
+<span data-ttu-id="b1df1-111">Es folgt ein Beispiel, das veranschaulicht, wie ein Feature und ein Featureempfänger, der von  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) abgeleitet wird, und überschreiben die Basiseigenschaften definieren.</span><span class="sxs-lookup"><span data-stu-id="b1df1-111">The following is a sample that demonstrates how to define a feature and a feature receiver that derives from  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) and override the base properties.</span></span>
   
     
     
@@ -157,20 +157,20 @@ namespace MySample.Sample.Server.SampleClaimsProvider
 ```
 
 
-## <a name="additional-resources"></a><span data-ttu-id="b5097-112">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="b5097-112">Additional resources</span></span>
-<span data-ttu-id="b5097-113"><a name="SP15_HowToDeployClaimsProvider_AdditionalResources"> </a></span><span class="sxs-lookup"><span data-stu-id="b5097-113"></span></span>
+## <a name="additional-resources"></a><span data-ttu-id="b1df1-112">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="b1df1-112">Additional resources</span></span>
+<span data-ttu-id="b1df1-113"><a name="SP15_HowToDeployClaimsProvider_AdditionalResources"> </a></span><span class="sxs-lookup"><span data-stu-id="b1df1-113"><a name="SP15_HowToDeployClaimsProvider_AdditionalResources"> </a></span></span>
 
 
--  [<span data-ttu-id="b5097-114">Anspruchsbasierte Identität in SharePoint</span><span class="sxs-lookup"><span data-stu-id="b5097-114">Claims-based identity in SharePoint</span></span>](claims-based-identity-in-sharepoint.md)
+-  [<span data-ttu-id="b1df1-114">Anspruchsbasierte Identität in SharePoint</span><span class="sxs-lookup"><span data-stu-id="b1df1-114">Claims-based identity in SharePoint</span></span>](claims-based-identity-in-sharepoint.md)
     
   
--  [<span data-ttu-id="b5097-115">Eingehende Ansprüche: Anmelden bei SharePoint</span><span class="sxs-lookup"><span data-stu-id="b5097-115">Incoming claims: Signing into SharePoint</span></span>](incoming-claims-signing-into-sharepoint.md)
+-  [<span data-ttu-id="b1df1-115">Eingehende Ansprüche: Anmelden bei SharePoint</span><span class="sxs-lookup"><span data-stu-id="b1df1-115">Incoming claims: Signing into SharePoint</span></span>](incoming-claims-signing-into-sharepoint.md)
     
   
--  [<span data-ttu-id="b5097-116">Anspruchsanbieter in SharePoint</span><span class="sxs-lookup"><span data-stu-id="b5097-116">Claims provider in SharePoint</span></span>](claims-provider-in-sharepoint.md)
+-  [<span data-ttu-id="b1df1-116">Anspruchsanbieter in SharePoint</span><span class="sxs-lookup"><span data-stu-id="b1df1-116">Claims provider in SharePoint</span></span>](claims-provider-in-sharepoint.md)
     
   
--  [<span data-ttu-id="b5097-117">Vorgehensweise: Erstellen ein anspruchsanbieters in SharePoint</span><span class="sxs-lookup"><span data-stu-id="b5097-117">How to: Create a claims provider in SharePoint</span></span>](how-to-create-a-claims-provider-in-sharepoint.md)
+-  [<span data-ttu-id="b1df1-117">Vorgehensweise: Erstellen ein anspruchsanbieters in SharePoint</span><span class="sxs-lookup"><span data-stu-id="b1df1-117">How to: Create a claims provider in SharePoint</span></span>](how-to-create-a-claims-provider-in-sharepoint.md)
     
   
 

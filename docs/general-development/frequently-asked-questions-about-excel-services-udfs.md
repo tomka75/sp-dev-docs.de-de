@@ -11,55 +11,55 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/13/2017
 ---
-# <a name="frequently-asked-questions-about-excel-services-udfs"></a><span data-ttu-id="23625-103">Häufig gestellte Fragen zu Excel Services-UDFs</span><span class="sxs-lookup"><span data-stu-id="23625-103">Frequently Asked Questions About Excel Services UDFs</span></span>
+# <a name="frequently-asked-questions-about-excel-services-udfs"></a><span data-ttu-id="8eee6-103">Häufig gestellte Fragen zu Excel Services-UDFs</span><span class="sxs-lookup"><span data-stu-id="8eee6-103">Frequently Asked Questions About Excel Services UDFs</span></span>
 
-<span data-ttu-id="23625-104">Here are some frequently asked questions about Excel Services user-defined functions (UDFs).</span><span class="sxs-lookup"><span data-stu-id="23625-104">Here are some frequently asked questions about Excel Services user-defined functions (UDFs).</span></span> 
+<span data-ttu-id="8eee6-104">Here are some frequently asked questions about Excel Services user-defined functions (UDFs).</span><span class="sxs-lookup"><span data-stu-id="8eee6-104">Here are some frequently asked questions about Excel Services user-defined functions (UDFs).</span></span> 
   
     
     
 
 
-## <a name="creating-managed-code-udfs"></a><span data-ttu-id="23625-105">Creating Managed-Code UDFs</span><span class="sxs-lookup"><span data-stu-id="23625-105">Creating Managed-Code UDFs</span></span>
+## <a name="creating-managed-code-udfs"></a><span data-ttu-id="8eee6-105">Creating Managed-Code UDFs</span><span class="sxs-lookup"><span data-stu-id="8eee6-105">Creating Managed-Code UDFs</span></span>
 
 
-### <a name="what-is-a-supported-udf-class"></a><span data-ttu-id="23625-106">What is a supported UDF class?</span><span class="sxs-lookup"><span data-stu-id="23625-106">What is a supported UDF class?</span></span>
+### <a name="what-is-a-supported-udf-class"></a><span data-ttu-id="8eee6-106">What is a supported UDF class?</span><span class="sxs-lookup"><span data-stu-id="8eee6-106">What is a supported UDF class?</span></span>
 
-<span data-ttu-id="23625-p101">The UDF class in a UDF assembly must be public. It can be sealed. It cannot be abstract, internal, or private. It must have a parameterless, public constructor. For languages that automatically generate a parameterless, public constructor (for example, C#), you can have no constructor at all.</span><span class="sxs-lookup"><span data-stu-id="23625-p101">The UDF class in a UDF assembly must be public. It can be sealed. It cannot be abstract, internal, or private. It must have a parameterless, public constructor. For languages that automatically generate a parameterless, public constructor (for example, C#), you can have no constructor at all.</span></span>
+<span data-ttu-id="8eee6-p101">The UDF class in a UDF assembly must be public. It can be sealed. It cannot be abstract, internal, or private. It must have a parameterless, public constructor. For languages that automatically generate a parameterless, public constructor (for example, C#), you can have no constructor at all.</span><span class="sxs-lookup"><span data-stu-id="8eee6-p101">The UDF class in a UDF assembly must be public. It can be sealed. It cannot be abstract, internal, or private. It must have a parameterless, public constructor. For languages that automatically generate a parameterless, public constructor (for example, C#), you can have no constructor at all.</span></span>
   
     
     
 
-### <a name="what-is-a-supported-udf-method"></a><span data-ttu-id="23625-112">What is a supported UDF method?</span><span class="sxs-lookup"><span data-stu-id="23625-112">What is a supported UDF method?</span></span>
+### <a name="what-is-a-supported-udf-method"></a><span data-ttu-id="8eee6-112">What is a supported UDF method?</span><span class="sxs-lookup"><span data-stu-id="8eee6-112">What is a supported UDF method?</span></span>
 
-<span data-ttu-id="23625-p102">The UDF method in a UDF assembly must be public. The UDF method must be thread-safe.</span><span class="sxs-lookup"><span data-stu-id="23625-p102">The UDF method in a UDF assembly must be public. The UDF method must be thread-safe.</span></span>
+<span data-ttu-id="8eee6-p102">The UDF method in a UDF assembly must be public. The UDF method must be thread-safe.</span><span class="sxs-lookup"><span data-stu-id="8eee6-p102">The UDF method in a UDF assembly must be public. The UDF method must be thread-safe.</span></span>
   
     
     
-<span data-ttu-id="23625-115">A UDF method cannot have:</span><span class="sxs-lookup"><span data-stu-id="23625-115">A UDF method cannot have:</span></span> 
-  
-    
-    
-
-- <span data-ttu-id="23625-116">**ref** or **out** parameters</span><span class="sxs-lookup"><span data-stu-id="23625-116">**ref** or **out** parameters</span></span>
-    
-  
-- <span data-ttu-id="23625-117">**retval** attributes</span><span class="sxs-lookup"><span data-stu-id="23625-117">**retval** attributes</span></span>
-    
-  
-- <span data-ttu-id="23625-118">**Optional** arguments</span><span class="sxs-lookup"><span data-stu-id="23625-118">**Optional** arguments</span></span>
-    
-  
-- <span data-ttu-id="23625-119">unsupported data types</span><span class="sxs-lookup"><span data-stu-id="23625-119">unsupported data types</span></span>
-    
-  
-<span data-ttu-id="23625-p103">The UDF method must also have a supported return type. For a list of supported data types, see the "Data Types" section of this topic.</span><span class="sxs-lookup"><span data-stu-id="23625-p103">The UDF method must also have a supported return type. For a list of supported data types, see the "Data Types" section of this topic.</span></span>
+<span data-ttu-id="8eee6-115">A UDF method cannot have:</span><span class="sxs-lookup"><span data-stu-id="8eee6-115">A UDF method cannot have:</span></span> 
   
     
     
 
-### <a name="can-i-call-a-web-service-from-a-udf-assembly"></a><span data-ttu-id="23625-122">Can I call a Web service from a UDF assembly?</span><span class="sxs-lookup"><span data-stu-id="23625-122">Can I call a Web service from a UDF assembly?</span></span>
+- <span data-ttu-id="8eee6-116">**ref** or **out** parameters</span><span class="sxs-lookup"><span data-stu-id="8eee6-116">**ref** or **out** parameters</span></span>
+    
+  
+- <span data-ttu-id="8eee6-117">**retval** attributes</span><span class="sxs-lookup"><span data-stu-id="8eee6-117">**retval** attributes</span></span>
+    
+  
+- <span data-ttu-id="8eee6-118">**Optional** arguments</span><span class="sxs-lookup"><span data-stu-id="8eee6-118">**Optional** arguments</span></span>
+    
+  
+- <span data-ttu-id="8eee6-119">unsupported data types</span><span class="sxs-lookup"><span data-stu-id="8eee6-119">unsupported data types</span></span>
+    
+  
+<span data-ttu-id="8eee6-p103">The UDF method must also have a supported return type. For a list of supported data types, see the "Data Types" section of this topic.</span><span class="sxs-lookup"><span data-stu-id="8eee6-p103">The UDF method must also have a supported return type. For a list of supported data types, see the "Data Types" section of this topic.</span></span>
+  
+    
+    
 
-<span data-ttu-id="23625-p104">Yes. For an example, see the following UDF sample code. Also see  [How to: Create a UDF That Calls a Web Service](how-to-create-a-udf-that-calls-a-web-service.md).</span><span class="sxs-lookup"><span data-stu-id="23625-p104">Yes. For an example, see the following UDF sample code. Also see  [How to: Create a UDF That Calls a Web Service](how-to-create-a-udf-that-calls-a-web-service.md).</span></span>
+### <a name="can-i-call-a-web-service-from-a-udf-assembly"></a><span data-ttu-id="8eee6-122">Can I call a Web service from a UDF assembly?</span><span class="sxs-lookup"><span data-stu-id="8eee6-122">Can I call a Web service from a UDF assembly?</span></span>
+
+<span data-ttu-id="8eee6-p104">Yes. For an example, see the following UDF sample code. Also see  [How to: Create a UDF That Calls a Web Service](how-to-create-a-udf-that-calls-a-web-service.md).</span><span class="sxs-lookup"><span data-stu-id="8eee6-p104">Yes. For an example, see the following UDF sample code. Also see  [How to: Create a UDF That Calls a Web Service](how-to-create-a-udf-that-calls-a-web-service.md).</span></span>
   
     
     
@@ -147,110 +147,110 @@ End Namespace
 ```
 
 
-## <a name="data-types"></a><span data-ttu-id="23625-126">Datentypen</span><span class="sxs-lookup"><span data-stu-id="23625-126">Data Types</span></span>
+## <a name="data-types"></a><span data-ttu-id="8eee6-126">Datentypen</span><span class="sxs-lookup"><span data-stu-id="8eee6-126">Data Types</span></span>
 
 
-### <a name="what-are-the-data-types-that-can-be-used-as-udf-parameters"></a><span data-ttu-id="23625-127">What are the data types that can be used as UDF parameters?</span><span class="sxs-lookup"><span data-stu-id="23625-127">What are the data types that can be used as UDF parameters?</span></span>
+### <a name="what-are-the-data-types-that-can-be-used-as-udf-parameters"></a><span data-ttu-id="8eee6-127">What are the data types that can be used as UDF parameters?</span><span class="sxs-lookup"><span data-stu-id="8eee6-127">What are the data types that can be used as UDF parameters?</span></span>
 
-<span data-ttu-id="23625-128">The supported data types are as follows:</span><span class="sxs-lookup"><span data-stu-id="23625-128">The supported data types are as follows:</span></span>
-  
-    
-    
-
-- <span data-ttu-id="23625-129">Numeric types: Double, Single, Int32, UInt32, Int16, UInt16, Byte, Sbyte</span><span class="sxs-lookup"><span data-stu-id="23625-129">Numeric types: Double, Single, Int32, UInt32, Int16, UInt16, Byte, Sbyte</span></span>
-    
-  
-- <span data-ttu-id="23625-130">Zeichenfolge</span><span class="sxs-lookup"><span data-stu-id="23625-130">String</span></span>
-    
-  
-- <span data-ttu-id="23625-131">Boolean</span><span class="sxs-lookup"><span data-stu-id="23625-131">Boolean</span></span>
-    
-  
-- <span data-ttu-id="23625-132">Object arrays: one- or two- dimensional arrays, that is, object [] and object [,]</span><span class="sxs-lookup"><span data-stu-id="23625-132">Object arrays: one- or two- dimensional arrays, that is, object [] and object [,]</span></span>
-    
-  
-- <span data-ttu-id="23625-133">DateTime</span><span class="sxs-lookup"><span data-stu-id="23625-133">DateTime</span></span> 
-    
-  
-
-### <a name="what-are-the-supported-return-value-types"></a><span data-ttu-id="23625-134">What are the supported return value types?</span><span class="sxs-lookup"><span data-stu-id="23625-134">What are the supported return value types?</span></span>
-
-<span data-ttu-id="23625-135">The supported return value types are as follows:</span><span class="sxs-lookup"><span data-stu-id="23625-135">The supported return value types are as follows:</span></span>
+<span data-ttu-id="8eee6-128">The supported data types are as follows:</span><span class="sxs-lookup"><span data-stu-id="8eee6-128">The supported data types are as follows:</span></span>
   
     
     
 
-- <span data-ttu-id="23625-136">Numeric types: Double, Single, Int32, UInt32, Int16, UInt16, Byte, Sbyte</span><span class="sxs-lookup"><span data-stu-id="23625-136">Numeric types: Double, Single, Int32, UInt32, Int16, UInt16, Byte, Sbyte</span></span>
+- <span data-ttu-id="8eee6-129">Numeric types: Double, Single, Int32, UInt32, Int16, UInt16, Byte, Sbyte</span><span class="sxs-lookup"><span data-stu-id="8eee6-129">Numeric types: Double, Single, Int32, UInt32, Int16, UInt16, Byte, Sbyte</span></span>
     
   
-- <span data-ttu-id="23625-137">Zeichenfolge</span><span class="sxs-lookup"><span data-stu-id="23625-137">String</span></span>
+- <span data-ttu-id="8eee6-130">Zeichenfolge</span><span class="sxs-lookup"><span data-stu-id="8eee6-130">String</span></span>
     
   
-- <span data-ttu-id="23625-138">Boolean</span><span class="sxs-lookup"><span data-stu-id="23625-138">Boolean</span></span>
+- <span data-ttu-id="8eee6-131">Boolean</span><span class="sxs-lookup"><span data-stu-id="8eee6-131">Boolean</span></span>
     
   
-- <span data-ttu-id="23625-139">Object arrays: one- or two-dimensional arrays, that is, object [], object [,], int[] and int[,])</span><span class="sxs-lookup"><span data-stu-id="23625-139">Object arrays: one- or two-dimensional arrays, that is, object [], object [,], int[] and int[,])</span></span>
+- <span data-ttu-id="8eee6-132">Object arrays: one- or two- dimensional arrays, that is, object [] and object [,]</span><span class="sxs-lookup"><span data-stu-id="8eee6-132">Object arrays: one- or two- dimensional arrays, that is, object [] and object [,]</span></span>
     
   
-- <span data-ttu-id="23625-140">DateTime</span><span class="sxs-lookup"><span data-stu-id="23625-140">DateTime</span></span> 
-    
-  
-- <span data-ttu-id="23625-141">Object</span><span class="sxs-lookup"><span data-stu-id="23625-141">Object</span></span>
+- <span data-ttu-id="8eee6-133">DateTime</span><span class="sxs-lookup"><span data-stu-id="8eee6-133">DateTime</span></span> 
     
   
 
-## <a name="xlls"></a><span data-ttu-id="23625-142">XLLs</span><span class="sxs-lookup"><span data-stu-id="23625-142">XLLs</span></span>
+### <a name="what-are-the-supported-return-value-types"></a><span data-ttu-id="8eee6-134">What are the supported return value types?</span><span class="sxs-lookup"><span data-stu-id="8eee6-134">What are the supported return value types?</span></span>
 
-
-### <a name="are-xlls-supported"></a><span data-ttu-id="23625-143">Are XLLs supported?</span><span class="sxs-lookup"><span data-stu-id="23625-143">Are XLLs supported?</span></span>
-
-<span data-ttu-id="23625-p105">Not directly. Excel Services will load and call only managed-code UDFs. However, you can write a managed-code wrapper to call the XLLs and deploy the XLLs to the server, together with the managed-code wrapper assembly.</span><span class="sxs-lookup"><span data-stu-id="23625-p105">Not directly. Excel Services will load and call only managed-code UDFs. However, you can write a managed-code wrapper to call the XLLs and deploy the XLLs to the server, together with the managed-code wrapper assembly.</span></span>
+<span data-ttu-id="8eee6-135">The supported return value types are as follows:</span><span class="sxs-lookup"><span data-stu-id="8eee6-135">The supported return value types are as follows:</span></span>
   
     
     
 
-## <a name="see-also"></a><span data-ttu-id="23625-147">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="23625-147">See also</span></span>
+- <span data-ttu-id="8eee6-136">Numeric types: Double, Single, Int32, UInt32, Int16, UInt16, Byte, Sbyte</span><span class="sxs-lookup"><span data-stu-id="8eee6-136">Numeric types: Double, Single, Int32, UInt32, Int16, UInt16, Byte, Sbyte</span></span>
+    
+  
+- <span data-ttu-id="8eee6-137">Zeichenfolge</span><span class="sxs-lookup"><span data-stu-id="8eee6-137">String</span></span>
+    
+  
+- <span data-ttu-id="8eee6-138">Boolean</span><span class="sxs-lookup"><span data-stu-id="8eee6-138">Boolean</span></span>
+    
+  
+- <span data-ttu-id="8eee6-139">Object arrays: one- or two-dimensional arrays, that is, object [], object [,], int[] and int[,])</span><span class="sxs-lookup"><span data-stu-id="8eee6-139">Object arrays: one- or two-dimensional arrays, that is, object [], object [,], int[] and int[,])</span></span>
+    
+  
+- <span data-ttu-id="8eee6-140">DateTime</span><span class="sxs-lookup"><span data-stu-id="8eee6-140">DateTime</span></span> 
+    
+  
+- <span data-ttu-id="8eee6-141">Object</span><span class="sxs-lookup"><span data-stu-id="8eee6-141">Object</span></span>
+    
+  
+
+## <a name="xlls"></a><span data-ttu-id="8eee6-142">XLLs</span><span class="sxs-lookup"><span data-stu-id="8eee6-142">XLLs</span></span>
 
 
-#### <a name="tasks"></a><span data-ttu-id="23625-148">Aufgaben</span><span class="sxs-lookup"><span data-stu-id="23625-148">Tasks</span></span>
+### <a name="are-xlls-supported"></a><span data-ttu-id="8eee6-143">Are XLLs supported?</span><span class="sxs-lookup"><span data-stu-id="8eee6-143">Are XLLs supported?</span></span>
 
-
+<span data-ttu-id="8eee6-p105">Not directly. Excel Services will load and call only managed-code UDFs. However, you can write a managed-code wrapper to call the XLLs and deploy the XLLs to the server, together with the managed-code wrapper assembly.</span><span class="sxs-lookup"><span data-stu-id="8eee6-p105">Not directly. Excel Services will load and call only managed-code UDFs. However, you can write a managed-code wrapper to call the XLLs and deploy the XLLs to the server, together with the managed-code wrapper assembly.</span></span>
   
     
     
- [<span data-ttu-id="23625-149">How to: Create a UDF That Calls a Web Service</span><span class="sxs-lookup"><span data-stu-id="23625-149">How to: Create a UDF That Calls a Web Service</span></span>](how-to-create-a-udf-that-calls-a-web-service.md)
-  
-    
-    
- [<span data-ttu-id="23625-150">How to: Trust a Location</span><span class="sxs-lookup"><span data-stu-id="23625-150">How to: Trust a Location</span></span>](how-to-trust-a-location.md)
-  
-    
-    
- [<span data-ttu-id="23625-151">How to: Catch Exceptions</span><span class="sxs-lookup"><span data-stu-id="23625-151">How to: Catch Exceptions</span></span>](how-to-catch-exceptions.md)
-#### <a name="concepts"></a><span data-ttu-id="23625-152">Konzepte</span><span class="sxs-lookup"><span data-stu-id="23625-152">Concepts</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="8eee6-147">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="8eee6-147">See also</span></span>
+
+
+#### <a name="tasks"></a><span data-ttu-id="8eee6-148">Aufgaben</span><span class="sxs-lookup"><span data-stu-id="8eee6-148">Tasks</span></span>
 
 
   
     
     
- [<span data-ttu-id="23625-153">Understanding Excel Services UDFs</span><span class="sxs-lookup"><span data-stu-id="23625-153">Understanding Excel Services UDFs</span></span>](understanding-excel-services-udfs.md)
+ [<span data-ttu-id="8eee6-149">How to: Create a UDF That Calls a Web Service</span><span class="sxs-lookup"><span data-stu-id="8eee6-149">How to: Create a UDF That Calls a Web Service</span></span>](how-to-create-a-udf-that-calls-a-web-service.md)
   
     
     
- [<span data-ttu-id="23625-154">Walkthrough: Developing a Managed-Code UDF</span><span class="sxs-lookup"><span data-stu-id="23625-154">Walkthrough: Developing a Managed-Code UDF</span></span>](walkthrough-developing-a-managed-code-udf.md)
+ [<span data-ttu-id="8eee6-150">How to: Trust a Location</span><span class="sxs-lookup"><span data-stu-id="8eee6-150">How to: Trust a Location</span></span>](how-to-trust-a-location.md)
   
     
     
- [<span data-ttu-id="23625-155">Excel Services-Architektur</span><span class="sxs-lookup"><span data-stu-id="23625-155">Excel Services Architecture</span></span>](excel-services-architecture.md)
+ [<span data-ttu-id="8eee6-151">How to: Catch Exceptions</span><span class="sxs-lookup"><span data-stu-id="8eee6-151">How to: Catch Exceptions</span></span>](how-to-catch-exceptions.md)
+#### <a name="concepts"></a><span data-ttu-id="8eee6-152">Konzepte</span><span class="sxs-lookup"><span data-stu-id="8eee6-152">Concepts</span></span>
+
+
   
     
     
- [<span data-ttu-id="23625-156">Excel Services Alerts</span><span class="sxs-lookup"><span data-stu-id="23625-156">Excel Services Alerts</span></span>](excel-services-alerts.md)
+ [<span data-ttu-id="8eee6-153">Understanding Excel Services UDFs</span><span class="sxs-lookup"><span data-stu-id="8eee6-153">Understanding Excel Services UDFs</span></span>](understanding-excel-services-udfs.md)
   
     
     
- [<span data-ttu-id="23625-157">Excel Services Known Issues and Tips</span><span class="sxs-lookup"><span data-stu-id="23625-157">Excel Services Known Issues and Tips</span></span>](excel-services-known-issues-and-tips.md)
+ [<span data-ttu-id="8eee6-154">Walkthrough: Developing a Managed-Code UDF</span><span class="sxs-lookup"><span data-stu-id="8eee6-154">Walkthrough: Developing a Managed-Code UDF</span></span>](walkthrough-developing-a-managed-code-udf.md)
   
     
     
- [<span data-ttu-id="23625-158">Excel Services Best Practices</span><span class="sxs-lookup"><span data-stu-id="23625-158">Excel Services Best Practices</span></span>](excel-services-best-practices.md)
+ [<span data-ttu-id="8eee6-155">Excel Services-Architektur</span><span class="sxs-lookup"><span data-stu-id="8eee6-155">Excel Services Architecture</span></span>](excel-services-architecture.md)
+  
+    
+    
+ [<span data-ttu-id="8eee6-156">Excel Services Alerts</span><span class="sxs-lookup"><span data-stu-id="8eee6-156">Excel Services Alerts</span></span>](excel-services-alerts.md)
+  
+    
+    
+ [<span data-ttu-id="8eee6-157">Excel Services Known Issues and Tips</span><span class="sxs-lookup"><span data-stu-id="8eee6-157">Excel Services Known Issues and Tips</span></span>](excel-services-known-issues-and-tips.md)
+  
+    
+    
+ [<span data-ttu-id="8eee6-158">Excel Services Best Practices</span><span class="sxs-lookup"><span data-stu-id="8eee6-158">Excel Services Best Practices</span></span>](excel-services-best-practices.md)
