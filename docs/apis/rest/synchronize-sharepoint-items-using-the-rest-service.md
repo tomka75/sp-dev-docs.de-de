@@ -1,11 +1,17 @@
-<a id="synchronize-sharepoint-items-using-the-rest-service" class="xliff"></a>
-
-# Synchronisieren von SharePoint-Elementen mithilfe des REST-Diensts
+---
+title: Synchronisieren von SharePoint-Elementen mit dem REST-Dienst
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: ed16442556103b74c820b0d67ea4bbcc0667f7ea
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
+# <a name="synchronize-sharepoint-items-using-the-rest-service"></a>Synchronisieren von SharePoint-Elementen mit dem REST-Dienst
 Erfahren Sie, wie Sie mit der Ressource **GetListItemChangesSinceToken**, die Teil des SharePoint REST-Diensts ist, Elemente zwischen SharePoint und Ihren Add-ins oder Diensten synchronisieren.
 
-<a id="synchronizing-sharepoint-items-using-the-getlistitemchangessincetoken-resource" class="xliff"></a>
-
-## Synchronisieren von SharePoint-Elementen mithilfe der Ressource GetListItemChangesSinceToken
+## <a name="synchronizing-sharepoint-items-using-the-getlistitemchangessincetoken-resource"></a>Synchronisieren von SharePoint-Elementen mithilfe der Ressource GetListItemChangesSinceToken
 Zum Synchronisieren von Elementen zwischen SharePoint und Ihren Add-ins oder Diensten können Sie die Ressource **GetListItemChangesSinceToken** verwenden. **GetListItemChangesSinceToken** ist Teil des SharePoint REST-Diensts und entspricht dem Webdienstaufruf **Lists.GetListItemChangesSinceToken**.
  
 Führen Sie eine **POST**-Anforderung aus, die ein Objekt [SP.ChangeLogItemQuery object properties](#bk_props) im Hauptteil enthält.
@@ -45,9 +51,7 @@ Die Anforderung gibt ADO **rowset** XML mit den Zeilen zurück, die alle mit der
 
 |
 
-<a id="spchangelogitemquery-object-properties" class="xliff"></a>
-
-## Objekteigenschaften SP.ChangeLogItemQuery
+## <a name="spchangelogitemquery-object-properties"></a>Objekteigenschaften SP.ChangeLogItemQuery
 <a name="bk_props"> </a>
 ****
 
@@ -55,14 +59,12 @@ Die Anforderung gibt ADO **rowset** XML mit den Zeilen zurück, die alle mit der
 |:-----|:-----|
 |**ListName**|Eine Zeichenfolge, die entweder Titel oder GUID der Liste enthält. Bei Abruf der Tabelle "UserInfo" enthält die Zeichenfolge UserInfo. Die Verwendung der GUID führt zu einer besseren Leistung.|
 |**ViewName**|Eine Zeichenfolge mit der GUID für die Ansicht, die für die durch die Parameter _query_,  _viewFields_ und  _rowLimit_ dargestellten Standard-Ansichtattribute zu verwenden ist. Wird dieses Argument nicht angegeben, so wird die Standardansicht verwendet. Wird das Argument angegeben, so setzt der Wert der Parameter _query_,  _viewFields_ oder  _rowLimit_ die entsprechende Einstellung in der Ansicht außer Kraft. Weist z. B. die durch den Parameter _viewFields_ angegebene Ansicht ein Zeilenlimit von 100 auf, während der Parameter _rowLimit_ den Wert 1000 enthält, dann werden in der Antwort 1000 Zeilen zurückgegeben.|
-|**Query**|Ein [Query](http://msdn.microsoft.com/de-de/library/ms471093.aspx)-Element mit der Abfrage, die festlegt, welche Datensätze in welcher Reihenfolge zurückgegeben werden.|
+|**Query**|Ein [Query](http://msdn.microsoft.com/en-us/library/ms471093.aspx)-Element mit der Abfrage, die festlegt, welche Datensätze in welcher Reihenfolge zurückgegeben werden.|
 |**QueryOptions**|Ein XML-Fragment in der folgenden Form, das separate Knoten für die verschiedenen Eigenschaften des Objekts **SPQuery** enthält.|
-|**ChangeToken**|Eine Zeichenfolge, die das Änderungstoken für die Anforderung enthält. Eine Beschreibung des Formats, das in dieser Zeichenfolge verwendet wird, finden Sie unter [Übersicht über das Änderungsprotokoll](http://msdn.microsoft.com/de-de/library/bb417456.aspx). Wenn Null übergeben wird, werden alle Elemente in der Liste zurückgegeben.|
-|**Contains**|Ein [Contains](http://msdn.microsoft.com/de-de/library/ms196501.aspx)-Element, das das benutzerdefinierte Filtern für die Abfrage definiert.|
+|**ChangeToken**|Eine Zeichenfolge, die das Änderungstoken für die Anforderung enthält. Eine Beschreibung des Formats, das in dieser Zeichenfolge verwendet wird, finden Sie unter [Übersicht über das Änderungsprotokoll](http://msdn.microsoft.com/en-us/library/bb417456.aspx). Wenn Null übergeben wird, werden alle Elemente in der Liste zurückgegeben.|
+|**Contains**|Ein [Contains](http://msdn.microsoft.com/en-us/library/ms196501.aspx)-Element, das das benutzerdefinierte Filtern für die Abfrage definiert.|
 
-<a id="additional-resources" class="xliff"></a>
-
-## Zusätzliche Ressourcen
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 <a name="bk_addresources"> </a>
 
 -  [Grundlegendes zum SharePoint REST-Dienst](get-to-know-the-sharepoint-rest-service.md)

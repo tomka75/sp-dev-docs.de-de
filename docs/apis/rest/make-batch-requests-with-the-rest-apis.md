@@ -1,3 +1,13 @@
+---
+title: "Durchführen von Batchanforderungen mit den REST-APIs"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: b415b086175b366fbbc6d920186198b096cc85c7
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="make-batch-requests-with-the-rest-apis"></a>Durchführen von Batchanforderungen mit den REST-APIs
 Erfahren Sie, wie Sie die Abfrageoption `$batch` mit den REST-/OData-APIs verwenden.
  
