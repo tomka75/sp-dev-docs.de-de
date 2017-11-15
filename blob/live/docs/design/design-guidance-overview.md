@@ -1,0 +1,43 @@
+---
+title: Entwerfen von benutzerfreundlichen SharePoint-Umgebungen
+ms.date: 9/25/2017
+ms.openlocfilehash: 20e38c855b6a63db9f3c3bb3e670082127e2c2f6
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
+# <a name="designing-great-sharepoint-experiences"></a><span data-ttu-id="66af5-102">Entwerfen von benutzerfreundlichen SharePoint-Umgebungen</span><span class="sxs-lookup"><span data-stu-id="66af5-102">Designing great SharePoint experiences</span></span>
+
+<span data-ttu-id="66af5-103">SharePoint ist eine Plattform, die Inhalte für mehr als 200.000 Organisationen und 190 Millionen Personen weltweit bietet.</span><span class="sxs-lookup"><span data-stu-id="66af5-103">SharePoint is a platform that delivers content to more than 200,000 organizations and 190 Million people worldwide.</span></span> <span data-ttu-id="66af5-104">Dieser SharePoint-Designleitfaden unterstützt Sie dabei, noch überzeugendere SharePoint-Umgebungen zu erstellen sowie Ihre Marke und Botschaft effizient zu kommunizieren.</span><span class="sxs-lookup"><span data-stu-id="66af5-104">This SharePoint design guidance will help you create even more compelling SharePoint experiences, as well as effectively communicate your brand and message to your audience.</span></span> <span data-ttu-id="66af5-105">Er unterstützt Sie dabei, die leistungsstarken Tools in SharePoint besser zu nutzen und gleichzeitig Ihre eigenen angepassten und optimierten Umgebungen zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="66af5-105">This guidance will help you better take advantage of the powerful tools in SharePoint while creating your own customized and optimized experiences.</span></span> <span data-ttu-id="66af5-106">Wir freuen uns über Ihr Feedback und Ihre Rückmeldungen, sodass wir diesen Leitfaden verbessern können.</span><span class="sxs-lookup"><span data-stu-id="66af5-106">We welcome your feedback and input so that we can keep making improvements to this guidance.</span></span>
+
+<!-- Seems like you should tell them how you'd like to receive feedback - i.e. via issues in the repo? -->
+
+![SharePoint-Kommunikationswebsite auf mehreren Geräten](../images/design-guidance-overview.png)
+
+
+## <a name="sharepoint-design-principles"></a><span data-ttu-id="66af5-108">SharePoint-Designprinzipien</span><span class="sxs-lookup"><span data-stu-id="66af5-108">SharePoint design principles</span></span> 
+
+<span data-ttu-id="66af5-109">SharePoint setzt auf den Designprinzipien auf, die die Office- und Microsoft-Produktfamilien formen.</span><span class="sxs-lookup"><span data-stu-id="66af5-109">SharePoint builds on the design principles that shape the Office and Microsoft product families.</span></span> <span data-ttu-id="66af5-110">Diese Prinzipien sorgen dafür, dass das Design unseren Produktzielen und den Benutzeranforderungen entspricht.</span><span class="sxs-lookup"><span data-stu-id="66af5-110">These principles help the design stay true to our product goals and user needs.</span></span>
+
+<span data-ttu-id="66af5-111">**Optimistisch und schnell**</span><span class="sxs-lookup"><span data-stu-id="66af5-111">**Optimistic and fast**</span></span>
+
+<span data-ttu-id="66af5-112">SharePoint unterstützt die Benutzer, alles zu erreichen, was sie möchten, indem sie über die erforderliche Plattform und den erforderlichen Support verfügen.</span><span class="sxs-lookup"><span data-stu-id="66af5-112">SharePoint is encouraging, knowing people can achieve whatever they set their minds to when given the platform and the support they need.</span></span> <span data-ttu-id="66af5-113">Wir sind schnell und agil – und wir passen unsere Produktumgebung basierend auf Feedback und Rückmeldungen an.</span><span class="sxs-lookup"><span data-stu-id="66af5-113">We're fast and agile - and we adjust our product experience based on feedback and input.</span></span>
+
+<span data-ttu-id="66af5-114">**Dynamisch und aktiv**</span><span class="sxs-lookup"><span data-stu-id="66af5-114">**Dynamic and alive**</span></span>
+
+<span data-ttu-id="66af5-115">Wir fördern Dynamik und sind begeistert davon, wie Veränderungen zu neuen Möglichkeiten führen können.</span><span class="sxs-lookup"><span data-stu-id="66af5-115">We thrive on the dynamism in the world and love the way that change can open new possibilities for people.</span></span> <span data-ttu-id="66af5-116">Wir haben keine Angst, uns neu zu erfinden, und möchten uns ständig weiterentwickeln, um die Anforderungen der Menschen und Unternehmen besser zu erfüllen, die die Welt um uns herum verändern.</span><span class="sxs-lookup"><span data-stu-id="66af5-116">We’re fearless about reinventing ourselves, continually changing for the better to meet the needs of the people and companies changing the world around us.</span></span>
+
+<span data-ttu-id="66af5-117">**Authentisch und praktisch**</span><span class="sxs-lookup"><span data-stu-id="66af5-117">**Authentic and useful**</span></span>
+
+<span data-ttu-id="66af5-118">Unsere Leidenschaft besteht darin, unsere Kunden zu unterstützen, und das seit mehr als 30 Jahren.</span><span class="sxs-lookup"><span data-stu-id="66af5-118">Our passion is to help people achieve, and it has been for more than 30 years.</span></span> <span data-ttu-id="66af5-119">Wir tun dies wie kein anderes Unternehmen.</span><span class="sxs-lookup"><span data-stu-id="66af5-119">We care about it in a way that no one else does.</span></span> <span data-ttu-id="66af5-120">Wir sind uns der Bedeutung unserer Kunden bewusst und stellen sicher, dass SharePoint durch Authentizität und Echtheit relevant und praktisch bleibt.</span><span class="sxs-lookup"><span data-stu-id="66af5-120">We understand the importance of our customers and make sure that SharePoint stays relevant and useful, by staying authentic and true.</span></span>
+
+<span data-ttu-id="66af5-121">**Zukunftsorientiert**</span><span class="sxs-lookup"><span data-stu-id="66af5-121">**Forward-thinking**</span></span>
+
+<span data-ttu-id="66af5-122">Wir möchten herausfinden, was über die aktuelle Vorgehensweise hinaus möglich ist.</span><span class="sxs-lookup"><span data-stu-id="66af5-122">We search for what’s possible beyond today’s way of getting things done.</span></span> <span data-ttu-id="66af5-123">Uns treibt all das an, was unsere Kunden erreichen können, und möchten dies durch unsere Plattform unterstützen und optimieren.</span><span class="sxs-lookup"><span data-stu-id="66af5-123">We’re energized by all that people are capable of achieving and seek to support and amplify it through our platform.</span></span> <span data-ttu-id="66af5-124">Wir interessieren uns für die Anforderungen unserer Kunden – nicht nur heute, sondern auch in der Zukunft, indem wir antizipieren, was und wie sie es erreichen möchten.</span><span class="sxs-lookup"><span data-stu-id="66af5-124">We care about the needs of people not only today, but tomorrow — anticipating what and how they’ll want to achieve.</span></span> <span data-ttu-id="66af5-125">Deshalb entwickeln wir unsere Technologie dahingehend, wer sie sein und was sie  erreichen können.</span><span class="sxs-lookup"><span data-stu-id="66af5-125">So we build our technology around who they can be and what they can become.</span></span>
+
+<span data-ttu-id="66af5-126">**Zugänglich und optimiert**</span><span class="sxs-lookup"><span data-stu-id="66af5-126">**Accessible and optimized**</span></span>
+
+<span data-ttu-id="66af5-127">Barrierefreiheit bedeutet die Entwicklung einer Umgebung für alle Anwender, die individuell anpassbar ist, um spezielle visuelle, auditive, sensorische, kognitive und sprachliche Anforderungen zu erfüllen.</span><span class="sxs-lookup"><span data-stu-id="66af5-127">Accessibility is developing an equal experience for all users that enables individuals to adjust their user experience to meet their unique visual, hearing, dexterity, cognitive, and speech needs.</span></span> <span data-ttu-id="66af5-128">SharePoint unterstützt das Konzept, jedem überall zugängliche Umgebungen bereitzustellen und unsere Umgebungen zu optimieren, um die Anforderungen all unserer Kunden widerzuspiegeln.</span><span class="sxs-lookup"><span data-stu-id="66af5-128">SharePoint believes strongly in providing accessible experiences for everyone, everywhere - and in optimizing our experiences to reflect the needs of all of our customers.</span></span>
+
+<!-- These seem like fairly high-level principles; it would be good to think about how to convey how these principles manifest in the design. Can you add a design example to each section that illustrate the principle? --> 
