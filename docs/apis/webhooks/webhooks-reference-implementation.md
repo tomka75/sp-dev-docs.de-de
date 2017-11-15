@@ -1,15 +1,25 @@
+---
+title: "SharePoint-Webhooks – Beispielreferenzimplementierung"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 0db2afd9a57241d3839394d6d9e188bec7998290
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="sharepoint-webhooks-sample-reference-implementation"></a>SharePoint-Webhooks – Beispielreferenzimplementierung
 
 **Mitwirkende(r)**: Bert Jansen (Microsoft), SharePoint PnP-Kernteam
 
 Die Implementierung des SharePoint Patterns and Practices (PnP)-Referenz zeigt, wie Sie SharePoint-Webhooks in der Anwendung verwenden können. Die Webhooks werden auf sofort im Unternehmen einsetzbare Weise mit verschiedenen Microsoft Azure-Komponenten, wie z. B. Azure-Webaufträge, Azure SQL Server und Azure Storage-Warteschlangen, für die Verarbeitung asynchroner Webauftragsbenachrichtigung implementiert.
 
-Die Referenzimplementierung funktioniert nur mit [SharePoint-Listenwebhooks](./lists/overview-sharepoint-list-webhooks). 
+Die Referenzimplementierung funktioniert nur mit [SharePoint-Listenwebhooks](./lists/overview-sharepoint-list-webhooks.md). 
 
 Sie finden diese Schritte auch im Video im [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=j3hWCAI9R20):
 
 <a href="https://www.youtube.com/watch?v=j3hWCAI9R20">
-<img src="../../../images/youtube-introducing-sharepoint-webhooks.png" alt="PnP webcast - Introducing SharePoint webhooks" />
+<img src="../../images/youtube-introducing-sharepoint-webhooks.png" alt="PnP webcast - Introducing SharePoint webhooks" />
 </a>
 
 ## <a name="applies-to"></a>Gilt für
@@ -28,9 +38,9 @@ Quellcode und andere Materialien, die für die Referenzimplementierung in zwei V
 
 Die Anwendung zeigt Ihnen das Verwalten von Webhooks, speziell für eine SharePoint-Liste. Darüber hinaus enthält sie eine Referenzimplementierung eines Webhook-Dienstendpunkts, die Sie in Ihren Webhook-Projekten wiederverwenden können. 
 
-![SharePoint-Webhook-Referenzimplementierungsanwendung](../../../images/webhook-sample-application.png)
+![SharePoint-Webhook-Referenzimplementierungsanwendung](../../images/webhook-sample-application.png)
 
-Im [Bereitstellungshandbuch zur SharePoint-Webhooks-Referenzimplementierung](https://github.com/SharePoint/sp-dev-samples/blob/master/Samples/WebHooks.List/Deployment%20guide.md) werden die Bereitstellungsschritte aufgelistet, die zum Bereitstellen der vom SharePoint-Anbieter gehosteten Referenzimplementierung verwendet werden. Verwenden Sie die [hier](https://github.com/SharePoint/sp-dev-samples/blob/master/Samples/WebHooks.List.AzureAD/Deployment%20guide.md) beschriebenen Schritte zur Bereitstellung der Office 365-Azure AD-Anwendung. Im Bereitstellungshandbuch wird gezeigt, wie Sie eine Web-API-Funktion als Webhook-Dienst verwenden. Wenn Sie darüber hinaus an Azure-Funktionen interessiert sind, sehen Sie sich den [Leitfaden zu Azure-Funktionen](https://github.com/SharePoint/sp-dev-samples/blob/master/Samples/WebHooks.List.AzureAD/azure%20functions%20guide.md) an, in dem erläutert wird, wie Azure-Funktionen in dieser Referenzimplementierung verwendet werden.
+Im [Bereitstellungshandbuch zur SharePoint-Webhooks-Referenzimplementierung](https://github.com/SharePoint/sp-dev-samples/blob/master/Samples/WebHooks.List/Deployment%20guide.md) werden die Bereitstellungsschritte aufgelistet, die zum Bereitstellen der vom SharePoint-Anbieter gehosteten Referenzimplementierung verwendet werden. Verwenden Sie die [hier](https://github.com/SharePoint/sp-dev-samples/blob/master/Samples/WebHooks.List.AzureAD/Deployment%20guide.md) beschriebenen Schritte zur Bereitstellung der Office 365 Azure AD-Anwendung. Im Bereitstellungshandbuch wird gezeigt, wie Sie eine Web-API-Funktion als Webhook-Dienst verwenden. Wenn Sie darüber hinaus an Azure-Funktionen interessiert sind, sehen Sie sich den [Leitfaden zu Azure Functions](https://github.com/SharePoint/sp-dev-samples/blob/master/Samples/WebHooks.List.AzureAD/azure%20functions%20guide.md) an, in dem erläutert wird, wie Azure Functions in dieser Referenzimplementierung verwendet wird.
 
 ## <a name="introduction-to-webhooks"></a>Einführung in Webhooks
 
@@ -38,7 +48,7 @@ Webhooks benachrichtigen Ihre Anwendung über Änderungen in SharePoint, die die
 
 ### <a name="adding-a-webhook-to-your-sharepoint-list"></a>Hinzufügen eines Webhooks zu Ihrer SharePoint-Liste
 
-Die Referenzimplementierung funktioniert mit einer SharePoint-Liste. Zum Hinzufügen eines Webhooks zu einer SharePoint-Liste erstellt die Anwendung zunächst ein Webhook-Abonnement durch Senden einer [`POST /_api/web/lists('list-id')/subscriptions`](./lists/create-subscription)-Anforderung. Die Anforderung umfasst Folgendes:
+Die Referenzimplementierung funktioniert mit einer SharePoint-Liste. Zum Hinzufügen eines Webhooks zu einer SharePoint-Liste erstellt die Anwendung zunächst ein Webhook-Abonnement durch Senden einer [`POST /_api/web/lists('list-id')/subscriptions`](./lists/create-subscription.md)-Anforderung. Die Anforderung umfasst Folgendes:
 
 * Eine Nutzlast, die die Liste identifiziert, für die Sie den Webhook hinzufügen.
 * Die Position der Webhook-Dienst-URL zum Senden der Benachrichtigungen.
@@ -46,7 +56,7 @@ Die Referenzimplementierung funktioniert mit einer SharePoint-Liste. Zum Hinzuf�
 
 Nachdem Sie SharePoint zum Hinzufügen Ihres Webhook aufgefordert haben, überprüft SharePoint, ob Ihr Webhook-Dienstendpunkt vorhanden ist. Eine Zeichenfolge wird als Validierung an Ihren Dienstendpunkt gesendet. SharePoint erwartet, dass Ihr Dienstendpunkt die Zeichenfolge für die Validierung innerhalb von 5 Sekunden zurückgibt. Wenn dieser Vorgang fehlschlägt, wird die Webhook-Erstellung abgebrochen. Wenn Sie Ihren Dienst bereitgestellt haben, funktioniert dies, und SharePoint gibt einer HTTP 201-Nachricht auf die POST-Anforderung zurück, die die Anwendung ursprünglich gesendet hat. Die Nutzlast in der Antwort enthält die ID des neuen Webhook-Abonnements.
 
-![Hinzufügen eines Webhooks](../../../images/webhook-sample-add-process.png)
+![Hinzufügen eines Webhooks](../../images/webhook-sample-add-process.png)
 
 Sehen Sie sich die Referenzimplementierung an, und Sie sehen, dass alle Webhook-CRUD-Vorgänge in der [WebHookManager](https://github.com/SharePoint/sp-dev-samples/blob/master/Samples/WebHooks.List/SharePoint.WebHooks.Common/WebHookManager.cs)-Klasse des **SharePoint.WebHooks.Common**-Projekts konsolidiert sind. Das Hinzufügen eines Webhooks erfolgt mithilfe der **AddListWebHookAsync**-Methode:
 
@@ -97,13 +107,13 @@ Eigenschaft|Beschreibung
 
 Wenn der Dienst aufgerufen wird, ist es wichtig, dass der Dienst mit einer HTTP 200-Nachricht in weniger als 5 Sekunden antwortet. Weiter unten in diesem Artikel erhalten Sie mehr Informationen zur Reaktionszeit, aber im Wesentlichen ist es erforderlich, dass Sie die Benachrichtigungen **asynchron** behandeln. In dieser Referenzimplementierung verwenden Sie dazu Azure-Webaufträge und Azure Storage-Warteschlangen.
 
-![SharePoint ruft Ihren Webhook-Endpunkt auf](../../../images/webhook-sample-call-webhook.png)
+![SharePoint ruft Ihren Webhook-Endpunkt auf](../../images/webhook-sample-call-webhook.png)
 
 ### <a name="grab-the-changes-your-service-needs-to-act-upon"></a>Erfassen der Änderungen, auf die der Dienst reagieren muss
 
 Im vorherigen Schritt wurde Ihr Dienstendpunkt aufgerufen, aber SharePoint hat nur Informationen dazu bereitgestellt, wo die Änderung vorgenommen wurde, nicht dazu, was tatsächlich geändert wurde. Um zu erfahren, was geändert wurde, müssen Sie die SharePoint-`GetChanges()`-API wie in der nachstehenden Abbildung gezeigt verwenden.
 
-![Async GetChanges](../../../images/webhook-sample-async-getchanges.png)
+![Async GetChanges](../../images/webhook-sample-async-getchanges.png)
 
 Weitere Informationen zur `GetChanges()`-Implementierung erhalten Sie in der **ProcessNotification**-Methode in der [ChangeManager](https://github.com/SharePoint/sp-dev-samples/blob/master/Samples/WebHooks.List/SharePoint.WebHooks.Common/ChangeManager.cs)-Klasse des **SharePoint.WebHooks.Common**-Projekts. 
 
@@ -118,7 +128,7 @@ Im Folgenden werden einige der wichtigsten Punkte über Änderungen aufgeführt:
 
 Das folgende Diagramm beschreibt den vollständigen End-to-End-Webhook-Fluss:
 
-![End-to-End-Fluss der Webhooks-Referenzimplementierung](../../../images/webhook-sample-end-to-end-flow.png)
+![End-to-End-Fluss der Webhooks-Referenzimplementierung](../../images/webhook-sample-end-to-end-flow.png)
 
 1. Die Anwendung erstellt ein Webhook-Abonnement. Wenn dies der Fall ist, ruft sie das aktuelle **changeToken** aus der Liste ab, für die der Webhook erstellt wurde.
 2. Die Anwendung behält das **changeToken** in einem permanenten Speicher bei, in diesem Fall z. B. in SQL Azure.
@@ -144,7 +154,7 @@ Erstellen Sie einen Webauftrag, das wöchentlich alle Abonnement-IDs aus dem per
 
 > **Hinweis:** Dieser Webauftrag ist nicht Teil dieser Referenzimplementierung.
 
-Die tatsächliche Erneuerung eines SharePoint-Listen-Webhooks ist mithilfe eines [`PATCH /_api/web/lists('list-id')/subscriptions(‘subscriptionID’)`](./lists/update-subscription)-REST-Aufrufs möglich. In der Referenzimplementierung ist das Aktualisieren von Webhooks in der [WebHookManager](https://github.com/SharePoint/sp-dev-samples/blob/master/Samples/WebHooks.List/SharePoint.WebHooks.Common/WebHookManager.cs)-Klasse des **SharePoint.WebHooks.Common**-Projekts implementiert. Das Aktualisieren eines Webhooks erfolgt mithilfe der **AddListWebHookAsync**-Methode:
+Die tatsächliche Erneuerung eines SharePoint-Listen-Webhooks ist mithilfe eines [`PATCH /_api/web/lists('list-id')/subscriptions(‘subscriptionID’)`](./lists/update-subscription.md)-REST-Aufrufs möglich. In der Referenzimplementierung ist das Aktualisieren von Webhooks in der [WebHookManager](https://github.com/SharePoint/sp-dev-samples/blob/master/Samples/WebHooks.List/SharePoint.WebHooks.Common/WebHookManager.cs)-Klasse des **SharePoint.WebHooks.Common**-Projekts implementiert. Das Aktualisieren eines Webhooks erfolgt mithilfe der **UpdateListWebHookAsync**-Methode:
 
 ```csharp
 /// <summary>
@@ -169,4 +179,4 @@ Da SharePoint Ihren Webhook-Dienstendpunkt aufruft, muss Ihr Endpunkt durch Shar
 
 * Stellen Sie während der anfänglichen Entwicklung Ihrer Dienstverarbeitungslogik Ihre eigene serialisierte Nutzlast zur Verfügung. Dadurch wird es möglich, die Verarbeitungslogik vollständig zu testen, ohne den Dienstendpunkt bereitzustellen (sogar ohne Konfigurieren eines Webhooks).
 * Wenn Sie Zugriff auf Azure-Ressourcen haben, können Sie Ihren Endpunkt in Azure unter Verwendung eines Debug-Builds bereitstellen und den Azure-App-Dienst für das Debuggen konfigurieren. Dann können Sie einen Remotehaltepunkt festlegen und das Remotedebugging mit Visual Studio durchführen.
-- Wenn Sie Ihren Dienst nicht während der Entwicklung bereitstellen möchten, müssen Sie einen sicheren Tunnel für den Dienst verwenden. Sie teilen SharePoint sozusagen mit, dass sich der Benachrichtigungsdienst auf einem gemeinsam genutzten öffentlichen Endpunkt befindet. Installieren Sie auf dem Client eine Komponente, die mit diesem freigegebenen öffentlichen Dienst eine Verbindung herstellt. Immer, wenn ein Aufruf des öffentlichen Endpunkts erfolgt, wird die Clientkomponente benachrichtigt, die dann die Nutzlast an den auf dem lokalen Host ausgeführten Dienst sendet. [ngrok](https://ngrok.com/) ist eine Implementierung eines solchen Tools für sichere Tunnel, die Sie verwenden können, um Ihren Dienst-Webhook lokal zu debuggen.
+- Wenn Sie Ihren Dienst nicht während der Entwicklung bereitstellen möchten, müssen Sie einen sicheren Tunnel für den Dienst verwenden. Sie teilen SharePoint sozusagen mit, dass sich der Benachrichtigungsdienst auf einem gemeinsam genutzten öffentlichen Endpunkt befindet. Installieren Sie auf dem Client eine Komponente, die mit diesem freigegebenen öffentlichen Dienst eine Verbindung herstellt. Immer, wenn ein Aufruf des öffentlichen Endpunkts erfolgt, wird die Clientkomponente benachrichtigt, die dann die Nutzlast an den auf dem lokalen Host ausgeführten Dienst sendet. [ngrok](https://ngrok.com/) ist eine Implementierung eines solchen Tools für sichere Tunnel, das Sie verwenden können, um Ihren Webhook-Dienst lokal zu debuggen.

@@ -1,3 +1,13 @@
+---
+title: Erste Schritte mit SharePoint-Webhooks
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 7692a59f944a302bffed2d33bc31d8fe4b9a0318
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="get-started-with-sharepoint-webhooks"></a>Erste Schritte mit SharePoint-Webhooks
 
 In diesem Artikel wird beschrieben, wie Sie eine Anwendung zum Hinzufügen und Bearbeiten von SharePoint-Webhook-Anforderungen erstellen. Sie erfahren, wie Sie SharePoint-Webhook-Anforderungen mit dem [Postman-Client](https://www.getpostman.com/) schnell erstellen und ausführen können, unter Verwendung einer einfachen ASP.NET-Web-API als Webhook-Empfänger.
@@ -305,7 +315,7 @@ Postman macht die Arbeit mit APIs sehr einfach. Im ersten Schritt konfigurieren 
 * Wählen Sie die Option **Add token to header** aus.
 * Doppelklicken Sie auf die Variable **access\_token**, um das Token zum Header der Anforderung hinzuzufügen.
 
-![Abrufen eines neuen Zugriffstokens von Postman](../../../images/postman-get-new-access-token.png)
+![Abrufen eines neuen Zugriffstokens von Postman](../../images/postman-get-new-access-token.png)
 
 ### <a name="get-documents-list-id"></a>Abrufen der ID der Liste „Dokumente“
 
@@ -354,7 +364,7 @@ Da Sie nun alle erforderlichen Informationen haben, können Sie die Abfrage und 
     }
     ```
 
-    ![Hinzufügen eines Webhook-Bodys in Postman](../../../images/postman-add-webhook-body.png)
+    ![Hinzufügen eines Webhook-Bodys in Postman](../../images/postman-add-webhook-body.png)
 
 > Stellen Sie sicher, dass der Wert **expirationDateTime** höchstens 6 Monate in der Zukunft liegt, gerechnet vom aktuellen Datum. 
 
@@ -465,10 +475,10 @@ Nun fügen Sie eine Datei zur Bibliothek „Dokumente“ hinzu und testen, ob Si
 
 Dieses Projekt schreibt die Informationen nur ins Ablaufprotokoll. Im Empfänger werden die Informationen jedoch an eine Tabelle oder eine Warteschlange gesendet, die die empfangenen Daten verarbeiten und die von SharePoint gesendeten Informationen auswerten kann. 
 
-Mit diesen Daten können Sie die URL erstellen und über die [GetChanges](https://msdn.microsoft.com/de-de/library/office/dn531433.aspx#bk_ListGetChanges)-API die neuesten Änderungen abrufen.
+Mit diesen Daten können Sie die URL erstellen und über die [GetChanges](https://msdn.microsoft.com/EN-US/library/office/dn531433.aspx#bk_ListGetChanges)-API die neuesten Änderungen abrufen.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
 In diesem Artikel haben Sie mithilfe des Postman-Clients und einer einfachen Web-API Webhook-Benachrichtigungen von SharePoint abonniert und empfangen.
 
-Sehen Sie sich als nächstes die [Beispielreferenzimplementierung für SharePoint-Webhooks](./webhooks-reference-implementation) an. Sie gibt ein End-to-End-Beispiel, das Azure-Speicherwarteschlangen verwendet, um die Informationen zu verarbeiten, Änderungen von SharePoint abzurufen und diese Änderungen an eine SharePoint-Liste zurückzusenden.
+Sehen Sie sich als nächstes die [Beispielreferenzimplementierung für SharePoint-Webhooks](./webhooks-reference-implementation.md) an. Sie gibt ein End-to-End-Beispiel, das Azure-Speicherwarteschlangen verwendet, um die Informationen zu verarbeiten, Änderungen von SharePoint abzurufen und diese Änderungen an eine SharePoint-Liste zurückzusenden.
