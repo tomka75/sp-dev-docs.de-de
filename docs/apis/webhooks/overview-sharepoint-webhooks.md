@@ -1,8 +1,18 @@
+---
+title: "Übersicht über SharePoint-Webhooks"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 519ed85118d4295772c74fcc06ded68110497262
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="overview-of-sharepoint-webhooks"></a>Übersicht über SharePoint-Webhooks
 
 SharePoint-[Webhooks](http://en.wikipedia.org/wiki/Webhook) ermöglichen Entwicklern das Erstellen von Anwendungen, die den Empfang von Benachrichtigungen für bestimmte Ereignisse, die in SharePoint auftreten, abonnieren. Wenn ein Ereignis ausgelöst wird, sendet SharePoint ein HTTP POST-Payload an den Abonnenten. Webhooks sind leichter zu entwickeln und zu verwenden als Windows Communication Foundation-Dienste (WCF), die von SharePoint-Add-In-Remote-Ereignisempfängern verwendet werden. Dies liegt daran, dass Webhooks reguläre HTTP-Dienste sind (Web-API).
 
-Webhooks sind derzeit nur für SharePoint-Listenelemente aktiviert. SharePoint-Listenelement-Webhooks umfassen die Ereignisse, die Listenelementänderungen für eine angegeben SharePoint-Liste oder Dokumentbibliothek entspricht. SharePoint-Webhooks bieten eine einfache Benachrichtigungspipeline, damit Ihre Anwendung Änderungen an einer SharePoint-Liste erkennen kann, ohne den Dienst abzurufen. Weitere Informationen finden Sie unter [SharePoint-Listen-Webhooks](./lists/overview-sharepoint-list-webhooks): 
+Webhooks sind derzeit nur für SharePoint-Listenelemente aktiviert. SharePoint-Listenelement-Webhooks umfassen die Ereignisse, die Listenelementänderungen für eine angegeben SharePoint-Liste oder Dokumentbibliothek entspricht. SharePoint-Webhooks bieten eine einfache Benachrichtigungspipeline, damit Ihre Anwendung Änderungen an einer SharePoint-Liste erkennen kann, ohne den Dienst abzurufen. Weitere Informationen finden Sie unter [SharePoint-Listen-Webhooks](./lists/overview-sharepoint-list-webhooks.md). 
 
 ## <a name="creating-webhooks"></a>Erstellen von Webhooks
 Um einen neuen SharePoint-Webhook zu erstellen, fügen Sie ein neues Abonnement zur entsprechenden SharePoint-Ressource hinzu, z. B. zu einer SharePoint-Liste. 
@@ -118,7 +128,7 @@ Der Hauptteil der HTTP-Anforderung an die Dienstbenachrichtigungs-URL enthält e
 }
 ```
 
-Die Benachrichtigung umfasst keine Informationen zu den Änderungen, durch die sie ausgelöst wurde. Ihre Anwendung verwendet die [GetChanges-API](https://msdn.microsoft.com/de-de/library/office/dn531433.aspx#bk_ListGetChanges) in der Liste, um die Sammlung von Änderungen aus dem Änderungsprotokoll abzufragen und den Änderungstokenwert für alle nachfolgenden Aufrufe zu speichern, wenn die Anwendung benachrichtigt wird.
+Die Benachrichtigung umfasst keine Informationen zu den Änderungen, durch die sie ausgelöst wurde. Ihre Anwendung verwendet die [GetChanges-API](https://msdn.microsoft.com/EN-US/library/office/dn531433.aspx#bk_ListGetChanges) in der Liste, um die Sammlung von Änderungen aus dem Änderungsprotokoll abzufragen und den Änderungstokenwert für alle nachfolgenden Aufrufe zu speichern, wenn die Anwendung benachrichtigt wird.
 
 ## <a name="event-types"></a>Ereignistypen
 SharePoint-Webhooks unterstützen nur asynchrone Ereignisse. Das bedeutet, dass Webhooks nur nach einer Änderung ausgelöst werden (ähnlich wie **-ed**-Ereignisse). Somit sind synchrone Ereignisse (**-ing**-Ereignisse) nicht möglich.

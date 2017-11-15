@@ -1,3 +1,13 @@
+---
+title: "Löschen eines Abonnements"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 553a20757c0849f5033bc3345c4645f1754945bc
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="delete-a-subscription"></a>Löschen eines Abonnements
 
 Löscht ein Webhook-Abonnement aus einer SharePoint-Liste. Nach dem Löschen des Abonnements werden keine Benachrichtigungen mehr übermittelt.

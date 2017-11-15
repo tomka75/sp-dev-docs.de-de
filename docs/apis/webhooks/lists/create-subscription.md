@@ -1,3 +1,13 @@
+---
+title: Erstellen eines neuen Abonnements
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 374200568aa1151e58b9ae76fc48fb2465921af7
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-a-new-subscription"></a>Erstellen eines neuen Abonnements 
 
 Erstellt ein neues Webhook-Abonnement in einer SharePoint-Liste. 
@@ -76,4 +86,4 @@ Content-Type: application/json
 
 Bevor ein neues Abonnement erstellt wird, sendet SharePoint eine Anforderung mit einem Überprüfungstoken im Textkörper der Anfrage an die bereitgestellt Dienst-URL. Ihr Dienst muss auf diese Anforderung durch Zurückgeben des Überprüfungstokens antworten.
 
-Wenn der Dienst die Anforderung auf diese Weise nicht überprüfen kann, wird das Abonnement nicht erstellt. Weitere Informationen finden Sie unter [Übersicht über SharePoint-Webhooks](../overview-sharepoint-webhooks).
+Wenn der Dienst die Anforderung auf diese Weise nicht überprüfen kann, wird das Abonnement nicht erstellt. Weitere Informationen finden Sie unter [Übersicht über SharePoint-Webhooks](../overview-sharepoint-webhooks.md).

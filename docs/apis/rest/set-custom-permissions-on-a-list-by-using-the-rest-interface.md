@@ -1,9 +1,20 @@
+---
+title: Festlegen von benutzerdefinierten Berechtigungen in einer Liste mithilfe der REST-Schnittstelle
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 20e1b305fb19a010e8a5b60ab12ffb43cff61cf5
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="set-custom-permissions-on-a-list-by-using-the-rest-interface"></a>Festlegen von benutzerdefinierten Berechtigungen in einer Liste mithilfe der REST-Schnittstelle
 Informationen zum Definieren von benutzerdefinierten abgestimmten Berechtigungen in einer SharePoint-Liste mithilfe der REST-Schnittstelle und JavaScript.
 
 SharePoint-Websites, Listen und Listenelemente sind Typen von **SecurableObject**. Standardmäßig erbt ein sicherungsfähiges Objekt die übergeordneten Berechtigungen. Wenn Sie benutzerdefinierte Berechtigungen für ein Objekt festlegen möchten, müssen Sie die Vererbung der Berechtigungen unterbrechen und dann durch Hinzufügen oder Entfernen von Rollenzuweisungen neue Berechtigungen definieren.
  
- **Hinweis**  Links zu Artikeln zum Festlegen abgestimmter Berechtigungen finden Sie unter [zusätzliche Ressourcen](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources).
+> [!Note]
+> Links zu Artikeln zum Festlegen abgestimmter Berechtigungen finden Sie unter [zusätzliche Ressourcen](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources).
  
 In dem Codebeispiel in diesem Artikel werden benutzerdefinierte Berechtigungen in einer Liste zugewiesen, anschließend werden die Gruppenberechtigungen für die Liste geändert. In dem Beispiel wird die REST-Schnittstelle für folgende Vorgänge verwendet:
  
@@ -31,7 +42,7 @@ Außerdem müssen Sie Add-in-Berechtigungen mit **Vollzugriff** für den **Web**
 
 In den folgenden Beispielen ist der Inhalt der Datei „App.js“ in einem auf SharePoint gehosteten Add-in dargestellt. Im ersten Beispiel wird die domainübergreifende JavaScript-Bibliothek zu Erstellen und Senden der HTTP-Anfragen verwendet. Im zweiten Beispiel werden jQuery AJAX-Anfragen verwendet.
  
-Bevor Sie den Code ausführen, ersetzen Sie die Platzhalterwerte mit tatsächlichen Werten. Wenn Sie eine andere Sprache oder Umgebung verwenden, müssen Sie einige Komponenten der Anforderung hinzufügen oder ändern. Weitere Informationen finden Sie unter [How REST requests differ by environment](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#bk_HowRequestsDiffer) (So unterscheiden sich REST-Anforderungen je nach Umgebung).
+Bevor Sie den Code ausführen, ersetzen Sie die Platzhalterwerte mit tatsächlichen Werten. Wenn Sie eine andere Sprache oder Umgebung verwenden, müssen Sie einige Komponenten der Anforderung hinzufügen oder ändern. Weitere Informationen finden Sie unter [How REST requests differ by environment](complete-basic-operations-using-sharepoint-rest-endpoints.md#bk_HowRequestsDiffer) (So unterscheiden sich REST-Anforderungen je nach Umgebung).
  
  **Beispiel 1: Domänenübergreifende Bibliotheksanforderungen**
  
@@ -274,9 +285,12 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
     
  
 - TechNet-Artikel:
-     - [Referenz zu abgestimmten Berechtigungen für SharePoint Server 2013](http://technet.microsoft.com/de-de/library/dn169567.aspx)
-     - [Bewährte Methoden für die Verwendung abgestimmter Berechtigungen in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/gg128955.aspx)
-     - [Benutzerberechtigungen und Berechtigungsstufen in SharePoint 2013](http://technet.microsoft.com/de-de/library/cc721640.aspx)
+     - 
+  [Referenz zu abgestimmten Berechtigungen für SharePoint Server 2013](http://technet.microsoft.com/en-us/library/dn169567.aspx)
+     - 
+  [Bewährte Methoden für die Verwendung abgestimmter Berechtigungen in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/gg128955.aspx)
+     - 
+  [Benutzerberechtigungen und Berechtigungsstufen in SharePoint 2013](http://technet.microsoft.com/en-us/library/cc721640.aspx)
     
  
 

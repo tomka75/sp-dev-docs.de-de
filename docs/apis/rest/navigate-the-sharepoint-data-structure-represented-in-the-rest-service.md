@@ -1,3 +1,13 @@
+---
+title: Navigieren in der im REST-Dienst dargestellten SharePoint-Datenstruktur
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 21d0326e9729a0cdb16f03211fae76a76859e5ab
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="navigate-the-sharepoint-data-structure-represented-in-the-rest-service"></a>Navigieren in der im REST-Dienst dargestellten SharePoint-Datenstruktur
 Informationen zum Starten von einem REST-Endpunkt für einen gegebenen SharePoint-Element und Navigieren zu und Zugreifen auf dazugehörige Elemente, z. B. übergeordnete Standorte oder die Bibliotheksstruktur, in der sich das jeweilige Element befindet. 
  

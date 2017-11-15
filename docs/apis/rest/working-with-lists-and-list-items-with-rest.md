@@ -1,3 +1,13 @@
+---
+title: Arbeiten mit Listen und Listenelementen unter Verwendung von REST
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 66e9b7f7e622fe3df661c102fc1d62fde421f31e
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="working-with-lists-and-list-items-with-rest"></a>Arbeiten mit Listen und Listenelementen unter Verwendung von REST
 In diesem Artikel erfahren Sie, wie Sie grundlegende Erstellungs-, Lese-, Aktualisierungs- und Löschoperationen, auch als CRUD-Operationen (Create, Read, Update, Delete) bezeichnet, für Listen und Listenelemente mit der SharePoint REST-Schnittstelle durchführen.
  

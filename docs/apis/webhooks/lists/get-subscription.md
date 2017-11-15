@@ -1,3 +1,13 @@
+---
+title: Abrufen von Abonnements
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 6dea5da88388c0787c9295141cee2fed50a5fa65
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="get-subscriptions"></a>Abrufen von Abonnements
 
 Ruft ein oder mehrere Webhook-Abonnements in einer SharePoint-Liste ab.

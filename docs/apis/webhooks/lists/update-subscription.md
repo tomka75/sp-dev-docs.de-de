@@ -1,3 +1,13 @@
+---
+title: Aktualisieren eines Abonnements
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 6638ad3f3919f9e14497adb7dacc1c1a09c139f6
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="update-a-subscription"></a>Aktualisieren eines Abonnements
 
 Aktualisiert ein Webhook-Abonnement in einer SharePoint-Liste.
