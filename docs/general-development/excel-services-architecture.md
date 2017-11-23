@@ -38,7 +38,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-> <span data-ttu-id="c6a2d-113">**Hinweis:** In Microsoft Excel Online, Bestandteil von Office Online, werden auch Excel-Arbeitsmappen im Browser unterstützt.</span><span class="sxs-lookup"><span data-stu-id="c6a2d-113">Microsoft Excel Online, part of Office Online, also supports Excel workbooks in the browser.</span></span> <span data-ttu-id="c6a2d-114">Weitere Informationen zu Excel Online finden Sie in der [Dokumentation zu Office Web Apps](https://technet.microsoft.com/en-us/library/ee855124.aspx).</span><span class="sxs-lookup"><span data-stu-id="c6a2d-114">Note Microsoft Excel Online, part of Office Online, also supports Excel workbooks in the browser. For more information about Excel Online, see  [documentation about Office Web Apps](https://technet.microsoft.com/en-us/library/ee855124.aspx).</span></span> 
+> <span data-ttu-id="c6a2d-113">**Hinweis:** In Microsoft Excel Online, Bestandteil von Office Online, werden auch Excel-Arbeitsmappen im Browser unterstützt.</span><span class="sxs-lookup"><span data-stu-id="c6a2d-113">Microsoft Excel Online, part of Office Online, also supports Excel workbooks in the browser.</span></span> <span data-ttu-id="c6a2d-114">Weitere Informationen zu Excel Online finden Sie in der [Dokumentation zu Office Web Apps](https://technet.microsoft.com/de-de/library/ee855124.aspx).</span><span class="sxs-lookup"><span data-stu-id="c6a2d-114">Note Microsoft Excel Online, part of Office Online, also supports Excel workbooks in the browser. For more information about Excel Online, see  [documentation about Office Web Apps](https://technet.microsoft.com/de-de/library/ee855124.aspx).</span></span> 
   
     
     
@@ -75,7 +75,7 @@ ms.lasthandoff: 10/13/2017
   
     
     
-<span data-ttu-id="c6a2d-126">Informationen zu Excel Services Topologie, Skalierbarkeit, Leistung und Sicherheit finden Sie unter der SharePoint Server 2010-Dokumentation auf  [TechNet](http://technet.microsoft.com/en-us/library/cc303422%28office.14%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="c6a2d-126">For information about Excel Services topology, scalability, performance, and security, see the SharePoint Server 2010 documentation on  [TechNet](http://technet.microsoft.com/en-us/library/cc303422%28office.14%29.aspx).</span></span> 
+<span data-ttu-id="c6a2d-126">Informationen zu Excel Services Topologie, Skalierbarkeit, Leistung und Sicherheit finden Sie unter der SharePoint Server 2010-Dokumentation auf  [TechNet](http://technet.microsoft.com/de-de/library/cc303422%28office.14%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="c6a2d-126">For information about Excel Services topology, scalability, performance, and security, see the SharePoint Server 2010 documentation on  [TechNet](http://technet.microsoft.com/de-de/library/cc303422%28office.14%29.aspx).</span></span> 
   
     
     

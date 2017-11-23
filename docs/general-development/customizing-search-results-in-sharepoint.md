@@ -290,7 +290,7 @@ using (var context = new ClientContext("http://localhost"))
     
   
 -  <span data-ttu-id="f5940-273">
-  [Übersicht über das Suchschema in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/jj219669%28office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="f5940-273">[Overview of the search schema in SharePoint](http://technet.microsoft.com/en-us/library/jj219669%28office.15%29.aspx)</span></span>
+  [Übersicht über das Suchschema in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/jj219669%28office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="f5940-273">[Overview of the search schema in SharePoint](http://technet.microsoft.com/de-de/library/jj219669%28office.15%29.aspx)</span></span>
     
   
 

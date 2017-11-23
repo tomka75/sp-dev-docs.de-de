@@ -14,7 +14,7 @@ ms.lasthandoff: 10/13/2017
 ## <a name="sharepoint-workflow-object-model"></a><span data-ttu-id="c0c50-104">SharePoint-Workflow-Objektmodell</span><span class="sxs-lookup"><span data-stu-id="c0c50-104">SharePoint workflow object model</span></span>
 <span data-ttu-id="c0c50-105"><a name="bk_SPwfom"> </a></span><span class="sxs-lookup"><span data-stu-id="c0c50-105"></span></span>
 
-<span data-ttu-id="c0c50-p101">Das SharePoint-Objektmodell basiert auf der Basis des .NET Framework 4-Objektmodells für Windows Workflow Foundation 4, jedoch mit Innovationen, die in SharePoint-Workflowfunktionen im Allgemeinen und in SharePoint-Add-Ins insbesondere ermöglichen. Das systemeigene .NET Framework 4-Objektmodell für Windows Workflow Foundation 4 befindet sich in der .NET Framework  [System.Workflow Namespaces](http://msdn.microsoft.com/en-us/library/gg145026.aspx).</span><span class="sxs-lookup"><span data-stu-id="c0c50-p101">The SharePoint object model is built on top of the .NET Framework 4 object model for Windows Workflow Foundation 4, but with innovations that enable workflow functionality in SharePoint generally, and in SharePoint Add-ins in particular. The native .NET Framework 4 object model for Windows Workflow Foundation 4 is located in the .NET Framework  [System.Workflow namespaces](http://msdn.microsoft.com/en-us/library/gg145026.aspx).</span></span>
+<span data-ttu-id="c0c50-p101">Das SharePoint-Objektmodell basiert auf der Basis des .NET Framework 4-Objektmodells für Windows Workflow Foundation 4, jedoch mit Innovationen, die in SharePoint-Workflowfunktionen im Allgemeinen und in SharePoint-Add-Ins insbesondere ermöglichen. Das systemeigene .NET Framework 4-Objektmodell für Windows Workflow Foundation 4 befindet sich in der .NET Framework  [System.Workflow Namespaces](http://msdn.microsoft.com/de-de/library/gg145026.aspx).</span><span class="sxs-lookup"><span data-stu-id="c0c50-p101">The SharePoint object model is built on top of the .NET Framework 4 object model for Windows Workflow Foundation 4, but with innovations that enable workflow functionality in SharePoint generally, and in SharePoint Add-ins in particular. The native .NET Framework 4 object model for Windows Workflow Foundation 4 is located in the .NET Framework  [System.Workflow namespaces](http://msdn.microsoft.com/de-de/library/gg145026.aspx).</span></span>
   
     
     
@@ -111,7 +111,7 @@ ms.lasthandoff: 10/13/2017
 
 
 -  <span data-ttu-id="c0c50-137">
-  [Einführung für Entwickler für Windows Workflow Foundation (WF) in .NET 4](http://msdn.microsoft.com/en-us/library/ee342461.aspx)</span><span class="sxs-lookup"><span data-stu-id="c0c50-137">[A Developer's Introduction to Windows Workflow Foundation (WF) in .NET 4](http://msdn.microsoft.com/en-us/library/ee342461.aspx)</span></span>
+  [Einführung für Entwickler für Windows Workflow Foundation (WF) in .NET 4](http://msdn.microsoft.com/de-de/library/ee342461.aspx)</span><span class="sxs-lookup"><span data-stu-id="c0c50-137">[A Developer's Introduction to Windows Workflow Foundation (WF) in .NET 4](http://msdn.microsoft.com/de-de/library/ee342461.aspx)</span></span>
     
   
 -  [<span data-ttu-id="c0c50-138">Windows Workflow Foundation 4.0: Hello, Workflow!</span><span class="sxs-lookup"><span data-stu-id="c0c50-138">Windows Workflow Foundation 4.0: Hello, workflow!</span></span>](http://weblogs.asp.net/gunnarpeipman/archive/2009/07/08/windows-workflow-foundation-4-0-hello-workflow.aspx)

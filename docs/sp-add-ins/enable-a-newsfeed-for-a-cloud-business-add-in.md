@@ -76,7 +76,7 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="a19e7-133">Entwickeln von Cloud-Business-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="a19e7-133">Develop cloud business add-ins</span></span>](develop-cloud-business-add-ins.md)
     
  
--  [<span data-ttu-id="a19e7-134">Soziale Funktionen und Zusammenarbeit in SharePoint</span><span class="sxs-lookup"><span data-stu-id="a19e7-134">Social and collaboration features in SharePoint</span></span>](http://msdn.microsoft.com/en-us/library/office/jj163280.aspx)
+-  [<span data-ttu-id="a19e7-134">Soziale Funktionen und Zusammenarbeit in SharePoint</span><span class="sxs-lookup"><span data-stu-id="a19e7-134">Social and collaboration features in SharePoint</span></span>](http://msdn.microsoft.com/de-de/library/office/jj163280.aspx)
     
  
 -  [<span data-ttu-id="a19e7-135">Erstellen eines Cloud-Business-Add-Ins mit einem sozialen Newsfeed</span><span class="sxs-lookup"><span data-stu-id="a19e7-135">Create a cloud business add-in with a social newsfeed</span></span>](create-a-cloud-business-add-in-with-a-social-newsfeed.md)

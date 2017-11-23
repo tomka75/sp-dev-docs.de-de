@@ -258,7 +258,7 @@ static Dictionary<string, string> ViewXmls = new Dictionary<string, string>()
     
   
 -  <span data-ttu-id="5ef5e-160">
-  [Einführung in Collaborative Application Markup Language (CAML)](http://msdn.microsoft.com/en-us/library/ms426449.aspx)</span><span class="sxs-lookup"><span data-stu-id="5ef5e-160">[Introduction to Collaborative Application Markup Language (CAML)](http://msdn.microsoft.com/en-us/library/ms426449.aspx)</span></span>
+  [Einführung in Collaborative Application Markup Language (CAML)](http://msdn.microsoft.com/de-de/library/ms426449.aspx)</span><span class="sxs-lookup"><span data-stu-id="5ef5e-160">[Introduction to Collaborative Application Markup Language (CAML)](http://msdn.microsoft.com/de-de/library/ms426449.aspx)</span></span>
     
   
 -  [<span data-ttu-id="5ef5e-161">Vorgehensweise: Einrichten einer Umgebung für die Entwicklung von mobilen Anwendungen für SharePoint</span><span class="sxs-lookup"><span data-stu-id="5ef5e-161">How to: Set up an environment for developing mobile apps for SharePoint</span></span>](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md)

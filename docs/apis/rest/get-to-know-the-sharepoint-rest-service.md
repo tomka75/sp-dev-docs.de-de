@@ -138,7 +138,7 @@ List.GetByTitle(listname)
 
 -  [<span data-ttu-id="47dae-223">Einführung OData</span><span class="sxs-lookup"><span data-stu-id="47dae-223">Introducing OData</span></span>](http://msdn.microsoft.com/en-us/data/hh237663) 
 -  <span data-ttu-id="47dae-224">
-  [Open Data Protocol – Beispiel](http://msdn.microsoft.com/en-us/library/ff478141.aspx)</span><span class="sxs-lookup"><span data-stu-id="47dae-224">[Open Data Protocol by Example](http://msdn.microsoft.com/en-us/library/ff478141.aspx)</span></span>
+  [Open Data Protocol – Beispiel](http://msdn.microsoft.com/de-de/library/ff478141.aspx)</span><span class="sxs-lookup"><span data-stu-id="47dae-224">[Open Data Protocol by Example](http://msdn.microsoft.com/de-de/library/ff478141.aspx)</span></span>
 -  [<span data-ttu-id="47dae-225">Open Data Protocol</span><span class="sxs-lookup"><span data-stu-id="47dae-225">Open Data Protocol</span></span>](http://www.odata.org/)
 -  [<span data-ttu-id="47dae-226">OData-Protokoll – URI-Konventionen</span><span class="sxs-lookup"><span data-stu-id="47dae-226">OData Protocol URI Conventions</span></span>](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/)
 -  [<span data-ttu-id="47dae-227">Adressieren von Dienstvorgängen</span><span class="sxs-lookup"><span data-stu-id="47dae-227">Addressing Service Operations</span></span>](http://www.odata.org/documentation/odata-version-2-0/uri-conventions#AddressingServiceOperations)

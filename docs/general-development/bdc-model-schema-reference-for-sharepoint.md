@@ -23,7 +23,7 @@ ms.lasthandoff: 10/13/2017
   
     
     
-<span data-ttu-id="dc651-108">Weitere Informationen zu Business Connectivity Services und zur Sicherheit finden Sie unter  [Business Connectivity Services-Sicherheit (Übersicht)](http://technet.microsoft.com/en-us/library/ee661734%28office.14%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="dc651-108">See  [Business Connectivity Services security overview](http://technet.microsoft.com/en-us/library/ee661734%28office.14%29.aspx) to learn more about the Business Connectivity Services and security.</span></span>
+<span data-ttu-id="dc651-108">Weitere Informationen zu Business Connectivity Services und zur Sicherheit finden Sie unter  [Business Connectivity Services-Sicherheit (Übersicht)](http://technet.microsoft.com/de-de/library/ee661734%28office.14%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="dc651-108">See  [Business Connectivity Services security overview](http://technet.microsoft.com/de-de/library/ee661734%28office.14%29.aspx) to learn more about the Business Connectivity Services and security.</span></span>
   
     
     

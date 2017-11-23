@@ -51,11 +51,11 @@ ms.lasthandoff: 10/13/2017
 
 
 -  <span data-ttu-id="d527c-112">
-  [Ändern bewerteter Suchergebnisse in „Abfrageregeln verwalten“](http://technet.microsoft.com/en-us/library/jj871676.aspx#BKMK_ChangeRankedSearchResults)</span><span class="sxs-lookup"><span data-stu-id="d527c-112">[Change ranked search results in Manage query rules](http://technet.microsoft.com/en-us/library/jj871676.aspx#BKMK_ChangeRankedSearchResults)</span></span>
+  [Ändern bewerteter Suchergebnisse in „Abfrageregeln verwalten“](http://technet.microsoft.com/de-de/library/jj871676.aspx#BKMK_ChangeRankedSearchResults)</span><span class="sxs-lookup"><span data-stu-id="d527c-112">[Change ranked search results in Manage query rules](http://technet.microsoft.com/de-de/library/jj871676.aspx#BKMK_ChangeRankedSearchResults)</span></span>
     
   
 -  <span data-ttu-id="d527c-113">
-  [„Ändern bewerteter Suchergebnisse" in „Erstellen von Abfrageregeln für das Web Content Management"](http://technet.microsoft.com/en-us/library/jj871014.aspx#BKMK_ChangeRankedSearchResults)</span><span class="sxs-lookup"><span data-stu-id="d527c-113">[Change ranked search results in Create query rules for web content management](http://technet.microsoft.com/en-us/library/jj871014.aspx#BKMK_ChangeRankedSearchResults)</span></span>
+  [„Ändern bewerteter Suchergebnisse" in „Erstellen von Abfrageregeln für das Web Content Management"](http://technet.microsoft.com/de-de/library/jj871014.aspx#BKMK_ChangeRankedSearchResults)</span><span class="sxs-lookup"><span data-stu-id="d527c-113">[Change ranked search results in Create query rules for web content management](http://technet.microsoft.com/de-de/library/jj871014.aspx#BKMK_ChangeRankedSearchResults)</span></span>
     
   
 
@@ -595,7 +595,7 @@ using (var context = new ClientContext("http://localhost"))
     
   
 -  <span data-ttu-id="d527c-316">
-  [Übersicht über durchforstete und verwaltete Eigenschaften in SharePoint](http://technet.microsoft.com/en-us/library/jj219630%28office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="d527c-316">[Overview of crawled and managed properties in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/jj219630%28office.15%29.aspx)</span></span>
+  [Übersicht über durchforstete und verwaltete Eigenschaften in SharePoint](http://technet.microsoft.com/de-de/library/jj219630%28office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="d527c-316">[Overview of crawled and managed properties in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/jj219630%28office.15%29.aspx)</span></span>
     
   
 

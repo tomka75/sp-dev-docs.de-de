@@ -168,7 +168,7 @@ ms.lasthandoff: 10/13/2017
   
     
     
-<span data-ttu-id="6a757-p112">Um eine Eigenschaftseinschränkung für einen durchforsteten Eigenschaftswert anzugeben, müssen Sie die durchforstete Eigenschaft zunächst der verwalteten Eigenschaft zuordnen. Weitere Informationen dazu finden Sie unter **Verwaltete und durchforstete Eigenschaften** unter [Planen der Endbenutzer-Sucherfahrung](http://technet.microsoft.com/en-us/library/cc263089.aspx).</span><span class="sxs-lookup"><span data-stu-id="6a757-p112">To specify a property restriction for a crawled property value, you must first map the crawled property to a managed property. See **Managed and crawled properties** in [Plan the end-user search experience](http://technet.microsoft.com/en-us/library/cc263089.aspx).</span></span> 
+<span data-ttu-id="6a757-p112">Um eine Eigenschaftseinschränkung für einen durchforsteten Eigenschaftswert anzugeben, müssen Sie die durchforstete Eigenschaft zunächst der verwalteten Eigenschaft zuordnen. Weitere Informationen dazu finden Sie unter **Verwaltete und durchforstete Eigenschaften** unter [Planen der Endbenutzer-Sucherfahrung](http://technet.microsoft.com/de-de/library/cc263089.aspx).</span><span class="sxs-lookup"><span data-stu-id="6a757-p112">To specify a property restriction for a crawled property value, you must first map the crawled property to a managed property. See **Managed and crawled properties** in [Plan the end-user search experience](http://technet.microsoft.com/de-de/library/cc263089.aspx).</span></span> 
   
     
     

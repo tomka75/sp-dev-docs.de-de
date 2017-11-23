@@ -21,7 +21,7 @@ ms.lasthandoff: 10/13/2017
     
 
 
-> <span data-ttu-id="e126a-114">**Hinweis:** Eine Personenauswahl mit Funktionen zur Auswahl von Ansprüchen wird manchmal auch als Anspruchsauswahl bezeichnet.</span><span class="sxs-lookup"><span data-stu-id="e126a-114">**Note** A people picker with claims picking functionality is sometimes referred to as a claims picker. For more information, see  People picker and claims provider planning.</span></span> <span data-ttu-id="e126a-115">Weitere Informationen finden Sie unter [Planen für die Personenauswahl und für Anspruchsanbieter](http://technet.microsoft.com/en-us/library/gg602063.aspx).</span><span class="sxs-lookup"><span data-stu-id="e126a-115">For more information, see  [People picker and claims provider planning](http://technet.microsoft.com/en-us/library/gg602063.aspx).</span></span> 
+> <span data-ttu-id="e126a-114">**Hinweis:** Eine Personenauswahl mit Funktionen zur Auswahl von Ansprüchen wird manchmal auch als Anspruchsauswahl bezeichnet.</span><span class="sxs-lookup"><span data-stu-id="e126a-114">**Note** A people picker with claims picking functionality is sometimes referred to as a claims picker. For more information, see  People picker and claims provider planning.</span></span> <span data-ttu-id="e126a-115">Weitere Informationen finden Sie unter [Planen für die Personenauswahl und für Anspruchsanbieter](http://technet.microsoft.com/de-de/library/gg602063.aspx).</span><span class="sxs-lookup"><span data-stu-id="e126a-115">For more information, see  [People picker and claims provider planning](http://technet.microsoft.com/de-de/library/gg602063.aspx).</span></span> 
   
     
     

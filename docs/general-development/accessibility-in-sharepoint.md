@@ -34,11 +34,11 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="3eb8a-114">Tastenkombinationen für SharePoint-Produkte</span><span class="sxs-lookup"><span data-stu-id="3eb8a-114">Keyboard shortcuts for SharePoint products</span></span>](http://office.microsoft.com/en-us/sharepoint-foundation-help/keyboard-shortcuts-for-sharepoint-products-HA102772894.aspx?CTT=5&amp;origin=HA102772892)
     
   
-<span data-ttu-id="3eb8a-p104">Benutzer mit Administratoraufgaben Website in der Regel mithilfe der SharePoint-Zentraladministration-Website zum Verwalten von Bereitstellungen. Ein mithilfe von Maus und Tastatur sind die typischen Geräte, mit denen Sie interagieren mit der Zentraladministration. Weitere Informationen zu Eingabehilfen für Administratoren und anderen IT-Spezialisten in SharePoint finden Sie unter  [Eingabehilfen für SharePoint](http://technet.microsoft.com/en-us/library/jj219681.aspx).</span><span class="sxs-lookup"><span data-stu-id="3eb8a-p104">Users who have site administrator responsibilities typically use the SharePoint Central Administration site to manage deployments. A mouse and keyboard are the typical devices that you use to interact with Central Administration. For more information about accessibility for administrators and other IT pros in SharePoint, see  [Accessibility for SharePoint](http://technet.microsoft.com/en-us/library/jj219681.aspx).</span></span>
+<span data-ttu-id="3eb8a-p104">Benutzer mit Administratoraufgaben Website in der Regel mithilfe der SharePoint-Zentraladministration-Website zum Verwalten von Bereitstellungen. Ein mithilfe von Maus und Tastatur sind die typischen Geräte, mit denen Sie interagieren mit der Zentraladministration. Weitere Informationen zu Eingabehilfen für Administratoren und anderen IT-Spezialisten in SharePoint finden Sie unter  [Eingabehilfen für SharePoint](http://technet.microsoft.com/de-de/library/jj219681.aspx).</span><span class="sxs-lookup"><span data-stu-id="3eb8a-p104">Users who have site administrator responsibilities typically use the SharePoint Central Administration site to manage deployments. A mouse and keyboard are the typical devices that you use to interact with Central Administration. For more information about accessibility for administrators and other IT pros in SharePoint, see  [Accessibility for SharePoint](http://technet.microsoft.com/de-de/library/jj219681.aspx).</span></span>
   
     
     
-<span data-ttu-id="3eb8a-p105">Benutzer, die Geräte verfügen, die Fingereingabe unterstützen können Gesten verwenden, um Vorgänge auszuführen. Weitere Informationen finden Sie unter  [Touch](http://msdn.microsoft.com/en-us/library/windows/desktop/cc872774.aspx) auf MSDN, und die [Office-Touch-Handbuch](http://office.microsoft.com/en-us/support/office-touch-guide-HA102823845.aspx) auf Office.com.</span><span class="sxs-lookup"><span data-stu-id="3eb8a-p105">Users who have devices that support touch can use gestures to complete operations. For more information, see  [Touch](http://msdn.microsoft.com/en-us/library/windows/desktop/cc872774.aspx) on MSDN, and the [Office Touch Guide](http://office.microsoft.com/en-us/support/office-touch-guide-HA102823845.aspx) on Office.com.</span></span>
+<span data-ttu-id="3eb8a-p105">Benutzer, die Geräte verfügen, die Fingereingabe unterstützen können Gesten verwenden, um Vorgänge auszuführen. Weitere Informationen finden Sie unter  [Touch](http://msdn.microsoft.com/de-de/library/windows/desktop/cc872774.aspx) auf MSDN, und die [Office-Touch-Handbuch](http://office.microsoft.com/en-us/support/office-touch-guide-HA102823845.aspx) auf Office.com.</span><span class="sxs-lookup"><span data-stu-id="3eb8a-p105">Users who have devices that support touch can use gestures to complete operations. For more information, see  [Touch](http://msdn.microsoft.com/de-de/library/windows/desktop/cc872774.aspx) on MSDN, and the [Office Touch Guide](http://office.microsoft.com/en-us/support/office-touch-guide-HA102823845.aspx) on Office.com.</span></span>
   
     
     
@@ -62,13 +62,13 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="3eb8a-125">Eingabehilfen</span><span class="sxs-lookup"><span data-stu-id="3eb8a-125">Accessibility</span></span>](http://msdn.microsoft.com/en-us/windows/bb735024.aspx)
     
   
--  [<span data-ttu-id="3eb8a-126">Design für Eingabehilfen (Windows Store-apps)</span><span class="sxs-lookup"><span data-stu-id="3eb8a-126">Design for Accessibility (Windows Store apps)</span></span>](http://msdn.microsoft.com/en-us/library/windows/apps/hh700407.aspx)
+-  [<span data-ttu-id="3eb8a-126">Design für Eingabehilfen (Windows Store-apps)</span><span class="sxs-lookup"><span data-stu-id="3eb8a-126">Design for Accessibility (Windows Store apps)</span></span>](http://msdn.microsoft.com/de-de/library/windows/apps/hh700407.aspx)
     
   
--  [<span data-ttu-id="3eb8a-127">Meeting grundlegende Eingabehilfen-Anforderungen (Windows Store-apps mit JavaScript und HTML)</span><span class="sxs-lookup"><span data-stu-id="3eb8a-127">Meeting basic accessibility requirements (Windows Store apps using JavaScript and HTML)</span></span>](http://msdn.microsoft.com/en-us/library/windows/apps/hh700338.aspx)
+-  [<span data-ttu-id="3eb8a-127">Meeting grundlegende Eingabehilfen-Anforderungen (Windows Store-apps mit JavaScript und HTML)</span><span class="sxs-lookup"><span data-stu-id="3eb8a-127">Meeting basic accessibility requirements (Windows Store apps using JavaScript and HTML)</span></span>](http://msdn.microsoft.com/de-de/library/windows/apps/hh700338.aspx)
     
   
--  [<span data-ttu-id="3eb8a-128">Eingabehilfen in Windows Store-apps mithilfe von JavaScript</span><span class="sxs-lookup"><span data-stu-id="3eb8a-128">Accessibility in Windows Store apps using JavaScript</span></span>](http://msdn.microsoft.com/en-us/library/windows/apps/hh452702.aspx)
+-  [<span data-ttu-id="3eb8a-128">Eingabehilfen in Windows Store-apps mithilfe von JavaScript</span><span class="sxs-lookup"><span data-stu-id="3eb8a-128">Accessibility in Windows Store apps using JavaScript</span></span>](http://msdn.microsoft.com/de-de/library/windows/apps/hh452702.aspx)
     
   
 
@@ -109,7 +109,7 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="3eb8a-153">Ressourcencenter für Microsoft-Eingabehilfen</span><span class="sxs-lookup"><span data-stu-id="3eb8a-153">Microsoft Accessibility Resource Centers</span></span>](http://www.microsoft.com/enable/centers/)
     
   
--  [<span data-ttu-id="3eb8a-154">Richtlinien und Prüfliste für Eingabehilfen</span><span class="sxs-lookup"><span data-stu-id="3eb8a-154">Guidelines and checklist for accessibility</span></span>](http://msdn.microsoft.com/en-us/library/windows/apps/hh700325.aspx)
+-  [<span data-ttu-id="3eb8a-154">Richtlinien und Prüfliste für Eingabehilfen</span><span class="sxs-lookup"><span data-stu-id="3eb8a-154">Guidelines and checklist for accessibility</span></span>](http://msdn.microsoft.com/de-de/library/windows/apps/hh700325.aspx)
     
   
 -  [<span data-ttu-id="3eb8a-155">Designrichtlinien für die Benutzerfreundlichkeit von Add-Ins für SharePoint</span><span class="sxs-lookup"><span data-stu-id="3eb8a-155">SharePoint Add-ins UX design guidelines</span></span>](http://msdn.microsoft.com/library/a4a8f53c-27d7-43dc-b6db-aa7b1f1c7d45%28Office.15%29.aspx)
@@ -124,7 +124,7 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="3eb8a-158">Barrierefreiheit in Microsoft-Produkten</span><span class="sxs-lookup"><span data-stu-id="3eb8a-158">Accessibility in Microsoft Products</span></span>](http://www.microsoft.com/enable/products/default.aspx)
     
   
--  [<span data-ttu-id="3eb8a-159">Eingabehilfen für SharePoint</span><span class="sxs-lookup"><span data-stu-id="3eb8a-159">Accessibility for SharePoint</span></span>](http://technet.microsoft.com/en-us/library/jj219681.aspx)
+-  [<span data-ttu-id="3eb8a-159">Eingabehilfen für SharePoint</span><span class="sxs-lookup"><span data-stu-id="3eb8a-159">Accessibility for SharePoint</span></span>](http://technet.microsoft.com/de-de/library/jj219681.aspx)
     
   
 

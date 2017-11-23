@@ -17,11 +17,11 @@ ms.lasthandoff: 10/13/2017
 
 <span data-ttu-id="83f13-109">Informationen zum Schreiben einer Wörtertrennung finden Sie in den folgenden Artikeln:</span><span class="sxs-lookup"><span data-stu-id="83f13-109">For information on how to write a word breaker refer to the following articles</span></span> 
 -  <span data-ttu-id="83f13-110">
-  [Implementieren von einem Worttrennmodul](http://msdn.microsoft.com/en-us/library/ms693186%28v=vs.85%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="83f13-110">[Implementing a Word Breaker](http://msdn.microsoft.com/en-us/library/ms693186%28v=vs.85%29.aspx)</span></span>
+  [Implementieren von einem Worttrennmodul](http://msdn.microsoft.com/de-de/library/ms693186%28v=vs.85%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="83f13-110">[Implementing a Word Breaker](http://msdn.microsoft.com/de-de/library/ms693186%28v=vs.85%29.aspx)</span></span>
     
   
 -  <span data-ttu-id="83f13-111">
-  [IWordBreaker-Schnittstelle](http://msdn.microsoft.com/en-us/library/ms691079%28v=vs.85%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="83f13-111">[IWordBreaker interface](http://msdn.microsoft.com/en-us/library/ms691079%28v=vs.85%29.aspx)</span></span>
+  [IWordBreaker-Schnittstelle](http://msdn.microsoft.com/de-de/library/ms691079%28v=vs.85%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="83f13-111">[IWordBreaker interface](http://msdn.microsoft.com/de-de/library/ms691079%28v=vs.85%29.aspx)</span></span>
     
   
 
@@ -287,11 +287,11 @@ ms.lasthandoff: 10/13/2017
     
   
 -  <span data-ttu-id="83f13-189">
-  [Implementieren von einem Worttrennmodul](http://msdn.microsoft.com/en-us/library/ms693186%28v=vs.85%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="83f13-189">[Implementing a Word Breaker](http://msdn.microsoft.com/en-us/library/ms693186%28v=vs.85%29.aspx)</span></span>
+  [Implementieren von einem Worttrennmodul](http://msdn.microsoft.com/de-de/library/ms693186%28v=vs.85%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="83f13-189">[Implementing a Word Breaker](http://msdn.microsoft.com/de-de/library/ms693186%28v=vs.85%29.aspx)</span></span>
     
   
 -  <span data-ttu-id="83f13-190">
-  [IWordBreaker-Schnittstelle](http://msdn.microsoft.com/en-us/library/ms691079%28v=vs.85%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="83f13-190">[IWordBreaker interface](http://msdn.microsoft.com/en-us/library/ms691079%28v=vs.85%29.aspx)</span></span>
+  [IWordBreaker-Schnittstelle](http://msdn.microsoft.com/de-de/library/ms691079%28v=vs.85%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="83f13-190">[IWordBreaker interface](http://msdn.microsoft.com/de-de/library/ms691079%28v=vs.85%29.aspx)</span></span>
     
   
 

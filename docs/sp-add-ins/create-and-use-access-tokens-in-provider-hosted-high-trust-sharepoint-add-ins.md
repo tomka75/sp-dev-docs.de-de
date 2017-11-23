@@ -173,7 +173,7 @@ ms.lasthandoff: 10/13/2017
 
  
 
-1. <span data-ttu-id="f3dff-p130">Abrufen der Bytearrayversion (nicht der Zeichenfolge) des Fingerabdrucks des Zertifikats. Dies ist ein SHA-1-Digest des Zertifikats. (In verwaltetem Code kann dies mit der Methode  [GetCertHash()](http://msdn2.microsoft.com/EN-US/library/4f9acc3f) durchgeführt werden. Sie benötigen etwas Äquivalentes in der Sprache, die Sie verwenden.)</span><span class="sxs-lookup"><span data-stu-id="f3dff-p130">Obtain the byte array (not string) version of the thumbprint of the certificate. This is a SHA-1 digest of the certificate. (In managed code, this can be done with the  [GetCertHash()](http://msdn2.microsoft.com/EN-US/library/4f9acc3f) method. You will need something equivalent in the language you are using.)</span></span>
+1. <span data-ttu-id="f3dff-p130">Abrufen der Bytearrayversion (nicht der Zeichenfolge) des Fingerabdrucks des Zertifikats. Dies ist ein SHA-1-Digest des Zertifikats. (In verwaltetem Code kann dies mit der Methode  [GetCertHash()](http://msdn2.microsoft.com/de-de/library/4f9acc3f) durchgeführt werden. Sie benötigen etwas Äquivalentes in der Sprache, die Sie verwenden.)</span><span class="sxs-lookup"><span data-stu-id="f3dff-p130">Obtain the byte array (not string) version of the thumbprint of the certificate. This is a SHA-1 digest of the certificate. (In managed code, this can be done with the  [GetCertHash()](http://msdn2.microsoft.com/de-de/library/4f9acc3f) method. You will need something equivalent in the language you are using.)</span></span>
     
  
 2. <span data-ttu-id="f3dff-241">Codiertes Bytearray mit Base64-URL-Codierung.</span><span class="sxs-lookup"><span data-stu-id="f3dff-241">Encode the byte array with Base 64 URL encoding.</span></span>

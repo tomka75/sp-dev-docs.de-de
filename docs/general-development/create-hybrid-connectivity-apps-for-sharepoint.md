@@ -22,7 +22,7 @@ ms.lasthandoff: 10/13/2017
   
     
     
-<span data-ttu-id="218a3-112">Eine vollständige Beschreibung zum Konfigurieren einer funktionierenden Hybrid-Lösung finden Sie unter  [Hybridlösung für SharePoint](http://technet.microsoft.com/en-us/library/jj838715.aspx).</span><span class="sxs-lookup"><span data-stu-id="218a3-112">For a complete description of how to configure a working hybrid solution, see  [Hybrid for SharePoint](http://technet.microsoft.com/en-us/library/jj838715.aspx).</span></span> <span data-ttu-id="218a3-113">Diese Artikelreihe führt Sie durch alle Anforderungen der Konfiguration von Datenquellen, Reverseproxys, Suche, Sicherheit, Netzwerken und anderen Voraussetzungen zum Einrichten des End-to-End-Szenarios.</span><span class="sxs-lookup"><span data-stu-id="218a3-113">For a complete description of how to configure a working hybrid solution, see  Hybrid for SharePoint Server 2013. This series of articles walks you through all the requirements of configuring data sources, reverse proxies, search, security, networking, and everything else needed to set up the end-to-end scenario.</span></span>
+<span data-ttu-id="218a3-112">Eine vollständige Beschreibung zum Konfigurieren einer funktionierenden Hybrid-Lösung finden Sie unter  [Hybridlösung für SharePoint](http://technet.microsoft.com/de-de/library/jj838715.aspx).</span><span class="sxs-lookup"><span data-stu-id="218a3-112">For a complete description of how to configure a working hybrid solution, see  [Hybrid for SharePoint](http://technet.microsoft.com/de-de/library/jj838715.aspx).</span></span> <span data-ttu-id="218a3-113">Diese Artikelreihe führt Sie durch alle Anforderungen der Konfiguration von Datenquellen, Reverseproxys, Suche, Sicherheit, Netzwerken und anderen Voraussetzungen zum Einrichten des End-to-End-Szenarios.</span><span class="sxs-lookup"><span data-stu-id="218a3-113">For a complete description of how to configure a working hybrid solution, see  Hybrid for SharePoint Server 2013. This series of articles walks you through all the requirements of configuring data sources, reverse proxies, search, security, networking, and everything else needed to set up the end-to-end scenario.</span></span>
   
     
     
@@ -122,7 +122,7 @@ ms.lasthandoff: 10/13/2017
     
   
 -  <span data-ttu-id="218a3-154">
-  [Schnellstart (WCF Data Services)](http://msdn.microsoft.com/en-us/library/cc668796.aspx)</span><span class="sxs-lookup"><span data-stu-id="218a3-154">[Quickstart (WCF Data Services)](http://msdn.microsoft.com/en-us/library/cc668796.aspx)</span></span>
+  [Schnellstart (WCF Data Services)](http://msdn.microsoft.com/de-de/library/cc668796.aspx)</span><span class="sxs-lookup"><span data-stu-id="218a3-154">[Quickstart (WCF Data Services)](http://msdn.microsoft.com/de-de/library/cc668796.aspx)</span></span>
     
   
 
@@ -217,7 +217,7 @@ ms.lasthandoff: 10/13/2017
 
 
 -  <span data-ttu-id="218a3-194">
-  [Hybridlösung für SharePoint](http://technet.microsoft.com/en-us/library/jj838715.aspx)</span><span class="sxs-lookup"><span data-stu-id="218a3-194">[Hybrid for SharePoint Server 2013](http://technet.microsoft.com/en-us/library/jj838715.aspx)</span></span>
+  [Hybridlösung für SharePoint](http://technet.microsoft.com/de-de/library/jj838715.aspx)</span><span class="sxs-lookup"><span data-stu-id="218a3-194">[Hybrid for SharePoint Server 2013](http://technet.microsoft.com/de-de/library/jj838715.aspx)</span></span>
     
   
 -  [<span data-ttu-id="218a3-195">Business Connectivity Services in SharePoint</span><span class="sxs-lookup"><span data-stu-id="218a3-195">Business Connectivity Services in SharePoint</span></span>](business-connectivity-services-in-sharepoint.md)

@@ -70,19 +70,19 @@ ms.lasthandoff: 10/13/2017
     
 
 -  <span data-ttu-id="ffcbd-132">
-  [Get-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219783%28office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="ffcbd-132">[Get-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219783%28office.15%29.aspx)</span></span>
+  [Get-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-de/library/jj219783%28office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="ffcbd-132">[Get-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-de/library/jj219783%28office.15%29.aspx)</span></span>
     
   
 -  <span data-ttu-id="ffcbd-133">
-  [Set-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219659%28office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="ffcbd-133">[Set-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219659%28office.15%29.aspx)</span></span>
+  [Set-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-de/library/jj219659%28office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="ffcbd-133">[Set-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-de/library/jj219659%28office.15%29.aspx)</span></span>
     
   
 -  <span data-ttu-id="ffcbd-134">
-  [Remove-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219742%28office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="ffcbd-134">[Remove-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219742%28office.15%29.aspx)</span></span>
+  [Remove-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-de/library/jj219742%28office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="ffcbd-134">[Remove-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-de/library/jj219742%28office.15%29.aspx)</span></span>
     
   
 -  <span data-ttu-id="ffcbd-135">
-  [New-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219502%28office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="ffcbd-135">[New-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219502%28office.15%29.aspx)</span></span>
+  [New-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-de/library/jj219502%28office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="ffcbd-135">[New-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-de/library/jj219502%28office.15%29.aspx)</span></span>
     
   
 <span data-ttu-id="ffcbd-136">Tabelle 1 enthält die Eigenschaften, die Sie über die weiter oben erwähnten Windows PowerShell-Cmdlets konfigurieren können.</span><span class="sxs-lookup"><span data-stu-id="ffcbd-136">Table 1 lists the properties you can configure through the Windows PowerShell cmdlets mentioned previously.</span></span>
@@ -109,7 +109,7 @@ ms.lasthandoff: 10/13/2017
 ### <a name="how-to-list-all-read-only-managed-properties-for-the-content-enrichment-web-service"></a><span data-ttu-id="ffcbd-176">Gewusst wie: Auflisten aller schreibgeschützte verwaltete Eigenschaften für den Webdienst Inhaltserweiterung</span><span class="sxs-lookup"><span data-stu-id="ffcbd-176">How to list all read-only managed properties for the Content Enrichment web service</span></span>
 <span data-ttu-id="ffcbd-177"><a name="SP15contentprocess_read-only_managed_properties"> </a></span><span class="sxs-lookup"><span data-stu-id="ffcbd-177"></span></span>
 
-<span data-ttu-id="ffcbd-p110">Bestimmte verwalteten Eigenschaften sind schreibgeschützt und können nicht aus dem Webdienst ausgegeben werden. Diese Eigenschaften können aufgelistet werden, mithilfe von  [Get-SPEnterpriseSearchServiceApplication](http://technet.microsoft.com/en-us/library/ff608050%28office.15%29.aspx) und [Get-SPEnterpriseSearchMetadataManagedProperty](http://technet.microsoft.com/en-us/library/ff607560%28office.15%29.aspx)Windows PowerShell-Cmdlets, im folgenden Beispiel dargestellt:</span><span class="sxs-lookup"><span data-stu-id="ffcbd-p110">Certain managed properties are read-only and cannot be output from the web service. These properties can be listed by using the  [Get-SPEnterpriseSearchServiceApplication](http://technet.microsoft.com/en-us/library/ff608050%28office.15%29.aspx) and [Get-SPEnterpriseSearchMetadataManagedProperty](http://technet.microsoft.com/en-us/library/ff607560%28office.15%29.aspx)Windows PowerShell cmdlets, shown in the following example:</span></span>
+<span data-ttu-id="ffcbd-p110">Bestimmte verwalteten Eigenschaften sind schreibgeschützt und können nicht aus dem Webdienst ausgegeben werden. Diese Eigenschaften können aufgelistet werden, mithilfe von  [Get-SPEnterpriseSearchServiceApplication](http://technet.microsoft.com/de-de/library/ff608050%28office.15%29.aspx) und [Get-SPEnterpriseSearchMetadataManagedProperty](http://technet.microsoft.com/de-de/library/ff607560%28office.15%29.aspx)Windows PowerShell-Cmdlets, im folgenden Beispiel dargestellt:</span><span class="sxs-lookup"><span data-stu-id="ffcbd-p110">Certain managed properties are read-only and cannot be output from the web service. These properties can be listed by using the  [Get-SPEnterpriseSearchServiceApplication](http://technet.microsoft.com/de-de/library/ff608050%28office.15%29.aspx) and [Get-SPEnterpriseSearchMetadataManagedProperty](http://technet.microsoft.com/de-de/library/ff607560%28office.15%29.aspx)Windows PowerShell cmdlets, shown in the following example:</span></span>
   
     
     

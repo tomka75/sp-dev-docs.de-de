@@ -475,7 +475,7 @@ if (queryStringParams.AllKeys.Contains("validationtoken"))
 
 <span data-ttu-id="41f71-p122">Dieses Projekt schreibt die Informationen nur ins Ablaufprotokoll. Im Empfänger werden die Informationen jedoch an eine Tabelle oder eine Warteschlange gesendet, die die empfangenen Daten verarbeiten und die von SharePoint gesendeten Informationen auswerten kann.</span><span class="sxs-lookup"><span data-stu-id="41f71-p122">This project just writes the information to the trace log. However, in your receiver, you will send this information into a table or a queue that can process the received data to get information from SharePoint.</span></span> 
 
-<span data-ttu-id="41f71-282">Mit diesen Daten können Sie die URL erstellen und über die [GetChanges](https://msdn.microsoft.com/EN-US/library/office/dn531433.aspx#bk_ListGetChanges)-API die neuesten Änderungen abrufen.</span><span class="sxs-lookup"><span data-stu-id="41f71-282">With this data, you can construct the URL and use the [GetChanges](https://msdn.microsoft.com/EN-US/library/office/dn531433.aspx#bk_ListGetChanges) API to get the latest changes.</span></span>
+<span data-ttu-id="41f71-282">Mit diesen Daten können Sie die URL erstellen und über die [GetChanges](https://msdn.microsoft.com/de-de/library/office/dn531433.aspx#bk_ListGetChanges)-API die neuesten Änderungen abrufen.</span><span class="sxs-lookup"><span data-stu-id="41f71-282">With this data, you can construct the URL and use the [GetChanges](https://msdn.microsoft.com/de-de/library/office/dn531433.aspx#bk_ListGetChanges) API to get the latest changes.</span></span>
 
 ## <a name="next-steps"></a><span data-ttu-id="41f71-283">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="41f71-283">Next steps</span></span>
 

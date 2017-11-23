@@ -104,7 +104,7 @@ ms.lasthandoff: 10/13/2017
     
 
     
-> <span data-ttu-id="19238-149">**Hinweis:** Zum Öffnen einer Arbeitsmappe mit dem Befehl **In Excel öffnen** müssen Sie über die Berechtigung "Öffnen" verfügen.</span><span class="sxs-lookup"><span data-stu-id="19238-149">**Note:** To open a workbook by using the **Open in Excel** command, you must have "open" rights.</span></span> <span data-ttu-id="19238-150">Weitere Informationen finden Sie im nächsten Abschnitt **Verwalten von Arbeitsmappen** und unter [Benutzerberechtigungen und Berechtigungsstufen](http://technet.microsoft.com/en-us/library/cc721640%28office.14%29.aspx) auf [TechNet](http://technet.microsoft.com/en-us/library/cc263215%28office.14%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="19238-150">For more information, see the next section, **Managing Workbooks**, and  [User Permissions and Permission Levels](http://technet.microsoft.com/en-us/library/cc721640%28office.14%29.aspx) on [TechNet](http://technet.microsoft.com/en-us/library/cc263215%28office.14%29.aspx).</span></span> <span data-ttu-id="19238-151">Benutzer, die nicht über die Berechtigung "Öffnen" verfügen, können dennoch eine Momentaufnahme in Excel öffnen.</span><span class="sxs-lookup"><span data-stu-id="19238-151">Users who do not have "open" rights can still open a snapshot in Excel.</span></span> 
+> <span data-ttu-id="19238-149">**Hinweis:** Zum Öffnen einer Arbeitsmappe mit dem Befehl **In Excel öffnen** müssen Sie über die Berechtigung "Öffnen" verfügen.</span><span class="sxs-lookup"><span data-stu-id="19238-149">**Note:** To open a workbook by using the **Open in Excel** command, you must have "open" rights.</span></span> <span data-ttu-id="19238-150">Weitere Informationen finden Sie im nächsten Abschnitt **Verwalten von Arbeitsmappen** und unter [Benutzerberechtigungen und Berechtigungsstufen](http://technet.microsoft.com/de-de/library/cc721640%28office.14%29.aspx) auf [TechNet](http://technet.microsoft.com/de-de/library/cc263215%28office.14%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="19238-150">For more information, see the next section, **Managing Workbooks**, and  [User Permissions and Permission Levels](http://technet.microsoft.com/de-de/library/cc721640%28office.14%29.aspx) on [TechNet](http://technet.microsoft.com/de-de/library/cc263215%28office.14%29.aspx).</span></span> <span data-ttu-id="19238-151">Benutzer, die nicht über die Berechtigung "Öffnen" verfügen, können dennoch eine Momentaufnahme in Excel öffnen.</span><span class="sxs-lookup"><span data-stu-id="19238-151">Users who do not have "open" rights can still open a snapshot in Excel.</span></span> 
   
     
     
@@ -152,7 +152,7 @@ ms.lasthandoff: 10/13/2017
   
     
     
-<span data-ttu-id="19238-167">Weitere Informationen zum Verwalten von Arbeitsmappen mithilfe von Excel Services finden Sie in der SharePoint Server-Dokumentation auf  [TechNet](http://technet.microsoft.com/en-us/library/ee424405%28office.14%29.aspx) oder in der Hilfe zu SharePoint Server.</span><span class="sxs-lookup"><span data-stu-id="19238-167">For more information about managing workbooks by using Excel Services, see the SharePoint Server documentation on  [TechNet](http://technet.microsoft.com/en-us/library/ee424405%28office.14%29.aspx) or SharePoint Server Help.</span></span>
+<span data-ttu-id="19238-167">Weitere Informationen zum Verwalten von Arbeitsmappen mithilfe von Excel Services finden Sie in der SharePoint Server-Dokumentation auf  [TechNet](http://technet.microsoft.com/de-de/library/ee424405%28office.14%29.aspx) oder in der Hilfe zu SharePoint Server.</span><span class="sxs-lookup"><span data-stu-id="19238-167">For more information about managing workbooks by using Excel Services, see the SharePoint Server documentation on  [TechNet](http://technet.microsoft.com/de-de/library/ee424405%28office.14%29.aspx) or SharePoint Server Help.</span></span>
   
     
     
@@ -198,7 +198,7 @@ ms.lasthandoff: 10/13/2017
   
     
     
-<span data-ttu-id="19238-p118">JavaScript-UDFs ähneln  [UDFs](http://msdn.microsoft.com/en-us/library/ms499792.aspx), die Sie für Microsoft Excel erstellen können. Der Unterschied besteht darin, dass JavaScript-UDFs nur in Arbeitsmappen verwendet werden, die in eine Webseite eingebettet sind, und nur auf dieser Webseite vorhanden sind.</span><span class="sxs-lookup"><span data-stu-id="19238-p118">JavaScript UDFs are similar to  [UDFs](http://msdn.microsoft.com/en-us/library/ms499792.aspx) that you can create for Microsoft Excel. The difference is that JavaScript UDFs are only used in workbooks embedded in a webpage and only exist on that web page.</span></span>
+<span data-ttu-id="19238-p118">JavaScript-UDFs ähneln  [UDFs](http://msdn.microsoft.com/de-de/library/ms499792.aspx), die Sie für Microsoft Excel erstellen können. Der Unterschied besteht darin, dass JavaScript-UDFs nur in Arbeitsmappen verwendet werden, die in eine Webseite eingebettet sind, und nur auf dieser Webseite vorhanden sind.</span><span class="sxs-lookup"><span data-stu-id="19238-p118">JavaScript UDFs are similar to  [UDFs](http://msdn.microsoft.com/de-de/library/ms499792.aspx) that you can create for Microsoft Excel. The difference is that JavaScript UDFs are only used in workbooks embedded in a webpage and only exist on that web page.</span></span>
   
     
     
@@ -247,7 +247,7 @@ ms.lasthandoff: 10/13/2017
   
     
     
- <span data-ttu-id="19238-204">Dokumentation zur [Excel Services 2010 REST-API](http://msdn.microsoft.com/en-us/library/ee556413.aspx) in der Dokumentation zum SharePoint SDK.</span><span class="sxs-lookup"><span data-stu-id="19238-204">[Excel Services 2010 REST API](http://msdn.microsoft.com/en-us/library/ee556413.aspx) documentation in the SharePoint SDK documentation.</span></span>
+ <span data-ttu-id="19238-204">Dokumentation zur [Excel Services 2010 REST-API](http://msdn.microsoft.com/de-de/library/ee556413.aspx) in der Dokumentation zum SharePoint SDK.</span><span class="sxs-lookup"><span data-stu-id="19238-204">[Excel Services 2010 REST API](http://msdn.microsoft.com/de-de/library/ee556413.aspx) documentation in the SharePoint SDK documentation.</span></span>
   
     
     

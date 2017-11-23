@@ -286,11 +286,11 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
  
 - <span data-ttu-id="a55be-149">TechNet-Artikel:</span><span class="sxs-lookup"><span data-stu-id="a55be-149">TechNet articles:</span></span>
      - <span data-ttu-id="a55be-150">
-  [Referenz zu abgestimmten Berechtigungen für SharePoint Server 2013](http://technet.microsoft.com/en-us/library/dn169567.aspx)</span><span class="sxs-lookup"><span data-stu-id="a55be-150">[Fine-grained permission reference for SharePoint Server 2013](http://technet.microsoft.com/en-us/library/dn169567.aspx)</span></span>
+  [Referenz zu abgestimmten Berechtigungen für SharePoint Server 2013](http://technet.microsoft.com/de-de/library/dn169567.aspx)</span><span class="sxs-lookup"><span data-stu-id="a55be-150">[Fine-grained permission reference for SharePoint Server 2013](http://technet.microsoft.com/de-de/library/dn169567.aspx)</span></span>
      - <span data-ttu-id="a55be-151">
-  [Bewährte Methoden für die Verwendung abgestimmter Berechtigungen in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/gg128955.aspx)</span><span class="sxs-lookup"><span data-stu-id="a55be-151">[Best practices for using fine-grained permissions in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/gg128955.aspx)</span></span>
+  [Bewährte Methoden für die Verwendung abgestimmter Berechtigungen in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/gg128955.aspx)</span><span class="sxs-lookup"><span data-stu-id="a55be-151">[Best practices for using fine-grained permissions in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/gg128955.aspx)</span></span>
      - <span data-ttu-id="a55be-152">
-  [Benutzerberechtigungen und Berechtigungsstufen in SharePoint 2013](http://technet.microsoft.com/en-us/library/cc721640.aspx)</span><span class="sxs-lookup"><span data-stu-id="a55be-152">[User permissions and permission levels in SharePoint 2013](http://technet.microsoft.com/en-us/library/cc721640.aspx)</span></span>
+  [Benutzerberechtigungen und Berechtigungsstufen in SharePoint 2013](http://technet.microsoft.com/de-de/library/cc721640.aspx)</span><span class="sxs-lookup"><span data-stu-id="a55be-152">[User permissions and permission levels in SharePoint 2013](http://technet.microsoft.com/de-de/library/cc721640.aspx)</span></span>
     
  
 

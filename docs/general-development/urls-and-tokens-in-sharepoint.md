@@ -99,7 +99,7 @@ ms.lasthandoff: 10/13/2017
 
 
 -  <span data-ttu-id="e7989-228">
-  [Erstellen von Farmlösungen in SharePoint](https://msdn.microsoft.com/en-us/library/office/jj163902.aspx)</span><span class="sxs-lookup"><span data-stu-id="e7989-228">[Build farm solutions in SharePoint](https://msdn.microsoft.com/en-us/library/office/jj163902.aspx)</span></span>
+  [Erstellen von Farmlösungen in SharePoint](https://msdn.microsoft.com/de-de/library/office/jj163902.aspx)</span><span class="sxs-lookup"><span data-stu-id="e7989-228">[Build farm solutions in SharePoint](https://msdn.microsoft.com/de-de/library/office/jj163902.aspx)</span></span>
     
   
 -  [<span data-ttu-id="e7989-229">Erweiterte Extranetunterstützung</span><span class="sxs-lookup"><span data-stu-id="e7989-229">Advanced Extranet Support</span></span>](http://msdn.microsoft.com/library/21d67796-23c5-4339-8f0e-124208d21ab2%28Office.15%29.aspx)

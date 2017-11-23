@@ -62,7 +62,7 @@ ms.lasthandoff: 10/13/2017
 
 
 -  <span data-ttu-id="99cc7-126">
-  [Planen für Social Computing und Zusammenarbeit in SharePoint](http://technet.microsoft.com/en-us/library/ee662531%28v=office.15%29)</span><span class="sxs-lookup"><span data-stu-id="99cc7-126">[Plan for social computing and collaboration in SharePoint](http://technet.microsoft.com/en-us/library/ee662531%28v=office.15%29)</span></span>
+  [Planen für Social Computing und Zusammenarbeit in SharePoint](http://technet.microsoft.com/de-de/library/ee662531%28v=office.15%29)</span><span class="sxs-lookup"><span data-stu-id="99cc7-126">[Plan for social computing and collaboration in SharePoint](http://technet.microsoft.com/de-de/library/ee662531%28v=office.15%29)</span></span>
     
   
 -  [<span data-ttu-id="99cc7-127">Clientklassenbibliothek für Funktionen und Daten für das soziale Netzwerk</span><span class="sxs-lookup"><span data-stu-id="99cc7-127">Social client class library</span></span>](http://msdn.microsoft.com/library/9cc3f70c-78ac-4d2d-b46e-77522ee5d937%28Office.15%29.aspx)

@@ -5,9 +5,9 @@
 ## <a name="prerequisites"></a><span data-ttu-id="4adca-103">Voraussetzungen</span><span class="sxs-lookup"><span data-stu-id="4adca-103">Prerequisites</span></span>
 <span data-ttu-id="4adca-104">Machen Sie sich mit Folgendem vertraut, bevor Sie beginnen:</span><span class="sxs-lookup"><span data-stu-id="4adca-104">Before you get started, make sure that you're familiar with the following:</span></span>
 - <span data-ttu-id="4adca-105">
-  [Verwenden des Clientobjektmodells](https://msdn.microsoft.com/en-us/library/ff798388.aspx)</span><span class="sxs-lookup"><span data-stu-id="4adca-105">[Using the Client Object Model](https://msdn.microsoft.com/en-us/library/ff798388.aspx)</span></span>
+  [Verwenden des Clientobjektmodells](https://msdn.microsoft.com/de-de/library/ff798388.aspx)</span><span class="sxs-lookup"><span data-stu-id="4adca-105">[Using the Client Object Model](https://msdn.microsoft.com/de-de/library/ff798388.aspx)</span></span>
 - <span data-ttu-id="4adca-106">
-  [Gängige Programmieraufgaben im verwalteten Clientobjektmodell](https://msdn.microsoft.com/en-us/library/ee537013.aspx)</span><span class="sxs-lookup"><span data-stu-id="4adca-106">[Common Programming Tasks in the Managed Client Object Model](https://msdn.microsoft.com/en-us/library/ee537013.aspx)</span></span>
+  [Gängige Programmieraufgaben im verwalteten Clientobjektmodell](https://msdn.microsoft.com/de-de/library/ee537013.aspx)</span><span class="sxs-lookup"><span data-stu-id="4adca-106">[Common Programming Tasks in the Managed Client Object Model](https://msdn.microsoft.com/de-de/library/ee537013.aspx)</span></span>
 
 <span data-ttu-id="4adca-107">Sie müssen auch das [Microsoft.SharePointOnline.CSOM](https://www.nuget.org/packages/Microsoft.SharePointOnline.CSOM/)-NuGet-Paket (Version 16.1.6906.1200 oder höher) referenzieren.</span><span class="sxs-lookup"><span data-stu-id="4adca-107">You will also need to reference the [Microsoft.SharePointOnline.CSOM](https://www.nuget.org/packages/Microsoft.SharePointOnline.CSOM/) NuGet package (version 16.1.6906.1200 or later).</span></span>
 
@@ -17,7 +17,7 @@
 
 ><span data-ttu-id="4adca-110">**Hinweis:**</span><span class="sxs-lookup"><span data-stu-id="4adca-110">**Note**</span></span>
 >* <span data-ttu-id="4adca-111">Die URL zum Erstellen des Kontextobjekts enthält das Suffix _-admin_, da **TenantAdministration**-Methoden mit der Adminwebsite funktionieren.</span><span class="sxs-lookup"><span data-stu-id="4adca-111">The URL used to create the context object includes the _-admin_ suffix, because **TenantAdministration** methods work with the admin site.</span></span>
->* <span data-ttu-id="4adca-112">Erstellen Sie eine __Tenant__-Instanz mit dem [Tenant-Konstruktor](https://msdn.microsoft.com/en-us/library/dn174852.aspx), und rufen Sie dann die Methoden für diese Instanz auf.</span><span class="sxs-lookup"><span data-stu-id="4adca-112">Create a __Tenant__ instance with the [Tenant constructor](https://msdn.microsoft.com/en-us/library/dn174852.aspx), and then call the methods on that instance.</span></span>
+>* <span data-ttu-id="4adca-112">Erstellen Sie eine __Tenant__-Instanz mit dem [Tenant-Konstruktor](https://msdn.microsoft.com/de-de/library/dn174852.aspx), und rufen Sie dann die Methoden für diese Instanz auf.</span><span class="sxs-lookup"><span data-stu-id="4adca-112">Create a __Tenant__ instance with the [Tenant constructor](https://msdn.microsoft.com/de-de/library/dn174852.aspx), and then call the methods on that instance.</span></span>
 >* <span data-ttu-id="4adca-113">Sie können denselben Ansatz verwenden, um andere Designverwaltungsmethoden aufzurufen.</span><span class="sxs-lookup"><span data-stu-id="4adca-113">You can use the same approach to call other theme management methods.</span></span>
 
 ```C#
@@ -195,6 +195,6 @@ __Return type:__ ClientResult<bool></span></span>
 * [<span data-ttu-id="4adca-189">SharePoint-Websitedesign: PowerShell-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="4adca-189">SharePoint site theming: PowerShell cmdlets</span></span>](sharepoint-site-theming-powershell.md)
 * [<span data-ttu-id="4adca-190">SharePoint-Websitedesign: REST-API</span><span class="sxs-lookup"><span data-stu-id="4adca-190">SharePoint site theming: REST API</span></span>](sharepoint-site-theming-rest-api.md)
 * <span data-ttu-id="4adca-191">
-  [Verwenden des Clientobjektmodells](https://msdn.microsoft.com/en-us/library/ff798388.aspx)</span><span class="sxs-lookup"><span data-stu-id="4adca-191">[Using the Client Object Model](https://msdn.microsoft.com/en-us/library/ff798388.aspx)</span></span>
+  [Verwenden des Clientobjektmodells](https://msdn.microsoft.com/de-de/library/ff798388.aspx)</span><span class="sxs-lookup"><span data-stu-id="4adca-191">[Using the Client Object Model](https://msdn.microsoft.com/de-de/library/ff798388.aspx)</span></span>
 * <span data-ttu-id="4adca-192">
-  [Gängige Programmieraufgaben im verwalteten Clientobjektmodell](https://msdn.microsoft.com/en-us/library/ee537013.aspx)</span><span class="sxs-lookup"><span data-stu-id="4adca-192">[Common Programming Tasks in the Managed Client Object Model](https://msdn.microsoft.com/en-us/library/ee537013.aspx)</span></span>
+  [Gängige Programmieraufgaben im verwalteten Clientobjektmodell](https://msdn.microsoft.com/de-de/library/ee537013.aspx)</span><span class="sxs-lookup"><span data-stu-id="4adca-192">[Common Programming Tasks in the Managed Client Object Model](https://msdn.microsoft.com/de-de/library/ee537013.aspx)</span></span>

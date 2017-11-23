@@ -160,7 +160,7 @@ ms.lasthandoff: 10/13/2017
 
 
 -  <span data-ttu-id="f9021-150">
-  [Duet Enterprise für Microsoft SharePoint und SAP Server 2.0](http://technet.microsoft.com/en-us/library/ff972436.aspx)</span><span class="sxs-lookup"><span data-stu-id="f9021-150">[Duet Enterprise for Microsoft SharePoint and SAP Server 2.0](http://technet.microsoft.com/en-us/library/ff972436.aspx)</span></span>
+  [Duet Enterprise für Microsoft SharePoint und SAP Server 2.0](http://technet.microsoft.com/de-de/library/ff972436.aspx)</span><span class="sxs-lookup"><span data-stu-id="f9021-150">[Duet Enterprise for Microsoft SharePoint and SAP Server 2.0](http://technet.microsoft.com/de-de/library/ff972436.aspx)</span></span>
     
   
 -  [<span data-ttu-id="f9021-151">Gewusst wie: Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint</span><span class="sxs-lookup"><span data-stu-id="f9021-151">How to: Create an external content type from an OData source in SharePoint</span></span>](how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint.md)

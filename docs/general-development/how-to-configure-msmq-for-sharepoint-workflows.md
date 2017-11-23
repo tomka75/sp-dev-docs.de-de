@@ -84,15 +84,15 @@ $proxy.Update();
     
 
 -  <span data-ttu-id="d7e5d-135">
-  [Zu Message Queuing](http://msdn.microsoft.com/en-us/library/windows/desktop/ms706032%28v=vs.85%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="d7e5d-135">[About Message Queuing](http://msdn.microsoft.com/en-us/library/windows/desktop/ms706032%28v=vs.85%29.aspx)</span></span>
+  [Zu Message Queuing](http://msdn.microsoft.com/de-de/library/windows/desktop/ms706032%28v=vs.85%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="d7e5d-135">[About Message Queuing](http://msdn.microsoft.com/de-de/library/windows/desktop/ms706032%28v=vs.85%29.aspx)</span></span>
     
   
 -  <span data-ttu-id="d7e5d-136">
-  [Message Queuing-Referenz (engl.)](http://msdn.microsoft.com/en-us/library/windows/desktop/ms700112%28v=vs.85%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="d7e5d-136">[Message Queuing Reference](http://msdn.microsoft.com/en-us/library/windows/desktop/ms700112%28v=vs.85%29.aspx)</span></span>
+  [Message Queuing-Referenz (engl.)](http://msdn.microsoft.com/de-de/library/windows/desktop/ms700112%28v=vs.85%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="d7e5d-136">[Message Queuing Reference](http://msdn.microsoft.com/de-de/library/windows/desktop/ms700112%28v=vs.85%29.aspx)</span></span>
     
   
 -  <span data-ttu-id="d7e5d-137">
-  [Message Queuing-Fehler und Codes für Statusangaben](http://msdn.microsoft.com/en-us/library/windows/desktop/ms700106%28v=vs.85%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="d7e5d-137">[Message Queuing Error and Information Codes](http://msdn.microsoft.com/en-us/library/windows/desktop/ms700106%28v=vs.85%29.aspx)</span></span>
+  [Message Queuing-Fehler und Codes für Statusangaben](http://msdn.microsoft.com/de-de/library/windows/desktop/ms700106%28v=vs.85%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="d7e5d-137">[Message Queuing Error and Information Codes](http://msdn.microsoft.com/de-de/library/windows/desktop/ms700106%28v=vs.85%29.aspx)</span></span>
     
   
 
@@ -101,7 +101,7 @@ $proxy.Update();
 
 
 -  <span data-ttu-id="d7e5d-140">
-  [Message Queuing (MSMQ)](http://msdn.microsoft.com/en-us/library/windows/desktop/ms711472%28v=vs.85%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="d7e5d-140">[Message Queuing (MSMQ)](http://msdn.microsoft.com/en-us/library/windows/desktop/ms711472%28v=vs.85%29.aspx)</span></span>
+  [Message Queuing (MSMQ)](http://msdn.microsoft.com/de-de/library/windows/desktop/ms711472%28v=vs.85%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="d7e5d-140">[Message Queuing (MSMQ)](http://msdn.microsoft.com/de-de/library/windows/desktop/ms711472%28v=vs.85%29.aspx)</span></span>
     
   
 

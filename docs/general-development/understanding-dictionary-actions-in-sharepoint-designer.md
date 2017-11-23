@@ -252,7 +252,7 @@ ms.lasthandoff: 10/13/2017
 <span data-ttu-id="67d88-176"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="67d88-176"></span></span>
 
 
--  [<span data-ttu-id="67d88-177">Workflow in SharePoint</span><span class="sxs-lookup"><span data-stu-id="67d88-177">Workflow in SharePoint</span></span>](http://technet.microsoft.com/en-us/sharepoint/jj556245.aspx)
+-  [<span data-ttu-id="67d88-177">Workflow in SharePoint</span><span class="sxs-lookup"><span data-stu-id="67d88-177">Workflow in SharePoint</span></span>](http://technet.microsoft.com/de-de/sharepoint/jj556245.aspx)
     
   
 -  [<span data-ttu-id="67d88-178">Neu in SharePoint-Workflows</span><span class="sxs-lookup"><span data-stu-id="67d88-178">What's new in workflow in SharePoint Server 2013</span></span>](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)

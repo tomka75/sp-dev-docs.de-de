@@ -235,7 +235,7 @@ ms.lasthandoff: 10/13/2017
   
     
     
-<span data-ttu-id="dd389-p121">Die SharePoint Server-Implementierung von CMIS verwendet die  [BlockedFileExtensions](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.SPWebApplication.BlockedFileExtensions.aspx) -Eigenschaft, um eine Liste der Dateierweiterungen abzurufen, die nicht auf Websites in der Webanwendung hochgeladen oder von diesen heruntergeladen werden können. CMIS respektiert die [von SharePoint standardmäßig blockierten Dateitypen](http://technet.microsoft.com/en-us/library/cc262496.aspx).</span><span class="sxs-lookup"><span data-stu-id="dd389-p121">The SharePoint Server implementation of CMIS uses the  [BlockedFileExtensions](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.SPWebApplication.BlockedFileExtensions.aspx) property to get a list of file extensions that cannot be uploaded or downloaded from sites in the Web application. CMIS respects the [file types that SharePoint blocks by default](http://technet.microsoft.com/en-us/library/cc262496.aspx).</span></span>
+<span data-ttu-id="dd389-p121">Die SharePoint Server-Implementierung von CMIS verwendet die  [BlockedFileExtensions](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.SPWebApplication.BlockedFileExtensions.aspx) -Eigenschaft, um eine Liste der Dateierweiterungen abzurufen, die nicht auf Websites in der Webanwendung hochgeladen oder von diesen heruntergeladen werden können. CMIS respektiert die [von SharePoint standardmäßig blockierten Dateitypen](http://technet.microsoft.com/de-de/library/cc262496.aspx).</span><span class="sxs-lookup"><span data-stu-id="dd389-p121">The SharePoint Server implementation of CMIS uses the  [BlockedFileExtensions](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.SPWebApplication.BlockedFileExtensions.aspx) property to get a list of file extensions that cannot be uploaded or downloaded from sites in the Web application. CMIS respects the [file types that SharePoint blocks by default](http://technet.microsoft.com/de-de/library/cc262496.aspx).</span></span>
   
     
     
@@ -296,7 +296,7 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="dd389-268">Hinzufügen von SharePoint-Funktionen</span><span class="sxs-lookup"><span data-stu-id="dd389-268">Add SharePoint capabilities</span></span>](add-sharepoint-capabilities.md)
     
   
--  [<span data-ttu-id="dd389-269">Verwalten von gesperrten Dateitypen in SharePoint</span><span class="sxs-lookup"><span data-stu-id="dd389-269">Manage blocked file types</span></span>](http://technet.microsoft.com/en-us/library/cc262496.aspx)
+-  [<span data-ttu-id="dd389-269">Verwalten von gesperrten Dateitypen in SharePoint</span><span class="sxs-lookup"><span data-stu-id="dd389-269">Manage blocked file types</span></span>](http://technet.microsoft.com/de-de/library/cc262496.aspx)
     
   
 -  [<span data-ttu-id="dd389-270">OASIS Content Management Interoperability Specification (CMIS) Version 1.0</span><span class="sxs-lookup"><span data-stu-id="dd389-270">OASIS Content Management Interoperability Specification (CMIS) version 1.0</span></span>](http://docs.oasis-open.org/cmis/CMIS/v1.0/os/cmis-spec-v1.0.html)

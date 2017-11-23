@@ -149,7 +149,7 @@ ms.lasthandoff: 10/13/2017
 ## <a name="the-appxaml-file-and-the-silverlight-application-model"></a><span data-ttu-id="54e02-172">Die Datei App.xaml und das Silverlight-Anwendungsmodell</span><span class="sxs-lookup"><span data-stu-id="54e02-172">The App.xaml file and the Silverlight application model</span></span>
 <span data-ttu-id="54e02-173"><a name="BKMK_ApplicationModel"> </a></span><span class="sxs-lookup"><span data-stu-id="54e02-173"></span></span>
 
-<span data-ttu-id="54e02-p121">Objektebene und seine zugeordneten Code-Behind-Datei App.xaml.cs, sind Standardkomponenten einer verwalteten Silverlight-Anwendung. Anwendungen, mit denen die verwaltete API für Silverlight müssen eine Klasse, die von der Silverlight-  [Anwendung](http://msdn.microsoft.com/en-us/library/system.windows.application%28VS.95%29.aspx) -Klasse abgeleitet sind, um das Silverlight-Anwendungsmodell implementieren enthalten. Die **Application** -Klasse unterstützt Anwendung Lebenszyklusereignisse und Funktionen für die Verwaltung von Ressourcen wie Bilder, Zeichenfolgen und XAML-Vorlagen.</span><span class="sxs-lookup"><span data-stu-id="54e02-p121">The App.xaml file and its associated code-behind file, App.xaml.cs, are standard components of a managed Silverlight application. Applications that use the managed API for Silverlight must include a class derived from the Silverlight  [Application](http://msdn.microsoft.com/en-us/library/system.windows.application%28VS.95%29.aspx) class, in order to implement the Silverlight application model. The **Application** class supports application life-cycle events and facilities for managing resources like images, strings, and XAML templates.</span></span>
+<span data-ttu-id="54e02-p121">Objektebene und seine zugeordneten Code-Behind-Datei App.xaml.cs, sind Standardkomponenten einer verwalteten Silverlight-Anwendung. Anwendungen, mit denen die verwaltete API für Silverlight müssen eine Klasse, die von der Silverlight-  [Anwendung](http://msdn.microsoft.com/de-de/library/system.windows.application%28VS.95%29.aspx) -Klasse abgeleitet sind, um das Silverlight-Anwendungsmodell implementieren enthalten. Die **Application** -Klasse unterstützt Anwendung Lebenszyklusereignisse und Funktionen für die Verwaltung von Ressourcen wie Bilder, Zeichenfolgen und XAML-Vorlagen.</span><span class="sxs-lookup"><span data-stu-id="54e02-p121">The App.xaml file and its associated code-behind file, App.xaml.cs, are standard components of a managed Silverlight application. Applications that use the managed API for Silverlight must include a class derived from the Silverlight  [Application](http://msdn.microsoft.com/de-de/library/system.windows.application%28VS.95%29.aspx) class, in order to implement the Silverlight application model. The **Application** class supports application life-cycle events and facilities for managing resources like images, strings, and XAML templates.</span></span>
   
     
     
@@ -163,19 +163,19 @@ ms.lasthandoff: 10/13/2017
 
 
 -  <span data-ttu-id="54e02-180">
-  [Unter Verwendung des Model-View-ViewModel-Musters](http://msdn.microsoft.com/en-us/library/hh821028.aspx)</span><span class="sxs-lookup"><span data-stu-id="54e02-180">[Using the Model-View-ViewModel Pattern](http://msdn.microsoft.com/en-us/library/hh821028.aspx)</span></span>
+  [Unter Verwendung des Model-View-ViewModel-Musters](http://msdn.microsoft.com/de-de/library/hh821028.aspx)</span><span class="sxs-lookup"><span data-stu-id="54e02-180">[Using the Model-View-ViewModel Pattern](http://msdn.microsoft.com/de-de/library/hh821028.aspx)</span></span>
     
   
 -  <span data-ttu-id="54e02-181">
-  [Architektur des Pivot-Steuerelements für Windows Phone](http://msdn.microsoft.com/en-us/library/ff941097%28VS.92%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="54e02-181">[Pivot Control Architecture for Windows Phone](http://msdn.microsoft.com/en-us/library/ff941097%28VS.92%29.aspx)</span></span>
+  [Architektur des Pivot-Steuerelements für Windows Phone](http://msdn.microsoft.com/de-de/library/ff941097%28VS.92%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="54e02-181">[Pivot Control Architecture for Windows Phone](http://msdn.microsoft.com/de-de/library/ff941097%28VS.92%29.aspx)</span></span>
     
   
 -  <span data-ttu-id="54e02-182">
-  [Silverlight-Anwendungsmodell](http://msdn.microsoft.com/en-us/library/cc872869%28VS.95%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="54e02-182">[Silverlight Application Model](http://msdn.microsoft.com/en-us/library/cc872869%28VS.95%29.aspx)</span></span>
+  [Silverlight-Anwendungsmodell](http://msdn.microsoft.com/de-de/library/cc872869%28VS.95%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="54e02-182">[Silverlight Application Model](http://msdn.microsoft.com/de-de/library/cc872869%28VS.95%29.aspx)</span></span>
     
   
 -  <span data-ttu-id="54e02-183">
-  [Entwickeln einer Windows Phone-Anwendung mit dem MVVM-Muster](http://msdn.microsoft.com/en-us/library/hh848247.aspx)</span><span class="sxs-lookup"><span data-stu-id="54e02-183">[Developing a Windows Phone Application using the MVVM Pattern](http://msdn.microsoft.com/en-us/library/hh848247.aspx)</span></span>
+  [Entwickeln einer Windows Phone-Anwendung mit dem MVVM-Muster](http://msdn.microsoft.com/de-de/library/hh848247.aspx)</span><span class="sxs-lookup"><span data-stu-id="54e02-183">[Developing a Windows Phone Application using the MVVM Pattern](http://msdn.microsoft.com/de-de/library/hh848247.aspx)</span></span>
     
   
 -  [<span data-ttu-id="54e02-184">Die Model-View-ViewModel Entwurfsmuster WPF-Apps</span><span class="sxs-lookup"><span data-stu-id="54e02-184">WPF Apps With The Model-View-ViewModel Design Pattern</span></span>](http://msdn.microsoft.com/en-us/magazine/dd419663.aspx)

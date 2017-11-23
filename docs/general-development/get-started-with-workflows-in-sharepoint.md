@@ -199,26 +199,26 @@ ms.lasthandoff: 10/13/2017
     
 
 -  <span data-ttu-id="e1760-171">
-  [Einführung für Entwickler für Windows Workflow Foundation (WF) in .NET 4](http://msdn.microsoft.com/en-us/library/ee342461.aspx)</span><span class="sxs-lookup"><span data-stu-id="e1760-171">[A Developer's Introduction to Windows Workflow Foundation (WF) in .NET 4](http://msdn.microsoft.com/en-us/library/ee342461.aspx)</span></span>
+  [Einführung für Entwickler für Windows Workflow Foundation (WF) in .NET 4](http://msdn.microsoft.com/de-de/library/ee342461.aspx)</span><span class="sxs-lookup"><span data-stu-id="e1760-171">[A Developer's Introduction to Windows Workflow Foundation (WF) in .NET 4](http://msdn.microsoft.com/de-de/library/ee342461.aspx)</span></span>
     
   
 -  <span data-ttu-id="e1760-172">
-  [Neues in Windows Workflow Foundation](http://msdn.microsoft.com/en-us/library/dd489410%28v=vs.110%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="e1760-172">[What's New in Windows Workflow Foundation](http://msdn.microsoft.com/en-us/library/dd489410%28v=vs.110%29.aspx)</span></span>
+  [Neues in Windows Workflow Foundation](http://msdn.microsoft.com/de-de/library/dd489410%28v=vs.110%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="e1760-172">[What's New in Windows Workflow Foundation](http://msdn.microsoft.com/de-de/library/dd489410%28v=vs.110%29.aspx)</span></span>
     
   
 -  [<span data-ttu-id="e1760-173">Handbuch für Anfänger mit Windows Workflow Foundation</span><span class="sxs-lookup"><span data-stu-id="e1760-173">Beginner's Guide to Windows Workflow Foundation</span></span>](http://msdn.microsoft.com/en-us/netframework/first-steps-with-wf.aspx)
     
   
 -  <span data-ttu-id="e1760-174">
-  [Grundlegendes zu Windows Workflow Foundation](http://msdn.microsoft.com/en-us/library/dd851337.aspx)</span><span class="sxs-lookup"><span data-stu-id="e1760-174">[The Workflow Way: Understanding Windows Workflow Foundation](http://msdn.microsoft.com/en-us/library/dd851337.aspx)</span></span>
+  [Grundlegendes zu Windows Workflow Foundation](http://msdn.microsoft.com/de-de/library/dd851337.aspx)</span><span class="sxs-lookup"><span data-stu-id="e1760-174">[The Workflow Way: Understanding Windows Workflow Foundation](http://msdn.microsoft.com/de-de/library/dd851337.aspx)</span></span>
     
   
 -  <span data-ttu-id="e1760-175">
-  [Einführung in das Regelmodul für Windows Workflow Foundation](http://msdn.microsoft.com/en-us/library/dd554919.aspx)</span><span class="sxs-lookup"><span data-stu-id="e1760-175">[Introduction to the Windows Workflow Foundation Rules Engine](http://msdn.microsoft.com/en-us/library/dd554919.aspx)</span></span>
+  [Einführung in das Regelmodul für Windows Workflow Foundation](http://msdn.microsoft.com/de-de/library/dd554919.aspx)</span><span class="sxs-lookup"><span data-stu-id="e1760-175">[Introduction to the Windows Workflow Foundation Rules Engine](http://msdn.microsoft.com/de-de/library/dd554919.aspx)</span></span>
     
   
 -  <span data-ttu-id="e1760-176">
-  [Integration von Windows Workflow Foundation mit Windows Communication Foundation](http://msdn.microsoft.com/en-us/library/cc626077.aspx)</span><span class="sxs-lookup"><span data-stu-id="e1760-176">[Windows Workflow Foundation integration with Windows Communication Foundation](http://msdn.microsoft.com/en-us/library/cc626077.aspx)</span></span>
+  [Integration von Windows Workflow Foundation mit Windows Communication Foundation](http://msdn.microsoft.com/de-de/library/cc626077.aspx)</span><span class="sxs-lookup"><span data-stu-id="e1760-176">[Windows Workflow Foundation integration with Windows Communication Foundation](http://msdn.microsoft.com/de-de/library/cc626077.aspx)</span></span>
     
   
 

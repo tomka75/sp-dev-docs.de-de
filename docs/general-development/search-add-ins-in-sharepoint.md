@@ -252,7 +252,7 @@ http://mylocalhost/_api/search/query?querytext='SharePoint'
     
   
 -  <span data-ttu-id="fe526-182">
-  [Exportieren und Importieren von benutzerdefinierten Suchkonfigurationseinstellungen in SharePoint (TechNet)](http://technet.microsoft.com/en-us/library/jj871675.aspx)</span><span class="sxs-lookup"><span data-stu-id="fe526-182">[Export and import customized search configuration settings in SharePoint Server 2013 (TechNet)](http://technet.microsoft.com/en-us/library/jj871675.aspx)</span></span>
+  [Exportieren und Importieren von benutzerdefinierten Suchkonfigurationseinstellungen in SharePoint (TechNet)](http://technet.microsoft.com/de-de/library/jj871675.aspx)</span><span class="sxs-lookup"><span data-stu-id="fe526-182">[Export and import customized search configuration settings in SharePoint Server 2013 (TechNet)](http://technet.microsoft.com/de-de/library/jj871675.aspx)</span></span>
     
   
 

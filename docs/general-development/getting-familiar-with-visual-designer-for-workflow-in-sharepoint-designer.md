@@ -130,7 +130,7 @@ ms.lasthandoff: 10/13/2017
 <span data-ttu-id="49ce3-141"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="49ce3-141"></span></span>
 
 
--  [<span data-ttu-id="49ce3-142">Workflow in SharePoint </span><span class="sxs-lookup"><span data-stu-id="49ce3-142">Workflow in SharePoint </span></span>](http://technet.microsoft.com/en-us/sharepoint/jj556245.aspx)
+-  [<span data-ttu-id="49ce3-142">Workflow in SharePoint </span><span class="sxs-lookup"><span data-stu-id="49ce3-142">Workflow in SharePoint </span></span>](http://technet.microsoft.com/de-de/sharepoint/jj556245.aspx)
     
   
 -  [<span data-ttu-id="49ce3-143">Neuigkeiten im Workflow in SharePoint</span><span class="sxs-lookup"><span data-stu-id="49ce3-143">What's new in workflow in SharePoint Server 2013</span></span>](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)

@@ -69,7 +69,7 @@ private static void Import(string fileName)
     
   
 -  <span data-ttu-id="0a7ba-119">
-  [Exportieren und Importieren von benutzerdefinierten Suchkonfigurationseinstellungen in SharePoint](http://technet.microsoft.com/en-us/library/jj871675.aspx)</span><span class="sxs-lookup"><span data-stu-id="0a7ba-119">[Export and import customized search configuration settings in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/jj871675.aspx)</span></span>
+  [Exportieren und Importieren von benutzerdefinierten Suchkonfigurationseinstellungen in SharePoint](http://technet.microsoft.com/de-de/library/jj871675.aspx)</span><span class="sxs-lookup"><span data-stu-id="0a7ba-119">[Export and import customized search configuration settings in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/jj871675.aspx)</span></span>
     
   
 

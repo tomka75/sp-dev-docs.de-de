@@ -664,7 +664,7 @@ wfParams['SomeRandomString'] = strInputValue
 
 
 -  <span data-ttu-id="a88be-385">
-  [Zuordnungs- und -Initiierungsformulare für Workflows (SharePoint Foundation)](http://msdn.microsoft.com/en-us/library/office/ms481192%28v=office.14%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="a88be-385">[Workflow Association and Initiation Forms (SharePoint Foundation)](http://msdn.microsoft.com/en-us/library/office/ms481192%28v=office.14%29.aspx)</span></span>
+  [Zuordnungs- und -Initiierungsformulare für Workflows (SharePoint Foundation)](http://msdn.microsoft.com/de-de/library/office/ms481192%28v=office.14%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="a88be-385">[Workflow Association and Initiation Forms (SharePoint Foundation)](http://msdn.microsoft.com/de-de/library/office/ms481192%28v=office.14%29.aspx)</span></span>
     
   
 -  [<span data-ttu-id="a88be-386">Arbeiten mit dem clientseitigen Objektmodell in SharePoint-Workflowdiensten</span><span class="sxs-lookup"><span data-stu-id="a88be-386">Working with the SharePoint Workflow Services Client Side Object Model</span></span>](working-with-the-sharepoint-workflow-services-client-side-object-model.md)

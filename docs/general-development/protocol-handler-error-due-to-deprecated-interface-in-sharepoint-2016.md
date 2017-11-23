@@ -196,7 +196,7 @@ struct AccessorInitParameters
 ## <a name="additional-resources"></a><span data-ttu-id="ce046-121">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="ce046-121">Additional Resources</span></span>
 <span data-ttu-id="ce046-122"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="ce046-122"></span></span>
 
-<span data-ttu-id="ce046-123">Weitere Informationen finden Sie unter [Enterprise Search-Protokollhandler](https://msdn.microsoft.com/en-us/library/office/aa981260%28v=office.12%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="ce046-123">For more information, see  [Enterprise Search Protocol Handlers](https://msdn.microsoft.com/en-us/library/office/aa981260%28v=office.12%29.aspx).</span></span>
+<span data-ttu-id="ce046-123">Weitere Informationen finden Sie unter [Enterprise Search-Protokollhandler](https://msdn.microsoft.com/de-de/library/office/aa981260%28v=office.12%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="ce046-123">For more information, see  [Enterprise Search Protocol Handlers](https://msdn.microsoft.com/de-de/library/office/aa981260%28v=office.12%29.aspx).</span></span>
   
     
     

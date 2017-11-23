@@ -1174,11 +1174,11 @@ End Namespace
 
 
 -  <span data-ttu-id="6c41a-199">
-  [Vorgehensweise: Erstellen Filter von Datenanbietern für PerformancePoint Services in SharePoint](https://msdn.microsoft.com/en-us/library/office/cc159445.aspx)</span><span class="sxs-lookup"><span data-stu-id="6c41a-199">[How to: Create filter data providers for PerformancePoint Services in SharePoint](https://msdn.microsoft.com/en-us/library/office/cc159445.aspx)</span></span>
+  [Vorgehensweise: Erstellen Filter von Datenanbietern für PerformancePoint Services in SharePoint](https://msdn.microsoft.com/de-de/library/office/cc159445.aspx)</span><span class="sxs-lookup"><span data-stu-id="6c41a-199">[How to: Create filter data providers for PerformancePoint Services in SharePoint](https://msdn.microsoft.com/de-de/library/office/cc159445.aspx)</span></span>
     
   
 -  <span data-ttu-id="6c41a-200">
-  [PerformancePoint-Dienste in SharePoint](https://msdn.microsoft.com/en-us/library/office/ee559635.aspx)</span><span class="sxs-lookup"><span data-stu-id="6c41a-200">[PerformancePoint Services in SharePoint](https://msdn.microsoft.com/en-us/library/office/ee559635.aspx)</span></span>
+  [PerformancePoint-Dienste in SharePoint](https://msdn.microsoft.com/de-de/library/office/ee559635.aspx)</span><span class="sxs-lookup"><span data-stu-id="6c41a-200">[PerformancePoint Services in SharePoint](https://msdn.microsoft.com/de-de/library/office/ee559635.aspx)</span></span>
     
   
 

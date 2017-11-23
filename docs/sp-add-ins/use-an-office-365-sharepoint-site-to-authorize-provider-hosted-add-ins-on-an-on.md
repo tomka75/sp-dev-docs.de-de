@@ -50,11 +50,11 @@ ms.lasthandoff: 10/13/2017
  
 
  
- <span data-ttu-id="5782a-124">[Erstellen Sie zuerst eine PFX-Zertifikatstestdatei und dann eine entsprechende CER-Testdatei](http://msdn.microsoft.com/en-us/library/windows/hardware/ff552299%28v=vs.85%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="5782a-124">[Create a test .pfx certificate file first, and then a corresponding test .cer file](http://msdn.microsoft.com/en-us/library/windows/hardware/ff552299%28v=vs.85%29.aspx).</span></span> 
+ <span data-ttu-id="5782a-124">[Erstellen Sie zuerst eine PFX-Zertifikatstestdatei und dann eine entsprechende CER-Testdatei](http://msdn.microsoft.com/de-de/library/windows/hardware/ff552299%28v=vs.85%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="5782a-124">[Create a test .pfx certificate file first, and then a corresponding test .cer file](http://msdn.microsoft.com/de-de/library/windows/hardware/ff552299%28v=vs.85%29.aspx).</span></span> 
  
 
  
- <span data-ttu-id="5782a-125">[Sie können auch das MakeCert-Testprogramm verwenden, um ein X.509-Testzertifikat zu erstellen](http://msdn.microsoft.com/en-us/library/ms537364%28VS.85%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="5782a-125">[You can also use the MakeCert test program to generate a test X.509 certificate](http://msdn.microsoft.com/en-us/library/ms537364%28VS.85%29.aspx).</span></span> 
+ <span data-ttu-id="5782a-125">[Sie können auch das MakeCert-Testprogramm verwenden, um ein X.509-Testzertifikat zu erstellen](http://msdn.microsoft.com/de-de/library/ms537364%28VS.85%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="5782a-125">[You can also use the MakeCert test program to generate a test X.509 certificate](http://msdn.microsoft.com/de-de/library/ms537364%28VS.85%29.aspx).</span></span> 
  
 
  
@@ -104,7 +104,7 @@ ms.lasthandoff: 10/13/2017
  
 
  
-6. <span data-ttu-id="5782a-p106">Exportieren Sie die Datei an einen gewünschten Speicherort, und vergeben Sie ein Kennwort. In diesem Beispiel lautet das Kennwort nur der Einfachheit halber **Kennwort**. Verwenden Sie in einer Produktionsumgebung ein sicheres Kennwort. Siehe [Richtlinien für die Erstellung sicherer Kennwörter](http://msdn.microsoft.com/en-us/library/bb416446.aspx) und [Sichere Kennwörter](http://msdn.microsoft.com/en-us/library/ms161962.aspx).</span><span class="sxs-lookup"><span data-stu-id="5782a-p106">Export the file to a location you choose and give it a password. In this example, the password is  **password**. In a production environment, use a strong password. See [Guidelines for creating strong passwords](http://msdn.microsoft.com/en-us/library/bb416446.aspx) and [Strong passwords](http://msdn.microsoft.com/en-us/library/ms161962.aspx).</span></span>
+6. <span data-ttu-id="5782a-p106">Exportieren Sie die Datei an einen gewünschten Speicherort, und vergeben Sie ein Kennwort. In diesem Beispiel lautet das Kennwort nur der Einfachheit halber **Kennwort**. Verwenden Sie in einer Produktionsumgebung ein sicheres Kennwort. Siehe [Richtlinien für die Erstellung sicherer Kennwörter](http://msdn.microsoft.com/de-de/library/bb416446.aspx) und [Sichere Kennwörter](http://msdn.microsoft.com/de-de/library/ms161962.aspx).</span><span class="sxs-lookup"><span data-stu-id="5782a-p106">Export the file to a location you choose and give it a password. In this example, the password is  **password**. In a production environment, use a strong password. See [Guidelines for creating strong passwords](http://msdn.microsoft.com/de-de/library/bb416446.aspx) and [Strong passwords](http://msdn.microsoft.com/de-de/library/ms161962.aspx).</span></span>
     
  
 

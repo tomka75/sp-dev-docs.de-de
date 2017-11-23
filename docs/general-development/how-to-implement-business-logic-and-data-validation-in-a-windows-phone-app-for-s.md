@@ -311,7 +311,7 @@ public override void Validate(string fieldName, object value)
     
   
 -  <span data-ttu-id="d1df4-199">
-  [Binden von Silverlight-Daten](http://msdn.microsoft.com/en-us/library/cc278072.aspx)</span><span class="sxs-lookup"><span data-stu-id="d1df4-199">[Silverlight Data Binding](http://msdn.microsoft.com/en-us/library/cc278072.aspx)</span></span>
+  [Binden von Silverlight-Daten](http://msdn.microsoft.com/de-de/library/cc278072.aspx)</span><span class="sxs-lookup"><span data-stu-id="d1df4-199">[Silverlight Data Binding](http://msdn.microsoft.com/de-de/library/cc278072.aspx)</span></span>
     
   
 -  [<span data-ttu-id="d1df4-200">Vorgehensweise: Einrichten einer Umgebung für die Entwicklung von mobilen Anwendungen für SharePoint</span><span class="sxs-lookup"><span data-stu-id="d1df4-200">How to: Set up an environment for developing mobile apps for SharePoint</span></span>](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md)

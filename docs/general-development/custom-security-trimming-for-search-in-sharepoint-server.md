@@ -113,15 +113,15 @@ ms.lasthandoff: 10/13/2017
     
 
 -  <span data-ttu-id="2f354-141">
-  _documentUrls_: Ein  [IList\<T\>](http://msdn2.microsoft.com/EN-US/library/5y536ey6)-Objekt, das die URLs für jedes Inhaltselement in den Suchergebnissen enthält, das der Durchforstungsregel entspricht.</span><span class="sxs-lookup"><span data-stu-id="2f354-141">documentUrls: A  IList  object that contain the URLs for each content item from the search results that match the crawl rule.</span></span>
+  _documentUrls_: Ein  [IList\<T\>](http://msdn2.microsoft.com/de-de/library/5y536ey6)-Objekt, das die URLs für jedes Inhaltselement in den Suchergebnissen enthält, das der Durchforstungsregel entspricht.</span><span class="sxs-lookup"><span data-stu-id="2f354-141">documentUrls: A  IList  object that contain the URLs for each content item from the search results that match the crawl rule.</span></span>
     
   
 -  <span data-ttu-id="2f354-142">
-  _documentAcls_: Ein [IList\<T\>](http://msdn2.microsoft.com/EN-US/library/5y536ey6)-Objekt, das Element-ACLs für jedes Inhaltselement enthält, dessen Zugriff von der Security Trimmer-Implementierung zu bestimmen ist.</span><span class="sxs-lookup"><span data-stu-id="2f354-142">documentAcls: A  IList  object containing item ACLs for each content item whose access is to be determined by the security trimmer implementation.</span></span>
+  _documentAcls_: Ein [IList\<T\>](http://msdn2.microsoft.com/de-de/library/5y536ey6)-Objekt, das Element-ACLs für jedes Inhaltselement enthält, dessen Zugriff von der Security Trimmer-Implementierung zu bestimmen ist.</span><span class="sxs-lookup"><span data-stu-id="2f354-142">documentAcls: A  IList  object containing item ACLs for each content item whose access is to be determined by the security trimmer implementation.</span></span>
     
   
 -  <span data-ttu-id="2f354-143">
-  _sessionProperties_: Ein [IDictionary\<TKey, TValue\>](http://msdn2.microsoft.com/EN-US/library/s4ys34ea)-Objekt, das den vorübergehenden Eigenschaftenbehälter enthält.</span><span class="sxs-lookup"><span data-stu-id="2f354-143">sessionProperties: A  IDictionary<TKey, TValue> object containing the transient property bag.</span></span>
+  _sessionProperties_: Ein [IDictionary\<TKey, TValue\>](http://msdn2.microsoft.com/de-de/library/s4ys34ea)-Objekt, das den vorübergehenden Eigenschaftenbehälter enthält.</span><span class="sxs-lookup"><span data-stu-id="2f354-143">sessionProperties: A  IDictionary<TKey, TValue> object containing the transient property bag.</span></span>
     
   
 -  <span data-ttu-id="2f354-144">_userIdentity_: Ein  [IIdentity](https://msdn.microsoft.com/library/System.Security.Principal.IIdentity.aspx)-Objekt, aus dem Implementierer die Identität des Benutzers abrufen können.</span><span class="sxs-lookup"><span data-stu-id="2f354-144">_userIdentity_: An  [IIdentity](https://msdn.microsoft.com/library/System.Security.Principal.IIdentity.aspx) object from which implementers can retrieve the user's identity.</span></span>
@@ -261,6 +261,6 @@ public void Initialize(NameValueCollection staticProperties, SearchServiceApplic
     
   
 -  <span data-ttu-id="2f354-207">
-  [Übersicht über Business Connectivity Services in SharePoint](http://technet.microsoft.com/en-us/library/ee661740.aspx)</span><span class="sxs-lookup"><span data-stu-id="2f354-207">[Overview of Business Connectivity Services in SharePoint](http://technet.microsoft.com/en-us/library/ee661740.aspx)</span></span>
+  [Übersicht über Business Connectivity Services in SharePoint](http://technet.microsoft.com/de-de/library/ee661740.aspx)</span><span class="sxs-lookup"><span data-stu-id="2f354-207">[Overview of Business Connectivity Services in SharePoint](http://technet.microsoft.com/de-de/library/ee661740.aspx)</span></span>
     
   

@@ -155,6 +155,6 @@ ms.lasthandoff: 10/13/2017
 
 ## <a name="see-also"></a><span data-ttu-id="a33b1-242">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="a33b1-242">See also</span></span>
 
-- [<span data-ttu-id="a33b1-243">Design – Toolkit und Ressourcen</span><span class="sxs-lookup"><span data-stu-id="a33b1-243">Design toolkit and assets</span></span>](https://developer.microsoft.com/en-us/fabric#/resources)
+- [<span data-ttu-id="a33b1-243">Design – Toolkit und Ressourcen</span><span class="sxs-lookup"><span data-stu-id="a33b1-243">Design toolkit and assets</span></span>](https://developer.microsoft.com/de-de/fabric#/resources)
 
 

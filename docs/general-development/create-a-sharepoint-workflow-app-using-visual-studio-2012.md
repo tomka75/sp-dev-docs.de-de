@@ -47,11 +47,11 @@ ms.lasthandoff: 10/13/2017
     
   
 -  <span data-ttu-id="09e63-120">
-  [Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/en-us/library/jj658586%28v=office.15%29)</span><span class="sxs-lookup"><span data-stu-id="09e63-120">[Configure workflow in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/jj658586%28v=office.15%29)</span></span>
+  [Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/de-de/library/jj658586%28v=office.15%29)</span><span class="sxs-lookup"><span data-stu-id="09e63-120">[Configure workflow in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/jj658586%28v=office.15%29)</span></span>
     
   
 -  <span data-ttu-id="09e63-121">
-  [Videoreihe: Installieren und Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/en-us/library/dn201724%28v=office.15%29)</span><span class="sxs-lookup"><span data-stu-id="09e63-121">[Video series: Install and configure Workflow in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/dn201724%28v=office.15%29)</span></span>
+  [Videoreihe: Installieren und Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/de-de/library/dn201724%28v=office.15%29)</span><span class="sxs-lookup"><span data-stu-id="09e63-121">[Video series: Install and configure Workflow in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/dn201724%28v=office.15%29)</span></span>
     
   
 
@@ -103,7 +103,7 @@ ms.lasthandoff: 10/13/2017
   
 
     
-> <span data-ttu-id="09e63-136">**Wichtig:** Bevor Sie mit dieser exemplarischen Vorgehensweise beginnen, stellen Sie sicher, dass die Workflowentwicklungsumgebung korrekt installiert und konfiguriert ist.</span><span class="sxs-lookup"><span data-stu-id="09e63-136">**Important:** Before you start this walkthrough, ensure that you have a properly installed and configured workflow development environment.</span></span> <span data-ttu-id="09e63-137">Weitere Informationen finden Sie unter [Vorbereiten auf das Einrichten und Konfigurieren einer SharePoint-Workflowentwicklungsumgebung](prepare-to-set-up-and-configure-a-sharepoint-workflow-development-environment.md).</span><span class="sxs-lookup"><span data-stu-id="09e63-137">[Prepare to set up and configure a SharePoint workflow development environment](prepare-to-set-up-and-configure-a-sharepoint-workflow-development-environment.md)</span></span> <span data-ttu-id="09e63-138">Stellen Sie außerdem sicher, dass Sie über eine SharePoint-Instanz verfügen, mit der Sie Ihren Workflow entwickeln können.</span><span class="sxs-lookup"><span data-stu-id="09e63-138">Also, ensure that you have a SharePoint instance that you can develop your workflow against.</span></span> <span data-ttu-id="09e63-139">Weitere Informationen finden Sie unter [Installieren von SharePoint](http://technet.microsoft.com/en-us/library/cc303424.aspx).</span><span class="sxs-lookup"><span data-stu-id="09e63-139">For more information, see  [Themes overview for SharePoint](http://technet.microsoft.com/en-us/library/cc303424.aspx).</span></span> 
+> <span data-ttu-id="09e63-136">**Wichtig:** Bevor Sie mit dieser exemplarischen Vorgehensweise beginnen, stellen Sie sicher, dass die Workflowentwicklungsumgebung korrekt installiert und konfiguriert ist.</span><span class="sxs-lookup"><span data-stu-id="09e63-136">**Important:** Before you start this walkthrough, ensure that you have a properly installed and configured workflow development environment.</span></span> <span data-ttu-id="09e63-137">Weitere Informationen finden Sie unter [Vorbereiten auf das Einrichten und Konfigurieren einer SharePoint-Workflowentwicklungsumgebung](prepare-to-set-up-and-configure-a-sharepoint-workflow-development-environment.md).</span><span class="sxs-lookup"><span data-stu-id="09e63-137">[Prepare to set up and configure a SharePoint workflow development environment](prepare-to-set-up-and-configure-a-sharepoint-workflow-development-environment.md)</span></span> <span data-ttu-id="09e63-138">Stellen Sie außerdem sicher, dass Sie über eine SharePoint-Instanz verfügen, mit der Sie Ihren Workflow entwickeln können.</span><span class="sxs-lookup"><span data-stu-id="09e63-138">Also, ensure that you have a SharePoint instance that you can develop your workflow against.</span></span> <span data-ttu-id="09e63-139">Weitere Informationen finden Sie unter [Installieren von SharePoint](http://technet.microsoft.com/de-de/library/cc303424.aspx).</span><span class="sxs-lookup"><span data-stu-id="09e63-139">For more information, see  [Themes overview for SharePoint](http://technet.microsoft.com/de-de/library/cc303424.aspx).</span></span> 
   
     
     
@@ -257,7 +257,7 @@ ms.lasthandoff: 10/13/2017
   
 
   
-5. <span data-ttu-id="09e63-p111">Konfigurieren Sie schließlich Ihren SharePoint Server für die Verwaltung ausgehender E-Mails über den SMTP-Dienst. Anweisungen finden Sie unter  [Konfigurieren ausgehender E-Mails für eine SharePoint-Farm](http://technet.microsoft.com/en-us/library/cc263462.aspx). Dies ist nötig, damit vom Workflow E-Mail-Benachrichtigungen im Zusammenhang mit Workflowaufgaben gesendet werden können.</span><span class="sxs-lookup"><span data-stu-id="09e63-p111">Finally, configure your SharePoint Server to manage outgoing email using the SMTP service. For instructions, see  [Configure outgoing email for a SharePoint farm](http://technet.microsoft.com/en-us/library/cc263462.aspx). This is necessary to allow the workflow to send email notifications related to workflow tasks.</span></span>
+5. <span data-ttu-id="09e63-p111">Konfigurieren Sie schließlich Ihren SharePoint Server für die Verwaltung ausgehender E-Mails über den SMTP-Dienst. Anweisungen finden Sie unter  [Konfigurieren ausgehender E-Mails für eine SharePoint-Farm](http://technet.microsoft.com/de-de/library/cc263462.aspx). Dies ist nötig, damit vom Workflow E-Mail-Benachrichtigungen im Zusammenhang mit Workflowaufgaben gesendet werden können.</span><span class="sxs-lookup"><span data-stu-id="09e63-p111">Finally, configure your SharePoint Server to manage outgoing email using the SMTP service. For instructions, see  [Configure outgoing email for a SharePoint farm](http://technet.microsoft.com/de-de/library/cc263462.aspx). This is necessary to allow the workflow to send email notifications related to workflow tasks.</span></span>
     
   
 
@@ -272,7 +272,7 @@ ms.lasthandoff: 10/13/2017
 1. <span data-ttu-id="09e63-p112">Öffnen Sie den Workflow-Designer durch Doppelklicken auf das Workflow-Projektelement im **Projektmappen-Explorer**. Sie sehen die Workflow-Designeroberfläche (und die Workflow-Toolbox). Der Designer wird mit einer anfänglichen Workflowphase namens **Sequenz** aufgefüllt.</span><span class="sxs-lookup"><span data-stu-id="09e63-p112">Open the workflow designer by double-clicking on the workflow project item in **Solution Explorer**. You will see the workflow designer surface (and the workflow toolbox); the designer is populated with an initial workflow stage named **Sequence**.</span></span>
     
   
-2. <span data-ttu-id="09e63-p113">Unser erster Schritt besteht darin, die **LookupSPListItem**-Aktivität aus der Toolbox (siehe Abbildung 10) in die Phase **Sequenz** auf der Designeroberfläche zu ziehen. Wir verwenden diese Aktivität, um zu einem beliebigen Zeitpunkt den Status des Dokuments abzurufen. Die **LookupSPListItem**-Aktivität gibt diesen als  [DynamicValue](http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.activities.dynamicvalue%28v=azure.10%29.aspx)-Objekt zurück, das einen Satz von SharePoint-Listenelementeigenschaften als Schlüssel-Wert-Paare enthält.</span><span class="sxs-lookup"><span data-stu-id="09e63-p113">Our first step is to grab the **LookupSPListItem** activity from the toolbox (see Figure 10) and drop it in the **Sequence** stage on the designer surface. We use this activity to get the status of the document at any given time, which the **LookupSPListItem** activity returns as a [DynamicValue](http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.activities.dynamicvalue%28v=azure.10%29.aspx) object that contains a set of SharePoint list item properties as key-value pairs.</span></span>
+2. <span data-ttu-id="09e63-p113">Unser erster Schritt besteht darin, die **LookupSPListItem**-Aktivität aus der Toolbox (siehe Abbildung 10) in die Phase **Sequenz** auf der Designeroberfläche zu ziehen. Wir verwenden diese Aktivität, um zu einem beliebigen Zeitpunkt den Status des Dokuments abzurufen. Die **LookupSPListItem**-Aktivität gibt diesen als  [DynamicValue](http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.activities.dynamicvalue%28v=azure.10%29.aspx)-Objekt zurück, das einen Satz von SharePoint-Listenelementeigenschaften als Schlüssel-Wert-Paare enthält.</span><span class="sxs-lookup"><span data-stu-id="09e63-p113">Our first step is to grab the **LookupSPListItem** activity from the toolbox (see Figure 10) and drop it in the **Sequence** stage on the designer surface. We use this activity to get the status of the document at any given time, which the **LookupSPListItem** activity returns as a [DynamicValue](http://msdn.microsoft.com/de-de/library/windowsazure/microsoft.activities.dynamicvalue%28v=azure.10%29.aspx) object that contains a set of SharePoint list item properties as key-value pairs.</span></span>
     
    <span data-ttu-id="09e63-199">**Abbildung 10. "LookupSPListItem"-Aktivitätsauswahl.**</span><span class="sxs-lookup"><span data-stu-id="09e63-199">**Figure 10. LookupSPListItem activity selector.**</span></span>
 
@@ -509,15 +509,15 @@ ms.lasthandoff: 10/13/2017
     
 
 -  <span data-ttu-id="09e63-292">
-  [Bereitstellen und Installieren von Apps für SharePoint: Methoden und Optionen](http://msdn.microsoft.com/en-us/library/fp179933.aspx)</span><span class="sxs-lookup"><span data-stu-id="09e63-292">[Deploying and installing apps for SharePoint: methods and options](http://msdn.microsoft.com/en-us/library/fp179933.aspx)</span></span>
+  [Bereitstellen und Installieren von Apps für SharePoint: Methoden und Optionen](http://msdn.microsoft.com/de-de/library/fp179933.aspx)</span><span class="sxs-lookup"><span data-stu-id="09e63-292">[Deploying and installing apps for SharePoint: methods and options](http://msdn.microsoft.com/de-de/library/fp179933.aspx)</span></span>
     
   
 -  <span data-ttu-id="09e63-293">
-  [Veröffentlichen von Apps für SharePoint](http://msdn.microsoft.com/en-us/library/jj164070.aspx)</span><span class="sxs-lookup"><span data-stu-id="09e63-293">[Publish apps for SharePoint](http://msdn.microsoft.com/en-us/library/jj164070.aspx)</span></span>
+  [Veröffentlichen von Apps für SharePoint](http://msdn.microsoft.com/de-de/library/jj164070.aspx)</span><span class="sxs-lookup"><span data-stu-id="09e63-293">[Publish apps for SharePoint](http://msdn.microsoft.com/de-de/library/jj164070.aspx)</span></span>
     
   
 -  <span data-ttu-id="09e63-294">
-  [Vorgehensweise: Erstellen und Bereitstellen deklarativer Workflows in Sandkastenlösungen (mithilfe von SharePoint Designer 2013](http://msdn.microsoft.com/en-us/library/gg615452%28v=office.14%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="09e63-294">[How to: Create and Deploy Declarative Workflows in Sandboxed Solutions](http://msdn.microsoft.com/en-us/library/gg615452%28v=office.14%29.aspx) (Using SharePoint Designer 2013)</span></span>
+  [Vorgehensweise: Erstellen und Bereitstellen deklarativer Workflows in Sandkastenlösungen (mithilfe von SharePoint Designer 2013](http://msdn.microsoft.com/de-de/library/gg615452%28v=office.14%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="09e63-294">[How to: Create and Deploy Declarative Workflows in Sandboxed Solutions](http://msdn.microsoft.com/de-de/library/gg615452%28v=office.14%29.aspx) (Using SharePoint Designer 2013)</span></span>
     
   
 

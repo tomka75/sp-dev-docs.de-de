@@ -176,15 +176,15 @@ ms.lasthandoff: 10/13/2017
 
 
 -  <span data-ttu-id="6f717-189">
-  [Websitetypen: WebTemplates und Websitedefinitionen](http://msdn.microsoft.com/en-us/library/ms434313.aspx)</span><span class="sxs-lookup"><span data-stu-id="6f717-189">[Site Types: WebTemplates and Site Definitions](http://msdn.microsoft.com/en-us/library/ms434313.aspx)</span></span>
+  [Websitetypen: WebTemplates und Websitedefinitionen](http://msdn.microsoft.com/de-de/library/ms434313.aspx)</span><span class="sxs-lookup"><span data-stu-id="6f717-189">[Site Types: WebTemplates and Site Definitions](http://msdn.microsoft.com/de-de/library/ms434313.aspx)</span></span>
     
   
 -  <span data-ttu-id="6f717-190">
-  [Grundlegendes zu packen und POST von Workflows in SharePoint](http://msdn.microsoft.com/en-us/library/jj819316%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="6f717-190">[Understanding how to package and deploy workflow in SharePoint](http://msdn.microsoft.com/en-us/library/jj819316%28v=office.15%29.aspx)</span></span>
+  [Grundlegendes zu packen und POST von Workflows in SharePoint](http://msdn.microsoft.com/de-de/library/jj819316%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="6f717-190">[Understanding how to package and deploy workflow in SharePoint](http://msdn.microsoft.com/de-de/library/jj819316%28v=office.15%29.aspx)</span></span>
     
   
 -  <span data-ttu-id="6f717-191">
-  [Farmlösungen in SharePoint erstellen](http://msdn.microsoft.com/en-us/library/jj163902%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="6f717-191">[Build farm solutions in SharePoint](http://msdn.microsoft.com/en-us/library/jj163902%28v=office.15%29.aspx)</span></span>
+  [Farmlösungen in SharePoint erstellen](http://msdn.microsoft.com/de-de/library/jj163902%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="6f717-191">[Build farm solutions in SharePoint](http://msdn.microsoft.com/de-de/library/jj163902%28v=office.15%29.aspx)</span></span>
     
   
 -  [<span data-ttu-id="6f717-192">Kopieren oder Verschieben einer Liste mithilfe einer Listenvorlage</span><span class="sxs-lookup"><span data-stu-id="6f717-192">Copy or move lists by using list templates</span></span>](http://office.com/redir/HA101782479.aspx)

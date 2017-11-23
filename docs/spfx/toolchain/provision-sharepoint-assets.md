@@ -14,12 +14,12 @@ Fügt ein vorhandenes Element zu einem vorhandenen Feature hinzu. Wenn eine Funk
 -  [<span data-ttu-id="be854-228">Tutorial: Provisioning SharePoint assets from your SharePoint client-side web part</span><span class="sxs-lookup"><span data-stu-id="be854-228">Tutorial - Provisioning SharePoint assets from your SharePoint client-side web part</span></span>](https://dev.office.com/sharepoint/docs/spfx/web-parts/get-started/provision-sp-assets-from-package)
 
 -  <span data-ttu-id="be854-229">
-  [SharePoint-Baustein: Features](https://msdn.microsoft.com/en-us/library/ee537350.aspx)</span><span class="sxs-lookup"><span data-stu-id="be854-229">[SharePoint Building Block: Features](https://msdn.microsoft.com/en-us/library/ee537350.aspx)</span></span>
+  [SharePoint-Baustein: Features](https://msdn.microsoft.com/de-de/library/ee537350.aspx)</span><span class="sxs-lookup"><span data-stu-id="be854-229">[SharePoint Building Block: Features](https://msdn.microsoft.com/de-de/library/ee537350.aspx)</span></span>
 
--  [<span data-ttu-id="be854-230">Featureframework: Verwendung des UpgradeActions-Elements</span><span class="sxs-lookup"><span data-stu-id="be854-230">Feature Framework - UpgradeAcctions element usage</span></span>](https://msdn.microsoft.com/en-us/library/office/ee537575.aspx)
+-  [<span data-ttu-id="be854-230">Featureframework: Verwendung des UpgradeActions-Elements</span><span class="sxs-lookup"><span data-stu-id="be854-230">Feature Framework - UpgradeAcctions element usage</span></span>](https://msdn.microsoft.com/de-de/library/office/ee537575.aspx)
 
--  [<span data-ttu-id="be854-231">Featureframework: Field-Element</span><span class="sxs-lookup"><span data-stu-id="be854-231">Feature Framework - Field Element</span></span>](https://msdn.microsoft.com/en-us/library/aa979575.aspx)
+-  [<span data-ttu-id="be854-231">Featureframework: Field-Element</span><span class="sxs-lookup"><span data-stu-id="be854-231">Feature Framework - Field Element</span></span>](https://msdn.microsoft.com/de-de/library/aa979575.aspx)
 
--  [<span data-ttu-id="be854-232">Featureframework: ContentType-Element</span><span class="sxs-lookup"><span data-stu-id="be854-232">Feature Framework - ContentType Element</span></span>](https://msdn.microsoft.com/en-us/library/aa544268.aspx)
+-  [<span data-ttu-id="be854-232">Featureframework: ContentType-Element</span><span class="sxs-lookup"><span data-stu-id="be854-232">Feature Framework - ContentType Element</span></span>](https://msdn.microsoft.com/de-de/library/aa544268.aspx)
 
--  [<span data-ttu-id="be854-233">Featureframework: ListInstance-Element</span><span class="sxs-lookup"><span data-stu-id="be854-233">Feature Framework - ListInstance Element</span></span>](https://msdn.microsoft.com/en-us/library/office/ms476062.aspx)
+-  [<span data-ttu-id="be854-233">Featureframework: ListInstance-Element</span><span class="sxs-lookup"><span data-stu-id="be854-233">Feature Framework - ListInstance Element</span></span>](https://msdn.microsoft.com/de-de/library/office/ms476062.aspx)

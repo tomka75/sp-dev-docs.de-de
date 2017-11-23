@@ -127,7 +127,7 @@ ewa.BrowserUdfs.add("StockQuote",
     
   
 -  <span data-ttu-id="88aab-143">
-  [Benutzerdefinierte Funktionen von Excel Services](http://msdn.microsoft.com/en-us/library/ms493934)</span><span class="sxs-lookup"><span data-stu-id="88aab-143">[Excel Services User-Defined Functions](http://msdn.microsoft.com/en-us/library/ms493934)</span></span>
+  [Benutzerdefinierte Funktionen von Excel Services](http://msdn.microsoft.com/de-de/library/ms493934)</span><span class="sxs-lookup"><span data-stu-id="88aab-143">[Excel Services User-Defined Functions](http://msdn.microsoft.com/de-de/library/ms493934)</span></span>
     
   
 

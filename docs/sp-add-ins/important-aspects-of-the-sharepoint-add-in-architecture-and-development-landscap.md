@@ -202,7 +202,7 @@ ms.lasthandoff: 10/13/2017
  
 
  
-<span data-ttu-id="846e8-226">Weitere Informationen zum Verwalten von Add-Ins finden Sie unter [Installieren und Verwalten von SharePoint-Add-Ins](http://msdn.microsoft.com/en-us/library/733647a3-a5d3-475b-967d-3bb627c2a0c2) auf TechNet.</span><span class="sxs-lookup"><span data-stu-id="846e8-226">For more information about managing add-ins, see  [Install and manage SharePoint Add-ins](http://msdn.microsoft.com/en-us/library/733647a3-a5d3-475b-967d-3bb627c2a0c2) on TechNet.</span></span>
+<span data-ttu-id="846e8-226">Weitere Informationen zum Verwalten von Add-Ins finden Sie unter [Installieren und Verwalten von SharePoint-Add-Ins](http://msdn.microsoft.com/de-de/library/733647a3-a5d3-475b-967d-3bb627c2a0c2) auf TechNet.</span><span class="sxs-lookup"><span data-stu-id="846e8-226">For more information about managing add-ins, see  [Install and manage SharePoint Add-ins](http://msdn.microsoft.com/de-de/library/733647a3-a5d3-475b-967d-3bb627c2a0c2) on TechNet.</span></span>
  
 
  

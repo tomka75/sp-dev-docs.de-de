@@ -183,11 +183,11 @@ ms.lasthandoff: 10/13/2017
     
   
 -  <span data-ttu-id="bebe0-173">
-  [Unterschiede zwischen SharePoint 2010 und SharePoint 2013](http://technet.microsoft.com/en-us/library/ff607742%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="bebe0-173">[Changes from SharePoint 2010 to SharePoint](http://technet.microsoft.com/en-us/library/ff607742%28v=office.15%29.aspx)</span></span>
+  [Unterschiede zwischen SharePoint 2010 und SharePoint 2013](http://technet.microsoft.com/de-de/library/ff607742%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="bebe0-173">[Changes from SharePoint 2010 to SharePoint](http://technet.microsoft.com/de-de/library/ff607742%28v=office.15%29.aspx)</span></span>
     
   
 -  <span data-ttu-id="bebe0-174">
-  [Neu in SharePoint-Workflows](http://technet.microsoft.com/en-us/library/jj219638%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="bebe0-174">[What's new in workflow in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/jj219638%28v=office.15%29.aspx)</span></span>
+  [Neu in SharePoint-Workflows](http://technet.microsoft.com/de-de/library/jj219638%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="bebe0-174">[What's new in workflow in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/jj219638%28v=office.15%29.aspx)</span></span>
     
   
 

@@ -194,7 +194,7 @@ private void AddListItem()
     
   
 -  <span data-ttu-id="dac11-161">
-  [Verwenden des Standortfeldtyps in mobilen Anwendungen für SharePoint](http://technet.microsoft.com/en-us/library/fp161355%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="dac11-161">[Use the SharePoint location field type in mobile applications](http://technet.microsoft.com/en-us/library/fp161355%28v=office.15%29.aspx)</span></span>
+  [Verwenden des Standortfeldtyps in mobilen Anwendungen für SharePoint](http://technet.microsoft.com/de-de/library/fp161355%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="dac11-161">[Use the SharePoint location field type in mobile applications](http://technet.microsoft.com/de-de/library/fp161355%28v=office.15%29.aspx)</span></span>
     
   
 

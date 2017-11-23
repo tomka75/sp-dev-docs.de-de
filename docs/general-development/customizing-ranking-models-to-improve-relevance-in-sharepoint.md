@@ -61,19 +61,19 @@ ms.lasthandoff: 10/13/2017
     
 
 -  <span data-ttu-id="60df1-125">
-  [Get-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607990.aspx)</span><span class="sxs-lookup"><span data-stu-id="60df1-125">[Get-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607990.aspx)</span></span>
+  [Get-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/de-de/library/ff607990.aspx)</span><span class="sxs-lookup"><span data-stu-id="60df1-125">[Get-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/de-de/library/ff607990.aspx)</span></span>
     
   
 -  <span data-ttu-id="60df1-126">
-  [New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607980.aspx)</span><span class="sxs-lookup"><span data-stu-id="60df1-126">[New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607980.aspx)</span></span>
+  [New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/de-de/library/ff607980.aspx)</span><span class="sxs-lookup"><span data-stu-id="60df1-126">[New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/de-de/library/ff607980.aspx)</span></span>
     
   
 -  <span data-ttu-id="60df1-127">
-  [Remove-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff608045.aspx)</span><span class="sxs-lookup"><span data-stu-id="60df1-127">[Remove-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff608045.aspx)</span></span>
+  [Remove-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/de-de/library/ff608045.aspx)</span><span class="sxs-lookup"><span data-stu-id="60df1-127">[Remove-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/de-de/library/ff608045.aspx)</span></span>
     
   
 -  <span data-ttu-id="60df1-128">
-  [Set-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607940.aspx)</span><span class="sxs-lookup"><span data-stu-id="60df1-128">[Set-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607940.aspx)</span></span>
+  [Set-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/de-de/library/ff607940.aspx)</span><span class="sxs-lookup"><span data-stu-id="60df1-128">[Set-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/de-de/library/ff607940.aspx)</span></span>
     
   
 
@@ -153,7 +153,7 @@ $rm.RankingModelXML > myrm.xml
 3. <span data-ttu-id="60df1-p107">Bearbeiten Sie die  `myrm.xml`-Datei in einem XML-Editor. Sie müssen neue GUID-Werte für die **id**-Attribute im  _RankModel2Stage_-Element und alle  _RankingModel2NN_-Elemente verwenden. Um einen neuen GUID-Wert abzurufen, können Sie beispielsweise folgenden Windows PowerShell-Befehl verwenden:  `[guid]::NewGuid()`</span><span class="sxs-lookup"><span data-stu-id="60df1-p107">Edit the  `myrm.xml` file in an XML editor. You must use new GUID values for the **id** attributes in _RankModel2Stage_ element and all _RankingModel2NN_ elements. To get a new GUID value you can for example use the following Windows PowerShell command: `[guid]::NewGuid()`</span></span>
     
   
-4. <span data-ttu-id="60df1-146">Erstellen Sie ein neues Bewertungsmodell mit dem  [New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607980.aspx)-Cmdlet, indem Sie folgende Befehle ausführen.</span><span class="sxs-lookup"><span data-stu-id="60df1-146">Create a new ranking model with the  [New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607980.aspx) cmdlet by running the following commands.</span></span>
+4. <span data-ttu-id="60df1-146">Erstellen Sie ein neues Bewertungsmodell mit dem  [New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/de-de/library/ff607980.aspx)-Cmdlet, indem Sie folgende Befehle ausführen.</span><span class="sxs-lookup"><span data-stu-id="60df1-146">Create a new ranking model with the  [New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/de-de/library/ff607980.aspx) cmdlet by running the following commands.</span></span>
     
 ```powershell
   

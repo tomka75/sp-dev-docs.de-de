@@ -15,7 +15,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-<span data-ttu-id="b46da-p102">Eine ausführliche Übersicht über die neuen sozialen und Zusammenarbeitsfunktionen in SharePoint finden Sie unter  [Neuigkeiten bei sozialen Netzwerken in SharePoint](http://technet.microsoft.com/en-us/library/jj219766%28v=office.15%29) auf TechNet. Weitere Informationen zum Programmieren mit der Nutzung von sozialen Netzwerken und Zusammenarbeit zur Verfügung finden Sie unter [Soziale Funktionen und Zusammenarbeit in SharePoint](social-and-collaboration-features-in-sharepoint.md).</span><span class="sxs-lookup"><span data-stu-id="b46da-p102">For an in-depth overview of the new social and collaboration features in SharePoint, see  [What's new in social computing in SharePoint](http://technet.microsoft.com/en-us/library/jj219766%28v=office.15%29) on TechNet. For more information about programming with social and collaboration features, see [Social and collaboration features in SharePoint](social-and-collaboration-features-in-sharepoint.md).</span></span>
+<span data-ttu-id="b46da-p102">Eine ausführliche Übersicht über die neuen sozialen und Zusammenarbeitsfunktionen in SharePoint finden Sie unter  [Neuigkeiten bei sozialen Netzwerken in SharePoint](http://technet.microsoft.com/de-de/library/jj219766%28v=office.15%29) auf TechNet. Weitere Informationen zum Programmieren mit der Nutzung von sozialen Netzwerken und Zusammenarbeit zur Verfügung finden Sie unter [Soziale Funktionen und Zusammenarbeit in SharePoint](social-and-collaboration-features-in-sharepoint.md).</span><span class="sxs-lookup"><span data-stu-id="b46da-p102">For an in-depth overview of the new social and collaboration features in SharePoint, see  [What's new in social computing in SharePoint](http://technet.microsoft.com/de-de/library/jj219766%28v=office.15%29) on TechNet. For more information about programming with social and collaboration features, see [Social and collaboration features in SharePoint](social-and-collaboration-features-in-sharepoint.md).</span></span>
 ## <a name="new-and-changed-my-site-features-in-sharepoint"></a><span data-ttu-id="b46da-109">Neue und geänderte Meine Website-Features in SharePoint</span><span class="sxs-lookup"><span data-stu-id="b46da-109">New and changed My Site features in SharePoint Server 2013</span></span>
 <span data-ttu-id="b46da-110"><a name="bkmk_Social"> </a></span><span class="sxs-lookup"><span data-stu-id="b46da-110"></span></span>
 
@@ -160,7 +160,7 @@ $loader.CreatePersonalSiteEnqueueBulk(@("user1@domain.com"))
 $loader.Context.ExecuteQuery()
 ```
 
-<span data-ttu-id="b46da-137">Weitere Informationen finden Sie unter  [, damit Sie programmgesteuert persönliche Websites (ein Drive für Unternehmen) in Office 365 bereitstellen möchten?](http://blogs.msdn.com/b/frank_marasco/archive/2014/03/25/so-you-want-to-programmatically-provision-personal-sites-one-drive-for-business-in-office-365.aspx) und [Use Windows PowerShell zum Verwalten von SharePoint](http://technet.microsoft.com/en-us/library/ee806878%28v=office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="b46da-137">For more information, see  [So you want to programmatically provision Personal Sites (One Drive for Business) in Office 365?](http://blogs.msdn.com/b/frank_marasco/archive/2014/03/25/so-you-want-to-programmatically-provision-personal-sites-one-drive-for-business-in-office-365.aspx) and [Use Windows PowerShell to administer SharePoint](http://technet.microsoft.com/en-us/library/ee806878%28v=office.15%29.aspx).</span></span>
+<span data-ttu-id="b46da-137">Weitere Informationen finden Sie unter  [, damit Sie programmgesteuert persönliche Websites (ein Drive für Unternehmen) in Office 365 bereitstellen möchten?](http://blogs.msdn.com/b/frank_marasco/archive/2014/03/25/so-you-want-to-programmatically-provision-personal-sites-one-drive-for-business-in-office-365.aspx) und [Use Windows PowerShell zum Verwalten von SharePoint](http://technet.microsoft.com/de-de/library/ee806878%28v=office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="b46da-137">For more information, see  [So you want to programmatically provision Personal Sites (One Drive for Business) in Office 365?](http://blogs.msdn.com/b/frank_marasco/archive/2014/03/25/so-you-want-to-programmatically-provision-personal-sites-one-drive-for-business-in-office-365.aspx) and [Use Windows PowerShell to administer SharePoint](http://technet.microsoft.com/de-de/library/ee806878%28v=office.15%29.aspx).</span></span>
   
     
     
@@ -302,7 +302,7 @@ while (retries <= 10)
     
   
 -  <span data-ttu-id="b46da-201">
-  [Was ist neu in sozialen Netzwerken in SharePoint](http://technet.microsoft.com/en-us/library/jj219766%28v=office.15%29)</span><span class="sxs-lookup"><span data-stu-id="b46da-201">[What's new in social computing in SharePoint](http://technet.microsoft.com/en-us/library/jj219766%28v=office.15%29)</span></span>
+  [Was ist neu in sozialen Netzwerken in SharePoint](http://technet.microsoft.com/de-de/library/jj219766%28v=office.15%29)</span><span class="sxs-lookup"><span data-stu-id="b46da-201">[What's new in social computing in SharePoint](http://technet.microsoft.com/de-de/library/jj219766%28v=office.15%29)</span></span>
     
   
 

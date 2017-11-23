@@ -96,7 +96,7 @@ ms.lasthandoff: 10/13/2017
     
   
 -  <span data-ttu-id="6d067-169">
-  [Installieren von SQL Server-BI-Features mit SharePoint (PowerPivot und Reporting Services)](http://msdn.microsoft.com/en-us/library/hh231671)</span><span class="sxs-lookup"><span data-stu-id="6d067-169">[Install SQL Server BI Features with SharePoint (PowerPivot and Reporting Services)](http://msdn.microsoft.com/en-us/library/hh231671)</span></span>
+  [Installieren von SQL Server-BI-Features mit SharePoint (PowerPivot und Reporting Services)](http://msdn.microsoft.com/de-de/library/hh231671)</span><span class="sxs-lookup"><span data-stu-id="6d067-169">[Install SQL Server BI Features with SharePoint (PowerPivot and Reporting Services)](http://msdn.microsoft.com/de-de/library/hh231671)</span></span>
     
   
 

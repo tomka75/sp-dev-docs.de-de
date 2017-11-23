@@ -73,7 +73,7 @@ ms.lasthandoff: 10/13/2017
   
 
   
-<span data-ttu-id="2289f-127">Weitere Anleitungen finden Sie unter  [Einrichten einer allgemeinen Entwicklungsumgebung für SharePoint](set-up-a-general-development-environment-for-sharepoint.md) und [Features für soziale Netzwerke in SharePoint konfigurieren](http://technet.microsoft.com/en-us/library/fp161267%28v=office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="2289f-127">For more guidance, see  [Set up a general development environment for SharePoint](set-up-a-general-development-environment-for-sharepoint.md) and [Configure social computing features in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/fp161267%28v=office.15%29.aspx).</span></span>
+<span data-ttu-id="2289f-127">Weitere Anleitungen finden Sie unter  [Einrichten einer allgemeinen Entwicklungsumgebung für SharePoint](set-up-a-general-development-environment-for-sharepoint.md) und [Features für soziale Netzwerke in SharePoint konfigurieren](http://technet.microsoft.com/de-de/library/fp161267%28v=office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="2289f-127">For more guidance, see  [Set up a general development environment for SharePoint](set-up-a-general-development-environment-for-sharepoint.md) and [Configure social computing features in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/fp161267%28v=office.15%29.aspx).</span></span>
   
     
     
@@ -165,7 +165,7 @@ ms.lasthandoff: 10/13/2017
   
     
     
-<span data-ttu-id="2289f-p109">App-Berechtigungsanforderungen sind auf der SharePoint-Bereitstellung im Querformat beschränkt. Tabelle 3 zeigt die Bereichsnamen (mit den entsprechenden Bereich URIs) und die verfügbaren Rechte für den Zugriff auf Features für soziale Netzwerke. Weitere Informationen finden Sie unter  [Add-In-Berechtigungen in SharePoint](http://msdn.microsoft.com/library/5f7a8440-3c09-4cf8-83ec-c236bfa2d6c4%28Office.15%29.aspx),  [Add-In-Autorisierungsrichtlinientypen in SharePoint](http://msdn.microsoft.com/library/124879c7-a746-4c10-96a7-da76ad5327f0%28Office.15%29.aspx)und  [Planen der app-Berechtigungsverwaltung in SharePoint](http://technet.microsoft.com/en-us/library/jj219576%28office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="2289f-p109">App permission requests are scoped to the SharePoint deployment landscape. Table 3 shows the scope names (with corresponding scope URIs) and the available rights for accessing social features. For more information, see  [Add-in permissions in SharePoint](http://msdn.microsoft.com/library/5f7a8440-3c09-4cf8-83ec-c236bfa2d6c4%28Office.15%29.aspx),  [Add-in authorization policy types in SharePoint](http://msdn.microsoft.com/library/124879c7-a746-4c10-96a7-da76ad5327f0%28Office.15%29.aspx), and  [Plan app permissions management in SharePoint](http://technet.microsoft.com/en-us/library/jj219576%28office.15%29.aspx).</span></span>
+<span data-ttu-id="2289f-p109">App-Berechtigungsanforderungen sind auf der SharePoint-Bereitstellung im Querformat beschränkt. Tabelle 3 zeigt die Bereichsnamen (mit den entsprechenden Bereich URIs) und die verfügbaren Rechte für den Zugriff auf Features für soziale Netzwerke. Weitere Informationen finden Sie unter  [Add-In-Berechtigungen in SharePoint](http://msdn.microsoft.com/library/5f7a8440-3c09-4cf8-83ec-c236bfa2d6c4%28Office.15%29.aspx),  [Add-In-Autorisierungsrichtlinientypen in SharePoint](http://msdn.microsoft.com/library/124879c7-a746-4c10-96a7-da76ad5327f0%28Office.15%29.aspx)und  [Planen der app-Berechtigungsverwaltung in SharePoint](http://technet.microsoft.com/de-de/library/jj219576%28office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="2289f-p109">App permission requests are scoped to the SharePoint deployment landscape. Table 3 shows the scope names (with corresponding scope URIs) and the available rights for accessing social features. For more information, see  [Add-in permissions in SharePoint](http://msdn.microsoft.com/library/5f7a8440-3c09-4cf8-83ec-c236bfa2d6c4%28Office.15%29.aspx),  [Add-in authorization policy types in SharePoint](http://msdn.microsoft.com/library/124879c7-a746-4c10-96a7-da76ad5327f0%28Office.15%29.aspx), and  [Plan app permissions management in SharePoint](http://technet.microsoft.com/de-de/library/jj219576%28office.15%29.aspx).</span></span>
   
     
     
@@ -225,15 +225,15 @@ ms.lasthandoff: 10/13/2017
     
   
 -  <span data-ttu-id="2289f-247">
-  [Soziale Netzwerke und Zusammenarbeit in SharePoint Server](http://technet.microsoft.com/en-us/library/ee662531%28v=office.15%29)</span><span class="sxs-lookup"><span data-stu-id="2289f-247">[Plan for social computing and collaboration in SharePoint](http://technet.microsoft.com/en-us/library/ee662531%28v=office.15%29)</span></span>
+  [Soziale Netzwerke und Zusammenarbeit in SharePoint Server](http://technet.microsoft.com/de-de/library/ee662531%28v=office.15%29)</span><span class="sxs-lookup"><span data-stu-id="2289f-247">[Plan for social computing and collaboration in SharePoint](http://technet.microsoft.com/de-de/library/ee662531%28v=office.15%29)</span></span>
     
   
 -  <span data-ttu-id="2289f-248">
-  [Features für soziale Netzwerke in SharePoint konfigurieren](http://technet.microsoft.com/en-us/library/fp161267%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="2289f-248">[Configure social computing features in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/fp161267%28v=office.15%29.aspx)</span></span>
+  [Features für soziale Netzwerke in SharePoint konfigurieren](http://technet.microsoft.com/de-de/library/fp161267%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="2289f-248">[Configure social computing features in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/fp161267%28v=office.15%29.aspx)</span></span>
     
   
 -  <span data-ttu-id="2289f-249">
-  [Terminologie und Konzepte sozialer Netzwerke in SharePoint](http://technet.microsoft.com/en-us/library/jj219804%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="2289f-249">[Social computing terminology and concepts in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/jj219804%28v=office.15%29.aspx)</span></span>
+  [Terminologie und Konzepte sozialer Netzwerke in SharePoint](http://technet.microsoft.com/de-de/library/jj219804%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="2289f-249">[Social computing terminology and concepts in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/jj219804%28v=office.15%29.aspx)</span></span>
     
   
  <span data-ttu-id="2289f-250">**Referenzdokumentation**</span><span class="sxs-lookup"><span data-stu-id="2289f-250">**Reference documentation**</span></span>

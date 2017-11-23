@@ -227,11 +227,11 @@ ms.lasthandoff: 10/13/2017
     
   
 -  <span data-ttu-id="03edb-214">
-  [WebPartZone-Klasse](http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.webparts.webpartzone.aspx)</span><span class="sxs-lookup"><span data-stu-id="03edb-214">[WebPartZone class](http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.webparts.webpartzone.aspx)</span></span>
+  [WebPartZone-Klasse](http://msdn.microsoft.com/de-de/library/system.web.ui.webcontrols.webparts.webpartzone.aspx)</span><span class="sxs-lookup"><span data-stu-id="03edb-214">[WebPartZone class](http://msdn.microsoft.com/de-de/library/system.web.ui.webcontrols.webparts.webpartzone.aspx)</span></span>
     
   
 -  <span data-ttu-id="03edb-215">
-  [WebPartZoneBase-Eigenschaften](http://msdn.microsoft.com/en-us/library/335sw9k3.aspx)</span><span class="sxs-lookup"><span data-stu-id="03edb-215">[WebPartZoneBase properties](http://msdn.microsoft.com/en-us/library/335sw9k3.aspx)</span></span>
+  [WebPartZoneBase-Eigenschaften](http://msdn.microsoft.com/de-de/library/335sw9k3.aspx)</span><span class="sxs-lookup"><span data-stu-id="03edb-215">[WebPartZoneBase properties](http://msdn.microsoft.com/de-de/library/335sw9k3.aspx)</span></span>
     
   
 -  [<span data-ttu-id="03edb-216">Erstellen von Websites für SharePoint</span><span class="sxs-lookup"><span data-stu-id="03edb-216">Build sites for SharePoint</span></span>](build-sites-for-sharepoint.md)

@@ -70,14 +70,14 @@ PS> Register-SPWorkflowService -SPSite "https://myserver/mysitecollection" -Work
 
 
 -  <span data-ttu-id="6989c-165">
-  [Installieren und Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/en-us/library/jj658588.aspx)</span><span class="sxs-lookup"><span data-stu-id="6989c-165">[Install and configure workflow for SharePoint Server 2013](http://technet.microsoft.com/en-us/library/jj658588.aspx)</span></span>
+  [Installieren und Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/de-de/library/jj658588.aspx)</span><span class="sxs-lookup"><span data-stu-id="6989c-165">[Install and configure workflow for SharePoint Server 2013](http://technet.microsoft.com/de-de/library/jj658588.aspx)</span></span>
     
   
 -  <span data-ttu-id="6989c-166">
-  [Videoreihe: Installieren und Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/en-us/library/dn201724.aspx)</span><span class="sxs-lookup"><span data-stu-id="6989c-166">[Video series: Install and configure Workflow in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/dn201724.aspx)</span></span>
+  [Videoreihe: Installieren und Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/de-de/library/dn201724.aspx)</span><span class="sxs-lookup"><span data-stu-id="6989c-166">[Video series: Install and configure Workflow in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/dn201724.aspx)</span></span>
     
   
 -  <span data-ttu-id="6989c-167">
-  [Workflow-Manager 1.0](http://msdn.microsoft.com/en-us/library/jj193528%28Azure.10%29)</span><span class="sxs-lookup"><span data-stu-id="6989c-167">[Workflow Manager 1.0](http://msdn.microsoft.com/en-us/library/jj193528%28Azure.10%29)</span></span>
+  [Workflow-Manager 1.0](http://msdn.microsoft.com/de-de/library/jj193528%28Azure.10%29)</span><span class="sxs-lookup"><span data-stu-id="6989c-167">[Workflow Manager 1.0](http://msdn.microsoft.com/de-de/library/jj193528%28Azure.10%29)</span></span>
     
   

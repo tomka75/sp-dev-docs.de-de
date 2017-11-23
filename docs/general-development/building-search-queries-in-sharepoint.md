@@ -45,7 +45,7 @@ ms.lasthandoff: 10/13/2017
 - <span data-ttu-id="35522-118">Ersetzen Sie die Zeichenfolge für die Abfragetransformation durch ein FQL-Äquivalent wie z. B. `{?andnot({searchTerms},filter(contentclass:"urn:content-class:SPSPeople*"))}`.</span><span class="sxs-lookup"><span data-stu-id="35522-118">Replace the Query Transformation string with an FQL equivalent, such as  `{?andnot({searchTerms},filter(contentclass:"urn:content-class:SPSPeople*"))}`.</span></span>
     
   
-<span data-ttu-id="35522-119">Weitere Informationen zu Ergebnisquellen und deren Funktionsweise finden Sie unter:  [Informationen zu Ergebnisquellen](http://office.microsoft.com/en-us/support/sharepoint/sharepointsearch/understanding-result-sources-HA102848849.aspx) und [Konfigurieren der Ergebnisquellen für die Suche in SharePoint](http://technet.microsoft.com/en-us/library/jj683115%28v=office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="35522-119">For more information about result sources and how they work, see to:  [Understanding result sources](http://office.microsoft.com/en-us/support/sharepoint/sharepointsearch/understanding-result-sources-HA102848849.aspx) and [Configure result sources for search in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/jj683115%28v=office.15%29.aspx).</span></span>
+<span data-ttu-id="35522-119">Weitere Informationen zu Ergebnisquellen und deren Funktionsweise finden Sie unter:  [Informationen zu Ergebnisquellen](http://office.microsoft.com/en-us/support/sharepoint/sharepointsearch/understanding-result-sources-HA102848849.aspx) und [Konfigurieren der Ergebnisquellen für die Suche in SharePoint](http://technet.microsoft.com/de-de/library/jj683115%28v=office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="35522-119">For more information about result sources and how they work, see to:  [Understanding result sources](http://office.microsoft.com/en-us/support/sharepoint/sharepointsearch/understanding-result-sources-HA102848849.aspx) and [Configure result sources for search in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/jj683115%28v=office.15%29.aspx).</span></span>
   
     
     
@@ -72,11 +72,11 @@ ms.lasthandoff: 10/13/2017
     
   
 -  <span data-ttu-id="35522-128">
-  [Übersicht über Abfrageverarbeitung in SharePoint](http://technet.microsoft.com/en-us/library/jj219620%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="35522-128">[Overview of query processing in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/jj219620%28v=office.15%29.aspx)</span></span>
+  [Übersicht über Abfrageverarbeitung in SharePoint](http://technet.microsoft.com/de-de/library/jj219620%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="35522-128">[Overview of query processing in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/jj219620%28v=office.15%29.aspx)</span></span>
     
   
 -  <span data-ttu-id="35522-129">
-  [Abfragevariablen in SharePoint](http://technet.microsoft.com/en-us/library/jj683123.aspx)</span><span class="sxs-lookup"><span data-stu-id="35522-129">[Query variables in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/jj683123.aspx)</span></span>
+  [Abfragevariablen in SharePoint](http://technet.microsoft.com/de-de/library/jj683123.aspx)</span><span class="sxs-lookup"><span data-stu-id="35522-129">[Query variables in SharePoint Server 2013](http://technet.microsoft.com/de-de/library/jj683123.aspx)</span></span>
     
   
 
