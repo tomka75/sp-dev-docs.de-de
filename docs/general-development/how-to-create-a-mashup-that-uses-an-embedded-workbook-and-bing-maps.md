@@ -1,15 +1,15 @@
 ---
-title: So Erstellen einer Mashup, die eine eingebettete Arbeitsmappe und Bing Maps verwendet.
+title: Erstellen einer Mashup, die eine eingebettete Arbeitsmappe und Bing Maps verwendet
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3cfeb8d7-84b8-4673-bc92-b176cba4ac3e
-ms.openlocfilehash: 4fd4caf9c77aec37a888fd74cf819037e7372af1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3ffda7629e52045086e8dcd45e97c959058d7951
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-a-mashup-that-uses-an-embedded-workbook-and-bing-maps"></a>So: Erstellen einer Mashup, die eine eingebettete Arbeitsmappe und Bing Maps verwendet.
+# <a name="create-a-mashup-that-uses-an-embedded-workbook-and-bing-maps"></a>Erstellen einer Mashup, die eine eingebettete Arbeitsmappe und Bing Maps verwendet
 
 Dieser Artikel führt Sie durch eine leistungsfähige webbasierten Mashup, die eine eingebettete Excel-Arbeitsmappe und Bing Maps kombiniert.
   
