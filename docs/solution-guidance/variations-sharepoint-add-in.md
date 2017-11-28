@@ -1,0 +1,51 @@
+---
+title: Variationen in SharePoint-add-in-Objektmodell
+ms.date: 11/03/2017
+ms.openlocfilehash: 8d389a61ed6af1edcdc4485d1e28d366496b29d1
+ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 11/06/2017
+---
+<a name="variations-in-the-sharepoint-add-in-model"></a><span data-ttu-id="997ad-102">Variationen in SharePoint-add-in-Objektmodell</span><span class="sxs-lookup"><span data-stu-id="997ad-102">Variations in the SharePoint add-in model</span></span>
+=========================================
+
+<a name="summary"></a><span data-ttu-id="997ad-103">Summary</span><span class="sxs-lookup"><span data-stu-id="997ad-103">Summary</span></span>
+-------
+
+<span data-ttu-id="997ad-104">Ansatz verwenden Sie zum Konfigurieren von Variationen unterscheidet in das neue SharePoint-Add-in-Modell mit vollständigen vertrauen Code war.</span><span class="sxs-lookup"><span data-stu-id="997ad-104">The approach you take to configure variations is different in the new SharePoint Add-in model than it was with Full Trust Code.</span></span> <span data-ttu-id="997ad-105">In einer typischen vollständige vertrauen Code (FTC) / Farmlösung Szenario der SharePoint Server-Side Object Model (Microsoft.SharePoint.Publishing.Variations) wurde verwendet, um Variationen konfigurieren und Features, die den Code ausgeführt über SharePoint-Lösungen bereitgestellt wurden.</span><span class="sxs-lookup"><span data-stu-id="997ad-105">In a typical Full Trust Code (FTC) / Farm Solution scenario, the SharePoint Server-side Object Model (Microsoft.SharePoint.Publishing.Variations) was used to configure variations, and features that executed the code were deployed via SharePoint Solutions.</span></span>
+
+<span data-ttu-id="997ad-106">In einem Szenario mit SharePoint-Add-Ins Modell verwenden Sie die SharePoint-Client-Side-Objekt Objektmodell (CSOM) oder REST-API Variationen konfigurieren.</span><span class="sxs-lookup"><span data-stu-id="997ad-106">In an SharePoint Add-in model scenario, you use the SharePoint Client-side Object Model (CSOM) or REST API to configure variations.</span></span> <span data-ttu-id="997ad-107">Dieses Muster wird häufig als *remote provisioning Muster*bezeichnet.</span><span class="sxs-lookup"><span data-stu-id="997ad-107">This pattern is commonly referred to as the *remote provisioning pattern*.</span></span>
+
+<a name="high-level-guidelines"></a><span data-ttu-id="997ad-108">Allgemeine Richtlinien</span><span class="sxs-lookup"><span data-stu-id="997ad-108">High-level guidelines</span></span>
+---------------------
+
+<span data-ttu-id="997ad-109">In der Regel von einer Ziehpunkt möchten wir die folgenden allgemeinen Richtlinien zur Konfiguration von Variationen in das neue SharePoint-Add-in-Modell enthalten.</span><span class="sxs-lookup"><span data-stu-id="997ad-109">As a rule of a thumb, we would like to provide the following high-level guidelines to configure variations in the new SharePoint Add-in model.</span></span>
+
+- <span data-ttu-id="997ad-110">Verwenden Sie die SharePoint-Client-Side Object Model (CSOM)-API, um Variationen möglichst konfigurieren.</span><span class="sxs-lookup"><span data-stu-id="997ad-110">Use the SharePoint Client-side Object Model (CSOM) API to configure variations whenever possible.</span></span>
+    - <span data-ttu-id="997ad-111">.NET clientseitigen Objektmodell [Variationen-Klasse (MSDN-API-Dokumentation)](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.publishing.variations.aspx)</span><span class="sxs-lookup"><span data-stu-id="997ad-111">.Net Client side object model [Variations class (MSDN API Documentation)](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.publishing.variations.aspx)</span></span>
+    - <span data-ttu-id="997ad-112">JavaScript clientseitigen Objektmodell [Variationen-Klasse (MSDN-API-Dokumentation)](https://msdn.microsoft.com/en-us/library/office/jj994778.aspx)</span><span class="sxs-lookup"><span data-stu-id="997ad-112">JavaScript Client side object model [Variations class (MSDN API Documentation)](https://msdn.microsoft.com/en-us/library/office/jj994778.aspx)</span></span>
+- <span data-ttu-id="997ad-113">Nicht alle Einstellungen für Variationen Konfiguration stehen derzeit über den oben aufgeführten Klassen SharePoint CSOM API-Varianten.</span><span class="sxs-lookup"><span data-stu-id="997ad-113">Not all variation configuration settings are currently available via the SharePoint CSOM API Variations classes listed above.</span></span>
+- <span data-ttu-id="997ad-114">Sie können hinausgehen, was die oben aufgeführten CSOM API Variationen Klassen bereitstellen und einige variationseinstellungen konfigurieren.</span><span class="sxs-lookup"><span data-stu-id="997ad-114">You can go beyond what the CSOM API Variations classes listed above provide and configure some variations settings.</span></span>  <span data-ttu-id="997ad-115">Zu diesem Zweck legen Sie die Werte für Variationen Einstellungen in Website-Eigenschaftenbehälter gespeichert und/oder Ändern von Listenelementen in den Listen mit Variationen verknüpft ist.</span><span class="sxs-lookup"><span data-stu-id="997ad-115">To do this, you set the values for variations settings stored in site property bags and/or modify list items in the lists associated with variations.</span></span>
+    + <span data-ttu-id="997ad-116">Die [VariationsExtensions.cs-Klasse (O365 Plug & Play-Beispiel)](https://github.com/SharePoint/PnP-Sites-Core/tree/master/Core/OfficeDevPnP.Core/Extensions/VariationExtensions.cs) enthält einige Beispiele, die Eigenschaftensammlung und Liste Element Eigenschaftswerte zum Konfigurieren der variationseinstellungen zu ändern.</span><span class="sxs-lookup"><span data-stu-id="997ad-116">The [VariationsExtensions.cs class (O365 PnP Sample)](https://github.com/SharePoint/PnP-Sites-Core/tree/master/Core/OfficeDevPnP.Core/Extensions/VariationExtensions.cs) contains several examples that modify property bag and list item values to configure variations settings.</span></span>
+    + <span data-ttu-id="997ad-117">Die [VariationsExtensions.cs-Klasse (O365 Plug & Play-Beispiel)](https://github.com/SharePoint/PnP-Sites-Core/blob/master/Core/OfficeDevPnP.Core/Extensions/VariationExtensions.cs) veranschaulicht, wie ***Alle Einstellungen*** konfigurieren, die Sie in der Einstellungsseite Variationen festlegen können.</span><span class="sxs-lookup"><span data-stu-id="997ad-117">The [VariationsExtensions.cs class (O365 PnP Sample)](https://github.com/SharePoint/PnP-Sites-Core/blob/master/Core/OfficeDevPnP.Core/Extensions/VariationExtensions.cs) illustrates how to configure ***all of the settings*** that you can set in the variations settings page.</span></span>
+    + <span data-ttu-id="997ad-118">Das [Aktivieren der variationseinstellungen, sodass Sie Varianten Ihrer Website (Office 365-Support-Artikel) erstellen können](https://support.office.com/en-za/article/Turn-on-variations-settings-so-you-can-create-variations-of-your-site-fc021610-bdb5-4b5c-9d59-ce8af6699b4b) , sind die Elemente können in der Einstellungsseite Variationen konfigurieren und beschreibt, was sie tun aufgelistet.</span><span class="sxs-lookup"><span data-stu-id="997ad-118">The [Turn on variations settings so you can create variations of your site (O365 Support Article)](https://support.office.com/en-za/article/Turn-on-variations-settings-so-you-can-create-variations-of-your-site-fc021610-bdb5-4b5c-9d59-ce8af6699b4b) lists  the items you can configure in the variations settings page and describes what they do.</span></span>
+
+<a name="related-links"></a><span data-ttu-id="997ad-119">Verwandte links</span><span class="sxs-lookup"><span data-stu-id="997ad-119">Related links</span></span>
+=============
+
+- <span data-ttu-id="997ad-120">Artikel mit Hinweisen zur [http://aka.ms/OfficeDevPnPGuidance](http://aka.ms/OfficeDevPnPGuidance "Artikel mit Hinweisen zur")</span><span class="sxs-lookup"><span data-stu-id="997ad-120">Guidance articles at [http://aka.ms/OfficeDevPnPGuidance](http://aka.ms/OfficeDevPnPGuidance "Guidance Articles")</span></span>
+- <span data-ttu-id="997ad-121">Feldverweise in MSDN unter [http://aka.ms/OfficeDevPnPMSDN](http://aka.ms/OfficeDevPnPMSDN "Verweise in MSDN")</span><span class="sxs-lookup"><span data-stu-id="997ad-121">References in MSDN at [http://aka.ms/OfficeDevPnPMSDN](http://aka.ms/OfficeDevPnPMSDN "References in MSDN")</span></span>
+- <span data-ttu-id="997ad-122">Videos zur [http://aka.ms/OfficeDevPnPVideos](http://aka.ms/OfficeDevPnPVideos "Videos")</span><span class="sxs-lookup"><span data-stu-id="997ad-122">Videos at [http://aka.ms/OfficeDevPnPVideos](http://aka.ms/OfficeDevPnPVideos "Videos")</span></span>
+
+<a name="related-pnp-samples"></a><span data-ttu-id="997ad-123">Verwandte Plug & Play-Beispiele</span><span class="sxs-lookup"><span data-stu-id="997ad-123">Related PnP samples</span></span>
+===================
+
+- [<span data-ttu-id="997ad-124">VariationsExtensions.cs-Klasse (O365 Plug & Play-Beispiel)</span><span class="sxs-lookup"><span data-stu-id="997ad-124">VariationsExtensions.cs class (O365 PnP Sample)</span></span>](https://github.com/SharePoint/PnP-Sites-Core/blob/master/Core/OfficeDevPnP.Core/Extensions/VariationExtensions.cs)
+- <span data-ttu-id="997ad-125">Beispiele und Inhalte am [http://aka.ms/OfficeDevPnP](http://aka.ms/OfficeDevPnP)</span><span class="sxs-lookup"><span data-stu-id="997ad-125">Samples and content at [http://aka.ms/OfficeDevPnP](http://aka.ms/OfficeDevPnP)</span></span>
+
+<a name="applies-to"></a><span data-ttu-id="997ad-126">Gilt für</span><span class="sxs-lookup"><span data-stu-id="997ad-126">Applies to</span></span>
+==========
+- <span data-ttu-id="997ad-127">Office 365 mit mehreren Mandanten (MT)</span><span class="sxs-lookup"><span data-stu-id="997ad-127">Office 365 Multi Tenant (MT)</span></span>
+- <span data-ttu-id="997ad-128">Office 365 dedizierte (D)</span><span class="sxs-lookup"><span data-stu-id="997ad-128">Office 365 Dedicated (D)</span></span>
+- <span data-ttu-id="997ad-129">SharePoint 2013 lokal</span><span class="sxs-lookup"><span data-stu-id="997ad-129">SharePoint 2013 on-premises</span></span>
