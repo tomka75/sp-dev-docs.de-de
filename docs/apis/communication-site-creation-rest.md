@@ -9,7 +9,7 @@ In diesem Artikel setzen wir voraus, dass Sie bereits den Artikel „Grundlegend
 Zur Erstellung moderner SharePoint-Kommunikationswebsites stehen die folgenden REST-Befehle zur Verfügung:
 
 - **Create**: Erstellt eine neue SharePoint-Kommunikationswebsite.
-- **Status**: Ruft den Status einer SharePoint-Kommunikationswebsite ab.
+- **Status**: Ruft den Status einer SharePoint-Kommunikationswebsite ab. 
 
 Basis für die URL von REST-Befehlen für Kommunikationswebsites ist die Zeichenfolge `_api/sitepages/communicationsite`. Die Endpunkte für die oben aufgeführten Befehle beispielsweise sehen wie folgt aus:
 
