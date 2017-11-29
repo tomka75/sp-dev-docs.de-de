@@ -1,0 +1,97 @@
+---
+title: "Konfigurieren von Projekten für Office 365-API für die Verteilung"
+ms.date: 11/03/2017
+ms.openlocfilehash: 4dde15a519cd313b26b07e11b2bde7d8bb349f45
+ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 11/06/2017
+---
+# <a name="configure-office-365-api-projects-for-distribution"></a><span data-ttu-id="8accf-102">Konfigurieren von Projekten für Office 365-API für die Verteilung</span><span class="sxs-lookup"><span data-stu-id="8accf-102">Configure Office 365 API Projects for Distribution</span></span>
+
+### <a name="summary"></a><span data-ttu-id="8accf-103">Summary</span><span class="sxs-lookup"><span data-stu-id="8accf-103">Summary</span></span> ###
+<span data-ttu-id="8accf-104">Auf dieser Seite wird erläutert, dass einige Schritte Entwickler berücksichtigen sollten auf ihre Projekte, die die Office 365-APIs vor deren Verteilung mit anderen Entwicklern, ihren Kunden oder Quellcode-Verwaltungssysteme wie Team Foundation Server, Git oder Visual Studio nutzen Online.</span><span class="sxs-lookup"><span data-stu-id="8accf-104">This page explains some steps developers should consider taking on their projects that leverage the Office 365 APIs prior to distributing them to other developers, their customers, or to source control systems such as Team Foundation Server, Git or Visual Studio Online.</span></span>
+
+<span data-ttu-id="8accf-105">Insbesondere auf dieser Seite sehen sich zwei Schritte:</span><span class="sxs-lookup"><span data-stu-id="8accf-105">Specifically this page will look at two steps:</span></span>
+
+- [<span data-ttu-id="8accf-106">Fixup Azure AD-Diagramm Client NuGet-Paket (engl.)</span><span class="sxs-lookup"><span data-stu-id="8accf-106">Fixup Azure AD Graph Client NuGet Package Reference</span></span>](#fixup-azure-ad-graph-client-nuget-package-reference)
+- [<span data-ttu-id="8accf-107">Bereinigen der `web.config` für app-spezifischen Details</span><span class="sxs-lookup"><span data-stu-id="8accf-107">Cleaning the `web.config` for app-specific details</span></span>](#cleaning-the-webconfig-for-app-specific-details)
+
+# <a name="fixup-azure-ad-graph-client-nuget-package-reference"></a><span data-ttu-id="8accf-108">Fixup Azure AD-Diagramm Client NuGet-Paket (engl.)</span><span class="sxs-lookup"><span data-stu-id="8accf-108">Fixup Azure AD Graph Client NuGet Package Reference</span></span>
+
+<span data-ttu-id="8accf-109">Alle Projekte, die die Office 365-API-SDKs über einen verbundenen Dienst hinzufügen nutzen enthalten ein NuGet-Paket, das Office 365 und Azure AD-Verweise auf das Projekt in Visual Studio erstellten hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="8accf-109">All projects that leverage the Office 365 API SDKs by way of adding a connected service include a NuGet package that adds Office 365 & Azure AD references to the project created in Visual Studio.</span></span> 
+
+<span data-ttu-id="8accf-110">Durch die **Office 365-API-Tools** in Visual Studio dem Projekt hinzugefügte NuGet-Paket ist nicht in der Registrierung des NuGet-Paket vorhanden und daher Versuche zum Erstellen einer NuGet-Paket-Wiederherstellung schlägt fehl, da ein passendes Paket gefunden werden kann.</span><span class="sxs-lookup"><span data-stu-id="8accf-110">The NuGet package added to the project by the **Office 365 API Tools** in Visual Studio is not present in the NuGet package registry and therefore attempts to perform a NuGet package restore will fail because it cannot find a matching package.</span></span>
+
+## <a name="understanding-the-problem"></a><span data-ttu-id="8accf-111">Beschreibung des Problems</span><span class="sxs-lookup"><span data-stu-id="8accf-111">Understanding the Problem</span></span> ##
+
+<span data-ttu-id="8accf-112">Die **Office 365-API-Tools für Visual Studio 2013**, Version 1.3.41104.1, hinzugefügt Projekte im Rahmen des Assistenten zum verbundenen Dienst Hinzufügen mehrerer NuGet-Pakete.</span><span class="sxs-lookup"><span data-stu-id="8accf-112">The **Office 365 API Tools for Visual Studio 2013**, version 1.3.41104.1, adds multiple NuGet packages to projects as part of completing the Add Connected Service wizard.</span></span> <span data-ttu-id="8accf-113">Ein Paket insbesondere stellt eine Herausforderung: **Microsoft Azure Active Directory Graph-Clientbibliothek**.</span><span class="sxs-lookup"><span data-stu-id="8accf-113">One package in particular presents a challenge: **Microsoft Azure Active Directory Graph Client Library**.</span></span>
+
+<span data-ttu-id="8accf-114">Die Arbeitsweise von Visual Studio ist, dass oder Addins, enthalten eine lokale Kopie der NuGet-Paket in der Regel damit Entwickler nicht immer mit dem Internet NuGet-Pakete herunterladen verbunden sein.</span><span class="sxs-lookup"><span data-stu-id="8accf-114">The way Visual Studio works is that it, or addins, typically contain a local copy of the NuGet package so developers do not always have to be connected to the internet to download the NuGet packages.</span></span> <span data-ttu-id="8accf-115">Das Paket, das die Tools enthalten hat eine ID von **Microsoft.Azure.ActiveDirectory.GraphClient** & einer Version von **1.0.22**.</span><span class="sxs-lookup"><span data-stu-id="8accf-115">The package that the tools include has an ID of **Microsoft.Azure.ActiveDirectory.GraphClient** & a version of **1.0.22**.</span></span>
+
+<span data-ttu-id="8accf-116">Wenn Projekte in Datenquellen-Steuerelement übernommen werden, sind in der Regel die Pakete nicht eingeschlossen als Teil des Commit, da sie viel extra Speicher Speicherplatz Bedarfs und unnötig hinzufügen können erhöhen Sie die Größe eines Pakets, wenn es gemeinsam mit anderen Entwicklern.</span><span class="sxs-lookup"><span data-stu-id="8accf-116">When projects are committed to source control, typically the packages are not included as part of the commit because they can add a lot of extra storage space demands and unnecessarily increase the size of a package when sharing it with other developers.</span></span> <span data-ttu-id="8accf-117">Aus diesem Grund einer der ersten Aufgaben Entwickler Schritt nach Abrufen einer Kopie des Projekts aus der quellcodeverwaltung [Wiederherstellen NuGet-Paket](http://docs.nuget.org/docs/reference/package-restore)ausgeführt wird.</span><span class="sxs-lookup"><span data-stu-id="8accf-117">Therefore one of the first tasks developers do after getting a copy of the project from source control is to run [NuGet package restore](http://docs.nuget.org/docs/reference/package-restore).</span></span>
+
+<span data-ttu-id="8accf-118">Die Herausforderung besteht darin, dass ein Paket mit dem gleichen ID & Version nicht in der Registrierung des NuGet-Paket vorhanden ist; Es ist kein Paket mit einer ID mit **Microsoft.Azure.ActiveDirectory.GraphClient** & einer Version von **1.0.22**.</span><span class="sxs-lookup"><span data-stu-id="8accf-118">The challenge is that a package with the same ID & version does not exist in the NuGet package registry; there is no package with an ID of **Microsoft.Azure.ActiveDirectory.GraphClient** & a version of **1.0.22**.</span></span> <span data-ttu-id="8accf-119">Das Paket ist in der Registrierung NuGet-Paket **[Microsoft.Azure.ActiveDirectory.GraphClient](http://www.nuget.org/packages/Microsoft.Azure.ActiveDirectory.GraphClient)**, aber unter verschiedenen Versionen vorhanden.</span><span class="sxs-lookup"><span data-stu-id="8accf-119">The package does exist in the NuGet package registry, **[Microsoft.Azure.ActiveDirectory.GraphClient](http://www.nuget.org/packages/Microsoft.Azure.ActiveDirectory.GraphClient)**, but under different versions.</span></span>
+
+## <a name="fixing-the-azure-ad-graph-client-nuget-package-reference"></a><span data-ttu-id="8accf-120">Beheben von NuGet-Paket-Referenz zu Azure AD-Grafik-Clients</span><span class="sxs-lookup"><span data-stu-id="8accf-120">Fixing the Azure AD Graph Client NuGet Package Reference</span></span> ##
+
+<span data-ttu-id="8accf-121">Bis die Office 365-API-Tools für Visual Studio 2013 aktualisiert werden, um dieses Problem zu beheben, empfiehlt es sich um das Projekt vor dem Ausführen eines Commits zu Ihrem Quellcodeverwaltungssystem, unabhängig davon ändern, wenn mithilfe von Team Foundation Server, Visual Studio Online, Git oder andere Lösung.</span><span class="sxs-lookup"><span data-stu-id="8accf-121">Until the Office 365 API Tools for Visual Studio 2013 are updated to fix this issue, it is recommended to alter the project prior to committing to your source control system, regardless if you are using Team Foundation Server, Visual Studio Online, Git or any other solution.</span></span>
+
+<span data-ttu-id="8accf-122">Suchen Sie nach dem Erstellen des Projekts innerhalb des Projekts `packages.config` -Datei, und suchen Sie nach einem Paket mit einer ID mit **Microsoft.Azure.ActiveDirectory.GraphClient** & Version von **1.0.22**.</span><span class="sxs-lookup"><span data-stu-id="8accf-122">After creating the project, look within the project's `packages.config` file and search for a package with an ID of **Microsoft.Azure.ActiveDirectory.GraphClient** & version of **1.0.22**.</span></span> <span data-ttu-id="8accf-123">Die sicherste Methode zum Aktualisieren des Projekts ist zum Deinstallieren und Neuinstallieren von des Pakets.</span><span class="sxs-lookup"><span data-stu-id="8accf-123">The safest way to update the project is to uninstall & then reinstall the package.</span></span>
+
+<span data-ttu-id="8accf-124">Öffnen Sie die **Paket-Manager-Konsole** in Visual Studio, und geben Sie Folgendes ein, um das Paket zu deinstallieren:</span><span class="sxs-lookup"><span data-stu-id="8accf-124">Open the **Package Manager Console** in Visual Studio and enter the following to uninstall the package:</span></span>
+
+  ````powershell
+  PM> Uninstall-Package -Id Microsoft.Azure.ActiveDirectory.GraphClient
+  ````
+
+  > <span data-ttu-id="8accf-125">Wenn die Deinstallation einen Fehler zum Suchen nach nicht das Paket auslöst, entfernen Sie einfach den Paket-Verweis aus der `packages.config` Datei manuell & Ihre Änderungen zu speichern.</span><span class="sxs-lookup"><span data-stu-id="8accf-125">If the uninstall throws an error about not finding the package, simply remove the package reference from the `packages.config` file manually & save your changes.</span></span>
+
+<span data-ttu-id="8accf-126">Installieren Sie nun die öffentliche Version der gleichen NuGet-Paket aus der öffentlichen Registrierung:</span><span class="sxs-lookup"><span data-stu-id="8accf-126">Now, install the public version of the same NuGet package from the public registry:</span></span>
+
+  ````powershell
+  PM> Install-Package -Id Microsoft.Azure.ActiveDirectory.GraphClient -Version 2.0.2
+  ````
+
+  > <span data-ttu-id="8accf-127">Das vorstehende Beispiel verweist auf eine bestimmte Version des Azure AD Graph-Clients, die die Office 365-APIs entwickelt bekannt ist.</span><span class="sxs-lookup"><span data-stu-id="8accf-127">The above example references a specific version of the Azure AD graph client that is known to work with the Office 365 APIs.</span></span> <span data-ttu-id="8accf-128">Zukünftige Versionen so auslassen funktionieren möglicherweise die `-Version` -Argument ist optional.</span><span class="sxs-lookup"><span data-stu-id="8accf-128">Future versions may work so omitting the `-Version` argument is optional.</span></span>
+
+[<span data-ttu-id="8accf-129">zurück zum Seitenanfang</span><span class="sxs-lookup"><span data-stu-id="8accf-129">back to top</span></span>](#configure-office-365-api-projects-for-distribution)
+
+# <a name="cleaning-the-webconfig-for-app-specific-details"></a><span data-ttu-id="8accf-130">Bereinigen der `web.config` für App-spezifischen Details</span><span class="sxs-lookup"><span data-stu-id="8accf-130">Cleaning the `web.config` for App-Specific Details</span></span>
+
+<span data-ttu-id="8accf-131">Die **Office 365-API-Tools** für Visual Studio hinzufügen, die Möglichkeit zum Erstellen eines neuen Azure AD-Anwendung mit den erforderlichen Berechtigungen für die Office 365-APIs, die mit dem **Dienst verbunden** -Assistenten in Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="8accf-131">The **Office 365 API Tools** for Visual Studio add the ability to create a new Azure AD application with the necessary permissions for the Office 365 APIs using the **Connected Service** wizard in Visual Studio.</span></span> <span data-ttu-id="8accf-132">Wenn der Assistent abgeschlossen ist, mehrere Einträge und Anpassungen werden dem Projekt vorgenommen `web.config` Datei.</span><span class="sxs-lookup"><span data-stu-id="8accf-132">When completing the wizard, multiple entries and customizations are made to the project's `web.config` file.</span></span>
+
+<span data-ttu-id="8accf-133">Diese Änderungen gehören die folgenden Add-in-Einstellungen:</span><span class="sxs-lookup"><span data-stu-id="8accf-133">These modifications include the following add-in settings:</span></span>
+
+- <span data-ttu-id="8accf-134">**Ida: ClientID**: die eindeutige ID der Anwendung in Ihrem Azure AD-Mandanten erstellt.</span><span class="sxs-lookup"><span data-stu-id="8accf-134">**ida:ClientID**: The unique ID of the application created in your Azure AD tenant.</span></span>
+- <span data-ttu-id="8accf-135">**IDA: Kennwort**: die Azure AD-Anwendung-Schlüssel, der mit dem Dienst verbunden-Assistenten generiert wurde.</span><span class="sxs-lookup"><span data-stu-id="8accf-135">**ida:Password**: The Azure AD application's key that was generated by the Connected Service wizard.</span></span>
+- <span data-ttu-id="8accf-136">**Ida: AuthorizationUri**: den Endpunkt zur Authentifizierung mit Azure AD verwendet.</span><span class="sxs-lookup"><span data-stu-id="8accf-136">**ida:AuthorizationUri**: The endpoint used to authenticate with Azure AD.</span></span>
+
+<span data-ttu-id="8accf-137">Die **Ida: ClientID** und **Ida: Kennwort** sind für die Azure AD-app eindeutig.</span><span class="sxs-lookup"><span data-stu-id="8accf-137">The **ida:ClientID** and **ida:Password** are unique to the Azure AD app.</span></span> <span data-ttu-id="8accf-138">Einige Entwicklungsteams möglicherweise wählen Sie für jeden Entwickler auf Code anhand ihrer eigenen app, ähnlich wie Entwickler eigene lokale Entwicklungsdatenbank verwenden.</span><span class="sxs-lookup"><span data-stu-id="8accf-138">Some development teams may elect for each developer to code against their own app, similar to how developers work against their own local development database.</span></span> <span data-ttu-id="8accf-139">Daher können Sie sich vorstellen der die **Ida: ClientID** und **Ida: Kennwort** Datenbank-Verbindungszeichenfolgen ähnelt.</span><span class="sxs-lookup"><span data-stu-id="8accf-139">Therefore you can think of the the **ida:ClientID** and **ida:Password** similar to database connection strings.</span></span> 
+
+<span data-ttu-id="8accf-140">Das nächste Mal verwendet ein Entwickler die Connected-Service-Assistent zum Erstellen eines neuen Azure AD-Anwendung des Projekts, der Assistent erkennt die **Ida: CliendID** und Versuch der Verbindung zu einer Anwendung in Azure AD-Mandanten des aktuellen Benutzers.</span><span class="sxs-lookup"><span data-stu-id="8accf-140">The next time a developer uses the Connected Service wizard to create a new Azure AD application of the project, the wizard will detect the **ida:CliendID** and try to connect to an application in the current user's Azure AD tenant.</span></span> <span data-ttu-id="8accf-141">Wenn eine Übereinstimmung gefunden wird, wird der Connected-Service-Assistenten ein Fehler ausgelöst.</span><span class="sxs-lookup"><span data-stu-id="8accf-141">If a match is not found, the Connected Service wizard will throw an error.</span></span>
+
+<span data-ttu-id="8accf-142">Aus diesem Grund vor dem Ausführen eines Commits für das Projekt aus, bevor Sie mit anderen Entwicklern freigeben oder Datenquellen-Steuerelement, es wird empfohlen, die Werte aus der **Ida: ClientID**entfernen & **Ida: Kennwort** Add-in-Einstellungen in der `web.config`.</span><span class="sxs-lookup"><span data-stu-id="8accf-142">Therefore, prior to committing the project to source control or before sharing with other developers, it is recommended to remove the values from the **ida:ClientID** & **ida:Password** add-in settings in the `web.config`.</span></span>
+
+[<span data-ttu-id="8accf-143">zurück zum Seitenanfang</span><span class="sxs-lookup"><span data-stu-id="8accf-143">back to top</span></span>](#configure-office-365-api-projects-for-distribution)
+
+----------
+
+### <a name="related-links"></a><span data-ttu-id="8accf-144">Verwandte links</span><span class="sxs-lookup"><span data-stu-id="8accf-144">Related links</span></span> ###
+- [<span data-ttu-id="8accf-145">NuGet: App für SharePoint-Web-Toolkit</span><span class="sxs-lookup"><span data-stu-id="8accf-145">NuGet: App for SharePoint Web Toolkit</span></span>](http://www.nuget.org/packages/AppForSharePointWebToolkit)
+- [<span data-ttu-id="8accf-146">NuGet: Paket wiederherstellen</span><span class="sxs-lookup"><span data-stu-id="8accf-146">NuGet: Package Restore</span></span>](http://docs.nuget.org/docs/reference/package-restore)
+- [<span data-ttu-id="8accf-147">MSDN: NuGet-Pakete für Office 365-Client-API-Bibliothek</span><span class="sxs-lookup"><span data-stu-id="8accf-147">MSDN: Office 365 API Client Library NuGet Packages</span></span>](http://msdn.microsoft.com/office/office365/HowTo/adding-service-to-your-Visual-Studio-project#O365NuGets)
+
+### <a name="applies-to"></a><span data-ttu-id="8accf-148">Gilt für</span><span class="sxs-lookup"><span data-stu-id="8accf-148">Applies to</span></span> ###
+-  <span data-ttu-id="8accf-149">Office 365 mit mehreren Mandanten (MT)</span><span class="sxs-lookup"><span data-stu-id="8accf-149">Office 365 Multi Tenant (MT)</span></span>
+-  <span data-ttu-id="8accf-150">Office 365 dedizierte (D)</span><span class="sxs-lookup"><span data-stu-id="8accf-150">Office 365 Dedicated (D)</span></span>
+
+### <a name="author"></a><span data-ttu-id="8accf-151">Autor</span><span class="sxs-lookup"><span data-stu-id="8accf-151">Author</span></span>
+<span data-ttu-id="8accf-152">Andrew Connell - [@andrewconnell](https://twitter.com/andrewconnell)</span><span class="sxs-lookup"><span data-stu-id="8accf-152">Andrew Connell - [@andrewconnell](https://twitter.com/andrewconnell)</span></span>
+
+### <a name="version-history"></a><span data-ttu-id="8accf-153">Versionsverlauf</span><span class="sxs-lookup"><span data-stu-id="8accf-153">Version history</span></span> ###
+<span data-ttu-id="8accf-154">Version</span><span class="sxs-lookup"><span data-stu-id="8accf-154">Version</span></span>  | <span data-ttu-id="8accf-155">Datum</span><span class="sxs-lookup"><span data-stu-id="8accf-155">Date</span></span> | <span data-ttu-id="8accf-156">Kommentare</span><span class="sxs-lookup"><span data-stu-id="8accf-156">Comments</span></span>
+---------| -----| --------
+<span data-ttu-id="8accf-157">0,1</span><span class="sxs-lookup"><span data-stu-id="8accf-157">0.1</span></span>  | <span data-ttu-id="8accf-158">31 Dezember 2014</span><span class="sxs-lookup"><span data-stu-id="8accf-158">December 31, 2014</span></span> | <span data-ttu-id="8accf-159">Erster Entwurf</span><span class="sxs-lookup"><span data-stu-id="8accf-159">First draft</span></span>
+
+

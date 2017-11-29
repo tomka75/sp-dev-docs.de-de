@@ -1,0 +1,24 @@
+---
+title: Bereitstellen von Ihrer SharePoint-Add-Ins
+ms.date: 11/03/2017
+ms.openlocfilehash: 78eea67ff452bcccc9bc8ab59bb65477d942c19e
+ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 11/06/2017
+---
+# <a name="deploying-your-sharepoint-add-ins"></a><span data-ttu-id="7b342-102">Bereitstellen von Ihrer SharePoint-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="7b342-102">Deploying your SharePoint Add-Ins</span></span>
+
+<span data-ttu-id="7b342-103">Die Artikel in diesem Abschnitt zeigen, wie Ihre SharePoint-add-ins bereitstellen.</span><span class="sxs-lookup"><span data-stu-id="7b342-103">The articles in this section show you how to deploy your SharePoint add-ins.</span></span>
+
+|<span data-ttu-id="7b342-104">**Artikel**</span><span class="sxs-lookup"><span data-stu-id="7b342-104">**Article**</span></span>|<span data-ttu-id="7b342-105">**Zeigt, wie Sie das Add-In Modell zu verwenden.**</span><span class="sxs-lookup"><span data-stu-id="7b342-105">**Shows you how to use the add-in model to**</span></span>|
+|:-----|:-----|
+|[<span data-ttu-id="7b342-106">Bereitstellen von Websites für die Microsoft Azure</span><span class="sxs-lookup"><span data-stu-id="7b342-106">Deploy Sites to Microsoft Azure</span></span>](Move-O365Api-Project-from-Dev-To-Prod.md)|<span data-ttu-id="7b342-107">Auf dieser Seite wird erläutert, die Schritte zum Offlineschalten einer Office 365-API-Entwicklungsprojekt und starten es an ein Arbeitsbeispiel vollständig in Microsoft Azure gehostet wird.</span><span class="sxs-lookup"><span data-stu-id="7b342-107">This page explains the steps involved in taking an Office 365 API development project and launching it to a working sample hosted entirely in Microsoft Azure .</span></span>|
+|[<span data-ttu-id="7b342-108">Verwenden von Azure WebJobs mit Office 365</span><span class="sxs-lookup"><span data-stu-id="7b342-108">Use Azure WebJobs with Office 365</span></span>](Use-Microsoft-Azure-WebJobs-with-Office-365.md)|<span data-ttu-id="7b342-109">Verwenden von Azure WebJobs Zeitgeberaufträge implementieren, die SharePoint Online zugreifen können.</span><span class="sxs-lookup"><span data-stu-id="7b342-109">Use Azure WebJobs to implement timer jobs that can access SharePoint Online.</span></span>|
+|[<span data-ttu-id="7b342-110">Konfigurieren der vom Anbieter gehosteten-Add-ins für die Verteilung</span><span class="sxs-lookup"><span data-stu-id="7b342-110">Configure Provider-Hosted Add-ins for Distribution</span></span>](Configure-SP-Provider-Hosted-Apps-For-Distribution.md)|<span data-ttu-id="7b342-111">Auf dieser Seite erläutert die Probleme, die bei der Freigabe eines SharePoint-Anwendung mit anderen Entwicklern vom Anbieter gehostete oder beim Abrufen einer Kopie aus einem Quellcodeverwaltungssystem wie Team Foundation Server, Git oder Visual Studio Online auftreten können.</span><span class="sxs-lookup"><span data-stu-id="7b342-111">This page explains issues that may arise when sharing a SharePoint Provider-Hosted application with other developers or when obtaining a copy from a source control system such as Team Foundation Server, Git or Visual Studio Online.</span></span>|
+|[<span data-ttu-id="7b342-112">Konfigurieren von Office 365-Projekte für die Verteilung</span><span class="sxs-lookup"><span data-stu-id="7b342-112">Configure Office 365 Projects for Distribution</span></span>](Configure-O365Api-Project-For-Distribution.md)|<span data-ttu-id="7b342-113">Auf dieser Seite wird erläutert, dass einige Schritte Entwickler berücksichtigen sollten auf ihre Projekte, die die Office 365-APIs vor deren Verteilung mit anderen Entwicklern, ihren Kunden oder Quellcode-Verwaltungssysteme nutzen.</span><span class="sxs-lookup"><span data-stu-id="7b342-113">This page explains some steps developers should consider taking on their projects that leverage the Office 365 APIs prior to distributing them to other developers, their customers, or to source control systems.</span></span>|
+
+## <a name="additional-resources"></a><span data-ttu-id="7b342-114">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="7b342-114">Additional resources</span></span>
+<span data-ttu-id="7b342-115"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="7b342-115"></span></span>
+
+- [<span data-ttu-id="7b342-116">Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen</span><span class="sxs-lookup"><span data-stu-id="7b342-116">Office 365 development patterns and practices solution guidance</span></span>](Office-365-development-patterns-and-practices-solution-guidance.md)
