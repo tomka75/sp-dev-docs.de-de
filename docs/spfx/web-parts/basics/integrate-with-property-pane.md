@@ -1,10 +1,20 @@
+---
+title: Machen Sie Ihr clientseitiges SharePoint-Webpart konfigurierbar
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 5b63efd205dc55cf741628ecf00bff44efb4c9d1
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="make-your-sharepoint-client-side-web-part-configurable"></a>Machen Sie Ihr clientseitiges SharePoint-Webpart konfigurierbar
 
-Im Eigenschaftenbereich können Endbenutzer das Webpart mit einer Reihe von Eigenschaften konfigurieren. Im Artikel [Erstellen Ihres ersten Webparts](../get-started/build-a-hello-world-web-part) wird beschrieben, wie der Eigenschaftenbereich in der **HelloWorldWebPart**-Klasse definiert ist. Die Eigenschaften des Eigenschaftenbereichs sind in**PropertyPaneSettings** definiert.
+Im Eigenschaftenbereich können Endbenutzer das Webpart mit einer Reihe von Eigenschaften konfigurieren. Im Artikel [Erstellen Ihres ersten Webparts](../get-started/build-a-hello-world-web-part.md) wird beschrieben, wie der Eigenschaftenbereich in der **HelloWorldWebPart**-Klasse definiert ist. Die Eigenschaften des Eigenschaftenbereichs sind in**PropertyPaneSettings** definiert.
 
 Die folgende Abbildung zeigt ein Beispiel für einen Eigenschaftenbereich in SharePoint.
 
-![Beispiel für Eigenschaftenbereich](../../../../images/property-pane-example.png)
+![Beispiel für Eigenschaftenbereich](../../../images/property-pane-example.png)
 
 Der Eigenschaftenbereich weist drei wichtige Metadaten auf:
 
@@ -103,7 +113,7 @@ Diese steht dann in Ihrem Webpart über die **this.properties.targetProperty** z
 <p class="ms-font-l ms-fontColor-white">${this.properties.description}</p>
 ```
 
-Wenn die Eigenschaften definiert sind, können Sie in Ihrem Webpart mit dem **this.properties.[Eigenschaftsname** darauf zugreifen. Details finden Sie unter [**Render**-Methode von **HelloWorldWebPart**](../get-started/build-a-hello-world-web-part#web-part-render-method):
+Wenn die Eigenschaften definiert sind, können Sie in Ihrem Webpart mit dem **this.properties.[Eigenschaftsname** darauf zugreifen. Details finden Sie unter [**Render**-Methode von **HelloWorldWebPart**](../get-started/build-a-hello-world-web-part.md#web-part-render-method):
 
 ## <a name="handling-field-changes"></a>Behandeln von Feldänderungen
 
@@ -124,4 +134,4 @@ protected get disableReactivePropertyChanges(): boolean {
 
 ## <a name="custom-property-pane-controls"></a>Benutzerdefinierte Eigenschaftenbereich-Steuerelemente
 
-SharePoint Framework enthält eine Reihe von Standardsteuerelementen für den Eigenschaftenbereich. Doch manchmal benötigen Sie zusätzliche Funktionen, die über die grundlegenden Steuerelemente hinausgehen. Mit SharePoint Framework können Sie benutzerdefinierte Steuerelemente erstellen, um die erforderliche Funktionalität bereitzustellen. Weitere Informationen finden Sie im Leitfaden zum [Erstellen benutzerdefinierter Steuerelemente für den Eigenschaftenbereich](../guidance/build-custom-property-pane-controls).
+SharePoint Framework enthält eine Reihe von Standardsteuerelementen für den Eigenschaftenbereich. Doch manchmal benötigen Sie zusätzliche Funktionen, die über die grundlegenden Steuerelemente hinausgehen. Mit SharePoint Framework können Sie benutzerdefinierte Steuerelemente erstellen, um die erforderliche Funktionalität bereitzustellen. Weitere Informationen finden Sie im Leitfaden zum [Erstellen benutzerdefinierter Steuerelemente für den Eigenschaftenbereich](../guidance/build-custom-property-pane-controls.md).

@@ -1,228 +1,247 @@
-# <a name="using-page-placeholders-from-application-customizer-hello-world-part-2"></a>Verwenden von Seitenplatzhaltern aus dem Anwendungsanpasser (Hello World, Teil 2)
+# <a name="use-page-placeholders-from-application-customizer-hello-world-part-2"></a>Verwenden von Seitenplatzhaltern aus dem Anwendungsanpasser (Hello World, Teil 2)
 
->**Hinweis:** Die SharePoint Framework-Erweiterungen befinden sich derzeit in der Preview-Phase. Änderungen sind vorbehalten. Die Verwendung von SharePoint Framework-Erweiterungen in Produktionsumgebungen wird aktuell nicht unterstützt.
+Anwendungsanpasser bieten Zugriff auf bekannte Speicherorte auf SharePoint-Seiten, die Sie basierend auf Ihren geschäftlichen und funktionalen Anforderungen anpassen können. Sie können beispielsweise dynamische Kopfzeilen und Fußzeilen erstellen, die auf allen Seiten in SharePoint Online gerendert werden. 
 
-Anwendungsanpasser ermöglichen auch den Zugriff auf bekannte Positionen auf der Seite, die Sie basierend auf Ihren geschäftlichen und funktionalen Anforderungen ändern können. Typische Szenarien sind dynamische Kopf- und Fußzeilen, die auf allen Seiten in SharePoint Online sichtbar sind. 
+Dieses Modell ist vergleichbar mit der Verwendung einer **UserCustomAction**-Auflistung in einem **Website** oder **Web**-Objekt zum Ändern der Seitenoberfläche über benutzerdefiniertes JavaScript. Der Hauptunterschied bzw. Vorteil bei SharePoint Framework (SPFx) Extensions besteht darin, dass Ihre Seitenelemente nicht geändert werden, wenn Änderungen an der HTML-/DOM-Struktur in SharePoint Online vorgenommen werden.
 
-Dieses Modell ist vergleichbar mit der Verwendung einer UserCustomAction-Sammlung auf einer Website oder in einem Webobjekt zum Zuordnen von benutzerdefiniertem JavaScript-Code, der zum Ändern der Benutzererfahrung auf der Seite dient. Der Hauptunterschied bzw. der Vorteil bei der Verwendung von SPFx-Erweiterung liegt darin, dass bestimmte Elemente immer auf der Seite vorhanden sind, unabhängig von Änderungen an der HTML-/DOM-Struktur bei künftigen Änderungen in SharePoint Online.
+In diesem Artikel wird beschrieben, wie Sie Ihre [Hello World-Erweiterung](./build-a-hello-world-extension.md) erweitern, um die Seitenplatzhalter zu nutzen. Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=ipRw6o6bOTw&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV) nachvollziehen:
 
-In diesem Artikel erweitern wir die Hello World-Erweiterung, die wir im vorherigen Artikel [Erstellen Ihrer ersten SharePoint Framework Erweiterung (Hallo Welt Teil 1)](./build-a-hello-world-extension.md) erstellt haben, um die Verwendung von Seitenplatzhaltern. 
+<a href="https://www.youtube.com/watch?v=3LXuYBaJ1Lc">
+<img src="../../../images/spfx-ext-youtube-tutorial2.png" alt="Screenshot of the YouTube video player for this tutorial" />
+</a>
 
-## <a name="getting-access-to-page-placeholders"></a>Zugreifen auf Seitenplatzhalter
+## <a name="get-access-to-page-placeholders"></a>Zugreifen auf Seitenplatzhalter
 
-Die Erweiterungen des Anwendungsanpassers werden in den Bereichen `Site`, `Web` und `List` unterstützt. Sie können den Bereich steuern, indem Sie entscheiden, wo und wie der Anwendungsanpasser im SharePoint-Mandanten registriert werden soll. Wenn Anwendungsanpasse im Bereich vorhanden ist und gerendert wird, können Sie die folgende Methode verwenden, um auf den Platzhalter zuzugreifen. Nachdem Sie das Platzhalterobjekt erhalten haben, haben Sie die vollständige Kontrolle darüber, was dem Endbenutzer angezeigt wird.
-
-Beachten Sie, dass wir einen bekannten Platzhalter anfordern, indem wir den entsprechenden bekannten Bezeichner verwenden. In diesem Fall greift der Code auf den Kopfzeilenbereich der Seite mit dem Bezeichner `PageHeader` zu. 
+Anwendungsanpasser-Erweiterungen werden bei `Site`-, `Web`- und `List`-Bereichen unterstützt. Sie können den Bereich steuern, indem Sie entscheiden, wo und wie der Anwendungsanpasser in Ihrem SharePoint-Mandanten registriert wird. Wenn der Anwendungsanpasser in dem Bereich vorhanden ist und gerendert wird, können Sie die folgende Methode verwenden, um Zugriff auf den Platzhalter zu erhalten. 
 
 ```ts
-    // Handling the header placeholder
-    if (!this._headerPlaceholder) {
-      this._headerPlaceholder = this.context.placeholders.tryAttach(
-        'PageHeader',
-        {
-          onDispose: this._onDispose
-        });
+    // Handling the Bottom placeholder
+    if (!this._bottomPlaceholder) {
+      this._bottomPlaceholder =
+        this.context.placeholderProvider.tryCreateContent(
+          PlaceholderName.Bottom,
+          { onDispose: this._onDispose });
+    ...
     }
 ```
 
-In den folgenden Schritten ändern wir den zuvor erstellten Hello World-Anwendungsanpasser, um auf Platzhalter zuzugreifen und ihren Inhalt zu ändern, indem wir ihnen benutzerdefinierte HTML-Elemente hinzufügen. 
+Nachdem Sie das Platzhalterobjekt abgerufen haben, haben Sie die volle Kontrolle darüber, was dem Endbenutzer angezeigt wird.
 
-Wechseln Sie in Visual Studio Code (oder Ihre bevorzugte IDE), und öffnen Sie **src\extensions\helloWorld\HelloWorldApplicationCustomizer.ts.**
+Beachten Sie, dass Sie einen bekannten Platzhalter mithilfe des entsprechenden bekannten Bezeichners anfordern. In diesem Fall greift der Code auf den Fußzeilenbereich der Seite mithilfe des `Bottom` -Bezeichners zu. 
 
-Fügen Sie `Placeholder` zum Import aus `@microsoft/sp-application-base` hinzu, indem Sie die Importanweisung wie folgt aktualisieren:
+In den folgenden Schritten ändern wir den Hello World-Anwendungsanpasser, um auf Platzhalter zuzugreifen und ihren Inhalt zu ändern, indem wir benutzerdefinierte HTML-Elemente hinzufügen.
 
-```ts
-import {
-  BaseApplicationCustomizer,
-  Placeholder
-} from '@microsoft/sp-application-base';
-```
+1. Öffnen Sie in Visual Studio Code (oder Ihrer bevorzugte IDE) **src\extensions\helloWorld\HelloWorldApplicationCustomizer.ts.**
 
-Fügen Sie außerdem die folgenden Importanweisungen nach dem `strings`-Import oben in der Datei hinzu:
+2. Fügen Sie `PlaceholderContent` und `PlaceholderName` zum Import aus `@microsoft/sp-application-base` hinzu, indem Sie die Importanweisung wie folgt aktualisieren:
 
-* In den folgenden Schritten erstellen wir Formatvorlagendefinitionen für die Ausgabe.
-* `escape` wird verwendet, um die Eigenschaften des Anwendungsanpassers auzukommentieren.  
+    ```ts
+    import {
+      BaseApplicationCustomizer, 
+      PlaceholderContent,
+      PlaceholderName
+    } from '@microsoft/sp-application-base';
+    ```
+    
+      Fügen Sie außerdem die folgenden Importanweisungen nach dem `strings`-Import oben in der Datei hinzu:
 
-```ts
-import styles from './AppCustomizer.module.scss';
-import { escape } from '@microsoft/sp-lodash-subset'; 
-```
+    ```ts
+    import styles from './AppCustomizer.module.scss';
+    import { escape } from '@microsoft/sp-lodash-subset'; 
+    ```
 
-Erstellen Sie eine neue Datei mit dem Namen **AppCustomizer.module.scss** im Ordner **src\extensions\helloWorld**. 
+    `escape` wird verwendet, um die Eigenschaften des Anwendungsanpassers auzukommentieren. In den folgenden Schritten erstellen Sie Formatvorlagendefinitionen für die Ausgabe.  
 
-Aktualisieren Sie **AppCustomizer.module.scss** wie folgt:
+3. Erstellen Sie eine neue Datei mit dem Namen **AppCustomizer.module.scss** im Ordner **src\extensions\helloWorld**. 
 
-* Hierbei handelt es sich um die Formatvorlagen, die im Ausgabe-HTML-Code für die Kopf- und Fußzeilenplatzhalter verwendet werden.
+4. Aktualisieren Sie **AppCustomizer.module.scss** wie folgt:
 
-```css
-.app {
-  .header {
-    height:60px; 
-    text-align:center; 
-    line-height:2.5; 
-    font-weight:bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    >**Hinweis:** Hierbei handelt es sich um die Formatvorlagen, die in der HTML-Ausgabe für die Kopf- und Fußzeilenplatzhalter verwendet werden.
 
-  .footer {
-    height:40px; 
-    text-align:center; 
-    line-height:2.5; 
-    font-weight:bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-```
-
-Wechseln Sie zurück zu **HelloWorldApplicationCustomizer.ts**, und aktualisieren Sie die **IHelloWorldApplicationCustomizerProperties**-Oberfläche wie folgt, damit sie bestimmte Eigenschaften für Kopf- und Fußzeile hat.
-
-* Wenn Ihr Befehlssatz die ClientSideComponentProperties JSON-Eingabe verwendet, wird sie in das Objekt `BaseExtension.properties` deserialisert. Sie können eine Benutzeroberfläche definieren, um sie zu beschreiben.
-
-```ts
-export interface IHelloWorldApplicationCustomizerProperties {
-  Header: string;
-  Footer: string;
-}
-```
-
-Fügen Sie die folgenden privaten Variablen in der **HelloWorldApplicationCustomizer**-Klasse hinzu. In diesem Szenario können dies lokale Variablen in einer `onRender`-Methode sein. Wenn sie jedoch gemeinsam mit anderen Objekten verwendet werden sollen, definieren Sie sie als private Variablen. 
-
-```ts
-export default class HelloWorldApplicationCustomizer
-  extends BaseApplicationCustomizer<IHelloWorldApplicationCustomizerProperties> {
-  
-  // These have been added
-  private _headerPlaceholder: Placeholder;
-  private _footerPlaceholder: Placeholder;
-```
-
-Aktualisieren Sie die `onRender`-Methode mit dem folgenden Code:
-
-* Wir verwenden `this.context.placeholders.tryAttach`, um auf den Platzhalter zuzugreifen.
-* Erweiterungscode sollte nicht davon ausgehen, dass der erwartete Platzhalter verfügbar ist.
-* Der Code erwartet benutzerdefinierte Eigenschaften mit dem Namen `Header` und `Footer`. Wenn die Eigenschaften vorhanden sind, werden sie innerhalb des Platzhalters gerendert.
-* Beachten Sie, dass der Codepfad für die Kopfzeile und die Fußzeile in der Methode unten beinahe identisch ist. Er unterscheidet sich nur durch die verwendeten Variablen und Formatvorlagendefinitionen.
-
-```ts
-  @override
-  public onRender(): void {
-
-    console.log('CustomHeader.onRender()');
-    console.log('Available placeholders: ',
-      this.context.placeholders.placeholderNames.join(', '));
-
-    // Handling the header placeholder
-    if (!this._headerPlaceholder) {
-      this._headerPlaceholder = this.context.placeholders.tryAttach(
-        'PageHeader',
-        {
-          onDispose: this._onDispose
-        });
-
-      // The extension should not assume that the expected placeholder is available.
-      if (!this._headerPlaceholder) {
-        console.error('The expected placeholder (PageHeader) was not found.');
-        return;
-      }
-
-      if (this.properties) {
-        let headerString: string = this.properties.Header;
-        if (!headerString) {
-          headerString = '(Header property was not defined.)';
+      ```css
+      .app {
+        .top {
+          height:60px;
+          text-align:center;
+          line-height:2.5;
+          font-weight:bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
-        if (this._headerPlaceholder.domElement) {
-          this._headerPlaceholder.domElement.innerHTML = `
-                <div class="${styles.app}">
-                  <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.header}">
-                    <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i> ${escape(headerString)}
-                  </div>
-                </div>`;
+        .bottom {
+          height:40px;
+          text-align:center;
+          line-height:2.5;
+          font-weight:bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
+      ```
+
+5. Aktualisieren Sie in der Datei **HelloWorldApplicationCustomizer.ts** die **IHelloWorldApplicationCustomizerProperties**-Oberfläche wie folgt, um bestimmte Eigenschaften für Kopf- und Fußzeile hinzuzufügen.
+
+      **Hinweis:**Wenn Ihr Befehlssatz die JSON-Eingabe „ClientSideComponentProperties“ verwendet, wird sie in das Objekt `BaseExtension.properties` deserialisiert. Sie können eine Benutzeroberfläche definieren, um sie zu beschreiben.
+
+    ```ts
+    export interface IHelloWorldApplicationCustomizerProperties {
+      Top: string;
+      Bottom: string;
     }
+    ```
 
-    // Handling the footer placeholder
-    if (!this._footerPlaceholder) {
-      this._footerPlaceholder = this.context.placeholders.tryAttach(
-        'PageFooter',
-        {
-          onDispose: this._onDispose
-        });
+6. Fügen Sie die folgenden privaten Variablen innerhalb der **HelloWorldApplicationCustomizer**-Klasse hinzu. In diesem Szenario können dies nur lokale Variablen in einer `onRender`-Methode sein, wenn Sie sie jedoch für andere Objekte freigeben möchten, definieren Sie sie als private Variablen. 
 
-      // The extension should not assume that the expected placeholder is available.
-      if (!this._footerPlaceholder) {
-        console.error('The expected placeholder (PageFooter) was not found.');
-        return;
-      }
+      ```ts
+      export default class HelloWorldApplicationCustomizer
+        extends BaseApplicationCustomizer<IHelloWorldApplicationCustomizerProperties> {
 
-      if (this.properties) {
-        let footerString: string = this.properties.Footer;
-        if (!footerString) {
-          footerString = '(Footer property was not defined.)';
+        // These have been added
+        private _topPlaceholder: PlaceholderContent | undefined;
+        private _bottomPlaceholder: PlaceholderContent | undefined;
+    ```
+
+7. Aktualisieren Sie den Code der `onInit`-Methode wie folgt:
+
+      ```ts
+        @override
+        public onInit(): Promise<void> {
+          Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
+
+          // Added to handle possible changes on the existence of placeholders.
+          this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);
+
+          // Call render method for generating the HTML elements.
+          this._renderPlaceHolders();
+          return Promise.resolve<void>();
+        }
+      ```
+
+
+8. Erstellen Sie eine neue private `_renderPlaceHolders`-Methode mit dem folgenden Code:
+
+      ```ts
+        private _renderPlaceHolders(): void {
+
+          console.log('HelloWorldApplicationCustomizer._renderPlaceHolders()');
+          console.log('Available placeholders: ',
+        this.context.placeholderProvider.placeholderNames.map(name => PlaceholderName[name]).join(', '));
+
+          // Handling the top placeholder
+          if (!this._topPlaceholder) {
+        this._topPlaceholder =
+          this.context.placeholderProvider.tryCreateContent(
+            PlaceholderName.Top,
+            { onDispose: this._onDispose });
+
+        // The extension should not assume that the expected placeholder is available.
+        if (!this._topPlaceholder) {
+          console.error('The expected placeholder (Top) was not found.');
+          return;
         }
 
-        if (this._footerPlaceholder.domElement) {
-          this._footerPlaceholder.domElement.innerHTML = `
-                <div class="${styles.app}">
-                  <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.footer}">
-                    <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i> ${escape(footerString)}
-                  </div>
-                </div>`;
+        if (this.properties) {
+          let topString: string = this.properties.Top;
+          if (!topString) {
+            topString = '(Top property was not defined.)';
+          }
+
+          if (this._topPlaceholder.domElement) {
+            this._topPlaceholder.domElement.innerHTML = `
+              <div class="${styles.app}">
+                <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.top}">
+                  <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i> ${escape(topString)}
+                </div>
+              </div>`;
+          }
         }
-      }
-    }
-  }
+          }
 
-```
+          // Handling the bottom placeholder
+          if (!this._bottomPlaceholder) {
+        this._bottomPlaceholder =
+          this.context.placeholderProvider.tryCreateContent(
+            PlaceholderName.Bottom,
+            { onDispose: this._onDispose });
 
-Fügen Sie die folgende Methode nach der `onRender`-Methode hinzu. In diesem Fall geben wir eine einfache Konsolenmeldung aus, wenn die Erweiterung von der Seite entfernt wird. 
+        // The extension should not assume that the expected placeholder is available.
+        if (!this._bottomPlaceholder) {
+          console.error('The expected placeholder (Bottom) was not found.');
+          return;
+        }
 
-```ts
- private _onDispose(): void {
-    console.log('[CustomHeader._onDispose] Disposed custom header.');
-  }
+        if (this.properties) {
+          let bottomString: string = this.properties.Bottom;
+          if (!bottomString) {
+            bottomString = '(Bottom property was not defined.)';
+          }
 
-```
+          if (this._bottomPlaceholder.domElement) {
+            this._bottomPlaceholder.domElement.innerHTML = `
+              <div class="${styles.app}">
+                <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.bottom}">
+                  <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i> ${escape(bottomString)}
+                </div>
+              </div>`;
+          }
+        }
+          }
+        }
+      ```
 
-Der Code kann nun in SharePoint Online getestet werden. 
+      * Verwenden Sie `this.context.placeholderProvider.tryCreateContent`, um auf den Platzhalter zuzugreifen.
+      * Erweiterungscode sollte nicht davon ausgehen, dass der erwartete Platzhalter verfügbar ist.
+      * Der Code erwartet benutzerdefinierte Eigenschaften mit dem Namen `Top` und `Bottom`. Wenn die Eigenschaften vorhanden sind, werden diese in den Platzhaltern gerendert.
+      * Beachten Sie, dass der Codepfad sowohl für die Platzhalter oben als auch für die Platzhalter unten nahezu identisch ist. Die einzigen Unterschiede sind die in den Formatvorlagen verwendeten Variablen.
 
-Wechseln Sie in das Konsolenfenster, in dem `gulp serve` ausgeführt wird, und schauen Sie nach, ob Fehler gemeldet wurden. gulp meldet alle Fehler in der Konsole. Sie müssen sie dann zuerst beheben, bevor Sie fortfahren können.
+9. Fügen Sie nach der `_renderPlaceHolders`-Methode die folgende Methode hinzu. In diesem Fall geben Sie eine einfache Konsolenmeldung aus, wenn die Erweiterung von der Seite entfernt wird. 
 
-Wenn Sie die Lösung derzeit noch nicht ausgeführt wird, führen Sie den folgenden Befehl aus, und stellen Sie sicher, dass keine Fehler auftreten.
+      ```ts
+        private _onDispose(): void {
+          console.log('[HelloWorldApplicationCustomizer._onDispose] Disposed custom top and bottom placeholders.');
+        }
+      ```
+
+Sie können nun den Code in SharePoint Online testen.
+
+## <a name="test-your-code"></a>Testen des Codes
+
+Wechseln Sie in das Konsolenfenster, in dem `gulp serve` ausgeführt wird, und schauen Sie nach, ob Fehler gemeldet wurden. Gulp meldet alle Fehler in der Konsole; Sie müssen die Fehler beheben, bevor Sie den Vorgang fortsetzen.
+
+Wenn die Lösung nicht ausgeführt wird, verwenden Sie den folgenden Befehl, um nach Fehlern zu suchen.
 
 ```
 gulp serve --nobrowser
 ```
 
-Navigieren Sie zu einer sofort einsatzfähigen modernen Liste in SharePoint Online. Dies kann eine Liste oder Bibliothek für die anfänglichen Tests sein. 
+Wechseln Sie zu einer modernen Liste in SharePoint Online. Dies kann eine Liste oder eine Bibliothek sein. 
 
-Um die Erweiterung zu testen, hängen Sie die folgende Abfragezeichenfolgenparameter an die URL an:
+Um die Erweiterung zu testen, hängen Sie die folgenden Abfragezeichenfolgenparameter an die URL an:
 
-* Beachten Sie, dass die in diesem Abfrageparameter verwendete GUID mit dem ID-Attribut Ihres Anwendungsanpassers übereinstimmen muss, die Sie in **HelloWorldApplicationCustomizer.manifest.json** finden.
-* Wir verwenden darüber hinaus Kopf- und Fußzeilen-JSON-Eigenschaften, um dem Anwendungsanpasser Parameter oder Konfigurationen bereitzustellen. In diesem Fall geben wir diese Werte einfach aus, wobei Sie das Verhalten jedoch basierend auf den Eigenschaften in der eigentlichen Produktionsumgebung anpassen können. 
 
 ```
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"5fc73e12-8085-4a4b-8743-f6d02ffe1240":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Header":"Header area of the page","Footer":"Footer area in the page"}}}
-```
-Die vollständige anzufordernde URL sähe in etwa wie folgt aus:
-
-```
-contoso.sharepoint.com/Lists/Contoso/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"5fc73e12-8085-4a4b-8743-f6d02ffe1240":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Header":"Header area of the page","Footer":"Footer area in the page"}}}
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"e5625e23-5c5a-4007-a335-e6c2c3afa485":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Top":"Top area of the page","Bottom":"Bottom area in the page"}}}
 ```
 
-![Abfragen des Debugging-Manifests für die Seite zulassen](../../../../images/ext-app-debug-manifest-message.png)
+* Beachten Sie, dass die in diesem Abfrageparameter verwendete GUID mit dem ID-Attribut Ihres Anwendungsanpassers übereinstimmen muss. Dieses ist in der Datei **HelloWorldApplicationCustomizer.manifest.json** verfügbar.
+* Sie verwenden JSON-Eigenschaften von Kopf- und Fußzeilen, um Parameter oder Konfigurationen für den Anwendungsanpasser bereitzustellen. In diesem Fall geben Sie diese Werte einfach aus. Sie können auch das Verhalten auf Grundlage der in der Produktion verwendeten Eigenschaften anpassen. 
 
-Klicken Sie auf die Schaltfläche zum **Laden von Debugging-Skripts**, um weiter Skripts von Ihrem lokalen Host zu laden.
+Die vollständige URL sollte ähnlich wie im folgenden Beispiel aussehen:
+
+```
+contoso.sharepoint.com/Lists/Contoso/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"e5625e23-5c5a-4007-a335-e6c2c3afa485":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Top":"Top area of the page","Bottom":"Bottom area in the page"}}}
+```
+
+Wählen Sie **Load debug scripts**, um weiter Skripts von Ihrem lokalen Host zu laden.
+
+![Abfragen des Debugging-Manifests für die Seite zulassen](../../../images/ext-app-debug-manifest-message.png)
 
 Sie sollten jetzt den benutzerdefinierten Kopf- und Fußzeileninhalt auf der Seite sehen. 
 
-![Benutzerdefinierte Kopf- und Fußzeilenelemente, auf der Seite gerendert](../../../../images/ext-app-header-footer-visible.png)
+![Benutzerdefinierte Kopf- und Fußzeilenelemente, auf der Seite gerendert](../../../images/ext-app-header-footer-visible.png)
 
 ## <a name="next-steps"></a>Nächste Schritte
-Herzlichen Glückwunsch, Sie haben Ihre erste benutzerdefinierte Kopf- und Fußzeile mithilfe des Anwendungsanpassers erstellt! Sie können Ihre Hello World-Erweiterung im nächsten Thema [Bereitstellen Ihrer Erweiterung für die Websitesammlung (Hello World, Teil 3)](./serving-your-extension-from-sharepoint.md) noch weiter entwickeln. Sie erfahren, wie Sie die Hello World-Erweiterung in einer SharePoint-Websitesammlung mit **Debug**-Abfrageparametern bereitstellen und in der Vorschau anzeigen. 
+Herzlichen Glückwunsch, Sie haben Ihre eigenen benutzerdefinierte Kopf- und Fußzeile mithilfe des Anwendungsanpassers erstellt! Informationen zum Fortsetzen der Erstellung Ihrer Erweiterung finden Sie unter [Bereitstellen Ihrer Erweiterung in SharePoint (Hello World, Teil 3)](./serving-your-extension-from-sharepoint.md). Sie erfahren, wie die Hello World-Erweiterung in einer SharePoint-Websitesammlung bereitgestellt und in der Vorschau angezeigt wird, ohne die **Debug**-Abfrageparameter zu verwenden. 

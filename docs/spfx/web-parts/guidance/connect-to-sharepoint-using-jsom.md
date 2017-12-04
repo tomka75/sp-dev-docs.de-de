@@ -1,8 +1,18 @@
+---
+title: Verbinden mit SharePoint mithilfe des JavaScript-Objektmodells (JSOM)
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: cbaaf3811d6975b6fb94d14b451722f396f10cc0
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/20/2017
+---
 # <a name="connect-to-sharepoint-using-the-javascript-object-model-jsom"></a>Verbinden mit SharePoint mithilfe des JavaScript-Objektmodells (JSOM)
 
 In der Vergangenheit haben Sie vielleicht beim Erstellen von SharePoint-Anpassungen, das SharePoint JavaScript-Objektmodell (JSOM) zur Kommunikation mit SharePoint verwendet. Dies wird nicht mehr empfohlen (siehe **Empfehlungen** unten), es gibt jedoch nach wie vor gültige Anwendungsfälle, z. B. die Codemigration. Dieser Artikel veranschaulicht, wie SharePoint JSOM beim Erstellen von Lösungen auf dem SharePoint Framework verwendet wird.
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für SharePoint Framework einrichten](../../set-up-your-development-environment).
+> **Hinweis:** Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für SharePoint Framework einrichten](../../set-up-your-development-environment.md).
 
 ## <a name="create-a-new-project"></a>Erstellen eines neuen Projekts
 
@@ -33,11 +43,17 @@ Geben Sie die folgenden Werte ein, wenn Sie dazu aufgefordert werden:
 - **SharePoint-Listen** als Webpartname.
 - **Zeigt die Namen von Listen auf der aktuellen Website an** als Webpartbeschreibung.
 
-![Der SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../../images/tutorial-spjsom-yo-sharepoint.png)
+![Der SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../images/tutorial-spjsom-yo-sharepoint.png)
 
-Öffnen Sie den Projektordner in Ihrem Code-Editor, sobald die Gerüsterstellung abgeschlossen ist. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 
-![Das SharePoint Framework-Projekt in Visual Studio-Code](../../../../images/tutorial-spjsom-vscode.png)
+```sh
+npm shrinkwrap
+```
+
+Öffnen Sie dann den Projektordner im Code-Editor. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+
+![Das SharePoint Framework-Projekt in Visual Studio-Code](../../../images/tutorial-spjsom-vscode.png)
 
 Gehen Sie folgendermaßen vor, um das Verzeichnis in Visual Studio-Code vom Konsolentyp aus zu öffnen:
 ```sh
@@ -228,7 +244,7 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 
 Das clientseitige Webpart, das in diesem Artikel als Beispiel verwendet wurde, lädt per Klick Informationen zu SharePoint-Listen in die aktuelle Website.
 
-![Das clientseitige SharePoint Framework-Webpart zeigt Titel von SharePoint-Listen in der aktuellen Website an](../../../../images/tutorial-spjsom-web-part-list-titles.png)
+![Das clientseitige SharePoint Framework-Webpart zeigt Titel von SharePoint-Listen in der aktuellen Website an](../../../images/tutorial-spjsom-web-part-list-titles.png)
 
 Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Fügen Sie in der `SharePointLists`-Klasse eine neue Methode namens `getListsTitles` hinzu:
 
@@ -310,7 +326,7 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
     });
 
     return (
-      <div className={styles.helloWorld}>
+      <div className={styles.sharePointLists}>
         <div className={styles.container}>
           <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
             <div className="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
@@ -346,7 +362,7 @@ gulp serve --nobrowser
 
 Da Sie SharePoint JSOM zur Kommunikation mit SharePoint verwenden, müssen Sie das Webpart mit der gehosteten SharePoint-Workbench-Version testen. (Deshalb wird der `--nobrowser`-Parameter angegeben, um zu verhindern, dass die lokale Workbench automatisch geladen wird).
 
-![Das clientseitige SharePoint Framework-Webpart zeigt Titel von SharePoint-Listen in der aktuellen Website an](../../../../images/tutorial-spjsom-web-part-list-titles.png)
+![Das clientseitige SharePoint Framework-Webpart zeigt Titel von SharePoint-Listen in der aktuellen Website an](../../../images/tutorial-spjsom-web-part-list-titles.png)
 
 Das deklarative Referenzieren von SharePoint JSOM-Skripts als externe Skripts ist bequem, und Sie können so den Code übersichtlich halten. Ein Nachteil besteht aber darin, dass Sie absolute URLs zum Speicherort angeben müssen, aus dem SharePoint JSOM-Skripts geladen werden sollen. Wenn Sie für Entwicklung, Prüfung und Produktion separate SharePoint-Mandanten verwenden, wird zusätzliche Arbeit erforderlich, um die folgenden URLs für die verschiedenen Umgebungen entsprechend zu ändern. In solchen Fällen könnten Sie auch erwägen, mithilfe von [SPComponentLoader](https://dev.office.com/sharepoint/reference/spfx/sp-loader/spcomponentloader) imperativ auf JSOM zu verweisen, um die Skripts im Code der SPFx-Komponenten zu laden.
 
@@ -364,16 +380,21 @@ Entfernen Sie zuerst vorhandene externe Skriptverweise. Öffnen Sie dazu im Code
 
 ```json
 {
-  "entries": [
-    {
-      "entry": "./lib/webparts/sharePointLists/SharePointListsWebPart.js",
-      "manifest": "./src/webparts/sharePointLists/SharePointListsWebPart.manifest.json",
-      "outputPath": "./dist/share-point-lists.bundle.js"
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "share-point-lists-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/sharePointLists/SharePointListsWebPart.js",
+          "manifest": "./src/webparts/sharePointLists/SharePointListsWebPart.manifest.json"
+        }
+      ]
     }
-  ],
+  },
   "externals": {},
   "localizedResources": {
-    "sharePointListsStrings": "webparts/sharePointLists/loc/{locale}.js"
+    "SharePointListsWebPartStrings": "lib/webparts/sharePointLists/loc/{locale}.js"
   }
 }
 ```
@@ -417,7 +438,7 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-Aktualisieren Sie in der gleichen Datei, die `getListsTitles`-Methode auf den folgenden Code:
+Aktualisieren Sie in der gleichen Datei die `getListsTitles`-Methode auf den folgenden Code:
 
 ```ts
 export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
@@ -459,11 +480,9 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-Um dem Benutzer den Ladestatus der SharePoint JSOM-Skripts zu melden, fügen Sie die `import`-Anweisung hinzu, um damit auf die `Placeholder`-Komponente zu verweisen und die `render`-Methode auf folgenden Code zu aktualisieren:
+Um dem Benutzer den Ladestatus der SharePoint JSOM-Skripts zu melden, aktualisieren Sie die `render`-Methode auf den folgenden Code:
 
 ```tsx
-import { Placeholder } from '@microsoft/sp-webpart-base';
-
 export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
   // ...
   public render(): React.ReactElement<ISharePointListsProps> {
@@ -472,13 +491,22 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
     });
 
     return (
-      <div className={styles.helloWorld}>
+      <div className={styles.sharePointLists}>
         <div className={styles.container}>
           {this.state.loadingScripts &&
-            <Placeholder
-              icon={'ms-Icon--CustomList'}
-              iconText={'SharePoint lists'}
-              description={'Loading SharePoint JSOM scripts...'} />}
+            <div className="ms-Grid" style={{ color: "#666", backgroundColor: "#f4f4f4", padding: "80px 0", alignItems: "center", boxAlign: "center" }}>
+              <div className="ms-Grid-row" style={{ color: "#333" }}>
+                <div className="ms-Grid-col ms-u-hiddenSm ms-u-md3"></div>
+                <div className="ms-Grid-col ms-u-sm12 ms-u-md6" style={{ height: "100%", whiteSpace: "nowrap", textAlign: "center" }}>
+                  <i className="ms-fontSize-su ms-Icon ms-Icon--CustomList" style={{ display: "inline-block", verticalAlign: "middle", whiteSpace: "normal" }}></i><span className="ms-fontWeight-light ms-fontSize-xxl" style={{ paddingLeft: "20px", display: "inline-block", verticalAlign: "middle", whiteSpace: "normal" }}>SharePoint lists</span>
+                </div>
+                <div className="ms-Grid-col ms-u-hiddenSm ms-u-md3"></div>
+              </div>
+              <div className="ms-Grid-row" style={{ width: "65%", verticalAlign: "middle", margin: "0 auto", textAlign: "center" }}>
+                <span style={{ color: "#666", fontSize: "17px", display: "inline-block", margin: "24px 0", fontWeight: 100 }}>Loading SharePoint JSOM scripts...</span>
+              </div>
+              <div className="ms-Grid-row"></div>
+            </div>}
           {this.state.loadingScripts === false &&
             <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
               <div className="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
@@ -507,7 +535,7 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-Wenn die React-Komponente meldet, dass die SharePoint JSOM-Skripts geladen werden, zeigt sie den standardmäßigen SharePoint Framework-Platzhalter an. Nachdem die Skripts geladen wurden, wird das Webpart den erwarteten Inhalt mit der Schaltfläche anzeigen, damit der Benutzer die Informationen zu SharePoint-Listen auf die aktuelle Website laden kann.
+Wenn die React-Komponente meldet, dass die SharePoint JSOM-Skripts geladen werden, zeigt sie einen Platzhalter an. Nachdem die Skripts geladen wurden, wird das Webpart den erwarteten Inhalt mit der Schaltfläche anzeigen, damit der Benutzer die Informationen zu SharePoint-Listen auf die aktuelle Website laden kann.
 
 ### <a name="load-sharepoint-jsom-scripts-using-spcomponentloader"></a>Laden von SharePoint JSOM-Skripts mit SPComponentLoader
 
@@ -520,7 +548,7 @@ import { SPComponentLoader } from '@microsoft/sp-loader';
 
 export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
   // ...
-  private componentDidMount(): void {
+  public componentDidMount(): void {
     SPComponentLoader.loadScript('/_layouts/15/init.js', {
       globalExportsName: '$_global_init'
     })
@@ -560,7 +588,7 @@ gulp serve --nobrowser
 
 Wie zuvor sollte das Webpart die Titel der SharePoint-Listen auf der aktuellen Website anzeigen.
 
-![Das clientseitige SharePoint Framework-Webpart zeigt Titel von SharePoint-Listen in der aktuellen Website an](../../../../images/tutorial-spjsom-web-part-list-titles.png)
+![Das clientseitige SharePoint Framework-Webpart zeigt Titel von SharePoint-Listen in der aktuellen Website an](../../../images/tutorial-spjsom-web-part-list-titles.png)
 
 Obwohl die Verwendung des `SPComponentLoader` einigen Aufwand erfordert, ermöglicht er Ihnen, serverrelative URLs zu verwenden, die in Szenarien nützlich sind, in denen Sie unterschiedliche Mandanten für Entwicklung, Prüfung und Produktion einsetzen.
 

@@ -1,3 +1,13 @@
+---
+title: Verwenden von Designfarben in Ihren SharePoint Framework-Anpassungen
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: f7f8c24bb2483064504e75e71a19caf1914874f4
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="use-theme-colors-in-your-sharepoint-framework-customizations"></a>Verwenden von Designfarben in Ihren SharePoint Framework-Anpassungen
 
 Beim Erstellen von SharePoint Framework-Anpassungen sollten Sie Designfarben verwenden, damit Ihre Anpassungen wie ein Teil der Website aussehen. In diesem Artikel wird erläutert, wie Sie auf die Designfarben der Kontextwebsite in Ihrer SharePoint Framework-Lösung verweisen können.
@@ -8,7 +18,7 @@ Beim Erstellen von SharePoint Framework-Anpassungen sollten Sie Designfarben ver
 
 Wenn Sie ein Gerüst für ein neues clientseitiges SharePoint Framework-Webpart erstellen, wird dafür eine feste Palette mit Blautönen verwendet. Wenn Sie ein solches Webpart zu einer modernen Website hinzufügen, die ein anderes Farbschema verwendet, sticht dieses hervor und sieht nicht wie ein Teil der Website aus.
 
-![Clientseitiges SharePoint Framework-Webpart mit blauem Farbschema auf einer modernen Teamwebsite, die ein rotes Design aufweist](../../images/themed-styles-blue-web-part-red-site.png)
+![Clientseitiges SharePoint Framework-Webpart mit blauem Farbschema auf einer modernen Teamwebsite, die ein rotes Design aufweist](../images/themed-styles-blue-web-part-red-site.png)
 
 Wenn Sie feste Farben verwenden, entscheiden Sie vorab, welche Farben für welche Elemente verwendet werden sollen. Dies kann zu einer Situation wie oben beschrieben führen, bei der ein blaues Webpart auf einer roten Teamwebsite angezeigt wird und unnötig hervorsticht. In den meisten Fällen bietet es sich an, die Designfarben der Kontextwebsite zu verwenden, damit Ihre Lösung nicht hervorsticht, sondern wie ein Teil der Website aussieht.
 
@@ -63,7 +73,7 @@ Wenn Sie ein Gerüst für ein neues clientseitiges SharePoint Framework-Webpart 
 
 Öffnen Sie im Code-Editor die Datei **./src/webparts/helloWorld/components/HelloWorld.tsx**, und entfernen Sie aus dem Div mit der Klasse **ms-Raster-Row** die Klasse **ms-BgColor-ThemeDark**Klasse.
 
-![Die Klasse „ms-bgColor-themeDark“ ausgewählt im Visual Studio-Code-Editor](../../images/themed-styles-ms-bgcolor-themedark-class.png)
+![Die Klasse „ms-bgColor-themeDark“ ausgewählt im Visual Studio-Code-Editor](../images/themed-styles-ms-bgcolor-themedark-class.png)
 
 Öffnen Sie als Nächstes in demselben Ordner die Datei **HelloWorld.module.scss**. Ändern Sie den `.row`-Selektor folgendermaßen:
 
@@ -74,7 +84,7 @@ Wenn Sie ein Gerüst für ein neues clientseitiges SharePoint Framework-Webpart 
 }
 ```
 
-![Der erweiterte .row-Selektor mit Hintergrundfarbe](../../images/themed-styles-row-class.png)
+![Der erweiterte .row-Selektor mit Hintergrundfarbe](../images/themed-styles-row-class.png)
 
 Ändern Sie im `.button`-Selektor die Eigenschaften `background-color` und `border-color` folgendermaßen:
 
@@ -87,11 +97,11 @@ Wenn Sie ein Gerüst für ein neues clientseitiges SharePoint Framework-Webpart 
 }
 ```
 
-![Der aktualisierte .button-Selektor mit Verweisen auf Designfarben](../../images/themed-styles-button-class.png)
+![Der aktualisierte .button-Selektor mit Verweisen auf Designfarben](../images/themed-styles-button-class.png)
 
 Wenn Sie das Webpart zu einer Website hinzufügen, werden die vom Webpart verwendeten Farben automatisch an die von der aktuellen Website verwendeten Designfarben angepasst.
 
-![Parallele Ansicht desselben Webparts, das in zwei Websites mit unterschiedlichen Farben angezeigt wird. Das Webpart folgt dem Farbschema der jeweiligen Website.](../../images/themed-styles-side-by-side.png)
+![Parallele Ansicht desselben Webparts, das in zwei Websites mit unterschiedlichen Farben angezeigt wird. Das Webpart folgt dem Farbschema der jeweiligen Website.](../images/themed-styles-side-by-side.png)
 
 ## <a name="more-information"></a>Weitere Informationen
 

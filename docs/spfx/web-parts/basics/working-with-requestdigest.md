@@ -1,3 +1,13 @@
+---
+title: Arbeiten mit __REQUESTDIGEST
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: ae30e9d655ebaf9d99d6e72017a2ed62e2fb3aac
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="working-with-requestdigest"></a>Arbeiten mit __REQUESTDIGEST
 
 Beim Ausführen von Nicht-GET-REST-Anforderungen an die SharePoint-API müssen Sie einen gültigen Anforderungsdigest zu Ihrer Anforderung hinzufügen. Dieser Digest belegt die Gültigkeit Ihrer Anforderung für SharePoint. Da dieses Token nur eine begrenzte Zeit gültig ist, müssen Sie sicherstellen, dass das Token gültig ist, bevor Sie es zu der Anforderung hinzufügen. Andernfalls schlägt die Anforderung fehl. In diesem Artikel werden die unterschiedlichen Ansätze beschrieben, wie Sie einen gültigen Anforderungsdigest erhalten, sowie Tücken bei einigen häufig verwendeten Ansätzen.

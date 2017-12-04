@@ -1,3 +1,13 @@
+---
+title: "Migrieren von jQuery- und FullCalendar-Lösungen, die mit dem Script Editor-Webpart erstellt wurden, in das SharePoint-Framework"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 7df585424fb5a0e4f056c791385e6a7214e28b3c
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/20/2017
+---
 # <a name="migrate-jquery-and-fullcalendar-solution-built-using-script-editor-web-part-to-sharepoint-framework"></a>Migrieren von jQuery- und FullCalendar-Lösungen, die mit dem Script Editor-Webpart erstellt wurden, in das SharePoint-Framework
 
 Beim Erstellen von SharePoint-Lösungen verwenden SharePoint-Entwickler häufig das jQuery-Plug-In [FullCalendar](https://fullcalendar.io) zum Anzeigen von Daten in der Kalenderansicht. FullCalendar ist eine großartige Alternative zur standardmäßigen SharePoint-Kalenderansicht, da es Ihnen ermöglicht, Daten aus verschiedenen Kalenderlisten, aus Nicht-Kalenderlisten oder sogar von außerhalb von SharePoint als Kalenderdaten zu rendern. In diesem Artikel wird veranschaulicht, wie Sie eine SharePoint-Anpassung mit FullCalendar, die mithilfe des Script Editor-Webparts erstellt wurde, in das SharePoint-Framework migrieren können.
@@ -6,7 +16,7 @@ Beim Erstellen von SharePoint-Lösungen verwenden SharePoint-Entwickler häufig 
 
 Um das Verfahren der Migration einer SharePoint-Anpassung in das SharePoint-Framework mithilfe von FullCalendar zu veranschaulichen, verwenden Sie die folgende Lösung, die eine Kalenderansicht von Aufgaben zeigt, die aus einer SharePoint-Liste abgerufen wurden.
 
-![Kalenderansicht von Aufgaben, angezeigt auf einer SharePoint-Seite](../../../../images/fullcalendar-sewp.png)
+![Kalenderansicht von Aufgaben, angezeigt auf einer SharePoint-Seite](../../../images/fullcalendar-sewp.png)
 
 Die Lösung wird anhand des standardmäßigen Script Editor-Webparts von SharePoint erstellt. Nachfolgend ist der in der Anpassung verwendete Code aufgeführt.
 
@@ -149,11 +159,11 @@ Zuerst lädt die Anpassung die Bibliotheken, die verwendet werden: jQuery, Momen
 
 Mithilfe des jQuery-Plug-Ins FullCalendar erhalten Benutzer mit wenig Aufwand reichhaltige Lösungen, die z. B. verschiedene Farben zum Kennzeichnen von verschiedenen Ereignissen verwenden oder mit Drag & Drop Ereignisse neu organisieren können.
 
-![Ziehen von Ereignissen in FullCalendar, um zugrunde liegende Aufgaben neu zu planen](../../../../images/fullcalendar-sewp-draganddrop.png)
+![Ziehen von Ereignissen in FullCalendar, um zugrunde liegende Aufgaben neu zu planen](../../../images/fullcalendar-sewp-draganddrop.png)
 
 ## <a name="migrate-the-tasks-calendar-solution-from-the-script-editor-web-part-to-the-sharepoint-framework"></a>Migrieren der Aufgabenkalenderlösung vom Script Editor-Webpart in das SharePoint-Framework
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment), in der Sie SharePoint-Framework-Lösungen erstellen können.
+> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment.md), in der Sie SharePoint-Framework-Lösungen erstellen können.
 
 Das Umwandeln einer auf dem Script Editor-Webpart basierten Anpassung in das SharePoint-Framework bietet eine Reihe von Vorteilen, wie z. B. eine benutzerfreundlichere Konfiguration und die zentrale Verwaltung der Lösung. Es folgt eine Schritt-für-Schritt-Beschreibung dazu, wie Sie die Lösung in das SharePoint-Framework migrieren können. Sie migrieren die Lösung zunächst in das SharePoint-Framework, wobei so wenige Änderungen am ursprünglichen Code wie möglich vorgenommen werden. Später transformieren Sie den Code der Lösung in TypeScript, um die Sicherheitsfeatures nutzen zu können, die es während der Entwicklung bietet. Und Sie ersetzen einigen Code durch die SharePoint-Framework-API, um von deren Funktionen zu profitieren und die Lösung weiter zu vereinfachen.
 
@@ -187,11 +197,17 @@ Es werden mehrere Eingabeaufforderungen angezeigt. Definieren Sie die Werte jewe
 - **Zeigt Aufgaben in der Kalenderansicht** als Beschreibung des Webparts
 - **No javaScript web framework** als Eintrittspunkt für die Webpart-Erstellung
 
-![SharePoint-Framework-Yeoman-Generator mit den Standardoptionen](../../../../images/fullcalendar-yeoman.png)
+![SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../images/fullcalendar-yeoman.png)
 
-Öffnen Sie den Projektordner in Ihrem Code-Editor, sobald die Gerüsterstellung abgeschlossen ist. In diesem Tutorial verwenden Sie Visual Studio Code.
+Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 
-![SharePoint-Framework-Projekt in Visual Studio Code](../../../../images/fullcalendar-vscode.png)
+```sh
+npm shrinkwrap
+```
+
+Öffnen Sie dann den Projektordner im Code-Editor. In diesem Tutorial verwenden Sie Visual Studio Code.
+
+![SharePoint Framework-Projekt in Visual Studio Code](../../../images/fullcalendar-vscode.png)
 
 ### <a name="load-javascript-libraries"></a>Laden von JavaScript-Bibliotheken
 
@@ -393,7 +409,7 @@ gulp serve --nobrowser
 
 Da das Webpart die Daten aus SharePoint lädt, müssen Sie das Webpart mit der gehosteten SharePoint-Framework-Arbeitsfläche testen. Navigieren Sie zu **https://yourtenant.sharepoint.com/_layouts/workbench.aspx**, und fügen Sie das Webpart zum Canvas hinzu. Die in der Kalenderansicht angezeigten Aufgaben sollten nun mit dem jQuery-Plug-In FullCalendar angezeigt werden.
 
-![Aufgaben, dargestellt in einer Kalenderansicht in einem clientseitigen Webpart aus dem SharePoint-Framework](../../../../images/fullcalendar-spfx.png)
+![Aufgaben, dargestellt in einer Kalenderansicht in einem clientseitigen Webpart aus dem SharePoint-Framework](../../../images/fullcalendar-spfx.png)
 
 ## <a name="add-support-for-configuring-the-web-part-through-web-part-properties"></a>Hinzufügen von Unterstützung zum Konfigurieren des Webparts über Webparteigenschaften
 
@@ -403,7 +419,7 @@ In den vorherigen Schritten haben Sie die Aufgabenkalenderlösung aus dem Script
 
 Beginnen Sie mit der Definition einer Webparteigenschaft, um den Namen der Liste zu speichern, aus der Aufgaben geladen werden sollen. Öffnen Sie im Code-Editor die Datei **./src/webparts/tasksCalendar/TasksCalendarWebPart.manifest.json**, benennen Sie die standardmäßige **description**-Eigenschaft in **listName** um, und löschen Sie den Wert.
 
-![Die listName-Eigenschaft im Webpartmanifest, hervorgehoben in Visual Studio Code](../../../../images/fullcalendar-spfx-listname-property.png)
+![Die listName-Eigenschaft im Webpartmanifest, hervorgehoben in Visual Studio Code](../../../images/fullcalendar-spfx-listname-property.png)
 
 Aktualisieren Sie als Nächstes die Oberfläche der Webparteigenschaften, um die Änderungen im Manifest zu übernehmen. Öffnen Sie im Code-Editor die Datei **./src/webparts/tasksCalendar/ITasksCalendarWebPartProps.ts**, und ändern Sie den Inhalt in:
 
@@ -651,7 +667,7 @@ gulp serve --nobrowser
 
 Navigieren Sie zu der gehosteten Workbench, und fügen Sie das Webpart zum Canvas hinzu. Öffnen Sie den Eigenschaftenbereich des Webparts, geben Sie den Namen der Liste mit Aufgaben an, und klicken Sie auf die Schaltfläche **Übernehmen**, um die Änderungen zu bestätigen. Sie sollten nun im Webpart in einer Kalenderansicht angezeigte Aufgaben sehen.
 
-![Aufgaben, geladen aus der konfigurierten Liste und angezeigt in einem clientseitigen Webpart des SharePoint-Framework](../../../../images/fullcalendar-spfx-list-configured.png)
+![Aufgaben, geladen aus der konfigurierten Liste und angezeigt in einem clientseitigen Webpart des SharePoint-Framework](../../../images/fullcalendar-spfx-list-configured.png)
 
 ## <a name="transform-the-plain-javascript-code-to-typescript"></a>Transformieren des einfachen JavaScript-Codes in TypeScript
 

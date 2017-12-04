@@ -1,3 +1,13 @@
+---
+title: "Verwenden von vorhandenen JavaScript-Bibliotheken in clientseitigen SharePoint Framework-Webparts"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 0f391bc079a53c4748367da69e1b93a8113e69ba
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="use-existing-javascript-libraries-in-sharepoint-framework-client-side-web-parts"></a>Verwenden von vorhandenen JavaScript-Bibliotheken in clientseitigen SharePoint Framework-Webparts
 
 Bei der Erstellung clientseitiger Webparts in SharePoint Framework können Sie bereits vorhandene JavaScript-Bibliotheken nutzen, um leistungsstarke Lösungen zu programmieren. Sie sollten jedoch einige Aspekte berücksichtigen, damit Ihre Webparts die Leistung der SharePoint-Seiten, auf denen sie eingesetzt werden, nicht beeinträchtigen.
@@ -53,17 +63,17 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
 
 SharePoint Framework arbeitet mit einer Build-Toolkette auf Basis von Open Source-Tools wie gulp und webpack. Beim Erstellen von SharePoint Framework-Projekten fassen diese Buildtools automatisch alle referenzierten Ressourcen in einer einzigen JavaScript-Datei zusammen. Dieser Prozess wird Bundling (Bündelung) genannt.
 
-![Befehlsfenster mit dem Task „gulp bundle“ neben dem SharePoint Framework-Ordner „dist“ mit den Ausgabedateien](../../../../images/external-scripts-gulp-bundle.png)
+![Befehlsfenster mit dem Task „gulp bundle“ neben dem SharePoint Framework-Ordner „dist“ mit den Ausgabedateien](../../../images/external-scripts-gulp-bundle.png)
 
 Bundling hat verschiedene Vorteile. Zunächst einmal sind alle erforderlichen Ressourcen für Ihr Webpart in einer einzigen JavaScript-Datei verfügbar. Das vereinfacht die Bereitstellung, da das Webpart nur aus einer einzigen Datei besteht und es unmöglich ist, während des Bereitstellungsprozesses eine Abhängigkeit zu übersehen. Zudem verwendet ihr Webpart unterschiedliche Ressourcen, und es ist wichtig, dass diese Ressourcen in der richtigen Reihenfolge geladen werden. Das während der Erstellung von webpack generierte Webpart-Bundle übernimmt das Laden der unterschiedlichen Ressourcen für Sie. Unter anderem löst es auch sämtliche Abhängigkeiten zwischen diesen Ressourcen auf. Auch für Endbenutzer hat Webpart-Bundling Vorteile: Im Allgemeinen lässt sich eine einzelne, größere Datei schneller herunterladen als viele kleine Dateien. Durch die Zusammenfassung mehrerer kleinerer Dateien in einem größeren Bundle lädt das Webpart schneller auf der Seite. Ein Bundling von vorhandenen JavaScript-Bibliotheken mit clientseitigen SharePoint Framework-Webparts hat allerdings auch Nachteile.
 
 Beim Bundling vorhandener JavaScript-Frameworks im SharePoint Framework werden alle referenzierten Skripts in der generierten Bundle-Datei zusammengefasst. Um noch einmal das Angular-Beispiel zu bemühen: Ein optimiertes Webpart-Bundle mit Angular ist über 170 KB groß.
 
-![Größe der Bundle-Datei im Explorer](../../../../images/external-scripts-bundle-size.png)
+![Größe der Bundle-Datei im Explorer](../../../images/external-scripts-bundle-size.png)
 
 Wenn Sie ein weiteres Webpart zu Ihrem Projekt hinzufügen, das ebenfalls Angular verwendet, und das Projekt erstellen, erhalten Sie zwei Bundle-Dateien: eine pro Webpart. Jede Datei ist dabei größer als 170 KB.
 
-![Zwei Bundle-Dateien im Explorer](../../../../images/external-scripts-two-bundles-size.png)
+![Zwei Bundle-Dateien im Explorer](../../../images/external-scripts-two-bundles-size.png)
 
 Angenommen, Sie fügen diese Webparts zu einer Seite hinzu. Jeder Benutzer würde Angular dann mehrere Male herunterladen, und zwar einmal mit jedem Webpart auf der Seite. Dieser Ansatz ist ineffizient und verlangsamt das Laden der Seite.
 
@@ -146,23 +156,23 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
 
 Wenn Sie Ihr Projekt jetzt erstellen, sehen Sie, dass die generierte Bundle-Datei nur noch 6 KB groß ist.
 
-![Größe der Bundle-Datei im Explorer](../../../../images/external-scripts-external-angular-bundle-size.png)
+![Größe der Bundle-Datei im Explorer](../../../images/external-scripts-external-angular-bundle-size.png)
 
 Wenn Sie ein weiteres Webpart zu Ihrem Projekt hinzufügen, das ebenfalls Angular verwendet, und das Projekt erneut erstellen, ist jedes Bundle 6 KB groß.
 
-![Zwei Bundle-Dateien im Explorer](../../../../images/external-scripts-external-angular-two-bundles-size.png)
+![Zwei Bundle-Dateien im Explorer](../../../images/external-scripts-external-angular-two-bundles-size.png)
 
 Die Annahme, dass Sie damit 300 KB eingespart haben, ist jedoch falsch. Beide Webparts benötigen Angular noch immer und laden es, sobald zum ersten Mal ein Benutzer die Seite besucht, auf der eines von ihnen platziert ist.
 
-![Angular in den Entwicklertools auf einer Seite mit einem Webpart](../../../../images/external-scripts-browser-loading-angular.png)
+![Angular in den Entwicklertools auf einer Seite mit einem Webpart](../../../images/external-scripts-browser-loading-angular.png)
 
 Auch wenn Sie beide Angular-Webparts zu der Seite hinzufügen, lädt SharePoint Framework Angular nur ein einziges Mal herunter.
 
-![Angular in den Entwicklertools auf einer Seite mit zwei Webparts](../../../../images/external-scripts-browser-loading-angular-two-web-parts.png)
+![Angular in den Entwicklertools auf einer Seite mit zwei Webparts](../../../images/external-scripts-browser-loading-angular-two-web-parts.png)
 
 Der wirkliche Vorteil einer Referenzierung vorhandener JavaScript-Bibliotheken als externe Ressourcen zeigt sich dann, wenn Ihre Organisation einen zentralen Speicherort für alle häufig verwendeten Skripts hat oder Sie ein CDN nutzen. In solchen Fällen besteht die Möglichkeit, dass die betreffende JavaScript-Bibliothek bereits im Browsercache des Benutzers liegt. Dann müsste nur noch das Webpart-Bundle geladen werden, und die Ladezeit der Seite wäre signifikant kürzer.
 
-![Registerkarte „Network“ in den Entwicklertools ohne Eintrag für Angular, obwohl zwei Webparts auf der Seite das Framework nutzen](../../../../images/external-scripts-browser-loading-angular-from-cache.png)
+![Registerkarte „Network“ in den Entwicklertools ohne Eintrag für Angular, obwohl zwei Webparts auf der Seite das Framework nutzen](../../../images/external-scripts-browser-loading-angular-from-cache.png)
 
 Das Beispiel oben zeigt, wie Sie Angular aus einem CDN laden. Ein öffentliches CDN ist jedoch nicht erforderlich. In der Konfiguration können Sie auf jeden Speicherort verweisen: ob öffentliches CDN, privat gehostetes Repository oder SharePoint-Dokumentbibliothek. Solange die Benutzer Ihrer Webparts auf die angegebenen URLs zugreifen können, werden die Webparts wie erwartet funktionieren.
 
@@ -213,7 +223,7 @@ Angenommen, Sie möchten jQuery mit einem jQuery-Plug-In verwenden, das als Nich
 
 Das Laden des Webparts würde sehr wahrscheinlich fehlschlagen: Beide Skripts würden wahrscheinlich parallel geladen werden, und das Plug-In könnte sich nicht bei jQuery registrieren.
 
-![Fehler beim Laden eines Webparts mit einem jQuery-Plug-In im Nicht-Modul-Format](../../../../images/external-scripts-non-amd-no-deps-error.png)
+![Fehler beim Laden eines Webparts mit einem jQuery-Plug-In im Nicht-Modul-Format](../../../images/external-scripts-non-amd-no-deps-error.png)
 
 Wie bereits erwähnt, können Sie in SharePoint Framework Abhängigkeiten für Nicht-Modul-Plug-Ins spezifizieren. Diese Abhängigkeiten werden in der Eigenschaft **globalDependencies** angegeben:
 
@@ -230,7 +240,7 @@ Jede in der Eigenschaft **globalDependencies** angegebene Abhängigkeit muss auf
 
 Wenn Sie jetzt versuchen würden, das Projekt zu erstellen, würde wieder ein Fehler gemeldet. Dieses Mal würde moniert,dass Sie keine Abhängigkeit zu einem Nicht-Modul-Skript angeben dürfen.
 
-![Fehler beim Erstellen eines SharePoint Framework-Projekts mit einem Nicht-Modul-Skript und der Angabe einer Abhängigkeit von einem Skript, das ein Modul ist](../../../../images/external-scripts-non-amd-deps-error.png)
+![Fehler beim Erstellen eines SharePoint Framework-Projekts mit einem Nicht-Modul-Skript und der Angabe einer Abhängigkeit von einem Skript, das ein Modul ist](../../../images/external-scripts-non-amd-deps-error.png)
 
 Um dieses Problem zu lösen, müssen Sie jQuery lediglich als Nicht-Modul-Skript registrieren:
 

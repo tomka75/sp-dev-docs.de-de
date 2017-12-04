@@ -1,3 +1,13 @@
+---
+title: "Migrieren von jQuery- und DataTables-Lösungen, die mit Script Editor-Webpart erstellt wurden, in SharePoint Framework"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: a50a56f3b433d9152e047bd51525747abf9d2865
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/20/2017
+---
 # <a name="migrate-jquery-and-datatables-solution-built-using-script-editor-web-part-to-sharepoint-framework"></a>Migrieren von jQuery- und DataTables-Lösungen, die mit Script Editor-Webpart erstellt wurden, in SharePoint Framework
 
 Eines der am häufigsten verwendeten jQuery-Plug-Ins ist [DataTables](https://datatables.net/). Mit DataTables können Sie problemlos leistungsstarke Übersichten über die Daten erstellen, die aus SharePoint und externen APIs stammen. In diesem Artikel wird erläutert, wie Sie eine SharePoint-Anpassung mithilfe von DataTables, die mit dem Script Editor-Webpart erstellt wurden, in das SharePoint-Framework migrieren.
@@ -6,7 +16,7 @@ Eines der am häufigsten verwendeten jQuery-Plug-Ins ist [DataTables](https://da
 
 Um das Verfahren der Migration einer SharePoint-Anpassung in das SharePoint-Framework mithilfe von DataTables zu veranschaulichen, verwenden Sie die folgende Lösung, die einen Überblick über die IT-Supportanfragen zeigt, die aus einer SharePoint-Liste abgerufen wurden.
 
-![Übersicht über die IT-Supportanfragen, angezeigt auf einer SharePoint-Seite](../../../../images/datatables-sewp.png)
+![Übersicht über die IT-Supportanfragen, angezeigt auf einer SharePoint-Seite](../../../images/datatables-sewp.png)
 
 Die Lösung wird anhand des standardmäßigen Script Editor-Webparts von SharePoint erstellt. Nachfolgend ist der in der Anpassung verwendete Code aufgeführt.
 
@@ -113,11 +123,11 @@ Die Anpassung lädt zunächst die von ihr verwendeten Bibliotheken: jQuery, Data
 
 Durch die Verwendung von DataTables erhalten Endbenutzer eine leistungsfähige Lösung, mit der sie die Ergebnisse auf einfache Weise filtern, sortieren und darin blättern können, ohne dass weitere Entwicklungsschritte erforderlich sind.
 
-![Die Liste der IT-Supportanfragen, angezeigt mit DataTables und gefiltert nach Anfragen, die Lidia zugeordnet sind, sowie in absteigender Reihenfolge nach Fälligkeitsdatum sortiert](../../../../images/datatables-sewp-filter.png)
+![Die Liste der IT-Supportanfragen, angezeigt mit DataTables und gefiltert nach Anfragen, die Lidia zugeordnet sind, sowie in absteigender Reihenfolge nach Fälligkeitsdatum sortiert](../../../images/datatables-sewp-filter.png)
 
 ## <a name="migrate-the-it-requests-overview-solution-from-the-script-editor-web-part-to-the-sharepoint-framework"></a>Migrieren der Übersichtslösung für IT-Anfragen vom Script Editor-Webpart in das SharePoint-Framework
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment), in der Sie SharePoint Framework-Lösungen erstellen können.
+> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment.md), in der Sie SharePoint Framework-Lösungen erstellen können.
 
 Das Umwandeln dieser Anpassung in das SharePoint-Framework bietet eine Reihe von Vorteilen, wie z. B. eine benutzerfreundlichere Konfiguration und die zentrale Verwaltung der Lösung. Es folgt eine Schritt-für-Schritt-Beschreibung dazu, wie Sie die Lösung in das SharePoint-Framework migrieren können. Sie migrieren die Lösung zunächst in das SharePoint-Framework, wobei so wenige Änderungen am ursprünglichen Code wie möglich vorgenommen werden. Später transformieren Sie den Code der Lösung in TypeScript, um die Sicherheitsfeatures nutzen zu können, die es während der Entwicklung bietet.
 
@@ -150,11 +160,17 @@ Es werden mehrere Eingabeaufforderungen angezeigt. Definieren Sie die Werte jewe
 - **IT-Anfragen** als Name des Webparts
 - **Übersicht über die IT-Supportanfragen** als Beschreibung für das Webpart
 
-![SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../../images/datatables-yeoman.png)
+![SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../images/datatables-yeoman.png)
 
-Öffnen Sie den Projektordner in Ihrem Code-Editor, sobald die Gerüsterstellung abgeschlossen ist. In diesem Tutorial verwenden Sie Visual Studio Code.
+Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 
-![SharePoint Framework-Projekt in Visual Studio Code](../../../../images/datatables-vscode.png)
+```sh
+npm shrinkwrap
+```
+
+Öffnen Sie dann den Projektordner im Code-Editor. In diesem Tutorial verwenden Sie Visual Studio Code.
+
+![SharePoint Framework-Projekt in Visual Studio Code](../../../images/datatables-vscode.png)
 
 ### <a name="load-javascript-libraries"></a>Laden von JavaScript-Bibliotheken
 
@@ -340,7 +356,7 @@ gulp serve --nobrowser
 
 Da das Webpart die Daten aus SharePoint lädt, müssen Sie das Webpart mit der gehosteten SharePoint Framework-Arbeitsfläche testen. Navigieren Sie zu **https://yourtenant.sharepoint.com/_layouts/workbench.aspx**, und fügen Sie das Webpart zum Canvas hinzu. Die IT-Anfragen sollten nun mit dem jQuery-Plug-In von DataTables angezeigt werden.
 
-![IT-Anfragen, dargestellt in einem clientseitigen Webpart des SharePoint-Framework](../../../../images/datatables-spfx.png)
+![IT-Anfragen, dargestellt in einem clientseitigen Webpart des SharePoint-Framework](../../../images/datatables-spfx.png)
 
 ## <a name="add-support-for-configuring-the-web-part-through-web-part-properties"></a>Hinzufügen von Unterstützung zum Konfigurieren des Webparts über Webpart-Eigenschaften
 
@@ -350,7 +366,7 @@ In den vorherigen Schritten haben Sie die IT-Anfragenlösung aus dem Script Edit
 
 Beginnen Sie mit der Definition einer Webparteigenschaft, um den Namen der Liste zu speichern, aus der IT-Anfragen geladen werden sollen. Öffnen Sie im Code-Editor die Datei **./src/webparts/itRequests/ItRequestsWebPart.manifest.json**, benennen Sie die standardmäßige **description**-Eigenschaft in **listName** um, und löschen Sie den Wert.
 
-![Die listName-Eigenschaft im Webpartmanifest, hervorgehoben im Visual Studio-Code](../../../../images/datatables-spfx-listname-property.png)
+![Die listName-Eigenschaft im Webpartmanifest, hervorgehoben im Visual Studio-Code](../../../images/datatables-spfx-listname-property.png)
 
 Aktualisieren Sie als Nächstes die Oberfläche der Webparteigenschaften, um die Änderungen im Manifest zu übernehmen. Öffnen Sie im Code-Editor die Datei **./src/webparts/itRequests/IItRequestsWebPartProps.ts**, und ändern Sie den Inhalt in:
 
@@ -492,7 +508,7 @@ gulp serve --nobrowser
 
 Navigieren Sie zu der gehosteten Workbench, und fügen Sie das Webpart zum Canvas hinzu. Öffnen Sie den Eigenschaftenbereich des Webparts, geben Sie den Namen der Liste mit IT-Anfragen an, und klicken Sie auf die Schaltfläche **Übernehmen**, um die Änderungen zu bestätigen. Sie sollten nun die im Webpart angezeigten IT-Anfragen sehen.
 
-![IT-Anfragen, geladen aus der konfigurierten Liste und angezeigt im clientseitigen Webpart des SharePoint-Framework](../../../../images/datatables-spfx-list-configured.png)
+![IT-Anfragen, geladen aus der konfigurierten Liste und angezeigt im clientseitigen Webpart des SharePoint-Framework](../../../images/datatables-spfx-list-configured.png)
 
 ## <a name="transform-the-plain-javascript-code-to-typescript"></a>Transformieren des einfachen JavaScript-Codes in TypeScript
 

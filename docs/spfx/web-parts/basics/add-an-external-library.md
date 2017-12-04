@@ -1,3 +1,13 @@
+---
+title: "Hinzufügen einer externen Bibliothek zu Ihrem clientseitigen SharePoint-Webpart"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 1dd951a3f2e07c263ae1b5d8fba697365bf454c8
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="add-an-external-library-to-your-sharepoint-client-side-web-part"></a>Hinzufügen einer externen Bibliothek zu Ihrem clientseitigen SharePoint-Webpart
 
 Vielleicht möchten Sie eine oder mehrere JavaScript-Bibliotheken in Ihr Webpart einfügen. In diesem Artikel wird gezeigt, wie Sie eine externe Bibliothek bündeln und Bibliotheken freigeben.

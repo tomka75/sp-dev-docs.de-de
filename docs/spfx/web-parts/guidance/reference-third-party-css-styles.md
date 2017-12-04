@@ -1,10 +1,20 @@
+---
+title: Verweisen auf CSS-Formatvorlagen von Drittanbietern in SharePoint Framework-Webparts
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 9f85911dd2696fcb4c3dff7430883bd19a0ceb70
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/20/2017
+---
 # <a name="reference-third-party-css-styles-in-sharepoint-framework-web-parts"></a>Verweisen auf CSS-Formatvorlagen von Drittanbietern in SharePoint Framework-Webparts
 
 Es gibt viele Bibliotheken von Drittanbietern, die Sie nutzen können, um vielfältige clientseitige SharePoint Framework-Webparts zu erstellen. Neben Skripts können diese Bibliotheken häufig zusätzliche Ressourcen wie Stylesheets enthalten. In diesem Artikel werden zwei verschiedene Ansätze zum Einschließen von CSS-Formatvorlagen von Drittanbietern in Webparts gezeigt und wie sich jeder Ansatz auf das resultierende Webpart-Bundle auswirkt. Bei dem in diesem Artikel erläuterten Beispiel werden zum Anzeigen eines Accordion jQuery und jQuery UI verwendet.
 
-![Von einem clientseitigen Webpart gerendertes jQuery UI-Accordion](../../../../images/thirdpartycss-accordion-styled.png)
+![Von einem clientseitigen Webpart gerendertes jQuery UI-Accordion](../../../images/thirdpartycss-accordion-styled.png)
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment).
+> **Hinweis:** Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment.md).
 
 ## <a name="prepare-the-project"></a>Vorbereiten des Projekts
 
@@ -36,11 +46,17 @@ Geben Sie die folgenden Werte ein, wenn Sie dazu aufgefordert werden:
 - **jQuery accordion** als Webpartname
 - **Shows jQuery accordion** als Webpartbeschreibung
 
-![Der SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../../images/thirdpartycss-yeoman.png)
+![Der SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../images/thirdpartycss-yeoman.png)
 
-Öffnen Sie den Projektordner in Ihrem Code-Editor, sobald die Gerüsterstellung abgeschlossen ist. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 
-![Das SharePoint Framework-Projekt in Visual Studio Code](../../../../images/thirdpartycss-visual-studio-code.png)
+```sh
+npm shrinkwrap
+```
+
+Öffnen Sie dann den Projektordner im Code-Editor. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+
+![Das SharePoint Framework-Projekt in Visual Studio-Code](../../../images/thirdpartycss-visual-studio-code.png)
 
 ### <a name="add-test-content"></a>Hinzufügen von Testinhalt
 
@@ -142,7 +158,7 @@ gulp serve
 
 Nach dem Hinzufügen des Webparts zum Zeichenbereich sollten Sie das Accordion in Aktion sehen.
 
-![Von einem clientseitigen Webpart gerendertes jQuery UI-Accordion ohne Formatvorlagen](../../../../images/thirdpartycss-accordion-not-styled.png)
+![Von einem clientseitigen Webpart gerendertes jQuery UI-Accordion ohne Formatvorlagen](../../../images/thirdpartycss-accordion-not-styled.png)
 
 An diesem Punkt haben Sie nur auf die jQuery UI-Skripts verwiesen, was erklärt, warum das Accordion keine Formatvorlagen aufweist. Als Nächstes fügen Sie die fehlenden CSS-Formatvorlagen hinzu, um das Accordion mit Formatvorlagen zu versehen.
 
@@ -168,7 +184,7 @@ gulp serve
 
 Das Accordion sollte korrekt angezeigt und mithilfe des standardmäßigen jQuery UI-Designs mit einem Branding versehen werden.
 
-![jQuery UI-Accordion, das mit mithilfe des standardmäßigen jQuery UI-Deisngs mit einem Branding versehen wurde, das von einem clientseitigen SharePoint Framework-Webpart gerendert wurde](../../../../images/thirdpartycss-accordion-styled.png)
+![jQuery UI-Accordion, das mit mithilfe des standardmäßigen jQuery UI-Deisngs mit einem Branding versehen wurde, das von einem clientseitigen SharePoint Framework-Webpart gerendert wurde](../../../images/thirdpartycss-accordion-styled.png)
 
 ### <a name="analyze-the-contents-of-the-generated-web-part-bundle"></a>Analysieren der Inhalte des generierten Webpart-Bundles
 
@@ -176,7 +192,7 @@ Die einfachste Möglichkeit zum Verwenden von Drittanbieterbibliotheken und dere
 
 Um den Einfluss der Bibliotheken auf die Größe des generierten Webpart-Bundles zu sehen, öffnen Sie nach dem Bündeln des Projekts die Datei **./temp/stats/js-thirdpartycss.stats.html** in einem Webbrowser. Bewegen Sie den Mauszeiger über das Diagramm. Sie werden sehen, dass die CSS-Dateien von jQuery UI, auf die von dem Webpart verwiesen wird, über 6 % der gesamten Webpart-Bundle-Größe ausmachen.
 
-![CSS-Datei von jQuery UI (im Diagramm hervorgehoben) zu Darstellung der Größe der unterschiedlichen Teile des generierten Webpart-Bundles](../../../../images/thirdpartycss-jquery-ui-css-size.png)
+![CSS-Datei von jQuery UI (im Diagramm hervorgehoben) zu Darstellung der Größe der unterschiedlichen Teile des generierten Webpart-Bundles](../../../images/thirdpartycss-jquery-ui-css-size.png)
 
 Wie im Haftungsausschluss unterhalb des Diagramms erwähnt, sind die Größen nur ein Anhaltspunkt, der die Größe der Debugversion des Bundles angibt. Die endgültige Produktversion des Bundles wäre erheblich kleiner. Es ist dennoch hilfreich, sich klarzumachen, aus welchen unterschiedlichen Teilen das Webpart-Bundle besteht und welche Größe diese im Vergleich zu anderen Elementen in dem Bundle aufweisen.
 
@@ -238,11 +254,11 @@ gulp serve
 
 Nach dem Hinzufügen des Webparts zum Zeichenbereich sollten Sie das Accordion in Aktion sehen.
 
-![Von einem clientseitigen Webpart gerendertes jQuery UI-Accordion ohne Formatvorlagen](../../../../images/thirdpartycss-accordion-not-styled.png)
+![Von einem clientseitigen Webpart gerendertes jQuery UI-Accordion ohne Formatvorlagen](../../../images/thirdpartycss-accordion-not-styled.png)
 
 Öffnen Sie in Ihrem Webbrowser die Entwicklertools, wechseln Sie zu der Registerkarte, auf der die Netzwerkanfragen angezeigt werden, und laden Sie die Seite erneut. Sie werden sehen, dass sowohl jQuery als auch jQuery UI aus dem CDN geladen werden.
 
-![In Microsoft Edge-Entwicklertools hervorgehobene jQuery- und jQuery UI-Anfragen](../../../../images/thirdpartycss-libraries-cdn.png)
+![In Microsoft Edge-Entwicklertools hervorgehobene jQuery- und jQuery UI-Anfragen](../../../images/thirdpartycss-libraries-cdn.png)
 
 An diesem Punkt haben Sie nur auf die jQuery UI-Skripts verwiesen, was erklärt, warum das Accordion keine Formatvorlagen aufweist. Als Nächstes fügen Sie die fehlenden CSS-Formatvorlagen hinzu, um das Accordion mit Formatvorlagen zu versehen.
 
@@ -281,7 +297,7 @@ gulp serve
 
 Das Accordion sollte korrekt angezeigt und mithilfe des standardmäßigen jQuery UI-Designs mit einem Branding versehen werden.
 
-![jQuery UI-Accordion, das mit mithilfe des standardmäßigen jQuery UI-Deisngs mit einem Branding versehen wurde, das von einem clientseitigen SharePoint Framework-Webpart gerendert wurde](../../../../images/thirdpartycss-accordion-styled.png)
+![jQuery UI-Accordion, das mit mithilfe des standardmäßigen jQuery UI-Deisngs mit einem Branding versehen wurde, das von einem clientseitigen SharePoint Framework-Webpart gerendert wurde](../../../images/thirdpartycss-accordion-styled.png)
 
 ### <a name="analyze-the-contents-of-the-generated-web-part-bundle-loading-resources-from-url"></a>Analysieren der Inhalte des generierten Webpart-Bundles, das Ressourcen von der URL lädt
 

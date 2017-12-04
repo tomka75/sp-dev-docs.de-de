@@ -1,3 +1,13 @@
+---
+title: "Hinweise zu Lösungspaketen"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 41baeeed27f08f155b425d7886f1f54aae4e670d
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="notes-on-solution-packaging"></a>Hinweise zu Lösungspaketen
 
 Die Gulp-Aufgabe **package-solution** sucht unter **/config/package-solution.json** nach unterschiedlichen Konfigurationsdetails, einschließlich einiger allgemeiner Dateipfade, und definiert die Beziehung zwischen Komponenten (_WebParts_ und _Anwendungen_) in einem Paket.

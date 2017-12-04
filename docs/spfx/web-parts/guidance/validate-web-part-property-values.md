@@ -1,8 +1,18 @@
+---
+title: "Überprüfen von Webpart-Eigenschaftswerten"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 290fea0bf884e16b266ab2d2f7f493174374d350
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/20/2017
+---
 # <a name="validate-web-part-property-values"></a>Überprüfen von Webpart-Eigenschaftswerten
 
 Wenn Sie mit Webparts arbeiten, können Benutzer diese mithilfe der Eigenschaften entsprechend der jeweiligen Bedürfnisse konfigurieren. Überprüfen Sie die bereitgestellten Konfigurationswerte und erleichtern Sie es Benutzern auf diese Weise, den Webpart zu konfigurieren und das Arbeiten mit dem Webpart insgesamt zu verbessern. In diesem Artikel erfahren Sie, wie Sie Eigenschaftswerte in clientseitigen Webparts in SharePoint Framework überprüfen.
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment), in der Sie SharePoint Framework-Lösungen erstellen können.
+> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment.md), in der Sie SharePoint Framework-Lösungen erstellen können.
 
 ## <a name="create-new-project"></a>Erstellen eines neuen Projekts
 
@@ -32,11 +42,17 @@ Geben Sie die folgenden Werte ein, wenn Sie dazu aufgefordert werden:
 - **List Info** als Namen des Webparts
 - **Shows information about the selected list** als Beschreibung Ihres Webparts
 
-![SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../../images/property-validation-yeoman-generator.png)
+![SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../images/property-validation-yeoman-generator.png)
 
-Öffnen Sie den Projektordner in Ihrem Code-Editor, sobald die Gerüsterstellung abgeschlossen ist. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 
-![SharePoint Framework-Projekt in Visual Studio Code](../../../../images/property-validation-visual-studio-code.png)
+```sh
+npm shrinkwrap
+```
+
+Öffnen Sie dann den Projektordner im Code-Editor. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+
+![SharePoint Framework-Projekt in Visual Studio Code](../../../images/property-validation-visual-studio-code.png)
 
 ## <a name="validate-web-part-property-values-in-the-sharepoint-framework"></a>Überprüfen von Webpart-Eigenschaftswerten in SharePoint Framework
 
@@ -114,15 +130,15 @@ gulp serve
 
 Fügen Sie in der Workbench den Webpart zum Zeichenbereich hinzu, und öffnen Sie dessen Eigenschaften. Wenn Sie die Beschreibung entfernen, sollte der erste Fehler angezeigt werden.
 
-![Angezeigter Überprüfungsfehler in einer erforderlichen Eigenschaft ohne angegebenen Wert](../../../../images/property-validation-empty-description-error.png)
+![Angezeigter Überprüfungsfehler in einer erforderlichen Eigenschaft ohne angegebenen Wert](../../../images/property-validation-empty-description-error.png)
 
 Geben Sie danach einen Wert an, der länger als 40 Zeichen ist. Unterhalb des Textfelds sollte ein weiterer Überprüfungsfehler angezeigt werden.
 
-![Angezeigter Überprüfungsfehler, wenn der angegebene Wert länger als zulässig ist](../../../../images/property-validation-description-too-long-error.png)
+![Angezeigter Überprüfungsfehler, wenn der angegebene Wert länger als zulässig ist](../../../images/property-validation-description-too-long-error.png)
 
 Beachten Sie, dass bei Angabe eines ungültigen Werts der Webpart mit dem letzten gültigen Wert gerendert wird. Darüber hinaus wird im nichtreaktiven Modus des Eigenschaftenbereichs bei Ungültigkeit einer Webpart-Eigenschaft die Schaltfläche **Apply** deaktiviert, damit die ungültige Konfiguration nicht vom Benutzer angewendet werden kann.
 
-![Als deaktiviert gerenderte Apply-Schaltfläche, wenn eine Webpart-Eigenschaft einen ungültigen Wert aufweist.](../../../../images/property-validation-description-error-apply-disabled.png)
+![Als deaktiviert gerenderte Apply-Schaltfläche, wenn eine Webpart-Eigenschaft einen ungültigen Wert aufweist.](../../../images/property-validation-description-error-apply-disabled.png)
 
 ### <a name="validate-web-part-property-values-using-remote-apis"></a>Überprüfung von Webpart-Eigenschaftswerten mithilfe von Remote-APIs
 
@@ -243,7 +259,7 @@ Führen Sie den folgenden Befehl aus, um zu überprüfen, ob das Projekt ausgef�
 gulp serve
 ```
 
-![Im Eigenschaftenbereich des Webparts angezeigte Listennameneigenschaft](../../../../images/property-validation-list-name-property.png)
+![Im Eigenschaftenbereich des Webparts angezeigte Listennameneigenschaft](../../../images/property-validation-list-name-property.png)
 
 #### <a name="validate-the-name-of-the-list-using-the-sharepoint-rest-api"></a>Überprüfen des Listennamens mithilfe der SharePoint REST-API
 
@@ -344,21 +360,21 @@ Da die Listennamen-Überprüfungsmethode mit der SharePoint REST-API kommunizie
 
 Fügen Sie den Webpart zum Zeichenbereich hinzu, und öffnen Sie dessen Eigenschaften. Da Sie keinen Standardwert für den Listennamen angegeben haben, dies aber eine erforderliche Eigenschaft ist, wird Ihnen ein Überprüfungsfehler angezeigt.
 
-![Angezeigter Überprüfungsfehler in einer erforderlichen Eigenschaft ohne angegebenen Wert](../../../../images/property-validation-empty-list-name-error.png)
+![Angezeigter Überprüfungsfehler in einer erforderlichen Eigenschaft ohne angegebenen Wert](../../../images/property-validation-empty-list-name-error.png)
 
 Wenn Sie einen nicht vorhandenen Listennamen angeben, zeigt der Webpart einen Überprüfungsfehler an, der besagt, dass die angegebene Liste auf der aktuellen Website nicht vorhanden ist.
 
-![Angezeigter Überprüfungsfehler nach Angabe des Namens einer Liste, die auf der aktuellen Website nicht vorhanden ist](../../../../images/property-validation-invalid-list-name-error.png)
+![Angezeigter Überprüfungsfehler nach Angabe des Namens einer Liste, die auf der aktuellen Website nicht vorhanden ist](../../../images/property-validation-invalid-list-name-error.png)
 
 Wenn Sie den Namen einer vorhandenen Liste angeben, wird der Validierungsfehler ausgeblendet.
 
-![Kein Fehler angezeigt bei gültigem Listennamen](../../../../images/property-validation-valid-list-name.png)
+![Kein Fehler angezeigt bei gültigem Listennamen](../../../images/property-validation-valid-list-name.png)
 
 #### <a name="optimize-validation-using-remote-apis"></a>Optimieren der Überprüfung mithilfe von Remote-APIs
 
 Beim Überprüfen von Webpart-Eigenschaften mit Remote-APIs überwacht SharePoint Framework Änderungen an den Steuerelementen des Eigenschaftenbereichs und sendet die aktualisierten Werte zur Überprüfung an den angegebenen Überprüfungshandler. Standardmäßig wartet SharePoint Framework 200 ms, bevor das Überprüfungsverfahren ausgelöst wird. Wenn der Benutzer den Wert von 200 ms nicht geändert hat, wird das Überprüfungsverfahren von SharePoint Framework gestartet. Wenn der Überprüfungshandler eine Remote-API verwendet, sendet diese Methode bei jedem Start des Überprüfungsverfahrens eine Webanforderung an die API, um den angegebenen Wert zu überprüfen. Schreibt der Benutzer nicht schnell genug, werden nur teilweise fertiggestellte Werte zur Überprüfung gesendet, was eine unnötige Belastung für das Netzwerk und die API darstellt. In solchen Fällen sollten Sie die Verzögerung der Überprüfung erhöhen.
 
-![Netzwerktools in Microsoft Edge zeigen Webanforderungen mit unvollständigen Listennamen, die zur Überprüfung gesendet werden](../../../../images/property-validation-partial-list-name-validation.png)
+![Netzwerktools in Microsoft Edge zeigen Webanforderungen mit unvollständigen Listennamen, die zur Überprüfung gesendet werden](../../../images/property-validation-partial-list-name-validation.png)
 
 Sie können die Überprüfungsverzögerung für jede Eigenschaft separat konfigurieren, je nach dem Typ des Werts, den der Benutzer angeben muss. Folgende Schritte veranschaulichen, wie die Überprüfungsverzögerung für die Eigenschaft **listName** erhöht wird.
 

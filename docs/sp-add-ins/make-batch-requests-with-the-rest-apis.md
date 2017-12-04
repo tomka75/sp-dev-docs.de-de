@@ -1,12 +1,21 @@
-
+---
+title: "Durchführen von Batchanforderungen mit den REST-APIs"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 68dff5844cfaaa27071ca5f5d870e4be1eeaf7b7
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="make-batch-requests-with-the-rest-apis"></a>Durchführen von Batchanforderungen mit den REST-APIs
 Erfahren Sie, wie Sie die Abfrageoption `$batch` mit den REST-/OData-APIs verwenden.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
-In diesem Artikel wird beschrieben, wie Sie Vorgänge und Abfragen an die REST-/OData-API von Microsoft SharePoint Online (sowie des lokalen SharePoint 2016 und höher) und die [Unterklasse Dateien und Ordner](http://msdn.microsoft.com/en-us/office/office365/api/files-rest-operations) der Office 365 REST-APIs zusammenfassen. Mit diesem Verfahren können Sie die Leistung Ihrer Add-ins verbessern, indem Sie mehrere Vorgänge in einer einzelnen Anforderung an den Server und einer einzelnen Antwort kombinieren.
+In diesem Artikel wird beschrieben, wie Sie Vorgänge und Abfragen an die REST-/OData-API von Microsoft SharePoint Online (sowie des lokalen SharePoint 2016 und höher) und die [Unterklasse Dateien und Ordner](http://msdn.microsoft.com/de-DE/office/office365/api/files-rest-operations) der Office 365 REST-APIs zusammenfassen. Mit diesem Verfahren können Sie die Leistung Ihrer Add-ins verbessern, indem Sie mehrere Vorgänge in einer einzelnen Anforderung an den Server und einer einzelnen Antwort kombinieren.
  
 
 ## <a name="executive-summary-of-the-batch-option"></a>Zusammenfassung der $batch-Option
@@ -120,7 +129,7 @@ Es gibt zahlreiche OData-Bibliotheken, die die OData-Batchverarbeitung für viel
 
  
 
--  [.NET OData-Bibliothek](http://msdn.microsoft.com/en-us/office/microsoft.data.odata%28v=vs.90%29). Siehe insbesondere die **ODataBatch***-Klassen.
+-  [.NET OData-Bibliothek](http://msdn.microsoft.com/de-DE/office/microsoft.data.odata%28v=vs.90%29). Siehe insbesondere die **ODataBatch***-Klassen.
     
  
 -  [Datajs-Bibliothek](http://datajs.codeplex.com/documentation). Siehe insbesondere [Batchvorgänge](http://datajs.codeplex.com/wikipage?title=datajs%20OData%20API&amp;referringTitle=Documentation#Batch).

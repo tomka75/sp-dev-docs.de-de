@@ -1,9 +1,18 @@
-
+---
+title: Hochladen von Dateien mithilfe der REST-API und jQuery
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 1e43bc768703da811f4168413da258dc1beddbeb
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="upload-a-file-by-using-the-rest-api-and-jquery"></a>Hochladen von Dateien mithilfe der REST-API und jQuery
 Erfahren Sie, wie Sie eine lokale Datei mithilfe der REST-API und jQuery AJAX-Anforderungen in einen SharePoint-Ordner hochladen.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 In den Codebeispielen in diesem Artikel werden die REST-Schnittstelle und jQuery AJAX-Anforderungen verwendet, um eine lokale Datei zur Bibliothek **Documents** hinzuzufügen und dann die Eigenschaften des Listenelements zu ändern, das die hochgeladene Datei darstellt.
@@ -75,7 +84,7 @@ Um die Beispiele aus diesem Artikel auszuführen, benötigen Sie Folgendes:
  
 
  
-Sie müssen [diese Anforderungen](upload-a-file-by-using-the-rest-api-and-jquery#RunTheExamples) erfüllen, um das Beispiel verwenden zu können.
+Sie müssen [diese Anforderungen](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples) erfüllen, um das Beispiel verwenden zu können.
  
 
  
@@ -255,7 +264,7 @@ function getQueryStringParameter(paramToRetrieve) {
  
 
  
-Sie müssen [diese Anforderungen](upload-a-file-by-using-the-rest-api-and-jquery#RunTheExamples) erfüllen, um das Beispiel ausführen zu können.
+Sie müssen [diese Anforderungen](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples) erfüllen, um das Beispiel ausführen zu können.
  
 
  
@@ -404,19 +413,19 @@ function onError(error) {
 <a name="bk_addresources"> </a>
 
 
--  [Grundlegendes zum SharePoint REST-Dienst](get-to-know-the-sharepoint-2013-rest-service)
+-  [Grundlegendes zum SharePoint REST-Dienst](get-to-know-the-sharepoint-rest-service.md)
     
  
--  [Arbeiten mit Ordnern und Dateien unter Verwendung von REST](working-with-folders-and-files-with-rest)
+-  [Arbeiten mit Ordnern und Dateien unter Verwendung von REST](working-with-folders-and-files-with-rest.md)
     
  
--  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest)
+-  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest.md)
     
  
 -  [REST-API-Referenz und Beispiele](http://msdn.microsoft.com/library/rest-api-reference-and-samples%28Office.15%29.aspx)
     
  
--  [Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library)
+-  [Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md)
     
  
 

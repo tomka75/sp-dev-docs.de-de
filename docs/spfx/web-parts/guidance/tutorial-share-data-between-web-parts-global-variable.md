@@ -1,10 +1,20 @@
+---
+title: Gemeinsame Verwendung von Daten zwischen Webparts mithilfe einer globalen Variable (Tutorial)
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 5ee1bf737bc3d78636e981092212e5f37d89d5bc
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/20/2017
+---
 # <a name="share-data-between-web-parts-using-a-global-variable-tutorial"></a>Gemeinsame Verwendung von Daten zwischen Webparts mithilfe einer globalen Variable (Tutorial)
 
 > Hinweis: Wir konnten noch nicht überprüfen, ob sich die Anleitung in diesem Artikel mit der allgemein verfügbaren SPFx-Version (GA-Version) umsetzen lässt. Möglicherweise treten Probleme auf, wenn Sie die neueste Version für dieses Tutorial verwenden.
 
 Wenn Sie bei der Erstellung von clientseitigen Webparts Daten nur einmal laden und anschließend in den verschiedenen Webparts jeweils wiederverwenden, verbessert das die Leistung Ihrer Seiten und reduziert die Last in Ihrem Netzwerk. In diesem Tutorial beschreiben wir Schritt für Schritt, wie Webparts Daten mithilfe einer globalen Variable gemeinsam verwenden können.
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen können, müssen Sie [Ihre Entwicklungsumgebung für die Erstellung clientseitiger SharePoint-Webparts einrichten](../../set-up-your-development-environment).
+> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen können, müssen Sie [Ihre Entwicklungsumgebung für die Erstellung clientseitiger SharePoint-Webparts einrichten](../../set-up-your-development-environment.md).
 
 ## <a name="prepare-the-project"></a>Vorbereiten des Projekts
 
@@ -37,17 +47,23 @@ Es werden verschiedene Eingabeaufforderungen angezeigt. Geben Sie jeweils die fo
 - **Shows recently modified documents** als Beschreibung Ihres Webparts
 - **React** als das zu verwendende Framework
 
-![SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../../images/tutorial-sharingdata-yo-sharepoint-recent-documents.png)
+![Der SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../images/tutorial-sharingdata-yo-sharepoint-recent-documents.png)
 
-Öffnen Sie nach Abschluss der Gerüsterstellung den Projektordner in Ihrem Code-Editor. Für die Anleitung in diesem Artikel haben wir Visual Studio Code verwendet; auch die Screenshots entstammen diesem Editor. Sie können jedoch auch jeden beliebigen anderen Editor verwenden.
+Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 
-![SharePoint Framework-Projekt in Visual Studio Code](../../../../images/tutorial-sharingdata-vscode.png)
+```sh
+npm shrinkwrap
+```
+
+Öffnen Sie dann den Projektordner im Code-Editor. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+
+![Das SharePoint Framework-Projekt in Visual Studio-Code](../../../images/tutorial-sharingdata-vscode.png)
 
 ## <a name="show-the-recently-modified-documents"></a>Anzeigen der kürzlich geänderten Dokumente
 
 Das Webpart „Zuletzt verwendete Dokumente“ zeigt Informationen zu den zuletzt geänderten Dokumenten an, die jeweils als Office UI Fabric-Karte dargestellt werden.
 
-![Webpart „Zuletzt verwendete Dokumente“ mit drei kleinen Dokumentkarten für die drei zuletzt geänderten Dokumente](../../../../images/tutorial-sharingdata-recent-documents.png)
+![Webpart „Zuletzt verwendete Dokumente“ mit drei kleinen Dokumentkarten für die drei zuletzt geänderten Dokumente](../../../images/tutorial-sharingdata-recent-documents.png)
 
 ### <a name="remove-the-standard-description-property"></a>Entfernen der Standardeigenschaft _description_
 
@@ -332,13 +348,13 @@ gulp serve
 
 Fügen Sie in SharePoint Workbench das Webpart „Zuletzt verwendete Dokumente“ zur Canvas hinzu.
 
-![Webpart „Zuletzt verwendete Dokumente“ mit Dokumentkarten für die drei zuletzt geänderten Dokumente](../../../../images/tutorial-sharingdata-recent-documents.png)
+![Webpart „Zuletzt verwendete Dokumente“ mit Dokumentkarten für die drei zuletzt geänderten Dokumente](../../../images/tutorial-sharingdata-recent-documents.png)
 
 ## <a name="show-the-most-recently-modified-document"></a>Anzeigen des zuletzt geänderten Dokuments
 
 Das Webpart „Recent document“ zeigt Informationen zu dem zuletzt geänderten Dokument an.
 
-![Webpart „Recent document“ mit einer großen Dokumentkarte mit Informationen zu dem zuletzt geänderten Dokument](../../../../images/tutorial-sharingdata-recent-document.png)
+![Webpart „Recent document“ mit einer großen Dokumentkarte mit Informationen zu dem zuletzt geänderten Dokument](../../../images/tutorial-sharingdata-recent-document.png)
 
 ### <a name="add-the-second-web-part"></a>Hinzufügen des zweiten Webparts
 
@@ -357,7 +373,7 @@ Es werden verschiedene Eingabeaufforderungen angezeigt. Geben Sie jeweils die fo
 - **Recent document** als Namen des Webparts
 - **Zeigt Informationen zu dem zuletzt geänderten Dokumentinformation** als Beschreibung des Webparts.
 
-![SharePoint Framework-Yeoman-Generator mit Informationen zum Erstellen eines Gerüsts für das zweite Webpart](../../../../images/tutorial-sharingdata-yo-sharepoint-recent-document.png)
+![SharePoint Framework-Yeoman-Generator mit Informationen zum Erstellen eines Gerüsts für das zweite Webpart](../../../images/tutorial-sharingdata-yo-sharepoint-recent-document.png)
 
 ### <a name="remove-the-standard-description-property"></a>Entfernen der Standardeigenschaft _description_
 
@@ -442,7 +458,7 @@ Das Webpart „Recent document“ zeigt Informationen zu dem zuletzt geänderten
 
 Aktivieren Sie in Visual Studio Code das Explorer-Fenster aus dem Ordner **./src/webparts/recentDocuments**, und verschieben Sie die Dateien **IDocument.ts** und **IDocumentActivity.ts** eine Ebene nach oben zum Ordner **./src/webparts**.
 
-![Explorer-Fenster in Visual Studio Code mit den Dateien „IDocument.ts“ und „IDocumentActivity.ts“ (hervorgehoben)](../../../../images/tutorial-sharingdata-interfaces.png)
+![Explorer-Fenster in Visual Studio Code mit den Dateien „IDocument.ts“ und „IDocumentActivity.ts“ (hervorgehoben)](../../../images/tutorial-sharingdata-interfaces.png)
 
 #### <a name="update-references-to-the-moved-files"></a>Aktualisieren der Verweise auf die verschobenen Dateien
 
@@ -596,7 +612,7 @@ gulp serve
 
 Fügen Sie in SharePoint Workbench das Webpart „Recent document“ zur Canvas hinzu.
 
-![Webpart „Recent document“ mit einer Dokumentkarte mit Informationen zu dem zuletzt geänderten Dokument](../../../../images/tutorial-sharingdata-recent-document.png)
+![Webpart „Recent document“ mit einer Dokumentkarte mit Informationen zu dem zuletzt geänderten Dokument](../../../images/tutorial-sharingdata-recent-document.png)
 
 Diese Implementierung ist ein typisches Beispiel für zwei Webparts, die unabhängig voneinander entwickelt werden. Würden beide Webparts auf derselben Seite platziert und würden beide Webparts Daten aus SharePoint laden, würden sie zwei separate Anforderungen ausführen, um einander ähnliche Informationen abzurufen. Angenommen, Sie müssten zu einem späteren Zeitpunkt die Quelle für die Informationen zu den zuletzt geänderten Dokumenten ändern. Dann müssten Sie beide Webparts aktualisieren. Damit die Seite schneller lädt und der Webpartcode einfacher zu pflegen ist, können Sie die zum Abrufen der Daten genutzte Logik zentralisieren und einmal abgerufene Daten für beide Webparts verfügbar machen.
 
@@ -608,7 +624,7 @@ Zur Zentralisierung des Ladens der Informationen zu den zuletzt geänderten Doku
 
 Erstellen Sie im Projektordner den Ordnerpfad **./src/services/documentsService**. Verschieben Sie die Dateien **IDocument.ts** und **IDocumentActivity.ts** aus dem Ordner **./src/webparts** in den Ordner **./src/services/documentsService**.
 
-![Dateien „IDocument.ts“ und „IDocumentActivity.ts“ im Explorer-Fenster in Visual Studio Code](../../../../images/tutorial-sharingdata-interfaces-documentsservice.png)
+![Dateien „IDocument.ts“ und „IDocumentActivity.ts“ im Explorer-Fenster in Visual Studio Code](../../../images/tutorial-sharingdata-interfaces-documentsservice.png)
 
 ### <a name="build-the-data-access-service"></a>Erstellen des Datenzugriffsdiensts
 
@@ -782,7 +798,7 @@ Führen Sie den folgenden Befehl über eine Eingabeaufforderung in Ihrem Projekt
 gulp serve
 ```
 
-![Webparts „Recent document“ und „Zuletzt verwendete Dokumente“ mit Informationen zu den zuletzt geänderten Dokumenten](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
+![Webparts „Recent document“ und „Zuletzt verwendete Dokumente“ mit Informationen zu den zuletzt geänderten Dokumenten](../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
 
 ### <a name="load-web-part-data-using-the-data-service"></a>Laden von Webpartdaten mithilfe des Datendiensts
 
@@ -860,7 +876,7 @@ Führen Sie über eine Eingabeaufforderung im Projektordner den folgenden Befehl
 gulp serve
 ```
 
-![Webparts „Recent document“ und „Zuletzt verwendete Dokumente“ mit Informationen zu den zuletzt geänderten Dokumenten](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
+![Webparts „Recent document“ und „Zuletzt verwendete Dokumente“ mit Informationen zu den zuletzt geänderten Dokumenten](../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
 
 ### <a name="share-data-between-web-parts"></a>Gemeinsame Verwendung von Daten zwischen Webparts
 
@@ -989,12 +1005,12 @@ Führen Sie über eine Eingabeaufforderung im Projektordner den folgenden Befehl
 gulp serve
 ```
 
-![Webparts „Recent document“ und „Zuletzt verwendete Dokumente“ mit Informationen zu den zuletzt geänderten Dokumenten](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
+![Webparts „Recent document“ und „Zuletzt verwendete Dokumente“ mit Informationen zu den zuletzt geänderten Dokumenten](../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
 
 Wenn Sie den verschiedenen Abschnitten der Methode `DocumentsService.ensureRecentDocuments` Protokollierungsanweisungen hinzufügen, können Sie nachverfolgen, wie die Daten einmalig geladen und anschließend für das zweite Webpart wiederverwendet werden.
 
-![Entwicklerkonsole mit verschiedenen Protokollierungsmeldungen in Microsoft Edge](../../../../images/tutorial-sharingdata-console-log.png)
+![Entwicklerkonsole mit verschiedenen Protokollierungsmeldungen in Microsoft Edge](../../../images/tutorial-sharingdata-console-log.png)
 
 ## <a name="see-also"></a>Weitere Artikel
 
-- [Gemeinsame Verwendung von Daten zwischen clientseitigen Webparts](./share-data-between-web-parts)
+- [Gemeinsame Verwendung von Daten zwischen clientseitigen Webparts](./share-data-between-web-parts.md)

@@ -1,12 +1,18 @@
-<a id="sharepoint-framework-development-tools-and-libraries" class="xliff"></a>
-
-# Entwicklungstools und -bibliotheken für das SharePoint Framework
+---
+title: "Entwicklungstools und -bibliotheken für das SharePoint Framework"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 2df6ebaaf1d56b20e2ae96063c9d6bff339603c5
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
+# <a name="sharepoint-framework-development-tools-and-libraries"></a>Entwicklungstools und -bibliotheken für das SharePoint Framework
 
 Das SharePoint Framework umfasst mehrere clientseitige JavaScript-Bibliotheken, die Sie zum Erstellen von Lösungen verwenden können. Dieser Artikel enthält eine Übersicht über die Tools und Bibliotheken, die Sie zum Entwickeln von clientseitigen Webparts verwenden können.
 
-<a id="typescript" class="xliff"></a>
-
-## TypeScript
+## <a name="typescript"></a>TypeScript
 Bei TypeScript handelt es sich um eine typisierte Obersprache zu JavaScript, die in einfaches JavaScript kompiliert. SharePoint-Tools für die clientseitige Entwicklung werden auf Basis von TypeScript-Klassen, -Modulen und -Schnittstellen erstellt. Sie können diese verwenden, um stabile clientseitige Webparts zu erstellen. 
 
 Für die ersten Schritte mit TypeScript finden Sie in den folgenden Ressourcen Informationen:
@@ -16,9 +22,7 @@ Für die ersten Schritte mit TypeScript finden Sie in den folgenden Ressourcen I
 * [TypeScript-Handbuch](https://www.typescriptlang.org/docs/handbook/basic-types.html)
 * [TypeScript-Community bei Stack Overflow](https://stackoverflow.com/questions/tagged/typescript)
 
-<a id="javascript-frameworks" class="xliff"></a>
-
-## JavaScript-Frameworks
+## <a name="javascript-frameworks"></a>JavaScript-Frameworks
 Sie können eine beliebige Anzahl von JavaScript-Frameworks zum Entwickeln clientseitiger Webparts erstellen. Nachfolgend sehen Sie einige der gängigsten Frameworks:
 
 * [React](https://facebook.github.io/react/)
@@ -30,17 +34,13 @@ Da es sich bei clientseitigen Webparts um Komponenten handelt, die auf einer Sha
 
 Darüber hinaus wird empfohlen, dass Sie sich die [SharePoint PnP JavaScript-Core-Bibliothek](https://github.com/SharePoint/PnP-JS-Core) ansehen, bei der es sich um eine von der Community geförderte Initiative handelt, um einfachen Zugriff auf SharePoint-REST-APIs bereitzustellen. 
 
-<a id="node-package-manager-npm" class="xliff"></a>
-
-## Knotenpaket-Manager (npm)
+## <a name="node-package-manager-npm"></a>Knotenpaket-Manager (npm)
 
 Die SharePoint-Tools für die clientseitige Entwicklung verwenden den [npm](https://www.npmjs.com/)-Paket-Manager, der [NuGet](https://www.nuget.org/) ähnlich ist, um Abhängigkeiten und andere erforderliche JavaScript-Hilfsprogramme zu verwalten. npm ist in der Regel als Teil des Node.js-Setups enthalten.
 
 Weitere Informationen über npm finden Sie in der [npm-Dokumentation](https://docs.npmjs.com/).
 
-<a id="nodejs" class="xliff"></a>
-
-## Node.js
+## <a name="nodejs"></a>Node.js
 
 Node.js ist eine plattformübergeifende Open Source-Laufzeitumgebung zum Hosten und Ausführen von JavaScript-Code. Sie können node.js verwenden, um serverseitige Webanwendungen zu entwickeln, die in JavaScript geschrieben werden. Die node.js-Ökosystem ist eng mit npm und Taskausführungen wie gulp verbunden, um eine effiziente Umgebung zum Erstellen von JavaScript-basierten Anwendungen bereitzustellen. Nodel.js ist IIS Express oder IIS ähnlich, umfasst aber Tools, die die clientseitige Entwicklung vereinfachen. 
 
@@ -50,9 +50,7 @@ Weitere Informationen zu Node.js finden Sie in den folgenden Themen:
 * [API-Referenzdokumentation zu Node.js](https://nodejs.org/api/)
 * [Node.js-Syntax und -Beispiel](https://nodejs.org/api/synopsis.html)
 
-<a id="gulp-task-runner" class="xliff"></a>
-
-## Gulp-Taskausführung
+## <a name="gulp-task-runner"></a>Gulp-Taskausführung
 Die SharePoint-Tools für clientseitige Entwicklung verwenden [gulp](http://gulpjs.com/) als Taskausführung für den Buildprozess für Folgendes:
 
 * Bündeln und Minimieren von JavaScript- und CSS-Dateien
@@ -66,9 +64,7 @@ Weitere Informationen zu gulp finden Sie in den folgenden Themen:
 * [TypeScript und Gulp](https://www.typescriptlang.org/docs/handbook/gulp.html)
 * [Artikel zu Gulp](https://github.com/gulpjs/gulp/blob/master/docs/README.md#articles)
 
-<a id="webpack" class="xliff"></a>
-
-## Webpack
+## <a name="webpack"></a>Webpack
 
 Webpack ist ein Modulbundler, der aus Ihren Webpartdateien und Abhängigkeiten ein oder mehrere JavaScript-Bündel generiert, damit Sie unterschiedliche Bündel für unterschiedliche Szenarien laden können.
 
@@ -79,9 +75,7 @@ Weitere Informationen zu webpack finden Sie in den folgenden Themen:
 * [Webpack-Dokumentation](http://webpack.github.io/docs/what-is-webpack.html)
 * [TypeScript, React und Webpack](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)
 
-<a id="yeoman-generators" class="xliff"></a>
-
-## Yeoman-Generatoren
+## <a name="yeoman-generators"></a>Yeoman-Generatoren
 [Yeoman](http://yeoman.io/) hilft Ihnen bei den ersten Schritten mit neuen Projekten und stellt bewährte Methoden und Tools bereit, mit denen Sie produktiv arbeiten können. Der SharePoint-Yeoman-Generator ist im Rahmen des Frameworks für den Einstieg in neue clientseitige Webpartprojekte verfügbar. 
 
 Weitere Informationen zu Yeoman finden Sie in den folgenden Themen:
@@ -94,9 +88,7 @@ Nachfolgend finden Sie einige häufig verwendete Yeoman-Generatoren, die Sie je 
 * [generator-react-webpack](https://github.com/newtriks/generator-react-webpack)
 * [generator-angular](https://www.npmjs.com/package/generator-angular)
 
-<a id="source-code-editors" class="xliff"></a>
-
-## Quellcode-Editoren
+## <a name="source-code-editors"></a>Quellcode-Editoren
 SharePoint Framework wird clientseitig gesteuert. Daher können Sie einen HTML- und JavaScript-Code-Editor Ihrer Wahl verwenden, z. B.:
 
 * [Visual Studio Code](https://code.visualstudio.com/)
@@ -105,25 +97,19 @@ SharePoint Framework wird clientseitig gesteuert. Daher können Sie einen HTML- 
 
 In der SharePoint Framework-Dokumentation wird Visual Studio Code in den Dokumenten und Beispielen verwendet. Visual Studio Code ist ein einfacher und dennoch leistungsfähiger Quellcode-Editor von Microsoft, der auf dem Desktop ausgeführt wird und für Windows, Mac und Linux verfügbar ist. Er verfügt über integrierte Unterstützung für JavaScript, TypeScript und Node.js und bietet ein reichhaltiges Ökosystem von Erweiterungen für andere Sprachen (wie C++, C#, Python, PHP) und Laufzeiten.
 
-<a id="sharepoint-rest-apis" class="xliff"></a>
-
-## SharePoint-REST-APIs
+## <a name="sharepoint-rest-apis"></a>SharePoint-REST-APIs
 
 Das SharePoint Framework ermöglicht wichtige Integrationen in SharePoint-Oberflächen und richtet sich an die Webentwicklung. Mit den REST-APIs von SharePoint können Sie mit SharePoint und anderen Arbeitslasten interagieren, aus denen Ihre Webpartfunktionalität besteht. 
 
 Es wird empfohlen, dass Sie sich mit den folgenden REST-APIs vertraut machen:
 
-* [REST-APIs von SharePoint-Listen](https://msdn.microsoft.com/de-de/library/office/dn292552.aspx)
+* [REST-APIs von SharePoint-Listen](https://msdn.microsoft.com/de-DE/library/office/dn292552.aspx)
 
-<a id="patterns-and-practices" class="xliff"></a>
-
-## Patterns and Practices
+## <a name="patterns-and-practices"></a>Patterns and Practices
 
 Die Initiative[Office Dev Patterns and Practices/SharePoint Pattern and Practices (PnP)](http://aka.ms/officedevpnp) bietet Codebeispiele, Muster und andere Ressourcen, die Ihnen bei der Umwandlung Ihrer vorhandenen Lösung in das SharePoint Framework behilflich sind. Machen Sie sich unbedingt mit den Codebeispielen und Anweisungen der PnP-Initiative vertraut.
 
-<a id="additional-resources" class="xliff"></a>
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-## Zusätzliche Ressourcen
-
-* [SharePoint Framework](sharepoint-framework-overview)
-* [Erstellen eines clientseitigen Hallo Welt-Webparts](web-parts/get-started/build-a-hello-world-web-part)
+* [SharePoint Framework](sharepoint-framework-overview.md)
+* [Erstellen eines clientseitigen Hallo Welt-Webparts](web-parts/get-started/build-a-hello-world-web-part.md)

@@ -1,3 +1,13 @@
+---
+title: "SharePoint Framework-Toolkette"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: cf62390105b5e32f9255cb8b35d8f660a249f9fc
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="sharepoint-framework-toolchain"></a>SharePoint Framework-Toolkette
 
 Die SharePoint Framework-Toolkette ist eine Sammlung von Buildtools, Frameworkpaketen und anderen Elementen, mit denen Sie clientseitige Projekte erstellen und bereitstellen können. Die Toolkette unterstützt Sie bei der Erstellung clientseitiger Komponenten wie Webparts. Außerdem ermöglicht sie es Ihnen mit Tools wie der SharePoint Workbench, diese Komponenten in Ihrer lokalen Entwicklungsumgebung zu testen. Auch zum Packen und Bereitstellen auf SharePoint lässt sich die Toolkette nutzen. Darüber hinaus stellt sie verschiedene Buildbefehle für wichtige Buildtasks zur Verfügung, darunter unter anderem Befehle für die Codekompilierung und für das Packen clientseitiger Projekte in SharePoint-App-Pakete. 
@@ -66,7 +76,7 @@ Immer, wenn ein neues Projekt mit dem Generator erstellt wird, installiert der G
 ### <a name="packagejson"></a>package.json
 Die Datei `package.json` im clientseitigen Projekt enthält eine Liste der Abhängigkeiten des Projekts. Diese Liste definiert, welche Abhängigkeiten installiert werden müssen. Wie oben erwähnt kann jede Abhängigkeit wiederum weitere Abhängigkeiten enthalten. In npm können Sie über die Eigenschaften `dependencies` und `devDependencies` sowohl Laufzeit- als auch Buildabhängigkeiten definieren. Die Eigenschaft `devDependencies` kommt zum Einsatz, wenn das jeweilige Modul im Code verwendet werden soll. Das ist beispielsweise bei der Erstellung von Webparts der Fall.
 
-Nachfolgend sehen Sie die Datei `package.json` für das [helloworld-Webpart](web-parts/get-started/build-a-hello-world-web-part):
+Nachfolgend sehen Sie die Datei `package.json` für das [helloworld-Webpart](../web-parts/get-started/build-a-hello-world-web-part.md):
 
 ```json 
 {
@@ -98,7 +108,7 @@ Nachfolgend sehen Sie die Datei `package.json` für das [helloworld-Webpart](web
 }
 ```
 
-Zwar werden für ein Projekt sehr viele Pakete installiert; sie sind aber nur für die Erstellung des Webparts in der Entwicklungsumgebung erforderlich. Mithilfe dieser Pakete können Sie alle nötigen Module und Abhängigkeiten implementieren, um Ihr Webpart zu erstellen, es zu kompilieren, ein Bundling für es durchzuführen und es für die Bereitstellung zu packen. Die finale und minimierte Bundle-Version des Webparts, die Sie auf einem CDN-Server oder auf SharePoint bereitstellen, enthält keines dieser Pakete. Allerdings können Sie Ihr Webpart je nach den konkreten Anforderungen auch so konfigurieren, dass es bestimmte Module enthält. Weitere Informationen finden Sie unter [Add an external library to a web part](web-parts/basics/add-an-external-library).
+Zwar werden für ein Projekt sehr viele Pakete installiert; sie sind aber nur für die Erstellung des Webparts in der Entwicklungsumgebung erforderlich. Mithilfe dieser Pakete können Sie alle nötigen Module und Abhängigkeiten implementieren, um Ihr Webpart zu erstellen, es zu kompilieren, ein Bundling für es durchzuführen und es für die Bereitstellung zu packen. Die finale und minimierte Bundle-Version des Webparts, die Sie auf einem CDN-Server oder auf SharePoint bereitstellen, enthält keines dieser Pakete. Allerdings können Sie Ihr Webpart je nach den konkreten Anforderungen auch so konfigurieren, dass es bestimmte Module enthält. Weitere Informationen finden Sie unter [Add an external library to a web part](../web-parts/basics/add-an-external-library.md).
 
 ### <a name="working-with-source-control-systems"></a>Arbeiten mit Quellcodeverwaltungssystemen
 Je mehr Projektabhängigkeiten es gibt, desto mehr Pakete müssen installiert werden. Es empfiehlt sich nicht, den Ordner `node_modules` in das Quellcodeverwaltungssystem einzuchecken, da er alle Abhängigkeiten enthält. Sie sollten den Ordner `node_modules` in die Liste der Dateien aufnehmen, die beim Einchecken ignoriert werden. 
@@ -146,7 +156,7 @@ gulp serve
 
 `serve` führt die verschiedenen Tasks aus und startet im Anschluss SharePoint Workbench.
 
-![Task „gulp serve“](../../../images/toolchain-gulp-serve-task.png)
+![Task „gulp serve“](../../images/toolchain-gulp-serve-task.png)
 
 ### <a name="build-targets"></a>Buildziele
 Im Screenshot oben sehen Sie, dass der Task folgendes Buildziel setzt:

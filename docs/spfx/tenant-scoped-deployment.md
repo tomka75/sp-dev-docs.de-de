@@ -1,3 +1,13 @@
+---
+title: "Mandantenweite Lösungsbereitstellung für SharePoint Framework-Lösungen"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 2340e4f5ee0bdc48c5bd4dd6dc85f9c63e3b2697
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="tenant-scoped-solution-deployment-for-sharepoint-framework-solutions"></a>Mandantenweite Lösungsbereitstellung für SharePoint Framework-Lösungen
 
 Sie können Ihre SharePoint Framework-Komponenten so konfigurieren, dass sie sofort nach der Installation des Lösungspakets im App-Katalog eines Mandanten mandantenweit verfügbar sind. Hierzu verwenden Sie das Attribut **skipFeatureDeployment** in der Datei **package-solution.json**.
@@ -7,7 +17,7 @@ Ist dieses Attribut für eine Lösung aktiviert, wird dem Mandantenadministrator
 Eine Demonstration der mandantenweiten Bereitstellung finden Sie in dem folgenden Video in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=pemHOZCSwZI).
 
 <a href="https://www.youtube.com/watch?v=pemHOZCSwZI&list=PLR9nK3mnD-OXZbEvTEPxzIOMGXj_aZKJG">
-<img src="../../images/tenant-deploy-youtube-video.png" alt="PnP Short Guidance video on tenant-wide deployment option" />
+<img src="../images/tenant-deploy-youtube-video.png" alt="PnP Short Guidance video on tenant-wide deployment option" />
 </a>
 
 > Beachten Sie: Sie müssen auf die neueste Version der SharePoint Framework-Yeoman-Vorlage aktualisieren, um diese Funktion nutzen zu können. Aktualisieren können Sie Ihre globale Installation mit dem Befehl `npm install -g @microsoft/generator-sharepoint`. 
@@ -24,7 +34,7 @@ Wenn diese Option verwendet wird, werden alle Featureframeworkdefinitionen in de
 
 In der SharePoint Framework-Yeoman-Vorlage ist eine spezifische Frage für diese Option enthalten. Ihre Antwort auf diese Frage hat direkte Auswirkungen auf das Attribut **skipFeatureDeployment** in der Datei **package-solution.json**. 
 
-![Yeoman-Frage zur mandantenweiten Bereitstellung](../../images/tenant-deploy-yeoman.png)
+![Yeoman-Frage zur mandantenweiten Bereitstellung](../images/tenant-deploy-yeoman.png)
 
 In der folgenden Beispielkonfiguration ist **skipFeatureDeployment** auf „true“ gesetzt. Das bedeutet, dass die Lösung zentral im gesamten Mandanten bereitgestellt werden kann. 
 
@@ -49,7 +59,7 @@ Wird eine Lösung, für die das Attribut **skipFeatureDeployment** auf **true** 
 
 Das Kontrollkästchen **Make this solution available to all sites in the organization** ist standardmäßig deaktiviert. Wenn der Administrator das Kontrollkästchen aktiviert, sind die Komponenten der Lösung automatisch im gesamten Mandantenbereich sichtbar und verfügbar. 
 
-![Einstellung „Make this solution available to all sites in an organization“ bei der Bereitstellung der Lösung im App-Katalog](../../images/tenant-deploy-app-catalog.png)
+![Einstellung „Make this solution available to all sites in an organization“ bei der Bereitstellung der Lösung im App-Katalog](../images/tenant-deploy-app-catalog.png)
 
 Beachten Sie: Da die lösungs- und websitespezifischen Aktualisierungsaktionen nur bei Verwendung eines Featureframeworks verfügbar sind, gibt es keine spezifische Aktualisierungsoption für zentral bereitgestellte Lösungen. Lösungen dieses Typs lassen sich einfach über eine Aktualisierung der lösungsspezifischen Objekte im CDN sowie eine Aktualisierung des Pakets im App-Katalog aktualisieren. Dadurch werden automatisch sämtliche vorhandenen Komponenteninstanzen im Mandantenbereich so aktualisiert, dass sie die neuesten Komponentenobjekte verwenden (z. B. JavaScript-Dateien und aktualisierte CSS-Dateien).
 

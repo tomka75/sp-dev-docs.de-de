@@ -1,8 +1,18 @@
+---
+title: "Vereinfachen des Hinzufügens von Webparts mit vorkonfigurierten Einträgen"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 6adeab3325aa9ba73b16ee9a182825d48b2eb300
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/20/2017
+---
 # <a name="simplify-adding-web-parts-with-preconfigured-entries"></a>Vereinfachen des Hinzufügens von Webparts mit vorkonfigurierten Einträgen
 
 Komplexere clientseitige SharePoint Framework-Webparts können zahlreiche Eigenschaften haben, die vom Benutzer konfiguriert werden müssen. Sie können Benutzer unterstützen, indem Sie vorkonfigurierte Eigenschafteneinträge für bestimmte Szenarien hinzufügen. Ein vorkonfigurierte Eintrag initialisiert das Webpart mit vordefinierten Werten. In diesem Artikel erfahren Sie, wie Sie vorkonfigurierte Einträge in einem clientseitigen SharePoint Framework-Webpart verwenden, um Benutzern vorkonfigurierte Versionen Ihres Webparts bereitzustellen.
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment).
+> **Hinweis:** Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment.md).
 
 ## <a name="what-are-web-part-preconfigured-entries"></a>Was sind vorkonfigurierte Einträge für Webparts?
 
@@ -46,10 +56,23 @@ Eigenschaftsname           |Werttyp      |Erforderlich|Zweck                    
 title                   |ILocalizedString|ja     |Der Webparttitel, der in der Toolbox angezeigt wird.              |`"title": { "default": "Weather", "nl-nl": "Weerbericht" }`
 description             |ILocalizedString|ja     |Die Webpartbeschreibung, die in den Toolbox-QuickInfos angezeigt wird.|`"description": { "default": "Shows weather in the given location", "nl-nl": "Toont weerbericht voor de opgegeven locatie" } `
 officeFabricIconFontName|string          |nein      |Das Symbol für das Webpart, das in der Toolbox angezeigt wird. Dessen Wert muss einer der [Office UI Fabric-Symbolnamen](https://dev.office.com/fabric#/styles/icons) sein. Wenn diese Eigenschaft einen Wert hat, wird die **iconImageUrl**-Eigenschaft ignoriert.|`"officeFabricIconFontName": "Sunny"`
-iconImageUrl            |string          |nein      |Das Symbol für das Webpart, das in der Toolbox angezeigt und von einer Bild-URL dargestellt wird. Das Bild an der URL muss genau 38x38 px sein. Wenn die **officeFabricIconName**-Eigenschaft nicht über einen Wert verfügt, muss diese Eigenschaft einen Wert aufweisen.|`"iconImageUrl": "https://cdn.contoso.com/weather.png"`
+iconImageUrl            |string          |nein      |Das Symbol für das Webpart, das in der Toolbox angezeigt und von einer Bild-URL dargestellt wird. Das Bild an der URL muss genau 40x28 px sein. Wenn die **officeFabricIconName**-Eigenschaft nicht über einen Wert verfügt, muss diese Eigenschaft einen Wert aufweisen.|`"iconImageUrl": "https://cdn.contoso.com/weather.png"`
 groupId                 |string          |ja     |Die Gruppen-ID bestimmt, welche Toolboxgruppe das Webpart enthalten soll. Das SharePoint Framework reserviert Gruppen-IDs für Standardgruppen. Der Entwickler kann eine dieser Gruppen auswählen. Wenn eine Gruppen-ID angegeben ist, wird die **group**-Eigenschaft ignoriert. Alternativ kann der Entwickler eine eindeutige ID und einen eindeutigen Gruppennamen auswählen. In der Toolbox wird das Webpart dann in seiner eigenen Gruppe angezeigt.|`"groupId": "6737645a-4443-4210-a70e-e5e2a219133a"`
 Gruppe                   |ILocalizedString|nein      |Der Name der Gruppe in der Toolbox, in der das Webpart angezeigt werden soll. Wenn kein Wert angegeben ist, wird das Webpart in der **Custom**-Gruppe angezeigt.|`"group": { "default": "Content", "nl-nl": "Inhoud" }`
-Eigenschaften              |TProperties     |ja     |Ein Schlüssel-Wert-Paarobjekt mit Standardwerten für Webparteigenschaften.|`"properties": { "location": "Redmond", "numberOfDays": 3, "showIcon": true }`
+dataVersion             |string          |nein      |Verwenden Sie dieses Feld, um die Datenversion der vorkonfigurierten Daten anzugeben, die dem Webpart bereitgestellt werden. Beachten Sie, dass sich die Datenversion vom Versionsfeld im Manifest unterscheidet. Die Manifestversion wird zum Steuern der Versionsverwaltung des Webpartcodes verwendet, die Datenversion wird hingegen zum Steuern der Versionsverwaltung der serialisierten Daten des Webparts verwendet. Weitere Informationen finden Sie im dataVersion-Feld Ihres Webparts. Unterstützte Werte: MAJOR.MINOR Version.|`"dataVersion": "1.0"`
+properties              |TProperties     |ja     |Ein Schlüssel-Wert-Paarobjekt mit Standardwerten für Webparteigenschaften.|`"properties": { "location": "Redmond", "numberOfDays": 3, "showIcon": true }`
+
+Folgende vordefinierte Kategorien können für die `groupId`-Eigenschaft verwendet werden.
+
+Kategoriename |Guid |Webpart-Auswahl zuordnen |Beschreibung        
+--- |--- |--- |---
+Text, Medien und Inhalt | `cf066440-0614-43d6-98ae-0b31cf14c7c3`| Medien und Inhalt  |Diese Kategorie enthält Webparts, die Text, Multimedia, Dokumente, Informationen aus dem Web und andere formatierte Inhalte anzeigen.   
+Ermitteln | `1edbd9a8-0bfb-4aa2-9afd-14b8c45dd489`| Suche  |Diese Kategorie enthält Webparts, die Inhalte organisieren, gruppieren und filtern, um Benutzer bei der Suche nach Informationen zu helfen. 
+Kommunikation und Zusammenarbeit | `75e22ed5-fa14-4829-850a-c890608aca2d`| Zusammenarbeit im sozialen Netzwerk |Diese Kategorie enthält Webparts, die die gemeinsame Nutzung von Informationen, Teamarbeit und soziale Interaktionen vereinfachen.
+Planung und Durchführung | `1bc7927e-4a5e-4520-b540-71305c79c20a`| Geschäftsdaten | Diese Kategorie enthält Webparts, die die Produktivität im Team durch Verwendung von Planungs- und Durchführungstools fördern. 
+Business und Intelligence | `4aca9e90-eff5-4fa1-bac7-728f5f157b66`| Geschäftsdaten | Diese Kategorie enthält Webparts für das Nachverfolgen und Analysieren von Daten sowie für die Integration von geschäftlichen Abläufen in Seiten. 
+Websitetools | `070951d7-94da-4db8-b06e-9d581f1f55b1`| Websitetools  |Diese Kategorie enthält Webparts für Websiteinformationen und -verwaltung. 
+Sonstiges | `5c03119e-3074-46fd-976b-c60198311f70`| Sonstige | Diese Kategorie enthält Webparts, die nicht in anderen Kategorien enthalten sind.            
 
 Einige Webparteigenschaften weisen einen Wert vom Typ **ILocalizedString** auf. Dieser Typ ist ein Schlüssel-Wert-Paarobjekt, mit dem Entwickler Zeichenfolgen für die unterschiedlichen Gebietsschemas angeben können. Mindestens ein Wert vom Typ **ILocalizedString** muss den **Standardwert** enthalten. Entwickler können optional die Übersetzungen dieses Werts in die unterschiedlichen Gebietsschemas bereitstellen, die ihr Webpart unterstützt. Wenn das Webpart auf einer Seite in einem Gebietsschema platziert wird, das nicht in der lokalisierten Zeichenfolge aufgeführt ist, wird stattdessen der Standardwert verwendet.
 
@@ -80,7 +103,7 @@ Ein **ILocalizedString**-Wert, der nicht gültig ist, da der **default** -Schlü
 
 Um anzuzeigen, wie Sie beim Erstellen von Webparts vorkonfigurierte Einträge verwenden können, erstellen Sie ein Beispiel-Katalog-Webpart. Benutzer können mithilfe mehrerer Eigenschaften dieses Webpart konfigurieren, um Elemente aus einer ausgewählten Liste auf eine bestimmte Weise anzuzeigen. Aus Platzgründen wird die eigentliche Implementierung der Webpartlogik ausgelassen, und Sie konzentrieren sich auf die Verwendung der **preconfiguredEntries**-Eigenschaft, um vorkonfigurierte Versionen des Katalog-Webparts bereitzustellen.
 
-![Webparteigenschaftenbereich, in dem die unterschiedlichen Eigenschaften angezeigt werden, die Benutzer konfigurieren müssen, damit das Webpart funktioniert](../../../../images/preconfiguredentries-needs-configuration.png)
+![Webparteigenschaftenbereich, in dem die unterschiedlichen Eigenschaften angezeigt werden, die Benutzer konfigurieren müssen, damit das Webpart funktioniert](../../../images/preconfiguredentries-needs-configuration.png)
 
 ### <a name="create-a-new-project"></a>Erstellen eines neuen Projekts
 
@@ -110,11 +133,17 @@ Geben Sie die folgenden Werte ein, wenn Sie dazu aufgefordert werden:
 - **Zeigt Elemente aus der ausgewählten Liste an** als Beschreibung Ihres Webparts
 - **React** als Eintrittspunkt für die Webpart-Erstellung
 
-![SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../../images/preconfiguredentries-yeoman.png)
+![SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../images/preconfiguredentries-yeoman.png)
 
-Öffnen Sie den Projektordner in Ihrem Code-Editor, sobald die Gerüsterstellung abgeschlossen ist. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 
-![SharePoint Framework-Projekt in Visual Studio Code](../../../../images/preconfiguredentries-visual-studio-code.png)
+```sh
+npm shrinkwrap
+```
+
+Öffnen Sie dann den Projektordner im Code-Editor. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+
+![SharePoint Framework-Projekt in Visual Studio Code](../../../images/preconfiguredentries-visual-studio-code.png)
 
 ### <a name="add-web-part-properties"></a>Hinzufügen von Webparteigenschaften
 
@@ -173,19 +202,27 @@ Aktualisieren Sie React-Hauptkomponente so, dass die Werte der Eigenschaften ang
 import * as React from 'react';
 import styles from './Gallery.module.scss';
 import { IGalleryProps } from './IGalleryProps';
-import { Placeholder } from '@microsoft/sp-webpart-base';
 
-export default class Gallery extends React.Component<IGalleryProps, {}> {
+export default class Gallery extends React.Component<IGalleryProps, void> {
   public render(): JSX.Element {
     if (this.needsConfiguration()) {
-      return <Placeholder
-        icon="ms-Icon--ThumbnailView"
-        iconText="Gallery"
-        description="Show items from the selected list" />;
+      return <div className="ms-Grid" style={{ color: "#666", backgroundColor: "#f4f4f4", padding: "80px 0", alignItems: "center", boxAlign: "center" }}>
+        <div className="ms-Grid-row" style={{ color: "#333" }}>
+          <div className="ms-Grid-col ms-u-hiddenSm ms-u-md3"></div>
+          <div className="ms-Grid-col ms-u-sm12 ms-u-md6" style={{ height: "100%", whiteSpace: "nowrap", textAlign: "center" }}>
+            <i className="ms-fontSize-su ms-Icon ms-Icon--ThumbnailView" style={{ display: "inline-block", verticalAlign: "middle", whiteSpace: "normal" }}></i><span className="ms-fontWeight-light ms-fontSize-xxl" style={{ paddingLeft: "20px", display: "inline-block", verticalAlign: "middle", whiteSpace: "normal" }}>Gallery</span>
+          </div>
+          <div className="ms-Grid-col ms-u-hiddenSm ms-u-md3"></div>
+        </div>
+        <div className="ms-Grid-row" style={{ width: "65%", verticalAlign: "middle", margin: "0 auto", textAlign: "center" }}>
+          <span style={{ color: "#666", fontSize: "17px", display: "inline-block", margin: "24px 0", fontWeight: 100 }}>Show items from the selected list</span>
+        </div>
+        <div className="ms-Grid-row"></div>
+      </div>;
     }
     else {
       return (
-        <div className={styles.helloWorld}>
+        <div className={styles.gallery}>
           <div className={styles.container}>
             <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
               <div className='ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1'>
@@ -367,7 +404,7 @@ gulp serve
 
 Fügen Sie im Webbrowser das Webpart zum Zeichenbereich hinzu, und öffnen Sie dessen Eigenschaftenbereich. Sie sollten alle Eigenschaften sehen, die von Benutzern konfiguriert werden können.
 
-![Webparteigenschaftenbereich, in dem die unterschiedlichen Eigenschaften angezeigt werden, die Benutzer konfigurieren müssen, damit das Webpart funktioniert](../../../../images/preconfiguredentries-needs-configuration.png)
+![Webparteigenschaftenbereich, in dem die unterschiedlichen Eigenschaften angezeigt werden, die Benutzer konfigurieren müssen, damit das Webpart funktioniert](../../../images/preconfiguredentries-needs-configuration.png)
 
 Da Sie für das Webpart keine Standardwerte angegeben haben, müssen Benutzer jedes Mal, wenn sie das Webpart der Seite hinzufügen, dieses zuerst konfigurieren. Sie können dies vereinfachen, indem Sie für die häufigsten Szenarien Standardwerte angeben.
 
@@ -406,11 +443,11 @@ gulp serve
 
 Wenn Sie die Webpart-Toolbox öffnen, um das Webpart zum Zeichenbereich hinzuzufügen, werden Sie sehen, dass sich der Name und das Symbol geändert haben und nun die vorkonfigurierten Einstellungen widerspiegeln.
 
-![Webpart-Toolbox mit der vorkonfigurierten Version des Webparts](../../../../images/preconfiguredentries-recent-images-toolbox.png)
+![Webpart-Toolbox mit der vorkonfigurierten Version des Webparts](../../../images/preconfiguredentries-recent-images-toolbox.png)
 
 Nach dem Hinzufügen des Webparts zu der Seite funktioniert dieses sofort mit den vorkonfigurierten Einstellungen.
 
-![Vorkonfiguriertes Webpart, das sofort funktioniert, nachdem es der Seite hinzugefügt wurde](../../../../images/preconfiguredentries-recent-images-canvas.png)
+![Vorkonfiguriertes Webpart, das sofort funktioniert, nachdem es der Seite hinzugefügt wurde](../../../images/preconfiguredentries-recent-images-canvas.png)
 
 ### <a name="specify-multiple-preconfigured-web-part-entries"></a>Eingeben mehrerer vorkonfigurierter Webparteinträge
 
@@ -460,11 +497,11 @@ gulp serve
 
 Wenn Sie die Webpart-Toolbox öffnen, um das Webpart dem Zeichenbereich hinzuzufügen, werden Sie sehen, dass es zwei Webparts gibt, aus denen Sie auswählen können.
 
-![Webpart-Toolbox mit der vorkonfigurierten Version des Webparts](../../../../images/preconfiguredentries-multiple-web-parts-toolbox.png)
+![Webpart-Toolbox mit der vorkonfigurierten Version des Webparts](../../../images/preconfiguredentries-multiple-web-parts-toolbox.png)
 
 Nach dem Hinzufügen des Webparts **Zuletzt verwendete Dokumente** zu der Seite verwendet dieses sofort die spezifischen vorkonfigurierten Einstellungen.
 
-![Vorkonfiguriertes Webpart für zuletzt verwendete Dokumente, das sofort funktioniert, nachdem es der Seite hinzugefügt wurde](../../../../images/preconfiguredentries-recent-documents-canvas.png)
+![Vorkonfiguriertes Webpart für zuletzt verwendete Dokumente, das sofort funktioniert, nachdem es der Seite hinzugefügt wurde](../../../images/preconfiguredentries-recent-documents-canvas.png)
 
 ### <a name="specify-an-unconfigured-instance-of-the-web-part"></a>Angeben einer nicht konfigurierten Instanz des Webparts
 
@@ -529,4 +566,4 @@ gulp serve
 
 Wenn Sie die Webpart-Toolbox öffnen, um das Webpart dem Zeichenbereich hinzuzufügen, werden Sie sehen, dass es nun drei Webparts gibt, aus denen Benutzer auswählen können.
 
-![Webpart-Toolbox mit der vorkonfigurierten Version des Webparts](../../../../images/preconfiguredentries-three-configurations-toolbox.png)
+![Webpart-Toolbox mit der vorkonfigurierten Version des Webparts](../../../images/preconfiguredentries-three-configurations-toolbox.png)
