@@ -1,21 +1,395 @@
-    MIT License
+﻿Attribution 4.0 International
 
-    Copyright (c) Microsoft Corporation. All rights reserved.
+=======================================================================
 
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
+Creative Commons Corporation („Creative Commons“) ist keine Rechtskanzlei und
+bietet keinen Rechtsservice und keine Rechtsberatung. Die Vergabe von
+Creative Commons Public Licenses begründet kein Anwalt-Klient-Verhältnis oder
+eine sonstige Beziehung. Creative Commons stellt seine Lizenzen und zugehörigen
+Informationen wie besehen zur Verfügung. Creative Commons erteilt keine
+Garantien bezüglich ihrer Lizenzen, unter den Bedingungen und Konditionen lizenzierten Materialien
+oder zugehöriger Information. Creative Commons
+weist im größtmöglichen Umfang jegliche Schadenshaftung
+durch deren Nutzung zurück.
 
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
+Verwendung von Creative Commons Public Licenses
 
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE
+Creative Commons Public Licenses umfassen ein Standardpaket mit Bestimmungen,
+die Autoren und andere Rechteinhaber verwenden können, um
+Urheberwerke und anderes durch Urheber-
+und ähnliche Rechte, die in der Public License unten aufgeführt sind, geschütztes Material zu teilen. Die
+folgenden Erwägungen dienen nur zu Informationszwecken, erheben nicht
+den Anspruch auf Vollständigkeit und sind nicht Teil unserer Lizenzen.
+
+     Erwägungen für Lizenzgeber: Unsere Public Licenses richten sich
+     an Personen, die autorisiert sind, Materialien
+     freizugeben, das andernfalls durch
+     Urheber- und ähnliche Rechte geschützt ist. Unsere Lizenzen sind
+     unwiderruflich. Die Lizenzgeber müssen die Bestimmungen der Lizenz
+     lesen und verstehen, bevor sie sie verwenden.
+     Außerdem sollten die Lizenzgeber alle Rechte auf ihrer Seite wissen, bevor
+     sie unsere Lizenzen anwenden, damit die Öffentlichkeit das
+     Material wie gewünscht verwenden kann. Die Lizenzgeber sollten alle Materialien, die
+     der Lizenz nicht unterliegen, eindeutig kennzeichnen. Dies schließt auch andere CC-
+     lizenzierte Materialien oder unter einer Ausnahme oder 
+     Urheberrechtsbeschränkung verwendete Materialien ein. Weitere Erwägungen für Lizenzgeber:
+	wiki.creativecommons.org/Considerations_for_licensors
+
+     Erwägungen für die Öffentlichkeit: Durch die Verwendung einer unserer Public
+     Licenses erteilt ein Lizenzgeber der Öffentlichkeit die Genehmigung zur Nutzung der
+     lizenzierten Materialien unter gewissen Bestimmungen. Wenn
+     aus irgendeinem Grund keine Genehmigung des Lizenzgebers erforderlich ist, zum
+     Beispiel aufgrund einer geltenden Ausnahme oder einer Urheberrechtsbeschränkung,
+     wird diese Nutzung nicht von der Lizenz geregelt. Unsere
+     Lizenzen erteilen Genehmigungen ausschließlich unter Urheber- und ähnlichen
+     Rechten, zu deren Erteilung der Lizenzgeber berechtigt ist. Die Verwendung
+     des lizenzierten Materials kann trotzdem aus anderen
+     Gründen eingeschränkt sein, etwa weil andere Personen Urheberrechte oder andere
+     Rechte an dem Material besitzen. Ein Lizenzgeber kann spezielle Anforderungen stellen,
+     zum Beispiel, dass alle Änderungen gekennzeichnet oder beschrieben werden müssen.
+     Obwohl dies in unseren Lizenzen nicht vorgeschrieben ist, fordern wir Sie dennoch dazu auf,
+     diese Anforderungen bei Möglichkeit einzuhalten. Weitere_Erwägungen
+     für die Öffentlichkeit: 
+	wiki.creativecommons.org/Considerations_for_licensees
+
+=======================================================================
+
+Creative Commons Attribution 4.0 International Public License
+
+Durch die Ausübung der lizenzierten Rechte (Definition unten), stimmen Sie zu und erklären,
+an die Bedingungen und Konditionen dieser Creative Commons
+Attribution 4.0 International Public License („Public License“) gebunden zu sein. Sofern
+diese Public License als Vertrag ausgelegt werden kann, werden Ihnen
+die lizenzierten Rechte aufgrund Ihrer Zustimmung zu
+diesen Bestimmungen gewährt und der Lizenzgeber erteilt Ihnen diese Rechte aufgrund
+der Vergütung, die der Lizenzgeber erhält, wenn er das
+lizenzierte Material unter diesen Bestimmungen zur Verfügung stellt.
+
+
+Abschnitt 1 – Definitionen.
+
+  a. Angepasstes Material bezeichnet Material, das dem Urheberrecht und ähnlichen
+     Rechten unterliegt, das in Anlehnung an bzw. auf der Grundlage des lizenzierten Materials erstellt wurde
+     und in dem das lizenzierte Material übersetzt, verändert,
+     neu angeordnet, umgestaltet oder auf andere Art überarbeitet wurde, die
+     gemäß dem Urheberrecht und ähnlichen Rechten die Genehmigung des
+     Lizenzgebers erfordert. Wenn es sich bei dem lizenzierten Material
+     um musikalische Werke, Aufführungen oder Tonaufnahmen handelt, wird angepasstes Material
+     für die Zwecke dieser Lizenz immer dann produziert, wenn das lizenzierte Material
+     zusammen mit bewegtem Bild wiedergegeben wird.
+
+  b. Anpasser-Lizenz bezeichnet die Lizenz, die Sie Ihren Urheber-
+     und vergleichbaren Rechten bezüglich Ihrer Beiträge an dem angepassten Material in
+     Übereinstimmung mit den Bestimmungen dieser Public License anwenden.
+
+  c. Urheber- und ähnliche Rechte bezeichnet die Urheber- und/oder ähnlichen Rechte,
+     die in engem Zusammenhang zum Urheberrecht stehen, einschließlich, aber nicht beschränkt auf
+     Aufführungen, Ausstrahlungen, Tonaufnahmen und sui generis
+     Datenbankschutzrechte, ohne Rücksicht auf die Bezeichnung oder Klassifizierung der
+     Rechte. Für die Zwecke dieser Public License gelten die in
+     Abschnitt 2(b)(1)-(2) genannten Rechte nicht als Urheber- oder ähnliche
+     Rechte.
+
+  d. Effektive technische Maßnahmen bezeichnet jene Maßnahmen, die
+     ohne entsprechende Genehmigung gemäß den Bestimmungen des
+     Artikels 11 des am 20. Dezember 1996 verabschiedeten
+     WIPO-Urheberrechtsvertrags oder unter vergleichbaren internationalen Gesetzen
+     nicht umgangen werden dürfen.
+
+  e. Ausnahmen und Beschränkungen bezeichnen die ehrliche Verwendung, ehrliche Geschäfte und/oder
+     andere Ausnahmen oder Beschränkungen der Urheber- und ähnlichen Rechte,
+     die für Ihre Nutzung des lizenzierten Materials gelten.
+
+  f. Lizenziertes Material bezeichnet die künstlerischen oder literarischen Werke, Datenbanken
+     oder anderes Material, auf das der Lizenzgeber diese Public
+     License angewandt hat.
+
+  g. Lizenzierte Rechte bezeichnet die Rechte, die Ihnen vorbehaltlich der
+     Bestimmungen dieser Public License gewährt werden und die auf
+     alle Urheber- und ähnlichen Rechte beschränkt sind, die für Ihre Nutzung des
+     lizenzierten Materials gelten und zu deren Lizenzierung der Lizenzgeber autorisiert ist.
+
+  h. Lizenzgeber bezeichnet die Person(en) oder Entität(en), die
+     unter dieser Public License Rechte gewähren.
+
+  i. Teilen bezeichnet die Veröffentlichung von Material durch irgendwelche Mittel oder
+     Verfahren, die gemäß der lizenzierten Rechte einer Genehmigung bedürfen, zum
+     Beispiel die Wiedergabe, öffentliche Anzeige, öffentliche Aufführung, Verteilung,
+     Verbreitung, Mitteilung oder Importierung und die Veröffentlichung des Materials
+     auf eine Weise, durch die sie Mitgliedern der
+     Öffentlichkeit von Orten und zu Zeiten
+     ihrer Wahl zugänglich sind.
+
+  j. Sui generis Datenbankschutzrechte bezeichnet andere Rechte außer dem Urheberrecht,
+     das sich aus der Richtlinie 96/9/EC des Europäischen Parlaments und 
+     des Rates vom 11. März 1996 über den rechtlichen Schutz von Datenbanken
+     in ihrer jeweils gültigen Fassung ergab, sowie andere ähnliche
+     wesentliche Rechte irgendwo auf der Welt.
+
+  k. Sie bezeichnet die Person oder Entität, die die lizenzierten Rechte
+     unter dieser Public License ausübt. Ihr/-e hat die entsprechende Bedeutung.
+
+
+Abschnitt 2 – Umfang.
+
+  a. Lizenzgewährung.
+
+       1. Vorbehaltlich der Bestimmungen dieser Public License
+          gewährt der Lizenzgeber Ihnen hiermit eine weltweite, gebührenfreie,
+          nicht unterlizenzierbare, nicht ausschließliche, unwiderrufliche Lizenz zur
+          Ausübung der lizenzierten Rechte am lizenzierten Material zur:
+
+            a. Wiedergabe und zum Teilen des lizenzierten Materials im Ganzen oder
+               in Teilen und
+
+            b. Produktion, Wiedergabe und zum Teilen von angepasstem Material.
+
+       2. Ausnahmen und Beschränkungen. Zur Vermeidung von Missverständnissen gilt
+          diese Public License nicht, wenn Ihre Nutzung unter eine der Ausnahmen 
+          und Beschränkungen fällt, im welchem Falle Sie sich nicht an diese
+          Bestimmungen halten müssen.
+
+       3. Laufzeit. Die Laufzeit dieser Public License ist in Abschnitt
+          6(a) festgelegt.
+
+       4. Medien und Formate; technische Änderungen erlaubt. Der
+          Lizenzgeber autorisiert Sie zur Ausübung der lizenzierten Rechte in
+          beliebigen Medien und Formaten, die bereits bekannt sind oder später entwickelt werden,
+          und bei Bedarf zur Umsetzung technischer Änderungen. Der
+          Lizenzgeber verzichtet darauf und/oder erklärt, von keinen Rechten oder
+          Genehmigungen Gebrauch zu machen, um Ihnen zu untersagen, notwendige technische Änderungen
+          vorzunehmen, um die lizenzierten Rechte auszuüben, einschließlich
+          erforderlicher technischer Änderungen zur Umgehung effektiver
+          technischer Maßnahmen. Für die Zwecke dieser Public License
+          stellen gemäß diesem Abschnitt 2(a) erlaubte Änderungen
+          (4) niemals angepasstes Material dar.
+
+       5. Nachgeordnete Empfänger.
+
+            a. Angebot vom Lizenzgeber – Lizenziertes Material. Jeder
+               Empfänger des lizenzierten Materials erhält automatisch
+               ein Angebot vom Lizenzgeber zur Ausübung der
+               lizenzierten Rechte gemäß den Bestimmungen dieser
+               Public License.
+
+            b. Keine nachgeordneten Einschränkungen. Sie dürfen keine zusätzlichen oder anderslautenden
+               Bestimmungen anbieten oder auferlegen bzw.
+               effektive technische Maßnahmen für das lizenzierte Material anwenden,
+               wenn dadurch die Ausübung der
+               lizenzierten Rechte durch einen Empfänger des lizenzierten
+               Materials eingeschränkt wird.
+
+       6. Keine Befürwortung. Nichts in dieser Public License stellt die Erlaubnis dar
+          oder darf als Erlaubnis ausgelegt werden, zu behaupten oder anzudeuten, dass Sie
+          oder Ihre Nutzung der lizenzierten Materialien verbunden ist
+          mit oder gesponsert, befürwortet oder ein offizieller Status verliehen wird von
+          dem Lizenzgeber oder autorisierten Dritten, um eine Anerkennung
+          gemäß Abschnitt 3(a)(1)(A)(i) zu erhalten.
+
+  b. Andere Rechte.
+
+       1. Moralische Rechte, zum Beispiel das Recht auf Unantastbarkeit, werden unter
+          dieser Public License nicht lizenziert, genauso wenig wie Veröffentlichungs-
+          und Datenschutzrechte und/oder ähnliche Persönlichkeitsrechte; allerdings
+          verzichtet der Lizenzgeber im größtmöglichen Umfang darauf und/oder stimmt zu,
+          diese ihm zustehenden Rechte in dem erforderlichen begrenzten Umfang auszuüben,
+          um Ihnen den Gebrauch der lizenzierten
+          Rechte zu ermöglichen.
+
+       2. Patent- und Markenrechte werden unter dieser
+          Public License nicht lizenziert.
+
+       3. Der Lizenzgeber verzichtet im größtmöglichen Umfang auf sein Recht zur
+          Erhebung von Gebühren von Ihnen für die Ausübung der lizenzierten
+          Rechte, ob direkt oder durch eine Verwertungsgesellschaft
+          auf einem freiwilligen, nicht obligatorischen oder vorgeschriebenen
+          Genehmigungssystem basierend. In allen anderen Fällen behält sich der Lizenzgeber ausdrücklich
+          das Recht vor, derartige Gebühren zu erheben.
+
+
+Abschnitt 3 – Lizenzbedingungen.
+
+Ihre Ausübung der lizenzierten Rechte unterliegt ausdrücklich
+den folgenden Bedingungen.
+
+  a. Anerkennung.
+
+       1. Wenn Sie das lizenzierte Material teilen (einschließlich in angepasster
+          Form), müssen Sie:
+
+            a. Folgendes erhalten, wenn es vom Lizenzgeber
+               mit dem lizenzierten Material bereitgestellt wurde:
+
+                 i. Identifizierung des/der Autor(en) des lizenzierten
+                    Materials und anderer entsprechend anzuerkennender
+                    Personen in der vom Lizenzgeber angemessen
+                    geforderten Form (einschließlich mittels Pseudonyme, falls
+                    genannt);
+
+                ii. ein Urheberrechtsvermerk;
+
+               iii. ein Hinweis, der auf diese Public License verweist;
+
+                iv. ein Hinweis, der auf den Haftungsausschluss
+                    verweist;
+
+                 v. ein URI oder Hyperlink auf das lizenzierte Material im
+                    vertretbaren Umfang;
+
+            b. ein Hinweis darauf, ob Sie das lizenzierte Material verändert haben und
+               ein Hinweis auf frühere Änderungen; und
+
+            c. ein Hinweis darauf, dass das lizenzierte Material unter dieser
+               Public License lizenziert ist, unter Einbeziehung des Textes bzw. des URI oder
+               eines Hyperlinks zu dieser Public License.
+
+       2. Sie können die Bedingungen aus Abschnitt 3(a)(1) in jeder 
+          vertretbaren Weise je nach Medium, Mitteln und Kontext, in dem
+          Sie das lizenzierte Material teilen, erfüllen. Beispielsweise kann es
+          angemessen sein, die Bedingungen durch Bereitstellung eines URI oder
+          Hyperlinks zu einer Ressource, die die geforderten
+          Informationen enthält, zu erfüllen.
+
+       3. Wenn vom Lizenzgeber gefordert, müssen Sie die
+          im Abschnitt 3(a)(1)(A) geforderten Informationen im vertretbaren Umfang
+          entfernen.
+
+       4. Wenn Sie von Ihnen produziertes angepasstes Material teilen, darf die von Ihnen
+          angewandte Anpasser-Lizenz die Empfänger des angepassten Materials nicht daran hindern,
+          die Bestimmungen dieser Public License zu erfüllen.
+
+
+Abschnitt 4 – Sui generis Datenbankschutzrechte.
+
+Wenn die lizenzierten Rechte sui generis Datenbankschutzrechte enthalten,
+die für Ihre Nutzung des lizenzierten Materials gelten:
+
+  a. Zur Vermeidung von Zweifeln gewährt Ihnen Abschnitt 2(a)(1) das Recht,
+     alle oder große Teile der Inhalte der Datenbank
+     zu extrahieren, wiederzuverwenden, wiederzugeben und zu teilen;
+
+  b. Wenn Sie alle oder große Teile der Datenbankinhalte in eine
+     Datenbank einschließen, an der Sie sui generis Datenbankschutzrechte
+     halten, gilt die Datenbank, an der Sie sui generis Datenbankschutzrechte
+     halten (jedoch nicht die einzelnen Inhalte), als angepasstes Material; und
+
+  c. Sie müssen die Bedingungen in Abschnitt 3(a) einhalten, wenn Sie
+     alle oder große Teile der Inhalte der Datenbank teilen.
+
+Zur Ausräumung von Zweifeln gilt dieser Abschnitt 4 als Ergänzung und nicht als
+Ersatz Ihrer Verpflichtungen unter dieser Public License, wenn die lizenzierten
+Rechte andere Urheber- und ähnliche Rechte enthält.
+
+
+Abschnitt 5 – Haftungsausschluss und Haftungsbeschränkung.
+
+  a. SOFERN NICHT ANDERWEITIG GESONDERT VOM LIZENZGEBER IM RAHMEN DES MÖGLICHEN ANGEGEBEN,
+     STELLT DER LIZENZGEBER DAS LIZENZIERTE MATERIAL WIE BESEHEN
+     UND OHNE MÄNGELGEWÄHR ZU VERFÜGUNG, UND ERTEILT KEINE ZUSICHERUNGEN ODER GARANTIEREN
+     JEGLICHER ART BEZÜGLICH DES LIZENZIERTEN MATERIALS, OB AUSDRÜCKLICH,
+     STILLSCHWEIGEND, GESETZLICH ODER ANDERWEITIG. DIES UMFASST UNEINGESCHRÄNKT
+     GEWÄHRLEISTUNGEN FÜR EIGENTUM, HANDELSÜBLICHKEIT, EIGNUNG FÜR EINEN BESTIMMTEN
+     ZWECK, NICHTVERLETZUNG DER RECHTE DRITTER, ABWESENHEIT VON VERBORGENEN ODER ANDEREN MÄNGELN,
+     GENAUIGKEIT ODER DIE ANWESENHEIT ODER ABWESENHEIT VON FEHLERN, GANZ GLEICH, OB DIESE BEKANNT ODER
+     FESTSTELLBAR SIND. FALLS HAFTUNGSAUSSCHLÜSSE IM GANZEN ODER IN TEILEN
+     NICHT ZULÄSSIG SIND, GILT DIESER HAFTUNGSAUSSCHLUSS NICHT FÜR SIE.
+
+  b. DER LIZENZGEBER IST IM GESETZLICH ZULÄSSIGEN UMFANG KEINESFALLS HAFTBAR
+     IHNEN GEGENÜBER AUFGRUND IRGENDEINER RECHTSTHEORIE (EINSCHLIESSLICH, ABER NICHT BESCHRÄNKT AUF
+     FAHRLÄSSIGKEIT) ODER ANDERWEITIG FÜR DIREKTE, BESONDERE, INDIREKTE,
+     ZUFÄLLIGE, FOLGESCHÄDEN, STRAFE EINSCHLIESSENDE, EXEMPLARISCHE SCHÄDEN ODER SONSTIGE VERLUSTE,
+     KOSTEN, AUSGABEN ODER SCHÄDEN INFOLGE DIESER PUBLIC LICENSE ODER
+     DER NUTZUNG DES LIZENZIERTEN MATERIALS, AUCH WENN DER LIZENZGEBER
+     ÜBER DIE MÖGLICHKEIT SOLCHER VERLUSTE, KOSTEN, AUSGABEN ODER
+     SCHÄDEN INFORMIERT WURDE. FALLS EINE HAFTUNGSBESCHRÄNKUNG IM GANZEN ODER
+     IN TEILEN NICHT ZULÄSSIG IST, GILT DIESE BESCHRÄNKUNG NICHT FÜR SIE.
+
+  c. Der oben dargelegte Haftungsausschluss und die Haftungsbeschränkung
+     sind soweit möglich so auszulegen, dass
+     sie einem absoluten Ausschluss bzw. einer absoluten
+     Haftungsbeschränkung am nächsten kommen.
+
+
+Abschnitt 6 –  Laufzeit und Kündigung.
+
+  a. Diese Public License gilt für die Laufzeit des hier lizenzierten Urheberrechts und
+     ähnlicher Rechte. Wenn Sie die Bestimmungen
+     dieser Public License jedoch verletzen, verfallen automatisch Ihre Rechte unter dieser
+     Public License.
+
+  b. Wenn Ihr Recht zur Nutzung der lizenzierten Materialien gemäß
+     Abschnitt 6(a) verfallen ist, wird es unter folgenden Voraussetzungen wiederhergestellt:
+
+       1. automatisch an den Datum, an dem der Verstoß behoben wird, vorausgesetzt,
+          Sie beheben den Verstoß innerhalb von 30 Tagen nach Ihrer
+          Kenntnisnahme; oder
+
+       2. durch ausdrückliche Wiederherstellung durch den Lizenzgeber.
+
+     Zur Ausräumung von Zweifeln beeinträchtigt dieser Abschnitt 6(b) nicht
+     das Recht des Lizenzgebers, Rechtsmittel gegen Ihre Verstöße
+     gegen diese Public License einzulegen.
+
+  c. Zur Ausräumung von Zweifeln kann der Lizenzgeber das
+     lizenzierte Material auch unter gesonderten Bestimmungen anbieten oder die
+     Verbreitung des lizenzierten Materials jederzeit einstellen, was jedoch nicht
+     die Kündigung dieser Public License bedeutet.
+
+  d. Die Abschnitte 1, 5, 6, 7 und 8 gelten über die Kündigung dieser Public
+     License hinaus.
+
+
+Anschnitt 7 – Andere Bestimmungen.
+
+  a. Der Lizenzgeber unterliegt keinen zusätzlichen oder anderslautenden
+     von Ihnen mitgeteilten Bestimmungen, sofern nicht ausdrücklich vereinbart.
+
+  b. Alle nicht hierin dargelegten Vereinbarungen, Absprachen oder Übereinkünfte bezüglich des
+     lizenzierten Materials sind gesondert und
+     unabhängig von den Bestimmungen dieser Public License zu betrachten.
+
+
+Abschnitt 8 – Auslegung.
+
+  a. Zur Ausräumung von Zweifeln hat diese Public License nicht
+     den Zweck und darf nicht dahingehend ausgelegt werden,
+     die Nutzung der lizenzierten Materialien zu reduzieren, zu beschränken, einzugrenzen oder Bedingungen aufzuerlegen, wenn
+     das Material unter dieser Public License auch ohne Genehmigung verwendet werden kann.
+
+  b. Soweit möglich werden Bestimmungen dieser Public License, die als
+     rechtsunwirksam erachtet werden, automatisch im
+     erforderlichen Mindestmaß geändert, damit sie rechtswirksam werden. Wenn eine Bestimmung
+     nicht geändert werden kann, ist sie aus dieser Public License zu streichen,
+     ohne dass dadurch die Rechtswirksamkeit der übrigen Bestimmungen
+     beeinträchtigt wird.
+
+  c. Es wird auf keine Bestimmungen dieser Public License verzichtet und
+     es werden keine Verstöße geduldet, sofern nicht ausdrücklich mit dem
+     Lizenzgeber vereinbart.
+
+  d. Nichts in dieser Public License ist oder darf ausgelegt werden
+     als eine Beschränkung oder ein Verzicht irgendwelcher Vorrechte oder Befreiungen,
+     auf die Sie oder der Lizenzgeber Anspruch haben, einschließlich bezüglich
+     Rechtsverfahren durch irgendein Gericht oder eine Behörde.
+
+
+=======================================================================
+
+Creative Commons ist keine Partei seiner Public
+Licenses. Dennoch kann Creative Commons eine seiner
+Public Licenses auf Material anwenden, das es veröffentlicht, in welchem Fall
+das Unternehmen als Lizenzgeber auftritt. Der Text der Public Licenses von Creative Commons
+ist gemäß der CC0 Public
+Domain Dedication in die Gemeinfreiheit entlassen. Creative Commons gewährt nur insoweit das Recht,
+die Marke „Creative Commons“ oder andere Marken oder Logos
+von Creative Commons zu nutzen, als dies notwendig ist, um kenntlich zu machen,
+dass das Material unter einer Public License
+von Creative Commons geteilt wird oder insoweit dies
+anderweitig durch die Richtlinien gestattet wird, einschließlich, jedoch nicht beschränkt auf
+unbefugte Änderungen an Public Licenses oder anderer Absprachen,
+Übereinkünfte oder Vereinbarungen von Creative Commons bezüglich der
+Verwendung lizenzierten Materials. Eine darüber hinaus gehende Nutzung bedarf der vorherigen schriftlichen Zustimmung von Creative Commons. Um
+Zweifel auszuschließen, wird darauf hingewiesen, dass dieser Abschnitt kein Teil der
+Public Licenses ist.
+
+Sie können Creative Commons auf creativecommons.org kontaktieren.
