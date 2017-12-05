@@ -21,6 +21,7 @@ So erstellen Sie eine selbst signierte Zertifikat mit diesem Skript:
 Von hier aus kann das eigentliche Skript kopiert werden:
 
 ```powershell
+#Requires -RunAsAdministrator
 <#
 .SYNOPSIS
 Creates a Self Signed Certificate for use in server to server authentication
@@ -278,5 +279,5 @@ namespace AzureADCertAuth
 
 ## <a name="faq"></a>Häufig gestellte Fragen
 ### <a name="can-i-use-other-means-besides-certificates-for-realizing-app-only-access-for-my-azure-ad-app"></a>Kann ich anderweitig neben Zertifikate für nur-app-Zugriff für meine app Azure AD Realität verwenden?
-Keine, alle anderen Optionen sind gesperrte und von SharePoint Online und führt zum Fehler Zugriff verweigert.
+Keine, alle anderen Optionen werden von SharePoint Online blockiert und führt zum Fehler Zugriff verweigert.
 
