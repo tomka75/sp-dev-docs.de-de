@@ -1,8 +1,18 @@
+---
+title: "Drei Autorisierungssysteme für SharePoint-Add-Ins"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 0ada356729f13c91d60fc98cc22fb3d1a958542b
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="three-authorization-systems-for-sharepoint-add-ins"></a>Drei Autorisierungssysteme für SharePoint-Add-Ins
 Erfahren Sie mehr über die drei Systeme, die SharePoint-Add-Ins verwenden können, um die Autorisierung für SharePoint-Ressourcen zu erhalten.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 In SharePoint ist ein SharePoint-Add-In genau wie ein Benutzer ein Identitätsprinzipal, der für die Verwendung von SharePoint-Ressourcen authentifiziert und autorisiert werden muss. Ein Add-In kann drei Authorisierungssysteme verwenden. Sie schließen sich nicht gegenseitig aus.
@@ -18,17 +28,17 @@ In SharePoint ist ein SharePoint-Add-In genau wie ein Benutzer ein Identitätspr
 
 -  **Niedrige Vertrauensebene**: Eine vom Anbieter gehostete SharePoint-Add-In kann in Microsoft Azure Access Control Service (ACS) registriert werden. Dann wird ein Zugriffstoken für die App ausgestellt, mit dem die App auf die Ressourcen in der SharePoint-Mandantschaft oder -Farm zugreifen kann, in der die App installiert ist. Azure ACS ist der vertrauenswürdige Tokenherausgeber in einem OAuth 2.0 Framework-"Ablauf", zu dem SharePoint und die Remotekomponenten der App gehören. Apps, die dieses System verwenden, können im Office Store verkauft werden. Das System mit niedriger Vertrauensebene ist in erster Linie für Apps gedacht, deren Remotekomponenten in der Cloud gehostet sind.
     
-    Weitere Informationen zum Erstellen einer SharePoint-Add-In, die das System mit niedriger Vertauensebene verwendet, finden Sie im SDK-Knoten  [Erstellen von SharePoint-Add-Ins, die die Autorisierung mit niedriger Vertrauensebene verwenden](creating-sharepoint-add-ins-that-use-low-trust-authorization).
+    Weitere Informationen zum Erstellen einer SharePoint-Add-In, die das System mit niedriger Vertauensebene verwendet, finden Sie im SDK-Knoten  [Erstellen von SharePoint-Add-Ins, die die Autorisierung mit niedriger Vertrauensebene verwenden](creating-sharepoint-add-ins-that-use-low-trust-authorization.md).
     
      **Hinweis** Der Kunde, der das Add-In installiert, muss über ein Office 365-Konto verfügen. Dieses ist erforderlich, damit das Add-In Zugriff auf Azure ACS hat. Der Kunde benötigt dieses Konto jedoch für keinen anderen Zweck, und dass Add-In kann in einer lokalen SharePoint-Farm installiert werden, nachdem einige einfache Konfigurationsaufgaben auf der Farm durchgeführt wurden.
 -  **Besonders vertrauenswürdig**: Eine vom Anbieter gehostete App kann eine Vertrauensstellung mit SharePoint einrichten, indem sie digitale Zertifikate verwendet. Das besonders vertrauenswürdige System ist primär für Apps vorgesehen, deren Remotekomponenten lokal gehostet werden. Die App kann in einer SharePoint-Farm installiert werden, die nicht mit dem Internet verbunden ist. Die App kann nicht auf SharePoint Online installiert oder im Office Store verkauft werden.
     
-    Weitere Informationen zum Erstellen einer SharePoint-Add-In die das besonders vertrauenswürdige System verwendet, finden Sie im SDK-Knoten  [Erstellen von Add-Ins für SharePoint, die eine Autorisierung mit hoher Vertrauenswürdigkeit verwenden](creating-sharepoint-add-ins-that-use-high-trust-authorization).
+    Weitere Informationen zum Erstellen einer SharePoint-Add-In die das besonders vertrauenswürdige System verwendet, finden Sie im SDK-Knoten  [Erstellen von Add-Ins für SharePoint, die eine Autorisierung mit hoher Vertrauenswürdigkeit verwenden](creating-sharepoint-add-ins-that-use-high-trust-authorization.md).
     
  
 -  **Domänenübergreifende Bibliothek**: Wenn sich die Geschäftslogik der App in JavaScript befindet, können Sie die domänenübergreifende SharePoint- Bibliothek anstelle der oder als Ergänzung zum System mit niedriger Vertrauensebene oder dem besonders vertrauenswürdigen System verwenden. Die Bibliothek ist außerdem für Szenarien vorgesehen, in denen die App in der Cloud gehostete Komponenten aufweist, die Unternehmensfirewall des Kunden jedoch die Verwendung des Systems mit niedriger Vertrauensebene erschwert. Der Browser des Benutzers sperrt Skripts von anderen Domänen, die Bibliothek kapselt jedoch ein sicheres System, um diese Einschränkung zu umgehen. Apps, die die Bibliothek verwenden, können im Office Store verkauft und auf SharePoint Online oder lokal in SharePoint installiert werden.
     
-    Weitere Informationen zum Erstellen einer SharePoint-Add-In, die die domänenübergreifende Bibliothek verwendet, finden Sie im SDK-Knoten  [Erstellen von SharePoint-Add-Ins, die die domänenübergreifende Bibliothek verwenden](creating-sharepoint-add-ins-that-use-the-cross-domain-library), dem Blogbeitrag  [Lösen von domänenübergreifenden Problemen in Apps für SharePoint](http://blogs.msdn.com/b/officeapps/archive/2012/11/29/solving-cross-domain-problems-in-apps-for-sharepoint.aspx).
+    Weitere Informationen zum Erstellen einer SharePoint-Add-In, die die domänenübergreifende Bibliothek verwendet, finden Sie im SDK-Knoten  [Erstellen von SharePoint-Add-Ins, die die domänenübergreifende Bibliothek verwenden](creating-sharepoint-add-ins-that-use-the-cross-domain-library.md), dem Blogbeitrag  [Lösen von domänenübergreifenden Problemen in Apps für SharePoint](http://blogs.msdn.com/b/officeapps/archive/2012/11/29/solving-cross-domain-problems-in-apps-for-sharepoint.aspx).
     
  
 
@@ -72,7 +82,7 @@ In der SharePoint-Implementierung werden also die OAuth-Rollen von den folgenden
 - SharePoint übernimmt die Rolle des Ressourcenservers.
     
  
-- Azure ACS übernimmt die Rolle des Autorisierungsservers, wenn  [das Autorisierungssystem mit niedriger Vertrauensebene](creating-sharepoint-add-ins-that-use-low-trust-authorization) verwendet wird. Wenn das [besonders vertrauenswürdige System](creating-sharepoint-add-ins-that-use-high-trust-authorization) verwendet wird, wird die App selbst (zusammen mit einem digitalen Zertifikat) zum Autorisierungsserver.
+- Azure ACS übernimmt die Rolle des Autorisierungsservers, wenn [das Autorisierungssystem mit niedriger Vertrauensstellung](creating-sharepoint-add-ins-that-use-low-trust-authorization.md) verwendet wird. Wenn [das System mit hoher Vertrauensstellung](creating-sharepoint-add-ins-that-use-high-trust-authorization.md) verwendet wird, wird das Add-In selbst (zusammen mit einem digitalen Zertifikat) zum Autorisierungsserver.
     
  
 

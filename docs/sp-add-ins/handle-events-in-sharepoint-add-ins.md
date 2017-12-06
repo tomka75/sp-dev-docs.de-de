@@ -1,6 +1,16 @@
+---
+title: Behandeln von Ereignissen in SharePoint-Add-Ins
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 5640d1698772b300b66a40fc848ed810c63cdf19
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="handle-events-in-sharepoint-add-ins"></a>Behandeln von Ereignissen in SharePoint-Add-Ins
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Ihr benutzerdefinierter Code kann drei Kategorien von Ereignissen in vom Anbieter gehosteten Add-Ins behandeln:
@@ -39,10 +49,10 @@ Zur Behandlung von Listen- und Listenelementereignissen erstellen Sie Remoteerei
 
  
 
-- Ereignisse im Hostweb werden programmgesteuert beim CSOM (Clientobjektmodell) oder der SharePoint-REST-API registriert. Diese Aufgabe wird normalerweise in der Logik für die „erste Ausführung" im Add-In oder in einem Handler für ein Add-In-Ereignis ausgeführt. (Eine Übersicht über Add-In-Ereignisse finden Sie im weiteren Verlauf des Artikels unter  [Behandeln von Add-In-Ereignissen](#HandlingAppEvents).) Ein Codebeispiel, das ein Listenereignis programmgesteuert registriert, finden Sie unter  [OfficeDev/PnP/Samples/Core.EventReceivers](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.EventReceivers).
+- Ereignisse im Hostweb werden programmgesteuert beim CSOM (Clientobjektmodell) oder der SharePoint-REST-API registriert. Diese Aufgabe wird normalerweise in der Logik für die „erste Ausführung" im Add-In oder in einem Handler für ein Add-In-Ereignis ausgeführt. (Eine Übersicht über Add-In-Ereignisse finden Sie im weiteren Verlauf des Artikels unter  [Behandeln von Add-In-Ereignissen](#HandlingAppEvents).) Ein Codebeispiel, das ein Listenereignis programmgesteuert registriert, finden Sie unter  [OfficeDev/PnP/Samples/Core.EventReceivers](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.EventReceivers.md).
     
  
--  Ereignisse im Add-In-Web werden normalerweise mit einfachem XML-Markup in einem Feature des Add-In-Webs registriert. Details zum Erstellen des Markups und des Diensts finden Sie in  [Erstellen eines Remoteereignisempfängers in Add-Ins für SharePoint](create-a-remote-event-receiver-in-sharepoint-add-ins). Es ist auch möglich, Add-In-Web-Ereignisse programmgesteuert zu registrieren.
+-  Ereignisse im Add-In-Web werden normalerweise mit einfachem XML-Markup in einem Feature des Add-In-Webs registriert. Details zum Erstellen des Markups und des Diensts finden Sie in  [Erstellen eines Remoteereignisempfängers in Add-Ins für SharePoint](create-a-remote-event-receiver-in-sharepoint-add-ins.md). Es ist auch möglich, Add-In-Web-Ereignisse programmgesteuert zu registrieren.
     
  
 
@@ -133,7 +143,7 @@ Um die Ereignisse zu ändern, die der Remote-Ereignisempfänger behandelt, öffn
 
  
 
- **Hinweis** Weitere Informationen zu RERs, einschließlich Informationen zur Problembehandlung, finden Sie unter  [FAQ für Remote-Ereignisempfänger](handle-events-in-sharepoint-add-ins#RERFAQ).
+ **Hinweis** Weitere Informationen zu RERs, einschließlich Informationen zur Problembehandlung, finden Sie unter  [FAQ für Remote-Ereignisempfänger](handle-events-in-sharepoint-add-ins.md#RERFAQ).
  
 
 
@@ -152,7 +162,7 @@ Das Ereignis **AppInstalled** wird ausgeführt, unmittelbar nachdem SharePoint a
 
  
 
- **Hinweis** Beim Installieren eines Add-Ins mit  [Mandantenbereich](tenancies-and-deployment-scopes-for-sharepoint-add-ins) wird das Add-In in der Add-In-Katalog-Websitesammlung installiert, und das AppInstalled-Ereignis wird dann und nur dann ausgeführt. Das Add-In wird in mehreren Websites des Mandanten angezeigt, aber das Ereignis wird nicht separat für jede ausgeführt.
+ **Hinweis** Beim Installieren eines Add-Ins mit  [Mandantenbereich](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md) wird das Add-In in der Add-In-Katalog-Websitesammlung installiert, und das AppInstalled-Ereignis wird dann und nur dann ausgeführt. Das Add-In wird in mehreren Websites des Mandanten angezeigt, aber das Ereignis wird nicht separat für jede ausgeführt.
  
 
 Neben dem Abbruch der Add-In-Installation kann dieses Ereignis für viele andere Zwecke verwendet werden:
@@ -168,7 +178,7 @@ Neben dem Abbruch der Add-In-Installation kann dieses Ereignis für viele andere
  
 - Festlegen der App-Instanz-relativen Initialisierungseinstellungen. Beispielsweise kann Ihr Add-In einen Add-In-Web-Eigenschaftenbehälter zum Speichern von Einstellungen enthalten, die von einer Instanz des Add-Ins zur anderen variieren. Der AppInstalled-Handler kann, z. B. basierend auf dem Websitetyp des Hostwebs (z. B. Teamwebsite oder Blog-Website), unterschiedliche Werte in den Eigenschaftenbehälter schreiben.
     
-     **Hinweis** Durch Überprüfen, ob das Hostweb eine AppCatalog-Website ist, lässt sich einfach feststellen, ob das Add-In mit Mandantenbereich installiert wurde. Siehe  [Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins).
+     **Hinweis** Durch Überprüfen, ob das Hostweb eine AppCatalog-Website ist, lässt sich einfach feststellen, ob das Add-In mit Mandantenbereich installiert wurde. Siehe  [Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md).
 - Ausführen App-Instanz-relativer Konfiguration in der Remotewebanwendung des Add-ins, z. B. Hinzufügen einer Tabelle zu einer Datenbank.
     
  
@@ -208,7 +218,7 @@ Einige Beispiele für mögliche Aktionen eines Handlers für dieses Ereignis:
 - Ändern App-Instanz-relativer Komponenten in der Webanwendung oder Remotedatenbank des Add-Ins.
     
  
- *Ausführliche Anweisungen zum Erstellen von Add-In-Ereignishandlern finden Sie unter [How to: Create an add-in event receiver](create-an-add-in-event-receiver-in-sharepoint-add-ins)*.
+ *Ausführliche Anweisungen zum Erstellen von Add-In-Ereignishandlern finden Sie unter [How to: Create an add-in event receiver](create-an-add-in-event-receiver-in-sharepoint-add-ins.md)*.
  
 
  
@@ -245,7 +255,7 @@ Installations- und Aktualisierungsfehler können auf der SharePoint-Benutzerober
  
 
  
-![Fehler bei der Installation eines Add-Ins in SharePoint anzeigen.](../../images/1edb644e-b3d4-4a9b-b92e-4ae2c07341c2.png)
+![Fehler bei der Installation eines Add-Ins in SharePoint anzeigen.](../images/1edb644e-b3d4-4a9b-b92e-4ae2c07341c2.png)
  
 
 #### <a name="add-in-event-handler-architecture-strategies"></a>Strategien für die Architektur von Add-In-Ereignishandlern
@@ -308,7 +318,7 @@ Wenn der Handler z. B. eine Aktion in einer SQL Server-Datenbank ausführen muss
  
 
  
-Das SharePoint-Add-In-Modell bietet keine Möglichkeit, benutzerdefinierten serverseitigen Code in SharePoint zu speichern und vom CSOM (clientseitigen Objektmodell) aus aufzurufen. Aber das CSOM ermöglicht, Try-Catch- und If-then-else-Logik zu bündeln und zur Ausführung an den Server zu senden. Ein ausführliches Beispiel eines Add-In-Ereignishandlers, der die Handlerdelegierungsstrategie verwendet, um einem Hostweb eine Liste hinzuzufügen, finden Sie unter  [Erstellen eines Add-In-Ereignisempfängers in SharePoint-Add-Ins](create-an-add-in-event-receiver-in-sharepoint-add-ins). Ein Codebeispiel finden Sie unter  [OfficeDev/PnP/Samples/Core.AppEvents.HandlerDelegation](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.AppEvents.HandlerDelegation).
+Das SharePoint-Add-In-Modell bietet keine Möglichkeit, benutzerdefinierten serverseitigen Code in SharePoint zu speichern und vom CSOM (clientseitigen Objektmodell) aus aufzurufen. Aber das CSOM ermöglicht, Try-Catch- und If-then-else-Logik zu bündeln und zur Ausführung an den Server zu senden. Ein ausführliches Beispiel eines Add-In-Ereignishandlers, der die Handlerdelegierungsstrategie verwendet, um einem Hostweb eine Liste hinzuzufügen, finden Sie unter  [Erstellen eines Add-In-Ereignisempfängers in SharePoint-Add-Ins](create-an-add-in-event-receiver-in-sharepoint-add-ins.md). Ein Codebeispiel finden Sie unter  [OfficeDev/PnP/Samples/Core.AppEvents.HandlerDelegation](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.AppEvents.HandlerDelegation.md).
  
 
  
@@ -324,7 +334,7 @@ Sie können nicht immer die Handlerdelegierungsstrategie verwenden. Wenn der Han
 ## <a name="remote-event-receivers-in-add-ins-that-support-multiple-security-zones"></a>Remoteereignisempfänger in Add-Ins, die mehrere Sicherheitszonen unterstützen
 <a name="HandlingAppEvents"> </a>
 
-Es gibt einige Einschränkungen beim Entwerfen von Add-Ins, die mehrere Sicherheitszonen unterstützen und über einen Remoteereignisempfänger verfügen. Weitere Informationen finden Sie im Knowledge Base-Artikel kb3135876  [ Eine gehostete Anbieter-add-in kann nicht zu einer SharePoint nicht standardmäßigen Zonen hinzufügen](https://support.microsoft.com/en-us/kb/3135876).
+Es gibt einige Einschränkungen beim Entwerfen von Add-Ins, die mehrere Sicherheitszonen unterstützen und über einen Remoteereignisempfänger verfügen. Weitere Informationen finden Sie im Knowledge Base-Artikel kb3135876  [ Eine gehostete Anbieter-add-in kann nicht zu einer SharePoint nicht standardmäßigen Zonen hinzufügen](https://support.microsoft.com/de-DE/kb/3135876).
  
 
  
@@ -387,7 +397,7 @@ properties.EventType == SPRemoteEventType.ItemUpdating)
 
 ```
 
-| Ein vollständiges Codebeispiel finden Sie unter [Hinzufügen von Listenelement-Eigenschaften mit einem Remote-Ereignisempfänger](http://code.msdn.microsoft.com/SharePoint-2013-Add-list-2c6e71e0). Eine detaillierte Demonstration des Codebeispiels eines Remote-Ereignisempfängers finden Sie unter  [Migrieren eines SharePoint-Ereignisempfängers in einen Remote-Ereignisempfänger](http://channel9.msdn.com/Series/Reimagine-SharePoint-Development/Migrating-a-SharePoint-Event-Receiver-to-a-Remote-Event-Receiver).
+| Ein vollständiges Codebeispiel finden Sie unter [Hinzufügen von Listenelement-Eigenschaften mit einem Remote-Ereignisempfänger](http://code.msdn.microsoft.com/SharePoint-Add-list-2c6e71e0). Eine detaillierte Demonstration des Codebeispiels eines Remote-Ereignisempfängers finden Sie unter  [Migrieren eines SharePoint-Ereignisempfängers in einen Remote-Ereignisempfänger](http://channel9.msdn.com/Series/Reimagine-SharePoint-Development/Migrating-a-SharePoint-Event-Receiver-to-a-Remote-Event-Receiver).
  
 
  
@@ -395,7 +405,7 @@ properties.EventType == SPRemoteEventType.ItemUpdating)
 ### 
 <a name="RER_HowRERDifferentfrom2010"> </a>
 
-Weitere Informationen finden Sie unter [SPRemoteEventType-Enumeration](https://msdn.microsoft.com/en-us/library/microsoft.sharepoint.client.eventreceivers.spremoteeventtype.aspx)
+Weitere Informationen finden Sie unter [SPRemoteEventType-Enumeration](https://msdn.microsoft.com/de-DE/library/microsoft.sharepoint.client.eventreceivers.spremoteeventtype.aspx)
  
 
  
@@ -423,7 +433,7 @@ Abbildung 1 zeigt, wie Remote-Ereignisempfänger funktionieren:
  
 
  
-![So funktionieren Remote-Ereignisempfänger in SharePoint 2013](../../images/SP15Con_Remote_Event_Receivers_FAQ_fig1.png)
+![So funktionieren Remote-Ereignisempfänger in SharePoint 2013](../images/SP15Con_Remote_Event_Receivers_FAQ_fig1.png)
  
 
  
@@ -433,7 +443,7 @@ Abbildung 1 zeigt, wie Remote-Ereignisempfänger funktionieren:
 ### <a name="how-do-i-debug-remote-event-receivers"></a>Wie werden Remote-Ereignisempfänger gedebuggt?
 <a name="RER_DebugRER"> </a>
 
-Siehe [Debugging und Problembehandlung eines Remoteereignisempfängers in einem Add-In für SharePoint](debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in) 
+Siehe [Debugging und Problembehandlung eines Remoteereignisempfängers in einem Add-In für SharePoint](debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in.md) 
  
 
  
@@ -466,10 +476,10 @@ Wenn ein SharePoint 2010-Projektmappenpaket, das einen Ereignishandler enthält,
 <a name="SP15handleevents_addlresources"> </a>
 
 
--  [Erstellen eines Remoteereignisempfängers in SharePoint-Add-Ins](create-a-remote-event-receiver-in-sharepoint-add-ins)
+-  [Erstellen eines Remoteereignisempfängers in SharePoint-Add-Ins](create-a-remote-event-receiver-in-sharepoint-add-ins.md)
     
  
--  [Erstellen eines Add-In-Ereignisempfängers in SharePoint-Add-Ins](create-an-add-in-event-receiver-in-sharepoint-add-ins)
+-  [Erstellen eines Add-In-Ereignisempfängers in SharePoint-Add-Ins](create-an-add-in-event-receiver-in-sharepoint-add-ins.md)
     
  
 -  [Einführung in Remote-Ereignisempfänger in SharePoint 2013](http://www.microsoft.com/resources/msdn/en-us/office/media/video/videol?cid=sdc&amp;from=mscomsdc&amp;VideoID=3ef8f7ae-85a7-44c3-967d-d1620e2a019f)

@@ -1,8 +1,18 @@
+---
+title: "Erstellen eines von einem Anbieter gehosteten Add-Ins, das eine benutzerdefinierte SharePoint-Liste und einen benutzerdefinierten Inhaltstyp enthält"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: e5dacf516a3569b2dd38cdbe1936e6c874cb0556
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-content-type"></a>Erstellen eines von einem Anbieter gehosteten Add-Ins, das eine benutzerdefinierte SharePoint-Liste und einen benutzerdefinierten Inhaltstyp enthält
 Erstellen Sie ein SharePoint-Add-In, das eine in der Cloud gehostete Webanwendung mit benutzerdefinierten, in SharePoint gehosteten Listenvorlagen, Listeninstanzen und benutzerdefinierten Inhaltstypen unter Verwendung der Office Developer Tools für Visual Studio 2012 kombiniert. In diesem Artikel erfahren Sie, wie Sie mit SharePoint-Add-In-Webs interagieren, indem Sie den REST/OData-Webdienst verwenden, und wie Sie OAuth in einem SharePoint-Add-In implementieren.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Die meisten klassischen SharePoint-Komponenten, wie benutzerdefinierte Inhaltstypen, benutzerdefinierte Listendefinitionen und Workflows, können einem in der Cloud gehosteten SharePoint-Add-In hinzugefügt werden. Das einfache Beispiel in diesem Artikel enthält Folgendes:
@@ -33,7 +43,7 @@ Die meisten klassischen SharePoint-Komponenten, wie benutzerdefinierte Inhaltsty
 -  [Visual Studio 2012](https://www.microsoft.com/en-us/download/details.aspx?id=30682) oder höher.
     
  
--  [Office Developer Tools](https://msdn.microsoft.com/en-us/office/aa905340.aspx)
+-  [Office Developer Tools](https://msdn.microsoft.com/de-DE/office/aa905340.aspx)
     
  
 - Eine SharePoint- Installation zum Testen und Debuggen
@@ -44,7 +54,7 @@ Die meisten klassischen SharePoint-Komponenten, wie benutzerdefinierte Inhaltsty
   - Die SharePoint-Testwebsite muss aus der Websitedefinition der **Entwicklerwebsite** (die Sie in der Zentraladministration erstellen können) erstellt werden.
     
  
-  - Ihre Remote-Webanwendung kommuniziert mit der Add-In-Website entweder über JavaScript und die domänenübergreifende  [-Bibliothek](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library) oder über [OAuth](authorization-and-authentication-of-sharepoint-add-ins). Wenn OAuth verwendet wird, wie im fortlaufenden Beispiel in diesem Artikel, muss die SharePoint-Installation für die Verwendung von OAuth konfiguriert sein.
+  - Ihre Remote-Webanwendung kommuniziert mit der Add-In-Website entweder über JavaScript und die domänenübergreifende  [-Bibliothek](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md) oder über [OAuth](authorization-and-authentication-of-sharepoint-add-ins.md). Wenn OAuth verwendet wird, wie im fortlaufenden Beispiel in diesem Artikel, muss die SharePoint-Installation für die Verwendung von OAuth konfiguriert sein.
     
  
 
@@ -64,9 +74,9 @@ Bevor Sie Ihr erstes Add-In erstellen, sollten Sie grundsätzlich wissen, was Sh
 
 |**Titel des Artikels**|**Beschreibung**|
 |:-----|:-----|
-| [SharePoint-Add-Ins](sharepoint-add-ins)|Hier finden Sie Informationen über das neue Add-In-Modell in SharePoint, das es Ihnen ermöglicht, Add-Ins als kompakte, einfach zu verwendende Lösungen für Endbenutzer zu erstellen.|
-| [Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape)|Hier finden Sie Informationen über Aspekte der Architektur von SharePoint-Add-Ins und das Modell für SharePoint-Add-Ins, einschließlich Add-In-Hostingoptionen, Benutzeroberflächenoptionen, Bereitstellungssystem, Sicherheitssystem und Lebenszyklus.|
-| [Auswählen von Mustern für die Entwicklung und das Hosten Ihres SharePoint-Add-Ins](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in)|Hier finden Sie Informationen über die verschiedenen Möglichkeiten zum Hosten von SharePoint-Add-Ins.|
+| [SharePoint-Add-Ins](sharepoint-add-ins.md)|Hier finden Sie Informationen über das neue Add-In-Modell in SharePoint, das es Ihnen ermöglicht, Add-Ins als kompakte, einfach zu verwendende Lösungen für Endbenutzer zu erstellen.|
+| [Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)|Hier finden Sie Informationen über Aspekte der Architektur von SharePoint-Add-Ins und das Modell für SharePoint-Add-Ins, einschließlich Add-In-Hostingoptionen, Benutzeroberflächenoptionen, Bereitstellungssystem, Sicherheitssystem und Lebenszyklus.|
+| [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in.md)|Hier finden Sie Informationen über die verschiedenen Möglichkeiten zum Hosten von SharePoint-Add-Ins.|
 
 ## <a name="develop-the-sharepoint-add-in"></a>Entwickeln des SharePoint-Add-Ins
 <a name="Develop"> </a>
@@ -105,14 +115,14 @@ Bevor Sie Ihr erstes Add-In erstellen, sollten Sie grundsätzlich wissen, was Sh
   -  **System.IdentityModel.dll** Diese Assembly ist Teil von .NET Framework 4 und wird auf dem Knoten **Assemblies | Framework** des Dialogfelds **Verweis hinzufügen** angezeigt.
     
  
-7. Wenn Ihre Remotewebanwendung auf Informationen im Hostweb und im Add-In-Web zugreift, müssen Sie der Datei „AppManifest.xml“ ein **AppPermissionRequests**-Element mit einem oder mehreren untergeordneten **AppPermissionRequest**-Elementen hinzufügen. (Die Webanwendung im fortlaufenden Beispiel dieses Artikels greift nur auf das Add-In-Web zu. Add-In-Prinzipale verfügen automatisch über alle erforderlichen Berechtigungen für das Add-In-Web, sodass die Datei „AppManifest.xml“ in dem Beispiel kein **AppPermissionRequests**-Element umfasst). Weitere Informationen über Add-In-Berechtigungsanforderungen und wie sie hinzugefügt werden, finden Sie unter [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint-2013).
+7. Wenn Ihre Remotewebanwendung auf Informationen im Hostweb und im Add-In-Web zugreift, müssen Sie der Datei „AppManifest.xml“ ein **AppPermissionRequests**-Element mit einem oder mehreren untergeordneten **AppPermissionRequest**-Elementen hinzufügen. (Die Webanwendung im fortlaufenden Beispiel dieses Artikels greift nur auf das Add-In-Web zu. Add-In-Prinzipale verfügen automatisch über alle erforderlichen Berechtigungen für das Add-In-Web, sodass die Datei „AppManifest.xml“ in dem Beispiel kein **AppPermissionRequests**-Element umfasst). Weitere Informationen über Add-In-Berechtigungsanforderungen und wie sie hinzugefügt werden, finden Sie unter [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint.md).
     
  
 
 ### <a name="to-add-the-sharepoint-components"></a>So fügen Sie SharePoint-Komponenten hinzu
 
 
-1. Zum Hinzufügen von SharePoint-Komponenten zu einem Add-In gehen Sie gleich vor wie beim Hinzufügen von Komponenten zu einem klassischen Farmlösung. Es kann jedoch nicht jede Art von SharePoint-Komponente einem SharePoint-Add-In hinzugefügt werden. Die Zwecke, denen diese Komponenten dienen, werden in SharePoint-Add-Ins auf andere Weise erreicht. Ausführlichere Informationen darüber, welche Arten von SharePoint-Komponenten einem SharePoint-Add-In hinzugefügt werden können und wie sie einem Projekt hinzugefügt werden, finden Sie unter  [Typen von SharePoint-Komponenten, die in einem SharePoint-Add-In enthalten sein können](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013#TypesOfSPComponentsInApps).
+1. Zum Hinzufügen von SharePoint-Komponenten zu einem Add-In gehen Sie gleich vor wie beim Hinzufügen von Komponenten zu einem klassischen Farmlösung. Es kann jedoch nicht jede Art von SharePoint-Komponente einem SharePoint-Add-In hinzugefügt werden. Die Zwecke, denen diese Komponenten dienen, werden in SharePoint-Add-Ins auf andere Weise erreicht. Ausführlichere Informationen darüber, welche Arten von SharePoint-Komponenten einem SharePoint-Add-In hinzugefügt werden können und wie sie einem Projekt hinzugefügt werden, finden Sie unter  [Typen von SharePoint-Komponenten, die in einem SharePoint-Add-In enthalten sein können](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#TypesOfSPComponentsInApps).
     
     Verwenden Sie für das fortlaufende Beispiel die folgenden Verfahren. Diese geben Beispiele für die Verwendung von Visual Studio 2012 zum Hinzufügen von benutzerdefinierten Spalten, Inhaltstypen, Listenvorlagen und Listeninstanzen zu einem SharePoint-Add-In.
     
@@ -370,7 +380,7 @@ Bevor Sie Ihr erstes Add-In erstellen, sollten Sie grundsätzlich wissen, was Sh
 
     In dem fortlaufenden Beispiel entwickeln Sie eine ASP.NET-Webanwendung. Führen Sie die folgenden Schritte aus.
     
-      1. Öffnen Sie die Datei „Default.aspx“, und ersetzen Sie das Textelement der Datei durch das folgende Markup. Das Markup fügt eine Schaltfläche **Get the Cast** hinzu, welche, wenn sie ausgewählt wird, die Liste **Characters in Hamlet** im Add-In-Web liest und deren Daten in einem [GridView](http://msdn2.microsoft.com/EN-US/library/4w7ya1ts)-Steuerelement darstellt, das erst nach dem Klicken auf die Schaltfläche angezeigt wird.
+      1. Öffnen Sie die Datei „Default.aspx“, und ersetzen Sie das Textelement der Datei durch das folgende Markup. Das Markup fügt eine Schaltfläche **Get the Cast** hinzu, welche, wenn sie ausgewählt wird, die Liste **Characters in Hamlet** im Add-In-Web liest und deren Daten in einem [GridView](http://msdn2.microsoft.com/de-DE/library/4w7ya1ts)-Steuerelement darstellt, das erst nach dem Klicken auf die Schaltfläche angezeigt wird.
     
 ```HTML
   <body >
@@ -415,7 +425,7 @@ string accessToken;
 Uri sharepointUrl;
 ```
 
-  4. Ersetzen Sie die **Page_Load**-Methode durch den folgenden Code, der die **TokenHelper**-Klasse verwendet, um Token von dem OAuth-kompatiblen sicheren Token-Server abzurufen. Der Zugriffstoken wird dann in der Eigenschaft [CommandArgument](http://msdn2.microsoft.com/EN-US/library/hykdabtx) der Schaltfläche zum späteren Abrufen durch den Click-Ereignishandler der Schaltfläche gespeichert.
+  4. Ersetzen Sie die **Page_Load**-Methode durch den folgenden Code, der die **TokenHelper**-Klasse verwendet, um Token von dem OAuth-kompatiblen sicheren Token-Server abzurufen. Der Zugriffstoken wird dann in der Eigenschaft [CommandArgument](http://msdn2.microsoft.com/de-DE/library/hykdabtx) der Schaltfläche zum späteren Abrufen durch den Click-Ereignishandler der Schaltfläche gespeichert.
     
 ```C#
   protected void Page_Load(object sender, EventArgs e)
@@ -438,7 +448,7 @@ Uri sharepointUrl;
 }
 ```
 
-  5. Fügen Sie der **Default**-Klasse den folgenden Ereignishandler hinzu. Der Handler beginnt, den in der Eigenschaft [CommandArgument](http://msdn2.microsoft.com/EN-US/library/hykdabtx) der Schaltfläche gespeicherten Zugriffstoken abzurufen.
+  5. Fügen Sie der **Default**-Klasse den folgenden Ereignishandler hinzu. Der Handler beginnt, den in der Eigenschaft [CommandArgument](http://msdn2.microsoft.com/de-DE/library/hykdabtx) der Schaltfläche gespeicherten Zugriffstoken abzurufen.
     
 ```C#
   protected void Button1_Click(object sender, EventArgs e)
@@ -458,14 +468,14 @@ Uri sharepointUrl;
 }
 ```
 
-  7. Fügen Sie die folgende Zeile hinzu, die einen der SharePoint-REST/OData-Endpunkte verwendet, um Listendaten abzurufen. In diesem Beispiel liest der Code die Liste **Characters in Hamlet**, die für das Add-In-Web bereitgestellt wird. Die APIs für diesen Dienst machen es einfach, in einer einzelnen Codezeile eine Liste auszuwählen und drei Felder in der Liste zum Zurückgeben festzulegen. Beachten Sie, dass Sie in der OData-URL den internen Namen der Felder (Spalten) und nicht den Anzeigenamen angeben müssen, damit der Code `Title`, `Actor` sowie `CastingStatus` verwendet und nicht `Character`, `Actor/Actress` und `Casting Status.` Weitere Informationen über den REST/OData-Webdienst finden Sie unter [Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen](use-odata-query-operations-in-sharepoint-rest-requests).
+  7. Fügen Sie die folgende Zeile hinzu, die einen der SharePoint-REST/OData-Endpunkte verwendet, um Listendaten abzurufen. In diesem Beispiel liest der Code die Liste **Characters in Hamlet**, die für das Add-In-Web bereitgestellt wird. Die APIs für diesen Dienst machen es einfach, in einer einzelnen Codezeile eine Liste auszuwählen und drei Felder in der Liste zum Zurückgeben festzulegen. Beachten Sie, dass Sie in der OData-URL den internen Namen der Felder (Spalten) und nicht den Anzeigenamen angeben müssen, damit der Code `Title`, `Actor` sowie `CastingStatus` verwendet und nicht `Character`, `Actor/Actress` und `Casting Status.` Weitere Informationen über den REST/OData-Webdienst finden Sie unter [Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen](use-odata-query-operations-in-sharepoint-rest-requests.md).
     
 ```C#
   // REST/OData URL section
  string oDataUrl = "/_api/Web/lists/getbytitle('Characters In Hamlet')/items?$select=Title,Actor,CastingStatus";
 ```
 
-  8. Fügen Sie den folgenden Code hinzu, der die Klassen[HttpWebRequest](http://msdn2.microsoft.com/EN-US/library/8y7x3zz2) und [HttpWebResponse](http://msdn2.microsoft.com/EN-US/library/ww5755y6) des [System.Net](http://msdn2.microsoft.com/EN-US/library/btdf6a7e)-Namespace verwendet, um die HTTP-Anforderungs- und -Antwortobjekte zu erstellen.
+  8. Fügen Sie den folgenden Code hinzu, der die Klassen[HttpWebRequest](http://msdn2.microsoft.com/de-DE/library/8y7x3zz2) und [HttpWebResponse](http://msdn2.microsoft.com/de-DE/library/ww5755y6) des [System.Net](http://msdn2.microsoft.com/de-DE/library/btdf6a7e)-Namespace verwendet, um die HTTP-Anforderungs- und -Antwortobjekte zu erstellen.
     
 ```C#
   // HTTP Request and Response construction section
@@ -477,7 +487,7 @@ request.Headers.Add("Authorization", "Bearer " + accessToken);
 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 ```
 
-  9. Fügen Sie den folgenden Code hinzu, um das ATOM-formatierte Antwort-XML zu analysieren. Er verwendet die Klassen des Namespace  [System.Xml.Linq](http://msdn2.microsoft.com/EN-US/library/bb299195) , um die zurückgegebenen Daten zu analysieren und eine [List<T>](http://msdn2.microsoft.com/EN-US/library/6sh2ey19) der Elemente aus der SharePoint-Liste zu erstellen. (Sie könnten auch die Klassen des Namespace [System.Xml](http://msdn2.microsoft.com/EN-US/library/y3y47afh) verwenden.) Beachten Sie, dass in dem von SharePoint zurückgegebenen XML die untergeordneten Elemente des **entry**-Elements die Metadaten zu dem Listenelement enthalten. Die tatsächlichen Zeilendaten eines SharePoint-Listenelements sind zwei Schichten weiter unten im **properties**-Element geschachtelt. Aus diesem Grund wird die Erweiterungsmethode  [Elements<T>](http://msdn2.microsoft.com/EN-US/library/bb348465) zweimal verwendet, um die höheren Ebenen herauszufiltern.
+  9. Fügen Sie den folgenden Code hinzu, um das ATOM-formatierte Antwort-XML zu analysieren. Er verwendet die Klassen des Namespace  [System.Xml.Linq](http://msdn2.microsoft.com/de-DE/library/bb299195) , um die zurückgegebenen Daten zu analysieren und eine [List<T>](http://msdn2.microsoft.com/de-DE/library/6sh2ey19) der Elemente aus der SharePoint-Liste zu erstellen. (Sie könnten auch die Klassen des Namespace [System.Xml](http://msdn2.microsoft.com/de-DE/library/y3y47afh) verwenden.) Beachten Sie, dass in dem von SharePoint zurückgegebenen XML die untergeordneten Elemente des **entry**-Elements die Metadaten zu dem Listenelement enthalten. Die tatsächlichen Zeilendaten eines SharePoint-Listenelements sind zwei Schichten weiter unten im **properties**-Element geschachtelt. Aus diesem Grund wird die Erweiterungsmethode  [Elements<T>](http://msdn2.microsoft.com/de-DE/library/bb348465) zweimal verwendet, um die höheren Ebenen herauszufiltern.
     
 ```C#
   // Response markup parsing section
@@ -492,7 +502,7 @@ List<XElement> entries = oDataXML.Descendants(atom + "entry")
                          .ToList();
 ```
 
-  10. Fügen Sie die folgende LINQ-Abfrage hinzu, um eine [IEnumerable<T>](http://msdn2.microsoft.com/EN-US/library/9eekhta0)-Sammlung eines anonymen Typs zu erstellen, die nur die Eigenschaften besitzt, die Sie benötigen. Beachten Sie, dass obwohl der Code durch seinen internen `Title`-Namen auf das Elementfeld Titel verweisen muss, der Eigenschaftenname in dem anonymen Typ, dem der Wert zugewiesen wird, als `Character` benannt werden kann. Ein Effekt davon ist, dass der besser geeignete Name **Character** auf der Seite angezeigt wird, wenn die Sammlung an ein Rastersteuerelement gebunden wird.
+  10. Fügen Sie die folgende LINQ-Abfrage hinzu, um eine [IEnumerable<T>](http://msdn2.microsoft.com/de-DE/library/9eekhta0)-Sammlung eines anonymen Typs zu erstellen, die nur die Eigenschaften besitzt, die Sie benötigen. Beachten Sie, dass obwohl der Code durch seinen internen `Title`-Namen auf das Elementfeld Titel verweisen muss, der Eigenschaftenname in dem anonymen Typ, dem der Wert zugewiesen wird, als `Character` benannt werden kann. Ein Effekt davon ist, dass der besser geeignete Name **Character** auf der Seite angezeigt wird, wenn die Sammlung an ein Rastersteuerelement gebunden wird.
     
 ```C#
   var entryFieldValues = from entry in entries
@@ -502,7 +512,7 @@ List<XElement> entries = oDataXML.Descendants(atom + "entry")
 
 ```
 
-  11. Schließen Sie den Handler mit dem folgenden Code ab, um die Daten an ein  [GridView](http://msdn2.microsoft.com/EN-US/library/4w7ya1ts) -Steuerelement auf der Seite zu binden. Die Spaltenüberschriften in dem Steuerelement werden standardmäßig als die Eigenschaftsnamen des anonymen Typs angezeigt: `Character`,  `Actor` und `CastingStatus`. Das  [GridView](http://msdn2.microsoft.com/EN-US/library/4w7ya1ts) -Steuerelement besitzt Eigenschaften, die es Ihnen ermöglichen, die Überschriften der Namens- und Formatierungsspalten zu steuern, sodass sie **Actor/Actress** und **Casting Status** lauten können, um mit den Spaltenüberschriften in SharePoint übereinzustimmen. Diese Methoden werden der Einfachheit halber hier nicht beschrieben. (Sie könnten auch ein [DataGrid](http://msdn2.microsoft.com/EN-US/library/e1zk1ey1) -Steuerelement verwenden.)
+  11. Schließen Sie den Handler mit dem folgenden Code ab, um die Daten an ein  [GridView](http://msdn2.microsoft.com/de-DE/library/4w7ya1ts) -Steuerelement auf der Seite zu binden. Die Spaltenüberschriften in dem Steuerelement werden standardmäßig als die Eigenschaftsnamen des anonymen Typs angezeigt: `Character`,  `Actor` und `CastingStatus`. Das  [GridView](http://msdn2.microsoft.com/de-DE/library/4w7ya1ts) -Steuerelement besitzt Eigenschaften, die es Ihnen ermöglichen, die Überschriften der Namens- und Formatierungsspalten zu steuern, sodass sie **Actor/Actress** und **Casting Status** lauten können, um mit den Spaltenüberschriften in SharePoint übereinzustimmen. Diese Methoden werden der Einfachheit halber hier nicht beschrieben. (Sie könnten auch ein [DataGrid](http://msdn2.microsoft.com/de-DE/library/e1zk1ey1) -Steuerelement verwenden.)
     
 ```C#
   GridView1.DataSource = entryFieldValues;
@@ -527,7 +537,7 @@ GridView1.DataBind();
 ## <a name="publishing-the-sharepoint-add-in"></a>Veröffentlichen des SharePoint-Add-Ins
 <a name="Publish"> </a>
 
-Um Ihr SharePoint-Add-In zu veröffentlichen, laden Sie das Add-In-Paket in einen Unternehmens-Add-In-Katalog oder den Office Add-In-Store. Weitere Informationen finden Sie unter  [Veröffentlichen im Office Store oder im Add-In-Katalog eines Unternehmens](deploying-and-installing-sharepoint-add-ins-methods-and-options#MarketOrCatalog) und [Veröffentlichen von SharePoint-Add-Ins](publish-sharepoint-add-ins).
+Um Ihr SharePoint-Add-In zu veröffentlichen, laden Sie das Add-In-Paket in einen Unternehmens-Add-In-Katalog oder den Office Add-In-Store. Weitere Informationen finden Sie unter  [Veröffentlichen im Office Store oder im Add-In-Katalog eines Unternehmens](deploying-and-installing-sharepoint-add-ins-methods-and-options.md#MarketOrCatalog) und [Veröffentlichen von SharePoint-Add-Ins](publish-sharepoint-add-ins.md).
  
 
  
@@ -579,13 +589,13 @@ In diesem Artikel wurde beschrieben, wie ein einfaches hybrides SharePoint-Add-I
 
  
 
-- Hinzufügen von vollständiger CRUD-Funktionalität zum Add-In mit den REST/OData-Endpunkten oder einem der Clientobjektmodelle. Weitere Informationen finden Sie unter  [Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen](use-odata-query-operations-in-sharepoint-rest-requests) und [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode](complete-basic-operations-using-sharepoint-2013-client-library-code).
+- Hinzufügen von vollständiger CRUD-Funktionalität zum Add-In mit den REST/OData-Endpunkten oder einem der Clientobjektmodelle. Weitere Informationen finden Sie unter  [Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen](use-odata-query-operations-in-sharepoint-rest-requests.md) und [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode](complete-basic-operations-using-sharepoint-client-library-code.md).
     
  
-- Lokalisieren Ihres SharePoint-Add-Ins für andere Kulturen. Weitere Informationen finden Sie unter [Lokalisieren von SharePoint-Add-Ins](localize-sharepoint-add-ins).
+- Lokalisieren Ihres SharePoint-Add-Ins für andere Kulturen. Weitere Informationen finden Sie unter [Lokalisieren von SharePoint-Add-Ins](localize-sharepoint-add-ins.md).
     
  
-- Erstellen eines Windows Phone Companion-Add-Ins, das die Funktionalität der Remote-Webanwendung dupliziert. Weitere Informationen finden Sie unter  [Erstellen von mobilen Add-Ins für SharePoint](http://msdn.microsoft.com/en-us/library/office/jj163228.aspx).
+- Erstellen eines Windows Phone Companion-Add-Ins, das die Funktionalität der Remote-Webanwendung dupliziert. Weitere Informationen finden Sie unter  [Erstellen von mobilen Add-Ins für SharePoint](http://msdn.microsoft.com/de-DE/library/office/jj163228.aspx).
     
  
 
@@ -593,10 +603,10 @@ In diesem Artikel wurde beschrieben, wie ein einfaches hybrides SharePoint-Add-I
 <a name="SP15createcloud_bk_addlresources"> </a>
 
 
--  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins)
+-  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
--  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins)
+-  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
     
  
 

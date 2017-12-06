@@ -1,9 +1,18 @@
-
+---
+title: "Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 7215ae000b40436c64b2a4b566948a88f20b9533
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="publish-sharepoint-add-ins-by-using-visual-studio"></a>Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio
 Erfahren Sie, wie Sie Ihre SharePoint-Add-In mithilfe von Microsoft Visual Studio 2013 oder Visual Studio 2012 veröffentlichen. Wenn mit dem Add-In eine Webanwendung verknüpft ist, stellen Sie diese zuerst bereit. Wie bei allen SharePoint-Add-Ins packen Sie dann die SharePoint-Add-In und veröffentlichen sie anschließend. Sie können Ihr Add-In auch optional zur Aufnahme in den Office Store übermitteln.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -154,7 +163,7 @@ Wenn Sie soweit sind, dass Sie die SharePoint-Add-In als Paket veröffentlichen 
  
 4. Geben Sie in den Feldern zur **Angabe der Identität des Add-Ins** die Client-ID und das Clientgeheimnis des Add-Ins ein, und wählen Sie dann die Schaltfläche **Weiter**.
     
-    Siehe [Autorisierung und Authentifizierung von SharePoint-Add-Ins](authorization-and-authentication-of-sharepoint-add-ins)
+    Siehe [Autorisierung und Authentifizierung von SharePoint-Add-Ins](authorization-and-authentication-of-sharepoint-add-ins.md)
     
  
 5. Aktivieren Sie für alle Typen von SharePoint-Add-Ins das Kontrollkästchen **Ausgabeordner nach dem Verpacken öffnen**, sofern es nicht bereits aktiviert ist, und wählen Sie dann die Schaltfläche **Fertig stellen**.
@@ -188,7 +197,7 @@ Eine Schritt-für-Schritt-Anleitung finden Sie unter [Gewusst wie: Installieren 
 ### <a name="step-3-publish-your-sharepoint-add-in"></a>Schritt 3: Veröffentlichen Sie Ihr SharePoint-Add-In
 <a name="Publish"> </a>
 
-Zum Veröffentlichen der SharePoint-Add-In laden Sie die Add-In-Manifestdatei (.APP) des Add-Ins in den Office Store, den Katalog für Add-Ins für Office, SharePoint, eine Dateifreigabe oder einen Exchange-Katalog hoch. Das Add-In-Manifest Ihres Add-Ins befindet sich im Ordner  `app.publish`, z. B.  `%UserProfile%\Documents\Visual Studio 2012\Projects\MyApp\bin\Debug\app.publish`. Weitere Informationen zum Veröffentlichen Ihrer SharePoint-Add-In finden Sie unter  [Autorisierung und Authentifizierung für Add-Ins in SharePoint](authorization-and-authentication-of-sharepoint-add-ins).
+Zum Veröffentlichen der SharePoint-Add-In laden Sie die Add-In-Manifestdatei (.APP) des Add-Ins in den Office Store, den Katalog für Add-Ins für Office, SharePoint, eine Dateifreigabe oder einen Exchange-Katalog hoch. Das Add-In-Manifest Ihres Add-Ins befindet sich im Ordner  `app.publish`, z. B.  `%UserProfile%\Documents\Visual Studio 2012\Projects\MyApp\bin\Debug\app.publish`. Weitere Informationen zum Veröffentlichen Ihrer SharePoint-Add-In finden Sie unter  [Autorisierung und Authentifizierung für Add-Ins in SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md).
  
 
  
@@ -197,7 +206,7 @@ Zum Veröffentlichen der SharePoint-Add-In laden Sie die Add-In-Manifestdatei (.
 <a name="Additional"> </a>
 
 
--  [Veröffentlichen von SharePoint-Add-Ins](publish-sharepoint-add-ins)
+-  [Veröffentlichen von SharePoint-Add-Ins](publish-sharepoint-add-ins.md)
     
  
 -  [Veröffentlichen Ihres Office-Add-Ins](http://msdn.microsoft.com/library/7f3ae6a0-06e9-438c-8899-bd9f605e6d9e%28Office.15%29.aspx)

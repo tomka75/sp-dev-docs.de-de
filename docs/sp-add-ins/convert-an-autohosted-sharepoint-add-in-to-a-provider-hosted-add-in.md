@@ -1,8 +1,18 @@
+---
+title: Konvertieren eines automatisch gehosteten SharePoint-Add-Ins in ein vom Anbieter gehostetes Add-In
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 9c822a4d2b9b4a79a3a91afd935b3d059da4c027
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in"></a>Konvertieren eines automatisch gehosteten SharePoint-Add-Ins in ein vom Anbieter gehostetes Add-In
 Erfahren Sie, wie Sie ein automatisch gehostetes SharePoint-Add-In in ein vom Anbieter gehostetes Add-In konvertieren können.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Mit Microsoft SharePoint wurde ein neuer Ansatz für die Erweiterung von SharePoint-Websites zusätzlich zum vorherigen Ansatz eingeführt, der auf der Verwendung lösungsbasierter Anpassungen basiert. Dieses neue Erweiterbarkeitsmodell für SharePoint, das als Add-In-Modell bezeichnet wird, ermöglicht Entwicklern die Erstellung von benutzerdefinierten Implementierungen, die an SharePoint-Umgebungen weitergegeben werden können, unabhängig davon, ob diese in einer lokalen, einer SharePoint Online- oder einer Hybridbereitstellung ausgeführt werden.
@@ -19,7 +29,7 @@ In diesem Artikel werden die Konvertierung und Migration eines automatisch gehos
 ## <a name="prerequisites-for-converting-an-autohosted-add-in-to-a-provider-hosted-add-in"></a>Voraussetzungen für die Konvertierung eines automatisch gehosteten Add-Ins in ein vom Anbieter gehostetes Add-In
 
 
-- Alle [Voraussetzungen für das Entwickeln von vom Anbieter gehosteten Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins#SP15createselfhostapp_bk_prereq).
+- Alle [Voraussetzungen für das Entwickeln von vom Anbieter gehosteten Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md).
     
  
 - Azure SDK 2.3, das Sie über [diese Download Center-Seite](http://azure.microsoft.com/downloads) installieren können.
@@ -39,10 +49,10 @@ Bevor Sie ein automatisch gehostetes Add-In in ein vom Anbieter gehostetes Add-I
 
 |**Titel des Artikels**|**Beschreibung**|
 |:-----|:-----|
-| [SharePoint-Add-Ins](sharepoint-add-ins)|Hier finden Sie Informationen über das neue Add-In-Modell in SharePoint, das es Ihnen ermöglicht, Add-Ins als kompakte, einfach zu verwendende Lösungen für Endbenutzer zu erstellen.|
-| [Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape)|Erfahren Sie mehr über Aspekte der Architektur von SharePoint-Add-Ins und das Modell für SharePoint-Add-Ins, wie z. B. die Hostingoptionen für Add-Ins, Benutzeroberflächenoptionen, das Bereitstellungssystem, das Sicherheitssystem und den Lebenszyklus.|
-| [Auswählen von Mustern für die Entwicklung und das Hosten Ihres SharePoint-Add-Ins](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in)|Hier finden Sie Informationen über die verschiedenen Möglichkeiten zum Hosten von SharePoint-Add-Ins.|
-| [Hostwebs, Add-In-Webs und SharePoint-Komponenten in SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013)|Hier lernen Sie den Unterschied zwischen Hostwebs und Add-In-Webs kennen. Außerdem erfahren Sie, welche SharePoint-Komponenten eines Add-Ins für SharePoint hinzugefügt werden können, welche für das Hostweb bereitgestellt werden, welche für das Add-In-Web bereitgestellt werden und wie das Add-In-Web in einer isolierten Domäne bereitgestellt wird.|
+| [SharePoint-Add-Ins](sharepoint-add-ins.md)|Hier finden Sie Informationen über das neue Add-In-Modell in SharePoint, das es Ihnen ermöglicht, Add-Ins als kompakte, einfach zu verwendende Lösungen für Endbenutzer zu erstellen.|
+| [Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)|Erfahren Sie mehr über Aspekte der Architektur von SharePoint-Add-Ins und das Modell für SharePoint-Add-Ins, wie z. B. die Hostingoptionen für Add-Ins, Benutzeroberflächenoptionen, das Bereitstellungssystem, das Sicherheitssystem und den Lebenszyklus.|
+| [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in.md)|Hier finden Sie Informationen über die verschiedenen Möglichkeiten zum Hosten von SharePoint-Add-Ins.|
+| [Hostwebs, Add-In-Webs und SharePoint-Komponenten in SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md)|Hier lernen Sie den Unterschied zwischen Hostwebs und Add-In-Webs kennen. Außerdem erfahren Sie, welche SharePoint-Komponenten eines Add-Ins für SharePoint hinzugefügt werden können, welche für das Hostweb bereitgestellt werden, welche für das Add-In-Web bereitgestellt werden und wie das Add-In-Web in einer isolierten Domäne bereitgestellt wird.|
 
 ## <a name="converting-the-add-in"></a>Konvertieren des Add-Ins
 <a name="Converting"> </a>
@@ -131,7 +141,7 @@ Der nächste Schritt ist die Erstellung einer neuen Microsoft Azure SQL-Datenban
  
 
  
-![Auflistung von Azure SQL-Datenbanken](../../images/ConvertAuto2ProviderFig3.jpg)
+![Auflistung von Azure SQL-Datenbanken](../images/ConvertAuto2ProviderFig3.jpg)
  
 Klicken Sie im obersten Navigationsbereich auf den Link **SERVER**, und klicken Sie dann in der Fußzeile auf die Schaltfläche **HINZUFÜGEN**, wie in der folgenden Abbildung gezeigt:
  
@@ -143,7 +153,7 @@ Klicken Sie im obersten Navigationsbereich auf den Link **SERVER**, und klicken 
  
 
  
-![Schaltfläche „Hinzufügen“ für Azure SQL-Datenbanken](../../images/ConvertAuto2ProviderFig4.jpg)
+![Schaltfläche „Hinzufügen“ für Azure SQL-Datenbanken](../images/ConvertAuto2ProviderFig4.jpg)
  
 Wählen Sie im daraufhin angezeigten Dialogfeld **SERVER ERSTELLEN** das Azure-**ABONNEMENT**, den **ANMELDENAMEN** und das **KENNWORT** für den Benutzer, der Rechte auf dem Server haben wird, und dieselbe **REGION** aus, die beim Erstellen der Azure-Website zuvor verwendet wurde. Notieren Sie den Anmeldenamen und das Kennwort, da diese in einem späteren Schritt benötigt werden.
  
@@ -155,7 +165,7 @@ Wählen Sie im daraufhin angezeigten Dialogfeld **SERVER ERSTELLEN** das Azure-*
  
 
  
-![Dialogfeld für neue Azure SQL-Datenbank](../../images/ConvertAuto2ProviderFig5.jpg)
+![Dialogfeld für neue Azure SQL-Datenbank](../images/ConvertAuto2ProviderFig5.jpg)
  
 Nachdem das Formular ausgefüllt wurde, klicken Sie auf das **Häkchensymbol** unten rechts, um die Datenbank zu erstellen. Während jetzt der Server erstellt wird, können als einzige Ressource nur andere Azure-Dienste darauf zugreifen. Notieren Sie den Namen der Microsoft Azure SQL-Datenbank, da dieser in einem späteren Schritt benötigt wird.
  
@@ -171,7 +181,7 @@ Zum Herstellen einer Verbindung mit der Microsoft Azure SQL-Datenbank und zum Be
  
 
  
-![Fehler beim Herstellen der Verbindung mit dem Server](../../images/ConvertAuto2ProviderFig6.jpg)
+![Fehler beim Herstellen der Verbindung mit dem Server](../images/ConvertAuto2ProviderFig6.jpg)
  
 Zum Erstellen einer Firewallregel wählen Sie im **Azure-Verwaltungsportal** die zuvor erstellte Microsoft Azure SQL-Datenbank aus und klicken dann im obersten Navigationsbereich auf den Link **KONFIGURIEREN**. Unter dem Abschnitt **Zugelassene IP-Adressen** wird derzeit Ihre IP-Adresse angezeigt, wie in der folgenden Abbildung dargestellt. Klicken Sie auf **ZU DEN ZUGELASSENEN IP-ADRESSEN HINZUFÜGEN**, um eine Firewallregel hinzuzufügen. Damit werden Verbindungen mit der Microsoft Azure SQL-Datenbank und die Bereitstellung der Datenbank zugelassen. Achten Sie darauf, in der Fußzeile auf die Schaltfläche **Speichern** zu klicken.
  
@@ -183,7 +193,7 @@ Zum Erstellen einer Firewallregel wählen Sie im **Azure-Verwaltungsportal** die
  
 
  
-![Azure SQL-Firewallregel erstellen](../../images/ConvertAuto2Providerfig7.jpg)
+![Azure SQL-Firewallregel erstellen](../images/ConvertAuto2Providerfig7.jpg)
  
 Der nächste Schritt ist die Bereitstellung der Datenbank und kann über das Azure SDK 2.3 in Visual Studio durchgeführt werden. Installieren Sie das SDK über [diese Download Center-Seite](http://azure.microsoft.com/downloads). Öffnen Sie in Visual Studio das Toolfenster **SQL Server-Objekt-Explorer**, klicken Sie mit der rechten Maustaste auf den Knoten **SQL Server**, und wählen Sie **SQL Server hinzufügen** aus:
  
@@ -195,7 +205,7 @@ Der nächste Schritt ist die Bereitstellung der Datenbank und kann über das Azu
  
 
  
-![Verbindung mit SQL Azure in Visual Studio herstellen](../../images/ConvertAuto2Providerfig8.jpg)
+![Verbindung mit SQL Azure in Visual Studio herstellen](../images/ConvertAuto2Providerfig8.jpg)
  
 Geben Sie im Dialogfeld **Mit Server verbinden** den **Servernamen** ein, legen Sie die **Authentifizierung** auf **SQL Server-Authentifizierung** fest, und geben Sie denselben **Anmeldenamen** und dasselbe **Kennwort** ein, die beim Erstellen der Microsoft Azure SQL-Datenbank definiert wurden. Der Servername sollte der vollqualifizierte Name des Servers sein, in diesem Fall `[server-name].database.windows.net`, wie in der folgenden Abbildung gezeigt:
  
@@ -207,7 +217,7 @@ Geben Sie im Dialogfeld **Mit Server verbinden** den **Servernamen** ein, legen 
  
 
  
-![SQL-Dialogfeld zum Anmelden am Server](../../images/ConvertAuto2Providerfig9.jpg)
+![SQL-Dialogfeld zum Anmelden am Server](../images/ConvertAuto2Providerfig9.jpg)
  
 Erweitern Sie nach dem Herstellen der Verbindung mit der Microsoft Azure SQL-Datenbank den Knoten für den neu hinzugefügten Server, klicken Sie mit der rechten Maustaste auf den Knoten **Datenbanken**, und wählen Sie **Datenebenenanwendung veröffentlichen** aus, um den Assistent für Veröffentlichungen aufzurufen.
  
@@ -223,7 +233,7 @@ Klicken Sie im Abschnitt **Quell-Datenebenenanwendung (.dacpac)** auf die Schalt
  
 
  
-![Dialogfeld zum Veröffentlichen einer Datenebenenanwendung](../../images/ConvertAuto2ProviderFig10.jpg)
+![Dialogfeld zum Veröffentlichen einer Datenebenenanwendung](../images/ConvertAuto2ProviderFig10.jpg)
  
 Aktualisieren Sie das Visual Studio-Toolfenster **SQL Server-Objekt-Explorer**, um zu sehen, dass CustomerDb unter dem Knoten **Datenbanken** aufgelistet ist.
  
@@ -247,7 +257,7 @@ Nachdem die Microsoft Azure SQL-Datenbank erstellt wurde, erstellen Sie eine Kop
  
 
  
-![Dialogfeld für Azure SQL-Verbindungszeichenfolgen](../../images/ConvertAuto2Providerfig11.jpg)
+![Dialogfeld für Azure SQL-Verbindungszeichenfolgen](../images/ConvertAuto2Providerfig11.jpg)
  
 Zweitens können Sie die Verbindungszeichenfolge innerhalb von Visual Studio abrufen, vorausgesetzt, dass das Azure SDK v2.3 installiert ist. Wählen Sie im Toolfenster **SQL Server-Objekt-Explorer** in Visual Studio die Datenbank **CustomerDb** aus, und werfen Sie dann einen Blick in das Toolfenster **Eigenschaften**, in dem die Verbindungszeichenfolge angezeigt wird. Dies ist derselbe Wert wie im **Azure-Verwaltungsportal** oben.
  
@@ -259,7 +269,7 @@ Zweitens können Sie die Verbindungszeichenfolge innerhalb von Visual Studio abr
  
 
  
-![SQL-Verbindungszeichenfolge in Visual Studio abrufen](../../images/ConvertAuto2ProviderFig12.jpg)
+![SQL-Verbindungszeichenfolge in Visual Studio abrufen](../images/ConvertAuto2ProviderFig12.jpg)
  
 
  
@@ -282,7 +292,7 @@ Melden Sie sich zum Erstellen einer neuen Azure-Website zuerst beim **Azure-Verw
  
 
  
-![Azure-Website-Dashboard](../../images/ConvertAuto2Providerfig13.jpg)
+![Azure-Website-Dashboard](../images/ConvertAuto2Providerfig13.jpg)
  
 Wählen Sie danach im Assistenten zum Erstellen einer Website **BERECHNEN**, **WEBSITE**, **SCHNELLERFASSUNG** aus, und geben Sie eine **URL** und einen **WEBHOSTINGPLAN** an. Geben Sie schließlich die **REGION** an, in der die Website erstellt werden soll. Merken Sie sich unbedingt die Region, da diese Region für die später zu erstellende Microsoft Azure SQL-Datenbank verwendet werden muss. Wenn noch kein Webhostingplan vorhanden oder ein neuer erwünscht ist, wählen Sie darüber hinaus die Option **Neuen Webhostingplan erstellen** aus. In der folgenden Abbildung ist ein Beispiel gezeigt:
  
@@ -294,7 +304,7 @@ Wählen Sie danach im Assistenten zum Erstellen einer Website **BERECHNEN**, **W
  
 
  
-![Dialogfeld zum Erstellen einer Azure-Website](../../images/ConvertAuto2Providerfig14.jpg)
+![Dialogfeld zum Erstellen einer Azure-Website](../images/ConvertAuto2Providerfig14.jpg)
  
 Notieren Sie nach dem Erstellen der Azure-Website die URL, die für die Website verwendet wird. In den Abbildungen oben wird die Website  `http://spahapptoph.azurewebsites.net` erstellt. 
  
@@ -383,7 +393,7 @@ Jetzt müssen die ASP.NET-MVC-Webanwendungsdateien an die Azure-Website als Remo
  
 
  
-![Dialogfeld „Web veröffentlichen“ in Visual Studio](../../images/ConvertAuto2Providerfig17.jpg)
+![Dialogfeld „Web veröffentlichen“ in Visual Studio](../images/ConvertAuto2Providerfig17.jpg)
  
 Wählen Sie im nächsten Schritt den Namen der Azure-Website aus, die in einem vorherigen Schritt erstellt wurde, wie in der folgenden Abbildung gezeigt. Klicken Sie auf **OK**, und vergewissern Sie sich, dass die URL der Website HTTPS enthält.
  
@@ -395,7 +405,7 @@ Wählen Sie im nächsten Schritt den Namen der Azure-Website aus, die in einem v
  
 
  
-![Dialogfeld „Vorhandene Website auswählen“](../../images/ConvertAuto2ProviderFig18.png)
+![Dialogfeld „Vorhandene Website auswählen“](../images/ConvertAuto2ProviderFig18.png)
  
 Klicken Sie im letzten Schritt auf die Schaltfläche **Verbindung überprüfen**, um sicherzustellen, dass die Einstellungen und die Verbindung ordnungsgemäß funktionieren, und klicken Sie abschließend auf **Veröffentlichen**. Damit wird die Bereitstellung der ASP.NET-Webanwendung an die Azure-Website durch Visual Studio ausgelöst. 
  
@@ -449,7 +459,7 @@ Entfernen Sie dann die Referenz im SharePoint-Add-In-Projekt zur ASP.NET-MVC-Web
  
 
  
-![Webprojekteigenschaften in Visual Studio](../../images/ConvertAuto2ProviderFig20.jpg)
+![Webprojekteigenschaften in Visual Studio](../images/ConvertAuto2ProviderFig20.jpg)
  
 Im letzten Schritt ist eine manuelle Aktualisierung der Datei AppManifest.xml erforderlich, da einige Einstellungen im Designer nicht verfügbar gemacht werden. Speichern Sie dafür alle vorhandenen Änderungen an der Datei AppManifest.xml, klicken Sie dann mit der rechten Maustaste auf dieselbe Datei im **Projektmappen-Explorer**, und wählen Sie **Code anzeigen** aus.
  
@@ -461,7 +471,7 @@ Im letzten Schritt ist eine manuelle Aktualisierung der Datei AppManifest.xml er
  
 
  
-![Kontextmenü des Add-In-Manifests in Visual Studio](../../images/ConvertAuto2ProviderFig21.jpg)
+![Kontextmenü des Add-In-Manifests in Visual Studio](../images/ConvertAuto2ProviderFig21.jpg)
  
 Entfernen Sie in der Codeansicht der Datei "AppManifest.xml" die zwei Referenzen auf das ASP.NET-MVC-Webanwendungsprojekt und das SQL-Datenebenen-Anwendungsprojekt, da diese in einem vom Anbieter gehosteten SharePoint-Add-In nicht erforderlich sind.
  
@@ -486,7 +496,7 @@ Suchen Sie dann nach dem Element **<RemoteWebApplication>**, und aktualisieren S
  
 
  
-![Client-ID-Attribut im Add-In-Manifest](../../images/ConvertAuto2ProviderFig22.jpg)
+![Client-ID-Attribut im Add-In-Manifest](../images/ConvertAuto2ProviderFig22.jpg)
  
 Nach dem Speichern aller Änderungen an der Datei "AppManifest.xml" ist das Add-In jetzt bereit für das Testen als vom Anbieter bereitgestelltes SharePoint-Add-In. Stellen Sie das Add-In an eine SharePoint-Farm oder SharePoint Online-Website bereit, um zu überprüfen, ob die Konvertierungsschritte ordnungsgemäß durchgeführt wurden.
  

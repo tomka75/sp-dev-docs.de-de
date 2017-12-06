@@ -1,20 +1,31 @@
+---
+title: "Hinzufügen eines benutzerdefinierten Inhaltstyps zu einem von SharePoint gehosteten SharePoint-Add-In"
+ms.date: 10/26/2017
+ms.prod: sharepoint
+redirect_url: https://docs.microsoft.com/sharepoint/dev/sp-add-ins/add-a-custom-content-type-to-a-sharepoint-hosted-sharepoint-add-in/
+ms.openlocfilehash: a4c8e2d1b4563339357735e12c1ff2f10ff78be1
+ms.sourcegitcommit: 56dde2f5d7919cc9998846c8c137108ca326ba43
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/30/2017
+---
 # <a name="add-a-custom-content-type-to-a-sharepoint-hosted-sharepoint-add-in"></a>Hinzufügen eines benutzerdefinierten Inhaltstyps zu einem von SharePoint gehosteten SharePoint-Add-In
 Erfahren Sie, wie Sie benutzerdefinierte Inhaltstypen in SharePoint-Add-Ins einschließen.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
-Dies ist der vierte in einer Reihe von Artikeln über die Grundlagen der Entwicklung von von SharePoint gehosteten SharePoint-Add-Ins. Machen Sie sich zunächst mit [SharePoint-Add-Ins](sharepoint-add-ins) und den anderen Artikeln in dieser Reihe vertraut:
+Dies ist der vierte in einer Reihe von Artikeln über die Grundlagen der Entwicklung von von SharePoint gehosteten SharePoint-Add-Ins. Machen Sie sich zunächst mit [SharePoint-Add-Ins](sharepoint-add-ins.md) und den anderen Artikeln in dieser Reihe vertraut:
  
 
--  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins)
+-  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
     
  
--  [Bereitstellung und Installation eines von SharePoint gehosteten SharePoint-Add-Ins](deploy-and-install-a-sharepoint-hosted-sharepoint-add-in)
+-  [Bereitstellung und Installation eines von SharePoint gehosteten Add-Ins für SharePoint](deploy-and-install-a-sharepoint-hosted-sharepoint-add-in.md)
     
  
--  [Hinzufügen von benutzerdefinierten Spalten zu einem von SharePoint gehosteten SharePoint-Add-In](add-custom-columns-to-a-sharepoint-hostedsharepoint-add-in)
+-  [Hinzufügen von benutzerdefinierten Spalten zu einem von SharePoint gehosteten Add-In für SharePoint](add-custom-columns-to-a-sharepoint-hostedsharepoint-add-in.md)
     
  
 
@@ -53,7 +64,7 @@ In diesem Artikel fügen Sie dem SharePoint-Add-In „Orientierung für Mitarbei
     
     **Registerkarte „Inhaltstyp“**
 
-  ![Der Inhaltstyp-Designer, in dem „NewEmployee“ als Typname „Stellt einen neuen Mitarbeiter dar“ als Beschreibung und „Orientierung für Mitarbeiter“ als Gruppe angezeigt wird.](../../images/8a9768f4-315d-45c0-88d7-687dbf84495c.PNG)
+  ![Der Inhaltstyp-Designer, in dem „NewEmployee“ als Typname „Stellt einen neuen Mitarbeiter dar“ als Beschreibung und „Orientierung für Mitarbeiter“ als Gruppe angezeigt wird.](../images/8a9768f4-315d-45c0-88d7-687dbf84495c.PNG)
  
  
 7. Öffnen Sie die Registerkarte **Spalten** im Designer.
@@ -62,7 +73,7 @@ In diesem Artikel fügen Sie dem SharePoint-Add-In „Orientierung für Mitarbei
     
     **Registerkarte „Spalten“**
 
-    ![Die Registerkarte „Spalten“ des Inhaltstyp-Designers, wobei „Mitarbeiter“, „Abteilung“ und „Orientierungsphase“ im Raster aufgeführt sind.](../../images/835e78b3-a073-45b2-b4ee-3f9be9d88495.PNG)
+    ![Die Registerkarte „Spalten“ des Inhaltstyp-Designers, wobei „Mitarbeiter“, „Abteilung“ und „Orientierungsphase“ im Raster aufgeführt sind.](../images/835e78b3-a073-45b2-b4ee-3f9be9d88495.PNG)
  
  
 9. Speichern Sie die Datei, und schließen Sie den Designer.
@@ -104,7 +115,7 @@ In diesem Artikel fügen Sie dem SharePoint-Add-In „Orientierung für Mitarbei
     
     **Dialogfeld „Inhaltstypeinstellungen“**
 
-    ![Das Dialogfeld „Inhaltstypeinstellungen“, in dem nur ein einziger Inhaltstyp mit dem Namen „NewEmployee“ aufgeführt ist.](../../images/b90699f4-40de-4f50-ad47-3e8773d0eb92.PNG)
+    ![Das Dialogfeld „Inhaltstypeinstellungen“, in dem nur ein einziger Inhaltstyp mit dem Namen „NewEmployee“ aufgeführt ist.](../images/b90699f4-40de-4f50-ad47-3e8773d0eb92.PNG)
  
 19.  Klicken Sie auf **OK**, um das Dialogfeld zu schließen, und speichern und schließen Sie anschließend die Datei.
     
@@ -176,7 +187,7 @@ In diesem Artikel fügen Sie dem SharePoint-Add-In „Orientierung für Mitarbei
     
     **Liste „Neue Mitarbeiter in Seattle“**
 
-    ![Die Liste „Neue Mitarbeiter in Seattle“, in der die Spalten „Abteilung“ und „Orientierungsphase“ bereits vorhanden sind.](../../images/b654af45-663e-425c-b7c7-b8b5524cb316.PNG) 
+    ![Die Liste „Neue Mitarbeiter in Seattle“, in der die Spalten „Abteilung“ und „Orientierungsphase“ bereits vorhanden sind.](../images/b654af45-663e-425c-b7c7-b8b5524cb316.PNG) 
  
 4. Versuchen Sie, der Liste neue Elemente hinzuzufügen und vorhandene Elemente zu bearbeiten.
     
@@ -184,9 +195,9 @@ In diesem Artikel fügen Sie dem SharePoint-Add-In „Orientierung für Mitarbei
 5. Schließen Sie zum Beenden der Debugsitzung das Browserfenster, oder beenden Sie das Debuggen in Visual Studio. Jedes Mal, wenn Sie F5 drücken, zieht Visual Studio die vorherige Version des Add-Ins zurück und installiert die neueste.
     
  
-6. Da Sie mit diesem Add-In und dieser Visual Studio-Projektmappe in anderen Artikeln arbeiten werden, hat es sich bewährt, das Add-In ein letztes Mal zurückzuziehen, wenn Sie Ihre Arbeit daran für eine Weile abgeschlossen haben. Klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer**, und wählen Sie **Zurückziehen** aus.
+6. Da Sie mit diesem Add-In und dieser Visual Studio-Lösung in anderen Artikeln arbeiten werden, hat es sich bewähr, das Add-In ein letztes Mal zurückzuziehen, wenn Sie Ihre Arbeit daran für eine Weile abgeschlossen haben. Klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer**, und wählen Sie **Zurückziehen** aus.
 
 ## 
 <a name="Nextsteps"> </a>
 
-Im nächsten Artikel dieser Reihe fügen Sie ein Listenansicht-Webpart zur Standardseite des SharePoint-Add-Ins hinzu:  [Hinzufügen eines Webparts zu einer Seite in einem von SharePoint gehosteten Add-In für SharePoint](add-a-web-part-to-a-page-in-a-sharepoint-hosted-sharepoint-add-in).
+Im nächsten Artikel dieser Reihe fügen Sie ein Listenansicht-Webpart zur Standardseite des SharePoint-Add-Ins hinzu:  [Hinzufügen eines Webparts zu einer Seite in einem von SharePoint gehosteten Add-In für SharePoint](add-a-web-part-to-a-page-in-a-sharepoint-hosted-sharepoint-add-in.md).

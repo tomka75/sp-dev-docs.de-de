@@ -1,14 +1,24 @@
+---
+title: Erstellen von SharePoint-Add-Ins, die Autorisierung mit einer niedrigen Vertrauensebene verwenden
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 4719c9697edb95c43532b7f438cf3b5d0e714399
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="creating-sharepoint-add-ins-that-use-low-trust-authorization"></a>Erstellen von SharePoint-Add-Ins, die Autorisierung mit einer niedrigen Vertrauensebene verwenden
 Erfahren Sie mehr über das Autorisierungssystem mit niedriger Vertrauensebene für SharePoint-Add-Ins.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Remotekomponenten in einem SharePoint-Add-In (oder einer externen Anwendung) können die Autorisierung für SharePoint-Ressourcen erteilen, indem mit jeder HTTP-Anforderung ein Zugriffstoken an SharePoint weitergegeben wird. Die Remotekomponenten rufen das Zugriffstoken aus einem Microsoft Azure Access Control Service (ACS)-Konto ab, das dem Office 365-Mandanten zugeordnet ist. Azure ACS dient als Autorisierungsserver in einer  [OAuth 2.0](http://oauth.net/)-Transaktion, die einen Ablauf aufruft, dabei dient SharePoint als Ressourcenserver und die Remotekomponenten als der Client. Entsprechende Protokollspezifikationen finden Sie unter [Web-Autorisierungsprotokoll (oauth)](http://datatracker.ietf.org/doc/active/#oauth). 
  
 
-Vom Anbieter gehostete SharePoint-Add-Ins, die das Autorisierungssystem mit niedriger Vertrauensebene verwenden, können im Office Store verkauft und in Microsoft SharePoint Online oder einer lokalen SharePoint-Farm installiert werden, die so konfiguriert ist, dass sie zum Einrichten einer Vertrauensstellung mit Azure ACS den Office 365-Mandanten des Kunden verwendet. Der Kunde muss einen Office 365-Mandanten besitzen, um SharePoint-Add-Ins zu installieren, die das System mit niedriger Vertrauensstellung verwenden. Der Kunde benötigt den Mandanten jedoch zu keinem anderen Zweck. Anweisungen zum Verknüpfen einer lokalen Farm mit einem Office 365-Mandanten finden Sie unter  [Verwenden einer Office 365 SharePoint-Website, um vom Anbieter gehostete Add-Ins auf einer lokalen SharePoint-Website zu autorisieren](use-an-office-365-sharepoint-site-to-authorize-provider-hosted-add-ins-on-an-on-premises-sharepoint-site).
+Vom Anbieter gehostete SharePoint-Add-Ins, die das Autorisierungssystem mit niedriger Vertrauensebene verwenden, können im Office Store verkauft und in Microsoft SharePoint Online oder einer lokalen SharePoint-Farm installiert werden, die so konfiguriert ist, dass sie zum Einrichten einer Vertrauensstellung mit Azure ACS den Office 365-Mandanten des Kunden verwendet. Der Kunde muss einen Office 365-Mandanten besitzen, um SharePoint-Add-Ins zu installieren, die das System mit niedriger Vertrauensstellung verwenden. Der Kunde benötigt den Mandanten jedoch zu keinem anderen Zweck. Anweisungen zum Verknüpfen einer lokalen Farm mit einem Office 365-Mandanten finden Sie unter  [Verwenden einer Office 365 SharePoint-Website, um vom Anbieter gehostete Add-Ins auf einer lokalen SharePoint-Website zu autorisieren](use-an-office-365-sharepoint-site-to-authorize-provider-hosted-add-ins-on-an-on.md).
  
 
 
@@ -23,14 +33,14 @@ Zum Verwenden des Systems mit niedriger Vertrauensstellung muss das SharePoint-A
  **Hinweis** Für die Registrierung muss die Anwendung über eine Internetdomäne verfügen. Zu diesem Zweck kann jede vorhandene Domäne verwendet werden, Sie können jedoch nicht zu 100 % sicher sein, dass eine Domäne, die Sie nicht besitzen, auch existiert, deshalb muss eine Webanwendung Teil einer systemeigenen Geräteanwendung sein, selbst wenn die Webanwendungskomponente nur zum Aktivieren der Registrierung dient. Weitere Informationen finden Sie in einem so konzipierten Codebeispiel unter [Bereitstellen von Websites in Batches mithilfe des Add-In-Modells](http://code.msdn.microsoft.com/Provision-sites-in-batches-fcf31bc6).
  
 
-Weitere Informationen über die Registrierung finden Sie unter [Registrieren von SharePoint-Add-Ins 2013](register-sharepoint-add-ins-2013).
+Weitere Informationen über die Registrierung finden Sie unter [Registrieren von SharePoint-Add-Ins 2013](register-sharepoint-add-ins.md).
  
 
  
 
 ### <a name="add-in-secret-expiration"></a>Ablauf des geheimen Add-In-Schlüssels
 
-Der geheime Add-In-Schlüssel muss alle 12 Monate ersetzt werden. Weitere Informationen finden Sie unter [Ersetzen eines ablaufenden geheimen Clientschlüssels in einem SharePoint-Add-In](replace-an-expiring-client-secret-in-a-sharepoint-add-in).
+Der geheime Add-In-Schlüssel muss alle 12 Monate ersetzt werden. Weitere Informationen finden Sie unter [Ersetzen eines ablaufenden geheimen Clientschlüssels in einem SharePoint-Add-In](replace-an-expiring-client-secret-in-a-sharepoint-add-in.md).
  
 
  
@@ -49,7 +59,7 @@ Ein SharePoint-Add-In kann für die Verwendung einer der beiden folgenden Autori
 -  **Nur-Add-In-Richtlinie:** Add-Ins, die diese Richtlinie verwenden, können jede Aktion ausführen, für die sie eine Berechtigung besitzen, selbst wenn der Benutzer die Berechtigung für die Aktion nicht besitzt. Der Entwickler muss eine Anforderung senden, damit diese Richtlinie im Add-In-Manifest des Add-Ins verwendet wird. Die Anforderung muss von dem Benutzer genehmigt werden, der das Add-In installiert. Diese Richtlinie ist nur für vom Anbieter gehostete SharePoint-Add-Ins zulässig.
     
  
-Weitere Informationen über Autorisierungsrichtlinien finden Sie unter  [Add-In-Autorisierungsrichtlinientypen in SharePoint](add-in-authorization-policy-types-in-sharepoint-2013).
+Weitere Informationen über Autorisierungsrichtlinien finden Sie unter  [Add-In-Autorisierungsrichtlinientypen in SharePoint](add-in-authorization-policy-types-in-sharepoint.md).
  
 
  
@@ -66,10 +76,10 @@ SharePoint verwendet zwei große OAuth-Abläufe. Einer ist für in der Cloud geh
 
  
 
--  **Ablauf mit Kontexttoken:** Die Remotekomponente der SharePoint-Add-In verwendet das SharePoint-Clientobjektmodell (CSOM) oder REST-Endpunkte, um Aufrufe an SharePoint auszuführen. SharePoint fordert ein Kontexttoken von ACS an, das es an den Remoteserver senden kann. Der Remoteserver verwendet das Kontexttoken, um ein Zugriffstoken bei ACS anzufordern. Der Remoteserver verwendet das Zugriffstoken anschließend, um mit SharePoint zu kommunizieren. Details zu diesem Ablauf finden Sie unter [OAuth-Ablauf mit Kontexttoken für Add-Ins in SharePoint](context-token-oauth-flow-for-sharepoint-add-ins).
+-  **Ablauf mit Kontexttoken:** Die Remotekomponente der SharePoint-Add-In verwendet das SharePoint-Clientobjektmodell (CSOM) oder REST-Endpunkte, um Aufrufe an SharePoint auszuführen. SharePoint fordert ein Kontexttoken von ACS an, das es an den Remoteserver senden kann. Der Remoteserver verwendet das Kontexttoken, um ein Zugriffstoken bei ACS anzufordern. Der Remoteserver verwendet das Zugriffstoken anschließend, um mit SharePoint zu kommunizieren. Details zu diesem Ablauf finden Sie unter [OAuth-Ablauf mit Kontexttoken für Add-Ins in SharePoint](context-token-oauth-flow-for-sharepoint-add-ins.md).
     
  
--  **Ablauf mit Authentifizierungscode:** Ein SharePoint-Add-In erhält die benötigten Berechtigungen für den Zugriff auf SharePoint-Ressourcen, wenn es installiert wird. Anwendungen, die nicht in SharePoint installiert sind, müssen jedoch „spontan" Berechtigungen anfordern, d. h., jedes Mal, wenn sie ausgeführt werden. In diesem Ablauf ist kein SharePoint-Kontexttoken vorhanden. Wenn das Add-In ausgeführt wird und versucht, auf SharePoint zuzugreifen, fordert SharePoint den Benutzer stattdessen dazu auf, Berechtigungen für die Anwendung zu gewähren, die es anfordert. Wenn der Benutzer die Berechtigungen gewährt, ruft SharePoint einen Autorisierungscode von ACS ab, der an die Anwendung weitergegeben wird. Die Anwendung verwendet den Code, um ein Zugriffstoken von ACS abzurufen, das anschließend für die Kommunikation mit SharePoint verwendet werden kann. Details zu diesem Ablauf finden Sie unter [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins).
+-  **Ablauf mit Authentifizierungscode:** Ein SharePoint-Add-In erhält die benötigten Berechtigungen für den Zugriff auf SharePoint-Ressourcen, wenn es installiert wird. Anwendungen, die nicht in SharePoint installiert sind, müssen jedoch „spontan" Berechtigungen anfordern, d. h., jedes Mal, wenn sie ausgeführt werden. In diesem Ablauf ist kein SharePoint-Kontexttoken vorhanden. Wenn das Add-In ausgeführt wird und versucht, auf SharePoint zuzugreifen, fordert SharePoint den Benutzer stattdessen dazu auf, Berechtigungen für die Anwendung zu gewähren, die es anfordert. Wenn der Benutzer die Berechtigungen gewährt, ruft SharePoint einen Autorisierungscode von ACS ab, der an die Anwendung weitergegeben wird. Die Anwendung verwendet den Code, um ein Zugriffstoken von ACS abzurufen, das anschließend für die Kommunikation mit SharePoint verwendet werden kann. Details zu diesem Ablauf finden Sie unter [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins.md).
     
  
 
@@ -186,19 +196,19 @@ clientContext.ExecuteQuery();
 ## <a name="in-this-section"></a>Inhalt dieses Abschnitts
 <a name="Trouble"> </a>
 
- [Verwenden einer Office 365 SharePoint-Website, um vom Anbieter gehostete Add-Ins auf einer lokalen SharePoint-Website zu autorisieren](use-an-office-365-sharepoint-site-to-authorize-provider-hosted-add-ins-on-an-on-premises-sharepoint-site)
+ [Verwenden einer Office 365 SharePoint-Website, um vom Anbieter gehostete Add-Ins auf einer lokalen SharePoint-Website zu autorisieren](use-an-office-365-sharepoint-site-to-authorize-provider-hosted-add-ins-on-an-on.md)
  
 
  
- [OAuth-Ablauf mit Kontexttoken für SharePoint-Add-Ins](context-token-oauth-flow-for-sharepoint-add-ins)
+ [OAuth-Ablauf mit Kontexttoken für SharePoint-Add-Ins](context-token-oauth-flow-for-sharepoint-add-ins.md)
  
 
  
- [Autorisierungscode-OAuth-Fluss für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins)
+ [Autorisierungscode-OAuth-Fluss für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins.md)
  
 
  
- [Austauschen eines ablaufenden geheimen Clientschlüssels in einem SharePoint-Add-In](replace-an-expiring-client-secret-in-a-sharepoint-add-in)
+ [Austauschen eines ablaufenden geheimen Clientschlüssels in einem SharePoint-Add-In](replace-an-expiring-client-secret-in-a-sharepoint-add-in.md)
  
 
  
@@ -207,7 +217,7 @@ clientContext.ExecuteQuery();
 <a name="FileName_AdditionalResources"> </a>
 
 
--  [Registrieren von SharePoint-Add-Ins 2013](register-sharepoint-add-ins-2013)
+-  [Registrieren von SharePoint-Add-Ins 2013](register-sharepoint-add-ins.md)
     
  
 

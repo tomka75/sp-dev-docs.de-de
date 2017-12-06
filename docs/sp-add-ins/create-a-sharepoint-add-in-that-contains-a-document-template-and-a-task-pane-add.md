@@ -1,8 +1,18 @@
+---
+title: "Erstellen eines SharePoint-Add-Ins, das eine Dokumentvorlage und ein Aufgabenbereich-Add-In enthält"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 8cda409943bfb30168650d3aaf8118ce4af0faac
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-a-sharepoint-add-in-that-contains-a-document-template-and-a-task-pane-add-in"></a>Erstellen eines SharePoint-Add-Ins, das eine Dokumentvorlage und ein Aufgabenbereich-Add-In enthält
 Verwenden Sie Visual Studio, um ein Office-Add-In zu entwickeln, das in einem Dokument angezeigt wird, das von einem SharePoint-Add-In geöffnet wird.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Sie können ein SharePoint-Add-In erstellen, das eine Dokumentenvorlage enthält (z. B. eine Spesenabrechnung). Das Dokument kann ein Add-In für den Aufgabenbereich enthalten, das mit SharePoint-Daten interagiert. Beispielsweise können Benutzer die Felder einer Rechnung ausfüllen, indem sie Daten aus den Business Connectivity Services (BCS) verwenden, oder eine Spesenabrechnung erstellen, indem sie eine Spesenkategorie in einer SharePoint-Liste auswählen.
@@ -26,10 +36,10 @@ Installieren Sie die folgenden Komponenten, bevor Sie beginnen:
 
 - Eine SharePoint-Entwicklungsumgebung:
     
-      - To develop SharePoint-Add-Ins that target SharePoint in Office 365, see  [How to: Set up an environment for developing SharePoint Add-ins on Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
+      - To develop SharePoint-Add-Ins that target SharePoint in Office 365, see  [How to: Set up an environment for developing SharePoint Add-ins on Office 365](http://msdn.microsoft.com/de-DE/library/office/apps/fp161179%28v=office.15%29).
     
  
-  - Informationen zum Entwickeln von SharePoint-Add-Ins für eine lokale SharePoint-Installation finden Sie unter [Vorgehensweise: Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](http://msdn.microsoft.com/en-us/library/office/apps/fp179923%28v=office.15%29).
+  - Informationen zum Entwickeln von SharePoint-Add-Ins für eine lokale SharePoint-Installation finden Sie unter [Vorgehensweise: Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](http://msdn.microsoft.com/de-DE/library/office/apps/fp179923%28v=office.15%29).
     
  
 -  [Visual Studio 2015 und die Microsoft Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs)
@@ -143,7 +153,7 @@ In diesem Verfahren erstellen Sie eine Dokumentbibliothek und legen die Arbeitsm
  
 12. Legen Sie im Manifest-Designer den Wert für **Startseite** auf „~appWebUrl/Lists/MyDocumentLibrary“ fest. Dieser wird in den Wert „OfficeEnabledAddin/Lists/MyDocumentLibrary“ konvertiert.
     
-     **Hinweis** Diese URL verweist auf die Dokumentbibliothek. Sie müssen das ~appWebUrl-Token am Anfang von allen URLs in Ihrem Office-Add-In-Manifest verwenden, die auf Elemente innerhalb der Add-In-Website verweist. Weitere Informationen zu URL-Token in einem SharePoint-Add-In Projekt finden Sie unter [URL-Zeichenfolgen und Token in SharePoint-Add-Ins](url-strings-and-tokens-in-sharepoint-add-ins).
+     **Hinweis** Diese URL verweist auf die Dokumentbibliothek. Sie müssen das ~appWebUrl-Token am Anfang von allen URLs in Ihrem Office-Add-In-Manifest verwenden, die auf Elemente innerhalb der Add-In-Website verweist. Weitere Informationen zu URL-Token in einem SharePoint-Add-In Projekt finden Sie unter [URL-Zeichenfolgen und Token in SharePoint-Add-Ins](url-strings-and-tokens-in-sharepoint-add-ins.md).
 13. Schließen Sie den Manifest-Designer, um die Änderung zu speichern.
     
  
@@ -160,10 +170,10 @@ In diesem Beispiel werden die SharePoint-Listendaten nur angezeigt, aber Sie kö
 
  
 
--  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten](complete-basic-operations-using-sharepoint-2013-rest-endpoints)
+-  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten](complete-basic-operations-using-sharepoint-rest-endpoints.md)
     
  
--  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013)
+-  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md)
     
  
 -  [Beibehalten des Zustands und der Einstellungen von Add-Ins](http://msdn.microsoft.com/library/407df6e8-c237-4d6a-b357-3000fe3de9ff%28Office.15%29.aspx)
@@ -292,7 +302,7 @@ Sie können Ihr Aufgabenbereich-Add-in debuggen, indem Sie das Dokument starten 
 
  
 
- **Hinweis** Dieser Vorgang öffnet Excel Online. Dies funktioniert nur mit einem Office 365-Konto. Weitere Informationen finden Sie unter [Vorgehensweise: Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
+ **Hinweis** Dieser Vorgang öffnet Excel Online. Dies funktioniert nur mit einem Office 365-Konto. Weitere Informationen finden Sie unter [Vorgehensweise: Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365](http://msdn.microsoft.com/de-DE/library/office/apps/fp161179%28v=office.15%29).
  
 
 
@@ -354,7 +364,7 @@ Wenn Sie zum Packen des Add-Ins für die Veröffentlichung bereit sind, öffnen 
 
 - Öffnen Sie im  **Projektmappen-Explorer** das Kontextmenü für das SharePoint-Add-In-Projekt, und wählen Sie dann **Veröffentlichen** aus.
     
-    Der Assistent **Add-Ins für Office und SharePoint veröffentlichen** wird angezeigt. Weitere Informationen finden Sie unter [Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio](publish-sharepoint-add-ins-by-using-visual-studio).
+    Der Assistent **Add-Ins für Office und SharePoint veröffentlichen** wird angezeigt. Weitere Informationen finden Sie unter [Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio](publish-sharepoint-add-ins-by-using-visual-studio.md).
     
  
 

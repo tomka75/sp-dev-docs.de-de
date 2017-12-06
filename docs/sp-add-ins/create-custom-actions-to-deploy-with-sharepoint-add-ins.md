@@ -1,8 +1,18 @@
+---
+title: Erstellen benutzerdefinierter Aktionen zur Bereitstellung mit SharePoint-Add-Ins
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 8772f35ad0f165e172356350f23bb1859d4a131a
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-custom-actions-to-deploy-with-sharepoint-add-ins"></a>Erstellen benutzerdefinierter Aktionen zur Bereitstellung mit SharePoint-Add-Ins
 In diesem Artikel erfahren Sie, wie Sie eine benutzerdefinierte Aktion in SharePoint erstellen, die für das Hostweb bereitgestellt wird, wenn Sie ein SharePoint-Add-In bereitstellen.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Wenn Sie ein SharePoint-Add-In erstellen, ermöglichen Ihnen benutzerdefinierte Aktionen die Interaktion mit den Listen und dem Menüband im Hostweb. Eine benutzerdefinierte Aktion wird für das Hostweb bereitgestellt, wenn Endbenutzer Ihr Add-In installieren. Mithilfe benutzerdefinierter Aktionen ist es möglich, eine Remotewebseite zu öffnen und über die Abfragezeichenfolge Informationen zu übergeben. Es sind zwei Typen von benutzerdefinierten Aktionen für Add-Ins verfügbar: benutzerdefinierte Aktionen für das Menüband und für Menüelemente.
@@ -11,7 +21,7 @@ Wenn Sie ein SharePoint-Add-In erstellen, ermöglichen Ihnen benutzerdefinierte 
 ## <a name="prerequisites-for-using-the-examples-in-this-article"></a>Voraussetzungen für die Verwendung der Beispiele in diesem Artikel
 <a name="SP15Createcustomactionsapps_Prereq"> </a>
 
-Sie benötigen eine Entwicklungsumgebung, wie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins) erläutert.
+Sie benötigen eine Entwicklungsumgebung, wie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md) erläutert.
  
 
  
@@ -28,9 +38,9 @@ In der folgenden Tabelle sind hilfreiche Artikel aufgeführt, die ein besseres V
 
 |**Artikel**|**Beschreibung**|
 |:-----|:-----|
-| [SharePoint-Add-Ins](sharepoint-add-ins)|Hier finden Sie Informationen über das neue Add-In-Modell in SharePoint, das es Ihnen ermöglicht, Add-Ins als kompakte, einfach zu verwendende Lösungen für Endbenutzer zu erstellen.|
-| [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins)|Hier erfahren Sie mehr über die UX-Optionen (User eXperience, Benutzerumgebung) beim Erstellen von SharePoint-Add-Ins.|
-| [Hostwebs, Add-In-Webs und SharePoint-Komponenten in SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013)|Hier erhalten Sie Informationen über den Unterschied zwischen einem Hostweb und einem Add-In-Web. Außerdem erfahren Sie, welche SharePoint-Komponenten in ein SharePoint-Add-In eingeschlossen werden können, welche Komponenten für das Hostweb bereitgestellt werden, welche Komponenten für das Add-In-Web bereitgestellt werden, und wie das Add-In-Web in einer isolierten Domäne bereitgestellt wird.|
+| [SharePoint-Add-Ins](sharepoint-add-ins.md)|Hier finden Sie Informationen über das neue Add-In-Modell in SharePoint, das es Ihnen ermöglicht, Add-Ins als kompakte, einfach zu verwendende Lösungen für Endbenutzer zu erstellen.|
+| [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins.md)|Hier erfahren Sie mehr über die UX-Optionen (User eXperience, Benutzerumgebung) beim Erstellen von SharePoint-Add-Ins.|
+| [Hostwebs, Add-In-Webs und SharePoint-Komponenten in SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md)|Hier erhalten Sie Informationen über den Unterschied zwischen einem Hostweb und einem Add-In-Web. Außerdem erfahren Sie, welche SharePoint-Komponenten in ein SharePoint-Add-In eingeschlossen werden können, welche Komponenten für das Hostweb bereitgestellt werden, welche Komponenten für das Add-In-Web bereitgestellt werden, und wie das Add-In-Web in einer isolierten Domäne bereitgestellt wird.|
 
 ## <a name="code-example-create-a-custom-action-in-the-host-web-document-libraries"></a>Codebeispiel: Erstellen einer benutzerdefinierten Aktion in den Hostweb-Dokumentbibliotheken
 <a name="SP15Createcustomactionsapps_Codeexample"> </a>
@@ -56,7 +66,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
 1. Öffnen Sie Visual Studio als Administrator. (Klicken Sie dazu im Menü **Start** mit der rechten Maustaste auf das Visual Studio-Symbol, und wählen Sie **Als Administrator ausführen** aus.)
     
  
-2. Erstellen Sie das vom Anbieter gehostete SharePoint-Add-In wie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins) erläutert, und nennen Sie es „itCustomActionsApp“. 
+2. Erstellen Sie das vom Anbieter gehostete SharePoint-Add-In wie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md) erläutert, und nennen Sie es „itCustomActionsApp“. 
     
  
 
@@ -286,7 +296,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
 
  
 
-  ![Dokumentbibliothek mit geöffneter Legende für ein Dokument, das durch die Popupschaltfläche in der Legende geöffnete Menü und das geöffnete Menü "Erweitert".](../../images/477cecf5-03ff-46ff-9c25-a5f9a86d43f4.png)
+  ![Dokumentbibliothek mit geöffneter Legende für ein Dokument, das durch die Popupschaltfläche in der Legende geöffnete Menü und das geöffnete Menü "Erweitert".](../images/477cecf5-03ff-46ff-9c25-a5f9a86d43f4.png)
  
 
  
@@ -307,7 +317,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
 
  
 
-  ![Webseite mit Parametern aus einer benutzerdefinierten Aktion](../../images/CustomActions_target.png)
+  ![Webseite mit Parametern aus einer benutzerdefinierten Aktion](../images/CustomActions_target.png)
  
 
  
@@ -319,7 +329,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
 
  
 
-  ![Eine Dokumentbibliothek mit einem ausgewählten Dokument, der geöffneten Registerkarte „Datei“ im Menüband und der benutzerdefinierten Schaltfläche im Menüband.](../../images/b315cb68-ff6a-4770-a1dc-738696ab71d2.png)
+  ![Eine Dokumentbibliothek mit einem ausgewählten Dokument, der geöffneten Registerkarte „Datei“ im Menüband und der benutzerdefinierten Schaltfläche im Menüband.](../images/b315cb68-ff6a-4770-a1dc-738696ab71d2.png)
  
 
  
@@ -351,22 +361,22 @@ In diesem Artikel wurde die Vorgehensweise zum Erstellen einer benutzerdefiniert
 
  
 
--  [Codebeispiel: Öffnen einer Remote-Add-In-Webseite mit einer benutzerdefinierten ECB-Aktion](http://code.msdn.microsoft.com/SharePoint-2013-Open-e0ca1826)
+-  [Codebeispiel: Öffnen einer Remote-Add-In-Webseite mit einer benutzerdefinierten ECB-Aktion](http://code.msdn.microsoft.com/SharePoint-Open-e0ca1826)
     
  
 -  [SharePoint-Add-in-Localization](https://github.com/OfficeDev/SharePoint-Add-in-Localization)
     
  
--  [Codebeispiel: Verwenden von benutzerdefinierten Aktionen und der domänenübergreifenden Bibliothek zum Bestellen von Büchern](http://code.msdn.microsoft.com/SharePoint-2013-Open-a-36d1598d)
+-  [Codebeispiel: Verwenden von benutzerdefinierten Aktionen und der domänenübergreifenden Bibliothek zum Bestellen von Büchern](http://code.msdn.microsoft.com/SharePoint-Open-a-36d1598d)
     
  
--  [Verwenden des Stylesheets einer SharePoint-Website in SharePoint-Add-Ins](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins)
+-  [Verwenden des Stylesheets einer SharePoint-Website in SharePoint-Add-Ins](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins.md)
     
  
--  [Verwenden des Client-Chromsteuerelements in SharePoint-Add-Ins](use-the-client-chrome-control-in-sharepoint-add-ins)
+-  [Verwenden des Client-Chromsteuerelements in SharePoint-Add-Ins](use-the-client-chrome-control-in-sharepoint-add-ins.md)
     
  
--  [Erstellen von Add-In-Webparts zur Installation mit Ihrem SharePoint-Add-In](create-add-in-parts-to-install-with-your-sharepoint-add-in)
+-  [Erstellen von Add-In-Webparts zur Installation mit Ihrem SharePoint-Add-In](create-add-in-parts-to-install-with-your-sharepoint-add-in.md)
     
  
 
@@ -374,22 +384,22 @@ In diesem Artikel wurde die Vorgehensweise zum Erstellen einer benutzerdefiniert
 <a name="SP15Createcustomactionsapps_AddResources"> </a>
 
 
--  [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins)
+-  [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md)
     
  
--  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins)
+-  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins.md)
     
  
--  [Designrichtlinien für die Benutzerfreundlichkeit von SharePoint-Add-Ins](sharepoint-add-ins-ux-design-guidelines)
+-  [Designrichtlinien für die Benutzerfreundlichkeit von Add-Ins für SharePoint](sharepoint-add-ins-ux-design-guidelines.md)
     
  
--  [Erstellen von UX-Komponenten in SharePoint](create-ux-components-in-sharepoint-2013)
+-  [Erstellen von UX-Komponenten in SharePoint](create-ux-components-in-sharepoint.md)
     
  
--  [Drei Ansätze, um Entwurfsentscheidungen für SharePoint-Add-Ins zu treffen](three-ways-to-think-about-design-options-for-sharepoint-add-ins)
+-  [Drei Ansätze, um Entwurfsentscheidungen für SharePoint-Add-Ins zu treffen](three-ways-to-think-about-design-options-for-sharepoint-add-ins.md)
     
  
--  [Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape)
+-  [Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)
     
  
 

@@ -1,8 +1,18 @@
+---
+title: Anpassen einer Listenansicht in SharePoint-Add-Ins durch clientseitiges Rendering
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: db1bc6ebc7d2991cff5bae762080d85cdcfb0ec5
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="customize-a-list-view-in-sharepoint-add-ins-using-client-side-rendering"></a>Anpassen einer Listenansicht in SharePoint-Add-Ins durch clientseitiges Rendering
 Erfahren Sie, wie Sie eine Listenansicht in einem von SharePoint gehosteten Add-In mithilfe der clientseitigen Renderingtechnologie in SharePoint anpassen.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 In SharePoint stellt das clientseitige Rendering eine Möglichkeit dar, wie Sie Ihre eigene Ausgabe für eine Gruppe von Steuerelementen, die in einer SharePoint-Seite gehostet werden, erzeugen können. Es ermöglicht Ihnen, weit verbreitete Technologien wie HTML und JavaScript zum Definieren der Renderinglogik von SharePoint-Listenansichten zu verwenden. Beim clientseitigen Rendering können Sie Ihre eigenen JavaScript-Ressourcen definieren und sie in den für Ihre Add-Ins verfügbaren Datenspeicheroptionen hosten, beispielsweise in einer Dokumentbibliothek. Ein von SharePoint gehostetes Add-In enthält nur SharePoint-Komponenten. Die Ressourcen eines von SharePoint gehosteten Add-Ins befinden sich auf einer isolierten Unterwebsite des Hostwebs, die als Add-In-Web bezeichnet wird.
@@ -39,9 +49,9 @@ Die folgende Tabelle enthält eine Liste hilfreicher Artikel, die es Ihnen erlei
 
 |**Titel des Artikels**|**Beschreibung**|
 |:-----|:-----|
-| [SharePoint-Add-Ins](sharepoint-add-ins)|In diesem Artikel erfahren Sie mehr über das neue Add-In-Modell in Microsoft SharePoint, das Sie zur Erstellung von Add-Ins verwenden können, die einfache, benutzerfreundliche Lösungen für Endbenutzer darstellen.|
-| [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins)|Hier erfahren Sie mehr über die UX-Optionen beim Erstellen von SharePoint-Add-Ins.|
-| [Hostwebs, Add-In-Webs und SharePoint-Komponenten in SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013)|In diesem Artikel erfahren Sie, welche Unterschiede zwischen Hostwebs und App-Webs bestehen. Sie erfahren zudem, welche SharePoint-Komponenten in eine SharePoint-Add-In aufgenommen werden können, welche Komponenten für das Hostweb und welche für das App-Web bereitgestellt werden und wie das App-Web in einer isolierten Domäne bereitgestellt wird.|
+| [SharePoint-Add-Ins](sharepoint-add-ins.md)|In diesem Artikel erfahren Sie mehr über das neue Add-In-Modell in Microsoft SharePoint, das Sie zur Erstellung von Add-Ins verwenden können, die einfache, benutzerfreundliche Lösungen für Endbenutzer darstellen.|
+| [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins.md)|Hier erfahren Sie mehr über die UX-Optionen beim Erstellen von SharePoint-Add-Ins.|
+| [Hostwebs, Add-In-Webs und SharePoint-Komponenten in SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md)|In diesem Artikel erfahren Sie, welche Unterschiede zwischen Hostwebs und App-Webs bestehen. Sie erfahren zudem, welche SharePoint-Komponenten in eine SharePoint-Add-In aufgenommen werden können, welche Komponenten für das Hostweb und welche für das App-Web bereitgestellt werden und wie das App-Web in einer isolierten Domäne bereitgestellt wird.|
 
 ## <a name="code-example-customize-a-list-view-by-using-client-side-rendering"></a>Codebeispiel: Anpassen einer Listenansicht durch clientseitiges Rendering
 <a name="SP15CSRlistview_Codeexample"> </a>
@@ -70,7 +80,7 @@ Abbildung 1 zeigt eine clientseitig gerenderte Ansicht einer Liste mit Ankündig
  
 
  
-![Benutzerdefinierte Ansicht einer Liste mit Ankündigungen](../../images/CSRListView_result.png)
+![Benutzerdefinierte Ansicht einer Liste mit Ankündigungen](../images/CSRListView_result.png)
  
 
 ### <a name="to-create-the-sharepoint-add-in-project"></a>So erstellen Sie das SharePoint-Add-In-Projekt
@@ -88,7 +98,7 @@ Abbildung 1 zeigt eine clientseitig gerenderte Ansicht einer Liste mit Ankündig
 
  
 
-  ![Visual Studio-Vorlage „SharePoint-Add-In“](../../images/AppForSharePointVSTemplate.PNG)
+  ![Visual Studio-Vorlage „SharePoint-Add-In“](../images/AppForSharePointVSTemplate.PNG)
  
 
  
@@ -244,19 +254,19 @@ In diesem Artikel wird gezeigt, wie Sie mithilfe des clientseitigen Renderings e
 
  
 
--  [Codebeispiel: Anpassen einer Listenansicht in einem Add-In durch clientseitiges Rendering](http://code.msdn.microsoft.com/SharePoint-2013-Customize-61761017)
+-  [Codebeispiel: Anpassen einer Listenansicht in einem Add-In durch clientseitiges Rendering](http://code.msdn.microsoft.com/SharePoint-Customize-61761017)
     
  
--  [Verwenden des Stylesheets einer SharePoint-Website in SharePoint-Add-Ins](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins)
+-  [Verwenden des Stylesheets einer SharePoint-Website in SharePoint-Add-Ins](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins.md)
     
  
--  [Verwenden des Client-Chromsteuerelements in SharePoint-Add-Ins](use-the-client-chrome-control-in-sharepoint-add-ins)
+-  [Verwenden des Client-Chromsteuerelements in SharePoint-Add-Ins](use-the-client-chrome-control-in-sharepoint-add-ins.md)
     
  
--  [Erstellen benutzerdefinierter Aktionen zur Bereitstellung mit SharePoint-Add-Ins](create-custom-actions-to-deploy-with-sharepoint-add-ins)
+-  [Erstellen benutzerdefinierter Aktionen zur Bereitstellung mit SharePoint-Add-Ins](create-custom-actions-to-deploy-with-sharepoint-add-ins.md)
     
  
--  [Erstellen von Add-In-Webparts zur Installation mit Ihrem SharePoint-Add-In](create-add-in-parts-to-install-with-your-sharepoint-add-in)
+-  [Erstellen von Add-In-Webparts zur Installation mit Ihrem SharePoint-Add-In](create-add-in-parts-to-install-with-your-sharepoint-add-in.md)
     
  
 
@@ -264,19 +274,19 @@ In diesem Artikel wird gezeigt, wie Sie mithilfe des clientseitigen Renderings e
 <a name="SP15CSRlistview_AddResources"> </a>
 
 
--  [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins)
+-  [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md)
     
  
--  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins)
+-  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins.md)
     
  
--  [Erstellen von UX-Komponenten in SharePoint](create-ux-components-in-sharepoint-2013)
+-  [Erstellen von UX-Komponenten in SharePoint](create-ux-components-in-sharepoint.md)
     
  
--  [Drei Ansätze, um Entwurfsentscheidungen für SharePoint-Add-Ins zu treffen](three-ways-to-think-about-design-options-for-sharepoint-add-ins)
+-  [Drei Ansätze, um Entwurfsentscheidungen für SharePoint-Add-Ins zu treffen](three-ways-to-think-about-design-options-for-sharepoint-add-ins.md)
     
  
--  [Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape)
+-  [Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)
     
  
 

@@ -1,15 +1,26 @@
-
+---
+title: "Austauschen eines ablaufenden geheimen Clientschlüssels in einem Add-In für SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 4c5295ea0cd345f01264f86c6d84230029c6ace8
+ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 11/03/2017
+---
 # <a name="replace-an-expiring-client-secret-in-a-sharepoint-add-in"></a>Austauschen eines ablaufenden geheimen Clientschlüssels in einem SharePoint-Add-In
 Erfahren Sie, wie Sie einen neuen geheimen Clientschlüssel für ein SharePoint-Add-In hinzufügen können, der bei AppRegNew.aspx registriert ist.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+> [!NOTE]
+> Der Name "Apps für SharePoint" wird in "SharePoint-Add-Ins" geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Tools für Visual Studio möglicherweise weiterhin der Begriff "Apps für SharePoint" verwendet. Weitere Einzelheiten finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Geheime Clientschlüssel für SharePoint-Add-Ins, die mithilfe der AppRegNew.aspx-Seite registriert wurden, laufen nach einem Jahr ab. In diesem Artikel wird erläutert, wie Sie einen neuen geheimen Schlüssel für das Add-In hinzufügen und wie Sie einen neuen geheimen Clientschlüssel erstellen können, der drei Jahre gültig ist.
  
 
- **Hinweis** In diesem Artikel geht es um SharePoint-Add-Ins, die über einen Organisationskatalog verteilt und über die Seite AppRegNew.aspx registriert werden. Wenn das Add-In über das Verkäuferdashboard registriert ist, finden Sie weitere Informationen unter [Erstellen oder Aktualisieren von Client-IDs und geheimen Clientschlüsseln im Verkäuferdashboard](https://dev.office.com/officestore/docs/create-or-update-client-ids-and-secrets#bk_update).
+> [!NOTE]
+> Dieser Artikel enthält Informationen zu SharePoint-Add-Ins, die über einen Organisationskatalog verteilt werden und bei der Seite "AppRegNew.aspx" registriert sind. Wenn das Add-In auf dem Verkäuferdashboard registriert ist, finden Sie weitere Informationen unter [Erstellen oder Aktualisieren von Client-IDs und geheimen Clientschlüsseln im Verkäuferdashboard](https://dev.office.com/officestore/docs/create-or-update-client-ids-and-secrets#bk_update).
  
 
 
@@ -98,9 +109,9 @@ $rand = [System.Security.Cryptography.RandomNumberGenerator]::Create()
 $rand.GetBytes($bytes)
 $rand.Dispose()
 $newClientSecret = [System.Convert]::ToBase64String($bytes)
-New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Sign -Value $newClientSecret
-New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Verify -Value $newClientSecret
-New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret
+New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Sign -Value $newClientSecret -StartDate (Get-Date) -EndDate (Get-Date).AddYears(1)
+New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Verify -Value $newClientSecret -StartDate (Get-Date) -EndDate (Get-Date).AddYears(1)
+New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret -StartDate (Get-Date) -EndDate (Get-Date).AddYears(1)
 $newClientSecret
 ```
 
@@ -108,14 +119,14 @@ $newClientSecret
     
  
 
- **Tipp** Standardmäßig ist der geheime Schlüssel des Add-Ins ein Jahr gültig. Sie können diesen Zeitraum verkürzen oder verlängern (bis auf maximal drei Jahre), indem Sie den Parameter **-EndDate** für die drei Aufrufe des Cmdlets **New-MsolServicePrincipalCredential** verwenden. Der Wert des Parameters muss ein [DateTime](http://msdn2.microsoft.com/EN-US/library/03ybds8y)-Objekt sein, das nicht mehr als drei Jahre nach **DateTime.Now** liegt.
+> [!TIP]
+> Standardmäßig sind geheime Add-In-Schlüssel ein Jahr gültig. Sie können diesen Zeitraum mit dem Parameter **-EndDate** der drei Aufrufe des Cmdlets **New-MsolServicePrincipalCredential** verkürzen oder verlängern (bis maximal drei Jahre). Der Wert des Parameters muss ein [DateTime](http://msdn2.microsoft.com/de-DE/library/03ybds8y)-Objekt sein, das maximal auf einen Zeitraum von drei Jahren ab **DateTime.Now** eingestellt werden darf.
  
-
-
 ## <a name="update-the-remote-web-application-in-visual-studio-to-use-the-new-secret"></a>Aktualisieren der Remote-Webanwendung in Visual Studio zum Verwenden des neuen geheimen Schlüssels
 
 
- **Wichtig** Wenn Ihr Add-In ursprünglich mit einer Vorabversion der Microsoft Office Developer Tools für Visual Studio erstellt wurde, enthält es möglicherweise eine veraltete Version der Datei TokenHelper.cs (oder TokenHelper.vb). Wenn die Datei die Zeichenfolge „secondaryClientSecret" nicht enthält, ist sie veraltet und muss ausgetauscht werden, bevor Sie die Webanwendung durch einen neuen geheimen Schlüssel aktualisieren können. Um eine Kopie einer endgültigen Version der Datei abzurufen, benötigen Sie Visual Studio 2012 oder höher. Erstellen Sie ein neues SharePoint-Add-In-Projekt in Visual Studio. Kopieren Sie die TokenHelper-Datei in das Webanwendungsprojekt Ihres SharePoint-Add-Ins. 
+> [!IMPORTANT]
+>  Wenn das Add-In ursprünglich mit einer Vorabversion des Microsoft Office Developer Tools für Visual Studio erstellt wurde, kann es eine veraltete Version der Datei TokenHelper.cs (oder .vb) enthalten. Wenn die Datei nicht die Zeichenfolge "SecondaryClientSecret" enthält, ist sie veraltet und muss ersetzt werden, bevor Sie die Webanwendung mit einem neuen Schlüssel aktualisieren können. Sie benötigen Visual Studio 2012 oder höher, um eine Kopie der Veröffentlichungsversion der Datei erhalten zu können. Erstellen Sie ein neues SharePoint-Add-In-Projekt in Visual Studio. Kopieren Sie die darin enthaltene Datei TokenHelper in das Webanwendungsprojekt Ihrer SharePoint-Add-In. 
  
 
 
@@ -136,7 +147,8 @@ $newClientSecret
   <add key="SecondaryClientSecret" value="your old secret here" />
 ```
 
-> **Hinweis** Wenn Sie diesen Vorgang das erste Mal ausführen, gibt es zu diesem Zeitpunkt noch keinen **SecondaryClientSecret**-Eigenschaftseintrag in der Konfigurationsdatei. Wenn Sie das Verfahren jedoch für beim Ablauf eines nachfolgenden geheimen Clientschlüssels durchführen (zweiter oder dritter), ist die Eigenschaft **SecondaryClientSecret** bereits vorhanden und enthält den ursprünglichen bzw. bereits vor einiger Zeit abgelaufenen alten geheimen Clientschlüssel. Löschen Sie in diesem Fall zunächst die **SecondaryClientSecret**-Eigenschaft, bevor Sie **ClientSecret** umbenennen.
+> [!NOTE]
+> Wenn Sie dieses Verfahren zum ersten Mal durchführen, ist zu diesem Zeitpunkt in der Konfigurationsdatei kein **SecondaryClientSecret**-Eigenschaftseintrag vorhanden. Wenn Sie das Verfahren für einen nachfolgenden (zweiten oder dritten) Ablauf eines geheimen Clientschlüssels durchführen, ist die Eigenschaft **SecondaryClientSecret** bereits vorhanden und enthält den ursprünglichen oder noch älteren abgelaufenen alten Schlüssel . Löschen Sie in diesem Fall zuerst die Eigenschaft **SecondaryClientSecret**, bevor Sie **ClientSecret** umbenennen.
 
 3. Fügen Sie einen neuen **ClientSecret**-Schlüssel hinzu, und übergeben Sie den neuen geheimen Clientschlüssel. Ihr Markup sollte wie folgt aussehen:
     
@@ -148,6 +160,9 @@ $newClientSecret
      ... other settings may be here ...
 </appSettings>
 ```
+
+> [!IMPORTANT]
+> Sie können den neu generierten geheimen Clientschlüssel erst verwenden, nachdem der aktuelle geheime Clientschlüssel abgelaufen ist. Daher ist es nicht möglich, den Client-ID-Schlüssel ohne den vorhandenen SecondaryClientSecret-Schlüssel in den neuen geheimen Clientschlüssel zu ändern. Sie müssen die Verfahrensweise dieses Artikels befolgen und warten, bis der vorherige geheime Clientschlüssel abgelaufen ist. Dann können Sie den SecondaryClientSecret entfernen, wenn Sie möchten.
 
 4. Wenn Sie zu einer neuen „TokenHelper“-Datei gewechselt haben, müssen Sie das Projekt neu erstellen.
     
@@ -174,7 +189,7 @@ connect-msolservice -credential $msolcred
 
 2. Rufen Sie **ServicePrincipals** und die Schlüssel ab. Durch das Drucken von **$keys** werden drei Datensätze zurückgegeben. Ersetzen Sie jede **KeyId** unter *KeyId1* , *KeyId2* und *KeyId3*. Außerdem wird Ihnen das **EndDate** der einzelnen Schlüssel angezeigt. Vergewissern Sie sich, dass dort die abgelaufenen Schlüssel angezeigt werden.
     
-     **Hinweis:** Die **clientId** muss der abgelaufenen **clientId** entsprechen. Es wird empfohlen, alle Schlüssel für diese **clientId** zu löschen, sowohl die abgelaufenen als auch die noch nicht abgelaufenen.
+     >**Hinweis:** Die **clientId** muss der abgelaufenen **clientId** entsprechen. Es wird empfohlen, alle Schlüssel für diese **clientId** zu löschen, sowohl die abgelaufenen als auch die noch nicht abgelaufenen.
     
 
 
@@ -214,9 +229,4 @@ $newClientSecret
 
 ## <a name="see-also"></a>Siehe auch
 
-
-#### <a name="other-resources"></a>Sonstige Ressourcen
-
-
- 
- [Vom Anbieter gehostete fällt bei SPO aus](http://blogs.technet.com/b/sharepointdevelopersupport/archive/2015/03/11/provider-hosted-app-fails-on-spo.aspx)
+[Vom Anbieter gehostete App fällt bei SPO aus](http://blogs.technet.com/b/sharepointdevelopersupport/archive/2015/03/11/provider-hosted-app-fails-on-spo.aspx)

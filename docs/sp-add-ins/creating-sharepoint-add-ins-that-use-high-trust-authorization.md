@@ -1,8 +1,18 @@
-# <a name="creating-sharepoint-add-ins-that-use-high-trust-authorization"></a>Erstellen von SharePoint-Add-Ins, die eine Autorisierung mit hoher Vertrauenswürdigkeit verwenden
+---
+title: "Erstellen von SharePoint-Add-Ins, die eine Autorisierung mit hoher Vertrauenswürdigkeit verwenden"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: d39ab5425d0ba60f47dbf2902e4c3cd1e6d4c689
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
+# <a name="creating-sharepoint-add-ins-that-use-high-trust-authorization"></a>Erstellen von SharePoint-Add-Ins, die eine Autorisierung mit hoher Vertrauensstellung verwenden
 Erfahren Sie mehr über besonders vertrauenswürdige SharePoint-Add-Ins, die digitale Zertifikate verwenden, um eine Vertrauensstellung zwischen SharePoint und den Remotekomponenten einzurichten, die auf SharePoint zugreifen.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
  **Von:**
@@ -20,7 +30,7 @@ Ein besonders vertrauenswürdiges Add-In ist eine vom Anbieter gehostete SharePo
 
  
 
- **Hinweis** In diesem Thema erfahren Sie mehr über das besonders vertrauenswürdige Autorisierungssystem für SharePoint-Add-Ins. Praktische Informationen zur Erstellung und Bereitstellung besonders vertrauenswürdiger Add-Ins finden Sie in den folgenden Themen: [Erstellen besonders vertrauenswürdiger SharePoint-Add-Ins](create-high-trust-sharepoint-add-ins) [Packen und Veröffentlichen besonders vertrauenswürdiger SharePoint-Add-Ins](package-and-publish-high-trust-sharepoint-add-ins)
+ **Hinweis** In diesem Thema erfahren Sie mehr über das besonders vertrauenswürdige Autorisierungssystem für SharePoint-Add-Ins. Praktische Informationen zur Erstellung und Bereitstellung besonders vertrauenswürdiger Add-Ins finden Sie in den folgenden Themen: [Erstellen besonders vertrauenswürdiger SharePoint-Add-Ins](create-high-trust-sharepoint-add-ins.md) [Packen und Veröffentlichen besonders vertrauenswürdiger SharePoint-Add-Ins](package-and-publish-high-trust-sharepoint-add-ins.md)
  
 
 In SharePoint liefert der Sicherheitstokendienst Zugriffstoken für Server-zu-Server-Authentifizierung. Der Sicherheitstokendienst aktiviert vorübergehende Zugriffstoken, um auf andere Anwendungsdienste wie Exchange 2013, Lync 2013 und SharePoint-Add-Ins zuzugreifen. Ein Farmadministrator richtet eine Vertrauensstellung zwischen SharePoint und der anderen Anwendung oder dem Add-In ein, indem er Windows PowerShell-Cmdlets und ein Zertifikat verwendet. Jedes Zertifikat, das verwendet wird, muss von SharePoint mithilfe des Cmdlets  `New-SPTrustedRootAuthority` als vertrauenswürdig eingestuft werden. Außerdem muss jedes Zertifikat bei SharePoint mithilfe des Cmdlets `New-SPTrustedSecurityTokenIssuer` als ein Tokenherausgeber registriert werden.
@@ -62,7 +72,7 @@ $fullIssuerIdentifier = "<client_ID_of_SP_app> " + "@" + "<realm_GUID> "
 New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --other parameters omitted--
 ```
 
-Normalerweise wird das Cmdlet  `New-SPTrustedSecurityTokenIssuer` in einem Skript verwendet, das andere Aufgaben durchführt, um SharePoint für besonders vertrauenswürdige Add-Ins zu konfigurieren. Weitere Informationen zu diesen Skripts und vollständige Beispiele für das Cmdlet `New-SPTrustedSecurityTokenIssuer` finden Sie unter [Besonders vertrauenswürdige Konfigurationsskripts für SharePoint](high-trust-configuration-scripts-for-sharepoint-2013).
+Normalerweise wird das Cmdlet  `New-SPTrustedSecurityTokenIssuer` in einem Skript verwendet, das andere Aufgaben durchführt, um SharePoint für besonders vertrauenswürdige Add-Ins zu konfigurieren. Weitere Informationen zu diesen Skripts und vollständige Beispiele für das Cmdlet `New-SPTrustedSecurityTokenIssuer` finden Sie unter [Besonders vertrauenswürdige Konfigurationsskripts für SharePoint](high-trust-configuration-scripts-for-sharepoint.md).
  
 
  
@@ -93,7 +103,7 @@ Damit die weiterhin vertrauenswürdigen SharePoint-Add-Ins wieder verwendet werd
  
 
  
-Der Vorteil der Verwendung eines Zertifikats pro Add-In ist, dass es einfacher ist, einem bestimmten Add-In das Vertrauen zu entziehen, da die von den weiterhin vertrauenswürdigen Add-Ins verwendeten Zertifikate nicht betroffen sind, wenn der Administrator dem Zertifikat des einen Add-Ins das Vertrauen entzieht. Der Nachteil dieser Strategie besteht darin, dass ein Administrator mehr Zertifikate beschaffen muss und SharePoint so konfiguriert sein muss, dass jedes der Zertifikate verwendet wird, was mithilfe eines wiederverwendbaren Skripts erfolgen kann (siehe  [Besonders vertrauenswürdige Konfigurationsskripts für SharePoint](high-trust-configuration-scripts-for-sharepoint-2013)).
+Der Vorteil der Verwendung eines Zertifikats pro Add-In ist, dass es einfacher ist, einem bestimmten Add-In das Vertrauen zu entziehen, da die von den weiterhin vertrauenswürdigen Add-Ins verwendeten Zertifikate nicht betroffen sind, wenn der Administrator dem Zertifikat des einen Add-Ins das Vertrauen entzieht. Der Nachteil dieser Strategie besteht darin, dass ein Administrator mehr Zertifikate beschaffen muss und SharePoint so konfiguriert sein muss, dass jedes der Zertifikate verwendet wird, was mithilfe eines wiederverwendbaren Skripts erfolgen kann (siehe  [Besonders vertrauenswürdige Konfigurationsskripts für SharePoint](high-trust-configuration-scripts-for-sharepoint.md)).
  
 
  
@@ -124,7 +134,7 @@ New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $certifica
 
 ```
 
-Das Stammzertifikat und das Zertifikat der mittleren Ebene sollten nur einmal in einer SharePoint-Farm hinzugefügt werden. Normalerweise wird das Zertifikat der Webanwendung in einem separaten Skript hinzugefügt, das auch andere Konfigurationen vornimmt, wie dem Aufruf von  `New-SPTrustedSecurityTokenIssuer`. Beispiele finden Sie unter  [Besonders vertrauenswürdige Konfigurationsskripts für SharePoint](high-trust-configuration-scripts-for-sharepoint-2013).
+Das Stammzertifikat und das Zertifikat der mittleren Ebene sollten nur einmal in einer SharePoint-Farm hinzugefügt werden. Normalerweise wird das Zertifikat der Webanwendung in einem separaten Skript hinzugefügt, das auch andere Konfigurationen vornimmt, wie dem Aufruf von  `New-SPTrustedSecurityTokenIssuer`. Beispiele finden Sie unter  [Besonders vertrauenswürdige Konfigurationsskripts für SharePoint](high-trust-configuration-scripts-for-sharepoint.md).
  
 
  
@@ -140,7 +150,7 @@ Weitere Informationen finden Sie im Blog-Post  [Fehler: Dem Stamm der Zertifikat
 ## <a name="web-application-needs-to-know-that-it-is-a-token-issuer"></a>Die Webanwendung muss wissen, dass es sich um einen Tokenherausgeber handelt
 <a name="AppIsTokenIssuer"> </a>
 
-Die Remotewebanwendungs-Komponente des SharePoint-Add-Ins ist an ihr Zertifikat in IIS gebunden. Dies ist für die herkömmlichen Zwecke von Zertifikaten ausreichend: sicheres Identifizieren der Webanwendung und Kodieren der HTTP-Anforderungen und -Antworten. In einem besonders vertrauenswürdigen SharePoint-Add-In hat das Zertifikat jedoch die zusätzliche Aufgabe, offizieller „Aussteller“ der Zugriffstoken zu sein, die von der Webanwendung an SharePoint gesendet werden. Dazu muss die Webanwendung die Aussteller-ID des Zertifikats kennen, das verwendet wird, wenn das Zertifikat bei SharePoint als Tokenherausgeber registriert wird. Die Webanwendung findet diese ID im Abschnitt **appSettings** der Datei „web.config“, in dem sich ein Schlüssel mit der Bezeichnung **IssuerId** befindet. Anweisungen dazu, wie der Add-In-Entwickler diesen Wert festlegt und wie das Zertifikat an die Webanwendung in IIS gebunden wird, finden Sie unter [Packen und Veröffentlichen besonders vertrauenswürdiger SharePoint-Add-Ins](package-and-publish-high-trust-sharepoint-add-ins). Wenn der Kunde die Strategie verwendet, für jedes besonders vertrauenswürdige SharePoint-Add-In ein separates Zertifikat zu haben, wird der **ClientId**-Wert auch als der **IssuerId**-Wert verwendet. Dies gilt nicht, wenn mehrere Add-Ins das gleiche Zertifikat verwenden, da jedes SharePoint-Add-In seine eigene eindeutige Client-ID aufweisen muss, während die Aussteller-ID der Bezeichner für ein **SPTrustedSecurityTokenIssuer**-Objekt ist.
+Die Remotewebanwendungs-Komponente des SharePoint-Add-Ins ist an ihr Zertifikat in IIS gebunden. Dies ist für die herkömmlichen Zwecke von Zertifikaten ausreichend: sicheres Identifizieren der Webanwendung und Kodieren der HTTP-Anforderungen und -Antworten. In einem besonders vertrauenswürdigen SharePoint-Add-In hat das Zertifikat jedoch die zusätzliche Aufgabe, offizieller „Aussteller“ der Zugriffstoken zu sein, die von der Webanwendung an SharePoint gesendet werden. Dazu muss die Webanwendung die Aussteller-ID des Zertifikats kennen, das verwendet wird, wenn das Zertifikat bei SharePoint als Tokenherausgeber registriert wird. Die Webanwendung findet diese ID im Abschnitt **appSettings** der Datei „web.config“, in dem sich ein Schlüssel mit der Bezeichnung **IssuerId** befindet. Anweisungen dazu, wie der Add-In-Entwickler diesen Wert festlegt und wie das Zertifikat an die Webanwendung in IIS gebunden wird, finden Sie unter [Packen und Veröffentlichen besonders vertrauenswürdiger SharePoint-Add-Ins](package-and-publish-high-trust-sharepoint-add-ins.md). Wenn der Kunde die Strategie verwendet, für jedes besonders vertrauenswürdige SharePoint-Add-In ein separates Zertifikat zu haben, wird der **ClientId**-Wert auch als der **IssuerId**-Wert verwendet. Dies gilt nicht, wenn mehrere Add-Ins das gleiche Zertifikat verwenden, da jedes SharePoint-Add-In seine eigene eindeutige Client-ID aufweisen muss, während die Aussteller-ID der Bezeichner für ein **SPTrustedSecurityTokenIssuer**-Objekt ist.
  
 
  
@@ -191,16 +201,16 @@ Entwickler müssen die Anforderungen für Anwendungssicherheit, wie oben beschri
 <a name="AR"> </a>
 
 
--  [Erstellen von besonders vertrauenswürdigen SharePoint-Add-Ins](create-high-trust-sharepoint-add-ins)
+-  [Erstellen von besonders vertrauenswürdigen SharePoint-Add-Ins](create-high-trust-sharepoint-add-ins.md)
     
  
--  [Packen und Veröffentlichen besonders vertrauenswürdiger SharePoint-Add-Ins](package-and-publish-high-trust-sharepoint-add-ins)
+-  [Packen und Veröffentlichen besonders vertrauenswürdiger SharePoint-Add-Ins](package-and-publish-high-trust-sharepoint-add-ins.md)
     
  
 -  [Tipps zur Problembehandlung für besonders vertrauenswürdige Add-Ins unter SharePoint](http://blogs.technet.com/b/speschka/archive/2012/11/01/more-troubleshooting-tips-for-high-trust-apps-on-sharepoint-2013.aspx)
     
  
--  [Autorisierung und Authentifizierung von SharePoint-Add-Ins](authorization-and-authentication-of-sharepoint-add-ins)
+-  [Autorisierung und Authentifizierung für Add-Ins in SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md)
     
  
 

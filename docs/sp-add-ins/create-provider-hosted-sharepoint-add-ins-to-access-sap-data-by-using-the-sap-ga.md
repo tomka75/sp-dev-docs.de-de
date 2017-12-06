@@ -1,8 +1,18 @@
-# <a name="create-provider-hosted-sharepoint-add-ins-to-access-sap-data-by-using-the-sap-gateway-for-microsoft"></a>Erstellen von vom Anbieter gehosteten SharePoint-Add-Ins zum Zugreifen auf SAP-Daten mithilfe des SAP-Gateway für Microsoft
+---
+title: "Erstellen von vom Anbieter gehosteten SharePoint-Add-Ins zum Zugreifen auf SAP-Daten mithilfe des SAP-Gateway für Microsoft"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: d32e94567b67e3f3acdfb042daa6a9de68c5209f
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
+# <a name="create-provider-hosted-sharepoint-add-ins-to-access-sap-data-by-using-the-sap-gateway-for-microsoft"></a>Erstellen von vom Anbieter gehosteten SharePoint-Add-Ins für den Zugriff auf SAP-Daten mithilfe des SAP-Gateway für Microsoft
 Erfahren Sie, wie Sie ein SharePoint-Add-In erstellen, das auf SAP-Daten zugreifen kann.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Sie können ein SharePoint-Add-In erstellen, das SAP-Daten und optional SharePoint-Daten liest und schreibt, indem Sie das SAP-Gateway für Microsoft und die Azure AD-Authentifizierungsbibliothek für .NET verwenden. In diesem Artikel werden Sie die Verfahren für das Entwerfen des SharePoint-Add-Ins für einen autorisierten Zugriff auf SAP beschrieben. 
@@ -15,7 +25,7 @@ Für die in diesem Artikel beschriebenen Verfahren müssen die folgenden erforde
 
  
 
--  **Eine Website für Office 365-Entwickler** in einer Office 365-Domain, die mit einem Microsoft Azure Active Directory-Abonnement verknüpft ist. Weitere Informationen finden Sie unter [Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365) oder [Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnement](create-a-developer-site-on-an-existing-office-365-subscription).
+-  **Eine Website für Office 365-Entwickler** in einer Office 365-Domain, die mit einem Microsoft Azure Active Directory-Abonnement verknüpft ist. Weitere Informationen finden Sie unter [Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365.md) oder [Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnement](create-a-developer-site-on-an-existing-office-365-subscription.md).
     
  
 -  **Visual Studio 2013 Update 2** oder höher, das Sie unter [Willkommen bei Visual Studio 2013](http://msdn.microsoft.com/library/dd831853.aspx) abrufen können.
@@ -36,13 +46,13 @@ Für die in diesem Artikel beschriebenen Verfahren müssen die folgenden erforde
 -  **Grundkenntnisse zu Azure AD.** Weitere Informationen finden Sie unter [Erste Schritte mit Azure AD](http://msdn.microsoft.com/library/azure/dn655157.aspx).
     
  
--  **Grundkenntnisse in der Erstellung von SharePoint-Add-Ins.** Weitere Informationen finden Sie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins).
+-  **Grundkenntnisse in der Erstellung von SharePoint-Add-Ins.** Weitere Informationen finden Sie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md).
     
  
 -  **Grundkenntnisse zu OAuth 2.0 in Azure AD**. Weitere Informationen finden Sie unter [OAuth 2.0 in Azure AD](http://msdn.microsoft.com/library/azure/dn645545.aspx) und den untergeordneten Themen.
     
  
- **Codebeispiel:** [SharePoint: Verwenden des SAP-Gateway für Microsoft in einem SharePoint-Add-In](http://code.msdn.microsoft.com/SharePoint-2013-Using-the-0931abce)
+ **Codebeispiel:** [SharePoint: Verwenden des SAP-Gateway für Microsoft in einem SharePoint-Add-In](http://code.msdn.microsoft.com/SharePoint-Using-the-0931abce)
  
 
  
@@ -50,7 +60,7 @@ Für die in diesem Artikel beschriebenen Verfahren müssen die folgenden erforde
 ## <a name="understand-authentication-and-authorization-to-sap-gateway-for-microsoft-and-sharepoint"></a>Grundlegendes zur Authentifizierung und Autorisierung beim SAP-Gateway für Microsoft und SharePoint
 <a name="AuthOverview"> </a>
 
-Mit OAuth 2.0 in Azure AD können Anwendungen auf mehrere Ressourcen zugreifen, die von Microsoft Azure gehostet werden, und SAP-Gateway für Microsoft ist eine davon. Mit OAuth 2.0 sind Anwendungen, zusätzlich zu Benutzern, Sicherheitsprinzipale. Für Anwendungsprinzipale ist eine Authentifizierung und Autorisierung bei geschützten Ressourcen zusätzlich zu (und manchmal anstelle von) Benutzern erforderlich. Der Prozess beinhaltet einen OAuth-"Ablauf", bei dem die Anwendung, die ein SharePoint-Add-In sein kann, ein Zugriffstoken (und Aktualisierungstoken) abruft, das von allen von Microsoft Azure gehosteten Diensten und Anwendungen akzeptiert wird, die für die Verwendung von Azure AD als OAuth 2.0-Autorisierungsserver konfiguriert sind. Der Prozess ähnelt der Art und Weise, wie die Remotekomponenten eines von einem Anbieter gehostetes SharePoint-Add-In eine Autorisierung für SharePoint erhalten, wie in  [Erstellen von SharePoint-Add-Ins, die die Autorisierung mit niedriger Vertrauensebene verwenden](creating-sharepoint-add-ins-that-use-low-trust-authorization) und den untergeordneten Artikeln beschrieben. Das ACS-Autorisierungssystem verwendet jedoch Microsoft Azure Access Control Service (ACS) anstelle von Azure AD als vertrauenswürdigen Tokenherausgeber.
+Mit OAuth 2.0 in Azure AD können Anwendungen auf mehrere Ressourcen zugreifen, die von Microsoft Azure gehostet werden, und SAP-Gateway für Microsoft ist eine davon. Mit OAuth 2.0 sind Anwendungen, zusätzlich zu Benutzern, Sicherheitsprinzipale. Für Anwendungsprinzipale ist eine Authentifizierung und Autorisierung bei geschützten Ressourcen zusätzlich zu (und manchmal anstelle von) Benutzern erforderlich. Der Prozess beinhaltet einen OAuth-"Ablauf", bei dem die Anwendung, die ein SharePoint-Add-In sein kann, ein Zugriffstoken (und Aktualisierungstoken) abruft, das von allen von Microsoft Azure gehosteten Diensten und Anwendungen akzeptiert wird, die für die Verwendung von Azure AD als OAuth 2.0-Autorisierungsserver konfiguriert sind. Der Prozess ähnelt der Art und Weise, wie die Remotekomponenten eines von einem Anbieter gehostetes SharePoint-Add-In eine Autorisierung für SharePoint erhalten, wie in  [Erstellen von SharePoint-Add-Ins, die die Autorisierung mit niedriger Vertrauensebene verwenden](creating-sharepoint-add-ins-that-use-low-trust-authorization.md) und den untergeordneten Artikeln beschrieben. Das ACS-Autorisierungssystem verwendet jedoch Microsoft Azure Access Control Service (ACS) anstelle von Azure AD als vertrauenswürdigen Tokenherausgeber.
  
 
  
@@ -58,7 +68,7 @@ Mit OAuth 2.0 in Azure AD können Anwendungen auf mehrere Ressourcen zugreifen, 
  **Tipp** Wenn Ihr SharePoint-Add-In außer auf das SAP-Gateway für Microsoft auf SharePoint zugreift, muss es *beide* Systeme verwenden: Azure AD, um ein Zugriffstoken für das SAP-Gateway für Microsoft abzurufen, und das ACS-Autorisierungssystem, um ein Zugriffstoken für SharePoint abzurufen. Die Token aus den zwei Quellen sind nicht austauschbar. Weitere Informationen finden Sie unter [Optionales Hinzufügen eines Zugriffs auf SharePoint zur ASP.NET-Anwendung](#SharePoint).
  
 
-Eine ausführliche Beschreibung und ein Diagramm zu dem in OAuth 2.0 verwendeten OAuth-Ablauf in Azure AD finden Sie unter  [Ablauf für die Gewährung eines Autorisierungscodes](http://msdn.microsoft.com/library/azure/dn645542.aspx). (Eine ähnliche Beschreibung und ein Diagramm für den Ablauf beim Zugriff auf SharePoint finden Sie unter  [Die einzelnen Schritte des Kontexttokenablaufs](context-token-oauth-flow-for-sharepoint-add-ins#OAuth_ProcessFlowSteps).)
+Eine ausführliche Beschreibung und ein Diagramm zu dem in OAuth 2.0 verwendeten OAuth-Ablauf in Azure AD finden Sie unter  [Ablauf für die Gewährung eines Autorisierungscodes](http://msdn.microsoft.com/library/azure/dn645542.aspx). (Eine ähnliche Beschreibung und ein Diagramm für den Ablauf beim Zugriff auf SharePoint finden Sie unter  [Die einzelnen Schritte des Kontexttokenablaufs](context-token-oauth-flow-for-sharepoint-add-ins.md#OAuth_ProcessFlowSteps).)
  
 
  
@@ -450,7 +460,7 @@ using Newtonsoft.Json.Linq;
 
 
      **Important**  Delete this line when you are ready to deploy the ASP.NET application to staging. See  [Modify the add-in and stage it to Azure and Office 365](#Stage).
-5. Fügen Sie der **Page_Load**-Methode den folgenden Code hinzu. Die an die `GetSAPData`-Methode übergebene Zeichenfolge ist eine OData-Abfrage.
+1. Fügen Sie der **Page_Load**-Methode den folgenden Code hinzu. Die an die `GetSAPData`-Methode übergebene Zeichenfolge ist eine OData-Abfrage.
     
 ```
   if (!IsPostBack)
@@ -509,7 +519,7 @@ using Newtonsoft.Json.Linq;
 </div>
 ```
 
-2. Geben Sie der Webseite optional das Erscheinungsbild einer SharePoint-Seite, indem Sie das SharePoint [-Chromsteuerelement](use-the-client-chrome-control-in-sharepoint-add-ins) und [das Stylesheet der Host-SharePoint-Website](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins) verwenden.
+2. Geben Sie der Webseite optional das Erscheinungsbild einer SharePoint-Seite, indem Sie das SharePoint [-Chromsteuerelement](use-the-client-chrome-control-in-sharepoint-add-ins.md) und [das Stylesheet der Host-SharePoint-Website](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins.md) verwenden.
     
  
 
@@ -532,7 +542,7 @@ using Newtonsoft.Json.Linq;
 ## <a name="optionally-add-sharepoint-access-to-the-aspnet-application"></a>Optional können Sie der ASP.NET-Anwendung SharePoint-Zugriff hinzufügen.
 <a name="SharePoint"> </a>
 
-Natürlich muss Ihr SharePoint-Add-In nicht nur SAP-Daten auf einer von SharePoint gestarteten Webseite anzeigen. Es kann auch SharePoint-Daten erstellen, lesen, aktualisieren und löschen. Ihr zugrunde liegender Code kann dafür entweder das SharePoint-Clientobjektmodell (CSOM) oder die REST-APIs von SharePoint verwenden. Das CSOM wird als Assemblypaar bereitgestellt, das die Office Developer Tools für Visual Studio automatisch in das ASP.NET-Projekt eingefügt und auf **Lokale Kopie** in Visual Studio festgelegt haben, damit es im ASP.NET-Anwendungspaket enthalten ist. Weitere Informationen zum Verwenden von CSOM finden Sie unter [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode](complete-basic-operations-using-sharepoint-2013-client-library-code). Informationen zum Verwenden der REST-APIs finden Sie unter [Erläuterungen zur REST-Schnittstelle von SharePoint und zu ihrer Verwendung](http://msdn.microsoft.com/en-us/magazine/dn198245.aspx). 
+Natürlich muss Ihr SharePoint-Add-In nicht nur SAP-Daten auf einer von SharePoint gestarteten Webseite anzeigen. Es kann auch SharePoint-Daten erstellen, lesen, aktualisieren und löschen. Ihr zugrunde liegender Code kann dafür entweder das SharePoint-Clientobjektmodell (CSOM) oder die REST-APIs von SharePoint verwenden. Das CSOM wird als Assemblypaar bereitgestellt, das die Office Developer Tools für Visual Studio automatisch in das ASP.NET-Projekt eingefügt und auf **Lokale Kopie** in Visual Studio festgelegt haben, damit es im ASP.NET-Anwendungspaket enthalten ist. Weitere Informationen zum Verwenden von CSOM finden Sie unter [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode](complete-basic-operations-using-sharepoint-client-library-code.md). Informationen zum Verwenden der REST-APIs finden Sie unter [Erläuterungen zur REST-Schnittstelle von SharePoint und zu ihrer Verwendung](http://msdn.microsoft.com/de-DE/magazine/dn198245.aspx). 
  
 
  
@@ -541,19 +551,19 @@ Unabhängig davon, ob Sie CSOM oder die REST-APIs für den Zugriff auf SharePoin
 
  
 
--  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins)
+-  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
--  [Autorisierung und Authentifizierung von SharePoint-Add-Ins](authorization-and-authentication-of-sharepoint-add-ins)
+-  [Autorisierung und Authentifizierung für Add-Ins in SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md)
     
  
--  [Drei Autorisierungssysteme für SharePoint-Add-Ins](three-authorization-systems-for-sharepoint-add-ins)
+-  [Drei Autorisierungssysteme für SharePoint-Add-Ins](three-authorization-systems-for-sharepoint-add-ins.md)
     
  
--  [Erstellen von SharePoint-Add-Ins, die die Autorisierung mit niedriger Vertrauensebene verwenden](creating-sharepoint-add-ins-that-use-low-trust-authorization)
+-  [Erstellen von SharePoint-Add-Ins, die die Autorisierung mit niedriger Vertrauensebene verwenden](creating-sharepoint-add-ins-that-use-low-trust-authorization.md)
     
  
--  [OAuth-Ablauf mit Kontexttoken für SharePoint-Add-Ins](context-token-oauth-flow-for-sharepoint-add-ins)
+-  [OAuth-Ablauf mit Kontexttoken für SharePoint-Add-In](context-token-oauth-flow-for-sharepoint-add-ins.md)
     
  
 
@@ -672,20 +682,20 @@ Wenn Sie das Debugging des SharePoint-Add-In mit F5 in Visual Studio abgeschloss
 7. Klicken Sie unten im Bildschirm auf **SPEICHERN**.
     
  
-8. Sie das Add-In bei Azure ACS. Dies muss auch dann durchgeführt werden, wenn das Add-In nicht auf SharePoint zugreift und keine Token von ACS verwendet, da derselbe Prozess das Add-In auch beim App-Verwaltungsdienst des Office 365-Abonnements registriert, was erforderlich ist. (Er wird als „App-Verwaltungsdienst“ bezeichnet, da SharePoint-Add-Ins ursprünglich „Apps für SharePoint“ hießen). Sie führen die Registrierung auf der Seite „AppRegNew.aspx“ einer beliebigen SharePoint-Website im Office 365-Abonnement durch. Ausführliche Informationen finden Sie unter [Registrieren von SharePoint-Add-Ins 2013](register-sharepoint-add-ins-2013). Im Rahmen dieses Prozesses erhalten Sie eine neue Client-ID und einen neuen geheimen Clientschlüssel. Geben Sie diese Werte in die Datei „web.config“ für die Schlüssel **ClientId** (nicht **ida:ClientID**) und **ClientSecret** ein.
+8. Sie das Add-In bei Azure ACS. Dies muss auch dann durchgeführt werden, wenn das Add-In nicht auf SharePoint zugreift und keine Token von ACS verwendet, da derselbe Prozess das Add-In auch beim App-Verwaltungsdienst des Office 365-Abonnements registriert, was erforderlich ist. (Er wird als „App-Verwaltungsdienst“ bezeichnet, da SharePoint-Add-Ins ursprünglich „Apps für SharePoint“ hießen). Sie führen die Registrierung auf der Seite „AppRegNew.aspx“ einer beliebigen SharePoint-Website im Office 365-Abonnement durch. Ausführliche Informationen finden Sie unter [Registrieren von SharePoint-Add-Ins 2013](register-sharepoint-add-ins.md). Im Rahmen dieses Prozesses erhalten Sie eine neue Client-ID und einen neuen geheimen Clientschlüssel. Geben Sie diese Werte in die Datei „web.config“ für die Schlüssel **ClientId** (nicht **ida:ClientID**) und **ClientSecret** ein.
     
      **Vorsicht** Wenn Sie aus irgendeinem Grund nach dieser Änderung F5 drücken, überschreiben die Office Developer Tools für Visual Studio einen oder beide dieser Werte. Aus diesem Grund sollten Sie die mit „AppRegNew.aspx“ abgerufenen Werte aufzeichnen und immer sicherstellen, dass die Werte in der „web.config“ korrekt sind, kurz bevor Sie die ASP.NET-Anwendung veröffentlichen. 
 
 ### <a name="publish-the-aspnet-application-to-azure-and-install-the-add-in-to-sharepoint"></a>Veröffentlichen der ASP.NET-Anwendung in Azure und Installieren des SharePoint-Add-Ins
 
 
-1. Es gibt verschiedene Möglichkeiten, eine ASP.NET-Anwendung an eine Azure-Website zu veröffentlichen. Weitere Informationen finden Sie unter  [Bereitstellen einer Azure-Website](http://azure.microsoft.com/en-us/documentation/articles/web-sites-deploy/).
+1. Es gibt verschiedene Möglichkeiten, eine ASP.NET-Anwendung an eine Azure-Website zu veröffentlichen. Weitere Informationen finden Sie unter  [Bereitstellen einer Azure-Website](http://azure.microsoft.com/de-DE/documentation/articles/web-sites-deploy/).
     
  
 2. Klicken Sie in Visual Studio mit der rechten Maustaste auf das SharePoint-Add-In-Projekt, und wählen Sie **Paket** aus. Klicken Sie auf der sich öffnenden Seite **Add-In veröffentlichen** auf **Add-In verpacken**. Der Datei-Explorer öffnet sich im Ordner mit dem Add-In-Paket.
     
  
-3. Melden Sie sich bei Office 365 als globaler Administrator an, und navigieren Sie zur App-Katalog-Websitesammlung der Organisation. (Falls keine vorhanden ist, erstellen Sie eine. Informationen finden Sie unter  [Verwenden des App-Katalogs zur Bereitstellung von benutzerdefinierten Geschäfts-Apps für Ihre SharePoint Online-Umgebung](http://office.microsoft.com/en-us/sharepoint-help/use-the-app-catalog-to-make-custom-business-apps-available-for-your-sharepoint-online-environment-HA102772362.aspx).)
+3. Melden Sie sich bei Office 365 als globaler Administrator an, und navigieren Sie zur App-Katalog-Websitesammlung der Organisation. (Falls keine vorhanden ist, erstellen Sie eine. Informationen finden Sie unter  [Verwenden des App-Katalogs zur Bereitstellung von benutzerdefinierten Geschäfts-Apps für Ihre SharePoint Online-Umgebung](http://office.microsoft.com/de-DE/sharepoint-help/use-the-app-catalog-to-make-custom-business-apps-available-for-your-sharepoint-online-environment-HA102772362.aspx).)
     
  
 4. Laden Sie das Add-In in den Add-In-Katalog hoch.
@@ -700,7 +710,7 @@ Wenn Sie das Debugging des SharePoint-Add-In mit F5 in Visual Studio abgeschloss
 7. Nachdem das Add-In installiert wurde, klicken Sie auf das zugehörige Symbol auf der Seite **Websiteinhalt**, um das Add-In zu starten.
     
  
-Unter [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](deploying-and-installing-sharepoint-add-ins-methods-and-options) finden Sie weitere Informationen über die Installation von SharePoint-Add-Ins.
+Unter [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](deploying-and-installing-sharepoint-add-ins-methods-and-options.md) finden Sie weitere Informationen über die Installation von SharePoint-Add-Ins.
  
 
 ## <a name="deploying-the-add-in-to-production"></a>Bereitstellen des Add-Ins an die Produktion

@@ -1,12 +1,21 @@
-
+---
+title: Registrieren von SharePoint 2013-Add-Ins
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 037e8ea5ca0ca79a1e3144c7cf415279db4a6347
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="register-sharepoint-add-ins-2013"></a>Registrieren von SharePoint 2013-Add-Ins
 Registrieren Sie Ihre SharePoint-Add-Ins in Azure ACS mithilfe von Visual Studio, dem Verkäuferdashboard oder einer AppRegNew.aspx-Seite, und rufen Sie Registrierungsinformationen ab.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
-Damit die Remotekomponenten eines vom Anbieter gehosteten SharePoint-Add-Ins mit SharePoint über OAuth interagieren können, muss das Add-In zunächst beim cloudbasierten Dienst [Azure ACS](https://msdn.microsoft.com/en-us/library/azure/gg429788.aspx) sowie beim SharePoint App-Verwaltungsdienst der Mandantschaft oder der Farm registriert werden (Er wird als „App-Verwaltungsdienst“ bezeichnet, da SharePoint-Add-Ins ursprünglich „Apps für SharePoint“ hießen).
+Damit die Remotekomponenten eines vom Anbieter gehosteten SharePoint-Add-Ins mit SharePoint über OAuth interagieren können, muss das Add-In zunächst beim cloudbasierten Dienst [Azure ACS](https://msdn.microsoft.com/de-DE/library/azure/gg429788.aspx) sowie beim SharePoint App-Verwaltungsdienst der Mandantschaft oder der Farm registriert werden (Er wird als „App-Verwaltungsdienst“ bezeichnet, da SharePoint-Add-Ins ursprünglich „Apps für SharePoint“ hießen).
  
 
  **Hinweis** Dies ist für von SharePoint gehostete Add-Ins nicht erforderlich.
@@ -32,7 +41,7 @@ Um das Add-In bei Azure ACS zu registrieren, geben Sie die folgenden Information
  
 Nachdem Sie das Add-In registriert haben, verfügt es über eine Add-In-Identität und ist ein *Sicherheitsprinzipal*, der als Add-In-Prinzipal bezeichnet wird. Wenn Sie das Add-In installieren, können SharePoint-Administratoren Informationen zum jeweiligen Add-In-Prinzipal abrufen.
  
-Wenn ein Benutzer zum ersten Mal Add-In-Berechtigungen zum Zugreifen auf SharePoint-Ressourcen gewährt (dies kann entweder während der Installation oder zur Laufzeit erfolgen, abhängig vom Design des Add-Ins), erhält SharePoint Informationen über das Add-In von Azure ACS. SharePoint speichert diese Informationen dann in der Datenbank des App-Verwaltungsdiensts in der SharePoint-Mandantschaft oder -Farm. Der geheime Clientschlüssel wird nur mit Azure ACS gespeichert. SharePoint ist das Geheimnis des Add-Ins niemals bekannt. Der Inhaltsdatenbankdienst und andere Komponenten, wie z. B. der Benutzerprofildienst, können den Anzeigenamen und andere grundlegende Informationen über das Add-In direkt vom freigegebenen App-Verwaltungsdienst abrufen. Weitere Informationen finden Sie unter [Abrufen von Informationen zur Add-In-Registrierung und zum Add-In-Prinzipal ](register-sharepoint-add-ins-2013#Retrieve) in diesem Artikel.
+Wenn ein Benutzer zum ersten Mal Add-In-Berechtigungen zum Zugreifen auf SharePoint-Ressourcen gewährt (dies kann entweder während der Installation oder zur Laufzeit erfolgen, abhängig vom Design des Add-Ins), erhält SharePoint Informationen über das Add-In von Azure ACS. SharePoint speichert diese Informationen dann in der Datenbank des App-Verwaltungsdiensts in der SharePoint-Mandantschaft oder -Farm. Der geheime Clientschlüssel wird nur mit Azure ACS gespeichert. SharePoint ist das Geheimnis des Add-Ins niemals bekannt. Der Inhaltsdatenbankdienst und andere Komponenten, wie z. B. der Benutzerprofildienst, können den Anzeigenamen und andere grundlegende Informationen über das Add-In direkt vom freigegebenen App-Verwaltungsdienst abrufen. Weitere Informationen finden Sie unter [Abrufen von Informationen zur Add-In-Registrierung und zum Add-In-Prinzipal ](register-sharepoint-add-ins.md#Retrieve) in diesem Artikel.
  
 
  **Hinweis** In diesem Artikel wird davon ausgegangen, dass Sie mit den grundlegenden Konzepten und Prinzipien des OAuth 2.0-Frameworks vertraut sind. Weitere Informationen finden Sie unter [OAuth.net](http://oauth.net/) und [Web-Autorisierungsprotokoll (oauth)](http://datatracker.ietf.org/doc/active/).
@@ -62,7 +71,7 @@ Es gibt drei Möglichkeiten zum Registrieren eines Add-Ins. Welche Methode Sie a
 
  
 
-  ![Das Formular auf der Seite „AppRegNew“ mit Feldern für die Client-ID, den geheimen Clientschlüssel, den Titel, die App-Domäne &amp; die Umleitungs-URL. Neben den ersten beiden werden Schaltflächen namens „Generieren“ angezeigt. In der Ecke befinden sich die Schaltflächen „Erstellen“ und „Abbrechen“.](../../images/9a38d876-2189-418c-9314-ae493a4cab61.PNG)
+  ![Das Formular auf der Seite „AppRegNew“ mit Feldern für die Client-ID, den geheimen Clientschlüssel, den Titel, die App-Domäne &amp; die Umleitungs-URL. Neben den ersten beiden werden Schaltflächen namens „Generieren“ angezeigt. In der Ecke befinden sich die Schaltflächen „Erstellen“ und „Abbrechen“.](../images/9a38d876-2189-418c-9314-ae493a4cab61.PNG)
  
 
  
@@ -75,7 +84,7 @@ Es gibt drei Möglichkeiten zum Registrieren eines Add-Ins. Welche Methode Sie a
  
   -  **Geheimer Add-In-Schlüssel**: Der geheime Add-In-Schlüssel, der auch als geheimer Clientschlüssel bezeichnet wird, ist eine opake Zeichenkette. Er wird auf der Seite AppRegNew.aspx über die Schaltfläche **Generieren** generiert. Im Folgenden sehen Sie ein Beispiel für einen geheimen Add-In-Schlüssel: **xvVpG0AgVIJfch6ldu4dLUlcZyysmGqBRbpFDu6AfJw=**.
     
-     **Wichtig** Geheime Add-In-Schlüssel laufen ab. Wenn Sie das Add-In im Verkäuferdashboard registrieren, können Sie die Ablaufdauer auf bis zu 3 Jahre festlegen. Im Dashboard können Sie außerdem neue geheime Schlüssel hinzufügen, wenn sich die alten ihrem Ablaufdatum nähern. Der neue geheime Schlüssel wird in allen Instanzen des Add-Ins aktiviert. Wenn Sie das Add-In bei AppRegNew.aspx registrieren, läuft der geheime Schlüssel nach einem Jahr ab. Ausführliche Informationen finden Sie unter [Austauschen eines ablaufenden geheimen Clientschlüssels in einem SharePoint-Add-In](replace-an-expiring-client-secret-in-a-sharepoint-add-in).
+     **Wichtig** Geheime Add-In-Schlüssel laufen ab. Wenn Sie das Add-In im Verkäuferdashboard registrieren, können Sie die Ablaufdauer auf bis zu 3 Jahre festlegen. Im Dashboard können Sie außerdem neue geheime Schlüssel hinzufügen, wenn sich die alten ihrem Ablaufdatum nähern. Der neue geheime Schlüssel wird in allen Instanzen des Add-Ins aktiviert. Wenn Sie das Add-In bei AppRegNew.aspx registrieren, läuft der geheime Schlüssel nach einem Jahr ab. Ausführliche Informationen finden Sie unter [Austauschen eines ablaufenden geheimen Clientschlüssels in einem SharePoint-Add-In](replace-an-expiring-client-secret-in-a-sharepoint-add-in.md).
   -  **Titel**: Ein benutzerfreundlicher Titel, zum BeispielContoso-Fotodruck-Add-In. Benutzer werden aufgefordert, dem Add-In die Berechtigungen zu gewähren oder zu verweigern, die das Add-In anfordert. Dieser Titel wird als Name des Add-Ins bei der Zustimmungseingabeaufforderung angezeigt. 
     
  
@@ -87,7 +96,7 @@ Es gibt drei Möglichkeiten zum Registrieren eines Add-Ins. Welche Methode Sie a
   - www.fabrikam.com
     
  
-  -  **Umleitungs-URI:**: Der Endpunkt in Ihrer Remoteanwendung oder dem Dienst, an die bzw. den ACS einen Authentifizierungscode sendet. Genau genommen verwenden SharePoint-Add-Ins diesen Wert nicht. Der Umleitungs-URI ist für Webanwendungen erforderlich, die außerhalb von SharePoint gestartet werden und den [Authentifizierungscodeablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization#Flows) verwenden, um autorisierten Zugriff auf SharePoint-Daten zu erhalten. Der Umleitungs-URI wird für echte SharePoint-Add-Ins ignoriert (die von SharePoint gestartet werden und den [Kontexttokenablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization#Flows) verwenden). Der Umleitungs-URI ist in der Regel dieselbe Seite, Controllermethode oder Webdienstmethode, die den Authentifizierungscode von ACS angefordert hat, es kann sich jedoch auch um einen anderen Endpunkt handeln. Der Endpunkt muss über Logik verfügen, die den Autorisierungscode aus der von ACS gesendeten HTTP-Antwort abruft und dann diesen Code verwendet, um ein Zugriffs- und Aktualisierungstoken anzufordern. Weitere Informationen finden Sie unter [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins). Das Formular erfordert, dass Sie auch für echte SharePoint-Add-Ins einen gültigen Wert eingeben, obwohl er nicht verwendet wird.
+  -  **Umleitungs-URI:**: Der Endpunkt in Ihrer Remoteanwendung oder dem Dienst, an die bzw. den ACS einen Authentifizierungscode sendet. Genau genommen verwenden SharePoint-Add-Ins diesen Wert nicht. Der Umleitungs-URI ist für Webanwendungen erforderlich, die außerhalb von SharePoint gestartet werden und den [Authentifizierungscodeablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization.md#Flows) verwenden, um autorisierten Zugriff auf SharePoint-Daten zu erhalten. Der Umleitungs-URI wird für echte SharePoint-Add-Ins ignoriert (die von SharePoint gestartet werden und den [Kontexttokenablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization.md#Flows) verwenden). Der Umleitungs-URI ist in der Regel dieselbe Seite, Controllermethode oder Webdienstmethode, die den Authentifizierungscode von ACS angefordert hat, es kann sich jedoch auch um einen anderen Endpunkt handeln. Der Endpunkt muss über Logik verfügen, die den Autorisierungscode aus der von ACS gesendeten HTTP-Antwort abruft und dann diesen Code verwendet, um ein Zugriffs- und Aktualisierungstoken anzufordern. Weitere Informationen finden Sie unter [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins.md). Das Formular erfordert, dass Sie auch für echte SharePoint-Add-Ins einen gültigen Wert eingeben, obwohl er nicht verwendet wird.
     
     Der Wert muss eine vollständige Endpunkt-URL, einschließlich des Protokolls sein; dieses muss *HTTPS* sein. Beispiel:
     
@@ -153,7 +162,7 @@ Bevor Sie das SharePoint-Add-In verpacken und seine Remotekomponenten bereitstel
 
 3. Geben Sie im Visual Studio-Projekt in der Datei „AppManifest.xml“ den Add-In-ID-Wert als **ClientId** *in Kleinbuchstaben* ein.
     
-     **Hinweis** Das Add-In-Manifest gilt nicht für Webanwendungen, bei denen die Berechtigung für den Zugriff auf SharePoint-Ressourcen spontan abgerufen wird. Diese sind eigentlich keine „SharePoint-Add-Ins“. Sie werden nicht in SharePoint installiert und haben kein Add-In-Manifest. Weitere Informationen finden Sie unter [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins).
+     **Hinweis** Das Add-In-Manifest gilt nicht für Webanwendungen, bei denen die Berechtigung für den Zugriff auf SharePoint-Ressourcen spontan abgerufen wird. Diese sind eigentlich keine „SharePoint-Add-Ins“. Sie werden nicht in SharePoint installiert und haben kein Add-In-Manifest. Weitere Informationen finden Sie unter [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins.md).
 
     Das folgende Beispiel veranschaulicht die Verwendung des **ClientId**-Werts in der Datei „AppManifest.xml“.
     
@@ -235,12 +244,12 @@ Um eine Liste der registrierten Add-In-Prinzipale anzuzeigen, wechseln Sie zu:
 <a name="AR"> </a>
 
 
--  [Autorisierung und Authentifizierung von SharePoint-Add-Ins](authorization-and-authentication-of-sharepoint-add-ins)
+-  [Autorisierung und Authentifizierung für Add-Ins in SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md)
     
  
--  [Drei Autorisierungssysteme für SharePoint-Add-Ins](three-authorization-systems-for-sharepoint-add-ins)
+-  [Drei Autorisierungssysteme für SharePoint-Add-Ins](three-authorization-systems-for-sharepoint-add-ins.md)
     
  
--  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins)
+-  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  

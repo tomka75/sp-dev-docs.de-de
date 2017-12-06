@@ -1,8 +1,18 @@
+---
+title: Autorisierung und Authentifizierung von SharePoint-Add-Ins
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: a90ec9255d46fac1468e80d6a0304336e2c5654b
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="authorization-and-authentication-of-sharepoint-add-ins"></a>Autorisierung und Authentifizierung von SharePoint-Add-Ins
 Hier erhalten Sie einen Überblick über die Authentifizierung und Autorisierung in SharePoint, die verwendet werden, um Anforderungen eines SharePoint-Add-Ins für den Zugriff auf SharePoint-Ressourcen zu autorisieren.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 ## <a name="add-in-authentication-in-sharepoint"></a>Add-In-Authentifizierung in SharePoint
@@ -12,7 +22,7 @@ Wenn sich ein  *Benutzer*  bei SharePoint anmeldet, wird das Sicherheitstoken de
  
 
  
-SharePoint-Add-Ins sind außerdem Sicherheitsprinzipale, die authentifiziert und autorisiert werden müssen. Add-Ins können auf verschiedene Weise authentifiziert und autorisiert werden. Weitere Informationen finden Sie unter  [Drei Autorisierungssysteme für SharePoint-Add-Ins](three-authorization-systems-for-sharepoint-add-ins). 
+SharePoint-Add-Ins sind außerdem Sicherheitsprinzipale, die authentifiziert und autorisiert werden müssen. Add-Ins können auf verschiedene Weise authentifiziert und autorisiert werden. Weitere Informationen finden Sie unter  [Drei Autorisierungssysteme für SharePoint-Add-Ins](three-authorization-systems-for-sharepoint-add-ins.md). 
  
 
  
@@ -28,7 +38,7 @@ SharePoint verwendet drei Arten von Autorisierungsrichtlinien. Die Nur-Benutzer-
  
 
  
-Weitere Informationen über Autorisierungsrichtlinien und ihre Funktionsweise finden Sie unter [Add-In-Autorisierungsrichtlinientypen in SharePoint](add-in-authorization-policy-types-in-sharepoint-2013).
+Weitere Informationen über Autorisierungsrichtlinien und ihre Funktionsweise finden Sie unter [Add-In-Autorisierungsrichtlinientypen in SharePoint](add-in-authorization-policy-types-in-sharepoint.md).
  
 
  
@@ -48,7 +58,7 @@ Berechtigungen für Add-Ins können auch von SharePoint Online-Mandantenadminist
  
 
  
-In der Add-In-Manifestdatei gibt ein SharePoint-Add-In die Berechtigungen an, die es für eine ordnungsgemäße Funktionsweise benötigt. In den Berechtigungsanforderungen sind sowohl die Rechte angegeben, die ein Add-In benötigt, als auch der Bereich, in dem die Rechte benötigt werden. Bereiche geben an, an welcher Stelle in der SharePoint-Hierarchie eine Berechtigungsanforderung angewendet wird. SharePoint unterstützt vier unterschiedliche Inhaltsbereiche: Mandant, Websitesammlung, Website und Liste. Außerdem gibt es spezielle Bereiche zum Ausführen von Suchabfragen, Zugreifen auf Taxonomiedaten, Features für soziale Netzwerke, Microsoft Business Connectivity Services (BCS)-Features und Project Server 2013-Features. Weitere Informationen zu Add-In-Berechtigungen finden Sie unter  [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint-2013).
+In der Add-In-Manifestdatei gibt ein SharePoint-Add-In die Berechtigungen an, die es für eine ordnungsgemäße Funktionsweise benötigt. In den Berechtigungsanforderungen sind sowohl die Rechte angegeben, die ein Add-In benötigt, als auch der Bereich, in dem die Rechte benötigt werden. Bereiche geben an, an welcher Stelle in der SharePoint-Hierarchie eine Berechtigungsanforderung angewendet wird. SharePoint unterstützt vier unterschiedliche Inhaltsbereiche: Mandant, Websitesammlung, Website und Liste. Außerdem gibt es spezielle Bereiche zum Ausführen von Suchabfragen, Zugreifen auf Taxonomiedaten, Features für soziale Netzwerke, Microsoft Business Connectivity Services (BCS)-Features und Project Server 2013-Features. Weitere Informationen zu Add-In-Berechtigungen finden Sie unter  [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint.md).
  
 
  
@@ -56,11 +66,11 @@ In der Add-In-Manifestdatei gibt ein SharePoint-Add-In die Berechtigungen an, di
 ## <a name="when-is-oauth-used"></a>Wann wird OAuth verwendet?
 <a name="FileName_uniquekeyword4"> </a>
 
-Möglicherweise haben Sie schon gehört, dass OAuth 2.0 eine wichtige Rolle bei der Authentifizierung und Autorisierung von SharePoint-Add-Ins spielt. Das ist tatsächlich der Fall, aber nicht unbedingt als Teil der Autorisierungsfunktion für jedes SharePoint-Add-In. Wenn Sie die Erstellung eines SharePoint-Add-Ins planen, das in einer Remotewebanwendung ausgeführt wird und über serverseitigen Code zurück an SharePoint kommuniziert, müssen Sie OAuth verwenden. Wenn die Remotewebanwendung nicht lokal vorhanden ist, würden Sie das  [Autorisierungssystem mit niedriger Vertrauensebene](creating-sharepoint-add-ins-that-use-low-trust-authorization) verwenden, bei dem Azure ACS der Aussteller des Zugriffstokens ist. Bei einer lokalen Version würden Sie normalerweise das [besonders vertrauenswürdige System](creating-sharepoint-add-ins-that-use-high-trust-authorization) verwenden, bei dem das Zugriffstoken vom Add-In selbst und einem digitalen Zertifikat ausgestellt werden.
+Möglicherweise haben Sie schon gehört, dass OAuth 2.0 eine wichtige Rolle bei der Authentifizierung und Autorisierung von SharePoint-Add-Ins spielt. Das ist tatsächlich der Fall, aber nicht unbedingt als Teil der Autorisierungsfunktion für jedes SharePoint-Add-In. Wenn Sie die Erstellung eines SharePoint-Add-Ins planen, das in einer Remotewebanwendung ausgeführt wird und über serverseitigen Code zurück an SharePoint kommuniziert, müssen Sie OAuth verwenden. Wenn die Remotewebanwendung nicht lokal vorhanden ist, würden Sie das  [Autorisierungssystem mit niedriger Vertrauensebene](creating-sharepoint-add-ins-that-use-low-trust-authorization.md) verwenden, bei dem Azure ACS der Aussteller des Zugriffstokens ist. Bei einer lokalen Version würden Sie normalerweise das [besonders vertrauenswürdige System](creating-sharepoint-add-ins-that-use-high-trust-authorization.md) verwenden, bei dem das Zugriffstoken vom Add-In selbst und einem digitalen Zertifikat ausgestellt werden.
  
 
  
-Sie würden OAuth nicht verwenden, um einen Aufruf von JavaScript auf einer Seite im Add-In selbst oder von einer Remotewebseite über  [die domänenübergreifende Bibliothek](creating-sharepoint-add-ins-that-use-the-cross-domain-library) durchzuführen. Weitere Informationen zur domänenübergreifenden Bibliothek finden Sie unter [Erstellen von SharePoint-Add-Ins, die die domänenübergreifende Bibliothek verwenden](creating-sharepoint-add-ins-that-use-the-cross-domain-library).
+Sie würden OAuth nicht verwenden, um einen Aufruf von JavaScript auf einer Seite im Add-In selbst oder von einer Remotewebseite über  [die domänenübergreifende Bibliothek](creating-sharepoint-add-ins-that-use-the-cross-domain-library.md) durchzuführen. Weitere Informationen zur domänenübergreifenden Bibliothek finden Sie unter [Erstellen von SharePoint-Add-Ins, die die domänenübergreifende Bibliothek verwenden](creating-sharepoint-add-ins-that-use-the-cross-domain-library.md).
  
 
  
@@ -69,12 +79,12 @@ Sie würden OAuth nicht verwenden, um einen Aufruf von JavaScript auf einer Seit
 <a name="Filename_AdditionalResources"> </a>
 
 
--  [Drei Autorisierungssysteme für SharePoint-Add-Ins](three-authorization-systems-for-sharepoint-add-ins)
+-  [Drei Autorisierungssysteme für SharePoint-Add-Ins](three-authorization-systems-for-sharepoint-add-ins.md)
     
  
--  [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint-2013)
+-  [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint.md)
     
  
--  [SharePoint-Add-Ins](sharepoint-add-ins)
+-  [SharePoint-Add-Ins](sharepoint-add-ins.md)
     
  

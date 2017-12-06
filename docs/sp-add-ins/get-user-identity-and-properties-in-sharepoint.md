@@ -1,8 +1,18 @@
+---
+title: "Abrufen von Benutzeridentitäten und Eigenschaften in SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 6bfca47eb63da2fe4351d93485f533a9e1c6eedf
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="get-user-identity-and-properties-in-sharepoint"></a>Abrufen von Benutzeridentitäten und Eigenschaften in SharePoint
 Rufen Sie die Benutzeridentität und Benutzerinformationen in SharePoint ab.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Je nachdem, welche Informationen Sie abrufen möchten, können Benutzeridentität und Benutzerinformationen auf verschiedene Weise abgerufen werden. In diesem Artikel werden einige Möglichkeiten gezeigt.
@@ -12,7 +22,7 @@ Je nachdem, welche Informationen Sie abrufen möchten, können Benutzeridentitä
 <a name="Prereq"> </a>
 
 
-- Bereiten Sie Ihre Add-In-Entwicklungsumgebung wie in [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins) beschrieben vor.
+- Bereiten Sie Ihre Add-In-Entwicklungsumgebung wie in [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md) beschrieben vor.
     
  
 - Installieren Sie Visual Studio.
@@ -22,7 +32,7 @@ Je nachdem, welche Informationen Sie abrufen möchten, können Benutzeridentitä
     
  
 
- **Hinweis** Anweisungen zum Einrichten einer Entwicklungsumgebung, die Ihren Anforderungen entspricht, finden Sie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins).
+ **Hinweis** Anweisungen zum Einrichten einer Entwicklungsumgebung, die Ihren Anforderungen entspricht, finden Sie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md).
  
 
 
@@ -36,9 +46,9 @@ In der folgenden Tabelle werden einige hilfreiche Artikel aufgelistet, in denen 
 
 |** Artikel **|**Beschreibung**|
 |:-----|:-----|
-| [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint-2013)|Dieser Artikel enthält Informationen zu Add-In-Berechtigungen in SharePoint, zu Typen von Add-In-Berechtigungen, Berechtigungsanforderungsbereichen und der Verwaltung von Berechtigungen. Zudem werden in diesem Artikel die Unterschiede zwischen Add-In-Berechtigungsrechten und Benutzerrechten besprochen.|
-| [OAuth-Ablauf mit Kontexttoken für SharePoint-Add-In](context-token-oauth-flow-for-sharepoint-add-ins)|In diesem Artikel wird der OAuth-Authentifizierungs- und -Autorisierungsablauf für in der Cloud gehostete Add-Ins erläutert.|
-| [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins)|In diesem Artikel erfahren Sie, wie Sie eine grundlegende von einem Anbieter gehostete SharePoint-Add-In mit Office Developer Tools für Visual Studio 2012 erstellen, wie Sie unter Verwendung des SharePoint-CSOM mit Microsoft SharePoint-Sites interagieren und wie Sie OAuth in einer SharePoint-Add-In implementieren.|
+| [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint.md)|Dieser Artikel enthält Informationen zu Add-In-Berechtigungen in SharePoint, zu Typen von Add-In-Berechtigungen, Berechtigungsanforderungsbereichen und der Verwaltung von Berechtigungen. Zudem werden in diesem Artikel die Unterschiede zwischen Add-In-Berechtigungsrechten und Benutzerrechten besprochen.|
+| [OAuth-Ablauf mit Kontexttoken für SharePoint-Add-Ins](context-token-oauth-flow-for-sharepoint-add-ins.md)|In diesem Artikel wird der OAuth-Authentifizierungs- und -Autorisierungsablauf für in der Cloud gehostete Add-Ins erläutert.|
+| [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)|In diesem Artikel erfahren Sie, wie Sie eine grundlegende von einem Anbieter gehostete SharePoint-Add-In mit Office Developer Tools für Visual Studio 2012 erstellen, wie Sie unter Verwendung des SharePoint-CSOM mit Microsoft SharePoint-Sites interagieren und wie Sie OAuth in einer SharePoint-Add-In implementieren.|
 
 ## <a name="retrieving-current-website-user-identity"></a>Abrufen der Identität des aktuellen Websitebenutzers
 <a name="WebsiteUserID"> </a>
@@ -88,7 +98,7 @@ Nachfolgend wird eine andere Möglichkeit zum Abrufen des Anmeldenamens des Benu
 
  
 
- **Hinweis** Die APIs befinden sich im Namespace „Microsoft.SharePoint.Client.Utilities“ in der Assembly [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx).
+ **Hinweis** Die APIs befinden sich im Namespace „Microsoft.SharePoint.Client.Utilities“ in der Assembly [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/de-DE/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx).
  
 
 Nachfolgend finden Sie einen Beispielcode, anhand dessen erläutert wird, wie Sie die Anmeldeinformationen des Benutzers abrufen.
@@ -189,19 +199,19 @@ clientContext.ExecuteQuery();
 <a name="AdditionalResources"> </a>
 
 
--  [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint-2013)
+-  [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint.md)
     
  
--  [OAuth-Ablauf mit Kontexttoken für SharePoint-Add-In](context-token-oauth-flow-for-sharepoint-add-ins)
+-  [OAuth-Ablauf mit Kontexttoken für SharePoint-Add-In](context-token-oauth-flow-for-sharepoint-add-ins.md)
     
  
--  [SharePoint-Add-Ins](sharepoint-add-ins)
+-  [SharePoint-Add-Ins](sharepoint-add-ins.md)
     
  
--  [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins)
+-  [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md)
     
  
--  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins)
+-  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
 

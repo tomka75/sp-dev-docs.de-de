@@ -1,8 +1,18 @@
+---
+title: "Erstellen besonders vertrauenswürdiger Add-Ins für SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: a790b6da4f32aea79a099dc76c0605e637622f9d
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-high-trust-sharepoint-add-ins"></a>Erstellen besonders vertrauenswürdiger Add-Ins für SharePoint
 Hier erfahren Sie, wie eine besonders vertrauenswürdige SharePoint-Add-In erstellt wird. Eine besonders vertrauenswürdige App verwendet digitale Zertifikate, um eine Vertrauensstellung zwischen einer Remotewebanwendung und SharePoint einzurichten. Besonders vertrauenswürdige Apps können nur in lokalen SharePoint-Installationen installiert werden, nicht in Microsoft SharePoint Online. Sie dienen darüber hinaus vorrangig der Verwendung in einer lokalen Installation statt in einer cloudbasierten Webanwendung.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -14,10 +24,10 @@ Um die Verfahren in diesem Artikel ausführen zu können, benötigen Sie Folgend
 
  
 
-- Eine lokale SharePoint-Entwicklungsumgebung. Eine Anleitung zur Einrichtung finden Sie unter  [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins). Achten Sie insbesondere darauf. dass Sie die Schritte im Abschnitt  [Konfigurieren von Diensten in SharePoint für die Verwendung in Server-zu-Server-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins#Servertoserver) ordnungsgemäß ausführen.
+- Eine lokale SharePoint-Entwicklungsumgebung. Eine Anleitung zur Einrichtung finden Sie unter  [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md). Achten Sie insbesondere darauf. dass Sie die Schritte im Abschnitt  [Konfigurieren von Diensten in SharePoint für die Verwendung in Server-zu-Server-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md#Servertoserver) ordnungsgemäß ausführen.
     
  
-- Erfahrung im Erstellen eines von einem Anbieter gehosteten SharePoint-Add-Ins. Weitere Informationen finden Sie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins).
+- Erfahrung im Erstellen eines von einem Anbieter gehosteten SharePoint-Add-Ins. Weitere Informationen finden Sie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md).
     
  
 - Installation von Visual Studio, entweder remote oder auf dem Computer, auf dem SharePoint installiert ist.
@@ -39,7 +49,7 @@ Lesen Sie die folgenden Artikel, um ein besseres Verständnis von SharePoint-Add
 
 |**Titel des Artikels**|**Beschreibung**|
 |:-----|:-----|
-| [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins)|Erfahren Sie, wie Sie eine grundlegende von einem Anbieter gehostete SharePoint-Add-In mit Office-Entwicklertools für Visual Studio erstellen und wie Sie unter Verwendung des SharePoint-CSOM mit SharePoint-Sites interagieren.|
+| [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)|Erfahren Sie, wie Sie eine grundlegende von einem Anbieter gehostete SharePoint-Add-In mit Office-Entwicklertools für Visual Studio erstellen und wie Sie unter Verwendung des SharePoint-CSOM mit SharePoint-Sites interagieren.|
 | [Digitale Zertifikate](http://msdn.microsoft.com/library/e523b335-0156-4f47-b55c-b80495587c4f.aspx) und [Arbeiten mit Zertifikaten](http://msdn.microsoft.com/library/6ffb8682-8f07-4a45-afbb-8d2487e9dbc3.aspx)|Lernen Sie die grundlegenden Ideen hinter digitalen Zertifikaten kennen.|
 
 ## <a name="introduction-to-running-high-trust-add-ins"></a>Einführung in die Ausführung besonders vertrauenswürdiger Add-Ins
@@ -53,7 +63,7 @@ Eine besonders vertrauenswürdige SharePoint-Add-In wird in erster Linie für di
  
 
  
-Für eine besonders vertrauenswürdige App wird zum Einrichten der Vertrauensstellung anstelle eines Kontexttoken ein Zertifikat verwendet. (Eine vom Anbieter gehostete App, die für die Verwendung des Microsoft Azure Access Control Service (ACS) als Vertrauensbroker erstellt wurde, muss geändert werden, um als besonders vertrauenswürdige App verwendet werden zu können.) Für besonders vertrauenswürdige Apps ist die Konfiguration in der SharePoint-Farm und auf dem Server erforderlich, auf dem die Remotewebanwendung gehostet wird. In diesem Thema werden die Konfigurationsschritte erläutert, die erforderlich sind, damit das Visual Studio-Debugging ( **F5**) verwendet werden kann. Für die Konfiguration einer Test-, Staging- oder Produktionsumgebung weichen diese Schritte leicht ab. Sie sind im Thema  [Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint](package-and-publish-high-trust-sharepoint-add-ins) beschrieben. 
+Für eine besonders vertrauenswürdige App wird zum Einrichten der Vertrauensstellung anstelle eines Kontexttoken ein Zertifikat verwendet. (Eine vom Anbieter gehostete App, die für die Verwendung des Microsoft Azure Access Control Service (ACS) als Vertrauensbroker erstellt wurde, muss geändert werden, um als besonders vertrauenswürdige App verwendet werden zu können.) Für besonders vertrauenswürdige Apps ist die Konfiguration in der SharePoint-Farm und auf dem Server erforderlich, auf dem die Remotewebanwendung gehostet wird. In diesem Thema werden die Konfigurationsschritte erläutert, die erforderlich sind, damit das Visual Studio-Debugging ( **F5**) verwendet werden kann. Für die Konfiguration einer Test-, Staging- oder Produktionsumgebung weichen diese Schritte leicht ab. Sie sind im Thema  [Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint](package-and-publish-high-trust-sharepoint-add-ins.md) beschrieben. 
  
 
  
@@ -87,11 +97,11 @@ Sie benötigen ein digitales X.509-Zertifikat für die Remotewebanwendung Ihrer 
  
 
  
-Alternativ können Sie auch mit dem Testprogramm MakeCert ein X.509-Zertifikat erstellen. Weitere Informationen zur Verwendung von MakeCert finden Sie unter  [Signing and checking code with Authenticode](http://msdn.microsoft.com/en-us/library/ms537364%28VS.85%29.aspx).
+Alternativ können Sie auch mit dem Testprogramm MakeCert ein X.509-Zertifikat erstellen. Weitere Informationen zur Verwendung von MakeCert finden Sie unter  [Signing and checking code with Authenticode](http://msdn.microsoft.com/de-DE/library/ms537364%28VS.85%29.aspx).
  
 
  
-Erstellen Sie zunächst eine PFX-Zertifikat-Testdatei und dann eine entsprechende CER-Testdatei. Das PFX-Zertifikat enthält den privaten Schlüssel, der von der Remotewebanwendung verwendet wird, um die Kommunikation mit SharePoint zu signieren. Die CER-Datei enthält den öffentlichen Schlüssel, über den SharePoint Meldungen entschlüsselt und sicherstellt, dass diese von einer Remotewebanwendung stammen und außerdem sicherstellt, dass die Remotewebanwendung über einen Zugriffstoken von einem Tokenherausgeber verfügt, dem SharePoint vertraut. Weitere Informationen zu den PFX- und CER-Dateien finden Sie unter  [Softwareherausgeberzertifikat](http://msdn.microsoft.com/en-us/library/windows/hardware/ff552299%28v=vs.85%29.aspx)
+Erstellen Sie zunächst eine PFX-Zertifikat-Testdatei und dann eine entsprechende CER-Testdatei. Das PFX-Zertifikat enthält den privaten Schlüssel, der von der Remotewebanwendung verwendet wird, um die Kommunikation mit SharePoint zu signieren. Die CER-Datei enthält den öffentlichen Schlüssel, über den SharePoint Meldungen entschlüsselt und sicherstellt, dass diese von einer Remotewebanwendung stammen und außerdem sicherstellt, dass die Remotewebanwendung über einen Zugriffstoken von einem Tokenherausgeber verfügt, dem SharePoint vertraut. Weitere Informationen zu den PFX- und CER-Dateien finden Sie unter  [Softwareherausgeberzertifikat](http://msdn.microsoft.com/de-DE/library/windows/hardware/ff552299%28v=vs.85%29.aspx)
  
 
  
@@ -108,7 +118,7 @@ Erstellen Sie zunächst eine PFX-Zertifikat-Testdatei und dann eine entsprechend
 
  
 
-  ![Option „Serverzertifikate“ in IIS](../../images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
+  ![Option „Serverzertifikate“ in IIS](../images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
  
 
  
@@ -120,7 +130,7 @@ Erstellen Sie zunächst eine PFX-Zertifikat-Testdatei und dann eine entsprechend
 
  
 
-  ![Link „Selbstsigniertes Zertifikat erstellen“](../../images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
+  ![Link „Selbstsigniertes Zertifikat erstellen“](../images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
  
 
  
@@ -135,7 +145,7 @@ Erstellen Sie zunächst eine PFX-Zertifikat-Testdatei und dann eine entsprechend
 
  
 
-  ![Exportieren eines Testzertifikats](../../images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
+  ![Exportieren eines Testzertifikats](../images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
  
 
  
@@ -193,16 +203,16 @@ Erstellen Sie zunächst eine PFX-Zertifikat-Testdatei und dann eine entsprechend
 ## <a name="configure-sharepoint-to-use-certificates-and-configure-trust-for-your-add-in"></a>Konfigurieren von SharePoint für die Verwendung von Zertifikaten und Konfigurieren einer Vertrauensstellung für das Add-In
 <a name="Configure2"> </a>
 
-Das Windows PowerShell-Skript, das Sie in diesem Abschnitt erstellen, soll die Verwendung von **F5** in Visual Studio unterstützen. Es dient *nicht* zur ordnungsgemäßen Konfiguration einer SharePoint-Staging- oder -Produktionsinstallation. Anweisungen zur Konfiguration einer SharePoint-Staging- oder -Produktionsinstallation zur Verwendung von Zertifikaten finden Sie unter [Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint](package-and-publish-high-trust-sharepoint-add-ins).
+Das Windows PowerShell-Skript, das Sie in diesem Abschnitt erstellen, soll die Verwendung von **F5** in Visual Studio unterstützen. Es dient *nicht* zur ordnungsgemäßen Konfiguration einer SharePoint-Staging- oder -Produktionsinstallation. Anweisungen zur Konfiguration einer SharePoint-Staging- oder -Produktionsinstallation zur Verwendung von Zertifikaten finden Sie unter [Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint](package-and-publish-high-trust-sharepoint-add-ins.md).
  
 
  
 
- **Hinweis** Stellen Sie sicher, dass Sie die Schritte unter [Konfigurieren von Diensten in SharePoint für die Verwendung in Server-zu-Server-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins#Servertoserver) (dies wird als Voraussetzung für diesen Artikel aufgeführt) ordnungsgemäß ausgeführt haben. Andernfalls müssen Sie die Konfiguration jetzt vornehmen, um den Vorgang fortsetzen zu können.
+ **Hinweis** Stellen Sie sicher, dass Sie die Schritte unter [Konfigurieren von Diensten in SharePoint für die Verwendung in Server-zu-Server-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md#Servertoserver) (dies wird als Voraussetzung für diesen Artikel aufgeführt) ordnungsgemäß ausgeführt haben. Wenn dies nicht der Fall ist, müssen Sie jetzt die Konfiguration vornehmen, um fortfahren zu können.
  
 
 
-### <a name="to-configure-sharepoint"></a>So konfigurieren Sie SharePoint
+### <a name="to-configure-sharepoint"></a>Konfigurieren von SharePoint
 
 
 1. Beginnen Sie in einem Text-Editor oder Windows PowerShell-Editor eine neue Datei, und fügen Sie die folgenden Zeilen hinzu, um ein Zertifikatsobjekt zu erstellen:
@@ -272,7 +282,7 @@ In diesem Abschnitt erfahren Sie, wie Sie ein besonders vertrauenswürdiges Shar
 
  
 
- **Hinweis** Wie im Abschnitt [Voraussetzungen für die Erstellung von besonders vertrauenswürdigen Add-Ins](#Prereq) angegeben, wird in diesem Artikel davon ausgegangen, dass Sie wissen, wie ein von einem Anbieter gehostetes SharePoint-Add-In erstellt wird. Weitere Informationen finden Sie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins).
+ **Hinweis** Wie im Abschnitt [Voraussetzungen für die Erstellung von besonders vertrauenswürdigen Add-Ins](#Prereqs) angegeben, wird in diesem Artikel davon ausgegangen, dass Sie wissen, wie ein von einem Anbieter gehostetes SharePoint-Add-In erstellt wird. Weitere Informationen finden Sie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md).
  
 
 
@@ -334,7 +344,7 @@ In diesem Abschnitt erfahren Sie, wie Sie ein besonders vertrauenswürdiges Shar
 
  
 
-  ![Beispiel-App, die den Webtitel abruft](../../images/SP15HighTrustLaunchNew.gif)
+  ![Beispiel-App, die den Webtitel abruft](../images/SP15HighTrustLaunchNew.gif)
  
 
  
@@ -449,7 +459,7 @@ Wenn Sie das neue Zertifikat abgerufen haben, müssen Sie - sofern Sie dies noch
 2. Drücken Sie **F5**, um das Add-In zu debuggen.
     
  
-Lesen Sie nach Abschluss der Entwicklung Ihrer besonders vertrauenswürdigen App unter  [Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint](package-and-publish-high-trust-sharepoint-add-ins) die Anweisungen zum Verpacken und Veröffentlichen dieser Art von SharePoint-Add-In.
+Lesen Sie nach Abschluss der Entwicklung Ihrer besonders vertrauenswürdigen App unter  [Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint](package-and-publish-high-trust-sharepoint-add-ins.md) die Anweisungen zum Verpacken und Veröffentlichen dieser Art von SharePoint-Add-In.
  
 
  
@@ -471,7 +481,7 @@ Office Developer Tools für Visual Studio enthält eine Datei mit dem Namen „T
 - Abrufen des SharePoint-Sicherheitstokendienst (STS)-Zertifikats.
     
  
-- In Anwendungen, die ein Autorisierungssystem mit niedriger anstelle von hoher Vertrauenswürdigkeit verwenden, verfügen diese Dateien über zusätzliche Aufgaben, beispielsweise die Behandlung von OAuth-Token für das unter  [OAuth-Ablauf mit Kontexttoken für Add-Ins in SharePoint](context-token-oauth-flow-for-sharepoint-add-ins) beschriebene Szenario. Eine Beschreibung dieses Szenarios würde den Rahmen dieses Artikels jedoch sprengen. 
+- In Anwendungen, die ein Autorisierungssystem mit niedriger anstelle von hoher Vertrauenswürdigkeit verwenden, verfügen diese Dateien über zusätzliche Aufgaben, beispielsweise die Behandlung von OAuth-Token für das unter  [OAuth-Ablauf mit Kontexttoken für Add-Ins in SharePoint](context-token-oauth-flow-for-sharepoint-add-ins.md) beschriebene Szenario. Eine Beschreibung dieses Szenarios würde den Rahmen dieses Artikels jedoch sprengen. 
     
  
 Weitere Informationen zu TokenHelper und SharePointContext finden Sie in den Kommentare in den Dateien.
@@ -482,7 +492,7 @@ In einer besonders vertrauenswürdigen App gibt es kein Kontexttoken. Das Kontex
  
 
  
-Wenn Sie ein Debugging in Visual Studio mit **F5** ausführen, verwendet Microsoft Office Developer Tools für Visual Studio die Windows-Authentifizierung, und die zwei erstellten Codedateien verwenden die Windows-Identität der Person, die das Add-In ausführt, zum Erstellen des Zugriffstokens. Wenn Ihr Add-In veröffentlicht wird, müssen Sie die Remotewebanwendung im IIS-Manager so konfigurieren, dass die Windows-Authentifizierung verwendet wird, wenn Sie die zwei erstellten Dateien ohne Änderung verwenden möchten. Wenn Ihre Anwendung keine Windows-Authentifizierung in der Produktionsumgebung verwendet, müssen Sie die generierten Codedateien (TokenHelper und/oder SharePointContext) anpassen, damit sie ein anderes Authentifizierungssystem verwenden. Sie müssen diese Dateien auch anpassen, wenn Ihre Remotewebanwendung mit einer anderen Identität als der des Benutzers, der das SharePoint-Add-In ausführt, auf SharePoint zugreift. Schließlich muss Ihr Code, wenn die Remotewebanwendung PHP, node.js, Java oder eine andere Nicht-ASP.NET-Plattform ist, die ID des Benutzers von dem jeweiligen Authentifizierungssystem abrufen und diese ID dann zu dem Zugriffstoken hinzufügen, das zusammengestellt wird. Weitere Informationen finden Sie unter [Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint](package-and-publish-high-trust-sharepoint-add-ins), [Erstellen und Verwenden von Zugriffstoken in von einem Anbieter gehosteten besonders vertrauenswürdigen SharePoint-Add-Ins](create-and-use-access-tokens-in-provider-hosted-high-trust-sharepoint-add-ins) und [Verwenden von SharePoint-Add-Ins mit SAML- und FBA-Websites in SharePoint](http://blogs.technet.com/b/speschka/archive/2012/12/07/using-sharepoint-apps-with-saml-and-fba-sites-in-sharepoint-2013.aspx).
+Wenn Sie ein Debugging in Visual Studio mit **F5** ausführen, verwendet Microsoft Office Developer Tools für Visual Studio die Windows-Authentifizierung, und die zwei erstellten Codedateien verwenden die Windows-Identität der Person, die das Add-In ausführt, zum Erstellen des Zugriffstokens. Wenn Ihr Add-In veröffentlicht wird, müssen Sie die Remotewebanwendung im IIS-Manager so konfigurieren, dass die Windows-Authentifizierung verwendet wird, wenn Sie die zwei erstellten Dateien ohne Änderung verwenden möchten. Wenn Ihre Anwendung keine Windows-Authentifizierung in der Produktionsumgebung verwendet, müssen Sie die generierten Codedateien (TokenHelper und/oder SharePointContext) anpassen, damit sie ein anderes Authentifizierungssystem verwenden. Sie müssen diese Dateien auch anpassen, wenn Ihre Remotewebanwendung mit einer anderen Identität als der des Benutzers, der das SharePoint-Add-In ausführt, auf SharePoint zugreift. Schließlich muss Ihr Code, wenn die Remotewebanwendung PHP, node.js, Java oder eine andere Nicht-ASP.NET-Plattform ist, die ID des Benutzers von dem jeweiligen Authentifizierungssystem abrufen und diese ID dann zu dem Zugriffstoken hinzufügen, das zusammengestellt wird. Weitere Informationen finden Sie unter [Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint](package-and-publish-high-trust-sharepoint-add-ins.md), [Erstellen und Verwenden von Zugriffstoken in von einem Anbieter gehosteten besonders vertrauenswürdigen SharePoint-Add-Ins](create-and-use-access-tokens-in-provider-hosted-high-trust-sharepoint-add-ins.md) und [Verwenden von SharePoint-Add-Ins mit SAML- und FBA-Websites in SharePoint](http://blogs.technet.com/b/speschka/archive/2012/12/07/using-sharepoint-apps-with-saml-and-fba-sites-in-sharepoint-2013.aspx).
  
 
  
@@ -491,25 +501,25 @@ Wenn Sie ein Debugging in Visual Studio mit **F5** ausführen, verwendet Microso
 <a name="bk_addresources"> </a>
 
 
--  [Packen und Veröffentlichen besonders vertrauenswürdiger SharePoint-Add-Ins](package-and-publish-high-trust-sharepoint-add-ins)
+-  [Packen und Veröffentlichen besonders vertrauenswürdiger SharePoint-Add-Ins](package-and-publish-high-trust-sharepoint-add-ins.md)
     
  
 -  [Tipps zur Problembehandlung für besonders vertrauenswürdige Add-Ins unter SharePoint](http://blogs.technet.com/b/speschka/archive/2012/11/01/more-troubleshooting-tips-for-high-trust-apps-on-sharepoint-2013.aspx)
     
  
--  [Registrieren von SharePoint 2013-Add-Ins](register-sharepoint-add-ins-2013)
+-  [Registrieren von SharePoint-Add-Ins 2013](register-sharepoint-add-ins.md)
     
  
--  [Autorisierung und Authentifizierung von SharePoint-Add-Ins](authorization-and-authentication-of-sharepoint-add-ins)
+-  [Autorisierung und Authentifizierung für Add-Ins in SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md)
     
  
 -  [Ankündigung der neuen SharePointContext-Hilfsklasse in SharePoint 2013-Add-Ins](http://blogs.msdn.com/b/officeapps/archive/2013/11/07/announcing-the-new-sharepointcontext-helper-in-apps-for-sharepoint-2013.aspx)
     
  
--  [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint-2013)
+-  [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint.md)
     
  
--  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins)
+-  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
 

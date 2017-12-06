@@ -1,9 +1,18 @@
-
-# <a name="troubleshooting-high-trust-sharepoint-add-ins"></a>Problembehandlung besonders vertrauenswürdiger Add-Ins
+---
+title: "Problembehandlung besonders vertrauenswürdiger Add-Ins"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: f195d06c28eae988551d2bd4eb2add49007876dc
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
+# <a name="troubleshooting-high-trust-sharepoint-add-ins"></a>Problembehandlung bei SharePoint-Add-Ins mit hoher Vertrauensstellung
 Hier erhalten Sie Unterstützung bei Problemen mit der Entwicklung von besonders vertrauenswürdigen Add-Ins.
  
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
+ **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Dieser Artikel beschreibt das Fiddler-Tool und enthält Hinweise zum Beheben von einiger spezieller Probleme.
@@ -87,7 +96,7 @@ Der erste Schritt zur Behebung des Problems besteht darin, mit dem Visual Studio
 - Es wurde kein Benutzerprofil für den Benutzer erstellt, der auf die Remotewebanwendung zugreift. Erstellen Sie das Benutzerprofil.
     
  
-- Ihr Add-In verfügt nicht über die Berechtigung für die Ressource, auf die Sie zugreifen möchten. Öffnen Sie die SharePoint-Verwaltungsshell, und führen Sie das folgende Windows PowerShell-Cmdlet aus. Die Variable  `$web` ist die SharePoint-Website, auf die Sie zugreifen möchten, und `$appPrincipal`) ist die Add-In-ID. Weitere Informationen finden Sie unter  [Set-SPAppPrincipalPermission](http://technet.microsoft.com/en-us/library/jj219714%28v=office.15%29.aspx).
+- Ihr Add-In verfügt nicht über die Berechtigung für die Ressource, auf die Sie zugreifen möchten. Öffnen Sie die SharePoint-Verwaltungsshell, und führen Sie das folgende Windows PowerShell-Cmdlet aus. Die Variable  `$web` ist die SharePoint-Website, auf die Sie zugreifen möchten, und `$appPrincipal`) ist die Add-In-ID. Weitere Informationen finden Sie unter  [Set-SPAppPrincipalPermission](http://technet.microsoft.com/de-DE/library/jj219714%28v=office.15%29.aspx).
     
 ```
   Set-SPAppPrincipalPermission -Site $web -AppPrincipal $appPrincipal -Scope Site -Right FullControl
@@ -96,7 +105,7 @@ Der erste Schritt zur Behebung des Problems besteht darin, mit dem Visual Studio
 - Ihre Webanwendung akzeptiert anonyme Anforderungen. Dies bedeutet, dass das Zugriffstoken keine echte Benutzeridentität enthält. Stellen Sie sicher, dass für das Stammverzeichnis Ihrer Remotewebanwendung der anonyme Zugriff in IIS deaktiviert ist. Sie können dies auch überprüfen, indem Sie Ihre Remotewebanwendung debuggen und den Wert von **Request.LogonUserIdentity** in der Datei „default.aspx.cs“ (oder .vb) überprüfen, um sicherzustellen, dass es sich nicht um einen anonymen Benutzer handelt.
     
  
-- Ihr digitales Zertifikat wurde dem vertrauenswürdigen Zertifikatspeicher nicht hinzugefügt. Stellen Sie sicher, dass Sie die Verfahren in  [Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint](package-and-publish-high-trust-sharepoint-add-ins) befolgt haben.
+- Ihr digitales Zertifikat wurde dem vertrauenswürdigen Zertifikatspeicher nicht hinzugefügt. Stellen Sie sicher, dass Sie die Verfahren in  [Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint](package-and-publish-high-trust-sharepoint-add-ins.md) befolgt haben.
     
  
 
