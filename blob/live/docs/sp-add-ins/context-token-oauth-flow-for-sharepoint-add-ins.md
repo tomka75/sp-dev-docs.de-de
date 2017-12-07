@@ -1,0 +1,140 @@
+---
+title: "Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: e6a5cfd5a3cf5b2f1264d4a4c53ab89c3bf6afb1
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
+# <a name="context-token-oauth-flow-for-sharepoint-add-ins"></a><span data-ttu-id="fd413-102">OAuth-Ablauf mit Kontexttoken für SharePoint-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="fd413-102">Context Token OAuth flow for SharePoint Add-ins</span></span>
+<span data-ttu-id="fd413-103">Erfahren Sie mehr über den OAuth-Authentifizierungs- und -Autorisierungsablauf für vom Anbieter gehostete Add-Ins mit niedriger Vertrauensebene in SharePoint.</span><span class="sxs-lookup"><span data-stu-id="fd413-103">Learn about the OAuth authentication and authorization flow for low-trust, provider-hosted add-ins in SharePoint.</span></span>
+ 
+
+ <span data-ttu-id="fd413-p101">**Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).</span><span class="sxs-lookup"><span data-stu-id="fd413-p101">**Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).</span></span>
+ 
+
+
+## <a name="get-an-overview-of-oauth-and-sharepoint-provider-hosted-sharepoint-add-ins"></a><span data-ttu-id="fd413-107">Übersicht über OAuth und vom Anbieter gehostete SharePoint-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="fd413-107">Get an overview of OAuth and SharePoint provider-hosted SharePoint Add-ins</span></span>
+<span data-ttu-id="fd413-108"><a name="OAuth_Actors"> </a></span><span class="sxs-lookup"><span data-stu-id="fd413-108"></span></span>
+
+<span data-ttu-id="fd413-p102">In SharePoint **umfasst der OAuth-Authentifizierungs- und Autorisierungsablauf für ein von einem Anbieter gehosteten Add-In mit niedriger Vertrauensebene eine Reihe von Interaktionen zwischen dem Add-In, SharePoint, dem Autorisierungsserver und dem Browser** zur Laufzeit. In diesem Szenario ist Microsoft Azure Access Control Service (ACS) der Autorisierungsserver.</span><span class="sxs-lookup"><span data-stu-id="fd413-p102">In SharePoint,  **the OAuth authentication and authorization flow for a provider-hosted, low-trust, add-in involves a series of interactions between your add-in, SharePoint, the authorization server, and the browser** at runtime. The authorization server in this scenario is Microsoft Azure Access Control Service (ACS).</span></span>
+ 
+
+ 
+<span data-ttu-id="fd413-p103">Mit einem von einem Anbieter gehosteten Add-In erhalten Sie Remotewebanwendungen oder Dienste, die von SharePoint separat und nicht Teil der SharePoint-Farm oder des SharePoint Online-Mandanten sind. Diese können in der Cloud oder auf einem lokalen Server gehostet werden. In diesem Artikel wird die Remotekomponente Contoso.com genannt.</span><span class="sxs-lookup"><span data-stu-id="fd413-p103">With a provider-hosted add-in, you have a remote web application or service that is separate from SharePoint, and not part of the SharePoint farm or SharePoint Online tenancy. It can be hosted in the cloud or on an on-premise server. In this article, the remote component is called Contoso.com.</span></span>
+ 
+
+ 
+
+ <span data-ttu-id="fd413-p104">**Hinweis** Die Remotekomponente kann auch Ereignisempfänger hosten, die auf Ereignisse reagieren, die bei SharePoint-Elementen wie Listen oder Listenelementen auftreten. Beispiele für Remoteereignisse, auf die Contoso.com möglicherweise reagieren sollte, sind Listenereignisse, z. B. das Hinzufügen oder Entfernen eines Listenelements, oder Webereignisse, wie das Hinzufügen oder Entfernen einer Website. Weitere Informationen zum Erstellen von Remoteereignisempfängern finden Sie unter [Erstellen eines Remoteereignisempfängers in SharePoint-Add-Ins](create-a-remote-event-receiver-in-sharepoint-add-ins.md).</span><span class="sxs-lookup"><span data-stu-id="fd413-p104">**Note**  The remote component can also host event receivers that respond to events that occur to SharePoint items, such as lists or list items. Examples of remote events that Contoso.com might want to respond to are list events, such as adding or removing a list item; or web events, such as adding or deleting a site. For more information about how to create remote event receivers, see  [Create a remote event receiver in SharePoint Add-ins](create-a-remote-event-receiver-in-sharepoint-add-ins.md).</span></span>
+ 
+
+<span data-ttu-id="fd413-p105">Contoso.com verwendet das SharePoint-Clientobjektmodell (CSOM) oder die SharePoint-REST-APIs, um Aufrufe an SharePoint durchzuführen. Die Contoso.com-Anwendung verwendet einen OAuth-Ablauf mit Tokenübergabe für die Authentifizierung bei SharePoint. **SharePoint und Contoso.com vertrauen einander nicht, aber beide vertrauen ACS** und akzeptieren von ACS ausgestellte Token. An dem Ablauf sind drei Token beteiligt: SharePoint lässt ACS ein Kontexttoken erstellen, das SharePoint an Constoso.com weiterleitet. Contoso.com validiert, dass das Kontexttoken von ACS stammt, und vertraut ihm deshalb. Contoso.com extrahiert dann ein Aktualisierungstoken aus dem Kontexttoken und verwendet es, um ein Zugriffstoken direkt von ACS zu erhalten. Das Zugriffstoken wird in alle Anforderungen an SharePoint eingeschlossen. SharePoint validiert, dass das Zugriffstoken von ACS ausgestellt wurde, und reagiert deshalb auf die Anforderungen von Contoso.com.</span><span class="sxs-lookup"><span data-stu-id="fd413-p105">Contoso.com uses the SharePoint client object model (CSOM) or the SharePoint REST APIs to make calls to SharePoint. The Contoso.com application uses an OAuth token-passing flow to authenticate with SharePoint.  **SharePoint and Contoso.com do not trust each other; but both trust ACS** and will accept tokens issued by ACS. There are three tokens involved: SharePoint has ACS create a context token that SharePoint forwards to Constoso.com. Contoso.com validates that the context token was issued by ACS so it trusts it. Contoso.com then extracts a refresh token from the context token and uses it to get an access token directly from ACS. It includes the access token in all its requests to SharePoint. SharePoint validates that the access token was issued by ACS, so it responds to the requests from Contoso.com.</span></span>
+ 
+
+ 
+ <span data-ttu-id="fd413-p106">**Sie stellen den Code für die Tokenverarbeitung** in der Remotekomponente bereit. (Wenn Ihre Remotekomponente allerdings auf .NET gehostet ist, stellen die Microsoft Office-Entwicklertools für Visual Studio Beispielcode bereit, der den größten Teil der Arbeit für Sie übernimmt.) Ausführliche Informationen zum Code für die Tokenverarbeitung finden Sie unter [Handhabung von Sicherheitstoken in vom Anbieter gehosteten Add-Ins für SharePoint mit niedriger Vertrauensebene](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md).</span><span class="sxs-lookup"><span data-stu-id="fd413-p106">**You provide the token-handling code** in the remote component. (But if your remote component is hosted on .NET, the Microsoft Office Developer Tools for Visual Studio provide sample code that does most of the work for you.) For details about token-handling code, see [Handle security tokens in provider-hosted low-trust SharePoint Add-ins](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md).</span></span>
+ 
+
+ 
+
+## <a name="complete-the-prerequisites-for-using-the-flow"></a><span data-ttu-id="fd413-126">Erfüllen der Voraussetzungen für die Verwendung des Ablaufs</span><span class="sxs-lookup"><span data-stu-id="fd413-126">Complete the prerequisites for using the flow</span></span>
+<span data-ttu-id="fd413-127"><a name="Prerequisites"> </a></span><span class="sxs-lookup"><span data-stu-id="fd413-127"></span></span>
+
+<span data-ttu-id="fd413-128">Es gibt einige vorbereitende Schritte, die ausgeführt werden müssen, bevor ein SharePoint-Add-In den Kontexttokenablauf verwenden kann.</span><span class="sxs-lookup"><span data-stu-id="fd413-128">There are some preliminary steps that must be done before a SharePoint Add-in can use the Context Token flow.</span></span> 
+ 
+
+ 
+
+- <span data-ttu-id="fd413-129">Wenn die SharePoint-Add-In in einer lokalen SharePoint-Farm installiert werden soll, gibt es Setupanforderungen, die nicht gelten, wenn sie nur in SharePoint Online installiert wird:</span><span class="sxs-lookup"><span data-stu-id="fd413-129">If the SharePoint Add-in is to be installed to an on-premise SharePoint farm, there are setup requirements that don't apply if it is only installed to SharePoint Online:</span></span>
+    
+      - <span data-ttu-id="fd413-130">Die **Farm muss so konfiguriert werden**, dass sie Add-Ins unterstützt. (Dies ist tatsächlich eine Anforderung für die Installation beliebiger SharePoint-Add-Ins in der Farm, selbst wenn sie den Kontexttokenablauf nicht verwenden.) Weitere Informationen finden Sie unter [Konfigurieren einer Umgebung für SharePoint-Add-Ins](http://technet.microsoft.com/de-DE/library/fp161236%28v=office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="fd413-130">The  **farm must be configured** to support add-ins. (This is actually a requirement for installing any SharePoint Add-ins to the farm, even if they don't use the Context Token flow.) For more information, see [Configure an environment for SharePoint Add-ins](http://technet.microsoft.com/de-DE/library/fp161236%28v=office.15%29.aspx).</span></span>
+    
+ 
+  - <span data-ttu-id="fd413-p107">Der **Kunde**, der das Add-In installiert, **muss über ein Office 365-Konto verfügen**. Dies ist erforderlich, um Zugriff auf ACS zu erhalten. Der Kunde muss sein Konto nicht für andere Zwecke nutzen.</span><span class="sxs-lookup"><span data-stu-id="fd413-p107">The  **customer** who is installing the add-in **must have an Office 365 account**. This is necessary to get access to ACS. The customer does not have to use their account for any other purpose.</span></span>
+    
+ 
+  - <span data-ttu-id="fd413-p108">Die Farm muss für die Verwendung der Vertrauensstellung konfiguriert werden, die Office 365 mit ACS hat. Dies kann einfach über Windows PowerShell-Skripts durchgeführt werden. Ausführliche Informationen finden Sie unter  [Verwenden einer Office 365 SharePoint-Website, um vom Anbieter gehostete Add-Ins auf einer lokalen SharePoint-Website zu autorisieren](use-an-office-365-sharepoint-site-to-authorize-provider-hosted-add-ins-on-an-on.md).</span><span class="sxs-lookup"><span data-stu-id="fd413-p108">The farm must be configured to share the trust relationship that Office 365 has with ACS. This is easily done with Windows PowerShell scripts. For details, see  [Use an Office 365 SharePoint site to authorize provider-hosted add-ins on an on-premises SharePoint site](use-an-office-365-sharepoint-site-to-authorize-provider-hosted-add-ins-on-an-on.md).</span></span>
+    
+ 
+- <span data-ttu-id="fd413-p109">Unabhängig davon, ob das Add-In in SharePoint Online oder einer lokalen SharePoint-Farm installiert wird, muss das **SharePoint-Add-In bei ACS registriert werden**. Ausführliche Informationen zur entsprechenden Vorgehensweise finden Sie unter [Registrieren von SharePoint-Add-Ins 2013](register-sharepoint-add-ins.md). Unter anderem stellt das Add-In ACS seine Client-ID und den geheimen Clientschlüssel als Teil der Registrierung bereit.</span><span class="sxs-lookup"><span data-stu-id="fd413-p109">Regardless of whether the add-in is installed to SharePoint Online or to an on-premise SharePoint farm, the  **SharePoint Add-in must be registered with ACS**. For details about how this can be done, see [Register SharePoint Add-ins 2013](register-sharepoint-add-ins.md). Among other things, the add-in provides ACS with its client ID and client secret as part of the registration.</span></span>
+    
+ 
+
+## <a name="see-the-steps-in-the-context-token-flow"></a><span data-ttu-id="fd413-140">Informationen finden Sie in den Schritten des Kontexttokenablaufs</span><span class="sxs-lookup"><span data-stu-id="fd413-140">See the steps in the Context Token flow</span></span>
+<span data-ttu-id="fd413-141"><a name="OAuth_ProcessFlowSteps"> </a></span><span class="sxs-lookup"><span data-stu-id="fd413-141"></span></span>
+
+<span data-ttu-id="fd413-142">Der OAuth-Authentifizierungs- und -Autorisierungsablauf für vom Anbieter gehostete SharePoint-Add-Ins ist in der folgenden Abbildung dargestellt.</span><span class="sxs-lookup"><span data-stu-id="fd413-142">The OAuth authentication and authorization flow for a SharePoint provider-hosted add-in is shown in the following figure.</span></span>
+ 
+
+ 
+
+<span data-ttu-id="fd413-143">**OAuth-Kontexttokenablauf**</span><span class="sxs-lookup"><span data-stu-id="fd413-143">**OAuth Context Token flow**</span></span>
+
+ 
+
+ 
+![Autorisierungsprozessablauf von OAuth](../images/833fcdcc-1755-438b-9ada-dce9646564c0.gif)
+ 
+<span data-ttu-id="fd413-145">Die folgenden Schritte entsprechen den Nummern in der Abbildung:</span><span class="sxs-lookup"><span data-stu-id="fd413-145">These are the steps that correspond to the numbers in the figure:</span></span>
+ 
+
+ 
+
+ 
+
+1. <span data-ttu-id="fd413-p110">Ein Benutzer startet das SharePoint-Add-In aus SharePoint. Der Entwurf des Add-Ins bestimmt, wie dies funktioniert:</span><span class="sxs-lookup"><span data-stu-id="fd413-p110">A user launches the SharePoint Add-in from SharePoint. The design of the add-in determines how this is done:</span></span>
+    
+      - <span data-ttu-id="fd413-p111">Wenn das Add-In so entworfen ist, dass es in der Remotewebanwendung (unter Contoso.com) in einem Add-In-Webpart part (der im Wesentlichen ein Wrapper um einen **IFRAME** ist) angezeigt werden soll, bedeutet das Starten des Add-Ins einfach, zu einer SharePoint-Seite zu navigieren, die das Add-In-Webpart enthält. (Wenn der Benutzer noch nicht angemeldet ist, fordert SharePoint den Benutzer auf, sich anzumelden.) SharePoint verarbeitet die Seite und erkennt, dass eine Komponente der Contoso.com-Anwendung auf der Seite vorhanden ist. (Ausführliche Informationen zu Add-In-Webparts finden Sie unter [Erstellen von Add-In-Webparts zur Installation mit Ihrem SharePoint-Add-In](create-add-in-parts-to-install-with-your-sharepoint-add-in.md).)</span><span class="sxs-lookup"><span data-stu-id="fd413-p111">If the add-in is designed to surface the remote web application (at Contoso.com) in an add-in part (which is essentially a wrapper around an **IFRAME**), then launching the add-in simply means navigating to a SharePoint page that contains the add-in part. (If the user is not already logged on, SharePoint prompts the user to log on.) SharePoint processes the page and detects that there is a component from the Contoso.com application on the page. (For details about add-in parts, see  [Create add-in parts to install with your SharePoint Add-in](create-add-in-parts-to-install-with-your-sharepoint-add-in.md).)</span></span>
+    
+ 
+  - <span data-ttu-id="fd413-p112">Wenn das Add-In so entworfen ist, dass es eine volle Seite im Browser verwendet, startet der Benutzer das Add-In, indem er auf der SharePoint-Website auf die entsprechende Add-In-Kachel auf der Seite **Websiteinhalte** klickt. (Eine Variante dieser Vorgehensweise ist, wenn das Add-In ein benutzerdefiniertes Menü- oder Menübandelement umfasst, mit dem die Remotekomponente gestartet wird.)</span><span class="sxs-lookup"><span data-stu-id="fd413-p112">If the add-in is designed to use as a full page in the browser, then the user launches it by clicking on its add-in tile on the SharePoint website's  **Site Contents** page. (A variation of this is when the add-in includes a custom menu or ribbon item that launches the remote component.)</span></span>
+    
+ 
+2. <span data-ttu-id="fd413-p113">Unabhängig davon, wie das Add-In gestartet wird, muss SharePoint ein Kontexttoken abrufen, das an die Contoso.com-Anwendung gesendet werden kann. Deshalb fordert SharePoint bei ACS an, ein Kontexttoken zu erstellen, das die Informationen zum SharePoint-Kontext enthält, einschließlich des aktuellen Benutzers, der URL der Remoteanwendung und anderer Informationen. Das Kontexttoken enthält auch ein verschlüsseltes Aktualisierungstoken.</span><span class="sxs-lookup"><span data-stu-id="fd413-p113">Regardless of how the add-in is launched, SharePoint must get a context token that it can send to the Contoso.com application, so it asks ACS to create a context token that contains information about the SharePoint context including the current user, the remote application URL, and other information. The context token also contains an encrypted refresh token.</span></span>
+    
+ 
+3. <span data-ttu-id="fd413-p114">ACS signiert das Kontexttoken mit einem Algorithmus, der den geheimen Contoso.com-Add-In-Schlüssel verwendet, und gibt es an SharePoint zurück. Nur ACS und das Contoso.com-Add-In kennen den geheimen Schlüssel.</span><span class="sxs-lookup"><span data-stu-id="fd413-p114">ACS signs the context token, with an algorithm that uses the Contoso.com add-in secret, and returns it to SharePoint. Only ACS and the Contoso.com add-in know the secret.</span></span>
+    
+ 
+4. <span data-ttu-id="fd413-p115">Wenn die Contoso.com-Anwendung in einem Add-In-Webpart angezeigt wird, gibt SharePoint die Seite wieder, auf der das Add-In-Webpart gehostet ist, und fügt das Kontexttoken zur URL hinzu, die der **IFRAME** im Add-In-Webpart aufruft, um seine Inhalte abzurufen. Wenn die Contoso.com-Anwendung eine volle Seite ist, leitet SharePoint den Browser zu Constoso.com um und fügt das Kontexttoken als Teil der Umleitungsantwort hinzu.</span><span class="sxs-lookup"><span data-stu-id="fd413-p115">If the Contoso.com application is surfaced in an add-in part, SharePoint renders the page that hosts the add-in part and adds the context token to the URL that the  **IFRAME** in the add-in part calls to get its contents. If the Contoso.com application is full page, SharePoint redirects the browser to Constoso.com and includes the context token as a part of the redirect response.</span></span>
+    
+ 
+5. <span data-ttu-id="fd413-159">Das Kontexttoken ist in der Browseranforderung enthalten, die an den Server „Contoso.com“ gesendet wird.</span><span class="sxs-lookup"><span data-stu-id="fd413-159">The context token is included in the browser request that is sent to the Contoso.com server.</span></span>
+    
+ 
+6. <span data-ttu-id="fd413-p116">Der Contoso.com-Server erhält das Kontexttoken und validiert die Signatur, da er den geheimen Clientschlüssel kennt. Damit wird Contoso.com versichert, dass das Token von ACS ausgestellt wurde und nicht von einem Betrüger, der sich als SharePoint ausgibt. Contoso.com extrahiert das Aktualisierungstoken aus dem Kontexttoken und sendet es zusammen mit anderen Informationen wie der Client-ID und dem geheimen Clientschlüssel in einer Anforderung für ein Zugriffstoken, das den Zugriff auf SharePoint ermöglicht, an ACS.</span><span class="sxs-lookup"><span data-stu-id="fd413-p116">The Contoso.com server gets the context token and validates the signature which it can do because it knows the client secret. This assures Contoso.com that the token was issued by ACS and not an imposter pretending to be SharePoint. Contoso.com extracts the refresh token from the context token and sends it, along with other information including the its client ID and client secret, to ACS in a request for an access token that will allow it to access SharePoint,</span></span>
+    
+ 
+7. <span data-ttu-id="fd413-p117">ACS validiert das Aktualisierungstoken, um sicher zu sein, dass das Token von ACS ausgestellt wurde, und gibt dann ein Zugriffstoken an Contoso.com zurück. Optional kann Contoso.com dieses Zugriffstoken zwischenspeichern, damit ACS nicht bei jedem Zugriff auf SharePoint ein Zugriffstoken ausstellen muss. Standardmäßig sind Zugriffstoken jeweils für einige Stunden auf einmal gültig. (Zum Zeitpunkt, zu dem dieser Artikel geschrieben wurde, lag der Standardablaufzeitraum für von ACS ausgestellte Zugriffstoken für SharePoint bei 12 Stunden, aber das könnte sich ändern.) Jedes Zugriffstoken ist für das Benutzerkonto spezifisch, das in der Originalanforderung für eine Autorisierung angegeben ist, und gewährt nur den Zugriff auf den Dienst (in diesem Fall SharePoint), der in dieser Anforderung angegeben ist. Aktualisierungstoken sind länger gültig (sechs Monate zum Zeitpunkt, als dieser Artikel geschrieben wurde) und können ebenfalls zwischengespeichert werden. Dasselbe Aktualisierungstoken kann also für ein neues Zugriffstoken von ACS eingelöst werden, bis das Aktualisierungstoken selbst abläuft. (Weitere Informationen zum Zwischenspeichern von Token finden Sie unter  [Handhabung von Sicherheitstoken in vom Anbieter gehosteten Add-Ins für SharePoint mit niedriger Vertrauensebene](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md).) Wenn das Aktualisierungstoken abläuft, kann Contoso.com ein neues erhalten, indem ein neues Kontexttoken abgerufen wird. Ausführliche Informationen zur entsprechenden Vorgehensweise finden Sie unter  [Abrufen eines neuen Kontexttokens](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md#GetNewContextToken).</span><span class="sxs-lookup"><span data-stu-id="fd413-p117">ACS validates the refresh token so that it is assured that it issued the token, and then it returns an access token to Contoso.com. Optionally, Contoso.com can cache this access token so it doesn't have ask ACS for an access token every time that it accesses SharePoint. By default, access tokens are good for a few hours at a time. (When this article was written, the default expiration for ACS-issued access tokens to SharePoint was 12 hours, but that could change.) Each access token is specific to the user account that is specified in the original request for authorization, and grants access only to the service (in this case, SharePoint) that is specified in that request. Refresh tokens are longer lived (six months when this article was written) and can also be cached. So, the same refresh token can be redeemed for a new access token from ACS until the refresh token itself expires. (For more information about caching tokens, see  [Handle security tokens in provider-hosted low-trust SharePoint Add-ins](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md).) When the refresh token expires, the Contoso.com can get a new one by obtaining a new context token. For details about how this is done, see  [Get a new context token](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md#GetNewContextToken).</span></span>
+    
+ 
+8. <span data-ttu-id="fd413-p118">Contoso.com verwendet das Zugriffstoken, um einen SharePoint-REST-API-Aufruf oder eine CSOM-Anforderung an SharePoint durchzuführen. Dafür wird das OAuth-Zugriffstoken im HTTP-**Authorization**-Header übergeben. (Beispielcode für das Erstellen des Headers wird in den Office Developer Tools für Visual Studio bereitgestellt, wenn Ihre Remotekomponente auf einer .NET-Plattform gehostet wird.</span><span class="sxs-lookup"><span data-stu-id="fd413-p118">Contoso.com uses the access token to make a SharePoint REST API call or CSOM request to spnv. It does this by passing the OAuth access token in the HTTP  **Authorization** header. (Sample code for creating the header is provided in the Office Developer Tools for Visual Studio if your remote component is hosted on a .NET platform.</span></span>
+    
+ 
+9. <span data-ttu-id="fd413-p119">SharePoint validiert das Zugriffstoken, damit sichergestellt ist, dass es von ACS ausgestellt wurde. Dann werden die von Contoso.com angeforderten Daten an Contoso.com gesendet oder der von Contoso.com angeforderte CRUD-Vorgang (Erstellen, Lesen, Aktualisieren oder Löschen) durchgeführt.</span><span class="sxs-lookup"><span data-stu-id="fd413-p119">SharePoint validates the access token so that it is assured the token was issued by ACS. It then sends the data that Contoso.com requested to Contoso.com or performs the create, read, update, or delete (CRUD) operation that Contoso.com requested.</span></span>
+    
+ 
+10. <span data-ttu-id="fd413-175">Die Contoso.com-Anwendungsseite wird im Browser (oder im **IFRAME** des Add-In-Webparts) wiedergegeben.</span><span class="sxs-lookup"><span data-stu-id="fd413-175">The Contoso.com application page renders in the browser (or in the  **IFRAME** of the add-in part).</span></span>
+    
+ 
+
+## <a name="additional-resources"></a><span data-ttu-id="fd413-176">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="fd413-176">Additional resources</span></span>
+<span data-ttu-id="fd413-177"><a name="Filename_AdditionalResources"> </a></span><span class="sxs-lookup"><span data-stu-id="fd413-177"></span></span>
+
+
+-  [<span data-ttu-id="fd413-178">Autorisierung und Authentifizierung für Add-Ins in SharePoint</span><span class="sxs-lookup"><span data-stu-id="fd413-178">Authorization and authentication of SharePoint Add-ins</span></span>](authorization-and-authentication-of-sharepoint-add-ins.md)
+    
+ 
+-  [<span data-ttu-id="fd413-179">Add-In-Berechtigungen in SharePoint</span><span class="sxs-lookup"><span data-stu-id="fd413-179">Add-in permissions in SharePoint</span></span>](add-in-permissions-in-sharepoint.md)
+    
+ 
+-  [<span data-ttu-id="fd413-180">Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="fd413-180">Important aspects of the SharePoint Add-in architecture and development landscape</span></span>](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)
+    
+ 
+-  [<span data-ttu-id="fd413-181">Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="fd413-181">Get started creating SharePoint-hosted SharePoint Add-ins</span></span>](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
+    
+ 
+
