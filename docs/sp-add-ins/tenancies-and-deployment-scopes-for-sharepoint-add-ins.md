@@ -1,140 +1,93 @@
 ---
 title: "Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint"
-ms.date: 09/25/2017
+description: "Bereitstellen von SharePoint-Add-Ins für SharePoint-Mandanten mit Mandantenbereichen und Webbereichen."
+ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 9a2114067ed7782188a4efd91bfe26c709b0777e
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ecd8176cb3cfd69b9264444fbcb6d34704372e6a
+ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/03/2017
 ---
-# <a name="tenancies-and-deployment-scopes-for-sharepoint-add-ins"></a><span data-ttu-id="f5698-102">Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint</span><span class="sxs-lookup"><span data-stu-id="f5698-102">Tenancies and deployment scopes for SharePoint Add-ins</span></span>
- <span data-ttu-id="f5698-103">Lernen Sie das Konzept von Mandantschaften und die Unterschiede zwischen der Bereitstellung von SharePoint-Add-Ins im Mandantenbereich und im Webbereich kennen.</span><span class="sxs-lookup"><span data-stu-id="f5698-103">Learn about the concept of tenancies and the differences between deploying SharePoint Add-ins at tenant scope and web scope.</span></span>
- 
+# <a name="tenancies-and-deployment-scopes-for-sharepoint-add-ins"></a><span data-ttu-id="2efbd-103">Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint</span><span class="sxs-lookup"><span data-stu-id="2efbd-103">Tenancies and deployment scopes for SharePoint Add-ins</span></span>
 
- <span data-ttu-id="f5698-p101">**Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).</span><span class="sxs-lookup"><span data-stu-id="f5698-p101">**Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).</span></span>
- 
+<span data-ttu-id="2efbd-104">Eine SharePoint-**Mandanteneinheit** ist ein Satz von Websitesammlungen entweder in einer SharePoint-Farm oder in SharePoint Online.</span><span class="sxs-lookup"><span data-stu-id="2efbd-104">A SharePoint **tenancy** is a set of site collections in either a SharePoint farm or in SharePoint Online.</span></span> <span data-ttu-id="2efbd-105">In SharePoint Online gehören die Websitesammlungen zu einem einzelnen Kundenkonto.</span><span class="sxs-lookup"><span data-stu-id="2efbd-105">In SharePoint Online, the site collections belong to a single customer account.</span></span> <span data-ttu-id="2efbd-106">In einer SharePoint-Farm kann es sich bei den Websitesammlungen um alle Websitesammlungen in einer SharePoint-Webanwendung oder um eine Teilmenge davon handeln, oder es kann sich um einen Satz von Websitesammlungen über mehrere Webanwendungen in der Farm hinweg handeln.</span><span class="sxs-lookup"><span data-stu-id="2efbd-106">A sp15allshort tenancy is a set of site collections in either a SharePoint farm or in sposhort. In sposhort, the site collections belong to a single customer account. In a SharePoint farm, the site collections can be all the site collections in a SharePoint web application or a subset of them, or it can be a set of site collections from across multiple web applications in the farm. A tenancy can have a spappsing add-in catalog just as a SharePoint web application can.</span></span> <span data-ttu-id="2efbd-107">Eine Mandantschaft kann genau wie eine SharePoint-Webanwendung einen SharePoint-Add-In-Katalog aufweisen.</span><span class="sxs-lookup"><span data-stu-id="2efbd-107">A tenancy can have a SharePoint add-in catalog just as a SharePoint web application can.</span></span>
 
+<span data-ttu-id="2efbd-108"><a name="AppScope"> </a></span><span class="sxs-lookup"><span data-stu-id="2efbd-108"><a name="AppScope"> </a></span></span>
+## <a name="tenancies-and-add-in-scope"></a><span data-ttu-id="2efbd-109">Mandantschaften und Add-In-Bereich</span><span class="sxs-lookup"><span data-stu-id="2efbd-109">Tenancies and add-in scope</span></span>
 
-## <a name="tenancies-and-add-in-scope"></a><span data-ttu-id="f5698-107">Mandantschaften und Add-In-Bereich</span><span class="sxs-lookup"><span data-stu-id="f5698-107">Tenancies and add-in scope</span></span>
-<span data-ttu-id="f5698-108"><a name="AppScope"> </a></span><span class="sxs-lookup"><span data-stu-id="f5698-108"></span></span>
+<span data-ttu-id="2efbd-110">Ein SharePoint-Add-In weist einen **Add-In-Bereich** auf.</span><span class="sxs-lookup"><span data-stu-id="2efbd-110">A SharePoint Add-in has an **add-in scope**.</span></span> <span data-ttu-id="2efbd-111">Die zwei möglichen Add-In-Bereiche sind Webbereich und Mandantenbereich.</span><span class="sxs-lookup"><span data-stu-id="2efbd-111">The two possible add-in scopes are web scope or tenant scope.</span></span> <span data-ttu-id="2efbd-112">Der Unterschied ist keine systeminterne Eigenschaft des Add-Ins, und Sie als Entwickler können den Bereich Ihres Add-Ins nicht festlegen.</span><span class="sxs-lookup"><span data-stu-id="2efbd-112">The difference is not an intrinsic property of the add-in, and you, the developer, do not decide what the scope of your add-in is.</span></span> <span data-ttu-id="2efbd-113">Diese Entscheidung wird von Mandantenadministratoren als Nebeneffekt der Installationsweise des Add-Ins getroffen.</span><span class="sxs-lookup"><span data-stu-id="2efbd-113">The decision is made by tenant administrators as a side effect of how the add-in is installed.</span></span> 
 
-<span data-ttu-id="f5698-p102">Einem SharePoint-Mandanten ist ein Satz von Websitesammlungen in einer SharePoint-Farm oder in SharePoint Online zugeordnet. In SharePoint Online gehören die Websitesammlungen zu einem einzelnen Kundenkonto. In einer SharePoint-Farm kann es sich um alle Websitesammlungen in einer SharePoint-Webanwendung bzw. eine Teilmenge davon oder auch um einen Satz von Websitesammlungen aus mehreren Webanwendungen in der Farm handeln. Ein Mandant kann genau wie eine SharePoint-Webanwendung über einen SharePoint-Add-In-Add-In-Katalog verfügen.</span><span class="sxs-lookup"><span data-stu-id="f5698-p102">A SharePoint tenancy is a set of site collections in either a SharePoint farm or in SharePoint Online. In SharePoint Online, the site collections belong to a single customer account. In a SharePoint farm, the site collections can be all the site collections in a SharePoint web application or a subset of them, or it can be a set of site collections from across multiple web applications in the farm. A tenancy can have a SharePoint Add-in add-in catalog just as a SharePoint web application can.</span></span>
- 
+<span data-ttu-id="2efbd-114">Nachdem ein Add-In in den Add-In-Katalog einer Mandantschaft hochgeladen wurde, kann es sofort auf einzelnen Websites innerhalb der Mandantschaft installiert werden.</span><span class="sxs-lookup"><span data-stu-id="2efbd-114">After an add-in is uploaded to the add-in catalog of a tenancy, it is immediately available to be installed on websites within the tenancy on a website-by-website basis.</span></span> <span data-ttu-id="2efbd-115">Add-Ins, die auf diese Weise installiert werden, weisen einen **Webbereich** auf.</span><span class="sxs-lookup"><span data-stu-id="2efbd-115">Add-ins that are installed this way have **web scope**.</span></span> 
 
- 
-<span data-ttu-id="f5698-p103">Einem SharePoint-Add-In ist ein Add-In-Bereich zugewiesen. Die beiden möglichen Add-In-Bereiche sindWebbereich oderMandantenbereich. Der Unterschied stellt keine interne Eigenschaft des Add-Ins dar, und Sie als Entwickler können den Bereich Ihres Add-Ins nicht festlegen. Die Entscheidung wird von Mandantenadministratoren als Nebeneffekt der Installationsart des Add-Ins getroffen. Nachdem ein Add-In in den Add-In-Katalog eines Mandanten hochgeladen wurde, steht sie sofort zur Installation auf einzelnen Websites innerhalb des Mandanten zur Verfügung. Auf diese Weise installierte Add-Ins gelten im Webbereich. Mandantenadministratoren haben jedoch auch eine andere Möglichkeit. Sie können eine Batchinstallation des Add-Ins auf einer Untermenge von Websites des Mandanten vornehmen. Auf diese Weise installierte Add-Ins gelten im Mandantenbereich. Der Mandantenadministrator kann mithilfe einer Liste von verwalteten Pfaden, Websitevorlagen oder Websitesammlungen angeben, auf welchen Websites das Add-In installiert wird. Ein per Batch installiertes Add-In kann nur von einem Mandantenadministrator deinstalliert werden. Wenn der Mandantenadministrator das Add-In deinstalliert, wird es von allen Websites des Mandanten deinstalliert. Benutzer können ein per Batch installiertes Add-In nicht auf einzelnen Websites deinstallieren. Dasselbe gilt für die Aktualisierung von per Batch installierten Add-Ins: nur ein Mandantenadministrator kann dies tun, und das Add-In wird per Batchupdate auf allen Websites des Mandanten aktualisiert, auf denen es installiert ist.</span><span class="sxs-lookup"><span data-stu-id="f5698-p103">A SharePoint Add-in has an add-in scope. The two possible add-in scopes are web scope ortenant scope. The difference is not an intrinsic property of the add-in, and you, the developer, do not decide what the scope of your add-in is. The decision is made by tenant administrators as a side effect of how the add-in is installed. After an add-in is uploaded to the add-in catalog of a tenancy, it is immediately available to be installed on websites within the tenancy on a website-by-website basis. Add-ins that are installed this way have web scope. Tenant administrators have another option, however. They can choose to batch install the add-in to a subset of websites within the tenancy. Add-ins that are installed in this way have tenant scope. The tenant admin can specify which websites the add-in is installed to by means of a list of managed paths, a list of site templates, or a list of site collections. An add-in that has been batch-installed can only be uninstalled by a tenant administrator. When the tenant admin uninstalls the add-in, it is uninstalled from every website in the tenancy. Users can't uninstall a batch-installed add-in on a website-by-website basis. The same principle applies to updating a batch-installed add-in: only a tenant administrator can do it, and it is batch-updated on every website in the tenancy where it is installed.</span></span>
- 
+<span data-ttu-id="2efbd-116">Mandantenadministratoren haben jedoch eine weitere Option.</span><span class="sxs-lookup"><span data-stu-id="2efbd-116">Tenant administrators have another option, however.</span></span> <span data-ttu-id="2efbd-117">Sie können das Add-In im Batch in eine Untermenge von Websites innerhalb der Mandantschaft installieren.</span><span class="sxs-lookup"><span data-stu-id="2efbd-117">They can choose to batch install the add-in to a subset of websites within the tenancy.</span></span> <span data-ttu-id="2efbd-118">Add-Ins, die auf diese Weise installiert werden, weisen einen **Mandantenbereich** auf.</span><span class="sxs-lookup"><span data-stu-id="2efbd-118">Add-ins that are installed in this way have **tenant scope**.</span></span> <span data-ttu-id="2efbd-119">Der Mandantenadministrator kann über eine Liste verwalteter Pfade, eine Liste von Websitevorlagen oder eine Liste von Websitesammlungen angeben, auf welchen Websites das Add-In installiert wird.</span><span class="sxs-lookup"><span data-stu-id="2efbd-119">The tenant admin can specify which websites the add-in is installed to by means of a list of managed paths, a list of site templates, or a list of site collections.</span></span> <span data-ttu-id="2efbd-120">Ein Add-In, das im Batch installiert wurde, kann nur von einem Mandantenadministrator deinstalliert werden.</span><span class="sxs-lookup"><span data-stu-id="2efbd-120">An add-in that has been batch-installed can only be uninstalled by a tenant administrator.</span></span> <span data-ttu-id="2efbd-121">Wenn der Mandantenadministrator das Add-In deinstalliert, wird es von jeder Website in der Mandantschaft deinstalliert.</span><span class="sxs-lookup"><span data-stu-id="2efbd-121">When the tenant admin uninstalls the add-in, it is uninstalled from every website in the tenancy.</span></span> <span data-ttu-id="2efbd-122">Benutzer können ein im Batch installiertes Add-In nicht auf einzelnen Websites deinstallieren.</span><span class="sxs-lookup"><span data-stu-id="2efbd-122">Users can't uninstall a batch-installed add-in on a website-by-website basis.</span></span> <span data-ttu-id="2efbd-123">Die gleichen Grundsätze gelten für das Aktualisieren eines im Batch installierten Add-Ins: Nur ein Mandantenadministrator kann das Add-In aktualisieren, und dieses wird auf jeder Website in der Mandantschaft, auf der es installiert ist, im Batch aktualisiert.</span><span class="sxs-lookup"><span data-stu-id="2efbd-123">The same principle applies to updating a batch-installed add-in: only a tenant administrator can do it, and it is batch-updated on every website in the tenancy where it is installed.</span></span>
 
- 
-<span data-ttu-id="f5698-p104">Bei der Batchinstallation eines Add-Ins, das ein Add-In-Web enthält, wird nur ein einzelnes Add-In-Web erstellt und von allen Hostwebsites verwendet, auf denen das Add-In installiert wird. Das Add-In-Web befindet sich in der Websitesammlung des Unternehmenskatalogs.</span><span class="sxs-lookup"><span data-stu-id="f5698-p104">If an add-in that includes an add-in web is batch-installed, only one add-in web is created and it is shared by all the host websites on which the add-in is installed. The add-in web is located in the site collection of the organization's add-in catalog.</span></span>
- 
+<span data-ttu-id="2efbd-124">Bei der Batchinstallation eines Add-Ins, das ein Add-In-Web enthält, wird nur ein einzelnes Add-In-Web erstellt und von allen Hostwebsites verwendet, auf denen das Add-In installiert wird.</span><span class="sxs-lookup"><span data-stu-id="2efbd-124">If an add-in that includes an add-in web is batch-installed, only one add-in web is created and it is shared by all the host websites on which the add-in is installed. The add-in web is located in the site collection of the organization's add-in catalog.</span></span> <span data-ttu-id="2efbd-125">Das Add-In-Web befindet sich in der Websitesammlung des Add-In-Katalogs des Unternehmens.</span><span class="sxs-lookup"><span data-stu-id="2efbd-125">The add-in web is located in the site collection of the organization's add-in catalog.</span></span>
 
- 
-<span data-ttu-id="f5698-129">Wenn neue Websitesammlungen in der Mandantschaft erstellt werden, werden Add-Ins, die zuvor im Batch installiert wurden, automatisch in der neuen Websitesammlung installiert.</span><span class="sxs-lookup"><span data-stu-id="f5698-129">When new site collections are created in the tenancy, add-ins that were previously batch-installed are automatically installed on the new site collection.</span></span>
- 
+<span data-ttu-id="2efbd-126">Wenn neue Websitesammlungen in der Mandantschaft erstellt werden, werden Add-Ins, die zuvor im Batch installiert wurden, automatisch in der neuen Websitesammlung installiert.</span><span class="sxs-lookup"><span data-stu-id="2efbd-126">When new site collections are created in the tenancy, add-ins that were previously batch-installed are automatically installed on the new site collection.</span></span>
 
- 
+> [!NOTE]
+> <span data-ttu-id="2efbd-127">Der Add-In-Bereich sollte nicht mit dem Featurebereich verwechselt werden.</span><span class="sxs-lookup"><span data-stu-id="2efbd-127">Add-in scope should not be confused with Feature scope.</span></span> <span data-ttu-id="2efbd-128">Der Featurebereich bestimmt, wo die Elemente in einem Feature bereitgestellt werden.</span><span class="sxs-lookup"><span data-stu-id="2efbd-128">Feature scope determines where the elements in a Feature are deployed.</span></span> <span data-ttu-id="2efbd-129">Die Optionen beinhalten **Farm**, **WebApplication**, **Site** (d.h. Websitesammlung) und **Web**.</span><span class="sxs-lookup"><span data-stu-id="2efbd-129">The possibilities include **Farm**, **WebApplication**, **Site** (that is, site collection), and **Web**.</span></span> <span data-ttu-id="2efbd-130">Für Features in SharePoint-Add-Ins (sowohl Hostwebfeatures als auch Features innerhalb einer WSP-Datei in einem Add-In-Paket) ist nur **Web** zulässig.</span><span class="sxs-lookup"><span data-stu-id="2efbd-130">Only **Web** is permitted for Features in SharePoint Add-ins (both host web features and features inside a .wsp in an add-in package).</span></span> 
 
- <span data-ttu-id="f5698-p105">**Hinweis** Der Add-In-Bereich sollte nicht mit dem Featurebereich verwechselt werden. Der Featurebereich bestimmt, wo die Elemente in einem Feature bereitgestellt werden. Mögliche Werte sind z. B. **Farm**, **WebApplication**, **Website** (d. h. Websitesammlung) und **Web**. Nur **Web** ist für Features in SharePoint-Add-Ins zulässig (sowohl Hostweb-Features als auch Features in einer WSP-Datei in einem Add-In-Paket). Der Add-In-Bereich sollte ebenfalls nicht mit den Add-In-Berechtigungsstufen verwechselt werden. SharePoint-Add-Ins können Berechtigungen für alle oder ausgewählte Teile von SharePoint-Inhalten auf der Listen-, Web-, Websitesammlungs- und Mandantenebene anfordern. Durch das Installieren eines Add-Ins mit Mandantenbereich erhält das Add-In weder zusätzliche Berechtigungen noch werden wesentliche Bedingungen des SharePoint-Sicherheitsmodells außer Kraft gesetzt. Weitere Informationen zu Add-In-Berechtigungen finden Sie unter [Add-In Berechtigungen in SharePoint](add-in-permissions-in-sharepoint.md).</span><span class="sxs-lookup"><span data-stu-id="f5698-p105">**Note**  Add-in scope should not be confused with Feature scope. Feature scope determines where the elements in a Feature are deployed. The possibilities include  **Farm**,  **WebApplication**,  **Site** (that is, site collection), and **Web**. Only  **Web** is permitted for Features in SharePoint Add-ins (both host web Features and Features inside a .wsp in an add-in package).Add-in scope should also not be confused with add-in permission levels. SharePoint Add-ins can request permissions to all or selected parts of SharePoint content at the levels of list, web, site collection, and tenancy. Installing an add-in with tenant scope does not give it permissions that it would not otherwise have, nor does it cancel key provisions of the SharePoint security model. For more information about add-in permissions, see  [Add-in permissions in SharePoint](add-in-permissions-in-sharepoint.md).</span></span>
- 
+> <span data-ttu-id="2efbd-131">Der Add-In-Bereich sollte außerdem nicht mit Add-In-Berechtigungsstufen verwechselt werden.</span><span class="sxs-lookup"><span data-stu-id="2efbd-131">Add-in scope should also not be confused with add-in permission levels.</span></span> <span data-ttu-id="2efbd-132">SharePoint-Add-Ins können Berechtigungen für alle oder für ausgewählte Teile von SharePoint-Inhalten auf den Ebenen Liste, Web, Websitesammlung und Mandantschaft anfordern.</span><span class="sxs-lookup"><span data-stu-id="2efbd-132">SharePoint Add-ins can request permissions to all or selected parts of SharePoint content at the levels of list, web, site collection, and tenancy.</span></span> <span data-ttu-id="2efbd-133">Durch Installieren eines Add-Ins mit Mandantenbereich erhält das Add-In keine Berechtigungen, die es ansonsten nicht hätte, und es werden auch keine wichtigen Bereitstellungen des SharePoint-Sicherheitsmodells abgebrochen.</span><span class="sxs-lookup"><span data-stu-id="2efbd-133">Installing an add-in with tenant scope does not give it permissions that it would not otherwise have, nor does it cancel key provisions of the SharePoint security model.</span></span> <span data-ttu-id="2efbd-134">Weitere Informationen über Add-In-Berechtigungen finden Sie unter [Add-In-Berechtigungen in SharePoint](add-in-permissions-in-sharepoint.md).</span><span class="sxs-lookup"><span data-stu-id="2efbd-134">For more information about add-in permissions, see  [Add-in permissions in SharePoint](add-in-permissions-in-sharepoint.md).</span></span>
 
+<span data-ttu-id="2efbd-135"><a name="Tenant"> </a></span><span class="sxs-lookup"><span data-stu-id="2efbd-135"></span></span>
+## <a name="limitations-of-tenant-scoped-add-ins"></a><span data-ttu-id="2efbd-136">Einschränkungen für Add-Ins mit Mandantenbereich</span><span class="sxs-lookup"><span data-stu-id="2efbd-136">Limitations of tenant-scoped add-ins</span></span>
 
-## <a name="limitations-of-tenant-scoped-add-ins"></a><span data-ttu-id="f5698-137">Einschränkungen für Add-Ins mit Mandantenbereich</span><span class="sxs-lookup"><span data-stu-id="f5698-137">Limitations of tenant-scoped add-ins</span></span>
-<span data-ttu-id="f5698-138"><a name="Tenant"> </a></span><span class="sxs-lookup"><span data-stu-id="f5698-138"></span></span>
+<span data-ttu-id="2efbd-137">Die folgenden Typen von Add-Ins funktionieren bei Batchinstallation nicht ordnungsgemäß:</span><span class="sxs-lookup"><span data-stu-id="2efbd-137">The following types of add-ins will not work correctly when batch-installed:</span></span>
 
-<span data-ttu-id="f5698-139">Die folgenden Arten von Add-Ins können nicht per Batch installiert werden:</span><span class="sxs-lookup"><span data-stu-id="f5698-139">The following kinds of add-ins cannot be batch-installed:</span></span>
- 
+- <span data-ttu-id="2efbd-138">Add-Ins, die eine benutzerdefinierte Aktion für das Menüband enthalten. (Als Menüelemente bereitgestellte benutzerdefinierte Aktionen sind zulässig.)</span><span class="sxs-lookup"><span data-stu-id="2efbd-138">Add-ins that contain a custom action for the ribbon. (Custom actions that are deployed as menu items are allowed.)</span></span>
+- <span data-ttu-id="2efbd-139">Add-Ins, die ein Add-In-Webpart enthalten.</span><span class="sxs-lookup"><span data-stu-id="2efbd-139">Add-ins that contain an add-in part.</span></span>
 
- 
+<span data-ttu-id="2efbd-140">Denken Sie außerdem daran, dass die Installation mit Mandantenbereich in der Office 365 Small Business Premium-Version von SharePoint Online nicht möglich ist.</span><span class="sxs-lookup"><span data-stu-id="2efbd-140">In addition, note again that installation with tenant scope is not possible in the Office 365 Small Business Premium version of SharePoint Online.</span></span>
 
-- <span data-ttu-id="f5698-p106">Add-Ins, die eine benutzerdefinierte Aktion für das Menüband enthalten. (Als Menüelemente bereitgestellte benutzerdefinierte Aktionen sind zulässig.)</span><span class="sxs-lookup"><span data-stu-id="f5698-p106">Add-ins that contain a custom action for the ribbon. (Custom actions that are deployed as menu items are allowed.)</span></span>
+<span data-ttu-id="2efbd-141"><a name="Web"> </a></span><span class="sxs-lookup"><span data-stu-id="2efbd-141"></span></span>
+## <a name="how-to-install-uninstall-and-update-an-add-in-on-multiple-websites-in-a-tenancy"></a><span data-ttu-id="2efbd-142">Installieren, Deinstallieren und Aktualisieren eines Add-Ins auf mehreren Websites eines Mandanten</span><span class="sxs-lookup"><span data-stu-id="2efbd-142">How to install, uninstall, and update an add-in on multiple websites in a tenancy</span></span>
+
+<span data-ttu-id="2efbd-143">Add-Ins aus dem Office Store oder aus einem Add-In-Katalog können von Mandantenadministratoren mit dem folgenden Verfahren auf mehreren Websites eines Mandanten installiert, deinstalliert und aktualisiert werden.</span><span class="sxs-lookup"><span data-stu-id="2efbd-143">Regardless of whether an add-in is installed from the Office Store or from an add-in catalog, tenant admins can install it to multiple websites in a tenancy, uninstall it, and update it by using the following procedures.</span></span>
+
+### <a name="to-install-a-sharepoint-add-in-to-multiple-websites"></a><span data-ttu-id="2efbd-144">So installieren Sie ein SharePoint-Add-In auf mehreren Websites</span><span class="sxs-lookup"><span data-stu-id="2efbd-144">To install a SharePoint Add-in to multiple websites</span></span>
+
+1. <span data-ttu-id="2efbd-145">Gehen Sie zur Seite **Websiteinhalte** der Website für den Unternehmenskatalog.</span><span class="sxs-lookup"><span data-stu-id="2efbd-145">Navigate to the  **Site Contents** page of the corporate catalog website.</span></span>
+
+2. <span data-ttu-id="2efbd-146">Wählen Sie **Add-In hinzufügen** aus, und installieren Sie das Add-In so, wie Sie bei jeder anderen SharePoint-Website vorgehen würden.</span><span class="sxs-lookup"><span data-stu-id="2efbd-146">Select  **Add an add-in** and install the add-in just as you would on any other SharePoint website.</span></span>
+
+3. <span data-ttu-id="2efbd-147">Nachdem das Add-In installiert wurde, zeigen Sie auf der Seite **Websiteinhalte** auf den Link zu dem Add-In.</span><span class="sxs-lookup"><span data-stu-id="2efbd-147">After the add-in is installed, hover over the link to the add-in in the  **Site Contents** page. A " ..." link appears.</span></span> <span data-ttu-id="2efbd-148">Ein „**...**“-Link wird angezeigt.</span><span class="sxs-lookup"><span data-stu-id="2efbd-148">A "**...**" link appears.</span></span>
+
+4. <span data-ttu-id="2efbd-149">Wählen Sie den Link aus. Ein Popup wird angezeigt.</span><span class="sxs-lookup"><span data-stu-id="2efbd-149">Select the link, and a callout appears.</span></span>
+
+5. <span data-ttu-id="2efbd-150">Wählen Sie im Menü den Befehl **Bereitstellung** aus.</span><span class="sxs-lookup"><span data-stu-id="2efbd-150">Select **Deployment** on the menu.</span></span>
+
+6. <span data-ttu-id="2efbd-p109">Geben Sie auf der Benutzeroberfläche für die Bereitstellung die Websitesammlungen an, in denen das Add-In installiert werden soll. Sie können nach verwalteten Pfaden, Websitevorlagen oder URLs filtern.</span><span class="sxs-lookup"><span data-stu-id="2efbd-p109">Use the deployment UI that opens to specify the site collections to which you want the add-in installed. You can filter by managed paths, site templates, or URLs. The filters have a logical "OR" relationship: the add-in is installed to the union of all the site collections that pass any one or more of the filters.</span></span>
+
+7. <span data-ttu-id="2efbd-154">Wählen Sie **OK** aus.</span><span class="sxs-lookup"><span data-stu-id="2efbd-154">Select **OK**.</span></span>
     
- 
-- <span data-ttu-id="f5698-142">Add-Ins, die ein Add-In-Webpart enthalten.</span><span class="sxs-lookup"><span data-stu-id="f5698-142">Add-ins that contain an add-in part.</span></span> 
-    
- 
-<span data-ttu-id="f5698-143">Denken Sie außerdem daran, dass die Installation mit Mandantenbereich in der Office 365 Small Business Premium-Version von SharePoint Online nicht möglich ist.</span><span class="sxs-lookup"><span data-stu-id="f5698-143">In addition, note again that installation with tenant scope is not possible in the Office 365 Small Business Premium version of SharePoint Online.</span></span>
+
+### <a name="to-uninstall-a-batch-installed-sharepoint-add-in"></a><span data-ttu-id="2efbd-155">So deinstallieren Sie ein per Batch installiertes SharePoint-Add-In</span><span class="sxs-lookup"><span data-stu-id="2efbd-155">To uninstall a batch-installed SharePoint Add-in</span></span>
+
+1. <span data-ttu-id="2efbd-156">Gehen Sie zur Seite **Websiteinhalte** der Website für den Unternehmenskatalog.</span><span class="sxs-lookup"><span data-stu-id="2efbd-156">Navigate to the  **Site Contents** page of the corporate catalog website.</span></span>
+
+2. <span data-ttu-id="2efbd-157">Zeigen Sie auf der Seite **Websiteinhalte** auf den Link zu dem Add-In.</span><span class="sxs-lookup"><span data-stu-id="2efbd-157">Hover over the link to the add-in in the  **Site Contents** page. A " ..." link appears.</span></span> <span data-ttu-id="2efbd-158">Ein „**...**“-Link wird angezeigt.</span><span class="sxs-lookup"><span data-stu-id="2efbd-158">A "**...**" link appears.</span></span>
+
+3. <span data-ttu-id="2efbd-159">Wählen Sie den Link aus. Ein Popup wird angezeigt.</span><span class="sxs-lookup"><span data-stu-id="2efbd-159">Select the link, and a callout appears.</span></span>
+
+4. <span data-ttu-id="2efbd-160">Wählen Sie im Popup **Entfernen** aus.</span><span class="sxs-lookup"><span data-stu-id="2efbd-160">Select **Remove** on the callout.</span></span>    
  
 
+### <a name="to-update-a-batch-installed-sharepoint-add-in"></a><span data-ttu-id="2efbd-161">So aktualisieren Sie ein per Batch installiertes SharePoint-Add-In</span><span class="sxs-lookup"><span data-stu-id="2efbd-161">To update a batch-installed SharePoint Add-in</span></span>
+
+1. <span data-ttu-id="2efbd-162">Gehen Sie zur Seite **Websiteinhalte** der Website für den Unternehmenskatalog.</span><span class="sxs-lookup"><span data-stu-id="2efbd-162">Navigate to the  **Site Contents** page of the corporate catalog website.</span></span> <span data-ttu-id="2efbd-163">Wenn ein Update für ein Add-In verfügbar ist, wird neben dem Add-In eine Meldung angezeigt.</span><span class="sxs-lookup"><span data-stu-id="2efbd-163">If there is an update available for an add-in, a message appears next to the add-in.</span></span> <span data-ttu-id="2efbd-164">Es gibt einen Link zum Aktualisieren des Add-Ins.</span><span class="sxs-lookup"><span data-stu-id="2efbd-164">There will be a link to update the add-in.</span></span>
+
+2. <span data-ttu-id="2efbd-165">Klicken Sie auf den Link, um das Add-In zu aktualisieren.</span><span class="sxs-lookup"><span data-stu-id="2efbd-165">Click the link to update the add-in.</span></span>
+
+3. <span data-ttu-id="2efbd-166">Wenn Sie zur Genehmigung der Berechtigungsanforderungen des Add-Ins aufgefordert werden, wählen Sie **Vertrauen** aus.</span><span class="sxs-lookup"><span data-stu-id="2efbd-166">When you are prompted to approve the permission requests of the add-in, choose  **Trust It**.</span></span>   
  
 
-## <a name="how-to-install-uninstall-and-update-an-add-in-on-multiple-websites-in-a-tenancy"></a><span data-ttu-id="f5698-144">Installieren, Deinstallieren und Aktualisieren eines Add-Ins auf mehreren Websites eines Mandanten</span><span class="sxs-lookup"><span data-stu-id="f5698-144">How to install, uninstall, and update an add-in on multiple websites in a tenancy</span></span>
-<span data-ttu-id="f5698-145"><a name="Web"> </a></span><span class="sxs-lookup"><span data-stu-id="f5698-145"></span></span>
+## <a name="additional-resources"></a><span data-ttu-id="2efbd-167">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="2efbd-167">Additional resources</span></span>
+<span data-ttu-id="2efbd-168"><a name="SP15tenancies_addlresources"> </a></span><span class="sxs-lookup"><span data-stu-id="2efbd-168"></span></span>
 
-<span data-ttu-id="f5698-146">Add-Ins aus dem Office Store oder aus einem Add-In-Katalog können von Mandantenadministratoren mit dem folgenden Verfahren auf mehreren Websites eines Mandanten installiert, deinstalliert und aktualisiert werden.</span><span class="sxs-lookup"><span data-stu-id="f5698-146">Regardless of whether an add-in is installed from the Office Store or from an add-in catalog, tenant admins can install it to multiple websites in a tenancy, uninstall it, and update it by using the following procedures.</span></span>
- 
-
- 
-
-### <a name="to-install-a-sharepoint-add-in-to-multiple-websites"></a><span data-ttu-id="f5698-147">So installieren Sie ein SharePoint-Add-In auf mehreren Websites</span><span class="sxs-lookup"><span data-stu-id="f5698-147">To install a SharePoint Add-in to multiple websites</span></span>
-
-
-1. <span data-ttu-id="f5698-148">Navigieren Sie zur Seite **Websiteinhalte** der Website für den Unternehmenskatalog.</span><span class="sxs-lookup"><span data-stu-id="f5698-148">Navigate to the  **Site Contents** page of the corporate catalog website.</span></span>
+-  [<span data-ttu-id="2efbd-169">Veröffentlichen von SharePoint-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="2efbd-169">Publish SharePoint Add-ins</span></span>](publish-sharepoint-add-ins.md)    
+-  [<span data-ttu-id="2efbd-170">Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="2efbd-170">Important aspects of the SharePoint Add-in architecture and development landscape</span></span>](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)   
+-  [<span data-ttu-id="2efbd-171">Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen</span><span class="sxs-lookup"><span data-stu-id="2efbd-171">Deploying and installing SharePoint Add-ins: methods and options</span></span>](deploying-and-installing-sharepoint-add-ins-methods-and-options.md) 
+-  [<span data-ttu-id="2efbd-172">Aktualisierungsverfahren für SharePoint-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="2efbd-172">SharePoint Add-ins update process</span></span>](sharepoint-add-ins-update-process.md)
     
- 
-2. <span data-ttu-id="f5698-149">Wählen Sie **Add-In hinzufügen** aus, und installieren Sie das Add-In so, wie Sie bei jeder anderen SharePoint-Website vorgehen würden.</span><span class="sxs-lookup"><span data-stu-id="f5698-149">Select  **Add an add-in** and install the add-in just as you would on any other SharePoint website.</span></span>
-    
- 
-3. <span data-ttu-id="f5698-p107">Nachdem das Add-In installiert wurde, zeigen Sie auf der Seite **Websiteinhalte** auf den Link zu dem Add-In. Ein „**...**“-Link wird angezeigt.</span><span class="sxs-lookup"><span data-stu-id="f5698-p107">After the add-in is installed, hover over the link to the add-in in the  **Site Contents** page. A " **...**" link appears.</span></span>
-    
- 
-4. <span data-ttu-id="f5698-152">Wählen Sie den Link aus. Ein Popup wird angezeigt.</span><span class="sxs-lookup"><span data-stu-id="f5698-152">Select the link, and a callout appears.</span></span>
-    
- 
-5. <span data-ttu-id="f5698-153">Wählen Sie im Menü den Befehl **Bereitstellung** aus.</span><span class="sxs-lookup"><span data-stu-id="f5698-153">Select  **Deployment** on the menu.</span></span>
-    
- 
-6. <span data-ttu-id="f5698-p108">Geben Sie auf der Benutzeroberfläche für die Bereitstellung die Websitesammlungen an, in denen das Add-In installiert werden soll. Sie können nach verwalteten Pfaden, Websitevorlagen oder URLs filtern.</span><span class="sxs-lookup"><span data-stu-id="f5698-p108">Use the deployment UI that opens to specify the site collections to which you want the add-in installed. You can filter by managed paths, site templates, or URLs. The filters have a logical "OR" relationship: the add-in is installed to the union of all the site collections that pass any one or more of the filters.</span></span>
-    
- 
-7. <span data-ttu-id="f5698-157">Wählen Sie **OK** aus.</span><span class="sxs-lookup"><span data-stu-id="f5698-157">Select  **OK**.</span></span>
-    
- 
-
-### <a name="to-uninstall-a-batch-installed-sharepoint-add-in"></a><span data-ttu-id="f5698-158">So deinstallieren Sie ein per Batch installiertes SharePoint-Add-In</span><span class="sxs-lookup"><span data-stu-id="f5698-158">To uninstall a batch-installed SharePoint Add-in</span></span>
-
-
-1. <span data-ttu-id="f5698-159">Navigieren Sie zur Seite **Websiteinhalte** der Website für den Unternehmenskatalog.</span><span class="sxs-lookup"><span data-stu-id="f5698-159">Navigate to the  **Site Contents** page of the corporate catalog website.</span></span>
-    
- 
-2. <span data-ttu-id="f5698-p109">Zeigen Sie auf der Seite **Websiteinhalte** auf den Link zu dem Add-In. Ein „**...**“-Link wird angezeigt.</span><span class="sxs-lookup"><span data-stu-id="f5698-p109">Hover over the link to the add-in in the  **Site Contents** page. A " **...**" link appears.</span></span>
-    
- 
-3. <span data-ttu-id="f5698-162">Wählen Sie den Link aus. Ein Popup wird angezeigt.</span><span class="sxs-lookup"><span data-stu-id="f5698-162">Select the link, and a callout appears.</span></span>
-    
- 
-4. <span data-ttu-id="f5698-163">Wählen Sie im Popup **Entfernen** aus.</span><span class="sxs-lookup"><span data-stu-id="f5698-163">Select  **Remove** on the callout.</span></span>
-    
- 
-
-### <a name="to-update-a-batch-installed-sharepoint-add-in"></a><span data-ttu-id="f5698-164">So aktualisieren Sie ein per Batch installiertes SharePoint-Add-In</span><span class="sxs-lookup"><span data-stu-id="f5698-164">To update a batch-installed SharePoint Add-in</span></span>
-
-
-1. <span data-ttu-id="f5698-p110">Navigieren Sie zur Seite **Websiteinhalte** der Website für den Unternehmenskatalog. Wenn für ein Add-In ein Update verfügbar ist, wird neben dem Add-In eine Meldung angezeigt. Es wird ein Link angezeigt, um das Add-In zu aktualisieren.</span><span class="sxs-lookup"><span data-stu-id="f5698-p110">Navigate to the  **Site Contents** page of the corporate catalog website. If there is an update available for an add-in, a message appears beside the add-in. There will be a link to update the add-in.</span></span>
-    
- 
-2. <span data-ttu-id="f5698-168">Klicken Sie auf den Link, um das Add-In zu aktualisieren.</span><span class="sxs-lookup"><span data-stu-id="f5698-168">Click the link to update the add-in.</span></span>
-    
- 
-3. <span data-ttu-id="f5698-169">Wenn Sie zur Genehmigung der Berechtigungsanforderungen des Add-Ins aufgefordert werden, wählen Sie **Vertrauen** aus.</span><span class="sxs-lookup"><span data-stu-id="f5698-169">When you are prompted to approve the permission requests of the add-in, choose  **Trust It**.</span></span>
-    
- 
-
-## <a name="additional-resources"></a><span data-ttu-id="f5698-170">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="f5698-170">Additional resources</span></span>
-<span data-ttu-id="f5698-171"><a name="SP15tenancies_addlresources"> </a></span><span class="sxs-lookup"><span data-stu-id="f5698-171"></span></span>
-
-
--  [<span data-ttu-id="f5698-172">Veröffentlichen von SharePoint-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="f5698-172">Publish SharePoint Add-ins</span></span>](publish-sharepoint-add-ins.md)
-    
- 
--  [<span data-ttu-id="f5698-173">Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="f5698-173">Important aspects of the SharePoint Add-in architecture and development landscape</span></span>](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)
-    
- 
--  [<span data-ttu-id="f5698-174">Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen</span><span class="sxs-lookup"><span data-stu-id="f5698-174">Deploying and installing SharePoint Add-ins: methods and options</span></span>](deploying-and-installing-sharepoint-add-ins-methods-and-options.md)
-    
- 
--  [<span data-ttu-id="f5698-175">Aktualisierungsverfahren für SharePoint-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="f5698-175">SharePoint Add-ins update process</span></span>](sharepoint-add-ins-update-process.md)
-    
- 
-
