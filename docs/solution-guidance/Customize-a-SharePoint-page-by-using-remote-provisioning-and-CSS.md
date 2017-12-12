@@ -1,40 +1,41 @@
 ---
 title: Anpassen einer SharePoint-Seite mithilfe von remote-Bereitstellung und CSS
 ms.date: 11/03/2017
-ms.openlocfilehash: 7287c1d4375f37f1047ab299dbe04f012f0fa297
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 6cf2eb2044af5a8659e19fea94e009824e7ec9d2
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="customize-a-sharepoint-page-by-using-remote-provisioning-and-css"></a><span data-ttu-id="60f12-102">Anpassen einer SharePoint-Seite mithilfe von remote-Bereitstellung und CSS</span><span class="sxs-lookup"><span data-stu-id="60f12-102">Customize a SharePoint page by using remote provisioning and CSS</span></span>
+# <a name="customize-a-sharepoint-page-by-using-remote-provisioning-and-css"></a><span data-ttu-id="86d8e-102">Anpassen einer SharePoint-Seite mithilfe von remote-Bereitstellung und CSS</span><span class="sxs-lookup"><span data-stu-id="86d8e-102">Customize a SharePoint page by using remote provisioning and CSS</span></span>
 
-<span data-ttu-id="60f12-103">Verwenden Sie zum Anpassen von SharePoint-rich-Text-Felder und Webpartzonen CSS.</span><span class="sxs-lookup"><span data-stu-id="60f12-103">Use CSS to customize SharePoint rich text fields and Web Part Zones.</span></span>
+<span data-ttu-id="86d8e-103">Verwenden Sie zum Anpassen von SharePoint-rich-Text-Felder und Webpartzonen CSS.</span><span class="sxs-lookup"><span data-stu-id="86d8e-103">Use CSS to customize SharePoint rich text fields and Web Part Zones.</span></span>
 
-<span data-ttu-id="60f12-104">_**Gilt für:** Office 365 | SharePoint 2013 | SharePoint Online_</span><span class="sxs-lookup"><span data-stu-id="60f12-104">_**Applies to:** Office 365 | SharePoint 2013 | SharePoint Online_</span></span>
+<span data-ttu-id="86d8e-104">_**Gilt für:** Office 365 | SharePoint 2013 | SharePoint Online_</span><span class="sxs-lookup"><span data-stu-id="86d8e-104">_**Applies to:** Office 365 | SharePoint 2013 | SharePoint Online_</span></span>
 
-<span data-ttu-id="60f12-105">Sie können cascading Stylesheets (CSS) zum Anpassen von SharePoint-rich-Text-Felder und Webpartzonen verwenden.</span><span class="sxs-lookup"><span data-stu-id="60f12-105">You can use cascading style sheets (CSS) to customize SharePoint rich text fields and Web Part Zones.</span></span> <span data-ttu-id="60f12-106">Informationen zum Anpassen von rich-Text-Felder, können Sie dieses Recht auf der Seite Aufgaben ausführen, die Sie bearbeiten.</span><span class="sxs-lookup"><span data-stu-id="60f12-106">To customize rich text fields, you can do this right in the page you're editing.</span></span> <span data-ttu-id="60f12-107">Sie können für Webpartzonen verwenden Sie das Skript-Editor-Webpart, um HTML oder Skripts hinzufügen oder ordnen Sie ein Cascading Stylesheet.</span><span class="sxs-lookup"><span data-stu-id="60f12-107">For Web Part Zones, you can use the Script Editor Web Part to add HTML or scripts, or associate a CSS style sheet.</span></span>
-<span data-ttu-id="60f12-108">Ein Codebeispiel, das in diesem Artikel zugeordnet ist, finden Sie in GitHub [Branding.AlternateCSSAndSiteLogo](https://github.com/SharePoint/PnP/tree/master/Samples/Branding.AlternateCSSAndSiteLogo) in [Office 365 Developer Mustern und Methoden](https://github.com/SharePoint/PnP) .</span><span class="sxs-lookup"><span data-stu-id="60f12-108">For a code sample that is associated with this article, see  [Branding.AlternateCSSAndSiteLogo](https://github.com/SharePoint/PnP/tree/master/Samples/Branding.AlternateCSSAndSiteLogo) in [Office 365 Developer Patterns and Practices](https://github.com/SharePoint/PnP) on GitHub.</span></span>
+<span data-ttu-id="86d8e-105">Sie können cascading Stylesheets (CSS) zum Anpassen von SharePoint-rich-Text-Felder und Webpartzonen verwenden.</span><span class="sxs-lookup"><span data-stu-id="86d8e-105">You can use cascading style sheets (CSS) to customize SharePoint rich text fields and Web Part Zones.</span></span> <span data-ttu-id="86d8e-106">Informationen zum Anpassen von rich-Text-Felder, können Sie dieses Recht auf der Seite Aufgaben ausführen, die Sie bearbeiten.</span><span class="sxs-lookup"><span data-stu-id="86d8e-106">To customize rich text fields, you can do this right in the page you're editing.</span></span> <span data-ttu-id="86d8e-107">Sie können für Webpartzonen verwenden Sie das Skript-Editor-Webpart, um HTML oder Skripts hinzufügen oder ordnen Sie ein Cascading Stylesheet.</span><span class="sxs-lookup"><span data-stu-id="86d8e-107">For Web Part Zones, you can use the Script Editor Web Part to add HTML or scripts, or associate a CSS style sheet.</span></span>
+<span data-ttu-id="86d8e-108">Ein Codebeispiel, das in diesem Artikel zugeordnet ist, finden Sie in GitHub [Branding.AlternateCSSAndSiteLogo](https://github.com/SharePoint/PnP/tree/master/Samples/Branding.AlternateCSSAndSiteLogo) in [Office 365 Developer Mustern und Methoden](https://github.com/SharePoint/PnP) .</span><span class="sxs-lookup"><span data-stu-id="86d8e-108">For a code sample that is associated with this article, see  [Branding.AlternateCSSAndSiteLogo](https://github.com/SharePoint/PnP/tree/master/Samples/Branding.AlternateCSSAndSiteLogo) in [Office 365 Developer Patterns and Practices](https://github.com/SharePoint/PnP) on GitHub.</span></span>
 
-## <a name="customize-rich-text-fields"></a><span data-ttu-id="60f12-109">Rich-Text-Felder anpassen</span><span class="sxs-lookup"><span data-stu-id="60f12-109">Customize rich text fields</span></span>
-<span data-ttu-id="60f12-110"><a name="sectionSection0"> </a></span><span class="sxs-lookup"><span data-stu-id="60f12-110"></span></span>
+## <a name="customize-rich-text-fields"></a><span data-ttu-id="86d8e-109">Rich-Text-Felder anpassen</span><span class="sxs-lookup"><span data-stu-id="86d8e-109">Customize rich text fields</span></span>
+<span data-ttu-id="86d8e-110"><a name="sectionSection0"> </a></span><span class="sxs-lookup"><span data-stu-id="86d8e-110"></span></span>
 
-<span data-ttu-id="60f12-111">Sie können mithilfe von CSS-rechts im Editor Seite rich-Text-Felder anpassen:</span><span class="sxs-lookup"><span data-stu-id="60f12-111">You can customize rich text fields by using CSS right in the page editor:</span></span>
+<span data-ttu-id="86d8e-111">Sie können mithilfe von CSS-rechts im Editor Seite rich-Text-Felder anpassen:</span><span class="sxs-lookup"><span data-stu-id="86d8e-111">You can customize rich text fields by using CSS right in the page editor:</span></span>
 
-1. <span data-ttu-id="60f12-112">Wählen Sie in der SharePoint-Seite **Bearbeiten** , um die Seite-Editor zu öffnen.</span><span class="sxs-lookup"><span data-stu-id="60f12-112">In your SharePoint page, choose  **Edit** to open the page editor.</span></span>
+1. <span data-ttu-id="86d8e-112">Wählen Sie in der SharePoint-Seite **Bearbeiten** , um die Seite-Editor zu öffnen.</span><span class="sxs-lookup"><span data-stu-id="86d8e-112">In your SharePoint page, choose  **Edit** to open the page editor.</span></span>
     
-2. <span data-ttu-id="60f12-113">Wählen Sie im Menüband **Einfügen** > **Code einbetten**.</span><span class="sxs-lookup"><span data-stu-id="60f12-113">From the ribbon, choose  **Insert** > **Embed Code**.</span></span>
+2. <span data-ttu-id="86d8e-113">Wählen Sie im Menüband **Einfügen** > **Code einbetten**.</span><span class="sxs-lookup"><span data-stu-id="86d8e-113">From the ribbon, choose  **Insert** > **Embed Code**.</span></span>
     
-<span data-ttu-id="60f12-114">Sie können jetzt hinzufügen oder Ändern von CSS-Elemente für ein rich-Text-Feld.</span><span class="sxs-lookup"><span data-stu-id="60f12-114">You can now add or modify CSS elements for a rich text field.</span></span>
+<span data-ttu-id="86d8e-114">Sie können jetzt hinzufügen oder Ändern von CSS-Elemente für ein rich-Text-Feld.</span><span class="sxs-lookup"><span data-stu-id="86d8e-114">You can now add or modify CSS elements for a rich text field.</span></span>
 
-## <a name="customize-web-part-zones"></a><span data-ttu-id="60f12-115">Anpassen von Webpartzonen</span><span class="sxs-lookup"><span data-stu-id="60f12-115">Customize Web Part Zones</span></span>
-<span data-ttu-id="60f12-116"><a name="sectionSection1"> </a></span><span class="sxs-lookup"><span data-stu-id="60f12-116"></span></span>
+## <a name="customize-web-part-zones"></a><span data-ttu-id="86d8e-115">Anpassen von Webpartzonen</span><span class="sxs-lookup"><span data-stu-id="86d8e-115">Customize Web Part Zones</span></span>
+<span data-ttu-id="86d8e-116"><a name="sectionSection1"> </a></span><span class="sxs-lookup"><span data-stu-id="86d8e-116"></span></span>
 
-<span data-ttu-id="60f12-117">Um Webpartzonen mit CSS anzupassen, verwenden Sie das Skript-Editor-Webpart.</span><span class="sxs-lookup"><span data-stu-id="60f12-117">To customize Web Part Zones by using CSS, you use the Script Editor Web Part.</span></span> <span data-ttu-id="60f12-118">Weitere Informationen finden Sie unter [Gewusst wie: Verwenden des Skript-Editor-Webparts in SharePoint 2013](http://community.bamboosolutions.com/blogs/sharepoint-2013/archive/2013/05/20/how-to-use-script-editor-web-part-in-sharepoint-2013.aspx).</span><span class="sxs-lookup"><span data-stu-id="60f12-118">For more information, see  [How to Use the Script Editor Web Part in SharePoint 2013](http://community.bamboosolutions.com/blogs/sharepoint-2013/archive/2013/05/20/how-to-use-script-editor-web-part-in-sharepoint-2013.aspx).</span></span>
+<span data-ttu-id="86d8e-117">Um Webpartzonen mit CSS anzupassen, verwenden Sie das Skript-Editor-Webpart.</span><span class="sxs-lookup"><span data-stu-id="86d8e-117">To customize Web Part Zones by using CSS, you use the Script Editor Web Part.</span></span> <span data-ttu-id="86d8e-118">Weitere Informationen finden Sie unter [Gewusst wie: Verwenden des Skript-Editor-Webparts in SharePoint 2013](http://community.bamboosolutions.com/blogs/sharepoint-2013/archive/2013/05/20/how-to-use-script-editor-web-part-in-sharepoint-2013.aspx).</span><span class="sxs-lookup"><span data-stu-id="86d8e-118">For more information, see  [How to Use the Script Editor Web Part in SharePoint 2013](http://community.bamboosolutions.com/blogs/sharepoint-2013/archive/2013/05/20/how-to-use-script-editor-web-part-in-sharepoint-2013.aspx).</span></span>
 
-<span data-ttu-id="60f12-119">**Hinweis**  Wenn Sie SharePoint Online und des NoScript-Features verwenden, wird das Skript-Editor-Webpart deaktiviert.</span><span class="sxs-lookup"><span data-stu-id="60f12-119">**Note**  If you are using SharePoint Online and the NoScript feature, the Script Editor Web Part is disabled.</span></span> 
+> [!NOTE] 
+> <span data-ttu-id="86d8e-119">Wenn Sie SharePoint Online und des NoScript-Features verwenden, wird das Skript-Editor-Webpart deaktiviert.</span><span class="sxs-lookup"><span data-stu-id="86d8e-119">If you are using SharePoint Online and the NoScript feature, the Script Editor Web Part is disabled.</span></span> 
 
-<span data-ttu-id="60f12-120">Im folgenden Codebeispiel wird benutzerdefinierte CSS in der Ressourcenbibliothek hochgeladen, wendet einen Verweis auf die CSS-URL mit einer benutzerdefinierten Aktion und anschließend erstellt eine benutzerdefinierte Aktion, um einen Link zu der neuen CSS-Datei zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="60f12-120">The following code example uploads custom CSS to the Asset Library, applies a reference to the CSS URL with a custom action, and then creates a custom action to build a link to the new CSS file.</span></span>
+<span data-ttu-id="86d8e-120">Im folgenden Codebeispiel wird benutzerdefinierte CSS in der Ressourcenbibliothek hochgeladen, wendet einen Verweis auf die CSS-URL mit einer benutzerdefinierten Aktion und anschließend erstellt eine benutzerdefinierte Aktion, um einen Link zu der neuen CSS-Datei zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="86d8e-120">The following code example uploads custom CSS to the Asset Library, applies a reference to the CSS URL with a custom action, and then creates a custom action to build a link to the new CSS file.</span></span>
 
 ```C#
 using System;
@@ -130,11 +131,11 @@ namespace AlternateCSSAppAutohostedWeb.Services
 
 ```
 
-## <a name="additional-resources"></a><span data-ttu-id="60f12-121">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="60f12-121">Additional resources</span></span>
-<span data-ttu-id="60f12-122"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="60f12-122"></span></span>
+## <a name="see-also"></a><span data-ttu-id="86d8e-121">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="86d8e-121">See also</span></span>
+<span data-ttu-id="86d8e-122"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="86d8e-122"></span></span>
 
--  [<span data-ttu-id="60f12-123">Lösungen für das SharePoint-Websitebranding und die Seitenanpassung</span><span class="sxs-lookup"><span data-stu-id="60f12-123">SharePoint site branding and page customization solutions</span></span>](SharePoint-site-branding-and-page-customization-solutions.md)
+-  [<span data-ttu-id="86d8e-123">Lösungen für das SharePoint-Websitebranding und die Seitenanpassung</span><span class="sxs-lookup"><span data-stu-id="86d8e-123">SharePoint site branding and page customization solutions</span></span>](SharePoint-site-branding-and-page-customization-solutions.md)
     
--  [<span data-ttu-id="60f12-124">Gewusst wie: Verwenden des Skript-Editor-Webparts in SharePoint 2013</span><span class="sxs-lookup"><span data-stu-id="60f12-124">How to Use the Script Editor Web Part in SharePoint 2013</span></span>](http://community.bamboosolutions.com/blogs/sharepoint-2013/archive/2013/05/20/how-to-use-script-editor-web-part-in-sharepoint-2013.aspx)
+-  [<span data-ttu-id="86d8e-124">Gewusst wie: Verwenden des Skript-Editor-Webparts in SharePoint 2013</span><span class="sxs-lookup"><span data-stu-id="86d8e-124">How to Use the Script Editor Web Part in SharePoint 2013</span></span>](http://community.bamboosolutions.com/blogs/sharepoint-2013/archive/2013/05/20/how-to-use-script-editor-web-part-in-sharepoint-2013.aspx)
     
--  [<span data-ttu-id="60f12-125">ScriptEditorWebPart-Klasse</span><span class="sxs-lookup"><span data-stu-id="60f12-125">ScriptEditorWebPart class</span></span>](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.webpartpages.scripteditorwebpart.aspx)
+-  [<span data-ttu-id="86d8e-125">ScriptEditorWebPart-Klasse</span><span class="sxs-lookup"><span data-stu-id="86d8e-125">ScriptEditorWebPart class</span></span>](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.webpartpages.scripteditorwebpart.aspx)
