@@ -1,11 +1,11 @@
 ---
 title: "SharePoint-Metadaten, die Websitenavigation und Veröffentlichung Websitefeatures"
 ms.date: 11/03/2017
-ms.openlocfilehash: 6917e097fd9b329d07ebfc82952150f30c63a8af
-ms.sourcegitcommit: 3276e9b281b227fb2f1a131ab4ac54ae212ce5cf
+ms.openlocfilehash: 4b0f1a2605693efeb0fc61a5f63f38baf301db7c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/24/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-metadata-site-navigation-and-publishing-site-features"></a>SharePoint-Metadaten, die Websitenavigation und Veröffentlichung Websitefeatures
 
@@ -335,7 +335,8 @@ Wenn Reihenfolge 1 aktiv ist, mit der ein Benutzer fordert, dass eine Seite aus 
 
 Nachdem Sie definieren und Gerätekanäle bestellen, können Sie verschiedene Gestaltungsvorlagen auf jeden Kanal anwenden. Standardmäßig werden alle Kanäle die Masterseite des Kanals Standard verwenden. 
 
-**Hinweis:**  CSOM ist eine öffentliche API zum Bearbeiten von Gerätekanäle und gerätekanalbereiche nicht enthalten.
+> [!NOTE] 
+> CSOM ist eine öffentliche API zum Bearbeiten von Gerätekanäle und gerätekanalbereiche nicht enthalten.
 
 ### <a name="display-templates"></a>Anzeigevorlagen
 
@@ -352,7 +353,8 @@ SharePoint speichert Anzeigevorlagen in den Ordner Anzeigevorlagen im Gestaltung
 
 Der Ereignisempfänger, die konvertieren und Aktualisieren von Gestaltungsvorlagen und Seitenlayouts aus HTML, JavaScript auch konvertiert Anzeigevorlagen von HTML in JavaScript. Die Konvertierung und synchronisiert ist unidirektional; nicht werden aus JavaScript zurück zu HTML konvertiert.
 
-**Hinweis:**  CSOM ist eine öffentliche API zum Bearbeiten von Anzeigevorlagen nicht enthalten.
+> [!NOTE] 
+> CSOM ist eine öffentliche API zum Bearbeiten von Anzeigevorlagen nicht enthalten.
 
 **Anzeigevorlagenstruktur**
 
@@ -404,7 +406,8 @@ Bevor Sie beginnen, um Eigenschaften zu identifizieren, die Sie in einer Anzeige
 <mso:ManagedPropertyMapping msdt:dt="string">'Picture URL'{Picture URL}:'PublishingImage;PictureURL;PictureThumbnailURL','Link URL'{Link URL}:'Path','Line 1'{Line 1}:'Title','Line 2'{Line 2}:'Description','Line 3'{Line3}:'','owsTXTPrice','owsTXTColor'</mso:ManagedPropertyMapping>
 ```
 
-**Hinweis:**  In diesem Beispiel wird **Bild-URL** der ersten verwalteten Eigenschaft zugeordnet, die vorliegt, wenn die Suche Ergebnisse für **PublishingImage**, **PictureURL**oder **PictureThumbnailURL**erhält.
+> [!NOTE] 
+> In diesem Beispiel wird **Bild-URL** der ersten verwalteten Eigenschaft zugeordnet, die vorliegt, wenn die Suche Ergebnisse für **PublishingImage**, **PictureURL**oder **PictureThumbnailURL**erhält.
 
 ### <a name="image-renditions"></a>Bilddarstellungen
 
@@ -456,7 +459,7 @@ Das Attribut SharePoint Context Filter führt weitere Verarbeitung weiterleitet,
 
 Weitere Informationen finden Sie unter [Informationen zu ASP.NET MVC](http://www.asp.net/mvc/overview) und[Einführung in MVC für SharePoint-Add-ins zu unterstützen](http://blogs.msdn.com/b/officeapps/archive/2013/07/09/introducing-mvc-support-for-apps-for-sharepoint.aspx).
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Branding und Bereitstellen von Lösungen für SharePoint 2013 und SharePoint Online-Website](Branding-and-site-provisioning-solutions-for-SharePoint.md)

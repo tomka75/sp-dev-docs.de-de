@@ -1,11 +1,11 @@
 ---
 title: 'Das Timer Job-Framework #'
 ms.date: 11/03/2017
-ms.openlocfilehash: d6db7e8e9eb50006d8abb6d02ccfd9a0d12b736c
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: caaa5342ac1a680821b8095a247d4fe89bc700e0
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="the-timer-job-framework"></a>Das Timer Job-Framework #
 
@@ -21,7 +21,8 @@ Video eine Einführung in die Zeitgeberaufträge [in diesem Video Plug & Play-](
 ## <a name="simple-timer-job-example"></a>Einfaches Beispiel für Zeitgeberauftrag ##
 In diesem Kapitel erfahren Sie, wie Sie eine sehr einfache Zeitgeberauftrag zum Erstellen: das Ziel der in diesem Beispiel wird dem Leser einen schnellen Einblick in bereitstellen, später bieten wir eine ausführlichere Erläuterung der den Timer Job-Framework. 
 
-**Hinweis:** Eine umfangreichere Plug & Play-Lösung mit zehn einzelne Zeitgeberauftrag-Beispiele von "Hello World" herunter, die tatsächliche Inhaltsablauf Aufträge finden Sie unter https://github.com/SharePoint/PnP/tree/dev/Solutions/Core.TimerJobs.Samples
+> [!NOTE] 
+> Eine umfangreichere Plug & Play-Lösung mit zehn einzelne Zeitgeberauftrag-Beispiele von "Hello World" herunter, die tatsächliche Inhaltsablauf Aufträge finden Sie unter https://github.com/SharePoint/PnP/tree/dev/Solutions/Core.TimerJobs.Samples
 
 Die folgenden wird beschrieben, wie eine einfache Zeitgeberauftrag zu erstellen:
 
@@ -29,7 +30,10 @@ Die folgenden wird beschrieben, wie eine einfache Zeitgeberauftrag zu erstellen:
 Erstellen Sie in diesem ersten Schritt ein neues Projekt vom Typ "Konsole" und verweisen Sie die Plug & Play-Core-Bibliothek zu, indem Sie einen der folgenden Schritte ausführen:
 
 - Fügen Sie Sie dem Projekt das Office 365 Developer Mustern und Methoden Core Nuget-Paket. Es wird ein [Nuget-Paket für v15 (lokal) und für v16 (Office 365)](https://www.nuget.org/packages?q=pnp). Dies ist die bevorzugte Option.
-- Fügen Sie Sie dem Projekt das vorhandene Plug & Play-Kern-Source-Projekt. Dadurch können Sie den Plug & Play-Kerncode schrittweise beim Debuggen. **Hinweis:** Dafür verantwortlich ist dieser Code aktualisiert mit den neuesten Änderungen Plug & Play-hinzugefügt werden.
+- Fügen Sie Sie dem Projekt das vorhandene Plug & Play-Kern-Source-Projekt. Dadurch können Sie den Plug & Play-Kerncode schrittweise beim Debuggen. 
+
+    > [!NOTE] 
+    > Dafür verantwortlich ist dieser Code aktualisiert mit den neuesten Änderungen Plug & Play-hinzugefügt werden.
 
 ### <a name="step-2-create-a-timer-job-class-and-add-your-timer-job-logic"></a>Schritt 2: Erstellen Sie eine Zeitgeberauftrag-Klasse und fügen Ihre Zeitgeberauftrag Logik hinzu ###
 1. Fügen Sie eine Klasse für den Zeitgeberauftrag mit dem Namen `SimpleJob`.
@@ -127,7 +131,8 @@ Darüber hinaus kann der Zeitgeberauftrag, indem Markieren des Auftrags und **F�
 
 ![Azure-portal](media/timerjob-framework/n4wGS5x.png)
 
-**Hinweis:** Ausführliche Anleitungen ein Azure WebJob bereitstellen finden Sie unter [Erste Schritte mit Azure WebJobs ("Zeitgeberaufträge") für Ihre Office 365-Websites](https://github.com/SharePoint/PnP-Guidance/blob/master/articles/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites.md). 
+> [!NOTE] 
+> Ausführliche Anleitungen ein Azure WebJob bereitstellen finden Sie unter [Erste Schritte mit Azure WebJobs ("Zeitgeberaufträge") für Ihre Office 365-Websites](https://github.com/SharePoint/PnP-Guidance/blob/master/articles/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites.md). 
 
 ### <a name="deploying-timer-jobs-to-windows-server-using-the-windows-scheduler"></a>Bereitstellen von Zeitgeberaufträgen in Windows Server mithilfe der Windows-Taskplaner ###
 Wenn in Windows Server bereitgestellt wird, müssen den Zeitgeberauftrag ohne Benutzereingriff ausführen. Ändern der `app.config` speichern unter **Bereitstellen von Zeitgeberaufträgen für Microsoft Azure mithilfe von Azure WebJobs**beschrieben. 
@@ -198,7 +203,8 @@ public void UseNetworkCredentialsAuthentication(string credentialName)
 #### <a name="app-only"></a>Nur-App ####
 App ist nur die **bevorzugte Methode** , wie Sie Mandanten bezogenen Berechtigungen gewähren können. Für Benutzeranmeldeinformationen muss das Benutzerkonto die erforderlichen Berechtigungen verfügen. 
 
-**Hinweis:** Bestimmte Website lösen mit nur-App-Authentifizierung Logik funktionieren nicht. Ausführliche Informationen finden Sie im nächsten Abschnitt. 
+> [!NOTE] 
+> Bestimmte Website lösen mit nur-App-Authentifizierung Logik funktionieren nicht. Ausführliche Informationen finden Sie im nächsten Abschnitt. 
 
 Um den Auftrag für nur-app-Authentifizierung zu konfigurieren, verwenden Sie eine der folgenden Methoden:
 ```C#
@@ -208,7 +214,8 @@ public void UseAzureADAppOnlyAuthentication(string clientId, string clientSecret
 
 Die gleiche-Methode kann für Office 365 oder SharePoint lokal Zeitgeberaufträge mithilfe der nur-app-Authentifizierung auf einfache Weise zwischen Umgebungen Portable wodurch verwendet werden.
 
-**Hinweis:** Bei Verwendung der nur-app-wird die Logik Zeitgeberauftrag misslingen, wenn APIs verwendet werden, die mit **AuthenticationType.AppOnly**nicht funktionsfähig. Standardsamples sind die Such-API, an den Taxonomie-Store schreiben und das Benutzerprofil API verwenden.
+> [!NOTE] 
+> Bei Verwendung der nur-app-wird die Logik Zeitgeberauftrag misslingen, wenn APIs verwendet werden, die mit **AuthenticationType.AppOnly**nicht funktionsfähig. Standardsamples sind die Such-API, an den Taxonomie-Store schreiben und das Benutzerprofil API verwenden.
 
 ### <a name="sites-to-operate-on"></a>Websites für den Betrieb ###
 Der Ausführung eines Zeitgeberauftrags benötigt es einen oder mehrere Standorte für ausführen. Um einen Zeitgeberauftrag Websites hinzuzufügen, verwenden Sie die unten Satz von Methoden.
@@ -401,7 +408,8 @@ Den Timer Job-Framework standardmäßig verwendet Threads, um Arbeit zu parallel
 #### <a name="throttling"></a>Drosselung ####
 Da Zeitgeberauftrag threading verwendet und Zeitgeberauftrag Vorgänge in der Regel ressourcenintensive Vorgänge sind, konnte eine Ausführung des Zeitgeberauftrags gedrosselt. Um ordnungsgemäß befassen sich mit den Timer Job-Framework und dem gesamten verwendet Plug & Play-Core-Einschränkung der `ExecuteQueryRetry` Methode anstatt vom standardmäßigen `ExecuteQuery`Methode.
 
-**Hinweis:** Es ist wichtig, verwenden Sie `ExecuteQueryRetry` in Ihrem Code zur Implementierung des Zeitgeberauftrags.
+> [!NOTE] 
+> Es ist wichtig, verwenden Sie `ExecuteQueryRetry` in Ihrem Code zur Implementierung des Zeitgeberauftrags.
 
 #### <a name="concurrency-issues---process-all-sub-sites-of-a-site-collection-in-the-same-thread"></a>Parallelität Probleme mit – verarbeiten alle Unterwebsites einer Websitesammlung in demselben thread ####
 

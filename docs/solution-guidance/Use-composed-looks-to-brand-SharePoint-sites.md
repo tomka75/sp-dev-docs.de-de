@@ -1,115 +1,116 @@
 ---
-title: Verwendung zusammengesetzt sucht nach Marke SharePoint-Websites
+title: Use composed looks to brand SharePoint sites
 ms.date: 11/03/2017
-ms.openlocfilehash: ebf4fa0e503cb8c811c6e7ac549d1b89998c1a7d
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: a3c9450690227785cb368f09a299fc769168ce89
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="use-composed-looks-to-brand-sharepoint-sites"></a>Verwendung zusammengesetzt sucht nach Marke SharePoint-Websites
+# <a name="use-composed-looks-to-brand-sharepoint-sites"></a>Use composed looks to brand SharePoint sites
 
-Gelten Sie zusammengesetzten, einschließlich Farben, Schriftarten und eines Hintergrundbilds, um Ihre SharePoint 2013 und SharePoint Online-Websites mithilfe von SharePoint Designmodul.
+Apply composed looks, including colors, fonts, and a background image, to your SharePoint 2013 and SharePoint Online sites by using the SharePoint theming engine.
 
 _**Gilt für:** Office 365 | SharePoint 2013 | SharePoint Online_
 
-Sie können Ihre SharePoint-Websites zusammengesetzten zuweisen. Zusammengesetzten sind Out-of-Box-Designs, die in SharePoint 2013 und SharePoint Online enthalten sind. Wählen Sie **Websiteeinstellungen**aus, um ein zusammengesetztes Design auf einer SharePoint-Website anzuwenden, > **Aussehen und Verhalten** > **Erscheinungsbild ändern**. Klicken Sie dann können der Änderung der Assistent aussehen zum Anpassen der Farben, Schriftarten, Gestaltungsvorlage und Hintergrundbild des ein zusammengesetztes Design. Die Änderung der Assistent aussehen kopiert, überträgt und CSS, in SharePoints-Inhaltsdatenbank gespeichert. Außerdem recolors Bilder und speichert sie in der Inhaltsdatenbank. 
+You can apply composed looks to your SharePoint sites. Composed looks are out-of-the-box themes that are included in SharePoint 2013 and SharePoint Online. To apply a composed look to a SharePoint site, select **Site Settings** > **Look and Feel** > **Change the look**. You can then use the Change the look wizard to customize the colors, fonts, master page, and background image of a composed look. The Change the look wizard copies, transforms, and stores CSS in SharePoint's content database. It also recolors images and stores them in the content database. 
 
-## <a name="sharepoint-theming-engine"></a>SharePoint-Designmodul
+## <a name="sharepoint-theming-engine"></a>SharePoint theming engine
 <a name="sectionSection0"> </a>
 
-SharePoint 2013 Designmodul können Farben, Schriftarten und eines Hintergrundbilds zu einer Website durch Zuordnen dieser Elemente zu einer Gestaltungsvorlage anwenden.
+You can use the SharePoint 2013 theming engine to apply colors, fonts, and a background image to a site by associating those elements with a master page.
 
-In SharePoint 2013 und SharePoint Online ist ein Design ein verbundener XML-Definitionsdateien, einer Bilddatei und eine Masterseite zugeordnet ist, mit denen Sie benutzerdefinierte CSS auf einer Website anwenden. Die folgenden XML-Dateien definieren farbplätze und schriftartenplätze, die die Details zu bestimmten Farben und Schriftarten definieren, wie sie auf Formatvorlagen angewendet werden: 
+In SharePoint 2013 and SharePoint Online, a theme is a connected set of XML definition files, an image file, and an associated master page that you can use to apply custom CSS to a site. The following XML files define color slots and font slots that define the details of specific colors and fonts as they're applied to styles: 
 
 - .spcolor
     
 - .spfont
     
-Sie können Ihre eigenen Dateien Farbe und Schriftart in Ihrer bevorzugten Text-Editor erstellen.
+You can create your own color and font files in your favorite text editor.
 
-In der folgenden Tabelle sind die Elemente des ein zusammengesetztes Design.
+The following table lists the elements of a composed look.
 
-|**Element**|**Datei oder Dateien**|**Wo sie gespeichert werden**|**Erforderlich?**|
+|**Element**|**File or files**|**Where it's stored**|**Erforderlich?**|
 |:-----|:-----|:-----|:-----|
-|Farbpalette|.spcolor|Design Gallery\15 Ordner|Ja|
-|Schriftartenschema|.spfont|Design Gallery\15 Ordner|Nein|
-|Layout der Website|<p>Master</p><p>.Preview</p>|Gestaltungsvorlagenkatalog|Ja|
-|Hintergrundbild|<p>JPG</p><p>BMP</p><p>PNG</p><p>GIF</p>|Website-Objekten|Nein|
-Benutzer können mithilfe der Änderung des Assistenten aussehen zusammengesetzten auswählen (**Site Settings** > **Aussehen und Verhalten** > **Erscheinungsbild ändern**), der erste Schritte-Benutzeroberfläche oder direkt in im Menü Websiteaktionen. Wenn ein Benutzer ein zusammengesetztes Design auswählt, wendet Designmodul Farben, Schriftarten, Hintergrundbilder, die zugehörigen Master-Seite und der .preview-Datei, die die master-Seite auf der Website zugeordnet. 
+|Farbpalette|.spcolor|Theme Gallery\15 folder|Ja|
+|Font scheme|.spfont|Theme Gallery\15 folder|Nein|
+|Site layout|<p>.master</p><p>.preview</p>|Master Page Gallery|Ja|
+|Background image|<p>.jpg</p><p>.bmp</p><p>.png</p><p>.gif</p>|Site assets|Nein|
+Users can select composed looks by using the Change the look wizard (**Site Settings** > **Look and Feel** > **Change the Look**), the Getting Started UI, or directly in the site actions menu. When a user selects a composed look, the theming engine applies colors, fonts, background images, the associated .master page, and the .preview file associated with the .master page to the site. 
 
-### <a name="color-palettes"></a>Farbpaletten
+### <a name="color-palettes"></a>Color palettes
 
-Designmodul speichert Farben in Farbpaletten, die von der Datei .spcolor definiert, wie in Abbildung 1 dargestellt. Farbpaletten werden in den Designkatalog der Stammwebsite gespeichert. Eine Farbpalette ist eine Farbe Palette Definitionen und Farbe Steckplätze bestehen bearbeitbaren XML-Datei. Farbe der Palette Metadaten ( `<s:colorPalette>`) definiert die folgenden:
+The theming engine stores colors in color palettes defined by the .spcolor file, as shown in Figure 1. Color palettes are stored in the Theme Gallery of the root site. A color palette is an editable XML file made up of color palette definitions and color slots. Color palette metadata ( `<s:colorPalette>`) defines the following:
 
-- Drei Vorschau anzeigen, die definieren, welche Farbe für die Verwendung in einer Vorschau zusammengesetztes Design Steckplätze Slots.
+- Three preview slots that define what color slots to use in composed look previews.
     
-- Eine **IsInverted** -Eigenschaft, mit der der Palette Designer angeben, ob das Design invertiert ist (dunkler Hintergrund mit heller Text).
+- An  **isInverted** property that lets the palette designer specify whether the theme is inverted (dark background with light text).
     
-- Der XML-Namespace das Design zugeordnet.
+- The XML namespace associated with the theme.
     
-Farbplätze definiert zwei Attributesâ€ "Farbe Name und Valueâ€", die einen Namen für die Farbe und RGB-Wert zu definieren. Farbplätze haben semantische Namen wie BodyText oder SiteTitle, die einen Bereich einer SharePoint-Seite Hilfe Sie identifizieren, welche Steckplätze entsprechen.
+Color slots are defined by two attributesâ€”color name and valueâ€”that define a name for the color and its RGB value. Color slots have semantic names, such as BodyText or SiteTitle, that help you identify which slots correspond to a region of a SharePoint page.
 
 `<s:color name="BodyText" value="444444" />`
 
-**Abbildung 1. .spcolor-Datei**
+**Figure 1. .spcolor file**
 
-![Screenshot einer .spcolor-Datei mit Farbe Name und Value-Attribute](media/16de0716-2e21-471f-b9e5-f461a33b397b.png)
+![Screenshot of an .spcolor file showing color name and value attributes](media/16de0716-2e21-471f-b9e5-f461a33b397b.png)
 
-Zeile 2 der Datei .spcolor definiert den XML-Namespace Steckplätze Vorschau, und gibt an, ob die Farben umgekehrt werden (weisen sie einen hellen Vordergrund auf eine dunkler Hintergrund anstelle einer dunkler Vordergrund auf Hintergrund). 
+Line 2 of the .spcolor file defines the XML namespace, preview slots, and whether colors are inverted (they have a light foreground on a dark background instead of a dark foreground on a light background). 
 
-Die .spcolor-Datei enthält 89 farbplätze. Farbplätze können Sie um umfassendere Aspekte der Farbe, einschließlich Durchlässigkeit, mithilfe von Hexadezimalwerte 8 Ziffern zu definieren. Beispielsweise grün ist RRGGBB 00FF00 ein 70 Prozent undurchsichtig grüner AARRGGBB 7F00FF00 ist. Wenn SharePoint einen Steckplatz, den Sie definieren verwendet, werden keine CSS, die darauf verweist Farbe zu ändern. Wenn ein Steckplatz definiert ist, die nie in CSS verwiesen wird, wird die Farbe nie in der Benutzeroberfläche angezeigt.
+The .spcolor file contains 89 color slots. You can use color slots to define richer aspects of color, including opacity, by using 8-digit hexadecimal values. For example, if green is RRGGBB 00FF00, a 70 percent opaque green is AARRGGBB 7F00FF00. If SharePoint uses a slot that you don't define, any CSS that references it won't change color. If a slot is defined that is never referenced in CSS, the color is never shown in the UI.
 
-Sie können die .spcolor-Datei in Editor bearbeiten. Es kann in PowerPoint nicht bearbeitet werden.
+You can edit the .spcolor file in Notepad. You cannot edit it in PowerPoint.
 
-### <a name="color-palette-tool"></a>Farbe Palette tool
+### <a name="color-palette-tool"></a>Color palette tool
 
-Die [Farbe Palette Tool](http://www.microsoft.com/en-us/download/details.aspx?id=38182) können zum Visualisieren Designfarben und wie sie auf der Seite zusammenarbeiten. Verwenden Sie es zum Identifizieren der Farbinformationen können Sie in der farbplätze der Datei .spcolor verwenden und Farben auf einer SharePoint-Website anwenden, ohne alle CSS im Rahmen des Prozesses ändern.
+You can use the  [color palette tool](http://www.microsoft.com/en-us/download/details.aspx?id=38182) to visualize theme colors and how they work together on the page. Use it to identify color information you can use in the color slots of the .spcolor file, and apply colors to a SharePoint site without changing any CSS as part of the process.
 
-Das Tool zeigt die Farben im Hexadezimal-Format, sodass Sie können auf einfache Weise kopieren und fügen den Color-Wert in das entsprechende Element in der Datei .spcolor. Das Tool Farbe Palette können auch ein Hintergrundbild in einem Modell und Umschalten zwischen der Gestaltungsvorlagen seattle.master und oslo.master passen. 
+The tool displays the colors in hexadecimal format, so you can easily copy and paste the color value into the appropriate element in your .spcolor file. You can also use the color palette tool to fit a background image into a mockup and toggle between the seattle.master and oslo.master master pages. 
 
 
-**Abbildung 2. Farbe Palette tool**
+**Figure 2. Color palette tool**
 
-![Screenshot des Tools Palette Farbe](media/407d8095-20cd-4d9b-be53-493d95b4653c.png)
+![Screenshot of the color palette tool](media/407d8095-20cd-4d9b-be53-493d95b4653c.png)
 
-Die Datei .spcolor ist die einzige Datei, die für ein neues Design erforderlich ist, jedoch müssen Sie möglicherweise einige benutzerdefinierte Schriftart Deklarationen, je nach die Extrusionstiefe der Entwurfszeit hinzufügen. Dazu müssen Sie die .spfont-Datei zugreifen.
+The .spcolor file is the only file that is required for a new theme, but you might need to add some custom font declarations, depending on the depth of your design. To do that, you need to access the .spfont file.
 
-### <a name="font-schemes"></a>Schriftartenschemas
+### <a name="font-schemes"></a>Font schemes
 
-Auf die gleiche Weise, dass Farbpaletten definieren, wie die Farben in zusammengesetzten verwendet werden definieren Schriftartenschemas Schriftarten in der zusammengesetzten. 
+In the same way that color palettes define how colors are used in composed looks, font schemes define the fonts in composed looks. 
 
-Schriftartenschemas sind in der .spfont-Datei in den Designkatalog gespeicherten definiert. Die .spfont-Datei umfasst die folgenden schriftartenplätze, die den Namen, Schriftart und Skript Werte ein zusammengesetztes Design zu definieren:
+Font schemes are defined in the .spfont file stored in the Theme Gallery. The .spfont file includes the following font slots that define the name, typeface, and script values of a composed look:
 
 - Titel
     
 - Navigation
     
-- Kleine-Überschrift
+- Small-heading
     
-- Überschrift
+- Heading
     
-- Large-Überschrift
+- Large-heading
     
 - Body
     
-- Großer Textkörper
+- Large-body
     
-Schriftarten sind weitere von Skripttyp (z. B. Lateinisch, Arabisch, Kyrillisch) beschränkt. Unterstützung für Web Schriftarten ist in vier Dateitypen enthalten:
+Fonts are further scoped by script type (for example, Latin, Arabic, Cyrillic). Web fonts support is included in four file types:
 
-- Eingebettete open Typ EOT)
+- Embedded open type (EOT)
     
-- Web open Font Format-Datei (WOFF)
+- Web open font format file (WOFF)
     
-- TrueType-Schriftart (TTF)
+- TrueType font (TTF)
     
-- Skalierbare Vektorgrafiken (SVG)
+- Scalable vector graphics (SVG)
     
-Das Schriftartenschema definiert einen großen Vorschaubild und eine kleine Vorschaubild. Sie sind nur für Webschriftarten erforderlich.
+The font scheme defines a large preview image and a small preview image. They are required only for web fonts.
 
-**Hinweis**  Sie können die .spfont-Datei in Editor bearbeiten. Es kann in PowerPoint nicht bearbeitet werden.
+> [!NOTE] 
+> You can edit the .spfont file in Notepad. You cannot edit it in PowerPoint.
 
-Es folgt ein Beispiel einer .spfont-Datei.
+The following is an example of an .spfont file.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -132,137 +133,140 @@ Es folgt ein Beispiel einer .spfont-Datei.
 </s:fontScheme>
 ```
 
-### <a name="site-layout-master-pages-and-corresponding-preview-files"></a>Layout der Website: Masterseiten und entsprechende Vorschaudateien
+### <a name="site-layout-master-pages-and-corresponding-preview-files"></a>Site layout: master pages and corresponding preview files
 
-Designmodul definiert das Layout Website einen durchkomponierten Look basierend auf der Masterseite Master und die entsprechenden .preview-Datei. Wenn die Masterseite für die zusammengesetztes Design definierten seattle.master ist, definiert die Masterseite beispielsweise das Layout der Website.
+The theming engine defines the site layout of a composed look based on the .master master page and its corresponding .preview file. For example, if the master page defined for the composed look is seattle.master, that master page defines the layout of the site.
 
-Das Layout der Website entnommen the Master Page Gallery von Masterseiten, die begleitenden .preview Dateien vorhanden sind. Eine Datei .preview ist erforderlich für eine Gestaltungsvorlage als Option für die **Änderung des Erscheinungsbilds** Benutzeroberfläche angezeigt werden (**Websiteeinstellungen** > **Aussehen und Verhalten** > **Erscheinungsbild ändern**).
+The site layout is pulled from the Master Page Gallery of any master pages that have accompanying .preview files. A .preview file is required for a master page to appear as an option in the **Change the look** UI (**Site Settings** > **Look and Feel** > **Change the look**).
 
-Erstellen Sie eine Gestaltungsvorlage im Dropdown-Menü Layout der Website zur Verfügung zu stellen, eine .preview-Datei, die die master-Seite entspricht. Die Datei .preview Zeigt Miniaturansichten für zusammengesetztes Design und im Vorschaubereich rechts neben der Optionen auf der Seite designbuilder.aspx **Erscheinungsbild ändern** .
+To make a master page available from the Site Layout drop-down menu, create a .preview file that corresponds to the .master page. The .preview file displays thumbnail images for the composed look and the preview section to the right of the **Change the look** options on the designbuilder.aspx page.
 
-### <a name="background-image"></a>Hintergrundbild
+### <a name="background-image"></a>Background image
 
-Sie können das Hintergrundbild des ein zusammengesetztes Design ändern, indem Sie auf **Ändern**. Daraufhin wird ein Dialogfeld hochladen, die Sie zum Hochladen einer Bilddatei verwenden können. Sie können auch Ihr eigenes Bild auf den Hintergrund Preview ziehen.
+You can change the background image of a composed look by choosing **Change**. This opens an upload dialog box that you can use to upload an image file. You can also drag your own image onto the background preview.
 
-## <a name="create-custom-themes"></a>Erstellen benutzerdefinierter Designs
+## <a name="create-custom-themes"></a>Create custom themes
 <a name="sectionSection1"> </a>
 
-So erstellen Sie ein benutzerdefiniertes Design:
+To create a custom theme:
 
-1. Wechseln Sie auf **websiteeinstellungen**, und klicken Sie unter der Überschrift Web-Designer-Kataloge, wählen Sie **Designs** > **15**. Eine Liste der .spcolor und .spfont-Dateien wird angezeigt, wie in Abbildung 3 dargestellt.
+1. Go to **Site settings**, and under the Web Designer Galleries heading, select **Themes** > **15**. A list of .spcolor and .spfont files appears, as shown in Figure 3.
     
-    **Abbildung 3. Designkatalog**
+    **Figure 3. Theme Gallery**
 
-    ![Screenshot von den Designkatalog, der zeigt Fontscheme und Pallette-Dateien](media/76e9b4f3-5838-4cd8-9f2f-33a0c94bfddd.png)
+    ![Screenshot of the Theme Gallery showing fontscheme and pallette files](media/76e9b4f3-5838-4cd8-9f2f-33a0c94bfddd.png)
 
-2. Laden Sie eine Kopie einer der .spcolor-Dateien (beispielsweise Palette001.spcolor), und öffnen Sie es in einem Text-Editor. 
+2. Download a copy of one of the .spcolor files (for example, Palette001.spcolor) and open it in a text editor. 
     
-3. Bearbeiten der Datei kopierten .spcolor entsprechend Ihrer Entwurfsrichtlinien. Angenommen, wenn Sie eine schwarze Schriftart für Textkörper haben, bearbeiten Sie die Datei zur Änderung der Linie `<s:color name="BodyText" value="444444" />` auf `<s:color name="BodyText" value="000000" />`.
+3. Edit the copied .spcolor file to reflect your design guidelines. For example, if you have a black font for main body text, edit the file to change the line  `<s:color name="BodyText" value="444444" />` to `<s:color name="BodyText" value="000000" />`.
     
-4. Fügen Sie für jedes HTML-Element eine Farbe hinzu. 
+4. For each HTML element, add your color. 
     
-5. Wenn Sie fertig sind, laden Sie die .spcolor-Datei mit den **websiteeinstellungen** > **Design** > **15** Ordner.
+5. When you are done, upload the .spcolor file to the **Site settings** > **Theme** > **15** folder.
     
-    **Hinweis**  Speichern Sie die Datei unter einem neuen Namen (beispielsweise custom_palette1.spcolor).
+    > [!NOTE] 
+    > Save the file with a new file name (for example, custom_palette1.spcolor).
 
-   In der folgenden Tabelle ordnet Farben und Seitenelemente ihr Code in der Datei .spcolor. Es ist eine Teilmenge der Zuordnungen, die in der Datei .spcolor verfügbar sind.
+   The following table maps colors and page elements to their code in the .spcolor file. It is a subset of the mappings that are available in the .spcolor file.
     
 
     |**Element**|**Farbe**|**Code**|
     |:-----|:-----|:-----|
-    |Textkörper|Schwarz| `<s:color name="BodyText" value="000000" />`|
-    |Globale Navigation Hintergrund|Blau| `<s:color name="HeaderBackground" value="018dff" />`|
-    |Text für die globale navigation|Whitepaper| `<s:color name="HeaderNavigationText" value="ffffff" />`|
-    |Aktuelle Navigation Hintergrund|Rot| `<s:color name="NavigationHoverBackground" value="e51400" />`|
-    |Text für die aktuelle navigation|Whitepaper| `<s:color name="Navigation" value="ffffff" />`|
-    |Titel|Whitepaper| `<s:color name="SiteTitle" value="FFFFFF" />`|
-    |Fußzeile Hintergrund|Schwarz| `<s:color name="FooterBackground" value="000000" />`|
+    |Body text|Black| `<s:color name="BodyText" value="000000" />`|
+    |Global navigation background|Blue| `<s:color name="HeaderBackground" value="018dff" />`|
+    |Global navigation text|White| `<s:color name="HeaderNavigationText" value="ffffff" />`|
+    |Current navigation background|Red| `<s:color name="NavigationHoverBackground" value="e51400" />`|
+    |Current navigation text|White| `<s:color name="Navigation" value="ffffff" />`|
+    |Titel|White| `<s:color name="SiteTitle" value="FFFFFF" />`|
+    |Footer background|Black| `<s:color name="FooterBackground" value="000000" />`|
 
-6. Informationen zum Anpassen von .spfont Herunterladen einer Kopie einer .spfont-Datei, und öffnen Sie es in einem Text-Editor. Beachten Sie, dass die .spfont-Datei ein wenig anders als .spcolor angeordnet ist, aber beide Dateien eine ähnliche Struktur freigeben. 
+6. To customize .spfont, download a copy of a .spfont file and open it in a text editor. Notice that the .spfont file is laid out a bit differently than .spcolor, but that both files share a similar structure. 
     
-    **Abbildung 4. .spfont-Datei**
+    **Figure 4. .spfont file**
 
-    ![Screenshot, der den Inhalt der .spfont-Datei anzeigt](media/893f905a-34d9-4dbd-a012-03797084f9e6.png)
+    ![Screenshot that shows the contents of the .spfont file](media/893f905a-34d9-4dbd-a012-03797084f9e6.png)
 
-7. Bearbeiten Sie jede `<s:fontSlot />` Abschnitt zum Anpassen der Schriftart SharePoint gilt für die angegebene Schriftart Steckplatz auf der Seite. Beachten Sie beispielsweise den ersten Eintrag, `<s:fontSlot name="title">`. Dieser Eintrag wird beschrieben, welche Schriftart SharePoint verwendet, um den Titel der Seite zu formatieren. In diesem Abschnitt gibt auch an, welche Schriftart für verschiedene Sprachen verwendet werden soll.
+7. Edit each  `<s:fontSlot />` section to customize the font SharePoint applies to the specified font slot on the page. For example, notice the first entry, `<s:fontSlot name="title">`. This entry describes which font SharePoint uses to style the title of the page. This section also specifies which font will be used for different languages.
     
-    **Hinweis**  Sie können hochladen benutzerdefinierte Schriftarten in SharePoint und zeigen Sie jeden Eintrag auf eine benutzerdefinierte .eot, .woff, ttf und SVG-Datei. 
+    > [!NOTE] 
+    > You can upload custom fonts to SharePoint and point each entry to a custom .eot, .woff, .ttf, and .svg file. 
 
-8. Laden Sie die Datei mit den **websiteeinstellungen** > **Design** > **15** Ordner.
+8. Upload the file to the **Site settings** > **Theme** > **15** folder.
     
-    **Hinweis**  Speichern Sie die Datei unter einem neuen Namen (beispielsweise custom_font.spfont).
+    > [!NOTE] 
+    > Save the file with a new file name (for example, custom_font.spfont).
 
-    In der folgenden Tabelle ordnet Schriftarten Seitenelemente wie sie in der .spfont-Datei definiert sind.
+    The following table maps page elements to fonts as they're defined in the .spfont file.
 
 |**Element**|**Schriftart**|**Code**|
 |:-----|:-----|:-----|
-|Titel|Sans öffnen| `<s:cs typeface="Open Sans" />`|
+|Titel|Open Sans| `<s:cs typeface="Open Sans" />`|
 |Navigation|Roboto| `<s:cs typeface="Roboto" />`|
-|Überschriften|Trajan Pro| `<s:cs typeface="Trajan Pro" />`|
-|Body|Sans öffnen| `<s:cs typeface="Open Sans" />`|
+|Headings|Trajan Pro| `<s:cs typeface="Trajan Pro" />`|
+|Body|Open Sans| `<s:cs typeface="Open Sans" />`|
 
-Möglicherweise müssen Sie sicherstellen, dass einige benutzerdefinierten Schriftarten Browser Benutzer zur Verfügung stehen. Bezieht sich die Überschriften auf eine Trajan Pro Schriftart, die auf die meisten Benutzercomputern ungewöhnlich ist, fügen Sie die folgenden Deklarationen von Schriftart am oberen Rand der Deklaration < S:fontSlot > fest. Dadurch wird sichergestellt, dass die richtige Schriftart angezeigt wird. 
+You might have to ensure that some custom fonts are available to users' browsers. For example, if the headings refer to a Trajan Pro font, which is uncommon on most users' computers, add the following font declarations at the top of the <s:fontSlot> declaration. This will ensure that the correct font is displayed. 
 
 ```XML
 <s:latin typeface=" Trajan Pro" eotsrc="/SiteAssets/Trajan Pro.eot" woffsrc="/SiteAssets/Trajan Pro.woff" ttfsrc="/SiteAssets/Trajan Pro.ttf" svgsrc="/SiteAssets/Trajan Pro.svg"  />
 ```
 
-## <a name="add-a-custom-theme-to-sharepoint"></a>Hinzufügen eines benutzerdefinierten Designs in SharePoint
+## <a name="add-a-custom-theme-to-sharepoint"></a>Add a custom theme to SharePoint
 <a name="sectionSection2"> </a>
 
-Nachdem Sie Ihre Anpassungen an der Gestaltungsvorlage, .spcolor und .spfont-Dateien vornehmen, fügen sie in das Verzeichnis zusammengesetzten hinzu, damit SharePoint, darauf zugreifen kann. 
+After you make your customizations to the master page, .spcolor, and .spfont files, add them to the Composed Looks directory so that SharePoint can access them. 
 
-1. Wechseln Sie auf **websiteeinstellungen**, und klicken Sie unter **Web-Designer-Kataloge**, und wählen Sie **Zusammengesetzten**. 
+1. Go to **Site settings**, and under **Web Designer Galleries**, select **Composed Looks**. 
     
-2. Wählen Sie den Link **Neues Element** oben links aus. Ein Fenster geöffnet wird, wie in Abbildung 5 dargestellt.
+2. Choose the **new item** link at the top left. A window opens, as shown in Figure 5.
     
-    **Abbildung 5. Zusammengesetzten**
+    **Figure 5. Composed looks**
 
-    ![Screenshot, der auf der Seite neue zusammengesetztes Design wird](media/8155ba5d-9492-473d-b153-c3db566cbdec.png)
+    ![Screenshot that shows the new composed look page](media/8155ba5d-9492-473d-b153-c3db566cbdec.png)
 
-3. Fügen Sie einen Titel und einen Namen für Ihre zusammengesetztes Design.
+3. Add a title and a name for your composed look.
     
-4. Führen Sie das verbleibende dar:
+4. Complete the remaining field:
     
-    - Fügen Sie im Feld **Master-Seiten-URL** die URL der Masterseite, die Sie Designs verwenden möchten.
+    - In the **Master Page URL** field, add the URL of the master page you would like the theme to use.
     
-    - Fügen Sie im Feld **Design-URL** die URL der Datei .spcolor hinzu.
+    - In the **Theme URL** field, add the URL of the .spcolor file.
     
-    - Schließen Sie im Feld **Bild-URL** die URL eines Bilds, das Sie als Hintergrund verwenden möchten. Dies ist nicht erforderlich, wenn Ihre Umgebung für ein Hintergrundbild Aufrufen nicht.
+    - In the **Image URL** field, include the URL of an image that you want to use as a background. This is not required if your design doesn't call for a background image.
     
-    - Schließen Sie in das Feld **Schriftart Schema URL** die URL der .spfont-Datei.
+    - In the **Font Scheme URL** field, include the URL of the .spfont file.
     
-    - Geben Sie im Feld **Anzeigereihenfolge** an, die Reihenfolge, in der zusammengesetzte Design angezeigt werden soll.
+    - In the **Display Order** field, indicate the order in which the composed look should be displayed.
     
-5. Wählen Sie **Speichern** aus. Ihre Eingabe Design wird nun in der Liste **Durchkomponierte** angezeigt werden.
+5. Wählen Sie **Speichern** aus. Your theme entry will now appear in the  **Composed Looks** list.
     
-Nach dem Hinzufügen Ihrer benutzerdefinierten Designs aus, um als ein zusammengesetztes Design Benutzer das Design zugreifen und es zu einer Website anwenden, indem Sie auf **websiteeinstellungen** > **Aussehen und Verhalten** > **Erscheinungsbild ändern**. Abbildung 6 zeigt ein Beispiel eines Abschnitts **Erscheinungsbild ändern** , in den **Websiteeinstellungen**.
+After you add your custom theme to as a composed look, users can access the theme and apply it to a site by going to **Site settings** > **Look and Feel** > **Change the look**. Figure 6 shows an example of a **Change the look** section in **Site Settings**.
 
-**Abbildung 6. Zusammengesetzten in Erscheinungsbild ändern verfügbar**
+**Figure 6. Composed looks available in Change the look**
 
-![Screenshot, der anzeigt, die zusammengesetzten sucht, stehen in den Websiteeinstellungen > Ändern der Darstellung](media/11acb4ea-cff6-483c-890f-8c574e14f29d.png)
+![Screenshot that shows the composed looks that are available in Site Settings > Change the look](media/11acb4ea-cff6-483c-890f-8c574e14f29d.png)
 
-## <a name="what-does-the-theming-engine-do-when-a-user-applies-a-composed-look"></a>Was geschieht Designmodul? Wenn ein Benutzer ein zusammengesetztes Design angewendet wird.
+## <a name="what-does-the-theming-engine-do-when-a-user-applies-a-composed-look"></a>What does the theming engine do when a user applies a composed look?
 <a name="sectionSection3"> </a>
 
-Wenn ein Benutzer ein zusammengesetztes Design angewendet wird, wird SharePoint kopiert, überträgt und speichert in der Inhaltsdatenbank CSS. Außerdem recolors und speichert Bilder in der Inhaltsdatenbank. Im Rahmen des Prozesses zum Anwenden eines Designs auf eine Website zieht Designmodul Farbe und Schriftart Werte aus der angegebenen Farbe Farbpalette und ein Schriftartenschema in den Designkatalog der Stammwebsite gefunden wurde. Zum Anwenden von Master-Seite und die .preview Gestaltungsvorlagendatei (das Layout der Website) zieht Designmodul Gestaltungsvorlagen in the Master Page Gallery, die eine entsprechende Datei .preview aufweisen. 
+When a user applies a composed look, SharePoint copies, transforms, and stores CSS in the content database. It also recolors and stores images in the content database. As part of the process of applying a theme to a site, the theming engine pulls color and font values from the specified color palette and font scheme found in the Theme Gallery of the root site. To apply .master page and the master page .preview file (the site layout), the theming engine pulls master pages in the Master Page Gallery that have a corresponding .preview file. 
 
-Wenn sie ein zusammengesetztes Design angewendet wird, ordnet das Modul die Einstellungen, die durch bestimmte CSS-Kommentare, die Designmodul definiert angegeben. Designmodul im Detail speichert das Hintergrundbild auf Website-Objekten, skalierbar und JPG und BMP Bilder komprimiert und beschränkt die Größe von GIF und PNG-Bilder. 
+When it applies a composed look, the engine maps the settings specified by specific CSS comments that the theming engine defines. Under the hood, the theming engine saves the background image to Site Assets, scales and compresses JPG and BMP images, and limits the size of GIF and PNG images. 
 
-Wenn ein zusammengesetztes Design auf einer SharePoint-Website angewendet wird, SharePoint sucht und CSS-Kommentartoken durch Einbetten eines Werts, der die zusammengesetztes Design in die nächste Zeile in der CSS-Datei nach dem Token abgeleiteten ersetzt. In diesem neue Wert wird auf der SharePoint-Website angewendet.
+When a composed look is applied to a SharePoint site, SharePoint finds and replaces CSS comment tokens by embedding a value derived from the composed look in the next line in the CSS file after the token. This new value is applied to the SharePoint site.
 
-Die folgende Tabelle enthält die CSS-Kommentar-Token.
+The following table lists the CSS comment tokens.
 
-|**Token**|**Beschreibung**|**Entsprechende ApplyTheme-parameter**|
+|**Token**|**Beschreibung**|**Corresponding ApplyTheme parameter**|
 |:-----|:-----|:-----|
-|/ * ReplaceBGImage * /|Aktuelle Hintergrundbild mit dem Bild in der zugewiesenen vertauscht zusammengesetzt aussehen Bild-URL.|backgroundImageUrl|
-|/ * ReplaceFont * /|Wechselt von der aktuellen Schriftart mit einem der Schriftarten, die in der Schriftart Schema URL von der zugewiesenen zusammengesetztes Design gefunden.|fontSchemeUrl|
-|/ * ReplaceColor * /|Vertauscht die aktuelle Farbe mit einem der in einer farbplatzes in der Farbe Palette URL von der zugewiesenen zusammengesetztes Design angegebenen Farben.|colorPaletteUrl|
-|/ * RecolorImage * /|Recolors Bilder mit Farbton anpassen oder ausfüllen. ||
+|/* ReplaceBGImage */|Swaps current background image with the image in the assigned composed look image URL.|backgroundImageUrl|
+|/* ReplaceFont */|Swaps the current font with one of the fonts found in the font scheme URL of the assigned composed look.|fontSchemeUrl|
+|/* ReplaceColor */|Swaps the current color with one of the colors specified in a color slot in the color palette URL of the assigned composed look.|colorPaletteUrl|
+|/* RecolorImage */|Recolors images using tinting or filling. ||
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Lösungen für das SharePoint-Websitebranding und die Seitenanpassung](SharePoint-site-branding-and-page-customization-solutions.md)
     
--  [Branding und Bereitstellen von Lösungen für SharePoint 2013 und SharePoint Online-Website](Branding-and-site-provisioning-solutions-for-SharePoint.md)
+-  [Branding and site provisioning solutions for SharePoint 2013 and SharePoint Online](Branding-and-site-provisioning-solutions-for-SharePoint.md)

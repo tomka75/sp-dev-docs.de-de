@@ -1,48 +1,49 @@
 ---
-title: "Erste Schritte mit Azure WebJobs (\"Zeitgeberaufträge\") für Ihre Office 365-Websites #"
+title: 'Getting Started with azure WebJobs ("timer jobs") for your Office 365 Sites #'
 ms.date: 11/03/2017
-ms.openlocfilehash: 34adf8616224a7f098f336165f120dcb3cde1a6f
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: ec290dea670cdb0915b1f10dfc3e9a9698eb35fd
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="getting-started-with-azure-webjobs-timer-jobs-for-your-office-365-sites"></a>Erste Schritte mit Azure WebJobs ("Zeitgeberaufträge") für Ihre Office 365-Websites #
+# <a name="getting-started-with-azure-webjobs-timer-jobs-for-your-office-365-sites"></a>Getting Started with azure WebJobs ("timer jobs") for your Office 365 Sites #
 
 ### <a name="summary"></a>Summary ###
-In diesem Beitrag werde ich über wie ein Azure WebJob als ein geplanter Auftrag für Ihre Office 365 verwenden erstellt werden kann (oder Prem, sollten Sie gern) SharePoint-Installation. Mit Office 365 ausführen, wenn Sie und im SharePoint Online-Dienst nutzen, Sie die erneut weiterführen müssen Sie die Aktionen, die verwendet, um *Zeitgeberaufträge* in Ihrer herkömmlichen farmlösungen werden. Führen Sie entlang, während wir die grundlegenden Konzepte von Erste Schritte mit der Erstellung von benutzerdefinierten Aufträge für Office 365-Websites durchlaufen.
+In this post I’ll talk about how you can build an Azure WebJob to act as a scheduled job for your Office 365 (or on-prem, should you like) SharePoint installation. With Office 365, if you’re running and utilizing the SharePoint Online service, you’ll need to re-think the way you run the things that used to be *timer jobs* in your traditional Farm-solutions. Follow along while we walk through the basic concepts of getting started with building custom jobs for Office 365 sites.
 
-# <a name="introduction-to-azure-webjob-as-a-timer-job-for-your-office-365-sites"></a>Einführung in Azure WebJob als einen Zeitgeberauftrag für die Office 365-Websites #
-In herkömmlichen SharePoint-Entwicklung haben wir [Zeitgeberaufträge](http://tz.nu/1DNtqH8), die in der SharePoint-Farmen geplante Aufgaben ausgeführt werden. Eine häufig verwendete Methode ist zum Entwickeln von benutzerdefinierten Zeitgeberaufträge, um kontinuierlich oder iterativ in Ihrer Umgebung bestimmte Aufgaben ausführen.
+# <a name="introduction-to-azure-webjob-as-a-timer-job-for-your-office-365-sites"></a>Introduction to Azure WebJob as a Timer Job for your Office 365 sites #
+In traditional SharePoint development we have [Timer Jobs](http://tz.nu/1DNtqH8), which performs scheduled tasks in your SharePoint farms. A commonly used technique is to develop custom timer jobs in order to continuously or iteratively perform certain tasks in your environment.
 
-Mit Office 365 und SharePoint Online müssen Sie nicht entscheidender Vorteil, Bereitstellen von farmlösungen ist, auf dem die herkömmlichen Zeitgeberaufträge normalerweise live. Stattdessen wir haben, erhalten eine andere Möglichkeit zum Planen von unseren Tasks – Dies führt zu dem Konzept einer [Azure WebJob](http://tz.nu/1ueFvMZ).
+With Office 365 and SharePoint Online, you don’t have the luxury to deploy your farm solutions, which is where your traditional timer jobs normally live. Instead, we have to find another way to schedule our tasks – this brings us to the concept of an [Azure WebJob](http://tz.nu/1ueFvMZ).
 
-## <a name="steps-for-building-the-webjob-using-visual-studio-2015-preview"></a>Schritte zum Erstellen von der WebJob mithilfe von Visual Studio 2015 (Preview)  ##
-Um eine neue WebJob von Grund auf zu erstellen, müssen wir, nur erstellen eine neue Konsolenanwendung, und stellen Sie sicher, dass wir die erforderlichen Assemblys zum Projekt hinzufügen. In diesem Beispiel wird [Visual Studio 2015 (Preview)](http://tz.nu/1CagngX)verwendet, wie der Name schon sagt derzeit eine Beta-Version ist.
+## <a name="steps-for-building-the-webjob-using-visual-studio-2015-preview"></a>Steps for building the WebJob using Visual Studio 2015 (Preview)  ##
+In order to build a new WebJob from scratch, all we need to do is create a new console application and make sure we add the required assemblies to the project. In this sample I’ll use [Visual Studio 2015 (preview)](http://tz.nu/1CagngX), which as its name implies is currently in a beta release.
 
-### <a name="step-1-create-your-console-application"></a>Schritt 1: Erstellen der Konsolenanwendung ###
-Starten Sie, indem Sie ein neues Projekt erstellen, und stellen Sie sicher, dass Sie die Vorlage "**Console Application**" ausgewählt haben. Darüber hinaus und dies ist wichtig, stellen Sie sicher, dass Sie **.NET Framework 4.5**gewählten!
+### <a name="step-1-create-your-console-application"></a>Step 1: Create your console application ###
+Start by creating a new project and make sure you’ve selected the "**Console Application**" template. Also, and this is important, make sure you've chosen **.NET Framework 4.5**!
 
-![Das Dialogfeld Neues Projekt, so erstellen Sie eine Konsolenanwendung, die mit den Punkt festgelegt net Framework 4.5](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/1.Create-Console-Application.png)
+![The New Project dialog box, set to create a console application using the dot net Framework 4.5](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/1.Create-Console-Application.png)
 
-### <a name="step-2-add-the-sharepoint-specific-assemblies-from-nuget"></a>Schritt 2: Hinzufügen der SharePoint-spezifische Assemblys aus NuGet ###
-Wenn Sie Visual Studio 2015 wie ich mache verwenden, sieht das NuGet-Paket-Manager-Dialogfeld geringfügig von früheren Versionen von Visual Studio, aber das Konzept des identisch.
+### <a name="step-2-add-the-sharepoint-specific-assemblies-from-nuget"></a>Step 2: Add the SharePoint-specific assemblies from NuGet ###
+If you’re using Visual Studio 2015 as I’m doing, the NuGet package manager dialog will look slightly different from earlier versions of Visual Studio, but the concept’s the same.
 
- - Wechseln Sie zu**"Extras**"->"**NuGet-Paket-Manager**-">"**Verwalten von NuGet-Pakete für Lösung..."**
- - Suchen Sie nach "**App für SharePoint**"
- - Installieren Sie das Paket "**AppForSharePointWebToolkit**" dem installieren die erforderlichen Hilfsklassen für die Arbeit mit dem SharePoint-Clientobjektmodells aufgerufen.
+ - Go to "**Tools**" -> "**NuGet Package Manager**" -> "**Manage NuGet Packages for Solution…**"
+ - Search for "**App for SharePoint**"
+ - Install the package called "**AppForSharePointWebToolkit**" which will install the required helper classes for working with the SharePoint Client Object Model.
 
-![Die NuGet Package Manager-Dialogfeld mit den Suchbegriff App für SharePoint. App für SharePoint Web Toolkit wird hervorgehoben, und die Schaltfläche "installieren" geklickt werden kann.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/2.Add-App-For-SharePoint-Web-Toolkit-from-Nuget.png)
-Stellen Sie sicher, dass das NuGet-Paket erfolgreich war, indem Sie sicherstellen, dass diese beiden neuen Klassen in Ihrer Konsolenanwendungsprojekt vorhanden ist: ![der Projektmappen-Explorer zeigt die neu hinzugefügten Klassen Share Point Kontext und Hilfsprogramm-Token.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/3.Project-Overview-With-Added-Files.png)
+![The NuGet Package Manager dialog showing the search term, App for SharePoint. App For SharePoint Web Toolkit is highlighted and the Install button is ready to be clicked.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/2.Add-App-For-SharePoint-Web-Toolkit-from-Nuget.png)
+Make sure the NuGet package worked by making sure there’s these two new classes in your console application project: ![The Solution Explorer shows the newly added classes, Share Point Context and Token Helper.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/3.Project-Overview-With-Added-Files.png)
 
-### <a name="step-3-add-the-required-code-to-execute-the-job-on-your-office-365-site"></a>Schritt 3: Hinzufügen des erforderlichen Codes zum Ausführen des Auftrags auf Ihrer Office 365-Website ###
-An dieser Stelle haben wir unsere Konsolenanwendung erstellt, und wir haben die erforderlichen Assemblys, die für uns zur Kommunikation mit SharePoint vereinfachen werden hinzugefügt. Nächste Schritte stellen sind der Hilfsklassen, um das Ausführen von Befehlen im unseren SharePoint-Umgebung über unsere Console Application verwenden. Markieren Sie entlang.
+### <a name="step-3-add-the-required-code-to-execute-the-job-on-your-office-365-site"></a>Step 3: Add the required code to execute the job on your Office 365 site ###
+At this point we’ve created our Console Application and we’ve added the required assemblies that will make it easy for us to communicate with SharePoint. Next steps are to make use of these helper classes in order to execute commands in our SharePoint environment through our Console Application. Tag along.
 
-***Hinweis:*** In diesem Beispiel nach Abschluss des Vorgangs ich werde verwenden ein Konto + Kennwort Ansatz (wie ein Dienstkonto). Authentifizierung erläutert Optionen weiter unten im Artikel und Links zu anderen alternativen Auschecken.
+> [!NOTE] 
+> In the finished sample I’ll be using an account+password approach (like a service account). We’ll discuss authentication options further down in the article and check out links to other alternatives.
 
-#### <a name="wire-up-the-calls-to-the-sharepoint-online-site-collection"></a>Definieren der Anrufe für die SharePoint Online-Websitesammlung ####
+#### <a name="wire-up-the-calls-to-the-sharepoint-online-site-collection"></a>Wire up the calls to the SharePoint Online site collection ####
 
-Der folgende Code veranschaulicht den Anruf an Ihre Website leicht verbinden kann, nun, da wir die Hilfsklassen aus unseren NuGet-Paket hinzugefügt haben.
+The following code demonstrates how to wire up the call to your site quite easily now that we’ve added the helper classes from our NuGet package.
 
 ```C#
  static void Main(string[] args)
@@ -93,25 +94,25 @@ Der folgende Code veranschaulicht den Anruf an Ihre Website leicht verbinden kan
    }
 ``` 
 
-In der beispielanwendung finden Sie, dass ich zwei Hilfsmethoden für das Abrufen von den Kontonamen und das Kennwort des Kontos aus der App.config.Datei hinzugefügt haben. Diese werden im Abschnitt Authentifizierung erläutert weiter unten in diesem Artikel.
+You can see in my sample application that I’ve added two helper methods for fetching the Account Name and Account Password from the app.config file. These are explained in the authentication-section further down in this article.
 
-Wie bei der main-Methode ist, müssen wir nur Dinge bis zu unserem Portal verbinden. Bevor wir tiefer wie wir SharePoint in unseren Code bearbeiten können untersuchen, Erläuterung der Optionen für die Authentifizierung.
+As for the main method, that’s all we need to wire things up to our portal. Before we dig deeper into how we can manipulate SharePoint from our code, let’s discuss options for authentication.
 
-## <a name="authentication-considerations"></a>Überlegungen zur Authentifizierung ##
-Wir sehen Sie sich zwei Optionen für die Authentifizierung und finden Sie, wie sie sich unterscheiden. Weitere Optionen für die Authentifizierung in der Zukunft möglicherweise, aber hier sind zwei Ansätze häufig verwendete.
+## <a name="authentication-considerations"></a>Authentication considerations ##
+We’ll check out two options for authentication and see how they differ. There may be other options for authentication down the road, but here are two commonly used approaches.
 
-### <a name="option-1-use-a-service-account-username--password"></a>Option 1: Verwenden eines Dienstkontos (Username + Kennwort) ###
-Dieser Ansatz ist relativ einfach und ermöglicht es Ihnen, geben Sie einfach ein Konto und Kennwort Ihrem Office 365-Mandanten und verwenden Sie beispielsweise CSOM zum Ausführen von Code für Ihre Websites. Dies ist, was Sie auch in meinem Beispielcode oben angezeigt.
+### <a name="option-1-use-a-service-account-username--password"></a>Option 1: Use a Service Account (Username + Password) ###
+This approach is pretty straight forward and enables you to simply enter an account and password to your Office 365 tenant and then use for example CSOM to execute code on your sites. This is what you see in my sample code above as well.
 
-#### <a name="create-a-new-service-account-in-office-365"></a>Erstellen eines neuen Dienstkontos in Office 365 ####
-In der Reihenfolge zu diesem Zweck sollte ein bestimmtes Konto erstellt werden, die fungiert als Dienstkonto – entweder für dieses bestimmte Anwendung oder eine generische dienstanwendungskonto, die alle Aufträge und Dienste verwenden können.
+#### <a name="create-a-new-service-account-in-office-365"></a>Create a new Service Account in Office 365 ####
+In order for this to work a specific account should be created that acts as a service account – either for this specific application or a generic service application account that all your jobs and services can use.
 
-Aus Gründen der in dieser Demo habe ich ein neues Konto namens "**SP WebJob**" erstellt: ![das Dashboard zeigt das neu erstellte SP WebJob Konto.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/4.Service-Account-Overview.png)
+For the sake of this demo, I’ve created a new account called "**SP WebJob**": ![The dashboard shows the newly created SP WebJob account.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/4.Service-Account-Overview.png)
 
-Je nach den Auftrag auf welche Berechtigungen sollten haben, müssen Sie die Berechtigungen des Benutzerkontos bearbeiten, beim Einrichten von.
+Depending on what permissions the job should have, you will have to edit the permissions of the account when you set it up.
 
-#### <a name="store-credentials-in-your-appconfig"></a>Speichern von Anmeldeinformationen in der Datei app.config ####
-Innerhalb des Projekts ' App.config ' Datei können Sie die Anmeldeinformationen angeben, damit sie auf einfache Weise fetchable aus dem ausführbaren Code sind. Dies ist mein app.config aussieht:
+#### <a name="store-credentials-in-your-appconfig"></a>Store credentials in your app.config ####
+Within your project’s app.config file you can specify the credentials so they’re easily fetchable from the code executable. This is what my app.config looks like:
 ```XML
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
@@ -125,29 +126,29 @@ Innerhalb des Projekts ' App.config ' Datei können Sie die Anmeldeinformationen
 </configuration>
 
 ```
-Sie können die zwei Einstellungen in App.config finden Sie unter:
+You can see the two settings in the App.config:
 
  - SPOAccount
  - SPOPassword
 
-Wenn Sie den ersten Codeausschnitt überprüfen, erhalte ich diese Einstellungen aus der App.config.Datei abgerufen. Beachten Sie, dass das Speichern von den Kontonamen und das Kennwort in Klartext in der Datei app.config bedeutet halten. Sie müssen Treffen einer Entscheidung in eigene Projekte dafür, wie und wo Sie gespeichert und schützen Sie Ihre Kennwörter sollten Sie diesen Ansatz wählen.
+If you review the first code snippet, I’m fetching these settings from the app.config file. Just keep in mind that this means storing the account name and password in clear text in your app.config. You need to make a decision in your own projects for how and where to store and protect your passwords, should you choose this approach.
 
-#### <a name="the-job-runs-under-the-specified-account"></a>Der Auftrag wird unter dem angegebenen Konto ausgeführt. ####
-Sobald die Anwendung ausgeführt wird, sehen Sie, dass er ausgeführt wird, mit dem Konto im Konstruktor SharePointOnlineCredentials() angegeben:
+#### <a name="the-job-runs-under-the-specified-account"></a>The job runs under the specified account ####
+Once the application runs, you will see that it runs using the account specified in the SharePointOnlineCredentials() constructor:
 
-![Automatische Konvertierung Protokoll zeigt vier Text Übersetzungen SP WebJob zugeordnet.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/5.Running-Job-Overview.png)
+![The automatic translation log shows four text translations attributed to SP WebJob.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/5.Running-Job-Overview.png)
 
-In diesem Beispiel oben bin ich eine WebJob angezeigt, die auf eine benutzerdefinierte Liste in einem der "Meine Websites" in meiner SharePoint Online-Websitesammlung gehostet Aktionen ausgeführt wird.
+In my sample above I’m showing a WebJob that is executing actions on a custom list in one of my sites hosted in my SharePoint Online site collection.
 
-Aus diesem Grund erhalten wir einen guten zurückverfolgt werden Änderungen können im Portal unsere Dienstkonto ausgeführt. Hierbei handelt es sich deshalb Achten Sie darauf, nennen Sie das Konto mit Bedacht – jeder kennt, dass die Änderungen automatisch von unseren Dienst durchgeführt wurden, indem Sie einfach auf die Metadaten geändert/erstellt.
+Because of this, we can get a pretty good traceability of changes in the portal performed by our service account. This is why its important to name the account wisely – everyone will know that the modifications were done automatically by our service simply by looking at the modified/created metadata.
 
-### <a name="option-2-use-oauth-and-include-authentication-tokens-in-your-requests-to-avoid-specifying-accountpassword"></a>Option 2: Verwendung OAuth und enthalten Authentifizierungstoken in Ihre Anforderungen zu vermeiden, Konto und Kennwort angeben ###
-Dies wurde durch schätze [Kirk Evans](http://blogs.msdn.com/b/kaevans/) bei Microsoft ausführlich erläutert.
+### <a name="option-2-use-oauth-and-include-authentication-tokens-in-your-requests-to-avoid-specifying-accountpassword"></a>Option 2: Use OAuth and include authentication tokens in your requests to avoid specifying account/password ###
+This has been explained in great detail by my friend [Kirk Evans](http://blogs.msdn.com/b/kaevans/) at Microsoft.
 
-In seinem buchen gewählte "[Erstellen eines SharePoint-Add-Ins als einen Zeitgeberauftrag](http://tz.nu/1xBA76K)" erläutert er das können Sie nutzen und Durchlauf entlang des Zugriffs für das Token, um zu vermeiden und Kennwort Setupprogrammen wie bereits erwähnt, falls Sie nicht die Kennwörter speichern möchten und Anmeldeinformationen in die Anwendung.
+In his post called "[Building a SharePoint Add-in as a Timer Job](http://tz.nu/1xBA76K)" he explains how you can utilize and pass along the access tokens in order to avoid username/password setups like I explained above, in case you don't want to store the passwords and credentials in your application.
 
-## <a name="extending-the-code-with-some-csom-magic"></a>Erweitern Sie den Code mit einigen magischen CSOM ##
-An dieser Stelle haben wir eine funktionsfähige Console Application authentifizieren und Anforderungen an den Office 365-Websites ausführen kann. Nicht besonders interessant ausgeführt wurde im Code noch, sodass hier ist ein Beispiel-Ausschnitt, Abrufen von Informationen aus einer Liste bezeichnet "Automatische Übersetzungen", die ich erstellt haben, und die Codelogik wird angezeigt, wenn alle Elemente in der Liste, die übersetzt wurde noch nicht vorhanden ist und dann Es werden führen Sie einen Anruf an einen Übersetzungsdienst und den Text, der die gewünschte Ausgabe Sprache übersetzen.
+## <a name="extending-the-code-with-some-csom-magic"></a>Extending the code with some CSOM magic ##
+At this point we have a working Console Application which can authenticate and execute requests to your Office 365 sites. Nothing fancy has been done in the code yet, so here’s a sample snippet for pulling out some information from a list called "Automatic Translations" that I have created, and the code logic will see if there’s any items in the list that haven’t been translated and then it’ll execute a call to a translation-service and translate the text to the desired output language.
 ```C#
 static void Main(string[] args)
 {
@@ -211,83 +212,86 @@ static void Main(string[] args)
 }
 
 ```
-Die **TranslatorHelper** -Klasse ist eine Hilfsklasse, die eine benutzerdefinierte Übersetzung API ruft aber es nicht erläutert ausführlich in diesem Beitrag, da es sehr weit außerhalb des Bereichs ist.
+The **TranslatorHelper** class is a helper class which calls a custom translation API but it will not be discussed in detail in this post since it's pretty far outside of the scope.
 
-**Hinweis:** *Ressourcenverfügbarkeitsdaten aus dem Code Dies ist eine Demo definitiv nicht für die Verwendung in der Produktion, überprüfen sie und passen Sie entsprechend Ihrer codieren Standards und Sicherheitsprinzipien. Jedoch alle Console.WriteLine Ergänzungen für uns, überprüfen Sie die Ausführung der Aufträge auf einfache Weise über das Portal Azure hinzugefügt werden. Klicken Sie auf Protokollierung und Überwachung weiteren unten in diesem Artikel weitere.*
+> [!NOTE] 
+> As seen from the code this is a demo and definitely not for production use, please revise it and adjust according to your coding standards and security principles. However all the Console.WriteLine additions are added in order for us to review the execution of the jobs easily from the Azure Portal. More on logging and monitoring further down in this article.
 
-## <a name="publishing-your-webjob-to-azure"></a>Veröffentlichen Sie Ihre WebJob in Azure ##
-Wenn Sie Ihre WebJob entwickelt haben, und Sie können sie auf der Azure-Umgebung bereitstellen (an eine Azure-WebSite bereitgestellt), können Sie zwei grundlegende Optionen wie unten beschrieben.
+## <a name="publishing-your-webjob-to-azure"></a>Publishing your WebJob to Azure ##
+When you’ve developed your WebJob and you’re ready to deploy it to your Azure environment (deploys to an Azure WebSite), you have two main options as described below.
 
-### <a name="option-1-upload-a-zip-file-with-the-webjob-binaries-to-your-azure-portal"></a>Option 1: Hochladen einer Zip-Datei mit den WebJob Binärdateien in der Azure-Verwaltungsportal ###
-Verwenden der Azure-Verwaltungsportal, in dem Sie alle Ihre Awesomeness in Azure aufbewahren, können Sie eine Zip-Datei, enthält die Ausgabe aus Visual Studio Build hochladen. Dies ist eine einfache Möglichkeit zum Kompilieren und Versand von Ihrem Code an eine andere Person, die die Bereitstellung für Sie ausgeführt wird.
+### <a name="option-1-upload-a-zip-file-with-the-webjob-binaries-to-your-azure-portal"></a>Option 1: Upload a zip file with the WebJob binaries to your Azure Portal ###
+Using the Azure Portal where you keep all of your awesomeness in Azure, you can upload a zip-file containing the output from Visual Studio’s build. This is an easy way for compiling and shipping your code to someone else who will do the deployment for you.
 
-#### <a name="create-the-zip-file"></a>Erstellen Sie die Zipdatei ####
-Einfach abgerufen Sie werden, der die Ausgabedateien aus Ihrem Visual Studio (normalerweise im Ordner Bin/Debug oder Bin-Version) zu erstellen:
+#### <a name="create-the-zip-file"></a>Create the zip file ####
+Simply grab all the output files from your Visual Studio build (normally in your bin/Debug or bin/Release folder):
 
-![Eine Windows Explorer-Ansicht Bin/Debug-Ordner wird angezeigt.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/6.Zip-File-Overview.png)
-Komprimieren Sie, damit eine gute Zip-Datei für Ihre Arbeit Web Sie erzielen:
+![A Windows Explorer view of the bin/Debug folder is displayed.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/6.Zip-File-Overview.png)
+Compress them so you’ll get a nice Zip file for your web job:
 
-![Windows Explorer-Ansicht einer abgeschlossenen ZIP-Datei wird angezeigt.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/7.Zip-File-Created.png)
+![A Windows Explorer view of a completed .zip file is displayed.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/7.Zip-File-Created.png)
 
-#### <a name="find-a-web-site-where-the-job-should-be-deployed"></a>Suchen nach einer Website, in dem der Auftrag bereitgestellt werden ####
+#### <a name="find-a-web-site-where-the-job-should-be-deployed"></a>Find a web site where the job should be deployed ####
 
-Gut, damit Sie Ihr Paket haben. Das ist einfach. Nächste Schritt besteht darin, gleich https://portal.azure.com und melden Sie sich Ihre Windows Azure-Verwaltungsportal. Sie müssen entweder eine neue Website erstellen, oder verwenden Sie eine vorhandene – dieser Website werden den Host für unsere Webauftrag, von dort aus.
+Okay, so you’ve got your package. That’s easy enough. Next step is to head on to https://portal.azure.com and login to your Windows Azure Portal. From there you’ll need to either create a new web site, or use an existing one – this website will be the host for our web job.
 
-In unserem Fall habe ich bereits eine Azure-WebSite für einige der Demos für meine Office 365 damit ich, dass eine gerade verwenden werden.
+In my case, I already have an Azure WebSite for some of my Office 365 demos so I’ll just use that one.
 
-Wenn Sie unten im Einstellungsbereich für Ihre Website navigieren, finden Sie eine etwas "**WebJobs**" unter der Kopfzeile "**Vorgänge**" aufgerufen:
+If you scroll down in the settings pane for your website, you’ll find a something called "**WebJobs**" under the "**Operations**" header:
 
-![Des Autors Azure-Verwaltungsportal wird angezeigt, mit einem Pfeil auf WebJobs zeigen. ](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/8.Find-WebJobs-in-Azure-Portal.png)
- **Klicken, auf dem der Pfeil zeigt!**
+![The author's Azure Portal is displayed, with an arrow pointing to WebJobs.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/8.Find-WebJobs-in-Azure-Portal.png)
+**Click where the arrow points!**
 
-#### <a name="upload-your-webjob"></a>Hochladen der WebJob ####
+#### <a name="upload-your-webjob"></a>Upload your WebJob ####
 
-Hochladen der Webauftrag durch Klicken auf das Zeichen **[+ hinzufügen]** :
+Upload your web job by clicking the **[+ Add]** sign:
 
-![Die WebJobs Azure-Verwaltungsportal wird angezeigt, mit einem Pfeil auf Hinzufügen.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/9.Upload-Azure-WebJob-from-Azure-Portal.png)
+![The WebJobs Azure portal is displayed, with an arrow pointing to Add.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/9.Upload-Azure-WebJob-from-Azure-Portal.png)
 
-Wählen Sie einen Namen, wie der Auftrag ausgeführt werden soll und die tatsächlichen Zip-Datei:
+Choose a Name, how the job should run and the actual zip file:
 
-![Das Dialogfeld WebJob hinzufügen wird angezeigt. Das Feld Name den Text Zimmergren-O365-WebJobSample enthält und How to Run Feld enthält den Text On Demand.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/10.Configure-Name-of-Uploaded-WebJob.png)
+![The Add WebJob dialog is displayed. The Name field contains the text Zimmergren-O365-WebJobSample, and the How to Run field contains the text On Demand.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/10.Configure-Name-of-Uploaded-WebJob.png)
 
-***Wichtig:*** Die Alternative "Wie zur Ausführung" nur bietet "On Demand" oder "Fortlaufend" zu diesem Zeitpunkt, aber bald vorhanden sein Support für "Geplant" sowie – das ist wirklich möchten.
+> [!IMPORTANT] 
+> The "How To Run" alternative only offers "On Demand" or "Continuous" at this point, but soon there will be support for "Scheduled" as well – which is what we really want.
 
-*(Hinweis: im nächsten Abschnitt für die Veröffentlichung direkt von Azure, Planen Sie es aus in VS).*
+*(Hint: In the next section for publishing directly from Azure, you can schedule it from inside VS).*
 
-Okay, können geschieht – Sie nun Ihre Webjob aus der Azure-Verwaltungsportal ausführen:
+Okay, done – you can now run your webjob from your Azure Portal:
 
-![Die WebJobs Azure-Verwaltungsportal wird mit der neuen Liste angezeigt. Ein Kontextmenü wird über den Auftrag mit den Optionen ausführen und löschen.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/11.Run-WebJob-from-Azure-Portal.png)
+![The WebJobs Azure portal is displayed with the new job list. A context menu appears above the job with the options of Run and Delete.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/11.Run-WebJob-from-Azure-Portal.png)
 
-Dies ist zwar schön und Sicherheitsdeskriptor, da das Portal verfügt nicht über die Dialogfelder für die Unterstützung der Planung noch – ich würden Sie Informationen zum Veröffentlichen von auszuchecken intensiv über in Visual Studio 2015 stattdessen (oder 2013, wenn das Ihrer Wahl ist).
+While this is all fine and dandy, since the portal doesn’t have the dialogs for supporting scheduling just yet – I would urge you to check out how to publish from inside Visual Studio 2015 instead (or 2013, if that’s your choice).
 
-### <a name="option-2-publish-directly-to-azure-from-visual-studio"></a>Option 2: Veröffentlichen Sie direkt in Azure von Visual Studio ###
-Dies ist meine bevorzugten zu diesem Zeitpunkt, da ich die Tools in Visual Studio verwenden können, um alle Änderungen direkt mit einem gehosteten Dienst schnell veröffentlichen. Ein weiterer Vorteil werden deaktivieren bald, wie Sie auch den Auftrag planen können, genau wie Sie direkt in den Dialogfeldern in Visual Studio ausführen soll.
+### <a name="option-2-publish-directly-to-azure-from-visual-studio"></a>Option 2: Publish directly to Azure from Visual Studio ###
+This is my favorite one at this point because I can use the tooling in Visual Studio to quickly publish any changes directly to my hosted service. The other benefit will become clear soon, as you can also schedule the job exactly how you want it to execute directly from the dialogs in Visual Studio.
 
-#### <a name="choose-to-publish-the-webjob-from-visual-studio-2015"></a>Wählen Sie die WebJob von Visual Studio 2015 veröffentlichen ####
+#### <a name="choose-to-publish-the-webjob-from-visual-studio-2015"></a>Choose to publish the WebJob from Visual Studio 2015 ####
 
-***Hinweis:*** *Diese Dialogfelder abweichen etwas, wenn Sie eine frühere Version von Visual Studio ausführen. Darüber hinaus habe ich bereits angemeldet, wenn Sie dies zum ersten Mal tun ein Anmeldedialogfeld abrufen kann, um Azure-Konto anmelden. Dies ist eine Voraussetzung.*
+> [!NOTE] 
+> These dialogs may differ slightly if you’re running an earlier version of Visual Studio. Also, I am already logged in so if you’re doing this for the first time you may get a login-dialog in order to sign in to your Azure account. That’s a pre-requisite.
 
-Klicken Sie einfach mit der rechten Maustaste in des Projekts, und wählen Sie "**Veröffentlichen als einem Azure WebJob...**":
+Simply right-click your project and select "**Publish as an Azure WebJob…**":
 
-![Im Kontextmenü Projektmappen-Explorer wird angezeigt, mit der veröffentlichen als Azure WebJob Option hervorgehoben.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/12.Publish-WebJob-from-Visual-Studio-2015.png)
+![The Solution Explorer context menu is displayed with the Publish as Azure WebJob option highlighted.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/12.Publish-WebJob-from-Visual-Studio-2015.png)
 
-#### <a name="add-azure-webjob"></a>Hinzufügen von Azure WebJob ####
-Dadurch gelangen Sie zu einer neuen Dialogfeld, in denen können Sie den Auftrag konfigurieren, und da wir ein wiederkehrendes Projekt soll, die nach einem Zeitplan (in meinem Fall einmal für jeden Abend) ausgeführt wird, können Sie den Zeitplan direkt in den Dialogfeldern konfigurieren: ![das Hinzufügen von Azure WebJob Dialogfeld Benachrichtigung wird ayed. Das Namensfeld WebJob enthält den Text Zimmergren-O365-WebJobSample, Feld Modus ausführen WebJob enthält die Option nach einem Zeitplan ausführen, serienfelds enthält den Option periodisch Auftrag und das Kontrollkästchen kein Enddatum wird überprüft, die als Serie festlegen jedes Feld auf 1 gesetzt ist Tage , und die starten Datum 9 Januari 2015 ist.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/13.Add-Azure-WebJob-Dialog.png)
+#### <a name="add-azure-webjob"></a>Add Azure WebJob ####
+This will bring you to a new dialog where you can configure the job, and since we want a recurring job that should be executed on a schedule (in my case once every night) you can configure the schedule directly from the dialogs: ![The Add Azure WebJob dialog is displayed. The WebJob name field contains the text Zimmergren-O365-WebJobSample, the WebJob run mode field contains the option Run on a Schedule, the Recurrence field contains the option Recurring job and the check box No end date is checked, the Recur every field is set to 1 days, and the Starting on date is 9 Januari 2015.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/13.Add-Azure-WebJob-Dialog.png)
 
- - Stellen Sie sicher, dass der Name angezeigten Web ist
- - Wählen Sie Ihre Ausführmodus, ich bin "Auf einen Zeitplan", da es in einem bestimmten Zeitpunkt täglich kommen haben sollen
- - Der Auftrag ein wiederkehrendes Projekt oder einen einmaligen Auftrag sein sollte? Da wir möchten, können Sie einen Zeitgeberauftrag das wiederholt werden, muss in meinem Fall ohne jedes Enddatum, da es immer nachts ausgeführt werden kann
- - Sie können die Serie nach unten zu einer Minute, planen möchten, sollten.
- - Wenn starte wir? :-)
+ - Make sure the name is web friendly
+ - Select your run mode, I’m on "Run on a Schedule" because we want to have it occur on a specific time every day
+ - Should the job be a recurring job or a one-time job? Since we want to simulate a Timer Job it needs to be recurring, and in my case without any end date since it’ll be running every night
+ - You can schedule the recurrence down to every minute, should you want.
+ - When do we start? :-)
 
-Trefferposition **OK** und Sie sehen, dass Sie Visual Studio eine Meldung "**Installieren von WebJobs Publishing NuGet-Paket**" ablegen.
+Hit **OK** and you’ll see that Visual Studio will drop you a message saying "**Installing WebJobs Publishing NuGet Package**".
 
-#### <a name="visual-studio-added-webjobs-publishing-nuget-package"></a>Visual Studio hinzugefügt WebJobs Publishing NuGet-Paket ####
-![Klicken Sie im Dialogfeld WebJobs NuGet-Paket zu installieren wird angezeigt, der ein Drehfeld und der Text, Installieren von WebJobs Publishing NuGet-Paket angezeigt.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/14.WebJobs-NuGet-Package-Install.png)
+#### <a name="visual-studio-added-webjobs-publishing-nuget-package"></a>Visual Studio added WebJobs Publishing NuGet Package ####
+![The WebJobs NuGet Package Install dialog is displayed which displays a spinner and the text, Installing WebJobs Publishing NuGet Package.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/14.WebJobs-NuGet-Package-Install.png)
 
-Dadurch wird eine neue Datei mit dem Namen "**Webjob veröffentlichen settings.json**", um unseren Projekt, mit der Konfiguration für den Auftrag tatsächlich hinzugefügt.
+This actually adds a new file called "**webjob-publish-settings.json**" to our project, containing the configuration for the job.
 
-Die Datei sieht folgendermaßen aus:
+The file looks like this:
 ```json
 {
   "$schema": "http://schemastore.org/schemas/json/webjob-publish-settings.json",
@@ -299,68 +303,68 @@ Die Datei sieht folgendermaßen aus:
   "runMode": "Scheduled"
 }
 ```
-Rechts, müssen wir nicht mit dieser Datei gegenwärtig Mühe, da es bereits konzipiert, die Planung in Dialogfeldern.
+Right, we don’t need to bother with this file at the moment since we already designed the scheduling using the dialogs.
 
-#### <a name="select-publishingdeployment-target"></a>Wählen Sie Ziel Veröffentlichung-Bereitstellung ####
-Im nächste Schritt im Dialogfeld werden, wo Sie veröffentlichen/Bereitstellen Ihrer WebJob. Sie können ein Veröffentlichungsprofil importieren oder Microsoft Azure-WebSites, um zu authentifizieren, und wählen Sie eine vorhandene Websites aktivieren.
+#### <a name="select-publishingdeployment-target"></a>Select publishing/deployment target ####
+The next step in the dialog will be where to publish/deploy your WebJob. You can either import a publishing profile or select Microsoft Azure WebSites in order to authenticate and select one of your existing sites.
 
-Seit ich eine auch immer Meine Veröffentlichungsprofile von Meine Azure-Verwaltungsportal heruntergeladen haben, ich fahren Sie fort, und wählen Sie "**Import**" und geben Sie einfach die Veröffentlichung Profildatei, die ich meine Azure-Website heruntergeladen haben:
+Since I’ve got a habit of always downloading my publishing profiles from my Azure Portal, I’ll go ahead and select "**Import**" and simply specify the publishing profile file that I’ve downloaded from my Azure website:
 
-![Klicken Sie im Dialogfeld Web veröffentlichen wird mit der Registerkarte Verbindung sichtbar angezeigt.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/15.Publish-Web-Dialog.png)
+![The dialog Publish Web is displayed with the Connection tab visible.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/15.Publish-Web-Dialog.png)
 
-Anschließend müssen wir nur auf die Schaltfläche "Veröffentlichen" klicken. Keine Angst, es nicht kompakten. Ich denke.
+With that done, all we need to do is click the button called "Publish". Don’t be afraid, it wont bite. I think.
 
-#### <a name="publish"></a>Veröffentlichen ####
-Nachdem Sie veröffentlichen treffen, wird das Dialogfeld "Web veröffentlichen Aktivität" den Fortschritt der Bereitstellung Webauftrag angezeigt: ![im Dialogfeld Web veröffentlichen Aktivität wird angezeigt.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/16.Publish-Progress-Visual-Studio-2015.png)
+#### <a name="publish"></a>Publish ####
+Once you hit Publish, the Web Publish Activity dialog will display the progress of your Web Job deployment: ![The dialog Web Publish Activity is displayed.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/16.Publish-Progress-Visual-Studio-2015.png)
 
-Nachdem es erfolgt ist, sollte die WebJob in der Azure-Verwaltungsportal angezeigt: ![der Azure-Verwaltungsportal zeigt Zimmergren-O365-WebJobSample in der Liste der WebJobs mit dem Status abgeschlossen 2 Minuten vor.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/17.Web-Job-Published-as-seen-in-Azure-Portal.png)
+Once it’s done, you should see the WebJob in your Azure Portal: ![The Azure Portal shows Zimmergren-O365-WebJobSample in the list of WebJobs with the status of, Completed 2 min ago.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/17.Web-Job-Published-as-seen-in-Azure-Portal.png)
 
-Der Status WebJob wird nun als abgeschlossen angezeigt. Sie würden Fehler/sagen, wenn er nicht behandelten Ausnahmen auslösen oder anderweitig zur Verfügung fehlerhaft Verhalten stellen würde.
+The WebJob status is now displayed as Completed. It would say failure/error if it would throw any unhandled exceptions or otherwise provide unhealthy behavior.
 
-Er tut weiterhin "On Demand", aber dieser Auftrag wird stündlich jetzt tatsächlich ausgeführt.
+It still says "On Demand", but this job actually runs once every hour now.
 
-## <a name="monitoring-the-job-and-reviewing-logs"></a>Überwachung des Auftrags und Protokolle überprüfen ##
-Wenn Sie die oben beschriebenen Schritte durchgeführt haben, haben Sie einen Auftrag für Sie als geplante Aufgabe in der Cloud arbeiten Ausführen von Aktionen in Richtung der Office 365-Sites.
+## <a name="monitoring-the-job-and-reviewing-logs"></a>Monitoring the job and reviewing logs ##
+If you’ve done all the previous steps, you’ve got a job working for you as a scheduled task in the cloud, performing actions toward your Office 365 site(s).
 
-### <a name="view-all-job-executions-and-status"></a>Zeigen Sie aller Auftrag Ausführungen und Status an ###
-Wenn Sie überprüfen, wenn der Auftrag letzten Ausführung was das Ergebnis der jeder Ausführung des Auftrags war oder während der Ausführung des Auftrags für Änderungen überprüfen möchten, Sie können klicken Sie auf den Link unter "Protokolle" klicken Sie in der Übersicht über die WebJobs Vorgangs: ![der WebJobs-Dialogfeld , mit einem Pfeil auf den Link "Upgradeprotokolle" zeigen.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/18.View-All-WebJobs-and-status-of-execution.png)
+### <a name="view-all-job-executions-and-status"></a>View all job executions and status ###
+If you want to review when the job last ran, what the outcome of every execution of the job was or review what happened during execution of the job, you can click on the link under "Logs" when you’re in the WebJobs overview: ![The WebJobs dialog, with an arrow pointing to the Logs link.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/18.View-All-WebJobs-and-status-of-execution.png)
 
-Dadurch erhalten Sie eine Übersicht über alle Ausführungen der ausgewählten Aufträge, einschließlich der /outcome Status:
+This will give you an overview of all the executions of the selected jobs, including the status /outcome:
 
-![Die WebJob Details, einschließlich der letzte Auftrag ausgeführt wird.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/19.WebJob-Details-Overview.png)
+![The WebJob Details including Recent job runs.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/19.WebJob-Details-Overview.png)
 
-Auf den hervorgehobenen Link klicken, können Sie nach unten Architekturprinzipien eine bestimmte Ausführung zum Überprüfen der Protokolle des Auftrags und stellen Sie sicher, dass Dinge kein Problem. Dies ist wahrscheinlich mehr relevant, wenn der Auftrag tatsächlich einen Fehler verursacht, und Sie benötigen, Fehlerursache untersuchen, wenn das Ergebnis des Auftrags falsch ist oder nicht wie erwartet.
+By clicking the highlighted link, you can dig down into a specific execution to review the logs of the job and make sure things look okay. This is probably more relevant if the job actually caused an error and you needed to investigate what went wrong, or if the outcome of the job is incorrect or not as expected.
 
-Sie können auch sehen, dass die Console.WriteLine-Anweisungen, die ich so gut in Meine Console Application für diese Demo jetzt verwendet wird im Protokoll Ausführung Auftrag:
+You can also see that the Console.WriteLine statements that I so nicely used in my Console Application for this demo now shows up in the job execution log:
 
-![Die WebJob-Details die Zeilen in der Protokolldatei angezeigt.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/20.Review-Logs-and-Monitor-WebJob-Execution.png)
+![The WebJob Details showing the lines in the log file.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/20.Review-Logs-and-Monitor-WebJob-Execution.png)
 
-## <a name="tips--tricks"></a>Tipps und Tricks ##
-Alle mit früheren Versionen von Visual Studio ausgeführt werden können, habe ich alles mit Visual Studio 2015 arbeiten. Aber dabei, die es einige Punkte wurden, ich bin Hinzufügen dieser hier für den Fall, dass Sie in das gleiche umbricht.
+## <a name="tips--tricks"></a>Tips & Tricks ##
+While this can all be done with earlier versions of Visual Studio, I made everything work with Visual Studio 2015. But along the way there were some gotchas, I’m adding them here in case you bump into the same thing.
 
-### <a name="exit-code--2146232576-problem-when-running-the-job"></a>Exit Code-2146232576 Problem bei der Ausführung des Auftrags ###
-Seit dem Start eines Projekts Visual Studio 2015 (Preview) Serverstart es das Projekt als eine Konsolenanwendung, die auf **.NET Framework 4.5.3**basiert.
+### <a name="exit-code--2146232576-problem-when-running-the-job"></a>Exit code -2146232576 problem when running the job ###
+Since I started a Visual Studio 2015 (Preview) project, it started the project up as a Console Application based on **.NET Framework 4.5.3**.
 
-Ausführen des Auftrags lokal funktioniert, da .NET Framework 4.5.3 auf meinem Computer Dev vorhanden sind. Wenn ich den Auftrag zur eigene Windows Azure-Website als eine WebJob bereitgestellt, ist fehlgeschlagen, es mit "**Code-2146232576 beenden**".
+Running the job locally works fine, since .NET Framework 4.5.3 exist on my dev machine. However, once I deployed the job to My Windows Azure Web Site as a WebJob, it failed with "**exit code -2146232576**".
 
-#### <a name="solution-make-sure-youre-on-the-correct-net-version"></a>Lösung: Stellen Sie sicher, dass Sie die richtige Version .NET sind ####
-Eine Weile gedauert hat, bevor ich, wenn ich in **.NET Framework 4.5**geändert, funktioniert aber nicht Azure .NET Framework, Version 4.5.3 gefallen realisiert.
+#### <a name="solution-make-sure-youre-on-the-correct-net-version"></a>Solution: Make sure you’re on the correct .NET version ####
+It took a while before I realized that Azure didn’t like .NET Framework version 4.5.3, but when I changed to **.NET Framework 4.5**, it works.
 
-Sie in das Problem umbricht, stellen Sie nur sicher, dass Ihre Arbeit unter die richtige .NET Framework-Version ausgeführt wird.
-![Zeigt die Eigenschaften von Visual Studio-Projekt-Seite, Registerkarte Anwendung, mit der Ziel-Framework-Dropdown-, Hervorheben Punkt NET Framework 4.5.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/21.Change-NET-Framework-In-Visual-Studio-2015.png)
+If you bump into that problem, just make sure your job is executing under the correct .NET framework version.
+![Displays the Visual Studio Project Properties page, Application tab, showing the Target framework drop down, highlighting dot NET Framework 4.5.](media/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites/21.Change-NET-Framework-In-Visual-Studio-2015.png)
 
 # <a name="summary"></a>Summary #
-Es ist, zwar nicht sehr viel bis hin zum Erstellen einer Azure WebJob können Sie sie sehr komplex haben. Das allgemeine Konzept sehr gerade vorwärts ist jedoch klicken Sie dann als alle komplexe Projekte im Lieferumfang der Entscheidungen um Authentifizierung, Code Stabilität und Zuverlässigkeit, hohe Verfügbarkeit Szenarien, Wartungsfreundlichkeit und so weiter. Diese Variablen für jedes Projekt eindeutig sind und vor dem "nur Bereitstellen von" sorgfältig geplant werden sollte einen Auftrag zum Azure.
+While there’s not very much to building an Azure WebJob, you can make them quite complex. The overall concept is very straight forward – but then as with all complex projects comes the decisions around authentication, code stability and reliability, high availability scenarios, maintainability and so on. These are variables unique to each project and should be carefully considered before "just deploying" a job to Azure.
 
-### <a name="related-links"></a>Verwandte links ###
--  [Ursprüngliche Blogbeitrag auf Azure WebJobs](http://zimmergren.net/technical/getting-started-with-building-azure-webjobs-timer-jobs-for-your-office-365-sites) , indem Sie Tobias Zimmergren
--  [Empfohlene Ressourcen für Azure WebJobs](http://azure.microsoft.com/en-us/documentation/articles/websites-webjobs-resources/)
--  [Visual Studio 2015 (Preview) herunterladen](http://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx)
--  [Erstellen einer SharePoint-Add-Ins als einen Zeitgeberauftrag](http://blogs.msdn.com/b/kaevans/archive/2014/03/02/building-a-sharepoint-app-as-a-timer-job.aspx) , indem Kirk Evans
--  [Zum Bereitstellen von Azure WebJobs zu Azure-Websites:](http://azure.microsoft.com/en-us/documentation/articles/websites-dotnet-deploy-webjobs/)
--  [Einfache remote Zeitgeberauftrag, die Interaktion mit SharePoint Online,](http://channel9.msdn.com/Blogs/Office-365-Dev/Simple-remote-timer-job-that-interacts-with-SharePoint-Online-Office-365-Developer-Patterns-and-Prac) von Andrew Connell auf Channel 9
+### <a name="related-links"></a>Related links ###
+-  [Original blog post on Azure WebJobs](http://zimmergren.net/technical/getting-started-with-building-azure-webjobs-timer-jobs-for-your-office-365-sites) by Tobias Zimmergren
+-  [Recommended Resources for Azure WebJobs](http://azure.microsoft.com/en-us/documentation/articles/websites-webjobs-resources/)
+-  [Visual Studio 2015 (Preview) Download](http://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx)
+-  [Building a SharePoint Add-in as a Timer Job](http://blogs.msdn.com/b/kaevans/archive/2014/03/02/building-a-sharepoint-app-as-a-timer-job.aspx) by Kirk Evans
+-  [How to Deploy Azure WebJobs to Azure Websites](http://azure.microsoft.com/en-us/documentation/articles/websites-dotnet-deploy-webjobs/)
+-  [Simple remote timer job that interacts with SharePoint Online](http://channel9.msdn.com/Blogs/Office-365-Dev/Simple-remote-timer-job-that-interacts-with-SharePoint-Online-Office-365-Developer-Patterns-and-Prac) by Andrew Connell on Channel9
 
-### <a name="applies-to"></a>Gilt für ###
--  Office 365 mit mehreren Mandanten (MT)
--  Office 365 dedizierte (D)
--  SharePoint 2013 lokal 
+### <a name="applies-to"></a>Applies to ###
+-  Office 365 Multi Tenant (MT)
+-  Office 365 Dedicated (D)
+-  SharePoint 2013 on-premises 

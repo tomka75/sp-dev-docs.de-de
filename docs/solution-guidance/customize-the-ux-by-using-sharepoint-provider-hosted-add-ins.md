@@ -1,50 +1,51 @@
 ---
-title: Passen Sie die UX mithilfe von SharePoint gehostet durch Drittanbieter-add-ins
+title: Customize the UX by using SharePoint provider-hosted add-ins
 ms.date: 11/03/2017
-ms.openlocfilehash: 28f14fa6a15e367232b1384952ed6b7fefbfb3de
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: dd8497cba65034729dcd29dd4748c0abcce3c647
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="customize-the-ux-by-using-sharepoint-provider-hosted-add-ins"></a>Passen Sie die UX mithilfe von SharePoint gehostet durch Drittanbieter-add-ins
+# <a name="customize-the-ux-by-using-sharepoint-provider-hosted-add-ins"></a>Customize the UX by using SharePoint provider-hosted add-ins
 
-Anpassen von SharePoint-UX-Komponenten Remote mit vom Anbieter gehosteten-add-ins. 
+Customize SharePoint UX components remotely by using provider-hosted add-ins. 
 
 _**Gilt für:** Office 365 | SharePoint 2013 | SharePoint Online_
 
-In diesem Artikel wird beschrieben, Beispiele, in denen bewährte Methoden zum Anpassen von SharePoint-UX-Komponenten, einschließlich der folgenden Szenarien:
+This article describes samples that show best practices for customizing SharePoint UX components, including the following scenarios:
 
-- Seite Manipulation (hinzufügen und Ändern von Wiki-Seiten).
+- Page manipulation (adding and modifying a wiki page).
     
-- -Add-ins und Daten anzeigt in modale Dialogfelder.
+- Showing add-ins and data in modal dialog boxes.
     
-- Erstellen von personalisierten Benutzeroberflächenelemente.
+- Creating personalized UI elements.
     
-- Clientseitiges Rendering (JSLink-Dateien, die das Rendern von Feldern in SharePoint-Listen anpassen bereitstellen).
+- Client-side rendering (deploying JSLink files that customize the rendering of fields in SharePoint lists).
     
-- Webpart und Webpart-Add-in Bearbeitung (Remote bereitstellen und Ausführen eines Add-in-Skript-Webparts in einer vom Anbieter gehosteten-Add-in).
+- Web Part and add-in part manipulation (remotely provision and run an add-in script part in a provider-hosted add-in).
     
-- Datenaggregation und Zwischenspeichern (mit lokalen Speicher HTML5 und HTTP-Cookies reduzieren Sie die Anzahl der Aufrufe an SharePoint Service).
+- Data aggregation and caching (using HTML5 local storage and HTTP cookies to reduce the number of service calls to SharePoint).
 
-## <a name="page-manipulation"></a>Seite zum Bearbeiten
+## <a name="page-manipulation"></a>Page manipulation
 <a name="bmPageManipulate"> </a>
 
-Im Beispiel [Core.ModifyPages](https://github.com/SharePoint/PnP/tree/dev/Samples/Core.ModifyPages) umfasst zwei Szenarien für die Bearbeitung von Seiten:
+The [Core.ModifyPages](https://github.com/SharePoint/PnP/tree/dev/Samples/Core.ModifyPages) sample includes two page manipulation scenarios:
 
-- Erstellen Sie eine Wiki-Seite.
+- Create a wiki page.
     
-- Ändern des Layouts einer Wiki-Seite. 
+- Modify the layout of a wiki page. 
     
-Dieses Beispiel verwendet die standardmäßige Website Seitenbibliothek und vorhandenen Out-of-the-Box Layouts. Sie können auch aktualisieren, um eine benutzerdefinierte Wiki-Seitenbibliothek und benutzerdefinierten Layouts verwenden. Die UI-Add-in enthält zwei Schaltflächen, die erstellen sowohl Wiki-Seiten und zwei Links für die Anzeige von Wiki-Seiten, die Sie erstellen.
+This sample uses the default site pages library and existing out-of-the-box layouts. You can also update it to use a custom wiki page library and custom layouts. The add-in UI includes two buttons that create both wiki pages, and two links for viewing the wiki pages you create.
 
-**Abbildung 1. Startseite für das Beispiel für das Zusammenstellen**
+**Figure 1. Start page for the page manipulation sample**
 
-![Startseite für das Beispiel für das Zusammenstellen](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/8c6353d9-b339-4563-b945-eaea3d4da2a8.png)
+![Launch page for the page manipulation sample](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/8c6353d9-b339-4563-b945-eaea3d4da2a8.png)
 
-Der Beispielcode für das erste Szenario bestimmt, ob Sie bereits die Wiki-Seite erstellt haben. Wenn dies nicht der Fall, fügt die Datei in der Seitenbibliothek der Website, und gibt den URL zurück.
+The sample code for the first scenario determines whether you've already created the wiki page. If not, it adds the file to the site pages library and returns its URL.
 
-**Hinweis:** Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+> [!NOTE] 
+> The code in this article is provided as-is, without warranty of any kind, either express or implied, including any implied warranties of fitness for a particular purpose, merchantability, or non-infringement.
 
 ```
 var newpage = pageLibrary.RootFolder.Files.AddTemplateFile(newWikiPageUrl, TemplateFileType.WikiPage);
@@ -53,7 +54,7 @@ ctx.ExecuteQuery();
 wikiPageUrl = String.Format("sitepages/{0}", wikiPageName);
 ```
 
-In beiden Fällen wird im Beispiel den HTML-Code über das Textfeld auf der Startseite mit der **AddHtmlToWikiPage** -Methode in einer Hilfsklasse, die mit dem Namen **LabHelper**eingegeben werden. Diese Methode fügt den HTML-Code aus dem Formular in das Feld _WikiField_ der Wiki-Seite.
+In both scenarios, the sample adds the HTML entered via the text box on the start page by using the **AddHtmlToWikiPage** method in a helper class named **LabHelper**. This method inserts the HTML from the form inside the _WikiField_ field of the wiki page.
 
 ```
 public void AddHtmlToWikiPage(ClientContext ctx, Web web, string folder, string html, string page)
@@ -91,7 +92,7 @@ public void AddHtmlToWikiPage(ClientContext ctx, Web web, string folder, string 
         }
 ```
 
-Der Beispielcode für das zweite Szenario erstellt eine neue Instanz des **WebPartEntity** . Anschließend wird Methoden in einer Hilfsklasse zum Auffüllen der Webpart mit XML. Der XML-Code zeigt eine höher gestuften Verknüpfungsliste, einschließlich [http://www.bing.com](http://www.bing.com) und die Homepage des Repositorys [OfficeDev/PnP GitHub](https://github.com/SharePoint/PnP) .
+The sample code for the second scenario creates a new **WebPartEntity** instance. It then uses methods in a helper class to populate the Web Part with XML. The XML displays a promoted links list, including both [http://www.bing.com](http://www.bing.com) and the home page of the [OfficeDev/PnP GitHub](https://github.com/SharePoint/PnP) repository.
 
 ```
 WebPartEntity wp2 = new WebPartEntity();
@@ -108,13 +109,13 @@ new LabHelper().AddHtmlToWikiPage(ctx, ctx.Web, "SitePages", htmlEntry.Text, sce
 this.hplPage2.NavigateUrl = string.Format("{0}/{1}", Request.QueryString["SPHostUrl"], scenario2PageUrl);
 ```
 
-Der Hilfscode zeigt die höher gestuften Verknüpfungen mit einer Tabelle in einem **XsltListViewWebPart** -Webpart.
+The helper code displays the promoted links with a table inside an **XsltListViewWebPart** Web Part.
 
-**Abbildung 2. Zweite Wiki-Seiten mit XsltListViewWebPart und höher gestuften Verknüpfungen-Tabelle**
+**Figure 2. Second wiki page with XsltListViewWebPart and promoted links table**
 
-![Zweite Wiki-Seiten mit XsltListViewWeb Teil und höher gestuften Verknüpfungen-Tabelle](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/6dc60a0b-b11a-4fe9-ad06-6b4d0d4b8b24.png)
+![Second wiki page with XsltListViewWeb part and promoted links table](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/6dc60a0b-b11a-4fe9-ad06-6b4d0d4b8b24.png)
 
-Das **WpPromotedLinks** -Objekt auf der **LabHelper** -Instanz enthält XML, das die Darstellung des Webparts definiert, die in der Wiki-Seiten eingebettet werden. Die **AddWebPartToWikiPage** -Methode fügt dann das neu definierte-Webpart in einem neuen `div` -Tag auf Wiki-Seiten.
+The **WpPromotedLinks** object on the **LabHelper** instance contains XML that defines the appearance of the Web Part that will be embedded into the wiki page. The **AddWebPartToWikiPage** method then inserts the newly defined Web Part inside a new `div` tag on the wiki page.
 
 ```
 XmlDocument xd = new XmlDocument();
@@ -176,14 +177,15 @@ XmlDocument xd = new XmlDocument();
             ctx.ExecuteQuery();
 ```
 
-## <a name="showing-add-ins-and-data-in-modal-dialog-boxes"></a>Add-ins und Daten anzeigen in modale Dialogfelder
+## <a name="showing-add-ins-and-data-in-modal-dialog-boxes"></a>Showing add-ins and data in modal dialog boxes
 <a name="bmPageManipulate"> </a>
 
-Im Beispiel [Core.Dialog](https://github.com/SharePoint/PnP/tree/dev/Scenarios/Core.Dialog) zeigt zwei Methoden für das Einbetten von modales Dialogfeld Feld Links. Diese Links anzeigen eine vom Anbieter gehosteten Add-in-Seite in einer SharePoint-Website-Host. Das Add-In wird verwendet das Clientobjektmodell (CSOM) zum Erstellen der benutzerdefinierten Aktion und JavaScript starten und Anzeigen von Informationen in das Dialogfeld ein. Da einige dieser Informationen von der Hostwebsite abgerufen werden, wird auch das JavaScript-Objektmodell (JSOM) zum Abrufen von Informationen aus der Hostwebsite verwendet. Und, da das Add-in in einer anderen Domäne als der SharePoint-Website-Host ausgeführt wird, außerdem wird durch die domänenübergreifende SharePoint-Dokumentbibliothek der Hostwebsite anrufen.
+The [Core.Dialog](https://github.com/SharePoint/PnP/tree/dev/Scenarios/Core.Dialog) sample shows two methods for embedding modal dialog box links. These links display a provider-hosted add-in page into a SharePoint host site. The add-in uses the client object model (CSOM) to create the custom action and JavaScript to start and display information inside the dialog box. Because some of this information comes from the host site, it also uses the JavaScript object model (JSOM) to retrieve information from the host site. And because the add-in is running in a different domain than the SharePoint host site, it also uses the SharePoint cross-domain library to make the calls to the host site.
 
-**Hinweis:** Weitere Informationen zur Verwendung der domänenübergreifenden Bibliothek in diesem Szenario finden Sie unter [Zugriff auf SharePoint 2013-Daten aus-add-ins mithilfe der domänenübergreifenden Bibliothek](http://msdn.microsoft.com/library/bc37ff5c-1285-40af-98ae-01286696242d%28Office.15%29.aspx).
+> [!NOTE] 
+> For more information about using the cross-domain library in this scenario, see [Access SharePoint 2013 data from add-ins using the cross-domain library](http://msdn.microsoft.com/library/bc37ff5c-1285-40af-98ae-01286696242d%28Office.15%29.aspx).
 
-Die Startseite ist die Seite, die im Dialogfeld angezeigt wird. So behandeln Sie alle Unterschiede zwischen den angegebenen Anzeigekontext (Dialogfeld im Vergleich zu ganzseitigen) anzeigen, bestimmt das Add-in, ob sie in einem Dialogfeld angezeigt wird. Dies geschieht mithilfe von einen Abfragezeichenfolgen-Parameter, der zusammen mit den Links übergeben wird, die die Dialogfelder zu starten.
+The start page is the page that appears in the dialog box. To handle any differences in display given the display context (dialog box versus full-page), the add-in determines whether it's being displayed in a dialog box. It does this by using a query string parameter that is passed along with the links that start the dialog boxes.
 
 ```
 private string SetIsDlg(string isDlgValue)
@@ -194,11 +196,11 @@ private string SetIsDlg(string isDlgValue)
         }
 ```
 
-Sie könnten beispielsweise auswählen, zum Anzeigen bestimmter Elemente der Benutzeroberfläche (wie Schaltflächen) oder sogar auf verschiedene Seitenlayouts, je nachdem, ob der Inhalt in einem Dialogfeld angezeigt wird.
+You could, for example, choose to display certain UI elements (like buttons) or even different page layouts, depending on whether or not the content is being displayed in a dialog box.
 
-Die Benutzeroberfläche der Startseite stellt zwei Optionen zum Erstellen von Links, um das Dialogfeld zusammen mit einer Liste aller Listen auf dem hostweb. Es stellt auch **OK** und **Abbrechen** Schaltflächen, dass Sie im Dialogfeld Feld Kontext verwenden können, um das Dialogfeld Feld und/oder Aufforderung weiteren Aktionen in das Add-in zu schließen.
+The start page UI presents two options for creating links to the dialog box, along with a list of all the lists on the host web. It also presents **OK** and **Cancel** buttons that you can use in the dialog box context to close the dialog box and/or prompt additional actions in the add-in.
 
-Wenn Sie die **Option hinzufügen** Schaltfläche geklickt haben, erstellt das Add-in ein **CustomActionEntity** -Objekt, das das Dialogfeld beginnt. Anschließend wird die [Erweiterung OfficeDevPnP Core](https://github.com/SharePoint/PnP/tree/dev/OfficeDevPnP.Core) -Methode mit dem Namen **AddCustomAction** , um die neue benutzerdefinierte Aktion im Menü **Einstellungen der Website** hinzufügen.
+When you choose the **Add menu item** button, the add-in creates a **CustomActionEntity** object that starts the dialog box. It then uses the [OfficeDevPnP Core extension](https://github.com/SharePoint/PnP/tree/dev/OfficeDevPnP.Core) method named **AddCustomAction** to add the new custom action to the **Site Settings** menu.
 
 ```
 StringBuilder modelDialogScript = new StringBuilder(10);
@@ -221,7 +223,7 @@ CustomActionEntity customAction = new CustomActionEntity()
 cc.Web.AddCustomAction(customAction);
 ```
 
-Die **AddCustomAction** -Methode hinzugefügt der **UserCustomActions** -Auflistung, die die SharePoint-Website zugeordnet ist die benutzerdefinierte Aktion.
+The **AddCustomAction** method adds the custom action to the **UserCustomActions** collection that is associated with the SharePoint site.
 
 ```
 var newAction = existingActions.Add();
@@ -248,7 +250,7 @@ var newAction = existingActions.Add();
             web.Context.ExecuteQuery();
 ```
 
-Wenn Sie die **Seite mit den Skript-Editor-Webpart hinzufügen** Schaltfläche geklickt haben, verwendet die Methoden **AddWikiPage** und **AddWebPartToWikiPage** des Add-Ins zum Erstellen einer Wiki-Seiten innerhalb der Website-Bibliothek für Seiten und Hinzufügen eines konfigurierten Skript-Editor-Webparts auf der Seite.
+When you choose the **Add page with script editor web part** button, the add-in uses the methods **AddWikiPage** and **AddWebPartToWikiPage** to create a wiki page inside the site pages library and add a configured Script Editor Web Part to the page.
 
 ```
 string scenario1Page = String.Format("scenario1-{0}.aspx", DateTime.Now.Ticks);
@@ -261,7 +263,7 @@ scriptEditorWp.WebPartTitle = "Script editor test";
 cc.Web.AddWebPartToWikiPage("SitePages", scriptEditorWp, scenario1Page, 1, 1, false);
 ```
 
-Die **AddWikiPage** -Methode lädt der Seitenbibliothek der Website. Wenn die Wiki-Seiten durch das Add-in [OfficeDevPnP Core](https://github.com/SharePoint/PnP/tree/dev/OfficeDevPnP.Core) angegebenen nicht bereits vorhanden ist, wird die Seite erstellt.
+The **AddWikiPage** method loads the site pages library. If the wiki page specified by the add-in [OfficeDevPnP core](https://github.com/SharePoint/PnP/tree/dev/OfficeDevPnP.Core) doesn't already exist, it creates the page.
 
 ```
 public static string AddWikiPage(this Web web, string wikiPageLibraryName, string wikiPageName)
@@ -296,7 +298,7 @@ public static string AddWikiPage(this Web web, string wikiPageLibraryName, strin
         }
 ```
 
-Die **AddWebPartToWikiPage** -Methode fügt der neu definierten Webparts innerhalb einer neuen `<div>` -Tag auf Wiki-Seiten. Anschließend wird JSOM und der domänenübergreifenden Bibliothek zum Abrufen der Informationen, die die Liste der SharePoint-Listen auf dem hostweb aufgefüllt wird.
+The **AddWebPartToWikiPage** method inserts the newly defined Web Part inside a new `<div>` tag on the wiki page. It then uses JSOM and the cross-domain library to retrieve the information that populates the list of SharePoint lists on the host web.
 
 ```
 function printAllListNamesFromHostWeb() {
@@ -320,14 +322,14 @@ function printAllListNamesFromHostWeb() {
         );
 ```
 
-## <a name="personalized-ui-elements"></a>Personalisierte Benutzeroberflächenelemente
+## <a name="personalized-ui-elements"></a>Personalized UI elements
 <a name="bmPersonalized"> </a>
 
-Das [Branding.UIElementPersonalization](https://github.com/SharePoint/PnP/tree/dev/Samples/Branding.UIElementPersonalization) -Beispiel veranschaulicht, wie eingebettete JavaScript und Werte in Benutzerprofilen gespeichert und SharePoint-Listen für Benutzeroberflächenelemente auf dem hostweb zu personalisieren. Auch wird HTML5 lokalen Speicher verwendet, um Anrufe an die Hostwebsite zu minimieren.
+The [Branding.UIElementPersonalization](https://github.com/SharePoint/PnP/tree/dev/Samples/Branding.UIElementPersonalization) sample shows how to use embedded JavaScript and values stored in user profiles and SharePoint lists to personalize UI elements on the host web. It also uses HTML5 local storage to minimize calls to the host site.
 
-Startseite des Beispiels aufgefordert, eine der drei Zeichenfolgen (XX, JJ oder ZZ) in den Abschnitt **Über mich** von Ihrer Profilseite des Benutzers hinzufügen.
+The sample's start page prompts you to add one of three strings (XX, YY, or ZZ) to the **About Me** section of your user profile page.
 
-Das Add-In wurde bereits bereitgestellt, drei Bilder und einer SharePoint-Liste, die Titel und URLs für jedes Bild, sowie ein weiteres Feld enthält, der eine der drei Zeichenfolgen pro Bild verbindet. Nachdem Sie die **Anpassung der Eingabe-** Schaltfläche geklickt haben, bettet die personalize.js-Datei des Add-Ins in der Auflistung benutzerdefinierte Aktionen.
+The add-in has already deployed three images and a SharePoint list that contains titles and URLs for each image, along with an additional field that ties each image to one of the three strings. After you choose the **Inject customization** button, the add-in embeds the personalize.js file into the user custom actions collection.
 
 ```
 public void AddPersonalizeJsLink(ClientContext ctx, Web web)
@@ -374,7 +376,7 @@ public void AddPersonalizeJsLink(ClientContext ctx, Web web)
         }
 ```
 
-Da SharePoint-Teamwebsites standardmäßig die [Minimale herunterladen Strategie (MDS)](http://msdn.microsoft.com/en-us/library/office/dn456544%28v=office.15%29.aspx)verwenden, versucht der Code in der Datei personalize.js zuerst selbst MDS registrieren. Auf diese Weise beim Laden der Seite, die die JavaScript-Code enthält engine der MDS Starets der main-Funktion (**RemoteManager_Inject**). Wenn MDS deaktiviert ist, wird diese Funktion sofort gestartet.
+Because SharePoint team sites by default use the [Minimal Download Strategy (MDS)](http://msdn.microsoft.com/en-us/library/office/dn456544%28v=office.15%29.aspx), the code in the personalize.js file first attempts to register itself with MDS. This way, when you load the page that contains the JavaScript, the MDS engine starets the main function (**RemoteManager_Inject**). If MDS is disabled, this function starts right away.
 
 ```
 // Register script for MDS, if possible.
@@ -402,7 +404,7 @@ function RemoteManager_Inject() {
 }
 ```
 
-Die Funktion **personalizeIt()** überprüft HTML5 lokalen Speicher, bevor Benutzerprofilinformationen gesucht. Wenn es in der Benutzerprofilinformationen geht, werden die Informationen, die abgerufen, im lokalen Speicher HTML5 gespeichert.
+The **personalizeIt()** function checks HTML5 local storage before it looks up user profile information. If it goes to user profile information, it stores the information that it retrieves in HTML5 local storage.
 
 ```
 function personalizeIt() {
@@ -459,7 +461,7 @@ function personalizeIt() {
 }
 ```
 
-Die Datei personalize.js enthält auch Code, der überprüft, um festzustellen, ob der lokalen Speicherschlüssel abgelaufen ist. Dies ist nicht in HTML5 lokalen Speicher integriert.
+The personalize.js file also contains code that checks to determine whether the local storage key has expired. This isn't built into HTML5 local storage.
 
 ```
 // Check to see if the key has expired
@@ -490,17 +492,17 @@ function isKeyExpired(TimeStampKey) {
 ## <a name="client-side-rendering"></a>Clientseitiges Rendering
 <a name="bmPersonalized"> </a>
 
-Das [Branding.ClientSideRendering](https://github.com/SharePoint/PnP/tree/dev/Samples/Branding.ClientSideRendering) -Beispiel veranschaulicht, wie ein vom Anbieter gehosteten add-in verwenden, um Remote Bereitstellen von SharePoint-Artefakte und JSLink-Dateien, die clientseitiges Rendering verwenden, um das Aussehen und Verhalten von SharePoint-Listenfelder anpassen. JSLink-Dateien und clientseitiges Rendering können Sie, wie Sie steuern einer SharePoint-Seite Steuerelemente (Listenansichten, Listenfelder, und hinzufügen und Bearbeiten von Formularen) gerendert werden. Dieses Steuerelement kann reduzieren oder benutzerdefinierte Feldtypen überflüssig. Clientseitiges Rendering ermöglicht die Liste Feld Darstellung Remote Remote steuern.
+The [Branding.ClientSideRendering](https://github.com/SharePoint/PnP/tree/dev/Samples/Branding.ClientSideRendering) sample shows how to use a provider-hosted add-in to remotely provision SharePoint artifacts and JSLink files that use client-side rendering to customize the look and behavior of SharePoint list fields. JSLink files and client-side rendering give you control over how controls on a SharePoint page (list views, list fields, and add and edit forms) are rendered. This control can reduce or eliminate the need for custom field types. Client-side rendering makes it possible to remotely control list field appearance remotely.
 
-Im Beispiel kombiniert die JSLink Beispiele von der [Client-Side Rendering (JSLink)-Codebeispiele](http://code.msdn.microsoft.com/office/Client-side-rendering-JS-2ed3538a) zu einer einzelnen vom Anbieter gehosteten-add-in für SharePoint fest, stellt die JSLink-Dateien. Clientseitiges Rendering können Sie standardmäßigen-Technologien, wie HTML und JavaScript, verwenden, um benutzerdefinierte und vordefinierte Feldtypen Renderinglogik definieren.
+The sample combines the JSLink samples from the [Client-side rendering (JSLink) code samples](http://code.msdn.microsoft.com/office/Client-side-rendering-JS-2ed3538a) into a single provider-hosted add-in for SharePoint that provisions the JSLink files. Client-side rendering enables you to use standard web technologies, such as HTML and JavaScript, to define the rendering logic of custom and predefined field types.
 
-Wenn Sie das Beispiel starten, fordert die Startseite Sie alle Beispiele bereitstellen.
+When you start the sample, the start page prompts you to provision all the samples.
 
-**Abbildung 3. Startseite des Beispiels clientseitiges rendering**
+**Figure 3. Start page of the client-side rendering sample**
 
-![Startseite des Beispiels clientseitiges rendering](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/bfa1b472-976b-4bdc-95df-537cee5570e6.png)
+![Launch page of client-side rendering sample](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/bfa1b472-976b-4bdc-95df-537cee5570e6.png)
 
-Bei der Auswahl **Provision Beispiele**wird das Add-in bereitgestellt, ein Bild als auch alle der SharePoint-Listen, Listenansichten, Listenelemente, Formulare und JavaScript-Dateien, die in jedem Beispiel verwendet werden. Das Add-in erstellt einen Ordner namens JSLink-Beispiele in der Formatbibliothek, und klicken Sie dann die JavaScript-Dateien in diesen Ordner hochgeladen. Die **UploadFileToFolder** -Methode führt die Arbeit des Hochladens und jeder JavaScript-Datei einchecken.
+When you choose **Provision Samples**, the add-in deploys an image as well as all the SharePoint lists, list views, list items, forms, and JavaScript files that are used in each sample. The add-in creates a folder named JSLink-Samples in the Style Library, and then uploads the JavaScript files into that folder. The **UploadFileToFolder** method does the work of uploading and checking in each JavaScript file.
 
 ```
 public static void UploadFileToFolder(Web web, string filePath, Folder folder)
@@ -522,15 +524,15 @@ public static void UploadFileToFolder(Web web, string filePath, Folder folder)
         }
 ```
 
-### <a name="sample-1-apply-formatting-to-a-list-column"></a>Beispiel 1: Formatieren einer Listenspalte
+### <a name="sample-1-apply-formatting-to-a-list-column"></a>Sample 1: Apply formatting to a list column
 
-Beispiel 1 zeigt, wie um einer Listenspalte basierend auf den Wert des Felds zu formatieren. Priorität Feldwerte von 1 (hoch), 2 (Normal) und 3 (niedrig) werden in Rot, Gelb und Orange angezeigt.
+Sample 1 shows how to apply formatting to a list column based on the field value. Priority field values of 1 (High), 2 (Normal), and 3 (Low) are displayed in red, orange, and yellow.
 
-**Abbildung 4. Benutzerdefinierte Liste Feldanzeige**
+**Figure 4. Custom list field display**
 
-![Benutzerdefinierte Liste Feldanzeige](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/1481adfa-efc9-4b59-b07f-bb330f02d2bb.png)
+![Custom list field display](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/1481adfa-efc9-4b59-b07f-bb330f02d2bb.png)
 
-Das folgende JavaScript überschreibt die Standardanzeige dar und erstellt eine neue Anzeigevorlage für das Feld der Liste **Priorität** . Das Verfahren in die anonyme Funktion, die die Kontextinformationen über das Feld lädt, deren Anzeige Sie außer Kraft setzen möchten, die in alle Beispiele verwendet wird.
+The following JavaScript overrides the default field display and creates a new display template for the **Priority** list field. The technique in the anonymous function that loads the contextual information about the field whose display you want to override is used in all the samples.
 
 ```
 (function () {
@@ -566,15 +568,15 @@ function priorityFiledTemplate(ctx) {
 }
 ```
 
-### <a name="sample-2-shorten-long-text"></a>Beispiel 2: Kürzen Sie langen text
+### <a name="sample-2-shorten-long-text"></a>Sample 2: Shorten long text
 
-Beispiel 2 zeigt, wie zu kürzende langen Text im Feld **Text** , der einer Liste mit **Ankündigungen** gespeichert. Der vollständige Text zeigt als ein Popup-Fenster, das angezeigt wird, wenn Sie über ein Listenelement bewegen, wie in Abbildung 8 dargestellt.
+Sample 2 shows you how to truncate long text stored in the **Body** field of an **Announcements** list. The full text displays as a popup that appears whenever you hover over a list item, as shown in Figure 8.
 
-**Abbildung 5. Verkürzte Liste Feld Anzeige mit popup**
+**Figure 5. Shortened list field display showing popup**
 
-![Abgeschnittene Liste Feld Anzeige mit popup](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/a5e6d2af-f1f9-4bcc-9278-e56fd42c2e64.png)
+![Truncated list field display showing popup](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/a5e6d2af-f1f9-4bcc-9278-e56fd42c2e64.png)
 
-Das folgende JavaScript verkürzt **den Textkörper dar** und festgelegt, dass den vollständigen Text als ein Popup über das **Title** -Attribut für das **span** -Tag angezeigt werden.
+The following JavaScript shortens the **Body** field text and causes the full text to appear as a popup via the **title** attribute on the **span** tag.
 
 ```
 function bodyFiledTemplate(ctx) {
@@ -598,15 +600,15 @@ function bodyFiledTemplate(ctx) {
 }
 ```
 
-### <a name="sample-3-display-an-image-with-a-document-name"></a>Beispiel 3: Ein Bild mit einem Dokumentnamen anzeigen
+### <a name="sample-3-display-an-image-with-a-document-name"></a>Sample 3: Display an image with a document name
 
-Beispiel 3 zeigt, wie ein Bild neben dem Dokumentnamen eines in einer Dokumentbibliothek angezeigt. Eine rote Logo wird angezeigt, wenn der Wert des Felds **vertraulich** auf **Ja**festgelegt ist, wie in Abbildung 6 dargestellt. 
+Sample 3 shows you how to display an image next to a document name inside a document library. A red badge appears whenever the **Confidential** field value is set to **Yes**, as shown in Figure 6. 
 
-**Abbildung 6. Anzeige von Bildern neben den Namen des Dokuments**
+**Figure 6. Image display next to document name**
 
-![Anzeige von Bildern neben den Namen des Dokuments](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/f2768dfd-ae05-4afc-8dbe-26dc4e7dca6d.png)
+![Image display next to document name](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/f2768dfd-ae05-4afc-8dbe-26dc4e7dca6d.png)
 
-Das folgende JavaScript überprüft den Wert des Felds **vertraulich** und passt anschließend die **Namen** Feldanzeige basierend auf dem Wert eines anderen Felds. Das Beispiel verwendet das Bild, das hochgeladen wird, wenn Sie eine **Bereitstellung Beispiele**auswählen. 
+The following JavaScript checks the **Confidential** field value and then customizes the **Name** field display based on the value of another field. The sample uses the image that is uploaded when you choose **Provision Samples**. 
 
 ```
 function linkFilenameFiledTemplate(ctx) {
@@ -629,11 +631,11 @@ function linkFilenameFiledTemplate(ctx) {
 }
 ```
 
-### <a name="sample-4-display-a-bar-chart"></a>Beispiel 4: Ein Balkendiagramm angezeigt
+### <a name="sample-4-display-a-bar-chart"></a>Sample 4: Display a bar chart
 
-Beispiel 4 zeigt, wie ein Balkendiagramm in das Feld **% abgeschlossen** einer Aufgabenliste angezeigt. Die Darstellung des Balkendiagramm verwendet wird, hängt vom Wert im Feld **% abgeschlossen** , wie in Abbildung 10 dargestellt. Beachten Sie, dass ein Balkendiagramm auch in den Formularen für das Erstellen und Bearbeiten von Listenelementen Aufgabe angezeigt wird.
+Sample 4 shows you how to display a bar chart in the **% Complete** field of a task list. The appearance of the bar chart depends on the value of the **% Complete** field, as shown in Figure 10. Note that a bar chart will also appear in the forms for creating and editing task list items.
 
-Mit dem folgende Code wird die Anzeige Balkendiagramm erstellt und ordnet sie mit den Formularen anzeigen und -Anzeige (**PercentCompleteViewFiledTemplate**), und klicken Sie dann mit der neuen und Bearbeitungsformulare (**PercentCompleteEditFiledTemplate**).
+The following code creates the bar chart display and associates it with the view and display forms (**percentCompleteViewFiledTemplate**) and then with the new and edit forms (**percentCompleteEditFiledTemplate**).
 
 ```
 // This function provides the rendering logic for View and Display forms.
@@ -662,19 +664,19 @@ function percentCompleteEditFiledTemplate(ctx) {
 }
 ```
 
-**Abbildung 7. Balkendiagramm angezeigt, in das Feld % abgeschlossen**
+**Figure 7. Bar chart displayed in the % Complete field**
 
-![Balkendiagramm angezeigt, in das Feld % abgeschlossen](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/fb36f27a-2eb7-4c5f-8428-b85b65369ea9.png)
+![Bar chart displayed in the % Complete field](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/fb36f27a-2eb7-4c5f-8428-b85b65369ea9.png)
 
-### <a name="sample-5-change-the-rendering-template"></a>Beispiel 5: Ändern der Renderingvorlage
+### <a name="sample-5-change-the-rendering-template"></a>Sample 5: Change the rendering template
 
-Beispiel 5 zeigt, wie die Renderingvorlage für eine Listenansicht zu ändern. Diese Ansicht zeigt Element Listentitel, die wie Akkordeons erweitern, wenn Sie diese auswählen. Die erweiterte Ansicht zeigt, zusätzliche Felder für Listenelemente, wie in Abbildung 8 dargestellt.
+Sample 5 shows you how to change the rendering template for a list view. This view displays list item titles that expand like accordions when you select them. The expanded view shows you additional list item fields, as shown in Figure 8.
 
-**Abbildung 8. Reduzierte und erweiterte Element Listenansichten**
+**Figure 8. Collapsed and expanded list item views**
 
-![Reduzierte und erweiterte Element Listenansichten](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/fd185eef-e2be-4523-9adb-d524b84ecc26.png)
+![Collapsed and expanded list item views](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/fd185eef-e2be-4523-9adb-d524b84ecc26.png)
 
-Der folgende Code richtet die Vorlage und registriert dieses in die Vorlage Liste aus. Es richtet das allgemeine Layout, und klicken Sie dann den **OnPostRender** -Ereignishandler verwendet, um die JavaScript-Funktion zu registrieren, die ausgeführt wird, wenn die Liste dargestellt wird. Diese Funktion das Ereignis den CSS-Code zugeordnet und Ereignisbehandlung, die die Akkordeon Funktionalität implementiert.
+The following code sets up the template and registers it with the list template. It sets up the overall layout, and then uses the **OnPostRender** event handler to register the JavaScript function that executes when the list is rendered. This function associates the event with the CSS and event handling that implements the accordion functionality.
 
 ```
 (function () {
@@ -721,15 +723,15 @@ function accordionOnPostRender() {
 }
 ```
 
-### <a name="sample-6-validate-field-values"></a>Beispiel 6: Überprüfen der Feldwerte
+### <a name="sample-6-validate-field-values"></a>Sample 6: Validate field values
 
-Beispiel 6 zeigt, wie Sie reguläre Ausdrücke verwenden, um vom Benutzer eingegebenen Feldwerte überprüfen. Eine rote Fehlermeldung wird angezeigt, wenn der Benutzer eine ungültige e-Mail-Adresse in das Textfeld **E-Mail** eingibt. Dies geschieht, wenn der Benutzer erstellt oder ein Listenelement bearbeitet, wie in Abbildung 9 dargestellt.
+Sample 6 shows you how to use regular expressions to validate field values supplied by the user. A red error message appears when the user types an invalid email address into the **Email** field text box. This happens when the user either creates or edits a list item, as shown in Figure 9.
 
-**Abbildung 9. Fehlermeldung ungültigem Texteingabe**
+**Figure 9. Error message for invalid field text input**
 
-![Fehlermeldung ungültigem Texteingabe](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/d0d1faf1-aa03-4df8-a1a6-db86fff1f463.png)
+![Error message for invalid field text input](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/d0d1faf1-aa03-4df8-a1a6-db86fff1f463.png)
 
-Der folgende Code richtet die Vorlage mit einem Platzhalter für die Anzeige der Fehlermeldung und registriert Callback-Funktionen, die ausgelöst werden, wenn der Benutzer versucht, die Formulare übermitteln. Der erste Rückruf zurückgegeben wird des Werts der **E-Mail** -Spalte und der zweite Rückruf verwendet reguläre Ausdrücke, um den Zeichenfolgenwert zu überprüfen.
+The following code sets up the template with a placeholder for displaying the error message and registers the callback functions that fire whenever the user tries to submit the forms. The first callback returns the value of the **Email** column, and the second callback uses regular expressions to validate the string value.
 
 ```
 function emailFiledTemplate(ctx) {
@@ -779,15 +781,15 @@ function emailOnError(error) {
 }
 ```
 
-### <a name="sample-7-make-list-item-edit-fields-read-only"></a>Beispiel 7: Stellen Sie Listenelement schreibgeschützte Felder bearbeiten
+### <a name="sample-7-make-list-item-edit-fields-read-only"></a>Sample 7: Make list item edit fields read-only
 
-Beispiel sieben zeigt, wie Sie Felder für Listenelemente bearbeiten Formular nur-Lese-Liste. Der schreibgeschützte Felder anzeigen mit keine Bearbeitungssteuerelemente, wie in Abbildung 10 dargestellt.
+Sample seven shows you how to make list item edit form fields read-only. The read-only fields show with no editing controls, as shown in Figure 10.
 
-**Abbildung 10. Schreibgeschütztes Feld auf eine benutzerdefinierte Liste Bearbeitungsformular**
+**Figure 10. Read-only field on a custom list edit form**
 
-![Schreibgeschützte Felder in einer benutzerdefinierten Liste Bearbeitungsformular](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/de441289-8276-4e7c-8530-d08192e29000.png)
+![Read-only fields in a custom list edit form](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/de441289-8276-4e7c-8530-d08192e29000.png)
 
-Das folgende Codebeispiel ändert den **Titel**, **AssignedTo**und Felder des Listenelements **Priorität** Bearbeitungsformular so, dass sie die Feldwerte nur mit keine Bearbeitungssteuerelemente anzeigen. Der Code zeigt, wie die Abfrageanalyse Anforderungen für die verschiedenen Feldtypen behandeln.
+The following code example modifies the **Title**, **AssignedTo**, and **Priority** fields in the list item edit form so that they show the field values only with no editing controls. The code shows how to handle the parsing requirements for different field types.
 
 ```
 function readonlyFieldTemplate(ctx) {
@@ -889,13 +891,13 @@ function prepareNoteFieldValue(ctx) {
 } 
 ```
 
-### <a name="sample-8-hide-fields"></a>Beispiel 8: Ausblenden Felder
+### <a name="sample-8-hide-fields"></a>Sample 8: Hide fields
 
-Beispiel 8 zeigt, wie Felder in neuen Listenelement ausblenden und Formulare bearbeiten. Im Beispiel blendet das Feld **Vorgänger** , wenn ein Benutzer erstellt oder ein Aufgabenelement Liste bearbeitet.
+Sample 8 shows you how to hide fields in list item new and edit forms. The sample hides the **Predecessors** field when a user creates or edits a task list item.
 
-In diesem Beispiel wird als bearbeiten und neue Formular für eine Liste namens **Liste CSR-ausblenden-Steuerelemente**bereitgestellt. Informationen dazu, wie Sie die Ansicht des Formulars nach der Bereitstellung des Beispiels finden Sie unter [Branding.ClientSideRendering](https://github.com/SharePoint/PnP/tree/dev/Samples/Branding.ClientSideRendering).
+This sample deploys as the edit and new form for a list called **CSR-Hide-Controls list**. For information about how to view the form after you deploy the sample, see [Branding.ClientSideRendering](https://github.com/SharePoint/PnP/tree/dev/Samples/Branding.ClientSideRendering).
 
-Der folgende Code sucht das Feld **Vorgänger** in der HTML-Code des Formulars und ausgeblendet werden. Das Feld bleibt in der HTML-Code vorhanden, aber der Benutzer nicht im Browser angezeigt.
+The following code finds the **Predecessors** field in the HTML of the form and hides it. The field remains present in the HTML, but the user can't see it in the browser.
 
 ```
 (function () {
@@ -933,14 +935,14 @@ function hiddenFiledOnPreRender(ctx) {
 
 ```
 
-## <a name="web-part-and-add-in-part-manipulation"></a>Add-in-Teil zusammenstellen und Webparts
+## <a name="web-part-and-add-in-part-manipulation"></a>Web part and add-in part manipulation
 <a name="bmPersonalized"> </a>
 
-Das [Core.AppScriptPart](https://github.com/SharePoint/PnP/tree/dev/Samples/Core.AppScriptPart) -Beispiel veranschaulicht, wie Add-in-Skript-Komponenten nutzen, Skripts, die in einer vom Anbieter gehosteten-add-in ausgeführt wird, auf einer SharePoint-Seite einbetten. Dieses Beispiel zeigt, wie die Benutzeroberfläche einer Seite auf der Hostwebsite zu ändern, indem Sie ein Webpart-Add-in-Skript bereitstellen und es einer SharePoint-Seite aus dem Webpartkatalog hinzufügen.
+The [Core.AppScriptPart](https://github.com/SharePoint/PnP/tree/dev/Samples/Core.AppScriptPart) sample shows how to use add-in script parts to embed scripts running in a provider-hosted add-in on a SharePoint page. This sample shows how to modify the UI of a page on the host site by deploying an add-in script part and adding it to a SharePoint page from the webpart gallery.
 
-Ein Webpart-Add-in-Skript ist wie ein Webpart, können Sie es zu einer SharePoint-Seite aus dem Webpartkatalog hinzufügen, aber die Webpart-Datei eingebettet in diesem Fall eine JavaScript-Datei, die in einer vom Anbieter gehosteten-Add-in Remote ausgeführt wird. Das Webpart-Add-in-Skript ausgeführt wird, innerhalb einer `<div>` -Tag auf der SharePoint-Seite und bietet eine verbesserte Reaktionsgeschwindigkeit Design- und Erfahrung als Sie abrufen mit Add-in-Webparts, die in IFrames ausgeführt.
+An add-in script part is like a web part in that you can add it to a SharePoint page from the web part gallery, but in this case the .webpart file embeds a JavaScript file that runs remotely in a provider-hosted add-in. The add-in script part runs inside a  `<div>` tag on the SharePoint page and therefore provides a more responsive design and experience than you get with add-in parts that run in IFrames.
 
-Die Startseite enthält eine **Szenario ausführen** -Schaltfläche, die das Webpart-Add-in-Skript in den Webpartkatalog bereitgestellt wird. Das folgende Codebeispiel erstellt eine **FileCreationInformationObject** -Instanz, die den Inhalt der Webpart-Datei enthält, und dann wird die neue Datei in den Webpartkatalog hochgeladen. Beachten Sie, dass Sie auch diesen Code automatisch ausgeführt werden können, wenn das Webpart-Add-in installiert oder als Teil der Websitesammlung Bereitstellungsprozesses.
+The start page includes a **Run Scenario** button that deploys the add-in script part to the web part gallery. The following code example constructs a **FileCreationInformationObject** instance that contains the contents of the .webpart file and then uploads the new file into the web part gallery. Note that you can also run this code automatically when the add-in part installs or as part of the site collection provisioning process.
 
 ```
 var spContext = SharePointContextProvider.Current.GetSharePointContext(Context);
@@ -982,9 +984,9 @@ using (var clientContext = spContext.CreateUserClientContextForSPHost())
 }
 ```
 
-Nachdem Sie diesen Schritt abgeschlossen haben, können Sie in den Webpartkatalog das **Benutzerprofilinformationen** Add-in-Skript in eine neue **Add-in-Skript Teil** Kategorie Teil suchen. Nachdem Sie das Webpart-Add-in-Skript auf der Seite hinzufügen, steuert das Remote ausgeführte JavaScript die Anzeige von Informationen auf der Seite.
+After you finish this step, you can locate the **User profile information** add-in script part inside a new **Add-in Script Part** category in the web part gallery. After you add the add-in script part to the page, the remotely running JavaScript controls the display of the information on the page.
 
-Wenn Sie das Add-in-Skript-Webpart im Bearbeitungsmodus anzeigen, sehen Sie sich, dass sie die JavaScript-Datei eingebettet, die Remote ausgeführt wird. Das userprofileinformation.js-Skript verwendet die JSON Benutzerprofilinformationen aus der Hostwebsite abrufen. 
+When you view the add-in script part in edit mode, you'll see that it embeds the JavaScript file that is running remotely. The userprofileinformation.js script uses the JSON to get user profile information from the host site. 
 
 ```
 function sharePointReady() {
@@ -1021,36 +1023,36 @@ function sharePointReady() {
 
 ```
 
-## <a name="provisioning-publishing-features"></a>Bereitstellen von Veröffentlichungsfeatures
+## <a name="provisioning-publishing-features"></a>Provisioning publishing features
 <a name="bmPersonalized"> </a>
 
-Das [Provisioning.PublishingFeatures](https://github.com/SharePoint/PnP/tree/dev/Scenarios/Provisioning.PublishingFeatures) -Beispiel zeigt, wie für allgemeine Aufgaben mit der Veröffentlichung von Websites, die in Office 365 gehostet werden. Bereitstellung und mithilfe von Seitenlayouts, Masterseiten und Designs oder Einbetten von JavaScript in Seitenlayouts. Außerdem gezeigt, wie Filter anwenden, die steuern, welche Websitevorlagen für Unterwebsites verfügbar sind und welche Seitenlayouts sind auf dem hostweb verfügbar.
+The [Provisioning.PublishingFeatures](https://github.com/SharePoint/PnP/tree/dev/Scenarios/Provisioning.PublishingFeatures) sample shows how to do common tasks with publishing sites that are hosted on Office 365; for example, provisioning and using page layouts, master pages, and themes, or embedding JavaScript in page layouts. It also shows how to apply filters that control what site templates are available for subsites and what page layouts are available on the host web.
 
-Das Add-in vom Anbieter gehosteten CSOM Benutzeroberflächenelemente auf Veröffentlichungswebsites Bereitstellung häufig verwendet werden und verwendet JavaScript, dynamischere Erfahrungen in Seitenlayouts zu erstellen, die Sie für die Veröffentlichung von Websites bereitstellen können. Es werden auch die Unterschiede zwischen der Verwendung von Masterseiten und Designs in Veröffentlichungswebsites.
+The provider-hosted add-in uses CSOM to provision commonly used UI elements on publishing sites, and it uses JavaScript to create more dynamic experiences in page layouts that you can deploy to publishing sites. It also shows the differences between using master pages and themes in publishing sites.
 
-**Wichtig:**  Wenn die Funktionalität in diese Beispiel arbeiten möchten, müssen Sie die Veröffentlichungsfeatures auf Ihrer Website zu aktivieren. Informationen finden Sie unter [Aktivieren von Veröffentlichungsfeatures](https://support.office.com/en-us/article/Enable-publishing-features-479677a6-8b33-4ac7-907d-071c1c7e4518?CorrelationId=22291615-2acd-46be-8813-9e6c48d01a32&amp;ui=en-US&amp;rs=en-US&amp;ad=US).
+**Important:**  To make the functionality in this sample work, you need to activate the publishing features on your site. For information, see [Enable publishing features](https://support.office.com/en-us/article/Enable-publishing-features-479677a6-8b33-4ac7-907d-071c1c7e4518?CorrelationId=22291615-2acd-46be-8813-9e6c48d01a32&amp;ui=en-US&amp;rs=en-US&amp;ad=US).
 
-Die Start-Beispielseite bietet Ihnen drei Szenarien für die Anpassung der Benutzeroberfläche der Veröffentlichungswebsites: 
+The sample start page presents you with three scenarios for customizing the UI of publishing sites: 
 
-- Bereitstellen von Seitenlayouts.
+- Deploy page layouts.
     
-- Bereitstellen von Masterseiten und Designs.
+- Deploy master pages and themes.
     
-- Die verfügbaren Seitenlayouts und Websitevorlagen auf der Hostwebsite zu filtern.
+- Filter the available page layouts and site templates on the host site.
 
-### <a name="scenario-1-deploy-pages"></a>Szenario 1: Bereitstellen von Seiten
+### <a name="scenario-1-deploy-pages"></a>Scenario 1: Deploy pages
 
-Szenario 1 zeigt, wie ein benutzerdefiniertes Seitenlayout bereitstellen. Die in Abbildung 11 dargestellte **Deploy Seitenlayouts** Schaltfläche erstellt ein neues Seitenlayout und die Seite, die das Layout verwendet.
+Scenario 1 shows you how to deploy a custom page layout. The **Deploy page layouts** button shown in Figure 11 creates a new page layout and a page that uses that layout.
 
-**Abbildung 11. Schaltfläche zum Bereitstellen von Seitenlayouts**
+**Figure 11. Button to deploy page layouts**
 
-![Schaltfläche, die Seitenlayouts bereitgestellt wird.](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/141b3b83-9a74-4528-825a-efd94183526d.png)
+![Button that deploys page layouts](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/141b3b83-9a74-4528-825a-efd94183526d.png)
 
-Sie können die neue Seite durch Aufrufen der neu erstellten Demoseite auf Ihrer Hostwebsite, die enthält eingebetteten JavaScript und zeigt die Benutzerprofilinformationen anzeigen.
+You can view the new page by going to the newly created demo page on your host site, which contains embedded JavaScript and displays user profile information.
 
-Das Beispiel zeigt Informationen des Benutzers auf der Seite. Außerdem wird eine Seite hinzugefügt, in diesem Fall es ein **PublishingPageInformation** -Objekt verwendet, um die neue Seite erstellen.
+The sample displays this user's information on the page. It also adds a page, although in this case it uses a **PublishingPageInformation** object to create the new page.
 
-Im Beispiel wird ein neues Seitenlayout durch Hochladen einer Datei auf den Gestaltungsvorlagenkatalog und Zuweisen des Seite Layout Inhaltstyps hinzugefügt. Der folgende Code akzeptiert den Pfad zu einer ASPX-Datei (die Sie in Ihrem Visual Studio 2013-Projekt als Ressource bereitstellen können) und fügt es als ein Seitenlayout im Gestaltungsvorlagenkatalog hinzu.
+The sample adds a new page layout by uploading a file to the master page gallery and assigning it the page layout content type. The following code takes the path to a *.aspx file (which you can deploy as a resource in your Visual Studio 2013 project) and adds it as a page layout in the master page gallery.
 
 ```
 // Get the path to the file that you are about to deploy.
@@ -1103,13 +1105,13 @@ Im Beispiel wird ein neues Seitenlayout durch Hochladen einer Datei auf den Gest
             web.Context.ExecuteQuery();
 ```
 
-Sie können überprüfen, ob die neue Seite auf das neue Seitenlayout verwendet wird, durch das Aufrufen der Bibliothek für **Seiten** der Hostwebsite.
+You can verify that your new page is using the new page layout by going to the **Pages** library of the host site.
 
-### <a name="scenario-2-deploy-master-pages-and-themes"></a>Szenario 2: Bereitstellen von Masterseiten und Designs
+### <a name="scenario-2-deploy-master-pages-and-themes"></a>Scenario 2: Deploy master pages and themes
 
-Szenario 2 zeigt, wie zum Bereitstellen und Festlegen von Masterseiten und Designs für die Hostwebsite aus einer vom Anbieter gehosteten-add-in. Wenn Sie **Deploy master herunter, und** klicken Sie auf der Startseite Beispiel auswählen, wird im Beispiel bereitgestellt und wendet eine benutzerdefinierte Gestaltungsvorlage auf der Hostwebsite. Sie können neue Gestaltungsvorlage sehen, indem Sie auf der Homepage der Website.
+Scenario 2 shows you how to deploy and set master pages and themes for the host site from a provider-hosted add-in. When you choose **Deploy master and use it** on the sample start page, the sample deploys and applies a custom master page to the host site. You can see the new master page by going to the home page of the site.
 
-Im Beispiel wird eine neue Gestaltungsvorlage durch Hochladen einer Master-Datei in den Gestaltungsvorlagenkatalog und Zuweisen des Gestaltungsvorlage Inhaltstyps hinzugefügt. Der folgende Code akzeptiert den Pfad zu einem Master-Datei (die Sie in Ihrem Visual Studio 2013-Projekt als Ressource bereitstellen können) und fügt es als eine Gestaltungsvorlage im Gestaltungsvorlagenkatalog hinzu.
+The sample adds a new master page by uploading a *.master file to the master page gallery and assigning it the master page content type. The following code takes the path to a *.master file (which you can deploy as a resource in your Visual Studio 2013 project) and adds it as a master page in the master page gallery.
 
 ```
 string fileName = Path.GetFileName(sourceFilePath);
@@ -1159,7 +1161,7 @@ string fileName = Path.GetFileName(sourceFilePath);
             web.Context.ExecuteQuery();
 ```
 
-Im nächste Schritt wird die URL der neuen Gestaltungsvorlage als Wert für die **MasterUrl** und die **CustomMasterUrl** Eigenschaften des **Web** -Objekts festgelegt, das die Website darstellt. Im Beispiel behandelt dies mit einer einzelnen Methode, die die URL der neuen Gestaltungsvorlage im Gestaltungsvorlagenkatalog abruft und klicken Sie dann auf die Eigenschaften **Web.MasterUrl** und **Web.CustomMasterUrl** weist diesen Wert.
+The next step is to set the URL of the new master page as the value for both the **MasterUrl** and **CustomMasterUrl** properties of the **Web** object that represents the site. The sample handles this with a single method that fetches the URL of the new master page in the master page gallery and then assigns that value to the **Web.MasterUrl** and **Web.CustomMasterUrl** properties.
 
 ```
 // Assign master page to the host web.
@@ -1167,7 +1169,7 @@ Im nächste Schritt wird die URL der neuen Gestaltungsvorlage als Wert für die 
 
 ```
 
-Bei der Auswahl **Design bereitstellen und verwenden sie**das Beispiel bereitgestellt und ein benutzerdefiniertes Design auf der Hostwebsite angewendet. Im Beispiel wird die Farbpalette, Hintergrundbild und Schriftartenschema des Designs durch Hinzufügen eines neuen Designs mit diesen Werten (die Sie als Ressourcen innerhalb des Visual Studio 2013-Projekts bereitstellen) in den Designkatalog. Mit dem folgende Code wird das neue Design erstellt.
+When you choose **Deploy theme and use it**, the sample deploys and applies a custom theme to the host site. The sample sets the color palette, background image, and font scheme of the theme by adding a new theme with those values (which you can deploy as resources inside your Visual Studio 2013 project) to the theme gallery. The following code creates the new theme.
 
 ```
 List themesOverviewList = web.GetCatalog((int)ListTemplateType.DesignCatalog);
@@ -1194,7 +1196,7 @@ List themesOverviewList = web.GetCatalog((int)ListTemplateType.DesignCatalog);
                 web.Context.ExecuteQuery();
 ```
 
-Im nächste Schritt wird das dieses neue Design als das Design für die Website festgelegt. Mit dem folgende Code wird das Abrufen des Designs aus der Design Gallery und die Werte auf der Hostwebsite anwenden.
+The next step is to set this new theme as the theme for the site. The following code does this by fetching the theme from the theme gallery and then applying its values to the host site.
 
 ```
  CamlQuery query = new CamlQuery();
@@ -1235,15 +1237,15 @@ Im nächste Schritt wird das dieses neue Design als das Design für die Website 
                     web.Context.ExecuteQuery();
 ```
 
-### <a name="scenario-3-filter-available-page-layouts-and-site-templates"></a>Szenario 3: Filtern Sie verfügbaren Seitenlayouts und Websitevorlagen
+### <a name="scenario-3-filter-available-page-layouts-and-site-templates"></a>Scenario 3: Filter available page layouts and site templates
 
-Szenario 3 zeigt, wie die Optionen zu begrenzen, die Benutzer haben, wenn sie Vorlagen für neue Websites und Layouts, um neue Seiten gelten. Wenn Sie auf **Apply Filter mit Hostwebsite** wählen im Beispiel Startseite, im Beispiel wird ein benutzerdefiniertes Seitenlayout als Standard und eine zusätzliche Seitenlayout als einzige andere Option für neuen Seiten, die ein Benutzer erstellt. Im Beispiel reduziert auch die Anzahl der verfügbaren Optionen für Benutzer beim Erstellen von neuen Unterwebsites. Abbildung 12 zeigt, wie das Auswahlfeld Vorlage Website aussieht, bevor und nachdem die Filter angewendet wurden.
+Scenario 3 shows you how to limit the options that users have when they apply templates to new sites, and layouts to new pages. When you choose **Apply filters to host web** on the sample start page, the sample sets a custom page layout as the default and one additional page layout as the only other option for any new pages that a user creates. The sample also reduces the number of available options for users when they create new subsites. Figure 12 shows what the site template selection box looks like both before and after the filters have been applied.
 
-**Abbildung 12. Site-Vorlagenauswahl before und after Beispielfilter angewendet wurden**
+**Figure 12. Site template selection before and after sample filters have been applied**
 
-![Site-Vorlagenauswahl before und after Beispielfilter angewendet wurden](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/46c0e39d-dfec-45ed-9b72-ff3f6d5e1916.png)
+![Site template selection before and after sample filters have been applied](media/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins/46c0e39d-dfec-45ed-9b72-ff3f6d5e1916.png)
 
-Festgelegt sowohl Standard-als auch verfügbaren Seitenlayouts, indem Sie die zugeordneten ASPX-Dateien, die Methoden zum Erweiterungsmethoden, übergeben, wie im Code gezeigt.
+The sample sets both the default and available page layouts by passing the associated *.aspx files to methods to extension methods, as shown in the code.
 
 ```
                 List<string> pageLayouts = new List<string>();
@@ -1255,7 +1257,7 @@ Festgelegt sowohl Standard-als auch verfügbaren Seitenlayouts, indem Sie die zu
                 clientContext.Web.SetDefaultPageLayoutForSite(clientContext.Web, "ContosoLinksBelow.aspx");
 
 ```
-Im Beispiel wird die verfügbaren Websitevorlagen durch dann in etwa wie folgt. In diesem Fall wird die **WebTemplateEntity** -Instanzen, die jede Websitevorlage für eine Erweiterungsmethode namens **SetAvailableWebTemplates**definieren.
+The sample sets the available site templates by doing something similar. In this case it passes the **WebTemplateEntity** instances that define each site template to an extension method called **SetAvailableWebTemplates**.
 
 ```
 List<WebTemplateEntity> templates = new List<WebTemplateEntity>();
@@ -1266,9 +1268,9 @@ List<WebTemplateEntity> templates = new List<WebTemplateEntity>();
 
 ```
 
-Alle drei dieser Erweiterungsmethoden - **SetAvailablePageLayouts**, **SetDefaultPageLayoutForSite**und **SetAvailableWebTemplates** - Arbeit in die gleiche Weise. Sie erstellen eine XML-Dokumente, die Schlüssel/Wert-Paare enthalten, die die verfügbaren und Standardlayouts und die verfügbaren Vorlagen definieren. Sie übergeben dann diese Dokumente an eine weitere Erweiterungsmethode **SetPropertyBagValue**aufgerufen. Diese Methode ist in [OfficeDevPnPCore Erweiterung](hhttps://github.com/SharePoint/PnP-sites-core)implementiert. Nachdem sie die entsprechenden Eigenschaftenbehälter einrichtet, werden diese Eigenschaftenbehälter klicken Sie dann zum Filtern von Optionen auf der Benutzeroberfläche verwendet.
+All three of these extension methods - **SetAvailablePageLayouts**, **SetDefaultPageLayoutForSite**, and **SetAvailableWebTemplates** - work in the same way. They create XML documents that contain key/value pairs that define the available and default layouts and the available templates. They then pass these documents to an additional extension method called **SetPropertyBagValue**. This method is implemented in [OfficeDevPnPCore extension](hhttps://github.com/SharePoint/PnP-sites-core). After it sets up the appropriate property bags, these property bags are then used to filter options in the interface.
 
-Die drei Methoden zeigt **SetAvailableWebTemplates** das vollständige Muster.
+Of the three methods, **SetAvailableWebTemplates** shows the full pattern.
 
 ```
 public static void SetAvailableWebTemplates(this Web web, List<WebTemplateEntity> availableTemplates)
@@ -1310,12 +1312,12 @@ public static void SetAvailableWebTemplates(this Web web, List<WebTemplateEntity
 
 ```
 
-Die Eigenschaftensammlung **InheritWebTemplates** stellt sicher, dass alle Vorlagen, die normalerweise von der übergeordneten Website geerbt werden beim Erstellen von Unterwebsites auch ignoriert werden.
+The **InheritWebTemplates** property bag makes sure that any templates that are normally inherited from the parent site also are ignored when you create subsites.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
-- [UX-Komponenten in SharePoint 2013 und SharePoint Online](ux-components-in-sharepoint-2013-and-sharepoint-online.md)
+- [UX Components in SharePoint 2013 and SharePoint Online](ux-components-in-sharepoint-2013-and-sharepoint-online.md)
     
 - [Provisioning.Pages](https://github.com/SharePoint/PnP/tree/master/Samples/Provisioning.Pages)
     

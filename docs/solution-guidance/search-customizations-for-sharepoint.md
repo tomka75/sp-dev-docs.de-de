@@ -1,175 +1,176 @@
 ---
-title: "Durchsuchen von Anpassungen für SharePoint"
+title: Search customizations for SharePoint
 ms.date: 11/03/2017
-ms.openlocfilehash: c8afb3e0589e65e100ca3512926e931e966e510a
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 3bf69aac7b506a68124f57f8c4eafcc3508307c5
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="search-customizations-for-sharepoint"></a>Durchsuchen von Anpassungen für SharePoint
+# <a name="search-customizations-for-sharepoint"></a>Search customizations for SharePoint
 
-Erstellen Sie benutzerdefinierte SharePoint 2013 und SharePoint Online-Suche Szenarien mithilfe von suchbasierten Websiteverzeichnis und eine personalisierte Suche, oder suchen Sie Konfiguration Portabilität. 
+Create customized SharePoint 2013 and SharePoint Online search scenarios by using a search-based site directory, personalized search, or search configuration portability. 
 
-_**Gilt für:** Office 365 | SharePoint 2013 | SharePoint-Add-ins | SharePoint Online_
+_**Applies to:** Office 365 | SharePoint 2013 | SharePoint Add-ins | SharePoint Online_
 
-## <a name="search-based-site-directory"></a>Suchbasierte Websiteverzeichnis
+## <a name="search-based-site-directory"></a>Search-based site directory
 
-SharePoint-Suche können Sie eine suchbasierte Websiteverzeichnis ohne Schreiben von benutzerdefiniertem Code erstellen. 
+SharePoint search enables you to create a search-based site directory without writing any custom code. 
 
-So erstellen Sie ein Websiteverzeichnis
+To create a site directory:
 
-1. Erstellen der Website Directory Anzeigevorlagen.
+1. Create the site directory display templates.
     
-2. Definieren Sie den Site Directory Ergebnistyp.
+2. Define the site directory result type.
     
-3. Erstellen der Ergebnisseite an.
+3. Create the results page.
     
-4. Bearbeiten Sie die Eigenschaften des Suchergebnisse-Webpart.
+4. Edit the Results Web Part properties.
     
-Zum Erstellen der Website Directory Anzeigevorlagen:
+To create the site directory display templates:
 
-**Hinweis:**  Dieses Verfahren verwendet die Website bezogenen Anzeigevorlagen unverändert. Wenn Sie ändern, wie Site Directory Ergebnisse angezeigt werden, ändern die Anzeigevorlagen, die Sie erstellen möchten.
+> [!NOTE] 
+> This procedure uses the site-related display templates without modification. If you want to change how site directory results are displayed, modify the display templates that you create.
 
-1. Öffnen Sie das den **Gestaltungsvorlagenkatalog**zugeordnetes Netzwerklaufwerk. Weitere Informationen finden Sie unter [wie: Zuordnen eines Netzlaufwerks zum SharePoint 2013 Master Page Gallery](http://msdn.microsoft.com/en-us/library/office/jj733519%28v=office.15%29.aspx).
+1. Open the mapped network drive to the  **Master Page Gallery**. For more information, see [How to: Map a network drive to the SharePoint 2013 Master Page Gallery](http://msdn.microsoft.com/en-us/library/office/jj733519%28v=office.15%29.aspx).
     
-2. Erstellen Sie Kopien der Anzeigevorlage HTML-Dateien, die am besten zuordnen, was Sie tun möchten. Für die Website verzeichnisszenario wird dies Item_Site.html und Item_Site_HoverPanel.html sein. Beide Dateien befinden sich der `\Display Templates\Search` Ordner in der zugeordnetes Netzwerklaufwerk.
+2. Make copies of the display template HTML files that best map what you're trying to do. For the site directory scenario, this will be Item_Site.html and Item_Site_HoverPanel.html. Both files are located in the  `\Display Templates\Search` folder in the mapped network drive.
     
-3. Benennen Sie die Kopien, die Sie der Item_SiteDirectory.html und Item_SiteDirectory_HoverPanel.html-Dateien vorgenommen, wie dargestellt.
+3. Rename the copies that you made of the Item_SiteDirectory.html and Item_SiteDirectory_HoverPanel.html files as shown.
     
-    **Abbildung 1. Site Directory Anzeigevorlagen**
+    **Figure 1. Site directory display templates**
 
-    ![Site Directory Anzeigevorlagen](media/search-customizations-for-sharepoint/4c084d31-bad4-45f0-950b-ba214f9487f7.png)
+    ![Site directory display templates](media/search-customizations-for-sharepoint/4c084d31-bad4-45f0-950b-ba214f9487f7.png)
 
-4. Öffnen Sie die Datei Item_SiteDirectory.html, und stellen Sie wie folgt geändert:
+4. Open the Item_SiteDirectory.html file and make the following changes:
     
-    - Ändern der `<title>` Wert von "Websiteelements" bis "Websiteverzeichnis" markieren.
+    - Change the  `<title>` tag value from "Site Item" to "Site Directory".
     
-    - Ändern Sie die erste `<div>` Tag nach dem öffnenden `<body>` Markieren von `<div id="Item_Site">` auf `<div id="Item_SiteDirectory">`.
+    - Change the first  `<div>` tag after the opening `<body>` tag from `<div id="Item_Site">` to `<div id="Item_SiteDirectory">`.
     
-    - Ändern der beim Daraufzeigen Systemsteuerung Vorlage JavaScript-Datei des Anzeigenamens von: `var hoverUrl = "~sitecollection/_catalogs/masterpage/Display Templates/Search/Item_Site_HoverPanel.js";`an:`var hoverUrl = "~sitecollection/_catalogs/masterpage/Display Templates/Search/Item_SiteDirectory_HoverPanel.js";`
+    - Change the hover panel display template JavaScript file name from: `var hoverUrl = "~sitecollection/_catalogs/masterpage/Display Templates/Search/Item_Site_HoverPanel.js";`to: `var hoverUrl = "~sitecollection/_catalogs/masterpage/Display Templates/Search/Item_SiteDirectory_HoverPanel.js";`
     
-5. Öffnen Sie die Datei Item_SiteDirectory_HoverPanel.html, und stellen Sie wie folgt geändert:
+5. Open the Item_SiteDirectory_HoverPanel.html file and make the following changes:
     
-    - Ändern der `<div>` Tag nach dem öffnenden `<body>` markieren aus: `<title>Site Hover Panel Test</title>`an:`<title>Site Directory Hover Panel</title>`
+    - Change the  `<div>` tag following the opening `<body>` tag from: `<title>Site Hover Panel Test</title>`to: `<title>Site Directory Hover Panel</title>`
     
-    - Ändern der `<title>` markieren aus: `<div id="Item_Site_HoverPanel">`an:`<div id="Item_SiteDirectory_HoverPanel">`
+    - Change the  `<title>` tag from: `<div id="Item_Site_HoverPanel">`to: `<div id="Item_SiteDirectory_HoverPanel">`
     
-So definieren Sie den Website Directory Ergebnistyp
+To define the site directory result type:
 
-1. Wechseln Sie zu **Websiteeinstellungen** > **Suche** > **Ergebnistypen**, und klicken Sie dann auf **Neuer Ergebnistyp**.
+1. Go to  **Site Settings** > **Search** > **Result Types**, and then choose  **New Result Type**.
     
-2. Name des neuen Ergebnistyps "Grundlegende Websiteverzeichnis".
+2. Name your new result type "Basic Site Directory".
     
-3. In der **wie sollen diese Ergebnisse aussehen?** **Websiteverzeichnis**wählen Sie im Feld.
+3. In the  **What should these results look like?** box, select **Site Directory**.
     
-    **Abbildung 2. Ergebnis Standortkonfiguration**
+    **Figure 2. Site result configuration**
 
-    ![Beispiel für Ergebnis Standortkonfiguration](media/search-customizations-for-sharepoint/4f42a7c4-326b-4508-b9a7-e030ef34cd33.png)
+    ![Example site result configuration](media/search-customizations-for-sharepoint/4f42a7c4-326b-4508-b9a7-e030ef34cd33.png)
 
-4. Wählen Sie **Speichern**aus.
+4. Choose  **Save**.
     
-Auf die Ergebnisseite zu erstellen:
+To create the results page:
 
-1. Klicken Sie im Menü **Einstellungen** **auf Websiteinhalte**.
+1. On the  **Site Settings** menu, select **Site contents**.
     
-2. Wählen Sie **Seiten**.
+2. Select  **Pages**.
     
-3. Wählen Sie in der Bibliothek für **Seiten** , **Dateien** > **Neues Dokument** > **Seite**.
+3. In the  **Pages** library, select **Files** > **New Document** > **Page**.
     
-4. Geben Sie auf der Seite **Seite erstellen** "Websiteverzeichnis" für den **Titel** und "Sitedirectory" für **URL-Name**.
+4. On the  **Create Page** page, specify "Site Directory" for **Title** and "sitedirectory" for **URL Name**.
     
-5. Wählen Sie **Erstellen**.
+5. Choose  **Create**.
     
-So bearbeiten Sie die Eigenschaften des Suchergebnisse-Webpart
+To edit the Results Web Part properties:
 
-1. Wählen Sie auf der Seite **Websiteverzeichnis** **Einstellungen** > **Seite bearbeiten**.
+1. On the  **Site Directory** page, choose **Settings** > **Edit Page**.
     
-2. Wählen Sie in den **Suchergebnisse-Webpart**im **Webpart** -Menü, und wählen Sie dann auf **Webpart bearbeiten**.
+2. In the  **Search Results Web Part**, choose the  **Web Part** menu, and then choose **Edit Web Part**.
     
-    **Abbildung 3. Webpart-Menü**
+    **Figure 3. Web Part menu**
 
-    ![Abb. 3](media/search-customizations-for-sharepoint/1b01ac59-3bc1-42eb-a63d-61c2ad15cee4.png)
+    ![fig 3](media/search-customizations-for-sharepoint/1b01ac59-3bc1-42eb-a63d-61c2ad15cee4.png)
 
-3. Wählen Sie im Webpart-Toolbereich **Abfrage ändern** , um den Abfrage-Generator zu öffnen.
+3. In the Web Part tool pane, choose  **Change query** to open the Query Builder.
     
-4. Geben Sie im Feld **Abfragetext** Folgendes ein:`ContentClass:STS_Web OR ContentClass:STS_Site path:http://<YourServer>`
+4. In the  **Query text** field, enter the following: `ContentClass:STS_Web OR ContentClass:STS_Site path:http://<YourServer>`
     
-5. Wählen Sie die **Abfrage testen** zu bestätigen, dass die Syntax korrekt ist. **Search Results** Vorschaubereich sollte Unterwebsites der Website angezeigt werden, die Sie für den _Pfad_ des **Abfragetext**angegeben.
+5. Choose  **Test query** to confirm that the syntax is correct. The **Search Results Preview** pane should display subsites within the site you specified for _path_ in the **Query text**.
     
-    **Abbildung 4. Search Results-Webpart-Abfrage-Generator**
+    **Figure 4. Search results Web Part query builder**
 
-    ![Search Results Webpart Abfrage-Generator](media/search-customizations-for-sharepoint/7b55c821-4772-4874-bbcb-c757e2723599.png)
+    ![Search results web part query builder](media/search-customizations-for-sharepoint/7b55c821-4772-4874-bbcb-c757e2723599.png)
 
-6. Wählen Sie **OK** , um den Abfrage-Generator zu schließen.
+6. Choose  **OK** to close the Query Builder.
     
-7. Wählen Sie im **Anzeigevorlagen** **Ergebnistypen zum Anzeigen von Elementen verwenden**.
+7. In  **Display Templates**, select  **Use result types to display items**.
     
-8. Wählen Sie in der Dropdownliste **Ergebnistyp für Artikel** **Grundlegende Websiteverzeichnis** .
+8. Select  **Basic Site Directory** in the **Result type for item** drop-down list.
     
-9. Klicken Sie im Abschnitt **Darstellung** ändern Sie den **Titel** in "sind Websites ich Zugriff auf".
+9. In the  **Appearance** section, change the **Title** to "Sites I have access to".
     
-10. Wählen Sie **OK** , um die Änderungen am Webpart zu speichern und schließen den Webpart-Toolbereich. Die folgende Abbildung zeigt ein Beispiel für eine suchbasierte Directory Websiteseite.
+10. Choose  **OK** to save the changes to the Web Part and to close the Web Part tool pane. The following figure shows an example of a search-based site directory page.
     
-    **Abbildung 5. Beispiel für Contoso suchbasierte Website-Verzeichnis**
+    **Figure 5. Contoso search-based site directory example**
 
-    ![Beispiel für Contoso suchbasierte Website-Verzeichnis](media/search-customizations-for-sharepoint/5d1317d5-2e82-4819-b5a4-5bb515898a7b.png)
+    ![Contoso search-based site directory example](media/search-customizations-for-sharepoint/5d1317d5-2e82-4819-b5a4-5bb515898a7b.png)
 
-## <a name="personalized-search-results"></a>Personalisierte Suchergebnisse
+## <a name="personalized-search-results"></a>Personalized search results
 
-Personalisierte Suche ist beim Anzeigen von Suchergebnissen angegeben, an den Benutzer senden von der Suchanfrage vorgesehen sind. Dieser Abschnitt beschreibt einige Szenarien für personalisierte Such- und wie Sie sie implementieren können.
+Personalized search is when you show search results targeted to the user submitting the search request. This section describes some scenarios for personalized search and how you might implement them.
 
-### <a name="your-news-scenario"></a>Die News-Szenario
+### <a name="your-news-scenario"></a>Your news scenario
 
-In diesem Szenario erstellen Sie ein Search-add-in, das relevante Inhalte, wie Nachrichten und Ereignisse, geplant, für den Benutzer anzeigt.
+In this scenario, you create a search add-in that shows relevant content, such as news and events, targeted to the user.
 
-**Abbildung 6. Ihr News personalisierte Search-Szenario**
+**Figure 6. Your News personalized search scenario**
 
-![Ihr News personalisierte Search-Szenario](media/search-customizations-for-sharepoint/188af4d1-b8bb-4212-bfdb-c29a13f30286.png)
+![Your News personalized search scenario](media/search-customizations-for-sharepoint/188af4d1-b8bb-4212-bfdb-c29a13f30286.png)
 
-Um die News-Szenario zu implementieren, mit der die SharePoint-Suchergebnisse-Webparts und Anzeigevorlagen standardmäßig die News-Informationen, einschließlich Titel, Beschreibung und rollupbild angezeigt. Die ersten 10 Elemente News anzeigen. Wenn der Benutzer die rollupbild, Titel oder mehr lesen Link klickt, wird die Seite Neuigkeiten Artikel geladen.
+To implement the news scenario, use the SharePoint search results Web Part and default display templates to display the news information, including title, description, and rollup image. Show the first 10 news items. When the user chooses the rollup image, title, or Read More link, the news article page is loaded.
 
-Alternativ können Sie eine Suche-add-Ins mithilfe der Abfrage-API (CSOM oder REST) erstellen. Sie können die Anzahl der Nachrichtenelementen anzuzeigende mithilfe des add-ins Sucheigenschaften konfigurierbar machen.
+Alternatively, you can create a search add-in using the query API (CSOM or REST). You can make the number of news items to be displayed configurable by using the search add-in properties.
 
-Eine weitere Option ist mit der Abfrage-API die Abfrage-API-Code hinzufügen, der die Suchergebnisse direkt auf das Seitenlayout abruft.
+Another option is to use the query API to add the query API code that retrieves the search results directly to the page layout.
 
-News und Ereignis Informationen, die speziell für den Benutzer angezeigt:
+To display the news and event information specific to the user:
 
-1. Ändern der Abfrage zum Filtern von Nachrichten und Ereignis Ergebnisse basierend auf Benutzerprofileigenschaften wie Unternehmenseinheit, Region und Sprache.
+1. Modify the query to filter news and event results based on user profile properties like business unit, region, and language.
     
-2. Abrufen der Titel, Beschreibung, rollupbild und URL-Eigenschaften für die Elemente News oder Ereignis.
+2. Retrieve the Title, Description, rollup image, and URL properties for the news or event items.
     
-3. Sortieren der Logik für die kombinierte Neuigkeiten und Ereignisse, die auf Basis der **LastModifiedDate** -Eigenschaft implementieren.
+3. Implement sorting logic for the combined news and events based on the  **LastModifiedDate** property.
 
-### <a name="upcoming-events-scenario"></a>Anstehende Ereignisse-Szenario
+### <a name="upcoming-events-scenario"></a>Upcoming events scenario
 
-In diesem Szenario zeigt die Search-add-ins relevanten Ereignisse geplant, für den Benutzer.
+In this scenario, the search add-in shows relevant events targeted to the user.
 
-**Abbildung 7. Anstehende Ereignisse personalisierte Search-Szenario**
+**Figure 7. Upcoming Events personalized search scenario**
 
-![Anstehende Ereignisse personalisierte Search-Szenario](media/search-customizations-for-sharepoint/35afac63-b4e9-4d94-abc1-a5fa11cc2dbf.png)
+![Upcoming Events personalized search scenario](media/search-customizations-for-sharepoint/35afac63-b4e9-4d94-abc1-a5fa11cc2dbf.png)
 
-Zum Implementieren dieses Szenarios können Sie die SharePoint-Suchergebnisse-Webpart so ändern Sie die Abfrage aus, um nur in Kürze verfügbare Ereignisinformationen abrufen konfigurieren. Geben Sie hierzu `ContentClass:STS_ListItem_Events` für das Webpart Abfragetext. Erstellen Sie zum Ändern der Anzeige von Ereignis tritt auf, benutzerdefinierte Anzeigevorlagen, um die Ereignisinformationen zu rendern.
+To implement this scenario, you can configure the SharePoint search results Web Part to change the query to only retrieve upcoming event information. To do this, specify  `ContentClass:STS_ListItem_Events` for the Web Part's query text. To change how event results are displayed, create custom display templates to render the event information.
 
-Sie können die elementanzeigevorlage ändern, sodass, wenn der Benutzer das Bild, Titel oder mehr lesen Link auswählt, die Informationsseite Ereignis geladen wird. Sie können auch die Steuerelement-Anzeigevorlage ändern, sodass die nächsten 10-Ereignisergebnisse im Webpart, wenn der Benutzer **Weitere**auswählt angezeigt werden.
+You can modify the item display template so that when the user chooses the image, title, or Read More link, the event information page is loaded. You can also modify the control display template so that when the user chooses  **See More**, the next 10 event results are displayed in the Web Part.
 
-Sie können auch ein Search-add-in erstellen, die die Abfrage-API verwendet, sogar Ergebnisse abzurufen. Sie können das Search-add-in, um anzuzeigen, werden standardmäßig nur 10 der neuesten anstehende Ereignisse, aber stellen Sie diese Einstellung über die Add-in-Sucheigenschaften konfigurierbar konfigurieren. 
+You can also create a search add-in that uses the query API to retrieve even results. You can configure the search add-in to show, by default, only 10 of the latest upcoming events, but make this setting configurable through the search add-in properties. 
 
-### <a name="featured-news-scenario"></a>Empfohlene News-Szenario
+### <a name="featured-news-scenario"></a>Featured news scenario
 
-In diesem Szenario Suchergebnisse der Suche-add-Ins dargestellt als Ziel für die Benutzer an Stellen wie Unternehmensintranet und Abteilungen Angebotsseiten Empfohlener Inhalt. Sie können dies mit einem Webpart-Add-in implementieren, die eine jQuery-Plug-in mit HTML-Code enthält, die der Search REST-Dienst oder die CSOM-Abfrage zum Abrufen von Suchergebnissen aus SharePoint und Anzeigen der Ergebnisse verwendet.
+In this scenario, the search add-in shows search results as featured content targeted to your users in places such as corporate intranet and divisional landing pages. You can implement this with an add-in part that contains a jQuery plugin with HTML, that uses the search REST service or the query CSOM to get search results from SharePoint and display the results.
 
-### <a name="code-sample-for-personalized-search"></a>Codebeispiel für personalisierte Suche
+### <a name="code-sample-for-personalized-search"></a>Code sample for personalized search
 
-Die [SharePoint 2013: Personalisieren von Suchergebnisse in ein SharePoint-Add-in](http://code.msdn.microsoft.com/SharePoint-2013-Personalizi-fb6ddcf9) Beispiel zeigt ein Beispiel für einfache Suche und eine personalisierte Suchergebnisse Beispiel, die die Suchabfrage CSOM verwendet wird. Im Beispiel einfache Suche kann den Benutzer, die einen Suchfilter für einen Mandanten geltende Suche bereitstellen. Websites werden basierend auf den benutzerdefinierten Filter durchsucht.
+The [SharePoint 2013: Personalizing search results in a SharePoint Add-in](http://code.msdn.microsoft.com/SharePoint-2013-Personalizi-fb6ddcf9) sample shows a basic search example and a personalized search results example that uses the search query CSOM. The basic search example lets the user provide a search filter to use for a tenant-wide search. Sites are searched based on that user-supplied filter.
 
-Im Beispiel wird zunächst SharePoint Kontext mithilfe der **SharePointContextProvider** -Klasse.
+The example first gets SharePoint context by using the  **SharePointContextProvider** class.
 
 ```
 var spContext = SharePointContextProvider.Current.GetSharePointContext(Context);
 ```
 
-Im nächsten Schritt wird die Abfrage basierend auf der Benutzereingabe erstellt. Es beschränkt die Abfrage für Websitesammlungen und ruft dann die **ProcessQuery** -Methode, die den Kontext und die Abfrage im Methodenaufruf übergeben. Anschließend wird, dass die Ergebnisse **ProcessQuery** dementsprechend Tabelle die dann von der **FormatResults** -Methode analysiert, zurückgegeben.
+Next, it builds the query based on what the user entered. It restricts the query to site collections, and then calls the  **ProcessQuery** method, passing the context and the query in the method call. It then returns the **ProcessQuery** results as a result table, which is then parsed by the **FormatResults** method.
 
 ```
 using (var clientContext = spContext.CreateUserClientContextForSPHost())
@@ -180,7 +181,7 @@ using (var clientContext = spContext.CreateUserClientContextForSPHost())
 }
 ```
 
-Die **ProcessQuery** -Methode erstellt ein **KeywordQuery** -Objekt, das die Suchabfrage darstellt.
+The  **ProcessQuery** method builds a **KeywordQuery** object that represents the search query.
 
 ```
 KeywordQuery keywordQuery = new KeywordQuery(ctx);
@@ -194,7 +195,7 @@ keywordQuery.SelectProperties.Add("WebTemplate");
 keywordQuery.SortList.Add("SPSiteUrl", Microsoft.SharePoint.Client.Search.Query.SortDirection.Ascending);
 ```
 
-Die Suchabfrage wird dann in SharePoint durch Aufrufen der Methode **ExecuteQuery_Client(Query)** versendet. Die Ergebnisse zurückgegeben werden, die **ClientResult < T&gt; ** Objekt.
+The search query is then submitted to SharePoint by calling the  **ExecuteQuery_Client(Query)** method. Results are returned to the **ClientResult<T&gt;** object.
 
 ```
 SearchExecutor searchExec = new SearchExecutor(ctx);
@@ -202,7 +203,7 @@ ClientResult<ResultTableCollection> results = searchExec.ExecuteQuery(keywordQue
 ctx.ExecuteQuery();
 ```
 
-Die **FormatResults** -Methode durchlaufen und die Ergebnisse und erstellt eine HTML-Tabelle, um die Ergebniswerte anzuzeigen.
+The  **FormatResults** method iterates through the results and constructs an HTML table to display the result values.
 
 ```
 string responseHtml = "<h3>Results</h3>";
@@ -223,7 +224,7 @@ if (results.Value[0].RowCount > 0)
 responseHtml += "</table>";
 ```
 
-"Apptesten" überprüft die **ResolveAdditionalFilter** -Methode. Wenn sie gefunden wird, wird eine Liste mit Websitevorlagen eines beliebigen Typs in den Suchergebnissen zurückgegeben. Wenn es nicht gefunden wird, werden nur STS Webvorlagen in den Suchergebnissen zurückgegeben.
+The  **ResolveAdditionalFilter** method checks for "Apptest". If it is found, a list of site templates of any type is returned in the search results. If it is not found, only STS web templates are returned in the search results.
 
 ```
 private string ResolveAdditionalFilter(string aboutMeValue)
@@ -236,7 +237,7 @@ private string ResolveAdditionalFilter(string aboutMeValue)
 }
 ```
 
-Im Beispiel wird dann die Abfrage erstellt und ruft die **ProcessQuery** und **FormatResults** Methoden zum Abrufen, Format, und die Suchergebnisse angezeigt.
+The example then constructs the query and calls the  **ProcessQuery** and **FormatResults** methods to retrieve, format, and display the search results.
 
 ```
 string query = "contentclass:\"STS_Site\" " + templateFilter;
@@ -244,68 +245,69 @@ ClientResult<ResultTableCollection> results = ProcessQuery(clientContext, query)
 lblStatus2.Text = FormatResults(results);
 ```
 
-Sie können die Benutzeroberfläche für die in diesem Beispiel wird in der folgenden Abbildung sehen.
+You can see the UI for this example in the following figure.
 
-**Abbildung 8. Personalisierte Suchergebnisse Beispiel-UI**
+**Figure 8. Personalized search results sample UI**
 
-![Personalisierte Suchergebnisse Beispiel-UI](media/search-customizations-for-sharepoint/8e1c412b-71a7-42e2-b9f3-b7d045df3bde.png)
+![Personalized search results sample UI](media/search-customizations-for-sharepoint/8e1c412b-71a7-42e2-b9f3-b7d045df3bde.png)
 
-## <a name="search-configuration-portability"></a>Suche Konfiguration Portabilität
+## <a name="search-configuration-portability"></a>Search configuration portability
 
-In SharePoint 2013 und SharePoint Online können Sie exportieren und importieren angepasster suchkonfigurationseinstellungen zwischen Websitesammlungen und Websites. Sie können nur exportieren angepasster suchkonfigurationseinstellungen auf der Ebene Search Service Application (SSA), und Sie müssen die Suche APIs programmgesteuert dazu verwenden. Die Export-Option ist nicht in der SharePoint-UI verfügbar.
+In SharePoint 2013 and SharePoint Online, you can export and import customized search configuration settings between site collections and sites. You can only export customized search configuration settings at the Search service application (SSA) level, and you have to use the search APIs to do this programmatically. The export option is not available in the SharePoint UI.
 
-Die [SharePoint 2013: Import und Export der sucheinstellungen für SharePoint Online](http://code.msdn.microsoft.com/SharePoint-2013-Import-and-6287b5ac) Beispiel gezeigt, wie Sie zum Importieren und Exportieren von sucheinstellungen für eine SharePoint Online-Website verwenden des Suchdiensts CSOM in eine Konsolenanwendung.
+The [SharePoint 2013: Import and Export search settings for SharePoint Online](http://code.msdn.microsoft.com/SharePoint-2013-Import-and-6287b5ac) sample show how to import and export search settings for a SharePoint Online site using the search CSOM in a console application.
 
-### <a name="configuration-settings-that-are-portable"></a>Konfigurationseinstellungen, die portabel sind
+### <a name="configuration-settings-that-are-portable"></a>Configuration settings that are portable
 
-Beim Exportieren angepasster suchkonfigurationseinstellungen erstellt SharePoint 2013 eine suchkonfigurationsdatei im XML-Format. Mit dieser Konfigurationsdatei Suche enthält alle exportierbar suchkonfigurationseinstellungen auf SSA, Websitesammlung oder der Websiteebene aus, in dem Sie den Export starten. Eine suchkonfigurationsdatei für eine Websitesammlung enthält keine suchkonfigurationseinstellungen aus den einzelnen Standorten innerhalb der Websitesammlung.
+When you export customized search configuration settings, SharePoint 2013 creates a search configuration file in XML format. This search configuration file includes all exportable customized search configuration settings at the SSA, site collection, or site level from where you start the export. A search configuration file for a site collection does not contain search configuration settings from the individual sites within the site collection.
 
-Beim Importieren einer suchkonfigurationsdatei SharePoint 2013 erstellt und aktiviert jede benutzerdefinierte suchkonfigurationseinstellung in der Websitesammlung oder Website aus, in dem Sie den Import starten.
+When you import a search configuration file, SharePoint 2013 creates and enables each customized search configuration setting in the site collection or site from where you start the import.
 
-In Tabelle 1 werden die Einstellungen, die Sie exportieren und importieren können und Abhängigkeiten von anderen angepassten suchkonfigurationseinstellungen. Wenn eine benutzerdefinierte suchkonfigurationseinstellung auf einer anderen Ebene die suchkonfigurationseinstellungen abhängen, müssen Sie exportieren und Importieren von Einstellungen in allen relevante Ebenen.
+Table 1 lists the settings that you can export and import and any dependencies on other customized search configuration settings. If the customized search configuration settings depend on a customized search configuration setting at a different level, you must export and import settings at all relevant levels.
 
-**In Tabelle 1. Für die Suche, die Sie exportieren und importieren können**
+**Table 1. Search settings that you can export and import**
 
-|**Einstellung für die Konfiguration**|**Abhängigkeiten**|
+|**Configuration setting**|**Dependencies**|
 |:-----|:-----|
-|Abfrageregeln, einschließlich Ergebnis Blocs, heraufgestufte Ergebnisse und Benutzersegmente|Ergebnisquellen, Ergebnistypen, Suchschema, Bewertungsmodell|
-|Ergebnisquellen|Suchschema|
-|Ergebnistypen|Suchschema, ergebnisquellen, Anzeigevorlagen|
-|Suchschema|Keine|
-|Bewertungsmodell|Suchschema|
+|Query rules, including result blocs, promoted results, and user segments|Result sources, result types, search schema, ranking model|
+|Result sources|Search schema|
+|Result types|Search schema, result sources, display templates|
+|Search schema|Keine|
+|Ranking model|Search schema|
 
-Sie können suchkonfigurationseinstellungen aus einer SSA exportieren und importieren die Einstellungen von Websitesammlungen und Websites. Aber kann nicht importieren angepasster suchkonfigurationseinstellungen in eine SSA. Auch können nicht die standardmäßige suchkonfigurationseinstellungen exportiert werden.
+You can export customized search configuration settings from an SSA and import the settings to site collections and sites. But you can't import customized search configuration settings to an SSA. You also can't export the default search configuration settings.
 
-Auf Ebene der Websitesammlung oder Website können Sie exportieren oder importieren suchkonfigurationseinstellungen mithilfe der SharePoint-UI. Diese Einstellungen befinden sich im Abschnitt **Suchen** der Seite **Websiteeinstellungen** .
+At the site or site collection level, you can export or import search configuration settings by using the SharePoint UI. These settings are located in the  **Search** section of the **Site Settings** page.
 
-**Websiteeinstellungen - Suche**
+**Site Settings - Search**
 
-![Websiteeinstellungen - Suche](media/search-customizations-for-sharepoint/ada14bf4-d721-4974-ad50-a1f8ce01933f.png)
+![Site Settings - Search](media/search-customizations-for-sharepoint/ada14bf4-d721-4974-ad50-a1f8ce01933f.png)
 
-Diese Einstellungen sind auch im Abschnitt **Verwaltung der Websitesammlung** verfügbar. Alternativ können Sie programmgesteuert importieren und Exportieren diese Einstellungen mithilfe der SharePoint 2013-Suche CSOM.
+These settings are also available in the  **Site Collection Administration** section. Alternatively, you can programmatically import and export these settings by using the SharePoint 2013 search CSOM.
 
-### <a name="search-configuration-files"></a>Konfigurationsdateien für die Suche
+### <a name="search-configuration-files"></a>Search configuration files
 
-Die folgende Tabelle enthält die Schemadateien, die eine Suchkonfiguration unterstützen. Informationen zum Schemaformat finden Sie unter [Share Point Search Settings Portability Schemas](http://msdn.microsoft.com/en-us/library/office/dn627953%28v=office.15%29.aspx).
+The following table lists schema files that support a search configuration. For information about the schema format, see [Share Point search settings portability schemas](http://msdn.microsoft.com/en-us/library/office/dn627953%28v=office.15%29.aspx).
 
-**Hinweis:**  Sie können die Schemadateien [http://download.microsoft.com/download/1/2/2/12204CDE-56A6-4B2F-9719-4EA25FDA7743/SP15_search_settings_portability_schema.zip](http://download.microsoft.com/download/1/2/2/12204CDE-56A6-4B2F-9719-4EA25FDA7743/SP15_search_settings_portability_schema.zip)heruntergeladen werden. 
+> [!NOTE] 
+> You can download the schema files from [http://download.microsoft.com/download/1/2/2/12204CDE-56A6-4B2F-9719-4EA25FDA7743/SP15_search_settings_portability_schema.zip](http://download.microsoft.com/download/1/2/2/12204CDE-56A6-4B2F-9719-4EA25FDA7743/SP15_search_settings_portability_schema.zip). 
 
-**In Tabelle 2. Search Settings Portability schemas**
+**Table 2. Search settings portability schemas**
 
 |**Schema**|**Beschreibung**|
 |:-----|:-----|
-|[SPS15XSDSearchSet1](http://msdn.microsoft.com/en-us/library/office/dn639116%28v=office.15%29.aspx)|Gibt an, XML, das ergebnisquellen darstellt.|
-|[SPS15XSDSearchSet2](http://msdn.microsoft.com/en-us/library/office/dn639118%28v=office.15%29.aspx)|Gibt an, XML, das administrative Typen und Member zum Verwalten von einer Instanz der SSA Suche darstellt. Dazu gehören ergebniselementtypen und Einstellungen der Regel.|
-|[SPS15XSDSearchSet3](http://msdn.microsoft.com/en-us/library/office/dn639120%28v=office.15%29.aspx)|Gibt an, die Einstellungen darstellt, die Abfrageregeln, enthalten XML ergebnisquellen, verwalteten Eigenschaften, durchforstete Eigenschaften und rangmodelle.|
-|[SPS15XSDSearchSet4](http://msdn.microsoft.com/en-us/library/office/dn639117%28v=office.15%29.aspx)|Gibt an, XML, Enumerationen, die in anderen Schemas verwendet darstellt.|
-|[SPS15XSDSearchSet5](http://msdn.microsoft.com/en-us/library/office/dn639119%28v=office.15%29.aspx)|Gibt an, XML, Enumerationen wie **ResultType-Wert** darstellt, die in anderen Schemas verwendet werden.|
-|[SPS15XSDSearchSet6](http://msdn.microsoft.com/en-us/library/office/dn639115%28v=office.15%29.aspx)|Gibt an, XML, Enumerationen im Schema **Microsoft.Office.Server.Search.Administration** verwendet darstellt.|
+|[SPS15XSDSearchSet1](http://msdn.microsoft.com/en-us/library/office/dn639116%28v=office.15%29.aspx)|Specifies XML that represents result sources.|
+|[SPS15XSDSearchSet2](http://msdn.microsoft.com/en-us/library/office/dn639118%28v=office.15%29.aspx)|Specifies XML that represents administrative types and members for managing an SSA search instance. This includes result item types and property rule settings.|
+|[SPS15XSDSearchSet3](http://msdn.microsoft.com/en-us/library/office/dn639120%28v=office.15%29.aspx)|Specifies XML that represents settings that include query rules, result sources, managed properties, crawled properties, and ranking models.|
+|[SPS15XSDSearchSet4](http://msdn.microsoft.com/en-us/library/office/dn639117%28v=office.15%29.aspx)|Specifies XML that represents enumerations used in other schemas.|
+|[SPS15XSDSearchSet5](http://msdn.microsoft.com/en-us/library/office/dn639119%28v=office.15%29.aspx)|Specifies XML that represents enumerations like  **ResultType** that are used in other schemas.|
+|[SPS15XSDSearchSet6](http://msdn.microsoft.com/en-us/library/office/dn639115%28v=office.15%29.aspx)|Specifies XML that represents enumerations used in the  **Microsoft.Office.Server.Search.Administration** schema.|
 
-### <a name="using-csom-to-port-configuration-settings"></a>Verwenden CSOM zum Port-Konfigurationseinstellungen
+### <a name="using-csom-to-port-configuration-settings"></a>Using CSOM to port configuration settings
 
-Die CSOM-APIs, die Sie benötigen, um das Importieren und Exportieren von Ihrer suchkonfigurationseinstellungen sind in der **SearchConfigurationPortability** -Klasse im **Microsoft.SharePoint.Client.Search.Portability** -Namespace.
+The CSOM APIs that you need in order to import and export your search configuration settings are in the  **SearchConfigurationPortability** class in the **Microsoft.SharePoint.Client.Search.Portability** namespace.
 
-Im folgenden Codebeispiel wird veranschaulicht, wie suchkonfigurationseinstellungen für eine Website exportieren.
+The following code example shows how to export a site's search configuration settings.
 
 ```
 private static void ExportSearchSettings(ClientContext context, string settingsFile)
@@ -319,7 +321,7 @@ private static void ExportSearchSettings(ClientContext context, string settingsF
 }
 ```
 
-Der folgende Code zeigt, wie Sie eine Website suchkonfigurationseinstellungen importieren.
+The following code shows how to import a site's search configuration settings.
 
 ```
 private static void ImportSearchSettings(ClientContext context, string settingsFile)
@@ -331,11 +333,11 @@ private static void ImportSearchSettings(ClientContext context, string settingsF
 }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
-- [Suchlösungen in SharePoint 2013 und SharePoint Online](search-solutions-in-sharepoint-2013-and-sharepoint-online.md)
+- [Search solutions in SharePoint 2013 and SharePoint Online](search-solutions-in-sharepoint-2013-and-sharepoint-online.md)
     
-- [SharePoint 2013: Import und Export der sucheinstellungen für SharePoint Online](http://code.msdn.microsoft.com/SharePoint-2013-Import-and-6287b5ac)
+- [SharePoint 2013: Import and Export search settings for SharePoint Online](http://code.msdn.microsoft.com/SharePoint-2013-Import-and-6287b5ac)
     
-- [SharePoint 2013: Führt zu personalisieren der Suche in einer SharePoint-Add-in](http://code.msdn.microsoft.com/SharePoint-2013-Personalizi-fb6ddcf9)
+- [SharePoint 2013: Personalizing search results in a SharePoint Add-in](http://code.msdn.microsoft.com/SharePoint-2013-Personalizi-fb6ddcf9)

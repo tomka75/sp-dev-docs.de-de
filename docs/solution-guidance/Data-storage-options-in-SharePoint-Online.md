@@ -1,152 +1,152 @@
 ---
-title: Datenspeicheroptionen in SharePoint Online
+title: Data storage options in SharePoint Online
 ms.date: 11/03/2017
-ms.openlocfilehash: 0e9264de4cb19e4f32939e02786611580d41c82d
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 61913916350d33a15ed753ac60fe7310182a3073
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="data-storage-options-in-sharepoint-online"></a>Datenspeicheroptionen in SharePoint Online
+# <a name="data-storage-options-in-sharepoint-online"></a>Data storage options in SharePoint Online
 
-Bei der Entwicklung von SharePoint Online-add-ins müssen Sie eine Reihe von verschiedenen Optionen zum Speichern von Daten. Sie können das in diesem Artikel beschriebene Beispiel erkunden die Unterschiede zwischen den einzelnen Optionen, und lernen Sie die Vorteile der Verwendung von remote-Datenspeicher verwenden. 
+When you develop SharePoint Online add-ins, you have a number of different options for data storage. You can use the sample described in this article to explore the differences between each option, and to learn about the advantages to using remote data storage. 
 
 _**Gilt für:** Office 365 | SharePoint 2013 | SharePoint Online_
 
-In diesem Artikel werden die [Core.DataStorageModels](https://github.com/SharePoint/PnP/tree/master/Samples/Core.DataStorageModels) Beispiel-app, die jeder der folgenden Datenspeicheroptionen und die Vorteile und Nachteile der einzelnen anzeigt:
+This article describes the  [Core.DataStorageModels](https://github.com/SharePoint/PnP/tree/master/Samples/Core.DataStorageModels) sample app, which shows you each of the following data storage options and the advantages and disadvantages of each:
 
-- SharePoint-Liste auf dem hostweb
+- SharePoint list on the host web
     
-- SharePoint-Liste im Web app
+- SharePoint list on the app web
     
-- SQL Azure-Datenbank
+- SQL Azure database
     
-- Azure Warteschlangenspeicher
+- Azure queue storage
     
-- Azure-tabellenspeicherung
+- Azure table storage
     
-- Externen Webdienst
+- External web service
     
-Die [Core.DataStorageModels](https://github.com/SharePoint/PnP/tree/master/Samples/Core.DataStorageModels) Beispiel-app ist eine vom Anbieter gehosteten app geschrieben in c# und JavaScript, das eine Anzahl von SharePoint-Artefakte (Listen, app-Webpart, Webpart) für das hostweb und app-Webs bereitstellt. Es interagiert mit SharePoint-Listen auf der app-Web und Host-Web und führt auch Aufrufe an eine SQL Azure-Datenbank, ein Azure Warteschlangen- und Tabelle Speicherung und ein Remotewebdienst, die OData implementiert wird. In diesem Beispiel wird das Muster Model-View-Controller (MVC) verwendet.
-Die [Core.DataStorageModels](https://github.com/SharePoint/PnP/tree/master/Samples/Core.DataStorageModels) Beispiel-app gilt jede Speicheroption Daten auf eine bestimmte Funktion für die die Option gut geeignet ist, wie in der folgenden Tabelle beschrieben.
+The  [Core.DataStorageModels](https://github.com/SharePoint/PnP/tree/master/Samples/Core.DataStorageModels) sample app is a provider-hosted app written in C# and JavaScript that deploys a number of SharePoint artifacts (lists, app part, web part) to both the host web and the app web. It interacts with SharePoint lists on the app web and host web, and also makes calls to a SQL Azure database, an Azure queue and table storage, and a remote web service that implements OData. This sample uses the Model-View-Controller (MVC) pattern.
+The  [Core.DataStorageModels](https://github.com/SharePoint/PnP/tree/master/Samples/Core.DataStorageModels) sample app applies each data storage option to a specific function for which the option is well suited, as described in the following table.
 
-|Beispiel-app-Speicheroption|Verwendet für|
+|Sample app storage option|Used for|
 |:--|:--|
-|SharePoint-Liste app-web|Kunden-Notizen|
-|SharePoint-Liste Hostwebsite|Support-Anfragen|
-|Northwind-OData-Dienst|Kunden|
-|Azure-tabellenspeicherung|CSR-Bewertungen|
-|Azure Warteschlangenspeicher|Aufrufen der Warteschlange|
-|SQL Azure-Datenbank Northwind|Aufträge, Bestelldetails, Produkte|
+|SharePoint list app web|Customer notes|
+|SharePoint list host web|Support cases|
+|Northwind OData service|Customers|
+|Azure table storage|CSR ratings|
+|Azure queue storage|Call queue|
+|SQL Azure Northwind database|Orders, order details, products|
 
-Die app implementiert ein Customer Service Dashboard und zugehörige Schnittstellen, die aktuellen Aufträge, Kunden repräsentative Umfrage Bewertungen, Kunden Notizen, Support-Anfragen und eine Customer Vertreter Warteschlange anzeigen. Die ersten beiden Szenarien können Sie das Abrufen von Daten mithilfe von relativ einfach, Client-Objektmodellcode oder REST-Abfragen, aber durch Liste Abfrage Schwellenwerte begrenzt werden. Die folgenden vier Szenarien verwendet unterschiedliche Typen von Remotespeicher. 
+The app implements a customer service dashboard and related interfaces that show recent orders, customer representative survey ratings, customer notes, support cases, and a customer representative call queue. The first two scenarios let you retrieve data by using relatively simply client object model code or REST queries, but are limited by list query thresholds. The next four scenarios uses different types of remote storage. 
 
-**Abbildung 1. Startseite für Data Storage Modelle fordert Sie zum Bereitstellen von SharePoint-Komponenten**
+**Figure 1. Data storage models start page prompts you to deploy SharePoint components**
 
-![Screenshot des app-Beispiel-UI](media/bb3b58ca-b983-4ec4-b36d-18a911edb5d5.png)
+![Screenshot of app sample UI](media/bb3b58ca-b983-4ec4-b36d-18a911edb5d5.png)
 
 ## <a name="before-you-begin"></a>Bevor Sie beginnen:
 <a name="sectionSection0"> </a>
 
-Bevor Sie dieses Beispiel verwenden, stellen Sie sicher, dass Sie über Folgendes verfügen:
+Before you use this sample, make sure that you have the following:
 
-- Ein Microsoft Azure-Konto können Sie eine SQL Azure-Datenbank bereitstellen und erstellen Sie ein Konto Azure-Speicher. 
+- A Microsoft Azure account where you can deploy a SQL Azure database and create an Azure storage account. 
     
-- SharePoint-Entwickler-Standort, damit Sie das Beispiel aus Visual Studio 2013 bereitstellen können.
+- A SharePoint developer site so that you can deploy the sample from Visual Studio 2013.
     
-Darüber hinaus müssen Sie die Northwind-Datenbank in Microsoft Azure bereitstellen.
+Also, you need to deploy the Northwind database to Microsoft Azure.
 
-### <a name="to-deploy-the-northwind-database"></a>Zum Bereitstellen der Northwind-Datenbank
+### <a name="to-deploy-the-northwind-database"></a>To deploy the Northwind database
 
-1. Melden Sie sich an dem Azure-Verwaltungsportal, und wählen Sie **SQL-Datenbanken**> **Server**.
+1. Log on to the Azure Management Portal and choose  **SQL Databases**> **Servers**.
     
-2. Wählen Sie **einen SQL-Datenbankserver zu erstellen**.
+2. Choose  **Create a SQL Database Server**.
     
-3. Geben Sie Werte für **Benutzername**, **Kennwort**und **Region**, wie in Abbildung 2 dargestellt im Format **Server erstellen** .
+3. In the  **Create Server** form, enter values for **Login Name**,  **Login Password**, and  **Region**, as shown in Figure 2.
     
-    **Abbildung 2. Servereinstellungen für SQL-Datenbank**
+    **Figure 2. SQL database server settings**
 
-    ![Zeigt die SQL-Datenbank für den server](media/7ae059fa-eecc-4446-8171-294e44acb189.png)
+    ![Shows the SQL database server settings](media/7ae059fa-eecc-4446-8171-294e44acb189.png)
 
-4. Wählen Sie die Taste mit dem Häkchen auf Fertig stellen, und erstellen Sie den Server.
+4. Choose the checkmark button to finish and create the server.
     
-5. Nun, dass Sie die Datenbank erstellt haben, wählen Sie den Namen des Servers, den Sie erstellt haben, wie in Abbildung 3 dargestellt.
+5. Now that you've created the database, choose the server name that you created, as shown in Figure 3.
     
-    **Abbildung 3. Servernamen, klicken Sie auf der Seite Server**
+    **Figure 3. Server name on the Servers page**
 
-    ![Zeigt die Liste der SQL-Datenbanken](media/a6b097e4-5ad2-47df-9e31-ac0d699efd76.png)
+    ![Shows the list of SQL databases](media/a6b097e4-5ad2-47df-9e31-ac0d699efd76.png)
 
-6. Wählen Sie **Konfigurieren**, und wählen Sie den Pfeil in der unteren rechten Ecke, um die Konfiguration abzuschließen, und wählen Sie **Speichern**.
+6. Choose  **CONFIGURE**, and then choose the arrow in the lower right corner to complete the configuration, and choose  **SAVE**.
     
-7. Öffnen Sie SQL Server Management Studio auf Ihrem lokalen Entwicklungscomputer und erstellen Sie eine neue Datenbank mit dem Namen **NorthWind**.
+7. Open SQL Server Management Studio on your local development computer and create a new database named  **NorthWind**.
     
-8. Wählen Sie aus der **Nordwind** -Datenbank im **Objekt-Explorer**, und wählen Sie dann auf **Neue Abfrage**.
+8. In the  **Object Explorer**, select the  **Northwind** database, and then choose **New Query**.
     
-9. Öffnen Sie in einem Text-Editor Ihrer Wahl northwind.sql-SQL-Skript, das bereitgestellt wird mit dem Beispiel [Core.DataStorageModels](https://github.com/SharePoint/PnP/tree/master/Samples/Core.DataStorageModels) .
+9. In a text editor of your choice, open the northwind.sql SQL script that is provided with the  [Core.DataStorageModels](https://github.com/SharePoint/PnP/tree/master/Samples/Core.DataStorageModels) sample.
     
-10. Kopieren Sie den Text in der Datei northwind.sql, und fügen Sie ihn in das **Fenster SQL-Abfrage** in der SQL Server Management Studio, und wählen Sie dann auf **Ausführen**.
+10. Copy the text in the northwind.sql file and paste it into the  **SQL Query window** in the SQL Server Management Studio, and then choose **Execute**.
     
-11. Öffnen Sie im **Objekt-Explorer**das Kontextmenü (Rechtsklick) der **Northwind** -Datenbank, wählen Sie **Tasks**aus, und wählen Sie dann auf **Datenbank in SQL Azure bereitstellen**.
+11. In the  **Object Explorer**, open the shortcut menu for (right-click) the  **Northwind** database, select **Tasks**, and then select  **Deploy Database to SQL Azure**.
     
-12. Wählen Sie auf dem Bildschirm **Einführung in die** **nächste**.
+12. On the  **Introduction** screen, choose **Next**.
     
-13. Wählen Sie **verbinden...** , und geben Sie den **Servernamen** für den soeben erstellten SQL Azure-Datenbankserver.
+13. Choose  **Connect ...** and enter the **Server name** for the SQL Azure Database Server you just created.
     
-14. Wählen Sie im Dropdownmenü für die **Authentifizierung** **SQL Server-Authentifizierung**aus.
+14. In the  **Authentication** dropdown, select **SQL Server Authentication**.
     
-15. Geben Sie den Benutzernamen und das Kennwort, mit dem Sie den Server SQL Azure-Datenbank erstellt, und wählen Sie dann **Verbinden**.
+15. Enter the user name and password you used when you created the SQL Azure Database server, then choose  **Connect**.
     
-16. Wählen Sie **Weiter**, und wählen Sie **Fertig stellen**, und warten Sie, bis die Datenbank erstellt wird. Nachdem er erstellt wurde, wählen Sie **Schließen** , um den Assistenten zu schließen.
+16. Choose  **Next**, and then choose  **Finish**, and wait until the database is created. After it is created, choose  **Close** to close the wizard.
     
-17. Geben Sie an der Azure-Verwaltungsportal ( [https://manage.windowsazure.com/](https://manage.windowsazure.com/)), stellen Sie sicher, dass die Nordwind-Datenbank erfolgreich erstellt wurde. Sie sollte angezeigt werden, dass es auf dem Bildschirm Sql-Datenbanken aufgeführt wie in Abbildung 4 dargestellt.
+17. Return to the Azure Management Portal ( [https://manage.windowsazure.com/](https://manage.windowsazure.com/)) to verify that the Northwind database was created successfully. You should see it listed on the sql databases screen, as shown in Figure 4.
     
-    **Abbildung 4. Übersicht über SQL Server-Datenbanken**
+    **Figure 4. Listing of SQL Server databases**
 
-    ![Zeigt eine Liste aller SQL-Datenbanken, einschließlich Nordwind (engl.)](media/036b4252-f57b-4f39-9f60-ddaa30daf23c.png)
+    ![Shows a list of all SQL databases, including Northwind](media/036b4252-f57b-4f39-9f60-ddaa30daf23c.png)
 
-18. Wählen Sie aus der Nordwind-Datenbank, und wählen Sie dann auf **Ansicht SQL-Datenbank-Verbindungszeichenfolgen**.
+18. Select the Northwind database, and then select  **View SQL Database connection strings**.
     
-19. Kopieren Sie die Verbindungszeichenfolge, und fügen Sie ihn in eine Textdatei, und speichern Sie es lokal. Sie werden diese Verbindungszeichenfolge später benötigen. Das Dialogfeld **Verbindungszeichenfolgen** zu schließen.
+19. Copy the connection string and paste it into a text file and save it locally. You will need this connection string later. Close the  **Connection Strings** dialog box.
     
-20. Wählen Sie den Link zum **Einrichten von Windows Azure-Firewall-Regeln für diese IP-Adresse** , und fügen Sie Ihre IP-Adresse den Firewall-Regeln, die Zugriff auf die Datenbank zu ermöglichen.
+20. Choose the  **Set up Windows Azure firewall rules for this IP address** link and add your IP address to the firewall rules to allow you to access the database.
     
-21. Öffnen Sie das Core.DataStorageModels.sln-Projekt in Visual Studio 2013.
+21. Open the Core.DataStorageModels.sln project in Visual Studio 2013.
     
-22. Suchen Sie im Visual Studio- **Projektmappen-Explorer**die Datei "Web.config".
+22. In the Visual Studio **Solution Explorer**, locate the Web.config file.
     
-23. Suchen Sie in der Datei Web.config hinzufügen `name="NorthWindEntities"` Element, und ersetzen den vorhandenen ConnectionString-Wert mit der Verbindungszeichenfolge, die Sie in Schritt 19 lokal gespeichert. 
+23. In the Web.config file, locate the add  `name="NorthWindEntities"` element and replace the existing connectionString value with the connection string information that you saved locally in step 19. 
     
     ```XML
       <add name="NorthWindEntities" connectionString="metadata=res://*/Northwind.csdl|res://*/Northwind.ssdl|res://*/Northwind.msl;provider=System.Data.SqlClient;provider connection string=&amp;quot;data source=<Your Server Here>.database.windows.net;initial catalog=NorthWind;user id=<Your Username Here>@<Your Server Here>;password=<Your Password Here>;MultipleActiveResultSets=True;App=EntityFramework&amp;quot;" providerName="System.Data.EntityClient" />
     ```
-24. Speichern Sie die Datei "Web.config".
+24. Save the Web.config file.
 
-## <a name="sharepoint-list-on-the-app-web-notes-scenario"></a>SharePoint-Liste im Web app (Notes Szenario)
+## <a name="sharepoint-list-on-the-app-web-notes-scenario"></a>SharePoint list on the app web (Notes scenario)
 <a name="sectionSection1"> </a>
 
-Das Notes Liste Szenario, das in einer SharePoint-Liste für eine app-Website verwendet wird, zeigt, wie Listen in einer SharePoint-app-Web ausführen. In der app-Website mit einem Feld Titel und Beschreibung wird die Liste Notizen erstellt. Die SharePoint-REST-API führt eine Abfrage die Liste Notizen und gibt alle Notizen basierend auf eine Kunden-ID
+The Notes list scenario, which uses a SharePoint list on an app web, shows how lists perform in a SharePoint app web. The Notes list is created in the app web with a title and description field. The SharePoint REST API queries the Notes list and returns all the notes based on a customer ID.
 
-Von Listen im Web app hat eine wichtige Vorteil gegenüber der anderen Speicher Lösungen: Sie können einfache SharePoint REST-API-Aufrufe zum Abfragen von Daten verwenden. Es gibt jedoch auch einige Nachteile:
+Using lists in the app web has one important advantage over other storage solutions: you can use simple SharePoint REST API calls to query data. However, there are some disadvantages:
 
-- Um listenmetadaten zu aktualisieren, müssen Sie aktualisieren und erneut bereitstellen die app.
+- To update list metadata, you must update and redeploy the app.
     
-- Um die Datenstruktur zu aktualisieren, müssen Sie die Logik für das Speichern und Aktualisieren von Daten umschreiben.
+- To update the data structure, you must rewrite application logic for storing and updating data.
     
-- In der Liste gespeicherten Informationen kann nicht mit anderen add-ins auf einfache Weise gemeinsam genutzt werden.
+- Information stored in the list cannot be shared easily with other add-ins.
     
-- Sie können keine Daten in SharePoint suchen.
+- You cannot search for data in SharePoint.
     
-- Die Menge der Daten, die in Listen gespeichert werden können und die Größe des Abfrageresultsets sind beschränkt.
+- The amount of data that you can store in lists and the size of query result sets are limited.
     
-Der Code, der im Abschnitt "Hinweise" des Kunden Dashboards zugrunde liegt verwendet REST-Abfragen zum Abrufen von Daten aus einer Liste, die in der app-Web bereitgestellt wird. Diese Liste enthält die Felder für Titel, Autoren, Kunden-IDs und Beschreibungen. Sie können die app-Schnittstelle zum Hinzufügen und Abrufen von Notizen für einen angegebenen Kunden, verwenden, wie in Abbildung 5 dargestellt.
+The code that underlies the Notes section of the customer dashboard uses REST queries to retrieve data from a list that is deployed to the app web. This list contains fields for titles, authors, customer IDs, and descriptions. You can use the app's interface to add and retrieve notes for a specified customer, as shown in Figure 5.
 
-**Abbildung 5. Benutzeroberfläche für die Notes-app**
+**Figure 5. User interface for the Notes app**
 
-![Ein Screenshot der Benutzeroberfläche für das Datenmodell Speicher Notizen](media/d98ce2cf-5022-4f2b-ad3e-da4eea52dfb2.png)
+![A screenshot that shows the UI for the Notes data storage model](media/d98ce2cf-5022-4f2b-ad3e-da4eea52dfb2.png)
 
-Der **Notizen der Ansichtsliste in App-Web** -Link bietet eine Ansicht "sofort einsatzbereit" den Listendaten.
+The  **View Notes List in App Web** link provides an "out of the box" view of the list data.
 
-Diese app mithilfe des Model-View-Controller (MVC). Sie können den Code für das Szenario Notizen in der Datei Views/CustomerDashboard/Notes.cshtml sehen. Einfache REST-Aufrufen verwendet zum Hinzufügen und Abrufen von Daten. Der folgende Code ruft Notes aus der Liste Notizen für einen angegebenen Kunden.
+This app uses the Model-View-Controller (MVC) pattern. You can see the code for the notes scenario in the Views/CustomerDashboard/Notes.cshtml file. It uses simple REST calls to add and retrieve data. The following code retrieves notes from the Notes list for a specified customer.
 
 ```C#
 function getNotesAndShow() {
@@ -171,7 +171,7 @@ function getNotesAndShow() {
 }
 ```
 
-Der folgende Code Fügt einen Hinweis für einen bestimmten Kunden zur Notizenliste.
+The following code adds a note for a given customer to the notes list.
 
 ```C#
 function addNoteToList(note, customerID) {
@@ -197,101 +197,105 @@ function addNoteToList(note, customerID) {
 }
 ```
 
-Sie können 5000 Elemente hinzufügen, um der Liste angezeigt wird, dass die Liste Abfragen, die ein Ergebnis Generieren von 5000 oder mehr Elemente erreicht den Schwellenwert für die Abfrage werden und ein Fehler auftritt. Sie können auch große Menge an Daten hinzufügen, Ihrer Liste der app-Web, dass den Speichergrenzwert für Ihre Websitesammlung überschritten (hängt wie viel Speicher Sie darauf zugewiesen haben). Diese Szenarien zeigen zwei die wichtigsten Nachteile dieses Ansatzes: Abfrage größenbeschränkungen für Nachrichten und Speicherplatz Speichergrenzwerte aufgeführt. Wenn Ihr Unternehmen Ihnen das Arbeiten mit großen Datenmengen und Abfrageresultsets notwendig ist, funktioniert diese Vorgehensweise nicht.
+You can add 5000 items to the list to show that list queries that generate a result set of 5000 or more items will hit the list query threshold and fail. You can also add so much data to your list on the app web that you exceed the storage limit for your site collection (which depends on how much storage space you've allocated to it). These scenarios show two of the most important limitations of this approach: list query size limits and storage space limits. If your business needs require you to work with large data sets and query result sets, this approach won't work.
 
-### <a name="list-query-threshold"></a>Schwellenwert für die Liste Abfrage
+### <a name="list-query-threshold"></a>List query threshold
 <a name="bk_listquerythreshold"> </a>
 
-So laden Sie genügend Daten, um die Liste Abfrage Schwellenwert überschritten:
+To load enough data to exceed the list query threshold limit:
 
 
-1. Wählen Sie im linken Menü **Beispiel-Homepage**.
+1. In the left menu, choose  **Sample Home Page**.
     
-2. Wählen Sie im Abschnitt **Liste Abfrage Schwellenwerte** **Hinzufügen Listenelemente in der Liste Notizen im App-Web**.
+2. In the  **List Query Thresholds** section, choose **Add list items to the Notes list in the App Web**.
     
-3. Pro die Anweisungen, die über der Schaltfläche angezeigt werden, führen Sie diesen Vorgang 10-Mal.
+3. Per the instructions that appear above the button, perform this operation 10 times.
     
-    Bei der Aktualisierung der Liste Notizen am oberen Rand der Seite, die angibt, wie viele Listenelemente (Notes) Sie hinzugefügt haben, wird eine Meldung angezeigt, und wie viele sind Links, um Sie hinzuzufügen.
+    When the Notes list is updated, a message appears at the top of the page that indicates how many list items (Notes) you added and how many are left to add.
     
-    **Hinweis**  Der Vorgang dauert ungefähr einer Minute jedes Mal ausgeführt werden, den Sie die Schaltfläche auswählen. Ausführen des Vorgangs: 10-Mal Ergebnis wird in Abbildung 6 dargestellt.
-4. Nachdem Sie die Liste 5,001 Elemente hinzugefügt haben, wählen Sie im linken Menü Notizen. Beim Laden der Seite sehen Sie die Fehlermeldung, die in Abbildung 6, die anhand der SharePoint-REST-API wird angezeigt.
-    
-    **Abbildung 6. Liste Abfrage Thresold Fehlermeldung überschritten**
+    > [!NOTE] 
+    > The operation takes about one minute to run each time you choose the button. The end result of running the operation 10 times is shown in Figure 6.
 
-    ![Ein Screenshot, der eine Fehlermeldung, die besagt anzeigt, dass der Vorgang der Liste Ansicht Threshol überschritten.](media/90202b64-4b14-4764-9a4c-8fb236f8d10b.png)
-
-5. Wählen Sie **Ansicht Notizenliste im App-Web** und Seite durch die Liste zu sehen, dass sie 500 Zeilen enthält. Beachten Sie, dass zwar SharePoint-Listenansichten Durchsuchen dieses viele Einträge aufnehmen können, die REST-API aufgrund der Drosselung Schwellenwert Listenabfrage fällt aus.
+4. After you've added 5,001 items to the list, choose Notes in the left menu. When the page loads, you will see the error message shown in Figure 6, which comes from the SharePoint REST API.
     
-### <a name="data-storage-limit"></a>Speichergrenzwert Daten
+    **Figure 6. List query thresold exceeded error message**
+
+    ![A screenshot that shows an error message that states that the operation exceeded the list view threshol.](media/90202b64-4b14-4764-9a4c-8fb236f8d10b.png)
+
+5. Choose  **View Notes List in App Web** and page through the list to see that it includes 500 rows. Note that although SharePoint list views can accommodate browsing of this many entries, the REST API fails due to the list query throttling threshold.
+    
+### <a name="data-storage-limit"></a>Data storage limit
 <a name="bk_listquerythreshold"> </a>
 
-So laden Sie genügend Daten, um die Speichergrenzwerte für Daten überschritten:
+To load enough data to exceed the data storage limit:
 
-1. Wählen Sie im linken Menü **Beispiel-Homepage**.
+1. In the left menu, choose  **Sample Home Page**.
     
-2. Wählen Sie der Schwellenwert für die Daten im Abschnitt **die Liste App-Web-Notizen mit 1 GB Daten zu füllen**.
+2. In the Data Threshold section, choose  **Fill the App Web Notes list with 1GB of data**.
     
-3. Pro die Anweisungen, die über der Schaltfläche zum **Auffüllen der Liste App-Web-Notizen mit 1 GB Daten** angezeigt werden, führen Sie diesen Vorgang 11 Mal.
+3. Per the instructions that appear above the  **Fill the App Web Notes list with 1GB of data** button, perform this operation 11 times.
     
-    Bei der Aktualisierung der Liste Notizen am oberen Rand der Seite, die angibt, wie viele Listenelemente (Notes) Sie hinzugefügt haben, wird eine Meldung angezeigt, und wie viele sind Links, um Sie hinzuzufügen.
+    When the Notes list is updated, a message appears at the top of the page that indicates how many list items (Notes) you added and how many are left to add.
     
-    **Hinweis**  Der Vorgang dauert ungefähr einer Minute jedes Mal ausgeführt werden, den Sie die Schaltfläche auswählen. Ausführen des Vorgangs 11 Mal Ergebnis wird in Abbildung 7 dargestellt.
-4. Nach dem Ausführen dieses Vorgangs 11 Mal eine Fehlermeldung tritt auf, wenn Sie die Schaltfläche auswählen wie in Abbildung 7 dargestellt.
-    
-    **Abbildung 7. Data Storage Schwellenwert überschritten-Fehlermeldung**
+    > [!NOTE] 
+    > The operation takes about one minute to run each time you choose the button. The end result of running the operation 11 times is shown in Figure 7.
 
-    ![Ein Screenshot, der die Fehlermeldung angezeigt, die tritt auf, wenn die Daten überschritten wird](media/0bc55483-0ee1-487a-ba34-e827ec47aadd.png)
-
-5. Nachdem Sie den Speichergrenzwert Daten überschreiten, wählen Sie im Webbrowser die zurück-Schaltfläche, und wählen Sie dann den **Notizen** Link im linken Menü.
+4. After you perform the operation 11 times, an error message will occur when you choose the button, as shown in Figure 7.
     
-6. Wählen Sie **Ansicht Notizenliste im App-Web**.
-    
-    Beim Laden der Seite wird am oberen Rand der Seite, die angibt, dass die Website nicht genügend freier Speicherplatz ist eine Fehlermeldung angezeigt.
+    **Figure 7. Data storage threshold exceeded error message**
 
-## <a name="sharepoint-list-on-the-host-web-support-cases-scenario"></a>SharePoint-Liste auf dem hostweb (Support-Anfragen Szenario)
+    ![A screenshot that shows the error message that occurs when the data storage limit is exceeded](media/0bc55483-0ee1-487a-ba34-e827ec47aadd.png)
+
+5. After you exceed the data storage limit, choose the back button in the web browser, and then choose the  **Notes** link in the left menu.
+    
+6. Choose  **View Notes List in App Web**.
+    
+    When the page loads, an error message appears at the top of the page that indicates that the site is out of storage space.
+
+## <a name="sharepoint-list-on-the-host-web-support-cases-scenario"></a>SharePoint list on the host web (Support Cases scenario)
 <a name="sectionSection2"> </a>
 
-Das Support-Anfragen Szenario zeigt Daten, die in einer SharePoint-Liste im hostweb gespeichert ist. In diesem Szenario werden zwei unterschiedliche Muster und interagieren mit den Daten zugreifen. Das erste Muster enthält den SharePoint-Suchdienst, und die vom Inhaltssuche mit einer benutzerdefinierten Anzeigevorlage angewendet. Das zweite Muster enthält ein App-Webpart (Clientwebpart), die eine MVC-Ansicht angezeigt wird, die die **SP verwendet wird RequestExecutor** -Klasse, um die SharePoint-REST-API-aufrufen.
+The Support Cases scenario displays data that is stored in a SharePoint list in the host web. This scenario uses two different patterns to access and interact with the data. The first pattern includes the SharePoint Search Service and the Content By Search Web Part with a custom Display Template applied. The second pattern includes an App Part (Client Web Part) that displays an MVC view, which uses the  **SP.RequestExecutor** class to call the SharePoint REST API.
 
-Es gibt mehrere Vorteile der Verwendung von diesem Ansatz:
+There are several advantages to using this approach:
 
-- Sie können Daten auf einfache Weise mit einfachen REST-Abfragen oder Client-Objektmodellcode Abfragen.
+- You can query data easily using simple REST queries or client object model code.
     
-- Sie können nach Daten in SharePoint suchen.
+- You can search for data in SharePoint.
     
-- Sie können aktualisieren Sie die listenmetadaten und neue Ansichten für eine Liste erstellen, ohne zu aktualisieren und erneutes Bereitstellen der app. Diese Änderungen werden nicht beeinflusst das Verhalten Ihrer App.
+- You can update the list metadata and create new views for a list without updating and redeploying the app. These changes won't affect the behavior of your app.
     
-- Listen auf der Hostwebsite werden nicht gelöscht, wenn Sie Ihre app zu deinstallieren, wenn die app das **AppUninstalled** -Ereignis verwendet, um der Liste entfernen und/oder Löschen der Daten.
+- Lists on the host web are not deleted when you uninstall your app, unless the app uses the  **AppUninstalled** event to remove the list and/or delete the data.
     
-Versetzen diese Vorteile sind die folgenden Nachteile:
+Offsetting these advantages are the following disadvantages:
 
-- Die Hostwebsite beschränkt die Datenmenge, die in Listen gespeichert werden können, und die Größe der Ergebnisse der Abfrage. Wenn Ihr Unternehmen benötigt gespeichert und/oder Abfragen großen Datasets, ist dies kein empfohlener Ansatz.
+- The host web limits both the amount of data you can store in lists and the size of the query results. If your business needs require storing and/or querying large data sets, this is not a recommended approach.
     
-- Für komplexe Abfragen führen Listen sowie Datenbanken nicht aus.
+- For complex queries, lists do not perform as well as databases.
     
-- Zum Sichern und Wiederherstellen von Daten, führen Sie Listen sowie Datenbanken nicht aus.
+- For backing up and restoring data, lists do not perform as well as databases.
     
-Die Daten für dieses Szenario werden in einer SharePoint-Liste bereitgestellt, mit der Hostwebsite gespeichert. Daten abgerufen und mithilfe der folgenden angezeigt: 
+The data for this scenario is stored in a SharePoint list deployed to the host web. Data is retrieved and displayed by means of the following: 
 
-- Ein [Inhaltssuche-Webpart](https://msdn.microsoft.com/en-us/library/office/jj163789%28v=office.15%29.aspx).
+- A  [Content Search Web Part](https://msdn.microsoft.com/en-us/library/office/jj163789%28v=office.15%29.aspx).
     
-- Ein app-Webpart, das als Model-View-Controller Ansicht implementiert wird. 
+- An app part that's implemented as a model-view-controller view. 
     
-Der Code in dieser Ansicht verwendet REST-Abfragen zum Abrufen von Informationen aus der Liste, während das Inhaltssuche-Webpart den SharePoint-Suchdienst verwendet, um die Daten abzurufen. Die zwei Ansätze veranschaulichen den bedeutenden Vorteil dieser Option: Sie können den Suchdienst und den REST/CSOM-APIs verwenden, um Informationen aus einer Liste auf dem hostweb abzurufen.
+The code in this view uses REST queries to retrieve information from the list, while the content search web part uses the SharePoint search service to retrieve the data. The two approaches demonstrate the significant advantage of this option: you can use both the search service and the REST/CSOM APIs to retrieve information from a list on the host web.
 
-Wenn Sie einen Kunden aus der Unterstützung von Fällen Dropdown-Liste auswählen, sehen Sie die Groß-/Kleinschreibung Support-Daten für dieses Kunden anzeigen in das Webpart und das app-Webpart (Abbildung 8) angezeigt. Das Webpart möglicherweise nicht sofort, Inhalte zurück, da bis zu 24 Stunden für den SharePoint-Suchdienst dauert, die Daten zu indizieren. Sie können auch den Link **Ansicht Support Fällen Liste im Hostweb** um eine herkömmliche Ansicht der Listendaten anzuzeigen.
+When you select a customer from the support cases drop-down, you'll see the support case data for that customer displayed in both the web part and the app part (Figure 8). The web part might not return content right away, because it can take up to 24 hours for the SharePoint search service to index the data. You can also choose the  **View Support Cases List in Host Web** link to see a conventional view of the list data.
 
-**Abbildung 8. Benutzeroberfläche für den Support-Fall**
+**Figure 8. User interface for the support case scenario**
 
-![Ein Screenshot der Benutzeroberfläche für die Interaktion mit den Support-Fall](media/eac41f5c-90b7-4fe3-b47e-0d65b79cbf1c.png)
+![A screenshot that shows the UI for interacting with the support case scenario](media/eac41f5c-90b7-4fe3-b47e-0d65b79cbf1c.png)
 
-Das Inhaltssuche-Webpart bereitgestellt, die diese App verwendet eine benutzerdefinierte Anzeige-Vorlage. Abbildung 9 zeigt im Verzeichnis **Anlagen** des Webprojekts finden Sie auf das Webpart und die zugeordnete Vorlage.
+The content search web part deployed by this app uses a custom display template. Figure 9 shows where in the  **Assets** directory of the web project you can find the web part and the associated template.
 
-**Abbildung 9. Inhalt des Verzeichnisses Anlagen des Webprojekts**
+**Figure 9. Contents of the Assets directory of the web project**
 
-![Screenshot des Verzeichnisses Objekte](media/95db9118-9e56-4e39-84b1-271e54447792.png)
+![Screenshot of the Assets directory](media/95db9118-9e56-4e39-84b1-271e54447792.png)
 
-Der folgende JavaScript-Code, den finden Sie in der Datei Views/SupportCaseAppPart\Index.cshtml mithilfe die domänenübergreifenden Bibliothek eine REST-Abfrage für die SharePoint-Liste auf dem hostweb aufgerufen. 
+The following JavaScript code that you'll find in the Views/SupportCaseAppPart\Index.cshtml file uses the cross-domain library to invoke a REST query on the SharePoint list on the host web. 
 
 ```C#
 function execCrossDomainRequest() {
@@ -314,32 +318,32 @@ method: "GET",
 }
 ```
 
-Sie können 5000 Elemente hinzufügen, um der Liste angezeigt wird, dass die Liste Abfragen, die ein Ergebnis Generieren von 5000 oder mehr Elemente erreicht den Schwellenwert für die Abfrage werden und ein Fehler auftritt. In diesem Szenario wird ein wichtigste Nachteil dieser Vorgehensweise: Auflisten der Abfrage größenbeschränkungen für Nachrichten. Wenn Ihr Unternehmen Ihnen das Arbeiten mit großen Datenmengen und Abfrageresultsets notwendig ist, funktioniert diese Vorgehensweise nicht. Weitere Informationen finden Sie unter [Liste Abfrage Schwellenwert](#bk_listquerythreshold) weiter oben in diesem Artikel.
+You can add 5000 items to the list to show that list queries that generate a result set of 5000 or more items will hit the list query threshold and fail. This scenario shows one of the most important limitations of this approach: list query size limits. If your business needs require you to work with large data and query result sets, this approach won't work. For more information, see  [List query threshold](#bk_listquerythreshold) earlier in this article.
 
-## <a name="northwind-odata-web-service-customer-dashboard-scenario"></a>Northwind-OData-Webdienst (Kunden-Dashboard Szenario)
+## <a name="northwind-odata-web-service-customer-dashboard-scenario"></a>Northwind OData web service (Customer Dashboard scenario)
 <a name="sectionSection3"> </a>
 
-Das Kunden-Dashboard-Szenario wird JQuery AJAX zum Aufrufen des NorthWind OData-Diensts zum Zurückgeben von Kundeninformationen verwendet. Die app speichert seine Daten in einem Webdienst, und klicken Sie dann [OData](http://www.odata.org/) verwendet, um es abzurufen.
+The Customer Dashboard scenario uses JQuery AJAX to invoke the NorthWind OData service to return customer information. The app stores its data in a web service, then uses  [OData](http://www.odata.org/) to retrieve it.
 
-Im folgenden sind die Vorteile der Verwendung von diesem Ansatz:
+The following are the advantages to using this approach:
 
-- Ein bestimmten Webdienst kann mehrere Add-Ins unterstützen.
+- A given web service can support multiple add-ins.
     
-- Sie können den Webdienst aktualisieren, ohne zu aktualisieren und erneut bereitstellen Ihrer app.
+- You can update your web service without having to update and redeploy your app.
     
-- Ihre SharePoint und Web-Service-Installationen wirken sich nicht voneinander.
+- Your SharePoint and web service installations do not affect one another.
     
-- Hosten Dienste, wie Microsoft Azure ermöglichen es Ihnen, die Webdienste zu skalieren.
+- Hosting services such as Microsoft Azure enable you to scale your web services.
     
-- Sie können sichern und Wiederherstellen von Informationen auf Ihre Webdienste separat aus Ihrer SharePoint-Website.
+- You can back up and restore information on your web services separately from your SharePoint site.
     
-- Sie verloren nicht Daten, wenn Ihre app zu deinstallieren, es sei denn, die app das **AppUninstalled** -Ereignis verwendet, um die Daten zu löschen.
+- You don't lose data when uninstalling your app, unless the app uses the  **AppUninstalled** event to delete the data.
     
-Dashboard Kundenszenarien speichert seine Daten in einem Webdienst, der zum Abrufen der Daten des OData-Standards implementiert. In der Benutzeroberfläche des Kunden-Dashboard wählen Sie einen Kunden aus einem Dropdown-Menü und Informationen Kundenanzeige im Bereich **Kundeninformationen** .
+The customer dashboard scenario stores its data in a web service that implements the OData standard to retrieve data. In the customer dashboard interface, you select a customer from a drop-down menu, and customer information displays in the  **Customer Info** pane.
 
-Auf dieser Seite Benutzeroberfläche ist eine Model-View-Controller-Ansicht. Die Anzeige wird in der Datei Views/CustomerDashboard\Home.cshtml definiert. Der zugrunde liegende Code ist in der Datei Scripts/CustomerDashboard.js. Der JavaScript-Code verwendet AJAX, um die Northwind-Webdienst abzufragen. Da dies ein OData-Dienst ist, besteht aus den Webdienstabfrage Abfragezeichenfolgenargumente, eine URL für einen Webdienst-Endpunkt zugeordnet ist. Der Dienst gibt Kundeninformationen im JSON-Format zurück.
+This UI page is a Model-View-Controller view. The display is defined in the Views/CustomerDashboard\Home.cshtml file. The underlying code is in the Scripts/CustomerDashboard.js file. The JavaScript code uses AJAX to query the Northwind web service. Because this is an OData service, the web service query consists of query string arguments attached to a URL that points to a web service endpoint. The service returns customer information in JSON format.
 
-Mit dem folgende Code wird ausgeführt, wenn Sie den Link **Kunden-Dashboard** auswählen. Die Namen der Kunden und IDs, um das Dropdown-Menü Auffüllen abgerufen.
+The following code runs when you choose the  **Customer Dashboard** link. It retrieves all the customer names and IDs in order to populate the drop-down menu.
 
 ```C#
 var getCustomerIDsUrl = "https://odatasampleservices.azurewebsites.net/V3/Northwind/Northwind.svc/Customers?$format=json&amp;$select=CustomerID";
@@ -349,7 +353,7 @@ var getCustomerIDsUrl = "https://odatasampleservices.azurewebsites.net/V3/Northw
         });
 ```
 
-Mit dem folgende Code wird ausgeführt, wenn Sie einen Kundennamen aus dem Dropdown-Menü auswählen. Das OData **$filter** -Argument verwendet, um die Kunden-ID und andere Abfragezeichenfolgenargumente zum Abrufen von Informationen im Zusammenhang mit diesen Kunden angeben.
+The following code runs when you select a customer name from the drop-down menu. It uses the OData  **$filter** argument to specify the customer ID and other query string arguments to retrieve information related to this customer.
 
 ```C#
 var url = "https://odatasampleservices.azurewebsites.net/V3/Northwind/Northwind.svc/Customers?$format=json" +  "&amp;$select=CustomerID,CompanyName,ContactName,ContactTitle,Address,City,Country,Phone,Fax" + "&amp;$filter=CustomerID eq '" + customerID + "'";
@@ -361,28 +365,28 @@ $.get(url).done(getCustomersDone)
 });
 ```
 
-## <a name="azure-table-storage-customer-service-survey-scenario"></a>Azure-tabellenspeicherung (Customer Service Umfrage Szenario)
+## <a name="azure-table-storage-customer-service-survey-scenario"></a>Azure table storage (Customer Service Survey scenario)
 <a name="sectionSection4"> </a>
 
-Das Dienst Umfrage Szenario ermöglicht dem Kunden Mitarbeiter zu ihrer Bewertung basierend auf Kundenumfragen finden Sie unter und Azure-tabellenspeicherung und der Microsoft.WindowsAzure.Storage.Table.CloudTable-API zum Speichern und interagieren mit den Daten verwendet.
+The Customer Service Survey scenario allows a customer service representative to see their rating based on customer surveys and uses Azure table storage and the Microsoft.WindowsAzure.Storage.Table.CloudTable API to store and interact with the data.
 
-Im folgenden sind die Vorteile der Verwendung von diesem Ansatz:
+The following are the advantages to using this approach:
 
-- Azure-Speichertabellen unterstützen mehr als eine app.
+- Azure storage tables support more than one app.
     
-- Sie können die Azure-Speichertabellen aktualisieren, ohne zu aktualisieren und erneut bereitstellen Ihrer app.
+- You can update Azure storage tables without having to update and redeploy your app.
     
-- Ihre SharePoint-Installation und Azure-Speichertabellen haben keine Auswirkung auf die Leistung des jeweils anderen.
+- Your SharePoint installation and Azure storage tables have no effect on each other's performance.
     
-- Azure-Speicher Tabellen horizontal ganz einfach.
+- Azure storage tables scale easily.
     
-- Sie können sichern und Wiederherstellen die Azure-Speichertabellen separat von Ihrer SharePoint-Website.
+- You can back up and restore your Azure storage tables separately from your SharePoint site.
     
-- Sie verloren keine Daten, wenn Sie Ihre app zu deinstallieren, es sei denn, die app das **AppUninstalled** -Ereignis verwendet, um die Daten zu löschen.
+- You don't lose data when you uninstall your app, unless the app uses the  **AppUninstalled** event to delete the data.
     
-Die app-Schnittstelle des aktuellen Benutzers Umfrage Bewertung in der Center-Seite angezeigt. Wenn die Azure-Speicher-Tabelle leer ist, wird die app einige Informationen zur Tabelle hinzufügen, bevor es angezeigt.
+The app's interface displays the current user's survey rating in the center page. If that Azure storage table is empty, the app will add some information to the table before it displays it.
 
-Der folgende Code aus der CSRInfoController.cs definiert die **Start** -Methode, die der Benutzer **NameId**abruft.
+The following code from the CSRInfoController.cs defines the  **Home** method that retrieves the user's **nameId**.
 
 ```C#
 [SharePointContextFilter]
@@ -401,7 +405,7 @@ public ActionResult Home()
 }
 ```
 
-Der folgende Code aus der Datei SurveyRatingService.cs definiert den **SurveyRatingsService** -Konstruktor Einrichten der Verbindung mit dem Azure-Speicher-Konto festgelegt.
+The following code from the SurveyRatingService.cs file defines the  **SurveyRatingsService** constructor, which sets up the connection to the Azure storage account.
 
 ```C#
 public SurveyRatingsService(string storageConnectionStringConfigName = 
@@ -416,7 +420,7 @@ public SurveyRatingsService(string storageConnectionStringConfigName =
 }
 ```
 
-Der folgende Code aus der gleichen Datei definiert die **GetUserScore** -Methode, die aus der Tabelle Azure-Speicher des Benutzers Umfrage Score abruft.
+The following code from the same file defines the  **GetUserScore** method, which retrieves the user's survey score from the Azure storage table.
 
 ```C#
 public float GetUserScore(string userName)
@@ -437,7 +441,7 @@ public float GetUserScore(string userName)
 }
 ```
 
-Wenn die Tabelle keine Umfragedaten im Zusammenhang mit den aktuellen Benutzer enthält, weist die **AddSurveyRating** -Methode nach dem Zufallsprinzip eine Bewertung für den Benutzer.
+If the table doesn't contain any survey data related to the current user, the  **AddSurveyRating** method randomly assigns a score for the user.
 
 ```C#
 private float AddSurveyRatings(string userName)
@@ -460,28 +464,28 @@ private float AddSurveyRatings(string userName)
 }
 ```
 
-## <a name="azure-queue-storage-customer-call-queue-scenario"></a>Azure Warteschlangenspeicher (Customer aufrufen Warteschlange Szenario)
+## <a name="azure-queue-storage-customer-call-queue-scenario"></a>Azure queue storage (Customer Call Queue scenario)
 <a name="sectionSection5"> </a>
 
-Das Szenario Customer aufrufen Warteschlange aufgelistet Anrufer in der Warteschlange Support und simuliert Nachrichtenempfang Anrufe. Das Szenario wird Warteschlangen Azure-Speicher zum Speichern von Daten und die **Microsoft.WindowsAzure.Storage.Queue.CloudQueue** API mit Model-View-Controller verwendet.
+The Customer Call Queue scenario lists callers in the support queue and simulates taking calls. The scenario uses Azure storage queues to store data and the  **Microsoft.WindowsAzure.Storage.Queue.CloudQueue** API with Model-View-Controller.
 
-Im folgenden sind die Vorteile der Verwendung von diesem Ansatz:
+The following are the advantages to using this approach:
 
-- Azure-Speicher Warteschlangen unterstützen mehr als eine app.
+- Azure storage queues support more than one app.
     
-- Sie können die Warteschlangen Azure-Speicher aktualisieren, ohne zu aktualisieren und erneut bereitstellen Ihrer app.
+- You can update Azure storage queues without having to update and redeploy your app.
     
-- Ihre SharePoint-Installation und Azure-Speicher Warteschlangen haben keine Auswirkung auf die Leistung des jeweils anderen.
+- Your SharePoint installation and Azure storage queues have no effect on each other's performance.
     
-- Azure-Speicher Warteschlangen skalieren einfach.
+- Azure storage queues scale easily.
     
-- Sie können sichern und Wiederherstellen die Azure-Speicher Warteschlangen separat von Ihrer SharePoint-Website.
+- You can back up and restore your Azure storage queues separately from your SharePoint site.
     
-- Sie verloren keine Daten, wenn Sie Ihre app zu deinstallieren, es sei denn, die app das **AppUninstalled** -Ereignis verwendet, um die Daten zu löschen.
+- You don't lose data when you uninstall your app, unless the app uses the  **AppUninstalled** event to delete the data.
     
-Die app-Schnittstelle angezeigt ein Anruf Supportgruppe im mittleren Bereich, wenn Sie den Link **Aufrufen Warteschlange** auswählen. Simulieren Sie den Empfang von Anrufen (Hinzufügen eines Anrufs an die Warteschlange), indem **Simulieren Anrufe**auswählen, und nutzen den ältesten Anruf (entfernen einen Anruf aus der Warteschlange) können Sie durch Auswählen der **Anruf annehmen** Aktion in Verbindung mit einem bestimmten Anruf simulieren.
+The app's interface displays a support call queue in the center pane when you choose the  **Call Queue** link. You can simulate receiving calls (adding a call to the queue) by choosing **Simulate Calls**, and you can simulate taking the oldest call (removing a call from the queue) by choosing the  **Take Call** action associated with a given call.
 
-Diese Seite ist eine Model-View-Controller-Ansicht, die in der Datei Views\CallQueue\Home.cshmtl definiert ist. Die Datei Controllers\CallQueueController.cs definiert die **CallQueueController** -Klasse, die Methoden zum Abrufen aller Anrufe in die Warteschlange enthält, einen Anruf an die Warteschlange (simulieren eines Anrufs) hinzufügen und Entfernen von einen Anruf aus der Warteschlange (einen Anruf nutzen). Jeder der folgenden Methoden ruft Methoden in der Datei Services\CallQueueService.cs, die die Azure-Speicher-Warteschlange API verwendet, um die zugrunde liegenden Informationen in der Speicherwarteschlange abrufen definiert.
+This page is a Model-View-Controller view that is defined in the Views\CallQueue\Home.cshmtl file. The Controllers\CallQueueController.cs file defines the  **CallQueueController** class, which contains methods for retrieving all calls in the queue, adding a call to the queue (simulating a call), and removing a call from the queue (taking a call). Each of these methods calls methods defined in the Services\CallQueueService.cs file, which uses the Azure storage queue API to retrieve the underlying information in the storage queue.
 
 ```C#
 public class CallQueueController : Controller
@@ -520,7 +524,7 @@ public class CallQueueController : Controller
 }
 ```
 
-Die CallQueueService.cs-Datei definiert die **CallQueueService** -Klasse, die an die Warteschlange Azure-Speicher die Verbindung herstellt. Diese Klasse enthält auch die Methoden zum Hinzufügen, entfernen (entfernen) und der Aufrufe aus der Warteschlange abruft.
+The CallQueueService.cs file defines the  **CallQueueService** class, which establishes the connection to the Azure storage queue. That class also contains the methods for adding, removing (dequeuing), and retrieving the calls from the queue.
 
 ```C#
 public class CallQueueService
@@ -596,32 +600,32 @@ public class CallQueueService
 }
 ```
 
-## <a name="sql-azure-database-recent-orders-scenario"></a>SQL Azure-Datenbank (aktuellen Aufträge Szenario)
+## <a name="sql-azure-database-recent-orders-scenario"></a>SQL Azure database (Recent Orders scenario)
 <a name="sectionSection6"> </a>
 
-Das aktuellen Aufträge Szenario verwendet einen direkten Aufruf der Northwind SQL Azure-Datenbank, um alle Aufträge für einen bestimmten Kunden zurückzugeben.
+The Recent Orders scenario uses a direct call to the Northwind SQL Azure database to return all the orders for a given customer.
 
-Im folgenden sind die Vorteile der Verwendung von diesem Ansatz:
+The following are the advantages to using this approach:
 
-- Eine Datenbank kann mehrere app unterstützen.
+- A database can support more than one app.
     
-- Sie können das Datenbankschema aktualisieren, ohne dass aktualisieren und erneut bereitstellen Ihrer app, solange die Schemaversion Abfragen in Ihrer app keine Auswirkung auf.
+- You can update your database schema without having to update and redeploy your app, as long as the schema changes don't affect the queries in your app.
     
-- Eine relationale Datenbank kann n: n-Beziehungen unterstützt und daher die komplexere Geschäftsszenarien unterstützen.
+- A relational database can support many-to-many relationships and thus support more complex business scenarios.
     
-- Datenbank-Designtools können Sie um den Entwurf Ihrer Datenbank zu optimieren.
+- You can use database design tools to optimize the design of your database.
     
-- Relationale Datenbanken bieten eine bessere Leistung als die anderen Optionen, wenn Sie komplexe Vorgänge in Abfragen, wie etwa Berechnungen und Joins ausführen müssen.
+- Relational databases provide better performance than the other options when you need to execute complex operations in your queries, such as calculations and joins.
     
-- Eine SQL Azure-Datenbank können Sie zum Importieren und Exportieren von Daten auf einfache Weise, daher es einfacher ist zu verwalten und Ihre Daten zu verschieben.
+- A SQL Azure database allows you to import and export data easily, so it's easier to manage and move your data.
     
-- Sie verloren keine Daten, wenn Sie Ihre app zu deinstallieren, wenn die app das **AppUninstalled** -Ereignis verwendet, um die Daten zu löschen.
+- You don't lose any data when you uninstall your app, unless the app uses the  **AppUninstalled** event to delete the data.
     
-Die letzte Orders Schnittstelle funktioniert ähnlich wie die Kunden-Dashboard-Schnittstelle. Sie wählen Sie auf den Link **Aktuellen Aufträge** in der linken Spalte aus, und wählen Sie dann im Dropdown-Menü am oberen Rand der mittleren Bereich ein Kunden. Eine Liste der Aufträge dieses Kunden anzeigen wird im mittleren Bereich angezeigt.
+The recent orders interface works much like the customer dashboard interface. You choose on the  **Recent Orders** link in the left column, and then choose a customer from the drop-down menu at the top of the center pane. A list of orders from that customer will appear in the center pane.
 
-Diese Seite ist eine Model-View-Controller-Ansicht in der Datei Views\CustomerDashboard\Orders.cshtml definiert. Code in der Datei Controllers\CustomerDashboardController.cs verwendet das [Entity Framework](https://msdn.microsoft.com/en-us/data/ef.aspx) zum Abfragen der **Orders** -Tabelle in SQL Azure-Datenbank. Die Kunden-ID wird mithilfe der in der URL, die übergeben wird, wenn der Benutzer einen Kunden aus dem Dropdown-Menü auswählt einen Abfragezeichenfolgen-Parameter übergeben. Die Abfrage erstellt eine Verknüpfung für die Tabellen **Kunden**, **Lieferanten** und **Mitarbeiter**. Das Abfrageergebnis wird dann an die Model-View-Controller-Ansicht übergeben, die die Ergebnisse angezeigt werden.
+This page is a Model-View-Controller view defined in the Views\CustomerDashboard\Orders.cshtml file. Code in the Controllers\CustomerDashboardController.cs file uses the  [Entity Framework ](https://msdn.microsoft.com/en-us/data/ef.aspx) to query the **Orders** table in your SQL Azure database. The customer ID is passed by using a query string parameter in the URL that is passed when the user selects a customer from the drop-down menu. The query creates a join on the **Customer**,  **Employee**, and  **Shipper** tables. The query result is then passed to the Model-View-Controller view that displays the results.
 
-Der folgende Code aus der Datei CustomerDashboardController.cs Datenbankabfrage ausführt und gibt die Daten zur Ansicht zurück.
+The following code from the CustomerDashboardController.cs file performs the database query and returns the data to the view.
 
 ```C#
 public ActionResult Orders(string customerId)
@@ -644,9 +648,9 @@ public ActionResult Orders(string customerId)
 }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
--  [Zusammengesetzte Business-add-ins für SharePoint 2013 und SharePoint Online](Composite-buisness-apps-for-SharePoint.md)
+-  [Composite business add-ins for SharePoint 2013 and SharePoint Online](Composite-buisness-apps-for-SharePoint.md)
     
 -  [Office 365-Entwicklungsmuster und -übungen auf GitHub](https://github.com/SharePoint/PnP)

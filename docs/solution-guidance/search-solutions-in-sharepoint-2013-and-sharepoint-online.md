@@ -1,11 +1,11 @@
 ---
 title: "Suchlösungen in SharePoint 2013 und SharePoint Online"
 ms.date: 11/03/2017
-ms.openlocfilehash: 549e899fb3f4994442040b0699ce1367bbdf787a
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 99e7c75c2cffe085b045d1eb1bfbaeae57a55978
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="search-solutions-in-sharepoint-2013-and-sharepoint-online"></a>Suchlösungen in SharePoint 2013 und SharePoint Online
 
@@ -319,7 +319,7 @@ Innerhalb der `body` -Element vorhanden ist ein `script` Element, in dem Sie ext
 
 Das nächste Element ist ein `div` Element. Dies ist, platzieren Sie alle HTML oder Skripts, das als Teil der Vorlage angezeigt werden soll. Eine gute Möglichkeit, sich mit anzeigevorlagenstruktur vertraut werden Kopien der Standardvorlagen für Suchergebnisse anzeigen, Control_SearchResults.html, die Steuerelement-Anzeigevorlage und Item_Default.html elementanzeigevorlage herunterladen.
 
-#### <a name="additional-resources-for-result-types-and-display-templates"></a>Zusätzliche Ressourcen für Ergebnistypen und Anzeigevorlagen
+#### <a name="see-also-for-result-types-and-display-templates"></a>Siehe auch für Ergebnistypen und Anzeigevorlagen
 
 Im folgenden sind einige zusätzlichen Ressourcen für Anzeigevorlagen und Ergebnistypen:
 
@@ -437,7 +437,7 @@ using (var clientContext = spContext.CreateUserClientContextForSPHost())
 
 - [Durchsuchen von Anpassungen für SharePoint](search-customizations-for-sharepoint.md)
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [SharePoint-Add-Ins](http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx)

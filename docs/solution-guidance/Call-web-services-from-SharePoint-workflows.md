@@ -1,11 +1,11 @@
 ---
 title: Aufrufen von Webdiensten in SharePoint-workflows
 ms.date: 11/03/2017
-ms.openlocfilehash: d3ee350dde2f5c9978c6d875518f57e828f35dbc
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: e7644ca38ef29c564c8d1ac627cef6d527d5c5d9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="call-web-services-from-sharepoint-workflows"></a>Aufrufen von Webdiensten in SharePoint-workflows
 
@@ -36,7 +36,8 @@ Das [Workflow.CallCustomService](https://github.com/SharePoint/PnP/tree/master/S
 
 Das Beispiel funktioniert durch Starten eines Workflows von einer remote-Webanwendung. Diesen Workflow übergibt Abfrageinformationen, die vom Benutzer an der remote-Webanwendung, der dann diese Informationen zum Erstellen einer Abfrage an den Northwind OData-Webdienst übermittelt. Die Abfrage gibt die Produktlieferanten für ein bestimmtes Land. Nachdem sie diese Informationen empfangen hat, aktualisiert die Remotewebanwendung eine Lieferanten Produktliste, die in der Web-Add-in das Add-in bereitgestellt wurde.
 
-**Hinweis**  Die [Workflow.CallCustomService](https://github.com/SharePoint/PnP/tree/master/Samples/Workflow.CallCustomService) -Beispielseite enthält Anweisungen für die Bereitstellung von add-Ins. Sie können auch bereitstellen und Testen mit F5 in Visual Studio debuggen, wenn Sie die Anweisungen in den Blogbeitrag [Debugging SharePoint 2013-Workflows mit Visual Studio 2013](http://blogs.msdn.com/b/officeapps/archive/2013/10/30/debugging-sharepoint-2013-workflows-using-visual-studio-2013.aspx)befolgen.
+> [!NOTE] 
+> Die [Workflow.CallCustomService](https://github.com/SharePoint/PnP/tree/master/Samples/Workflow.CallCustomService) -Beispielseite enthält Anweisungen für die Bereitstellung von add-Ins. Sie können auch bereitstellen und Testen mit F5 in Visual Studio debuggen, wenn Sie die Anweisungen in den Blogbeitrag [Debugging SharePoint 2013-Workflows mit Visual Studio 2013](http://blogs.msdn.com/b/officeapps/archive/2013/10/30/debugging-sharepoint-2013-workflows-using-visual-studio-2013.aspx)befolgen.
 
 Diese app-Startseite enthält ein Dropdownmenü, aus dem Sie ein Land auswählen können, für die Sie eine Produktliste Lieferanten (Abbildung 1) erstellen möchten. 
 
@@ -216,7 +217,8 @@ Im Beispiel [Workflow.CallServiceUpdateSPViaProxy](https://github.com/SharePoint
 
 Im Beispiel wird eine Aufgabe, die nützlich ist, wenn alle Interaktionen mit einem Webdienst kapseln, sodass sie direkt vom Workflow verarbeitet werden soll. Mithilfe des Webproxys vereinfacht die Remotewebsite Anwendungslogik zu aktualisieren, ohne die Workflowinstanz zu aktualisieren. Wenn Sie den Proxy nicht verwenden, und Sie die Logik in Ihrer Webanwendung zu aktualisieren müssen, müssen Sie zum Entfernen der vorhandenen Workflow-Instanzen und klicken Sie dann das Add-In erneut bereitstellen. Aus diesem Grund wird empfohlen Design, wenn Sie einen remote-Webdienst aufrufen müssen. 
 
-**Hinweis**  Die [Workflow.CallCustomServiceUpdateViaProxy](https://github.com/SharePoint/PnP/tree/master/Samples/Workflow.CallServiceUpdateSPViaProxy) -Beispielseite enthält Anweisungen für die Bereitstellung von add-Ins. Sie können auch bereitstellen und Testen des Add-Ins mithilfe von **F5** in Visual Studio debuggen, wenn Sie die Anweisungen in den Blogbeitrag [Debugging SharePoint 2013-Workflows mit Visual Studio 2013](http://blogs.msdn.com/b/officeapps/archive/2013/10/30/debugging-sharepoint-2013-workflows-using-visual-studio-2013.aspx)befolgen.
+> [!NOTE] 
+> Die [Workflow.CallCustomServiceUpdateViaProxy](https://github.com/SharePoint/PnP/tree/master/Samples/Workflow.CallServiceUpdateSPViaProxy) -Beispielseite enthält Anweisungen für die Bereitstellung von add-Ins. Sie können auch bereitstellen und Testen des Add-Ins mithilfe von **F5** in Visual Studio debuggen, wenn Sie die Anweisungen in den Blogbeitrag [Debugging SharePoint 2013-Workflows mit Visual Studio 2013](http://blogs.msdn.com/b/officeapps/archive/2013/10/30/debugging-sharepoint-2013-workflows-using-visual-studio-2013.aspx)befolgen.
 
 Im Beispiel startet einen Workflow aus einer remote-Webanwendung. Diesen Workflow übergibt Abfrageinformationen, die vom Benutzer zum Northwind OData-Webdienst übermittelt. Die Abfrage gibt die Produktlieferanten für ein bestimmtes Land. Nach die Webdienstantwort Erhalt übergibt der Workflow die Informationen aus der Antwort auf die remote-Webanwendung. Klicken Sie dann die Remotewebanwendung aktualisiert eine Lieferanten Produktliste, die in der Web-Add-in das Add-in bereitgestellt wurde.
 
@@ -412,7 +414,8 @@ Das Beispiel enthält einen einfachen Workflow, der alle Listen zugeordnet werde
 
 Wenn Sie dieses Projekt in Visual Studio öffnen, sehen Sie sich, dass es sich um eine einfache, allgemeine Workflow handelt, der entwickelt für Funktion wird mit einer beliebigen SharePoint-Liste. Als die Workflowaufgabenliste bereitstellen nicht es eine beliebige Liste, mit der es verknüpft werden kann.
 
-**Hinweis**  Die Aufgabe aus, wie in diesem Beispiel mithilfe von Visual Studio 2013 nicht möglich. Dieses Beispiel stellt eine nützliche dieses Problem zu umgehen. Wenn der Visual Studio-Tools in der Zukunft aktualisiert werden, müssen Sie möglicherweise nicht um diese Methode verwenden.
+> [!NOTE] 
+> Die Aufgabe aus, wie in diesem Beispiel mithilfe von Visual Studio 2013 nicht möglich. Dieses Beispiel stellt eine nützliche dieses Problem zu umgehen. Wenn der Visual Studio-Tools in der Zukunft aktualisiert werden, müssen Sie möglicherweise nicht um diese Methode verwenden.
 
 ### <a name="deploy-a-workflow-to-the-host-web"></a>Bereitstellen eines Workflows mit der Hostwebsite
 
@@ -460,7 +463,7 @@ Wenn Sie dieses Projekt in Visual Studio öffnen, sehen Sie sich, dass es sich u
 
 Sie haben nun den Workflow mit der Hostwebsite bereitgestellt und eine Liste auf dem hostweb zugeordnet. Sie können einen Workflow manuell auslösen, oder Sie können den Workflow in Visual Studio aktualisieren, sodass auf andere Weise ausgelöst wird.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Zusammengesetzte Business-add-ins für SharePoint 2013 und SharePoint Online](Composite-buisness-apps-for-SharePoint.md)

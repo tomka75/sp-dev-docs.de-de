@@ -1,11 +1,11 @@
 ---
 title: "Bewährte Methoden für SharePoint Online-Portale - Leistung"
 ms.date: 11/03/2017
-ms.openlocfilehash: cdbbe4e851e1a6e4e4fc625c071721642aeb3a69
-ms.sourcegitcommit: b05e9f1edb1a23b07b7986655fac92c24dd62f5a
+ms.openlocfilehash: 6c0d6e5783f2de3f65553810a6408df837fd6f86
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="proven-practices-for-sharepoint-online-portals---performance"></a>Bewährte Methoden für SharePoint Online-Portale - Leistung
 
@@ -13,7 +13,8 @@ Jedes Portal Entwurf enthält mindestens einen Aspekt, die die Anpassung von Sha
 
 Implementieren von Anpassungen für SharePoint Online, und platziert eine noch größere Schwerpunkt effektiven Entwurf und Entwicklung für Webanwendungen im Allgemeinen und Webanwendungen mithilfe der clientseitigen insbesondere, besonders wenn es darum geht, das Konzept der Anwendung Leistung.
 
->**Hinweis**: Obwohl dieser Anleitung in erster Linie SharePoint Online bezieht, gilt die meisten es auch für Portale in einer lokalen SharePoint-Umgebung gehostet.
+> [!NOTE] 
+> Obwohl dieser Anleitung in erster Linie SharePoint Online bezieht, die meisten davon gilt auch für Portale in einer lokalen SharePoint-Umgebung gehostet.
 
 _**Gilt für:** SharePoint Online_
 
@@ -241,7 +242,8 @@ Content Delivery Network (CDN) ist ein geografisch verteilte-Netzwerk, mit dem e
     - [Office 365 öffentliches/privates CDN](https://dev.office.com/blogs/general-availability-of-office-365-cdn)
     - SharePoint Portal Style Library - Standardoption, wenn ein CDN nicht verwendet wird
 
->**Hinweis**: der [Office 365 private CDN-Funktion](https://dev.office.com/blogs/general-availability-of-office-365-cdn) verfügt über eine Veröffentlichung Feature automatische Umschreiben von URLs zu Urls CDN. Also nach der Aktivierung von privaten CDN wird SharePoint Ihrer Veröffentlichungsseiten mit Links zu Ihrem privaten CDN Standort ohne Sie als Entwickler müssen dies erstellt zeigen zurückgegeben. Dies gilt für Veröffentlichungsseiten, aber auch für Daten, die von den Inhalt von Such-Webparts, die Bibliothek Bildschirmpräsentation mit Bildern, Bildfelder in SPList-REST-Abfragen und SharePoint-bilddarstellungen zurückgegeben. Ihre Veröffentlichungsportal kann auch privaten und öffentlichen CDN im gleichen Portal kombinieren.
+> [!NOTE] 
+> Die [Office 365 private CDN-Funktion](https://dev.office.com/blogs/general-availability-of-office-365-cdn) verfügt über eine Veröffentlichung Feature automatische Umschreiben von URLs zu Urls CDN. Also nach der Aktivierung von privaten CDN wird SharePoint Ihrer Veröffentlichungsseiten mit Links zu Ihrem privaten CDN Standort ohne Sie als Entwickler müssen dies erstellt zeigen zurückgegeben. Dies gilt für Veröffentlichungsseiten, aber auch für Daten, die von den Inhalt von Such-Webparts, die Bibliothek Bildschirmpräsentation mit Bildern, Bildfelder in SPList-REST-Abfragen und SharePoint-bilddarstellungen zurückgegeben. Ihre Veröffentlichungsportal kann auch privaten und öffentlichen CDN im gleichen Portal kombinieren.
 
 ### <a name="ajax"></a>AJAX
 <a name="bk_ajax"> </a>
@@ -367,7 +369,7 @@ Die logische Architektur von der Datenzugriffsschicht (Data Access Layer, DAL) F
 10. Die Business Data Manager gibt die Böffnen für die Anzeige-Komponente
 11. Die Komponente für die Anzeige bindet an den Böffnen und rendert die Daten
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_additionalResources"> </a>
 
 - [Client-Side Data Access Layer (DAL) Beispiel](https://github.com/SharePoint/PnP/tree/master/Samples/Portal.DataAccessLayer)

@@ -1,73 +1,74 @@
 ---
-title: "Ersetzen Sie Dateien bereitgestellt, Verwendung von Modulen in SharePoint-farmlösungen"
+title: Replace files deployed using modules in SharePoint farm solutions
 ms.date: 11/03/2017
-ms.openlocfilehash: 3ea55aa39c86acc513ce65954e9ed5cf2195902b
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 9093eaad8d66159da3723801c58a6aa6d91d8879
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="replace-files-deployed-using-modules-in-sharepoint-farm-solutions"></a>Ersetzen Sie Dateien bereitgestellt, Verwendung von Modulen in SharePoint-farmlösungen
+# <a name="replace-files-deployed-using-modules-in-sharepoint-farm-solutions"></a>Replace files deployed using modules in SharePoint farm solutions
 
-Ersetzen Sie Dateien wie Masterseiten und Seitenlayouts in SharePoint, die Verwendung von Modulen in farmlösungen durch Hochladen und Aktualisieren der Verweise von neuen Dateien bereitgestellt wurden.
+Replace files, like master pages and page layouts in SharePoint, that were deployed using modules in farm solutions by uploading and updating references to use new files.
 
-_**Gilt für:** SharePoint 2013 | SharePoint-Add-ins | SharePoint Online_
+_**Applies to:** SharePoint 2013 | SharePoint Add-ins | SharePoint Online_
 
-Wenn Sie Dateien mithilfe von Modulen deklarativ in farmlösungen bereitgestellt, erfahren Sie, wie sie in neue Lösungen umgewandelt, die Verweise auf Dateien aktualisiert und bieten eine ähnliche Funktionalität mithilfe des Clientobjektmodells (CSOM). In der Vergangenheit wurden Module zur Bereitstellung von Dateien wie etwa Gestaltungsvorlagen und Seitenlayouts verwendet. In diesem Artikel wird beschrieben, wie die Transformation zu verwenden:
+If you deployed files declaratively using modules in farm solutions, learn how to transform them into new solutions that update references to files and provide similar functionality using the client object model (CSOM). In the past, modules were used to deploy files such as master pages and page layouts. This article describes how to use the transformation process to:
 
-1. Hochladen von neuen Gestaltungsvorlagen und Seitenlayouts.
+1. Upload new master pages and page layouts.
     
-2. Aktualisieren der Verweise, um die neue Masterseiten und Seitenlayoutdateien verwenden.
+2. Update references to use the new master pages and page layout files.
     
-Verwenden Sie diese Transformation verarbeiten, wenn:
+Use this transformation process when:
 
-- Ihrer vorhandenen farmlösungen verwendet Module zum Bereitstellen von Dateien.
+- Your existing farm solutions used modules to deploy files.
     
--  Sie möchten Gestaltungsvorlagen und Seitenlayouts in farmlösungen mit neuen Gestaltungsvorlagen und Seitenlayouts zu ersetzen, sodass sie mit SharePoint Online migriert werden können.
+-  You want to replace master pages and page layouts in farm solutions with new master pages and page layouts so that they can be migrated to SharePoint Online.
     
-- Sie haben Dokumentinhaltstypen auf Gestaltungsvorlagen oder in Seitenlayouts in Ihrer farmlösung deklarativ festgelegt.
+- You have set document content types on master pages or page layouts in your farm solution declaratively.
 
-**Wichtig:**  Farmlösungen können nicht mit SharePoint Online migriert werden. Durch die Techniken und den Code in diesem Artikel beschriebenen anwenden, können Sie eine neue Lösung mit ähnlicher Funktionalität, den Ihre farmlösungen bereitstellen, Update Verweise auf Dateien, erstellen, und klicken Sie dann die neue Lösung mit SharePoint Online bereitgestellt werden kann. Klicken Sie dann können Sie das Feature deaktivieren und die vorherige farmlösung zurückgezogen. Der Code in diesem Artikel erfordert zusätzlichen Code, um eine voll funktionsfähige Lösung bereitzustellen. In diesem Artikel erläutern beispielsweise nicht wie Authentifizierung mit Office 365, Implementierung Ausnahmebehandlung erforderlich, und so weiter. Zusätzliche Codebeispiele finden Sie unter [Office 365 Developer Mustern und Methoden Projekt](https://github.com/SharePoint/PnP).
+**Important:**  Farm solutions cannot be migrated to SharePoint Online. By applying the techniques and code described in this article, you can build a new solution with similar functionality that your farm solutions provide, update references to files, and then the new solution can be deployed to SharePoint Online. You can then disable the feature and retract the previous farm solution. The code in this article requires additional code to provide a fully working solution. For example, this article does not discuss how to authenticate with Office 365, how to implement required exception handling, and so on. For additional code samples, see the [Office 365 Developer Patterns and Practices project](https://github.com/SharePoint/PnP).
 
 ## <a name="before-you-begin"></a>Bevor Sie beginnen:
 
-Idealerweise sollten Sie überprüfen Ihrer vorhandenen farmlösungen, erfahren Sie mehr über die in diesem Artikel beschriebenen Verfahren und dann planen, wie diese Techniken für Ihre Szenarien gelten. Wenn Sie mit farmlösungen vertraut sind, oder nicht über eine vorhandene farmlösung verfügen entwickelt, kann es für Sie hilfreich sein:
+Ideally, you should review your existing farm solutions, learn about the techniques described in this article, and then plan how to apply these techniques to your scenarios. If you are unfamiliar with farm solutions or do not have an existing farm solution to work with, it might be helpful for you to:
 
-- Laden Sie die [Projektmappe Contoso.Intranet](https://github.com/SharePoint/PnP/tree/master/Reference%20Material/Contoso.Intranet). Überprüfen Sie Übung 1 [Ersetzung von Dateien über Modulen in voll vertrauenswürdig Lösungen bereitgestellt](https://github.com/SharePoint/TrainingContent/blob/master/O3658/10%20Transformation%20guidance%20from%20farm%20solutions%20to%20app%20model/10-1%20Replacement%20of%20files%20deployed%20via%20Modules/Lab.md) , um eine schnelle Grundlegendes zur Seite wie master Pages und Layouts in der Vergangenheit erstellt wurden möglicherweise erhalten möchten.
+- Download the [Contoso.Intranet solution](https://github.com/SharePoint/PnP/tree/master/Reference%20Material/Contoso.Intranet). Review exercise 1 in [Replacement of files provisioned via Modules in Full Trust Solutions](https://github.com/SharePoint/TrainingContent/blob/master/O3658/10%20Transformation%20guidance%20from%20farm%20solutions%20to%20app%20model/10-1%20Replacement%20of%20files%20deployed%20via%20Modules/Lab.md) to get a quick understanding of how master pages and page layouts might have been built in the past.
     
-- Informationen Sie zu farmlösungen. Weitere Informationen finden Sie unter [Übersicht über SharePoint 2010-Architekturen](https://msdn.microsoft.com/en-us/library/office/gg552610%28v=office.14%29.aspx) und[Farmlösungen in SharePoint 2013](https://msdn.microsoft.com/library/jj163902.aspx).
+- Learn about farm solutions. For more information, see [SharePoint 2010 Architectures Overview](https://msdn.microsoft.com/en-us/library/office/gg552610%28v=office.14%29.aspx) and[Build farm solutions in SharePoint 2013](https://msdn.microsoft.com/library/jj163902.aspx).
     
-Aktivieren Sie Sie vor dem Ausführen Ihrer Codebeispiel die Veröffentlichungsfeatures für die Websitesammlung und Website mit den folgenden Verfahren.
+Before running your code sample, enable the publishing features on the site collection and site with the following procedures.
 
-1. So aktivieren Sie das Feature **SharePoint Server-Veröffentlichungsinfrastruktur** für die Websitesammlung:
+1. To enable the  **SharePoint Server Publishing Infrastructure** feature on the site collection:
     
-    1. Öffnen Sie die SharePoint-Website, und navigieren Sie zu **Einstellungen** > **Websiteeinstellungen**.
+    1. Open your SharePoint site and go to  **Settings** > **Site Settings**.
     
-    2. Wählen Sie in der **Verwaltung der Websitesammlung** **Websitesammlungs-Features**.
+    2. In  **Site Collection Administration**, choose  **Site collection features**.
     
-    3. Wählen Sie auf **SharePoint Server-Veröffentlichungsinfrastruktur** **Aktivieren**.
+    3. On  **SharePoint Server Publishing Infrastructure**, choose  **Activate**.
     
-2. So aktivieren Sie das Feature **SharePoint Server-Veröffentlichung** auf der Website:
+2. To enable the  **SharePoint Server Publishing** feature on the site:
     
-    1. Öffnen Sie die SharePoint-Website, und navigieren Sie zu **Einstellungen** > **Websiteeinstellungen**.
+    1. Open your SharePoint site and go to  **Settings** > **Site Settings**.
     
-    2. Wählen Sie in der Liste **Websiteaktionen** **Websitefeatures verwalten**.
+    2. In  **Site Actions**, choose  **Manage site features**.
     
-    3. Wählen Sie auf **SharePoint Server-Veröffentlichung** **Aktivieren**.
+    3. On  **SharePoint Server Publishing**, choose  **Activate**.
     
-So richten Visual Studio-Projekt
+To set up your Visual Studio project:
 
-1. Laden Sie das [Beispielprojekt](https://github.com/SharePoint/TrainingContent/blob/master/O3658/10%20Transformation%20guidance%20from%20farm%20solutions%20to%20app%20model/Student.zip). Wählen Sie **Ansicht unformatierte** Downloadvorgang das Beispielprojekt, extrahieren Sie die Dateien aus der Zipdatei, und navigieren Sie zu dem Ordner Module9/ModuleReplacement.
+1. Download the [sample project](https://github.com/SharePoint/TrainingContent/blob/master/O3658/10%20Transformation%20guidance%20from%20farm%20solutions%20to%20app%20model/Student.zip). Choose  **View Raw** to start downloading the sample project, extract the files from the zip file, and then navigate to the Module9/ModuleReplacement folder.
     
-2. Öffnen Sie ModuleReplacement.sln.
+2. Open ModuleReplacement.sln.
     
-3. Öffnen Sie settings.xml. Überprüfen Sie und aktualisieren Sie die folgenden Attribute, um Ihre Anforderungen erfüllen:
+3. Open settings.xml. Review and update the following attributes to meet your requirements:
     
-    1.  **Masterpage** Element - verwendet das Attribut **File** an die neue Masterseite für die Bereitstellung auf den Gestaltungsvorlagenkatalog und das Attribut **ersetzt** die vorhandene Gestaltungsvorlage im Gestaltungsvorlagenkatalog gibt.
+    1.  **masterpage** element - Uses the **file** attribute to specify the new master page to deploy to the master page gallery, and the **replaces** attribute specifies the existing master page in the master page gallery.
     
-    2.  **PageLayout** -Element - verwendet das Attribut **File** , um die neue Seite Layout-Datei anzugeben, das Attribut **ersetzt** die vorhandene Seite Layout-Datei an und mehrere andere Attribute, um zusätzliche Seite Layoutinformationen anzugeben.
+    2.  **pagelayout** element - Uses the **file** attribute to specify the new page layout file, the **replaces** attribute to specify the existing page layout file, and several other attributes to specify additional page layout information.
 
-    **Hinweis:**  Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+    > [!NOTE] 
+    > The code in this article is provided as-is, without warranty of any kind, either express or implied, including any implied warranties of fitness for a particular purpose, merchantability, or non-infringement.
 
     ```XML
         <?xml version="1.0" encoding="utf-8" ?>
@@ -82,19 +83,19 @@ So richten Visual Studio-Projekt
     
     ```
 
-4. In MasterPageGalleryFiles.cs definieren die Klassen **MasterPageGalleryFile** und **LayoutFile** -Geschäftsobjekte, in denen Informationen zu den neuen Gestaltungsvorlagen und Seitenlayouts in SharePoint hochgeladen werden gespeichert.
+4. In MasterPageGalleryFiles.cs, the  **MasterPageGalleryFile** and **LayoutFile** classes define business objects that store information about the new master pages and page layouts to be uploaded to SharePoint.
 
-## <a name="upload-and-update-references-to-master-pages"></a>Hochladen Sie und aktualisieren Sie der Verweise auf Gestaltungsvorlagen
+## <a name="upload-and-update-references-to-master-pages"></a>Upload and update references to master pages
 
-Hochladen und Aktualisieren der Verweise auf die neuen Masterseiten auf Ihrer SharePoint-Website:
+To upload and update references to the new master pages on your SharePoint site:
 
-1. Fügen Sie in der Datei Program.cs die folgenden **using** -Anweisung hinzu.
+1. In Program.cs, add the following  **using** statement.
     
     ```C#
         using System.Security;
     ```
 
-2. Fügen Sie in der Datei Program.cs die folgenden Methoden zum Ausführen der Authentifizierung zu Office 365.
+2. In Program.cs, add the following methods to perform authentication to Office 365.
     
   ```C#
   static SecureString GetPassword()
@@ -151,17 +152,17 @@ Hochladen und Aktualisieren der Verweise auf die neuen Masterseiten auf Ihrer Sh
         }
   ```
 
-3. Fügen Sie den folgenden Code in Program.cs der **Main** -Methode, die die folgenden Aufgaben ausführt:
+3. In Program.cs, add the following code to the  **Main** method, which performs the following tasks:
     
-    1. Lädt die Datei settings.xml.
+    1. Loads the settings.xml file.
     
-    2. Ruft einen Verweis auf den Gestaltungsvorlagenkatalog mithilfe von [GetCatalog](https://msdn.microsoft.com/library/office/microsoft.sharepoint.client.web.getcatalog.aspx)(116). Masterseiten werden in den Gestaltungsvorlagenkatalog hochgeladen. Der Bezeichner der Listenvorlage der Gestaltungsvorlagenkatalog ist 116. Weitere Informationen finden Sie unter [ListTemplate-Element (Website)](https://msdn.microsoft.com/library/ms439434.aspx). Weitere Informationen über den Gestaltungsvorlagenkatalog werden geladen, einschließlich der Verwendung von [List.ContentTypes](https://msdn.microsoft.com/library/microsoft.sharepoint.client.list.contenttypes.aspx) zum Abrufen der Inhaltstypen Gestaltungsvorlagenkatalog zugeordnet.
+    2. Gets a reference to the master page gallery by using [GetCatalog](https://msdn.microsoft.com/library/office/microsoft.sharepoint.client.web.getcatalog.aspx)(116). Master pages are uploaded to the master page gallery. The identifier of the list template of the master page gallery is 116. For more information, see [ListTemplate Element (Site)](https://msdn.microsoft.com/library/ms439434.aspx). Other details about the master page gallery are loaded, including using [List.ContentTypes](https://msdn.microsoft.com/library/microsoft.sharepoint.client.list.contenttypes.aspx) to get the content types associated with the master page gallery.
     
-    3. Lädt die Eigenschaften des einschließlich Web.ContentTypes, Web.MasterUrl und Web.CustomMasterUrl Web-Objekts.
+    3. Loads properties of the Web object including Web.ContentTypes, Web.MasterUrl, and Web.CustomMasterUrl.
     
-    4. **ParentMasterPageContentTypeId** festgelegt auf den Inhaltstyp-ID von Masterseiten. Weitere Informationen finden Sie unter[Base Content Type Hierarchy](https://msdn.microsoft.com/library/ms452896%28v=office.14%29.aspx).
+    4. Sets  **parentMasterPageContentTypeId** to the content type ID of master pages. For more information, see[Base Content Type Hierarchy](https://msdn.microsoft.com/library/ms452896%28v=office.14%29.aspx).
     
-    5. Ruft den Inhaltstyp der Gestaltungsvorlagen aus den Gestaltungsvorlagenkatalog ab. Dieser Inhaltstyp wird verwendet, um den Inhaltstyp der neuen Gestaltungsvorlage weiter unten in diesem Artikel festlegen. 
+    5. Gets the content type of master pages from the master page gallery. This content type is used to set the content type of the new master page later in this article. 
     
     ```C#
     static void Main(string[] args)
@@ -210,13 +211,13 @@ Hochladen und Aktualisieren der Verweise auf die neuen Masterseiten auf Ihrer Sh
         }
     ```
 
-4. Fügen Sie in Program.cs die **UploadAndSetMasterPages** -Methode, die eine Liste von Geschäftsobjekten durch **MasterPageGalleryFile** erstellt:
+4. In Program.cs, add the  **UploadAndSetMasterPages** method, which creates a list of **MasterPageGalleryFile** business objects by:
     
-    1. Alle im settings.xml definierten **MasterPage** Elemente lesen.
+    1. Reading all the  **masterPage** elements defined in settings.xml.
     
-    2. Laden für jedes **MasterPage** -Element, das eine Gestaltungsvorlage für SharePoint hochladen angibt, die Attributwerte in einem Geschäftsobjekt **MasterPageGalleryFile** .
+    2. For each  **masterPage** element, which specifies a master page to upload to SharePoint, loading the attribute values into a **MasterPageGalleryFile** business object.
     
-    3. Für jedes **MasterPageGalleryFile** Business-Objekt in der Liste **UploadAndSetMasterPage**anrufen.
+    3. For each  **MasterPageGalleryFile** business object in the list, making a call to **UploadAndSetMasterPage**.
     
     ```C#
         
@@ -236,19 +237,19 @@ Hochladen und Aktualisieren der Verweise auf die neuen Masterseiten auf Ihrer Sh
     }
     ```
 
-5. Fügen Sie in Program.cs die **UploadAndSetMasterPage** -Methode, die folgenden Aufgaben ausgeführt werden:
+5. In Program.cs, add the  **UploadAndSetMasterPage** method, which performs the following tasks:
     
-    1. Checkt die Gestaltungsvorlage.
+    1. Checks out the master page.
     
-    2. Lädt die neue Datei mit [komplexer FileCreationInformation](https://msdn.microsoft.com/library/microsoft.sharepoint.client.filecreationinformation.aspx)hoch.
+    2. Uploads the new file by using [FileCreationInformation](https://msdn.microsoft.com/library/microsoft.sharepoint.client.filecreationinformation.aspx).
     
-    3. Ruft das Listenelement mit der neu hochgeladene Datei verknüpft ist.
+    3. Gets the list item associated with the newly uploaded file.
     
-    4. Verschiedene Eigenschaften festgelegt für das Listenelement, einschließlich Festlegen der Inhaltstyp-ID des Listenelements auf den Inhaltstyp-ID der Masterseite.
+    4. Sets various properties on the list item, including setting the content type ID of the list item to the content type ID of the master page.
     
-    5. Überprüft und genehmigt die neue Masterseite veröffentlicht. 
+    5. Checks in, publishes, and approves the new master page. 
     
-    6. Wenn die Masterseite für die aktuelle Website oder benutzerdefinierte Gestaltungsvorlage URL auf die alte Gestaltungsvorlage festgelegt ist, aktualisiert [Web.MasterUrl](https://msdn.microsoft.com/library/microsoft.sharepoint.client.web.masterurl.aspx) oder[Web.CustomMasterUrl](https://msdn.microsoft.com/library/microsoft.sharepoint.client.web.custommasterurl.aspx) , um die URL der neu hochgeladene Masterseite verwenden.
+    6. If the current site's master page or custom master page URL is set to the old master page, updates [Web.MasterUrl](https://msdn.microsoft.com/library/microsoft.sharepoint.client.web.masterurl.aspx) or[Web.CustomMasterUrl](https://msdn.microsoft.com/library/microsoft.sharepoint.client.web.custommasterurl.aspx) to use the newly uploaded master page URL.
     
     ```C#
       private static void UploadAndSetMasterPage(Web web, Folder folder, ClientContext clientContext, MasterPageGalleryFile masterPage)
@@ -298,20 +299,21 @@ Hochladen und Aktualisieren der Verweise auf die neuen Masterseiten auf Ihrer Sh
     }
     ```
 
-## <a name="upload-and-update-references-to-page-layouts"></a>Hochladen Sie und aktualisieren Sie der Verweise auf Seitenlayouts
+## <a name="upload-and-update-references-to-page-layouts"></a>Upload and update references to page layouts
 
-**Hinweis:**  Die Codebeispiele in diesem Abschnitt erstellen Sie auf die Codebeispiele im vorherigen Abschnitt dieses Artikels. 
+> [!NOTE] 
+> The code examples in this section build on the code examples in the previous section of this article. 
 
-Um Seitenlayouts zu ersetzen, die Verwendung von Modulen in farmlösungen bereitgestellt wurden, Hochladen Sie und aktualisieren Sie der Verweise auf die neue Seitenlayoutdateien durch verwenden:
+To replace page layouts that were deployed using modules in farm solutions, upload and update references to use the new page layout files by:
 
 
-1. Aktualisieren der **Main** -Methode durch den folgenden Code. Dieser Code enthält zusätzliche Schritte zum Hochladen und Aktualisieren der Verweise auf Seitenlayoutdateien, einschließlich:
+1. Updating the  **Main** method with the following code. This code contains additional steps for uploading and updating references to page layout files, including:
     
-    1. Wenn Sie auf das Seitenlayout Inhaltstyp-ID **ParentPageLayoutContentTypeId** festlegen
+    1. Setting  **parentPageLayoutContentTypeId** to the page layout's content type ID.
     
-    2.  Abrufen eines Inhaltstyps, der mit **ParentPageLayoutContentTypeId** aus den Gestaltungsvorlagenkatalog übereinstimmt.
+    2.  Getting a content type that matches **parentPageLayoutContentTypeId** from the master page gallery.
     
-    3. **UploadPageLayoutsAndUpdateReferences**aufrufen.
+    3. Calling  **UploadPageLayoutsAndUpdateReferences**.
     
     ```C#
                 static void Main(string[] args)
@@ -365,17 +367,17 @@ Um Seitenlayouts zu ersetzen, die Verwendung von Modulen in farmlösungen bereit
         }
     ```
 
-2. Fügen Sie in Program.cs die **UploadPageLayoutsAndUpdateReferences** -Methode, die folgenden Schritte ausführt:
+2. In Program.cs, add the  **UploadPageLayoutsAndUpdateReferences** method, which performs the following steps:
     
-    1. Liest die Seite Ersatz Layoutinformationen settings.xml **Pagelayout** Elemente lesen und speichern die Seite Ersatz Layoutinformationen im **LayoutFile** von Geschäftsobjekten zu einer Liste aller Business-Objekte hinzufügen.
+    1. Reads the page layout replacement information by reading the  **pagelayout** elements from settings.xml, storing the page layout replacement information in **LayoutFile** business objects, and adding all the business objects to a list.
     
-    2. Für jede Seitenlayout ersetzen:
+    2. For each page layout to replace:
     
-        1. Abfragen geben die Websiteinhaltstypen mithilfe von [Web.ContentTypes](https://msdn.microsoft.com/library/microsoft.sharepoint.client.web.contenttypes.aspx) finden Sie eine entsprechende Ressourcen, in dem der Name des Inhaltstyps für die Website der **AssociatedContentTypeName** in settings.xml für das neue Seitenlayout angegebenen gleich ist.
+        1. Queries the site's content types by using [Web.ContentTypes](https://msdn.microsoft.com/library/microsoft.sharepoint.client.web.contenttypes.aspx) to find a matching content type where the name of the site's content type is equal to the **associatedContentTypeName** specified in settings.xml for the new page layout.
     
-        2. Ruft die **UploadPageLayout**.
+        2. Calls  **UploadPageLayout**.
     
-        3. Ruft die **UpdatePages** zum Aktualisieren vorhandener Seiten, um die neuen Seitenlayouts zu verwenden.
+        3. Calls  **UpdatePages** to update existing pages to use the new page layouts.
 
   ```C#
         private static void UploadPageLayoutsAndUpdateReferences(Web web, Folder folder, ClientContext clientContext, XDocument settings, string contentTypeId)
@@ -406,21 +408,21 @@ Um Seitenlayouts zu ersetzen, die Verwendung von Modulen in farmlösungen bereit
 
   ```
 
-3.  Fügen Sie in Program.cs die **UploadPageLayout** -Methode, die folgenden Aufgaben ausgeführt werden:
+3.  In Program.cs, add the **UploadPageLayout** method, which performs the following tasks:
     
-    1. Checkt die seitenlayoutdatei.
+    1. Checks out the page layout file.
     
-    2. Lädt die neue Datei mit [komplexer FileCreationInformation](https://msdn.microsoft.com/library/microsoft.sharepoint.client.filecreationinformation.aspx)hoch.
+    2. Uploads the new file by using [FileCreationInformation](https://msdn.microsoft.com/library/microsoft.sharepoint.client.filecreationinformation.aspx).
     
-    3. Ruft das Listenelement mit der neu hochgeladene Datei verknüpft ist.
+    3. Gets the list item associated with the newly uploaded file.
     
-    4. Verschiedene Eigenschaften festgelegt für das Listenelement, einschließlich **ContentTypeId** und **PublishingAssociatedContentType**.
+    4. Sets various properties on the list item, including  **ContentTypeId** and **PublishingAssociatedContentType**.
     
-    5. Checkt, veröffentlicht, und die neue seitenlayoutdatei genehmigt.
+    5. Checks in, publishes, and approves the new page layout file.
     
-    6.  Um Verweise auf die alte Seite Layout-Datei zu entfernen, gespeichert Anrufe **PublishingHelper.UpdateAvailablePageLayouts** so aktualisieren Sie den XML-Code in der **PageLayouts** -Eigenschaft auf der aktuellen Website.
+    6.  To remove references to the old page layout file, calls **PublishingHelper.UpdateAvailablePageLayouts** to update the XML stored in the **PageLayouts** property on the current site.
     
-    7. Wenn die neu hochgeladene seitenlayoutdatei des **DefaultLayout** Attributwert aus settings.xml auf **true** festgelegt ist, verwendet **PublishingHelper.SetDefaultPageLayout** so aktualisieren Sie den XML-Code in die **DefaultPageLayout** -Eigenschaft auf gespeichert, die aktuelle Website.
+    7. If the newly uploaded page layout file's  **defaultLayout** attribute value from settings.xml is set to **true** , uses **PublishingHelper.SetDefaultPageLayout** to update the XML stored in the **DefaultPageLayout** property on the current site.
     
 
     ```C#
@@ -462,17 +464,17 @@ Um Seitenlayouts zu ersetzen, die Verwendung von Modulen in farmlösungen bereit
     }
     ```
 
-4. Fügen Sie in Program.cs die **UpdatePages** -Methode, die folgenden Aufgaben ausgeführt werden:
+4. In Program.cs, add the  **UpdatePages** method, which performs the following tasks:
     
-    1. Dient zum Abrufen der Bibliothek für **Seiten** , und klicken Sie dann in der Bibliothek für **Seiten** Ruft alle Listenelemente.
+    1. Gets the  **Pages** library, and then gets all the list items in the **Pages** library.
     
-    2. Für jedes Listenelement verwendet das Listenelement **PublishingPageLayout** Feld, um ein passendes Seitenlayout zu aktualisieren, finden die in settings.xml angegeben wurde und jetzt in **Pagelayouts** gespeichert ist. Wenn das Listenelement **PublishingPageLayout** Feld werden, um auf das neue Seitenlayout zu verweisen aktualisiert muss:
+    2. For each list item, uses the list item's  **PublishingPageLayout** field to find a matching page layout to update, which was specified in settings.xml and is now stored in **pagelayouts** . If the list item's **PublishingPageLayout** field needs to be updated to refer to the new page layout:
     
-        1. Checkt das Listenelement-Datei mithilfe von **PublishingHelper.CheckOutFile**.
+        1. Checks out the list item's file by using  **PublishingHelper.CheckOutFile**.
     
-        2. Die URL des Seitenlayouts verweisen auf die neue Seite Layout-Datei aktualisiert, und aktualisiert anschließend das **PublishingPageLayout** Feld des Listenelements.
+        2. Updates the URL of the page layout to refer to the new page layout file, and then updates the  **PublishingPageLayout** field of the list item.
     
-        3. Checkt, veröffentlicht, und die Datei, die durch das Listenelement genehmigt.
+        3. Checks in, publishes, and approves the file referenced by the list item.
 
     ```C#
     private static void UpdatePages(Web web, ClientContext clientContext, IList<LayoutFile> pageLayouts)
@@ -515,7 +517,7 @@ Um Seitenlayouts zu ersetzen, die Verwendung von Modulen in farmlösungen bereit
     }
     ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Transformieren von Farmlösungen in das SharePoint-Add-In-Modell](Transform-farm-solutions-to-the-SharePoint-app-model.md)

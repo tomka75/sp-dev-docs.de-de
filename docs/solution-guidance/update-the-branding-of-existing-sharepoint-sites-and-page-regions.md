@@ -1,33 +1,33 @@
 ---
-title: Aktualisieren Sie das branding der vorhandenen SharePoint-Websites und Bereiche der Seite
+title: Update the branding of existing SharePoint sites and page regions
 ms.date: 11/03/2017
-ms.openlocfilehash: 13fc6929dfa4aedfd87bb772c3e7687f71ce135d
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 16a4e6aa21f267c008660837b765e2bd2e47a940
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="update-the-branding-of-existing-sharepoint-sites-and-page-regions"></a>Aktualisieren Sie das branding der vorhandenen SharePoint-Websites und Bereiche der Seite
+# <a name="update-the-branding-of-existing-sharepoint-sites-and-page-regions"></a>Update the branding of existing SharePoint sites and page regions
 
-Passen Sie an und aktualisieren Sie das branding von vorhandenen SharePoint-Websites und Regionen von SharePoint-Seiten, einschließlich des Menübands, der Websitenavigation, im Menü Einstellungen, die Strukturansicht und dem Seiteninhalt.
+Customize and then refresh the branding of existing SharePoint sites or regions of SharePoint pages, including the ribbon, the site navigation, the Settings menu, the tree view, and the page content.
 
-_**Gilt für:** SharePoint 2013 | SharePoint-Add-ins | SharePoint Online_
+_**Applies to:** SharePoint 2013 | SharePoint Add-ins | SharePoint Online_
 
-Sie können das branding auf Ihren vorhandenen SharePoint-Websites und Websitesammlungen aktualisieren sowie Bereiche von SharePoint-Seiten anpassen. Möglicherweise möchten Sie beispielsweise hierzu, wenn Sie auf der Website eine neue Version aktualisieren. 
+You can refresh the branding on your existing SharePoint sites and site collections, as well as customize regions of SharePoint pages. You might want to do this, for example, when you update to a new version of the site. 
 
-## <a name="refresh-branding-of-existing-sites-and-subsites"></a>Aktualisieren von vorhandenen Websites und Unterwebsites branding
+## <a name="refresh-branding-of-existing-sites-and-subsites"></a>Refresh branding of existing sites and subsites
 
-Im Beispiel [Branding.Refresh](https://github.com/SharePoint/PnP/tree/dev/Scenarios/Branding.Refresh) im [Office 365 Developer Mustern und Methoden](https://github.com/SharePoint/PnP/tree/dev) Projekt auf GitHub zeigt, wie Sie die OfficeDevPnP.Core-Bibliothek verwenden, das zum Durchlaufen der vorhandenen Websites und Unterwebsites, um zu überprüfen und Aktualisieren der angewendeten branding. Das Beispiel veranschaulicht das branding Website aktualisieren, aber dasselbe Konzept kann verwendet werden, um andere Aktionen, wie eine neue Bibliothek für eine Liste der Websites bereitstellen oder Aktualisieren einer benutzerdefinierten Aktion, die während der Bereitstellung bereitgestellt wurde. Das gleiche Verfahren können Sie um vorhandene Websites in einer neueren Version zu verschieben.
+The [Branding.Refresh](https://github.com/SharePoint/PnP/tree/dev/Scenarios/Branding.Refresh) sample in the [Office 365 Developer patterns and practices](https://github.com/SharePoint/PnP/tree/dev) project on GitHub shows you how to use the OfficeDevPnP.Core library to iterate over existing sites and subsites to verify and update the applied branding. The sample shows how to update site branding, but the same concept can be used to do other things, such as deploy a new library to a list of sites, or update a custom action that was deployed during provisioning. You can use the same process to move existing sites to a newer version.
 
-Der Vorgang umfasst zwei Schritte:
+The operation involves two steps:
 
-- Rufen Sie die Websites, die Sie aktualisieren möchten.
+- Get the sites you want to update.
     
-- Aktualisieren der Websites.
+- Update the sites.
 
-### <a name="step-one-get-the-sites-you-want-to-update"></a>Schritt 1: Abrufen der Websites, die Sie aktualisieren möchten.
+### <a name="step-one-get-the-sites-you-want-to-update"></a>Step one: Get the sites you want to update
 
-Rufen Sie zunächst, eine Liste von Websites und Unterwebsites, die Sie aktualisieren möchten. Im Beispiel veranschaulicht, wie mithilfe der Suchfunktion dazu, aber andere Optionen gehören Lesen aus einem Websiteverzeichnis oder Bereitstellen ein Management Benutzeroberfläche denen Administratoren die Liste angeben können. Das folgende Beispiel veranschaulicht die Suchfunktion verwenden, um die Liste zu generieren.
+First, get a list of sites and subsites that you want to update. The sample shows how to do this by using the search functionality, but other options include reading from a site directory, or providing a management UI where administrators can specify the list. The following example shows you how to use search functionality to generate the list.
 
 ```
 // Get a list of sites. Search is one way to get this list, an alternative can be a site directory.
@@ -56,13 +56,13 @@ if (applyChangesToAllWebs)
 }
 ```
 
-Der Aufruf von **GetSubSites** ist rekursive, sodass es auf die Unterwebsite Struktur abruft. Nachdem die Struktur abgerufen wurde, stellen Sie sicher, dass die zurückgegebene Nummer richtig ist, bevor Sie fortfahren.
+The call to  **GetSubSites** is recursive so it fetches the subsite tree. After the tree has been fetched, verify that the number returned is correct before you continue.
 
-### <a name="step-two-update-the-branding"></a>Schritt 2: Aktualisieren der branding
+### <a name="step-two-update-the-branding"></a>Step two: Update the branding
 
-Nachdem Sie eine Website für die Verarbeitung ausgewählt haben, können Sie OfficeDevPnP.Core Methoden zum Bearbeiten der Website verwenden. Das Beispiel zeigt, wie für das Websitebranding dazu, aber verarbeiten Sie jede Art der Änderung auf die gleiche Weise.
+After you select a site for processing, you can use OfficeDevPnP.Core methods to manipulate the site. The sample shows how to do this for site branding, but you can process any type of change in the same way.
 
-Das Beispiel verwendet ein Muster, das den Web-Eigenschaftenbehälter zum Speichern von Informationen zu den aktuellen Einstellungen nutzt. Der Code liest zuerst Eigenschaftensammlung Eigenschaftswerte im Web und und führt eine Aktion, die für jeden Wert geeignet ist.
+The sample uses a pattern that leverages the web property bag to store information about the current settings. The code first reads the web property bag values and then takes an action that is appropriate for each value.
 
 ```
 // Verify that you have a property bag entry.
@@ -96,7 +96,7 @@ if (!String.IsNullOrEmpty(themeName))
 }
 ```
 
-Der Code, mit der das Design dann aktualisiert ist einfach und basiert auf OfficeDevPnP.Core-Methoden.
+The code that then updates the theme is straightforward and is based on OfficeDevPnP.Core methods.
 
 ```
 string themeRoot = Path.Combine(AppRootPath, String.Format(@"Themes\{0}", themeName));
@@ -122,43 +122,43 @@ else
 }
 ```
 
-## <a name="customize-regions-of-a-sharepoint-page"></a>Anpassen von Formularbereichen einer SharePoint-Seite
+## <a name="customize-regions-of-a-sharepoint-page"></a>Customize regions of a SharePoint page
 
-Wenn Ihr Ziel ist es, Bereiche einer SharePoint-Seite anpassen, können Sie eine Kombination von remote-Bereitstellung und benutzerdefinierte cascading Stylesheets (CSS) auf Bereiche der Seite zugeordneten Dateien. Zunächst müssen Sie Ihnen bekannt sein welche SharePoint-Dateien mit den verschiedenen Bereichen einer SharePoint-Seite verknüpft sind. 
+When your objective is to customize regions of a SharePoint page, you can use a combination of remote provisioning and custom cascading style sheets (CSS) on files associated with regions of the page. Initially, then, you must be aware of which SharePoint files are associated with the various regions of a SharePoint page. 
 
-**In Tabelle 1. Bereiche der SharePoint-Seite und die zugehörigen Dateien**
+**Table 1. SharePoint page regions and associated files**
 
-|**Seite region**|** Zugeordneten Dateien **|**Weitere Informationen**|
+|**Page region**|**Associated files **|**Weitere Informationen**|
 |:-----|:-----|:-----|
-|Menüband|Eine der Standardgestaltungsvorlage. Entsprechende CSS: <ul xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><li><p>Haupttext - Body: #s4-Arbeitsbereich</p></li><li><p>Suite Balken - links: #suiteBarLeft</p></li><li><p>Suite Balken - rechts: #suiteBarRight</p></li><li><p>Menübandcontainer: #globalNavBox</p></li></ul>|Kann über die Schaltfläche **Inhalte zu Schwerpunktthemen** ausgeblendet werden.|
-|Suitenavigation|Eine der Standardgestaltungsvorlage. |Kann über die Schaltfläche **Inhalte zu Schwerpunktthemen** ausgeblendet werden.|
-|Suite-links||Kann über die Schaltfläche **Inhalte zu Schwerpunktthemen** ausgeblendet werden.|
-|Willkommensmenü|Master|Kann über die Schaltfläche **Inhalte zu Schwerpunktthemen** ausgeblendet werden.|
-|Im Einstellungsmenü oder Zahnrad|Master|Ein Beispiel finden Sie unter [FTC zu CAM - benutzerdefinierte Aktionen und -Eigenschaft Objektdepot Einträge aus SP-Add-in](http://blogs.msdn.com/b/vesku/archive/2013/10/02/ftc-to-cam-custom-actions-and-property-bag-entries.aspx).|
+|Menüband|Any of the default master pages. Corresponding CSS: <ul xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><li><p>Main body - body: #s4-workspace</p></li><li><p>Suite bar - Left: #suiteBarLeft</p></li><li><p>Suite bar - Right: #suiteBarRight</p></li><li><p>Ribbon container: #globalNavBox</p></li></ul>|Can be hidden via the  **Focus on Content** button.|
+|Suite navigation|Any of the default master pages. |Can be hidden via the  **Focus on Content** button.|
+|Suite links||Can be hidden via the  **Focus on Content** button.|
+|Welcome menu|Master|Kann über die Schaltfläche **Inhalte zu Schwerpunktthemen** ausgeblendet werden.|
+|Settings menu or gear|Master|For an example, see [FTC to CAM - Custom actions and property bag entries from SP Add-in](http://blogs.msdn.com/b/vesku/archive/2013/10/02/ftc-to-cam-custom-actions-and-property-bag-entries.aspx).|
 |Hilfe|Master||
-|Kontextbezogene Registerkarten auf dem Menüband|Jede Standardgestaltungsvorlage.|Beispiele finden Sie unter den folgenden: <ul xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><li><p><a href="https://social.msdn.microsoft.com/Forums/sharepoint/en-US/df1e4e32-ef58-4b51-8ac8-a8c3690e648b/sharepoint-2013-duplicate-contextual-tabs?forum=sharepointdevelopment" target="_blank">SharePoint 2013 Duplikat kontextbezogene Registerkarten</a></p></li><li><p><a href="https://social.msdn.microsoft.com/Forums/sharepoint/en-US/a3640d58-afe1-41d0-ac83-bd7886c37355/hide-a-contextual-ribbon-tab?forum=crmdevelopment" target="_blank">Ausblenden einer kontextbezogenen Menüband-Registerkarte</a></p></li><li><p><a href="https://social.msdn.microsoft.com/Forums/sharepoint/en-US/201306cf-5874-4778-b773-f870c67cee94/hideshow-contextual-tab-on-click-event-of-subgrid?forum=crmdevelopment" target="_blank">Kontextregisterkarte einblenden/ausblenden auf klicken Sie auf Unterraster-Ereignis</a></p></li></ul>|
-|Symbolleiste für den Schnellzugriff|Master|Kann über die Schaltfläche **Inhalte zu Schwerpunktthemen** ausgeblendet werden.|
-|Website-logo|Master<p>Entsprechende CSS:.ms-Sitelcon-img</p>||
-|Der oberen Navigationsleiste|NAV CSOM/JSOM<p>Master</p>Entsprechende CSS (nicht im Bearbeitungsmodus): <ul xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><li><p>Neues Element ausgewählt:.ms-Kern-ListMenu-HorizontalBox li.static >.ms - core.listMenu-ausgewählten</p></li><li><p>Neue Artikel beim Daraufzeigen: .mscore-ListMenu-HorizontalBox li.static > a.ms-Kern-ListMenu-Element: beim Daraufzeigen</p></li><li><p>Dropdown-Pfeil:.ms-Kern-ListMenu-HorizontalBox .dynamic-children.additional-Hintergrund</p></li><li><p>Navigationselement (entsprechend der Menüelemente der obersten Ebene):.ms-Kern-ListMenu-HorizontalBox li.static >.ms-Kern-ListMenu-Element</p></li><li><p>Dropdown-Element: ul.dynamic.ms-Kern-ListMenu-Element</p></li><li><p>Dropdown-Container: ul.dynamic</p></li><li><p>Links zum Bearbeiten:.ms-Navedit-EditLinksText > span >.ms - Metadaten</p></li></ul>Entsprechende CSS (im Bearbeitungsmodus): <ul xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><li><p>NAV bearbeiten Modus Link:.ms-Kern-ListMenu-HorizontalBox.ms-Kern-ListMenuEdit > tr > .msnavedit LinkCell >.ms-Kern-ListMenu-Element</p></li><li><p>Link hinzufügen:.ms-Kern-ListMenu-HorizontalBox a.ms-Navedit-addNewLink</p></li></ul>||
-|Seitentitel|Entsprechende CSS (im Bearbeitungsmodus): <ul xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><li><p>Seitentitel und Seitentitel mit Link:.ms-Kern-Seitentitel,.ms-Kern-Seitentitel ein</p></li><li><p>Schaltfläche Beschreibung: #ms-PageDescriptionDiv</p></li><li><p>Im Beschreibungsfeld: js-Popup-MainElement</p></li><li><p>Beschreibung im Feld Pfeil: js-Popup-Schnabelspitze</p></li><li><p>Beschreibung: js-Callout-Body</p></li></ul>||
-|Suchfeld|NAV CSOM/JSOM<p>Master</p>Entsprechende CSS: <ul xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><li><p>Suche Knotenrahmens:.ms-\endash-Sb-Rahmen</p></li><li><p>Suchen im Feld Rahmen beim Daraufzeigen:.ms-\endash-Sb-Rahmen: beim Daraufzeigen</p></li><li><p>Suchen Sie beim Klicken auf den Rahmen:.ms-\endash-Sb-BorderFocused</p></li><li><p>Feld Input Suchtextfeld:.ms-\endash-Sb-borderFocused</p></li><li><p>Suchen im Feld Text:.ms-\endash-sb</p></li><li><p>Feld Input Suchtextfeld:.ms-\endash-Sb-Suche</p></li><li><p>Suche</p></li></ul>||
-|Navigationsbereich|NAV CSOM/JSOM<p>Master</p>|Weitere Informationen finden Sie unter: <ul xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><li><p><a href="https://msdn.microsoft.com/en-us/library/office/ms558975(v=office.14).aspx" target="_blank">Vorgehensweise: Anpassen der Navigation in SharePoint Server</a></p></li><li><p><a href="http://msdn.microsoft.com/library/c9da5011-3c73-4b83-8e00-e7a03a71ed02(Office.15).aspx" target="_blank">Verwaltete Navigation in SharePoint 2013</a></p></li></ul>|
-|Strukturansicht|Master|Weitere Informationen finden Sie unter [Vorgehensweise: Anpassen den integrierten Treeview Navigator](https://social.msdn.microsoft.com/Forums/sharepoint/en-US/dd4d49fd-e107-469d-b326-d37c86ff66b8/how-to-customize-the-builtin-treeview-navigator-?forum=sharepointcustomizationprevious).|
-|Seiteninhalt|Layout/Seiteninhalten Seiten<br>Webpartzone /-Webparts<p>Entsprechende CSS (WebPartZone und Webpart):</p><ul xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><li><p>Webpartzone:.ms-Webpart-zone</p></li><li><p>Webpart Inhaber:.ms-Webpartzone-Zelle</p></li><li><p>Webparttitel:.ms-Webpart-titleText</p></li><li><p>Web-Webpart-Titel mit Link:.ms-Webpart-TitleText > ein</p></li><li><p>Webpart Body:.ms-WPBody</p></li></ul>|Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen eines Seitenlayouts in SharePoint 2013](http://msdn.microsoft.com/library/5447e6a1-2f14-4667-81d0-7514b468be80%28Office.15%29.aspx)|
+|Ribbon contextual tabs|Any default master page.|For examples, see the following: <ul xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><li><p><a href="https://social.msdn.microsoft.com/Forums/sharepoint/en-US/df1e4e32-ef58-4b51-8ac8-a8c3690e648b/sharepoint-2013-duplicate-contextual-tabs?forum=sharepointdevelopment" target="_blank">SharePoint 2013 Duplicate Contextual Tabs</a></p></li><li><p><a href="https://social.msdn.microsoft.com/Forums/sharepoint/en-US/a3640d58-afe1-41d0-ac83-bd7886c37355/hide-a-contextual-ribbon-tab?forum=crmdevelopment" target="_blank">Hide a Contextual ribbon tab</a></p></li><li><p><a href="https://social.msdn.microsoft.com/Forums/sharepoint/en-US/201306cf-5874-4778-b773-f870c67cee94/hideshow-contextual-tab-on-click-event-of-subgrid?forum=crmdevelopment" target="_blank">Hide/Show contextual tab on click event of subgrid</a></p></li></ul>|
+|Quick access toolbar|Master|Can be hidden via the  **Focus on Content** button.|
+|Site logo|Master<p>Entsprechende CSS:.ms-Sitelcon-img</p>||
+|Top navigation|Nav CSOM/JSOM<p>Master</p>Entsprechende CSS (nicht im Bearbeitungsmodus): <ul xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><li><p>New Item selected: .ms-core-listMenu-horizontalBox li.static > .ms-core.listMenu-selected</p></li><li><p>New Item Hover: .mscore-listMenu-horizontalBox li.static > a.ms-core-listMenu-item:hover</p></li><li><p>Flyout Arrow: .ms-core-listMenu-horizontalBox .dynamic-children.additional-background</p></li><li><p>Nav Item (corresponding to top-level menu items): .ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item</p></li><li><p>Flyout Item: ul.dynamic .ms-core-listMenu-item</p></li><li><p>Flyout Container: ul.dynamic</p></li><li><p>Edit Links: .ms-navedit-editLinksText > span> .ms-metadata</p></li></ul>Corresponding CSS (in edit mode): <ul xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><li><p>Nav Edit Mode Link: .ms-core-listMenu-horizontalBox .ms-core-listMenuEdit > tr> .msnavedit-linkCell > .ms-core-listMenu-item</p></li><li><p>Add Link: .ms-core-listMenu-horizontalBox a.ms-navedit-addNewLink</p></li></ul>||
+|Seitentitel|Entsprechende CSS (im Bearbeitungsmodus): <ul xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><li><p>Page Title and Page Title with Link: .ms-core-pageTitle, .ms-core-pageTitle a</p></li><li><p>Description button: #ms-pageDescriptionDiv</p></li><li><p>Description box: .js-callout-mainElement</p></li><li><p>Description box arrow: .js-callout-beak</p></li><li><p>Description text: .js-callout-body</p></li></ul>||
+|Search box|Nav CSOM/JSOM<p>Master</p>Corresponding CSS: <ul xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><li><p>Search Box Border: .ms-srch-sb-border</p></li><li><p>Search Box Border Hover: .ms-srch-sb-border: hover</p></li><li><p>Search Box Border when clicked: .ms-srch-sb-borderFocused</p></li><li><p>Search Box Input Text Box: .ms-srch-sb-borderFocused</p></li><li><p>Search Box Body: .ms-srch-sb</p></li><li><p>Search Box Input Text Box: .ms-srch-sb-searching</p></li><li><p>Suche</p></li></ul>||
+|Left navigation|Nav CSOM/JSOM<p>Master</p>|For more information see: <ul xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><li><p><a href="https://msdn.microsoft.com/en-us/library/office/ms558975(v=office.14).aspx" target="_blank">How to: Customize Navigation in SharePoint Server</a></p></li><li><p><a href="http://msdn.microsoft.com/library/c9da5011-3c73-4b83-8e00-e7a03a71ed02(Office.15).aspx" target="_blank">Managed navigation in SharePoint 2013</a></p></li></ul>|
+|Tree view|.master|For more information, see [How to customize the built-in Treeview navigator](https://social.msdn.microsoft.com/Forums/sharepoint/en-US/dd4d49fd-e107-469d-b326-d37c86ff66b8/how-to-customize-the-builtin-treeview-navigator-?forum=sharepointcustomizationprevious).|
+|Page content|Page Layout/Content Pages<br>Web Part Zone/Web Parts<p>Corresponding CSS (Web Part Zone and Web Part):</p><ul xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><li><p>Web Part Zone: .ms-webpart-zone</p></li><li><p>Web Part Holder: .ms-webpartzone-cell</p></li><li><p>Web Part Title: .ms-webpart-titleText</p></li><li><p>Web Part Title with Link: .ms-webpart-titleText > a</p></li><li><p>Web Part Body: .ms-WPBody</p></li></ul>|For more information, see [How to: Create a page layout in SharePoint 2013](http://msdn.microsoft.com/library/5447e6a1-2f14-4667-81d0-7514b468be80%28Office.15%29.aspx)|
 
-Beispiele im Zusammenhang mit Bereichen einer Seite anpassen finden Sie im folgenden in der [Office 365 Developer Mustern und Methoden](https://github.com/SharePoint/PnP/tree/dev) Projekt auf GitHub:
+For samples related to customizing regions of a page, see the following in the [Office 365 Developer patterns and practices](https://github.com/SharePoint/PnP/tree/dev) project on GitHub:
 
 - [Branding.AlternateCSSAndSiteLogo](https://github.com/SharePoint/PnP/tree/master/Samples/Branding.AlternateCSSAndSiteLogo)
     
 - [Branding.Themes](https://github.com/Lauragra/PnP/tree/master/Scenarios/Branding.Themes)
 
-### <a name="required-minimal-content-placeholders-in-default-sharepoint-master-pages"></a>"Minimale" Inhaltsplatzhalter in der standardmäßigen SharePoint-Gestaltungsvorlagen erforderlich
+### <a name="required-minimal-content-placeholders-in-default-sharepoint-master-pages"></a>Required "minimal" content placeholders in default SharePoint master pages
 
-SharePoint Master Pages erfordern für die Verwendung von Platzhaltern für Inhalte, die die grundlegenden Content und strukturellen Elemente zu rendern, die eine SharePoint-Seite zur Unterstützung der Lebenszyklus der Seite muss. In Tabelle 2 aufgeführt und beschrieben die Inhaltsplatzhalter.
+SharePoint .master pages require that you use content placeholders, which render the basic content and structural elements that a SharePoint page needs to support the page lifecycle. Table 2 lists and describes the content placeholders.
 
-**In Tabelle 2. Mindestens erforderliche Inhaltsplatzhalter für eine SharePoint-Gestaltungsvorlage**
+**Table 2. Minimum required content placeholders for a SharePoint master page**
 
-|**Platzhalter für Inhalt**|**Enthält Inhalt für**|
+|**Content placeholder**|**Holds content for**|
 |:-----|:-----|
 |PlaceHolderAdditionalPageHead|Zusätzliche Elemente in der <head> eine Seite im Abschnitt.|
 |PlaceHolderBodyAreaClass|Zusätzliche Formatvorlagen in der Kopfzeile.|
@@ -183,9 +183,9 @@ SharePoint Master Pages erfordern für die Verwendung von Platzhaltern für Inha
 |PlaceHolderQuickLaunchBottom|Ende der schnellstartnavigation (Navigation oben).|
 |PlaceHolderQuickLaunchTop|Oberen Rand der schnellstartnavigation (Navigation oben).|
 |"PlaceHolderSearchArea"|Der Bereich, in dem Feld für die Suche Steuerelement, angezeigt wird (Suchfeld).|
-|PlaceHolderSiteName|Der Name der Website (Suitenavigation).|
-|PlaceHolderTitleAreaClass|Der Titelbereich der Seite (Suitenavigation).|
-|PlaceHolderTitleAreaSeparator|Schatten im Titelbereich (Suitenavigation).|
+|PlaceHolderSiteName|The name of the site (Suite Navigation).|
+|PlaceHolderTitleAreaClass|The title area of the page (Suite Navigation).|
+|PlaceHolderTitleAreaSeparator|Shadows in the title area (Suite Navigation).|
 |PlaceHolderTitleBreadCrumb|Content Breadcrumb Titelbereich. |
 |PlaceHolderTitleLeftBorder|Am linken Seitenrand Titelbereich (Suitenavigation).|
 |PlaceHolderTitleRightMargin|Der rechte Rand der Titelbereich (Suitenavigation).|
@@ -212,7 +212,7 @@ SharePoint Online stellt neue gestaltungsvorlagenmarkup für das Steuerelement *
 
 ### <a name="use-csom-to-customize-the-regions-of-a-sharepoint-page"></a>Verwenden Sie CSOM zum Anpassen von Regionen einer SharePoint-Seite
 
-Im Allgemeinen wird empfohlen, dass Sie die [UserCustomAction](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.usercustomaction.aspx) -Klasse zum Hinzufügen oder Entfernen von Hyperlinks und anderen Elementen verwenden. Dies ist ein Variant-Wert mit SharePoint mithilfe von [CustomAction](https://msdn.microsoft.com/en-us/library/office/ms460194.aspx) -Elements, die Sie als Teil der Feature-Framework erkennen möglicherweise, wenn Sie mit dem Objektmodell voll vertrauenswürdiger Code vertraut. Obwohl das **CustomAction** -Element und Feature Framework provisioning Muster sind insbesondere im Client-seitigen Objektmodell (CSOM) nicht unterstützt, können die gleichen Speicherort Bezeichner **CustomAction** -Elements zur Verfügung in CSOM-Code verwendet werden .
+Im Allgemeinen wird empfohlen, dass Sie die [UserCustomAction](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.usercustomaction.aspx) -Klasse zum Hinzufügen oder Entfernen von Hyperlinks und anderen Elementen verwenden. Dies ist ein Variant-Wert mit SharePoint mithilfe von [CustomAction](https://msdn.microsoft.com/en-us/library/office/ms460194.aspx) -Elements, die Sie als Teil der Feature-Framework erkennen möglicherweise, wenn Sie mit dem Objektmodell voll vertrauenswürdiger Code vertraut. Although the **CustomAction** element and feature framework provisioning pattern are not specifically supported in the client-side object model (CSOM), the same location identifiers available to the **CustomAction** element can be used in CSOM code.
 
 ```
 <CustomAction
@@ -244,27 +244,27 @@ Im Allgemeinen wird empfohlen, dass Sie die [UserCustomAction](https://msdn.micr
 
 ### <a name="customize-the-sharepoint-ribbon"></a>Anpassen des Menübands für SharePoint
 
-Wenn Sie das Menüband anpassen, wird der HTML-Code, die der Server rendert der Klassenname zugewiesen, die eine benutzerdefinierte Formatvorlage zugewiesen. Verwenden Sie dieses Feature, wechseln in die Formatbibliothek, und erstellen eine neue CSS-Datei für jede Formatvorlage, die Sie im Menüband hinzufügen möchten. Sie können benutzerdefinierte Formate zwei Abschnitte des Menübands hinzufügen: **Seitenelemente** und **Textarten.** Verwenden Sie die folgende Syntax für die Formate, die Sie hinzufügen:
+When you customize the ribbon, the HTML that the server renders is assigned to the class name that you assign to a custom style. To use this feature, go to the Style Library and create a new CSS file for each style that you want to add to the ribbon. Sie können benutzerdefinierte Formate zwei Abschnitte des Menübands hinzufügen: **Seitenelemente** und **Textarten.** Verwenden Sie die folgende Syntax für die Formate, die Sie hinzufügen:
 
 - Für die ** Seite Elemente ** Abschnitt: `span.ms-rteElement-<yourowndefinedname>`. Alternativ können Sie die Formatvorlagen H1, H2, H3 oder H4, die den Text umbrochen werden, die auf die Formatvorlage angewendet wird.
     
-- Für den Abschnitt **Textarten** : `.ms-rteEStyle-<yourowndefinedname>`.
+- For the  **Text Styles** section: `.ms-rteEStyle-<yourowndefinedname>`.
     
-Fügen Sie dann in der CSS-Klassendefinition die folgende Zeile: 
+Then, in your CSS class definition, add the following line: 
 
 `-ms-name:"The name visual in the ribbon for your style";`
 
-Sie können jetzt abgeschlossen, definieren die Details zu Ihrer benutzerdefinierten CSS-Klasse in Ihrer benutzerdefinierten CSS-Datei.
+Now you can finish defining the details of your custom CSS class in your custom .css file.
 
 ### <a name="customize-suite-navigation-on-a-web-part-page"></a>Anpassen der Suite Navigation auf einer Webpartseite
 
-In SharePoint 2013 hat die Benutzeroberfläche einer modernen Aussehen und Verhalten, die auf der Seite Kacheln basiert. Beispielsweise werden Live Kacheln auf der Standardseite für SharePoint 2013 standardmäßig angezeigt. Der oberen Navigationsleiste erleichtert es Benutzern, anzuzeigen und Zugriff auf soziale Inhalte und OneDrive für Unternehmen. Sie können das Aussehen und Verhalten dieser Bereiche mithilfe einer Mischung aus CSS- und JavaScript anpassen.
+In SharePoint 2013, the UI has a modern look and feel that is based on page tiles. For example, Live Tiles appear on the default SharePoint 2013 page by default. Der oberen Navigationsleiste erleichtert es Benutzern, anzuzeigen und Zugriff auf soziale Inhalte und OneDrive für Unternehmen. You can customize the look and feel of these areas by using a mix of CSS and JavaScript.
 
-Nach der Erstellung einer Webpartseite fügen Sie ein Skript-Editor Web Part (SEWP hinzu) eine Webpartzone verfügbar. In diesem Webpart können Sie JavaScript zu einer Seite hinzufügen. Sie können die SEWP JavaScript-Code hinzufügen, die die oberen Navigationsleiste durch seine **ElementId**identifiziert und dann ausblenden, indem Sie die Visibility-Eigenschaft auf ausgeblendete festlegen.
+After you create a Web Part page, add a Script Editor Web Part (SEWP) to an available Web Part zone. You can use this Web Part to add JavaScript to your page. You can add JavaScript code to the SEWP that identifies the top navigation bar by its  **ElementId**, and then hide it by setting its visibility property to hidden.
 
-### <a name="customize-the-settings-menu-or-gear"></a>Anpassen der im Menü Einstellungen oder Zahnrad
+### <a name="customize-the-settings-menu-or-gear"></a>Customize the Settings menu or gear
 
-Einträge Eigenschaftensammlung [UserCustomAction](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.usercustomaction.aspx) -Klasse und -Eigenschaft können Sie von einer beliebigen SharePoint-Website im Einstellungsmenü anpassen, wie im folgenden Codebeispiel dargestellt.
+You can use the [UserCustomAction](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.usercustomaction.aspx) class and property bag entries to customize the settings menu of any SharePoint site, as shown in the following code example.
 
 ```
 public void AddCustomActions(ClientContext clientContext)
@@ -300,9 +300,9 @@ public void AddCustomActions(ClientContext clientContext)
 }
 ```
 
-### <a name="customize-the-tree-view"></a>Anpassen der Strukturansicht
+### <a name="customize-the-tree-view"></a>Customize the tree view
 
-Um die Breite der Strukturansicht zu ändern, Hinzufügen einer `<div>` markieren, um das Tag Struktur in die master-Seite, und weisen Sie eine CSS-Klasse mit einer Formatvorlage Breite-Attribut die `<div>`. Sie können die Breite des **der schnellstartnavigation** erhöhen, indem Sie die CSS-Datei die folgenden Formatvorlagendefinition hinzufügen.
+To modify the width of the tree view, add a  `<div>` tag around the tree tag in the .master page and assign a CSS class with a style width attribute to the `<div>`. You can increase the width of the  **Quick Launch** navigation by adding the following style definition to the .css file.
 
 ```
 .ms-nav {
@@ -310,15 +310,15 @@ Um die Breite der Strukturansicht zu ändern, Hinzufügen einer `<div>` markiere
 }
 ```
 
-### <a name="customize-page-content"></a>Anpassen von Seiteninhalten
+### <a name="customize-page-content"></a>Customize page content
 
-Anforderungen für das Anpassen von Seiteninhalten richten sich nach den Inhalt, den Sie auf der Seite aufnehmen möchten. Wie bei anpassen im Menü **Websiteaktionen** , können Sie ein [UserCustomAction](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.usercustomaction.aspx) -Objekt branding mit Webparts bereit.
+Requirements for customizing page content depend on the content you're including in your page. As for customizing the  **Site Actions** menu, you can use a [UserCustomAction](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.usercustomaction.aspx) object to provision branding to Web Parts.
 
-Wenn Sie eine Veröffentlichungswebsite erstellen, finden Sie unter [Vorgehensweise: Erstellen eines Seitenlayouts in SharePoint 2013](http://msdn.microsoft.com/library/5447e6a1-2f14-4667-81d0-7514b468be80%28Office.15%29.aspx) zu die Grundlagen vertraut zu machen. Seitenlayouts hängen die Verfügbarkeit der [ContentTypeId](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.contenttypeid.aspx) -Klasse in CSOM. Wie bei anderen Elementen, die in CSOM nicht verfügbar sind, können Sie einen Windows Communication Foundation (WCF)-Dienst **ContentTypeId** als vorübergehende Lösung entwickelt.
+If you are building a publishing site, see [How to: Create a page layout in SharePoint 2013](http://msdn.microsoft.com/library/5447e6a1-2f14-4667-81d0-7514b468be80%28Office.15%29.aspx) to learn the basics. Page layouts depend on the availability of the [ContentTypeId](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.contenttypeid.aspx) class in CSOM. As for other members that aren't available in CSOM, you can use a Windows Communication Foundation (WCF) service to work with **ContentTypeId** as a temporary workaround.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Lösungen für das SharePoint-Websitebranding und die Seitenanpassung](SharePoint-site-branding-and-page-customization-solutions.md)
     
-- [Branding und Bereitstellen von Lösungen für SharePoint 2013 und SharePoint Online-Website](Branding-and-site-provisioning-solutions-for-SharePoint.md)
+- [Branding and site provisioning solutions for SharePoint 2013 and SharePoint Online](Branding-and-site-provisioning-solutions-for-SharePoint.md)

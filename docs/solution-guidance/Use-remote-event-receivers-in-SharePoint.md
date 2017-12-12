@@ -1,11 +1,11 @@
 ---
 title: "Verwenden von remote-Ereignisempfänger in SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 713e1b42682a315626e2d121710931c64e86961e
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 73ad90bdcf96c2ca31e94e76d9c22bb196b69712
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-remote-event-receivers-in-sharepoint"></a>Verwenden von remote-Ereignisempfänger in SharePoint
 
@@ -25,7 +25,8 @@ Das [Core.EventReceivers](https://github.com/SharePoint/PnP/tree/master/Samples/
 
 - Ergänzen Sie die Änderung Log-Lösung. Verwenden das remote-Ereignisempfänger Muster mit einem Change-Log-Muster bietet eine zuverlässigere Architektur für die Verarbeitung aller Änderungen an SharePoint-Inhaltsdatenbanken, Websitesammlungen, Websites oder Listen. Remote-Ereignisempfänger sofort ausgeführt, aber, da sie auf einem Remoteserver ausgeführt werden, treten möglicherweise ein Fehler bei der Kommunikation. Das Muster der Änderung Protokoll wird sichergestellt, dass alle Änderungen für die Verarbeitung verfügbar sind, aber die Anwendung die Änderungen bei der Verarbeitung in der Regel nach einem Zeitplan (beispielsweise einen Zeitgeberauftrag) ausgeführt wird. Dies bedeutet, dass die Änderungen nicht sofort verarbeitet werden. Wenn Sie diese beiden Muster gemeinsam verwenden, stellen Sie sicher, dass Sie einen Mechanismus verwenden, um zu verhindern, dass die gleiche Änderung zweimal verarbeiten. Weitere Informationen finden Sie unter [Abfrage SharePoint Änderungsprotokoll mit komplexer ChangeQuery und komplexer ChangeToken](query-sharepoint-change-log-with-changequery-and-changeToken.md).
 
-**Hinweis**  SharePoint-Hosting-add-ins unterstützt remote-Ereignisempfänger nicht. Um remote-Ereignisempfänger verwenden, müssen Sie eine vom Anbieter gehosteten-add-in verwenden. Sollten Sie remote-Ereignisempfänger nicht verwenden, für die Synchronisierung oder lange ausgeführte Prozesse. Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen eines Ereignisempfängers-Add-in](https://msdn.microsoft.com/library/office/jj220052.aspx).
+> [!NOTE] 
+> SharePoint-Hosting-add-ins unterstützt remote-Ereignisempfänger nicht. Um remote-Ereignisempfänger verwenden, müssen Sie eine vom Anbieter gehosteten-add-in verwenden. Sollten Sie remote-Ereignisempfänger nicht verwenden, für die Synchronisierung oder lange ausgeführte Prozesse. Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen eines Ereignisempfängers-Add-in](https://msdn.microsoft.com/library/office/jj220052.aspx).
 
 ## <a name="before-you-begin"></a>Bevor Sie beginnen:
 <a name="sectionSection0"> </a>
@@ -124,9 +125,11 @@ Die **ProcessEvent** behandelt die folgenden remote **SPRemoteEventType** -Ereig
     
 -  **ItemAdded** -Ereignisse, wenn eine Liste ein Element hinzugefügt wird. **ItemAdded** -Ereignis tritt auf, **ProcessEvent** Anrufe **HandleItemAdded**.
 
-**Hinweis**  In den Projekteigenschaften Core.EventReceiver stehen nur Eigenschaften **Handle App Installed** und **App-Deinstallation behandeln** . In diesem Codebeispiel wird veranschaulicht, wie Sie den **ItemAdded** -Ereignis-Handler zu einer Liste auf dem hostweb mithilfe des **AppInstalled** -Ereignisses während der Add-in-Installation hinzufügen.
+> [!NOTE] 
+> In den Projekteigenschaften Core.EventReceiver stehen nur Eigenschaften **Handle App Installed** und **App-Deinstallation behandeln** . In diesem Codebeispiel wird veranschaulicht, wie Sie den **ItemAdded** -Ereignis-Handler zu einer Liste auf dem hostweb mithilfe des **AppInstalled** -Ereignisses während der Add-in-Installation hinzufügen.
 
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
@@ -272,7 +275,7 @@ Wenn der **Remote Event Receiver Aufträge** Liste ein Element hinzugefügt wird
         }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)
