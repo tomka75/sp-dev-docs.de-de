@@ -3,15 +3,15 @@ title: Entwickeln des Websitedesigns in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 4c061484-2ba5-45ea-9860-aec9d7c8f80e
-ms.openlocfilehash: 36eaf6c36f53133567984c39b168b3617b5dd7cb
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 000eda61eae8230966f311a25a83518a4b1cdd1f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="develop-the-site-design-in-sharepoint"></a>Entwickeln des Websitedesigns in SharePoint
 Hier finden Sie Links zu Informationen über die Verwendung des Entwurfs-Managers und die Implementierung eines Designs für Ihre SharePoint-Website.
-Wenn Ihre SharePoint-Website die Marke Ihres Organisation darstellen und nicht „wie SharePoint aussehen“ soll, können Sie ein benutzerdefiniertes Designs erstellen und den Entwurfs-Manager verwenden, um dieses Ziel zu erreichen. Der Entwurfs-Manager ist ein Feature in SharePoint, das die Erstellung eines individuell angepassten, pixelgenauen Designs mit den Ihnen bereits vertrauten Webdesigntools erleichtert. Der Entwurfs-Manager ist ein Veröffentlichungsfeature, das in Veröffentlichungswebsites in SharePoint und Office 365 verfügbar ist. Sie können den Entwurfs-Manager auch verwenden, um die für die Öffentlichkeit zugängliche Website in Office 365 mit Branding zu versehen.
+Wenn Ihre SharePoint-Website die Marke Ihres Organisation darstellen und nicht „wie SharePoint aussehen“ soll, können Sie ein benutzerdefiniertes Designs erstellen und den Entwurfs-Manager verwenden, um dieses Ziel zu erreichen. Der Entwurfs-Manager ist ein Feature in SharePoint und macht es einfacher, vollständig individuell angepasste, pixelgenaue Designs zu erstellen, mit den Ihnen bereits vertrauten Webdesigntools. Der Entwurfs-Manager ist ein Veröffentlichungsfeature, das in Veröffentlichungswebsites in SharePoint und Office 365 verfügbar ist. Sie können den Entwurfs-Manager auch verwenden, um die für die Öffentlichkeit zugängliche Website in Office 365 mit Branding zu versehen.
   
     
     
@@ -30,7 +30,7 @@ Weitere Informationen zur Verwendung des Entwurfs-Managers zum Anpassen Ihrer We
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

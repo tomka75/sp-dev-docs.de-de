@@ -3,11 +3,11 @@ title: Das XLIFF-Interchange-Dateiformat in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 660c0f07-7030-4576-957e-b9f2cd0fa895
-ms.openlocfilehash: fb3a0454d972fa54a99bff693b97a716ec3f95ce
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 106110eb458cf6cd76ebc67fd8516cbcb4358a4f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="the-xliff-interchange-file-format-in-sharepoint"></a>Das XLIFF-Interchange-Dateiformat in SharePoint
 Abrufen von Informationen über die SharePoint Implementierung der XLIFF-Austauschdateiformat, einschließlich Schema Referenzinformationen und ein Beispiel für XML.
@@ -94,7 +94,7 @@ Im folgenden Beispiel wird eine XML-Dokuments in XLIFF-Austauschdateiformat vera
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

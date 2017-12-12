@@ -2,11 +2,11 @@
 title: Ermitteln von URIs von SharePoint-REST-Dienstendpunkten
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 4ed85227dda62357f080c9bfc01ab68d84028189
-ms.sourcegitcommit: 61f26b4fe41d3cd80622d9950d8f6599df48f26f
+ms.openlocfilehash: efe42ece3ee16ebff3f69d71e1e1b1fb7aabf209
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="determine-sharepoint-rest-service-endpoint-uris"></a>Ermitteln von URIs von SharePoint-REST-Dienstendpunkten
 Informieren Sie sich über allgemeine Richtlinien zur Ermittlung von URIs von SharePoint-REST-Endpunkten mithilfe der Signatur der entsprechenden Clientobjektmodell-APIs.
@@ -221,7 +221,7 @@ Die Abbildung unten veranschaulicht die Syntax, die der SharePoint-REST-Dienst f
 Wenn Sie die von einem Endpunkt angeforderten Daten auswählen, filtern oder sortieren möchten, unterstützt der SharePoint-REST-Dienst eine breite Palette von OData-Abfragezeichenfolgen-Operatoren. 
  
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Grundlegendes zum SharePoint REST-Dienst](get-to-know-the-sharepoint-rest-service.md)

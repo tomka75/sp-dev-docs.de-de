@@ -3,11 +3,11 @@ title: Erweitern der Exportfunktion mit festgelegtem Format in Word Automation S
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d8375505-432e-438e-971b-221a1d9bb601
-ms.openlocfilehash: de50843d70b07089a27ac8601fc76377717fd135
-ms.sourcegitcommit: 61f26b4fe41d3cd80622d9950d8f6599df48f26f
+ms.openlocfilehash: aad6cd52499a1599b15625d245e48eb46a7862be
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="extend-the-fixed-format-export-feature-in-word-automation-services"></a>Erweitern der Exportfunktion mit festgelegtem Format in Word Automation Services
 Erweitern Sie Word Automation Services in Microsoft Office 2013 ersetzen Sie die Bibliothek, die von der Funktion zum Exportieren in feste Formate verwendet.
@@ -176,7 +176,7 @@ Wenn die DLL-Datei für Exporte mit festgelegtem Format aktiv ist, muss sie in r
     
     
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 Weitere Informationen finden Sie in den folgenden Ressourcen:

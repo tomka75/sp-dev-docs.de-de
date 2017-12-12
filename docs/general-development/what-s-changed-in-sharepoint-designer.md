@@ -3,11 +3,11 @@ title: "Änderungen in SharePoint Designer 2013"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f1cd30c9-9a73-428d-9151-f1813b43b020
-ms.openlocfilehash: e336ccd9ad1a257ffa3c8bb44ed3b4933c8784ea
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 9f11714bff2ffe3c1052f37fa7a337f31ada9b42
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="whats-changed-in-sharepoint-designer-2013"></a>Änderungen in SharePoint Designer 2013
 Hier erhalten Sie Informationen zu Features, die veraltet sind oder aus SharePoint Designer 2013 entfernt wurden. Veraltete Features sind in SharePoint aus Kompatibilitätsgründen mit der vorherigen Produktversion weiterhin vorhanden, werden aber in zukünftigen Versionen entfernt.
@@ -175,19 +175,17 @@ Wenn Sie Ihre Webseite visuell gestalten oder mit einer Marke versehen möchten 
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="WhatsChangedSharePointDesigner2013_AdditionalResources"> </a>
 
 
 -  [Kurzübersicht zu Workflowaktionen (SharePoint-Workflowplattform)](workflow-actions-quick-reference-sharepoint-workflow-platform.md)
     
   
--  
-  [Unterschiede zwischen SharePoint 2010 und SharePoint 2013](http://technet.microsoft.com/en-us/library/ff607742%28v=office.15%29.aspx)
+-  [Unterschiede zwischen SharePoint 2010 und SharePoint 2013](http://technet.microsoft.com/de-DE/library/ff607742%28v=office.15%29.aspx)
     
   
--  
-  [Neu in SharePoint-Workflows](http://technet.microsoft.com/en-us/library/jj219638%28v=office.15%29.aspx)
+-  [Neu in SharePoint-Workflows](http://technet.microsoft.com/de-DE/library/jj219638%28v=office.15%29.aspx)
     
   
 

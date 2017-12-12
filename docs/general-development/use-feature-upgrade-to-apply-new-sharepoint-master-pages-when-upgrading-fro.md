@@ -3,11 +3,11 @@ title: "Verwenden eines Featureupgrades für das Anwenden neue SharePoint-Gestal
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: de3169f1-715e-4f80-bfbf-caea744e2a0b
-ms.openlocfilehash: 7ffa948154a5d78b9c65b88275c278d46d49a849
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3f370357d065ae858d0f21d8c4d59d927d55805f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-feature-upgrade-to-apply-new-sharepoint-master-pages-when-upgrading-from-sharepoint-2010"></a>Verwenden eines Featureupgrades für das Anwenden neue SharePoint-Gestaltungsvorlagen bei einem Upgrade von SharePoint 2010
 Learn how to reset a custom master page during the  `FeatureUpgrading` event when you're upgrading a SharePoint site from the 2010 to the 2013 compatibility mode. When you upgrade your SharePoint 2010 customizations to SharePoint, any references to custom master pages you've created switch back to the default.master page. If you've deployed a feature that contains one or more custom master pages to an upgraded SharePoint site collection that is running in SharePoint 2010 compatibility mode you'll need to reset your SharePoint master pages when you upgrade to the 2013 compatibility mode. This topic explains how to use a feature receiver to make sure that your SharePoint custom master pages get reset when you upgrade from SharePoint 2010. 
@@ -133,7 +133,7 @@ Once you're done with the upgrade, you'll want to think about the future and lon
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

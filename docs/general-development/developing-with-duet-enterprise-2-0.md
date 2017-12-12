@@ -3,11 +3,11 @@ title: Entwickeln mit Duet Enterprise 2.0
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c3ef38aa-559e-4832-95c7-75e222c77624
-ms.openlocfilehash: 15b9ac70484db215dd36a46d3648999aa26664e5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6694ddfdd6b312f59d0449643f8743f119b506dd
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="developing-with-duet-enterprise-20"></a>Entwickeln mit Duet Enterprise 2.0
 
@@ -155,21 +155,20 @@ Diese Lösungen werden kann, finden Sie unter Was mit Duet Enterprise 2.0 ausgef
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="ConNavExample_resources"> </a>
 
 
--  
-  [Duet Enterprise für Microsoft SharePoint und SAP Server 2.0](http://technet.microsoft.com/en-us/library/ff972436.aspx)
+-  [Duet Enterprise für Microsoft SharePoint und SAP Server 2.0](http://technet.microsoft.com/de-DE/library/ff972436.aspx)
     
   
 -  [Gewusst wie: Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint](how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint.md)
     
   
--  [Visual Studio Developer Center](http://msdn.microsoft.com/en-us/vstudio/default)
+-  [Visual Studio Developer Center](http://msdn.microsoft.com/de-DE/vstudio/default)
     
   
--  [Office-Entwicklung mit Visual Studio](http://msdn.microsoft.com/en-us/office/hh133430)
+-  [Office-Entwicklung mit Visual Studio](http://msdn.microsoft.com/de-DE/office/hh133430)
     
   
 

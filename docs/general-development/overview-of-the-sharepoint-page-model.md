@@ -3,11 +3,11 @@ title: "Übersicht über das SharePoint-Seitenmodell"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 808b1af3-89ab-4f02-89cc-ea86cb1f9a6e
-ms.openlocfilehash: 68d0fb01999767ad2697928d6d5f715e1dcef941
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c4b92c40cf047d33b7617fc5cba214ce1832cbb6
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="overview-of-the-sharepoint-page-model"></a>Übersicht über das SharePoint-Seitenmodell
 Informationen zum überarbeiteten Seitenmodell, einschließlich Gestaltungsvorlagen und Seitenlayouts, für SharePoint.
@@ -611,7 +611,7 @@ Oder Sie können einen Kanalbereich innerhalb der Elementanzeigevorlage eines In
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_AdditionalResources"> </a>
 
 

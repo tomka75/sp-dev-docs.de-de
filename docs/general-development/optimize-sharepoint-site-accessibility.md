@@ -3,11 +3,11 @@ title: Optimieren von SharePoint-Website zur Barrierefreiheit
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 0a3fbfb3-1a0b-4902-9317-525cf2f63d98
-ms.openlocfilehash: 9baf0d71c9893071db490cd12c099a9ef7bd8ef2
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: d98403903187b21a38769750c3212778b79a05af
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="optimize-sharepoint-site-accessibility"></a>Optimieren von SharePoint-Website zur Barrierefreiheit
 Verbessern Sie den Zugriff auf Ihre SharePoint-Seiten. Verbessern der SharePoint-Website-Benutzeroberfläche für Benutzer mit einer Vielzahl von Barrierefreiheit. Einige SharePoint-Websites veröffentlicht möglicherweise nicht nutzen Sie die Barrierefreiheitsfeatures, die verfügbar sind, welche können erschweren sie für Menschen mit behinderungen verwenden. Dieser Artikel enthält Informationen, die Ihnen bei der Optimierung Ihrer SharePoint-Website für Eingabehilfen helfen. 
@@ -37,7 +37,7 @@ Alternativer Text ist für die Sprachausgabe zum Lesen von nicht-Textinhalte auf
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

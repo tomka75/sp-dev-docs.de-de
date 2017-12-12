@@ -3,11 +3,11 @@ title: Neuigkeiten in Access
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 625bc1d0-55db-4420-a02e-aee04028b215
-ms.openlocfilehash: df9d6abbc550bf070968d479e5639c5f7fba08df
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2e04315f9700759198cf93ba0014f0821889ea4a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="whats-new-in-access"></a>Neuigkeiten in Access
 Hier finden Sie Informationen zu den Features in Access 2013, welche die Erstellung, Bereitstellung und Verwaltung von webbasierten Anwendungen für die Zusammenarbeit lokal oder in der Cloud erleichtern.
@@ -73,7 +73,7 @@ Weitere Informationen zur Entwicklung von Access 2013-Apps finden Sie unter [Gew
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15_access15overview_addres"> </a>
 
 

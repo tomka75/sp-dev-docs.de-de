@@ -3,11 +3,11 @@ title: "Business Connectivity Services-Programmierreferenz für SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: cfc9bdf8-ddf3-40e1-83d9-dbd304cebd57
-ms.openlocfilehash: 57a421903fa1307ca86ea1f7f346d66548503e1c
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 383abec307109491c9875fb20f514437d33d6312
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="business-connectivity-services-programmers-reference-for-sharepoint"></a>Business Connectivity Services-Programmierreferenz für SharePoint
 
@@ -48,7 +48,7 @@ Hier finden Sie Referenzinformationen beim Erstellen von Lösungen mithilfe von 
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 
 
 -  [Business Connectivity Services in SharePoint](business-connectivity-services-in-sharepoint.md)

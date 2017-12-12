@@ -3,11 +3,11 @@ title: Benutzerdefinierte Inhaltsverarbeitung mit der Content Enrichment-Webdien
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: bdda92c8-9c8d-416e-9a6b-4a9373686fa0
-ms.openlocfilehash: 621505bfb2ee7c406d55cad2c76061bdd4cb7114
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 7aa11f7002ab6c8440311d69a1869c303d6da617
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="custom-content-processing-with-the-content-enrichment-web-service-callout"></a>Benutzerdefinierte Inhaltsverarbeitung mit der Content Enrichment-Webdienstlegende
 Informationen Sie zu den Content inhaltsanreicherung in SharePoint, die Entwickler zum Erstellen eines externen Webdiensts um verwaltete Eigenschaften für durchforsteten Elemente während der inhaltsverarbeitung ändern können. Suche in SharePoint ermöglicht Benutzern, die verwalteten Eigenschaften der durchforsteten Elemente zu ändern, bevor sie durch Aufrufen von an einen Webdienst externe inhaltserweiterung indiziert sind. Die Möglichkeit zum Ändern von verwalteter Eigenschaften für Elemente während der inhaltsverarbeitung ist hilfreich, beim Ausführen von Aufgaben wie DatenBereinigung, entitätsextraktion, Klassifizierung und Kategorien.
@@ -69,20 +69,16 @@ Um die Webdienstclients zu konfigurieren, verwenden Sie die folgenden Windows Po
     
     
 
--  
-  [Get-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219783%28office.15%29.aspx)
+-  [Get-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-DE/library/jj219783%28office.15%29.aspx)
     
   
--  
-  [Set-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219659%28office.15%29.aspx)
+-  [Set-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-DE/library/jj219659%28office.15%29.aspx)
     
   
--  
-  [Remove-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219742%28office.15%29.aspx)
+-  [Remove-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-DE/library/jj219742%28office.15%29.aspx)
     
   
--  
-  [New-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219502%28office.15%29.aspx)
+-  [New-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-DE/library/jj219502%28office.15%29.aspx)
     
   
 Tabelle 1 enthält die Eigenschaften, die Sie über die weiter oben erwähnten Windows PowerShell-Cmdlets konfigurieren können.
@@ -109,7 +105,7 @@ Tabelle 1 enthält die Eigenschaften, die Sie über die weiter oben erwähnten W
 ### <a name="how-to-list-all-read-only-managed-properties-for-the-content-enrichment-web-service"></a>Gewusst wie: Auflisten aller schreibgeschützte verwaltete Eigenschaften für den Webdienst Inhaltserweiterung
 <a name="SP15contentprocess_read-only_managed_properties"> </a>
 
-Bestimmte verwalteten Eigenschaften sind schreibgeschützt und können nicht aus dem Webdienst ausgegeben werden. Diese Eigenschaften können aufgelistet werden, mithilfe von  [Get-SPEnterpriseSearchServiceApplication](http://technet.microsoft.com/en-us/library/ff608050%28office.15%29.aspx) und [Get-SPEnterpriseSearchMetadataManagedProperty](http://technet.microsoft.com/en-us/library/ff607560%28office.15%29.aspx)Windows PowerShell-Cmdlets, im folgenden Beispiel dargestellt:
+Bestimmte verwalteten Eigenschaften sind schreibgeschützt und können nicht aus dem Webdienst ausgegeben werden. Diese Eigenschaften können aufgelistet werden, mithilfe von  [Get-SPEnterpriseSearchServiceApplication](http://technet.microsoft.com/de-DE/library/ff608050%28office.15%29.aspx) und [Get-SPEnterpriseSearchMetadataManagedProperty](http://technet.microsoft.com/de-DE/library/ff607560%28office.15%29.aspx)Windows PowerShell-Cmdlets, im folgenden Beispiel dargestellt:
   
     
     
@@ -168,7 +164,7 @@ Führen Sie für eine einfache Implementierung folgende Schritte aus:
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

@@ -3,11 +3,11 @@ title: "Aktualisieren von Anpassungen für SharePoint-Websites"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 4b515860-69ae-4af8-8013-cd071c0ddca6
-ms.openlocfilehash: e2a4c4a29aa71f4a3f1673669ae3dc6ca2795f5e
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4ce3bab5fc777bd7ec2237ecfbfe2ae0d92a89d4
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="upgrade-site-customizations-for-sharepoint"></a>Aktualisieren von Anpassungen für SharePoint-Websites
 Informationen zu potenziellen Problemen und Empfehlungen für das Upgrade Ihrer SharePoint 2010 websiteanpassungen auf SharePoint abrufen. SharePoint führt wurden keine bedeutende Änderungen in der Benutzeroberfläche (UI), mit die Sie Websites mithilfe von schneller und flexiblere Komponenten anpassen kann. Aber wenn Sie von SharePoint 2010 aktualisieren, treten möglicherweise einige Probleme mit den neuen Komponenten, die in SharePoint zum Verarbeiten der Verbesserungen der Benutzeroberfläche erstellt wurden.
@@ -41,11 +41,11 @@ Tabelle 1 werden die möglichen Vorgängen Upgrade Probleme für benutzerdefinie
 |Gestaltungsvorlagen  <br/> |Während des Upgrades werden alle Verweise auf benutzerdefinierte Masterseiten, die Sie erstellt haben, wieder auf der Seite default.master zurückgesetzt. Dies kann Fehler aufgrund von Verweisen auf die benutzerdefinierten Seite auf fehlenden Komponenten in SharePoint führen.  <br/> Um dieses Problem zu beheben, müssen Sie die Verweise auf alle benutzerdefinierten Gestaltungsvorlagen ändern.  <br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
--  [Planen eines Upgrades eine Websitesammlung](https://technet.microsoft.com/en-us/library/ff191199.aspx)
+-  [Planen eines Upgrades eine Websitesammlung](https://technet.microsoft.com/de-DE/library/ff191199.aspx)
     
   
 -  [Branding-Probleme, die beim Upgrade auf SharePoint auftreten können](http://office.microsoft.com/en-us/office365-sharepoint-online-enterprise-help/branding-issues-that-may-occur-when-upgrading-to-sharepoint-HA104052656.aspx?CTT=5&amp;origin=HA104034491)

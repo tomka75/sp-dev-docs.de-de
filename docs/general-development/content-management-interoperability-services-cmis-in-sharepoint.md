@@ -3,11 +3,11 @@ title: CMIS (Content Management Interoperability Services) in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a1def24c-b2db-4bf9-8d2c-02f5628832f8
-ms.openlocfilehash: 564277ef0fdfe48ffe893840c581170389cd3a8e
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b2dafc5c63d7da4398134cd0e57e8edc92b4db39
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="content-management-interoperability-services-cmis-in-sharepoint"></a>CMIS (Content Management Interoperability Services) in SharePoint
 In diesem Artikel erfahren Sie mehr über die SharePoint-Implementierung der Version 1.0 des CMIS-Standards (OASIS Content Management Interoperability Services)
@@ -235,7 +235,7 @@ Das SharePoint-Objektmodell bietet Entwicklern zahlreiche Optionen für Erweiter
   
     
     
-Die SharePoint Server-Implementierung von CMIS verwendet die  [BlockedFileExtensions](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.SPWebApplication.BlockedFileExtensions.aspx) -Eigenschaft, um eine Liste der Dateierweiterungen abzurufen, die nicht auf Websites in der Webanwendung hochgeladen oder von diesen heruntergeladen werden können. CMIS respektiert die [von SharePoint standardmäßig blockierten Dateitypen](http://technet.microsoft.com/en-us/library/cc262496.aspx).
+Die SharePoint Server-Implementierung von CMIS verwendet die  [BlockedFileExtensions](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.SPWebApplication.BlockedFileExtensions.aspx) -Eigenschaft, um eine Liste der Dateierweiterungen abzurufen, die nicht auf Websites in der Webanwendung hochgeladen oder von diesen heruntergeladen werden können. CMIS respektiert die [von SharePoint standardmäßig blockierten Dateitypen](http://technet.microsoft.com/de-DE/library/cc262496.aspx).
   
     
     
@@ -289,14 +289,14 @@ CMIS 1.1 wird in SharePoint nicht unterstützt. Die neuere Version der CMIS-Spez
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15CMIS_AdditionalResources"> </a>
 
 
 -  [Hinzufügen von SharePoint-Funktionen](add-sharepoint-capabilities.md)
     
   
--  [Verwalten von gesperrten Dateitypen in SharePoint](http://technet.microsoft.com/en-us/library/cc262496.aspx)
+-  [Verwalten von gesperrten Dateitypen in SharePoint](http://technet.microsoft.com/de-DE/library/cc262496.aspx)
     
   
 -  [OASIS Content Management Interoperability Specification (CMIS) Version 1.0](http://docs.oasis-open.org/cmis/CMIS/v1.0/os/cmis-spec-v1.0.html)

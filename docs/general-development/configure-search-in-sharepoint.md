@@ -3,11 +3,11 @@ title: Konfigurieren der Suche in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e447127c-2b11-4d65-b46e-01a18cdcdee5
-ms.openlocfilehash: 0fa1ba925fd858ebef033a89bf98f0fe566fb167
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 0109e7f7b9c1028e0ddee988aeda93491d65154c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="configure-search-in-sharepoint"></a>Konfigurieren der Suche in SharePoint
 Erfahren Sie mehr über die zwei Arten von Anpassungen unter SharePoint-Suche: Hinzufügen einer benutzerdefinierten Wörtertrennung und Hinzufügen eines benutzerdefinierten Schritts zum Ändern von verwalteter Eigenschaften für die durchforsteten Elemente während der Inhaltsverarbeitung.
@@ -36,11 +36,11 @@ So ändern Sie verwaltete Eigenschaften in Form von einem externen Inhaltserweit
 -  [Benutzerdefinierte Wörtertrennungen in SharePoint](custom-word-breakers-in-sharepoint-server.md)
     
   
--  [Benutzerdefinierte Inhaltsverarbeitung mit der Content Enrichment-Webdienstlegende](custom-content-processing-with-the-content-enrichment-web-service-callout.md)
+-  [Benutzerdefinierte Inhaltsverarbeitung mit dem Webdienstpopup zur Inhaltsanreicherung](custom-content-processing-with-the-content-enrichment-web-service-callout.md)
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15configsearch_addlresources"> </a>
 
 

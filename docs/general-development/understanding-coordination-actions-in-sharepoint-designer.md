@@ -3,11 +3,11 @@ title: Verstehen von Koordinationsaktionen in SharePoint Designer 2013
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 33fbcf91-0a5d-47ab-85a9-9d2d556a204d
-ms.openlocfilehash: 95a8e8ad85a2f60b81a4b58a2305f3f6dae00187
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2f70d861564d5c1496d72a479e39329cfdc15a88
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="understanding-coordination-actions-in-sharepoint-designer-2013"></a>Verstehen von Koordinationsaktionen in SharePoint Designer 2013
 Koordinationsaktionen in SharePoint Designer 2013 dienen zum Starten eines Workflows, die auf der SharePoint 2010-Workflow-Plattform von innerhalb eines Workflows auf der SharePoint-Workflow-Plattform integriert.
@@ -154,11 +154,11 @@ SharePoint 2010-Workflow-Plattform Workflow-Instanzen, die innerhalb eines Share
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
--  [Neu in SharePoint-Workflows](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)
+-  [Neuerungen in SharePoint-Workflows](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)
     
   
 -  [Erste Schritte mit SharePoint-Workflows](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)

@@ -3,11 +3,11 @@ title: "Erstellen lokalisierter Anwendungen für Windows Phone basierend auf den
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c12d7fd4-8c6b-446b-970b-1eb0e5d0a9b2
-ms.openlocfilehash: 423cd5cfe84bdf23f8991a28eea70f90c83b93cf
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3c55a33469bc580d15a126585ce7ecac4babc841
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="build-localized-applications-for-windows-phone-based-on-the-sharepoint-templates"></a>Erstellen lokalisierter Anwendungen für Windows Phone basierend auf den SharePoint-Vorlagen
 Hier erfahren Sie, wie eine lokalisierbare Windows Phone-app mithilfe der neuen SharePoint-Vorlagen erstellen Erstellen von einem anderen Windows Phone-Vorlagen mithilfe unterscheidet. SharePoint SDK für Windows Phone 7.1 installiert Windows Phone-Projektvorlagen, die Sie zum Erstellen von Windows Phone 7.1 Applications gegen SharePoint oder SharePoint 2010 verwenden können. Weitere Informationen finden Sie unter  [Überblick über Anwendungsvorlagen für Windows Phone SharePoint in Visual Studio](overview-of-windows-phone-sharepoint-application-templates-in-visual-studio.md). 
@@ -49,7 +49,7 @@ Eine schrittweise erklärt wird, wie Sie eine lokalisierte Anwendung für Window
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

@@ -3,11 +3,11 @@ title: Formen in der SharePoint Server-Workflowvorlage in Visio
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f35bdf5d-c102-4e2d-8a23-1d2df17155b9
-ms.openlocfilehash: 0ef12568c05e15ea3bf65ab48cff095128e3f96f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6a30d5d67e40299eaeb96b0bcb4870ee559f8acc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="shapes-in-the-sharepoint-server-workflow-template-in-visio"></a>Formen in der SharePoint Server-Workflowvorlage in Visio
 In diesem Artikel erfahren Sie mehr über die Shapes in der SharePoint-Workflowvorlage in Visio 2013.
@@ -122,7 +122,7 @@ Die folgende Tabelle enthält eine Liste aller Shapes, die in der SharePoint-Abs
 |Parallele Aktion beenden  <br/> |**Paralleler Block** <br/> |–  <br/> ||
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="VSSPD_Additional"> </a>
 
 

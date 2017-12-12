@@ -3,11 +3,11 @@ title: Was ist neu in Business Connectivity Services in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3c96be6a-a8ff-43ad-8361-999293aff71f
-ms.openlocfilehash: f00cb948c43df75b7acc3609af6f48321ec2a608
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2b75381dc43be1fa882a23864bc88336f1b92acf
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="whats-new-in-business-connectivity-services-in-sharepoint"></a>Was ist neu in Business Connectivity Services in SharePoint
 Informationen Sie zu Änderungen und neuen Features in Business Connectivity Services (BCS) für SharePoint, einschließlich der erweiterten Unterstützung für REST, OData, externe Ereignisse und app-bezogenen externen Inhaltstypen. Business Connectivity Services (BCS) wurde in SharePoint 2010 eingeführt, wie eine Verbesserung in den Geschäftsdatenkatalog für Office SharePoint Server 2007 erstellt haben. BCS ermöglicht SharePoint, um Daten aus externen Datensystemen wie SAP, ERP und CRM, zusätzlich zu anderen Applikationen datengesteuerten zugreifen, die über Windows Communication Foundation (WCF) Dienste oder Open Data (OData) Endpunkte verfügbar gemacht werden.
@@ -35,7 +35,7 @@ BCS wurde verbessert und erweitert SharePoint, einschließlich der neuen Funktio
 |Unterstützung für Representational State Transfer (REST) und des Clientobjektmodells wurde verbessert.  <br/> | [Erste Schritte der Verwendung des Clientobjektmodells mit externen Daten in SharePoint](get-started-using-the-client-object-model-with-external-data-in-sharepoint.md) <br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15whatsnewBCS_addresources"> </a>
 
 

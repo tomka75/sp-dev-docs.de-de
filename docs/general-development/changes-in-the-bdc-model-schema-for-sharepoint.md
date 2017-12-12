@@ -3,11 +3,11 @@ title: "Änderungen im BDC-Modellschema für SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 882ea867-9acb-4313-99c9-865a523b72fd
-ms.openlocfilehash: 95048677b9ef34f394c58d4a13c3edf5ab538754
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c95208da93af349ae768df7069c425eb088b8b30
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="changes-in-the-bdc-model-schema-for-sharepoint"></a>Änderungen im BDC-Modellschema für SharePoint
 Hier erfahren Sie, was in SharePoint für das BDC-Modellschema geändert hat. Die Anzahl der Änderungen im Schema (BDCMetadata.xsd) für das Erstellen von BDC-Modelle auf SharePoint ist relativ gering. Aber diese Änderungen erhebliche Auswirkungen auf das Feature Angebote von Business Connectivity Services (BCS) festgelegt haben.
@@ -65,7 +65,7 @@ Die folgende Tabelle enthält die Änderungen an der Attribute der einzelnen Ele
 |Keine Änderungen  <br/> |||
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkmk_AdditionalResources"> </a>
 
 

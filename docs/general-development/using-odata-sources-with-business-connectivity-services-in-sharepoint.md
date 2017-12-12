@@ -3,11 +3,11 @@ title: Verwenden von OData-Quellen mit Business Connectivity Services in SharePo
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7a87e5bf-4428-4055-b113-7665a93e7326
-ms.openlocfilehash: bfa67d4b9d7f3db5306c5bbc3ec1c92b727c1459
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 40dcb00b9ab16c621aafd053691315ea9f4f99f7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="using-odata-sources-with-business-connectivity-services-in-sharepoint"></a>Verwenden von OData-Quellen mit Business Connectivity Services in SharePoint
 Erfahren Sie mehr über die ersten Schritte bei der Erstellung externer Inhaltstypen auf der Basis von OData-Quellen und der Verwendung dieser Daten in SharePoint- oder Office 2013-Komponenten.
@@ -116,7 +116,7 @@ Das Erstellen eines externen Inhaltstyps, der eine OData-Datenquelle verwendet, 
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15GetstartedOdata_addres"> </a>
 
 

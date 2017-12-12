@@ -5,11 +5,11 @@ keywords: vs.sharepointtools.workflow4.workflowlist,VS.SharePointTools.Workflow4
 f1_keywords: vs.sharepointtools.workflow4.workflowlist,VS.SharePointTools.Workflow4.WorkflowName
 ms.prod: sharepoint
 ms.assetid: a2643cd7-474d-4e4c-85bb-00f0b6685a1d
-ms.openlocfilehash: ae4354d1659ab4b70ea11a35f88c7fb8553e4048
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b8b851327808bfa548a9d76bfc66d4127af57295
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="get-started-with-workflows-in-sharepoint"></a>Erste Schritte mit Workflows in SharePoint
 Informationen zum neu entwickelten Workflow-Manager-Client 1.0, der die Infrastruktur für Workflows in SharePoint bereitstellt, und zur Integration von SharePoint-Workflows mit dem neuen Modell für SharePoint-Add-Ins.
@@ -162,7 +162,7 @@ In Visual Studio 2012 sind SharePoint-Workflowprojekttypen integriert. Befolgen 
 
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="information"> </a>
 
 Weitere Informationen zu **SharePoint-Add-Ins** erhalten Sie unter den folgenden Themen:
@@ -198,27 +198,22 @@ Weitere Informationen zu Windows Workflow Foundation 4 erhalten Sie unter den fo
     
     
 
--  
-  [Einführung für Entwickler für Windows Workflow Foundation (WF) in .NET 4](http://msdn.microsoft.com/en-us/library/ee342461.aspx)
+-  [Einführung für Entwickler für Windows Workflow Foundation (WF) in .NET 4](http://msdn.microsoft.com/de-DE/library/ee342461.aspx)
     
   
--  
-  [Neues in Windows Workflow Foundation](http://msdn.microsoft.com/en-us/library/dd489410%28v=vs.110%29.aspx)
+-  [Neues in Windows Workflow Foundation](http://msdn.microsoft.com/de-DE/library/dd489410%28v=vs.110%29.aspx)
     
   
--  [Handbuch für Anfänger mit Windows Workflow Foundation](http://msdn.microsoft.com/en-us/netframework/first-steps-with-wf.aspx)
+-  [Handbuch für Anfänger mit Windows Workflow Foundation](http://msdn.microsoft.com/de-DE/netframework/first-steps-with-wf.aspx)
     
   
--  
-  [Grundlegendes zu Windows Workflow Foundation](http://msdn.microsoft.com/en-us/library/dd851337.aspx)
+-  [Grundlegendes zu Windows Workflow Foundation](http://msdn.microsoft.com/de-DE/library/dd851337.aspx)
     
   
--  
-  [Einführung in das Regelmodul für Windows Workflow Foundation](http://msdn.microsoft.com/en-us/library/dd554919.aspx)
+-  [Einführung in das Regelmodul für Windows Workflow Foundation](http://msdn.microsoft.com/de-DE/library/dd554919.aspx)
     
   
--  
-  [Integration von Windows Workflow Foundation mit Windows Communication Foundation](http://msdn.microsoft.com/en-us/library/cc626077.aspx)
+-  [Integration von Windows Workflow Foundation mit Windows Communication Foundation](http://msdn.microsoft.com/de-DE/library/cc626077.aspx)
     
   
 

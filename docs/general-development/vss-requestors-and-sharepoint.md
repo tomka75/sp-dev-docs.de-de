@@ -3,11 +3,11 @@ title: VSS-Anforderer und SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 0b2e5a4e-40f0-4ccf-a21a-7274921f2169
-ms.openlocfilehash: c6608d90a0a4549557f813d184b63aede17ddadd
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e33fbaaaed785786e6be0abca0d691748dc0798f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="vss-requestors-and-sharepoint"></a>VSS-Anforderer und SharePoint
  **Zusammenfassung:** Informieren Sie sich über die Funktionsweise des Requestors-Systems des Systems Gruppenrichtlinien-Verwaltungskonsole (Volume Shadow Copy Service, VSS) mit Microsoft SharePoint. VSS in Windows Server kann verwendet werden, um Anwendungen erstellen, die sichern und Wiederherstellen von Microsoft SharePoint Foundation. Der VSS stellt eine Infrastruktur, die Speicherlösung-Management-Programme, Business-Programme und Hardwareanbietern zusammenzuarbeiten erstellen und Verwalten von Schattenkopien können. Für diese Infrastruktur-basierte Lösungen können die Schatten Kopien (oder gespiegelte Kopien) zum Sichern und Wiederherstellen von Datenbanken für eine oder mehrere- SharePoint Foundation .
@@ -95,7 +95,7 @@ Erfahren Sie, wie erstellen und Verwenden eines VSS-Requestors für SharePoint:
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

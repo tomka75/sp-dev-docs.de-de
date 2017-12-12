@@ -3,11 +3,11 @@ title: "Sprachenunterstützung für Windows Phone in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 2c396a91-0fc1-4e25-942b-fffad49bd2c6
-ms.openlocfilehash: 3cb2a1bfd23e9d533a53597437afec41d56d84c1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: cf88870f273399d8dea044626f96766967fa071d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="language-support-for-windows-phone-in-sharepoint"></a>Sprachenunterstützung für Windows Phone in SharePoint
 Informationen Sie zu sprachunterstützung für die Visual Studio-Vorlagen, die von SharePoint Software Development Kit (SDK) für Windows Phone für die Entwicklung mobiler Apps installiert werden. Um die mobile Anwendung für mehrere Sprachen zu entwickeln, müssen Sie zum Globalisieren und lokalisieren Sie die Anwendung. Die meisten Globalisierung und Lokalisierung Funktionen, die Sie benötigen, um zu implementieren ist bereits in die .NET Framework integriert. Mithilfe dieser Funktion können Sie Kunden in anderen Ländern und Regionen erreichen.
@@ -115,7 +115,7 @@ Obwohl Sie den programmgesteuerten Zugriff auf neun verschiedenen Sprachen haben
 |Schwedisch (Schweden)  <br/> |sv  <br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

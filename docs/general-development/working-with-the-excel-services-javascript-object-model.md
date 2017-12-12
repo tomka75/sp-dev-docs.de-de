@@ -3,11 +3,11 @@ title: Arbeiten mit dem Excel Services-JavaScript-Objektmodell
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 06219071-a7c1-4f54-b07f-7b7001592330
-ms.openlocfilehash: 9bf873dad64b0dedc3d4676646594d70ec3815a7
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ce16f6aec3f6c3776e0ade7e52aba3356b120ac7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="working-with-the-excel-services-javascript-object-model"></a>Arbeiten mit dem Excel Services-JavaScript-Objektmodell
 
@@ -163,12 +163,11 @@ Das Schreiben eines Entwurfs mithilfe des JavaScript-Objektmodells ist für Shar
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15DevKitchenCon_AnatomyofanappSignupsheets_Additionalresources"> </a>
 
 
--  
-  [Verwenden der Excel Services-JavaScript-API zum Arbeiten mit eingebetteten Excel-Arbeitsmappen](http://msdn.microsoft.com/en-us/library/hh315812.aspx)
+-  [Verwenden der Excel Services-JavaScript-API zum Arbeiten mit eingebetteten Excel-Arbeitsmappen](http://msdn.microsoft.com/de-DE/library/hh315812.aspx)
     
   
 -  [Ewa.EwaControl.loadEwaAsync](http://msdn.microsoft.com/library/a7ee4d6d-5472-b942-c78e-b368d30bcb0e%28Office.15%29.aspx)

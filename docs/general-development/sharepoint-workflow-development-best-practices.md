@@ -2,11 +2,11 @@
 title: "SharePoint VSS Writer"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: ac4e6a6d07bcaf3ab7ca1e74c33e2507921af601
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e0f94ae99936f77f80b419c95d2d17acfd872345
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-workflow-development-best-practices"></a>Bewährte Methoden für die Entwicklung von SharePoint-Workflows
 Stellt eine Sammlung von bewährten Methoden für Entwickler bereit, die Visual Studio zum Erstellen von Workflows in SharePoint verwenden.
@@ -182,7 +182,7 @@ Wenn möglich, ist es statt der Erstellung mehrerer **Approval**-Aktionen effekt
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

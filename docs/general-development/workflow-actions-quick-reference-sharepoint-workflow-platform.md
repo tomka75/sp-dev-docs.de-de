@@ -3,11 +3,11 @@ title: "Kurzübersicht zu Workflowaktionen (SharePoint-Workflowplattform)"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: eb3434e5-bc75-4474-8873-4980062fd29c
-ms.openlocfilehash: d480b0d6f2a34e046ecbc3ddf976fcc21da8c2a4
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: fbb82db15eee16bca4aa6c6a65ded2b2bebed278
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="workflow-actions-quick-reference-sharepoint-workflow-platform"></a>Kurzübersicht zu Workflowaktionen (SharePoint-Workflowplattform)
 In dieser Übersicht werden die Workflowaktionen, die im aktuellen Build von SharePoint Designer 2013 unterstützt werden, sowie nicht verfügbare Workflowaktionen aufgeführt.
@@ -37,7 +37,7 @@ Als Hauptaktionen werden die am häufigsten durchgeführten Aktionen bezeichnet,
 |Wörterbuch erstellen  <br/> |Erstellt eine Wörterbuchvariable von Schlüssel-/Wertpaaren.  <br/> **Hinweis:** Das Wörterbuch verwendet zum Speichern von Daten die JSON-Schreibweise.           Weitere Informationen zur Wörterbuchvariable finden Sie unter [Verstehen von Wörterbuchaktionen in SharePoint Designer 2013](understanding-dictionary-actions-in-sharepoint-designer.md). <br/> |
 |HTTP-Webdienst aufrufen  <br/> |Dient als Methodenaufruf an einen HTTP-Webdienst und gibt Daten im JSON-Format zurück. Einfache Authentifizierung wird über den Anforderungsheader unterstützt.  <br/> Weitere Informationen zur Wörterbuchvariable finden Sie unter  [Grundlegendes zu Wörterbuchaktionen in SharePoint Designer 2013](understanding-dictionary-actions-in-sharepoint-designer.md) <br/> |
 |Elemente in einem Wörterbuch zählen  <br/> |Gibt die Anzahl der Elemente in einem angegebenen Wörterbuch zurück  <br/> |
-|Berechnung ausführen  <br/> |Führt eine arithmetische Berechnung durch und speichert den Ausgabewert in einer Variablen.  <br/> **Hinweis:** In SharePoint unterstützt diese Aktion nur den nummerischen Typ **Double**. Ganze Zahlen werden nicht unterstützt. Die Verwendung des Operators "+" (Verkettung) für Zeichenfolgen wird nicht unterstützt.          |
+|Berechnung ausführen  <br/> |Führt eine arithmetische Berechnung durch und speichert den Ausgabewert in einer Variablen.  <br/> **Hinweis:** In SharePoint unterstützt diese Aktion nur den numerischen Typ **Double**. Ganze Zahlen werden nicht unterstützt. Die Verwendung des Operators "+" (Verkettung) für Zeichenfolgen wird nicht unterstützt.          |
 |Ein Element aus einem Wörterbuch abrufen  <br/> |Gibt ein bestimmtes Element aus der Wörterbuchvariable zurück  <br/> |
 |In Verlaufsliste protokollieren  <br/> |Schreibt eine Nachricht aus einer Liste vordefinierter Nachrichtenelemente in die Workflowverlaufsliste  <br/> |
 |Für Dauer anhalten  <br/> |Hält die Ausführung eines Workflows für ein in Tagen, Stunden und Minuten angegebenes Zeitintervall an  <br/> |
@@ -83,7 +83,7 @@ Listenaktionen gruppieren Aktionen, die zum Bearbeiten von Listen und Listenelem
 |Element auschecken  <br/> |Checkt ein Element aus. Der Workflow prüft, ob das Element eingecheckt ist, bevor er ein Dokument auscheckt. Sie können nur Elemente aus einer Bibliothek in Ihrer Website auschecken.  <br/> **Vorsicht:** Der Workflow stürzt ab, wenn Sie versuchen, ein nicht eingechecktes Element auszuchecken.           |
 |Dokument kopieren  <br/> |Kopiert ein Dokument aus der aktuellen Liste in eine andere Dokumentbibliotheksliste.  <br/> |
 |Listenelement erstellen  <br/> |Erstellt in der von Ihnen angegebenen Liste ein neues Listenelement. Sie können die Felder und Werte im neuen Element angeben. Sie können diese Aktion verwenden, wenn Sie ein neues Element mit bestimmten Informationen erstellen möchten.  <br/> |
-|Element löschen  <br/> |Löscht ein Element.  <br/> **Hinweis:** Diese Aktion wird auf dem Computer beendet, auf dem das Workflow-Manager-Workflowmodul ausgeführt wird, und gibt eine **System.InvalidOperationException**-Ausnahme aus. Für dieses Problem ist keine Umgehung verfügbar.          |
+|Element löschen  <br/> |Löscht ein Element.  <br/> **Hinweis:** Diese Aktion wird auf dem Computer beendet, auf dem das Workflowmodul Workflow-Manager ausgeführt wird, und löst eine Ausnahme des Typs **System.InvalidOperationException** aus. Für dieses Problem ist keine Umgehung verfügbar.          |
 |Auschecken des Elements verwerfen  <br/> |Verwirft die Änderungen und checkt das Element wieder ein, wenn ein Element ausgecheckt wurde und Änderungen daran vorgenommen wurden.  <br/> **Vorsicht:** Der Workflow stürzt ab, wenn Sie versuchen, ein nicht ausgechecktes Element einzuchecken.           |
 |Feld im aktuellen Element festlegen  <br/> |Legt ein bestimmtes Feld im aktuellen Element auf einen bestimmten Wert fest.  <br/> **Hinweis:** Wenn Sie möchten, dass der Workflow angehalten wird, bis der Wert des Felds geändert wurde, verwenden Sie anstatt dieser Aktion die Aktion **Auf Ereignis in Listenelement warten**.          |
 |Dokument übersetzen  <br/> |Übersetzt ein Dokument in eine bestimmte Sprache.  <br/> **Hinweis:** Eine vorkonfigurierte maschinelle Übersetzungsdienstanwendung ist erforderlich.           |
@@ -106,8 +106,8 @@ Projektaktionen unterstützen die Integration von Microsoft Project. Sie werden 
 |**Aktion**|**Beschreibung**|
 |:-----|:-----|
 |Projekt aus dem aktuellen Element erstellen  <br/> |Erstellt auf Basis des aktuellen Elements auf der PWA-Website der SharePoint-Farm ein neues Projekt  <br/> |
-|Projektfeld festlegen  <br/> |Legt für ein bestimmtes Feld auf Project Server einen Wert fest.  <br/> **Hinweis:** Für diesen Vorgang muss das Projekt erst eingecheckt werden. Wenn das Projekt nicht eingecheckt ist, wird der Workflow beendet, und Benutzer können das Projekt in Project Web App nicht öffnen.           |
-|Status der Projektstufe festlegen  <br/> |Legt den Status der Projektstufe fest.  <br/> **Hinweis:** Wenn das aktuelle Projekt ausgecheckt ist, tritt eine Ausnahme auf.           |
+|Projektfeld festlegen  <br/> |Legt für ein bestimmtes Feld auf Project Server einen Wert fest.  <br/> **Hinweis:** Für diese Aktion muss das Projekt eingecheckt sein. Wenn das Projekt nicht eingecheckt ist, wird der Workflow beendet, und das Projekt lässt sich nicht in Project Web App öffnen.           |
+|Status der Projektstufe festlegen  <br/> |Legt den Status der Projektstufe fest.  <br/> **Hinweis:** Wenn das aktuelle Projekt ausgecheckt ist, wird eine Ausnahme ausgelöst.           |
 |Statusfeld in Ideenliste festlegen  <br/> |Aktualisiert den Status für das ursprüngliche Listenelement, das mit dem aktuellen Projekt verknüpft ist  <br/> |
 |Auf Projektereignis warten  <br/> |Wartet auf ein bestimmtes Projektereignis  <br/> |
    
@@ -161,7 +161,7 @@ Eine Liste der Aktionen aus SharePoint 2010, die in SharePoint nicht mehr verwen
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkm_addlresource"> </a>
 
 

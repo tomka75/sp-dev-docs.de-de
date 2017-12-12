@@ -3,11 +3,11 @@ title: "Neuerungen in Workflows für SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 1d51421b-61ac-46b6-a865-52f968ddc5b3
-ms.openlocfilehash: d17537f93cd1636e8399d0713801c975f3e7f042
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bf9347b0c0120d2cb8317a16be3406aaed388009
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="whats-new-in-workflows-for-sharepoint"></a>Neuerungen in Workflows für SharePoint
 Hier erhalten Sie Informationen zu den neuen Features für Workflows in SharePoint. Das Workflow-Framework in SharePoint hat sich gegenüber früheren Versionen erheblich geändert. Die folgenden Abschnitte bieten kurze Zusammenfassungen zu den wichtigsten Updates und Verbesserungen an der Workflowinfrastruktur.
@@ -19,7 +19,7 @@ Hier erhalten Sie Informationen zu den neuen Features für Workflows in SharePoi
 ## <a name="completely-redesigned-workflow-infrastructure"></a>Vollständig neu gestaltete Workflowinfrastruktur
 <a name="SP15Whatsnewinworflow_infrastructure"> </a>
 
-SharePoint-Workflows werden von Windows Workflow Foundation 4 (WF) unterstützt, das in Vergleich zu früheren Versionen erheblich überarbeitet wurde. Windows Workflow Foundation basiert wiederum auf der von  [Windows Communication Foundation (WCF)](http://msdn.microsoft.com/en-us/netframework/aa663324) bereitgestellten Messaging-Funktion.
+SharePoint-Workflows werden von Windows Workflow Foundation 4 (WF) unterstützt, das in Vergleich zu früheren Versionen erheblich überarbeitet wurde. Windows Workflow Foundation basiert wiederum auf der von  [Windows Communication Foundation (WCF)](http://msdn.microsoft.com/de-DE/netframework/aa663324) bereitgestellten Messaging-Funktion.
   
     
     
@@ -128,7 +128,7 @@ Nachfolgend sind die neuen Workflowaktionen aufgeführt, die in SharePoint berei
 |Dieses Feld im Projekt auf diesen Wert festlegen [Microsoft Project]  <br/> |Legt den Wert für das unternehmensspezifische Feld für ein angegebenes Projekt fest.  <br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15Whatsnewinworflow_Addresources"> </a>
 
 

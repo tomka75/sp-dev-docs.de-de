@@ -3,11 +3,11 @@ title: Suche in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 59220f81-0e5e-4945-8056-cf0a116446cb
-ms.openlocfilehash: daf7d446efd7f20a8123b86e8325cc5f0253cd8d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 06b5c8bda47a73b7a5df9d2c7b99fc98ad67d74e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="search-in-sharepoint"></a>Suche in SharePoint
 Informationen zur Erweiterbarkeit von Bausteinen in Suche in SharePoint und zu deren Verwendung für Ihre Anwendungsfälle. Mithilfe von Suche in SharePoint können Benutzer relevante Informationen schneller und einfacher denn je finden. Zudem wird es für Suchadministratoren einfach gestaltet, die Suchabfrage anzupassen. Außerdem werden verschiedene API-Sätze für komplexere Anpassungen und Lösungen bereitgestellt.
@@ -69,7 +69,7 @@ Diese Bereiche bestehen aus Komponenten und Datenbanken, die gemeinsam Suchvorg�
   
     
     
-Eine ausführlichere Ansicht finden Sie unter  [Technische Diagramme - Suche](http://technet.microsoft.com/en-us/library/cc263199.aspx#search) und [Übersicht über die Suche in SharePoint](http://technet.microsoft.com/en-us/library/jj219738.aspx).
+Eine ausführlichere Ansicht finden Sie unter  [Technische Diagramme - Suche](http://technet.microsoft.com/de-DE/library/cc263199.aspx#search) und [Übersicht über die Suche in SharePoint](http://technet.microsoft.com/de-DE/library/jj219738.aspx).
   
     
     
@@ -236,7 +236,7 @@ Weitere Informationen finden Sie unter  [Verwenden der SharePoint-Suchabfrage-AP
 
 ### <a name="analytics"></a>Analyse
 
-Die Analyseverarbeitungskomponente analysiert sowohl Inhalte an sich als auch die Interaktion der Benutzer mit Inhalten, um jene Inhalte zu identifizieren und verfügbar zu machen, die für Benutzer am nützlichsten und relevantesten sind. Diese Analysen werden von Zeitgeberaufträgen durchgeführt, die für die Durchführung der Analyse-Lebenszyklusaufgaben, wie z.B. das Starten, Beenden, Anhalten und Fortsetzen eines Analyseauftrags, verantwortlich sind. Sie können diese Zeitgeberaufträge über den Namespace [Microsoft.Office.Server.Search.Analytics](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Analytics.aspx) bearbeiten. Ausführliche Informationen zu Analysen in SharePoint finden Sie unter [Übersicht über die Analyseverarbeitung in SharePoint](http://technet.microsoft.com/en-us/library/jj219554.aspx).
+Die Analyseverarbeitungskomponente analysiert sowohl Inhalte an sich als auch die Interaktion der Benutzer mit Inhalten, um jene Inhalte zu identifizieren und verfügbar zu machen, die für Benutzer am nützlichsten und relevantesten sind. Diese Analysen werden von Zeitgeberaufträgen durchgeführt, die für die Durchführung der Analyse-Lebenszyklusaufgaben, wie z.B. das Starten, Beenden, Anhalten und Fortsetzen eines Analyseauftrags, verantwortlich sind. Sie können diese Zeitgeberaufträge über den Namespace [Microsoft.Office.Server.Search.Analytics](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Analytics.aspx) bearbeiten. Ausführliche Informationen zu Analysen in SharePoint finden Sie unter [Übersicht über die Analyseverarbeitung in SharePoint](http://technet.microsoft.com/de-DE/library/jj219554.aspx).
   
     
     
@@ -307,15 +307,13 @@ SharePoint bietet zwei neue REST-Schnittstellen: Navigation und Ereignisprotokol
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 
 
--  
-  [Änderungen zwischen SharePoint 2010 und SharePoint](http://technet.microsoft.com/en-us/library/ff607742.aspx)
+-  [Änderungen zwischen SharePoint 2010 und SharePoint](http://technet.microsoft.com/de-DE/library/ff607742.aspx)
     
   
--  
-  [Technische Diagramme - Suchen](http://technet.microsoft.com/en-us/library/cc263199.aspx#search)
+-  [Technische Diagramme - Suchen](http://technet.microsoft.com/de-DE/library/cc263199.aspx#search)
     
   
 -  [Hinzufügen von SharePoint-Funktionen](add-sharepoint-capabilities.md)

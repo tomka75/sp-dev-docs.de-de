@@ -3,11 +3,11 @@ title: "Kurzübersicht zu Workflowaktionen (SharePoint 2010-Workflowplattform)"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: b033f79f-2179-4cfd-9d1c-7c04f83d4a4b
-ms.openlocfilehash: 44dc0d4d6216e63c1e37a35200af8ac31fe58608
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bea32ac464cb45edc04f9781e465c965a6c7fec2
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="workflow-actions-quick-reference-sharepoint-2010-workflow-platform"></a>Kurzübersicht Workflowaktionen (SharePoint 2010-Workflowplattform)
 In diesem Artikel werden die Workflowaktionen beschrieben, die in der SharePoint 2010-Workflowplattform in Microsoft SharePoint Designer 2013 zur Verfügung stehen. Diesen Artikel sollten Sie *ausschließlich* dann als Referenz heranziehen, wenn Sie in SharePoint Designer 2013 arbeiten, aber dennoch weiterhin die SharePoint 2010-Workflowplattform verwenden möchten. Wenn Sie stattdessen die SharePoint-Workflowplattform verwenden möchten, ist der Artikel [Kurzübersicht zu Workflowaktionen (SharePoint-Workflowplattform](workflow-actions-quick-reference-sharepoint-workflow-platform.md) die richtige Anlaufstelle, neben anderen Artikeln (aufgeführt im Abschnitt „Zusätzliche Ressourcen“) zu neuen Features in der neueren Plattform. Wenn Sie einen Workflow mit der 2010-Workflowplattform erstellen möchten, müssen Sie zunächst im Dialogfeld **Workflow erstellen** im Feld **Plattformtyp** die Option **SharePoint 2010-Workflow** auswählen.
@@ -276,7 +276,7 @@ Ein Websiteworkflow wird auf einer Websiteebene ausgeführt und ist an kein spez
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

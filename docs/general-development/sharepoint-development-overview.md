@@ -3,11 +3,11 @@ title: "Übersicht über die SharePoint-Entwicklung"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f86e2695-4d7a-4fc5-bc23-689de96c4b06
-ms.openlocfilehash: afff0116f8c5af2127a15c39885591ef22d482db
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4ff45a8c37940dbe2ce9bcc356ffc17d2db6eb47
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-development-overview"></a>Übersicht über die SharePoint-Entwicklung
 SharePoint ist eine Entwicklungsplattform für SharePoint-Add-Ins und Farmlösungen. Machen Sie sich mit den Funktionen und Features von SharePoint vertraut, um mit Ihrer Entwicklung zu beginnen.
@@ -121,7 +121,7 @@ Wenn Sie sich mit den unterschiedlichen SharePoint-Add-In-Typen vertraut gemacht
 | [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](http://msdn.microsoft.com/library/1b992485-6efe-4ea4-a18c-221689b0b66f%28Office.15%29.aspx) <br/> |Enthält Schritt-für-Schritt-Anleitungen zum Erstellen einer einfachen SharePoint-Add-In, die auf einer SharePoint-Website gehostet wird.  <br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_additionalresources"> </a>
 
 

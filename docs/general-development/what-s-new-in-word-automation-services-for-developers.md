@@ -3,11 +3,11 @@ title: "Neuigkeiten in Word Automation Services für Entwickler"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 00d2cf8d-93b0-4aab-8e76-31a6bb2f0dcb
-ms.openlocfilehash: c01450d5a61edd71ee767c6028bd94937dd5e124
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bba621cc37299a956e9a46dbb6dc7cdfc280b251
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="whats-new-in-word-automation-services-for-developers"></a>Neuigkeiten in Word Automation Services für Entwickler
 Dieses Thema bietet eine allgemeine Übersicht über das Hinzufügen und Erweiterungen für Entwickler in Word Automation Services. In Microsoft SharePoint ist die primäre zusätzlich zu Word Automation Services Unterstützung für "on Demand" Datei Konvertierung Anforderungen. Die wichtigste Verbesserung Word Automation Services wird die Unterstützung für die Verwendung von Datenströmen als Eingabe und Ausgabe von Konvertierungsaufgaben hinzugefügt.
@@ -84,14 +84,14 @@ Durch die hinzugefügte auf Anforderung Datei Konvertierung Anfragen und Unterst
     
     
 
-### <a name="additional-resources"></a>Zusätzliche Ressourcen
+### <a name="see-also"></a>Siehe auch
 <a name="was15AdditionalResources"> </a>
 
 
--  [Word Automation Services in SharePoint Server 2010](http://msdn.microsoft.com/en-us/library/ee558278)
+-  [Word Automation Services in SharePoint Server 2010](http://msdn.microsoft.com/de-DE/library/ee558278)
     
   
--  [Word Automation Services-Klassenbibliothek](http://msdn.microsoft.com/en-us/library/ee559408)
+-  [Word Automation Services-Klassenbibliothek](http://msdn.microsoft.com/de-DE/library/ee559408)
     
   
 

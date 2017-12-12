@@ -3,11 +3,11 @@ title: Erstellen von Windows Phone-Apps, die auf SharePoint zugreifen
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 36681335-f772-4499-8445-f94481bc18e7
-ms.openlocfilehash: 7e9f0794b49f41ac405378c73fd38bf5f9323881
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3187d51804a96627f38b2ec5f4320f7d356c1107
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="build-windows-phone-apps-that-access-sharepoint"></a>Erstellen von Windows Phone-Apps, die auf SharePoint zugreifen
 Erfahren Sie, wie Sie SharePoint-Add-Ins erstellen können, die SharePoint und mobilen Geräte integrieren, z. B. Windows Phone 8 und Windows Phone 7.
@@ -53,16 +53,16 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie mit SharePoint, .NET Framew
     
     
 
--  [Entwickeln einer Windows Phone-Anwendung von Anfang bis Ende](http://msdn.microsoft.com/en-us/library/gg680270%28v=pandp.11%29.aspx)
+-  [Entwickeln einer Windows Phone-Anwendung von Anfang bis Ende](http://msdn.microsoft.com/de-DE/library/gg680270%28v=pandp.11%29.aspx)
     
   
--  [Benutzeroberfläche für Windows Phone](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff967556%28v=vs.105%29.aspx)
+-  [Benutzeroberfläche für Windows Phone](http://msdn.microsoft.com/de-DE/library/windowsphone/develop/ff967556%28v=vs.105%29.aspx)
     
   
--  [Schnellstart: Erstellen einer Benutzeroberfläche mit XAML für Windows Phone](http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj207025%28v=vs.105%29.aspx)
+-  [Schnellstart: Erstellen einer Benutzeroberfläche mit XAML für Windows Phone](http://msdn.microsoft.com/de-DE/library/windowsphone/develop/jj207025%28v=vs.105%29.aspx)
     
   
--  [Pivot-Steuerelementarchitektur für Windows Phone](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff941097%28v=vs.105%29.aspx)
+-  [Pivot-Steuerelementarchitektur für Windows Phone](http://msdn.microsoft.com/de-DE/library/windowsphone/develop/ff941097%28v=vs.105%29.aspx)
     
   
 
@@ -226,11 +226,11 @@ Die folgenden Vorgehensweisen und Übersichten befassen sich mit den spezifische
 -  [Vorgehensweise: Integrieren von Zuordnungen in Windows Phone-Anwendungen und SharePoint aufgelistet](how-to-integrate-maps-with-windows-phone-apps-and-sharepoint-lists.md)
     
   
--  [Vorgehensweise: Erstellen Suchvorgänge gesteuerte mobile Anwendungen mit der Navigation und Ereignis protokollieren von REST-Schnittstellen](how-to-build-search-driven-mobile-apps-with-the-navigation-and-event-logging-res.md)
+-  [Vorgehensweise: Erstellen von suchgesteuerten mobilen Apps mit den REST-Schnittstellen für Navigation und Ereignisprotokollierung](how-to-build-search-driven-mobile-apps-with-the-navigation-and-event-logging-res.md)
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15buildmobile_addlresources"> </a>
 
 
@@ -256,7 +256,7 @@ Die folgenden Vorgehensweisen und Übersichten befassen sich mit den spezifische
 -  [Microsoft SharePoint SDK für Windows Phone 7.1](http://www.microsoft.com/en-us/download/details.aspx?id=30476)
     
   
--  [Informationen zu Expression Blend](http://msdn.microsoft.com/en-us/library/cc296376%28Expression.40%29.aspx)
+-  [Informationen zu Expression Blend](http://msdn.microsoft.com/de-DE/library/cc296376%28Expression.40%29.aspx)
     
   
 

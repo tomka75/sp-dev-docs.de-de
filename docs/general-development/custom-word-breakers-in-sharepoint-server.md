@@ -3,11 +3,11 @@ title: "Benutzerdefinierte Wörtertrennungen in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d18b48d4-987c-4228-9932-30d5b30f86a2
-ms.openlocfilehash: 55cbfc603c1ea778625c7ccd7de4db411d66226c
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 52ee69b816c55f49334d3309e10b331551284770
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="custom-word-breakers-in-sharepoint"></a>Benutzerdefinierte Wörtertrennungen in SharePoint
 In diesem Artikel finden Sie Informationen zu Wörtertrennungen in SharePoint. Die Wörtertrennung ist eines der wichtigsten Features bei der Verarbeitung natürlicher Sprache (Natural Language Processing, NLP), die Suchläufe ermöglichen und Suchergebnisse (oder Abrufe) verbessern. Durch Wörtertrennungen wird ein Textfluss in einzelne Wörter oder Token aufgeteilt, die Sie als Basis für die weitere Sprachverarbeitung verwenden können. Wörtertrennungen sind sprachspezifisch. Zusätzlich zu integrierten Wörtertrennungen ermöglicht die Suche in SharePoint die Verwendung von benutzerdefinierten Wörtertrennungen, sodass Benutzer das Wörtertrennungsverhalten entsprechend ihren Anforderungen anpassen können. Eine Liste der Sprachen, die die Anpassung der Wörtertrennung unterstützt, finden Sie unter [Unterstützte Sprachen für die Anpassung der Wörtertrennung in SharePoint](#SP15_SupportedLanguages).
@@ -16,12 +16,10 @@ In diesem Artikel finden Sie Informationen zu Wörtertrennungen in SharePoint. D
     
 
 Informationen zum Schreiben einer Wörtertrennung finden Sie in den folgenden Artikeln: 
--  
-  [Implementieren von einem Worttrennmodul](http://msdn.microsoft.com/en-us/library/ms693186%28v=vs.85%29.aspx)
+-  [Implementieren von einem Worttrennmodul](http://msdn.microsoft.com/de-DE/library/ms693186%28v=vs.85%29.aspx)
     
   
--  
-  [IWordBreaker-Schnittstelle](http://msdn.microsoft.com/en-us/library/ms691079%28v=vs.85%29.aspx)
+-  [IWordBreaker-Schnittstelle](http://msdn.microsoft.com/de-DE/library/ms691079%28v=vs.85%29.aspx)
     
   
 
@@ -279,19 +277,17 @@ Vietnamesisch
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15wordbreakers_addresources"> </a>
 
 
 -  [Konfigurieren der Suche in SharePoint](configure-search-in-sharepoint.md)
     
   
--  
-  [Implementieren von einem Worttrennmodul](http://msdn.microsoft.com/en-us/library/ms693186%28v=vs.85%29.aspx)
+-  [Implementieren von einem Worttrennmodul](http://msdn.microsoft.com/de-DE/library/ms693186%28v=vs.85%29.aspx)
     
   
--  
-  [IWordBreaker-Schnittstelle](http://msdn.microsoft.com/en-us/library/ms691079%28v=vs.85%29.aspx)
+-  [IWordBreaker-Schnittstelle](http://msdn.microsoft.com/de-DE/library/ms691079%28v=vs.85%29.aspx)
     
   
 

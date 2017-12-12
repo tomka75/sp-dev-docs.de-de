@@ -3,11 +3,11 @@ title: "Erstellen von Websites für SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3b372a63-7cdf-462a-abb4-750e611e967d
-ms.openlocfilehash: 6063c4fa80f7e0c89674dfaff6cbd98d763b79e7
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b6805fd65007827160720f8ad97b0401582edd80
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="build-sites-for-sharepoint"></a>Erstellen von Websites für SharePoint
 Hier finden Sie Informationen zum neuen Websiteerstellungs- und Veröffentlichungsmodell für Websites in SharePoint.
@@ -143,7 +143,7 @@ Sie können das Variationsfeature in SharePoint verwenden, um barrierefreie Webs
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15_BuildSitesForSP2013_AdditionalResources"> </a>
 
 

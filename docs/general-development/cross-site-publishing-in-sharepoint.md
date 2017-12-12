@@ -3,11 +3,11 @@ title: "Websiteübergreifende Veröffentlichung in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 33f49e69-c1d3-4a6e-8887-5df683cba022
-ms.openlocfilehash: cbb1a0eec5d60b8453e3d6c66179142fa1e07630
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e6db277ceb3c45e0f147e27c96b272afe4e585ee
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="cross-site-publishing-in-sharepoint"></a>Websiteübergreifende Veröffentlichung in SharePoint
 
@@ -183,7 +183,7 @@ public CatalogConnectionSettings GetCatalogConnectionSettings(string catalogPath
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

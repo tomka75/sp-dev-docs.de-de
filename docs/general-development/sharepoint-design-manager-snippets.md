@@ -3,11 +3,11 @@ title: Codeausschnitte des SharePoint-Entwurfs-Managers
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 68caef4c-5941-4a88-b34b-f88122801cef
-ms.openlocfilehash: 784c6f0734a342946f518b2ce571f28f61051ffc
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2c670d8fb7cd6ec3f293a3e5da9b75380005f598
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-design-manager-snippets"></a>Codeausschnitte des SharePoint-Entwurfs-Managers
 Ein Codeausschnitt ist eine HTML-Darstellung einer SharePoint-Komponente oder eines Steuerelements, wie beispielsweise eine Navigationsleiste oder ein Webpart. Mithilfe des Codeausschnittkatalogs im Entwurfs-Manager können Sie Ihrer HTML-Gestaltungsvorlage oder dem Seitenlayout schnell SharePoint-Funktionen hinzufügen.
@@ -37,10 +37,8 @@ Im Menüband werden verschiedene Optionen des Codeausschnittkatalogs angezeigt, 
     
 Nachdem Sie einen Codeausschnitt in die HTML-Datei eingefügt haben, erhalten Sie eine Vorschau des im Codeausschnitt angegebenen HTML-Codes zur Entwurfszeit. Sie können auch über die serverseitige Vorschau im Entwurfs-Manager sehen, wie das Steuerelement auf der Livewebsite dargestellt wird. Die Vorschau zur Entwurfszeit enthält möglicherweise statische Beispieldaten, während in der serverseitigen Vorschau ggf. verfügbare Livedaten verwendet werden. Bei einem Navigationssteuerelement, das Navigationslinks aus einem Ausdruckssatz bezieht, werden diese Ausdrücke in der serverseitigen Vorschau dynamisch angezeigt. Die Vorschau zur Entwurfszeit hingegen enthält eine statische Momentaufnahme der Ausdrücke zu dem Zeitpunkt der Erstellung des Codeausschnitts. Livedaten sind in der serverseitigen Vorschau für einige Codeausschnitte, darunter zahlreiche Webparts, nicht verfügbar. In einem solchen Fall erhalten Sie in der serverseitigen Vorschau die Meldung **Vorschau nicht verfügbar**.
   
-    
-    
-
->  **Hinweis:** Ein Codeausschnitt enthält HTML-Code, über den Sie im HTML-Editor eine Vorschau zur Entwurfszeit erhalten. Der HTML-Code in den Kommentaren "Vorschau starten" und "Vorschau beenden" sollte jedoch nicht bearbeitet werden, da er sich nur auf die Vorschau zur Entwurfszeit auswirkt und nicht darauf, wie SharePoint den Codeausschnitt letztlich rendert. Stattdessen müssen Sie für die Formatierung Ihres Codeausschnitts in der Regel die standardmäßigen SharePoint-Formatvorlagen, die auf den Codeausschnitt angewandt werden, ermitteln und überschreiben. 
+> [!NOTE]
+> Ein Codeausschnitt enthält HTML-Code, über den Sie im HTML-Editor eine Vorschau zur Entwurfszeit erhalten. Der HTML-Code in den Kommentaren "Vorschau starten" und "Vorschau beenden" sollte jedoch nicht bearbeitet werden, da er sich nur auf die Vorschau zur Entwurfszeit auswirkt und nicht darauf, wie SharePoint den Codeausschnitt letztlich rendert. Zum Gestalten des Codeausschnitts müssen Sie stattdessen in der Regel die auf den Codeausschnitt angewendeten standardmäßigen SharePoint-Formatvorlagen ermitteln und außer Kraft setzen. 
   
     
     
@@ -85,9 +83,9 @@ Im Codeausschnittkatalog werden verschiedene Optionen angezeigt. Dies richtet si
     
     Die Eigenschaften, die für den Hauptzweck des Codeausschnitts am wichtigsten sind, werden im obersten Abschnitt mit der Bezeichnung "Wichtig" angezeigt. Dies sind die wesentlichen Eigenschaften, die Sie verstehen müssen, wenn Sie Codeausschnitte verwenden.
     
-    
-    
-    > **Hinweis:** Wenn das Eigenschaftenraster über eine Kopfzeile verfügt, die mit AjaxDelta endet, sollten Sie diese Eigenschaften ignorieren, da sie für die Steuerelemente im Zusammenhang mit der minimalen Downloadstrategie gelten, die für Gestaltungsvorlagen und Seitenlayouts, die über den Entwurfs-Manager erstellt werden, deaktiviert ist. 
+    > [!NOTE]
+    > Wenn das Eigenschaftenraster über eine Kopfzeile verfügt, die mit AjaxDelta endet, sollten Sie diese Eigenschaften ignorieren, da sie für die Steuerelemente im Zusammenhang mit der minimalen Downloadstrategie gelten, die für Gestaltungsvorlagen und Seitenlayouts, die über den Entwurfs-Manager erstellt werden, deaktiviert ist. 
+
 8. Wählen Sie nach dem Konfigurieren von Eigenschaften **Aktualisieren** aus. Dadurch werden sowohl die Vorschau als auch der HTML-Codeausschnitt links auf der Seite aktualisiert, sodass das Markup Ihre benutzerdefinierten Einstellungen widerspiegelt. Sie können jederzeit **Zurücksetzen** auswählen, um alle Eigenschaften auf ihre Standardeinstellungen zurückzusetzen.
     
   
@@ -183,10 +181,8 @@ Als Beispiel ist nachfolgend das Standardmarkup für einen Bearbeitungsmodusbere
 
 Nachfolgend finden Sie das Standardmarkup für einen Codeausschnitt für die obere Navigationsleiste. Dies ist komplexer, da dieser Codeausschnitt verschiedene Steuerelemente enthält, von denen einige ineinander geschachtelt sind, einschließlich einer Datenquelle für die Navigationsausdrücke, einem Stellvertretungs-Steuerelement und einem Inhaltsplatzhalter.
   
-    
-    
-
->  **Hinweis:** Einige der Steuerelemente, wie beispielsweise der Inhaltsplatzhalter, enthalten leere Tags für eine HTML-Vorschau, da das Element keine visuelle Darstellung auf der Seite benötigt. 
+> [!NOTE]
+> Einige der Steuerelemente, wie beispielsweise der Inhaltsplatzhalter, enthalten leere Tags für eine HTML-Vorschau, da das Element keine visuelle Darstellung auf der Seite benötigt. 
   
     
     
@@ -401,7 +397,7 @@ Es folgt eine Übersicht über die Arten von Markup, die in einem Codeausschnitt
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="Resources"> </a>
 
 

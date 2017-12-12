@@ -3,11 +3,11 @@ title: Erste Schritte der Verwendung des Clientobjektmodells mit externen Daten 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 8ed91929-fdb6-4fde-ba2a-7942870575f3
-ms.openlocfilehash: 2ddd19599a6a88523cb38940355104d178500f3d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 5efb6f880389b4f1d856ab8bf95f6dcde99bea09
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="get-started-using-the-client-object-model-with-external-data-in-sharepoint"></a>Erste Schritte der Verwendung des Clientobjektmodells mit externen Daten in SharePoint
 Erfahren Sie, wie Sie das SharePoint-Clientobjektmodell für die Arbeit mit Business Connectivity Services (BCS) in SharePoint verwenden.
@@ -209,7 +209,7 @@ Weitere Informationen zur Verwendung des Clientobjektmodells in SharePoint, find
 | [BCS-Client-Objektmodellreferenz für SharePoint](bcs-client-object-model-reference-for-sharepoint.md) <br/> |Zusammenfassung der für das Erstellen clientseitiger Skripts verfügbaren Objekte unter Verwendung des SharePoint-Clientobjektmodells für den Zugriff auf externe von BCS zur Verfügung gestellte Daten.  <br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="BCScsom_Learnmore"> </a>
 
 

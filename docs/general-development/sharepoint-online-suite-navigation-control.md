@@ -3,11 +3,11 @@ title: Navigationssteuerelement SharePoint Online-Suite
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: ba93e5c0-e591-48d0-a716-a08ec7ef6cea
-ms.openlocfilehash: d2f13eba8daea7cdf8fb865c3762ce6fad95da92
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 531253b34f59c05693cef0c7905e48de0b5c2c89
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-online-suite-navigation-control"></a>Navigationssteuerelement SharePoint Online-Suite
 Informationen Sie zu gestaltungsvorlagenmarkup für das Steuerelement Suitenavigation in SharePoint Online. {Einführung einfügen}
@@ -300,7 +300,7 @@ var g_navBarHelpDefaultKey = "HelpHome";
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

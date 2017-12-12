@@ -3,11 +3,11 @@ title: "Workflowaktions- und -aktivitätenreferenz für SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 88e09f75-480f-4a68-87a6-b496350345cc
-ms.openlocfilehash: 2be2fd88314a3e961a586ee4b80c80010cc0976f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4f808bbc0e8d6f08d2779a1e3d6b2343f9a5dd01
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="workflow-actions-and-activities-reference-for-sharepoint"></a>Workflowaktions- und -aktivitätenreferenz für SharePoint
 Erfahren Sie mehr über die Workflowaktionen, die für das Erstellen von Workflows in SharePoint Designer 2013 verfügbar sind, und über die Workflowaktivitätsklassen, die für Workflowentwickler zur Verfügung stehen, die Visual Studio 2012 verwenden.
@@ -34,11 +34,11 @@ Eine Liste der verfügbaren Workflowaktionen finden Sie unter  [Kurzübersicht z
 ## <a name="windows-workflow-foundation-40-activities"></a>Windows Workflow Foundation 4.0-Aktivitäten
 <a name="bkm_WF4"> </a>
 
-Obwohle Ihnen auf der SharePoint-Plattform und -Infrastruktur speziell für die Erstellung benutzerefinierter SharePoint-Workflows ausgelegte Aktivitätsklassen zur Verfügung stehen, können Sie auch die von Windows Workflow Foundation (WF) 4.0 bereitgestellten Aktivitätsklassen verwenden. Diese WF 4.0-Aktivitätsklassen stehen im Microsoft .NET Framework 4 im  [System.Activities.Statements](http://msdn.microsoft.com/en-us/library/system.activities.statements.aspx)-Namespace zur Verfügung.
+Obwohle Ihnen auf der SharePoint-Plattform und -Infrastruktur speziell für die Erstellung benutzerefinierter SharePoint-Workflows ausgelegte Aktivitätsklassen zur Verfügung stehen, können Sie auch die von Windows Workflow Foundation (WF) 4.0 bereitgestellten Aktivitätsklassen verwenden. Diese WF 4.0-Aktivitätsklassen stehen im Microsoft .NET Framework 4 im  [System.Activities.Statements](http://msdn.microsoft.com/de-DE/library/system.activities.statements.aspx)-Namespace zur Verfügung.
   
     
     
-Die WF 4.0-Aktivitätsklassen stellen einige nützliche Features bereit, die Sie in der SharePoint-Aktivitätsklassenbibliothek möglicherweise nicht finden. So beinhaltet WF 4.0 zum Beispiel die **If**-Klasse, mit der Sie bedingte Aktivitäten erstellen können. Darüber hinaus können Sie mit der  [System.ServiceModel.Activities.Send](http://msdn.microsoft.com/en-us/library/system.servicemodel.activities.send.aspx)-Aktivität eine Verbindung zu Webdienten herstellen.
+Die WF 4.0-Aktivitätsklassen stellen einige nützliche Features bereit, die Sie in der SharePoint-Aktivitätsklassenbibliothek möglicherweise nicht finden. So beinhaltet WF 4.0 zum Beispiel die **If**-Klasse, mit der Sie bedingte Aktivitäten erstellen können. Darüber hinaus können Sie mit der  [System.ServiceModel.Activities.Send](http://msdn.microsoft.com/de-DE/library/system.servicemodel.activities.send.aspx)-Aktivität eine Verbindung zu Webdienten herstellen.
   
     
     
@@ -57,7 +57,7 @@ Die WF 4.0-Aktivitätsklassen stellen einige nützliche Features bereit, die Sie
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkm_addlres"> </a>
 
 

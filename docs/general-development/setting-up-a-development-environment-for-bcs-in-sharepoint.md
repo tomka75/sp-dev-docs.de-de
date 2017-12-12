@@ -3,11 +3,11 @@ title: "Einrichten einer Entwicklungsumgebung für BCS in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d83c8a43-49dd-47eb-94d4-23aa2cf71a9a
-ms.openlocfilehash: ccd96046c91dae94fb68d5a38cf7a8546f38f284
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 33956da39dedd23fa5f81ce131d84e22eca9d60f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="setting-up-a-development-environment-for-bcs-in-sharepoint"></a>Einrichten einer Entwicklungsumgebung für BCS in SharePoint
 Informationen Sie zum Einrichten einer Entwicklungsumgebung für die Entwicklung von Lösungen SharePoint und SharePoint-Add-Ins mit Business Connectivity Services (BCS). Sie können die SharePoint Lösungen und SharePoint-Add-Ins erstellen, mithilfe von BCS auf einem Clientcomputer oder auf einem Servercomputer, abhängig von der Art der Lösung, die Sie erstellen.
@@ -51,7 +51,7 @@ Da diese Lösungen Code nicht erforderlich ist, können Sie SharePoint Designer 
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15SettingupdevenvBCS_addresources"> </a>
 
 

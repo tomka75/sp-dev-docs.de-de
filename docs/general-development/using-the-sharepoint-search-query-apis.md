@@ -3,11 +3,11 @@ title: Verwenden der SharePoint-Suchabfrage-APIs
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: ae9d73ed-1140-430b-9287-01dbbe8ae7d1
-ms.openlocfilehash: 1a68b192b9b27040b68f8f4a5b95e3711ba57ba5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4e706bbc5c685ba637f6b02d4eb748de8889d6fb
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="using-the-sharepoint-search-query-apis"></a>Verwenden der SharePoint-Suchabfrage-APIs
 In diesem Artikel erhalten Sie Informationen zu den in SharePoint verfügbaren Abfrage-APIs, die es Ihnen ermöglichen, benutzerdefinierten Lösungen und Anwendungen Suchfunktionen hinzuzufügen. 
@@ -83,7 +83,7 @@ using (ClientContext clientContext = new ClientContext("http://<serverName>/site
 }
 ```
 
-Sie können das folgende von SharePoint MVP  [Corey Roth](http://mvp.microsoft.com/en-us/mvp/Corey%20Roth-4029260) veröffentlichte Codebeispiel herunterladen: [SharePoint: Suchabfrage mit dem verwalteten Clientobjektmodell](http://code.msdn.microsoft.com/Query-Search-with-the-649f1bc1).
+Sie können das folgende von SharePoint MVP  [Corey Roth](http://mvp.microsoft.com/de-DE/mvp/Corey%20Roth-4029260) veröffentlichte Codebeispiel herunterladen: [SharePoint: Suchabfrage mit dem verwalteten Clientobjektmodell](http://code.msdn.microsoft.com/Query-Search-with-the-649f1bc1).
   
     
     
@@ -113,7 +113,7 @@ var results = searchExecutor.executeQuery(keywordQuery);
 context.executeQueryAsync(onQuerySuccess, onQueryError);
 ```
 
-Sie können das folgende von SharePoint MVP  [Corey Roth](http://mvp.microsoft.com/en-us/mvp/Corey%20Roth-4029260) veröffentlichte Codebeispiel herunterladen: [SharePoint: Suchabfrage mit dem JavaScript-Clientobjektmodell](http://code.msdn.microsoft.com/SharePoint-Querying-a629b53b).
+Sie können das folgende von SharePoint MVP  [Corey Roth](http://mvp.microsoft.com/de-DE/mvp/Corey%20Roth-4029260) veröffentlichte Codebeispiel herunterladen: [SharePoint: Suchabfrage mit dem JavaScript-Clientobjektmodell](http://code.msdn.microsoft.com/SharePoint-Querying-a629b53b).
   
     
     
@@ -166,12 +166,12 @@ using (SPSite siteCollection = new SPSite("<serverRelativeUrl>"))
 }
 ```
 
-Sie können das folgende von SharePoint MVP  [Corey Roth](http://mvp.microsoft.com/en-us/mvp/Corey%20Roth-4029260) veröffentlichte Codebeispiel herunterladen: [SharePoint: Suchabfrage mit der KeywordQuery-Klasse](http://code.msdn.microsoft.com/Query-Search-with-the-372139b5).
+Sie können das folgende von SharePoint MVP  [Corey Roth](http://mvp.microsoft.com/de-DE/mvp/Corey%20Roth-4029260) veröffentlichte Codebeispiel herunterladen: [SharePoint: Suchabfrage mit der KeywordQuery-Klasse](http://code.msdn.microsoft.com/Query-Search-with-the-372139b5).
   
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

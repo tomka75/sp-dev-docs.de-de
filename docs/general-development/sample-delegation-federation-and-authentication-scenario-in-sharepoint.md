@@ -2,11 +2,11 @@
 title: Beispieldelegierung-, Verbund- und Authentifizierungsszenario in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 6e1b643582a9ae4df479ffc0e4016ca3ec5446aa
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 43ed1eaec1f6e5ec9e29e032162b271d2830b41d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sample-delegation-federation-and-authentication-scenario-in-sharepoint"></a>Beispieldelegierung-, Verbund- und Authentifizierungsszenario in SharePoint
 Dieser Artikel enthält Beispielszenarien für identitätsdelegierung und Identitätsverbund.
@@ -43,7 +43,7 @@ In diesem Szenario wird eine Anwendung, die auf Back-End-Ressourcen zugreifen, d
   
     
     
-Mit dem Kerberos-Delegierung Objektmodell auf der Windows-Plattform heute stehen die Back-End-Ressourcen Zugriff nur für die Identität des Aufrufers sofortige und nicht auf, die mit dem ursprünglichen Aufrufer. Bei diesem Modell wird häufig als des vertrauenswürdigen Subsystems bezeichnet. Windows Identity Foundation (WIF) behält die Identität des dem ursprünglichen Anrufer und der direkte Aufrufer in der Kette Delegierung mithilfe der  [Delegate()](https://msdn.microsoft.com/en-us/library/cc310252.aspx) -Eigenschaft.
+Mit dem Kerberos-Delegierung Objektmodell auf der Windows-Plattform heute stehen die Back-End-Ressourcen Zugriff nur für die Identität des Aufrufers sofortige und nicht auf, die mit dem ursprünglichen Aufrufer. Bei diesem Modell wird häufig als des vertrauenswürdigen Subsystems bezeichnet. Windows Identity Foundation (WIF) behält die Identität des dem ursprünglichen Anrufer und der direkte Aufrufer in der Kette Delegierung mithilfe der  [Delegate()](https://msdn.microsoft.com/de-DE/library/cc310252.aspx) -Eigenschaft.
   
     
     
@@ -83,12 +83,12 @@ Die folgenden Komponenten sind an diesem Szenario beteiligt:
 - sts2: Ein STS mit der Rolle des Identitätsanbieters für Fabrikam.com, der einen vom Fabrikam-Mitarbeiter zur Authentifizierung verwendeten Endpunkt bereitstellt. Er hat eine Vertrauensstellung zu Contoso.com hergestellt, sodass Fabrikam-Mitarbeiter auf die Ressourcen von Contoso.com zugreifen können.
     
   
-Beachten Sie, dass der Begriff "ActAs Token" auf ein Token verweist, die von einem STS ausgestellt wurde, und die Identität des Benutzers enthält. Die  [Delegate()](https://msdn.microsoft.com/en-us/library/cc310252.aspx) -Eigenschaft enthält die STS-Identität.Wie in Abbildung 1 dargestellt, ist der Ablauf in diesem Szenario:
+Beachten Sie, dass der Begriff "ActAs Token" auf ein Token verweist, die von einem STS ausgestellt wurde, und die Identität des Benutzers enthält. Die  [Delegate()](https://msdn.microsoft.com/de-DE/library/cc310252.aspx) -Eigenschaft enthält die STS-Identität.Wie in Abbildung 1 dargestellt, ist der Ablauf in diesem Szenario:
   
     
     
 
-1. Die Contoso-Anwendung wird für das Abrufen eines ActAs-Tokens konfiguriert, das die Identität des Fabrikam-Mitarbeiters und des unmittelbaren Aufrufers in der  [Delegate()](https://msdn.microsoft.com/en-us/library/cc310252.aspx) -Eigenschaft enthält. Daniel implementiert diese Änderungen in die Anwendung.
+1. Die Contoso-Anwendung wird für das Abrufen eines ActAs-Tokens konfiguriert, das die Identität des Fabrikam-Mitarbeiters und des unmittelbaren Aufrufers in der  [Delegate()](https://msdn.microsoft.com/de-DE/library/cc310252.aspx) -Eigenschaft enthält. Daniel implementiert diese Änderungen in die Anwendung.
     
   
 2. Die Contoso-Anwendung wird für die Weitergabe des ActAs-Tokens an den Back-End-Dienst konfiguriert. Daniel implementiert diese Änderungen in die Anwendung.
@@ -193,7 +193,7 @@ Wie in Abbildung 3 gezeigt, ist der Ablauf in diesem Szenario:
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15_SampleDelegation_AdditionalResources"> </a>
 
 

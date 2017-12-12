@@ -3,11 +3,11 @@ title: "Probleme bei der Überprüfung in Visio (SharePoint 2010-Workflowplattfo
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 416c8269-3c4e-40f4-bc20-a625f07a4dac
-ms.openlocfilehash: 170ff120dceb06e6854aaf63079f9f3027c244a3
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4a700ee4a3061096db6e63f78fde2b0badac7f7c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="validation-issues-in-visio-sharepoint-2010-workflow-platform"></a>Probleme bei der Überprüfung in Visio (SharePoint 2010-Workflowplattform)
 Verwenden Sie diese Übersicht, bei der Validierung von Problemen beim Exportieren eines SharePoint-Workflows aus Visio Professional 2013 SharePoint Designer 2013 unterstützen. Dieser Artikel beschreibt Überprüfungsprobleme, die auftreten können, wenn Sie die SharePoint 2010-Workflow-Plattform in SharePoint Designer 2013 verwenden.
@@ -656,7 +656,7 @@ Visio Professional 2013 können maximal 10 Ebenen geschachtelter Workflowaktivit
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

@@ -3,11 +3,11 @@ title: "Erstellen von Farmlösungen in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 96c32f08-ad93-49af-b8d0-9d194a48cc79
-ms.openlocfilehash: 8cc5fbc9d9b26d0048cd0e42e611ff9707847079
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 550cc114ad3850f5c87bdb50dfd9e10a4e653f0a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="build-farm-solutions-in-sharepoint"></a>Erstellen von Farmlösungen in SharePoint
 Übersicht über unsere Dokumentation und die Entwicklung, Verpackung und Bereitstellung von administrativen Erweiterungen für SharePoint mit Farmlösungen.
@@ -76,7 +76,7 @@ Die Themen in diesem Abschnitt beschreiben die  *Änderungen*  bei der Entwicklu
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15buildfarm_addlresources"> </a>
 
 

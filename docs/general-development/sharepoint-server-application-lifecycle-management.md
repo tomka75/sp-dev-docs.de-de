@@ -3,11 +3,11 @@ title: Application Lifecycle Management in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: caaf9a09-2e6a-49e3-a8d6-aaf7f93a842a
-ms.openlocfilehash: a969bc3ae2e64de2214e8e85443ddc3164c10341
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 93314de898aa1880a0de48b5cfbf7a2e94d57b36
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-application-lifecycle-management"></a>Application Lifecycle Management in SharePoint
 In diesem Artikel erfahren Sie, wie Sie gängige ALM (Application Lifecycle Management)-Konzepte und -Methoden auf die Anwendungsentwicklung mit SharePoint-Technologien anwenden können.
@@ -662,7 +662,7 @@ Die Informationen in  [Aktualisierungsverfahren für Add-Ins für SharePoint](ht
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

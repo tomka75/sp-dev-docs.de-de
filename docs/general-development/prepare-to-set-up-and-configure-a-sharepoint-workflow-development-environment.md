@@ -3,11 +3,11 @@ title: "Ausführen vorbereitender Schritte zum Einrichten und Konfigurieren eine
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: b6a3321f-4131-4a8e-9cb7-7a1b4ab9e26b
-ms.openlocfilehash: 2c75e0c98642891abe614c6650dc09aa80c5df6f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 9d6afa7404fb31ad62e386f4204e1ae268e9acf9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="prepare-to-set-up-and-configure-a-sharepoint-workflow-development-environment"></a>Ausführen vorbereitender Schritte zum Einrichten und Konfigurieren einer Entwicklungsumgebung für SharePoint-Workflows
 Erfahren Sie mehr darüber, wie Sie eine Workflowentwicklungsumgebung für das Entwickeln von SharePoint-Workflows als eigenständige  [Apps für SharePoint](http://msdn.microsoft.com/library/fp179930.aspx) mit Visual Studio 2012 entwickeln.
@@ -133,7 +133,7 @@ Hier ist eine Zusammenfassung der Änderungen, die eine Aktualisierung Ihrer Wor
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

@@ -3,11 +3,11 @@ title: "Hinzufügen von SharePoint-Funktionen"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 11ecb65e-6dc5-4cf1-80ca-3c16418697b6
-ms.openlocfilehash: 16350833ae08dd0dca99104811ab71084ef4b317
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4701f07d122340c9412e6d8940acbb41ec3a153f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="add-sharepoint-capabilities"></a>Hinzufügen von SharePoint-Funktionen
 Hier erhalten Sie eine Übersicht und Anleitungen zum Hinzufügen von SharePoint-Features zu benutzerdefinierten Apps.
@@ -46,7 +46,7 @@ In der folgende Tabelle sind SharePoint-Funktionen aufgeführt, die Sie zu Ihren
 |Ermitteln von Inhalten im elektronischen Format für rechtliche Zwecke  <br/> | [eDiscovery in SharePoint](ediscovery-in-sharepoint.md) <br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

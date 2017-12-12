@@ -3,11 +3,11 @@ title: Verstehen von Aufgabenaktionen in SharePoint Designer 2013
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 6fd69e94-ebe1-4d5d-98db-b2f3ce16f098
-ms.openlocfilehash: d552cfecf00972f0b21b513d6ff52d1f53316a41
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ea78cffb454521f88e01fede693a4659594b7e42
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="understanding-task-actions-in-sharepoint-designer-2013"></a>Verstehen von Aufgabenaktionen in SharePoint Designer 2013
 Hier lernen, mit Aufgabenaktionen in SharePoint Designer 2013 zu arbeiten.
@@ -200,7 +200,7 @@ Für die Aktion **Vorgangsprozess starten** werden zwei Eingaben benötigt: die 
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

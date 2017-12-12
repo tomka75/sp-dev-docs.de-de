@@ -3,11 +3,11 @@ title: Business Connectivity Services in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 64b7d032-4b83-4e9e-bc08-f0a161af5457
-ms.openlocfilehash: 20274a51726540bd765b8a7627a4e645e9890b43
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3c29b9a8908930d0346d5206645f42cad8e9fbec
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="business-connectivity-services-in-sharepoint"></a>Business Connectivity Services in SharePoint
 Erfahren Sie, worum es sich bei Business Connectivity Services (BCS) handelt, welche Möglichkeiten es Ihnen bietet, und wie Sie in die Entwicklung von BCS-Anwendungen in SharePoint einsteigen. Sie können SharePoint als Zentrale für die Erstellung umfangreicher Produktivitäts- und Zusammenarbeitslösungen verwenden, die mit verschiedensten externen Systemen verwendet werden können. Business Connectivity Services (BCS) stellt die Infrastruktur bereit, die es SharePoint ermöglicht, Daten aus diesen externen Systemen in einem zentralen System zusammenzuführen. Die Tatsache, dass BCS eine flexible und umfassende Möglichkeit bietet, die externe Systemdatenquelle und die Interaktion mit dieser zu beschreiben, stellt ein überzeugendes Argument dafür dar, zusätzlich zu neuen SharePoint-Add-InsSharePoint als die zentrale Schnittstelle für die Arbeit mit Legacy-Geschäftssystemen zu verwenden.
@@ -143,7 +143,7 @@ Weitere Informationen finden Sie unter  [Verwenden von OData-Quellen mit Busines
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkmk_AdditionalResources"> </a>
 
 

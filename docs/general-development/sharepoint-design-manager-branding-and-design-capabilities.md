@@ -3,11 +3,11 @@ title: SharePoint Design Manager - Branding- und Designfunktionen
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 2f81acbb-1263-4f9d-8865-36eb7a3f907b
-ms.openlocfilehash: 8394c73339c0a5bc9fc9b33bb7ed79eef5cc4fb1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 9d7aa55efd42b0a8c1795669616661d96f503e08
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-design-manager-branding-and-design-capabilities"></a>SharePoint Design Manager - Branding- und Designfunktionen
 Hier finden Sie Links zu Informationen über die Verwendung der Branding- und Designfunktionen von Design Manager in SharePoint. Design Manager in SharePoint bietet einen neuen Ansatz für das Entwerfen von Websites. Mit den neuen Branding- und Desingfunktionen in Design Manager können Sie eine ansprechende Benutzeroberfläche für Ihre SharePoint-Website schaffen. Design Manager unterstützt außerdem den Import und Export eines visuellen Designs und kann Ihnen dabei helfen, eine konsistente Benutzeroberfläche auf allen Geräteplattformen in Ihrem Unternehmen bereitzustellen.
@@ -35,7 +35,7 @@ Weitere Informationen über die Design- und Unterstützungsfunktionen in Design 
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

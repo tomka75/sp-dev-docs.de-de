@@ -3,11 +3,11 @@ title: Gestaltungsvorlagen, der Gestaltungsvorlagenkatalog und Seitenlayouts in 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 80b9a360-bc2e-46c6-b0ca-1bc487b73db6
-ms.openlocfilehash: 0978e07bd031277bba00406b4e98dcfd7d05279c
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c412a74dd7d113718ef982e4f9d7030654c6219e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="master-pages-the-master-page-gallery-and-page-layouts-in-sharepoint"></a>Gestaltungsvorlagen, der Gestaltungsvorlagenkatalog und Seitenlayouts in SharePoint
 Hier finden Sie Links mit Informationen zur Verwendung des Entwurfs-Managers bei der Arbeit mit Gestaltungsvorlagen, Seitenlayouts und Anzeigevorlagen in Veröffentlichungswebsites in SharePoint.
@@ -45,7 +45,7 @@ Weitere Informationen zur Verwendung des Entwurfs-Managers bei der Arbeit mit Ge
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

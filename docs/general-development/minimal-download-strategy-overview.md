@@ -2,11 +2,11 @@
 title: "Minimale Downloadstrategie – Übersicht"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 9aafff627fcc47dbb8bbd4402585669dd6ef5bae
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 07ef1c73bf7ea01eb9dc9036597502eb687845b6
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="minimal-download-strategy-overview"></a>Minimale Downloadstrategie – Übersicht
 Erfahren Sie mehr über minimale herunterladen Strategie (MDS), ein neues Feature in SharePoint, die Ladezeit der Seite durch Senden nur die Unterschiede beim Benutzer navigieren zu einer neuen Seite reduziert. Minimale herunterladen Strategie (MDS) ist eine neue Technologie in SharePoint, die die Menge der Daten, die im Browser herunter verringert, wenn Benutzer von einer Seite in eine andere in einer SharePoint Website navigieren. Wenn Benutzer eine MDS-fähigen Website navigieren, verarbeitet der Client nur die Unterschiede (oder Delta) zwischen der aktuellen Seite und die angeforderte Seite. Abbildung 1 zeigt, dass die Abschnitte, die von einer Seite zum und deshalb ändern ein Update erforderlich. Das Delta umfasst in der Regel die Daten in den Abschnitten (1) Inhalte sowie andere Komponenten wie Navigationssteuerelemente (2).
@@ -205,7 +205,7 @@ Dank der Failovermechanismus nahtlos Steuerelemente unabhängig davon, ob MDS in
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

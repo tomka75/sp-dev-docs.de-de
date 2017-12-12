@@ -2,11 +2,11 @@
 title: "Rolle, Vererbung, Erhöhung von Berechtigungen und Kennwortänderungen in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 6860c6c126d3d617e303ec4bd67f73236eb647d0
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 07ff58f15255bdb924b3ccc14877056c64d65172
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="role-inheritance-elevation-of-privilege-and-password-changes-in-sharepoint"></a>Rolle, Vererbung, Erhöhung von Berechtigungen und Kennwortänderungen in SharePoint
 
@@ -212,7 +212,7 @@ Weitere Informationen zur API für verwaltete Konten finden Sie über die folgen
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15_RoleInheritance_AdditionalResources"> </a>
 
 

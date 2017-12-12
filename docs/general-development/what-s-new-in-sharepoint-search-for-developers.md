@@ -3,11 +3,11 @@ title: "Neuerungen für Entwickler bei der SharePoint-Suche"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: b8d69685-3612-421e-b011-50b4d580d461
-ms.openlocfilehash: aa3e8633312ee6fa814a7e9bb0152d131e30b799
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: a7c1c21a01e1cda974793685e229219a83b0b535
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="whats-new-in-sharepoint-search-for-developers"></a>Neuerungen für Entwickler bei der SharePoint-Suche
 Informationen Sie zu den neuen Features für Entwickler bei der Suche in SharePoint.
@@ -254,7 +254,7 @@ Das konnektorframework bietet auch verbesserte Ausnahme erfassen und Protokollie
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

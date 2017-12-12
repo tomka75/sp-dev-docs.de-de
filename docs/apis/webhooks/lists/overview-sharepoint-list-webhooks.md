@@ -2,11 +2,11 @@
 title: SharePoint-Listen-Webhooks
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 81657f3bcaf45eeea4e0999d3c6eb6dfad0407b1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2b3543885de7fcce75694d368667f17dd690592f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-list-webhooks"></a>SharePoint-Listen-Webhooks
 
@@ -37,6 +37,6 @@ Benachrichtigungen werden an Ihre Anwendung für die folgenden asynchronen Liste
 
 Synchrone Ereignisse werden in Webhooks nicht unterstützt.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 
 * [Übersicht über SharePoint-Webhooks](../overview-sharepoint-webhooks.md)

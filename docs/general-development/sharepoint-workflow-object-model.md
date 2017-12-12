@@ -3,18 +3,18 @@ title: SharePoint-Workflow-Objektmodell
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: be615a89-3201-4cd8-bbc7-15f3abf9f668
-ms.openlocfilehash: 0b02055055f6777b6c641c1a1445194573c54de5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 02434d1a009b54ad971145d53cb1c47b52a096ad
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-workflow-object-model"></a>SharePoint-Workflow-Objektmodell
 Rufen Sie eine kurze Einführung in das Workflowobjektmodell in SharePoint.
 ## <a name="sharepoint-workflow-object-model"></a>SharePoint-Workflow-Objektmodell
 <a name="bk_SPwfom"> </a>
 
-Das SharePoint-Objektmodell basiert auf der Basis des .NET Framework 4-Objektmodells für Windows Workflow Foundation 4, jedoch mit Innovationen, die in SharePoint-Workflowfunktionen im Allgemeinen und in SharePoint-Add-Ins insbesondere ermöglichen. Das systemeigene .NET Framework 4-Objektmodell für Windows Workflow Foundation 4 befindet sich in der .NET Framework  [System.Workflow Namespaces](http://msdn.microsoft.com/en-us/library/gg145026.aspx).
+Das SharePoint-Objektmodell basiert auf der Basis des .NET Framework 4-Objektmodells für Windows Workflow Foundation 4, jedoch mit Innovationen, die in SharePoint-Workflowfunktionen im Allgemeinen und in SharePoint-Add-Ins insbesondere ermöglichen. Das systemeigene .NET Framework 4-Objektmodell für Windows Workflow Foundation 4 befindet sich in der .NET Framework  [System.Workflow Namespaces](http://msdn.microsoft.com/de-DE/library/gg145026.aspx).
   
     
     
@@ -106,18 +106,17 @@ Verweis Inhalte für SharePoint-Schemas in den Anspruch  [Workflowschemas](http:
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_additionalresources"> </a>
 
 
--  
-  [Einführung für Entwickler für Windows Workflow Foundation (WF) in .NET 4](http://msdn.microsoft.com/en-us/library/ee342461.aspx)
+-  [Einführung für Entwickler für Windows Workflow Foundation (WF) in .NET 4](http://msdn.microsoft.com/de-DE/library/ee342461.aspx)
     
   
 -  [Windows Workflow Foundation 4.0: Hello, Workflow!](http://weblogs.asp.net/gunnarpeipman/archive/2009/07/08/windows-workflow-foundation-4-0-hello-workflow.aspx)
     
   
--  [Windows Workflow Foundation (WF) - Screencasts](http://msdn.microsoft.com/en-us/netframework/dd733248)
+-  [Windows Workflow Foundation (WF) - Screencasts](http://msdn.microsoft.com/de-DE/netframework/dd733248)
     
   
 -  [Workflowaktions- und -aktivitätenreferenz für SharePoint](workflow-actions-and-activities-reference-for-sharepoint.md)

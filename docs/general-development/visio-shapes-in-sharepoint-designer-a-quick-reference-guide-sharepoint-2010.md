@@ -3,11 +3,11 @@ title: "Visio-Shapes in SharePoint Designer 2013 Eine Kurzübersicht (SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 51bc37fd-37de-4ad0-a75a-bdf7333bc80c
-ms.openlocfilehash: d685265148d2e626982a6010f5f48a00d366863f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 44b084ef9dee9d50f45f8b5863ea9dc4f133f0dc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="visio-shapes-in-sharepoint-designer-2013-a-quick-reference-guide-sharepoint-2010-workflow-platform"></a>Visio-Shapes in SharePoint Designer 2013: Eine Kurzübersicht (SharePoint 2010-Workflowplattform)
 Sie können einen Workflow in Microsoft Visio Professional 2013 erstellen und diesen dann nach Microsoft SharePoint Designer 2013 exportieren. In diesem Handbuch sind die Visio-Shapes aufgeführt, die Sie zum Erstellen des Workflows verwenden.Verwenden Sie diesen Referenzartikel nur, wenn Sie in SharePoint Designer 2013 arbeiten, weiterhin jedoch die SharePoint 2010-Workflowplattform verwenden möchten.Die Shapes für die SharePoint 2010-Workflowplattform umfassen drei Schablonen: **Aktionen - SharePoint 2010-Workflow**, **Bedingungen - SharePoint 2010-Workflow** und **Abschlusszeichen - SharePoint 2010-Workflow**.
@@ -223,7 +223,7 @@ In Visio muss jeder Workflow mit einem Start-Abschlusszeichen (![Start](../image
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

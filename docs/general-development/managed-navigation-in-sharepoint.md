@@ -2,11 +2,11 @@
 title: Verwaltete Navigation in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 6dbb9da2d644b6f6f93ea4508616daee7fac321e
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c31c9cc6d2b344bc815bbd98409227ffbc63f86a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="managed-navigation-in-sharepoint"></a>Verwaltete Navigation in SharePoint
 
@@ -249,7 +249,7 @@ using (SPSite site = new SPSite(TestConfig.ServerUrl))
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15_ManagedNav_AdditionalResources"> </a>
 
 

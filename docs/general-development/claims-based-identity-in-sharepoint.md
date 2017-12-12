@@ -3,11 +3,11 @@ title: "Anspruchsbasierte Identität in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 32b6af2a-72f3-4302-a6af-5f00143cbf67
-ms.openlocfilehash: 7df5c259861cb43a36d5c7290a45698614ebfd20
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: a45031d32b91cd4b8339dda588ddcd9a657cd05f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="claims-based-identity-in-sharepoint"></a>Anspruchsbasierte Identität in SharePoint
 Informationen Sie zu den Grundlagen der anspruchsbasierten identitätsarchitektur in SharePoint.
@@ -48,7 +48,7 @@ Das Schlüsselkonzept liegt darin, dass ein Anspruch nicht nur ein eindeutiger B
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15_RoleInheritance_AdditionalResources"> </a>
 
 

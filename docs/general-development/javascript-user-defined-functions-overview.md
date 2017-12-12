@@ -3,11 +3,11 @@ title: "Benutzerdefinierte JavaScript-Funktionen (Übersicht)"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: fee38837-1985-4319-ba4e-b99c6ec66336
-ms.openlocfilehash: f154b2ba19fd37bb51ec4ada82ed5e6ce47b3006
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 8c4a4d867fc19d84b05b81497272e39d72f27118
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="javascript-user-defined-functions-overview"></a>Benutzerdefinierte JavaScript-Funktionen (Übersicht)
 Benutzerdefinierte JavaScript-Funktionen (UDFs) sind neu in Excel Services und SharePoint. Dieser Artikel bietet eine allgemeine Übersicht über JavaScript UDFs, einschließlich grundlegender Informationen über deren Funktionsweise in Excel Services.
@@ -116,7 +116,7 @@ JavaScript UDFs können entweder in Arbeitsmappen, die in SharePoint Excel Web A
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
@@ -126,8 +126,7 @@ JavaScript UDFs können entweder in Arbeitsmappen, die in SharePoint Excel Web A
 -  [Was ist neu in Excel Services für Entwickler](http://msdn.microsoft.com/library/09e96c8b-cb55-4fd1-a797-b50fbf0f9296.aspx)
     
   
--  
-  [Benutzerdefinierte Funktionen von Excel Services](http://msdn.microsoft.com/en-us/library/ms493934)
+-  [Benutzerdefinierte Funktionen von Excel Services](http://msdn.microsoft.com/de-DE/library/ms493934)
     
   
 

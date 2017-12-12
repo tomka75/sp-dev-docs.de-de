@@ -3,11 +3,11 @@ title: Erste Schritte mit den Business Connectivity Services in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c6bf3db0-db79-4b13-9834-891d24b2c9e5
-ms.openlocfilehash: 71ff8cc2b13f8fc6dd9d65eab41cb2743d713f4f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 971c338c4d05ddb8ede3cf5f77aa3eabebb2b1b3
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="get-started-with-business-connectivity-services-in-sharepoint"></a>Erste Schritte mit den Business Connectivity Services in SharePoint
 Lernen Sie die Grundlagen dessen, was Business Connectivity Services (BCS) für Entwickler von SharePoint-Lösungen bietet, sowie die ersten Schritte beim Verwenden von BCS in verschiedenen Arten von Lösungen.
@@ -73,11 +73,9 @@ Die folgende Tabelle zeigt die Kernkonzepte, mit denen Sie sich vertraut machen 
 
 |**Artikel**|**Beschreibung**|
 |:-----|:-----|
-| 
-  [Entity Data Model - Schlüsselkonzepte](http://msdn.microsoft.com/en-us/library/ee382840.aspx) <br/> |Das Entity Data Model (EDM) verwendet drei Schlüsselkonzepte zum Beschreiben der Datenstruktur: Entitätstyp, Zuordnungstyp und Eigenschaft. Dies sind die wichtigsten Konzepte beim Beschreiben der Datenstruktur in allen Implementierungen von EDM.  <br/> |
-| 
-  [Grundlegende Sicherheitsmaßnahmen für Webanwendungen](http://msdn.microsoft.com/en-us/library/zdh19h94.aspx) <br/> |Das Erstellen sicherer Webanwendungen ist ein sehr umfangreiches Thema. Sie müssen sich auch mit den Sicherheitsfunktionen des Windows-Betriebssystems vertraut machen, .NET Framework und ASP.NET. Es ist wichtig, zu verstehen, wie diese Sicherheitsfunktionen zu verwenden sind, um Bedrohungen entgegenzuwirken.  <br/> |
-| [WCF Data Services](http://msdn.microsoft.com/en-us/data/odata.aspx) <br/> |WCF Data Services, früher ADO.NET Data Services genannt, ermöglichen die Erstellung und Verarbeitung von OData-Diensten für das Web.  <br/> |
+| [Entity Data Model - Schlüsselkonzepte](http://msdn.microsoft.com/de-DE/library/ee382840.aspx) <br/> |Das Entity Data Model (EDM) verwendet drei Schlüsselkonzepte zum Beschreiben der Datenstruktur: Entitätstyp, Zuordnungstyp und Eigenschaft. Dies sind die wichtigsten Konzepte beim Beschreiben der Datenstruktur in allen Implementierungen von EDM.  <br/> |
+| [Grundlegende Sicherheitsmaßnahmen für Webanwendungen](http://msdn.microsoft.com/de-DE/library/zdh19h94.aspx) <br/> |Das Erstellen sicherer Webanwendungen ist ein sehr umfangreiches Thema. Sie müssen sich auch mit den Sicherheitsfunktionen des Windows-Betriebssystems vertraut machen, .NET Framework und ASP.NET. Es ist wichtig, zu verstehen, wie diese Sicherheitsfunktionen zu verwenden sind, um Bedrohungen entgegenzuwirken.  <br/> |
+| [WCF Data Services](http://msdn.microsoft.com/de-DE/data/odata.aspx) <br/> |WCF Data Services, früher ADO.NET Data Services genannt, ermöglichen die Erstellung und Verarbeitung von OData-Diensten für das Web.  <br/> |
 | [Open Data Protocol (OData)](http://www.odata.org) <br/> |OData ist ein Industriestandardprotokoll für den Zugriff auf Daten über URLs. Es befindet sich im Grunde über dem HTTP-Protokoll, um Funktionen mithilfe von vorhandenen HTTP-Verben zu lesen und zu schreiben.  <br/> |
 | [Internetinformationsdienste](http://www.iis.net/) <br/> |Internetinformationsdienste (IIS) ist eine Plattform, auf der SharePoint ausgeführt wird. Sie müssen nachvollziehen können, wie Websites, virtuelle Verzeichnisse, Webdienste, URLs, Websicherheit und weitere mit IIS verwandte Technologien erstellt werden können.  <br/> |
 | [Externe Inhaltstypen in SharePoint](external-content-types-in-sharepoint.md) <br/> |Externe Inhaltstypen sind Beschreibungen externer Systeme, die sie darstellen. Sie können wiederverwendet werden, wenn sie in SharePoint importiert werden, und können zum Erstellen komplexer codefreier Lösungen mithilfe von SharePoint Designer 2013, Outlook 2013, Webparts, externen Listen und benutzerdefinierten Clientanwendungen verwendet werden.  <br/> |
@@ -123,7 +121,7 @@ Wenn Sie die grundlegenden Konzepte von BCS beherrschen, können Sie erweiterte 
 | [BCS-REST-API-Referenz für SharePoint](bcs-rest-api-reference-for-sharepoint.md) <br/> |Hier erhalten Sie Referenzinformationen für das Erstellen von REST-URIs, die für den Zugriff und die Manipulation von OData-Quellen verwendet werden.  <br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15GettingStartedBCS_LearnMore"> </a>
 
 

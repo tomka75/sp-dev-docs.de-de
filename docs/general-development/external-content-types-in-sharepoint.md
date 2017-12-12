@@ -3,11 +3,11 @@ title: Externe Inhaltstypen in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 11d7adb5-5388-4517-ae03-beb7be1c6981
-ms.openlocfilehash: 4b4f27d7a3e30da28eee1f68eea1faf958e5f678
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: beac2fcaea11c5998a2b8a96291e45dc1ae5313e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="external-content-types-in-sharepoint"></a>Externe Inhaltstypen in SharePoint
 Erfahren Sie, welche Möglichkeiten Ihnen externe Inhaltstypen bieten, und was Sie benötigen, um mit deren Erstellung in SharePoint zu beginnen.
@@ -137,7 +137,7 @@ Tabelle 1 enthält Beispielaufgaben, mit denen das Arbeiten mit externen Inhalts
 | [Vorgehensweise: Erstellen externer Inhaltstypen für SQL Server in SharePoint](how-to-create-external-content-types-for-sql-server-in-sharepoint.md) <br/> |Erfahren Sie, wie Sie einen externen Inhaltstyp erstellen, der auf einer SQL Server-Datenbank basiert.  <br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15ectoverview_addres"> </a>
 
 

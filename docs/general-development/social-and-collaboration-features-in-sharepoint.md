@@ -3,11 +3,11 @@ title: Soziale Funktionen und Zusammenarbeit in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 5060f676-9aaa-41fe-88ef-e862ee2e1c52
-ms.openlocfilehash: 8fe69747b471220b5bb87926f06e89379d408e25
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 5ec81d54f9f1d43a798fcc2e0c0141351c724d7e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="social-and-collaboration-features-in-sharepoint"></a>Soziale Funktionen und Zusammenarbeit in SharePoint
 Erfahren Sie mehr über die Features für soziale Netzwerke und Zusammenarbeit in SharePoint und über Entwicklungsszenarien für „Meine Websites", Teamwebsites und Communitywebsites.
@@ -57,12 +57,11 @@ Benutzer können die umfangreiche, forenartige Erfahrung in Communitywebsites nu
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
--  
-  [Planen für Social Computing und Zusammenarbeit in SharePoint](http://technet.microsoft.com/en-us/library/ee662531%28v=office.15%29)
+-  [Planen für Social Computing und Zusammenarbeit in SharePoint](http://technet.microsoft.com/de-DE/library/ee662531%28v=office.15%29)
     
   
 -  [Clientklassenbibliothek für Funktionen und Daten für das soziale Netzwerk](http://msdn.microsoft.com/library/9cc3f70c-78ac-4d2d-b46e-77522ee5d937%28Office.15%29.aspx)

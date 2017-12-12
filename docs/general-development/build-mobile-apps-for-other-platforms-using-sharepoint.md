@@ -3,11 +3,11 @@ title: "Erstellen von mobilen Apps für andere Plattformen mit SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 017df869-44fb-4ffe-82fb-4654e01329ad
-ms.openlocfilehash: 79a29d982ffaf0ef91732090c3a989a5d10a2814
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 9332b25b93ea89d0bafc4a7074d1b0895f82f0f8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="build-mobile-apps-for-other-platforms-using-sharepoint"></a>Erstellen von mobilen Apps für andere Plattformen mit SharePoint
 Erfahren Sie, wie Sie REST (Representational State Transfer) zum Erstellen einer mobilen SharePoint-App für eine beliebige Plattform verwenden. Mobile Geräte sind heutzutage leistungsfähiger und benutzerfreundlicher geworden. Laptops, Netbooks und Tablet-PCs und Mobiltelefone bieten Mitarbeitern Zugriff auf die Informationen und Anwendungen, die sie für ihre Arbeit benötigen. Und die Entwicklung von Anwendungen für mobile Geräte war noch nie einfacher. Dementsprechend erfordern immer mehr Geschäftsszenarien die Integration von Clientanwendungen in ihre Geschäftsprozessen. In diesem Artikel wird beschrieben, wie mobile Client-Apps in SharePoint integriert werden. Sie können eine mobile App erstellen, um SharePoint-Inhalte von beliebigen Speicherorten zu durchsuchen und eine Verbindung mit SharePoint-Listen und -Bibliotheken zum Zugriff auf Daten herzustellen.
@@ -213,10 +213,9 @@ Der folgende XML-Code zeigt ein Beispiel für die Listenelementeigenschaften, di
 
 Das folgende Beispiel zeigt, wie Sie ein Listenelement **erstellen**.
   
-    
-    
-
-> **Hinweis:** Zum Ausführen dieses Vorgangs müssen Sie die Eigenschaft **ListItemEntityTypeFullName** der Liste kennen und sie als Wert von **type** im HTTP-Anforderungstext weitergeben.
+> [!NOTE]
+> 
+> Um diese Operation durchzuführen, müssen Sie die Eigenschaft **ListItemEntityTypeFullName** der Liste kennen und sie als Wert von **type** im Textkörper der HTTP-Anforderung übergeben.
   
     
     
@@ -241,10 +240,8 @@ headers:
 
 Das folgende Beispiel zeigt, wie Sie ein Listenelement **aktualisieren**.
   
-    
-    
-
-> **Hinweis:** Zum Ausführen dieses Vorgangs müssen Sie die Eigenschaft **ListItemEntityTypeFullName** der Liste kennen und sie als Wert von **type** im HTTP-Anforderungstext weitergeben.
+> [!NOTE]
+> Um diese Operation durchzuführen, müssen Sie die Eigenschaft **ListItemEntityTypeFullName** der Liste kennen und sie als Wert von **type** im Textkörper der HTTP-Anforderung übergeben.
   
     
     
@@ -293,7 +290,7 @@ Weitere Informationen finden Sie unter  [Ausführen grundlegender Vorgänge unte
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

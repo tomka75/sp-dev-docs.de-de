@@ -3,11 +3,11 @@ title: "Problembehandlung bei SharePoint Server-Workflow-Überprüfungsfehlern i
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c21cc3e2-45bd-4d34-a57d-dd0954436bd8
-ms.openlocfilehash: df9cbf15f3249b8dae78463b97be7d1f9cae595b
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 7462f1de37b128255198e6165c98b0258ba8e2b0
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="troubleshooting-sharepoint-server-workflow-validation-errors-in-visio"></a>Problembehandlung bei SharePoint Server-Workflow-Überprüfungsfehlern in Visio
 Verwenden Sie diese Übersicht, Validierung und fehlerüberprüfung Probleme in der Workflowvorlage Microsoft SharePoint in Microsoft Visio 2013 und Microsoft SharePoint Designer 2013 aufzulösen.
@@ -48,7 +48,7 @@ Die folgende Tabelle enthält eine Liste aller die Überprüfungsprobleme, die i
 |Eine parallele Aktivität muss mit einem Shape starten Verzweigung "Parallel" beginnen.  <br/> |Überprüfen Sie jede parallele Aktivität im Workflow, um sicherzustellen, dass es eine parallele Verzweigung starten Form hat, vor dem Beginn der parallelen Aktivitätsfeeds.  <br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="VSSPD_Trouble_Additional"> </a>
 
 
@@ -61,13 +61,13 @@ Die folgende Tabelle enthält eine Liste aller die Überprüfungsprobleme, die i
 -  [Kurzübersicht zu Workflowaktionen (SharePoint-Workflowplattform)](workflow-actions-quick-reference-sharepoint-workflow-platform.md)
     
   
--  [Erstellen, Importieren und Exportieren von SharePoint-Workflows in Visio](http://office.microsoft.com/en-us/visio-help/create-import-and-export-sharepoint-workflows-in-visio-HA101888007.aspx)
+-  [Erstellen, Importieren und Exportieren von SharePoint-Workflows in Visio](http://office.microsoft.com/de-DE/visio-help/create-import-and-export-sharepoint-workflows-in-visio-HA101888007.aspx)
     
   
--  [SharePoint Developer Center](http://msdn.microsoft.com/en-us/sharepoint/default.aspx)
+-  [SharePoint Developer Center](http://msdn.microsoft.com/de-DE/sharepoint/default.aspx)
     
   
--  [Visio Developer Center](http://msdn.microsoft.com/en-us/office/aa905478)
+-  [Visio Developer Center](http://msdn.microsoft.com/de-DE/office/aa905478)
     
   
 

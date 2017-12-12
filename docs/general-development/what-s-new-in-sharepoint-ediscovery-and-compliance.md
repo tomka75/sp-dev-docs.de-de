@@ -3,11 +3,11 @@ title: Neuigkeiten in SharePoint-eDiscovery und Compliance
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 39a1cc3f-c78d-478f-8c15-928b96386a52
-ms.openlocfilehash: 1270779285e663dd4058475898f997e5c8c66e14
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2942f9b5358bc9527e0ed7607688a2a54b7cb40b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="whats-new-in-sharepoint-ediscovery-and-compliance"></a>Neuigkeiten in SharePoint-eDiscovery und Compliance
 Lernen Sie neue Features in SharePoint für eDiscovery und Compliance-Features. Verwenden Sie diese Features zu verwalten und wiederherzustellenden Objekte in der Rechtsstreitigkeiten Beweisen.
@@ -94,7 +94,7 @@ Websites und anderen großen Objekten müssen manchmal ihre Benutzer mit einer b
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

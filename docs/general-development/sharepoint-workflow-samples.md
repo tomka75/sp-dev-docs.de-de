@@ -3,11 +3,11 @@ title: SharePoint-Workflowbeispiele
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: ffaccd6b-426d-4ca0-b62f-bc7b14641a49
-ms.openlocfilehash: 42abbc0a0b8e1ae8522092fce06452429cf673b7
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 5f89fb0084f593d2d92e30db63c135ba53dda762
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-workflow-samples"></a>SharePoint-Workflowbeispiele
 Stellt Beispiel-Workflows bereit, die verdeutlichen, wie SharePoint-Workflows im neuen Workflow-Manager-Client 1.0 -Framework erstellt und implementiert werden können.
@@ -74,7 +74,7 @@ Beispielcode dazu finden Sie hier:  [SharePoint-Workflow: Workflow-OM in einer S
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkm_additional"> </a>
 
 

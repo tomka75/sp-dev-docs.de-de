@@ -3,11 +3,11 @@ title: "Übersicht über den Entwurfs-Manager in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 29834b3f-3815-4347-91d3-296387663114
-ms.openlocfilehash: 6422ff4e19136bac523e1a4d59100241091ae11b
-ms.sourcegitcommit: 11d9185437fc819ab41421c0f4fe06aa300b9d28
+ms.openlocfilehash: 253207ef3191f5868cd69b273c5e42c4b54ac410
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="overview-of-design-manager-in-sharepoint"></a>Übersicht über den Entwurfs-Manager in SharePoint
 In diesem Artikel erfahren Sie, wie Sie den Entwurfs-Manager zum Branding von SharePoint-Websites verwenden können. Der Entwurfs-Manager ist ein Veröffentlichungsfeature, das auf Veröffentlichungswebsites in SharePoint und Office 365 verfügbar ist. 
@@ -148,16 +148,14 @@ Das wichtigste Feature des Entwurfs-Managers ist, dass er Ihr HTML-Design in ein
     
 Nach der Konvertierung werden Ihre HTML-Datei und die SharePoint-Gestaltungsvorlage verknüpft, sodass die Gestaltungsvorlage automatisch aktualisiert wird, wenn Sie die HTML-Datei bearbeiten und auf Ihrem zugeordneten Laufwerk speichern. Die HTML-Gestaltungsvorlage besitzt im Entwurfs-Manager eine Eigenschaft mit der Bezeichnung **Zugeordnete Datei**. Mit dieser Eigenschaft wird festgelegt, ob Änderungen an der HTML-Datei mit der .master-Datei synchronisiert werden.
   
-    
-    
-
-> **Hinweis:** Der Entwurfs-Manager bietet auch die Möglichkeit, eine minimale Gestaltungsvorlage als Grundlage für Ihr Design zu verwenden. In diesem Szenario müssen Sie nicht mit einem HTML-Design beginnen; Sie können stattdessen eine HTML-Gestaltungsvorlage mit allen Seitenelementen erstellen, die mindestens erforderlich sind, um die Gestaltungsvorlage korrekt in SharePoint zu rendern. Anschließend können Sie diese HTML-Gestaltungsvorlage bearbeiten, um Ihr Design anzupassen. 
+> [!NOTE]
+> Der Entwurfs-Manager bietet auch die Option, Ihr Design mithilfe einer minimalen Gestaltungsvorlage zu beginnen. In diesem Szenario müssen Sie nicht mit einem HTML-Design beginnen; Sie können stattdessen eine HTML-Gestaltungsvorlage erstellen, welche die mindestens erforderlichen Seitenelemente enthält, damit die Gestaltungsvorlage in SharePoint korrekt gerendert wird, und dann Ihr eigenes Design erstellen, indem Sie die HTML-Gestaltungsvorlage bearbeiten. 
   
     
     
 
 
-#### <a name="preview-the-master-page"></a>Anzeigen einer Vorschau der Gestaltungsvorlage
+#### <a name="preview-the-master-page"></a>Anzeigen der Gestaltungsvorlage in der Vorschau
 
 Zusätzlich zur Konvertierung Ihrer Gestaltungsvorlage bietet der Entwurfs-Manager eine serverseitige Vorschau (im Gegensatz zur Entwurfszeitvorschau in Ihrem HTML-Editor), sodass Sie eine Live-Vorschau Ihrer Gestaltungsvorlage erhalten und etwaige Probleme beheben können, die das Rendern der Seite verhindern können. Da Ihre HTML-Datei z. B. XML-konform sein muss, müssen Sie möglicherweise kleinere Markup-Probleme beheben und z. B. für alle Elemente schließende Tags angeben. Um Probleme zu beheben, sollten Sie die HTML-Datei bearbeiten, speichern und dann die serverseitige Vorschau aktualisieren.
   
@@ -303,7 +301,7 @@ Ein Designpaket ist eine .wsp-Datei, eine SharePoint-Lösungsdatei, bei der es s
 
 
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="Additional"> </a>
 
 

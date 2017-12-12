@@ -3,11 +3,11 @@ title: "Anspruchsbasierte Identität: Begriffsdefinitionen"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 0f3decb5-dcd8-432f-9bb8-533f2d01bef7
-ms.openlocfilehash: 471bedc2b00ceb2cbc4cdbaa717b39e9d3b0f5b2
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ab9e96d73a694747f42ee21797e8db032e12b670
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="claims-based-identity-term-definitions"></a>Anspruchsbasierte Identität: Begriffsdefinitionen
 
@@ -46,14 +46,14 @@ Tabelle 1 enthält Definitionen wichtiger Begriffe im Zusammenhang mit der anspr
 |Herstellen einer Vertrauensstellung  <br/> |Ein Prozess, mit dem Vertrauensstellungen zwischen Forderungsanbietern und Anwendungen vertrauender Seiten hergestellt werden. Dieser Prozess umfasst den Austausch von Identifizierungszertifikaten, die es der vertrauenden Seite ermöglichen, dem Inhalt von Ansprüchen zu vertrauen, die der Forderungsanbieter ausstellt.  <br/> |
 |Vertrauenswürdiger Anmeldeanbieter  <br/> |Ein externer (nicht zu SharePoint gehörender) Sicherheitstokendienst, dem SharePoint vertraut.  <br/> |
 |Einmalige Webanmeldung (Web-SSO)  <br/> |Ein Prozess, der zum Austauschen von Authentifizierung und Autorisierung Benutzerdaten gemeinsam Organisationen ermöglicht. Web-SSO verwenden, können Benutzer in Partnerorganisationen zwischen Domänen ohne Anmeldeinformationen an jeder Domäne Grenze präsentieren sichere Web Übergang.  <br/> |
-|WS-Verbund  <br/> |Die Organisation für die standard Weiterentwicklung von strukturierten Informationen Standards (OASIS-)-Spezifikation, die definiert, das Passive WS-Federation-Protokoll und andere Protokoll-Erweiterungen, die für den Verbund verwendet werden. Der WS-Federation-Standard definiert Mechanismen, die als Identität, Attribut, Authentifizierung und Autorisierung in unterschiedlichen Vertrauensstellungsbereichen verbunddomäne verwendet werden. Weitere Informationen zum WS-Verbund finden Sie unter  [Grundlegendes zu WS-Federation](http://msdn.microsoft.com/en-us/library/bb498017.aspx).<br/> |
+|WS-Verbund  <br/> |Die Organisation für die standard Weiterentwicklung von strukturierten Informationen Standards (OASIS-)-Spezifikation, die definiert, das Passive WS-Federation-Protokoll und andere Protokoll-Erweiterungen, die für den Verbund verwendet werden. Der WS-Federation-Standard definiert Mechanismen, die als Identität, Attribut, Authentifizierung und Autorisierung in unterschiedlichen Vertrauensstellungsbereichen verbunddomäne verwendet werden. Weitere Informationen zum WS-Verbund finden Sie unter  [Grundlegendes zu WS-Federation](http://msdn.microsoft.com/de-DE/library/bb498017.aspx).<br/> |
 |Passiver WS-Verbund  <br/> |Das Protokoll zum Anfordern von Ansprüchen von einem Forderungsanbieter über HTTP-Webbrowserumleitungen. Dieses Protokoll wird in Abschnitt 13 der WS-Verbundspezifikation 1.2 beschrieben.  <br/> |
 |WS-Verbund-PRP (Passive Requester Profile)  <br/> |Das WS-Federation Passive Requestor Profile beschreibt, wie die Vertrauenswürdigkeit Cross-Realm-Identität, Authentifizierung und Autorisierung Verbund Mechanismen, die in WS-Federation definiert sind von passiven anfordernden Personen, beispielsweise einen Webbrowser, verwendet werden können Identitätsdienste bereitstellen. Passive anfordernden Personen dieses Profils können nur das HTTP-Protokoll.  <br/> |
 |WS-Sicherheit  <br/> |Der WS-Security Standard ist ein Satz von Protokollen, die sichere Web-Service-Kommunikation mithilfe von SOAP unterstützen. Weitere Informationen zu WS-Security finden Sie auf der Website OASIS-  [OASIS-Web Services Security (WSS) TC](http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=wss) .<br/> |
 |WS-Trust  <br/> |Ein Standard, der WS-Security-Webdienste mit Methoden zum Erstellen und Überprüfen von Vertrauensstellungen bereitstellen verwendet. Weitere Informationen zum WS-Trust finden Sie auf der Website OASIS-  [OASIS-Web Services Secure Exchange (WS-SX) TC](http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ws-sx) .<br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

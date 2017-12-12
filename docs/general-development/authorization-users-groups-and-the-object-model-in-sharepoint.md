@@ -3,11 +3,11 @@ title: Autorisierung, Benutzer, Gruppen und das Objektmodell in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: aacf3398-f0b5-48cb-9071-440b4c3a9dd1
-ms.openlocfilehash: 70f5b96aebe55e0e79ca55da9cd35ad7d75bccb6
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: fb24b9c14101b16145ed588ac86766e297bec5c7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="authorization-users-groups-and-the-object-model-in-sharepoint"></a>Autorisierung, Benutzer, Gruppen und das Objektmodell in SharePoint
 
@@ -70,7 +70,8 @@ In Richtlinienrollen werden Benutzer und Gruppen sowohl durch ihre Sicherheits-I
     
     
 
-> **Hinweis:** Richtlinienrollen in der Zentraladministration unterscheiden sich von den Rollendefinitionen für eine Websitesammlung. 
+> [!NOTE]
+> Richtlinienrollen in der Zentraladministration unterscheiden sich von den Rollendefinitionen für eine Websitesammlung. 
   
     
     
@@ -185,7 +186,7 @@ In SharePoint nutzen alle Objektbereiche dieselbe grundlegende Berechtigungsverw
 -  [Microsoft.SharePoint.SPRoleCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRoleCollection.aspx)
     
   
-Wenn Sie Benutzer zu Rollen zuweisen möchten, verwenden Sie die Elemente der  [Microsoft.SharePoint.SPRoleAssignment](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRoleAssignment.aspx) -Klasse und der [Microsoft.SharePoint.SPRoleAssignmentCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRoleAssignmentCollection.aspx) -Klasse. Die [SPBasePermisssions](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.spbasepermissions.aspx) -Enumeration, die [SPRights](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRights.aspx) ersetzt, beinhaltet weitere Berechtigungen. Die [SPBasePermisssions](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.spbasepermissions.aspx) -Enumeration enthält auch ältere Berechtigungen, die zu denselben Konstantenwerten wie vorherige Berechtigungen in [SPRights](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRights.aspx) passen. Das SharePoint-Gruppenkonzept wird dem vorhandenen [SPGroup](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPGroup.aspx) -Objekt und dem [SPGroupCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPGroupCollection.aspx) -Objekt, das für websiteübergreifende Gruppen steht, zugeordnet.
+Wenn Sie Benutzer zu Rollen zuweisen möchten, verwenden Sie die Elemente der  [Microsoft.SharePoint.SPRoleAssignment](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRoleAssignment.aspx) -Klasse und der [Microsoft.SharePoint.SPRoleAssignmentCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRoleAssignmentCollection.aspx) -Klasse. Die [SPBasePermisssions](https://msdn.microsoft.com/de-DE/library/office/microsoft.sharepoint.spbasepermissions.aspx) -Enumeration, die [SPRights](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRights.aspx) ersetzt, beinhaltet weitere Berechtigungen. Die [SPBasePermisssions](https://msdn.microsoft.com/de-DE/library/office/microsoft.sharepoint.spbasepermissions.aspx) -Enumeration enthält auch ältere Berechtigungen, die zu denselben Konstantenwerten wie vorherige Berechtigungen in [SPRights](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRights.aspx) passen. Das SharePoint-Gruppenkonzept wird dem vorhandenen [SPGroup](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPGroup.aspx) -Objekt und dem [SPGroupCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPGroupCollection.aspx) -Objekt, das für websiteübergreifende Gruppen steht, zugeordnet.
   
     
     
@@ -247,7 +248,7 @@ Die einzige Möglichkeit, einen Benutzer aus allen Bereichen zu entfernen, ist, 
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15_AuthorizationUsersGroupsAndObjectModel_AdditionalResources"> </a>
 
 
