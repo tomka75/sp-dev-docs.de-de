@@ -2,14 +2,14 @@
 title: "Verwenden von Azure-Funktionen für SharePoint-Webhooks"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 48464f24c4889d793fcde5f75c1e437fbee1d384
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ea3ed94dd41c6da41b2cbeb6b5291211804c4dfc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="using-azure-functions-with-sharepoint-webhooks"></a>Verwenden von Azure-Funktionen für SharePoint-Webhooks
-[Azure-Funktionen](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview) bieten eine einfache Möglichkeit zum Hosten Ihrer SharePoint-Webhooks: Sie können einfach den C#- oder Javascript-Code Ihres Webhooks über den Browser hinzufügen und Azure kümmert sich um das Hosting und die Skalierung Ihrer Funktion. Dieses Handbuch zeigt die Einrichtung und Verwendung von Azure-Funktionen für Webhooks.
+[Azure-Funktionen](https://docs.microsoft.com/de-DE/azure/azure-functions/functions-overview) bieten eine einfache Möglichkeit zum Hosten Ihrer SharePoint-Webhooks: Sie können einfach den C#- oder Javascript-Code Ihres Webhooks über den Browser hinzufügen und Azure kümmert sich um das Hosting und die Skalierung Ihrer Funktion. Dieses Handbuch zeigt die Einrichtung und Verwendung von Azure-Funktionen für Webhooks.
 
 ## <a name="create-a-an-azure-function-app"></a>Erstellen einer Azure-Funktionsapp
 Im ersten Schritt müssen Sie eine Azure-Funktionsapp erstellen. Dies ist eine besondere Art von Azure-Webapp, die auf das Hosten von Azure-Funktionen ausgerichtet ist. Navigieren Sie zu [https://portal.azure.com](https://portal.azure.com), klicken Sie auf „Neu“ und suchen Sie nach „Funktionsapp“:
@@ -29,7 +29,7 @@ Damit können Sie die Funktion von einer Vorlage aus starten. Bei SharePoint-Web
 
 ![Auswählen einer Azure-Funktionsvorlage](../../images/webhook-azure-function3.png)
 
->**Hinweis:**
+> [!NOTE]
 > - Die Vorlage **GenericWebHook** funktioniert derzeit noch nicht für SharePoint-Webhooks, dieses Problem wird vom SharePoint-Produktteam jedoch demnächst behoben.
 > - Wenn Fehlermeldungen vom Typ „Fehler beim Validieren der Benachrichtigungs-URL“ beim Verwenden des Webhooks der Azure-Funktion, können Sie dieses Problem möglicherweise lösen, indem Sie die Berechtigungsstufe auf **Funktion** festlegen und die Funktion für den anonymen Zugriff definieren.
 

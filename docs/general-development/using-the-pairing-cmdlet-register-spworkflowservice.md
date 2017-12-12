@@ -3,11 +3,11 @@ title: Verwenden des passenden Register-SPWorkflowService-Cmdlets
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 91fca6c2-60ca-4177-8560-2b310dac0e2c
-ms.openlocfilehash: b04bb57d3583ea7fb4e8927ff867ab5ff3e2b264
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 93941c54931812e0333c2297705d5196dff164a6
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="using-the-pairing-cmdlet-register-spworkflowservice"></a>Verwenden des Kopplungs-Cmdlets Register-SPWorkflowService
 Erfahren Sie, wie Sie das Cmdlet **Register-SPWorkflowService** verwenden, um SharePoint erfolgreich mit dem Workflow-Manager zu koppeln.
@@ -65,19 +65,19 @@ PS> Register-SPWorkflowService -SPSite "https://myserver/mysitecollection" -Work
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
 -  
-  [Installieren und Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/en-us/library/jj658588.aspx)
+  [Installieren und Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/de-DE/library/jj658588.aspx)
     
   
 -  
-  [Videoreihe: Installieren und Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/en-us/library/dn201724.aspx)
+  [Videoreihe: Installieren und Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/de-DE/library/dn201724.aspx)
     
   
 -  
-  [Workflow-Manager 1.0](http://msdn.microsoft.com/en-us/library/jj193528%28Azure.10%29)
+  [Workflow-Manager 1.0](http://msdn.microsoft.com/de-DE/library/jj193528%28Azure.10%29)
     
   

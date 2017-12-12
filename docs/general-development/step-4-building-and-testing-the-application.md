@@ -3,11 +3,11 @@ title: Step 4 Building and Testing the Application
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f2feeecb-1b4c-4049-be4e-11d414f13d9f
-ms.openlocfilehash: 344c1fff77662184f13d9f4397b1c7e1f6b065e1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: fd80f3fabb19e74e04afb60b544c81785e7af19f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="step-4-building-and-testing-the-application"></a>Step 4: Building and Testing the Application
 
@@ -35,19 +35,17 @@ In diesem Schritt erstellen und testen Sie die Anwendung. In Visual Studio stehe
   
 2. Die Anwendung druckt die folgende Ausgabe in der Konsole.
     
-    > **Hinweis:** Die angezeigten Werte hängen von den Werten ab, die Sie in der Arbeitsmappe, der Sitzungs-ID usw. verwenden. 
+    > [!NOTE]
+    > Die angezeigten Werte hängen von den Werten ab, die Sie in der Arbeitsmappe, der Sitzungs-ID usw. verwenden. 
 
-```
-  
-The Credential is: System.Net.SystemNetworkCredential
-Total rows in range: 18
-Value in range is: 4245.955129
-```
+    ```
+    The Credential is: System.Net.SystemNetworkCredential
+    Total rows in range: 18
+    Value in range is: 4245.955129
+    ```
 
 3. Drücken Sie eine beliebige Taste, um SampleApplication.exe zu schließen.
     
-  
-
 ### <a name="file-not-found-exception"></a>Ausnahme "Datei nicht gefunden"
 
 
