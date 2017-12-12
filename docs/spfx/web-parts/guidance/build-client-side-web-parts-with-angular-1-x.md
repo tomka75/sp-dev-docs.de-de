@@ -1,12 +1,22 @@
-# <a name="build-sharepoint-framework-client-side-web-parts-with-angular-v1x"></a>Erstellen von clientseitigen SharePoint Framework-Webparts mit Angular v1.x
+---
+title: "Erstellen von clientseitigen SharePoint Framework-Webparts mit AngularJS"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: dea4a6c45f08228c57c4cd4f821cdcca7c12d713
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/20/2017
+---
+# <a name="build-sharepoint-framework-client-side-web-parts-with-angularjs"></a>Erstellen von clientseitigen SharePoint Framework-Webparts mit AngularJS
 
-Clientseitige Webparts lassen sich auch mit dem sehr beliebten Framework Angular erstellen. Da Angular modular aufgebaut ist, können Sie es für praktisch jede Art von Projekt einsetzen, von komplexen Single-Page-Anwendungen mit mehreren Ansichten bis hin zu kleineren Komponenten wie Webparts. Viele Organisationen haben in der Vergangenheit bereits SharePoint-Lösungen mit Angular erstellt. Dieser Artikel beschreibt, wie Sie mit Angular v1.x ein clientseitiges SharePoint Framework-Webpart erstellen und anschließend Stile mit [Office UI Fabric](http://dev.office.com/fabric) definieren. In diesem Tutorial erstellen Sie ein einfaches Webpart, das To-do-Elemente verwaltet.
+Clientseitige Webparts lassen sich auch mit dem sehr beliebten Framework AngularJS erstellen. Da Angular modular aufgebaut ist, können Sie es für praktisch jede Art von Projekt einsetzen, von komplexen Single-Page-Anwendungen mit mehreren Ansichten bis hin zu kleineren Komponenten wie Webparts. Viele Organisationen haben in der Vergangenheit bereits SharePoint-Lösungen mit AngularJS erstellt. Dieser Artikel beschreibt, wie Sie mit AngularJS ein clientseitiges SharePoint Framework-Webpart erstellen und anschließend Stile mit [Office UI Fabric](http://dev.office.com/fabric) definieren. In diesem Tutorial erstellen Sie ein einfaches Webpart, das To-do-Elemente verwaltet.
 
-![Clientseitiges SharePoint Framework-Webpart, das mit Angular erstellt wurde, angezeigt in SharePoint Workbench](../../../../images/ng-intro-hide-finished-tasks.png)
+![Clientseitiges SharePoint Framework-Webpart, das mit AngularJS erstellt wurde, angezeigt in SharePoint Workbench](../../../images/ng-intro-hide-finished-tasks.png)
 
 Der Quellcode des Webparts, mit dem wir arbeiten, steht auf GitHub zur Verfügung, unter [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo).
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment), in der Sie SharePoint Framework-Lösungen erstellen können.
+> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment.md), in der Sie SharePoint-Framework-Lösungen erstellen können.
 
 ## <a name="create-new-project"></a>Erstellen eines neuen Projekts
 
@@ -35,38 +45,44 @@ Es werden mehrere Eingabeaufforderungen angezeigt. Definieren Sie die Werte jewe
 - **To do** als Name des Webparts
 - **Simple management of to do tasks** als Beschreibung des Webparts
 
-![SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../../images/ng-intro-yeoman-generator.png)
+![SharePoint-Framework-Yeoman-Generator mit den Standardoptionen](../../../images/ng-intro-yeoman-generator.png)
 
-Öffnen Sie den Projektordner in Ihrem Code-Editor, sobald die Gerüsterstellung abgeschlossen ist. In diesem Tutorial verwenden Sie Visual Studio Code.
+Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 
-![SharePoint Framework-Projekt in Visual Studio Code](../../../../images/ng-intro-project-visual-studio-code.png)
+```sh
+npm shrinkwrap
+```
 
-## <a name="add-angular"></a>Hinzufügen von Angular
+Öffnen Sie dann den Projektordner im Code-Editor. In diesem Tutorial verwenden Sie Visual Studio Code.
 
-In diesem Tutorial laden Sie Angular aus einem CDN. Öffnen Sie dazu im Code-Editor die Datei **config/config.json**, und fügen Sie in der Eigenschaft **externals** die folgenden Zeilen hinzu:
+![SharePoint-Framework-Projekt in Visual Studio Code](../../../images/ng-intro-project-visual-studio-code.png)
+
+## <a name="add-angularjs"></a>Hinzufügen von AngularJS
+
+In diesem Tutorial laden Sie AngularJS aus einem CDN. Öffnen Sie dazu im Code-Editor die Datei **config/config.json**, und fügen Sie in der Eigenschaft **externals** die folgenden Zeilen hinzu:
 
 ```json
 "angular": {
-  "path": "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js",
+  "path": "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js",
   "globalName": "angular"
 }
 ```
 
-![Datei „config.json“, ergänzt um Angular](../../../../images/ng-intro-angular-config.png)
+![Datei „config.json“, ergänzt um AngularJS](../../../images/ng-intro-angular-config.png)
 
-## <a name="add-angular-typings-for-typescript"></a>Hinzufügen von Angular-Typisierungen für TypeScript
+## <a name="add-angularjs-typings-for-typescript"></a>Hinzufügen von AngularJS-Typisierungen für TypeScript
 
-Da Sie Angular im Code Ihres Webparts referenzieren werden, benötigen Sie auch Angular-Typisierungen für TypeScript. Führen Sie den folgenden Befehl in der Befehlszeile aus, um diese Typisierungen zu installieren:
+Da Sie AngularJS im Code Ihres Webparts referenzieren werden, benötigen Sie auch AngularJS-Typisierungen für TypeScript. Führen Sie den folgenden Befehl in der Befehlszeile aus, um diese Typisierungen zu installieren:
 
 ```sh
 npm install @types/angular --save-dev
 ```
 
-## <a name="implement-angular-application"></a>Implementieren der Angular-Anwendung
+## <a name="implement-angularjs-application"></a>Implementieren der AngularJS-Anwendung
 
-Sobald alle Voraussetzungen erfüllt sind, können Sie die Angular-Beispielanwendung implementieren. Da sie aus mehreren Dateien besteht, erstellen Sie zunächst einen Ordner namens **app** für sie.
+Sobald alle Voraussetzungen erfüllt sind, können Sie die AngularJS-Beispielanwendung implementieren. Da sie aus mehreren Dateien besteht, erstellen Sie zunächst einen Ordner namens **app** für sie.
 
-![Ordner „app“ in Visual Studio Code](../../../../images/ng-intro-app-folder.png)
+![Ordner „app“ in Visual Studio Code](../../../images/ng-intro-app-folder.png)
 
 ### <a name="implement-to-do-data-service"></a>Implementieren des To-do-Dateidiensts
 
@@ -180,7 +196,7 @@ export default class DataService implements IDataService {
 }
 ```
 
-![Datei „DataService.ts“ in Visual Studio Code](../../../../images/ng-intro-dataservice.png)
+![Datei „DataService.ts“ in Visual Studio Code](../../../images/ng-intro-dataservice.png)
 
 Im oben aufgeführten Codeausschnitt implementieren Sie drei Typen: die Schnittstelle **ITodo**, die ein To-do-Element in der Anwendung repräsentiert, die Schnittstelle **IDataService**, die die Signatur des Datendiensts definiert, und die Klasse **DataService**, die To-do-Elemente abruft und bearbeitet. Der Datendienst implementiert einfache Methoden zum Hinzufügen und Ändern von To-do-Elementen. Obwohl die Operationen sofort ausgeführt werden, gibt jede CRUD-Funktion zwecks Konsistenz eine Zusage zurück.
 
@@ -298,9 +314,9 @@ export default class HomeController {
 }
 ```
 
-![Datei „HomeController.ts“ in Visual Studio Code](../../../../images/ng-intro-homecontroller.png)
+![Datei „HomeController.ts“ in Visual Studio Code](../../../images/ng-intro-homecontroller.png)
 
-Zuerst laden Sie den zuvor implementierten Datendienst. Der Controller benötigt diesen Dienst, um die Elementliste abzurufen und die Elemente gemäß den Benutzeranforderungen zu modifizieren. Der Dienst wird über die Angular-Abhängigkeitsinjektion (Dependency Injection) in den Controller eingefügt. Der Controller implementiert eine Reihe von Funktionen, die für das Anzeigemodell verfügbar gemacht werden und aus der Vorlage aufgerufen werden können. Mithilfe dieser Funktionen können Benutzer später neue Elemente hinzufügen, Elemente als fertig gestellt oder noch zu erledigen markieren und Elemente löschen.
+Zuerst laden Sie den zuvor implementierten Datendienst. Der Controller benötigt diesen Dienst, um die Elementliste abzurufen und die Elemente gemäß den Benutzeranforderungen zu modifizieren. Der Dienst wird über die AngularJS-Abhängigkeitsinjektion (Dependency Injection) in den Controller eingefügt. Der Controller implementiert eine Reihe von Funktionen, die für das Anzeigemodell verfügbar gemacht werden und aus der Vorlage aufgerufen werden können. Mithilfe dieser Funktionen können Benutzer später neue Elemente hinzufügen, Elemente als fertig gestellt oder noch zu erledigen markieren und Elemente löschen.
 
 ### <a name="implement-the-main-module"></a>Implementieren des Hauptmoduls
 
@@ -318,15 +334,15 @@ todoapp
   .service('DataService', DataService);
 ```
 
-![Datei „app-module.ts“ in Visual Studio Code](../../../../images/ng-intro-app-module.png)
+![Datei „app-module.ts“ in Visual Studio Code](../../../images/ng-intro-app-module.png)
 
-Zunächst referenzieren Sie Angular und laden den Controller und den Datendienst, die Sie zuvor implementiert haben. Anschließend definieren Sie das Modul für Ihre Anwendung. Schließlich registrieren Sie noch den Controller und den Datendienst in der Anwendung.
+Zunächst referenzieren Sie AngularJS und laden den Controller und den Datendienst, die Sie zuvor implementiert haben. Anschließend definieren Sie das Modul für Ihre Anwendung. Schließlich registrieren Sie noch den Controller und den Datendienst in der Anwendung.
 
-Damit haben Sie eine Angular-Anwendung für Ihr Webpart erstellt. In den nächsten Schritten registrieren Sie die Angular-Anwendung im Webpart und machen sie durch Webpart-Eigenschaften konfigurierbar.
+Damit haben Sie eine AngularJS-Anwendung für Ihr Webpart erstellt. In den nächsten Schritten registrieren Sie die AngularJS-Anwendung im Webpart und machen sie durch Webpart-Eigenschaften konfigurierbar.
 
-## <a name="register-angular-application-with-web-part"></a>Registrieren der Angular-Anwendung im Webpart
+## <a name="register-angularjs-application-with-web-part"></a>Registrieren der AngularJS-Anwendung im Webpart
 
-In diesem Schritt fügen Sie die Angular-Anwendung zum Webpart hinzu. Öffnen Sie dazu im Code-Editor die Datei **ToDoWebPart.ts**.
+In diesem Schritt fügen Sie die AngularJS-Anwendung zum Webpart hinzu. Öffnen Sie im Code-Editor die Datei **ToDoWebPart.ts**.
 
 Fügen Sie unmittelbar vor der Klassendeklaration die folgenden Zeilen ein:
 
@@ -335,9 +351,9 @@ import * as angular from 'angular';
 import './app/app-module';
 ```
 
-![Importanweisungen in der Datei „ToDoWebPart.ts“ in Visual Studio Code](../../../../images/ng-intro-web-part-import-angular.png)
+![Importanweisungen in der Datei „ToDoWebPart.ts“ in Visual Studio Code](../../../images/ng-intro-web-part-import-angular.png)
 
-Jetzt können Sie eine Referenz auf Angular und Ihre Anwendung laden. Beide sind notwendig zum Bootstrapping der Angular-Anwendung.
+Jetzt können Sie eine Referenz auf AngularJS und Ihre Anwendung laden. Beide sind notwendig zum Bootstrapping der AngularJS-Anwendung.
 
 Ändern Sie die Funktion **render** des Webparts wie folgt:
 
@@ -345,7 +361,7 @@ Jetzt können Sie eine Referenz auf Angular und Ihre Anwendung laden. Beide sind
 public render(): void {
   if (this.renderedOnce === false) {
     this.domElement.innerHTML = `
-<div class="${styles.toDoWebPart}">
+<div class="${styles.toDo}">
   <div data-ng-controller="HomeController as vm">
     <div class="${styles.loading}" ng-show="vm.isLoading">
       <div class="${styles.spinner}">
@@ -389,14 +405,14 @@ public render(): void {
 }
 ```
 
-![„render“-Funktion des Webparts in Visual Studio Code](../../../../images/ng-intro-web-part-render-angular.png)
+![„render“-Funktion des Webparts in Visual Studio Code](../../../images/ng-intro-web-part-render-angular.png)
 
-Als Erstes weist der Code die Vorlage Ihrer Anwendung direkt dem DOM-Element des Webparts zu. Im Stammelement geben Sie den Namen des Controllers an, der sich in der Vorlage um die Ereignisverarbeitung und Datenbindung kümmern wird. Anschließend verwenden Sie den **todoapp**-Namen, den Sie bei der Deklaration des Hauptmoduls verwendet haben, zum Bootstrapping der Anwendung. Über die Webpart-Eigenschaft **renderedOnce** stellen Sie sicher, dass das Bootstrapping nur ein einziges Mal für die Angular-Anwendung durchgeführt wird. Würden Sie diese Eigenschaft nicht setzen, würde die Funktion **render** bei jeder Änderung an einer der Webpart-Eigenschaften nochmals aufgerufen werden und ein erneutes Bootstrapping der Angular-Anwendung durchführen. Das würde zu einem Fehler führen.
+Als Erstes weist der Code die Vorlage Ihrer Anwendung direkt dem DOM-Element des Webparts zu. Im Stammelement geben Sie den Namen des Controllers an, der sich in der Vorlage um die Ereignisverarbeitung und Datenbindung kümmern wird. Anschließend verwenden Sie den **todoapp**-Namen, den Sie bei der Deklaration des Hauptmoduls verwendet haben, zum Bootstrapping der Anwendung. Über die Webpart-Eigenschaft **renderedOnce** stellen Sie sicher, dass das Bootstrapping nur ein einziges Mal für die AngularJS-Anwendung durchgeführt wird. Würden Sie diese Eigenschaft nicht setzen, würde die Funktion **render** bei jeder Änderung an einer der Webpart-Eigenschaften nochmals aufgerufen werden und ein erneutes Bootstrapping der AngularJS-Anwendung durchführen. Das würde zu einem Fehler führen.
 
-Sie müssen außerdem noch die CSS-Stile implementieren, die Sie in der Vorlage verwenden. Öffnen Sie im Code-Editor die Datei **ToDo.module.scss**, und ersetzen Sie den Code in der Datei durch:
+Sie müssen außerdem noch die CSS-Formatvorlagen implementieren, die Sie in der Vorlage verwenden. Öffnen Sie im Code-Editor die Datei **ToDo.module.scss**, und ersetzen Sie den Code in der Datei durch:
 
 ```css
-.toDoWebPart {
+.toDo {
   .loading {
     margin: 0 auto;
     width: 6em;
@@ -637,7 +653,7 @@ Sie müssen außerdem noch die CSS-Stile implementieren, die Sie in der Vorlage 
 }
 ```
 
-![Datei „ToDo.module.scss“ in Visual Studio Code](../../../../images/ng-intro-web-part-css.png)
+![Datei „ToDo.module.scss“ in Visual Studio Code](../../../images/ng-intro-web-part-css.png)
 
 Überprüfen Sie mit dem folgenden Befehl, ob alles wie erwartet funktioniert:
 
@@ -647,7 +663,7 @@ gulp serve
 
 Im Browser sollte das To-do-Webpart mit To-do-Elementen angezeigt werden.
 
-![To-do-Webpart mit To-do-Elementen, gerendert mit Office UI Fabric](../../../../images/ng-intro-workbench-office-ui-fabric.png)
+![To-do-Webpart mit To-do-Elementen, gerendert mit Office UI Fabric](../../../images/ng-intro-workbench-office-ui-fabric.png)
 
 ## <a name="make-web-part-configurable"></a>Konfigurierbarmachen des Webparts
 
@@ -661,13 +677,13 @@ Zunächst fügen Sie eine Konfigurationseigenschaft zum Webpart-Manifest hinzu. 
 "hideFinishedTasks": false
 ```
 
-![Eigenschaft „hideFinishedTasks“ im Webpart-Manifest](../../../../images/ng-intro-manifest-property.png)
+![Eigenschaft „hideFinishedTasks“ im Webpart-Manifest](../../../images/ng-intro-manifest-property.png)
 
 ### <a name="update-the-signature-of-the-web-part-properties-interface"></a>Aktualisieren der Signatur der Webpart-Eigenschaften-Schnittstelle
 
 Nun aktualisieren Sie die Signatur der Webpart-Eigenschaften-Schnittstelle.
 
-Öffnen Sie dazu im Code-Editor die Datei **IToDoWebPartProps.ts**, und ersetzen Sie den Code in der Datei durch:
+Öffnen Sie im Code-Editor die Datei **ToDoWebPart.ts**, und aktualisieren Sie die `IToDoWebPartProps`-Schnittstelle wie folgt:
 
 ```ts
 export interface IToDoWebPartProps {
@@ -675,7 +691,7 @@ export interface IToDoWebPartProps {
 }
 ```
 
-![Datei „IToDoWebPartProps.ts“ in Visual Studio Code](../../../../images/ng-intro-property-interface.png)
+![Datei „IToDoWebPartProps.ts“ in Visual Studio Code](../../../images/ng-intro-property-interface.png)
 
 ### <a name="add-the-property-to-the-web-part-property-pane"></a>Hinzufügen der Eigenschaft zum Webpart-Eigenschaftenbereich
 
@@ -691,7 +707,7 @@ import {
 } from '@microsoft/sp-webpart-base';
 ```
 
-![Importanweisung „PropertyPaneToggle“ in Visual Studio Code](../../../../images/ng-intro-property-pane-toggle.png)
+![Importanweisung „PropertyPaneToggle“ in Visual Studio Code](../../../images/ng-intro-property-pane-toggle.png)
 
 Ändern Sie die Implementierung der Funktion `propertyPaneSettings` wie folgt:
 
@@ -722,19 +738,19 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
 Um die fehlenden Zeichenfolgenreferenzen zu ergänzen, müssen Sie zunächst die Signatur der Zeichenfolgen ändern. Öffnen Sie im Code-Editor die Datei **loc/mystrings.d.ts**, und ändern Sie den Code in der Datei wie folgt:
 
 ```ts
-declare interface IToDoStrings {
+declare interface IToDoWebPartStrings {
   PropertyPaneDescription: string;
-  ViewGroupName: string;
+  BasicGroupName: string;
   HideFinishedTasksFieldLabel: string;
 }
 
-declare module 'toDoStrings' {
-  const strings: IToDoStrings;
+declare module 'ToDoWebPartStrings' {
+  const strings: IToDoWebPartStrings;
   export = strings;
 }
 ```
 
-![Datei „loc/mystrings.d.ts“ in Visual Studio Code](../../../../images/ng-intro-strings-interface.png)
+![Datei „loc/mystrings.d.ts“ in Visual Studio Code](../../../images/ng-intro-strings-interface.png)
 
 Als Nächstes müssen Sie die Istwerte für die gerade definierten Zeichenfolgen angeben. Öffnen Sie im Code-Editor die Datei **loc/en-us.js**, und ändern Sie den Code in der Datei wie folgt:
 
@@ -748,7 +764,7 @@ define([], function() {
 });
 ```
 
-![Datei „loc/en-us.js“ in Visual Studio Code](../../../../images/ng-intro-strings.png)
+![Datei „loc/en-us.js“ in Visual Studio Code](../../../images/ng-intro-strings.png)
 
 Überprüfen Sie mit dem folgenden Befehl, ob alles wie erwartet funktioniert:
 
@@ -758,15 +774,15 @@ gulp serve
 
 Im Webpart-Eigenschaftenbereich sollte jetzt eine Umschaltfläche für die gerade definierte Eigenschaft zu sehen sein.
 
-![Umschaltfläche im Webpart-Eigenschaftenbereich](../../../../images/ng-intro-property-pane-toggle-browser.png)
+![Umschaltfläche im Webpart-Eigenschaftenbereich](../../../images/ng-intro-property-pane-toggle-browser.png)
 
-Aktuell hat ein Klick auf die Umschaltfläche noch keine Auswirkungen auf das Webpart, da es noch nicht mit Angular verbunden ist. Das erledigen Sie im nächsten Schritt.
+Aktuell hat ein Klick auf die Umschaltfläche noch keine Auswirkungen auf das Webpart, da es noch nicht mit AngularJS verbunden ist. Das erledigen Sie im nächsten Schritt.
 
-### <a name="make-the-angular-application-configurable-using-web-part-properties"></a>Ermöglichen der Konfiguration der Angular-Anwendung über Webpart-Eigenschaften
+### <a name="make-the-angularjs-application-configurable-using-web-part-properties"></a>Ermöglichen der Konfiguration der AngularJS-Anwendung über Webpart-Eigenschaften
 
-Im vorherigen Schritt haben Sie eine Webpart-Eigenschaft definiert, über die Benutzer wählen können, ob erledigte Aufgaben angezeigt werden sollen oder nicht. Als Nächstes übergeben Sie den vom Benutzer ausgewählten Wert an die Angular-Anwendung, sodass diese die Elemente entsprechend laden kann.
+Im vorherigen Schritt haben Sie eine Webpart-Eigenschaft definiert, über die Benutzer wählen können, ob erledigte Aufgaben angezeigt werden sollen oder nicht. Als Nächstes übergeben Sie den vom Benutzer ausgewählten Wert an die AngularJS-Anwendung, sodass diese die Elemente entsprechend laden kann.
 
-#### <a name="broadcast-angular-event-on-web-part-property-change"></a>Übertragen eines Angular-Ereignisses bei Änderung der Webpart-Eigenschaft
+#### <a name="broadcast-angularjs-event-on-web-part-property-change"></a>Übertragen eines AngularJS-Ereignisses bei Änderung der Webpart-Eigenschaft
 
 Öffnen Sie im Code-Editor die Datei **ToDoWebPart.ts**. Fügen Sie die folgende Zeile unmittelbar vor dem Webpart-Konstruktor ein:
 
@@ -774,7 +790,7 @@ Im vorherigen Schritt haben Sie eine Webpart-Eigenschaft definiert, über die Be
 private $injector: angular.auto.IInjectorService;
 ```
 
-![Klassenvariable „$injector“ in Visual Studio Code](../../../../images/ng-intro-injector-class-variable.png)
+![Klassenvariable „$injector“ in Visual Studio Code](../../../images/ng-intro-injector-class-variable.png)
 
 Ändern Sie nun die Funktion **render** des Webparts wie folgt:
 
@@ -782,7 +798,7 @@ private $injector: angular.auto.IInjectorService;
 public render(): void {
   if (this.renderedOnce === false) {
     this.domElement.innerHTML = `
-<div class="${styles.toDoWebPart}">
+<div class="${styles.toDo}">
   <div data-ng-controller="HomeController as vm">
     <div class="${styles.loading}" ng-show="vm.isLoading">
       <div class="${styles.spinner}">
@@ -830,9 +846,9 @@ public render(): void {
 }
 ```
 
-Im Beispielcode oben überträgt die Funktion bei jeder Änderung der Webpart-Eigenschaft ein Angular-Ereignis, das die Angular-Anwendung abonniert. Sobald die Angular-Anwendung ein Ereignis empfängt, bearbeitet sie es entsprechend.
+Im Beispielcode oben überträgt die Funktion bei jeder Änderung der Webpart-Eigenschaft ein AngularJS-Ereignis, das die AngularJS-Anwendung abonniert. Sobald die AngularJS-Anwendung ein Ereignis empfängt, bearbeitet sie es entsprechend.
 
-#### <a name="subscribe-to-web-part-property-change-event-in-angular"></a>Abonnieren von Änderungsereignissen bei Webpart-Eigenschaften in Angular
+#### <a name="subscribe-to-web-part-property-change-event-in-angularjs"></a>Abonnieren von Änderungsereignissen bei Webpart-Eigenschaften in AngularJS
 
 Öffnen Sie im Code-Editor die Datei **app/HomeController.ts**. Erweitern Sie den Konstruktor wie folgt:
 
@@ -847,9 +863,9 @@ constructor(private dataService: IDataService, private $window: angular.IWindowS
 }
 ```
 
-![Konstruktordefinition in der Datei „HomeController.ts“ in Visual Studio Code](../../../../images/ng-intro-homecontroller-event.png)
+![Konstruktordefinition in der Datei „HomeController.ts“ in Visual Studio Code](../../../images/ng-intro-homecontroller-event.png)
 
-Geben Sie Folgendes in die Befehlszeile ein, um zu überprüfen, ob die Angular-Anwendung wie erwartet arbeitet und korrekt auf die Eigenschaftenänderung antwortet:
+Geben Sie Folgendes in die Befehlszeile ein, um zu überprüfen, ob die AngularJS-Anwendung wie erwartet arbeitet und korrekt auf die Eigenschaftenänderung antwortet:
 
 ```sh
 gulp serve
@@ -857,4 +873,4 @@ gulp serve
 
 Wenn Sie auf die Umschaltfläche **Hide finished tasks** klicken, sollten abgeschlossene Aufgaben im Webpart eingeblendet bzw. ausgeblendet werden.
 
-![Webpart, das nur noch offene Aufgaben zeigt, mit aktivierter Option „Hide finished tasks“](../../../../images/ng-intro-hide-finished-tasks.png)
+![Webpart, das nur noch offene Aufgaben zeigt, mit aktivierter Option „Hide finished tasks“](../../../images/ng-intro-hide-finished-tasks.png)

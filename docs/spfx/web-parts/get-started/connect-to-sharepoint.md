@@ -1,11 +1,21 @@
+---
+title: "Verbinden Ihres clientseitigen Webparts mit SharePoint („Hello World“ Teil 2)"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: eababc970e28ac857293c51337adc55959599df1
+ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/31/2017
+---
 # <a name="connect-your-client-side-web-part-to-sharepoint-hello-world-part-2"></a>Verbinden Ihres clientseitigen Webparts mit SharePoint („Hello World“ Teil 2)
 
-Wenn Sie Ihr Webpart mit SharePoint verbinden, haben Sie Zugriff auf SharePoint-Funktionalitäten und -Daten und können Endbenutzern eine stärker integrierte Erfahrung bieten. In diesem Artikel bauen wir das HelloWorld-Webpart weiter aus, das Sie im vorherigen Artikel [Erstellen Ihres ersten Webparts](./build-a-hello-world-web-part) erstellt haben.
+Wenn Sie Ihr Webpart mit SharePoint verbinden, haben Sie Zugriff auf SharePoint-Funktionalitäten und -Daten und können Endbenutzern eine stärker integrierte Erfahrung bieten. In diesem Artikel bauen wir das HelloWorld-Webpart weiter aus, das Sie im vorherigen Artikel [Erstellen Ihres ersten Webparts](./build-a-hello-world-web-part.md) erstellt haben.
 
 Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=9VMwjb2pbQ8&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq) nachvollziehen: 
 
 <a href="https://www.youtube.com/watch?v=9VMwjb2pbQ8&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
-<img src="../../../../images/spfx-youtube-tutorial2.png" alt="Screenshot of the YouTube video player for this tutorial" />
+<img src="../../../images/spfx-youtube-tutorial2.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 
@@ -41,17 +51,17 @@ Ersetzen Sie in der Methode **render** den Codeblock **innerHTML** durch den fol
 
 ```ts
     this.domElement.innerHTML = `
-      <div class="${styles.helloWorld}">
-        <div class="${styles.container}">
-          <div class="ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}">
-            <div class="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
-              <span class="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
-              <p class="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
-              <p class="ms-font-l ms-fontColor-white">${escape(this.properties.description)}</p>
-              <p class="ms-font-l ms-fontColor-white">${escape(this.properties.test2)}</p>
-              <p class="ms-font-l ms-fontColor-white">Loading from ${escape(this.context.pageContext.web.title)}</p>
-              <a href="https://aka.ms/spfx" class="${styles.button}">
-                <span class="${styles.label}">Learn more</span>
+      <div class="${ styles.helloWorld }">
+        <div class="${ styles.container }">
+          <div class="${ styles.row }">
+            <div class="${ styles.column }">
+              <span class="${ styles.title }">Welcome to SharePoint!</span>
+              <p class="${ styles.subTitle }">Customize SharePoint experiences using Web Parts.</p>
+              <p class="${ styles.description }">${escape(this.properties.description)}</p>
+              <p class="${ styles.description }">${escape(this.properties.test)}</p>
+              <p class="${ styles.description }">Loading from ${escape(this.context.pageContext.web.title)}</p>
+              <a href="https://aka.ms/spfx" class="${ styles.button }">
+                <span class="${ styles.label }">Learn more</span>
               </a>
             </div>
           </div>
@@ -66,21 +76,23 @@ Speichern Sie die Datei. Der noch in der Konsole laufende Befehl `gulp serve` er
 * Erstellt und bündelt den aktualisierten Code automatisch
 * Aktualisiert die Seite in der lokalen Workbench (da der Webpart-Code neu geladen werden muss)
 
->**Hinweis:** Zeigen Sie das Konsolenfenster und VS Code nebeneinander an, um mitzuverfolgen, wie gulp beim Speichern von Änderungen in VS Code automatisch kompiliert.
+> [!NOTE]
+> Zeigen Sie das Konsolenfenster und VS Code nebeneinander an, um mitzuverfolgen, wie gulp beim Speichern von Änderungen in VS Code automatisch kompiliert.
 
 Wechseln Sie in Ihrem Browser zur lokalen Registerkarte „SharePoint Workbench“. Wenn Sie die Registerkarte bereits geschlossen haben, lautet die URL `https://localhost:4321/temp/workbench.html`.
 
 Im Webpart sollte jetzt Folgendes zu sehen sein:
 
-![SharePoint-Seitenkontext unter „localhost“](../../../../images/sp-mock-localhost-wp.png)
+![SharePoint-Seitenkontext unter „localhost“](../../../images/sp-mock-localhost-wp.png)
 
 Navigieren Sie nun zu der in SharePoint gehosteten SharePoint Workbench. Die vollständige URL lautet `https://your-sharepoint-site-url/_layouts/workbench.aspx`. Beachten Sie, dass Sie auf der SharePoint Online-Seite die Seiten aktualisieren müssen, um die Änderungen zu sehen.
 
->**Hinweis:** Wenn Sie das SPFx-Entwicklerzertifikat noch nicht installiert haben, meldet Workbench, dass das Laden von Skripts von „localhost“ nicht konfiguriert ist. Führen Sie im Projektverzeichnis den Befehl `gulp trust-dev-cert` in der Konsole aus, um das Entwicklerzertifikat zu installieren.
+> [!NOTE]
+> Wenn Sie das SPFx-Entwicklerzertifikat noch nicht installiert haben, meldet Workbench, dass das Laden von Skripts von „localhost“ nicht konfiguriert ist. Führen Sie im Projektverzeichnis den Befehl `gulp trust-dev-cert` in der Konsole aus, um das Entwicklerzertifikat zu installieren.
 
 Der Seitenkontext ist jetzt für das Webpart verfügbar, und der Seitentitel Ihrer SharePoint-Website sollte im Webpart zu sehen sein.
 
-![SharePoint-Seitenkontext auf der SharePoint-Website](../../../../images/sp-lists-spsiteurl-wp.png)
+![SharePoint-Seitenkontext auf der SharePoint-Website](../../../images/sp-lists-spsiteurl-wp.png)
 
 ## <a name="define-list-model"></a>Definieren eines Listenmodells
 Wenn Sie mit SharePoint-Listendaten arbeiten möchten, benötigen Sie ein Listenmodell. Zum Abrufen von Listen sind zwei Modelle erforderlich. 
@@ -140,7 +152,7 @@ Jetzt können Sie die Klasse **MockHttpClient** in der Klasse **HelloWorldWebPar
 
 Öffnen Sie die Datei **HelloWorldWebPart.ts**.
 
-Kopieren Sie den folgenden Code, und fügen Sie ihn direkt unter `import { IHelloWorldWebPartProps } from './IHelloWorldWebPartProps';` ein.
+Kopieren Sie den folgenden Code, und fügen Sie ihn direkt unter `import * as strings from 'HelloWorldWebPartStrings';` ein.
 
 ```ts
 import MockHttpClient from './MockHttpClient';
@@ -164,7 +176,7 @@ Speichern Sie die Datei.
 
 Als Nächstes müssen Sie Listen von der aktuellen Website abrufen. Zum Abrufen der Listen von der Website verwenden Sie die SharePoint-REST-APIs, die unter „https://yourtenantprefix.sharepoint.com/_api/web/lists“ liegen.
 
-SharePoint Framework umfasst die Hilfsklasse **spHttpClient**, um REST-API-Anforderungen in SharePoint auszuführen. Es fügt Standardkopfzeilen hinzu, verwaltet den für Schreibvorgänge erforderlichen Digest und sammelt Telemetrie, die dem Dienst hilft, die Leistung einer Anwendung zu überwachen.
+SharePoint-Framework umfasst die Hilfsklasse **spHttpClient**, um REST-API-Anforderungen in SharePoint auszuführen. Es fügt Standardkopfzeilen hinzu, verwaltet den für Schreibvorgänge erforderlichen Digest und sammelt Telemetrie, die dem Dienst hilft, die Leistung einer Anwendung zu überwachen.
 
 Um diese Hilfsklasse zu verwenden, müssen Sie diese zuerst aus dem **@microsoft/sp-http**-Modul importieren.
 
@@ -250,7 +262,7 @@ Ein Beispiel dafür sehen Sie in der Methode **render** des Webparts:
 
 Öffnen Sie die Klasse **HelloWorldWebPart**.
 
-SharePoint Workbench bietet Ihnen die Möglichkeit, Webparts entweder in Ihrer lokalen Umgebung oder auf einer SharePoint-Website zu testen. SharePoint Framework unterstützt diese Funktion mit dem Modul **EnvironmentType**, das anzeigt, in welcher Umgebung das Webpart gerade ausgeführt wird. 
+SharePoint Workbench bietet Ihnen die Möglichkeit, Webparts entweder in Ihrer lokalen Umgebung oder auf einer SharePoint-Website zu testen. SharePoint-Framework unterstützt diese Funktion mit dem Modul **EnvironmentType**, das anzeigt, in welcher Umgebung das Webpart gerade ausgeführt wird. 
 
 Damit Sie das Modul verwenden können, müssen Sie zuerst die Module **Environment** und ***EnvironmentType** aus dem Bundle **@microsoft/sp-core-library** importieren. Fügen Sie es zum Abschnitt **import** oben auf der Seite hinzu, wie im folgenden Code illustriert:
 
@@ -319,24 +331,25 @@ Navigieren Sie zur Methode **render**, und ersetzen Sie den Code in der Methode 
 
 ```ts
     this.domElement.innerHTML = `
-      <div class="${styles.helloWorld}">
-        <div class="${styles.container}">
-          <div class="ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}">
-            <div class="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
-              <span class="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
-              <p class="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
-              <p class="ms-font-l ms-fontColor-white">${escape(this.properties.description)}</p>
-              <p class="ms-font-l ms-fontColor-white">Loading from ${escape(this.context.pageContext.web.title)}</p>
-              <a href="https://aka.ms/spfx" class="${styles.button}">
-                <span class="${styles.label}">Learn more</span>
+      <div class="${ styles.helloWorld }">
+        <div class="${ styles.container }">
+          <div class="${ styles.row }">
+            <div class="${ styles.column }">
+              <span class="${ styles.title }">Welcome to SharePoint!</span>
+              <p class="${ styles.subTitle }">Customize SharePoint experiences using Web Parts.</p>
+              <p class="${ styles.description }">${escape(this.properties.description)}</p>
+              <p class="${ styles.description }">${escape(this.properties.test)}</p>
+              <p class="${ styles.description }">Loading from ${escape(this.context.pageContext.web.title)}</p>
+              <a href="https://aka.ms/spfx" class="${ styles.button }">
+                <span class="${ styles.label }">Learn more</span>
               </a>
             </div>
           </div>
-        </div>  
-        <div id="spListContainer" />
+          <div id="spListContainer" />
+        </div>
       </div>`;
 
-    this._renderListAsync(); 
+      this._renderListAsync();
 ```
 
 Speichern Sie die Datei.
@@ -347,16 +360,16 @@ Wechseln Sie zur lokalen Workbench, und fügen Sie das HelloWorld-Webpart hinzu.
 
 Nun sollten die simulierten Daten zurückgegeben werden.
 
-![Rendern von Listendaten von „localhost“](../../../../images/sp-lists-render-localhost.png)
+![Rendern von Listendaten von „localhost“](../../../images/sp-lists-render-localhost.png)
 
 Wechseln Sie zur in SharePoint gehosteten Workbench. Aktualisieren Sie die Seite, und fügen Sie das HelloWorld-Webpart hinzu.
 
 Es sollten nun Listen von der aktuellen Website zurückgegeben werden.
 
-![Rendern von Listendaten aus SharePoint](../../../../images/sp-lists-render-spsite.png)
+![Rendern von Listendaten aus SharePoint](../../../images/sp-lists-render-spsite.png)
 
 Jetzt können Sie den Server stoppen. Wechseln Sie zur Konsole, und stoppen Sie `gulp serve`. Drücken Sie `Ctrl+C`, um den gulp-Task zu beenden.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Sehr gut! Sie haben Ihren Webpart jetzt an die SharePoint-Listendaten angebunden. Im nächsten Artikel, [Bereitstellen Ihres Webparts auf einer SharePoint-Seite](./serve-your-web-part-in-a-sharepoint-page), können Sie Ihren HelloWorld-Webpart weiter ausbauen. Dort erfahren Sie, wie Sie den HelloWorld-Webpart auf einer klassischen serverseitigen SharePoint-Seite bereitstellen und eine Vorschau anzeigen können.
+Sehr gut! Sie haben Ihren Webpart jetzt an die SharePoint-Listendaten angebunden. Im nächsten Artikel, [Bereitstellen Ihres Webparts auf einer SharePoint-Seite](./serve-your-web-part-in-a-sharepoint-page.md), können Sie Ihren HelloWorld-Webpart weiter ausbauen. Dort erfahren Sie, wie Sie den HelloWorld-Webpart auf einer klassischen serverseitigen SharePoint-Seite bereitstellen und eine Vorschau anzeigen können.

@@ -1,11 +1,11 @@
 ---
 title: Arbeiten Sie mit Websites in einer Umgebung mit mehreren geografisch
 ms.date: 11/03/2017
-ms.openlocfilehash: c4fc583fd0d13dfc16d5b1b514b48cf29addbf0e
-ms.sourcegitcommit: 26a4fb9cfe1ffcd266313c16f2afabfc841fdb71
+ms.openlocfilehash: cd7b3889a7299916d96e4e80bb65126c41733494
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="work-with-sites-in-a-multi-geo-environment"></a>Arbeiten Sie mit Websites in einer Umgebung mit mehreren geografisch
 
@@ -31,7 +31,8 @@ Eine Enumeration Mandanten gesamte Website ausführen:
 
 Finden Sie weitere Informationen finden Sie [MultiGeo.SiteEnumeration](https://github.com/SharePoint/PnP/tree/dev/Samples/MultiGeo.SiteEnumeration) .
 
->**Hinweis:** Weitere Informationen zu Berechtigungen und wie Sie die Anwendung konfigurieren finden Sie unter [Einrichten einer Serverfarm mit mehreren geografisch beispielanwendung](multigeo-sampleapplicationsetup.md).
+> [!NOTE] 
+> Weitere Informationen zu Berechtigungen und wie Sie die Anwendung konfigurieren finden Sie unter [Einrichten einer Serverfarm mit mehreren geografisch beispielanwendung](multigeo-sampleapplicationsetup.md).
 
 ## <a name="performing-tenant-level-operations"></a>Ausführen von Vorgängen auf Mandantenebene
 Die `Tenant` Objekt wird auch verwendet, um auf Mandantenebene Einstellungen konfigurieren, wie CDN-Einstellungen und websiteeinstellungen auf Mandantenebene wie die **Website Geo Speicherort Einschränkung**. Um auf Mandantenebene-Vorgänge auszuführen:

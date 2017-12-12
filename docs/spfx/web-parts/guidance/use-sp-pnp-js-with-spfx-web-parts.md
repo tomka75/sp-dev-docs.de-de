@@ -1,4 +1,14 @@
-# <a name="use-sp-pnp-js-with-sharepoint-framework-web-parts"></a>Verwenden von sp-pnp-js mit SharePoint Framework-Webparts
+---
+title: Verwenden von sp-pnp-js mit SharePoint-Framework-Webparts
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: e0f86a7ed8d0c3c09e00087819b2608d8c67eccf
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/20/2017
+---
+# <a name="use-sp-pnp-js-with-sharepoint-framework-web-parts"></a>Verwenden von sp-pnp-js mit SharePoint-Framework-Webparts
 
 Sie können wählen, ob Sie die [sp-pnp-js](https://www.npmjs.com/package/sp-pnp-js)-Bibliothek beim Erstellen Ihrer SharePoint Framework-Webparts (SPFx) verwenden möchten. Diese Bibliothek bietet eine Fluent-API, um die Erstellung Ihrer REST-Abfragen intuitiv zu gestalten und die Batchverarbeitung und die Zwischenspeicherung zu unterstützen. Erfahren Sie mehr auf der [Projekt-Homepage](https://github.com/SharePoint/PnP-JS-Core), die Links zu Dokumentation, Beispielen und weiteren Ressourcen bieten, die Ihnen die ersten Schritte erleichtern.
 
@@ -31,21 +41,29 @@ yo @microsoft/sharepoint
 Geben Sie die folgenden Werte ein, sobald Sie während der Einrichtung des neuen Projekts dazu aufgefordert werden:
 
 - **spfx-sp-pnp-js-example** als Lösungsname (Standardwert beibehalten)
+- **SharePoint Online only (latest)** als Basispaketversion.
 - **Aktueller Ordner** als Speicherort der Lösung
-- **Kockout** als Framework
+- **Y**, um dem Mandantenadministrator die Bereitstellung der Lösung für alle Websites zu ermöglichen
+- **WebPart** als die zu erstellende Komponente
 - **SPPnPJSExample** als Name des Webparts
 - **Beispiel zur Verwendung von sp-pnp-js in SPFx** als Beschreibung
+- **Knockout** als Framework
 
-![Erstellung des Projektgerüsts abgeschlossen](../../../../images/sp-pnp-js-guide-completed-setup.png)
+![Erstellung des Projektgerüsts abgeschlossen](../../../images/sp-pnp-js-guide-completed-setup.png)
 
+Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 
-Nachdem der Bau des Gerüsts abgeschlossen wurde, öffnen Sie das Projekt im Code-Editor Ihrer Wahl. Die hier dargestellten Screenshots verwenden [Visual Studio Code](https://code.visualstudio.com/). Um das Verzeichnis in Visual Studio Code zu öffnen, geben Sie an der Konsole Folgendes ein:
+```sh
+npm shrinkwrap
+```
+
+Öffnen Sie als Nächstes das Projekt im beliebigen Code-Editor. Die hier aufgeführten Screenshots stellen [Visual Studio Code](https://code.visualstudio.com/) dar. Um das Verzeichnis in Visual Studio Code zu öffnen, geben Sie Folgendes in der Konsole ein:
 
 ```sh
 code .
 ```
 
-![Projekt in Visual Studio Code geöffnet](../../../../images/sp-pnp-js-guide-first-open.png)
+![Projekt in Visual Studio Code geöffnet](../../../images/sp-pnp-js-guide-first-open.png)
 
 ## <a name="install-and-setup-sp-pnp-js"></a>Installieren und Einrichten von sp-pnp-js
 
@@ -107,8 +125,8 @@ Festzuhalten ist, dass durch die Verwendung von sp-pnp-js weniger Code zur Verar
 ```TypeScript
 import * as ko from 'knockout';
 import styles from './SpPnPjsExample.module.scss';
-import { ISpPnPjsExampleWebPartProps } from './ISpPnPjsExampleWebPartProps';
-import pnp, { List, ListEnsureResult, ItemAddResult } from "sp-pnp-js";
+import { ISpPnPjsExampleWebPartProps } from './SpPnPjsExampleWebPart';
+import pnp, { List, ListEnsureResult, ItemAddResult, FieldAddResult } from "sp-pnp-js";
 
 export interface ISpPnPjsExampleBindingContext extends ISpPnPjsExampleWebPartProps {
   shouter: KnockoutSubscribable<{}>;
@@ -123,15 +141,16 @@ export interface OrderListItem {
   OrderNumber: string;
 }
 
-export default class SpPnPjsExampleViewModel {
+const LIST_EXISTS: string = 'List exists';
 
+export default class SpPnPjsExampleViewModel {
   public description: KnockoutObservable<string> = ko.observable('');
   public newItemTitle: KnockoutObservable<string> = ko.observable('');
   public newItemNumber: KnockoutObservable<string> = ko.observable('');
   public items: KnockoutObservableArray<OrderListItem> = ko.observableArray([]);
 
   public labelClass: string = styles.label;
-  public helloWorldClass: string = styles.helloWorld;
+  public spPnPjsExampleClass: string = styles.spPnPjsExample;
   public containerClass: string = styles.container;
   public rowClass: string = `ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`;
   public buttonClass: string = `ms-Button ${styles.button}`;
@@ -145,8 +164,7 @@ export default class SpPnPjsExampleViewModel {
     }, this, 'description');
 
     // Load the items
-    this.getItems().then(items => {
-
+    this.getItems().then((items: OrderListItem[]): void => {
       this.items(items);
     });
   }
@@ -155,9 +173,7 @@ export default class SpPnPjsExampleViewModel {
    * Gets the items from the list
    */
   private getItems(): Promise<OrderListItem[]> {
-
-    return this.ensureList().then(list => {
-
+    return this.ensureList().then((list: List): Promise<OrderListItem[]> => {
       // Here we are using the getAs operator so that our returned value will be typed
       return list.items.select("Id", "Title", "OrderNumber").getAs<OrderListItem[]>();
     });
@@ -167,28 +183,24 @@ export default class SpPnPjsExampleViewModel {
    * Adds an item to the list
    */
   public addItem(): void {
-
     if (this.newItemTitle() !== "" && this.newItemNumber() !== "") {
-
-      this.ensureList().then(list => {
-
+      this.ensureList().then((list: List): Promise<ItemAddResult> => {
         // Add the new item to the SharePoint list
-        list.items.add({
+        return list.items.add({
           Title: this.newItemTitle(),
           OrderNumber: this.newItemNumber(),
-        }).then((iar: ItemAddResult) => {
-
-          // Add the new item to the display
-          this.items.push({
-            Id: iar.data.Id,
-            OrderNumber: iar.data.OrderNumber,
-            Title: iar.data.Title,
-          });
-
-          // Clear the form
-          this.newItemTitle("");
-          this.newItemNumber("");
         });
+      }).then((iar: ItemAddResult) => {
+        // Add the new item to the display
+        this.items.push({
+          Id: iar.data.Id,
+          OrderNumber: iar.data.OrderNumber,
+          Title: iar.data.Title,
+        });
+
+        // Clear the form
+        this.newItemTitle("");
+        this.newItemNumber("");
       });
     }
   }
@@ -197,84 +209,83 @@ export default class SpPnPjsExampleViewModel {
    * Deletes an item from the list
    */
   public deleteItem(data): void {
-
-    if (confirm("Are you sure you want to delete this item?")) {
-      this.ensureList().then(list => {
-        list.items.getById(data.Id).delete().then(_ => {
-          this.items.remove(data);
-        });
-      }).catch((e: Error) => {
-        alert(`There was an error deleting the item: ${e.message}`);
-      });
+    if (!confirm("Are you sure you want to delete this item?")) {
+      return;
     }
+
+    this.ensureList().then((list: List): Promise<void> => {
+      return list.items.getById(data.Id).delete();
+    }).then(_ => {
+      this.items.remove(data);
+    }).catch((e: Error) => {
+      alert(`There was an error deleting the item: ${e.message}`);
+    });
   }
 
   /**
    * Ensures the list exists. If not, it creates it and adds some default example data
    */
   private ensureList(): Promise<List> {
-
-    return new Promise<List>((resolve, reject) => {
-
+    return new Promise<List>((resolve: (list: List) => void, reject: (err: string) => void): void => {
+      let listEnsureResults: ListEnsureResult;
       // Use lists.ensure to always have the list available
-      pnp.sp.web.lists.ensure("SPPnPJSExampleList").then((ler: ListEnsureResult) => {
+      pnp.sp.web.lists.ensure("SPPnPJSExampleList")
+        .then((ler: ListEnsureResult): Promise<FieldAddResult> => {
+          listEnsureResults = ler;
 
-        if (ler.created) {
+          if (!ler.created) {
+             // resolve main promise
+            resolve(ler.list);
+            // break promise chain
+            return Promise.reject(LIST_EXISTS);
+          }
 
           // We created the list on this call, so let's add a column
-          ler.list.fields.addText("OrderNumber").then(_ => {
+          return ler.list.fields.addText("OrderNumber");
+        }).then((): Promise<string> => {
+          console.warn('Adding items...');
+          // And we will also add a few items so we can see some example data
+          // Here we use batching
+          return listEnsureResults.list.getListItemEntityTypeFullName();
+        }).then((typeName: string): Promise<void> => {
+          // Create a batch
+          const batch = pnp.sp.web.createBatch();
+          listEnsureResults.list.items.inBatch(batch).add({
+            Title: "Title 1",
+            OrderNumber: "4826492"
+          }, typeName);
 
-            // And we will also add a few items so we can see some example data
-            // Here we use batching
+          listEnsureResults.list.items.inBatch(batch).add({
+            Title: "Title 2",
+            OrderNumber: "828475"
+          }, typeName);
 
-            // Create a batch
-            let batch = pnp.sp.web.createBatch();
+          listEnsureResults.list.items.inBatch(batch).add({
+            Title: "Title 3",
+            OrderNumber: "75638923"
+          }, typeName);
 
-            ler.list.getListItemEntityTypeFullName().then(typeName => {
-
-              ler.list.items.inBatch(batch).add({
-                Title: "Title 1",
-                OrderNumber: "4826492"
-              }, typeName);
-
-              ler.list.items.inBatch(batch).add({
-                Title: "Title 2",
-                OrderNumber: "828475"
-              }, typeName);
-
-              ler.list.items.inBatch(batch).add({
-                Title: "Title 3",
-                OrderNumber: "75638923"
-              }, typeName);
-
-              // Excute the batched operations
-              batch.execute().then(_ => {
-                // All of the items have been added within the batch
-
-                resolve(ler.list);
-
-              }).catch(e => reject(e));
-
-            }).catch(e => reject(e));
-
-          }).catch(e => reject(e));
-
-        } else {
-
-          resolve(ler.list);
-        }
-
-      }).catch(e => reject(e));
+          // Execute the batched operations
+          return batch.execute();
+        }).then((): void => {
+          // All of the items have been added within the batch
+          resolve(listEnsureResults.list);
+        }).catch((e: any): void => {
+          if (e !== LIST_EXISTS) {
+            reject(e);
+          }
+        });
     });
   }
 }
 ```
+
 ## <a name="update-the-template"></a>Aktualisieren der Vorlage
 
 Schließlich müssen wir die Vorlage aktualisieren, um sie der Funktionalität anzupassen, die wir dem ViewModel hinzugefügt haben. Kopieren Sie den unten aufgeführten Code die Datei **SpPnPjsExample.template.html**. Wir haben eine Titelzeile sowie einen ForEach-Repeater für die Elementauflistung und ein Formular hinzugefügt, mit dem Sie neue Elemente zur Liste hinzufügen können.
 
 ```html
-<div data-bind="attr: {class:helloWorldClass}">
+<div data-bind="attr: {class:spPnPjsExampleClass}">
   <div data-bind="attr: {class:containerClass}">
 
     <div data-bind="attr: {class:rowClass}">
@@ -330,6 +341,7 @@ Schließlich müssen wir die Vorlage aktualisieren, um sie der Funktionalität a
   </div>
 </div>
 ```
+
 ## <a name="run-the-example"></a>Ausführen des Beispiels
 
 Starten Sie das Beispiel, und fügen Sie das Webpart zu Ihrer in SharePoint gehosteten Workbench (/_layouts/workbench.aspx) hinzu, um es in Aktion sehen zu können.
@@ -338,7 +350,7 @@ Starten Sie das Beispiel, und fügen Sie das Webpart zu Ihrer in SharePoint geho
 gulp serve --nobrowser
 ```
 
-![Projekt bei der ersten Ausführung](../../../../images/sp-pnp-js-guide-first-run.png)
+![Projekt bei der ersten Ausführung](../../../images/sp-pnp-js-guide-first-run.png)
 
 Sie können vorhandene Elemente löschen, indem Sie auf das Papierkorbsymbol klicken, oder neue Elemente hinzufügen, indem Sie Werte in beide Felder eingeben und auf die Schaltfläche „Hinzufügen“ klicken.
 
@@ -350,7 +362,7 @@ Die sp-pnp-js-Bibliothek enthält eine große Palette an Funktionen und Erweiter
 
 Wenn Sie Ihre Lösung bereitstellen und mithilfe der Kennzeichnung `--ship` erstellen möchten, müssen Sie sp-pnp-js als externe Bibliothek in der Konfiguration markieren. Dies geschieht durch Aktualisierung der SPFx-Datei **config/config.js**, um diese Zeile in den Extern-Abschnitt einzuschließen:
 
-```
+```json
 "sp-pnp-js": "https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/2.0.1/pnp.min.js"
 ```
 
@@ -367,7 +379,7 @@ Fügen Sie eine neue Datei mit dem Namen **MockSpPnPjsExampleViewModel.ts** zusa
 ```TypeScript
 import * as ko from 'knockout';
 import styles from './SpPnPjsExample.module.scss';
-import { ISpPnPjsExampleWebPartProps } from './ISpPnPjsExampleWebPartProps';
+import { ISpPnPjsExampleWebPartProps } from './SpPnPjsExampleWebPart';
 import pnp, { List, ListEnsureResult, ItemAddResult } from "sp-pnp-js";
 import { ISpPnPjsExampleBindingContext, OrderListItem } from './SpPnPjsExampleViewModel';
 
@@ -379,7 +391,7 @@ export default class MockSpPnPjsExampleViewModel {
     public items: KnockoutObservableArray<OrderListItem> = ko.observableArray([]);
 
     public labelClass: string = styles.label;
-    public helloWorldClass: string = styles.helloWorld;
+    public spPnPjsExampleClass: string = styles.spPnPjsExample;
     public containerClass: string = styles.container;
     public rowClass: string = `ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`;
     public buttonClass: string = `ms-Button ${styles.button}`;
@@ -388,13 +400,12 @@ export default class MockSpPnPjsExampleViewModel {
         this.description(bindings.description);
 
         // When the web part description is updated, change this view model's description.
-        bindings.shouter.subscribe((value: string) => {
+        bindings.shouter.subscribe((value: string): void => {
             this.description(value);
         }, this, 'description');
 
         // Load the items
-        this.getItems().then(items => {
-
+        this.getItems().then((items: OrderListItem[]): void => {
             this.items(items);
         });
     }
@@ -424,9 +435,7 @@ export default class MockSpPnPjsExampleViewModel {
      * Simulates adding an item to the list
      */
     public addItem(): void {
-
         if (this.newItemTitle() !== "" && this.newItemNumber() !== "") {
-
             // Add the new item to the display
             this.items.push({
                 Id: this.items.length,
@@ -444,13 +453,13 @@ export default class MockSpPnPjsExampleViewModel {
      * Simulates deleting an item from the list
      */
     public deleteItem(data): void {
-
         if (confirm("Are you sure you want to delete this item?")) {
             this.items.remove(data);
         }
     }
 }
 ```
+
 ### <a name="update-webpart"></a>Aktualisieren des Webparts
 
 Abschließend muss das Webpart aktualisiert werden, um die simulierten Daten bei Bedarf verwenden zu können. Öffnen Sie die Datei **SpPnPjsExampleWebPart.ts**. Importieren Sie dann das simulierte ViewModell-Web, das Sie gerade erstellt haben.
@@ -458,41 +467,37 @@ Abschließend muss das Webpart aktualisiert werden, um die simulierten Daten bei
 ```TypeScript
 import MockSpPnPjsExampleViewModel from './MockSpPnPjsExampleViewModel';
 ```
+
+Im nächsten Schritt importieren Sie die Typen `Environment` und `EnvironmentType`, die Sie zum Erkennen des Umgebungstyps des Webparts verwenden möchten, die ausgeführt werden in:
+
+```ts
+import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
+```
+
 Suchen Sie anschließend die `_registerComponent`-Methode, und aktualisieren Sie diese wie unten dargestellt:
 
 ```TypeScript
 private _registerComponent(tagName: string): void {
-
-  if (Environment.type === EnvironmentType.Local) {
-    console.log("here I am.")
-    ko.components.register(
-      tagName,
-      {
-        viewModel: MockSpPnPjsExampleViewModel,
-        template: require('./SpPnPjsExample.template.html'),
-        synchronous: false
-      }
-    );
-  } else {
-    ko.components.register(
-      tagName,
-      {
-        viewModel: SpPnPjsExampleViewModel,
-        template: require('./SpPnPjsExample.template.html'),
-        synchronous: false
-      }
-    );
-  }
+  ko.components.register(
+    tagName,
+    {
+      viewModel: Environment.type === EnvironmentType.Local ?
+        MockSpPnPjsExampleViewModel :
+        SpPnPjsExampleViewModel,
+      template: require('./SpPnPjsExample.template.html'),
+      synchronous: false
+    }
+  );
 }
 ```
+
 Geben Sie dann `gulp serve` in der Konsole ein, um die lokale Workbench aufzurufen, die jetzt die simulierten Daten verwendet. (Falls der Server bereits ausgeführt wird, halten Sie ihn mit STRG+C an, und starten Sie ihn dann erneut.)
 
 ```sh
 gulp serve
 ```
 
-![Angezeigtes Projekt, das in der lokalen Workbench mit simulierten Daten ausgeführt wird](../../../../images/sp-pnp-js-guide-with-mock-data.png)
-
+![Angezeigtes Projekt, das in der lokalen Workbench mit simulierten Daten ausgeführt wird](../../../images/sp-pnp-js-guide-with-mock-data.png)
 
 ## <a name="download-full-example-code"></a>Herunterladen des vollständigen Beispielcodes
 

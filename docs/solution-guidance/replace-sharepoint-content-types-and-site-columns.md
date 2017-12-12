@@ -1,11 +1,11 @@
 ---
 title: Ersetzen Sie SharePoint-Inhaltstypen und Websitespalten
 ms.date: 11/03/2017
-ms.openlocfilehash: a707962d8a46dbc2f82a3bccd8668613f078d13d
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 4cb0e48e67ad0696694495288b52b37f44a8f3f3
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="replace-sharepoint-content-types-and-site-columns"></a>Ersetzen Sie SharePoint-Inhaltstypen und Websitespalten
 
@@ -31,7 +31,8 @@ So ersetzen Sie Inhaltstypen und Spalten von Websites mithilfe von CSOM:
     
 Im folgenden Code gezeigt **Main** die Reihenfolge der Vorgänge zum Ersetzen von Inhaltstypen und Websitespalten mithilfe von CSOM ausführen.
 
-**Hinweis:**  Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 static void Main(string[] args)
@@ -212,7 +213,8 @@ Im folgenden Code überprüft **ReplaceContentType** alle Elemente in allen Bibl
   3. Für jedes Listenelement Abrufen von Inhaltstyp-ID des Listenelements. Bestimmen Sie, ob die Inhaltstyp-ID des Listenelements alte Inhaltstyp-ID entspricht Wenn der Inhaltstyp-IDs nicht gleich sind, fahren Sie mit der nächsten Listenelement. Wenn der Inhaltstyp-IDs gleich sind, verwenden Sie [ContentType.StringId](https://msdn.microsoft.com/library/office/microsoft.sharepoint.client.contenttype.stringid.aspx) das Element der Liste die neuen Inhaltstyp-ID zugewiesen.
     
 
-**Hinweis:**  Der alte Inhaltstyp ist weiterhin in der Liste, aber er wird nicht mehr verwendet. Sie können jetzt den alten Inhaltstyp aus der Liste löschen, und es dann zurückgezogen. In diesem Artikel wird beschrieben, wie nur Dokumentinhaltstypen ersetzen. Wenn Sie Inhaltstypen auf Seitenlayouts ersetzen möchten, stellen Sie sicher, dass Sie die [AssociatedContentType](https://msdn.microsoft.com/library/office/microsoft.sharepoint.publishing.pagelayout.associatedcontenttype.aspx) -Eigenschaft auf jeder Seitenlayout in der Websitesammlung aktualisieren.
+> [!NOTE] 
+> Der alte Inhaltstyp ist weiterhin in der Liste, aber er wird nicht mehr verwendet. Sie können jetzt den alten Inhaltstyp aus der Liste löschen, und es dann zurückgezogen. In diesem Artikel wird beschrieben, wie nur Dokumentinhaltstypen ersetzen. Wenn Sie Inhaltstypen auf Seitenlayouts ersetzen möchten, stellen Sie sicher, dass Sie die [AssociatedContentType](https://msdn.microsoft.com/library/office/microsoft.sharepoint.publishing.pagelayout.associatedcontenttype.aspx) -Eigenschaft auf jeder Seitenlayout in der Websitesammlung aktualisieren.
 
 ```C#
 private static void ReplaceContentType(ClientContext cc, Web web)
@@ -276,7 +278,7 @@ private static void ReplaceContentType(ClientContext cc, Web web)
 }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Transformieren von Farmlösungen in das SharePoint-Add-In-Modell](Transform-farm-solutions-to-the-SharePoint-app-model.md)

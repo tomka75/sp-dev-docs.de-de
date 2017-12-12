@@ -1,11 +1,11 @@
 ---
 title: Cross-Domain-Bildern in SharePoint gehostet durch Drittanbieter-add-ins
 ms.date: 11/03/2017
-ms.openlocfilehash: 3260b534a87fbb097fdaa5910a1c41f276514733
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: c49ed045dbf3bdea18999111139f36885c6b7820
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="cross-domain-images-in-sharepoint-provider-hosted-add-ins"></a>Cross-Domain-Bildern in SharePoint gehostet durch Drittanbieter-add-ins
 
@@ -17,7 +17,8 @@ Möglicherweise möchten Bilder aus einer SharePoint-Website in der vom Anbieter
 
 Das [Core.CrossDomainImages](https://github.com/SharePoint/PnP/tree/dev/Samples/Core.CrossDomainImages) -Codebeispiel wird veranschaulicht, wie ein vom Anbieter gehosteten add-in einer SharePoint-Zugriffstoken und REST-Dienst zum Abrufen von Bildern aus SharePoint verwenden kann. Der REST-Dienst gibt eine Base64-codierte Zeichenfolge, die verwendet wird, um das Bild im Browser anzuzeigen. Verwenden Sie die Lösung in diesem Beispiel zum Anzeigen von Bildern in vom Anbieter gehosteten-add-ins mithilfe von serverseitigen oder mithilfe der clientseitigen Code in SharePoint gespeichert.
 
-**Hinweis:** Da das Beispiel einen REST-Endpunkt verwendet wird, können Sie serverseitigen oder mithilfe der clientseitigen Code verwenden, um Ihr Bild abzurufen.
+> [!NOTE] 
+> Da das Beispiel einen REST-Endpunkt verwendet wird, können Sie serverseitigen oder mithilfe der clientseitigen Code verwenden, um Ihr Bild abzurufen.
 
 ## <a name="before-you-begin"></a>Bevor Sie beginnen:
 
@@ -33,7 +34,8 @@ Wenn Sie dieses Beispiel ausführen, versucht Default.aspx folgenden geladen wer
     
 - Bild 3, mit einem Aufruf mithilfe der clientseitigen an einen REST-Endpunkt, der eine Base64-codierte Zeichenfolge zurückgibt.
     
-**Hinweis:** Abbildung 1 wird, da das Add-in Domänen, um das Bild in SharePoint abzurufen schneidet nicht gerendert. Beachten Sie, dass die URL des vom Anbieter gehosteten-add-Ins auf Localhost ausgeführt wird. Öffnen Sie das Kontextmenü (Rechtsklick) für Bild 1 ein, und wählen Sie dann auf **Eigenschaften**. Beachten Sie, dass die **Adresse (URL)** das Bild aus dem Web-Add-in, nicht Localhost abrufen möchte. Da das vom Anbieter gehosteten-Add-in Domänen, die zum Erreichen der Add-ins Web überschreitet, ist die Authentifizierung erforderlich, um das Bild zugreifen. Stellen Sie sicher, dass den Zugriff auf Bild 1 URL direkt, im Gegensatz zu den domänenübergreifenden Anruf in der vom Anbieter gehosteten-add-in, ohne Fehler aufgelöst wird durch Kopieren und Einfügen des **Felds Webadresse (URL)** in einem neuen Browserfenster geöffnet. Beachten Sie, dass Bild 1 ohne Fehler angezeigt. Vergleichen Sie die Quelle der Bild 1 auf die Quelle des Bilds 2. Beachten Sie, dass die **Adresse (URL)** in eine Base64-codierte Zeichenfolge zeigt.
+> [!NOTE] 
+> Abbildung 1 wird, da das Add-in Domänen, um das Bild in SharePoint abzurufen schneidet nicht gerendert. Beachten Sie, dass die URL des vom Anbieter gehosteten-add-Ins auf Localhost ausgeführt wird. Öffnen Sie das Kontextmenü (Rechtsklick) für Bild 1 ein, und wählen Sie dann auf **Eigenschaften**. Beachten Sie, dass die **Adresse (URL)** das Bild aus dem Web-Add-in, nicht Localhost abrufen möchte. Da das vom Anbieter gehosteten-Add-in Domänen, die zum Erreichen der Add-ins Web überschreitet, ist die Authentifizierung erforderlich, um das Bild zugreifen. Stellen Sie sicher, dass den Zugriff auf Bild 1 URL direkt, im Gegensatz zu den domänenübergreifenden Anruf in der vom Anbieter gehosteten-add-in, ohne Fehler aufgelöst wird durch Kopieren und Einfügen des **Felds Webadresse (URL)** in einem neuen Browserfenster geöffnet. Beachten Sie, dass Bild 1 ohne Fehler angezeigt. Vergleichen Sie die Quelle der Bild 1 auf die Quelle des Bilds 2. Beachten Sie, dass die **Adresse (URL)** in eine Base64-codierte Zeichenfolge zeigt.
 
 Beim Laden von Default.aspx **Page_Load** wird ausgeführt und führt folgende Schritte aus:
 
@@ -43,7 +45,8 @@ Beim Laden von Default.aspx **Page_Load** wird ausgeführt und führt folgende S
     
 3. Legt Image2.ImageUrl auf die Base64-codierte Zeichenfolge, die **ImgService.GetImage** zurückgibt. Zugriffstoken, Website, Ordner und Dateinamen werden **ImgService.GetImage**als Parameter übergeben.
     
-**Hinweis:** Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
  protected void Page_Load(object sender, EventArgs e)
@@ -114,7 +117,7 @@ Nach Abschluss der **Page_Load** führt Default.aspx den clientseitigen Code def
 
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)

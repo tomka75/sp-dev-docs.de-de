@@ -1,11 +1,11 @@
 ---
 title: Autorisieren von vom Anbieter gehosteten-add-in Benutzern zur Laufzeit mithilfe von OAuth
 ms.date: 11/03/2017
-ms.openlocfilehash: bf89754b71a892bef15b3ec05bf60b7f5bd39b5d
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 45d76f2f005361e3d8fe5ce73355b5c139e87c9e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="authorize-provider-hosted-add-in-users-at-run-time-by-using-oauth"></a>Autorisieren von vom Anbieter gehosteten-add-in Benutzern zur Laufzeit mithilfe von OAuth
 
@@ -58,7 +58,8 @@ Wenn Sie das Codebeispiel ausführen:
     
 3. Wenn Sie aufgefordert werden, die Erlaubnis, die Berechtigungen erteilen, die das Add-in anfordert, wählen Sie **Vertrauen**. Beachten Sie, dass Sie auf der Seite /_layouts/15/OAuthAuthorize.aspx umgeleitet werden. 
     
-    **Hinweis:**  Die Benutzer benötigen Berechtigungen **Verwalten** die Erlaubnis, die Berechtigungen erteilen, die das Add-in anfordert. Erfahren Sie unter [Authorization Code OAuth-Ablauf für SharePoint-Add-ins](http://msdn.microsoft.com/library/e89e91c7-ea39-49b9-af5a-7f047a7e2ab7%28Office.15%29.aspx).
+    > [!NOTE] 
+    > Die Benutzer benötigen Berechtigungen **Verwalten** die Erlaubnis, die Berechtigungen erteilen, die das Add-in anfordert. Erfahren Sie unter [Authorization Code OAuth-Ablauf für SharePoint-Add-ins](http://msdn.microsoft.com/library/e89e91c7-ea39-49b9-af5a-7f047a7e2ab7%28Office.15%29.aspx).
 
 4. Geben Sie in **Verbindung mit Contoso**den Namen der neuen Liste zu erstellen, und wählen Sie dann auf **Liste erstellen**.
     
@@ -66,7 +67,8 @@ Wenn Sie das Codebeispiel ausführen:
     
 Bei der Auswahl **Verbinden** auf **Connect to Office 365** **Verbinden** in Controllers\HomeController aufgerufen wird, die und ruft dann **TokenRepository.Connect** . Die URL auf **Connect to Office 365** vom Benutzer eingegebene wird als **HostUrl**an **TokenRepository.Connect** übergeben.
 
-**Hinweis:**  Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
  public ActionResult Connect(string hostUrl)
@@ -79,7 +81,8 @@ Bei der Auswahl **Verbinden** auf **Connect to Office 365** **Verbinden** in Con
 
 **TokenRepository.Connect** ruft **TokenHelper.GetAuthorizationUrl** . **TokenHelper.GetAuthorizationUrl** gibt die umleitungs-URL "oauthauthorize.aspx" automatisch mithilfe der **HostUrl** und die gewünschten Berechtigungen für die SharePoint-Ressource. "Oauthauthorize.aspx" automatisch dient zum Autorisieren von Benutzern mit OAuth. Wenn an OAuthorize.aspx umgeleitet wird, muss der Benutzer zu Office 365 anmelden und stimmen Sie dann die Berechtigungen des Add-ins anfordert, oder das Add-in als vertrauenswürdig. Die gewünschte Berechtigung für die SharePoint-Ressource ist **Web.Manage** . Nach der benutzerautorisierung erstellt das Codebeispiel Listen auf der SharePoint-Website. Zum Erstellen von Listen auf einer SharePoint-Website, benötigen Benutzer **Web.Manage** Berechtigungen.
 
-**Hinweis:** **TokenHelper.GetAuthorizationUrl** gibt eine URL des Formulars **https://contoso.sharepoint.com/_layouts/15/OAuthAuthorize.aspx?IsDlg=1&amp;Client_id =<Client ID>&amp;scope=Web.Manage&amp;Response_type = Code** , wobei ** &lt;Client-ID&gt; ** wird das Add-in Client-ID Wenn das Add-in über das Seller Dashboard registriert ist, kann das Add-in einer beliebigen Office 365-Website installieren. Wenn Ihr Add-in nicht über das Seller Dashboard registriert ist, müssen Sie Registrieren Ihrer add-Ins mithilfe von "appregnew.aspx", und klicken Sie dann aktualisieren Core.DynamicPermissionsWeb\web.config. Finden Sie weitere Informationen finden Sie unter[Registrieren von SharePoint-Add-ins 2013](http://msdn.microsoft.com/library/be41a5dc-2af9-4fd9-bf4e-ad6dfa849524%28Office.15%29.aspx).
+> [!NOTE] 
+> **TokenHelper.GetAuthorizationUrl** gibt eine URL des Formulars **https://contoso.sharepoint.com/_layouts/15/OAuthAuthorize.aspx?IsDlg=1&amp;Client_id =<Client ID>&amp;scope=Web.Manage&amp;Response_type = Code** , wobei ** &lt;Client-ID&gt; ** wird das Add-in Client-ID Wenn das Add-in über das Seller Dashboard registriert ist, kann das Add-in einer beliebigen Office 365-Website installieren. Wenn Ihr Add-in nicht über das Seller Dashboard registriert ist, müssen Sie Registrieren Ihrer add-Ins mithilfe von "appregnew.aspx", und klicken Sie dann aktualisieren Core.DynamicPermissionsWeb\web.config. Finden Sie weitere Informationen finden Sie unter[Registrieren von SharePoint-Add-ins 2013](http://msdn.microsoft.com/library/be41a5dc-2af9-4fd9-bf4e-ad6dfa849524%28Office.15%29.aspx).
 
 ```C#
  public void Connect(string hostUrl)
@@ -131,7 +134,7 @@ public void Callback(string code)
 
 Ihr Add-in jetzt hat das Zugriffstoken für diesen Benutzer und zum Erstellen von Listen auf der SharePoint-Website kann fortgesetzt werden. 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Office 365 Development Mustern und Methoden ausgesprochen](Office-365-development-patterns-and-practices-solution-guidance.md).

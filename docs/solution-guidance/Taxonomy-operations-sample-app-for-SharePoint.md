@@ -1,11 +1,11 @@
 ---
 title: "Taxonomie Vorgänge Beispiel-app für SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: c50bfe1afada0cfe907c4e11c4d2d6c6eb772b41
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 32e7b535103dd20a988c1253afe7f505d6c0e6f0
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="taxonomy-operations-sample-app-for-sharepoint"></a>Taxonomie Vorgänge Beispiel-app für SharePoint
 
@@ -49,7 +49,8 @@ Wenn Sie die Anwendung zu starten, eine Konsolenanwendung, die ähnlich wie in A
 
 Nachdem Sie die SharePoint-URL und Ihre Anmeldeinformationen angeben, tritt ein, der Benutzerauthentifizierung. Der folgende Code führt die Benutzerauthentifizierung in SharePoint Online.
     
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 ClientContext cc = new ClientContext(siteUrl);
@@ -160,7 +161,7 @@ Die Begriff Daten aus der verwalteten Metadatendienst in der Konsolenanwendung a
 
 ![Screenshot von der SharePoint-Verwaltungskonsole mit der taxonomieterminologiespeicher erweitert.](media/9e623deb-569b-457a-ad1c-fa6d0d4d0a38.png)
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Enterprise Content Management-Lösungen für SharePoint 2013 und SharePoint Online](Enterprise-Content-Management-solutions-for-SharePoint-2013-and-SharePoint-Online.md)

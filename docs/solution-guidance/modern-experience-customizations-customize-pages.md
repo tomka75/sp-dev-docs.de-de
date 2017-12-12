@@ -2,11 +2,11 @@
 title: Anpassen von "modernen" Websiteseiten
 description: "Benutzerdefiniertes branding in SharePoint Online verwenden, programmgesteuert \"moderne\" Seiten hinzufügen und hinzufügen, löschen oder Aktualisieren von Client-Side-Webparts auf \"modernen\" Seiten."
 ms.date: 11/09/2017
-ms.openlocfilehash: 28a6c8739d5ac47bb182f2fa5bc347c0dd3e947d
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: b22eabf437eab007a1f58a3ebfcb9c8b830805f8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="customizing-modern-site-pages"></a>Anpassen von "modernen" Websiteseiten
 
@@ -278,7 +278,7 @@ Die folgende Abbildung zeigt die wichtigsten Klassen, die, denen Sie beim Verwen
 
 Es werden weitere Optionen zur Anpassung der "modernen" Seiten wünschen schrittweise einzuführen. Diese Optionen werden mit der Veröffentlichung von SharePoint-Framework Zusatzfunktionen ausgerichtet. Derzeit keine genauen Zeitplan vorhanden ist, aber wir werden in den Artikeln "modernen" Erfahrung aktualisieren, sobald neue Funktionen freigegeben werden.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 
 - [Anpassen der „modernen“ Benutzeroberflächen in SharePoint Online](modern-experience-customizations.md)
 - [Erlauben Sie oder verhindern Sie der Erstellung von modernen Websiteseiten durch Endbenutzer](https://support.office.com/en-us/article/Allow-or-prevent-creation-of-modern-site-pages-by-end-users-c41d9cc8-c5c0-46b4-8b87-ea66abc6e63b?ui=en-US&rs=en-US&ad=US)

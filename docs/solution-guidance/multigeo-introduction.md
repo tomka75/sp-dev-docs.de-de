@@ -1,11 +1,11 @@
 ---
 title: "Einführung in OneDrive und SharePoint Online Multi-Geo-Vorschau"
 ms.date: 11/03/2017
-ms.openlocfilehash: 4b149feb923e667ba98785747dd27eae66b4a611
-ms.sourcegitcommit: 26a4fb9cfe1ffcd266313c16f2afabfc841fdb71
+ms.openlocfilehash: 1e13ce986e1ee84ce13dafb7bc8efad36b2c6348
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="introduction-to-onedrive-and-sharepoint-online-multi-geo-preview"></a>Einführung in OneDrive und SharePoint Online Multi-Geo-Vorschau
 
@@ -15,8 +15,8 @@ Die Multi-Geo OneDrive und SharePoint Online (ODSP) ermöglicht multinationale U
 
 In einer Konfiguration ODSP Multi-Geo Preview besteht aus Ihrem Office 365-Mandanten einen zentralen Speicherort (auch bekannt als Standardspeicherort) und einen oder mehrere Satelliten Geo-Speicherorte. Ein einzelner Mandant umfasst einen oder mehrere zusätzliche Geo-Speicherorte. Ihre Mandanten Informationen, einschließlich Geo-Standorten wird in Azure Active Directory (AAD) gespeichert.
 
-
->**Hinweis:** ODSP Multi-Geo Preview Features dienen nicht zum Optimieren der Leistung. Sie dienen Daten vor-Ort-Anforderungen erfüllen.
+> [!NOTE] 
+> ODSP Multi-Geo Preview Features dienen nicht zum Optimieren der Leistung. Sie dienen Daten vor-Ort-Anforderungen erfüllen.
 
 Im folgenden sind die wichtigsten Begriffe im Zusammenhang mit ODSP Multi-Geo-Vorschau:
 

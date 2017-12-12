@@ -1,11 +1,11 @@
 ---
 title: "Erstellen Sie remote Zeitgeberaufträge in SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 12f4abd507328afd19da562c8dbb569118bc91a9
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: e9cf373ef4ba81b66c9bfa340b650dd71548f006
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-remote-timer-jobs-in-sharepoint"></a>Erstellen Sie remote Zeitgeberaufträge in SharePoint
 
@@ -25,7 +25,8 @@ Laden Sie Sie zuerst [Core.TimerJobs.Samples](https://github.com/SharePoint/PnP/
 
 Vor der Verwendung der Lösung Core.TimerJobs.Samples, müssen Sie ein Startprojekt, beispielsweise das SimpleJob Projekt auswählen von öffnen das Kontextmenü (Rechtsklick) das **Core.TimerJobs.Samples.SimpleJob**auswählen und dann **festgelegt als Startprojekt**.
 
-**Hinweis:**  Bei der Erstellung eines neuen Projekts in Visual Studio zum Erstellen des neuen remote-Zeitgeberauftrags, das **OfficeDevPnP.Core** NuGet-Paket dem Projekt hinzugefügt. Wählen Sie in Visual Studio **TOOLS** > **NuGet Package Manager** > **Manage NuGet Packages for Solution**.
+> [!NOTE] 
+> Bei der Erstellung eines neuen Projekts in Visual Studio zum Erstellen des neuen remote-Zeitgeberauftrags, das **OfficeDevPnP.Core** NuGet-Paket dem Projekt hinzugefügt. Wählen Sie in Visual Studio **TOOLS** > **NuGet Package Manager** > **Manage NuGet Packages for Solution**.
 
 ## <a name="schedule-your-remote-timer-job"></a>Planen des remote-Zeitgeberauftrags
 
@@ -43,7 +44,8 @@ In Core.TimerJobs.Samples.SimpleJob führt **Main** in Program.cs die folgenden 
     
 4. Druckt Timer-Job-Informationen und führt den Zeitgeberauftrag mithilfe von **PrintJobSettingsAndRunJob**.
 
-**Hinweis:**  Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
  static void Main(string[] args)
@@ -295,7 +297,7 @@ void SiteGovernanceJob_TimerJobRun(object o, TimerJobRunEventArgs e)
         }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)

@@ -1,11 +1,11 @@
 ---
 title: "SharePoint-Website Bereitstellen von Lösungen"
 ms.date: 11/03/2017
-ms.openlocfilehash: 559de89e1b82f9a56d78cb1b8c1a5d062c5ac762
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 236423647190f655097f6203db4ff72ae5ef207b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-site-provisioning-solutions"></a>SharePoint-Website Bereitstellen von Lösungen
 
@@ -25,7 +25,7 @@ Die Beispiele in diesem Abschnitt beschriebenen veranschaulichen die vom Anbiete
 |[Ändern Sie der Berechtigungen für SharePoint-Website und Abrufen Sie des Status für externe Freigabe](modify-sharepoint-site-permissions-and-get-external-sharing-status.md)|[Core.SitePermissions](https://github.com/SharePoint/PnP/tree/dev/Scenarios/Core.SitePermissions)|Ändern Sie der Eigenschaften der Websitesammlungs-Administratoren mithilfe von CSOM-Code, und rufen Sie die externe Freigabe Status und externe Benutzer von einer Websitesammlung oder Mandanten.|
 |[SharePoint-Benutzer und Gruppen verwalten](manage-sharepoint-users-and-groups.md)|[Core.GroupManagement](https://github.com/SharePoint/PnP/tree/dev/Scenarios/Core.GroupManagement)|Verwalten von Benutzern, Gruppen und Berechtigungen in einer SharePoint-Websitesammlung.|
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Branding und Bereitstellen von Lösungen für SharePoint 2013 und SharePoint Online-Website](Branding-and-site-provisioning-solutions-for-SharePoint.md)

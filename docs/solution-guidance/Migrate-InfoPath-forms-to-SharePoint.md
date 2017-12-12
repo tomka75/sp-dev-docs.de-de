@@ -1,11 +1,11 @@
 ---
 title: Migrieren von InfoPath-Formularen in SharePoint 2013
 ms.date: 11/03/2017
-ms.openlocfilehash: f53ff1c78524e1a18e7082317dc9bc5c0aa56cdf
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 9efe83a8e3b5e37c091b2ea9d92bad401ebd0e7b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="migrate-infopath-forms-to-sharepoint-2013"></a>Migrieren von InfoPath-Formularen in SharePoint 2013
 
@@ -33,7 +33,7 @@ Die ersten beiden Lösungen, wird empfohlen, weil Information Worker, die nicht 
 |Verwenden Sie Microsoft Nachrichtenübermittlung und des Microsoft PowerApps|Dies ist die unsere empfohlener Ansatz für die Erweiterung von Listen von SharePoint-Hauptbenutzer.|
 |Neue Add-In-Modell und Client Side Entwicklungen |Sie können komplexe Formulare beschäftigte Mitarbeiter umfassende Code in vom Anbieter gehosteten-add-ins oder Client Side-Webparts zu konvertieren. Diese Option erfordert Ressourcen für Entwickler.|
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Muster und Methoden für InfoPath-Transformation Anleitungen](https://github.com/SharePoint/PnP-Transformation/tree/master/InfoPath) 

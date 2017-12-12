@@ -1,3 +1,13 @@
+---
+title: "Bereitstellen von SharePoint-Objekten mit dem Lösungspaket"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 9da564c257f513b40fc036b9656d11972d5dc530
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="provision-sharepoint-assets-with-your-solution-package"></a>Bereitstellen von SharePoint-Objekten mit dem Lösungspaket
 
 Manchmal müssen Sie vielleicht eine SharePoint-Liste oder einer Dokumentbibliothek zusammen mit Ihrem clientseitigen Lösungspaket bereitstellen, damit diese Liste oder Bibliothek für Ihre clientseitigen Komponenten, z. B. Webparts, verfügbar ist. Mit der SharePoint Framework-Toolkette können Sie SharePoint-Elemente mit ihrem clientseitigen Lösungspaket verpacken und bereitstellen. Diese Elemente werden dann bereitgestellt werden, wenn die clientseitige Lösung auf einer Website installiert wird. 
@@ -5,7 +15,7 @@ Manchmal müssen Sie vielleicht eine SharePoint-Liste oder einer Dokumentbibliot
 Details zu den Bereitstellungsoptionen finden Sie auch in einem der SharePoint PnP-Webcasts im [YouTube-Kanal von SharePoint PnP](https://www.youtube.com/watch?v=r-UdJhhHlEQ&list=PLR9nK3mnD-OUnJytlXlO84fQnYt50iTmS). 
 
 <a href="https://www.youtube.com/watch?v=r-UdJhhHlEQ&list=PLR9nK3mnD-OUnJytlXlO84fQnYt50iTmS">
-<img src="../../../images/spfx-webcast-youtube-provision-feature-elements.png" alt="Screenshot of the YouTube video player for this tutorial" />
+<img src="../../images/spfx-webcast-youtube-provision-feature-elements.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 
@@ -30,7 +40,7 @@ Ein Feld oder eine Websitespalte stellt ein Attribut oder Metadaten dar, die der
 
 Nehmen wir beispielsweise an, dass Sie eine Websitespalte mit dem Namen „Kunde“ definieren. Benutzer können diese Spalte zu ihren Listen hinzufügen und in ihren Inhaltstypen darauf verweisen. Dadurch wird sichergestellt, dass die Spalte – zumindest zu Beginn – dieselben Attribute aufweist, unabhängig davon, wo sie angezeigt wird.
 
-Sie können in der Dokumentation [Feldelement](https://msdn.microsoft.com/de-de/library/aa979575(v=office.15).aspx) die Informationen über das Schema und die Attribute nachlesen, um ein neues Feld in Ihrer Lösung zu definieren. 
+Sie können in der Dokumentation [Feldelement](https://msdn.microsoft.com/en-us/library/aa979575(v=office.15).aspx) die Informationen über das Schema und die Attribute nachlesen, um ein neues Feld in Ihrer Lösung zu definieren. 
 
 Nachfolgend sehen Sie ein Beispiel für ein neues DateTime-Feld:
 
@@ -51,7 +61,7 @@ Ein Inhaltstyp ist eine wieder verwendbare Sammlung von Metadaten (Spalten), Ver
 
 Stellen Sie sich beispielsweise ein Geschäftsszenario vor, in dem Sie mit drei verschiedenen Dokumenttypen arbeiten: Spesenabrechnungen, Bestellungen und Rechnungen. Alle drei Dokumenttypen weisen bestimmte gemeinsame Merkmale auf. Bei allen handelt es sich beispielsweise um Finanzdokumente, und alle enthalten Daten mit Währungswerten. Dennoch gelten für jeden Dokumenttyp spezifische Datenanforderungen, eine eigene Dokumentvorlage und ein eigener Workflow. Eine Lösung für dieses Problem könnte darin bestehen, vier Inhaltstypen zu erstellen. Der erste Inhaltstyp, Finanzdokument, könnte die Datenanforderungen enthalten, die in allen Finanzdokumenten in der Organisation gemeinsam vorkommen. Die verbleibenden drei Inhaltstypen, Spesenabrechnung, Bestellung und Rechnung, können die gemeinsamen Elemente von Finanzdokument erben. Darüber hinaus könnten sie Merkmale definieren, die für die einzelnen Typen spezifisch sind, z. B. eine spezielle Menge von Metadaten, eine Dokumentvorlage, die beim Erstellen eines neuen Elements verwendet werden soll, und ein spezieller Workflow für die Verarbeitung eines Elements.
 
-Sie können in der Dokumentation [Inhaltstypelement](https://msdn.microsoft.com/de-de/library/aa544268.aspx) die Informationen über das Schema und die Attribute nachlesen, um einen neuen Inhaltstyp in Ihrer Lösung zu definieren. 
+Sie können in der Dokumentation [Inhaltstypelement](https://msdn.microsoft.com/de-DE/library/aa544268.aspx) die Informationen über das Schema und die Attribute nachlesen, um einen neuen Inhaltstyp in Ihrer Lösung zu definieren. 
 
 Nachfolgend sehen Sie ein Beispiel für einen Inhaltstyp:
 
@@ -73,7 +83,7 @@ Listen sind ein wichtiges, zugrunde liegendes Feature einer SharePoint-Website. 
 
 SharePoint bietet mehrere Listenvorlagen, z. B. Kontaktlisten, Kalender, Aufgabenlisten usw. Sie können diese Vorlagen verwenden, um neue Listeninstanzen für Ihre Webparts oder andere Komponenten zu erstellen. Sie können z. B. die Listeninstanz „Finanzdokumente“ basierend auf der Vorlage für die Dokumentbibliothek definieren, um zugehörige Dokumente mit dem Webpart zu speichern. 
 
-Sie können in der Dokumentation [Listeninstanzelement](https://msdn.microsoft.com/de-de/library/office/ms476062.aspx) die Informationen über das Schema und die Attribute nachlesen, um einen neuen Listeninstanz in Ihrer Lösung zu definieren.
+Sie können in der Dokumentation [Listeninstanzelement](https://msdn.microsoft.com/de-DE/library/office/ms476062.aspx) die Informationen über das Schema und die Attribute nachlesen, um einen neuen Listeninstanz in Ihrer Lösung zu definieren.
 
 Es folgt ein Beispiel für eine Listeninstanzdefinition:
 
@@ -89,7 +99,7 @@ Es folgt ein Beispiel für eine Listeninstanzdefinition:
 
 #### <a name="lists-instances-with-custom-schema"></a>Listeninstanzen mit benutzerdefiniertem Schema
 
-Sie können eine benutzerdefinierte Listenschemadefinition verwenden, um Ihre Felder, Inhaltstypen und Ansichten zu definieren, die in Ihrer Listeninstanz verwendet werden. Das `customschema`-Attribut im [Listeninstanzelement](https://msdn.microsoft.com/de-de/library/office/ms476062.aspx#sectionSection0) wird verwendet, um auf ein benutzerdefiniertes Schema für die Listeninstanz zu verweisen. 
+Sie können eine benutzerdefinierte Listenschemadefinition verwenden, um Ihre Felder, Inhaltstypen und Ansichten zu definieren, die in Ihrer Listeninstanz verwendet werden. Das `customschema`-Attribut im [Listeninstanzelement](https://msdn.microsoft.com/de-DE/library/office/ms476062.aspx#sectionSection0) wird verwendet, um auf ein benutzerdefiniertes Schema für die Listeninstanz zu verweisen. 
 
 Sie können beispielsweise die Listeninstanz „Finanzdokumente“ mit dem Inhaltstyp „Finanzdokument“ definieren, der die Datenanforderungen kapseln könnte, die alle Finanzdokumente in der Organisation gemeinsam haben. 
 
@@ -142,7 +152,7 @@ Und die benutzerdefinierte Schemadefinition, die einen Inhaltstyp für die oben 
 ```
 ### <a name="create-sharepoint-items-in-your-solution"></a>Erstellen von SharePoint-Elementen in Ihrer Lösung
 
-Das Lösungspaket verwendet [SharePoint-Features](https://msdn.microsoft.com/de-de/library/ee537350(office.14).aspx) zum Verpacken und Bereitstellen der SharePoint-Elemente. Ein Feature ist ein Container, der ein oder mehrere SharePoint-Elemente für die Bereitstellung enthält. Eine Feauture enthält eine Feature.xml-Datei und eine oder mehrere Elementmanifestdateien. Diese XML-Dateien werden auch als Featuredefinitionen bezeichnet. 
+Das Lösungspaket verwendet [SharePoint-Features](https://msdn.microsoft.com/en-us/library/ee537350(office.14).aspx) zum Verpacken und Bereitstellen der SharePoint-Elemente. Ein Feature ist ein Container, der ein oder mehrere SharePoint-Elemente für die Bereitstellung enthält. Eine Feauture enthält eine Feature.xml-Datei und eine oder mehrere Elementmanifestdateien. Diese XML-Dateien werden auch als Featuredefinitionen bezeichnet. 
 
 Ein clientseitiges Lösungspaket enthält in der Regel ein Feature. Dieses Feature wird aktiviert, wenn die Lösung auf einer Website installiert wird. Es ist wichtig zu beachten, dass die Websiteadministratoren Ihr Lösungspaket und nicht das Feature installieren. 
 
@@ -265,7 +275,7 @@ Der oben aufgeführte Befehl verpackt eine oder mehrere clientseitige Komponente
 
 #### <a name="upgrade-sharepoint-items"></a>Aktualisieren von SharePoint-Elementen
 
-Sie können neue SharePoint-Elemente einschließen oder vorhandene SharePoint-Elemente aktualisieren, wenn Sie Ihre clientseitige Lösung aktualisieren. Da beim Bereitstellen von SharePoint-Elementen Features verwendet werden, Sie verwenden Sie die XML-Datei [Featureupgradeaktionen](https://msdn.microsoft.com/de-de/library/office/ee537575(v=office.14).aspx), um eine Liste von Upgradeaktionen zu definieren.
+Sie können neue SharePoint-Elemente einschließen oder vorhandene SharePoint-Elemente aktualisieren, wenn Sie Ihre clientseitige Lösung aktualisieren. Da beim Bereitstellen von SharePoint-Elementen Features verwendet werden, Sie verwenden Sie die XML-Datei [Featureupgradeaktionen](https://msdn.microsoft.com/en-us/library/office/ee537575(v=office.14).aspx), um eine Liste von Upgradeaktionen zu definieren.
 
 Das `upgradeActions`-JSON-Objektarray in der `package-solution.json` verweist auf die Feature-XML-Dateien, die den Upgradeaktionen für Ihr Feature zugeordnet sind. Eine Upgradeaktionsdatei definiert auf jeden Fall die Elementmanifest-XML-Datei, die ausgeführt wird, wenn das Feature aktualisiert wird. 
 
@@ -325,12 +335,12 @@ Gibt einen Versionsbereich an, auf den die angegebenen Upgradeaktionen angewende
 -  [Tutorial: Provisioning SharePoint assets from your SharePoint client-side web part](https://dev.office.com/sharepoint/docs/spfx/web-parts/get-started/provision-sp-assets-from-package)
 
 -  
-  [SharePoint-Baustein: Features](https://msdn.microsoft.com/de-de/library/ee537350.aspx)
+  [SharePoint-Baustein: Features](https://msdn.microsoft.com/de-DE/library/ee537350.aspx)
 
--  [Featureframework: Verwendung des UpgradeActions-Elements](https://msdn.microsoft.com/de-de/library/office/ee537575.aspx)
+-  [Featureframework: Verwendung des UpgradeActions-Elements](https://msdn.microsoft.com/de-DE/library/office/ee537575.aspx)
 
--  [Featureframework: Field-Element](https://msdn.microsoft.com/de-de/library/aa979575.aspx)
+-  [Featureframework: Field-Element](https://msdn.microsoft.com/de-DE/library/aa979575.aspx)
 
--  [Featureframework: ContentType-Element](https://msdn.microsoft.com/de-de/library/aa544268.aspx)
+-  [Featureframework: ContentType-Element](https://msdn.microsoft.com/de-DE/library/aa544268.aspx)
 
--  [Featureframework: ListInstance-Element](https://msdn.microsoft.com/de-de/library/office/ms476062.aspx)
+-  [Featureframework: ListInstance-Element](https://msdn.microsoft.com/de-DE/library/office/ms476062.aspx)

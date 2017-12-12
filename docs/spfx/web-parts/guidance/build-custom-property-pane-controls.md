@@ -1,16 +1,24 @@
+---
+title: "Erstellen benutzerdefinierter Steuerelemente für den Eigenschaftenbereich"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 42b3b6858626ab110aa03202819ea174c0c3fd62
+ms.sourcegitcommit: 3276e9b281b227fb2f1a131ab4ac54ae212ce5cf
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 11/24/2017
+---
 # <a name="build-custom-controls-for-the-property-pane"></a>Erstellen benutzerdefinierter Steuerelemente für den Eigenschaftenbereich
-
-> Hinweis:  Dieser Artikel wurde noch nicht mit der SPFx-GA-Version überprüft, möglicherweise treten daher Probleme auf, wenn Sie versuchen, dies mit der neuesten Version durchzuführen.
 
 Das SharePoint Framework enthält eine Reihe von Standardsteuerelementen für den Eigenschaftenbereich. Doch manchmal benötigen Sie zusätzliche Funktionen, die über die grundlegenden Steuerelemente hinausgehen. Möglicherweise benötigen Sie asynchrone Updates für die Daten in einem Steuerelement oder eine bestimmte Benutzeroberfläche. Erstellen Sie ein benutzerdefiniertes Steuerelement für den Eigenschaftenbereich, um die benötigten Funktionen zu erhalten.
 
 In diesem Artikel erfahren Sie, wie Sie ein benutzerdefiniertes Steuerelement für den Eigenschaftenbereich erstellen. Sie erstellen ein benutzerdefiniertes Dropdown-Steuerelement, das seine Daten asynchron aus einem externen Dienst lädt, ohne die Benutzeroberfläche des Webparts zu blockieren.
 
-![Element-Dropdownliste, in der verfügbare Elemente nach dem Auswählen einer Liste im Listen-Dropdown geladen werden](../../../../images/custom-property-pane-control-cascading-loading-items.png)
+![Element-Dropdownliste, in der verfügbare Elemente nach dem Auswählen einer Liste im Listen-Dropdown geladen werden](../../../images/custom-property-pane-control-cascading-loading-items.png)
 
 Der Quellcode des Webparts, mit dem wir arbeiten, steht auf GitHub zur Verfügung, unter [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols).
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment), in der Sie SharePoint Framework-Lösungen erstellen können.
+> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment.md), in der Sie SharePoint Framework-Lösungen erstellen können.
 
 ## <a name="create-new-project"></a>Erstellen eines neuen Projekts
 
@@ -40,11 +48,17 @@ Geben Sie die folgenden Werte ein, wenn Sie dazu aufgefordert werden:
 - **Zeigt Listenelemente aus der ausgewählten Liste an** als Beschreibung Ihres Webparts
 - **React** als Eintrittspunkt für die Webpart-Erstellung
 
-![SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../../images/custom-property-pane-control-yeoman.png)
+![SharePoint-Framework-Yeoman-Generator mit den Standardoptionen](../../../images/custom-property-pane-control-yeoman.png)
 
-Öffnen Sie den Projektordner in Ihrem Code-Editor, sobald die Gerüsterstellung abgeschlossen ist. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 
-![SharePoint Framework-Projekt in Visual Studio Code](../../../../images/custom-property-pane-control-visual-studio-code.png)
+```sh
+npm shrinkwrap
+```
+
+Öffnen Sie dann den Projektordner im Code-Editor. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+
+![SharePoint Framework-Projekt in Visual Studio Code](../../../images/custom-property-pane-control-visual-studio-code.png)
 
 ## <a name="define-web-part-property-for-storing-the-selected-list"></a>Definieren der Webparteigenschaft zum Speichern der ausgewählten Liste
 
@@ -52,7 +66,7 @@ In dem Webpart, das Sie erstellen, werden Listenelemente aus der ausgewählten S
 
 Öffnen Sie im Code-Editor die Datei **src/webparts/listItems/ListItemsWebPartManifest.json** Ersetzen Sie die standardmäßige **description**-Eigenschaft durch eine neue Eigenschaft mit dem Namen `listName`.
 
-![Webpartmanifest, bei dem die Webparteigenschaft 'listName' markiert ist](../../../../images/custom-property-pane-control-list-property-web-part-manifest.png)
+![Webpartmanifest, bei dem die Webparteigenschaft 'listName' markiert ist](../../../images/custom-property-pane-control-list-property-web-part-manifest.png)
 
 Öffnen Sie als Nächstes die Datei **src/webparts/listItems/IListItemsWebPartProps.ts**, und ersetzen Sie ihren Inhalt durch Folgendes:
 
@@ -78,12 +92,12 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 }
 ```
 
-Aktualisieren Sie den **propertyPaneSettings**-Getter auf Folgendes:
+Aktualisieren Sie die **getPropertyPaneConfiguration**-Methode in:
 
 ```ts
 export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
   // ...
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {
@@ -108,10 +122,10 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 }
 ```
 
-Ändern Sie in der Datei **src/webparts/listItems/loc/mystrings.d.ts** die **IListItemsStrings**-Schnittstelle in Folgendes:
+Ändern Sie in der Datei **src/webparts/listItems/loc/mystrings.d.ts** die **IListItemsWebPartStrings**-Schnittstelle in Folgendes:
 
 ```ts
-declare interface IListItemsStrings {
+declare interface IListItemsWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
   ListFieldLabel: string;
@@ -134,26 +148,17 @@ define([], function() {
 
 ```tsx
 export default class ListItems extends React.Component<IListItemsProps, {}> {
-  public render(): JSX.Element {
+  public render(): React.ReactElement<IListItemsProps> {
     return (
       <div className={styles.listItems}>
         <div className={styles.container}>
-          <div className={css('ms-Grid-row ms-bgColor-themeDark ms-fontColor-white', styles.row)}>
-            <div className='ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1'>
-              <span className='ms-font-xl ms-fontColor-white'>
-                Welcome to SharePoint!
-              </span>
-              <p className='ms-font-l ms-fontColor-white'>
-                Customize SharePoint experiences using web parts.
-              </p>
-              <p className='ms-font-l ms-fontColor-white'>
-                {this.props.listName}
-              </p>
-              <a
-                className={css('ms-Button', styles.button)}
-                href='https://github.com/SharePoint/sp-dev-docs/wiki'
-              >
-                <span className='ms-Button-label'>Learn more</span>
+          <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
+            <div className="ms-Grid-col ms-lg10 ms-xl8 ms-xlPush2 ms-lgPush1">
+              <span className="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
+              <p className="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
+              <p className="ms-font-l ms-fontColor-white">{escape(this.props.listName)}</p>
+              <a href="https://aka.ms/spfx" className={styles.button}>
+                <span className={styles.label}>Learn more</span>
               </a>
             </div>
           </div>
@@ -161,6 +166,14 @@ export default class ListItems extends React.Component<IListItemsProps, {}> {
       </div>
     );
   }
+}
+```
+
+Öffnen Sie als Nächstes die Datei  **src/webparts/listItems/components/IListItemsProps.ts**, und ersetzen Sie ihren Inhalt durch Folgendes:
+
+```ts
+export interface IListItemsProps {
+  listName: string;
 }
 ```
 
@@ -172,7 +185,7 @@ gulp serve
 
 Fügen Sie im Webbrowser das **Listenelement**-Webpart zum Zeichenbereich hinzu, und öffnen Sie die Eigenschaften. Überprüfen Sie, dass der für die **List**-Eigenschaft festgelegte Wert im Webparttext angezeigt wird.
 
-![Webpart, in dem der Wert der listName-Eigenschaft angezeigt wird](../../../../images/custom-property-pane-control-web-part-first-run.png)
+![Webpart, in dem der Wert der listName-Eigenschaft angezeigt wird](../../../images/custom-property-pane-control-web-part-first-run.png)
 
 ## <a name="create-asynchronous-dropdown-property-pane-control"></a>Erstellen eines asynchronen Steuerelements für den Dropdown-Eigenschaftenbereich
 
@@ -198,14 +211,14 @@ Wenn Sie ein benutzerdefiniertes Eigenschaftenbereichssteuerelement erstellen, d
 
 Erstellen Sie im Ordner **src** eine Hierarchie aus drei neuen Ordnern, damit Ihre Ordnerstruktur als **src/controls/PropertyPaneAsyncDropdown/components** angezeigt wird.
 
-![Komponentenordner in Visual Studio Code hervorgehoben](../../../../images/custom-property-pane-control-components-folder.png)
+![Komponentenordner in Visual Studio Code hervorgehoben](../../../images/custom-property-pane-control-components-folder.png)
 
 #### <a name="define-asynchronous-dropdown-react-component-properties"></a>Definieren von Eigenschaften asynchroner Dropdown-React-Komponenten
 
 Erstellen Sie im Ordner **src/controls/PropertyPaneAsyncDropdown/components** eine neue Datei mit dem Namen **IAsyncDropdownProps.ts**, und geben Sie den folgenden Code ein:
 
 ```ts
-import { IDropdownOption } from 'office-ui-fabric-react';
+import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
 
 export interface IAsyncDropdownProps {
   label: string;
@@ -219,12 +232,12 @@ export interface IAsyncDropdownProps {
 
 Die **IAsyncDropdownProps**-Klasse definiert Eigenschaften, die für die React-Komponente festgelegt werden können, die vom benutzerdefinierten Eigenschaftenbereichssteuerelement verwendet werden. Die **label**-Eigenschaft gibt die Bezeichnung für das Dropdown-Steuerelement an. Die der **loadOptions**-Stellvertretung zugeordnete Funktion wird vom Steuerelement aufgerufen, um die verfügbaren Optionen zu laden. Die der **onChanged**-Stellvertretung zugeordnete Funktion wird aufgerufen, nachdem der Benutzer eine Option in der Dropdownliste ausgewählt hat. Die **selectedKey**-Eigenschaft gibt den ausgewählten Wert an, der eine Zeichenfolge oder eine Zahl sein kann. Die **disabled**-Eigenschaft gibt an, ob das Dropdown-Steuerelement deaktiviert ist oder nicht. Die **stateKey**-Eigenschaft wird verwendet, um zu erzwingen, dass die React-Komponente erneut gerendert wird.
 
-#### <a name="define-asynchronous-dropdown-react-component-statekey"></a>Definieren der asynchronen Dropdown-React-Komponente „stateKey“
+#### <a name="define-asynchronous-dropdown-react-component-interface"></a>Definieren der asynchronen Dropdown-React-Komponentenschnittstelle
 
 Erstellen Sie im Ordner **src/controls/PropertyPaneAsyncDropdown/components** eine neue Datei mit dem Namen **IAsyncDropdownState.ts**, und geben Sie den folgenden Code ein:
 
 ```ts
-import { IDropdownOption } from 'office-ui-fabric-react';
+import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
 
 export interface IAsyncDropdownState {
   loading: boolean;
@@ -241,14 +254,17 @@ Erstellen Sie im Ordner **src/controls/PropertyPaneAsyncDropdown/components** ei
 
 ```tsx
 import * as React from 'react';
-import { Dropdown, Spinner } from 'office-ui-fabric-react';
+import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
+import { Spinner } from 'office-ui-fabric-react/lib/components/Spinner';
 import { IAsyncDropdownProps } from './IAsyncDropdownProps';
 import { IAsyncDropdownState } from './IAsyncDropdownState';
-import { IDropdownOption } from 'office-ui-fabric-react';
 
 export default class AsyncDropdown extends React.Component<IAsyncDropdownProps, IAsyncDropdownState> {
+  private selectedKey: React.ReactText;
+
   constructor(props: IAsyncDropdownProps, state: IAsyncDropdownState) {
     super(props);
+    this.selectedKey = props.selectedKey;
 
     this.state = {
       loading: false,
@@ -298,14 +314,32 @@ export default class AsyncDropdown extends React.Component<IAsyncDropdownProps, 
     return (
       <div>
         <Dropdown label={this.props.label}
-          isDisabled={this.props.disabled || this.state.loading || this.state.error !== undefined}
-          onChanged={this.props.onChanged}
-          selectedKey={this.props.selectedKey}
+          disabled={this.props.disabled || this.state.loading || this.state.error !== undefined}
+          onChanged={this.onChanged.bind(this)}
+          selectedKey={this.selectedKey}
           options={this.state.options} />
         {loading}
         {error}
       </div>
     );
+  }
+
+  private onChanged(option: IDropdownOption, index?: number): void {
+    this.selectedKey = option.key;
+    // reset previously selected options
+    const options: IDropdownOption[] = this.state.options;
+    options.forEach((o: IDropdownOption): void => {
+      if (o.key !== option.key) {
+        o.selected = false;
+      }
+    });
+    this.setState((prevState: IAsyncDropdownState, props: IAsyncDropdownProps): IAsyncDropdownState => {
+      prevState.options = options;
+      return prevState;
+    });
+    if (this.props.onChanged) {
+      this.props.onChanged(option, index);
+    }
   }
 }
 ```
@@ -327,7 +361,7 @@ Bei dem zweiten Satz von Eigenschaften handelt es sich um private Eigenschaften,
 Erstellen Sie im Ordner **src/controls/PropertyPaneAsyncDropdown/components** eine neue Datei mit dem Namen **IPropertyPaneAsyncDropdownProps.ts**, und geben Sie den folgenden Code ein:
 
 ```ts
-import { IDropdownOption } from 'office-ui-fabric-react';
+import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
 
 export interface IPropertyPaneAsyncDropdownProps {
   label: string;
@@ -365,7 +399,7 @@ import {
   IPropertyPaneField,
   PropertyPaneFieldType
 } from '@microsoft/sp-webpart-base';
-import { IDropdownOption } from 'office-ui-fabric-react';
+import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
 import { IPropertyPaneAsyncDropdownProps } from './IPropertyPaneAsyncDropdownProps';
 import { IPropertyPaneAsyncDropdownInternalProps } from './IPropertyPaneAsyncDropdownInternalProps';
 import AsyncDropdown from './components/AsyncDropdown';
@@ -380,6 +414,7 @@ export class PropertyPaneAsyncDropdown implements IPropertyPaneField<IPropertyPa
   constructor(targetProperty: string, properties: IPropertyPaneAsyncDropdownProps) {
     this.targetProperty = targetProperty;
     this.properties = {
+      key: properties.label,
       label: properties.label,
       loadOptions: properties.loadOptions,
       onPropertyChange: properties.onPropertyChange,
@@ -422,9 +457,9 @@ export class PropertyPaneAsyncDropdown implements IPropertyPaneField<IPropertyPa
 
 Die **PropertyPaneAsyncDropdown**-Klasse implementiert die standardmäßige **IPropertyPaneField**-Schnittstelle von SharePoint Framework mithilfe der **IPropertyPaneAsyncDropdownProps**-Schnittstelle als Vertrag für die öffentlichen Eigenschaften, die innerhalb des Webparts festgelegt werden können. Die Klasse enthält die folgenden drei öffentlichen Eigenschaften, die von der **IPropertyPaneField**-Schnittstelle definiert werden:
 
- * **type**: Muss auf **PropertyPaneFieldType.Custom** für ein benutzerdefiniertes Eigenschaftenbereichssteuerelement festgelegt sein.
- * **targetProperty**: Wird zum Angeben des Namens der Webparteigenschaft verwendet, die mit dem Steuerelement verwendet werden soll.
- * **properties**: Wird zum Definieren von steuerelementspezifischen Eigenschaften verwendet.
+- **type**: Muss auf **PropertyPaneFieldType.Custom** für ein benutzerdefiniertes Eigenschaftenbereichssteuerelement festgelegt sein.
+- **targetProperty**: Wird zum Angeben des Namens der Webparteigenschaft verwendet, die mit dem Steuerelement verwendet werden soll.
+- **properties**: Wird zum Definieren von steuerelementspezifischen Eigenschaften verwendet.
 
 Beachten Sie, dass die **properties**-Eigenschaften den internen Typ **IPropertyPaneAsyncDropdownInternalProps** und nicht die öffentliche **IPropertyPaneAsyncDropdownProps**-Schnittstelle aufweist, die von der Klasse implementiert wird. Dies ist Absicht, damit die **properties**-Eigenschaft die **onRender**-Methode definieren kann, die für das SharePoint Framework erforderlich ist. Wenn die **onRender**-Methode Teil der öffentlichen **IPropertyPaneAsyncDropdownProps**-Schnittstelle war, müssten Sie bei Verwendung des asynchronen Dropdownsteuerelement im Webpart war, müssten Sie dieser einen Wert innerhalb des Webparts zuweisen, was nicht erstrebenswert ist.
 
@@ -458,11 +493,11 @@ import { PropertyPaneAsyncDropdown } from '../../controls/PropertyPaneAsyncDropd
 Fügen Sie dann nach dem Code einen Verweis auf die **IDropdownOption**-Schnittstelle und zwei Hilfsfunktionen hinzu, die für die Arbeit mit Webparteigenschaften erforderlich sind.
 
 ```ts
-import { IDropdownOption } from 'office-ui-fabric-react';
+import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
 import { update, get } from '@microsoft/sp-lodash-subset';
 ```
 
-![Verweise auf die hervorgehobene Klasse 'PropertyPaneAsyncDropdown' und die Schnittstelle 'IDropdownOption in Visual Studio Code](../../../../images/custom-property-pane-control-web-part-imports.png)
+![Verweise auf die hervorgehobene Klasse 'PropertyPaneAsyncDropdown' und die Schnittstelle 'IDropdownOption in Visual Studio Code](../../../images/custom-property-pane-control-web-part-imports.png)
 
 #### <a name="add-method-to-load-available-lists"></a>Hinzufügen einer Methode zum Laden von verfügbaren Listen
 
@@ -500,21 +535,21 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
     // store new value in web part properties
     update(this.properties, propertyPath, (): any => { return newValue; });
     // refresh web part
-    this.onPropertyPaneFieldChanged(propertyPath, oldValue, newValue);
+    this.render();
   }
 }
 ```
 
 Nach dem Auswählen einer Liste im Listendropdown sollte der ausgewählte Wert in Webparteigenschaften beibehalten werden, und das Webpart sollte erneut gerendert werden, um die ausgewählte Eigenschaft widerzuspiegeln.
 
-#### <a name="render-the-list-web-part-property-using-the-asynchronous-dropdown-property-pane-control"></a>Rendern der list-Webparteigenschaft mithilfe des asynchronen Steuerelements für den Dropdown-Eigenschaftenbereich 
+#### <a name="render-the-list-web-part-property-using-the-asynchronous-dropdown-property-pane-control"></a>Rendern der list-Webparteigenschaft mithilfe des asynchronen Steuerelements für den Dropdown-Eigenschaftenbereich
 
-Ändern Sie in der **ListItemsWebPart**-Klasse den **propertyPaneSettings**-Getter, um das asynchrone Steuerelement für den Dropdown-Eigenschaftenbereich zum Rendern der **listName**-Webparteigenschaft zu verwenden.
+Ändern Sie in der **ListItemsWebPart**-Klasse die **getPropertyPaneConfiguration**-Methode, um das asynchrone Steuerelement für den Dropdown-Eigenschaftenbereich zum Rendern der **listName**-Webparteigenschaft zu verwenden.
 
 ```ts
 export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
   // ...
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {
@@ -548,9 +583,9 @@ An diesem Punkt sollten Sie in der Lage sein, eine Liste mithilfe des neu erstel
 gulp serve
 ```
 
-![Asynchrones Steuerelement für den Dropdown-Eigenschaftenbereich beim Laden der Optionen, ohne die Webpart-Benutzeroberfläche zu blockieren](../../../../images/custom-property-pane-control-loading-options.png)
+![Asynchrones Steuerelement für den Dropdown-Eigenschaftenbereich beim Laden der Optionen, ohne die Webpart-Benutzeroberfläche zu blockieren](../../../images/custom-property-pane-control-loading-options.png)
 
-![Auswählen einer der Optionen im asynchronen Steuerelement für den Dropdown-Eigenschaftenbereich](../../../../images/custom-property-pane-control-selecting-option.png)
+![Auswählen einer der Optionen im asynchronen Steuerelement für den Dropdown-Eigenschaftenbereich](../../../images/custom-property-pane-control-selecting-option.png)
 
 ## <a name="implement-cascading-dropdowns-using-the-asynchronous-dropdown-property-pane-control"></a>Implementieren verketteter Dropdownmenüs mithilfe des asynchronen Steuerelements für den Dropdown-Eigenschaftenbereich
 
@@ -569,12 +604,21 @@ Beim Erstellen von SharePoint Framework-Webparts müssen Sie möglicherweise ein
 // ...
 ```
 
-![Webpartmanifest, bei dem die Webparteigenschaft 'item' markiert ist](../../../../images/custom-property-pane-control-item-property-web-part-manifest.png)
+![Webpartmanifest, bei dem die Webparteigenschaft 'item' markiert ist](../../../images/custom-property-pane-control-item-property-web-part-manifest.png)
 
 Ändern Sie den Code in der Datei **src/webparts/listItems/IListItemsWebPartProps.ts** in Folgendes:
 
 ```ts
 export interface IListItemsWebPartProps {
+  listName: string;
+  item: string;
+}
+```
+
+Ändern Sie den Inhalt der Datei **src/webparts/listItems/components/IListItemsProps.ts** in Folgendes:
+
+```ts
+export interface IListItemsProps {
   listName: string;
   item: string;
 }
@@ -597,10 +641,10 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 }
 ```
 
-Ändern Sie in der Datei **src/webparts/listItems/loc/mystrings.d.ts** die **IListItemsStrings**-Schnittstelle in Folgendes:
+Ändern Sie in der Datei **src/webparts/listItems/loc/mystrings.d.ts** die **IListItemsWebPartStrings**-Schnittstelle in Folgendes:
 
 ```ts
-declare interface IListItemsStrings {
+declare interface IListItemsWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
   ListFieldLabel: string;
@@ -627,29 +671,18 @@ define([], function() {
 
 ```tsx
 export default class ListItems extends React.Component<IListItemsProps, {}> {
-  public render(): JSX.Element {
+  public render(): React.ReactElement<IListItemsProps> {
     return (
       <div className={styles.listItems}>
         <div className={styles.container}>
-          <div className={css('ms-Grid-row ms-bgColor-themeDark ms-fontColor-white', styles.row)}>
-            <div className='ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1'>
-              <span className='ms-font-xl ms-fontColor-white'>
-                Welcome to SharePoint!
-              </span>
-              <p className='ms-font-l ms-fontColor-white'>
-                Customize SharePoint experiences using web parts.
-              </p>
-              <p className='ms-font-l ms-fontColor-white'>
-                {this.props.listName}
-              </p>
-              <p className='ms-font-l ms-fontColor-white'>
-                {this.props.item}
-              </p>
-              <a
-                className={css('ms-Button', styles.button)}
-                href='https://github.com/SharePoint/sp-dev-docs/wiki'
-              >
-                <span className='ms-Button-label'>Learn more</span>
+          <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
+            <div className="ms-Grid-col ms-lg10 ms-xl8 ms-xlPush2 ms-lgPush1">
+              <span className="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
+              <p className="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
+              <p className="ms-font-l ms-fontColor-white">{escape(this.props.listName)}</p>
+              <p className="ms-font-l ms-fontColor-white">{escape(this.props.item)}</p>
+              <a href="https://aka.ms/spfx" className={styles.button}>
+                <span className={styles.label}>Learn more</span>
               </a>
             </div>
           </div>
@@ -720,7 +753,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
     // store new value in web part properties
     update(this.properties, propertyPath, (): any => { return newValue; });
     // refresh web part
-    this.onPropertyPaneFieldChanged(propertyPath, oldValue, newValue);
+    this.render();
   }
 }
 ```
@@ -738,12 +771,12 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 }
 ```
 
-Aktualisieren Sie als Nächstes den Code des **propertyPaneSettings**-Getters auf Folgendes:
+Ändern Sie als Nächstes den Code der Methode  **getPropertyPaneConfiguration** in:
 
 ```ts
 export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
   // ...
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     // reference to item dropdown needed later after selecting a list
     this.itemsDropDown = new PropertyPaneAsyncDropdown('item', {
       label: strings.ItemFieldLabel,
@@ -768,7 +801,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
                   label: strings.ListFieldLabel,
                   loadOptions: this.loadLists.bind(this),
                   onPropertyChange: this.onListChange.bind(this),
-                  selectedKey: this.properties.list
+                  selectedKey: this.properties.listName
                 }),
                 this.itemsDropDown
               ]
@@ -800,7 +833,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
     // store new value in web part properties
     update(this.properties, 'item', (): any => { return this.properties.item; });
     // refresh web part
-    this.onPropertyPaneFieldChanged(propertyPath, oldValue, newValue);
+    this.render();
     // reset selected values in item dropdown
     this.itemsDropDown.properties.selectedKey = this.properties.item;
     // allow to load items
@@ -822,20 +855,20 @@ gulp serve
 
 Nachdem Sie das Webpart das erste Mal zu der Seite hinzugefügt und seinen Eigenschaftenbereich geöffnet haben, sollten Sie beide Dropdownlisten deaktiviert und beim Laden ihrer Optionen sehen.
 
-![Dropdownmenüs im Webpart-Eigenschaftbereich beim Laden der Daten](../../../../images/custom-property-pane-control-cascading-loading-lists.png)
+![Dropdownmenüs im Webpart-Eigenschaftbereich beim Laden der Daten](../../../images/custom-property-pane-control-cascading-loading-lists.png)
 
 Nachdem die Optionen geladen wurden, wird die Dropdownliste aktiviert. Da noch keine Liste ausgewählt wurde, bleibt die Dropdownliste deaktiviert.
 
-![Aktivierte Dropdownliste im Webpart-Eigenschaftenbereich. Deaktivierte Element-Dropdownliste](../../../../images/custom-property-pane-control-cascading-lists-loaded-items-disabled.png)
+![Aktivierte Dropdownliste im Webpart-Eigenschaftenbereich. Deaktivierte Element-Dropdownliste](../../../images/custom-property-pane-control-cascading-lists-loaded-items-disabled.png)
 
 Nach dem Auswählen einer Liste in der Dropdownliste werden die in dieser Liste verfügbaren Elemente geladen.
 
-![Element-Dropdownliste, in der verfügbare Elemente nach dem Auswählen einer Liste im Listen-Dropdown geladen werden](../../../../images/custom-property-pane-control-cascading-loading-items.png)
+![Element-Dropdownliste, in der verfügbare Elemente nach dem Auswählen einer Liste im Listen-Dropdown geladen werden](../../../images/custom-property-pane-control-cascading-loading-items.png)
 
 Nachdem die verfügbaren Elemente geladen wurden, wird die Element-Dropdownliste aktiviert.
 
-![Auswählen eines Listenelements aus der Element-Dropdownliste im Webpart-Eigenschaftenbereich](../../../../images/custom-property-pane-control-cascading-items-loaded-enabled.png)
+![Auswählen eines Listenelements aus der Element-Dropdownliste im Webpart-Eigenschaftenbereich](../../../images/custom-property-pane-control-cascading-items-loaded-enabled.png)
 
 Nach dem Auswählen eines Elements in der Element-Dropdownliste wird das Webpart aktualisiert und zeigt das ausgewählte Element im Text an.
 
-![Ausgewählte Liste und gerendertes Element im Webpart](../../../../images/custom-property-pane-control-cascading-selected-list-item.png)
+![Ausgewählte Liste und gerendertes Element im Webpart](../../../images/custom-property-pane-control-cascading-selected-list-item.png)

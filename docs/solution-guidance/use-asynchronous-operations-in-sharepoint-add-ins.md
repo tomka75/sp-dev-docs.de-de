@@ -1,11 +1,11 @@
 ---
 title: "Verwenden Sie asynchrone Vorgänge in SharePoint-Add-ins"
 ms.date: 11/03/2017
-ms.openlocfilehash: 3bf311c7084c6dba5e4faecb2ebfbd9edd6e4f86
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: c2144297453a47ae4b4ee718b5a9682181f20f5e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-asynchronous-operations-in-sharepoint-add-ins"></a>Verwenden Sie asynchrone Vorgänge in SharePoint-Add-ins
 
@@ -45,7 +45,8 @@ Asynchrone Vorgänge in Ihr Add-in vom Anbieter gehosteten mithilfe von Azure We
     
 4. Der Azure-WebJob führt benutzerdefinierte Geschäftslogik für Ihre SharePoint Online-Website. 
     
-**Hinweis:**  Hinzufügen einer Nachricht an die Warteschlange Azure Storage verwendet einen anderen Prozess aus dem Prozess, der die WebJob Azure ausgeführt wird. Ihr Add-In kann daher asynchrone Vorgänge durch Hinzufügen von neuen Nachrichten an die Warteschlange mit einem Prozess, und klicken Sie dann mithilfe der Azure-WebJob zum Verarbeiten von Nachrichten in einem anderen Prozess implementieren. 
+> [!NOTE] 
+> Hinzufügen einer Nachricht an die Warteschlange Azure Storage verwendet einen anderen Prozess aus dem Prozess, der die WebJob Azure ausgeführt wird. Ihr Add-In kann daher asynchrone Vorgänge durch Hinzufügen von neuen Nachrichten an die Warteschlange mit einem Prozess, und klicken Sie dann mithilfe der Azure-WebJob zum Verarbeiten von Nachrichten in einem anderen Prozess implementieren. 
 
 ## <a name="before-you-begin"></a>Bevor Sie beginnen:
 
@@ -116,7 +117,8 @@ Verwenden Sie die Informationen in der folgenden Tabelle, um Konfigurationseinst
 || **AzureWebJobsStorage**| Ersetzen Sie **[YourAccount]** durch den Speicher Kontonamen aus dem Azure-Verwaltungsportal kopiert.|
 ||| Ersetzen Sie **[YourKey]** zusammen mit der primären Zugriffstaste aus dem Azure-Verwaltungsportal kopiert.|
 
-**Hinweis:**  Stellen Sie **ClientId** und den **ClientSecret** in Core.QueueWebJobUsageWeb ruft aktualisiert, beispielsweise wenn Sie die Versionsnummer in der Datei AppManifest.xml erhöhen sicher, dass Sie **ClientId** und in den **ClientSecret** Aktualisieren der Core.QueueWebJobUsage.Job\app.config.
+> [!NOTE] 
+> Stellen Sie **ClientId** und den **ClientSecret** in Core.QueueWebJobUsageWeb ruft aktualisiert, beispielsweise wenn Sie die Versionsnummer in der Datei AppManifest.xml erhöhen sicher, dass Sie **ClientId** und in den **ClientSecret** Aktualisieren der Core.QueueWebJobUsage.Job\app.config.
 
 ## <a name="using-the-corequeuewebjobusage-add-in"></a>Mithilfe des Core.QueueWebJobUsage-add-Ins
 
@@ -138,7 +140,8 @@ Wenn Sie das Codebeispiel Core.QueueWebJobUsage ausführen, die vom Anbieter geh
     
 3. Ruft die **SiteManager(). AddAsyncOperationRequestToQueue** um die Nachricht an die Warteschlange Azure Storage hinzuzufügen.
     
-**Hinweis:**  Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 protected void btnAsync_Click(object sender, EventArgs e)
@@ -254,7 +257,7 @@ public static void ProcessQueueMessage(
         }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Office 365 Development Mustern und Methoden ausgesprochen](Office-365-development-patterns-and-practices-solution-guidance.md).

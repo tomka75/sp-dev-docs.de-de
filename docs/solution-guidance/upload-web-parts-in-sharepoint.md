@@ -1,11 +1,11 @@
 ---
 title: Hochladen von Webparts in SharePoint
 ms.date: 11/03/2017
-ms.openlocfilehash: c7e6e7a4bc6d843661ecd7c27d71381f47254ca9
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 81cac6a20f7907a0a15edcd81bf393b896e82153
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="upload-web-parts-in-sharepoint"></a>Hochladen von Webparts in SharePoint
 
@@ -53,7 +53,8 @@ Wenn Sie das Codebeispiel ausführen und **Szenario ausführen**wählen:
     
     Beachten Sie, dass das **Src** -Attribut Links zu einer JavaScript-auf die Remotewebsite Datei. Die ** &lt;Skript&gt; ** Element wird von der **Content** -Eigenschaft in der Core.AppScriptPartWeb\userprofileinformation.webpart festgelegt, wie im folgenden Beispiel dargestellt. Die JavaScript-Datei mit verknüpften durch das **Src** -Attribut ist Core.AppScriptPartWeb\Scripts\userprofileinformation.js. Userprofileinformation.js liest Profilinformationen des aktuellen Benutzers aus der Benutzerprofildienst und dann diese Informationen im Webpart angezeigt.
     
-     **Hinweis:** Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+    > [!NOTE] 
+    > Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
   ```XML
   <property name="Content" type="string">&amp;lt;script type="text/javascript" src="https://localhost:44361/scripts/userprofileinformation.js"&amp;gt;&amp;lt;/script&amp;gt;
@@ -65,7 +66,8 @@ Wenn Sie das Codebeispiel ausführen und **Szenario ausführen**wählen:
     
 9. Wählen Sie **Speichern** aus.
 
-**Hinweis:** Wenn Ihre Benutzerprofil Bild nicht angezeigt wird, öffnen Sie Ihrer OneDrive for Business-Website, und klicken Sie dann mit der Hostwebsite zurückzugeben.
+> [!NOTE] 
+> Wenn Ihre Benutzerprofil Bild nicht angezeigt wird, öffnen Sie Ihrer OneDrive for Business-Website, und klicken Sie dann mit der Hostwebsite zurückzugeben.
 
 In Core.AppScriptPartWeb\Pages\Default.aspx führt **Szenario ausführen** **BtnScenario_Click**, die Folgendes ermöglicht:
 
@@ -121,7 +123,7 @@ protected void btnScenario_Click(object sender, EventArgs e)
         }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)

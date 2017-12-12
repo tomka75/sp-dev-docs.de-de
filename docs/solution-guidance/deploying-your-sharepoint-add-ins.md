@@ -1,11 +1,11 @@
 ---
 title: Bereitstellen von Ihrer SharePoint-Add-Ins
 ms.date: 11/03/2017
-ms.openlocfilehash: 78eea67ff452bcccc9bc8ab59bb65477d942c19e
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: d26b438935e109c69979f8f51e0a3cf99281a4ec
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="deploying-your-sharepoint-add-ins"></a>Bereitstellen von Ihrer SharePoint-Add-Ins
 
@@ -18,7 +18,7 @@ Die Artikel in diesem Abschnitt zeigen, wie Ihre SharePoint-add-ins bereitstelle
 |[Konfigurieren der vom Anbieter gehosteten-Add-ins für die Verteilung](Configure-SP-Provider-Hosted-Apps-For-Distribution.md)|Auf dieser Seite erläutert die Probleme, die bei der Freigabe eines SharePoint-Anwendung mit anderen Entwicklern vom Anbieter gehostete oder beim Abrufen einer Kopie aus einem Quellcodeverwaltungssystem wie Team Foundation Server, Git oder Visual Studio Online auftreten können.|
 |[Konfigurieren von Office 365-Projekte für die Verteilung](Configure-O365Api-Project-For-Distribution.md)|Auf dieser Seite wird erläutert, dass einige Schritte Entwickler berücksichtigen sollten auf ihre Projekte, die die Office 365-APIs vor deren Verteilung mit anderen Entwicklern, ihren Kunden oder Quellcode-Verwaltungssysteme nutzen.|
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)

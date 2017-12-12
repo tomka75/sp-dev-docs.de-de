@@ -1,11 +1,11 @@
 ---
 title: Sandkasten-Transformation ausgesprochen
 ms.date: 11/03/2017
-ms.openlocfilehash: 32291e7b94c91b89487e0c16427a6e3437c17cb9
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: b3b254b0bc1c7b086fff73f4b02e7691da6dd945
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sandbox-solution-transformation-guidance"></a>Sandkasten-Transformation ausgesprochen 
 Transformieren oder Konvertieren von codebasierte sandkastenlösungen in der SharePoint-add-in-Objektmodell. Informationen Sie zu den Optionen und Strategien zum Konvertieren von vorhandener Code basierende Funktionen in SharePoint-add-in-Modell oder alternative Lösungen.
@@ -94,7 +94,7 @@ Wir interessieren sich für bestimmte Artikel auf der Transformation Techniken, 
 
 Alle deklarative Definitionen in der Sandkasten-Lösung werden weiterhin arbeiten, nachdem diese Änderung in SharePoint Online angewendet werden soll. 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Entfernen codebasierte Sandkastenlösungen in SharePoint Online](http://dev.office.com/blogs/removing-code-based-sandbox-solutions-in-sharepoint-online)

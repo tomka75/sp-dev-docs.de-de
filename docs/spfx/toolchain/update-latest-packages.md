@@ -1,8 +1,18 @@
-# <a name="update-sharepoint-framework-packages"></a>Aktualisieren von SharePoint Framework-Paketen 
+---
+title: Aktualisieren von SharePoint-Framework-Paketen
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: b8d542ac73d1739faff65f4636cffdef062a3c00
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
+# <a name="update-sharepoint-framework-packages"></a>Aktualisieren von SharePoint-Framework-Paketen 
 
 Die SharePoint-Tools für die clientseitige Entwicklung verwenden den [npm](https://www.npmjs.com/)-Paket-Manager, um Abhängigkeiten und andere erforderliche JavaScript-Hilfsprogramme zu verwalten. npm ist in der Regel als Teil des Node.js-Setups enthalten.
 
-Beim Erstellen einer neuen clientseitigen Lösung ruft der Yeoman-Generator für SharePoint die neuesten SharePoint Framework-Pakete ab, die für Ihr clientseitiges Projekt erforderlich sind. Ihre vorhandenen Pakete sind ggf. veraltet und möglicherweise stehen zum Erstellen Ihres Projekts neue Versionen der Pakete zur Verfügung. Entsprechend den [Versionshinweisen](https://aka.ms/spfx-release-notes) für eine bestimmte Version oder das neueste Paket können Sie die in Ihrem Projekt verwendeten SharePoint Framework-Pakete aktualisieren. SharePoint Framework-Pakete enthalten die npm-Pakete, die Sie in Ihrem Projekt installiert haben (Beispiel: [@microsoft/sp-core-library](https://www.npmjs.com/package/@microsoft/sp-core-library)), sowie die global installierten npm-Pakete (Beispiel: [@microsoft/generator-sharepoint](https://www.npmjs.com/package/@microsoft/generator-sharepoint)). 
+Beim Erstellen einer neuen clientseitigen Lösung ruft der Yeoman-Generator für SharePoint die neuesten SharePoint-Framework-Pakete ab, die für Ihr clientseitiges Projekt erforderlich sind. Ihre vorhandenen Pakete sind ggf. veraltet und möglicherweise stehen zum Erstellen Ihres Projekts neue Versionen der Pakete zur Verfügung. Entsprechend den [Versionshinweisen](https://aka.ms/spfx-release-notes) für eine bestimmte Version oder das neueste Paket können Sie die in Ihrem Projekt verwendeten SharePoint-Framework-Pakete aktualisieren. SharePoint Framework-Pakete enthalten die npm-Pakete, die Sie in Ihrem Projekt installiert haben (Beispiel: [@microsoft/sp-core-library](https://www.npmjs.com/package/@microsoft/sp-core-library)), sowie die global installierten npm-Pakete (Beispiel: [@microsoft/generator-sharepoint](https://www.npmjs.com/package/@microsoft/generator-sharepoint)). 
 
 Obwohl nicht erforderlich, empfiehlt es sich, die SharePoint Framework-Pakete regelmäßig zu aktualisieren, um alle neuesten Änderungen und Updates zu erhalten. 
 

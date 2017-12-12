@@ -1,11 +1,11 @@
 ---
 title: Suchen Sie in einer Serverfarm mit mehreren geografisch SharePoint Mandanten
 ms.date: 11/03/2017
-ms.openlocfilehash: 463fa7608a4e913ec2be326e9a9f9ad64f118854
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 214c1b7ca1a6e2b985f1be780c29ea8b34165ef0
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="search-in-a-multi-geo-sharepoint-tenant"></a>Suchen Sie in einer Serverfarm mit mehreren geografisch SharePoint Mandanten
 
@@ -30,7 +30,8 @@ Im Szenario mit in der folgenden Abbildung dargestellt hat ein Mandanten Multi-G
 
 Suche ist aus Sicht des ein Endbenutzer auf den aktuellen Speicherort des Geo beschränkt. Wenn Benutzer von einer Website gehostet in Nordamerika Suchvorgänge ausführen, sehen sie nur Ergebnisse aus dem Speicherort der Geo North America an. Suchvorgänge aus einer Website in Europa gehostet werden Ergebnisse aus Websites in Europa Geo Speicherort zurückgegeben.
 
-> **Hinweis:** Suche wird in der Zukunft Multi-Geo bewusst sein. Eine Suchabfrage führen Sie von einer beliebigen Stelle in den Mandanten wird allen geografisch Standorten in den Mandanten suchen und kombinierten Ergebnisse zurückgibt.
+> [!NOTE] 
+> Suche wird in der Zukunft Multi-Geo bewusst sein. Eine Suchabfrage führen Sie von einer beliebigen Stelle in den Mandanten wird allen geografisch Standorten in den Mandanten suchen und kombinierten Ergebnisse zurückgibt.
 
 ## <a name="working-with-search-programmatically-in-a-multi-geo-tenant"></a>Arbeiten mit der Suche programmgesteuert in einem Multi-Geo-Mandanten
 Programmgesteuertes Arbeiten mit der Suche ähnelt dem durch die Endbenutzer-Suche. Wenn Sie eine Suchabfrage ausführen, nur erhalten Ergebnisse für den Speicherort der Geo Sie in denen Sie die Abfrage ausführen. Anwendungen, jedoch mit mehreren geografisch Mandanten Suchvorgänge ausführen können. Zu diesem Zweck durchlaufen die Geo Speicherorte in Ihrem Mandanten, die gleichen Suchabfrage an jedem Standort Geo Problem, und die Ergebnisse verketten.

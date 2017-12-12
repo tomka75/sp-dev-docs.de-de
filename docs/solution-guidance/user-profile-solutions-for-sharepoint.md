@@ -1,11 +1,11 @@
 ---
 title: "User Profile Lösungen für SharePoint 2013 und SharePoint Online"
 ms.date: 11/03/2017
-ms.openlocfilehash: bf67fbb6a36901618e0ea2590443a569ebf16d12
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: cb210ab9a66e5eb799c027316357d5a1f51397a6
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="user-profile-solutions-for-sharepoint-2013-and-sharepoint-online"></a>User Profile Lösungen für SharePoint 2013 und SharePoint Online
 
@@ -23,7 +23,7 @@ Die Beispiele in diesem-Lösungspaket wird gezeigt, wie vom Anbieter gehosteten-
 |Personalisieren von Search Results Beispiel SharePoint-Add-in|[Search.PersonalizedResults](https://github.com/SharePoint/PnP/tree/dev/Samples/Search.PersonalizedResults)|Personalisieren von SharePoint durch Filtern von Informationen, die auf dem Wert einer Benutzerprofileigenschaft basiert. 
 |Beispiel-Upload Benutzerprofilbilder SharePoint-Add-in|[Core.ProfilePictureUploader](https://github.com/SharePoint/PnP/tree/dev/Samples/Core.ProfilePictureUploader)|Führen Sie einen Massenupload von Benutzerprofildaten von einer Dateifreigabe oder einem SharePoint Online-URL, und Verknüpfen von Benutzerprofileigenschaften mit hochgeladene Bilder.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen 
+## <a name="see-also"></a>Siehe auch 
 
 * [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)
 * [Muster und Practices-Entwicklercenter](http://dev.office.com/patterns-and-practices)

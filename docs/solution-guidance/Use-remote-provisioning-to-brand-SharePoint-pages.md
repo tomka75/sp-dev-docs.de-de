@@ -1,11 +1,11 @@
 ---
 title: Verwenden Sie remote-Bereitstellung zu Marke SharePoint-Seiten
 ms.date: 11/03/2017
-ms.openlocfilehash: 195d5e183850625d732ae696447cbc9a56ab1e8b
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: e06c83261af951070f37320917afcae544fbf95f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-remote-provisioning-to-brand-sharepoint-pages"></a>Verwenden Sie remote-Bereitstellung zu Marke SharePoint-Seiten
 
@@ -47,7 +47,8 @@ public void ApplyTheme(
     
 - ShareGenerated - ein Boolean-Wert. **True,** Wenn die generierte Designdateien auf der Stammwebsite angewendet werden soll. **"false"** werden in der aktuellen Website gespeichert werden.
 
-**Hinweis**  Der Parameter ShareGenerated bestimmt, ob die entsprechendes mit Design versehenes Ausgabedateien gespeichert sind, in einem Web-spezifische Speicherort oder einem Speicherort, der in der gesamten Websitesammlung zugegriffen werden kann. Es wird empfohlen, dass Sie den Standardwert für den Websitetyp beibehalten.
+> [!NOTE] 
+> Der Parameter ShareGenerated bestimmt, ob die entsprechendes mit Design versehenes Ausgabedateien gespeichert sind, in einem Web-spezifische Speicherort oder einem Speicherort, der in der gesamten Websitesammlung zugegriffen werden kann. Es wird empfohlen, dass Sie den Standardwert für den Websitetyp beibehalten.
 
 ## <a name="themeinfo-class"></a>ThemeInfo-Klasse
 <a name="sectionSection1"> </a>
@@ -279,7 +280,7 @@ namespace ApplyThemeAppWeb.Pages
 }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Lösungen für das SharePoint-Websitebranding und die Seitenanpassung](SharePoint-site-branding-and-page-customization-solutions.md)

@@ -1,11 +1,11 @@
 ---
 title: Plug & Play-Bereitstellung Modul- und die Core-Bibliothek
 ms.date: 11/03/2017
-ms.openlocfilehash: 274c9796be400d3ae305358ff93d9dd6d28fa8bf
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 9e1a6e6c62e71cf66c218ef57853ae10642d2a73
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="pnp-provisioning-engine-and-the-core-library"></a>Plug & Play-Bereitstellung Modul- und die Core-Bibliothek
 
@@ -13,7 +13,8 @@ Betrachten Sie allgemeine remote Bereitstellungsprozess, einschließlich eine n�
 
 Das Plug & Play-Bereitstellung Modul ist das Herzstück von provisioning Framework und auf Grundlage ist die OfficeDevPnP.Core-Bibliothek. Das provisioning Modul ist Bestandteil der Hauptbibliothek und sie die zentrale Bibliothek Erweiterungen in der Implementierung von Bereitstellungsaufgaben nutzt. Erweiterungsmethoden auf dem SharePoint-CSOM/REST-Objektmodell umfasst, ermöglicht der Hauptbibliothek provisioning Aufgaben wie das Aufzählen von und erste Bereitstellung Vorlagen als auch speichern und Anwenden von Vorlagen klicken Sie dann auf neuer und vorhandener Websites. Darüber hinaus können Sie Bereitstellungsaufgaben automatisieren und codierten Logik in Ihrer Bereitstellung Routinen einführen.
 
-**Hinweis:**  Um ein video Exemplarische Vorgehensweise zum Erstellen und Speichern von Anwenden einer Bereitstellung Vorlage anzuzeigen, wechseln Sie zu [Erste Schritte mit Plug & Play-Bereitstellung Engine](https://channel9.msdn.com/blogs/OfficeDevPnP/Getting-Started-with-PnP-Provisioning-Engine).
+> [!NOTE] 
+> Um ein video Exemplarische Vorgehensweise zum Erstellen und Speichern von Anwenden einer Bereitstellung Vorlage anzuzeigen, wechseln Sie zu [Erste Schritte mit Plug & Play-Bereitstellung Engine](https://channel9.msdn.com/blogs/OfficeDevPnP/Getting-Started-with-PnP-Provisioning-Engine).
 
 ## <a name="pnp-provisioning-engine"></a>Plug & Play-Modul für die Bereitstellung
 
@@ -27,7 +28,8 @@ Sie können zwei Ansätze Extrahieren von Ihrer Website entwerfen als provisioni
 
 Für die Verwendung der Windows PowerShell-Skripts mit der Bereitstellung Engine müssen Sie zuerst heruntergeladen und installiert die Plug & Play-PowerShell-Cmdlets. Alles, was Sie zum Ausführen von Windows PowerShell benötigen, einschließlich Download und Anleitungen für die Installation sowie der Windows PowerShell-Befehl-Dokumentation ist im Repository [SharePointPnP.PowerShell Befehle](https://github.com/SharePoint/PnP-PowerShell) auf GitHub verfügbar.
 
-**Hinweis:**  Das Repository SharePointPnP.PowerShell Befehle enthält drei Versionen von Windows PowerShell-Befehle MSI-Datei. Zwei sind für lokale (einer für SharePoint 2013) und für SharePoint 2016 verwenden, und die dritte für SharePoint Online ist.
+> [!NOTE] 
+> Das Repository SharePointPnP.PowerShell Befehle enthält drei Versionen von Windows PowerShell-Befehle MSI-Datei. Zwei sind für lokale (einer für SharePoint 2013) und für SharePoint 2016 verwenden, und die dritte für SharePoint Online ist.
 
 Das Repository SharePointPnP.PowerShell Befehle enthält, mit denen Sie einer Bibliothek mit Windows PowerShell-Befehle, die auf SharePoint Online abzielen erstellen können. Die Befehle CSOM verwenden können und für beide SharePoint Online und lokalem SharePoint, Sie je nach der MSI-Paket installieren.
 
@@ -37,7 +39,8 @@ Außerdem ist ein kurzes [Channel 9](https://channel9.msdn.com/) -Video&mdash;Ei
 
 Um CSOM/REST-Code zum Extrahieren von einer Bereitstellung Vorlage einsetzen möchten, erstellen Sie einfach ein Entwicklungsprojekt mithilfe von Visual Studio oder einer anderen Entwicklungsumgebung. Erstellen Sie jede Art von Projekt&mdash;beispielsweise eine Konsole oder Windows-Anwendung oder ein SharePoint-Add-in. Nachdem Sie ein Entwicklungsprojekt erstellt haben, müssen Sie der Hauptbibliothek Installieren der als ein NuGet-Paket verfügbar ist.
 
-**Hinweis:**  Anweisungen zum Suchen und installieren die zentrale Bibliothek NuGet-Paket und eine exemplarische Vorgehensweise für eine Bereitstellung Beispiel Konsole Remoteanwendung, stehen in [Provisioning Console Application Sample](provisioning-console-application-sample.md). Beachten Sie, dass der Hauptbibliothek in zwei Versionen stammen: eine beruht auf SharePoint Online, SharePoint 2013 und Office 365; und eine SharePoint 2013 lokal beruht.
+> [!NOTE] 
+> Anweisungen zum Suchen und installieren die zentrale Bibliothek NuGet-Paket und eine exemplarische Vorgehensweise für eine Bereitstellung Beispiel Konsole Remoteanwendung, stehen in [Provisioning Console Application Sample](provisioning-console-application-sample.md). Beachten Sie, dass der Hauptbibliothek in zwei Versionen stammen: eine beruht auf SharePoint Online, SharePoint 2013 und Office 365; und eine SharePoint 2013 lokal beruht.
 
 Ausführliche Informationen zur Verwendung von CSOM in der [Bereitstellung Console Application Beispiel](provisioning-console-application-sample.md)sind, ist die allgemeine Übersicht über die wie folgt:
 
@@ -49,7 +52,8 @@ Ausführliche Informationen zur Verwendung von CSOM in der [Bereitstellung Conso
     
 4. Speichern Sie die Bereitstellung Vorlageninstanz mit einem Speicherort Ihrer Wahl mithilfe einer Vorlage Anbieter und Serialisierung mit.
     
-    **Hinweis:**  Da der Vorlagenanbieter und die Serialisierung mit Objekte angepasst werden können, können Sie jegliches Persistenz Speicher- und Serialisierung Sie formatieren implementieren. Out-of-the-Box, unterstützt die Plug & Play-Bereitstellung Engine Dateisystem, SharePoint und Azure BLOB-Speicheranbieter-Vorlage. Es unterstützt auch XML und JSON Serialisierungsformatierer.
+    > [!NOTE] 
+  > Da der Vorlagenanbieter und die Serialisierung mit Objekte angepasst werden können, können Sie jegliches Persistenz Speicher- und Serialisierung Sie formatieren implementieren. Out-of-the-Box, unterstützt die Plug & Play-Bereitstellung Engine Dateisystem, SharePoint und Azure BLOB-Speicheranbieter-Vorlage. Es unterstützt auch XML und JSON Serialisierungsformatierer.
 
 Sie können finden Sie ein Beispiel für die XML-Ausgabe Serialisierung und erfahren Sie mehr über die XML-Serialisierungsschema im Artikel [Plug & Play-Bereitstellung Schema](pnp-provisioning-schema.md) . Auch zu können abrufen, das Schema und die zugehörige Dokumentation GitHub:[SharePoint/PnP-Provisioning-Schema](https://github.com/SharePoint/PnP-Provisioning-Schema/). Außerdem ist ein [Channel 9](https://channel9.msdn.com/) -Video&mdash;[tief die kurz-Plug & Play-Bereitstellung Engine Schema](https://channel9.msdn.com/blogs/OfficeDevPnP/Deep-dive-to-PnP-provisioning-engine-schema)&mdash;, die stellt und erläutert das Schema.
 
@@ -144,7 +148,7 @@ Die Core-Bibliothek (OfficeDevPnP.Core) ist ein CSOM/REST-Objektmodell, die das 
 |OfficeDevPnP.Core.Framework.Provisioning.Providers.Xml.V201505|Automatisch generierte Schemadateien für v201505 Version des Schemas.|
 |OfficeDevPnP.Core.Framework.Provisioning.Providers.Xml.V201508|Automatisch generierte Schemadateien für v201508 Version des Schemas.|
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Beispiel einer Anwendung in Konsole-Bereitstellung](provisioning-console-application-sample.md)

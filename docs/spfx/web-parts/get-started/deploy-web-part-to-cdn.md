@@ -1,3 +1,13 @@
+---
+title: Bereitstellen Ihres clientseitigen SharePoint-Webparts in einem CDN
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 286419df5ad902df046084d34057ec438f98a3f9
+ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/31/2017
+---
 # <a name="deploy-your-sharepoint-client-side-web-part-to-a-cdn"></a>Bereitstellen Ihres clientseitigen SharePoint-Webparts in einem CDN
 
 In diesem Artikel stellen Sie die **HelloWorld**-Ressourcen auf einem Remote-CDN und nicht mithilfe der lokalen Umgebung bereit. Sie verwenden ein Azure-Speicherkonto, das in ein CDN integriert ist, um Ihre Ressourcen bereitzustellen. Die Buildtools von SharePoint Framework bieten eine sofort nutzbare Unterstützung für die Bereitstellung auf einem Azure-Speicherkonto. Sie können die Dateien jedoch auch manuell an einen CDN-Anbieter Ihrer Wahl oder nach SharePoint hochladen.
@@ -5,34 +15,38 @@ In diesem Artikel stellen Sie die **HelloWorld**-Ressourcen auf einem Remote-CDN
 Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=FDGatKnjNeM&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq) nachvollziehen: 
 
 <a href="https://www.youtube.com/watch?v=FDGatKnjNeM&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
-<img src="../../../../images/spfx-youtube-tutorial4.png" alt="Screenshot of the YouTube video player for this tutorial" />
+<img src="../../../images/spfx-youtube-tutorial4.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
+
+> [!NOTE]
+> Es gibt mehrere unterschiedliche Hostingoptionen für Webpart-Objekte. In diesem Lernprogramm steht die Option „Azure CDN“ im Vordergrund, Sie können jedoch auch das [Office 365 CDN](./hosting-webpart-from-office-365-cdn.md) verwenden oder einfach Ihre Objekt aus der SharePoint-Bibliothek aus dem Mandanten hosten. Im letzteren Fall würden Sie nicht von den CDN-Leistungssteigerungen profitieren, im Hinblick auf die Funktionalität wäre dies jedoch möglich. Technisch gesehen wäre jeder Ort zum Hosten der Objekte für Endbenutzer denkbar, auf den Endbenutzer über HTTP zugreifen können.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
 Führen Sie die folgenden Schritte aus, bevor Sie starten:
 
-* [Erstellen des ersten clientseitigen Webparts](./build-a-hello-world-web-part)
-* [Verbinden des clientseitigen Webparts mit SharePoint](./connect-to-sharepoint)
-* [Bereitstellen des clientseitigen SharePoint-Webparts auf einer klassischen SharePoint-Seite](./serve-your-web-part-in-a-sharepoint-page)
+* [Erstellen des ersten clientseitigen Webparts](./build-a-hello-world-web-part.md)
+* [Verbinden des clientseitigen Webparts mit SharePoint](./connect-to-sharepoint.md)
+* [Bereitstellen des clientseitigen SharePoint-Webparts auf einer klassischen SharePoint-Seite](./serve-your-web-part-in-a-sharepoint-page.md)
 
 ## <a name="configure-azure-storage-account"></a>Konfigurieren eines Azure-Speicherkontos
 
 Konfigurieren Sie ein Azure-Speicherkonto, und integrieren Sie es in das CDN.
 
-Sie können die Anweisungen im Artikel [Integrieren eines Speicherkontos in CDN](https://azure.microsoft.com/en-us/documentation/articles/cdn-create-a-storage-account-with-cdn/) zusammen mit den detaillierten Schritten in diesem Artikel verwenden, um ein Azure -Speicherkonto zu erstellen und dieses in das CDN zu integrieren. Sie benötigen die folgenden Informationen:
+Sie können die Anweisungen im Artikel [Integrieren eines Speicherkontos in CDN](https://azure.microsoft.com/de-DE/documentation/articles/cdn-create-a-storage-account-with-cdn/) zusammen mit den detaillierten Schritten in diesem Artikel verwenden, um ein Azure -Speicherkonto zu erstellen und dieses in das CDN zu integrieren. Sie benötigen die folgenden Informationen:
 
 ### <a name="storage-account-name"></a>Speicherkontoname
 
-Dies ist der Name, den Sie zum Erstellen des Speicherkontos verwendet haben, wie in [Schritt 1: Erstellen eines Speicherkontos](https://azure.microsoft.com/en-us/documentation/articles/cdn-create-a-storage-account-with-cdn/#step-1-create-a-storage-account) beschrieben.
+Dies ist der Name, den Sie zum Erstellen des Speicherkontos verwendet haben, wie in [Schritt 1: Erstellen eines Speicherkontos](https://azure.microsoft.com/de-DE/documentation/articles/cdn-create-a-storage-account-with-cdn/#step-1-create-a-storage-account) beschrieben.
 
 Im folgenden Screenshot ist **spfxsamples** der Name des Speicherkontos.
 
-![Screenshots, auf dem die Seite „Erstellen eines neues Speicherkontos“ dargestellt ist](../../../../images/deploy-create-storage-account.png)
+![Screenshots, auf dem die Seite „Erstellen eines neues Speicherkontos“ dargestellt ist](../../../images/deploy-create-storage-account.png)
 
 Auf diese Weise wird der neue Speicherkontoendpunkt **spfxsamples.blob.core.windows.net** erstellt. 
 
->**Hinweis:** Sie müssen einen eindeutigen Speichernamen für Ihr SharePoint Framework-Projekt erstellen.
+> [!NOTE]
+> Sie müssen einen eindeutigen Speichernamen für Ihr SharePoint-Framework-Projekt erstellen.
 
 
 ### <a name="blob-container-name"></a>Name des BLOB-Containers
@@ -44,29 +58,29 @@ Wählen Sie **+ Container** aus, und erstellen Sie einen neuen Container mit den
 * Name: **helloworld-webpart**
 * Zugriffstyp: Container
 
-![Bild, das die Option zum Erstellen von Blob-Containern zeigt](../../../../images/deploy-option-blob-container.png)
+![Bild, das die Option zum Erstellen von Blob-Containern zeigt](../../../images/deploy-option-blob-container.png)
 
 ### <a name="storage-account-access-key"></a>Tastenkombination für Speicherkonto
 
 Wählen Sie im Dashboard des Speicherkontos die Option **Tastenkombination** im Dashboard aus, und kopieren Sie eine der Tastenkombinationen.
 
-![Bild, das die Tastenkombination für das Speicherkonto zeigt](../../../../images/deploy-storage-account-accesskey.png)
+![Bild, das die Tastenkombination für das Speicherkonto zeigt](../../../images/deploy-storage-account-accesskey.png)
 
 ### <a name="cdn-profile-and-endpoint"></a>CDN-Profil und Endpunkt
 
 Erstellen Sie ein neues CDN-Profil, und weisen Sie den CDN-Endpunkt diesem BLOB-Container zu.
 
-Erstellen Sie ein neues CDN-Profil, wie unter [Schritt 2: Erstellen eines neuen CDN-Profils](https://azure.microsoft.com/en-us/documentation/articles/cdn-create-a-storage-account-with-cdn/#step-2-create-a-new-cdn-profile) beschrieben.
+Erstellen Sie ein neues CDN-Profil, wie unter [Schritt 2: Erstellen eines neuen CDN-Profils](https://azure.microsoft.com/de-DE/documentation/articles/cdn-create-a-storage-account-with-cdn/#step-2-create-a-new-cdn-profile) beschrieben.
 
 Im folgenden Screenshot ist **spfxwebparts** der Name des CDN-Profils.
 
-![Screenshot zur Erstellung eines neuen CDN-Profils](../../../../images/deploy-create-cdn-profile.png)
+![Screenshot zur Erstellung eines neuen CDN-Profils](../../../images/deploy-create-cdn-profile.png)
 
-Erstellen Sie einen CND-Endpunkt, wie unter [Schritt 3: Erstellen eines neuen CDN-Endpunkts](https://azure.microsoft.com/en-us/documentation/articles/cdn-create-a-storage-account-with-cdn/#step-3-create-a-new-cdn-endpoint) beschrieben.
+Erstellen Sie einen CND-Endpunkt, wie unter [Schritt 3: Erstellen eines neuen CDN-Endpunkts](https://azure.microsoft.com/de-DE/documentation/articles/cdn-create-a-storage-account-with-cdn/#step-3-create-a-new-cdn-endpoint) beschrieben.
 
 Im folgenden Screenshot ist **spfxsamples** beispielsweise der Endpunktname **Speicher** ist der Ursprungstyp, und **spfxsamples.blob.core.windows.net** ist das Speicherkonto.
 
-![Screenshot zum Erstellen eines CDN-Endpunkts](../../../../images/deploy-create-cdn-endpoint.png)
+![Screenshot zum Erstellen eines CDN-Endpunkts](../../../images/deploy-create-cdn-endpoint.png)
 
 Der CDN-Endpunkt wird mit folgender URL erstellt: http://spfxsamples.azureedge.net
 
@@ -140,7 +154,8 @@ In diesem Beispiel sieht diese Datei mit dem zuvor erstellten CDN-Profil wie fol
 }
 ```
 
->**Hinweis:** Der CDN-Basispfad ist der CDN-Endpunkt mit dem BLOB-Container.
+> [!NOTE]
+> Der CDN-Basispfad ist der CDN-Endpunkt mit dem BLOB-Container.
 
 Speichern Sie die Datei.
 
@@ -200,7 +215,7 @@ Laden Sie das clientseitige Lösungspaket in den App-Catalog hoch, oder verwende
 
 Da Sie das Paket bereits bereitgestellt haben, werden Sie gefragt, ob das vorhandene Paket ersetzt werden soll.
 
-![Screenshot der Frage zum Ersetzen des clientseitigen Lösungspakets](../../../../images/sp-app-replace-pkg.png)
+![Screenshot der Frage zum Ersetzen des clientseitigen Lösungspakets](../../../images/sp-app-replace-pkg.png)
 
 Wählen Sie **Ersetzen**.
 
@@ -228,4 +243,4 @@ Solange Sie die **cdnBasePath**-Eigenschaft entsprechend aktualisieren, werden I
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Sie können jQuery und jQueryUI laden und ein jQuery Accordion-Webpart erstellen. Lesen Sie die Informationen unter [Hinzufügen von jQueryUI Accordion zu Ihrem clientseitigen Webpart](./add-jqueryui-accordion-to-web-part), um fortzufahren.
+Sie können jQuery und jQueryUI laden und ein jQuery Accordion-Webpart erstellen. Lesen Sie die Informationen unter [Hinzufügen von jQueryUI Accordion zu Ihrem clientseitigen Webpart](./add-jqueryui-accordion-to-web-part.md), um fortzufahren.

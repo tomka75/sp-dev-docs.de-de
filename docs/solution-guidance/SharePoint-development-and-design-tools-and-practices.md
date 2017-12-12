@@ -1,11 +1,11 @@
 ---
 title: SharePoint-Entwicklung und Design Tools und Methoden
 ms.date: 11/03/2017
-ms.openlocfilehash: 155558fb24f4be14919e83b881e70db7950ef26a
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 21d48416cdf3b556200e3f7fc2cb29d4d99ad4a6
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-development-and-design-tools-and-practices"></a>SharePoint-Entwicklung und Design Tools und Methoden
 
@@ -76,7 +76,8 @@ Das folgende Beispiel veranschaulicht die Design-Paket-APIs in das remote provis
 
 Dieser Code wurde für die Verwendung mit Veröffentlichungswebsites entwickelt. Es ist zwar möglich, die Design-Pakete-API verwenden, einem Branding Teamwebsites, die dem Standardseitenlayout Feature aktiviert ist, kann dies langfristige Supportanfragen führen.
 
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```
 using Microsoft.SharePoint.Client;
@@ -225,7 +226,7 @@ Die Tools, die Sie verwenden können, um eine SharePoint Online-Website mit Bran
 
 Die Enterprise Edition enthält eine teamwebsitesammlung am Stamm Webanwendung an, für die Domäne, die Veröffentlichung nicht enthalten ist. Es ist nicht öffentliche Website enthalten. Verwendung Entwurfs-Manager zum Verwalten von SharePoint-Website-branding-Elemente für die Veröffentlichung der Website in der SharePoint Online Enterprise Edition.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Branding und Bereitstellen von Lösungen für SharePoint 2013 und SharePoint Online-Website](Branding-and-site-provisioning-solutions-for-SharePoint.md)

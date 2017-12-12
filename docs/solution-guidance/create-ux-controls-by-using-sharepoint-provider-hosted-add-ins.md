@@ -1,11 +1,11 @@
 ---
 title: Erstellen von UX-Steuerelementen mithilfe von SharePoint gehostet durch Drittanbieter-add-ins
 ms.date: 11/03/2017
-ms.openlocfilehash: 568c01ab1d335e45b95c57ddb92ab0d1023fb238
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: a5ec35589ae00a6062be724a68910365102161c3
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-ux-controls-by-using-sharepoint-provider-hosted-add-ins"></a>Erstellen von UX-Steuerelementen mithilfe von SharePoint gehostet durch Drittanbieter-add-ins
 
@@ -32,11 +32,13 @@ Das [Core.PeoplePicker](https://github.com/SharePoint/PnP/tree/dev/Components/Co
 
 ![Personenauswahlsteuerung](media/create-ux-controls-by-using-sharepoint-provider-hosted-add-ins/ae6e2198-6f63-4ea1-a739-34f64ecd9117.png)
     
-**Hinweis:**  Die Visual Studio 2013-Lösung für das Beispiel enthält ein Modul mit dem Namen "Dummy", um sicherzustellen, dass das Add-in bereitgestellt wird, eine Web-Add-in erstellt. Eine Web-Add-in ist für domänenübergreifende Aufrufe erforderlich.
+> [!NOTE] 
+> Die Visual Studio 2013-Lösung für das Beispiel enthält ein Modul mit dem Namen "Dummy", um sicherzustellen, dass das Add-in bereitgestellt wird, eine Web-Add-in erstellt. Eine Web-Add-in ist für domänenübergreifende Aufrufe erforderlich.
 
 Der Skripts-Ordner des Projekts Core.PeoplePickerWeb enthält app.js und peoplepickercontrol.js-Dateien (zusammen mit Personen Personenauswahl Ressourcendateien für zusätzliche sprachunterstützung). Die Datei app.js holt Clientkontext mithilfe der domänenübergreifenden Bibliothek und den HTML-Code in der Datei Default.aspx in der personenauswahlsteuerung verknüpft. Die Datei "default.aspx" enthält die `<div>` Tags, die das Textfeld und Personen implementieren Funktion suchen.
 
-**Hinweis:**  Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```
 <div id="divAdministrators" class="cam-peoplepicker-userlookup ms-fullWidth">
@@ -255,7 +257,7 @@ Das Taxonomie Datumsauswahl-Steuerelement verwendet den folgenden Code eine **Ta
 
 Das Taxonomie Datumsauswahl-Steuerelement sucht nach potenziellen Übereinstimmungen geladen Ausdrücken und fügt neue Ausdrücke auf den Terminologiespeicher wie nötig.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [UX-Komponenten in SharePoint 2013 und SharePoint Online](ux-components-in-sharepoint-2013-and-sharepoint-online.md)

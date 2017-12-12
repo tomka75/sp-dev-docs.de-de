@@ -1,4 +1,14 @@
-# <a name="overview-of-the-sharepoint-framework"></a>Übersicht über das SharePoint Framework
+---
+title: "Übersicht über das SharePoint Framework"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: afb4f919b242e7409141cf771c88711025f9fdbb
+ms.sourcegitcommit: 11d9185437fc819ab41421c0f4fe06aa300b9d28
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/25/2017
+---
+# <a name="overview-of-the-sharepoint-framework"></a>Übersicht über das SharePoint-Framework
 
 Das SharePoint Framework (SPFx) ist ein Seiten- und Webpart-Modell, das vollständige Unterstützung für die clientseitige SharePoint-Entwicklung, einfache Integration in SharePoint-Daten und Unterstützung für Open-Source-Tools bietet. Mit dem SharePoint Framework können Sie moderne Webtechnologien und -tools in Ihrer bevorzugten Entwicklungsumgebung verwenden, um produktive Erfahrungen zu ermöglichen und Apps zu erstellen, die vom ersten Tag an schnell reagieren und für Mobilgeräte geeignet sind. Das SharePoint Framework funktioniert für SharePoint Online und bald auch für das lokale SharePoint (SharePoint 2016 Feature Pack 2).
  
@@ -16,7 +26,7 @@ Zu den wichtigsten Features von SharePoint Framework zählen:
  
 Im Skript-Editor-Webpart wird das Laufzeitmodell verbessert. Es enthält einer stabile Client-API, ein HttpClient-Objekt, das die Authentifizierung bei SharePoint und Office 365 verarbeitet, Kontextinformationen, einfache Eigenschaftsdefinition und -konfiguration und mehr. 
 
-Wenn Sie hauptsächlich mit C# arbeiten, möchten Sie bestimmt etwas über clientseitige JavaScript-Entwicklung lernen. Die meisten Ihrer bereits vorhandenen JavaScript-Kenntnisse im Zusammenhang mit SharePoint sind vollständig übertragbar, da sich die Datenmodelle nicht geändert haben und Sie die gleichen [REST-Dienste](https://msdn.microsoft.com/en-us/library/office/jj860569.aspx) oder [JavaScript Object Model (JSOM)](https://msdn.microsoft.com/en-us/library/office/jj193034.aspx) verwenden – je nach Ihren Anforderungen. Wenn Sie ein C#-Entwickler sind, bietet TypeScript einen guten Übergang in die JavaScript-Welt. Die Wahl der IDE bleibt Ihnen überlassen. Viele Entwickler verwenden die plattformübergreifende IDE Visual Studio Code. Viele Entwickler verwenden auch Produkte wie Sublime und ATOM.
+Wenn Sie hauptsächlich mit C# arbeiten, möchten Sie bestimmt etwas über clientseitige JavaScript-Entwicklung lernen. Die meisten Ihrer bereits vorhandenen JavaScript-Kenntnisse im Zusammenhang mit SharePoint sind vollständig übertragbar, da sich die Datenmodelle nicht geändert haben und Sie die gleichen [REST-Dienste](https://msdn.microsoft.com/de-DE/library/office/jj860569.aspx) oder [JavaScript Object Model (JSOM)](https://msdn.microsoft.com/de-DE/library/office/jj193034.aspx) verwenden – je nach Ihren Anforderungen. Wenn Sie ein C#-Entwickler sind, bietet TypeScript einen guten Übergang in die JavaScript-Welt. Die Wahl der IDE bleibt Ihnen überlassen. Viele Entwickler verwenden die plattformübergreifende IDE Visual Studio Code. Viele Entwickler verwenden auch Produkte wie Sublime und ATOM.
 
 ## <a name="why-the-sharepoint-framework"></a>Warum SharePoint Framework?
 
@@ -43,7 +53,7 @@ In der Vergangenheit haben wir Webparts als voll vertrauenswürdige C#-Assemblys
 
 ## <a name="whats-next"></a>Nächste Schritte
 
-SharePoint Framework-Webparts haben nun die allgemeine Verfügbarkeit (GA) erreicht. Wir stellen nach und nach Updates und Optimierungen basierend auf Ihrem Feedback und Ihren Erfahrungen bereit. Bei allen zusätzlichen SharePoint Framework-Funktionen, die zunächst im Vorschaumodus gestartet werden, können gelegentlich grundlegende Änderungen an API-Namen, Abläufen und mehr auftreten. Zukünftige Updates für das SharePoint Framework werden abwärtskompatibel sein, damit Ihre Lösungen weiterhin funktionieren.
+SharePoint-Framework-Webparts und -Erweiterungen haben nun die allgemeine Verfügbarkeit (GA) erreicht. Wir stellen nach und nach Updates und Optimierungen basierend auf Ihrem Feedback und Ihren Erfahrungen bereit. Bei allen zusätzlichen SharePoint Framework-Funktionen, die zunächst im Vorschaumodus gestartet werden, können gelegentlich grundlegende Änderungen an API-Namen, Abläufen und mehr auftreten. Zukünftige Updates für das SharePoint Framework werden abwärtskompatibel sein, damit Ihre Lösungen weiterhin funktionieren.
 
 ## <a name="sharepoint-framework-license"></a>SharePoint Framework-Lizenz
 
@@ -57,4 +67,5 @@ Sie können auch Probleme, Fragen oder Feedback zu den Dokumenten oder dem Share
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-- [Übersicht über clientseitige SharePoint-Webparts](./web-parts/overview-client-side-web-parts)
+- [Übersicht über clientseitige SharePoint-Webparts](./web-parts/overview-client-side-web-parts.md)
+- [Übersicht über SharePoint-Framework-Erweiterungen](./extensions/overview-extensions.md)

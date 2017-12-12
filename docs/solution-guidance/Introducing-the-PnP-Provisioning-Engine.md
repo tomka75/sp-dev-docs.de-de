@@ -1,11 +1,11 @@
 ---
 title: "Einführung in das Modul für Plug & Play-Bereitstellung"
 ms.date: 11/03/2017
-ms.openlocfilehash: 5f27bf0ad8eb45d8af78f1be0bc46a99858c9254
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 5ffce93158a74f43b6428ba9ab04143eebd68c48
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="introducing-the-pnp-provisioning-engine"></a>Einführung in das Modul für Plug & Play-Bereitstellung
 
@@ -250,7 +250,7 @@ Um mit der Plug & Play-Bereitstellung Engine lokalen wiedergegeben werden sollen
 Geben Sie mit der Plug & Play-Bereitstellung Engine wiedergegeben werden sollen Sie, geben Sie uns Feedback und genießen Sie die Zukunft der SharePoint-Add-in-Modell und remote-Bereitstellung!
 
 <a name="bk_addresources"> </a>
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 
 -  [Office 365 Development Patterns & Practices auf GitHub](https://github.com/SharePoint/PnP/)
 -  [SharePoint-Gruppe der Entwickler](http://aka.ms/sppnp-community) bei Microsoft Tech-Community

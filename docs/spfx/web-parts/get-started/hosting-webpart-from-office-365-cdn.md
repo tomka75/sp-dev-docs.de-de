@@ -1,3 +1,13 @@
+---
+title: "Hosten clientseitiger Webparts in Office 365 CDN"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 67eeaf7dbca7c9cc9cec31b87653c01addfafebc
+ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/31/2017
+---
 # <a name="hosting-client-side-web-part-from-office-365-cdn"></a>Hosten clientseitiger Webparts in Office 365 CDN
 
 In diesem Artikel wird beschrieben, wie Sie clientseitige Webparts in Office 365 CDN hosten. Office 365 CDN ist eine einfache Lösung, mit der Sie Ihre Ressourcen direkt in Ihrem eigenen Office 365-Mandanten hosten können. Es können beliebige statische Ressourcen gehostet werden, die in SharePoint Online verwendet werden. Weitere Details zur Office 365 CDN-Funktion finden Sie in diesem Blogbeitrag:
@@ -28,7 +38,7 @@ Jetzt sind öffentliche CDNs im Mandanten aktiviert, mit der Standardkonfigurati
 
 Erstellen Sie in Ihrer Websitesammlung eine neue Dokumentbibliothek namens **CDN**, und fügen Sie ihr einen Ordner namens **helloworld** hinzu.
 
-![Webpartordner „helloworld“ in der CDN-Bibliothek](../../../../images/cdn-helloworld-folder.png) 
+![Webpartordner „helloworld“ in der CDN-Bibliothek](../../../images/cdn-helloworld-folder.png) 
 
 Wechseln Sie wieder zur PowerShell-Konsole, und fügen Sie einen neuen CDN-Ursprung hinzu. Aktualisieren Sie die unten angegebene URL gemäß Ihrer Umgebung: 
 ```
@@ -40,7 +50,7 @@ Get-SPOTenantCdnOrigins -CdnType Public
 ```
 Sie sehen, dass der neu hinzugefügte Ursprung als gültiger CDN-Ursprung aufgeführt ist. Die endgültige Konfiguration des Ursprungs dauert einige Zeit (ca. 15 Minuten). Während Sie warten, können Sie ein Testwebpart erstellen, das nach Abschluss der Bereitstellung im Ursprung gehostet wird. 
 
-![Liste der öffentlichen Ursprünge im Mandanten](../../../../images/cdn-public-origins.png)
+![Liste der öffentlichen Ursprünge im Mandanten](../../../images/cdn-public-origins.png)
 
 > Sobald ein Ursprung nicht mehr mit *(Konfiguration steht aus)* gekennzeichnet ist, kann er in Ihrem Mandanten verwendet werden. Dieser Text weist auf laufende Konfigurationsaktivitäten zwischen SharePoint Online und dem CDN-System hin. 
 
@@ -67,16 +77,25 @@ yo @microsoft/sharepoint
 Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
 * Akzeptieren Sie den Standardnamen **sphosted-webpart** als Lösungsnamen, und drücken Sie die **EINGABETASTE**.
-* Wählen Sie **Use the current folder** als Speicherort für die Dateien aus.
-* Wählen Sie als Framework **No javaScript web framework** aus, und drücken Sie die **EINGABETASTE**.
-* Verwenden Sie **HelloWorld** als Namen des Webparts, und drücken Sie die **EINGABETASTE**.
-* Akzeptieren Sie die Standardbeschreibung **HelloWorld description**, und drücken Sie die **EINGABETASTE**.
+* Wählen Sie **SharePoint Online only (latest)**, und drücken Sie die **EINGABETASTE**.
+* Wählen Sie als Speicherort für die Dateien die Option **Use the current folder** aus.
+* Wählen Sie **N**, damit die Erweiterung auf jeder Website explizit installiert werden muss, wenn sie verwendet wird. 
+* Wählen Sie **Webpart** als den zu erstellenden Typ von clientseitiger Komponente aus. 
+* Akzeptieren Sie den Standardnamen **HelloWorld** als Namen für Ihr Webpart, und drücken Sie die **EINGABETASTE**.
+* Akzeptieren Sie die Standardbeschreibung **HelloWorld description** als Beschreibung für Ihr Webpart, und drücken Sie die **EINGABETASTE**.
+* Akzeptieren Sie die Standardeinstellung **No javaScript web framework** als das zu verwendende Framework, und drücken Sie die **EINGABETASTE**.
 
-![Yeoman-Generator-Fragen für das neu erstellte Webpart](../../../../images/cdn-create-webpart-yo.png)
+![Yeoman-Generator-Fragen für das neu erstellte Webpart](../../../images/cdn-create-webpart-yo.png)
 
 An diesem Punkt erstellt Yeoman ein Gerüst für die Lösungsdateien und installiert die erforderlichen Abhängigkeiten. Das kann einige Minuten dauern. Yeoman nimmt auch Ihr benutzerdefiniertes Webpart in das Projektgerüst auf.
-    
-Geben Sie nach Abschluss der Gerüsterstellung den folgenden Befehl ein, um das Webpartprojekt in Visual Studio Code zu öffnen:
+
+Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
+
+```sh
+npm shrinkwrap
+```
+
+Geben Sie Folgendes ein, um das Webpart-Projekt in Visual Studio Code zu öffnen:
 
 ```
 code .
@@ -88,12 +107,12 @@ Aktualisieren Sie die Datei *write-manifests.json* im Ordner *config* wie unten 
 https://publiccdn.sharepointonline.com/<tenant host name>/sites/site/library/folder
 ```
 
-![Aktualisierte Datei „write-manifests“ mit dem Pfad zum CDN-Endpunkt](../../../../images/cdn-write-manifest-json.png)
+![Aktualisierte Datei „write-manifests“ mit dem Pfad zum CDN-Endpunkt](../../../images/cdn-write-manifest-json.png)
 
 Speichern Sie Ihre Änderungen.
 
 Führen Sie die folgenden Aufgaben aus, um Ihre Lösung in einem Bundle zu verpacken.
-* Es wird ein Releasebuild Ihres Projekts ausgeführt, unter Verwendung der in der Datei **write-manifests.json** angegebenen CDN-URL. Die Ausgabe der Ausführung finden Sie im Ordner **./temp/deploy**. Dies sind die Dateien, die Sie in den SharePoint-Ordner hochladen müssen, der als CDN-Endpunkt fungiert. 
+* Es wird ein Releasebuild Ihres Projekts ausgeführt, unter Verwendung der in der Datei **write-manifests.json** angegebenen CDN-URL. Die Ausgabe der Ausführung finden Sie im Ordner .**/temp/deploy**. Dies sind die Dateien, die Sie in den SharePoint-Ordner hochladen müssen, der als CDN-Endpunkt fungiert. 
 
 ```
 gulp bundle --ship
@@ -109,7 +128,7 @@ Dieser Befehl erstellt ein Paket namens **sphosted-webpart.sppkg** im Ordner **s
 
 Laden Sie das neu erstellte Paket mit ihrer clientseitigen Lösung in den App-Katalog in Ihrem Mandanten hoch. Alternativ können Sie es auch per Drag & Drop verschieben. 
 
-![Im App-Katalog angezeigtes Installationspopup für die SPFx-Lösung](../../../../images/cdn-upload-solution-to-app-catalog.png)
+![Im App-Katalog angezeigtes Installationspopup für die SPFx-Lösung](../../../images/cdn-upload-solution-to-app-catalog.png)
 
 Wählen Sie **Bereitstellen** aus.
 
@@ -117,7 +136,7 @@ Wechseln Sie zu der Websitesammlung, in der Sie zuvor in diesem Tutorial die Bib
 
 Laden Sie alle Dateien aus dem Ordner **temp/deploy** in den Ordner **CDN/helloworld** in Ihrer Websitesammlung hoch. 
 
-![Ordner „helloworld“ im SPO-Mandanten mit den aus dem Ordner „temp/deploy“ kopierten Webpartressourcen](../../../../images/cdn-web-part-files-in-folder.png)
+![Ordner „helloworld“ im SPO-Mandanten mit den aus dem Ordner „temp/deploy“ kopierten Webpartressourcen](../../../images/cdn-web-part-files-in-folder.png)
 
 An diesem Punkt kann das Webpart auf der Seite verwendet werden.
 
@@ -125,15 +144,15 @@ An diesem Punkt kann das Webpart auf der Seite verwendet werden.
 
 Wählen Sie **Hinzufügen – App** in der Symbolleiste, und wählen Sie die App **sphosted-webpart-client-side-solution** zur Installation auf der Website aus.
 
-![Hinzufügen der Webpartlösung zur Website](../../../../images/cdn-add-webpart-to-site.png)
+![Hinzufügen der Webpartlösung zur Website](../../../images/cdn-add-webpart-to-site.png)
 
 Nachdem die Lösung installiert wurde, wählen Sie **Seite hinzufügen** im Menü mit dem *Zahnradsymbol*, und wählen Sie **HelloWorld** in der Webpartauswahl für die moderne Seite aus.
 
-![HelloWorld-Webpart in der Webpartauswahl für die moderne Seite](../../../../images/cdn-web-part-picker.png)
+![HelloWorld-Webpart in der Webpartauswahl für die moderne Seite](../../../images/cdn-web-part-picker.png)
 
 Sie sehen: Das Webpart wird gerendert, obwohl der node.js-Dienst nicht lokal ausgeführt wird. 
 
-![HelloWorld-Webpart, gerendert auf einer modernen Seite im Bearbeitungsmodus](../../../../images/cdn-web-part-rendering.png)
+![HelloWorld-Webpart, gerendert auf einer modernen Seite im Bearbeitungsmodus](../../../images/cdn-web-part-rendering.png)
 
 Speichern Sie die Änderungen auf der Seite mit dem Webpart.
 
@@ -141,7 +160,7 @@ Drücken Sie **F12**, um die Entwicklungstools zu öffnen.
 
 Erweitern Sie in der Liste der Quellen **publiccdn.sharepointonline.com**. Sie sehen, dass die Datei **hello-world.bundle** von dem CDN-Endpunkt geladen wird, den Sie zuvor im Tutorial definiert haben.
 
-![HelloWorld-Webpartbundle, geladen von der URL des öffentlichen CDN, auf der Registerkarte „Sources“ in den Chrome Developer Tools](../../../../images/cdn-web-part-f12-source.png)
+![HelloWorld-Webpartbundle, geladen von der URL des öffentlichen CDN, auf der Registerkarte „Sources“ in den Chrome Developer Tools](../../../images/cdn-web-part-f12-source.png)
 
 Ihr benutzerdefiniertes Webpart ist jetzt in SharePoint Online bereitgestellt und wird in Office 365 CDN gehostet. 
 

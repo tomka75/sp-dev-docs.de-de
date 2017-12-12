@@ -1,11 +1,11 @@
 ---
 title: "Erhöhten Berechtigungen in SharePoint-Add-ins"
 ms.date: 11/03/2017
-ms.openlocfilehash: 8102a3acc77efbc492c9ef7e62649851b5388954
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 1408ea8317d59a9e1408a2e7ebd1b88946cf0042
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="elevated-privileges-in-sharepoint-add-ins"></a>Erhöhten Berechtigungen in SharePoint-Add-ins
 
@@ -29,7 +29,8 @@ Nur-App Richtlinie verwendet OAuth, um das Add-in zu authentifizieren. Wenn das 
 
 Weitere Informationen finden Sie unter [App-autorisierungsrichtlinientypen in SharePoint 2013](https://msdn.microsoft.com/library/office/fp179892.aspx).
 
-**Hinweis:** Die nur-app-Richtlinie ist nur für SharePoint-Hosting-add-ins, dass die Host-Web Access werden, die Benutzer + app-Richtlinie verwendet muss vom Anbieter gehosteten add-Ins verfügbar.
+> [!NOTE] 
+> Die nur-app-Richtlinie ist nur für SharePoint-Hosting-add-ins, dass die Host-Web Access werden, die Benutzer + app-Richtlinie verwendet muss vom Anbieter gehosteten add-Ins verfügbar.
 
 Vorteile der Verwendung der nur-app-Richtlinie in der Include-add-in:
 
@@ -63,9 +64,11 @@ Ihr Add-In kann beim Microsoft Azure Access Control Service (ACS) zum Einrichten
 
 2. Verwenden Sie TokenHelper.GetClientContextWithAccessToken, um das ClientContext-Objekt abzurufen.
 
-**Hinweis:** Die Datei TokenHelper wird Quellcode, die von der Microsoft Office Developer Tools für Visual Studio generiert wird. Es ist keine Referenzdokumentation dafür, aber es sind umfassende Kommentare in die TokenHelper-Klasse. Um die Codekommentare angezeigt wird, erstellen Sie eine vom Anbieter gehosteten-add-in in Visual Studio.
+> [!NOTE] 
+> Die Datei TokenHelper wird Quellcode, die von der Microsoft Office Developer Tools für Visual Studio generiert wird. Es ist keine Referenzdokumentation dafür, aber es sind umfassende Kommentare in die TokenHelper-Klasse. Um die Codekommentare angezeigt wird, erstellen Sie eine vom Anbieter gehosteten-add-in in Visual Studio.
 
-**Hinweis:** Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+> [!NOTE] 
+> IE-Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```cs
 Uri siteUrl = new Uri(ConfigurationManager.AppSettings["MySiteUrl"]);
@@ -112,7 +115,8 @@ Bei der Planung von Dienstkonten in Ihr Add-in verwenden, beachten Sie Folgendes
 
 * Bevor das Add-in eine Aktion auf einer Website ausführen kann, müssen Dienstkonten zunächst über die Berechtigung zum Zugriff auf die Website erteilt werden.
 
-**Hinweis:** Add-ins aus dem Office Store erworben haben, kann nicht Dienstkonten verwenden.
+> [!NOTE] 
+> Add-ins aus dem Office Store erworben haben, kann nicht Dienstkonten verwenden.
 
 Der folgende Code zeigt, wie Sie mithilfe von [SharePointOnlineCredentials](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.sharepointonlinecredentials.aspx) mit einem Dienstkonto zu authentifizieren.
 
@@ -128,10 +132,8 @@ using (ClientContext context = new ClientContext("https://contoso.sharepoint.com
 }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 
-[Office 365 Development Mustern und Methoden ausgesprochen](Office-365-development-patterns-and-practices-solution-guidance.md).
-
-[Add-in - autorisierungsrichtlinientypen in SharePoint 2013](https://msdn.microsoft.com/en-us/library/office/fp179892.aspx).
-
-[Office 365 SharePoint-Website zum Autorisieren von vom Anbieter gehosteten-add-ins auf einer lokalen SharePoint-Website verwenden](https://msdn.microsoft.com/en-us/library/office/dn155905.aspx).
+- [Office 365 Development Mustern und Methoden ausgesprochen](Office-365-development-patterns-and-practices-solution-guidance.md).
+- [Add-in - autorisierungsrichtlinientypen in SharePoint 2013](https://msdn.microsoft.com/en-us/library/office/fp179892.aspx).
+- [Office 365 SharePoint-Website zum Autorisieren von vom Anbieter gehosteten-add-ins auf einer lokalen SharePoint-Website verwenden](https://msdn.microsoft.com/en-us/library/office/dn155905.aspx).

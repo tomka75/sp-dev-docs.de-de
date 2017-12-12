@@ -1,11 +1,11 @@
 ---
 title: "Aspekte der Autorisierung für den Mandanten in Deutschland, China oder US-Regierung-Umgebungen gehostet"
 ms.date: 11/03/2017
-ms.openlocfilehash: 537ab7cc5b7536ba977a9563639271ef5620559d
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: fd1ac87cf2dd2eb4ef2acf46e11afc7ea0192a44
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="authorization-considerations-for-tenants-hosted-in-the-germany-china-or-us-government-environments"></a>Aspekte der Autorisierung für den Mandanten in Deutschland, China oder US-Regierung-Umgebungen gehostet
 
@@ -162,7 +162,7 @@ ClientContext cc = new AuthenticationManager().GetAppOnlyAuthenticatedContext(si
 ```
 
 
-### <a name="additional-resources"></a>Zusätzliche Ressourcen
+### <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Informieren Sie sich über Office 365 Deutschland](https://support.office.com/en-US/article/Learn-about-Office-365-Germany-8a5a4bbc-667a-4cac-8769-d8ac9015db4c) 

@@ -1,11 +1,11 @@
 ---
 title: "Legen Sie externe Freigabe für Websitesammlungen in Office 365"
 ms.date: 11/03/2017
-ms.openlocfilehash: 62ff660a139d3453ac619a62b66a174725296c96
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: d98140a1502efce34ebe60112dfc201aa3336785
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="set-external-sharing-on-site-collections-in-office-365"></a>Legen Sie externe Freigabe für Websitesammlungen in Office 365
 
@@ -19,7 +19,8 @@ Das [Core.ExternalSharing](https://github.com/SharePoint/PnP/tree/master/Samples
     
 - Bereiten Sie Ihrer Websitesammlung für die Freigabe mit externen Benutzern vor.
 
-**Hinweis:** Einstellungen für externe Freigabe sind nur verfügbar in Office 365.
+> [!NOTE] 
+> Einstellungen für externe Freigabe sind nur verfügbar in Office 365.
 
 ## <a name="before-you-begin"></a>Bevor Sie beginnen:
 <a name="sectionSection0"> </a>
@@ -69,7 +70,8 @@ Wenn Sie dieses Codebeispiel ausführen, werden **Main** in Program.cs die folge
     
 - Ruft die **SetSiteSharing**.
 
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
  static void Main(string[] args)
@@ -181,7 +183,7 @@ public static void SetSiteSharing(ClientContext adminCC, string siteCollectionUR
         }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)

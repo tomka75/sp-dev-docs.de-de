@@ -1,11 +1,11 @@
 ---
 title: Lokalisierung-Features in Office 365 Beispiel-add-in verwenden
 ms.date: 11/03/2017
-ms.openlocfilehash: 83ced206837c555fc644715c77a1fa070ad23e9e
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: e3f6644f841f53b8e62e95ed626477aef0b0ac6b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-localization-features-in-office-365-sample-add-in"></a>Lokalisierung-Features in Office 365 Beispiel-add-in verwenden
 
@@ -19,7 +19,8 @@ Das [Core.CreateContentTypes](https://github.com/SharePoint/PnP/tree/master/Samp
     
 - Lokalisieren Sie den Inhaltstyp, Websitespalte, Listen- und eine benutzerdefinierte Website.
 
-**Hinweis**  In diesem Artikel beschriebenen Lokalisierungsfeatures sind sind nur verfügbar in Office 365. Informationen über die Lokalisierungsfeatures, die in Office 365 dedizierter oder SharePoint Server 2013: lokal verfügbar sind, finden Sie unter [How to: Localize-add-ins for SharePoint](http://msdn.microsoft.com/library/907a9189-7ce3-469a-8c87-4cef26f03c73.aspx) und [Lokalisieren von SharePoint-Lösungen](https://msdn.microsoft.com/en-us/library/ee696750.aspx).
+> [!NOTE] 
+> In diesem Artikel beschriebenen Lokalisierungsfeatures sind sind nur verfügbar in Office 365. Informationen über die Lokalisierungsfeatures, die in Office 365 dedizierter oder SharePoint Server 2013: lokal verfügbar sind, finden Sie unter [How to: Localize-add-ins for SharePoint](http://msdn.microsoft.com/library/907a9189-7ce3-469a-8c87-4cef26f03c73.aspx) und [Lokalisieren von SharePoint-Lösungen](https://msdn.microsoft.com/en-us/library/ee696750.aspx).
 
 ## <a name="before-you-begin"></a>Bevor Sie beginnen:
 <a name="sectionSection0"> </a>
@@ -50,7 +51,8 @@ Bevor Sie dieses Codebeispiel ausführen:
     
       e. Wählen Sie **Speichern und schließen**.
 
-**Hinweis**  Es kann für Ihre Website, um die ausgewählten Sprache(n) Rendern ein paar Minuten dauern. 
+> [!NOTE] 
+> Es kann für Ihre Website, um die ausgewählten Sprache(n) Rendern ein paar Minuten dauern. 
 
 **Abbildung 1. Spracheinstellungen für eine Website**
 
@@ -93,7 +95,8 @@ Die **LocalizeContentTypeAndField** -Methode zeigt, wie die folgenden Aufgaben a
     
 - Legen Sie andere lokalisierte Werte für den Titel und die Beschreibung einer Website mithilfe der **SetValueForUICulture** -Methode auf die **TitleResource** und **DescriptionResource** -Eigenschaften auf das **Field** -Objekt.
     
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 private static void LocalizeSiteAndList(ClientContext cc, Web web)
@@ -165,7 +168,7 @@ Wie in Abbildung 5 gezeigt, zeigt Ihre Website Ihrer benutzerdefinierten franzö
 
 ![Screenshot des Titels aktualisierte angepasste Seite](media/14471283-f7b6-49ca-a507-a3e28e43ee22.png)
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Lokalisierung Lösungen für SharePoint 2013 und SharePoint Online](localization-solutions-for-sharepoint-2013-and-sharepoint-online.md)

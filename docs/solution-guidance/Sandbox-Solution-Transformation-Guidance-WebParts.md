@@ -1,11 +1,11 @@
 ---
 title: Sandkasten-Transformation ausgesprochen - Webparts
 ms.date: 11/03/2017
-ms.openlocfilehash: 3c93765118827db986e0830dba870aee6002eeb1
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: e15cc7d7677019b3f60e75a2dd6a81398c0d5db1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sandbox-solution-transformation-guidance---web-parts"></a>Sandkasten-Transformation ausgesprochen - Webparts
 Transformieren oder Konvertieren von codebasierte sandkastenlösungen in der SharePoint-add-in-Objektmodell. Hier erfahren Sie, über die Optionen und Strategien für die vorhandenen Funktionalität in SharePoint-add-in-Modell oder alternative Lösungen zu konvertieren.
@@ -54,7 +54,7 @@ Eine andere Methode ist das Webpart als Client Side Lösung neu zu schreiben. Di
 <a name="sectionSection3"></a> Wenn Sie Ihre vorhandenen Sandkasten-Lösung aus Ihrer Websites deaktivieren, alle Elemente oder Dateien, die mithilfe von deklarativer Optionen bereitgestellt werden nicht jedoch entfernt werden, die Features in der Sandkasten-Projektmappe werden automatisch deaktiviert und der Ereignisempfänger werden entfernt.
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 -  [Entfernen codebasierte Sandkastenlösungen in SharePoint Online](http://dev.office.com/blogs/removing-code-based-sandbox-solutions-in-sharepoint-online)
 -  [Hilfestellung zur Transformation von Sandkastenlösungen](https://msdn.microsoft.com/en-us/pnp_articles/sandbox-solution-transformation-guidance)

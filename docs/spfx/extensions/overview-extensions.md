@@ -1,6 +1,6 @@
-# <a name="overview-of-sharepoint-framework-extensions-preview"></a>Übersicht über SharePoint Framework-Erweiterungen (Preview)
+# <a name="overview-of-sharepoint-framework-extensions"></a>Übersicht über SharePoint-Framework-Erweiterungen
 
-SharePoint Framework-Erweiterungen sind Erweiterungen der SharePoint-Benutzeroberfläche. Mit ihnen können Sie mehr Aspekte der SharePoint-Oberfläche individuell anpassen, beispielsweise Infobereiche, Symbolleisten und Listenansichten von Daten. SharePoint Framework-Erweiterungen können während der Preview-Phase in Office 365-Entwicklermandanten getestet werden. 
+Mit SharePoint-Framework-Erweiterungen können Sie die SharePoint-Benutzeroberfläche erweitern. Mit SharePoint-Framework-Erweiterungen können Sie weitere Aspekte der SharePoint-Benutzeroberfläche anpassen, u. a. Benachrichtigungsbereiche, Symbolleisten und Listenansichten. SharePoint-Framework-Erweiterungen sind in allen Office 365-Mandanten für die Produktion verfügbar. 
 
 > **Hinweis:** Sie erhalten einen kostenlosen Office 365-Entwicklermandanten, wenn Sie sich für das [Office 365 Developer Program](http://dev.office.com/devprogram) registrieren.
 
@@ -12,8 +12,11 @@ Mithilfe von SharePoint Framework-Erweiterungen können Sie die SharePoint-Benu
 
 Zusätzlich zu einfachen JavaScript-Projekten können Sie auch gängige Skripterstellungsframeworks wie AngularJS und React zur Erstellung Ihrer Erweiterungen nutzen. So können Sie beispielsweise React mit Komponenten aus Office UI Fabric React kombinieren und Oberflächen erstellen, die dieselben Komponenten verwenden wie Office 365.
 
+> [!NOTE]
+> Es gibt ein bekanntes Problem mit der Unterstützung für die Erweiterung von Listen und Bibliotheken in klassischen Benutzeroberflächen. Diese funktionieren derzeit nur in modernen Teamwebsites, auch als Gruppen zugeordnete Teamwebsites bezeichnet. Wir arbeiten an der Lösung dieses Problems. 
+
 ## <a name="get-started"></a>Erste Schritte
-Falls Sie SharePoint Framework noch nicht installiert haben, müssen Sie die Schritt-für-Schritt-Anleitung im Artikel zum Thema [Einrichten Ihrer Entwicklungsumgebung](../set-up-your-development-environment) befolgen.
+Falls Sie SharePoint Framework noch nicht installiert haben, müssen Sie die Schritt-für-Schritt-Anleitung im Artikel zum Thema [Einrichten Ihrer Entwicklungsumgebung](../set-up-your-development-environment.md) befolgen.
 
 Führen Sie nach der Installation von SharePoint Framework den folgenden Befehl aus, um Ihre Yeoman-Vorlagen auf die neueste Version zu aktualisieren:
 
@@ -21,7 +24,7 @@ Führen Sie nach der Installation von SharePoint Framework den folgenden Befehl
 npm install -g @microsoft/generator-sharepoint
 ```
 
-Anschließend erstellen Sie Ihre erste SharePoint Framework-Erweiterung mithilfe der Anleitung im Artikel [Build your first SharePoint Framework Extension (Hello World part 1)](./get-started/build-a-hello-world-extension).
+Anschließend erstellen Sie Ihre erste SharePoint Framework-Erweiterung mithilfe der Anleitung im Artikel [Build your first SharePoint Framework Extension (Hello World part 1)](get-started/build-a-hello-world-extension.md).
 
 ## <a name="stay-up-to-date"></a>Immer auf dem neuen Stand
 Die neuesten Informationen zu SharePoint Framework-Verbesserungen, einschließlich Erweiterungsaktualisierungen, finden Sie hier:
@@ -30,7 +33,7 @@ Die neuesten Informationen zu SharePoint Framework-Verbesserungen, einschließl
 * [Office-Entwicklerblog](http://dev.office.com/blogs)
 
 ## <a name="provide-feedback"></a>Übermitteln von Feedback 
-Wir würden uns über Ihr Feedback zur Preview-Version der SharePoint Framework-Erweiterungen freuen. Sie können die folgenden Ressourcen nutzen, um dem SharePoint-Entwicklerteam Feedback zu übermitteln:
+Übermitteln Sie gerne Ihr Feedback zum allgemein verfügbaren SharePoint-Framework. Über die folgenden Ressourcen können Sie Ihr Feedback direkt an das Entwicklungsteam von SharePoint übermitteln:
 
 - [Problemliste im Repository „sp-dev-docs“](https://github.com/SharePoint/sp-dev-docs/issues): Fragen, Probleme und Kommentare
 * [SharePoint StackExchange](http://sharepoint.stackexchange.com/): Verwenden Sie die Tags [#spfx](http://sharepoint.stackexchange.com/tags/spfx/), [#spfx-extensions](http://sharepoint.stackexchange.com/tags/spfx-extensions/) und [#spfx-tooling](http://sharepoint.stackexchange.com/tags/spfx-tooling/).
@@ -40,5 +43,5 @@ Wir würden uns über Ihr Feedback zur Preview-Version der SharePoint Framework
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-- [Übersicht über das SharePoint Framework](../sharepoint-framework-overview)
-- [Entwicklungstools und -bibliotheken für das SharePoint Framework](../tools-and-libraries)
+- [Übersicht über das SharePoint Framework](../sharepoint-framework-overview.md)
+- [Entwicklungstools und -bibliotheken für das SharePoint Framework](../tools-and-libraries.md)

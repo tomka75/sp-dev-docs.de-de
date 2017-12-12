@@ -1,17 +1,18 @@
 ---
 title: "Bewährte Methoden für SharePoint Online-Portale - Content-Zusammenführung"
 ms.date: 11/03/2017
-ms.openlocfilehash: ab941b1d856ebf1c631e2530960d9f789904e2ef
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: b78cad9e673d28d38f8c160020c4bd0ae33de7df
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="proven-practices-for-sharepoint-online-portals---content-aggregation"></a>Bewährte Methoden für SharePoint Online-Portale - Content-Zusammenführung
 
 Jedes Portal Entwurf umfasst eine Reihe von Anzeigekomponenten, die dynamisch Suchen von Inhalten für die Anzeige auf Portalseiten.  Grundlegende für den Betrieb des diese Steuerelemente ist das Konzept der Inhalte Aggregation, die für die Zwecke dieses Artikels, den wir für den Prozess Suchen von dynamisch festlegen Inhalte zur Laufzeit gewünscht. Das Verfahren, das Sie zum Ausführen von Aggregation auswählen kann erhebliche Auswirkungen auf die Leistung Ihres Portals und die dazugehörigen Seiten haben.
 
->**Hinweis**: Obwohl dieser Anleitung in erster Linie SharePoint Online bezieht, gilt die meisten es auch für Portale in einer lokalen SharePoint-Umgebung gehostet.
+> [!NOTE] 
+> Obwohl dieser Anleitung in erster Linie SharePoint Online bezieht, die meisten davon gilt auch für Portale in einer lokalen SharePoint-Umgebung gehostet.
 
 _**Gilt für:** SharePoint Online_
 
@@ -160,7 +161,7 @@ Wenn Sie suchbasierte Inhalte Aggregation verwenden, beachten Sie die folgenden 
 
 Finden Sie im [Artikel Portal Leistung](portal-performance.md) für Weitere Informationen zu den clientseitigen Datenzugriffsschicht.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_additionalResources"> </a>
 
 - [Leitfaden zur Portal Leistung](portal-performance.md)

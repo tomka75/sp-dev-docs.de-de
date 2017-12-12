@@ -1,17 +1,18 @@
 ---
 title: "Bewährte Methoden für SharePoint Online Webportal branding"
 ms.date: 11/03/2017
-ms.openlocfilehash: 4546bf4e04aa985d5e75201ba19bcdac546e518e
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 9d56f027541f69f12c1d487f2a97b1dd47c61373
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="proven-practices-for-sharepoint-online-portal-branding"></a>Bewährte Methoden für SharePoint Online Webportal branding
 
 Die Fähigkeit zum Anwenden einer benutzerdefinierten Marke in einem Portal spielt eine wichtige und dieser Artikel bietet Ihnen einen Überblick über die Optionen branding und branding bewährte Methoden.
 
->**Hinweis**: Obwohl dieser Anleitung SharePoint Online gerichtet ist die meisten davon gilt auch für Portale in einer lokalen SharePoint-Umgebung gehostet wird.
+> [!NOTE] 
+> Obwohl dieser Anleitung SharePoint Online Zielgruppenadressierung ist die meisten davon gilt auch für Portale in einer lokalen SharePoint-Umgebung gehostet wird.
 
 
 _**Gilt für:** SharePoint Online_
@@ -117,7 +118,7 @@ Weitere Informationen zu den CDN finden Sie unter:
 - [Verwenden die Inhaltsübermittlung mit SharePoint Online](https://support.office.com/en-gb/article/Using-content-delivery-networks-with-SharePoint-Online-9a64268c-0b74-4eaa-b971-fb6380b1b165)
 - [CDN-Manager](https://github.com/SharePoint/PnP/tree/master/Solutions/Core.CDNManager)
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Branding von SharePoint-Websites in der SharePoint-add-in-Objektmodell](branding-sharepoint-sites-sharepoint-add-in.md)

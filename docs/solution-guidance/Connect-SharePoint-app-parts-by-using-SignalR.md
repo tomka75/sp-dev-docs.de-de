@@ -1,11 +1,11 @@
 ---
 title: Verbinden von SharePoint-app-Webparts mithilfe von SignalR
 ms.date: 11/03/2017
-ms.openlocfilehash: cf9a011fdcca814bf248e4c8412f3232f4ba9d7a
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 0219f20e399522c1b41b093fe23f2480b4273822
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="connect-sharepoint-app-parts-by-using-signalr"></a>Verbinden von SharePoint-app-Webparts mithilfe von SignalR
 
@@ -37,7 +37,8 @@ Die verbundenen app-Webparts und Chat Hub-Architektur umfasst die folgenden Komp
     
 3. Chat-Hub, der die SignalR-Bibliothek zum Weiterleiten von Nachrichten verwendet wird, zum Empfangen von app-Webparts zu senden. In diesem Codebeispiel empfangen alle app-Webparts von Nachrichten aus der Chat bereit, einschließlich des app-Webparts, die die Nachricht gesendet hat.
     
-**Hinweis**  Da app-Webparts in einem IFRAME ausgeführt werden, können nicht Sie JavaScript verwenden, nur für die Kommunikation zwischen app-WebParts. 
+> [!NOTE] 
+> Da app-Webparts in einem IFRAME ausgeführt werden, können nicht Sie JavaScript verwenden, nur für die Kommunikation zwischen app-WebParts. 
 
 ## <a name="use-the-coreconnectedappparts-app"></a>Verwenden Sie die Core.ConnectedAppParts-app
 <a name="sectionSection2"> </a>
@@ -74,7 +75,8 @@ In diesem Codebeispiel enthält das Projekt Core.ConnectedAppParts zwei app-Webp
     
 4. Starten Sie die Verbindung mit dem Chat Hub mithilfe **$. Connection.hub.start () .done**. Ein Ereignishandler wird definiert, wenn die Verbindung hergestellt wird, klicken Sie auf die **Sendmessage** auf der Schaltfläche Ereignis. Dieser Ereignishandler ruft **chat.server.send** , um den Namen des app-Webparts und die Nachricht an den Hub Chat vom Benutzer eingegebene zu senden.
 
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```
     <!--Script references. -->
@@ -125,7 +127,7 @@ Wenn der Inline-JavaScript-Code in ConnectedPartOne.aspx **chat.server.send**aus
 
 **Wichtige**  In diesem Codebeispiel erhalten alle app-Webparts Hubs Chat aller Nachrichten, die über den Hub Chat. Erwägen Sie das Filtern von Nachrichten basierend auf ID für eine Sitzung, um zu bestimmen, welche app-Webparts, welche Nachrichten empfangen sollen.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)

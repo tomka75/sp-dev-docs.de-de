@@ -1,11 +1,11 @@
 ---
 title: "Records Management Extensions Beispiel-app für SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 34184d4f1b7f2c75c7167d86cc1cf90e1a40323e
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: cfc4269c4510b5bb9207e45458affcd99a9a2eab
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="records-management-extensions-sample-app-for-sharepoint"></a>Records Management Extensions Beispiel-app für SharePoint
 
@@ -68,7 +68,8 @@ Szenario 1 behandelt Features zur in-Place-datensatzverwaltung und Einstellungen
 
 Der folgende Code aktiviert oder deaktiviert das Feature In-Place-Datensatzverwaltung in der Websitesammlung. Die Methoden **DisableInPlaceRecordsManagementFeature** und **EnableSiteForInPlaceRecordsManagement** sind Teil der AppModelExtensions\RecordsManagementExtensions.cs-Datei in die [OfficeDevPnP.Core](https://github.com/SharePoint/PnP/tree/master/OfficeDevPnP.Core).
     
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 protected void btnToggleIPRStatus_Click(object sender, EventArgs e)
@@ -159,7 +160,8 @@ public static void SetRecordRestrictions(this Site site, EcmSiteRecordRestrictio
 
 Szenario 2 zeigt, wie mit direkten Datensätzen Einstellungen für die Verwaltung für Listen interagieren. Wenn die app installiert wird, erstellt er eine Dokumentbibliothek namens IPRTest. Wenn Sie diese app zu ändern, und speichern Sie die für die direkte datensatzverwaltung verwenden, werden die Änderungen auf IPRTest angewendet. 
 
-**Hinweis**  Um für die in-Place-datensatzverwaltung auf eine Liste verwenden, müssen Sie die Compliance-Records Management-Funktion in Ihrer Websitesammlung aktivieren, wie in Abbildung 1 weiter oben in diesem Artikel dargestellt. 
+> [!NOTE] 
+> Um für die in-Place-datensatzverwaltung auf eine Liste verwenden, müssen Sie die Compliance-Records Management-Funktion in Ihrer Websitesammlung aktivieren, wie in Abbildung 1 weiter oben in diesem Artikel dargestellt. 
 
 Der folgende Code in Default.aspx.cs ausgeführt, wenn ein Benutzer auf die Schaltfläche " **Save Changes** " auswählt.
 
@@ -305,7 +307,7 @@ public static void SetListAutoRecordDeclaration(this List list, bool autoDeclare
         }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Enterprise Content Management-Lösungen für SharePoint 2013 und SharePoint Online](Enterprise-Content-Management-solutions-for-SharePoint-2013-and-SharePoint-Online.md)

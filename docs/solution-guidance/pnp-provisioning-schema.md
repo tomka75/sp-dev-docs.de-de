@@ -1,11 +1,11 @@
 ---
 title: Plug & Play-Bereitstellung schema
 ms.date: 11/03/2017
-ms.openlocfilehash: acc16112e79972db74f97d50e20c1b0f1f0bb4f6
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: e2bb1c364aca836bb6f38b487c88d1e4eeb879c8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="pnp-provisioning-schema"></a>Plug & Play-Bereitstellung schema
 
@@ -55,7 +55,7 @@ Der Codeabschnitt darunter werden das Schemastammelement und direkte untergeordn
 </pnp:ProvisioningTemplate>
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Betrachtung der Sequenzierung Plug & Play-Bereitstellung Engine-Schema](https://channel9.msdn.com/blogs/OfficeDevPnP/Deep-dive-to-PnP-provisioning-engine-schema)

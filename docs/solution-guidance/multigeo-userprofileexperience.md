@@ -1,11 +1,11 @@
 ---
 title: Verwenden von Benutzerprofilen in einem SharePoint Multi-Geo-Mandanten
 ms.date: 11/03/2017
-ms.openlocfilehash: 85362f0bd67c1e148d8c75d691a67033e880c722
-ms.sourcegitcommit: 4ea7e9cb1efb53f89da236282002956739d77418
+ms.openlocfilehash: 75880f9811d299cd14a66467fac73439aefa1818
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="work-with-user-profiles-in-a-sharepoint-multi-geo-tenant"></a>Verwenden von Benutzerprofilen in einem SharePoint Multi-Geo-Mandanten
 
@@ -72,7 +72,8 @@ GET https://graph.microsoft.com/v1.0/users/bert@contoso.onmicrosoft.com?$select=
 
 Wenn Sie die Host-URL für persönliche Websites haben, können Sie, die zusammen mit der [Serverfarm mit mehreren geografisch](multigeo-discovery.md) Ermittlungsinformationen den Mandanten Admin-Website-URL für den Speicherort der Geo abgerufen, die dem Profil des Benutzers hostet.
 
->**Hinweis:** Wenn der Benutzer eine persönliche Website vorhanden ist, funktionieren diese Vorgehensweise nicht. Verwenden Sie stattdessen die SharePoint-Benutzer-Profil-API.
+> [!NOTE] 
+> Wenn der Benutzer eine persönliche Website vorhanden ist, funktionieren diese Vorgehensweise nicht. Verwenden Sie stattdessen die SharePoint-Benutzer-Profil-API.
 
 Finden Sie weitere Informationen finden Sie [MultiGeo.UserProfileUpdates](https://github.com/SharePoint/PnP/tree/dev/Samples/MultiGeo.UserProfileUpdates) .
 

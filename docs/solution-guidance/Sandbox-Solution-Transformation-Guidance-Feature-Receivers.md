@@ -1,11 +1,11 @@
 ---
 title: "Sandkasten-Transformation ausgesprochen - Featureempfänger"
 ms.date: 11/03/2017
-ms.openlocfilehash: 4072e7d7b920bcb2347d40d1f1ff25cd2935b3c4
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 91430d1523ad40acba163b86d369958f7273f219
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sandbox-solution-transformation-guidance---feature-receivers"></a>Sandkasten-Transformation ausgesprochen - Featureempfänger 
 Transformieren oder Konvertieren von codebasierte sandkastenlösungen in der SharePoint-add-in-Objektmodell. Hier erfahren Sie, über die Optionen und Strategien für die vorhandenen Funktionalität in SharePoint-add-in-Modell oder alternative Lösungen zu konvertieren.
@@ -95,7 +95,7 @@ Wenn Sie Code basierend Ansätze verwenden, empfehlen wir [Plug & Play-Provision
 Wenn Sie Ihre vorhandenen Sandkasten-Lösung aus Ihrer Websites, die alle Elemente oder Dateien bereitgestellt, mit deklarativer Optionen werden jedoch nicht entfernt deaktivieren wird automatisch das Feature deaktiviert werden. Ausführung des Codes in den Featureempfänger ist abhängig von der Zeitpunkt, wenn die Lösung Sandkasten deaktiviert wird. 
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 -  [Entfernen codebasierte Sandkastenlösungen in SharePoint Online](http://dev.office.com/blogs/removing-code-based-sandbox-solutions-in-sharepoint-online)
 -  [Hilfestellung zur Transformation von Sandkastenlösungen](https://msdn.microsoft.com/en-us/pnp_articles/sandbox-solution-transformation-guidance)

@@ -1,11 +1,11 @@
 ---
 title: Anpassen einer SharePoint-Seite mithilfe von remote-Bereitstellung und CSS
 ms.date: 11/03/2017
-ms.openlocfilehash: 7287c1d4375f37f1047ab299dbe04f012f0fa297
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 6cf2eb2044af5a8659e19fea94e009824e7ec9d2
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="customize-a-sharepoint-page-by-using-remote-provisioning-and-css"></a>Anpassen einer SharePoint-Seite mithilfe von remote-Bereitstellung und CSS
 
@@ -32,7 +32,8 @@ Sie können jetzt hinzufügen oder Ändern von CSS-Elemente für ein rich-Text-F
 
 Um Webpartzonen mit CSS anzupassen, verwenden Sie das Skript-Editor-Webpart. Weitere Informationen finden Sie unter [Gewusst wie: Verwenden des Skript-Editor-Webparts in SharePoint 2013](http://community.bamboosolutions.com/blogs/sharepoint-2013/archive/2013/05/20/how-to-use-script-editor-web-part-in-sharepoint-2013.aspx).
 
-**Hinweis**  Wenn Sie SharePoint Online und des NoScript-Features verwenden, wird das Skript-Editor-Webpart deaktiviert. 
+> [!NOTE] 
+> Wenn Sie SharePoint Online und des NoScript-Features verwenden, wird das Skript-Editor-Webpart deaktiviert. 
 
 Im folgenden Codebeispiel wird benutzerdefinierte CSS in der Ressourcenbibliothek hochgeladen, wendet einen Verweis auf die CSS-URL mit einer benutzerdefinierten Aktion und anschließend erstellt eine benutzerdefinierte Aktion, um einen Link zu der neuen CSS-Datei zu erstellen.
 
@@ -130,7 +131,7 @@ namespace AlternateCSSAppAutohostedWeb.Services
 
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Lösungen für das SharePoint-Websitebranding und die Seitenanpassung](SharePoint-site-branding-and-page-customization-solutions.md)

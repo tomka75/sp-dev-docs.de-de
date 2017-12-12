@@ -1,11 +1,11 @@
 ---
 title: Behandeln von SharePoint Online mithilfe von wieder aus exponentielle Drosselung
 ms.date: 11/03/2017
-ms.openlocfilehash: 5fe327f1d80ba38c67e82bfa82f4743c13e65510
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 092b5072ae26f7f815eaa6133512865512129874
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="handle-sharepoint-online-throttling-by-using-exponential-back-off"></a>Behandeln von SharePoint Online mithilfe von wieder aus exponentielle Drosselung
 
@@ -21,7 +21,7 @@ Weitere Informationen zur Einschränkung in SharePoint Online (beispielsweise Ur
 
 Darüber hinaus in der Stichprobe [ClientContextExtensions.cs](https://github.com/SharePoint/PnP/blob/dev/Samples/Core.Throttling/Core.Throttling/ClientContextExtensions.cs) checken Sie die Erweiterungsmethode ExecuteQueryImplementation aus. ExecuteQueryImplementation ist in [OfficeDevPnP.Core](https://github.com/SharePoint/PnP-Sites-Core/tree/master/Core/OfficeDevPnP.Core)enthalten.    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Ausgesprochen](Office-365-development-patterns-and-practices-solution-guidance.md)

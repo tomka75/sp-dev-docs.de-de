@@ -1,11 +1,11 @@
 ---
 title: Ersetzen Sie SharePoint-Webparts mit Add-in-Webparts
 ms.date: 11/03/2017
-ms.openlocfilehash: 3c65234be92b9757f3ed0894e0e8e7d11b6a2187
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: af8c3eb1d5f314332542247f811b9a25daf0702a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="replace-sharepoint-web-parts-with-add-in-parts"></a>Ersetzen Sie SharePoint-Webparts mit Add-in-Webparts
 
@@ -59,7 +59,8 @@ CSOM mithilfe um eines Webparts mit einem Webpart-Add-in zu ersetzen, müssen Si
     
 10. Wählen Sie die Add-in-Webpart-Datei, die Sie heruntergeladen haben, und wählen Sie dann die Webpart-Add-in-Definition anzeigen **Öffnen** .
     
-**Hinweis:**  Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```XML
 <webParts>
@@ -244,7 +245,7 @@ private static void ReplaceWebPart(Web web, ListItem item, LimitedWebPartManager
   }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Transformieren von Farmlösungen in das SharePoint-Add-In-Modell](Transform-farm-solutions-to-the-SharePoint-app-model.md)

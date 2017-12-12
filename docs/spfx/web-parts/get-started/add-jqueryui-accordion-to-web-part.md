@@ -1,13 +1,23 @@
+---
+title: "Hinzufügen von jQueryUI Accordion zu Ihrem clientseitigen SharePoint-Webpart"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: fb93d06b47d54a2836c33f832440a054475e563d
+ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/31/2017
+---
 # <a name="add-jqueryui-accordion-to-your-sharepoint-client-side-web-part"></a>Hinzufügen von jQueryUI Accordion zu Ihrem clientseitigen SharePoint-Webpart
 
 In diesem Artikel wird beschrieben, wie das jQueryUI Accordion zu Ihrem Webpart-Projekt hinzugefügt wird. Dazu gehört das Erstellen eines neuen Webparts, wie in der folgenden Abbildung gezeigt. 
 
-![Screenshot eines Webparts, das ein jQuery Accordion umfasst](../../../../images/jquery-accordion-wb.png)
+![Screenshot eines Webparts, das ein jQuery Accordion umfasst](../../../images/jquery-accordion-wb.png)
 
 Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=-3m__hRQxEI&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq) nachvollziehen: 
 
 <a href="https://www.youtube.com/watch?v=-3m__hRQxEI&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
-<img src="../../../../images/spfx-youtube-tutorial5.png" alt="Screenshot of the YouTube video player for this tutorial" />
+<img src="../../../images/spfx-youtube-tutorial5.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 ## <a name="prerequisites"></a>Voraussetzungen
@@ -47,17 +57,26 @@ yo @microsoft/sharepoint
 Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
 * Akzeptieren Sie den Standardnamen **jquery-webpart** als Lösungsnamen, und drücken Sie die **EINGABETASTE**.
-* Wählen Sie **Aktuellen Ordner verwenden** als Speicherort für die Dateien aus.
+* Wählen Sie **SharePoint Online only (latest)**, und drücken Sie die **EINGABETASTE**.
+* Wählen Sie als Speicherort für die Dateien die Option **Use the current folder** aus.
+* Wählen Sie **N**, damit die Erweiterung auf jeder Website explizit installiert werden muss, wenn sie verwendet wird. 
+* Wählen Sie **Webpart** als den zu erstellenden Typ von clientseitiger Komponente aus. 
 
 Über die nächsten Eingabeaufforderungen werden spezifische Informationen zum Webpart abgefragt:
 
-* Akzeptieren Sie die Standardeinstellung **No javascript web framework** als Framework, und drücken Sie die **EINGABETASTE**, um fortzufahren.
 * Geben Sie **jQuery** als Webpartnamen ein, und drücken Sie die **EINGABETASTE**.
 * Geben Sie**jQuery-Webpart** als Beschreibung des Webparts ein, und drücken Sie die **EINGABETASTE**. 
+* Akzeptieren Sie die Standardeinstellung **No JavaScript framework** als Framework, und drücken Sie die **EINGABETASTE**, um fortzufahren.
 
 An diesem Punkt installiert Yeoman die erforderlichen Abhängigkeiten und erstellt ein Gerüst für die Lösungsdateien. Das kann einige Minuten dauern. Yeoman erstellt ein Gerüst für das Projekt, um auch das **jQueryWebPart**-Webpart einzuschließen.
 
-Geben Sie in der Konsole Folgendes ein, um das Webpart-Projekt in Visual Studio-Code zu öffnen:
+Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
+
+```sh
+npm shrinkwrap
+```
+
+Geben Sie Folgendes ein, um das Webpart-Projekt in Visual Studio Code zu öffnen:
 
 ```
 code .
@@ -89,20 +108,23 @@ npm install --save @types/jqueryui
 ### <a name="unbundle-external-dependencies-from-web-part-bundle"></a>Entfernen externer Abhängigkeiten aus dem Webpartbundle
 Standardmäßig werden hinzugefügte Abhängigkeiten im Webpartbundle gebündelt. In einigen Fällen ist dies nicht ideal. Sie können diese Abhängigkeiten aus dem Webpartbundle entfernen.
 
-Öffnen Sie in Visual Studio Code die Datei „config\config.json“.
+Öffnen Sie in Visual Studio Code die Datei **config\config.json**.
 
 Diese Datei enthält Informationen zu Ihren Bundles und externen Abhängigkeiten. 
 
-Der Bereich `entries` enthält die Standardbundleinformationen - in diesem Fall jQuery-Webpartbundle. Wenn Sie Ihrer Lösung weitere Webparts hinzufügen, wird pro Webpart ein Eintrag angezeigt.
+Der Bereich `bundles` enthält die Standardbundleinformationen - in diesem Fall jQuery-Webpartbundle. Wenn Sie Ihrer Lösung weitere Webparts hinzufügen, wird pro Webpart ein Eintrag angezeigt.
 
 ```json
-"entries": [
-  {
-    "entry": "./lib/webparts/jQuery/jQueryWebPart.js",
-    "manifest": "./src/webparts/jQuery/jQueryWebPart.manifest.json",
-    "outputPath": "./dist/j-query.bundle.js",
-  }
-]
+  "bundles": {
+    "j-query-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/jQuery/JQueryWebPart.js",
+          "manifest": "./src/webparts/jQuery/JQueryWebPart.manifest.json"
+        }
+      ]
+    }
+  },
 ```
 
 Der Bereich `externals` enthält die Bibliotheken, die nicht im Standardbundle gebündelt sind. 
@@ -124,19 +146,24 @@ Der vollständige Inhalt der config.json-Datei ist derzeit wie folgt:
 
 ```json
 {
-  "entries": [
-    {
-      "entry": "./lib/webparts/jQuery/JQueryWebPart.js",
-      "manifest": "./src/webparts/jQuery/JQueryWebPart.manifest.json",
-      "outputPath": "./dist/j-query.bundle.js"
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "j-query-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/jQuery/JQueryWebPart.js",
+          "manifest": "./src/webparts/jQuery/JQueryWebPart.manifest.json"
+        }
+      ]
     }
-  ],
+  },
   "externals": {
     "jquery":"node_modules/jquery/dist/jquery.min.js",
     "jqueryui":"node_modules/jqueryui/jquery-ui.min.js"
   },
   "localizedResources": {
-    "jQueryStrings": "webparts/jQuery/loc/{locale}.js"
+    "JQueryWebPartStrings": "lib/webparts/jQuery/loc/{locale}.js"
   }
 }
 ```
@@ -144,7 +171,7 @@ Der vollständige Inhalt der config.json-Datei ist derzeit wie folgt:
 
 ## <a name="build-the-accordion"></a>Erstellen von Accordion
 
-Öffnen Sie den Projektordner **jquery-webpart** in Visual Studio Code. Ihr Projekt sollte das jQuery-Webpart aufweisen, das Sie zuvor im Ordner „/src/webparts/jQuery“ hinzugefügt haben.
+Öffnen Sie den Projektordner **jquery-webpart** in Visual Studio Code. Ihr Projekt sollte das jQuery-Webpart aufweisen, das Sie zuvor im Ordner `/src/webparts/jQuery` hinzugefügt haben.
 
 ### <a name="add-accordion-html"></a>Hinzufügen von Accordion-HTML
 Fügen Sie eine neue Datei im `src/webparts/jQuery`-Ordner namens **MyAccordionTemplate.ts** hinzu.
@@ -312,12 +339,13 @@ Stellen Sie in der Konsole sicher, dass Sie sich immer noch im Ordner „jquery-
 gulp serve
 ```
 
-> **Hinweis:** Visual Studio Code bietet integrierte Unterstützung für gulp und andere Tools zur Taskausführung. Sie können STRG + UMSCHALT + B unter Windows oder **BEFEHL + UMSCHALT + B** auf dem Mac drücken, um Ihr Webpart zu debuggen und eine Vorschau anzuzeigen.
+> [!NOTE]
+> Visual Studio Code bietet integrierte Unterstützung für gulp und andere Tools zur Taskausführung. Sie können **STRG + UMSCHALT + B** unter Windows oder **BEFEHL + UMSCHALT + B** auf dem Mac drücken, um Ihr Webpart zu debuggen und eine Vorschau anzuzeigen.
 
 Gulp führt die Aufgaben aus und öffnet die lokale SharePoint-Webpart Workbench.
 
 Drücken Sie im Seitenbereich auf das **+** (Pluszeichen), um die Liste von Webparts anzuzeigen, und führen Sie das jQuery-Webpart hinzu. Jetzt sollte das jQueryUI Accordion angezeigt werden.
 
-![Screenshot eines Webparts, das ein jQuery Accordion umfasst](../../../../images/jquery-accordion-wb.png)
+![Screenshot eines Webparts, das ein jQuery Accordion umfasst](../../../images/jquery-accordion-wb.png)
 
 Drücken Sie in der Konsole, in der `gulp serve` ausgeführt wird, auf **STRG + C**, um die Aufgabe abzubrechen.

@@ -1,11 +1,11 @@
 ---
 title: Zum Bereitstellen von Add-in-app nur Mandanten Administratorberechtigungen in SharePoint Online
 ms.date: 11/03/2017
-ms.openlocfilehash: a1d00ef42547116af8dfa569681566ac40cd97fc
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 48104bb22245a27be487685f8f668b0de2c559b5
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 <a name="how-to-provide-add-in-app-only-tenant-administrative-permissions-in-sharepoint-online"></a>Zum Bereitstellen von Add-in-app nur Mandanten Administratorberechtigungen in SharePoint Online
 ================================================
@@ -26,7 +26,7 @@ Schritte zum Mandanten Administratorberechtigung für die app nur-add-in bereits
 Beachten Sie, dass diese Operation hat, unter die Mandantenverwaltungs-Website ausgeführt werden und für diese Vorgänge verwendete Konto Mandanten Administratorberechtigungen verfügen müssen. Wenn Sie niedriger Berechtigungsstufe für das add-in bereitstellen, können Sie die unter normalen Websitesammlungs-URLs mit niedrigeren Berechtigungen abschließen. 
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Registrieren von SharePoint-Add-Ins 2013](https://msdn.microsoft.com/en-us/library/office/jj687469.aspx)

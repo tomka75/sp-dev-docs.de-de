@@ -1,11 +1,11 @@
 ---
 title: Plug & Play-Bereitstellung framework
 ms.date: 11/03/2017
-ms.openlocfilehash: 0f4420e99e3a9b4bc40ef29098f624c06053a818
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 863e69641e103c1cac264a9ca05ecb28e744eebe
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="pnp-provisioning-framework"></a>Plug & Play-Bereitstellung framework
 
@@ -67,7 +67,7 @@ Exportieren Sie das angepasste Website-Modell in Ihrer bevorzugten serialisierte
 
 Entweder ein Windows PowerShell-Skript oder eine CSOM/REST Code können Sie Ihre Bereitstellung Vorlage für neue oder vorhandene Websitesammlungen angewendet. Sie können auch eine komplette Websitesammlung oder nur einen Teil davon bereitstellen. Ein Beispiel für remote-Bereitstellung in der Praxis, einschließlich der Bereitstellung Vorlage, XML, Serialisierung finden Sie unter [Provisioning Console Application Sample](provisioning-console-application-sample.md).
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [PnP-Remotebereitstellung](pnp-remote-provisioning.md)

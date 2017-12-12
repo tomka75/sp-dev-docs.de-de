@@ -1,11 +1,11 @@
 ---
 title: "Entdecken Sie eine Multi-Geo-Konfiguration für einen SharePoint-Mandanten"
 ms.date: 11/03/2017
-ms.openlocfilehash: f33e63a49dd8ec52b5ba6cb83874bbdafb916b8d
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 2893d093131b17e65ecd30d08aff91d49f29de91
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="discover-a-multi-geo-configuration-for-a-sharepoint-tenant"></a>Entdecken Sie eine Multi-Geo-Konfiguration für einen SharePoint-Mandanten
 
@@ -67,7 +67,8 @@ Beispielantwort für einen Mandanten Multi-Geo:
 
 Finden Sie weitere Informationen finden Sie [MultiGeo.TenantInformationCollection](https://github.com/SharePoint/PnP/tree/dev/Samples/MultiGeo.TenantInformationCollection) .
 
->**Hinweis:** Weitere Informationen zu Berechtigungen und wie Sie die Anwendung konfigurieren finden Sie unter [Einrichten einer Serverfarm mit mehreren geografisch beispielanwendung](multigeo-sampleapplicationsetup.md).
+> [!NOTE] 
+> Weitere Informationen zu Berechtigungen und wie Sie die Anwendung konfigurieren finden Sie unter [Einrichten einer Serverfarm mit mehreren geografisch beispielanwendung](multigeo-sampleapplicationsetup.md).
 
 ## <a name="discover-whether-your-tenant-is-multi-geo"></a>Ermitteln Sie, ob es sich bei Ihrem Mandanten Multi-Geo ist 
 

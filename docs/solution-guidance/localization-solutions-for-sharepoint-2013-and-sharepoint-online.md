@@ -1,11 +1,11 @@
 ---
 title: "Lokalisierung Lösungen für SharePoint 2013 und SharePoint Online"
 ms.date: 11/03/2017
-ms.openlocfilehash: 020bbe4dded9a6af734cf0f2bab762c416903f10
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 447481593fca3af0cc855aa4299f036b67a7e47a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="localization-solutions-for-sharepoint-2013-and-sharepoint-online"></a>Lokalisierung Lösungen für SharePoint 2013 und SharePoint Online
 
@@ -22,7 +22,7 @@ Die folgenden Codebeispiele in diesem Abschnitt beschriebenen veranschaulichen d
 |[Lokalisierung-Features in Office 365 Beispiel-add-in verwenden](Use-localization-features-in-Office-365-sample-app.md)|[Core.CreateContentTypes](https://github.com/SharePoint/PnP/tree/master/Samples/Core.CreateContentTypes)|Verwenden Sie die Lokalisierungsfeatures in Office 365, um lokalisierte Werte für SharePoint-Websites, Listen, Inhaltstypen und Websitespalten bereitzustellen. |
 |[Lokalisieren von UI-Elemente Beispiel SharePoint-Add-in](Localize-UI-elements-sample-app-for-SharePoint.md)|[Core.JavaScriptCustomization](https://github.com/SharePoint/PnP/tree/master/Scenarios/Core.JavaScriptCustomization)|Lokalisieren von SharePoint-UI-Elemente mithilfe von JavaScript ersetzen den Textwert der ein UI-Elementwert mit einem übersetzten Text-Wert aus einer Ressource JavaScript-Datei geladen. |
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)

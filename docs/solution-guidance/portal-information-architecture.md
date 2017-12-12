@@ -1,45 +1,46 @@
 ---
-title: Proven Practices for SharePoint Online Portal Information Architecture
+title: "Bewährte Methoden für SharePoint Online-Portal Informationsarchitektur"
 ms.date: 11/03/2017
-ms.openlocfilehash: a00d44fb2847ca69768ba643a056f10981640528
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 25cefe4e220213d51752450f7a9e73c721970776
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="proven-practices-for-sharepoint-online-portal-information-architecture"></a>Proven Practices for SharePoint Online Portal Information Architecture
+# <a name="proven-practices-for-sharepoint-online-portal-information-architecture"></a>Bewährte Methoden für SharePoint Online-Portal Informationsarchitektur
 
-Having a solid information architecture is an important prerequisite for realizing a well maintainable and performing portal. Designing the optimal structure requires detailed planning. If not done properly, there is a high risk of adversely affecting user adoption or possible significant performance issues and the likelihood of both is very possible. 
+Eine einfarbige Informationsarchitektur ist eine wichtige Voraussetzung für die Realität ein Portal gut zu verwaltende und ausführen. Entwerfen der optimalen Struktur erfordert eine detaillierte Planung. Wenn nicht ordnungsgemäß ausgeführt wird, ein hohes Risiko einer Beeinträchtigung der Benutzer Annahme oder möglich erhebliche Leistungsprobleme vorhanden ist und die Wahrscheinlichkeit, dass beide ist sehr möglich. 
 
-You should be considering following factors:
+Sie sollten folgende Faktoren berücksichtigen:
 
-- Business objectives and the organizational structure.
-- What kind of content you are dealing with. Is the content collaborative or published content? 
-- Content classification and confidentiality 
-- Life-cycle of the content, and possible retention/disposition strategies. This also applies to sites as well. 
-- Users of the content, their behaviors, common tasks and expectations.
+- Von Unternehmenszielen und der Organisationsstruktur.
+- Welche Art von Inhalt, die Sie zuständig sind. Ist der Content collaborative oder veröffentlichte Inhalt? 
+- Content-Klassifizierung und Vertraulichkeit 
+- Lebenszyklus der Strategien Inhalts- und mögliche Aufbewahrung und Löschung. Dies gilt auch für Websites sowie. 
+- Benutzer von den Inhalt, Verhaltensweisen von allgemeine Aufgaben und erwartet.
 
-Once you know more about the users, the content, it's intended usage, you will have a good foundation to start with and can possibly avoid some of the common pitfalls around information architecture.
+Wenn Sie weitere Informationen zu den Benutzern, den Inhalt, wissen es ist beabsichtigt Nutzung, Sie haben eine gute Grundlage zu und können möglicherweise einige der allgemeinen Fehlerquellen um Informationsarchitektur vermeiden.
 
->**Note**: Although this guidance is targeting SharePoint Online most of it also applies to portals hosted on a SharePoint on-premises environment.
+> [!NOTE] 
+> Obwohl dieser Anleitung SharePoint Online Zielgruppenadressierung ist die meisten davon gilt auch für Portale in einer lokalen SharePoint-Umgebung gehostet wird.
 >
->This article is not meant to go deep into every aspect of governance, and Information architecture. The intended point is to highlight common issues that affect user adoption and/or performance, both of which are equally major problems.
+> In diesem Artikel soll keine tief in alle Aspekte der Unternehmensleitung und die Informationsarchitektur zu wechseln. Der vorgesehene Punkt besteht darin, häufig auftretender Probleme, die Einfluss auf Benutzerakzeptanz und/oder Leistung, markieren Sie beide gleichmäßig Hauptprobleme sind.
 
-_**Applies to:** SharePoint Online_
+_**Gilt für:** SharePoint Online_
 
-## <a name="anti-patternsor-you-shouldnt-be-doing-this"></a>Anti-patterns...or you shouldn't be doing this
-<a name="sectionSectionAntiPatterns"> </a> Below list contains the key things **not** to do when it comes to designing your portal information architecture:
+## <a name="anti-patternsor-you-shouldnt-be-doing-this"></a>Anti-Muster oder Sie sollte nicht dafür werden
+<a name="sectionSectionAntiPatterns"></a> Unterhalb der Liste enthält die wichtigsten Punkte **nicht** zu tun, wenn es darum geht, Entwerfen der Architektur Portal-Informationen:
 
-- Too many top-level parent portal site collections - This will cause confusion and can have adverse impacts on management, security considerations, usability, navigation and adoption in general.
-- Too deep hierarchies in single site collection with unique permissions - This can cause performance challenges.
-- Buried content - Content that is too deep impacts find-ability as well as adoption. If the user cannot find the content they are looking for, after a few levels deep, they will abandon their efforts and deem the portal as inefficient, which in turn, kills adoption. 
-- Stale content - Nobody likes stale content, and after a few times of seeing it, they won't come back for that reason. 
-- No use of content disposition strategies - This is needed to help avoiding stale content and to stay within the defined capacity boundaries. 
-- Relying on poor enterprise master data management resulting in a poor SharePoint Online taxonomy design. 
+- Zu viele übergeordnete Portalwebsite Sammlungen - dadurch Verwechslungen und negative Auswirkungen auf Verwaltung, Hinweise zur Sicherheit, Verwendbarkeit, Navigation und Annahme können im Allgemeinen aufweisen.
+- Dies kann zu tief Hierarchien in einzelne Websitesammlung mit eindeutigen Berechtigungen - Leistung Herausforderungen führen.
+- Verdeckte Inhalte - wirkt sich auf Inhalte, die zu tief sind, Suchen nach Möglichkeit als auch Annahme. Wenn der Benutzer den Inhalt nicht, die, den Sie finden kann für, nach der ein paar Ebenen tief, suchen, sie ihre Arbeit verwerfen und erachten das Portal als ineffiziente, die wiederum Annahme bricht ab. 
+- Veraltete Inhalte - niemand "gefällt mir" veraltete Inhalte und erst, nachdem ein paar Mal der auszublenden, sie werden nicht zurückkehren aus diesem Grund. 
+- Keine Verwendung der Content-Dispositionsstrategien - wird benötigt Vermeidung veraltete Inhalte sowie innerhalb der Grenzen festgelegte Kapazität bleiben. 
+- Vertrauende Seite auf den resultierenden in einen Entwurf für eine schlechte SharePoint Online Taxonomie masterdatenverwaltung schlechter Enterprise. 
  
 
-## <a name="key-considerations"></a>Key Considerations
-<a name="sectionSection0"> </a> Information Architecture is not a one-time process, it a continuous process. While an optimal information architecture may not always be obvious to end-users, a poorly designed and managed information architecture will certainly be remembered if the experience is a bad one. Keep measuring, keep evolving and keep it relevant and fresh.
+## <a name="key-considerations"></a>Wichtige Überlegungen
+<a name="sectionSection0"></a> Informationsarchitektur ist nicht als einmaligen Vorgang, es einen fortlaufenden Prozess. Während eine optimalen Informationsarchitektur möglicherweise nicht immer offensichtlich für Endbenutzer an, eine mangelhaft entworfene und verwaltete Informationen Architektur wird sicherlich beibehalten Sie, falls der eine falsche verwendet wird. Behalten Sie messen, behalten Sie weiterentwickelt, und bewahren Sie relevant und aktuell auf.
 
 &nbsp;
 
@@ -47,27 +48,27 @@ _**Applies to:** SharePoint Online_
 
 &nbsp;
 
-### <a name="site-organization-patterns"></a>Site Organization Patterns
-Consider minimizing the number of top level Site Collection nodes and the number of sub-site levels within your Information Architecture.
+### <a name="site-organization-patterns"></a>Website Organisation Muster
+Berücksichtigen Sie minimieren die Anzahl der Knoten auf oberster Ebene Ebene der Websitesammlung und die Anzahl der Ebenen in der Informationsarchitektur Unterwebsite.
 
-The discussions have changed around horizontal/flat site collections vs vertical/hierarchical. In the past, we promoted flattening hierarchies into potentially several separate site collections. This was for many reasons such as IA best practices, menu structures, content database management, capacity, etc. As far as for capacity reasons, with SharePoint Online, that is not too relevant anymore. However there are other considerations now such as URL limitations. 
+Die Diskussionen haben um Horizontal/flach Site Collections Vs vertikal/hierarchische geändert. In der Vergangenheit heraufgestuft wir reduzieren Hierarchien in potenziell mehrere separate Websitesammlungen. Dieses wurde vielen Gründen wie IA bewährte Methoden, Menüstrukturen, Inhaltsdatenbank Management, Kapazität usw.. Soweit aus Gründen der Kapazität mit SharePoint Online, die nicht zu wichtig mehr sind. Es gibt jedoch auch andere Aspekte nun wie URL-Einschränkungen. 
 
-For more information, refer to [SharePoint Online Software Boundaries and Limits](http://office.microsoft.com/en-us/office365-sharepoint-online-enterprise-help/sharepoint-online-software-boundaries-and-limits-HA102694293.aspx)
+Weitere Informationen finden Sie unter [SharePoint Online-Softwarebeschränkungen und-Grenzen](http://office.microsoft.com/en-us/office365-sharepoint-online-enterprise-help/sharepoint-online-software-boundaries-and-limits-HA102694293.aspx)
 
-Recommended patterns include grouping site collections and sites into different logical groupings such as Enterprise level and publishing sites. These might include search centers, records centers, ediscovery centers, etc.  These can be either at the root level or under the "/sites" managed path. Intranet publishing/portal sites can also be at the root or under the "/sites" managed path. Beispiel:
+Empfohlene Muster einschließen von Websitesammlungen und Websites in verschiedenen logischen Gruppen wie Unternehmensebene gruppieren und Veröffentlichen von Websites. Einige Beispiele suchcentern, Datenarchive, Ediscovery Center.  Dies können entweder am Stamm Ebene oder unter der verwaltete Pfad "/ sites" sein. Intranetwebsites Veröffentlichung-Portal können auch am Stamm oder unter der verwaltete Pfad "/ sites" sein. Beispiel:
 
-Sites considered enterprise level sites might be structured as:
+Websites berücksichtigt, dass Ebene Unternehmenswebsites als strukturiert sein können:
 
-    - /sites/
+    - / Sites /
         - Suche
-        - Records Center
-        - eDiscovery Center
+        - Datenarchiv
+        - eDiscovery-Center
         - Medien
-        - Compliance Policy Center
-        - BI Portal
-        - Content Type Hub
+        - Compliance-Richtlinie Center
+        - Business Intelligence-Portal
+        - Inhaltstyphub
 
-Sites considered as publishing portal sites might be structured as:
+Veröffentlichen von Portalwebsites als Websites möglicherweise als strukturiert sein:
 
     -/sites/
         - Intranet Home
@@ -79,108 +80,108 @@ Sites considered as publishing portal sites might be structured as:
         - ...
 
 
-Usually, not everything will migrate to the cloud immediately and all at once, so plan for a hybrid IA and evolve as necessary. Plan accordingly for Hybrid scenarios.
+In der Regel wird nicht alles sofort und alle gleichzeitig in die Cloud migrieren, also für eine hybride IA planen und weiterentwickelt nach Bedarf. Planen Sie entsprechend für hybridszenarien.
 
-[SharePoint hybrid sites and search](https://support.office.com/en-us/article/SharePoint-hybrid-sites-and-search-5ff7e56a-7af2-4511-adec-1e043afe244e)
+[SharePoint-Hybrid-Websites und Suche](https://support.office.com/en-us/article/SharePoint-hybrid-sites-and-search-5ff7e56a-7af2-4511-adec-1e043afe244e)
 
 ### <a name="permissions"></a>Berechtigungen
-Structuring for permissions is a difficult task every time, and is another topic that requires some careful planning. The use of user accounts, SharePoint groups and Active Directory groups/Azure AD groups to set permissions can be very challenging at times. SharePoint Online can use a combination of the three:
+Strukturieren von Berechtigungen ist schwierig jedes Mal, und ein weiteres Thema, das erfordert sorgfältige Planung. Die Verwendung von Benutzerkonten, SharePoint-Gruppen und Active Directory-Gruppen/Azure Active Directory-Gruppen zum Festlegen von Berechtigungen kann bisweilen sehr anspruchsvoll sein. SharePoint Online kann eine Kombination aus drei verwenden:
 
-- Direct User Permissions Approach
-- SharePoint Groups Approach
-- AD Security groups (AAD Security Groups )
+- Direkte Benutzer Berechtigungen Ansatz
+- Ansatz für SharePoint-Gruppen
+- AD-Sicherheitsgruppen (AAD Sicherheitsgruppen)
 
->**Note**: If you are in SPO, sync your groups with AD Connect
+> [!NOTE] 
+> Wenn Sie sich in SPO befinden, synchronisieren Sie Ihrer Gruppen mit Active Directory verbinden
 
-Try to follow these guidelines when planning for permissions:
+Versuchen Sie beim Planen der Berechtigungen die folgenden Richtlinien beachten:
 
-- Follow the principle of least privilege to start, expanding as needed
-- Use the standard, default groups first (Members, Visitors, Owners). Obviously, limit the the number of individuals to the Owners group
-- Use permissions inheritance and use groups over individuals when granting permissions
-- Organize content to take advantage of the permissions inheritance or organize by unique permissions and segment by classification levels if possible.
+- Führen Sie das Prinzip der geringsten Rechte auf starten, erweitern bei Bedarf
+- Verwenden Sie den Standard, Standard zunächst gruppiert (Mitglieder, Besucher, Besitzer). Natürlich Beschränken der die Anzahl von Personen zur Gruppe Besitzer
+- Verwenden Sie die Vererbung von Berechtigungen und verwenden Sie Gruppen über Personen, wenn Sie Berechtigungen erteilen
+- Organisieren von Inhalten nutzen Sie die Vererbung von Berechtigungen oder Organisieren, indem Sie eindeutige Berechtigungen und Segment nach Möglichkeit Klassifizierung Ebenen.
 
-Inaccessible content that should not be, will cause frustration and eventually hinder end user adoption and cause search results issues as well.
+Nicht zugegriffen werden Inhalte, die sollte nicht werden, wird sorgen für Frustration und schließlich beeinträchtigen Akzeptanz durch den Endbenutzer und Suchproblemen Ergebnissen führen.
 
 ### <a name="search"></a>Suche
-There are a large number of design considerations related to the configuration choices specific to Search in SPO. A detailed Search specification should be developed, especially for advanced configurations. The search experience can be tuned for performance, relevancy and can be customized for users. This includes:
+Eine große Anzahl von Entwurfsaspekte im Zusammenhang mit den Konfigurationsoptionen, die speziell für die Suche in SPO sind vorhanden. Eine ausführliche Suche Spezifikation sollten insbesondere für erweiterte Konfigurationen entwickelt werden. Kann die Suchfunktion für Leistung optimiert werden Relevanz und angepasst werden können. Dazu gehören:
 
-- Defining search-able managed properties 
-- Identifying high-quality pages for relevancy tuning 
-- Managing query rules and result sources 
+- Definieren von verwalteten Eigenschaften suchen können 
+- Identifizieren von Seiten für die Optimierung der Relevanz hohe Qualität 
+- Verwalten von Abfrageregeln und ergebnisquellen 
 
-Content Aggregation can have significant impact on the performance of your portal and its pages. Please refer to the [Portal Data Aggregation article](portal-data-aggregation.md) for more information on Content Aggregation.
+Content-Sammlung kann erhebliche Auswirkungen auf die Leistung Ihres Portals und die dazugehörigen Seiten haben. Näheres im [Portal Datenaggregation Artikel](portal-data-aggregation.md) Weitere Informationen zum Content-Sammlung.
 
-### <a name="taxonomy"></a>Taxonomy
-Taxonomy covers both site **navigation** as well as **data**. Careful planning is required from a governance perspective, as well as a performance perspective. Think about core business functions to start, but also think about future growth and manageability. 
+### <a name="taxonomy"></a>Taxonomie
+Taxonomie werden sowohl der **Navigation** als auch **Daten**behandelt. Durch eine sorgfältige Planung ist aus Sicht der Steuerung als auch einen Bezug auf die Leistung erforderlich. Überlegen Sie Kernaufgaben zu starten, aber auch überlegen künftiges Wachstum und verwaltbarkeit. 
 
-**Content Types** Proper planning, configuration and implementation of content types and their associated metadata is fundamental to the ability to organize, manage, classify, and find information in SharePoint.
+**Inhaltstypen** Ordnungsgemäße Planung, Konfiguration und Implementierung von Inhaltstypen und deren zugeordnete Metadaten ist unerlässlich für die Möglichkeit zum Organisieren, verwalten, klassifizieren und Informationen finden unter SharePoint.
 
-Define a small set of global content types – which may be based on legal or records management team requirements, as well as authoring requirements for tagging, etc.
+Definieren Sie eine kleine Gruppe von globalen Inhaltstypen – die basiert auf Legal oder Records Management-Teams sowie authoring Anforderungen für tagging usw..
 
-These content types should have at a minimum, some fields such as:
+Diese Inhaltstypen sollten mindestens einige Felder haben:
     
-    - InformationClassification
+    - Informationen Klassifikation
     - BusinessFunction
     - CorporateFunction
     - ...
 
-Create these in the content-type hub and use SharePoint CSOM to create content types using unique ID. You will still need to manually publish these content types. Don’t use the content-type Hub if you think that at site collection you would need to change the content types.
+Diese im Hub-Inhaltstyp erstellen und Verwenden von SharePoint-CSOM zum Erstellen Content-Typen mithilfe von eindeutige ID. Sie müssen immer noch manuell diese Inhaltstypen veröffentlicht. Verwenden Sie den Inhaltstyp-Hub nicht, wenn Sie annehmen, dass in der Websitesammlung Sie müssten die Inhaltstypen zu ändern.
 
-For more information on Content Types and Content Type Publishing, see: [Introduction to Content Type and Content Type Publishing](https://support.office.com/en-US/article/Introduction-to-content-types-and-content-type-publishing-A5026D23-8DF8-42F6-B0D6-1920880C0D03)
+Weitere Informationen zu Inhaltstypen und Content Type Publishing, finden Sie unter: [Einführung in Inhaltstyp und Content Type Publishing](https://support.office.com/en-US/article/Introduction-to-content-types-and-content-type-publishing-A5026D23-8DF8-42F6-B0D6-1920880C0D03)
 
-**Managed Metadata** This is another topic similar to Content Types, that is too big for the scope of this article. For a good start and more information, see [Introduction to Managed Metadata](https://support.office.com/en-us/article/Introduction-to-managed-metadata-a180fa28-6405-4679-9ec3-81d2028c4efc)
+**Verwaltete Metadaten** Hierbei handelt es sich um ein anderes Thema ähnlich wie Inhaltstypen, die für den Rahmen dieses Artikels zu groß ist. Einen guten Einstieg und Weitere Informationen finden Sie unter [Einführung in verwaltete Metadaten](https://support.office.com/en-us/article/Introduction-to-managed-metadata-a180fa28-6405-4679-9ec3-81d2028c4efc)
 
-Metadata in SharePoint enables organizations to combine the advantages of formal, managed taxonomies with the dynamic benefits of social tagging in customized ways mapping to different information usage and management scenarios.
+Metadaten in SharePoint kann Unternehmen die Vorteile der formelle, verwaltete Taxonomien mit der dynamischen Vorteile von thematischen Kategorien in benutzerdefinierten Möglichkeiten Zuordnung unterschiedliche Informationen Verwendung und Verwaltung von Szenarien zu kombinieren.
 
-Enterprise metadata hierarchies can be based off of information security classifications. Managed metadata can also be mapped to documents, list items, etc. via the usage of site columns and content types. These managed metadata term sets can be managed by managers and contributors and the ability to add terms to term sets can be controlled as well. 
+Enterprise-metadatenhierarchien können vom Informationen Sicherheit Klassifikationen basieren. Verwalteter Metadaten kann auch Dokumente, Listenelemente, über die Verwendung von Websitespalten und Inhaltstypen usw. zugeordnet werden. Diese verwaltete metadatenausdruckssätze können Manager und Mitwirkende und die Möglichkeit, Ausdrücke zu Ausdruck hinzufügen legt auch kontrolliert werden verwaltet werden. 
 
-Enterprise term store hierarchies are typically managed by a governance steering committee with an input process from other teams in the organization.  
+Enterprise Begriff Store Hierarchien werden normalerweise von einem Lenkungsausschuss Steuerung mit input ein Prozess, der aus anderen Teams in der Organisation verwaltet werden.  
 
->**Note**:
+> [!NOTE] 
+> Eine schlechte Planung und schlechte Management können Probleme mit großen taxonomiehierarchien und Tiefe Sortierung verursachen. Die Daten müssen sortierte clientseitige sein, damit es wird empfohlen, überlegen Sie sich die potenzielle Tiefe der Hierarchie und die Anzahl von Ausdrücken zurückgegeben wird. Je tiefer kann die Hierarchie in Kombination mit mehr Begriffe der Client DOM sortieren, um mehrere Sekunden dauern, verursachen. 
 >
->Poor planning and poor management can cause issues around large taxonomy hierarchies and deep sorting. The data needs to be sorted client-side, so it is recommended to carefully consider the potential depth of the hierarchy, and the number of terms being returned. The deeper the hierarchy, combined with more and more terms can cause the client DOM sort to take several seconds. 
+> Keine löschen Sie Terminologiespeicher Elemente, deren verwerfen der. Beibehalten der Terminologiespeicher bereinigen potenziell fehlende Objekte oder fehlerhafte Berechtigungen, wodurch Verzögerungen in der zurückgegebenen Daten.
 >
->Don't delete term-store items, deprecate them. Keep the term store clean of potentially missing objects or faulty permissions, causing delays in data being returned.
->
->Terms are not security trimmed, so sensitivity needs to be considered
+> Begriffe sind nicht eingeschränkt, damit Vertraulichkeit berücksichtigt werden muss
 
-For planning managed metadata, the following worksheets are available:
+Für verwaltete Metadaten planen stehen die folgenden Arbeitsblätter:
 
-[Managed metadata services planning worksheet](http://go.microsoft.com/fwlink/p/?LinkId=164578)
+[Verwaltete Metadatendienste Planungsarbeitsblatt](http://go.microsoft.com/fwlink/p/?LinkId=164578)
 
-[Detailed term set planning worksheet](http://go.microsoft.com/fwlink/p/?LinkId=163487)
+[Detaillierten festlegen Planungsarbeitsblatt](http://go.microsoft.com/fwlink/p/?LinkId=163487)
 
-**Navigation** Please refer to the [Portal Navigation Solutions article](portal-navigation.md) for more information on navigation best practices.
+**Navigation** Finden Sie im [Artikel Portal Navigation Lösungen](portal-navigation.md) für Weitere Informationen zu bewährten Methoden Navigation.
 
-### <a name="large-media"></a>Large Media
-Large files, such as videos, images, PowerPoint files, can cause grief for users as they are expected to be retrieved fairly quickly. Files such as videos will need to stream at certain rates and some apps might not render until they have retrieved the file(s) needed. Consider externalizing large media files. This will help with user adoption. 
+### <a name="large-media"></a>Große Medien
+Große Dateien, beispielsweise Videos, Bilder, PowerPoint-Dateien können Kummer für Benutzer dazu führen, dass sie erwartungsgemäß relativ schnell abgerufen werden sollen. Dateien wie Videos müssen in bestimmten Abständen stream und einige apps möglicherweise nicht gerendert werden, bis sie die erforderlichen Dateien abgerufen haben. Erwägen Sie das externalisieren große Mediendateien. Dies hilft mit Benutzerakzeptanz. 
 
-Here are a few options to consider:
-- [Meet Office 365 Video](https://support.office.com/en-us/article/Meet-Office-365-Video-ca1cc1a9-a615-46e1-b6a3-40dbd99939a6)
-- [Manage your Office 365 Video portal](https://support.office.com/en-us/article/Manage-your-Office-365-Video-portal-c059465b-eba9-44e1-b8c7-8ff7793ff5da?ui=en-US&rs=en-US&ad=US)
+Hier sind einige Optionen zu berücksichtigen sind:
+- [Erfüllen von Office 365-Videos](https://support.office.com/en-us/article/Meet-Office-365-Video-ca1cc1a9-a615-46e1-b6a3-40dbd99939a6)
+- [Verwalten Sie Ihre Office 365-Video-portal](https://support.office.com/en-us/article/Manage-your-Office-365-Video-portal-c059465b-eba9-44e1-b8c7-8ff7793ff5da?ui=en-US&rs=en-US&ad=US)
 
-The [Portal Branding](portal-branding.md) and [Portal Performance](portal-performance.md) articles highlight the use of CDN's as well.
+Die Artikel [Portal Branding](portal-branding.md) und [Portal Leistung](portal-performance.md) markieren sowie die Verwendung des CDN.
 
-For more information on CDN's, see:
-- [Office 365 Public/Private CDN capability](https://dev.office.com/blogs/general-availability-of-office-365-cdn)
-- [Using content delivery networks with SharePoint Online](https://support.office.com/en-gb/article/Using-content-delivery-networks-with-SharePoint-Online-9a64268c-0b74-4eaa-b971-fb6380b1b165)
-- [CDN Manager](https://github.com/SharePoint/PnP/tree/master/Solutions/Core.CDNManager)
+Weitere Informationen zu den CDN finden Sie unter:
+- [Office 365 öffentliches/privates CDN-Funktion](https://dev.office.com/blogs/general-availability-of-office-365-cdn)
+- [Verwenden die Inhaltsübermittlung mit SharePoint Online](https://support.office.com/en-gb/article/Using-content-delivery-networks-with-SharePoint-Online-9a64268c-0b74-4eaa-b971-fb6380b1b165)
+- [CDN-Manager](https://github.com/SharePoint/PnP/tree/master/Solutions/Core.CDNManager)
 
 
-### <a name="additional-resources"></a>Zusätzliche Ressourcen
+### <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 Patterns & Practices:
 
-- [Office 365 development and SharePoint patterns and practices solution guidance](https://msdn.microsoft.com/en-us/pnp_articles/office-365-development-patterns-and-practices-solution-guidance)
+- [Office 365-Entwicklung und SharePoint Mustern und Methoden ausgesprochen](https://msdn.microsoft.com/en-us/pnp_articles/office-365-development-patterns-and-practices-solution-guidance)
 
-Information Life-cycle Management:
+Lebenszyklus Informationsverwaltung:
 
-- [Overview of document deletion policies](https://technet.microsoft.com/en-US/library/dn790608.aspx)
-- [Information Management Policies in Office 365](https://technet.microsoft.com/en-us/library/dn792007.aspx)
-- [Introduction to Information Lifecycle Management](https://support.office.com/en-US/article/Introduction-to-information-management-policies-63a0b501-ba59-44b7-a35c-999f3be057b2)
+- [Übersicht über dokumentlöschrichtlinien](https://technet.microsoft.com/en-US/library/dn790608.aspx)
+- [Informationsverwaltungsrichtlinien in Office 365](https://technet.microsoft.com/en-us/library/dn792007.aspx)
+- [Einführung in die Anwendungslebenszyklus-Verwaltung von Informationen](https://support.office.com/en-US/article/Introduction-to-information-management-policies-63a0b501-ba59-44b7-a35c-999f3be057b2)
 
-Storage and Server Resources
+Speicher- und Serverressourcen
 
-- [Manage Site Collection Storage Limits](https://support.office.com/en-US/Article/Manage-site-collection-storage-limits-77389c2c-8e7e-4b16-ab97-1c7103784b08?ui=en-US&rs=en-US&ad=US)
-- [SharePoint Online Software Boundaries and Limits](https://support.office.com/en-us/article/SharePoint-Online-software-boundaries-and-limits-8f34ff47-b749-408b-abc0-b605e1f6d498?CTT=1&CorrelationId=ab0c93e3-8a23-4a72-887e-bac52c0a874d&ui=en-US&rs=en-US&ad=US)
+- [Verwalten von Speichergrenzen für Websitesammlungen](https://support.office.com/en-US/Article/Manage-site-collection-storage-limits-77389c2c-8e7e-4b16-ab97-1c7103784b08?ui=en-US&rs=en-US&ad=US)
+- [SharePoint Online-Softwarebeschränkungen und-Grenzen](https://support.office.com/en-us/article/SharePoint-Online-software-boundaries-and-limits-8f34ff47-b749-408b-abc0-b605e1f6d498?CTT=1&CorrelationId=ab0c93e3-8a23-4a72-887e-bac52c0a874d&ui=en-US&rs=en-US&ad=US)

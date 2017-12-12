@@ -1,11 +1,11 @@
 ---
 title: Ersetzen von Listendefinitionen erstellte SharePoint-Listen
 ms.date: 11/03/2017
-ms.openlocfilehash: 99caef124d7b5162839dff092d7760f7ec9dbdf3
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 99ccd2fa75968236ccd5505c5937e2dd2e1afe78
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="replace-sharepoint-lists-created-from-list-definitions"></a>Ersetzen von Listendefinitionen erstellte SharePoint-Listen
 Ersetzen Sie Listen und Bibliotheken, die mithilfe von Listendefinitionen in SharePoint erstellt wurden. 
@@ -30,7 +30,8 @@ Idealerweise sollten Sie überprüfen Ihrer vorhandenen farmlösungen, erfahren 
 
 1. Laden Sie die [Projektmappe Contoso.Intranet](https://github.com/SharePoint/PnP/tree/master/Reference%20Material/Contoso.Intranet). [Überprüfen der Anfangszustand der Website und Bibliothek für den Austausch](https://github.com/SharePoint/TrainingContent/blob/master/O3658/10%20Transformation%20guidance%20from%20farm%20solutions%20to%20app%20model/10-2%20Replacing%20Lists%20Created%20from%20Custom%20Templates/Lab.md#examine-the-initial-state-of-the-site-and-library-for-replacement) zum Abrufen von Listen erstellt wurden mit deklarativ Listendefinitionen einer schnellen Übersicht lesen.
     
-    **Hinweis:**  In Contoso.Intranet, in der Datei elements.xml für SP\ListTemplate\LTContosoLibrary ist die ID für die benutzerdefinierte Listenvorlage 10003. Sie verwenden diese zum Identifizieren der Vorlage, die zum Erstellen der Liste verwendet wurde. Überprüfen Sie auch die Konfigurationseinstellungen und Ansichten, die in Ihrer Liste definiert sind.
+    > [!NOTE] 
+    > In Contoso.Intranet, in der Datei elements.xml für SP\ListTemplate\LTContosoLibrary ist die ID für die benutzerdefinierte Listenvorlage 10003. Sie verwenden diese zum Identifizieren der Vorlage, die zum Erstellen der Liste verwendet wurde. Überprüfen Sie auch die Konfigurationseinstellungen und Ansichten, die in Ihrer Liste definiert sind.
 
 2. Informationen Sie zu farmlösungen. Weitere Informationen finden Sie unter [Übersicht über SharePoint 2010-Architekturen](https://msdn.microsoft.com/en-us/library/office/gg552610%28v=office.14%29.aspx) und [Farmlösungen in SharePoint 2013](https://msdn.microsoft.com/library/jj163902.aspx).
     
@@ -58,7 +59,8 @@ Im folgenden Code veranschaulicht die Methode Listen zu suchen, die mit einer be
     
 2. Für jede Liste in der Auflistung der zurückgegebenen Listen Wenn die **List.BaseTemplate** 10003 gleich ist, hinzugefügt die Liste eine Sammlung von Listen ersetzt werden, **ListsToReplace**aufgerufen. Denken Sie daran, dass 10003 Bezeichner der benutzerdefinierten Listenvorlage war, als es in der Stichprobe Contoso.Intranet überprüft.
 
-**Hinweis:**  Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 static void Main(string[] args)
@@ -150,7 +152,8 @@ private static void SetListSettings(ClientContext clientContext, List listToBeRe
 }
 ```
 
-**Hinweis:**  Basierend auf Ihren Anforderungen, können die Einstellungen für die Liste Ihrer ursprünglichen Listen abweichen. Überprüfen Sie die listeneinstellungen, und ändern Sie **SetListSettings** , um sicherzustellen, dass die ursprünglichen listeneinstellungen auf Ihre neuen Listen angewendet werden.
+> [!NOTE] 
+> Basierend auf Ihren Anforderungen, können die Einstellungen für die Liste Ihrer ursprünglichen Listen abweichen. Überprüfen Sie die listeneinstellungen, und ändern Sie **SetListSettings** , um sicherzustellen, dass die ursprünglichen listeneinstellungen auf Ihre neuen Listen angewendet werden.
 
 **SetContentTypes** setzt die Inhaltstypen in der neuen Liste durch:
 
@@ -168,7 +171,8 @@ private static void SetListSettings(ClientContext clientContext, List listToBeRe
     
 7. Löschen des Inhaltstyps [ContentType.DeleteObject](https://msdn.microsoft.com/library/office/microsoft.sharepoint.client.contenttype.deleteobject.aspx)aufrufen.
 
-**Hinweis:**  Wenn Sie einen direkte Transformation Ansatz verwenden und Ihre Inhaltstypen deklarativ mithilfe des Feature-Frameworks bereitgestellt wurden, müssen Sie: 
+> [!NOTE] 
+> Wenn Sie einen direkte Transformation Ansatz verwenden und Ihre Inhaltstypen deklarativ mithilfe des Feature-Frameworks bereitgestellt wurden, müssen Sie: 
 
  1. Erstellen Sie neue Inhaltstypen.
 
@@ -224,7 +228,8 @@ private static void SetContentTypes(ClientContext clientContext, List listToBeRe
 }
 ```
 
-**Hinweis:**  Zu diesem Zeitpunkt kann die neue Liste Inhalt aus der ursprünglichen Liste annehmen. Sie können auch optional hinzufügen und Entfernen von Ansichten. 
+> [!NOTE] 
+> Zu diesem Zeitpunkt kann die neue Liste Inhalt aus der ursprünglichen Liste annehmen. Sie können auch optional hinzufügen und Entfernen von Ansichten. 
 
 Benutzer können hinzufügen oder Entfernen von Ansichten in einer Liste zu ihrer geschäftlichen Anforderungen definiert. Aus diesem Grund müssen Sie zum Hinzufügen oder Entfernen von Ansichten für die neue Liste.  **AddViews** hinzugefügt der neuen Liste von Ansichten aus der ursprünglichen Liste:
 
@@ -341,7 +346,8 @@ private static void RemoveViews(ClientContext clientContext, List listToBeReplac
     
 4. Kopieren die Datei auf die URL des Stammordners Ziel mithilfe [File.CopyTo](https://msdn.microsoft.com/library/office/microsoft.sharepoint.client.file.copyto.aspx) . Alternativ können Sie die [File.MoveTo](https://msdn.microsoft.com/library/office/microsoft.sharepoint.client.file.moveto.aspx) -Methode verwenden, um die Datei an die Ziel-URL zu verschieben.
     
-**Hinweis:**  Der folgende Code gibt alle Listenelemente. Sollten Sie in Ihrer produktionsumgebung den folgenden Code durch Implementieren einer Schleife, und Migrieren von kleine Mengen von Listenelementen mithilfe mehrerer Iterationen optimieren.
+> [!NOTE] 
+> Der folgende Code gibt alle Listenelemente. Sollten Sie in Ihrer produktionsumgebung den folgenden Code durch Implementieren einer Schleife, und Migrieren von kleine Mengen von Listenelementen mithilfe mehrerer Iterationen optimieren.
 
 ```C#
 private static void MigrateContent(ClientContext clientContext, List listToBeReplaced, List newList)
@@ -369,11 +375,11 @@ private static void MigrateContent(ClientContext clientContext, List listToBeRep
 }
 ```
 
-**Hinweis:**  Der vorstehende Code veranschaulicht, wie zum Migrieren von Dateien in einer Liste im Stammordner gespeichert. Wenn Ihre Liste Unterordner umfasst, müssen Sie zusätzlichen Code zum Migrieren der Unterordner und deren Inhalt hinzu. Wenn in Ihrer Liste Workflows verwendet wird, ist zusätzlicher Code erforderlich, können Sie den Workflow auf die neue Liste zuordnen.
+> [!NOTE] 
+> Der vorstehende Code veranschaulicht, wie zum Migrieren von Dateien in einer Liste im Stammordner gespeichert. Wenn Ihre Liste Unterordner umfasst, müssen Sie zusätzlichen Code zum Migrieren der Unterordner und deren Inhalt hinzu. Wenn in Ihrer Liste Workflows verwendet wird, ist zusätzlicher Code erforderlich, können Sie den Workflow auf die neue Liste zuordnen.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Transformieren von Farmlösungen in das SharePoint-Add-In-Modell](Transform-farm-solutions-to-the-SharePoint-app-model.md)
-    
 - [SharePoint 2013](https://msdn.microsoft.com/library/office/jj162979.aspx)

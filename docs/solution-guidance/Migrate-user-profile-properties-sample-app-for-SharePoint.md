@@ -1,11 +1,11 @@
 ---
 title: "Migrieren Sie Benutzerprofil Eigenschaften Beispiel-add-in für SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 70b8fec69c22a0394184f6af969714d922b4c25a
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 03a7591b21531387e1cd1312be76f1f6e916c41e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="migrate-user-profile-properties-sample-add-in-for-sharepoint"></a>Migrieren Sie Benutzerprofil Eigenschaften Beispiel-add-in für SharePoint
 
@@ -105,7 +105,8 @@ In diesem Codebeispiel wird als Konsolenanwendung ausgeführt. Wenn das Codebeis
     
 - **UserProfileCollection.Save** verwendet zum Serialisieren von **UserData** in eine XML-Datei. Die XML-Datei wird unter dem Dateipfad gespeichert, der in ' App.config ' angegeben.
 
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 static void Main(string[] args)
@@ -383,7 +384,7 @@ static void SetSingleProfileProperty(string UserName, string PropertyName, strin
 
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [User Profile Lösungen für SharePoint 2013 und SharePoint Online](user-profile-solutions-for-sharepoint.md)

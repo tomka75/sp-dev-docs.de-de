@@ -1,11 +1,11 @@
 ---
 title: "Massenupload Dokumente Beispiel-add-in für SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 67b30e8bbff64e09c193fe714ac7f71dd87567db
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 3dce2044fa25e5ec1f231c6511b2186f6c9191d8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="bulk-upload-documents-sample-add-in-for-sharepoint"></a>Massenupload Dokumente Beispiel-add-in für SharePoint
 
@@ -13,7 +13,8 @@ Als Teil Ihrer Strategie für die Enterprise Content Management (ECM) können Si
     
 _**Gilt für:** Office 365 | SharePoint 2013 | SharePoint Online_
 
-**Hinweis**  Im Beispiel lädt eine Datei in eine Dokumentbibliothek hoch. Zum Hochladen mehrerer Dateien müssen Sie das Beispiel zu erweitern.
+> [!NOTE] 
+> Im Beispiel lädt eine Datei in eine Dokumentbibliothek hoch. Zum Hochladen mehrerer Dateien müssen Sie das Beispiel zu erweitern.
 
 Dieses Add-In wird verwendet eine Konsolenanwendung zum Hochladen von Dateien mithilfe von REST-API-aufrufen. Konfigurationseinstellungen werden in einem XML-Element und eine CSV-Datei angegeben. Verwenden Sie diese Lösung, wenn Folgendes auf Sie zutrifft:
 
@@ -57,7 +58,8 @@ Bevor Sie das Codebeispiel ausführen, folgendermaßen Sie vor:
 
 Aus der **Main** -Methode in Program.cs Ruft die **RecurseActions** -Methode die **Run** -Methode in OneDriveMapper.cs. Die **Run** -Methode ruft den Speicherort der Datei zum Hochladen von SharePointSites.csv ab und ruft dann die **IterateCollection** -Methode.
 
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 public override void Run(BaseAction parentAction, DateTime CurrentTime, LogHelper logger)
@@ -84,7 +86,8 @@ Die Datei SharePointSite.csv enthält eine Datei zum Hochladen und der Dokumentb
     
 4. Führt die Dateien hochladen.
 
-**Hinweis**  Der Dateiname wird mit dem Wert des **FileUploadName** in OneDriveUploader.xml angegebenen überschrieben.
+> [!NOTE] 
+> Der Dateiname wird mit dem Wert des **FileUploadName** in OneDriveUploader.xml angegebenen überschrieben.
 
 ```C#
 public override void IterateCollection(Collection<string> entries, LogHelper logger)
@@ -213,10 +216,9 @@ public override void IterateCollection(Collection<string> entries, LogHelper log
 
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
--  [Enterprise Content Management-Lösungen für SharePoint 2013 und SharePoint Online](Enterprise-Content-Management-solutions-for-SharePoint-2013-and-SharePoint-Online.md)
-    
+-  [Enterprise Content Management-Lösungen für SharePoint 2013 und SharePoint Online](Enterprise-Content-Management-solutions-for-SharePoint-2013-and-SharePoint-Online.md)   
 -  [Core.LargeFileUpload-Beispiel](https://github.com/SharePoint/PnP/tree/master/Samples/Core.LargeFileUpload)
     

@@ -1,11 +1,11 @@
 ---
 title: "Ändern der SharePoint-Host-Web-Listen zum Zeitpunkt der Erstellung"
 ms.date: 11/03/2017
-ms.openlocfilehash: fd4849672053fe1a368cb7f05814575a055f15c5
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: f9febeb90286fd49a28ff543692de62fb10f611a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="modify-sharepoint-host-web-lists-at-creation-time"></a>Ändern der SharePoint-Host-Web-Listen zum Zeitpunkt der Erstellung
 
@@ -27,7 +27,8 @@ Um die Ereignishandler für das Add-in zu implementieren, zeigen Sie die Eigensc
 
 Im folgenden Codebeispiel wird veranschaulicht, wie der Ereignisempfänger **AppInstalled** So fügen Sie den Ereignisempfänger **ListAdded** geändert wird.
 
-**Hinweis:**  Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 bool rerExists = false;
@@ -91,9 +92,10 @@ private void HandleListAdded(SPRemoteEventProperties properties)
 
 Wenn das Add-in deinstalliert wird, sollte der Ereignisempfänger auch entfernt werden. Damit dies funktioniert während des Debuggens, wechseln Sie zu der Dokumentbibliothek **im Test-Add-ins** , und verwenden Sie die Option **Entfernen** , klicken Sie auf das Add-in. Dadurch wird das Ereignis **AppUninstalling** mit den entsprechenden Berechtigungen den erstellte remote Ereignishandler entfernt. Wenn Sie nur schließen Sie den Browser oder des Add-Ins auf **Websiteinhalte deinstallieren**, nie der Ereignisempfänger ausgelöst wird, oder der Ereignisempfänger **AppUninstalling** mit nicht über ausreichende Berechtigungen zum Entfernen des Ereignisempfängers **ListAdded** ausgeführt wird. Dies ist, da-add-ins anders bereitgestellt werden, wenn diese Seite geladen ist, die Funktionsweise Visual Studio werden, wenn Sie F5 drücken.
 
-**Hinweis:**  Es wird empfohlen, dieses Beispiels in einer Neuinstallation Developer-Website testen.
+> [!NOTE] 
+> Es wird empfohlen, dieses Beispiels in einer Neuinstallation Developer-Website testen.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [SharePoint-Website Bereitstellen von Lösungen](sharepoint-site-provisioning-solutions.md)

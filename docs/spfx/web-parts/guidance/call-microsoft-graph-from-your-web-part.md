@@ -1,3 +1,13 @@
+---
+title: "Aufrufen der Microsoft Graph-API aus Ihrem Webpart mittels OAuth"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 0fa5d369358ace2c3e13f279d4f1fcf0f20aef90
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="call-the-microsoft-graph-api-using-oauth-from-your-web-part"></a>Aufrufen der Microsoft Graph-API aus Ihrem Webpart mittels OAuth
 
 Durch eine Integration mit Microsoft Graph können Sie viele nützliche Funktionen zu Ihrem Webpart hinzufügen, beispielsweise eine E-Mail-Funktion, Dokumente und Kalender. Damit Sie Microsoft Graph-APIs aufrufen können, müssen Sie die Active Directory Authentication Library (ADAL) for Javascript-Bibliothek verwenden und zur Authentifizierung den OAuth-Fluss nutzen. Bevor Ihr Webpart ADAL JS nutzen und Microsoft Graph-APIs korrekt und sicher aufrufen kann, sind einige Designspezifika zu berücksichtigen und Codemodifikationen zu implementieren.
@@ -12,7 +22,7 @@ Clientanwendungen wie Android- oder iOS-Apps haben keine URL; eine Umleitung ist
 
 Clientseitige Webanwendungen ähneln Webanwendungen, werden jedoch mithilfe von JavaScript implementiert und im Kontext eines Browsers ausgeführt. Diese Anwendungen können geheime Clientschlüssel nicht verwenden, ohne sie den Benutzern preiszugeben. Sie nutzen daher einen als impliziten OAuth-Fluss bezeichneten Autorisierungsfluss, um auf durch Azure AD gesicherte Ressourcen zuzugreifen. In diesem Fluss wird der Vertrag zwischen der Anwendung und Azure AD auf Basis der öffentlich bekannten Client-ID und der URL ausgehandelt, unter der die Anwendung gehostet wird. Clientseitige SharePoint Framework-Webparts müssen diesen Fluss verwenden, um eine Verbindung mit Ressourcen herstellen zu können, die durch Azure AD abgesichert sind. Zur Implementierung von Azure AD-basierter Authentifizierung und Autorisierung in Ihrem Webpart können Sie die von Microsoft bereitgestellte [Active Directory Authentication Library (ADAL) for JavaScript](https://github.com/AzureAD/azure-activedirectory-library-for-js) verwenden.
 
-## <a name="difference-between-client-side-applications-and-sharepoint-framework-web-parts"></a>Unterschied zwischen clientseitigen Anwendungen und SharePoint Framework-Webparts
+## <a name="difference-between-client-side-applications-and-sharepoint-framework-web-parts"></a>Unterschied zwischen clientseitigen Anwendungen und SharePoint-Framework-Webparts
 
 Eine typische clientseitige Webanwendung umfasst die gesamte Seite und ist die einzige Ressource, die unter der Anwendungs-URL verfügbar ist. Alle Elemente der Seite werden während der Entwicklung festgelegt, und die Benutzer der Anwendung können nicht dynamisch neue Elemente hinzufügen. Zwar kann eine clientseitige Webanwendung durchaus aus mehreren Ansichten bestehen, mit externen Daten arbeiten und in gewissem Umfang Konfigurationen erlauben; alle diese Aspekte berücksichtigen die Entwickler jedoch bereits bei der Programmierung der Anwendung.
 
@@ -46,9 +56,9 @@ Nach Abschluss der Authentifizierung leitet Azure AD Sie zurück zur Anwendung.
 
 ## <a name="use-adal-js-with-sharepoint-framework-client-side-web-parts"></a>Verwendung von ADAL JS in clientseitigen SharePoint Framework-Webparts
 
-Es gibt Möglichkeiten, die Einschränkungen von ADAL JS zu umgehen und OAuth erfolgreich in einem clientseitigen SharePoint Framework-Webpart zu implementieren.
+Es gibt Möglichkeiten, die Einschränkungen von ADAL JS zu umgehen und OAuth erfolgreich in einem clientseitigen SharePoint-Framework-Webpart zu implementieren.
 
-> **Wichtig:** Die folgende Anleitung basiert auf ADAL JS v1.0.12. Stellen Sie beim Hinzufügen von ADAL JS zu Ihren SharePoint Framework-Projekten sicher, dass Sie ADAL JS v1.0.12 installieren, da sonst die in diesem Artikel genannte Anleitung nicht wie erwartet funktioniert.
+> **Wichtig:** Die folgende Anleitung basiert auf ADAL JS v1.0.12. Stellen Sie beim Hinzufügen von ADAL JS zu Ihren SharePoint-Framework-Projekten sicher, dass Sie ADAL JS v1.0.12 installieren, da sonst die in diesem Artikel genannte Anleitung nicht wie erwartet funktioniert.
 
 ### <a name="load-adal-js-in-your-web-part"></a>Laden von ADAL JS in Ihrem Webpart
 
@@ -60,7 +70,7 @@ import * as AuthenticationContext from 'adal-angular';
 
 Diese Anweisung importiert die Klasse `AuthenticationContext`, die die ADAL JS-Funktionalität für die Verwendung in Webparts verfügbar macht. Anders als der Name des Moduls vermuten lässt, funktioniert die Klasse `AuthenticationContext` mit jeder JavaScript-Bibliothek.
 
-### <a name="make-adal-js-suitable-for-use-with-sharepoint-framework-web-parts"></a>Vorbereiten von ADAL JS für die Verwendung in SharePoint Framework-Webparts
+### <a name="make-adal-js-suitable-for-use-with-sharepoint-framework-web-parts"></a>Vorbereiten von ADAL JS für die Verwendung in SharePoint-Framework-Webparts
 
 Die aktuelle ADAL JS-Funktionalität ist nicht für die Verwendung in Webparts geeignet. Sie müssen daher den nachfolgenden Patch verwenden, damit ADAL JS in Ihrem Webpart funktioniert.
 
@@ -119,7 +129,7 @@ AuthenticationContext.prototype._renewToken = function (resource, callback) {
   this._renewTokenSuper(resource, callback);
   var _renewStates = this._getItem('renewStates');
   if (_renewStates) {
-    _renewStates = _renewStates.split(';');
+    _renewStates = _renewStates.split(',');
   }
   else {
     _renewStates = [];
@@ -221,7 +231,7 @@ export default class UpcomingMeetings extends React.Component<IUpcomingMeetingsP
 
 Der Code ruft zunächst das ADAL JS-Standardkonfigurationsobjekt ab und überträgt es an die Typisierung der neu definierten Konfigurationsschnittstelle. Anschließend übergibt er die ID der Webpart-Instanz, damit sichergestellt ist, dass alle ADAL JS-Werte so gespeichert werden können, dass es nicht zu Konflikten mit anderen Webparts auf der Seite kommt. Als Nächstes aktiviert der Code die popupbasierte Authentifizierung und definiert eine Rückruffunktion, die bei Abschluss der Authentifizierung ausgeführt wird und die Komponente aktualisiert. Zuletzt wird eine neue Instanz der Klasse `AuthenticationContext` erstellt, und die `_singletonInstance`, die im Konstruktor der Klasse `AuthenticationContext` definiert ist, wird zurückgesetzt. Dies ist erforderlich, damit jedes Webpart eine eigene Version des ADAL JS-Authentifizierungskontexts verwenden kann.
 
-## <a name="considerations-when-using-oauth-implicit-flow-in-sharepoint-framework-client-side-web-parts"></a>Wichtige Aspekte bei der Verwendung des impliziten OAuth-Flusses in clientseitigen SharePoint Framework-Webparts
+## <a name="considerations-when-using-oauth-implicit-flow-in-sharepoint-framework-client-side-web-parts"></a>Wichtige Aspekte bei der Verwendung des impliziten OAuth-Flusses in clientseitigen SharePoint-Framework-Webparts
 
 Bevor Sie clientseitige SharePoint Framework-Webparts erstellen, die mit durch Azure AD abgesicherten Ressourcen kommunizieren, sollten Sie einige Einschränkungen bedenken. Anhand der nachfolgenden Informationen können Sie entscheiden, ob die Verwendung von OAuth-Autorisierung in Webparts für Ihre Lösung und Ihre Organisation das Richtige ist.
 
@@ -249,4 +259,4 @@ Da clientseitige Anwendungen geheime Schlüssel nicht sicher speichern können u
 
 ## <a name="more-information"></a>Weitere Informationen
 
-- [Authentifizierungsszenarien für Azure AD](https://Azure.microsoft.com/en-us/documentation/articles/active-directory-authentication-scenarios/)
+- [Authentifizierungsszenarien für Azure AD](https://Azure.microsoft.com/de-DE/documentation/articles/active-directory-authentication-scenarios/)

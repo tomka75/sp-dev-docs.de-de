@@ -1,11 +1,11 @@
 ---
 title: "Informationen Management Beispiel-add-in für SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: ab6d8405bbef33063f54aecf00cfbd3c6b206a0d
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: c5e81e55cff89d6bf311c3fb6c7f40e0b0c87ee9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="information-management-sample-add-in-for-sharepoint"></a>Informationen Management Beispiel-add-in für SharePoint
 Als Teil Ihrer Strategie für die Enterprise Content Management (ECM) können Sie abrufen oder Festlegen von Richtlinien für Website zum Verwalten des Lebenszyklus der SharePoint-Website.
@@ -50,7 +50,8 @@ Die Datei Pages\Default.aspx.cs im Projekt Core.InformationManagementWeb enthäl
 
 Der folgende Code in der **Page_Load** -Methode der Seite "default.aspx.cs" abruft und die Daten zum Abschluss und Ablauf der Website, basierend auf der Website angewendete Richtlinie angezeigt. Dieser Code Ruft die Erweiterungsmethoden **GetSiteExpirationDate** und **GetSiteCloseDate** des Projekts OfficeDevPnP.Core.
     
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 // Get site expiration and closure dates.
@@ -122,7 +123,7 @@ if (drlPolicies.SelectedItem != null)
 
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Enterprise Content Management-Lösungen für SharePoint 2013 und SharePoint Online](Enterprise-Content-Management-solutions-for-SharePoint-2013-and-SharePoint-Online.md)

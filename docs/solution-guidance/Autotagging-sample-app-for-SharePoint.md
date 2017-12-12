@@ -1,11 +1,11 @@
 ---
 title: "Autotagging Beispiel-add-in für SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 6b210688ddd9082a1199cacf0c75cc2401137ccc
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 79be82cac67ad11921b4c4477e5773efc98396e7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="autotagging-sample-add-in-for-sharepoint"></a>Autotagging Beispiel-add-in für SharePoint
 
@@ -107,13 +107,15 @@ Wenn Sie die Schaltfläche **Führen Sie Szenario 1**geklickt haben, führt das 
     
 2. Den remote-Ereignisempfänger für das ItemAdding-Ereignis erstellt.
     
-    **Hinweis**  Dieser Artikel beschreibt den Ereignistyp Empfänger ItemAdding. Im Allgemeinen führt eine höhere Leistung als das ItemAdded-Ereignisempfängertyp der Ereignistyp Empfänger ItemAdding. Die ECM. Autotagging Beispiel stellt Code für die ItemAdding und die ItemAdded-Ereignis Receiver Typen bereit.
+    > [!NOTE] 
+    > Dieser Artikel beschreibt den Ereignistyp Empfänger ItemAdding. Im Allgemeinen führt eine höhere Leistung als das ItemAdded-Ereignisempfängertyp der Ereignistyp Empfänger ItemAdding. Die ECM. Autotagging Beispiel stellt Code für die ItemAdding und die ItemAdded-Ereignis Receiver Typen bereit.
 
 3. Fügt den remote-Ereignisempfänger in die Dokumentbibliothek.
     
 Der folgende Code in die **btnScenario1_Click** -Methode der Seite "default.aspx.cs" in der ECM. AutoTaggingWeb-Projekt zeigt diese Schritte.
 
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 protected void btnScenario1_Click(object sender, EventArgs e)
@@ -340,7 +342,7 @@ public static void RemoveEventReceiver(ClientContext ctx, List list, string rece
 
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Enterprise Content Management-Lösungen für SharePoint 2013 und SharePoint Online](Enterprise-Content-Management-solutions-for-SharePoint-2013-and-SharePoint-Online.md)

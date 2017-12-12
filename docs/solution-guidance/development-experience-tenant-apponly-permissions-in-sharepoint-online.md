@@ -1,11 +1,11 @@
 ---
 title: Entwickeln mit dem Mandanten Berechtigungen mit App-Only in SharePoint Online
 ms.date: 11/03/2017
-ms.openlocfilehash: 7e4080cf1847a1dcf98d1dbb19149a4bbfa8edd5
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: fb603d082296cd7a9793c6958bdd8b44befe05d1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="developing-using-tenant-permissions-with-app-only-in-sharepoint-online"></a>Entwickeln mit dem Mandanten Berechtigungen mit App-Only in SharePoint Online
 
@@ -71,13 +71,14 @@ In Visual Studio rechten Maustaste klicken Sie auf das Webprojekt, und wählen S
 
 ![](http://i.imgur.com/Y5vAlDr.png)
 
->**HINWEIS**
+> [!NOTE] 
 > - Wenn aus irgendeinem Grund der app beim Ändern Verpacken müssen Sie es in der app-Katalog erneut bereitstellen und installieren es erneut mit Ihrer Websitesammlung für die Entwicklung
 > - Wenn Sie add-Ins sind hat einen Appinstalled Ereignisempfänger, den Sie benötigen, um sicherzustellen, dass Sie Schritt 6 durchgeführt haben, bevor Sie Schritt 5
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
+
 - [Add-in-app nur Mandanten Administratorberechtigungen in SharePoint Online](https://msdn.microsoft.com/en-us/pnp_articles/how-to-provide-add-in-app-only-tenant-administrative-permissions-in-sharepoint-online)
 - [Add-in-Berechtigungen in SharePoint 2013](https://msdn.microsoft.com/en-us/library/office/fp142383.aspx)
 - [Hinweise zur App-Manifeststruktur und zum Paket eines SharePoint-Add-Ins](https://msdn.microsoft.com/en-us/library/office/fp179918.aspx)

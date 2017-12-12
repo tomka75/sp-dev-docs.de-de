@@ -1,11 +1,11 @@
 ---
 title: "Zusammengesetzte Geschäfts-apps für SharePoint 2013 und SharePoint Online"
 ms.date: 11/03/2017
-ms.openlocfilehash: 47f819f8d9066b9f82d925c56da0a2f751d3baba
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 73bd4b9fd9d37cd72271cdce38320c8fdb3c67eb
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="composite-business-apps-for-sharepoint-2013-and-sharepoint-online"></a>Zusammengesetzte Geschäfts-apps für SharePoint 2013 und SharePoint Online
 
@@ -41,7 +41,7 @@ In der folgenden Tabelle werden die Faktoren zu berücksichtigen sind, wenn Sie 
 |[Unternehmens-Ereignis Add-in-Integration in SharePoint](Corporate-app-event-registration-with-SharePoint.md)|[BusinessApps.CorporateEventsApp](https://github.com/SharePoint/PnP/tree/master/Solutions/BusinessApps.CorporateEventsApp)|Verwenden Sie eine vom Anbieter gehosteten-add-in, um komplexe geschäftliche Aufgaben implementieren.|
 |[Aufrufen von Webdiensten in SharePoint-workflows](Call-web-services-from-SharePoint-workflows.md)|<p>[Workflow.CallCustomService](https://github.com/SharePoint/PnP/tree/master/Samples/Workflow.CallCustomService)</p><p>[Workflow.CallServiceUpdateSPViaProxy](https://github.com/SharePoint/PnP/tree/master/Samples/Workflow.CallServiceUpdateSPViaProxy)</p><p>[Workflow.AssociateToHostWeb](https://github.com/SharePoint/PnP/tree/master/Samples/Workflow.AssociateToHostWeb)</p>|Verwenden Sie vom Anbieter gehostete apps remote-Webdienste aufrufen, die Geschäftsdaten enthalten.|
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)

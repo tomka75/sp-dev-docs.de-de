@@ -1,11 +1,11 @@
 ---
 title: "Implementieren einer Lösung mit SharePoint-Website-Klassifizierung"
 ms.date: 11/03/2017
-ms.openlocfilehash: e1ab5cde87390d51a648815cce427ae4930aab85
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 366b09990039dcb23ad21bf3259d3cafe1c9cee9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="implement-a-sharepoint-site-classification-solution"></a>Implementieren einer Lösung mit SharePoint-Website-Klassifizierung
 
@@ -47,7 +47,8 @@ Wiederholen Sie diese Schritte für die Namen **MBI** und **LBI**noch zweimal. V
 
 Sie können eine benutzerdefinierte Aktion für die Website-Klassifizierung auf der Seite **Einstellungen** und das **SharePoint Fanggeräte** -Symbol einfügen. Diese Aktion ist nur verfügbar für Benutzer mit der Berechtigung **ManageWeb** . Weitere Informationen finden Sie unter [Default Custom Action Locations and IDs](http://msdn.microsoft.com/en-us/library/office/bb802730%28v=office.15%29.aspx).
 
-**Hinweis:**  Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 /// <summary>
@@ -218,7 +219,8 @@ try {
 }
 ```
 
-**Hinweis:**  Weitere Informationen finden Sie unter [Erstellen einer Liste in der Hostwebsite bei Ihrer SharePoint-add-in installiert ist, und entfernen Sie ihn aus der Liste der zuletzt verwendeten Elemente](http://blogs.technet.com/b/speschka/archive/2014/05/07/create-a-list-in-the-host-web-when-your-sharepoint-app-is-installed-and-remove-it-from-the-recent-stuff-list.aspx).
+> [!NOTE] 
+> Weitere Informationen finden Sie unter [Erstellen einer Liste in der Hostwebsite bei Ihrer SharePoint-add-in installiert ist, und entfernen Sie ihn aus der Liste der zuletzt verwendeten Elemente](http://blogs.technet.com/b/speschka/archive/2014/05/07/create-a-list-in-the-host-web-when-your-sharepoint-app-is-installed-and-remove-it-from-the-recent-stuff-list.aspx).
 
 ## <a name="add-a-classification-indicator-to-site-page"></a>Hinzufügen eines Indikators Klassifizierung zu Websiteseite
 
@@ -277,7 +279,7 @@ function setClassifier() {
 
 Erweiterungsmethode **Web.AddIndexedPropertyBagKey** können in der Datei ObjectPropertyBagEntry.cs[OfficeDevPnP.Core](https://github.com/SharePoint/PnP/tree/96eff6153389d6d21358480878de9cc8fa21abab/OfficeDevPnP.Core) Sie um die klassifizierungswerte in Website-Eigenschaftenbehälter anstelle einer Liste zu speichern. Die Methode ermöglicht Eigenschaftenbehälter durchforsteten oder durchsuchbar sein.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [SharePoint-Website Bereitstellen von Lösungen](sharepoint-site-provisioning-solutions.md)

@@ -1,10 +1,20 @@
-# <a name="migrate-existing-script-editor-web-part-customizations-to-the-sharepoint-framework"></a>Migrieren vorhandener Skript-Editor-Webpart-Anpassungen zu SharePoint Framework
+---
+title: Migrieren vorhandener Skript-Editor-Webpart-Anpassungen zu SharePoint-Framework
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 89a8252798287bf0e668d5f8a9538d1c28381eb6
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
+# <a name="migrate-existing-script-editor-web-part-customizations-to-the-sharepoint-framework"></a>Migrieren vorhandener Skript-Editor-Webpart-Anpassungen zu SharePoint-Framework
 
 SharePoint Framework ist ein neues Modell zur Erstellung von SharePoint-Anpassungen. Falls Sie Ihre clientseitigen SharePoint-Lösungen bisher mithilfe des Skript-Editor-Webparts erstellt haben, fragen Sie sich möglicherweise, welche Vorteile eine Migration zu unserem neuen Entwicklungsmodell SharePoint Framework hat. In diesem Artikel werden die verschiedenen Vorteile einer Migration vorhandener clientseitiger Anpassungen zum neuen Entwicklungsmodell SharePoint Framework beschrieben. Darüber hinaus stellen wir Ihnen verschiedene Aspekte vor, die Sie bei der Migrationsplanung berücksichtigen sollten.
 
 > Hinweis: Die Informationen in diesem Artikel gelten für Anpassungen, die mithilfe des Skript-Editor-Webparts erstellt wurden, sowie für Anpassungen, die mithilfe des Inhalts-Editor-Webparts erstellt wurden. Wann immer in diesem Artikel auf das Skript-Editor-Webpart Bezug genommen wird, sind _sowohl das Inhalts-Editor-Webpart als auch das Skript-Editor-Webpart_ gemeint.
 
-## <a name="benefit-of-migrating-existing-client-side-customizations-to-the-sharepoint-framework"></a>Vorteile einer Migration vorhandener clientseitiger Anpassungen zu SharePoint Framework
+## <a name="benefit-of-migrating-existing-client-side-customizations-to-the-sharepoint-framework"></a>Vorteile einer Migration vorhandener clientseitiger Anpassungen zu SharePoint-Framework
 
 SharePoint Framework wurde von Grund auf als ein SharePoint-Entwicklungsmodell konzipiert, das den Schwerpunkt auf die clientseitige Entwicklung legt. Während es in erster Linie Erweiterungsfunktionen für moderne Teamwebsites bietet, funktionieren SharePoint Framework-basierte Anpassungen auch in der klassischen SharePoint-Oberfläche. Wenn Sie Ihre Anpassungen mit SharePoint Framework erstellen, hat das eine Reihe von Vorteilen gegenüber der Verwendung der übrigen aktuell verfügbaren SharePoint-Entwicklungsmodelle.
 
@@ -64,7 +74,7 @@ Während das Hosting von SharePoint Framework-Lösungen in einem CDN eine Reihe
 
 [Office 365 bietet ein öffentliches CDN](https://dev.office.com/blogs/office-365-public-cdn-developer-preview-release), über das Sie Dateien aus einer spezifischen SharePoint-Dokumentbibliothek in einem CDN veröffentlichen können. Das öffentliche CDN von Office 365 ist ein guter Kompromiss zwischen den Vorteilen eines CDN und der Einfachheit des Hostings von Codedateien in einer SharePoint-Dokumentbibliothek. Wenn Ihre Organisation kein Problem darin sieht, Codedateien öffentlich verfügbar zu machen, ist das öffentliche CDN von Office 365 eine interessante Option.
 
-## <a name="differences-between-sharepoint-framework-solutions-and-script-editor-web-part-customizations"></a>Unterschiede zwischen SharePoint Framework-Lösungen und Skript-Editor-Webpart-Anpassungen
+## <a name="differences-between-sharepoint-framework-solutions-and-script-editor-web-part-customizations"></a>Unterschiede zwischen SharePoint-Framework-Lösungen und Skript-Editor-Webpart-Anpassungen
 
 SharePoint-Anpassungen auf SharePoint Framework-Basis und SharePoint-Anpassungen auf Basis des Skript-Editor-Webparts sind einander sehr ähnlich. Beide Anpassungstypen werden als Teil der Seite im Kontext des aktuellen Benutzers ausgeführt und mit clientseitigem JavaScript programmiert. Es gibt aber auch einige wesentliche Unterschiede, die Ihre Architekturentscheidungen beeinflussen könnten und die Sie daher beim Lösungsentwurf berücksichtigen sollten.
 
@@ -86,13 +96,13 @@ SharePoint Framework gibt der IT-Abteilung die Kontrolle zurück. Da SharePoint
 
 Bei der Erstellung von Anpassungen mithilfe des Skript-Editor-Webparts hatten Citizen Developers die Kontrolle über das gesamte DOM ihrer Anpassung. Es gab keine Richtlinien hinsichtlich der Benutzeroberfläche oder der Funktionsweise von Anpassungen. Im Ergebnis erstellte jeder Entwickler seine Anpassungen anders, und die Endbenutzer waren mit vielen unterschiedlichen Benutzeroberflächen konfrontiert.
 
-Eines der Ziele von SharePoint Framework ist die Standardisierung der Erstellung clientseitiger Anpassungen. Es soll Einheitlichkeit erreicht werden, von der Bereitstellung über die Pflege bis hin zur Benutzeroberfläche. Mithilfe von [Office UI Fabric](http://dev.office.com/fabric) können Entwickler ihre benutzerdefinierten Lösungen leichter so gestalten, dass sie im Hinblick auf visuelles Design und Verhalten wie ein integraler Bestandteil von SharePoint wirken. Das fördert die Akzeptanz auf Benutzerseite. Die SharePoint Framework-Toolkette generiert Paketdateien für die Lösungen, die im App-Katalog bereitgestellt werden, sowie Skriptbundles, die an einem frei wählbaren Hostingspeicherort bereitgestellt werden. Aufbau und Verwaltungsprozess sind bei jeder Lösung gleich.
+Eines der Ziele von SharePoint-Framework ist die Standardisierung der Erstellung clientseitiger Anpassungen. Es soll Einheitlichkeit erreicht werden, von der Bereitstellung über die Pflege bis hin zur Benutzeroberfläche. Mithilfe von [Office UI Fabric](http://dev.office.com/fabric) können Entwickler ihre benutzerdefinierten Lösungen leichter so gestalten, dass sie im Hinblick auf visuelles Design und Verhalten wie ein integraler Bestandteil von SharePoint wirken. Das fördert die Akzeptanz auf Benutzerseite. Die SharePoint Framework-Toolkette generiert Paketdateien für die Lösungen, die im App-Katalog bereitgestellt werden, sowie Skriptbundles, die an einem frei wählbaren Hostingspeicherort bereitgestellt werden. Aufbau und Verwaltungsprozess sind bei jeder Lösung gleich.
 
 ### <a name="dont-modify-dom-outside-of-the-customization"></a>Keine DOM-Modifizierung außerhalb der Anpassung
 
 In der Vergangenheit wurden Skript-Editor-Webparts häufig eingesetzt, um Teile einer Seite zu ändern, so beispielsweise um die Symbolleiste um zusätzliche Schaltflächen zu erweitern oder die Überschrift oder das Branding der Seite anzupassen. Solche Anpassungen waren von bestimmten DOM-Elementen abhängig; bei jeder Aktualisierung der SharePoint-Benutzeroberfläche bestand daher ein Risiko, das sie anschließend nicht mehr funktionierten.
 
-SharePoint Framework fördert eine strukturierte und zuverlässige Vorgehensweise bei der Anpassung von SharePoint. Statt spezifische DOM-Elemente zur Anpassung von SharePoint zu verwenden, gibt SharePoint Framework Entwicklern eine öffentliche API an die Hand, mit deren Hilfe sie SharePoint erweitern können. Aktuell unterstützt SharePoint Framework als Form ausschließlich clientseitige Webparts. Die zukünftige Implementierung von Unterstützung für weitere Formen wie beispielsweise JSLink-Äquivalenten und benutzerdefinierten Benutzeraktionen wird aktuell [geprüft](https://dev.office.com/sharepoint/docs/spfx/roadmap). Ziel ist es, dass Entwickler mit SharePoint Framework die gängigsten Anpassungsszenarien implementieren können.
+SharePoint-Framework fördert eine strukturierte und zuverlässige Vorgehensweise bei der Anpassung von SharePoint. Statt spezifische DOM-Elemente zur Anpassung von SharePoint zu verwenden, gibt SharePoint Framework Entwicklern eine öffentliche API an die Hand, mit deren Hilfe sie SharePoint erweitern können. Aktuell unterstützt SharePoint Framework als Form ausschließlich clientseitige Webparts. Die zukünftige Implementierung von Unterstützung für weitere Formen wie beispielsweise JSLink-Äquivalenten und benutzerdefinierten Benutzeraktionen wird aktuell [geprüft](https://dev.office.com/sharepoint/docs/spfx/roadmap). Ziel ist es, dass Entwickler mit SharePoint Framework die gängigsten Anpassungsszenarien implementieren können.
 
 ### <a name="distributed-as-packages"></a>Verteilung im Paketformat
 
@@ -110,7 +120,7 @@ Mit SharePoint Framework können Entwickler bei der Lösungserstellung das Type
 
 In der Vergangenheit nutzten Entwickler bei der Erstellung wiederverwendbarer clientseitiger Anpassungen das JavaScript-Objekt **spPageContextInfo**, um Informationen über die aktuelle Seite, die aktuelle Website oder den aktuellen Benutzer abzurufen. Dieses Objekt bot eine einfache Möglichkeit, die Lösung auf mehreren SharePoint-Websites wiederzuverwenden und feste URLs zu vermeiden.
 
-Doch obwohl das Objekt **spPageContextInfo** auf klassischen SharePoint-Seiten noch im Einsatz ist, lässt es sich mit modernen SharePoint-Seiten und -Bibliotheken nicht zuverlässig verwenden. Entwicklern von SharePoint Framework-Lösungen empfehlen wir stattdessen die Verwendung des Objekts **[IWebPartContext.pageContext](https://dev.office.com/sharepoint/reference/spfx/sp-webpart-base/iwebpartcontext) **, das die Kontextinformationen der jeweiligen Lösung enthält.
+Doch obwohl das Objekt **spPageContextInfo** auf klassischen SharePoint-Seiten noch im Einsatz ist, lässt es sich mit modernen SharePoint-Seiten und -Bibliotheken nicht zuverlässig verwenden. Entwicklern von SharePoint Framework-Lösungen empfehlen wir stattdessen die Verwendung des Objekts **[IWebPartContext.pageContext](https://dev.office.com/sharepoint/reference/spfx/sp-webpart-base/iwebpartcontext)**, das die Kontextinformationen der jeweiligen Lösung enthält.
 
 ### <a name="no-access-to-sharepoint-javascript-object-model-by-default"></a>Kein standardmäßiger Zugriff auf das SharePoint JavaScript-Objektmodell
 
@@ -120,7 +130,7 @@ In der modernen SharePoint-Benutzeroberfläche ist SharePoint JSOM nicht standa
 
 Microsoft investiert nicht mehr aktiv in JSOM. Wenn Sie die Arbeit mit einer API bevorzugen, können Sie alternativ die [SharePoint Patterns and Practices JavaScript Core Library](https://github.com/SharePoint/PnP-JS-Core) verwenden, die eine Fluent-API sowie TypeScript-Typisierungen bietet.
 
-## <a name="migrate-existing-customization-to-the-sharepoint-framework"></a>Migrieren vorhandener Anpassungen zu SharePoint Framework
+## <a name="migrate-existing-customization-to-the-sharepoint-framework"></a>Migrieren vorhandener Anpassungen zu SharePoint-Framework
 
 Eine Migration vorhandener Skript-Editor-Webpart-Anpassungen zu SharePoint Framework hat sowohl für Endbenutzer als auch für Entwickler Vorteile. Wenn Sie sich für eine Migration vorhandener Anpassungen zu SharePoint Framework entscheiden, können Sie entweder so viel ihrer vorhandenen Skripts wie möglich wiederverwenden oder die Anpassung komplett neu schreiben.
 
@@ -128,7 +138,7 @@ Eine Migration vorhandener Skript-Editor-Webpart-Anpassungen zu SharePoint Fram
 
 Wenn Sie vorhandene Skript-Editor-Webpart-Anpassungen zu SharePoint Framework migrieren, können Sie Ihre bereits vorhandenen Skripts wiederverwenden. Obwohl SharePoint Framework gezielt auf die Verwendung von TypeScript ausgelegt ist, können Sie problemlos reines JavaScript verwenden und Ihren Code schrittweise auf TypeScript umstellen. Falls Sie eine Lösung nur während eines bestimmten Zeitraums unterstützen müssen oder Ihr Budget begrenzt ist, ist diese Strategie vielleicht ausreichend.
 
-Es ist nicht immer möglich, bereits vorhandene Skripts in einer SharePoint Framework-Lösung wiederzuverwenden. SharePoint Framework-Lösungen werden beispielsweise als JavaScript-Module verpackt und laden asynchron auf der Seite. Einige JavaScript-Bibliotheken funktionieren aber nicht einwandfrei, wenn sie in einem Modul referenziert werden, oder müssen auf eine bestimmte Art und Weise referenziert werden. Darüber hinaus können die Einbindung von Seitenereignissen wie `onload` oder der Einsatz der jQuery-Funktion `ready` zu unerwünschten Ergebnissen führen.
+Es ist nicht immer möglich, bereits vorhandene Skripts in einer SharePoint-Framework-Lösung wiederzuverwenden. SharePoint Framework-Lösungen werden beispielsweise als JavaScript-Module verpackt und laden asynchron auf der Seite. Einige JavaScript-Bibliotheken funktionieren aber nicht einwandfrei, wenn sie in einem Modul referenziert werden, oder müssen auf eine bestimmte Art und Weise referenziert werden. Darüber hinaus können die Einbindung von Seitenereignissen wie `onload` oder der Einsatz der jQuery-Funktion `ready` zu unerwünschten Ergebnissen führen.
 
 In Anbetracht der Vielzahl von JavaScript-Bibliotheken lässt sich vorab kaum einschätzen, ob Ihre vorhandenen Skripts in einer gegebenen SharePoint Framework-Lösung wiederverwendet werden können oder ob Sie die Anpassung doch neu schreiben müssen. Sie haben nur die Möglichkeit, die einzelnen Komponenten in eine SharePoint Framework-Lösung zu überführen und zu testen, ob sie wie erwartet funktionieren.
 
@@ -146,7 +156,7 @@ Bei der Umgestaltung vorhandener Skript-Editor-Webpart-Anpassungen in SharePoint
 
 #### <a name="move-existing-code-to-sharepoint-framework"></a>Überführen des vorhandenen Codes nach SharePoint Framework
 
-SharePoint-Anpassungen auf Basis des Skript-Editor-Webparts bestehen oft aus in das Webpart integriertem HTML-Markup und einem oder mehreren Verweisen auf JavaScript-Dateien. Wenn Sie eine vorhandene Anpassung in eine SharePoint Framework-Lösung überführen, müssen Sie das HTML-Markup aus dem Skript-Editor-Webpart höchstwahrscheinlich in die Methode **render** des clientseitigen SharePoint Framework-Webparts verschieben. Verweise auf externe Skripts müssen in Verweise in der Eigenschaft **externals** in der Datei **config.json** umgeändert werden. Interne Skripts müssen Sie in den Quellordner des Webparts kopieren und mithilfe von Anweisungen des Typs **require()** aus der Webpartklasse referenzieren.
+SharePoint-Anpassungen auf Basis des Skript-Editor-Webparts bestehen oft aus in das Webpart integriertem HTML-Markup und einem oder mehreren Verweisen auf JavaScript-Dateien. Wenn Sie eine vorhandene Anpassung in eine SharePoint-Framework-Lösung überführen, müssen Sie das HTML-Markup aus dem Skript-Editor-Webpart höchstwahrscheinlich in die Methode **render** des clientseitigen SharePoint Framework-Webparts verschieben. Verweise auf externe Skripts müssen in Verweise in der Eigenschaft **externals** in der Datei **config.json** umgeändert werden. Interne Skripts müssen Sie in den Quellordner des Webparts kopieren und mithilfe von Anweisungen des Typs **require()** aus der Webpartklasse referenzieren.
 
 #### <a name="reference-functions-from-script-files"></a>Referenzieren von Funktionen aus Skriptdateien
 

@@ -1,11 +1,11 @@
 ---
 title: "Nur-App- und erhöhten Berechtigungen in der SharePoint-add-in-Objektmodell"
 ms.date: 11/03/2017
-ms.openlocfilehash: 126e9e578d517c3076b9b6e7153df81506538dc0
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 9bcdbe3f5bb31e0c01fac300bb237bf0134c84a1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 <a name="app-only-and-elevated-privileges-in-the-sharepoint-add-in-model"></a>Nur-App- und erhöhten Berechtigungen in der SharePoint-add-in-Objektmodell
 ===============================================================
@@ -25,7 +25,11 @@ In der Regel von einer Ziehpunkt möchten wir die folgenden allgemeinen Richtlin
 - AllowAppOnlyPolicy funktioniert nicht mit 
     + Suche – Wenn Ziel SharePoint lokal ist. SharePoint Online-Unterstützung wurden ([Blogbeitrag](https://blogs.msdn.microsoft.com/vesku/2016/03/07/using-add-in-only-app-only-permissions-with-search-queries-in-sharepoint-online/)) hinzugefügt
     + Profil CSOM Benutzervorgänge, mit der Ausnahme, dass der Benutzerprofil Bulk Update-API mit nur-app-Berechtigungen verwendet werden können
-    + Aktualisieren der Taxonomie Diensteinträge (Schreiben) - Works lesen **Hinweis:** In diesen Szenarien Sie ein bestimmtes Dienstkonto verwenden müssen.
+    + Aktualisieren der Taxonomie Diensteinträge (Schreiben) - Works lesen
+    
+    > [!NOTE] 
+    > In diesen Szenarien müssen Sie ein bestimmtes Dienstkonto verwenden.
+
 - AllowAppOnlyPolicy ähnelt RunWithElevatedPrivileges, aber nicht genau.
     + AllowAppOnlyPolicy führt Code basierend auf die Berechtigungen für das SharePoint Add-in, nicht im Auftrag einer anderen Benutzers, der die entsprechenden Berechtigungen zum Ausführen eines Vorgangs hat.
 

@@ -2,11 +2,11 @@
 title: Bereitstellen von "modernen" Teamwebsites programmgesteuert
 description: "Bereitstellen einer Teamwebsite über die Benutzeroberfläche oder mit Plug & Play-CSOM Core oder Plug & Play-PowerShell."
 ms.date: 11/08/2017
-ms.openlocfilehash: 65b9637167045b4fa92728ab3266c336fdfe6ad2
-ms.sourcegitcommit: 4ea7e9cb1efb53f89da236282002956739d77418
+ms.openlocfilehash: 137629c7d1e9aaf55ac7709b07c4ad478202bfdc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="provisioning-modern-team-sites-programmatically"></a>Bereitstellen von "modernen" Teamwebsites programmgesteuert
 
@@ -125,7 +125,7 @@ Wenn Sie eine Unterwebsite unter der Stammwebsite einer Websitesammlung "moderne
 
 "Modernen" Teamwebsites werden nicht in der SharePoint-Admin-Benutzeroberfläche angezeigt. Sie können die Liste der "modernen" Teamwebsites von der Benutzeroberfläche von Office 365 Gruppen Admin unter der Office 365-Verwaltungsportals zugreifen. Die SharePoint Online-Admin-Benutzeroberfläche sind nur "klassische" SharePoint-Websites aufgeführt. Dieselbe Einschränkung gilt nicht für den Mandanten API; Diese API können zusammen mit "klassische" Teamwebsites "modernen" Teamwebsites aufgelistet werden. Um eine Liste der nur "modernen" Teamwebsites zu erhalten, können Sie die Gruppen-Endpunkt aus der Microsoft Graph-API verwenden.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 
 - [Anpassen der „modernen“ Benutzeroberflächen in SharePoint Online](modern-experience-customizations.md)
 - [Was ist eine SharePoint-Teamwebsite?](https://support.office.com/en-US/article/What-is-a-SharePoint-team-site-75545757-36c3-46a7-beed-0aaa74f0401e?ui=en-US&rs=en-US&ad=US)

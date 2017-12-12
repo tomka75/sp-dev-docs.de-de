@@ -1,11 +1,11 @@
 ---
 title: "Sandkasten-Transformation ausgesprochen - Ereignisempfänger"
 ms.date: 11/03/2017
-ms.openlocfilehash: 1e49fa9b9afdb06eb9ea4ec09a866eccf703cbf7
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 1002efd2edd5d7146163d79e50c8280ac0fe0f87
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sandbox-solution-transformation-guidance---event-receivers"></a>Sandkasten-Transformation ausgesprochen - Ereignisempfänger 
 In diesem Artikel helfen Ihnen, um Optionen und Strategien zum Austauschen von vorhandenen Ereignisempfänger aus Ihrer sandkastenlösungen zu identifizieren.
@@ -54,7 +54,7 @@ Ansatz verwenden Sie zum Verarbeiten von Ereignissen in SharePoint unterscheidet
 ## <a name="removing-your-sandbox-code-from-your-site"></a>Entfernen des Sandkasten-Codes aus Ihrer Website
 <a name="sectionSection3"></a>Wenn Sie Ihre vorhandenen Sandkasten-Lösung aus Ihrer Websites deaktivieren, alle Elemente oder Dateien, die mithilfe von deklarativer Optionen bereitgestellt werden nicht jedoch entfernt werden, die Features in der Sandkasten-Projektmappe werden automatisch deaktiviert und das Ereignis Receiver(s) entfernt werden . 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 -  [Entfernen codebasierte Sandkastenlösungen in SharePoint Online](http://dev.office.com/blogs/removing-code-based-sandbox-solutions-in-sharepoint-online)
 -  [Hilfestellung zur Transformation von Sandkastenlösungen](https://msdn.microsoft.com/en-us/pnp_articles/sandbox-solution-transformation-guidance)

@@ -1,11 +1,11 @@
 ---
 title: "SharePoint-Website branding und Seite Anpassung Lösungen"
 ms.date: 11/03/2017
-ms.openlocfilehash: 6d522af8f85a750656ef53b00785591bac4f93b4
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: f2779fa66451fd6fb477cde3d9294271ebfe0600
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-site-branding-and-page-customization-solutions"></a>SharePoint-Website branding und Seite Anpassung Lösungen
 
@@ -70,7 +70,7 @@ In diesem Abschnitt basiert auf Ihr Wissen über [SharePoint-Entwicklung und Des
 | [Aktualisieren Sie das branding der vorhandenen SharePoint-Websites und Bereiche der Seite](update-the-branding-of-existing-sharepoint-sites-and-page-regions.md) | Passen Sie an und aktualisieren Sie das branding von vorhandenen SharePoint-Websites und Regionen von SharePoint-Seiten, einschließlich des Menübands, der Websitenavigation, im Menü Einstellungen, die Strukturansicht und dem Seiteninhalt.
 |[Anpassen der OneDrive für Unternehmen Websitebranding](Customization-Options-For-OD4B-Sites.md)| Anpassen der OneDrive für Websites mit Geschäftsdaten in Office 365 oder über das Add-In Modell je nach den Anforderungen der Organisation.|
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Branding und Bereitstellen von Lösungen für SharePoint 2013 und SharePoint Online-Website](Branding-and-site-provisioning-solutions-for-SharePoint.md)

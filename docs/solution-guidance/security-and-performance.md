@@ -1,11 +1,11 @@
 ---
 title: Sicherheit und Leistung
 ms.date: 11/03/2017
-ms.openlocfilehash: f59b4de84742f9c8fc82bf0ccc7a0891860833e8
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 2e7cd37db5251e50edb099135b1e65a489266006
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="security-and-performance"></a>Sicherheit und Leistung
 
@@ -22,7 +22,7 @@ Die Artikel in diesem Abschnitt zeigen, wie zur Verbesserung der Sicherheit und 
 |[Behandeln von SharePoint Online-Einschränkung](Handle-SharePoint-Online-throttling-by-using-exponential-back-off.md) | Erfahren Sie, wie Drosselungen in SharePoint Online mithilfe der exponentiellen Back-off Technik behandeln. |
 |[JavaScript-Muster und Leistung](javascript-patterns-and-performance.md)| Hier erfahren Sie, welche JavaScript-Techniken, die Sie verwenden können, um Ihre Add-in-Leistung zu verbessern.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)

@@ -1,11 +1,11 @@
 ---
 title: Informationsverwaltungsrichtlinie in der SharePoint-add-in-Objektmodell
 ms.date: 11/03/2017
-ms.openlocfilehash: f395b7fa40f4798b2184bd637ca752c468b9289d
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 6b98c863dd21c5769ee03f3898970c90ee46e08c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 <a name="information-management-policy-in-the-sharepoint-add-in-model"></a>Informationsverwaltungsrichtlinie in der SharePoint-add-in-Objektmodell
 ============================================================
@@ -29,7 +29,8 @@ In der Regel von einer Ziehpunkt möchten wir die folgenden high Level Richtlini
 - Stellen Sie sicher, dass Sie nicht die Grenzwerte für die SharePoint-API für Office 365 Throttle verletzt werden beim Arbeiten mit großen Datenmengen und rekursive crawlt beim Überprüfen von Artefakten in Ihrer SharePoint-Websites und Informationsverwaltungsrichtlinien für diese entsprechend anzuwenden.
     + Die [Core.Throttling (O365 Plug & Play-Beispiel)](https://github.com/SharePoint/PnP/tree/master/Samples/Core.Throttling) wird gezeigt, wie intelligent Code SharePoint-API für Office 365-Einschränkung zu schreiben.
 
-**Hinweis:** Das CSOM hat derzeit keine Methoden verwenden, um die Aufbewahrung für Inhaltstypen (nur auf Websites) festgelegt.
+> [!NOTE] 
+> Das CSOM hat derzeit keine Methoden verwenden, um die Aufbewahrung für Inhaltstypen (nur auf Websites) festgelegt.
 
 **Erste Schritte**
 

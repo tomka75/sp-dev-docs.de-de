@@ -1,17 +1,18 @@
 ---
 title: "Richtlinien für die Entwicklung von SharePoint Online-Portale gut"
 ms.date: 11/03/2017
-ms.openlocfilehash: 3ec4237011796d6257378204f9d5ee5cb13db372
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 130ed5a14019633298cbee0f5321d0a15284076a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="guidelines-for-developing-well-performing-sharepoint-online-portals"></a>Richtlinien für die Entwicklung von SharePoint Online-Portale gut
 
 Lokale SharePoint-wurde, und ist eine häufig verwendete Plattform zum Erstellen von Unternehmensportale (auch bekannt als Intranets). Sie können ähnliche Portale SharePoint Online sowie, da jedoch SharePoint Online von einer Infrastruktur Architektur Sicht unterscheidet, ist es wichtig, die in der SharePoint Online spezifische Leistungsaspekte Faktor bei der Entwicklung Ihrer neuen, erstellen Portal. Diese Gruppe von Artikeln erhalten Hinweise auf die wichtigsten Portal Design Bereiche Sie.
 
->**Hinweis**: Obwohl dieser Anleitung SharePoint Online gerichtet ist die meisten davon gilt auch für Portale in einer lokalen SharePoint-Umgebung gehostet wird.
+> [!NOTE] 
+> Obwohl dieser Anleitung SharePoint Online Zielgruppenadressierung ist die meisten davon gilt auch für Portale in einer lokalen SharePoint-Umgebung gehostet wird.
 
 _**Gilt für:** SharePoint Online_
 
@@ -30,7 +31,8 @@ Diese Anleitung ist vollständig open-Source, und wir empfehlen die Gemeinschaft
 - Wenn Sie eine Erläuterung des Inhalts starten möchten, erstellen Sie ein Problem in der Problemliste
 - Verzweigen Sie das Repository, nehmen Sie Änderungen in den Artikeln und erstellen Sie eine Pull-Anforderung. Vielen Dank für Ihre Beiträge und unsere MSDN veröffentlichen System haben Sie darüber, wie die Seite Mitwirkender Freigabemodus Pull-Anforderung angenommen wurde
 
->**Hinweis**: Es werden werden weitere weiterentwickelt dieser Anleitung durch Hinzufügen, Beispiele, zusätzliche Insights, Integration von neuen Funktionen von SharePoint Online und wir freuen absolut Community Feedback und Beiträge.
+> [!NOTE] 
+> Wir werden werden weitere weiterentwickelt dieser Anleitung durch Hinzufügen, Beispiele, zusätzliche Insights, Integration von neuen Funktionen von SharePoint Online, und wir freuen absolut Community Feedback und Beiträge.
 
 ## <a name="whats-the-audience-were-targeting-with-these-guidelines"></a>Was ist die Benutzergruppe, die wir mit diesen Richtlinien abzielen?
 <a name="sectionSection1"></a> Den meisten Abschnitten verwenden Inhaltsadressierung Portal Entwickler für, jedoch wenn Sie nicht über ein Entwickler Hintergrund haben dann It des empfohlen, um über diese Richtlinien zu gelangen, wie es weitere allgemeine Bereiche wie die **Informationsarchitektur**, **Branding erörtert** und **Wechseln Sie Live**.

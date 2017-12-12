@@ -1,11 +1,11 @@
 ---
 title: "Synchronisieren Sie-add-in für SharePoint-Gruppen Beispiel Begriff"
 ms.date: 11/03/2017
-ms.openlocfilehash: adab11d4e63975ce0f44cf1b701c9b84f94334e3
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 4d78f316ad42639db4e8932515c574d867d421fc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="synchronize-term-groups-sample-add-in-for-sharepoint"></a>Synchronisieren Sie-add-in für SharePoint-Gruppen Beispiel Begriff
 
@@ -88,7 +88,8 @@ Sie können die Parameter _TermGroupExclusions_, _TermGroupToCopy_und _TermSetIn
 
 Im folgenden Codebeispiel wird die Verwendung der Methods **CopyNewTermGroups** und **CreateNewTargetTermGroup** MMSSyncManager.cs.
 
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 public bool CopyNewTermGroups(ClientContext sourceContext, ClientContext targetContext, List<string> termGroupExclusions = null, string termGroupToCopy = null)
@@ -263,7 +264,8 @@ private void CreateNewTargetTermGroup(ClientContext sourceClientContext, ClientC
 
 Bei der Auswahl von **Änderungen an**das Add-in werden Sie aufgefordert, geben Sie einen Begriff Gruppe zum Synchronisieren, und klicken Sie dann die **ProcessChanges** -Methode in MMSSyncManager.cs. **ProcessChanges** verwendet die **GetChanges** -Methode der **ChangedInformation** -Klasse, um alle Änderungen an Gruppen, Ausdruckssätze und Ausdrücke in der Quelle verwalteten Metadatendienst abzurufen. Änderungen werden klicken Sie dann auf das Ziel verwalteten Metadatendienst angewendet.
 
-**Hinweis**  Dieses Dokument enthält nur einige Teile der **ProcessChanges** -Methode. Um die gesamte Methode zu überprüfen, öffnen Sie die Core.MMSSync-Lösung in Visual Studio.
+> [!NOTE] 
+> Dieses Dokument enthält nur einige Teile der **ProcessChanges** -Methode. Um die gesamte Methode zu überprüfen, öffnen Sie die Core.MMSSync-Lösung in Visual Studio.
 
 Die **ProcessChanges** -Methode startet, indem Sie ein **TaxonomySession** -Objekt zu erstellen.
 
@@ -343,7 +345,7 @@ Der folgende Code zeigt, wie Sie einen Löschvorgang auszuführen, wenn einer Be
 
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Enterprise Content Management-Lösungen für SharePoint 2013 und SharePoint Online](Enterprise-Content-Management-solutions-for-SharePoint-2013-and-SharePoint-Online.md)

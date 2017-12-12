@@ -2,11 +2,11 @@
 title: Anpassen der "modernen" Erfahrungen in SharePoint Online
 description: "Sie erhalten ein Überblick über Schritte mithilfe von \"modernen\" dieser Kommunikationskanäle in SharePoint Online."
 ms.date: 11/08/2017
-ms.openlocfilehash: 542949a350ed6b3a36c81fcb8a30c56dfbd8bf32
-ms.sourcegitcommit: 4ea7e9cb1efb53f89da236282002956739d77418
+ms.openlocfilehash: aa1bbf607dbe1a38944a0912a28e85fede8422e1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="customizing-the-modern-experiences-in-sharepoint-online"></a>Anpassen der "modernen" Erfahrungen in SharePoint Online
 
@@ -62,7 +62,7 @@ In der Standardeinstellung "klassische" SharePoint-Websites "moderne" Seiten fü
 Die "modernen" guter SharePoint sind derzeit nicht für lokale SharePoint-verfügbar. Als Teil des SharePoint 2016 Feature Pack "moderne" Erfahrungen erhalten eine Einführung in die OneDrive for Business-Erfahrung, und nutzen können Sie von der SharePoint-Framework clientseitige Webparts klassische Seite Oberfläche.
 
 <a name="bk_addresources"> </a>
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 
 -  [Erstellen von verbundenen SharePoint Online Teamwebsites in Sekunden](https://blogs.office.com/en-us/2016/11/08/create-connected-sharepoint-online-team-sites-in-seconds/)
 -  [Neue Funktionen in SharePoint Online, einschließlich der Integration mit Office 365 Gruppen Teamwebsites](https://blogs.office.com/en-us/2016/08/31/new-capabilities-in-sharepoint-online-team-sites-including-integration-with-office-365-groups/)

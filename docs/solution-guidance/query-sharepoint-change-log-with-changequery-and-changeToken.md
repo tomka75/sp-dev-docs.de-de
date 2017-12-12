@@ -1,11 +1,11 @@
 ---
 title: "Abfragen von SharePoint-Änderungsprotokoll mit komplexer ChangeQuery und komplexer ChangeToken"
 ms.date: 11/03/2017
-ms.openlocfilehash: 79458791659ce0e750446d22d49564ff6998db1a
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: b255a298743e00c4616b691d4671ec5bea7c4463
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="query-sharepoint-change-log-with-changequery-and-changetoken"></a>Abfragen von SharePoint-Änderungsprotokoll mit komplexer ChangeQuery und komplexer ChangeToken
 
@@ -83,7 +83,8 @@ In Program.cs Anrufe **Main** **DoWork** zum Lesen und Verarbeiten von SharePoin
     
     3. Die neue Nummer festgelegt im Zeit zum Lesen von Änderungen aus dem Änderungsprotokoll. Wenn Änderungen an der Liste (die in **Coll**zurückgegeben wurde) vorhanden sind, legen **ChangeTokenStart** zum letzten Datum und Uhrzeit des ändern.
 
-**Hinweis:**  Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 private static void DoWork()
@@ -171,7 +172,7 @@ private static void DoWork()
         }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)

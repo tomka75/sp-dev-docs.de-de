@@ -1,11 +1,11 @@
 ---
 title: "Lokalisieren von UI-Elemente Beispiel-add-in für SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: e97db9ff902347015c47cfdb6605ec74072459ed
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 2bf8abc77c9cbe3058fba8544400bea1a6b405c7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="localize-ui-elements-sample-add-in-for-sharepoint"></a>Lokalisieren von UI-Elemente Beispiel-add-in für SharePoint
 
@@ -15,7 +15,8 @@ _**Gilt für:** Office 365 | SharePoint 2013 | SharePoint Online_
     
 [Core.JavaScriptCustomization](https://github.com/SharePoint/PnP/tree/master/Samples/Core.JavaScriptCustomization) -Beispiel-add-in zeigt, wie JavaScript verwenden, um der Textwert der SharePoint-UI-Element mit einem Wert übersetzten Text zu ersetzen, die aus einer Ressourcendatei JavaScript wiedergegeben wird. 
 
-**Hinweis**  Sie sind verantwortlich für die Verwaltung der übersetzten Textwerte in der JavaScript-Ressourcendatei. 
+> [!NOTE] 
+> Sie sind verantwortlich für die Verwaltung der übersetzten Textwerte in der JavaScript-Ressourcendatei. 
 
 In diesem Codebeispiel wird eine vom Anbieter gehosteten add-in, verwendet:
 
@@ -60,9 +61,11 @@ Konfigurieren Sie bevor Sie dieses Codebeispiel ausführen die Language-Einstell
     
 5. Wählen Sie **Speichern und schließen**.
 
-**Hinweis**  Es kann für Ihre Website, um die ausgewählten Sprache(n) Rendern ein paar Minuten dauern.
+> [!NOTE] 
+> Es kann für Ihre Website, um die ausgewählten Sprache(n) Rendern ein paar Minuten dauern.
 
-**Wichtige**  Das CSOM ist mit neuen Features in regelmäßigen Abständen aktualisiert. Wenn das CSOM neue Features zum Aktualisieren der Websiteseite oder Schnellstartleiste Link Titel bereitstellt, wird empfohlen, dass Sie die neuen Features in der CSOM nicht die hier beschriebenen Optionen verwenden.
+> [!IMPORTANT] 
+> Das CSOM ist mit neuen Features in regelmäßigen Abständen aktualisiert. Wenn das CSOM neue Features zum Aktualisieren der Websiteseite oder Schnellstartleiste Link Titel bereitstellt, wird empfohlen, dass Sie die neuen Features in der CSOM nicht die hier beschriebenen Optionen verwenden.
 
 **Abbildung 1. Festlegen der Sprache für eine Website**
 
@@ -102,11 +105,11 @@ Bevor Sie dieses Codebeispiel [Szenario 2](#bk_Scenario2) ausführen, führen Si
     
 3. Wählen Sie **Erstellen**.
     
-4. Enter  **Test page** in the body of the page.
+4. Geben Sie im Textkörper der Seite **Testseite** .
     
 5. Wählen Sie **Speichern**aus.
 
-## <a name="using-the-corejavascriptcustomization-sample-app"></a>Using the Core.JavaScriptCustomization sample app
+## <a name="using-the-corejavascriptcustomization-sample-app"></a>Verwenden die Core.JavaScriptCustomization Beispiel-app
 <a name="sectionSection1"> </a>
 
 Wenn Sie dieses Codebeispiel ausführen, wird eine vom Anbieter gehostete Anwendung angezeigt, wie in Abbildung 5 dargestellt. Dieser Artikel beschreibt Szenario 1 und 2 Szenario, da Sie die Techniken, die in Szenario 1 und 2 Szenario verwenden könnten, um lokalisierte Versionen der Websiteseite und Schnellstartleiste Link Titel bereitzustellen. 
@@ -126,7 +129,8 @@ Abbildung 6 zeigt die Startseite für Szenario 1.
 
 Die **AddJSLink** -Methode ist Teil der Datei JavaScriptExtensions.cs in **OfficeDevPnP.Core**.  **AddJSLink** erfordert, dass eine Zeichenfolge zur Darstellung des Bezeichners der benutzerdefinierten Aktion zugewiesen bereit, und eine Zeichenfolge mit einer durch Semikolons getrennte Liste der URLs auf die JavaScript-Dateien, die Sie mit der Hostwebsite hinzufügen möchten. Beachten Sie, dass dieses Codebeispiel einen Verweis auf Scripts\scenario1.js, fügt die eine Meldung in der Statusleiste mit der Hostwebsite hinzufügt.
     
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```
 protected void btnSubmit_Click(object sender, EventArgs e)
@@ -139,7 +143,8 @@ protected void btnSubmit_Click(object sender, EventArgs e)
         }
 ```
    
-**Hinweis**  SharePoint 2013 verwendet minimale Downloadstrategie, um die Datenmenge zu reduzieren Browser heruntergeladen wird, wenn Benutzer zwischen den Seiten auf einer SharePoint-Website navigieren. Weitere Informationen finden Sie unter [Übersicht über die minimale Downloadstrategie](http://msdn.microsoft.com/library/9caa7d99-1e74-4889-96c7-ba5a10772ad7.aspx). In scenario1.js stellt der folgende Code, und zwar unabhängig davon, ob minimale Downloadstrategie auf Ihrer SharePoint-Website verwendet wird, die **RemoteManager_Inject** -Methode immer aufgerufen wird, um den JavaScript-Code zum Hinzufügen von Meldung in der Statuszeile mit der Hostwebsite ausführen.
+> [!NOTE] 
+> SharePoint 2013 verwendet minimale Downloadstrategie, um die Datenmenge zu reduzieren Browser heruntergeladen wird, wenn Benutzer zwischen den Seiten auf einer SharePoint-Website navigieren. Weitere Informationen finden Sie unter [Übersicht über die minimale Downloadstrategie](http://msdn.microsoft.com/library/9caa7d99-1e74-4889-96c7-ba5a10772ad7.aspx). In scenario1.js stellt der folgende Code, und zwar unabhängig davon, ob minimale Downloadstrategie auf Ihrer SharePoint-Website verwendet wird, die **RemoteManager_Inject** -Methode immer aufgerufen wird, um den JavaScript-Code zum Hinzufügen von Meldung in der Statuszeile mit der Hostwebsite ausführen.
 
 ```
 if ("undefined" != typeof g_MinimalDownload &amp;&amp; g_MinimalDownload &amp;&amp; (window.location.pathname.toLowerCase()).endsWith("/_layouts/15/start.aspx") &amp;&amp; "undefined" != typeof asyncDeltaManager) {
@@ -151,7 +156,8 @@ if ("undefined" != typeof g_MinimalDownload &amp;&amp; g_MinimalDownload &amp;&a
 }
 ```
 
-**Hinweis**  Einige JavaScript-Dateien möglicherweise hängen von anderen JavaScript-Dateien geladen zuerst sein, bevor sie ausgeführt und erfolgreich abgeschlossen werden können. The following code construct from  **RemoteManager_Inject** uses the **loadScript** function in scenario1.js to first load jQuery, then continue running the remaining JavaScript code.
+> [!NOTE] 
+> Einige JavaScript-Dateien möglicherweise hängen von anderen JavaScript-Dateien geladen zuerst sein, bevor sie ausgeführt und erfolgreich abgeschlossen werden können. Das folgende Codekonstrukt aus **RemoteManager_Inject** verwendet die **LoadScript** -Funktion in scenario1.js erste Laden von jQuery, und gehen Sie den verbleibenden JavaScript-Code ausführen.
 
 ```
 var jQuery = "https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.2.min.js";
@@ -177,25 +183,26 @@ Szenario 2 mithilfe das in Szenario 1 beschriebenen Verfahren Benutzeroberfläch
 
 ![Screenshot der Startseite für Szenario 2](media/c706060b-e77d-4ae6-99c4-43dee80ff7d3.png)
 
-As shown in Figure 8, choosing  **Inject customization** applies the following changes to the site:
+Wie in Abbildung 8 gezeigt, betrifft **einlegen Anpassung** auswählen die folgenden Änderungen der Website:
 
-- The Quick Launch link title  **My quicklaunch entry** is changed to **Contoso link**.
+- **Meine Websitedesign Eintrag** Schnellstartleiste Link Titel wird auf **Contoso-Link**geändert.
     
 - Den Titel der Seite **Hello SharePoint** -Website wird zur **Seite "Contoso"**geändert.
 
 **Abbildung 9. Szenario 2 Anpassungen**
 
-![Scenario 2 customizations](media/47e8ec40-d291-496f-8677-01eb46441df2.png)
+![Szenario 2 Anpassungen](media/47e8ec40-d291-496f-8677-01eb46441df2.png)
     
-**Hinweis**  Wenn Ihre Werte für die Schnellstartleiste Link Titel und Titel der Website Seite unterscheidet sich von in Abbildung 8 dargestellt die Variablen **quickLauch_Scenario2** und **PageTitle_HelloSharePoint** in Bearbeiten Dateien die JavaScript-Ressource scenario2.en us.js oder scenario2.nl-nl.js. Führen Sie das Codebeispiel erneut aus. The scenario2.en-us.js file stores English (US) culture-specific resources. Die Datei scenario2.nl nl.js speichert niederländische kulturspezifische Ressourcen. Wenn Sie dieses Codebeispiel mit einer anderen Sprache testen, sollten Sie eine andere Ressourcendatei für JavaScript in der gleichen Namenskonvention erstellen.
+> [!NOTE] 
+> Wenn Ihre Werte für die Schnellstartleiste Link Titel und Titel der Website Seite unterscheidet sich von in Abbildung 8 dargestellt die Variablen **quickLauch_Scenario2** und **PageTitle_HelloSharePoint** in Bearbeiten Dateien die JavaScript-Ressource scenario2.en us.js oder scenario2.nl-nl.js. Führen Sie das Codebeispiel erneut aus. Die Datei scenario2.en us.js speichert Englisch (USA) kulturspezifische Ressourcen. Die Datei scenario2.nl nl.js speichert niederländische kulturspezifische Ressourcen. Wenn Sie dieses Codebeispiel mit einer anderen Sprache testen, sollten Sie eine andere Ressourcendatei für JavaScript in der gleichen Namenskonvention erstellen.
 
-Szenario 1, Ähnlichkeit mit **BtnSubmit_Click** in scenario2.aspx.cs **AddJsLink** , um einen Verweis auf die Datei Scripts\scenario2.js hinzuzufügen. In scenario2.js, the **RemoteManager_Inject** function calls the **TranslateQuickLaunch** function, which performs the following tasks:
+Szenario 1, Ähnlichkeit mit **BtnSubmit_Click** in scenario2.aspx.cs **AddJsLink** , um einen Verweis auf die Datei Scripts\scenario2.js hinzuzufügen. In scenario2.js Ruft die **RemoteManager_Inject** -Funktion die **TranslateQuickLaunch** -Funktion, die folgenden Aufgaben ausgeführt werden:
 
 - **_SpPageContextInfo.currentUICultureName**mithilfe der Website Kultur bestimmt.
     
-- Loads the JavaScript resource file containing culture specific resources that match the UI culture of the site. For example, if the site's culture was English (United States), the scenario2.en-us.js file is loaded.
+- Lädt JavaScript Ressourcendatei mit der Kultur bestimmte Ressourcen, die die Benutzeroberflächenkultur der Website entsprechen. Beispielsweise, wenn die Website Kultur Englisch (USA) wurde, wird die scenario2.en us.js-Datei geladen.
     
-- Replaces  **my quicklaunch entry** with the value of the **quickLauch_Scenario2** variable read from the JavaScript resource file.
+- Ersetzt **Meine Websitedesign-Eintrag** mit dem Wert der Variablen **quickLauch_Scenario2** aus der JavaScript-Ressourcendatei zu lesen.
 
 ```
 function RemoteManager_Inject() {
@@ -257,9 +264,9 @@ function TranslateQuickLaunch() {
 }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
--  [Localization solutions for SharePoint 2013 and SharePoint Online](localization-solutions-for-sharepoint-2013-and-sharepoint-online.md)
+-  [Lokalisierung Lösungen für SharePoint 2013 und SharePoint Online](localization-solutions-for-sharepoint-2013-and-sharepoint-online.md)
     
 -  [Core.JavaScriptCustomization](https://github.com/SharePoint/PnP/tree/master/Samples/Core.JavaScriptCustomization)

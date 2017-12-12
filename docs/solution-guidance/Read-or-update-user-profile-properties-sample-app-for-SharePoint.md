@@ -1,11 +1,11 @@
 ---
 title: "Lesen oder Aktualisieren von Benutzerprofileigenschaften Beispiel-add-in für SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 50b2fc8051ba8d9846844a1416d93a3088cc42c7
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: a8bbb4cba2414d7c95beb8e09f480b8e5307c02f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="read-or-update-user-profile-properties-sample-add-in-for-sharepoint"></a>Lesen oder Aktualisieren von Benutzerprofileigenschaften Beispiel-add-in für SharePoint
 
@@ -27,7 +27,8 @@ Verwenden Sie diese Lösung, wenn Folgendes auf Sie zutrifft:
     
 - Verwenden Sie Benutzerprofil Eigenschaftswerte, um SharePoint zu personalisieren.
 
-**Hinweis**  In diesem Codebeispiel wird nur in Office 365 ausgeführt. 
+> [!NOTE] 
+> In diesem Codebeispiel wird nur in Office 365 ausgeführt. 
 
 ## <a name="before-you-begin"></a>Bevor Sie beginnen:
 <a name="sectionSection0"> </a>
@@ -74,8 +75,8 @@ In diesem Codebeispiel enthält drei Szenarios.
 |Szenario|Zeigt, wie Sie...|
 |:---|:---|
 |1|Lesen Sie alle Benutzerprofileigenschaften für den Benutzer die app ausführt.|
-|2|<p>Aktualisieren einer einwertige Benutzerprofileigenschaft.</p><p>**Hinweis:** In diesem Szenario wird nur in Office 365 unterstützt.</p>|
-|3|<p>Aktualisieren einer mehrwertigen Benutzerprofileigenschaft.</p><p>**Hinweis:** In diesem Szenario wird nur in Office 365 unterstützt.</p>|
+|2|<p>Aktualisieren einer einwertige Benutzerprofileigenschaft.</p><p>**Hinweis**: in diesem Szenario wird nur in Office 365 unterstützt.</p>|
+|3|<p>Aktualisieren einer mehrwertigen Benutzerprofileigenschaft.</p><p>**Hinweis**: in diesem Szenario wird nur in Office 365 unterstützt.</p>|
 
 ### <a name="scenario-1-read-all-user-profile-properties"></a>Szenario 1: Lesen Sie alle Benutzerprofileigenschaften
 
@@ -91,7 +92,8 @@ Bei der Auswahl **Führen Sie Szenario 1**das Add-in liest alle Benutzerprofilei
     
 - Durchlaufen Sie **PersonProperties.UserProfileProperties** die Werte der Benutzerprofileigenschaften in einem Textfeld aufgelistet.
     
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 protected void btnScenario1_Click(object sender, EventArgs e)
@@ -167,7 +169,8 @@ protected void btnScenario2_Click(object sender, EventArgs e)
         }
 ```
     
-**Hinweis**  Wenn Sie benutzerdefinierte Benutzerprofileigenschaften verwenden, konfigurieren Sie die Eigenschaft, um die von Benutzern bearbeitet werden. Das Verfahren in diesem Szenario verwendet wird für benutzerdefinierte Benutzerprofileigenschaften verwendet werden. 
+> [!NOTE] 
+> Wenn Sie benutzerdefinierte Benutzerprofileigenschaften verwenden, konfigurieren Sie die Eigenschaft, um die von Benutzern bearbeitet werden. Das Verfahren in diesem Szenario verwendet wird für benutzerdefinierte Benutzerprofileigenschaften verwendet werden. 
 
 ### <a name="scenario-3-update-a-multivalued-user-profile-property"></a>Szenario 3: Aktualisieren einer mehrwertigen Benutzerprofileigenschaft
 
@@ -233,7 +236,7 @@ So fügen neue Fähigkeiten hinzu Benutzerprofileigenschaft SPS-Kenntnisse von a
 
         }
 ```
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [User Profile Lösungen für SharePoint 2013 und SharePoint Online](user-profile-solutions-for-sharepoint.md)

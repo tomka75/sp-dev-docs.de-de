@@ -1,11 +1,11 @@
 ---
 title: Erstellen von SharePoint-Inhaltstypen mithilfe von CSOM
 ms.date: 11/03/2017
-ms.openlocfilehash: 6a0e7eff44bffbc6b2de3cc181fe9b2d09df1117
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 05d32f9c1ec1d48a128216116515eb106c221274
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-sharepoint-content-types-by-using-csom"></a>Erstellen von SharePoint-Inhaltstypen mithilfe von CSOM
 
@@ -23,7 +23,8 @@ Herunterladen Sie das [Core.SPD](https://github.com/SharePoint/PnP/tree/dev/Samp
 
 Im folgenden Codebeispiel wird veranschaulicht, wie zum Erstellen eines Inhaltstyps mithilfe der **komplexer ContentTypeCreationInformation** -Klasse, einschließlich Festlegen der ID ab.
 
-**Hinweis:**  Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 ```C#
 ContentTypeCollection contentTypes = web.ContentTypes;
@@ -156,7 +157,7 @@ ContentType ct = web.ContentTypes.GetById("0x0101009189AB5D3D2647B580F011DA2F356
 
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [SharePoint-Website Bereitstellen von Lösungen](sharepoint-site-provisioning-solutions.md)

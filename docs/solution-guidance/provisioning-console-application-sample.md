@@ -1,11 +1,11 @@
 ---
 title: Beispiel einer Anwendung in Konsole-Bereitstellung
 ms.date: 11/03/2017
-ms.openlocfilehash: 29d14151ccea3bebec3c7e1a899bdf8067321193
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: f55962b55972312a421b8e153221f8b73bcf76b8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="provisioning-console-application-sample"></a>Beispiel einer Anwendung in Konsole-Bereitstellung
 
@@ -21,7 +21,8 @@ In diesem Beispiel erstellen wir eine grundlegende Konsolenanwendung, die Klasse
     
 - Die Bereitstellung Vorlage auf einer neuen oder vorhandenen Websitesammlung anzuwenden.
     
-**Hinweis:**  Diese exemplarische Vorgehensweise ist eine Ergänzung zu einer Stichprobe, die derzeit auf GitHub: [Erste Schritte mit der Plug & Play-Bereitstellung Engine](https://github.com/SharePoint/PnP/tree/master/Samples/Provisioning.Framework.Console). Den Code (Program.cs) und die Lösungsdateien für das Beispiel stehen zum Download zur Verfügung. Auch steht eine 20 Minuten video Präsentation dieses Prozesses (mit geringfügig Code) auf der Website Microsoft Channel 9: [Erste Schritte mit der Plug & Play-Bereitstellung Engine](https://channel9.msdn.com/blogs/OfficeDevPnP/Getting-Started-with-PnP-Provisioning-Engine).
+> [!NOTE] 
+> Diese exemplarische Vorgehensweise ist eine Ergänzung zu einer Stichprobe, die derzeit auf GitHub: [Erste Schritte mit der Plug & Play-Bereitstellung Engine](https://github.com/SharePoint/PnP/tree/master/Samples/Provisioning.Framework.Console). Den Code (Program.cs) und die Lösungsdateien für das Beispiel stehen zum Download zur Verfügung. Auch steht eine 20 Minuten video Präsentation dieses Prozesses (mit geringfügig Code) auf der Website Microsoft Channel 9: [Erste Schritte mit der Plug & Play-Bereitstellung Engine](https://channel9.msdn.com/blogs/OfficeDevPnP/Getting-Started-with-PnP-Provisioning-Engine).
 
 ## <a name="remote-provisioning-walkthrough"></a>Remote provisioning Exemplarische Vorgehensweise
 
@@ -37,7 +38,8 @@ Erstellen Sie zunächst ein Visual Studio-Projekt. In diesem Beispiel zur Verein
     
 4. Herunterladen und installieren Sie die Plug & Play-Core-Bibliothek, die als ein NuGet-Paket zur Verfügung steht: [OfficeDevPnP.Core Pakete](https://www.nuget.org/profiles/officedevpnp).
     
-    **Hinweis:**  Es gibt zwei Versionen der Kernbibliothek. Eine Version ist der **OfficeDevPnP.Core** -Bibliothek, die SharePoint Online und Office 365 beruht. Die zweite Version ist **OfficeDevPnP.Core (lokal)**, die SharePoint 2013 lokal beruht. Hier ist ein Screenshot der verfügbaren Optionen aus.
+    > [!NOTE] 
+    > Es gibt zwei Versionen der Kernbibliothek. Eine Version ist der **OfficeDevPnP.Core** -Bibliothek, die SharePoint Online und Office 365 beruht. Die zweite Version ist **OfficeDevPnP.Core (lokal)**, die SharePoint 2013 lokal beruht. Hier ist ein Screenshot der verfügbaren Optionen aus.
 
     ![Zwei zentrale Bibliothek Download-Optionen](media/provisioning-console-application-sample/5b1adb8d-52e5-4c67-8792-6ef0ae41d655.png)
 
@@ -198,7 +200,8 @@ Zunächst müssen wir für die Verbindung zu der Website, die wir als Grundlage 
     
 4. Erstellen Sie ein File System Connector-Objekt, sodass wir eine temporäre Kopie der Bereitstellung Vorlage speichern können, die wir zu einer anderen Website anwenden möchten.
     
-    **Hinweis:**  Dieser Schritt ist optional. Es ist nicht erforderlich, dass Sie die Bereitstellung Vorlage XML serialisieren. Zu diesem Zeitpunkt ist die Vorlage einfach C#-Code. Nicht nur Serialisierung optional ist, sondern auch können Serialisierungsformat werden soll.
+    > [!NOTE] 
+    > Dieser Schritt ist optional. Es ist nicht erforderlich, dass Sie die Bereitstellung Vorlage XML serialisieren. Zu diesem Zeitpunkt ist die Vorlage einfach C#-Code. Nicht nur Serialisierung optional ist, sondern auch können Serialisierungsformat werden soll.
 
 5. Führen Sie die Extrahierung der Bereitstellung Vorlage mithilfe von nur diese einzelnen Codezeile.      `ProvisioningTemplate template = ctx.Web.GetProvisioningTemplate(ptci);`
     
@@ -257,7 +260,7 @@ Nachdem wir extrahieren, speichern und die Bereitstellung Vorlage beibehalten, i
         web.ApplyProvisioningTemplate(template, ptai);
     ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Plug & Play-Bereitstellung framework](pnp-provisioning-framework.md)

@@ -1,11 +1,11 @@
 ---
 title: "Bewährte Methoden für SharePoint Online-Portale - Navigation Lösungen"
 ms.date: 11/03/2017
-ms.openlocfilehash: 4e1f1a2a402a2d12da99d0ea395bf628e41836cd
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 691e451aa2c1f9c7a0c0f6db969c36029f319235
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="proven-practices-for-sharepoint-online-portals---navigation-solutions"></a>Bewährte Methoden für SharePoint Online-Portale - Navigation Lösungen
 
@@ -13,7 +13,8 @@ Jedes Portal Projekt muss zum Implementieren einer Lösung für die Navigation. 
 
 Unabhängig von der Auswahl, eine Frage bleibt: Gewusst wie: Erstellen einer gut funktionierende Navigationssystem in SharePoint Online? In diesem Artikel werden diese Frage beantwortet.
 
->**Hinweis**: Obwohl dieser Anleitung in erster Linie SharePoint Online bezieht, gilt die meisten es auch für Portale in einer lokalen SharePoint-Umgebung gehostet.
+> [!NOTE] 
+> Obwohl dieser Anleitung in erster Linie SharePoint Online bezieht, die meisten davon gilt auch für Portale in einer lokalen SharePoint-Umgebung gehostet.
 
 _**Gilt für:** SharePoint Online_
 
@@ -97,28 +98,33 @@ Die Navigation Store behält die Konfiguration des Steuerelements benutzerdefini
 
 Die am häufigsten verwendeten benutzerdefinierten schafft Navigation Store, eine benutzerdefinierte SharePoint-Liste, ein Gleichgewicht zwischen Erweiterbarkeit, Verwaltbarkeit und Leistung (Wenn Sie über die Suche abgefragt wird). Das Listenschema kann auf einfache Weise erweitert werden, mit benutzerdefinierten Inhaltstypen, die Kopf-/Navigationsgruppen und Navigationslinks darstellen und Websitespalten, die die gewünschten benutzerdefinierten Attributen (z. B. Anzeigereihenfolge) zu definieren. Durchforstete Eigenschaften für diese Websitespalten können verwaltete Eigenschaften in SharePoint-Suche zugeordnet werden. Die Navigationsdaten werden über die vertrauten OOB Liste Management Seiten auf einfache Weise verwaltet. Die Navigationsdaten können über die SharePoint Search-REST-API remote zugegriffen werden.
 
->**Hinweis:** Navigation suchbasierte ist abhängig von den Suchindex. SharePoint crawlt kontinuierlich Portalinhalt; allerdings noch wird eine kurze Verzögerung bevor Änderungen an der SharePoint-Liste im Suchindex angezeigt werden.
+> [!NOTE] 
+> Navigation suchbasierte ist abhängig von den Suchindex. SharePoint crawlt kontinuierlich Portalinhalt; allerdings noch wird eine kurze Verzögerung bevor Änderungen an der SharePoint-Liste im Suchindex angezeigt werden.
 
 Die einfachste und besten Leistung benutzerdefinierte Navigation-Speicher ist eine JavaScript-Ressourcendatei (z. B. nav.js), die eine Komponente-spezifische Konfigurationsvariable (z. B. FooterNav) deklariert, die durch eine JSON-Zeichenfolge initialisiert wird. Der Browser automatisch lädt die Datei herunter, und speichert ihn zur späteren Verwendung.  Die Daten zur Konfiguration ist für die Verwendung bereit, nachdem es in der JavaScript-Laufzeitumgebung geladen. Der primäre Kompromiss bei diesem Ansatz betrifft die Benutzeroberfläche Verwaltung: mindestens muss ein Administrator eine JSON-Zeichenfolge in einer JavaScript-Datei manuell bearbeiten. Eine benutzerdefinierte Benutzeroberfläche wäre abstrakten den Speicher aus dem Admin, und stellen Dinge etwas benutzerfreundlichere erforderlich.
 
 An das andere Ende des Spektrums der benutzerdefinierten Navigation Speicher ist die benutzerdefinierte Datenbank. Diese Option bietet Ihnen ultimative Flexibilität, erfordert aber auch die am häufigsten benutzerdefinierte Entwicklung. Darüber hinaus wird für die Datenbank, die benutzerdefinierte Web-API und die Navigation Verwaltungsseite eine Hostingumgebung benötigt. 
 
->**Hinweis:** Eine hervorragende Beispiel zeigt, wie Sie eine benutzerdefinierte Navigation Store Implementieren der Verwendungsmöglichkeiten mithilfe der clientseitigen Datenzugriffsschicht aus dem SharePoint-Plug & Play-Repository verfügbar ist: [Client-Side Data Access Layer (DAL)-Beispiel](https://github.com/SharePoint/PnP/tree/master/Samples/Portal.DataAccessLayer)
+> [!NOTE] 
+> Eine hervorragende Beispiel zeigt, wie Sie eine benutzerdefinierte Navigation Store Implementieren der Verwendungsmöglichkeiten mithilfe der clientseitigen Datenzugriffsschicht aus dem SharePoint-Plug & Play-Repository verfügbar ist: [Client-Side Data Access Layer (DAL)-Beispiel](https://github.com/SharePoint/PnP/tree/master/Samples/Portal.DataAccessLayer)
 
 **Speicher des Out-of-Box (OOB) Navigation:** 
  <a name="bk_oobNavStores"> </a> 
 
 - **OOB verwaltete Navigation (MMS)**: <a name="bk_managedNavStore"></a> verwaltete Navigation können Sie einen Ausdruckssatz Managed Metadata Service (MMS) verwenden, um den Navigationsknoten für eine angegebene Websitesammlung zu konfigurieren. OOB Anzeige Navigationssteuerelemente verbraucht automatisch diese Daten. Die Seite OOB Navigation bietet eine leicht zu bedienende Benutzeroberfläche zum Verwalten von Navigationsknoten innerhalb einer Hierarchie von *uneingeschränkt* (unbegrenzte Tiefe). Benutzerdefinierte Anzeige Navigationssteuerelemente können auch diese Daten nutzen, aber Sie müssen dazu über JSOM wie es derzeit keine REST-API für die verwaltete Navigation Bearbeitung verfügbar ist.
 
-    >**Hinweis:** Es ist sehr schwierig, konfigurieren und verwalten eine globale Navigation Definition über verwaltete Navigation. Als jeweils neu, wenn eine Websitesammlung erstellt wird, müssen Sie die Konfiguration für die Websitesammlung und die zugehörigen Ausdruckssatz duplizieren. Denken Sie daran, die verwaltete Navigation ist auch nicht eingeschränkt, weshalb die Benutzer Links sichtbar ist, die sie nicht zugreifen können.
+    > [!NOTE] 
+    > Es ist sehr schwierig, konfigurieren und verwalten eine globale Navigation Definition über verwaltete Navigation. Als jeweils neu, wenn eine Websitesammlung erstellt wird, müssen Sie die Konfiguration für die Websitesammlung und die zugehörigen Ausdruckssatz duplizieren. Denken Sie daran, die verwaltete Navigation ist auch nicht eingeschränkt, weshalb die Benutzer Links sichtbar ist, die sie nicht zugreifen können.
 
 - **OOB strukturelle Navigation (Website)**: <a name="bk_structuralNavStore"></a> strukturelle Navigation können Sie die systemeigene Struktur der Websitesammlung (seine Webs und Seiten), verwenden, und erstellter Überschriften und Hyperlinks, so konfigurieren Sie die Navigationsknoten für eine angegebene Websitesammlung. Die Seite OOB Navigation bietet eine Benutzeroberfläche zum Verwalten von Navigationsknoten innerhalb einer Hierarchie *eingeschränkt* (beschränkt Tiefe). Benutzerdefinierte Anzeige Navigationssteuerelemente können auch diese Daten nutzen, jedoch müssen dazu über JSOM wie derzeit keine REST-API entwickelt strukturelle Navigation verfügbar ist.
 
-    >**Hinweis:** Die OOB Anzeige Navigationssteuerelemente verwenden Datenbankabfragen (d. h., Inhalt-nach-Abfrage), um die Navigationsdaten abzurufen. Sie hierzu bei jedem Laden der Seite, die sehr ressourcenintensiv für komplexe Websitestrukturen-Auflistung ist. Die Verwendung von strukturelle Navigation wird nur für kleine Portale mit einfachen Websitestrukturen-Auflistung empfohlen. Strukturelle Navigation ist immer sicherheitsoptimiert Ergebnisse zurückgibt.
+    > [!NOTE] 
+    > Die OOB Anzeige Navigationssteuerelemente verwenden Datenbankabfragen (d. h., Inhalt-nach-Abfrage), um die Navigationsdaten abzurufen. Sie hierzu bei jedem Laden der Seite, die sehr ressourcenintensiv für komplexe Websitestrukturen-Auflistung ist. Die Verwendung von strukturelle Navigation wird nur für kleine Portale mit einfachen Websitestrukturen-Auflistung empfohlen. Strukturelle Navigation ist immer sicherheitsoptimiert Ergebnisse zurückgibt.
 
 - **OOB Suchindex (Suche)**: <a name="bk_searchNavStore"></a> Suche gesteuerte Navigation können Sie Abfragen SharePoint-Suchindex für Websites und Seiten, indem Sie die richtige Suchabfrage zu erstellen. Es gibt keine bestimmte OOB Navigation Management-Seite, und Sie müssen zum Implementieren von benutzerdefinierten Anzeige Navigationssteuerelemente, um die von der Suchabfragen abgerufenen Daten nutzen.
 
-    >**Hinweis:** Bei Verwendung suchgesteuerter ist Navigation wichtig, dass Sie die Ergebnisse der abgerufene zwischenspeichern, wie Sie nicht, drücken Sie den Server bei jedem Laden der Seite möchten. Weiter unten in diesem Artikel die mithilfe der clientseitigen Daten wird Access Layer erläutert dem Modell in Kombination mit der Suche gesteuerte Navigation verwendet wird. Genau wie strukturelle Navigation wird bei der Suche gesteuerte Navigation sicherheitsoptimiert, damit die Benutzer nicht erreichbar Links nicht angezeigt werden. Nachteil der Suche gesteuerte Navigation ist, dass die Reihenfolge der die zurückgegebene Navigationselemente steuern ist.
+    > [!NOTE] 
+    > Bei Verwendung suchgesteuerter ist Navigation wichtig, dass Sie die Ergebnisse der abgerufene zwischenspeichern, wie Sie nicht, drücken Sie den Server bei jedem Laden der Seite möchten. Weiter unten in diesem Artikel die mithilfe der clientseitigen Daten wird Access Layer erläutert dem Modell in Kombination mit der Suche gesteuerte Navigation verwendet wird. Genau wie strukturelle Navigation wird bei der Suche gesteuerte Navigation sicherheitsoptimiert, damit die Benutzer nicht erreichbar Links nicht angezeigt werden. Nachteil der Suche gesteuerte Navigation ist, dass die Reihenfolge der die zurückgegebene Navigationselemente steuern ist.
 
 
 ### <a name="navigation-management-page"></a>Navigation-Verwaltungsseite
@@ -167,7 +173,7 @@ Der Client-Side Data Access Layer ist eine benutzerdefinierte clientseitige Java
 
 Finden Sie im [Artikel Portal Leistung](portal-performance.md) für Weitere Informationen zu den clientseitigen Datenzugriffsschicht.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_additionalResources"> </a>
 
 - [Leitfaden zur Portal Leistung](portal-performance.md)

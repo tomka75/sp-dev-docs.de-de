@@ -1,17 +1,18 @@
 ---
 title: "Bewährte Methoden für die Einführung von SharePoint Online-Portale"
 ms.date: 11/03/2017
-ms.openlocfilehash: c4dddb0b318b64f3f04d51d5be85d3a6e2c10e40
-ms.sourcegitcommit: 3276e9b281b227fb2f1a131ab4ac54ae212ce5cf
+ms.openlocfilehash: 996ab833afffc5849bb70e99b624c13842cbfca9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/24/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="best-practices-for-rolling-out-sharepoint-online-portals"></a>Bewährte Methoden für die Einführung von SharePoint Online-Portale
 
 Nach Sie widmen live Ihre Zeit und weniger Energie in Gebäude, die neue SharePoint Portal basieren darauf zuzugreifen soll... so bald wie möglich, aber was wäre eine gute Modell dafür? In diesem Artikel wird erläutert, das empfohlene Modell für die Bereitstellung von Ihrem Portal für die Endbenutzer.
 
->**Hinweis**: Obwohl dieser Anleitung SharePoint Online gerichtet ist die meisten davon gilt auch für Portale in einer lokalen SharePoint-Umgebung gehostet wird.
+> [!NOTE] 
+> Obwohl dieser Anleitung SharePoint Online Zielgruppenadressierung ist die meisten davon gilt auch für Portale in einer lokalen SharePoint-Umgebung gehostet wird.
 
 
 _**Gilt für:** SharePoint Online_
@@ -43,7 +44,7 @@ Unter Bild zeigt eine gute schrittweisen einführen. Beachten Sie, dass dies auc
 
 Die oben genannten Phasen erhalten Sie Zeit zum kompensieren Feedback und ändern Sie Ihr Portal, falls erforderlich, aber wie messen und phasenweise Nachsorge auf die Leistung während dieser Einführung? Der empfohlene Ansatz zum auf diese Weise ist in der Implementierung Portal Telemetrie einbetten, wie [im Artikel Leistung Telemetrie](https://msdn.microsoft.com/en-us/pnp_articles/portal-performance#telemetry)Abschnitt erläutert. Mit einer fortlaufenden Datenfluss Portal Leistung helfen Ihnen beim verstehen, wenn die Portal Leistung geändert wird, wenn die Anzahl der Benutzer, sondern auch wächst Wenn Sie in der zukünftigen stellen Portal ändert.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Capacity planning and load testing SharePoint Online](https://support.office.com/en-us/article/Capacity-planning-and-load-testing-SharePoint-Online-c932bd9b-fb9a-47ab-a330-6979d03688c0?ui=en-US&rs=en-US&ad=US)

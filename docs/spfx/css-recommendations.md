@@ -1,4 +1,14 @@
-# <a name="recommendations-for-working-with-css-in-sharepoint-framework-solutions"></a>Empfehlungen für das Arbeiten mit CSS in SharePoint Framework-Lösungen
+---
+title: "Empfehlungen für das Arbeiten mit CSS in SharePoint-Framework-Lösungen"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: c55b5362b4a1426c44cc0e7c53eacfe08982de64
+ms.sourcegitcommit: 3276e9b281b227fb2f1a131ab4ac54ae212ce5cf
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 11/24/2017
+---
+# <a name="recommendations-for-working-with-css-in-sharepoint-framework-solutions"></a>Empfehlungen für das Arbeiten mit CSS in SharePoint-Framework-Lösungen
 
 Wenn Sie SharePoint-Framework Lösungen erstellen, können Sie CSS verwenden, um zu definieren, wie sich Ihre Anpassung verhalten und aussehen soll. In diesem Artikel wird beschrieben, wie Sie die mit dem SharePoint Framework bereitgestellten Funktionen am besten nutzen und Ihre CSS-Formatvorlagen stabil erstellen.
 
@@ -216,8 +226,8 @@ Da der Selektor mit dem eindeutigen Klassennamen beginnt, der spezifisch für di
 
 ## <a name="integrate-office-ui-fabric"></a>Integration von Office UI Fabric
 
-Indem Sie dafür sorgen, dass Ihre Anpassungen wie die Standardfunktionen von SharePoint und Office 365 aussehen und sich so verhalten, können Sie Endbenutzern das Arbeiten damit erleichtern. Office UI Fabric bietet Ihnen eine Reihe von Steuerelementen und Formatvorlagen, die Sie in Ihren Anpassungen verwenden können, um eine nahtlose Integration in die vorhandene Benutzeroberfläche zu gewährleisten. Weitere Informationen zur Verwendung von Office UI Fabric im SharePoint Framework finden Sie im [Office UI Fabric-Integrationsleitfaden](web-parts/guidance/office-ui-fabric-integration).
+Wenn Sie die Darstellung und das Verhalten Ihrer Anpassungen so nah wie möglich an den Standardfunktionen von SharePoint und Office 365 halten, wird dies den Endbenutzern das Arbeiten mit diesen erleichtern. Office-UI-Fabric bietet eine Reihe von Steuerelementen und Formatvorlagen für die Verwendung in Ihren Anpassungen, die sich nahtlos in die vorhandene Benutzeroberfläche integrieren. Weitere Informationen zur Verwendung von Office-UI-Fabric in SharePoint-Framework finden Sie im [Integrationshandbuch für Office-UI-Fabric](office-ui-fabric-integration.md).
 
 ## <a name="use-theme-colors"></a>Verwenden von Designfarben
 
-In SharePoint können Benutzer die Designfarbe für Ihre Websites auswählen. In Ihren SharePoint Framework-Anpassungen sollten Sie dasselbe Design verwenden, das von den Benutzern ausgewählt wurde, damit Ihre Anpassung wie ein fester Bestandteil der Website aussieht und nicht unnötig hervorsticht. Da das Design von Benutzern auf deren Website festgelegt wird, können Sie nicht vorab festlegen, welche Farben Ihre Anpassung verwenden sollte, in SharePoint Framework kann das derzeit aktive Farbschema jedoch dynamisch und automatisch für Sie geladen werden. Weitere Informationen zu dieser Funktion finden Sie im [Leitfaden zur Verwendung von Designfarben](./use-theme-colors-in-your-customizations).
+In SharePoint können Benutzer die Designfarbe für Ihre Websites auswählen. In Ihren SharePoint Framework-Anpassungen sollten Sie dasselbe Design verwenden, das von den Benutzern ausgewählt wurde, damit Ihre Anpassung wie ein fester Bestandteil der Website aussieht und nicht unnötig hervorsticht. Da das Design von Benutzern auf deren Website festgelegt wird, können Sie nicht vorab festlegen, welche Farben Ihre Anpassung verwenden sollte, in SharePoint Framework kann das derzeit aktive Farbschema jedoch dynamisch und automatisch für Sie geladen werden. Weitere Informationen zu dieser Funktion finden Sie im [Leitfaden zur Verwendung von Designfarben](./use-theme-colors-in-your-customizations.md).

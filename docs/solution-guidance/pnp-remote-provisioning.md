@@ -1,11 +1,11 @@
 ---
 title: Plug & Play-remote-Bereitstellung
 ms.date: 11/03/2017
-ms.openlocfilehash: 89ddf3be57d2aec6099afc2bd3452bc11ead0868
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: bab282ab37204db3fd312f8bb27c247392309d61
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="pnp-remote-provisioning"></a>Plug & Play-remote-Bereitstellung
 
@@ -26,7 +26,7 @@ Microsoft SharePoint 2013 und das neue Add-In-Modell ermöglichen Ihnen die Verw
 |[OfficeDevPnP.Core](https://github.com/SharePoint/PnP-Sites-Core/tree/master/Core)|Office 365 Developer Plug & Play-Hauptkomponenten ist eine Erweiterung, die häufig kapselt remote CSOM/REST Vorgänge zur Unterstützung von CSOM provisioning Objekte wieder verwendbare Erweiterungsmethoden verwendet.|
 |[Innerhalb der Bereitstellung Plug & Play-Schema](https://channel9.msdn.com/blogs/OfficeDevPnP/Deep-dive-to-PnP-provisioning-engine-schema)|Eine Microsoft Channel 9-Audio/Video Einführung in dem Plug & Play-Bereitstellung Schema durch Paolo Pialorsi bereitgestellt werden.|
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)

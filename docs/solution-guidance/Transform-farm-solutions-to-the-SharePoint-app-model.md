@@ -1,11 +1,11 @@
 ---
 title: "Transformieren von farmlösungen für das SharePoint-add-in-Objektmodell"
 ms.date: 11/03/2017
-ms.openlocfilehash: f05de21aa816d86bf56ff3802ce3c0b5c87d0b67
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 1a85b977905013c129be5a8d2eb8febdd8b4d5c1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="transform-farm-solutions-to-the-sharepoint-add-in-model"></a>Transformieren von farmlösungen für das SharePoint-add-in-Objektmodell
 Transformieren Sie oder konvertieren Sie Ihrer Farm Solutions in der SharePoint-add-in-Objektmodell. Erfahren Sie, wie Webparts, Seitenlayouts, Gestaltungsvorlagen, Zeitgeberaufträge, und so weiter in der SharePoint-add-in-Objektmodell zu konvertieren.
@@ -82,15 +82,16 @@ Gelten Sie die folgenden bewährten Methoden bei der Umwandlung von bestimmten L
 
   4. Verwenden Sie eingebettetes JavaScript zum Manipulieren von UI-Elemente.
     
-    **Hinweis**  Um Ihre vorhandenen Webparts mit app-Webparts zu ersetzen, müssen Sie:
+    > [!NOTE] 
+    > Um Ihre vorhandenen Webparts mit app-Webparts zu ersetzen, müssen Sie:
 
     - Seite Laden von Add-Ins in Office 365-Abonnement aktivieren. Wenden Sie sich an den Office 365-Administrator.
     - Verwenden Sie CSOM, um die Seite Laden des add-Ins auf Ihrer Website zu aktivieren. Weitere Informationen finden Sie im Codebeispiel Core.SideLoading.
     - Installieren Sie Ihr app-Webpart auf Ihrer Website ein.
     - Seite Laden von add-ins auf Ihrer Website deaktivieren.
     - Deaktivieren Sie die Seite Laden von Add-Ins in Office 365-Abonnements. Wenden Sie sich an den Office 365-Administrator.
-<p></p>
--Seite zum Bearbeiten. Sie müssen möglicherweise Seite Bearbeitung während Ihrer benutzerdefinierten Site Bereitstellungsprozesses implementieren. Im Codebeispiel [Provisioning.Pages](https://github.com/SharePoint/PnP/tree/master/Samples/Provisioning.Pages) zeigt die Seite Techniken zur Bearbeitung, einschließlich des Erstellens einer Wiki-Seiten, Hinzufügen von HTML auf der Seite Erstellen einer Liste mit höher gestuften Links, Erstellen von Seiten mit verschiedenen Layouts, Hinzufügen von Out-of-Box-Webparts auf der Seite Inhalten, und Entfernen von der Seite.
+
+- Seite zum Bearbeiten. Sie müssen möglicherweise Seite Bearbeitung während Ihrer benutzerdefinierten Site Bereitstellungsprozesses implementieren. Im Codebeispiel [Provisioning.Pages](https://github.com/SharePoint/PnP/tree/master/Samples/Provisioning.Pages) zeigt die Seite Techniken zur Bearbeitung, einschließlich des Erstellens einer Wiki-Seiten, Hinzufügen von HTML auf der Seite Erstellen einer Liste mit höher gestuften Links, Erstellen von Seiten mit verschiedenen Layouts, Hinzufügen von Out-of-Box-Webparts auf der Seite Inhalten, und Entfernen von der Seite.
     
 - Websitespalten, Listendefinitionen und Inhaltstypen. Wenn Ihre Websitespalten, Listendefinitionen und Inhaltstypen erstellt wurden mithilfe der Feature-Framework-Elemente, die über farmlösungen bereitgestellt wurden, müssen Sie den Einsatz oder der Inhaltsmigration Transformation Ansatz verwenden. Dies gilt nicht für Feature-Framework-Elemente mithilfe von sandkastenlösungen bereitgestellt. Um die Inhaltsmigration Transformation Ansatz verwenden, müssen Sie Drittanbietertools verwenden, um die Farm lösungsabhängigkeiten zu entfernen.
     
@@ -100,7 +101,8 @@ Gelten Sie die folgenden bewährten Methoden bei der Umwandlung von bestimmten L
     
 - Zeitgeberaufträge. Wenn Sie SharePoint Online verwenden, können nicht Sie erstellen und Verwalten von Zeitgeberaufträgen. Stattdessen können Sie eine Konsolenanwendung erstellen, die Windows-Taskplaner oder ein [Azure Webauftrag](http://azure.microsoft.com/documentation/articles/web-sites-create-web-jobs/) planen und Ausführen der Konsolenanwendung Remote verwendet. Wenn Sie einen benutzerdefinierten Zeitgeberauftrag zu erstellen, bestimmen Sie, ob Sie ein bestimmtes Konto oder eine nur-app-Token OAuth-basierte verwenden müssen. Im Codebeispiel [Core.TimerJobs.Samples](https://github.com/SharePoint/PnP/tree/master/Solutions/Core.TimerJobs.Samples) zeigt, wie Ihre eigenen benutzerdefinierten Zeitgeberauftrag zu erstellen.
     
-    **Hinweis**  Wenn der Zeitgeberauftrag für serverseitigen Code verwendet wird, müssen Sie Umgestalten des Zeitgeberauftrags, um das CSOM oder eine andere Methode zu verwenden.
+    > [!NOTE] 
+    > Wenn der Zeitgeberauftrag für serverseitigen Code verwendet wird, müssen Sie Umgestalten des Zeitgeberauftrags, um das CSOM oder eine andere Methode zu verwenden.
 
 |**Artikel**|**Zeigt, wie Sie auf**|
 |:-----|:-----|
@@ -109,9 +111,8 @@ Gelten Sie die folgenden bewährten Methoden bei der Umwandlung von bestimmten L
 |[Ersetzen von Listendefinitionen erstellte Listen](replace-sharepoint-lists-created-from-list-definitions.md)|Ersetzen Sie Listen und Bibliotheken, die mithilfe von Listendefinitionen in SharePoint erstellt wurden.|
 |[Ersetzen Sie die Webparts durch Add-in-Webparts](replace-sharepoint-web-parts-with-add-in-parts.md)|Verwenden des Transformationsprozess Webparts mithilfe des SharePoint-Clientobjektmodells (CSOM) mit Add-in-Webparts zu ersetzen.|
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)
-    
 -  [Erstellen von Add-Ins für SharePoint](https://msdn.microsoft.com/library/jj163230.aspx)

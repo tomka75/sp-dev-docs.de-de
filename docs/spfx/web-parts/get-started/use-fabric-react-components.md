@@ -1,17 +1,25 @@
+---
+title: "Verwenden von Office UI Fabric React-Komponenten in clientseitigen SharePoint-Webparts"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: ba0c27ed1feeefd8a7762fbf1979c291d33879ff
+ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/31/2017
+---
 # <a name="use-office-ui-fabric-react-components-in-your-sharepoint-client-side-web-part"></a>Verwenden von Office UI Fabric React-Komponenten in clientseitigen SharePoint-Webparts
-
-> **Wichtig:** Um Office UI Fabric React verwenden zu können, müssen Sie vorhandene Projekte auf @microsoft/sp-build-web@1.0.1 oder höher aktualisieren. Am einfachsten gelingt das, wenn Sie vor dem Durchspielen dieser Anleitung `npm install -g @microsoft/generator-sharepoint` in der Konsole ausführen, um sicherzustellen, dass Sie das neueste Paket haben. 
 
 In diesem Artikel wird die Erstellung eines einfachen Webparts beschrieben, das die DocumentCard-Komponente von [Office UI Fabric React](https://github.com/OfficeDev/office-ui-fabric-react) verwendet. Office UI Fabric React ist das Front-End-Framework zur Erstellung von Oberflächen für Office und Office 365. Fabric React umfasst eine Sammlung stabiler, dynamischer und für die Darstellung auf Mobilgeräten optimierter Komponenten zur unkomplizierten Erstellung von Weboberflächen mithilfe der Office-Entwurfssprache.
 
 Die folgende Abbildung zeigt eine DocumentCard-Komponente, die mit Office UI Fabric React erstellt wurde:
 
-![Abbildung der Fabric-Komponente „DocumentCard“ in einer SharePoint Workbench](../../../../images/fabric-components-doc-card-view-ex.png)
+![Abbildung der Fabric-Komponente „DocumentCard“ in einer SharePoint Workbench](../../../images/fabric-components-doc-card-view-ex.png)
 
 Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=1N6kNvLxyg4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq) nachvollziehen: 
 
 <a href="https://www.youtube.com/watch?v=1N6kNvLxyg4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
-<img src="../../../../images/spfx-youtube-tutorial6.png" alt="Screenshot of the YouTube video player for this tutorial" />
+<img src="../../../images/spfx-youtube-tutorial6.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 
@@ -40,14 +48,26 @@ yo @microsoft/sharepoint
 Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
 * Übernehmen Sie den Standardnamen **documentcardexample-webpart** als Lösungsnamen, und drücken Sie die **EINGABETASTE**.
-* Wählen Sie als Typ von clientseitiger Komponente **WebPart** aus, und drücken Sie die **EINGABETASTE**.
+* Wählen Sie **SharePoint Online only (latest)**, und drücken Sie die **EINGABETASTE**.
+* Wählen Sie als Speicherort für die Dateien die Option **Use the current folder** aus.
+* Wählen Sie **N**, damit die Erweiterung auf jeder Website explizit installiert werden muss, wenn sie verwendet wird. 
+* Wählen Sie **Webpart** als den zu erstellenden Typ von clientseitiger Komponente aus. 
+
+Über die nächsten Eingabeaufforderungen werden spezifische Informationen zum Webpart abgefragt:
+
 * Verwenden Sie **DocumentCardExample** als Namen des Webparts, und drücken Sie die **EINGABETASTE**.
 * Akzeptieren Sie den Standardnamen **DocumentCardExample - Beschreibung**, und drücken Sie die **EINGABETASTE**.
 * Wählen Sie **React** als Framework aus, und drücken Sie die**EINGABETASTE**.
 
 An diesem Punkt installiert Yeoman die erforderlichen Abhängigkeiten und erstellt ein Gerüst für die Lösungsdateien. Das kann einige Minuten dauern. Yeoman erstellt ein Gerüst für das Projekt, um auch das DocumentCardExample-Webpart einzuschließen.
-    
-Wenn das Gerüst abgeschlossen ist, geben Sie in der Konsole Folgendes ein, um das Webpartprojekt in Visual Studio-Code zu öffnen:
+
+Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
+
+```sh
+npm shrinkwrap
+```
+
+Geben Sie Folgendes ein, um das Webpart-Projekt in Visual Studio Code zu öffnen:
 
 ```
 code .
@@ -74,18 +94,18 @@ Wie Sie sehen können, erstellt die`render`-Methode ein React-Element und render
 Dies ist die wichtigste React-Komponente, die Yeoman zu Ihrem Projekt hinzugefügt hat, das im Webpart-DOM gerendert wird.
 
 ```ts
-export default class DocumentCardExample extends React.Component<IDocumentCardExampleProps, void> {
+export default class DocumentCardExample extends React.Component<IDocumentCardExampleProps, {}> {
   public render(): React.ReactElement<IDocumentCardExampleProps> {
     return (
-      <div className={styles.helloWorld}>
-        <div className={styles.container}>
-          <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
-            <div className="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
-              <span className="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
-              <p className="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
-              <p className="ms-font-l ms-fontColor-white">{escape(this.props.description)}</p>
-              <a href="https://aka.ms/spfx" className={styles.button}>
-                <span className={styles.label}>Learn more</span>
+      <div className={ styles.documentCardExample }>
+        <div className={ styles.container }>
+          <div className={ styles.row }>
+            <div className={ styles.column }>
+              <span className={ styles.title }>Welcome to SharePoint!</span>
+              <p className={ styles.subTitle }>Customize SharePoint experiences using Web Parts.</p>
+              <p className={ styles.description }>{escape(this.props.description)}</p>
+              <a href="https://aka.ms/spfx" className={ styles.button }>
+                <span className={ styles.label }>Learn more</span>
               </a>
             </div>
           </div>
@@ -94,6 +114,7 @@ export default class DocumentCardExample extends React.Component<IDocumentCardEx
     );
   }
 }
+
 ```
 
 ### <a name="add-an-office-ui-fabric-component"></a>Hinzufügen einer Office UI Fabric-Komponente
@@ -102,9 +123,10 @@ Die *neuen modernen Benutzeroberflächen* in SharePoint verwenden die Office UI 
 
 Da wir bei der Erstellung der Lösung React als Framework ausgewählt haben, hat der Generator auch die richtige Version von Office UI Fabric React installiert. Sie können die Fabric-Komponenten ohne weiteren Aufwand direkt in Ihre React-Komponenten importieren. 
 
->**Hinweis:** Wir empfehlen, mit der Erstversion von SharePoint Framework jeweils die Version von Office UI Fabric und Fabric React zu verwenden, die mit dem Generator ausgeliefert wird. Von einer separaten Aktualisierung der Pakete von Office UI Fabric und Fabric React raten wir ab. Sie könnte zu Konflikten mit der jeweils bereits in SharePoint verfügbaren Version führen. In einem solchen Fall würde Ihr Webpart möglicherweise nicht wie erwartet arbeiten.
+> [!NOTE]
+> Bei der Erstveröffentlichung von SharePoint-Framework empfehlen wir, jeweils die Office-UI-Fabric- und Fabric React-Version zu verwenden, die mit dem Generator ausgeliefert wird. Von einer separaten Aktualisierung der Office-UI-Fabric- und Fabric React-Pakete raten wir ab. Sie könnte zu Konflikten mit der jeweils bereits in SharePoint verfügbaren Version führen. In einem solchen Fall würde Ihr Webpart möglicherweise nicht wie erwartet arbeiten.
 
-Öffnen Sie die Datei **DocumentCardExample.tsx** im Ordner **src\webparts\documentCardExample\components**. 
+Öffnen Sie **DocumentCardExample.tsx** im Ordner **src\webparts\documentCardExample\components**. 
 
 Fügen Sie die folgende `import`-Anweisung am Anfang der Datei hinzu, um React-Komponenten der Fabric zu importieren, die verwendet werden sollen.
 
@@ -232,4 +254,4 @@ gulp serve
     
 Wählen Sie in der Toolbox Ihr `DocumentCardExample`-Webpart aus, das hinzugefügt werden soll:
     
-![Abbildung der Fabric-Komponente „DocumentCard“ in einer SharePoint Workbench](../../../../images/fabric-components-doc-card-view-ex.png)
+![Abbildung der Fabric-Komponente „DocumentCard“ in einer SharePoint Workbench](../../../images/fabric-components-doc-card-view-ex.png)

@@ -1,11 +1,11 @@
 ---
 title: "Enterprise Content Management-Lösungen für SharePoint 2013 und SharePoint Online"
 ms.date: 11/03/2017
-ms.openlocfilehash: dfba11eac28c91bae7862e40f482278fcb4a7ec9
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: a1a5552bb744981ff467ad482bd9726405193e29
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="enterprise-content-management-solutions-for-sharepoint-2013-and-sharepoint-online"></a>Enterprise Content Management-Lösungen für SharePoint 2013 und SharePoint Online
 
@@ -29,7 +29,7 @@ Die Beispiele in diesem-Lösungspaket wird gezeigt, wie vom Anbieter gehosteten-
 |[Synchronisieren von ausdrucksgruppen](Synchronize-term-groups-sample-app-for-SharePoint.md)|[Core.MMSSync](https://github.com/SharePoint/PnP/tree/master/Samples/Core.MMSSync) | Synchronisieren Sie ausdrucksgruppen auf mehrere Terminologiespeicher.|
 |[Unterstützung von % und # in Dateien und Ordner mit der API http://](supporting-and-in-file-and-folder-with-the-resourcepath-api.md)| - | Entwickler Anleitungen auf aktualisierte Unterstützung für % und # dürfen in Dateien und Ordner.|
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)

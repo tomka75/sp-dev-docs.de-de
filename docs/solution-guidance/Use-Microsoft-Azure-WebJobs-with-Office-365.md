@@ -1,11 +1,11 @@
 ---
 title: Verwenden Sie Microsoft Azure WebJobs mit Office 365
 ms.date: 11/03/2017
-ms.openlocfilehash: 0b3eb304efb291dfa4c0bb7c0809f2c5b044d28f
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: e0b45676beaab11122a15c61ed0a426e9888d75d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-microsoft-azure-webjobs-with-office-365"></a>Verwenden Sie Microsoft Azure WebJobs mit Office 365
 
@@ -78,7 +78,8 @@ So erstellen Sie eine Konsolenanwendung zum Ausführen als einem Azure WebJob, f
 
 Fügen Sie den folgenden Code in Program.cs um die Konsolenanwendung.
 
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
 
 
 1. Fügen Sie **using** -Anweisungen hinzu.
@@ -185,7 +186,7 @@ Klicken Sie nach Abschluss der vorherigen Schritte aus, sollte Ihre WebJob Azure
     
 - Überprüfen Sie die Protokolle WebJob Details für Ihre Azure WebJob. Mit dem WebJob Details Protokolle können Sie überprüfen, wenn ein Auftrag ausgeführt haben, den Erfolg oder Misserfolg eines Auftrags für den führen keine Ausgabe aus der WebJob (beispielsweise beim Aufruf von Console.WriteLine) sowie andere Details des Auftrags ausgeführt. Weitere Informationen finden Sie im Abschnitt Auftragsverlauf anzeigen für [Vorgänge mit WebJobs Hintergrund ausführen](http://azure.microsoft.com/documentation/articles/web-sites-create-web-jobs/).
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Office 365 Development Mustern und Methoden ausgesprochen](Office-365-development-patterns-and-practices-solution-guidance.md).

@@ -1,11 +1,11 @@
 ---
 title: Arbeiten mit Websites in einer Umgebung mit mehreren geografisch
 ms.date: 11/03/2017
-ms.openlocfilehash: 812c141981e383a35c10ff414dbdb4a199160d00
-ms.sourcegitcommit: 26a4fb9cfe1ffcd266313c16f2afabfc841fdb71
+ms.openlocfilehash: 581df53ac1a9527d8078401c90bf472a93849b7d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="working-with-sites-in-a-multi-geo-environment"></a>Arbeiten mit Websites in einer Umgebung mit mehreren geografisch
 
@@ -66,7 +66,8 @@ using (var ctx = new ClientRuntimeContext(tenantAdminSiteForMyGeoLocation))
 }
 ```
 
->**Hinweis:** Wenn Sie erfahren mehr über die benötigten Berechtigungen und wie Sie Ihre Anwendung konfigurieren, und klicken Sie dann bitte Auschecken im Artikel [Einrichten der Multi-Geo Beispielanwendungen](multigeo-sampleapplicationsetup.md) möchten.
+> [!NOTE] 
+> Wenn Sie erfahren mehr über die benötigten Berechtigungen und wie Sie Ihre Anwendung konfigurieren, und klicken Sie dann bitte Auschecken im Artikel [Einrichten der Multi-Geo Beispielanwendungen](multigeo-sampleapplicationsetup.md) möchten.
 
 ## <a name="resources"></a>Ressourcen
 Unterhalb der Liste der Ressourcen sind hilfreich, wenn Sie weitere Informationen zum Arbeiten mit Websites vertraut machen:

@@ -1,11 +1,11 @@
 ---
 title: Verbessern der Leistung in SharePoint gehostet durch Drittanbieter-add-ins
 ms.date: 11/03/2017
-ms.openlocfilehash: 495d4900418447ccb1738a0a33020dc9940389d8
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: d876d0a14eebdcef940c6d22997f96182b51af28
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="improve-performance-in-sharepoint-provider-hosted-add-ins"></a>Verbessern der Leistung in SharePoint gehostet durch Drittanbieter-add-ins
 
@@ -122,7 +122,7 @@ function setLocalStorageKeyExpiry(key) {
 
 Bevor Sie für die Informationen aus dem lokalen Speicher-Schlüssel, der Code verwendet die **IsKeyExpired** Funktion, um festzustellen, ob der Schlüssel abläuft. Weitere Informationen finden Sie unter [Anpassen der UX mithilfe von SharePoint gehostet durch Drittanbieter-add-ins](customize-the-ux-by-using-sharepoint-provider-hosted-add-ins.md).
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [UX-Komponenten in SharePoint 2013 und SharePoint Online](ux-components-in-sharepoint-2013-and-sharepoint-online.md)

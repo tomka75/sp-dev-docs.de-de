@@ -2,11 +2,11 @@
 title: Anpassen von "modernen" Teamwebsites
 description: Anwenden eines benutzerdefinierten Designs zu einer "modernen" Teamsite in SharePoint Online.
 ms.date: 11/08/2017
-ms.openlocfilehash: 4341876f6ee07018325c5cc089cc28728538ab10
-ms.sourcegitcommit: 4ea7e9cb1efb53f89da236282002956739d77418
+ms.openlocfilehash: 18c557f3edb192e3336589a59f24522113bd1d9c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="customizing-modern-team-sites"></a>Anpassen von "modernen" Teamwebsites
 
@@ -165,7 +165,7 @@ public static bool IsNoScriptSite(Web web)
 
 Wir werden schrittweise weitere Anpassungsoptionen für "modernen" Teamwebsites einzuführen, die mit der Veröffentlichung von SharePoint-Framework Zusatzfunktionen ausgerichtet wird. Derzeit ist kein genauen Zeitplan verfügbar, aber wir werden in den Artikeln "modernen" Erfahrung aktualisieren, sobald neue Funktionen freigegeben werden.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 
 - [Anpassen der „modernen“ Benutzeroberflächen in SharePoint Online](modern-experience-customizations.md)
 - [Plug & Play-Remote-Bereitstellung](https://msdn.microsoft.com/en-us/pnp_articles/pnp-remote-provisioning)

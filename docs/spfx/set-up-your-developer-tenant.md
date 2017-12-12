@@ -1,3 +1,13 @@
+---
+title: Einrichten des Office 365-Mandanten
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 3f9b57d55b0e23c3acb4587552a2fad5626bbbd0
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/13/2017
+---
 # <a name="set-up-your-office-365-tenant"></a>Einrichten des Office 365-Mandanten
 
 Zum Erstellen und Bereitstellen von clientseitigen Webparts mithilfe der Preview-Version von SharePoint Framework benötigen Sie einen Office 365-Mandanten. 
@@ -64,4 +74,4 @@ https://your-sharepoint-site/_layouts/workbench.aspx
 ```
 
 ## <a name="next-steps"></a>Nächste Schritte
-Da Sie jetzt Ihren SharePoint-Mandanten konfiguriert, [richten Sie Ihre Entwicklungsumgebung ein](./set-up-your-development-environment), um clientseitige Webparts zu erstellen.
+Da Sie jetzt Ihren SharePoint-Mandanten konfiguriert, [richten Sie Ihre Entwicklungsumgebung ein](./set-up-your-development-environment.md), um clientseitige Webparts zu erstellen.

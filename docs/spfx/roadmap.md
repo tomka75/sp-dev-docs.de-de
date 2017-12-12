@@ -1,22 +1,32 @@
-# <a name="sharepoint-framework-roadmap"></a>SharePoint Framework-Roadmap
+---
+title: SharePoint Framework-Roadmap
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: a5097e0f7d465ab00c5c7a76a8ee78e10f737d7d
+ms.sourcegitcommit: 11d9185437fc819ab41421c0f4fe06aa300b9d28
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/25/2017
+---
+# <a name="sharepoint-framework-roadmap"></a>SharePoint-Framework-Roadmap
 
-Die Erstveröffentlichung von SharePoint Framework enthält Unterstützung für clientseitige Webparts. Dies ist jedoch nur der Beginn der Bereitstellung zusätzlicher moderner Anpassungsfunktionen für SharePoint. In diesem Artikel sind die verschiedenen Bereiche aufgeführt, die wir für die künftigen Versionen von SharePoint Framework bereit halten.
+Die Erstveröffentlichung von SharePoint-Framework enthielt nur Unterstützung für clientseitige Webparts. Dies war jedoch nur der Beginn der Bereitstellung zusätzlicher moderner Anpassungsfunktionen für SharePoint. Im folgenden werden die wichtigsten Funktionen aufgeführt, die nach der Markteinführung veröffentlicht wurden.
 
-> Hinweis: Dies ist eine Liste von Bereichen, die von den SharePoint-Entwicklern abgearbeitet und untersucht werden. Das bedeutet **NICHT**, dass all diese Bereiche auch wirklich bereitgestellt werden, wir bemühen uns jedoch, Elemente und Themen aus dieser Liste in den künftigen Versionen von SharePoint Framework schrittweise zu veröffentlichen.  
+- [Unterstützung für mandantenweite Bereitstellung](./tenant-scoped-deployment.md)
+- [Lokale Unterstützung für SharePoint 2016 (Feature Pack 2)](./sharepoint-2016-support.md)
+- [SharePoint-Framework-Erweiterungen](./extensions/overview-extensions.md)
+- [Mandanteneigenschaften](./tenant-properties.md)
 
-## <a name="on-premises-support"></a>Lokaler Support
 
-- Bereitstellung als Teil des Feature Pack 2 für SharePoint 2016
-- Ähnliche Funktionen wie in SharePoint Online
-- Ziel ist die Bereitstellung einer gemeinsamen Entwicklungsplattform, lokal und in der Cloud
-- Nutzung der modernen Toolkette und von Open Soure für lokale Umgebungen
-- Abzielen auf SharePoint 2016-Version während des Kalenderjahrs 2017
+> [!NOTE]
+> Dies ist eine Liste von Bereichen, die von den SharePoint-Entwicklern abgearbeitet und untersucht werden. Das bedeutet **NICHT**, dass all diese Bereiche auch wirklich bereitgestellt werden, wir bemühen uns jedoch, Elemente und Themen aus dieser Liste in den künftigen Versionen von SharePoint-Framework schrittweise zu veröffentlichen.
 
 ## <a name="general-improvements"></a>Allgemeine Verbesserungen
 
-- Einfacher Zugriff auf die Graph-API zum Zugreifen auf benutzerspezifische Informationen (GraphHttpClient in der Entwicklervorschau)
-- Websitesammlungs-App-Katalog mit Steuerung auf Mandantenebene für eine einfachere Bereitstellung von Lösungen 
+- Einfacher Zugriff auf die Graph-API zum Zugreifen auf benutzerspezifische Informationen (GraphHttpClient in der Vorschau)
+- Websitesammlungs-App-Katalog mit Steuerung auf Mandantenebene für eine einfachere Bereitstellung von Lösungen – Ende 2017
 - Webhooks auf Website-Ebene
+- Unterstützung für Office-UI-Fabric Core
 
 ## <a name="client-side-web-parts-and-add-ins"></a>Clientseitige Webparts und Add-Ins
 
@@ -27,17 +37,9 @@ Die Erstveröffentlichung von SharePoint Framework enthält Unterstützung für 
 
 - Add-Ins für die moderne Welt: Ansprechendere Wiedergabe mit der neuen UX. 
     - Azure AD-Registrierung
-    - Systemeigene dynamische Unterstützung 
-    - Erstellen von Add-Ins mit SharePoint Framework
+    - Systemeigene dynamische Unterstützung
+    - Erstellen von Add-Ins mit SharePoint-Framework
 
-## <a name="javascript-embedding-support-jslink-user-custom-actions"></a>Eingebettete JavaScript-Unterstützung (JSLink, benutzerdefinierte Benutzeraktionen)
-
-- Dieselbe Toolkette und dasselbe Bereitstellungsmodell wie bei clientseitigen Webparts
-- Leiten Sie von einer stark typisierten Basisklasse, wann immer möglich, ab, anstatt das Seiten-DOM direkt zu bearbeiten.
-- Moderne Erweiterungsverwendung mit modernen Benutzerumgebung ähnlich wie Benutzerdefinierte Aktionen und JS-Link in der klassischen Umgebung
-- Arbeiten mit NoScript über Mandanten-App-Katalog
-
-> Dies steht nun in der [Vorschau für Entwickler](https://dev.office.com/blogs/announcing-availability-of-sharepoint-framework-extensions-developer-preview) zur Verfügung.
 
 ## <a name="application-lifecycle-management"></a>Application Lifecycle Management
 
@@ -53,9 +55,28 @@ Die Erstveröffentlichung von SharePoint Framework enthält Unterstützung für 
 
 
 ## <a name="developer-experience"></a>Entwickleroberfläche
-- SharePoint Framework Workbench 2.0: Entwicklungsgeschichte hinter Webparts mit Unterstützung neuer Komponententypen zusätzlich zu clientseitigen Webparts
+- SharePoint-Framework-Workbench 2.0: Entwicklungsgeschichte für SharePoint-Framework-Erweiterungen
 - Toolkettenkomponenten
 - Zusätzliche Yeoman-Vorlagen
+
+## <a name="already-shipped-capabilities"></a>Bereits ausgeliefert Funktionen
+
+In den folgenden Kapiteln werden ältere Elemente auf der Roadmap-Seite erläutert, die bereits ausgeliefert wurden.
+
+### <a name="javascript-embedding-support-jslink-user-custom-actions"></a>Eingebettete JavaScript-Unterstützung (JSLink, benutzerdefinierte Benutzeraktionen) 
+
+- Dieselbe Toolkette und dasselbe Bereitstellungsmodell wie bei clientseitigen Webparts
+- Leiten Sie von einer stark typisierten Basisklasse, wann immer möglich, ab, anstatt das Seiten-DOM direkt zu bearbeiten.
+- Moderne Erweiterungsverwendung mit modernen Benutzerumgebung ähnlich wie Benutzerdefinierte Aktionen und JS-Link in der klassischen Umgebung
+- Arbeiten mit NoScript über Mandanten-App-Katalog
+
+### <a name="on-premises-support---sharepoint-2016-feature-pack-2"></a>Lokale Unterstützung – SharePoint 2016 Feature Pack 2
+
+- Bereitstellung als Teil des Feature Pack 2 für SharePoint 2016
+- Ähnliche Funktionen wie in SharePoint Online
+- Ziel ist die Bereitstellung einer gemeinsamen Entwicklungsplattform, lokal und in der Cloud
+- Nutzung der modernen Toolkette und von Open Soure für lokale Umgebungen
+- Abzielen auf SharePoint 2016-Version während des Kalenderjahrs 2017
 
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen

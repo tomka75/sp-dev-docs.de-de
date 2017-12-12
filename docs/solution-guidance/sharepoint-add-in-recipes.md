@@ -1,11 +1,11 @@
 ---
 title: SharePoint-Add-in Rezepte
 ms.date: 11/03/2017
-ms.openlocfilehash: e2df4e463fe9a1c4433b0b99649d89034f8db381
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 2f6d8046a2356fb9bd10efeb1b1724acff392466
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-add-in-recipes"></a>SharePoint-Add-in Rezepte
 
@@ -50,7 +50,7 @@ Die Artikel in diesem Abschnitt zeigen, wie das SharePoint-Add-in-Objektmodell z
 |[Workflows, Aktionen (Aktivitäten), Ereignisse und Formulare](workflows-actions-events-and-forms-sharepoint-add-in.md)|Implementieren von Workflows und die damit verbundenen Komponenten.|
 |[Yammer-Integration](yammer-integration-sharepoint-add-in.md)|Integrieren von Yammer in SharePoint.|
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)

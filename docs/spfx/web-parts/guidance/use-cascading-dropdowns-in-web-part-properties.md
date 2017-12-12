@@ -1,12 +1,22 @@
+---
+title: Verwenden von kaskadierenden Dropdowns in Webparteigenschaften
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: aecede48a431e42fa2edc3b1040e03d839022907
+ms.sourcegitcommit: 61f26b4fe41d3cd80622d9950d8f6599df48f26f
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/26/2017
+---
 # <a name="use-cascading-dropdowns-in-web-part-properties"></a>Verwenden von kaskadierenden Dropdowns in Webparteigenschaften
 
 Beim Entwerfen des Eigenschaftenbereichs für Ihre clientseitigen SharePoint-Webparts gibt es vielleicht eine Webparteigenschaft, deren Optionen basierend auf dem in einer anderen Eigenschaft ausgewählten Wert angezeigt werden. Dieses Szenario tritt in der Regel bei der Implementierung von kaskadierenden Dropdownsteuerelementen auf. In diesem Artikel erfahren Sie, wie kaskadierende Dropdownsteuerelemente im Webpart-Eigenschaftenbereich erstellt werden, ohne ein benutzerdefiniertes Steuerelement für den Eigenschaftenbereich zu entwickeln.
 
-![Deaktiviertes Elementdropdown und Webpartplatzhalter, die beim Laden der aktualisierten Liste von Elementoptionen kommunizieren](../../../../images/react-cascading-dropdowns-loading-indicator-when-loading-items.png)
+![Deaktiviertes Elementdropdown und Webpartplatzhalter, die beim Laden der aktualisierten Liste von Elementoptionen kommunizieren](../../../images/react-cascading-dropdowns-loading-indicator-when-loading-items.png)
 
 Der Quellcode des Webparts, mit dem wir arbeiten, steht auf GitHub zur Verfügung, unter [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols).
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment).
+> **Hinweis:** Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment.md).
 
 ## <a name="create-new-project"></a>Erstellen eines neuen Projekts
 
@@ -36,11 +46,17 @@ Geben Sie die folgenden Werte ein, wenn Sie dazu aufgefordert werden:
 - **Listenelemente** als Namen des Webparts
 - **Zeigt Listenelemente aus der ausgewählten Liste an** als Beschreibung Ihres Webparts
 
-![SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../../images/react-cascading-dropdowns-yo-sharepoint.png)
+![SharePoint-Framework-Yeoman-Generator mit den Standardoptionen](../../../images/react-cascading-dropdowns-yo-sharepoint.png)
 
-Öffnen Sie den Projektordner in Ihrem Code-Editor, sobald die Gerüsterstellung abgeschlossen ist. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 
-![SharePoint Framework-Projekt in Visual Studio Code](../../../../images/react-cascading-dropdowns-visual-studio-code.png)
+```sh
+npm shrinkwrap
+```
+
+Öffnen Sie dann den Projektordner im Code-Editor. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+
+![SharePoint-Framework-Projekt in Visual Studio Code](../../../images/react-cascading-dropdowns-visual-studio-code.png)
 
 ## <a name="define-a-web-part-property-to-store-the-selected-list"></a>Definieren einer Webparteigenschaft zum Speichern der ausgewählten Liste
 
@@ -48,7 +64,7 @@ Sie erstellen ein Webpart, in dem Listenelemente aus einer ausgewählten SharePo
 
 Öffnen Sie im Code-Editor die Datei **src/webparts/listItems/ListItemsWebPartManifest.json** Ersetzen Sie die standardmäßige **description**-Eigenschaft durch eine neue Eigenschaft mit dem Namen `listName`.
 
-![Webpartmanifest, bei dem die Webparteigenschaft 'list' markiert ist](../../../../images/react-cascading-dropdowns-listname-property-web-part-manifest.png)
+![Webpartmanifest, bei dem die Webparteigenschaft 'list' markiert ist](../../../images/react-cascading-dropdowns-listname-property-web-part-manifest.png)
 
 Öffnen Sie als Nächstes die Datei **src/webparts/listItems/IListItemsWebPartProps.ts**, und ersetzen Sie ihren Inhalt durch Folgendes:
 
@@ -166,7 +182,7 @@ gulp serve
 
 Fügen Sie im Webbrowser das **Listenelement**-Webpart zum Zeichenbereich hinzu, und öffnen Sie die Eigenschaften. Überprüfen Sie, dass der für die **List**-Eigenschaft festgelegte Wert im Webparttext angezeigt wird.
 
-![Webpart, in dem der Wert der listName-Eigenschaft angezeigt wird](../../../../images/react-cascading-dropdowns-web-part-first-run.png)
+![Webpart, in dem der Wert der listName-Eigenschaft angezeigt wird](../../../images/react-cascading-dropdowns-web-part-first-run.png)
 
 ## <a name="populate-the-dropdown-with-sharepoint-lists-to-choose-from"></a>Ausfüllen des Dropdowns mit SharePoint-Listen, aus denen eine Auswahl getroffen werden kann
 
@@ -242,7 +258,7 @@ Führen Sie den folgenden Befehl aus, um sicherzustellen, dass er wie erwartet f
 gulp serve
 ```
 
-![Die im Webpart-Eigenschaftenbereich mithilfe eines Dropdownsteuerelements gerenderte listName-Eigenschaft](../../../../images/react-cascading-dropdowns-listname-property-pane-dropdown.png)
+![Die im Webpart-Eigenschaftenbereich mithilfe eines Dropdownsteuerelements gerenderte listName-Eigenschaft](../../../images/react-cascading-dropdowns-listname-property-pane-dropdown.png)
 
 ### <a name="show-available-lists-in-the-list-dropdown"></a>Anzeigen verfügbarer Listen im Listendropdown
 
@@ -303,7 +319,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 
 Die **onPropertyPaneConfigurationStart**-Methode wird vom SharePoint Framework aufgerufen, nachdem der Webpart-Eigenschaftenbereich des Webparts geöffnet wurde. Die Methode prüft zuerst, ob die Informationen zu den in der aktuellen Website verfügbaren Listen geladen wurden. Wenn die Listeninformationen geladen wurden, wird das Listendropdown aktiviert. Wenn die Informationen zu Listen noch nicht geladen wurden, wird die Ladeanzeige angezeigt, die den Benutzer darüber informiert, dass das Webpart gerade Informationen zu Listen lädt.
 
-![Die während des Ladens von Informationen zu verfügbaren Listen angezeigte Ladeanzeige im Webpart](../../../../images/react-cascading-dropdowns-loading-indicator-when-loading-list-info.png)
+![Die während des Ladens von Informationen zu verfügbaren Listen angezeigte Ladeanzeige im Webpart](../../../images/react-cascading-dropdowns-loading-indicator-when-loading-list-info.png)
 
 Nachdem die Informationen zu den verfügbaren Listen geladen wurden, weist die Methode die abgerufenen Daten der **lists**-Klassenvariablen zu, von der aus sie vom Listendropdown verwendet werden können. Als Nächstes wird das Dropdown aktiviert, sodass der Benutzer eine Liste auswählen kann. Durch Aufrufen von **this.context.propertyPane.refresh()** wird der Webpart-Eigenschaftenbereich aktualisiert und spiegelt die letzten Änderungen am Listendropdown wider. Nachdem Listeninformationen geladen wurden, wird die Ladeanzeige durch Aufrufen der **clearLoadingIndicator**-Methode entfernt. Da durch Aufrufen dieser Methode die Benutzeroberfläche des Webparts gelöscht wird, wird die **render**-Methode aufgerufen, um das erneute Rendern des Webparts zu erzwingen.
 
@@ -315,13 +331,13 @@ gulp serve
 
 Wenn Sie dem Zeichenbereich ein Webpart hinzufügen und seinen Eigenschaftenbereich öffnen, sollten Sie das Listendropdown mit den verfügbaren Listen sehen, aus denen der Benutzer eine Auswahl treffen kann.
 
-![Listendropdown im Webpart-Eigenschaftenbereich, in dem die verfügbaren Listen angezeigt werden](../../../../images/react-cascading-dropdowns-list-dropdown-available-lists.png)
+![Listendropdown im Webpart-Eigenschaftenbereich, in dem die verfügbaren Listen angezeigt werden](../../../images/react-cascading-dropdowns-list-dropdown-available-lists.png)
 
 ## <a name="allow-users-to-select-an-item-from-the-selected-list"></a>Ermöglichen, dass Benutzer ein Element aus der ausgewählten Listen auswählen können
 
-Beim Erstellen von Webparts müssen Sie Benutzern häufig ermöglichen, eine Option aus einer Reihe von Werten auszuwählen, die von einem zuvor ausgewählten Wert bestimmt werden, z. B. das Auswählen eines Landes basierend auf dem ausgewählten Kontinent oder das Auswählen eines Listenelements aus einer ausgewählten Liste. Diese Benutzeroberfläche wird häufig als kaskadierendes Dropdown bezeichnet. Mithilfe der standardmäßigen Funktionen von clientseitigen SharePoint Framework-Webparts können Sie kaskadierende Dropdowns im Webpart-Eigenschaftenbereich erstellen. Um zu erfahren, wie dies funktioniert, erweitern Sie das zuvor erstellte Webpart mit der Funktion zum Auswählen eines Listenelements basierend auf der zuvor ausgewählten Liste.
+Beim Erstellen von Webparts müssen Sie Benutzern häufig ermöglichen, eine Option aus einer Reihe von Werten auszuwählen, die von einem zuvor ausgewählten Wert bestimmt werden, z. B. das Auswählen eines Landes/einer Region basierend auf dem ausgewählten Kontinent oder das Auswählen eines Listenelements aus einer ausgewählten Liste. Diese Benutzeroberfläche wird häufig als kaskadierendes Dropdown bezeichnet. Mithilfe der standardmäßigen Funktionen von clientseitigen SharePoint Framework-Webparts können Sie kaskadierende Dropdowns im Webpart-Eigenschaftenbereich erstellen. Um zu erfahren, wie dies funktioniert, erweitern Sie das zuvor erstellte Webpart mit der Funktion zum Auswählen eines Listenelements basierend auf der zuvor ausgewählten Liste.
 
-![Geöffnetes Listenelementdropdown im Webpart-Eigenschaftenbereich](../../../../images/react-cascading-dropdowns-item-dropdown-list-items.png)
+![Geöffnetes Listenelementdropdown im Webpart-Eigenschaftenbereich](../../../images/react-cascading-dropdowns-item-dropdown-list-items.png)
 
 ### <a name="add-item-web-part-property"></a>Hinzufügen der item-Webparteigenschaft
 
@@ -338,7 +354,7 @@ Beim Erstellen von Webparts müssen Sie Benutzern häufig ermöglichen, eine Opt
 }
 ```
 
-![Webpartmanifest, bei dem die Webparteigenschaft 'itemName' markiert ist](../../../../images/react-cascading-dropdowns-itemname-property-web-part-manifest.png)
+![Webpartmanifest, bei dem die Webparteigenschaft 'itemName' markiert ist](../../../images/react-cascading-dropdowns-itemname-property-web-part-manifest.png)
 
 Ändern Sie den Code in der Datei **src/webparts/listItems/IListItemsWebPartProps.ts** in Folgendes:
 
@@ -493,7 +509,7 @@ Führen Sie den folgenden Befehl aus, um sicherzustellen, dass er wie erwartet f
 gulp serve
 ```
 
-![Die im Webpart-Eigenschaftenbereich mithilfe eines Dropdown-Steuerelements gerenderte itemName-Eigenschaft](../../../../images/react-cascading-dropdowns-itemname-property-pane-dropdown.png)
+![Die im Webpart-Eigenschaftenbereich mithilfe eines Dropdown-Steuerelements gerenderte itemName-Eigenschaft](../../../images/react-cascading-dropdowns-itemname-property-pane-dropdown.png)
 
 ### <a name="show-items-available-in-the-selected-list-in-the-item-dropdown"></a>Anzeigen von verfügbaren Elementen in der ausgewählten Liste im Elementdropdown
 
@@ -595,7 +611,7 @@ gulp serve
 
 Das Elementdropdown ist, wie erforderlich, anfänglich deaktiviert, sodass Benutzer zuerst eine Liste auswählen müssen. Doch an diesem Punkt bleibt das Elementdropdown auch nach dem Auswählen einer Liste deaktiviert.
 
-![Auch nach dem Auswählen einer Liste deaktiviertes Elementdropdown](../../../../images/react-cascading-dropdowns-list-selected-item-disabled.png)
+![Auch nach dem Auswählen einer Liste deaktiviertes Elementdropdown](../../../images/react-cascading-dropdowns-list-selected-item-disabled.png)
 
 #### <a name="update-web-part-property-pane-after-selecting-a-list"></a>Aktualisieren des Webpart-Eigenschaftenbereichs nach dem Auswählen einer Liste
 
@@ -662,4 +678,4 @@ Nachdem die Elemente für die ausgewählte Liste geladen wurden, werden sie der 
 > isDisabled: newProps.isDisabled !== undefined ? newProps.isDisabled : newProps.disabled
 > ```
 
-![Elementdropdown im Webpart-Eigenschaftenbereich, in dem verfügbare Listenelemente für die ausgewählte Liste angezeigt werden](../../../../images/react-cascading-dropdowns-item-dropdown-list-items.png)
+![Elementdropdown im Webpart-Eigenschaftenbereich, in dem verfügbare Listenelemente für die ausgewählte Liste angezeigt werden](../../../images/react-cascading-dropdowns-item-dropdown-list-items.png)
