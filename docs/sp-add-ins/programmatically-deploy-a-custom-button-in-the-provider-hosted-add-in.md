@@ -1,141 +1,100 @@
+---
+title: "Programmgesteuertes Bereitstellen einer benutzerdefinierten Schaltfläche in anbietergehosteten Add-Ins"
+description: "Hier erfahren Sie, wie Sie eine benutzerdefinierte Menübandschaltfläche bei einer benutzerdefinierten Liste in Ihrem zuvor erstellten anbietergehosteten SharePoint-Add-In registrieren können."
+ms.date: 11/02/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 0fc7f5e8d4255f103413d9f49750d7d3365a2562
+ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 11/03/2017
+---
+# <a name="programmatically-deploy-a-custom-button-in-the-provider-hosted-add-in"></a>Programmgesteuertes Bereitstellen einer benutzerdefinierten Schaltfläche in anbietergehosteten Add-Ins
 
-# <a name="programmatically-deploy-a-custom-button-in-the-provider-hosted-add-in"></a>Programmgesteuertes Bereitstellen einer benutzerdefinierten Schaltfläche im vom Anbieter gehosteten Add-In
-Erfahren Sie, wie Sie programmgesteuert eine benutzerdefinierte Menübandschaltfläche mit einer benutzerdefinierten Liste im selben vom Anbieter gehosteten SharePoint-Add-In registrieren.
- 
+Dies ist der neunte Artikel in unserer Artikelreihe über die Grundlagen der Entwicklung von anbietergehosteten SharePoint-Add-Ins. Vor der Lektüre dieses Artikels sollten Sie sich zunächst mit [SharePoint-Add-Ins](sharepoint-add-ins.md) vertraut machen und die vorherigen Artikel der Reihe lesen:
 
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint#bk_newname).
- 
+-  [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
+-  [Übertragen des SharePoint-Aussehens und -Verhaltens auf Ihr vom Anbieter gehostetes Add-In](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md)
+-  [Einfügen einer benutzerdefinierten Schaltfläche in das vom Anbieter gehostete Add-In](include-a-custom-button-in-the-provider-hosted-add-in.md)
+-  [Schnelle Übersicht über das SharePoint-Objektmodell](get-a-quick-overview-of-the-sharepoint-object-model.md)
+-  [Hinzufügen von SharePoint-Schreibvorgängen zum vom Anbieter gehosteten Add-In](add-sharepoint-write-operations-to-the-provider-hosted-add-in.md)
+-  [Einfügen eines Add-In-Webparts in das vom Anbieter gehostete Add-In](include-an-add-in-part-in-the-provider-hosted-add-in.md)
+-  [Verarbeiten von Add-In-Ereignissen im vom Anbieter gehosteten Add-In](handle-add-in-events-in-the-provider-hosted-add-in.md)
+-  [Hinzufügen der Logik für die erste Ausführung zum vom Anbieter gehosteten Add-In](add-first-run-logic-to-the-provider-hosted-add-in.md)
 
-Dies ist der neunte in einer Reihe von Artikeln über die Grundlagen der Entwicklung von vom Anbieter gehosteten SharePoint-Add-Ins. Sie sollten sich zuerst mit [SharePoint Add-Ins](sharepoint-add-ins) und den vorherigen Artikeln in dieser Reihe vertraut machen:
- 
+> [!NOTE]
+> Wenn Sie unsere Artikelreihe zum Thema anbietergehostete Add-Ins durchgearbeitet haben, haben Sie bereits eine Visual Studio-Lösung, die Sie für diesen Artikel verwenden können. Alternativ können Sie das Repository unter [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) herunterladen und die Datei „BeforeProgrammaticButton.sln“ öffnen.
 
--  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins)
-    
- 
--  [Übertragen des SharePoint-Aussehens und -Verhaltens auf Ihr vom Anbieter gehostetes Add-In](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel)
-    
- 
--  [Einfügen einer benutzerdefinierten Schaltfläche in das vom Anbieter gehostete Add-In](include-a-custom-button-in-the-provider-hosted-add-in)
-    
- 
--  [Schnelle Übersicht über das SharePoint-Objektmodell](get-a-quick-overview-of-the-sharepoint-object-model)
-    
- 
--  [Hinzufügen von SharePoint-Schreibvorgängen zum vom Anbieter gehosteten Add-In](add-sharepoint-write-operations-to-the-provider-hosted-add-in)
-    
- 
--  [Einfügen eines Add-In-Webparts in das vom Anbieter gehostete Add-In](include-an-add-in-part-in-the-provider-hosted-add-in)
-    
- 
--  [Verarbeiten von Add-In-Ereignissen im vom Anbieter gehosteten Add-In](handle-add-in-events-in-the-provider-hosted-add-in)
-    
- 
--  [Hinzufügen der Logik für die erste Ausführung zum vom Anbieter gehosteten Add-In](add-first-run-logic-to-the-provider-hosted-add-in)
-    
- 
-
- **Hinweis** Wenn Sie diese Reihe zu vom Anbieter gehosteten Add-Ins durchgearbeitet haben, haben Sie eine Visual Studio-Projektmappe, die Sie verwenden können, um mit diesem Thema fortzufahren. Sie können außerdem das Repository unter  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) herunterladen und die Datei „BeforeProgrammaticButton.sln" öffnen.
- 
-
-In diesem Artikel erfahren Sie, wie Sie eine benutzerdefinierte Menübandschaltfläche in ein SharePoint-Add-In einfügen, wenn die Liste, deren Menüband die Schaltfläche erhält, selbst programmgesteuert im selben Add-In bereitgestellt wird.
- 
+In diesem Artikel erfahren Sie, wie Sie eine benutzerdefinierte Menübandschaltfläche in ein SharePoint-Add-In einfügen können, wenn die Liste, deren Menüband die Schaltfläche abruft, selbst programmgesteuert in dem betreffenden Add-In bereitgestellt wird.
 
 ## <a name="re-add-the-custom-button-to-the-project"></a>Erneutes Hinzufügen der benutzerdefinierten Schaltfläche zum Projekt
 
+> [!NOTE]
+> Die Einstellungen für Startprojekte in Visual Studio werden in der Regel nach jedem erneuten Öffnen der Lösung wieder auf die Standardwerte zurückgesetzt. Wann immer Sie beim Durcharbeiten dieser Artikelreihe die Beispiellösung erneut öffnen, müssen Sie umgehend die folgenden Schritte durchführen: 
+> 1. Klicken Sie oben im **Projektmappen-Explorer** mit der rechten Maustaste auf den Lösungsknoten, und wählen Sie die Option **Startprojekte festlegen** aus.  
+> 2. Stellen Sie sicher, dass alle drei Projekte in der Spalte **Aktion** auf **Start** festgelegt sind.
 
- **Hinweis** Die Einstellungen für Startprojekte in Visual Studio werden normalerweise auf die Standardwerte zurückgesetzt, wann immer die Projektmappe erneut geöffnet wird. Führen Sie die folgenden Schritte immer unmittelbar nach dem erneuten Öffnen der Beispielprojektmappe in dieser Artikelreihe durch: Klicken Sie mit der rechten Maustaste oben im **Projektmappen-Explorer** auf den Projektmappenknoten, und wählen Sie **Startprojekte festlegen** aus. Stellen Sie sicher, dass alle drei Projekte in der Spalte **Aktion** auf **Starten** festgelegt sind.
- 
+Im vorherigen Artikel haben Sie die benutzerdefinierte Menübandschaltfläche **AddEmployeeToCorpDB** aus dem Projekt entfernt. Gehen Sie nun wie folgt vor, um sie dem Projekt wieder hinzuzufügen:
 
-Im vorherigen Artikel haben Sie die benutzerdefinierte **AddEmployeeToCorpDB**-Menübandschaltfläche aus dem Projekt entfernt. Fügen Sie diese mit der folgenden Schritten unten wieder hinzu.
- 
+1. Klicken Sie auf der Symbolleiste oben im **Projektmappen-Explorer** auf die Schaltfläche **Alle Dateien anzeigen**.
 
- 
+   *Abbildung 1: Symbolleiste im Projektmappen-Explorer*
 
-1. Klicken Sie im **Projektmappen-Explorer** auf die Schaltfläche **Alle Dateien anzeigen** auf der kleinen Symbolleiste am oberen Rand des **Projektmappen-Explorers**.
-    
-  ![Die Projektmappen-Explorer-Symbolleiste mit einem Feld um die Schaltfläche „Alle Dateien anzeigen“.](../../images/f6b035f5-1aa7-452a-8f59-9dd44b062d06.PNG)
- 
+   ![Symbolleiste im Projektmappen-Explorer mit einem Kästchen um die Schaltfläche „Alle Dateien anzeigen“](../images/f6b035f5-1aa7-452a-8f59-9dd44b062d06.PNG)
 
- 
+2. Klicken Sie im Projekt **ChainStore** mit der rechten Maustaste auf **AddEmployeeToCorpDB**, und wählen Sie die Option **Zu Projekt hinzufügen** aus.
 
- 
-2. Klicken Sie im Projekt **ChainStore** mit der rechten Maustaste auf **AddEmployeeToCorpDB**, und wählen Sie **Zu Projekt hinzufügen** aus.
-    
- 
 3. Klicken Sie erneut auf die Schaltfläche **Alle Dateien anzeigen**.
-    
- 
-4. Erweitern Sie im Projekt **ChainStore****AddEmployeeToCorpDB**, und öffnen Sie die Datei „elements.xml".
-    
- 
 
-## <a name="understand-a-dilemma-and-its-solution"></a>Grundlegendes zu einem Dilemma und seiner Lösung
+4. Erweitern Sie im Projekt **ChainStore** das Element **AddEmployeeToCorpDB**, und öffnen Sie die Datei „elements.xml".
 
-In der Datei „elements.xml“ identifiziert das Attribut **RegistrationId** des Elements **CustomAction** die Liste, auf deren Menüband die Schaltfläche hinzugefügt wird: `{$ListId:Lists/Local Employees;}`. Das hat einwandfrei funktioniert, als die Liste bereits manuell zum Hostweb hinzugefügt wurde. Aber jetzt, da die Liste programmgesteuert in der zuerst ausgeführten Logik bereitgestellt wird, ist die Liste nicht vorhanden, wenn SharePoint das Add-In installiert und versucht, die Schaltfläche bereitzustellen. Bei der Installation des Add-Ins wird eine Ausnahme ausgelöst, und es treten Fehler auf.
- 
+## <a name="understand-a-dilemma-and-its-solution"></a>Ein Problem und seine Lösung
 
- 
-Das Bereitstellen der Liste im Ereignishandler der Installation statt in der zuerst ausgeführten Logik wird das Problem nicht lösen, da SharePoint benutzerdefinierte , deskriptiv definierte Komponenten wie die benutzerdefinierte Schaltfläche (und das Add-In-Webpart **Bestellung aufgeben**) bereitstellt,  *bevor*  der benutzerdefinierte Handler ausgeführt wird, sodass die Liste nicht vorhanden ist, wenn SharePoint versucht, die Schaltfläche bereitzustellen.
- 
+In der Datei „elements.xml" identifiziert das Attribut **RegistrationId** des Elements **CustomAction** die Liste, auf deren Menüband die Schaltfläche hinzugefügt wird: `{$ListId:Lists/Local Employees;}`. Das hat einwandfrei funktioniert, als die Liste bereits manuell zum Hostweb hinzugefügt wurde. Aber jetzt, da die Liste programmgesteuert in der zuerst ausgeführten Logik bereitgestellt wird, ist die Liste nicht vorhanden, wenn SharePoint das Add-In installiert und versucht, die Schaltfläche bereitzustellen. Bei der Installation des Add-Ins wird eine Ausnahme ausgelöst, und es treten Fehler auf.
 
- 
-Das vollständig programmgesteuerte Erstellen einer benutzerdefinierten Schaltfläche ist aus Gründen nicht praktikabel, die zu fortgeschritten sind, um sie hier zu erläutern. Zum Glück ist das nicht erforderlich. Es gibt eine relativ problemlose Möglichkeit, eine benutzerdefinierte Schaltfläche halbprogrammgesteuert zu erstellen und sie einer benutzerdefinierten Liste zuzuweisen. Im Folgenden werden die grundlegenden Schritte dargestellt:
- 
+Eine Bereitstellung der Liste im Installationsereignishandler statt in der zuerst auszuführenden Logik wird das Problem nicht lösen, da SharePoint benutzerdefinierte deskriptiv definierte Komponenten wie die benutzerdefinierte Schaltfläche (und das Add-In-Part **Bestellung aufgeben**) bereitstellt, *bevor* der benutzerdefinierte Handler ausgeführt wird. Die Liste wird also nicht vorhanden sein, wenn SharePoint versucht, die Schaltfläche bereitzustellen.
 
- 
+Eine vollständig programmgesteuerte Erstellung von benutzerdefinierten Schaltflächen ist aus verschiedenen Gründen nicht zweckmäßig. Deren Erörterung würde jedoch den Rahmen dieses Artikels sprengen. Glücklicherweise ist eine solche vollständig programmgesteuerte Erstellung auch nicht erforderlich. Es gibt eine relativ unkomplizierte Methode, benutzerdefinierte Schaltflächen halb-programmgesteuert zu erstellen und einer benutzerdefinierten Liste zuzuweisen. 
+
+Gehen Sie dazu wie folgt vor:
 
 1. Behalten Sie die deskriptiv definierte Schaltfläche im Projekt bei, aber weisen Sie diese dem Menüband von etwas zu, das immer auf SharePoint-Websites vorhanden ist, statt einer Liste,die programmgesteuert mit demselben Add-In bereitgestellt wird. 
-    
- 
-2. Fügen Sie der zuerst ausgeführten Logik, nachdem die Liste programmgesteuert erstellt wurde, programmgesteuert eine undefinierte Schaltfläche zum Menüband in der Liste hinzu.
-    
- 
-3. Initialisieren Sie die Eigenschaften der neuen Schaltfläche mit den Werten der ursprünglichen Schaltfläche. An diesem Punkt gibt es zwei identische Schaltflächen. Die zweite wird dem Menüband der Liste **Lokale Mitarbeiter** zugeordnet.
-    
- 
+
+2. Fügen Sie in der zuerst auszuführenden Logik (First-Run-Logik) nach dem Code für die programmgesteuerte Erstellung der Liste programmgesteuert eine nicht definierte Schaltfläche zum Menüband der Liste hinzu.
+
+3. Initialisieren Sie die Eigenschaften der neuen Schaltfläche mit den Werten der ursprünglichen Schaltfläche. Jetzt existieren zwei identische Schaltflächen. Die zweite Schaltfläche ist dem Menüband der Liste **Lokale Mitarbeiter** zugewiesen.
+
 4. Löschen Sie die ursprüngliche Schaltfläche programmgesteuert.
-    
- 
 
 ## <a name="programmatically-register-the-custom-button"></a>Programmgesteuertes Registrieren der benutzerdefinierten Schaltfläche
 
-Im folgende Verfahren wird gezeigt, wie Sie diese Strategie implementieren.
- 
+Mithilfe der nachfolgenden Anleitung können Sie diese Strategie umsetzen:
 
- 
+1. Erweitern Sie im Projekt **ChainStore** das Element **AddEmployeeToCorpDB**, öffnen Sie die Datei „elements.xml“, und ändern Sie den Wert des Attributs **RegistrationId** des Elements **CustomAction** in „100“. Dies ist die ID eines Listentyps. Auch wenn auf der Website keine Instanzen von Listen dieses Typs vorhanden sind, existiert der *Listentyp* dennoch auf jeder SharePoint-Website. Das Attribut sollte jetzt wie folgt aussehen:
+    
+    ```XML
+      RegistrationId="100"
+    ```
 
-1. Erweitern Sie im **ChainStore**-Projekt **AddEmployeeToCorpDB**, öffnen Sie die Datei „elements.xml", und ändern Sie dann den Wert des Attributs **RegistrationId** des Elements **CustomAction** auf 100. Dies ist die ID eines Listentyps. Auch wenn keine Instanzen dieses Typs von Listen auf der Website vorhanden sind, befindet sich die Liste *Typ*  auf jeder SharePoint-Website. Das Attribut sollte jetzt wie folgt aussehen.
+2. Fügen Sie in der Datei „SharePointComponentDeployer.cs“ die folgende Zeile zur Methode **DeployChainStoreComponentsToHostWeb** hinzu, direkt unterhalb der Zeile, die `CreateLocalEmployeesList` aufruft (diese Methode erstellen Sie im nächsten Schritt):
     
-```XML
-  RegistrationId="100"
-```
+    ```C#
+      ChangeCustomActionRegistration();
+    ```
 
-2. Fügen Sie in der Datei „SharePointComponentDeployer.cs" die folgende Zeile zur Methode  `DeployChainStoreComponentsToHostWeb` direkt unter der Zeile hinzu, die `CreateLocalEmployeesList` aufruft. Sie erstellen diese Methode im nächsten Schritt.
-    
-```C#
-  ChangeCustomActionRegistration();
-```
+3. Fügen Sie der Klasse `SharePointComponentDeployer` die folgende Methode hinzu: 
 
-3. Fügen Sie der `SharePointComponentDeployer`-Klasse die folgende Methode hinzu. Beachten Sie Folgendes zu diesem Code:
-    
-      - Da die benutzerdefinierte Aktion, das heißt, die benutzerdefinierte Schaltfläche, beim Menüband einer Liste  *Typ*  registriert wurde, wird sie der gesamten Website zugeordnet und befindet sich in der Sammlung der benutzerdefinierten Aktionen der Website. Daher ruft der Code sie aus dieser Sammlung ab.
-    
- 
-  - Der Wert von `action.Name` wird aus dem **ID**-Attribut des **CustomAction**-Elements in der Datei „element.xml“ in **AddEmployeeToCorpDB** abgeleitet.
-    
-     **Wichtig:**   **Sie müssen den Wert `action.Name` im Code unten ändern, damit er mit dem Wert in der Datei „elements.xml" übereinstimmt.** Der GUID-Teil des Namens weicht ab. Beachten Sie, dass ein „.“-Zeichen zwischen der GUID und dem Rest des Namens vorhanden ist. Der folgende Code ist ein Beispiel der Zeile. `where action.Name == "4a926a42-3577-4e02-9d06-fef78586b1bc.AddEmployeeToCorpDB"`
-
-```C#
-  private static void ChangeCustomActionRegistration()
-{
-    using (var clientContext = sPContext.CreateUserClientContextForSPHost())
+    ```C#
+      private static void ChangeCustomActionRegistration()
     {
+        using (var clientContext = sPContext.CreateUserClientContextForSPHost())
+        {
          var query = from action in clientContext.Web.UserCustomActions
-                     where action.Name == "{button_GUID} .AddEmployeeToCorpDB"
-                     select action;
+                 where action.Name == "{button_GUID} .AddEmployeeToCorpDB"
+                 select action;
           IEnumerable<UserCustomAction> matchingActions = clientContext.LoadQuery(query);          
              clientContext.ExecuteQuery();
-    
+
           UserCustomAction webScopedEmployeeAction = matchingActions.Single();
 
          // TODO8: Get a reference to the (empty) collection of custom actions 
@@ -149,79 +108,82 @@ Im folgende Verfahren wird gezeigt, wie Sie diese Strategie implementieren.
         // TODO11: Delete the original custom action.         
 
           clientContext.ExecuteQuery();
+        }
     }
-}
-```
+    ```
 
-4. Ersetzen Sie `TODO8` durch den folgenden Code.
+   Zu diesem Code ist Folgendes anzumerken:
     
-    Beachten Sie, dass Komponenten, die das Add-In erstellt beim Zurückziehen eines Add-Ins nicht entfernt werden. Nach der Ausführung Ihrer zuerst ausgeführten Logik ist eine benutzerdefinierte Aktion in der **UserCustomActions**-Auflistung der Liste enthalten, und sie wird nicht zurückgezogen, wenn Sie beim nächsten Mal F5 drücken. Um Verwirrung zu vermeiden, leert die letzte Zeile in diesem Code,  `listActions.Clear();`, die Auflistung.
+   - Da die benutzerdefinierte Aktion (d. h. die benutzerdefinierte Schaltfläche) im Menüband eines *Listentyps* registriert wurde, umfasst ihr Bereich die gesamte Website. Zudem ist die Aktion Teil der Sammlung von benutzerdefinierten Aktionen dieser Website. Der Code ruft sie also aus dieser Sammlung ab.
     
-
-
-```C#
-  var queryForList = from list in clientContext.Web.Lists
-                   where list.Title == "Local Employees"
-                   select list;
-IEnumerable<List> matchingLists = clientContext.LoadQuery(queryForList);
-clientContext.ExecuteQuery();
-
-List employeeList = matchingLists.First();
-var listActions = employeeList.UserCustomActions;
-clientContext.Load(listActions);
-listActions.Clear();
-```
-
-5. Ersetzen Sie `TODO9` durch die folgende Zeile, die eine undefinierte benutzerdefinierte Aktion zur Liste **Lokale Mitarbeiter** hinzufügt.
+   - Der Wert von `action.Name` wird aus dem Attribut **ID** des Elements **CustomAction** in der Datei „elements.xml“ in **AddEmployeeToCorpDB** abgerufen.
     
-```C#
-  var listScopedEmployeeAction = listActions.Add();
-```
+   > [!IMPORTANT]
+   > **Sie müssen in Ihrem Code als Wert für `action.Name` den Wert aus der Datei „elements.xml“ angeben.** Der Name wird einen anderen GUID-Teil haben. Dabei muss zwischen der GUID und dem Rest des Namens ein Zeichen des Typs `"."` stehen. Unten sehen Sie ein Beispiel für diese Zeile: 
+   > 
+   > `where action.Name == "4a926a42-3577-4e02-9d06-fef78586b1bc.AddEmployeeToCorpDB"`
 
-6. Ersetzen Sie `TODO10` durch den folgenden Code. Beachten Sie Folgendes zu diesem Code:
+4. Ersetzen Sie `TODO8` durch den unten aufgeführten Code. Bedenken Sie dabei, dass beim Zurückziehen eines Add-Ins die von diesem Add-In erstellten Komponenten nicht entfernt werden. Nach der Ausführung der First-Run-Logik wird in der Sammlung **UserCustomActions** der Liste eine benutzerdefinierte Aktion aufgeführt, die nicht zurückgezogen wird, wenn Sie das nächste Mal die Taste F5 drücken. Um Verwirrung vorzubeugen, leert die letzte Zeile in diesem Codebeispiel (`listActions.Clear();`) die Sammlung.
+
+    ```C#
+    var queryForList = from list in clientContext.Web.Lists
+               where list.Title == "Local Employees"
+               select list;
+    IEnumerable<List> matchingLists = clientContext.LoadQuery(queryForList);
+    clientContext.ExecuteQuery();
+
+    List employeeList = matchingLists.First();
+    var listActions = employeeList.UserCustomActions;
+    clientContext.Load(listActions);
+    listActions.Clear();
+    ```
+
+5. Ersetzen Sie `TODO9` durch die nachfolgende Zeile. Sie fügt der Liste **Lokale Mitarbeiter** eine nicht definierte benutzerdefinierte Aktion hinzu.
     
-      - Er weist die Eigenschaftswerte der Schaltfläche für den Webbereich (die mit beschreibendem Markup bereitgestellt wurde) den entsprechenden Eigenschaften der Schaltfläche für den Listenbereich zu, damit die beiden Schaltflächen außer im Bereich identisch sind.
+    ```C#
+      var listScopedEmployeeAction = listActions.Add();
+    ```
+
+6. Ersetzen Sie `TODO10` durch den folgenden Code: 
+
+    ```C#
+    listScopedEmployeeAction.Title = webScopedEmployeeAction.Title;
+    listScopedEmployeeAction.Location = webScopedEmployeeAction.Location;
+    listScopedEmployeeAction.Sequence = webScopedEmployeeAction.Sequence;
+    listScopedEmployeeAction.CommandUIExtension = webScopedEmployeeAction.CommandUIExtension;
+    listScopedEmployeeAction.Update();
+    ```
+
+   Zu diesem Code ist Folgendes anzumerken:
     
- 
-  - Die Eigenschaft **Sequence** gibt die relative Reihenfolge an, in der die Schaltfläche in ihrem Bereich des Menübands angezeigt wird. In diesem Fall befindet sich die Schaltfläche im Abschnitt **Aktionen** Teil der Registerkarte **Elemente** im Menüband. Im beschreibenden Markup war dieser Wert auf 10001 festgelegt, was hoch genug ist, um sicherzustellen, dass die Schaltfläche nach (d. h. rechts neben) den internen Schaltflächen angezeigt wird, die SharePoint selbst in den Abschnitt **Aktionen** im Menüband einfügt.
+   - Er weist die Eigenschaftswerte der Schaltfläche für den Webbereich (die mit beschreibendem Markup bereitgestellt wurde) den entsprechenden Eigenschaften der Schaltfläche für den Listenbereich zu, damit die beiden Schaltflächen außer im Bereich identisch sind.
     
- 
+   - Die Eigenschaft **Sequence** legt die relative Reihenfolge für die Anzeige der Schaltfläche in dem Menübereich fest, in dem sie platziert werden soll. In unserem Fall wird die Schaltfläche im Abschnitt **Aktionen** der Menübandregisterkarte **Elemente** platziert. Im deskriptiven Markup war der Wert auf „10001“ gesetzt, also hoch genug, dass die Schaltfläche nach (d. h. rechts von) den standardmäßigen Schaltflächen angezeigt wird, die SharePoint im Bereich **Aktionen** des Menübands platziert.
 
-```C#
-  listScopedEmployeeAction.Title = webScopedEmployeeAction.Title;
-listScopedEmployeeAction.Location = webScopedEmployeeAction.Location;
-listScopedEmployeeAction.Sequence = webScopedEmployeeAction.Sequence;
-listScopedEmployeeAction.CommandUIExtension = webScopedEmployeeAction.CommandUIExtension;
-listScopedEmployeeAction.Update();
-```
-
-7. Ersetzen Sie  `TODO11` durch die folgende Zeile, die die ursprüngliche, deskriptiv definierte Schaltfläche löscht. Wenn diese Zeile nicht vorhanden wäre, würde jede Liste auf der Website, die die Listenvorlage „100" verwendet, die benutzerdefinierte Schaltfläche enthalten. Da die Funktionalität der Schaltfläche eng verbunden ist mit der Liste **Lokale Mitarbeiter**, würde es keinen Sinn machen, die Schaltfläche auf einer anderen Liste zu haben. Außerdem würde die Schaltfläche ohne diese Zeile  *zweimal*  in der Liste **Lokale Mitarbeiter** angezeigt werden, die die Liste die Vorlage „100" verwendet.
+7. Ersetzen Sie `TODO11` durch die nachfolgend aufgeführte Zeile. Sie löscht die ursprüngliche deskriptiv definierte Schaltfläche. Ohne diese Zeile würde die benutzerdefinierte Schaltfläche auf der Website in jeder Liste angezeigt, die die Listenvorlage „100“ verwendet. Da die Funktionalität der Schaltfläche eng verzahnt ist mit der Liste **Lokale Mitarbeiter**, wäre es nicht sinnvoll, die Schaltfläche in andere Listen zu integrieren. Zudem würde die Schaltfläche ohne diese Zeile *doppelt* in der Liste **Lokale Mitarbeiter** angezeigt, da die Liste die Vorlage „100“ verwendet.
     
-```C#
-  webScopedEmployeeAction.DeleteObject();
-```
-
-
-    The entire method should now look like the following (except there should be a GUID in place of the placeholder).
+    ```C#
+      webScopedEmployeeAction.DeleteObject();
+    ```
     
-
-
-```C#
-  private static void ChangeCustomActionRegistration()
-{
-    using (var clientContext = SPContext.CreateUserClientContextForSPHost())
+8. Insgesamt sollte die Methode jetzt wie unten dargestellt aussehen (mit einer GUID statt des Platzhalters):
+    
+    ```C#
+      private static void ChangeCustomActionRegistration()
     {
+        using (var clientContext = SPContext.CreateUserClientContextForSPHost())
+        {
          var query = from action in clientContext.Web.UserCustomActions
-                     where action.Name == "{button_GUID} .AddEmployeeToCorpDB"
-                     select action;
+                 where action.Name == "{button_GUID} .AddEmployeeToCorpDB"
+                 select action;
           IEnumerable<UserCustomAction> matchingActions = clientContext.LoadQuery(query);          
              clientContext.ExecuteQuery();
-    
+
           UserCustomAction webScopedEmployeeAction = matchingActions.Single();
 
          var queryForList = from list in clientContext.Web.Lists
-                            where list.Title == "Local Employees"
-                            select list;
+                    where list.Title == "Local Employees"
+                    select list;
          IEnumerable<List> matchingLists = clientContext.LoadQuery(queryForList);
          clientContext.ExecuteQuery();
 
@@ -241,73 +203,55 @@ listScopedEmployeeAction.Update();
         webScopedEmployeeAction.DeleteObject();         
 
         clientContext.ExecuteQuery();
+        }
     }
-}
-```
+    ```
 
 
-## <a name="request-full-control-of-the-host-web"></a>Fordern Sie vollständige Kontrolle über das Hostweb an.
+## <a name="request-full-control-of-the-host-web"></a>Anfordern von Vollzugriff vom Hostweb
 
-Da das Add-In jetzt benutzerdefinierte Aktionen mit Webbereich hinzufügt und löscht, müssen die Berechtigungen, die das Add-In anfordert, von Verwalten auf Vollzugriff eskaliert werden. Gehen Sie folgendermaßen vor.
- 
+Da das Add-In jetzt auf den Bereich „Web“ bezogene benutzerdefinierte Aktionen hinzufügt und löscht, müssen Sie die vom Add-In angeforderten Berechtigungen von „Verwalten“ auf „Vollzugriff“ erweitern:
 
- 
+1. Öffnen Sie im **Projektmappen-Explorer** im Projekt **ChainStore** die Datei „AppManifest.xml“.
 
-1. Öffnen Sie im **Projektmappen-Explorer** die Datei „AppManifest.xml“ im **ChainStore**-Projekt.
-    
- 
-2. Öffnen Sie die Registerkarte **Berechtigungen**. Behalten Sie für den Wert **Bereich****Web** bei, wählen Sie aber im Feld **Berechtigung** die Option **Vollzugriff** aus der Dropdownliste aus.
-    
- 
+2. Öffnen Sie die Registerkarte **Berechtigungen**. Behalten Sie für **Bereich** den Wert **Web** bei, aber wählen Sie im Feld **Berechtigung** aus der Dropdownliste die Option **Vollzugriff** aus.
+
 3. Speichern Sie die Datei.
-    
- 
 
 ## <a name="run-the-add-in-and-test-the-button-deployment"></a>Ausführen des Add-Ins und Testen der Schaltflächenbereitstellung
 
+1. Öffnen Sie die Seite **Websiteinhalte** der Website des Hongkong-Stores, und entfernen Sie die Liste **Lokale Mitarbeiter**. 
+    
+   > [!NOTE]
+   > Wenn Sie ein Add-In in Visual Studio zurückziehen, werden die von dem betreffenden Add-In erstellten Listen nicht entfernt. Sie müssen die Liste also jedes Mal manuell löschen, wenn Sie den Code testen, der sie erstellt.
 
- 
+2. Drücken Sie die Taste F5, um das Add-In bereitzustellen und auszuführen. Visual Studio hostet die Remotewebanwendung in IIS Express und die SQL-Datenbank in SQL Express. Zudem installiert Visual Studio das Add-In vorübergehend auf Ihrer SharePoint-Testwebsite und führt es sofort aus. Bevor die Startseite des Add-Ins geöffnet wird, werden Sie aufgefordert, dem Add-In Berechtigungen zu erteilen.
 
- 
+3. Die Startseite des Add-Ins wird geöffnet. Klicken Sie oben im Chromsteuerelement auf **Zurück zur Website**.
 
-1. Öffnen Sie die Seite **Websiteinhalte** der Website des Hongkong-Stores, *und entfernen Sie die Liste **Lokale Mitarbeiter**.* 
+4. Wechseln Sie auf die Seite **Websiteinhalte**. Die Liste **Lokale Mitarbeiter** wird angezeigt, da sie von der First-Run-Logik hinzugefügt wurde.
     
-     **Hinweis** Durch das Zurückziehen eines Add-Ins in Visual Studio werden vom Add-In erstellte Listen nicht entfernt, daher müssen Sie sie jedes Mal manuell löschen, wenn Sie Code testen, der sie erstellt.
-2. Verwenden Sie die F5-TASTE, um Ihr Add-In bereitzustellen und auszuführen. Visual Studio hostet die Remotewebanwendung in IIS Express und die SQL-Datenbank in SQL Express. Außerdem wird eine temporäre Installation des Add-Ins auf Ihrer SharePoint-Testwebsite durchgeführt, und das Add-In wird sofort ausgeführt. Sie werden aufgefordert, Berechtigungen für das Add-In zu erteilen, bevor die Startseite geöffnet wird.
-    
- 
-3. Wenn die Add-In-Startseite geöffnet wird, wählen Sie den Link **Zurück zur Website** auf dem Chromesteuerelement im oberen Bereich aus.
-    
- 
-4. Navigieren Sie zur Seite **Websiteinhalte**. Die Liste **Lokale Mitarbeiter** ist vorhanden, da Ihre Logik für die erste Ausführung sie hinzugefügt hat.
-    
-     **Hinweis** Wenn die Liste nicht vorhanden ist oder Sie andere Anzeichen haben, dass der Code für die erste Ausführung nicht ausgeführt wird, wird möglicherweise die Tabelle **Mandanten** nicht in einen leeren Zustand zurückgesetzt, wenn Sie F5 drücken. Die häufigste Ursache hierfür ist, dass das Projekt **ChainCorporateDB** nicht mehr als Startprojekt in Visual Studio festgelegt ist. Im oberen Bereich dieses Artikels finden Sie Informationen, wie Sie dies beheben. Stellen Sie außerdem sicher, dass Sie die Datenbank so konfiguriert haben, dass sie wie unter [Konfigurieren von Visual Studio zum erneuten Erstellen der Unternehmensdatenbank bei jeder Debugsitzung](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel#Rebuild) beschrieben neu erstellt wird.
+   > [!NOTE]
+   > Falls die Liste nicht angezeigt wird oder Sie Grund zu der Annahme haben, dass die First-Run-Logik nicht ausgeführt wird, kann das daran liegen, wird möglicherweise die Tabelle **Mandanten** beim Drücken von F5 nicht in den leeren Zustand zurückgesetzt. Die häufigste Ursache hierfür: Das Projekt **ChainCorporateDB** ist in Visual Studio nicht mehr als Startprojekt gekennzeichnet. Eine Lösung für dieses Problem finden Sie in dem [Hinweis oben in diesem Artikel](#re-add-the-custom-button-to-the-project). Vergewissern Sie sich außerdem, dass die Datenbank so konfiguriert ist, dass sie neu erstellt wird (siehe [Konfigurieren von Visual Studio zum Neuerstellen der Unternehmensdatenbank in jeder Debugsitzung](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md#Rebuild)).
+
 5. Öffnen Sie die Liste, und fügen Sie ein Element hinzu.
-    
- 
-6. Wählen Sie in der Listenansicht das Element aus, und öffnen Sie die Registerkarte **Elemente** im Menüband. Die Schaltfläche **Zu Unternehmens-DB hinzufügen** wird im Menüband angezeigt.
-    
- 
-7. Klicken Sie auf die Schaltfläche. Der Mitarbeiter wird der Unternehmensdatenbank hinzugefügt und das Feld **Zu Unternehmens-DB hinzugefügt** wird in **Ja** geändert.
-    
- 
-8. Navigieren Sie zurück zur Seite **Websiteinhalte**, und wählen Sie **Add-In hinzufügen** aus.
-    
- 
-9. Fügen Sie eine neue **benutzerdefinierte Liste** hinzu. Standardmäßig ist der Typ „generisch". (Generisch ist Listentyp 100.) Öffnen Sie nach dem Erstellen der Liste die Registerkarte **Elemente** im Menüband. Beachten Sie, dass die Schaltfläche **Zu Unternehmens-DB hinzufügen***nicht*  im Menüband angezeigt wird, da Ihr Code die Schaltfläche mit Webbereich gelöscht hat.
-    
- 
-10. Schließen Sie zum Beenden der Debugsitzung das Browserfenster, oder beenden Sie das Debuggen in Visual Studio. Jedes Mal, wenn Sie F5 drücken, zieht Visual Studio die vorherige Version des Add-Ins zurück und installiert die neueste.
-    
- 
-11. Da Sie mit diesem Add-In und dieser Visual Studio-Projektmappe in anderen Artikeln arbeiten werden, hat es sich bewährt, das Add-In ein letztes Mal zurückzuziehen, wenn Sie Ihre Arbeit daran für eine Weile abgeschlossen haben. Klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer**, und wählen Sie **Zurückziehen** aus.
-    
- 
 
-## 
+6. Wählen Sie das Element in der Listenansicht aus, und wechseln Sie auf dem Menüband auf die Registerkarte **Element**. 
+
+7. Klicken Sie auf der Registerkarte **Element** auf die Schaltfläche **Zur Unternehmensdatenbank hinzufügen**. Der Mitarbeiter wird der Unternehmensdatenbank hinzugefügt, und das Feld **Zur Unternehmensdatenbank hinzugefügt** wird in **Ja** geändert.
+
+8. Wechseln Sie wieder auf die Seite **Websiteinhalte**, und klicken Sie dort auf **Add-In hinzufügen**.
+
+9. Fügen Sie eine neue **benutzerdefinierte Liste** hinzu. Als Typ wird standardmäßig „Generic“ festgelegt (d. h. der Listentyp „100“). Öffnen Sie nach der Erstellung der Liste auf dem Menüband die Registerkarte **Element**. Wie Sie sehen, wird die Schaltfläche **Zur Unternehmensdatenbank hinzufügen** zu diesem Zeitpunkt *nicht* auf dem Menüband angezeigt. Das liegt daran, dass Ihr Code die Schaltfläche mit dem Bezugsbereich „Web“ gelöscht hat.
+
+10. Schließen Sie zum Beenden der Debugsitzung das Browserfenster, oder beenden Sie das Debuggen in Visual Studio. Wann immer Sie F5 drücken, zieht Visual Studio die bisherige Version des Add-Ins zurück und installiert die jeweils neueste Version.
+
+11. Da Sie mit diesem Add-In und dieser Visual Studio-Lösung auch in anderen Artikeln arbeiten werden, empfiehlt es sich, das Add-In ein letztes Mal zurückzuziehen, sobald Sie eine Weile nicht mehr an ihm arbeiten werden. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie die Option **Zurückziehen** aus.
+
+## <a name="next-steps"></a>Nächste Schritte
 <a name="Nextsteps"> </a>
 
- Ereignisse für Listen und Listenelemente können in SharePoint auch benutzerdefinierte Handler umfassen. In nächsten Artikel erfahren Sie, wie Sie einen erstellen und in Ihrer zuerst ausgeführten Logik bereitstellen: [Behandeln von Listenelementereignissen im vom Anbieter gehosteten Add-In](handle-list-item-events-in-the-provider-hosted-add-in)
+Listenereignisse und Listenelementereignisse können in SharePoint ebenfalls von benutzerdefinierten Handlern verarbeitet werden. Wie Sie einen solchen Handler erstellen und in der First-Run-Logik bereitstellen, erfahren Sie im Artikel [Handle list item events in the provider-hosted add-in](handle-list-item-events-in-the-provider-hosted-add-in.md).
  
 
  

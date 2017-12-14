@@ -2,11 +2,11 @@
 title: "Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 555ff88386166d381d7ff4c6f3d56f30e5a645e1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 779998ed1b8929a1b23537fc577f8be2a1cbb0ba
+ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="complete-basic-operations-using-javascript-library-code-in-sharepoint"></a>Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint
 In diesem Artikel erfahren Sie, wie Sie Code zum Ausführen grundlegender Vorgänge unter Verwendung des JavaScript-Clientobjektmodells in SharePoint schreiben.
@@ -47,7 +47,7 @@ Weitere Information zu den Gruppen von APIs, die für SharePoint verfügbar sind
  
 
  
-In diesem Artikel wird erklärt, wie Sie mithilfe des JavaScript-Objektmodells grundlegende Aufgaben ausführen. Sie können mit den HTML-<script>-Tags einen Verweis auf das Objektmodell hinzufügen. Informationen zur Verwendung anderer Client-APIs finden Sie unter folgenden Themen:
+In diesem Artikel erklären wir Ihnen, wie Sie mithilfe des JavaScript-Objektmodells grundlegende Vorgänge ausführen. Einen Verweis auf das Objektmodell können Sie mit HTML-Tags des Typs &lt;script&gt; hinzufügen. Informationen zur Verwendung anderer Client-APIs finden Sie in den folgenden Artikeln:
  
 
  
@@ -72,7 +72,7 @@ In den folgenden Abschnitten werden Aufgaben beschrieben, die Sie programmgesteu
  
 
  
-Beim Erstellen eines in der Cloud gehosteten Add-Ins können Sie dem Objektmodell mithilfe der HTML-<script>-Tags einen Verweis hinzufügen. Es wird empfohlen, einen Verweis auf das Hostweb einzufügen, da das Add-In-Web möglicherweise nicht in allen Szenarien von in der Cloud gehosteten Add-Ins verfügbar ist. Sie können die URL des Hostwebs aus dem  _SPHostUrl_-Abfragezeichenfolgenparameter abrufen, wenn Sie das Token **{StandardTokens}** verwenden. Zudem können Sie den benutzerdefinierten Abfragezeichenfolgenparameter verwenden, wenn Sie das **{HostUrl}**-Token verwenden. Nachdem Sie die URL des Hostwebs ermittelt haben, müssen Sie den Verweis auf das Objektmodell mit JavaScript-Code dynamisch erstellen.
+Beim Erstellen eines in der Cloud gehosteten Add-Ins können Sie mithilfe von HTML-Tags des Typs &lt;script&gt; einen Verweis auf das Objektmodell hinzufügen. Wir empfehlen, auf das Hostweb zu verweisen, da das Add-In-Web nicht in allen Szenarien von in der Cloud gehosteten Add-Ins vorhanden ist. Wenn Sie das Token **{StandardTokens}** verwenden, können Sie die Hostweb-URL aus dem Abfragezeichenfolgenparameter _SPHostUrl_ abrufen. Wenn Sie das Token **{HostUrl}** verwenden, können Sie auch Ihren benutzerdefinierten Abfragezeichenfolgenparameter nutzen. Sobald Sie die Hostweb-URL abgerufen haben, müssen Sie mithilfe des JavaScript-Codes dynamisch den Verweis auf das Objektmodell erstellen.
  
 
  
@@ -157,7 +157,7 @@ Im folgenden Codebeispiel werden die folgenden Aufgaben ausgeführt, um einen Ve
 
 ```
 
-Beim Erstellen eines in SharePoint gehosteten Add-Ins können Sie mithilfe der HTML-Tags <script> einen Verweis auf das Objektmodell hinzufügen. Mithilfe des Add-In-Webs in einem von SharePoint gehosteten Add-In können Sie relative Pfade verwenden, um auf die erforderlichen Dateien zur Verwendung des JavaScript-Objektmodells zu verweisen.
+Beim Erstellen eines in SharePoint gehosteten Add-Ins können Sie mithilfe von HTML-Tags des Typs &lt;script&gt; einen Verweis auf das Objektmodell hinzufügen. Das Add-In-Web von in SharePoint gehosteten Add-Ins macht es möglich, relative Pfade zu verwenden, um die für die Verwendung des JavaScript-Objektmodells erforderlichen Dateien zu referenzieren.
  
 
  
@@ -776,7 +776,7 @@ Sie können Dateien mithilfe des JavaScript-Objektmodells anpassen. In den folge
 
  
 
- **Hinweis** Sie können nur Dateien mit einer Größe von bis zu 1,5 MB verwenden, wenn Sie das JavaScript-Objektmodell nutzen. Um größere Dateien hochzuladen, müssen Sie REST (Representational State Transfer) nutzen. Weitere Informationen finden Sie unter [](complete-basic-operations-using-sharepoint-rest-endpoints#LargeFiles.md).
+ **Hinweis** Sie können nur Dateien mit einer Größe von bis zu 1,5 MB verwenden, wenn Sie das JavaScript-Objektmodell nutzen. Um größere Dateien hochzuladen, müssen Sie REST (Representational State Transfer) nutzen. Weitere Informationen finden Sie unter [](complete-basic-operations-using-sharepoint-rest-endpoints.md#LargeFiles).
  
 
 
