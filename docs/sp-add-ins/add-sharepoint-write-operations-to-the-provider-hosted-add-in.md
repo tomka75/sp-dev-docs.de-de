@@ -1,277 +1,201 @@
 ---
 title: "Hinzufügen von SharePoint-Schreibvorgängen zum vom Anbieter gehosteten Add-In"
-ms.date: 09/25/2017
+description: "Hier erfahren Sie, wie anbietergehostete SharePoint-Add-Ins Daten in SharePoint schreiben können, wie Sie Spaltenwerte in Listenelementen ändern, wie Sie Schreibberechtigungen anfordern, wie Sie neue benutzerdefinierte Listen erstellen und Elemente in solche Listen einfügen und wie Sie auf gelöschte Komponenten prüfen können."
+ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 2a236873641467329df57d21101efedf3a98577a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 263d0feabbe9918309bc9f8ae4767428d2470785
+ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/03/2017
 ---
-# <a name="add-sharepoint-write-operations-to-the-provider-hosted-add-in"></a><span data-ttu-id="285fb-102">Hinzufügen von SharePoint-Schreibvorgängen zum vom Anbieter gehosteten Add-In</span><span class="sxs-lookup"><span data-stu-id="285fb-102">Add SharePoint write operations to the provider-hosted add-in</span></span>
-<span data-ttu-id="285fb-103">Erfahren Sie, wie Sie in einem vom Anbieter gehosteten SharePoint-Add-In Daten an SharePoint schreiben.</span><span class="sxs-lookup"><span data-stu-id="285fb-103">Learn how to write data to SharePoint in a provider-hosted SharePoint Add-in.</span></span>
- 
+# <a name="add-sharepoint-write-operations-to-the-provider-hosted-add-in"></a><span data-ttu-id="51bcd-103">Hinzufügen von SharePoint-Schreibvorgängen zu anbietergehosteten Add-Ins</span><span class="sxs-lookup"><span data-stu-id="51bcd-103">Add SharePoint write operations to the provider-hosted add-in</span></span>
 
- <span data-ttu-id="285fb-p101">**Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).</span><span class="sxs-lookup"><span data-stu-id="285fb-p101">**Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).</span></span>
- 
+<span data-ttu-id="51bcd-104">Dies ist der fünfte Artikel in unserer Artikelreihe über die Grundlagen der Entwicklung von anbietergehosteten SharePoint-Add-Ins. Vor der Lektüre dieses Artikels sollten Sie sich zunächst mit [SharePoint-Add-Ins](sharepoint-add-ins.md) vertraut machen und die vorherigen Artikel der Reihe lesen:</span><span class="sxs-lookup"><span data-stu-id="51bcd-104">This is the eighth in a series of articles about the basics of developing provider-hosted SharePoint Add-ins. You should first be familiar with  [SharePoint Add-ins](sharepoint-add-ins.md) and the previous articles in this series:</span></span>
 
-<span data-ttu-id="285fb-107">Dies ist der fünfte in einer Reihe von Artikeln über die Grundlagen der Entwicklung von vom Anbieter gehosteten SharePoint-Add-Ins. Sie sollten sich zuerst mit [SharePoint Add-Ins](sharepoint-add-ins.md) und den vorherigen Artikeln in dieser Reihe vertraut machen:</span><span class="sxs-lookup"><span data-stu-id="285fb-107">This is the fifthin a series of articles about the basics of developing provider-hosted SharePoint Add-ins. You should first be familiar with  [SharePoint Add-ins](sharepoint-add-ins.md) and the previous articles in this series:</span></span>
- 
+-  [<span data-ttu-id="51bcd-105">Get started creating provider-hosted SharePoint Add-ins</span><span class="sxs-lookup"><span data-stu-id="51bcd-105">Get started creating provider-hosted SharePoint Add-ins</span></span>](get-started-creating-provider-hosted-sharepoint-add-ins.md)
+-  [<span data-ttu-id="51bcd-106">Übertragen des SharePoint-Aussehens und -Verhaltens auf Ihr vom Anbieter gehostetes Add-In</span><span class="sxs-lookup"><span data-stu-id="51bcd-106">Give your provider-hosted add-in the SharePoint look-and-feel</span></span>](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md)
+-  [<span data-ttu-id="51bcd-107">Einfügen einer benutzerdefinierten Schaltfläche in das vom Anbieter gehostete Add-In</span><span class="sxs-lookup"><span data-stu-id="51bcd-107">Include a custom button in the provider-hosted add-in</span></span>](include-a-custom-button-in-the-provider-hosted-add-in.md)
+-  [<span data-ttu-id="51bcd-108">Schnelle Übersicht über das SharePoint-Objektmodell</span><span class="sxs-lookup"><span data-stu-id="51bcd-108">Get a quick overview of the SharePoint object model</span></span>](get-a-quick-overview-of-the-sharepoint-object-model.md)
 
--  [<span data-ttu-id="285fb-108">Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins</span><span class="sxs-lookup"><span data-stu-id="285fb-108">Get started creating provider-hosted SharePoint Add-ins</span></span>](get-started-creating-provider-hosted-sharepoint-add-ins.md)
+> [!NOTE]
+> <span data-ttu-id="51bcd-109">Wenn Sie unsere Artikelreihe zum Thema anbietergehostete Add-Ins durchgearbeitet haben, haben Sie bereits eine Visual Studio-Lösung, die Sie für diesen Artikel verwenden können.</span><span class="sxs-lookup"><span data-stu-id="51bcd-109">Note If you have been working through this series about provider-hosted add-ins, then you have a Visual Studio solution that you can use to continue with this topic. You can also download the repository at  SharePoint_Provider-hosted_Add-Ins_Tutorials and open the BeforeSharePointWriteOps.sln file.</span></span> <span data-ttu-id="51bcd-110">Alternativ können Sie das Repository unter [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) herunterladen und die Datei „BeforeSharePointWriteOps.sln“ öffnen.</span><span class="sxs-lookup"><span data-stu-id="51bcd-110">You can also download the repository at [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) and open the BeforeSharePointWriteOps.sln file.</span></span>
+
+<span data-ttu-id="51bcd-111">In diesem Artikel widmen wir uns wieder dem eigentlichen Programmieren und fügen verschiedene Funktionen hinzu, die Daten in das ChainStore-SharePoint-Add-In schreiben.</span><span class="sxs-lookup"><span data-stu-id="51bcd-111">In this article we get back to coding by adding some functions that write data to the Chain Store SharePoint Add-in.</span></span>
+
+## <a name="change-a-column-value-on-a-sharepoint-list-item"></a><span data-ttu-id="51bcd-112">Ändern von Spaltenwerten in SharePoint-Listenelementen</span><span class="sxs-lookup"><span data-stu-id="51bcd-112">Change a column value on a SharePoint list item</span></span>
+
+<span data-ttu-id="51bcd-113">Unser Add-In verfügt über eine benutzerdefinierte Menübandschaltfläche, über die sich Mitarbeiter aus der Liste **Lokale Mitarbeiter** des Stores in Hongkong zur Unternehmensdatenbank hinzufügen lassen.</span><span class="sxs-lookup"><span data-stu-id="51bcd-113">Our add-in has a custom ribbon button that adds an employee from the Hong Kong store's  **Local Employees** list to the corporate database. But the user has to remember to manually change the value of the Added to Corporate DB field toYes. Let's add code to do that automatically.</span></span> <span data-ttu-id="51bcd-114">Der Benutzer muss jedoch daran denken, den Wert des Felds **Zur Unternehmensdatenbank hinzugefügt** manuell auf **Ja** zu setzen.</span><span class="sxs-lookup"><span data-stu-id="51bcd-114">But the user has to remember to manually change the value of the **Added to Corporate DB** field to **Yes**.</span></span> <span data-ttu-id="51bcd-115">In diesem Artikel fügen Sie Code ein, der das automatisch erledigt.</span><span class="sxs-lookup"><span data-stu-id="51bcd-115">Let's add code to do that automatically.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="51bcd-116">Die Einstellungen für Startprojekte in Visual Studio werden in der Regel nach jedem erneuten Öffnen der Lösung wieder auf die Standardwerte zurückgesetzt.</span><span class="sxs-lookup"><span data-stu-id="51bcd-116">Note  The settings for Startup Projects in Visual Studio tend to revert to defaults whenever the solution is reopened. Always take these steps immediately after reopening the sample solution in this series of articles:</span></span> <span data-ttu-id="51bcd-117">Wann immer Sie beim Durcharbeiten dieser Artikelreihe die Beispiellösung erneut öffnen, müssen Sie umgehend die folgenden Schritte durchführen:</span><span class="sxs-lookup"><span data-stu-id="51bcd-117">Note  The settings for Startup Projects in Visual Studio tend to revert to defaults whenever the solution is reopened. Always take these steps immediately after reopening the sample solution in this series of articles:</span></span> 
+
+> 1. <span data-ttu-id="51bcd-118">Klicken Sie oben im **Projektmappen-Explorer** mit der rechten Maustaste auf den Lösungsknoten, und wählen Sie die Option **Startprojekte festlegen** aus.</span><span class="sxs-lookup"><span data-stu-id="51bcd-118">Right-click the solution node at the top of  **Solution Explorer** and select **Set startup projects**.</span></span>  
+> 2. <span data-ttu-id="51bcd-119">Stellen Sie sicher, dass alle drei Projekte in der Spalte **Aktion** auf **Start** gesetzt sind.</span><span class="sxs-lookup"><span data-stu-id="51bcd-119">Make sure all three projects are set to **Start** in the **Action** column.</span></span>
+
+1. <span data-ttu-id="51bcd-120">Öffnen Sie im **Projektmappen-Explorer** die Datei „EmployeeAdder.cs“.</span><span class="sxs-lookup"><span data-stu-id="51bcd-120">In **Solution Explorer**, open the EmployeeAdder.cs file.</span></span>
+
+2. <span data-ttu-id="51bcd-121">Fügen Sie der Methode **Page_Load** die unten aufgeführte Zeile hinzu, zwischen dem Aufruf von `AddLocalEmployeeToCorpDB` und dem Aufruf von `Response.Redirect`.</span><span class="sxs-lookup"><span data-stu-id="51bcd-121">Add the following line to the Page_Load method between the call of AddLocalEmployeeToCorpDB and the call of Response.Redirect. You will create the SetLocalEmployeeSyncStatus method in the next step.</span></span> <span data-ttu-id="51bcd-122">Im nächsten Schritt erstellen Sie die Methode **SetLocalEmployeeSyncStatus**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-122">In the next step, you create the **SetLocalEmployeeSyncStatus** method.</span></span>
     
- 
--  [<span data-ttu-id="285fb-109">Übertragen des SharePoint-Aussehens und -Verhaltens auf Ihr vom Anbieter gehostetes Add-In</span><span class="sxs-lookup"><span data-stu-id="285fb-109">Give your provider-hosted add-in the SharePoint look-and-feel</span></span>](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md)
+    ```C#
+       // Write to SharePoint 
+     SetLocalEmployeeSyncStatus();
+    ```
+
+3. <span data-ttu-id="51bcd-123">Fügen Sie der Klasse `EmployeeAdder` die folgende neue Methode hinzu:</span><span class="sxs-lookup"><span data-stu-id="51bcd-123">Add the following method to the  `EmployeeAdder` class.</span></span> 
+
+    ```C#
+       private void SetLocalEmployeeSyncStatus()
+     {
+         using (var clientContext = spContext.CreateUserClientContextForSPHost())
+         {
+             List localEmployeesList = clientContext.Web.Lists.GetByTitle("Local Employees");
+             ListItem selectedLocalEmployee = localEmployeesList.GetItemById(listItemID);
+             selectedLocalEmployee["Added_x0020_to_x0020_Corporate_x"] = true;
+             selectedLocalEmployee.Update();
+             clientContext.ExecuteQuery();
+         }
+     }
+    ```
+
+   <span data-ttu-id="51bcd-124">Zu diesem Code ist Folgendes anzumerken:</span><span class="sxs-lookup"><span data-stu-id="51bcd-124">Note the following about this code:</span></span>
     
- 
--  [<span data-ttu-id="285fb-110">Einfügen einer benutzerdefinierten Schaltfläche in das vom Anbieter gehostete Add-In</span><span class="sxs-lookup"><span data-stu-id="285fb-110">Include a custom button in the provider-hosted add-in</span></span>](include-a-custom-button-in-the-provider-hosted-add-in.md)
+   - <span data-ttu-id="51bcd-p105">Der interne Name für das Feld **Corporate DB hinzugefügt** sieht seltsam aus. Interne Feldnamen dürfen keine Leerzeichen enthalten. Wenn ein Benutzer also ein Feld mit Leerzeichen im Anzeigenamen erstellt, ersetzt SharePoint jedes Leerzeichen durch die Zeichenfolge „_x0020_", wenn der interne Name festgelegt wird. Dadurch wird „Zu Unternehmens-DB hinzugefügt" zu „Zu_x0020_Unternehmens-DB_x0020_hinzugefügt". Da interne Namen höchstens 32 Zeichen lang sein dürfen, wird der Name auf „Zu_x0020_Unternehmens-DB_x0020_h" gekürzt.</span><span class="sxs-lookup"><span data-stu-id="51bcd-p105">The internal name for the **Added to Corporate DB** field is odd-looking. Internal field names cannot contain spaces, so when a user creates a field with spaces in its display name, SharePoint substitutes the string "_x0020_" for each space when it sets the internal name. This turns "Added to Employee DB" into "Added_x0020_to_x0020_Corporate_x0020_DB". Internal names cannot be more than 32 characters, so the name is truncated to just "Added_x0020_to_x0020_Corporate_x".</span></span>
+
+   - <span data-ttu-id="51bcd-129">Obwohl die Spalte **Zur Unternehmensdatenbank hinzugefügt** in der SharePoint-UI als Feld des Typs **Ja/Nein** bezeichnet wird, handelt es sich tatsächlich um ein boolesches Feld. Deshalb wird sein Wert auf **true** gesetzt, nicht auf **Yes**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-129">Although the Added to Corporate DB column is called a "Yes/No" field in the SharePoint UI, it is really a boolean, so its value is set to true, not "Yes".</span></span>
+
+   - <span data-ttu-id="51bcd-p106">Die Methode **Update** der Klasse **ListItem** muss aufgerufen werden, um die Änderungen an der SharePoint-Inhaltsdatenbank zu übernehmen. Es ist eine allgemeine, aber nicht ganz universelle Regel, dass Sie, wenn Sie einen Eigenschaftswert eines Objekts ändern, das in den SharePoint-Datenbanken gespeichert ist, die Methode **Update** des Objekts aufrufen müssen.</span><span class="sxs-lookup"><span data-stu-id="51bcd-p106">The **Update** method of the **ListItem** class must be called to commit the changes to SharePoint's content database. It is a general, but not quite universal, rule that when you change a property value of an object that is stored in the SharePoint databases, you must call the object's **Update** method.</span></span>
+
+## <a name="request-permission-to-write-to-the-host-web-list"></a><span data-ttu-id="51bcd-132">Anfordern der Berechtigung zum Schreiben in die Hostwebliste</span><span class="sxs-lookup"><span data-stu-id="51bcd-132">Request permission to write to the host web list</span></span>
+
+<span data-ttu-id="51bcd-133">Da das Add-In nun sowohl in die Liste schreibt als auch aus ihr liest, müssen Sie die Berechtigungen, die das Add-In anfordert, von „Lesen“ auf „Schreiben“ erweitern.</span><span class="sxs-lookup"><span data-stu-id="51bcd-133">Since the add-in is now writing to the list as well as reading it, we need to escalate the permissions that the add-in requests from Read to Write. Follow these steps.</span></span> <span data-ttu-id="51bcd-134">Gehen Sie dazu wie folgt vor:</span><span class="sxs-lookup"><span data-stu-id="51bcd-134">Follow these steps.</span></span>
+
+1. <span data-ttu-id="51bcd-135">Öffnen Sie im **Projektmappen-Explorer** im Projekt **ChainStore** die Datei „AppManifest.xml“.</span><span class="sxs-lookup"><span data-stu-id="51bcd-135">In **Solution Explorer**, open the AppManifest.xml file in the **ChainStore** project.</span></span>
+
+2. <span data-ttu-id="51bcd-136">Öffnen Sie die Registerkarte **Berechtigungen**, und wählen Sie im Feld **Berechtigung** aus der Dropdownliste die Option **Schreiben** aus.</span><span class="sxs-lookup"><span data-stu-id="51bcd-136">Open the **Permissions** tab and in the **Permission** field, select **Write** from the drop down.</span></span>
+
+3. <span data-ttu-id="51bcd-137">Speichern Sie die Datei.</span><span class="sxs-lookup"><span data-stu-id="51bcd-137">Save the file.</span></span> 
+
+## <a name="run-the-add-in-and-test-the-button"></a><span data-ttu-id="51bcd-138">Ausführen des Add-Ins und Testen der Schaltfläche</span><span class="sxs-lookup"><span data-stu-id="51bcd-138">Run the add-in and test the button</span></span>
+
+1. <span data-ttu-id="51bcd-139">Drücken Sie die Taste F5, um Ihr Add-In bereitzustellen und auszuführen.</span><span class="sxs-lookup"><span data-stu-id="51bcd-139">Use the F5 key to deploy and run your add-in.</span></span> <span data-ttu-id="51bcd-140">Visual Studio hostet die Remotewebanwendung in IIS Express und die SQL-Datenbank in SQL Express.</span><span class="sxs-lookup"><span data-stu-id="51bcd-140">Visual Studio hosts the remote web application in IIS Express and hosts the SQL database in SQL Express.</span></span> <span data-ttu-id="51bcd-141">Zudem installiert Visual Studio das Add-In vorübergehend auf Ihrer SharePoint-Testwebsite und führt es sofort aus.</span><span class="sxs-lookup"><span data-stu-id="51bcd-141">Use the F5 key to deploy and run your add-in. Visual Studio makes a temporary installation of the add-in on your test SharePoint site and immediately runs the add-in.</span></span> <span data-ttu-id="51bcd-142">Bevor die Startseite des Add-Ins geöffnet wird, werden Sie aufgefordert, dem Add-In Berechtigungen zu erteilen.</span><span class="sxs-lookup"><span data-stu-id="51bcd-142">You are prompted to grant permissions to the add-in before its start page opens.</span></span> 
+
+2. <span data-ttu-id="51bcd-143">Wählen Sie im Berechtigungsformular aus der Liste die Option **Lokale Mitarbeiter** aus, und klicken Sie dann auf **Vertrauen**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-143">On the permission form, choose **Local Employees** from the list and then click **Trust it**.</span></span>
+
+3. <span data-ttu-id="51bcd-144">Die Startseite des Add-Ins wird geöffnet. Klicken Sie oben im Chromsteuerelement auf **Zurück zur Website**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-144">When the add-in's start page opens, click **Back to Site** on the chrome control at the top.</span></span>
+
+4. <span data-ttu-id="51bcd-145">Klicken Sie auf der Startseite der Website auf **Websiteinhalte** > **Lokale Mitarbeiter**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-145">From the website's home page, go to **Site Contents** > **Local Employees**.</span></span> <span data-ttu-id="51bcd-146">Die Seite mit der Listenansicht wird geöffnet.</span><span class="sxs-lookup"><span data-stu-id="51bcd-146">The list view page opens.</span></span>
+
+5. <span data-ttu-id="51bcd-147">Falls für keinen der in der Liste aufgeführten Mitarbeiter **Nein** in der Spalte **Zur Unternehmensdatenbank hinzugefügt** angegeben ist: Fügen Sie der Liste einen Mitarbeiter hinzu. Aktivieren Sie dabei jedoch *nicht__ das Kontrollkästchen __Zur Unternehmensdatenbank hinzugefügt*.</span><span class="sxs-lookup"><span data-stu-id="51bcd-147">If there are no employees on the list with  **No** in the **Added to Corporate DB** column, add an employee to the list, and *do not check the  __Added to Corporate DB__ checkbox.*</span></span> 
+
+6. <span data-ttu-id="51bcd-148">Öffnen Sie auf dem Menüband die Registerkarte **Elemente**. Im Abschnitt **Aktionen** der Registerkarte wird die benutzerdefinierte Schaltfläche **Zur Unternehmensdatenbank hinzufügen** angezeigt.</span><span class="sxs-lookup"><span data-stu-id="51bcd-148">On the ribbon, open the **Items** tab. In the **Actions** section of the tab, is the custom button **Add to Corporate DB**.</span></span>
+
+7. <span data-ttu-id="51bcd-149">Wählen Sie aus der Liste einen Mitarbeiter aus, für den **Nein** in der Spalte **Zur Unternehmensdatenbank hinzugefügt** angegeben ist.</span><span class="sxs-lookup"><span data-stu-id="51bcd-149">Select an employee on the list that has **No** in the **Added to Corporate DB** column.</span></span>
+
+8. <span data-ttu-id="51bcd-150">Klicken Sie auf die Schaltfläche **Zur Unternehmensdatenbank hinzufügen**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-150">Select the **Add to Corporate DB** button.</span></span> <span data-ttu-id="51bcd-151">(Zunächst müssen Sie ein Element auswählen.)</span><span class="sxs-lookup"><span data-stu-id="51bcd-151">(You must select an item first.)</span></span>
+
+9. <span data-ttu-id="51bcd-152">Die Seite scheint nun neu geladen zu werden, da die Methode **Page_Load** der Seite „EmployeeAdder“ wieder auf sie umleitet.</span><span class="sxs-lookup"><span data-stu-id="51bcd-152">The page will seem to reload because the  **Page_Load** method of the EmployeeAdder page redirects back to it.</span></span> <span data-ttu-id="51bcd-153">Der Wert des zum Mitarbeiter gehörenden Felds **Zur Unternehmensdatenbank hinzugefügt** wird in **Ja** geändert.</span><span class="sxs-lookup"><span data-stu-id="51bcd-153">The value of the **Added to Corporate DB** field for the employee changes to **Yes**.</span></span>
     
- 
--  [<span data-ttu-id="285fb-111">Schnelle Übersicht über das SharePoint-Objektmodell</span><span class="sxs-lookup"><span data-stu-id="285fb-111">Get a quick overview of the SharePoint object model</span></span>](get-a-quick-overview-of-the-sharepoint-object-model.md)
+   > [!NOTE]
+   > <span data-ttu-id="51bcd-154">Was hindert Benutzer daran, den Wert **Zur Unternehmensdatenbank hinzugefügt** manuell zu ändern und so Diskrepanzen zwischen der Liste und der Unternehmensdatenbank zu verursachen?</span><span class="sxs-lookup"><span data-stu-id="51bcd-154">Note  What prevents a user from manually changing the value  **Added to Corporate DB** in a way that makes the list and the corporate database inconsistent? Nothing does at the moment. You'll get the solution to this problem in a later article of this series.</span></span> <span data-ttu-id="51bcd-155">Zu diesem Zeitpunkt noch nichts.</span><span class="sxs-lookup"><span data-stu-id="51bcd-155">Nothing does at the moment.</span></span> <span data-ttu-id="51bcd-156">Eine Lösung für dieses Problem werden wir Ihnen in einem späteren Artikel dieser Reihe vorstellen.</span><span class="sxs-lookup"><span data-stu-id="51bcd-156">You'll get the solution to this problem in a later article of this series.</span></span>
+
+10. <span data-ttu-id="51bcd-157">Schließen Sie zum Beenden der Debugsitzung das Browserfenster, oder beenden Sie das Debuggen in Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="51bcd-157">To end the debugging session, close the browser window or stop debugging in Visual Studio. Each time that you press F5, Visual Studio will retract the previous version of the add-in and install the latest one.</span></span> <span data-ttu-id="51bcd-158">Wann immer Sie F5 drücken, zieht Visual Studio die bisherige Version des Add-Ins zurück und installiert die jeweils neueste Version.</span><span class="sxs-lookup"><span data-stu-id="51bcd-158">Each time you select F5, Visual Studio retracts the previous version of the add-in and installs the latest one.</span></span>
+
+11. <span data-ttu-id="51bcd-159">Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie die Option **Zurückziehen** aus.</span><span class="sxs-lookup"><span data-stu-id="51bcd-159">Right-click the project in  **Solution Explorer** and choose **Retract**.</span></span>
+
+## <a name="create-a-new-custom-list-on-the-host-website"></a><span data-ttu-id="51bcd-160">Erstellen einer neuen benutzerdefinierten Liste auf der Hostwebsite</span><span class="sxs-lookup"><span data-stu-id="51bcd-160">Create a new custom list on the host website</span></span>
+
+<span data-ttu-id="51bcd-161">Als nächste Verbesserung ergänzen wir das ChainStore-Add-In um eine Funktion, mit der Benutzer neue Elemente in einer Liste erstellen können, statt nur das Feld eines bereits vorhandenen Listenelements zu ändern.</span><span class="sxs-lookup"><span data-stu-id="51bcd-161">The next improvement to the Chain Store add-in is to create new items in a list, instead of merely changing a field in an existing item.</span></span> <span data-ttu-id="51bcd-162">Konkret soll bei der Aufgabe einer neuen Bestellung auf Unternehmensebene automatisch ein Element in einer SharePoint-Liste erstellt werden, das die Mitarbeiter vor Ort über die anstehende Lieferung informiert.</span><span class="sxs-lookup"><span data-stu-id="51bcd-162">Specifically, when a new order is placed at the corporate level, an item is automatically created in a SharePoint list that alerts local employees to expect a shipment.</span></span> <span data-ttu-id="51bcd-163">Die Liste heißt **Erwartete Lieferungen** und wird wie unten beschrieben erstellt.</span><span class="sxs-lookup"><span data-stu-id="51bcd-163">The list is called **Expected Shipments** and you create it with the following steps.</span></span> <span data-ttu-id="51bcd-164">In einem der noch folgenden Artikel in dieser Reihe werden wir Ihnen zeigen, wie Sie benutzerdefinierte Listen programmgesteuert zu Hostwebsites hinzufügen können. Dieser Artikel beschränkt sich auf die manuelle Vorgehensweise.</span><span class="sxs-lookup"><span data-stu-id="51bcd-164">The custom button is going to be on the ribbon of a specific list that records the employees of the local store. In a later article in this series, you'll learn how to programmatically add a custom list to a host website, but for now you'll add one manually.</span></span>
+
+1. <span data-ttu-id="51bcd-165">Navigieren Sie auf der Startseite des Fabrikam-Stores in Hongkong zu **Websiteinhalte** > **Add-In hinzufügen** > **Benutzerdefinierte Liste**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-165">From the home page of the Fabrikam Hong Kong Store, navigate to  Site Contents | add an add-in | Custom List.</span></span> 
+
+2. <span data-ttu-id="51bcd-166">Geben Sie in das Dialogfeld **Benutzerdefinierte Liste hinzufügen** als Namen **Erwartete Lieferungen** ein, und klicken Sie auf **Erstellen**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-166">In the Adding Custom List dialog, specifyExpected Shipments as the name and press Create.</span></span> 
+
+3. <span data-ttu-id="51bcd-167">Öffnen Sie auf der Seite **Websiteinhalte** die Liste **Erwartete Lieferungen**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-167">On the **Site Contents** page, open the **Expected Shipments** list.</span></span>
+
+4. <span data-ttu-id="51bcd-168">Klicken Sie auf dem Menüband auf der Registerkarte **Liste** auf **Listeneinstellungen**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-168">On the **List** tab on the ribbon, select **List Settings**.</span></span>
+
+5. <span data-ttu-id="51bcd-169">Wählen Sie im Abschnitt **Spalten** auf der Seite **Listeneinstellungen** die Spalte **Titel** aus.</span><span class="sxs-lookup"><span data-stu-id="51bcd-169">In the  **Columns** section of the **List Settings** page, click the **Title** column.</span></span>
+
+6. <span data-ttu-id="51bcd-170">Ändern Sie im Formular **Spalte bearbeiten** den **Spaltennamen** von **Titel** in **Produkt**. Klicken Sie dann auf **OK**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-170">In the  Edit Column form, change the Column name from Title toProduct; and then click  OK.</span></span>
+
+7. <span data-ttu-id="51bcd-171">Klicken Sie auf der Seite **Einstellungen** auf **Spalte erstellen**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-171">On the **Settings** page, click **Create column**.</span></span>
+
+8. <span data-ttu-id="51bcd-p115">In einem vorherigen Artikel dieser Reihe haben Sie gelernt, wie Sie benutzerdefinierte Spalten für eine Liste erstellen. Fügen Sie für die Liste **Erwartete Lieferungen** vier Spalten hinzu, und verwenden Sie dabei die Werte in der folgenden Tabelle. Behalten Sie für alle anderen Einstellungen die Standardeinstellungen bei.</span><span class="sxs-lookup"><span data-stu-id="51bcd-p115">In a previous article of this series, you learned how to create custom columns for a list. For the **Expected Shipments** list, add four columns, using the values in the following table. Leave all other settings at their defaults.</span></span>
+
+   |<span data-ttu-id="51bcd-175">**Spaltenname**</span><span class="sxs-lookup"><span data-stu-id="51bcd-175">**Column name**</span></span>|<span data-ttu-id="51bcd-176">**Typ**</span><span class="sxs-lookup"><span data-stu-id="51bcd-176">**Type**</span></span>|<span data-ttu-id="51bcd-177">**Erforderlich?**</span><span class="sxs-lookup"><span data-stu-id="51bcd-177">**Required?**</span></span>|<span data-ttu-id="51bcd-178">**Standardwert**</span><span class="sxs-lookup"><span data-stu-id="51bcd-178">**Default value**</span></span>|
+   |:-----|:-----|:-----|:-----|
+   |<span data-ttu-id="51bcd-179">Lieferant</span><span class="sxs-lookup"><span data-stu-id="51bcd-179">Supplier</span></span>|<span data-ttu-id="51bcd-180">**Eine Textzeile**</span><span class="sxs-lookup"><span data-stu-id="51bcd-180">**Single line of text**</span></span>|<span data-ttu-id="51bcd-181">Nicht erforderlich</span><span class="sxs-lookup"><span data-stu-id="51bcd-181">not required</span></span>|<span data-ttu-id="51bcd-182">Keine</span><span class="sxs-lookup"><span data-stu-id="51bcd-182">None</span></span>|
+   |<span data-ttu-id="51bcd-183">Menge</span><span class="sxs-lookup"><span data-stu-id="51bcd-183">Quantity</span></span>|<span data-ttu-id="51bcd-184">**Zahl**</span><span class="sxs-lookup"><span data-stu-id="51bcd-184">**Number**</span></span>|<span data-ttu-id="51bcd-185">Erforderlich</span><span class="sxs-lookup"><span data-stu-id="51bcd-185">Required</span></span>|<span data-ttu-id="51bcd-186">1</span><span class="sxs-lookup"><span data-stu-id="51bcd-186">1</span></span>|
+   |<span data-ttu-id="51bcd-187">Eingetroffen</span><span class="sxs-lookup"><span data-stu-id="51bcd-187">Arrived</span></span>|<span data-ttu-id="51bcd-188">**Ja/Nein**</span><span class="sxs-lookup"><span data-stu-id="51bcd-188">**Yes/No**</span></span>|<span data-ttu-id="51bcd-189">Nicht erforderlich</span><span class="sxs-lookup"><span data-stu-id="51bcd-189">not required</span></span>|<span data-ttu-id="51bcd-190">Nein</span><span class="sxs-lookup"><span data-stu-id="51bcd-190">No</span></span>|
+   |<span data-ttu-id="51bcd-191">Zum Bestand hinzugefügt</span><span class="sxs-lookup"><span data-stu-id="51bcd-191">Added to Inventory</span></span>|<span data-ttu-id="51bcd-192">**Ja/Nein**</span><span class="sxs-lookup"><span data-stu-id="51bcd-192">**Yes/No**</span></span>|<span data-ttu-id="51bcd-193">Nicht erforderlich</span><span class="sxs-lookup"><span data-stu-id="51bcd-193">not required</span></span>|<span data-ttu-id="51bcd-194">Nein</span><span class="sxs-lookup"><span data-stu-id="51bcd-194">No</span></span>|
+
+9. <span data-ttu-id="51bcd-195">Sobald Sie die Spalten erstellt haben: Klicken Sie auf der Seite mit den Listeneinstellungen auf **Websiteinhalte**, um die Seite **Websiteinhalte** zu öffnen.</span><span class="sxs-lookup"><span data-stu-id="51bcd-195">After you have created the columns, on the list settings page, click  **Site Contents** to open the **Site Contents** page. Open the Expected Shipments list.</span></span> <span data-ttu-id="51bcd-196">Öffnen Sie die Liste **Erwartete Lieferungen**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-196">Open the **Expected Shipments** list.</span></span>
+
+10. <span data-ttu-id="51bcd-197">Klicken Sie auf **Neues Element**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-197">Select **new item**.</span></span> <span data-ttu-id="51bcd-198">Das Formular für die Erstellung von Elementen sollte exakt wie unten dargestellt aussehen, einschließlich der zwei Sternchen als Markierung für die Pflichtfelder.</span><span class="sxs-lookup"><span data-stu-id="51bcd-198">Click  new item. The item creation form should look exactly like the following, including the two asterisks that indicate required fields.:</span></span>
+
+   <span data-ttu-id="51bcd-199">*Abbildung 1: Formular zur Erstellung eines Elements in der Liste „Erwartete Lieferungen“*</span><span class="sxs-lookup"><span data-stu-id="51bcd-199">*Figure 1. Item creation form for the Expected Shipments list*</span></span>
+
+   ![The item creation form for the Expected Shipments list. With fields for Product, Supplier, Quantity, Arrived, and "Added to Inventory". Asterisks by the titles of Product and Quantity and default value of one for Quantity.](../images/e552b5c9-8baa-4e53-9295-4d85a79d7734.PNG)
+
+11. <span data-ttu-id="51bcd-203">Wir möchten in dieser Liste nicht manuell Elemente erstellen. Klicken Sie daher auf **Abbrechen**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-203">We don't want to manually create items on this list, so click  **Cancel**.</span></span>
+
+## <a name="insert-an-item-into-a-sharepoint-list"></a><span data-ttu-id="51bcd-204">Einfügen von Elementen in eine SharePoint-Liste</span><span class="sxs-lookup"><span data-stu-id="51bcd-204">Insert an item into a SharePoint list</span></span>
+
+<span data-ttu-id="51bcd-205">Jetzt fügen Sie eine Funktion zum Add-In hinzu, die immer dann ein Element in der Liste **Erwartete Lieferungen** erstellt, wenn eine Bestellung für das Geschäft in Hongkong auf Unternehmensebene aufgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="51bcd-205">Now you add a function to the add-in that creates an item in the **Expected Shipments** list whenever an order for the Hong Kong store is placed at the corporate level.</span></span>
+
+1. <span data-ttu-id="51bcd-206">Öffnen Sie im **Projektmappen-Explorer** die Datei OrderForm.aspx.cs.</span><span class="sxs-lookup"><span data-stu-id="51bcd-206">In **Solution Explorer**, open the OrderForm.aspx.cs file.</span></span>
+
+2. <span data-ttu-id="51bcd-207">Fügen Sie am Anfang der Datei eine Anweisung des Typs **using** für **Microsoft.SharePoint.Client** ein.</span><span class="sxs-lookup"><span data-stu-id="51bcd-207">Add a **using** statement for **Microsoft.SharePoint.Client** to the top of the file.</span></span>
+
+3. <span data-ttu-id="51bcd-208">Fügen Sie in die Methode **BtnCreateOrder_Click** die folgende Zeile ein, direkt unter dem Aufruf von `CreateOrder`.</span><span class="sxs-lookup"><span data-stu-id="51bcd-208">In the btnCreateOrder_Click method, add the following line just below the call to CreateOrder. You'll create the CreateExpectedShipment method in the next step.</span></span> <span data-ttu-id="51bcd-209">Die Methode **CreateExpectedShipment** wird im nächsten Schritt erstellt.</span><span class="sxs-lookup"><span data-stu-id="51bcd-209">In the   method, add the following line just below the call to . You'll create the CreateExpectedShipment method in the next step.</span></span>
     
- 
+    ```C#
+      CreateExpectedShipment(txtBoxSupplier.Text, txtBoxItemName.Text, quantity);
+    ```
 
- <span data-ttu-id="285fb-p102">**Hinweis** Wenn Sie diese Reihe zu vom Anbieter gehosteten Add-Ins durchgearbeitet haben, haben Sie eine Visual Studio-Projektmappe, die Sie verwenden können, um mit diesem Thema fortzufahren. Sie können außerdem das Repository unter [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) herunterladen und die Datei „BeforeSharePointWriteOps.sln“ öffnen.</span><span class="sxs-lookup"><span data-stu-id="285fb-p102">**Note**  If you have been working through this series about provider-hosted add-ins, then you have a Visual Studio solution that you can use to continue with this topic. You can also download the repository at  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) and open the BeforeSharePointWriteOps.sln file.</span></span>
- 
+4. <span data-ttu-id="51bcd-210">Fügen Sie der Klasse `OrderForm` die folgende Methode hinzu:</span><span class="sxs-lookup"><span data-stu-id="51bcd-210">Add the following method to the  `OrderForm` class.</span></span> 
 
-<span data-ttu-id="285fb-114">In diesem Artikel kehren wir zum Codieren zurück und fügen einige Funktionen hinzu, die Daten in das ChainStore-SharePoint-Add-In schreiben.</span><span class="sxs-lookup"><span data-stu-id="285fb-114">In this article we get back to coding by adding some functions that write data to the Chain Store SharePoint Add-in.</span></span>
- 
-
-## <a name="change-a-column-value-on-a-sharepoint-list-item"></a><span data-ttu-id="285fb-115">Ändern eines Spaltenwerts in einem SharePoint-Listenelement</span><span class="sxs-lookup"><span data-stu-id="285fb-115">Change a column value on a SharePoint list item</span></span>
-
-<span data-ttu-id="285fb-p103">Unser Add-In verfügt über eine benutzerdefinierte Menübandschaltfläche, die einen Mitarbeiter aus der Liste **Lokale Mitarbeiter** des Stores in Hongkong zur Datenbank des Unternehmens hinzufügt. Aber der Benutzer muss daran denken, den Wert des Felds **Zu Unternehmens-DB hinzugefügt** manuell in „Ja“ zu ändern. Lassen Sie uns den Code hinzufügen, der dies automatisch ausführt.</span><span class="sxs-lookup"><span data-stu-id="285fb-p103">Our add-in has a custom ribbon button that adds an employee from the Hong Kong store's  **Local Employees** list to the corporate database. But the user has to remember to manually change the value of the **Added to Corporate DB** field toYes. Let's add code to do that automatically.</span></span>
- 
-
- 
-
- <span data-ttu-id="285fb-p104">**Hinweis** Die Einstellungen für Startprojekte in Visual Studio werden normalerweise auf die Standardwerte zurückgesetzt, wann immer die Projektmappe erneut geöffnet wird. Führen Sie die folgenden Schritte immer unmittelbar nach dem erneuten Öffnen der Beispielprojektmappe in dieser Artikelreihe durch: Klicken Sie mit der rechten Maustaste oben im **Projektmappen-Explorer** auf den Projektmappenknoten, und wählen Sie **Startprojekte festlegen** aus. Stellen Sie sicher, dass alle drei Projekte in der Spalte **Aktion** auf **Starten** festgelegt sind.</span><span class="sxs-lookup"><span data-stu-id="285fb-p104">**Note**   The settings for Startup Projects in Visual Studio tend to revert to defaults whenever the solution is reopened. Always take these steps immediately after reopening the sample solution in this series of articles: Right-click the solution node at the top of **Solution Explorer** and select **Set startup projects**.  Make sure all three projects are set to **Start** in the **Action** column.</span></span>
- 
-
-
-1. <span data-ttu-id="285fb-122">Öffnen Sie im **Projektmappen-Explorer** die Datei „EmployeeAdder.cs“.</span><span class="sxs-lookup"><span data-stu-id="285fb-122">In  **Solution Explorer**, open the EmployeeAdder.cs file.</span></span>
-    
- 
-2. <span data-ttu-id="285fb-p105">Fügen Sie die folgende Zeile zur Methode **Page_Load** zwischen dem Aufruf von `AddLocalEmployeeToCorpDB` und dem Aufruf von **Response.Redirect** hinzu. Sie erstellen die Methode `SetLocalEmployeeSyncStatus` im nächsten Schritt.</span><span class="sxs-lookup"><span data-stu-id="285fb-p105">Add the following line to the  **Page_Load** methodbetween the call of `AddLocalEmployeeToCorpDB` and the call of **Response.Redirect**. You will create the  `SetLocalEmployeeSyncStatus` method in the next step.</span></span>
-    
-```C#
-  // Write to SharePoint 
-SetLocalEmployeeSyncStatus();
-```
-
-3. <span data-ttu-id="285fb-p106">Fügen Sie der `EmployeeAdder`-Klasse die folgende neue Methode hinzu. Beachten Sie Folgendes zu diesem Code:</span><span class="sxs-lookup"><span data-stu-id="285fb-p106">Add the following new method to the  `EmployeeAdder` class. Note the following about this code:</span></span>
-    
-      - <span data-ttu-id="285fb-p107">Der interne Name für das Feld **Zu Unternehmensdatenbank hinzugefügt** sieht seltsam aus. Interne Feldnamen dürfen keine Leerzeichen enthalten. Wenn ein Benutzer also ein Feld mit Leerzeichen im Anzeigenamen erstellt, ersetzt SharePoint jedes Leerzeichen durch die Zeichenfolge „_x0020_“, wenn der interne Name festgelegt wird. Dadurch wird „Zu Unternehmens-DB hinzugefügt“ zu „Zu_x0020_Unternehmens-DB_x0020_hinzugefügt“. Da interne Namen höchstens 32 Zeichen lang sein dürfen, wird der Name auf „Zu_x0020_Unternehmens-DB_x0020_h“ gekürzt.</span><span class="sxs-lookup"><span data-stu-id="285fb-p107">The internal name for the  **Added to Corporate DB** field is odd-looking. Internal field names cannot contain spaces, so when a user creates a field with spaces in its display name, SharePoint substitutes the string "_x0020_" for each space when it sets the internal name. This turns "Added to Employee DB" into "Added_x0020_to_x0020_Corporate_x0020_DB". Internal names cannot be more than 32 characters, so the name is truncated to just "Added_x0020_to_x0020_Corporate_x".</span></span>
-    
- 
-  - <span data-ttu-id="285fb-131">Obwohl die Spalte **Zu Unternehmens-DB hinzugefügt** in der SharePoint-UI als „Ja/Nein“-Feld bezeichnet wird, handelt es sich tatsächlich um ein boolesches Feld. Deshalb wird sein Wert auf **true**, nicht „Ja“ festgelegt.</span><span class="sxs-lookup"><span data-stu-id="285fb-131">Although the  **Added to Corporate DB** column is called a "Yes/No" field in the SharePoint UI, it is really a boolean, so its value is set to **true**, not "Yes".</span></span>
-    
- 
-  - <span data-ttu-id="285fb-p108">Die Methode **Update** der Klasse **ListItem** muss aufgerufen werden, um die Änderungen an der SharePoint-Inhaltsdatenbank zu übernehmen. Es ist eine allgemeine, aber nicht ganz universelle Regel, dass Sie, wenn Sie einen Eigenschaftswert eines Objekts ändern, das in den SharePoint-Datenbanken gespeichert ist, die Methode **Update** des Objekts aufrufen müssen.</span><span class="sxs-lookup"><span data-stu-id="285fb-p108">The  **Update** method of the **ListItem** class must be called to commit the changes to SharePoint's content database. It is a general, but not quite universal, rule that when you change a property value of an object that is stored in the SharePoint databases, you must call the object's **Update** method.</span></span>
-    
- 
-
-```C#
-  private void SetLocalEmployeeSyncStatus()
-{
-    using (var clientContext = spContext.CreateUserClientContextForSPHost())
+    ```C#
+      private void CreateExpectedShipment(string supplier, string product, UInt16 quantity)
     {
-        List localEmployeesList = clientContext.Web.Lists.GetByTitle("Local Employees");
-        ListItem selectedLocalEmployee = localEmployeesList.GetItemById(listItemID);
-        selectedLocalEmployee["Added_x0020_to_x0020_Corporate_x"] = true;
-        selectedLocalEmployee.Update();
-        clientContext.ExecuteQuery();
+        using (var clientContext = spContext.CreateUserClientContextForSPHost())
+        {
+            List expectedShipmentsList = clientContext.Web.Lists.GetByTitle("Expected Shipments");
+            ListItemCreationInformation itemCreateInfo = new ListItemCreationInformation();
+            ListItem newItem = expectedShipmentsList.AddItem(itemCreateInfo);
+            newItem["Title"] = product;
+            newItem["Supplier"] = supplier;
+            newItem["Quantity"] = quantity;
+            newItem.Update();
+            clientContext.ExecuteQuery();
+        }
     }
-}
-```
+    ```
 
+   <span data-ttu-id="51bcd-211">Zu diesem Code ist Folgendes anzumerken:</span><span class="sxs-lookup"><span data-stu-id="51bcd-211">Note the following about this code:</span></span>
 
-## <a name="request-permission-to-write-to-the-host-web-list"></a><span data-ttu-id="285fb-134">Anfordern der Berechtigung zum Schreiben in die Hostwebliste</span><span class="sxs-lookup"><span data-stu-id="285fb-134">Request permission to write to the host web list</span></span>
+   - <span data-ttu-id="51bcd-212">Objekte des Typs **ListItem** werden ohne Konstruktor erstellt,</span><span class="sxs-lookup"><span data-stu-id="51bcd-212">A  **ListItem** object is not created with a constructor.</span></span> <span data-ttu-id="51bcd-213">um die Leistung zu verbessern.</span><span class="sxs-lookup"><span data-stu-id="51bcd-213">This is for performance reasons.</span></span> <span data-ttu-id="51bcd-214">Objekte des Typs **ListItem** haben zahlreiche Eigenschaften (neben den Standardwerten).</span><span class="sxs-lookup"><span data-stu-id="51bcd-214">A **ListItem** object has many properties (with default values).</span></span> <span data-ttu-id="51bcd-215">Würde ein Konstruktor verwendet, würde das vollständige Objekt in die XML-Nachricht aufgenommen, die von der Methode **ExecuteQuery** an den Server gesendet wird.</span><span class="sxs-lookup"><span data-stu-id="51bcd-215">If a constructor is used, the entire object would be included in the XML message that the **ExecuteQuery** method sends to the server.</span></span> 
+   
+   - <span data-ttu-id="51bcd-216">Objekte des Typs **ListItemCreationInformation** sind schlanke Objekte. Neben den Standardwerten enthalten sie nur die Werte, die absolut notwendig sind, damit der Server ein Objekt des Typs **ListItem** erstellen kann.</span><span class="sxs-lookup"><span data-stu-id="51bcd-216">The **ListItemCreationInformation** object is a lightweight object that only contains the minimal non-default values that the server needs to create a **ListItem** object.</span></span> <span data-ttu-id="51bcd-217">Eine der Codezeilen vermittelt den Eindruck, dass sie ein Objekt des Typs **ListItem** erstellt; tatsächlich fügt sie jedoch nur XML-Markup in die Nachrichten ein, die an den Server gesendet werden.</span><span class="sxs-lookup"><span data-stu-id="51bcd-217">It may appear that there is a line that creates a **ListItem** object, but recall that this line only adds some XML markup to a message that is sent to the server.</span></span> <span data-ttu-id="51bcd-218">Die Objekte des Typs **ListItem** werden auf dem Server erstellt.</span><span class="sxs-lookup"><span data-stu-id="51bcd-218">The **ListItem** object is created there on the server.</span></span>
 
-<span data-ttu-id="285fb-p109">Da das Add-In nun sowohl in die Liste schreibt als auch aus ihr liest, müssen wir die Berechtigungen, die das Add-In benötigt, von Lesen auf Schreiben eskalieren. Gehen Sie folgendermaßen vor.</span><span class="sxs-lookup"><span data-stu-id="285fb-p109">Since the add-in is now writing to the list as well as reading it, we need to escalate the permissions that the add-in requests from Read to Write. Follow these steps.</span></span>
- 
+   - <span data-ttu-id="51bcd-219">Es ist nicht notwendig, Objekte des Typs **ListItem** wieder an den Client zu senden. Daher enthält der Code keinen Aufruf der Methode **ClientContext.Load**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-219">There is no need to bring the  **ListItem** object back down to the client, so there is no call to **ClientContext.Load** method.</span></span>
 
- 
+   - <span data-ttu-id="51bcd-220">Es ist nicht notwendig, dass der Code explizit Werte in die Felder **Eingetroffen** und **Zum Bestand hinzugefügt** einfügt: Für diese Felder ist jeweils der Standardwert **Nein** gesetzt, also genau der Wert, den wir möchten.</span><span class="sxs-lookup"><span data-stu-id="51bcd-220">The code does not need to explicitly set the  Arrived or Added to Inventory fields because they have default values of "No", which is what we want.</span></span>
 
-1. <span data-ttu-id="285fb-137">Öffnen Sie im **Projektmappen-Explorer** die Datei „AppManifest.xml“ im **ChainStore**-Projekt.</span><span class="sxs-lookup"><span data-stu-id="285fb-137">In  **Solution Explorer**, open the AppManifest.xml file in the  **ChainStore** project.</span></span>
-    
- 
-2. <span data-ttu-id="285fb-138">Öffnen Sie die Registerkarte **Berechtigungen**, und wählen Sie im Feld **Berechtigung** die Option **Schreiben** aus der Dropdownliste aus.</span><span class="sxs-lookup"><span data-stu-id="285fb-138">Open the  **Permissions** tab and in the **Permission** field, select **Write** from the drop down.</span></span>
-    
- 
-3. <span data-ttu-id="285fb-139">Speichern Sie die Datei.</span><span class="sxs-lookup"><span data-stu-id="285fb-139">Save the file.</span></span> 
-    
- 
+## <a name="check-for-deleted-components"></a><span data-ttu-id="51bcd-221">Prüfen auf gelöschte Komponenten</span><span class="sxs-lookup"><span data-stu-id="51bcd-221">Checking for deleted components</span></span>
 
-## <a name="run-the-add-in-and-test-the-button"></a><span data-ttu-id="285fb-140">Ausführen des Add-Ins und Testen der Schaltfläche</span><span class="sxs-lookup"><span data-stu-id="285fb-140">Run the add-in and test the button</span></span>
+<span data-ttu-id="51bcd-p122">Jeder Benutzer mit Rechten als Eigentümer der Liste für eine SharePoint-Liste kann die Liste löschen. Und wenn die Liste von einem Add-In an das Hostweb bereitgestellt wird, kann der Websiteeigentümer des Hostwebs sie löschen. Das geschieht möglicherweise, wenn der Besitzer entscheidet, ohne die Funktionalität der Liste zurechzukommen. (Sie kann aus dem SharePoint-Papierkorb wiederhergestellt werden, wenn der Eigentümer seiner Meinung ändert.)</span><span class="sxs-lookup"><span data-stu-id="51bcd-p122">Anyone with list owner privileges for a SharePoint list can delete the list. And if the list is deployed to the host web by an add-in, the website owner of the host web can delete it. That may happen if the owner decides to do without the functionality provided by the list. (It can be restored from the SharePoint Recycle Bin if the owner changes his mind.)</span></span> 
 
+<span data-ttu-id="51bcd-226">Die Methode **CreateExpectedShipment** setzt voraus, dass die Liste **Erwartete Lieferungen** existiert.</span><span class="sxs-lookup"><span data-stu-id="51bcd-226">The **CreateExpectedShipment** method depends on the existence of the **Expected Shipments** list.</span></span> <span data-ttu-id="51bcd-227">Angenommen, der Besitzer einer Website löscht die Liste.</span><span class="sxs-lookup"><span data-stu-id="51bcd-227">Suppose a website owner decided to delete the list.</span></span> <span data-ttu-id="51bcd-228">Wenn nun zu einem späteren Zeitpunkt über das **Bestellformular** des Add-Ins eine Bestellung hinzugefügt und die Methode **CreateExpectedShipment** aufgerufen wird, gibt die Methode eine Ausnahme zurück und meldet, dass in der SharePoint-Website keine Liste namens **Erwartete Lieferungen** existiert.</span><span class="sxs-lookup"><span data-stu-id="51bcd-228">The **CreateExpectedShipment** method depends on the existence of the **Expected Shipments** list. Suppose a website owner decided to delete the list. Later, when an order is added with the add-in's **Order Form**, the CreateExpectedShipment is called and will throw an exception whose message says that there's no Expected Shipments list on the SharePoint website.</span></span>
 
- 
+<span data-ttu-id="51bcd-229">Es empfiehlt sich, die Methode so zu konfigurieren, dass sie prüft, ob `expectedShipmentsList` vorhanden ist, bevor sie Aktionen auf diese Liste anwendet.</span><span class="sxs-lookup"><span data-stu-id="51bcd-229">You might want the method to check the  `expectedShipmentsList` for nullity before it does anything with it. When you are working with CSOM, you can not  make this check with a simple structure like this:</span></span> <span data-ttu-id="51bcd-230">Wenn Sie mit CSOM arbeiten, können Sie eine solche Prüfung *nicht* mit einer einfachen Struktur wie der unten aufgeführten umsetzen:</span><span class="sxs-lookup"><span data-stu-id="51bcd-230">You might want the method to check the   for nullity before it does anything with it. When you are working with CSOM, you can *not*  make this check with a simple structure like this:</span></span>
 
+`if (expectedShipmentsList != null) { ... }`
  
+<span data-ttu-id="51bcd-231">Stattdessen müssen Sie eine spezielle CSOM-Klasse namens **ConditionalScope** verwenden.</span><span class="sxs-lookup"><span data-stu-id="51bcd-231">Instead, you need to use a special CSOM class called **ConditionalScope**.</span></span> <span data-ttu-id="51bcd-232">Der Grund liegt im Batchsystem von CSOM, das wir bereits im Vorgängerartikel dieses Artikels unserer Reihe erwähnt haben (siehe [Clientseitige Runtime und Batchverarbeitung](get-a-quick-overview-of-the-sharepoint-object-model.md#CSOMBatching)).</span><span class="sxs-lookup"><span data-stu-id="51bcd-232">The reasons for this are connected to CSOM's batching system, which was mentioned in the previous article in this series (see [Client-side runtime and batching](get-a-quick-overview-of-the-sharepoint-object-model.md#CSOMBatching)).</span></span> <span data-ttu-id="51bcd-233">**ConditionalScope** und das Batchsystem sind komplexere Konzepte, die den Rahmen dieser Einstiegsreihe sprengen würden. Sobald Sie alle Tutorials dieser Reihe durchgearbeitet haben, sollten Sie sich jedoch die zugehörigen Dokumentationsmaterialien in MSDN durchlesen.</span><span class="sxs-lookup"><span data-stu-id="51bcd-233">Instead, you need to use a special CSOM class called  **ConditionalScope**. The reasons for this are connected to CSOM's batching system, which was mentioned in the previous article in this series. (See  Client-side runtime and batching).  ConditionalScope and the batching system are advanced topics that are outside the scope of this getting started series, but you should see MSDN's documentation of them after you have completed this series of tutorials.</span></span>
 
-1. <span data-ttu-id="285fb-p110">Verwenden Sie die F5-TASTE, um Ihr Add-In bereitzustellen und auszuführen. Visual Studio hostet die Remotewebanwendung in IIS Express und die SQL-Datenbank in SQL Express. Außerdem wird eine temporäre Installation des Add-Ins auf Ihrer SharePoint-Testwebsite durchgeführt, und das Add-In wird sofort ausgeführt. Sie werden aufgefordert, Berechtigungen für das Add-In zu erteilen, bevor die Startseite geöffnet wird.</span><span class="sxs-lookup"><span data-stu-id="285fb-p110">Use the F5 key to deploy and run your add-in. Visual Studio hosts the remote web application in IIS Express and hosts the SQL database in a SQL Express. It also makes a temporary installation of the add-in on your test SharePoint site and immediately runs the add-in. You are prompted to grant permissions to the add-in before it's start page opens.</span></span> 
-    
- 
-2. <span data-ttu-id="285fb-145">Wählen Sie im Berechtigungsformular **Lokale Mitarbeiter** aus der Liste aus, und klicken Sie dann auf **Vertrauen**.</span><span class="sxs-lookup"><span data-stu-id="285fb-145">On the permission form, choose  **Local Employees** from the list and then click **Trust it**.</span></span>
-    
- 
-3. <span data-ttu-id="285fb-146">Wenn die Add-In-Startseite geöffnet wird, klicken Sie auf **Zurück zur Website** im Chromesteuerelement im oberen Bereich.</span><span class="sxs-lookup"><span data-stu-id="285fb-146">When the add-in's start page opens, click  **Back to Site** on the chrome control at the top.</span></span>
-    
- 
-4. <span data-ttu-id="285fb-p111">Navigieren Sie auf der Startseite der Website zu **Websiteinhalte | Lokale Mitarbeiter**. Die Seite mit der Listenansicht wird geöffnet.</span><span class="sxs-lookup"><span data-stu-id="285fb-p111">From the website's home page navigate to  **Site Contents | Local Employees**. The list view page opens.</span></span>
-    
- 
-5. <span data-ttu-id="285fb-149">Wenn auf der Liste keine Mitarbeiter mit **Neine** in der Spalte **Zu Unternehmens-DB hinzugefügt** vorhanden sind, fügen Sie einen Mitarbeiter zu der Liste hinzu, und *aktivieren Sie nicht das Kontrollkästchen **Zu Unternehmens-DB hinzugefügt**.*</span><span class="sxs-lookup"><span data-stu-id="285fb-149">If there are no employees on the list with  **No** in the **Added to Corporate DB** column, add an employee to the list, and *do not check the  **Added to Corporate DB** checkbox.*</span></span> 
-    
- 
-6. <span data-ttu-id="285fb-150">Öffnen Sie auf dem Menüband die Registerkarte **Elemente**. Im Abschnitt **Aktionen** der Registerkarte wird die benutzerdefinierte Schaltfläche **Zu Unternehmens-DB hinzufügen** angezeigt.</span><span class="sxs-lookup"><span data-stu-id="285fb-150">On the ribbon, open the  **Items** tab. In the **Actions** section of the tab, is the custom button **Add to Corporate DB**.</span></span>
-    
- 
-7. <span data-ttu-id="285fb-151">Wählen Sie einen Mitarbeiter in der Liste aus, für den **Nein** in der Spalte **Zu Unternehmens-DB hinzugefügt** angezeigt wird.</span><span class="sxs-lookup"><span data-stu-id="285fb-151">Select an employee on the list that has  **No** in the **Added to Corporate DB** column.</span></span>
-    
- 
-8. <span data-ttu-id="285fb-p112">Klicken Sie auf die Schaltfläche **Zu Unternehmens-DB hinzufügen**. * **Sie müssen zuerst ein Element auswählen!***</span><span class="sxs-lookup"><span data-stu-id="285fb-p112">Press the  **Add to Corporate DB** button. * **An item must be selected first!***</span></span> 
-    
- 
-9. <span data-ttu-id="285fb-p113">Die Seite scheint neu geladen zu werden, da die Methode **Page_Load** der Seite EmployeeAdder zur Seite umleitet. Der Wert des Felds **Zu Unternehmens-DB hinzugefügt** für den Mitarbeiter hat sich zu **Ja** geändert.</span><span class="sxs-lookup"><span data-stu-id="285fb-p113">The page will seem to reload because the  **Page_Load** method of the EmployeeAdder page redirects back to it. The value of the **Added to Corporate DB** field for the employee has changed to **Yes**.</span></span>
-    
-     <span data-ttu-id="285fb-p114">**HINWEIS** Was verhindert, dass ein Benutzer den Wert **Zu Unternehmens-DB hinzugefügt** in einer Weise manuell ändert, die dazu führt, dass die Liste und die Unternehmensdatenbank inkonsistent werden? Für den Moment nichts. Die Lösung für dieses Problem erfahren Sie in einem späteren Artikel dieser Reihe.</span><span class="sxs-lookup"><span data-stu-id="285fb-p114">**Note**  What prevents a user from manually changing the value  **Added to Corporate DB** in a way that makes the list and the corporate database inconsistent? Nothing does at the moment. You'll get the solution to this problem in a later article of this series.</span></span>
-10. <span data-ttu-id="285fb-p115">Schließen Sie zum Beenden der Debugsitzung das Browserfenster, oder beenden Sie das Debuggen in Visual Studio. Jedes Mal, wenn Sie F5 drücken, zieht Visual Studio die vorherige Version des Add-Ins zurück und installiert die neueste.</span><span class="sxs-lookup"><span data-stu-id="285fb-p115">To end the debugging session, close the browser window or stop debugging in Visual Studio. Each time that you press F5, Visual Studio will retract the previous version of the add-in and install the latest one.</span></span>
-    
- 
-11. <span data-ttu-id="285fb-161">Klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer**, und wählen Sie **Zurückziehen** aus.</span><span class="sxs-lookup"><span data-stu-id="285fb-161">Right-click the project in  **Solution Explorer** and choose **Retract**.</span></span>
-    
- 
-
-## <a name="create-a-new-custom-list-on-the-host-website"></a><span data-ttu-id="285fb-162">Erstellen einer neuen benutzerdefinierten Liste auf der Hostwebsite</span><span class="sxs-lookup"><span data-stu-id="285fb-162">Create a new custom list on the host website</span></span>
-
-<span data-ttu-id="285fb-p116">Die nächste Verbesserung am ChainStore-Add-In besteht darin, neue Elemente in einer Liste zu erstellen, statt lediglich ein Feld in einem vorhandenen Element zu ändern. Spezifisch gesagt, wenn eine neue Bestellung auf Unternehmensebene aufgegeben wird, wird automatisch ein Element in einer SharePoint-Liste erstellt, das lokale Mitarbeiter darauf aufmerksam macht, eine Lieferung zu erwarten. Die Liste heißt **Erwartete Lieferungen** und wird mit den folgenden Schritten erstellt. In einem späteren Artikel dieser Reihe erfahren Sie, wie Sie eine benutzerdefinierte Liste programmgesteuert zu einer Hostwebsite hinzufügen, aber für den Moment werden Sie diese manuell hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="285fb-p116">The next improvement to the Chain Store add-in is to create new items in a list, instead of merely changing a field in an existing item. Specifically, when a new order is placed at the corporate level, an item is automatically created in a SharePoint list that alerts local employees to expect a shipment. The list is called  **Expected Shipments** and you create it with the steps below. In a later article in this series, you'll learn how to programmatically add a custom list to a host website, but for now you'll add this one manually.</span></span>
- 
-
- 
-
-1. <span data-ttu-id="285fb-167">Navigieren Sie auf der Startseite des Fabrikam-Stores in Hongkong zu **Websiteinhalte | Add-In hinzufügen | Benutzerdefinierte Liste**.</span><span class="sxs-lookup"><span data-stu-id="285fb-167">From the home page of the Fabrikam Hong Kong Store, navigate to  **Site Contents | add an add-in | Custom List**.</span></span> 
-    
- 
-2. <span data-ttu-id="285fb-168">Geben Sie im Dialogfeld **Benutzerdefinierte Liste hinzufügen** „Erwartete Lieferungen“ als Namen an, und klicken Sie auf **Erstellen**.</span><span class="sxs-lookup"><span data-stu-id="285fb-168">In the  **Adding Custom List** dialog, specifyExpected Shipments as the name and press **Create**.</span></span> 
-    
- 
-3. <span data-ttu-id="285fb-169">Öffnen Sie auf der Seite **Websiteinhalte** die Liste **Erwartete Lieferungen**.</span><span class="sxs-lookup"><span data-stu-id="285fb-169">On the  **Site Contents** page, open the **Expected Shipments** list.</span></span>
-    
- 
-4. <span data-ttu-id="285fb-170">Öffnen Sie die Registerkarte **Liste** auf dem Menüband, und klicken Sie dann auf die Schaltfläche **Listeneinstellungen**.</span><span class="sxs-lookup"><span data-stu-id="285fb-170">Open the  **List** tab on the ribbon, and then click the **List Settings** button.</span></span>
-    
- 
-5. <span data-ttu-id="285fb-171">Klicken Sie im Abschnitt **Spalten** der Seite **Listeneinstellungen** auf die Spalte **Titel**.</span><span class="sxs-lookup"><span data-stu-id="285fb-171">In the  **Columns** section of the **List Settings** page, click the **Title** column.</span></span>
-    
- 
-6. <span data-ttu-id="285fb-172">Ändern Sie im Formular **Spalte bearbeiten** die Option **Spaltenname** von „Titel“ in „Produkt“, und klicken Sie dann auf **OK**.</span><span class="sxs-lookup"><span data-stu-id="285fb-172">In the  **Edit Column** form, change the **Column name** from Title toProduct; and then click  **OK**.</span></span>
-    
- 
-7. <span data-ttu-id="285fb-173">Klicken Sie auf der Seite **Einstellungen** auf **Spalte erstellen**.</span><span class="sxs-lookup"><span data-stu-id="285fb-173">On the  **Settings** page, click **Create column**.</span></span>
-    
- 
-8. <span data-ttu-id="285fb-p117">In einem vorherigen Artikel dieser Reihe haben Sie gelernt, wie Sie benutzerdefinierte Spalten für eine Liste erstellen. Fügen Sie für die Liste **Erwartete Lieferungen** vier Spalten hinzu, und verwenden Sie dabei die Werte in der folgenden Tabelle. Behalten Sie für alle anderen Einstellungen die Standardeinstellungen bei.</span><span class="sxs-lookup"><span data-stu-id="285fb-p117">In a previous article of this series, you learned how to create custom columns for a list. For the  **Expected Shipments** list, add four columns, using the values in the following table. Leave all other settings at their defaults.</span></span>
-    
-
-|<span data-ttu-id="285fb-177">**Spaltenname**</span><span class="sxs-lookup"><span data-stu-id="285fb-177">**Column name**</span></span>|<span data-ttu-id="285fb-178">**Typ**</span><span class="sxs-lookup"><span data-stu-id="285fb-178">**Type**</span></span>|<span data-ttu-id="285fb-179">**Erforderlich?**</span><span class="sxs-lookup"><span data-stu-id="285fb-179">**Required?**</span></span>|<span data-ttu-id="285fb-180">**Standardwert**</span><span class="sxs-lookup"><span data-stu-id="285fb-180">**Default value**</span></span>|
-|:-----|:-----|:-----|:-----|
-|<span data-ttu-id="285fb-181">Lieferant</span><span class="sxs-lookup"><span data-stu-id="285fb-181">Supplier</span></span>|<span data-ttu-id="285fb-182">**Eine Textzeile**</span><span class="sxs-lookup"><span data-stu-id="285fb-182">**Single line of text**</span></span>|<span data-ttu-id="285fb-183">Nicht erforderlich</span><span class="sxs-lookup"><span data-stu-id="285fb-183">not required</span></span>|<span data-ttu-id="285fb-184">keine</span><span class="sxs-lookup"><span data-stu-id="285fb-184">none</span></span>|
-|<span data-ttu-id="285fb-185">Menge</span><span class="sxs-lookup"><span data-stu-id="285fb-185">Quantity</span></span>|<span data-ttu-id="285fb-186">**Zahl**</span><span class="sxs-lookup"><span data-stu-id="285fb-186">**Number**</span></span>|<span data-ttu-id="285fb-187">Erforderlich</span><span class="sxs-lookup"><span data-stu-id="285fb-187">Required</span></span>|<span data-ttu-id="285fb-188">1</span><span class="sxs-lookup"><span data-stu-id="285fb-188">1</span></span>|
-|<span data-ttu-id="285fb-189">Eingetroffen</span><span class="sxs-lookup"><span data-stu-id="285fb-189">Arrived</span></span>|<span data-ttu-id="285fb-190">**Ja/Nein**</span><span class="sxs-lookup"><span data-stu-id="285fb-190">**Yes/No**</span></span>|<span data-ttu-id="285fb-191">Nicht erforderlich</span><span class="sxs-lookup"><span data-stu-id="285fb-191">not required</span></span>|<span data-ttu-id="285fb-192">Nein</span><span class="sxs-lookup"><span data-stu-id="285fb-192">No</span></span>|
-|<span data-ttu-id="285fb-193">Zum Bestand hinzugefügt</span><span class="sxs-lookup"><span data-stu-id="285fb-193">Added to Inventory</span></span>|<span data-ttu-id="285fb-194">**Ja/Nein**</span><span class="sxs-lookup"><span data-stu-id="285fb-194">**Yes/No**</span></span>|<span data-ttu-id="285fb-195">Nicht erforderlich</span><span class="sxs-lookup"><span data-stu-id="285fb-195">not required</span></span>|<span data-ttu-id="285fb-196">Nein</span><span class="sxs-lookup"><span data-stu-id="285fb-196">No</span></span>|
-9. <span data-ttu-id="285fb-p118">Nachdem Sie die Spalten erstellt haben, klicken Sie auf der Seite mit den Listeneinstellungen auf **Websiteinhalte**, um die Seite **Websiteinhalte** zu öffnen. Öffnen Sie die Liste **Erwartete Lieferungen**.</span><span class="sxs-lookup"><span data-stu-id="285fb-p118">After you have created the columns, on the list settings page, click  **Site Contents** to open the **Site Contents** page. Open the **Expected Shipments** list.</span></span>
-    
- 
-10. <span data-ttu-id="285fb-p119">Klicken Sie auf **Neues Element**. Das Formular für das Erstellen von Elementen sollte genau wie folgt aussehen, einschließlich der zwei Sternchen, die erforderliche Felder angeben:</span><span class="sxs-lookup"><span data-stu-id="285fb-p119">Click  **new item**. The item creation form should look exactly like the following, including the two asterisks that indicate required fields.:</span></span>
-    
-  ![The item creation form for the Expected Shipments list. With fields for Product, Supplier, Quantity, Arrived, and "Added to Inventory". Asterisks by the titles of Product and Quantity and default value of one for Quantity.](../images/e552b5c9-8baa-4e53-9295-4d85a79d7734.PNG)
- 
-
- 
-
- 
-11. <span data-ttu-id="285fb-204">Da wir Elemente in dieser Liste nicht manuell erstellen möchten, klicken Sie auf **Abbrechen**.</span><span class="sxs-lookup"><span data-stu-id="285fb-204">We don't want to manually create items on this list, so click  **Cancel**.</span></span>
-    
- 
-
-## <a name="insert-an-item-into-a-sharepoint-list"></a><span data-ttu-id="285fb-205">Einfügen eines Elements in eine SharePoint-Liste</span><span class="sxs-lookup"><span data-stu-id="285fb-205">Insert an item into a SharePoint list</span></span>
-
-<span data-ttu-id="285fb-206">Jetzt fügen Sie eine Funktion zum Add-In hinzu, die immer dann ein Element in der Liste **Erwartete Lieferungen** erstellt, wenn eine Bestellung für den Store in Hongkong auf Unternehmensebene aufgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="285fb-206">Now you add a function to the add-in that creates an item in the  **Expected Shipments** list whenever an order for the Hong Kong store is placed at the corporate level.</span></span>
- 
-
- 
-
-1. <span data-ttu-id="285fb-207">Öffnen Sie im **Projektmappen-Explorer** die Datei „OrderForm.aspx.cs“.</span><span class="sxs-lookup"><span data-stu-id="285fb-207">In  **Solution Explorer**, open the OrderForm.aspx.cs file.</span></span>
-    
- 
-2. <span data-ttu-id="285fb-208">Fügen Sie eine **using**-Anweisung für **Microsoft.SharePoint.Client** am Anfang der Datei hinzu.</span><span class="sxs-lookup"><span data-stu-id="285fb-208">Add a  **using** statement for **Microsoft.SharePoint.Client** to the top of the file.</span></span>
-    
- 
-3. <span data-ttu-id="285fb-p121">Fügen Sie in der Methode `btnCreateOrder_Click` die folgende Zeile direkt unter dem Aufruf von `CreateOrder` hinzu. Sie erstellen die Methode CreateExpectedShipment im nächsten Schritt.</span><span class="sxs-lookup"><span data-stu-id="285fb-p121">In the  `btnCreateOrder_Click` method, add the following line just below the call to `CreateOrder`. You'll create the CreateExpectedShipment method in the next step.</span></span>
-    
-```C#
-  CreateExpectedShipment(txtBoxSupplier.Text, txtBoxItemName.Text, quantity);
-```
-
-4. <span data-ttu-id="285fb-p122">Fügen Sie der `OrderForm`-Klasse die folgende Methode hinzu. Beachten Sie Folgendes zu diesem Code:</span><span class="sxs-lookup"><span data-stu-id="285fb-p122">Add the following method to the  `OrderForm` class. Note the following about this code:</span></span>
-    
-      - <span data-ttu-id="285fb-p123">Ein **ListItem**-Objekt wird aus Gründen der Systemleistung nicht mit einem Konstruktor erstellt. Ein **ListItem**-Objekt hat viele Eigenschaften (mit Standardwerten). Wenn ein Konstruktor verwendet wird, würde das gesamte Objekt in der XML-Meldung enthalten sein, die die Methode **ExecuteQuery** an den Server sendet. Das Objekt **ListItemCreationInformation** ist ein einfaches Objekt, das nur die minimalen vom Standard abweichenden Werte enthält, die der Server zum Erstellen eines **ListItem**-Objekts benötigt. Es mag wirken, als würde eine Zeile ein **ListItem**-Objekt erstellen, aber denken Sie daran, dass diese Zeile nur einige XML-Markups zu einer Meldung hinzufügt, die an den Server gesendet wird. Das Objekt **ListItem** wird auf dem Server erstellt.</span><span class="sxs-lookup"><span data-stu-id="285fb-p123">A  **ListItem** object is not created with a constructor. This is for performance reasons. A **ListItem** object has many properties (with default values). If a constructor is used, the entire object would be included in the XML message that the **ExecuteQuery** method sends to the server. The **ListItemCreationInformation** object is a lightweight object that only contains the minimal non-default values that the server needs to create a **ListItem** object. It may appear that there is a line that creates a **ListItem** object, but recall that this line only adds some XML markup to a message that is sent to the server. The **ListItem** object is created there on the server.</span></span>
-    
- 
-  - <span data-ttu-id="285fb-220">Es besteht keine Notwendigkeit, das Objekt **ListItem** zurück zum Client zu bringen. Deshalb gibt keinen Aufruf an die Methode **ClientContext.Load**.</span><span class="sxs-lookup"><span data-stu-id="285fb-220">There is no need to bring the  **ListItem** object back down to the client, so there is no call to **ClientContext.Load** method.</span></span>
-    
- 
-  - <span data-ttu-id="285fb-221">Der Code muss nicht explizit die Felder **Eingetroffen** oder **Zum Bestand hinzugefügt** festlegen, da diese die Standardwerte „Nein“ enthalten, was dem entspricht, was wir wollen.</span><span class="sxs-lookup"><span data-stu-id="285fb-221">The code does not need to explicitly set the  **Arrived** or **Added to Inventory** fields because they have default values of "No", which is what we want.</span></span>
-    
- 
-
-```
-  private void CreateExpectedShipment(string supplier, string product, UInt16 quantity)
-{
-    using (var clientContext = spContext.CreateUserClientContextForSPHost())
-    {
-        List expectedShipmentsList = clientContext.Web.Lists.GetByTitle("Expected Shipments");
-        ListItemCreationInformation itemCreateInfo = new ListItemCreationInformation();
-        ListItem newItem = expectedShipmentsList.AddItem(itemCreateInfo);
-        newItem["Title"] = product;
-        newItem["Supplier"] = supplier;
-        newItem["Quantity"] = quantity;
-        newItem.Update();
-        clientContext.ExecuteQuery();
-    }
-}
-```
-
-
-## <a name="checking-for-deleted-components"></a><span data-ttu-id="285fb-222">Suchen nach gelöschten Komponenten</span><span class="sxs-lookup"><span data-stu-id="285fb-222">Checking for deleted components</span></span>
-
-<span data-ttu-id="285fb-p124">Jeder Benutzer mit Rechten als Eigentümer der Liste für eine SharePoint-Liste kann die Liste löschen. Und wenn die Liste von einem Add-In an das Hostweb bereitgestellt wird, kann der Websiteeigentümer des Hostwebs sie löschen. Das geschieht möglicherweise, wenn der Besitzer entscheidet, ohne die Funktionalität der Liste zurechzukommen. (Sie kann aus dem SharePoint-Papierkorb wiederhergestellt werden, wenn der Eigentümer seiner Meinung ändert.)</span><span class="sxs-lookup"><span data-stu-id="285fb-p124">Anyone with list owner privileges for a SharePoint list can delete the list. And if the list is deployed to the host web by an add-in, the website owner of the host web can delete it. That may happen if the owner decides to do without the functionality provided by the list. (It can be restored from the SharePoint Recycle Bin if the owner changes his mind.)</span></span> 
- 
-
- 
-<span data-ttu-id="285fb-p125">Die Methode  `CreateExpectedShipment` hängt vom Vorhandensein der Liste **Erwartete Lieferungen** ab. Angenommen, der Besitzer einer Website entscheidet, die Liste zu löschen. Später, wenn eine Bestellung zum **Bestellformular** des Add-Ins hinzugefügt wird, wird `CreateExpectedShipment` aufgerufen und löst eine Ausnahme aus, deren Meldung besagt, dass keine Liste **Erwartete Lieferungen** auf der SharePoint-Website vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="285fb-p125">The  `CreateExpectedShipment` method depends on the existence of the **Expected Shipments** list. Suppose a website owner decided to delete the list. Later, when an order is added with the add-in's **Order Form**, the  `CreateExpectedShipment` is called and will throw an exception whose message says that there's no **Expected Shipments** list on the SharePoint website.</span></span>
- 
-
- 
-<span data-ttu-id="285fb-p126">Möglicherweise sollten Sie die Methode  `expectedShipmentsList` auf Nichtigkeit überprüfen lassen, bevor sie eine Aktion daran durchführt. Wenn Sie mit CSOM arbeiten, können Sie diese Überprüfung *nicht*  mit einer einfachen Struktur wie der folgenden durchführen:</span><span class="sxs-lookup"><span data-stu-id="285fb-p126">You might want the method to check the  `expectedShipmentsList` for nullity before it does anything with it. When you are working with CSOM, you can *not*  make this check with a simple structure like this:</span></span>
- 
-
- 
- `if (expectedShipmentsList != null) { ... }`
- 
-
- 
-<span data-ttu-id="285fb-p127">Stattdessen müssen Sie eine spezielle CSOM-Klasse verwenden, die als **ConditionalScope** bezeichnet wird. Die Gründe hierfür hängen mit dem Batchverarbeitungssystem von CSOM zusammen, das im vorherigen Artikel dieser Reihe erwähnt wurde. (Siehe [Clientseitige Laufzeit und Batchverarbeitung](get-a-quick-overview-of-the-sharepoint-object-model.md#CSOMBatching)). **ConditionalScope** und das Batchverarbeitungssystem sind fortgeschrittene Themen, die über den Umfang dieser Reihe für die ersten Schritte hinausgeht, aber Sie sollten einen Blick in die MSDN-Dokumentation dazu werfen, wenn Sie diese Reihe von Lernprogrammen abgeschlossen haben.</span><span class="sxs-lookup"><span data-stu-id="285fb-p127">Instead, you need to use a special CSOM class called  **ConditionalScope**. The reasons for this are connected to CSOM's batching system, which was mentioned in the previous article in this series. (See  [Client-side runtime and batching](get-a-quick-overview-of-the-sharepoint-object-model.md#CSOMBatching)).  **ConditionalScope** and the batching system are advanced topics that are outside the scope of this getting started series, but you should see MSDN's documentation of them after you have completed this series of tutorials.</span></span>
- 
-
- 
-<span data-ttu-id="285fb-236">Es gibt eine alternative Möglichkeit zum Prüfen, ob eine Liste vorhanden ist: Statt die Methode **GetByTitle** zu verwenden, um einen Verweis auf die Liste zu erhalten, können Sie mit Code wie dem folgenden überprüfen, ob sich eine Liste mit dem angegebenen Namen in der „Liste der Listen“ der Website befindet.</span><span class="sxs-lookup"><span data-stu-id="285fb-236">There is an alternative way to check for the existence of a list: instead of using the  **GetByTitle** method to get a reference to the list, you can check to see if a list with the specified name is in the website's "list of lists" with code like the following.</span></span>
- 
-
- 
-
-
+<span data-ttu-id="51bcd-234">Es gibt eine alternative Möglichkeit, auf das Vorhandensein einer Liste zu prüfen: Statt die Methode **GetByTitle** zu verwenden, um einen Verweis auf die Liste abzurufen, können Sie mit Code wie dem folgenden überprüfen, ob sich eine Liste mit dem angegebenen Namen in der „Liste der Listen“ der Website befindet.</span><span class="sxs-lookup"><span data-stu-id="51bcd-234">There is an alternative way to check for the existence of a list: instead of using the  **GetByTitle** method to get a reference to the list, you can check to see if a list with the specified name is in the website's "list of lists" with code like the following.</span></span>
 
 ```C#
 var query = from list in clientContext.Web.Lists 
@@ -287,73 +211,50 @@ if (matchingLists.Count() != 0)
 clientContext.ExecuteQuery(); 
 ```
 
-<span data-ttu-id="285fb-p128">Dieser Code hat den Vorteil, dass Sie die Komplikationen der Klasse **ConditionalScope** vermeiden können, und wir verwenden genau diesen Code an anderer Stelle in dieser Artikelreihe. Es gibt jedoch auch einen Nachteil: Dieser Code erfordert einen zusätzlichen Aufruf von **ExecuteQuery**, nur um den Wert abzurufen, den Sie in der **if**-Anweisung überprüfen möchten. Wenn dieses Verfahren in `CreateExpectedShipment` verwendet wird, um zu prüfen, ob die Liste vorhanden ist, hat diese Methode zwei Aufrufe von **ExecuteQuery**, die jeweils eine HTTP-Anforderung vom Remotewebserver an SharePoint durchführen. Diese Anforderungen sind der zeitaufwändigste Teil jeder CSOM-Methode. Daher ist es im Allgemeinen empfehlenswert, diese zu minimieren.</span><span class="sxs-lookup"><span data-stu-id="285fb-p128">The preceding code has the advantage of allowing you to avoid the complications of the  **ConditionalScope** class, and we use exactly this code elsewhere in this series of articles. But there is a disadvantage too: this code requires an extra call of **ExecuteQuery** solely to get the value you want to check in the **if** statement. If we use this technique in the `CreateExpectedShipment` to check for the existence of the list, then that method will have two calls of **ExecuteQuery** each of which makes an HTTP request from the remote web server to SharePoint. These requests are the most time-consuming part of any CSOM method, so it is generally a good practice to minimize them.</span></span>
- 
+<span data-ttu-id="51bcd-235">Das oben aufgeführte Codebeispiel ist einfacher als die komplexe Klasse **ConditionalScope**. Zudem verwenden wir genau diesen Code auch an anderer Stelle in dieser Artikelreihe.</span><span class="sxs-lookup"><span data-stu-id="51bcd-235">The preceding code has the advantage of allowing you to avoid the complications of the **ConditionalScope** class, and we use exactly this code elsewhere in this series of articles.</span></span> <span data-ttu-id="51bcd-236">Einen Nachteil gibt es jedoch: Dieser Code erfordert einen zusätzlichen Aufruf von **ExecuteQuery**, der ausschließlich dazu dient, den Wert abzurufen, der in der Anweisung des Typs **if** abgeprüft werden soll.</span><span class="sxs-lookup"><span data-stu-id="51bcd-236">But there is a disadvantage too: this code requires an extra call of **ExecuteQuery** solely to get the value you want to check in the **if** statement.</span></span> 
 
- 
-<span data-ttu-id="285fb-p129">`CreateExpectedShipment` wird wie gehabt beibehalten, aber in einem Produktions-Add-In müssen Sie überlegen, wie Ihr Code funktioniert, wenn eine Komponente, die darauf verweist, gelöscht wird. Das programmgesteuerte Wiederherstellen der Liste aus dem Papierkorb ist eine Option, aber diese würde Benutzer stören, die absichtlich entscheiden, die Liste zu löschen. Berücksichtigen Sie auch, dass möglicherweise die Möglichkeit darin besteht, nichts zu tun, um die Ausnahme zu verhindern. Eine Ausnahme von SharePoint würde Benutzer warnen, dass das Löschen der Liste einen Teil des Add-Ins untauglich macht, was der Person, die sie gelöscht hat, möglicherweise nicht bemerkt hat. Ein Benutzer kann dann entscheiden, ob die Liste aus dem Papierkorb wiedergeherstellt wird oder er ohne den Teil der Add-In-Funktionalität auskommt, der nicht mehr funktioniert.</span><span class="sxs-lookup"><span data-stu-id="285fb-p129">We will leave the  `CreateExpectedShipment` as it is, but in a production add-in, you need to think about how your code is going to work if a component that it references is deleted. Programmatically restoring the list from the Recycle Bin is one option, but that would annoy users who intentionally decided to delete the list. You should also consider that doing nothing at all to prevent the exception might be the best choice. An exception from SharePoint would alert users that the deletion of the list has broken part of the add-in, which is something the person who deleted it might not have realized. A user can then decide whether to restore the list from the Recycle Bin or do without the part of the add-in functionality that no longer works.</span></span>
- 
+<span data-ttu-id="51bcd-237">Wenn Sie also diese Technik in der Methode **CreateExpectedShipment** verwenden, um auf das Vorhandensein der Liste zu prüfen, führt diese Methode zwei Aufrufe von **ExecuteQuery** aus. Bei jedem dieser Aufrufe wird vom Remotewebserver eine HTTP-Anforderung an SharePoint gesendet.</span><span class="sxs-lookup"><span data-stu-id="51bcd-237">If we use this technique in the **CreateExpectedShipment** method to check for the existence of the list, that method will have two calls of **ExecuteQuery**, each of which makes an HTTP request from the remote web server to SharePoint.</span></span> <span data-ttu-id="51bcd-238">Solche Anfragen sind das zeitintensivste Element einer CSOM-Methode. Daher empfiehlt es sich in der Regel, sie nur sehr sparsam einzusetzen.</span><span class="sxs-lookup"><span data-stu-id="51bcd-238">These requests are the most time-consuming part of any CSOM method, so it is generally a good practice to minimize them.</span></span>
 
- 
+<span data-ttu-id="51bcd-239">Wir belassen die Methode **CreateExpectedShipment** in diesem Beispiel unverändert. Bei einem in der Produktion eingesetzten Add-In sollten Sie jedoch immer bedenken, wie sich Ihr Code verhält, wenn eine Komponente, auf die er verweist, gelöscht wird.</span><span class="sxs-lookup"><span data-stu-id="51bcd-239">We will leave the **CreateExpectedShipment** method as is, but in a production add-in, you need to think about how your code is going to work if a component that it references is deleted.</span></span> <span data-ttu-id="51bcd-240">Eine Möglichkeit wäre die programmgesteuerte Wiederherstellung der Liste aus dem Papierkorb. Das würde allerdings bei Benutzern zu Unzufriedenheit führen, die die Liste absichtlich gelöscht haben.</span><span class="sxs-lookup"><span data-stu-id="51bcd-240">Programmatically restoring the list from the Recycle Bin is one option, but that would annoy users who intentionally decided to delete the list.</span></span> 
 
-## <a name="request-permission-to-manage-the-website"></a><span data-ttu-id="285fb-246">Anfordern der Berechtigung zum Verwalten der Website</span><span class="sxs-lookup"><span data-stu-id="285fb-246">Request permission to manage the website</span></span>
+<span data-ttu-id="51bcd-p129">Es kann unter Umständen die beste Option sein, die Ausnahme einfach hinzunehmen. Eine Ausnahme von SharePoint würde den Benutzer darauf hinweisen, dass das Löschen der Liste einen Teil des Add-Ins beschädigt hat - eine Tatsache, derer er sich möglicherweise gar nicht bewusst war. Er könnte dann die Liste selbst aus dem Papierkorb wiederherstellen oder auf die nicht mehr funktionierende Add-In-Funktion verzichten.</span><span class="sxs-lookup"><span data-stu-id="51bcd-p129">We will leave the   as it is, but in a production add-in, you need to think about how your code is going to work if a component that it references is deleted. Programmatically restoring the list from the Recycle Bin is one option, but that would annoy users who intentionally decided to delete the list. You should also consider that doing nothing at all to prevent the exception might be the best choice. An exception from SharePoint would alert users that the deletion of the list has broken part of the add-in, which is something the person who deleted it might not have realized. A user can then decide whether to restore the list from the Recycle Bin or do without the part of the add-in functionality that no longer works.</span></span>
 
-<span data-ttu-id="285fb-p130">Sie erinnern sich, dass SharePoint, wenn ein Add-In Lese- oder Schreibberechtigungen im Bereich der Liste anfordert, den Benutzer auffordert, dem Add-In zu vertrauen. Das Dialogfeld enthält eine Dropdownliste, aus der der Benutzer die Liste auswählt, auf die das Add-In Zugriff haben sollte. Nur eine Liste kann ausgewählt werden. Aber das ChainStore-Add-In schreibt jetzt in zwei verschiedene Listen. Um Zugriff auf mehrere Listen zu erhalten, muss das Add-In die Berechtigung im Bereich des Web anfordern. Gehen Sie wie folgt vor:</span><span class="sxs-lookup"><span data-stu-id="285fb-p130">Recall that when an add-in requests Read or Write permission with the scope of List, SharePoint prompts the user to trust the add-in and the dialog contains a drop down list where the user selects the list to which the add-in should have access. Only one list can be selected. But the Chain Store add-in now writes to two different lists. To gain access to multiple lists, the add-in has to request permission with the scope of Web. Follow these steps:</span></span>
- 
+## <a name="request-permission-to-manage-the-website"></a><span data-ttu-id="51bcd-244">Anfordern der Berechtigung zum Verwalten der Website</span><span class="sxs-lookup"><span data-stu-id="51bcd-244">Request permission to manage the website</span></span>
 
- 
+<span data-ttu-id="51bcd-245">Sie erinnern sich: Sobald ein Add-In eine Lese- oder Schreibberechtigung für den Bereich „Liste“ anfordert, fragt SharePoint den Benutzer, ob er dem Add-In vertraut. Das entsprechende Dialogfeld enthält eine Dropdownliste, aus der der Benutzer die Liste auswählt, auf die das Add-In Zugriff haben soll.</span><span class="sxs-lookup"><span data-stu-id="51bcd-245">Recall that when an add-in requests Read or Write permission with the scope of List, SharePoint prompts the user to trust the add-in and the dialog contains a drop down list where the user selects the list to which the add-in should have access. Only one list can be selected. But the Chain Store add-in now writes to two different lists. To gain access to multiple lists, the add-in has to request permission with the scope of Web. Follow these steps:</span></span> <span data-ttu-id="51bcd-246">Hier kann nur eine einzige Liste ausgewählt werden.</span><span class="sxs-lookup"><span data-stu-id="51bcd-246">Only one item can be selected (default).</span></span> <span data-ttu-id="51bcd-247">Das ChainStore-Add-In allerdings schreibt jetzt zwei unterschiedliche Listen.</span><span class="sxs-lookup"><span data-stu-id="51bcd-247">But the Chain Store add-in now writes to two different lists.</span></span> <span data-ttu-id="51bcd-248">Um auf mehrere Listen zugreifen zu dürfen, muss das Add-In eine Berechtigung für den Bereich „Web“ anfordern.</span><span class="sxs-lookup"><span data-stu-id="51bcd-248">To gain access to multiple lists, the add-in has to request permission with the scope of Web.</span></span> <span data-ttu-id="51bcd-249">Gehen Sie wie folgt vor:</span><span class="sxs-lookup"><span data-stu-id="51bcd-249">Follow these steps:</span></span>
 
-1. <span data-ttu-id="285fb-252">Öffnen Sie im **Projektmappen-Explorer** die Datei „AppManifest.xml“ im **ChainStore**-Projekt.</span><span class="sxs-lookup"><span data-stu-id="285fb-252">In  **Solution Explorer**, open the AppManifest.xml file in the  **ChainStore** project.</span></span>
-    
- 
-2. <span data-ttu-id="285fb-253">Öffnen Sie die Registerkarte **Berechtigungen**, und wählen Sie im Feld **Bereich** die Option **Web** aus der Dropdownliste aus.</span><span class="sxs-lookup"><span data-stu-id="285fb-253">Open the  **Permissions** tab and in the **Scope** field, select **Web** from the drop down.</span></span>
-    
- 
-3. <span data-ttu-id="285fb-254">Wählen Sie im Feld **Berechtigung** die Option **Schreiben** aus der Dropdownliste aus.</span><span class="sxs-lookup"><span data-stu-id="285fb-254">In the  **Permission** field, select **Write** from the drop down.</span></span>
-    
- 
-4. <span data-ttu-id="285fb-255">Speichern Sie die Datei.</span><span class="sxs-lookup"><span data-stu-id="285fb-255">Save the file.</span></span> 
-    
- 
+1. <span data-ttu-id="51bcd-250">Öffnen Sie im **Projektmappen-Explorer** im Projekt **ChainStore** die Datei „AppManifest.xml“.</span><span class="sxs-lookup"><span data-stu-id="51bcd-250">In **Solution Explorer**, open the AppManifest.xml file in the **ChainStore** project.</span></span>
 
-## <a name="run-the-add-in-and-test-the-item-creation"></a><span data-ttu-id="285fb-256">Ausführen des Add-Ins und Testen der Elementerstellung</span><span class="sxs-lookup"><span data-stu-id="285fb-256">Run the add-in and test the item creation</span></span>
+2. <span data-ttu-id="51bcd-251">Öffnen Sie die Registerkarte **Berechtigungen**, und wählen Sie im Feld **Bereich** aus der Dropdownliste die Option **Web** aus.</span><span class="sxs-lookup"><span data-stu-id="51bcd-251">Open the **Permissions** tab and in the **Scope** field, select **Web** from the drop down.</span></span>
 
+3. <span data-ttu-id="51bcd-252">Wählen Sie im Feld **Berechtigung** aus der Dropdownliste die Option **Schreiben** aus.</span><span class="sxs-lookup"><span data-stu-id="51bcd-252">In the  **Permission** field, select **Write** from the drop down.</span></span>
 
- 
+4. <span data-ttu-id="51bcd-253">Speichern Sie die Datei.</span><span class="sxs-lookup"><span data-stu-id="51bcd-253">Save the file.</span></span> 
 
- 
+## <a name="run-the-add-in-and-test-the-item-creation"></a><span data-ttu-id="51bcd-254">Ausführen des Add-Ins und Testen der Elementerstellung</span><span class="sxs-lookup"><span data-stu-id="51bcd-254">Run the add-in and test the item creation</span></span>
 
-1. <span data-ttu-id="285fb-p131">Verwenden Sie die F5-TASTE, um Ihr Add-In bereitzustellen und auszuführen. Visual Studio hostet die Remotewebanwendung in IIS Express und die SQL-Datenbank in SQL Express. Außerdem wird eine temporäre Installation des Add-Ins auf Ihrer SharePoint-Testwebsite durchgeführt, und das Add-In wird sofort ausgeführt. Sie werden aufgefordert, Berechtigungen für das Add-In zu erteilen, bevor die Startseite geöffnet wird.</span><span class="sxs-lookup"><span data-stu-id="285fb-p131">Use the F5 key to deploy and run your add-in. Visual Studio hosts the remote web application in IIS Express and hosts the SQL database in a SQL Express. It also makes a temporary installation of the add-in on your test SharePoint site and immediately runs the add-in. You are prompted to grant permissions to the add-in before it's start page opens.</span></span> 
-    
- 
-2. <span data-ttu-id="285fb-261">Wenn die Add-In-Startseite geöffnet wird, klicken Sie auf den Link **Bestellformular** am unteren Rand der Seite.</span><span class="sxs-lookup"><span data-stu-id="285fb-261">When the add-in's start page opens, click the  **Order Form** link at the bottom of the page.</span></span>
-    
- 
-3. <span data-ttu-id="285fb-262">Geben Sie einige Werte in das Formular ein, und klicken Sie auf **Bestellung aufgeben**.</span><span class="sxs-lookup"><span data-stu-id="285fb-262">Enter some values in the form and press  **Place Order**.</span></span>
-    
- 
-4. <span data-ttu-id="285fb-263">Verwenden Sie im Browser die Schaltfläche „Zurück“, um wieder zur Startseite zu navigieren, und klicken Sie dann auf **Zurück zur Website** auf dem Chromesteuerelement oben.</span><span class="sxs-lookup"><span data-stu-id="285fb-263">Use the browser's back button to navigate back to the start page, and then click  **Back to Site** on the chrome control at the top.</span></span>
-    
- 
-5. <span data-ttu-id="285fb-p132">Navigieren Sie von der Startseite des Hongkong-Stores zur Seite **Websiteinhalte**, und öffnen Sie die Liste **Erwartete Lieferungen**. Es befindet sich jetzt ein Element in der Liste, das der Bestellung entspricht. Der folgende Screenshot ist ein Beispiel.</span><span class="sxs-lookup"><span data-stu-id="285fb-p132">From the home page of the Hong Kong store, navigate to  **Site Contents** and open the **Expected Shipments** list. There is now an item on the list corresponding to the order. The following screenshot is an example.</span></span>
-    
-  ![The Expected Shipments list with a single item. There Product and Supplier fields have names. The Quantity field has a number. The two Yes/No fields are both set to "No".](../images/e4285084-d31e-4e79-a469-ddebbc7dfb18.PNG)
- 
+1. <span data-ttu-id="51bcd-255">Drücken Sie die Taste F5, um Ihr Add-In bereitzustellen und auszuführen.</span><span class="sxs-lookup"><span data-stu-id="51bcd-255">Use the F5 key to deploy and run your add-in.</span></span> <span data-ttu-id="51bcd-256">Visual Studio hostet die Remotewebanwendung in IIS Express und die SQL-Datenbank in SQL Express.</span><span class="sxs-lookup"><span data-stu-id="51bcd-256">Visual Studio hosts the remote web application in IIS Express and hosts the SQL database in SQL Express.</span></span> <span data-ttu-id="51bcd-257">Zudem installiert Visual Studio das Add-In vorübergehend auf Ihrer SharePoint-Testwebsite und führt es sofort aus.</span><span class="sxs-lookup"><span data-stu-id="51bcd-257">Use the F5 key to deploy and run your add-in. Visual Studio makes a temporary installation of the add-in on your test SharePoint site and immediately runs the add-in.</span></span> <span data-ttu-id="51bcd-258">Bevor die Startseite des Add-Ins geöffnet wird, werden Sie aufgefordert, dem Add-In Berechtigungen zu erteilen.</span><span class="sxs-lookup"><span data-stu-id="51bcd-258">You are prompted to grant permissions to the add-in before its start page opens.</span></span> 
 
- 
+2. <span data-ttu-id="51bcd-259">Die Startseite des Add-Ins wird geöffnet. Klicken Sie unten auf der Seite auf den Link **Bestellformular**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-259">When the add-in's start page opens, click the  **Order Form** link at the bottom of the page.</span></span>
 
- 
-6. <span data-ttu-id="285fb-p134">Schließen Sie zum Beenden der Debugsitzung das Browserfenster, oder beenden Sie das Debuggen in Visual Studio. Jedes Mal, wenn Sie F5 drücken, zieht Visual Studio die vorherige Version des Add-Ins zurück und installiert die neueste.</span><span class="sxs-lookup"><span data-stu-id="285fb-p134">To end the debugging session, close the browser window or stop debugging in Visual Studio. Each time that you press F5, Visual Studio will retract the previous version of the add-in and install the latest one.</span></span>
-    
- 
-7. <span data-ttu-id="285fb-273">Klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer**, und wählen Sie **Zurückziehen** aus.</span><span class="sxs-lookup"><span data-stu-id="285fb-273">Right-click the project in  **Solution Explorer** and choose **Retract**.</span></span>
-    
- 
+3. <span data-ttu-id="51bcd-260">Geben Sie einige Werte in das Formular ein, und klicken Sie dann auf **Bestellung aufgeben**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-260">Enter some values in the form and press  **Place Order**.</span></span>
 
-## 
-<span data-ttu-id="285fb-274"><a name="Nextsteps"> </a></span><span class="sxs-lookup"><span data-stu-id="285fb-274"><a name="Nextsteps"> </a></span></span>
+4. <span data-ttu-id="51bcd-261">Klicken Sie im Browser auf die Zurück-Schaltfläche, um wieder zur Startseite zu gelangen. Klicken Sie dann oben auf dem Chromsteuerelement auf **Zurück zur Website**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-261">Use the browser's back button to navigate back to the start page, and then click  **Back to Site** on the chrome control at the top.</span></span>
 
- <span data-ttu-id="285fb-275">Im nächsten Artikel erfahren Sie, wie Sie das Remotebestellformular als Webpart auf einer SharePoint-Seite anzeigen: [Einfügen eines Add-In-Webparts in das vom Anbieter gehostete Add-In](include-an-add-in-part-in-the-provider-hosted-add-in.md)</span><span class="sxs-lookup"><span data-stu-id="285fb-275">In the next article, you'll learn how to surface the remote Order Form as a Web Part in a SharePoint page: [Include an add-in part in the provider-hosted add-in](include-an-add-in-part-in-the-provider-hosted-add-in.md)</span></span>
+5. <span data-ttu-id="51bcd-262">Klicken Sie auf der Startseite des Hongkong-Stores auf **Websiteinhalte**, und öffnen Sie die Liste **Erwartete Lieferungen**.</span><span class="sxs-lookup"><span data-stu-id="51bcd-262">From the home page of the Hong Kong store, navigate to the  **Site Contents** page and open the **Expected Shipments** list.</span></span> <span data-ttu-id="51bcd-263">In der Liste wird jetzt ein Element aufgeführt, das die Bestellung repräsentiert.</span><span class="sxs-lookup"><span data-stu-id="51bcd-263">There is now an item on the list corresponding to the order.</span></span> <span data-ttu-id="51bcd-264">Der Screenshot unten ist ein Beispiel für eine solche Liste.</span><span class="sxs-lookup"><span data-stu-id="51bcd-264">The following is an example:</span></span>
+  
+   <span data-ttu-id="51bcd-265">*Abbildung 2: Liste „Erwartete Lieferungen“ mit einem einzigen Element*</span><span class="sxs-lookup"><span data-stu-id="51bcd-265">*Figure 2. Expected Shipments list with a single item*</span></span>
+
+   ![Liste „Erwartete Lieferungen“ mit einem einzigen Element](../images/e4285084-d31e-4e79-a469-ddebbc7dfb18.PNG)
+
+6. <span data-ttu-id="51bcd-270">Schließen Sie zum Beenden der Debugsitzung das Browserfenster, oder beenden Sie das Debuggen in Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="51bcd-270">To end the debugging session, close the browser window or stop debugging in Visual Studio. Each time that you press F5, Visual Studio will retract the previous version of the add-in and install the latest one.</span></span> <span data-ttu-id="51bcd-271">Wann immer Sie F5 drücken, zieht Visual Studio die bisherige Version des Add-Ins zurück und installiert die jeweils neueste Version.</span><span class="sxs-lookup"><span data-stu-id="51bcd-271">Each time that you select F5, Visual Studio retracts the previous version of the add-in and installs the latest one.</span></span>
+
+7. <span data-ttu-id="51bcd-272">Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie die Option **Zurückziehen** aus.</span><span class="sxs-lookup"><span data-stu-id="51bcd-272">Right-click the project in  **Solution Explorer** and choose **Retract**.</span></span>
+
+## <a name="next-steps"></a><span data-ttu-id="51bcd-273">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="51bcd-273">Next steps</span></span>
+<span data-ttu-id="51bcd-274"><a name="Nextsteps"> </a></span><span class="sxs-lookup"><span data-stu-id="51bcd-274"><a name="Nextsteps"> </a></span></span>
+
+<span data-ttu-id="51bcd-275">Im nächsten Artikel erfahren Sie, wie Sie das Remotebestellformular als Webpart in eine SharePoint-Seite einbinden können: [Einfügen eines Add-In-Webparts in das vom Anbieter gehostete Add-In](include-an-add-in-part-in-the-provider-hosted-add-in.md).</span><span class="sxs-lookup"><span data-stu-id="51bcd-275">In the next article, you'll learn how to surface the remote Order Form as a Web Part in a SharePoint page: [Include an add-in part in the provider-hosted add-in](include-an-add-in-part-in-the-provider-hosted-add-in.md)</span></span>
  
 
  
