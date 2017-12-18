@@ -3,11 +3,11 @@ title: Zuordnen eines Netzlaufwerks zum SharePoint-Gestaltungsvorlagenkatalog
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7d416f6e-2471-4d03-97ae-4e8d907784c6
-ms.openlocfilehash: 7b86188fe330436d271cd4568dd161bb000e85c5
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 2e9cc092f719c419e21500916f5a4a5ffbe17c36
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="map-a-network-drive-to-the-sharepoint-master-page-gallery"></a>Zuordnen eines Netzlaufwerks zum SharePoint-Gestaltungsvorlagenkatalog
 
@@ -50,7 +50,7 @@ Ordnen Sie auf dem Computer, auf dem das Designtool oder der HTML-Editor ausgef√
     
   
 
-## <a name="additional-resources"></a>Zus√§tzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

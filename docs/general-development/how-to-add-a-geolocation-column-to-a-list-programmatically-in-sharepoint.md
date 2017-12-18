@@ -3,11 +3,11 @@ title: "Programmgesteuertes Hinzufügen einer Geolocation-Spalte zu einer Liste 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f31a3594-c328-4731-b8eb-5da6b85103ad
-ms.openlocfilehash: 58fb0341e34fc56f9fa07cba477aadb6efe8bf58
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 3278aba461fe9d1acbc33b5e4f24595794646e15
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="add-a-geolocation-column-to-a-list-programmatically-in-sharepoint"></a>Programmgesteuertes Hinzufügen einer Geolocation-Spalte zu einer Liste in SharePoint
 In diesem Artikel erfahren Sie, wie Sie programmgesteuert eine Geolocation-Spalte einer Liste in SharePoint hinzufügen. Sie können Standortinformationen und Karten in SharePoint-Listen und standortbasierten Websites mithilfe des neuen Geolocation-Felds hinzufügen, indem Sie Ihren eigenen Geolocation-basierten Feldtyp erstellen.
@@ -174,7 +174,7 @@ private void AddListItem()
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15addgeo_addlresources"> </a>
 
 

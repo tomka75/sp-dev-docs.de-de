@@ -3,11 +3,11 @@ title: "Verwenden der Code-Clientbibliothek für den Zugriff auf externe Daten i
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c280ae92-c52b-4658-b0f3-805fb215ef8e
-ms.openlocfilehash: 2f4e7a87db95ee5d1105111a5f5cdab9d1d6242b
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: bee624e58e0b7b85adbbdbc6097e04961001422f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-the-client-code-library-to-access-external-data-in-sharepoint"></a>Verwenden der Code-Clientbibliothek für den Zugriff auf externe Daten in SharePoint
 
@@ -202,7 +202,7 @@ Drücken Sie F5, um die app in SharePoint bereitstellen. Wechseln Sie zur Seite 
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkmk_Addresources"> </a>
 
 

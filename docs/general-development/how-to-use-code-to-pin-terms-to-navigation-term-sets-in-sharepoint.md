@@ -3,11 +3,11 @@ title: "Verwenden von Code zum Anheften von Ausdrücken zu Ausdruckssätzen in S
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 4a2811dc-25fd-4eb2-b0ab-1edded64c556
-ms.openlocfilehash: c04261b5106e2c66a308b0f96afd09b2065e41d4
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 477311aeba990eebf85157f04ae2380f135f297b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-code-to-pin-terms-to-navigation-term-sets-in-sharepoint"></a>Verwenden von Code zum Anheften von Ausdrücken zu Ausdruckssätzen in SharePoint
 
@@ -142,7 +142,7 @@ using (SPSite site = new SPSite(TestConfig.ServerUrl))
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15_H2UseCodeToPinTerms_AdditionalResources"> </a>
 
 

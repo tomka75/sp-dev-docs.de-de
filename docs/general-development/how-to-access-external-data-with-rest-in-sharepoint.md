@@ -3,11 +3,11 @@ title: Zugriff auf externe Daten mit REST in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 0663cc8c-a736-434d-9858-6ce12ce7f748
-ms.openlocfilehash: 3b51aeb585db992208117c2ddcc014425c87822c
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 9b1cab4d79db115c705cf0264bafee0593dfd5bc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="access-external-data-by-using-rest-in-sharepoint"></a>Zugriff auf externe Daten mit REST in SharePoint
 
@@ -202,7 +202,7 @@ Drücken Sie F5, um die app in SharePoint bereitstellen. Wechseln Sie zur Seite 
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkmk_Addres"> </a>
 
 

@@ -3,11 +3,11 @@ title: "Verwenden eines benutzerdefinierten Security Trimmers für Suchergebniss
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e1a8664e-fb43-45c2-83aa-9635fe1efc99
-ms.openlocfilehash: f661cf012664960bc703e9bebed1cb9e0d00c214
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 55ea7ee4ef785f65cefe436ebe2fbc14eab4bd87
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-a-custom-security-trimmer-for-sharepoint-server-search-results"></a>Verwenden eines benutzerdefinierten Security Trimmers für Suchergebnisse für SharePoint Server
 
@@ -420,8 +420,9 @@ Version=1.0.0.0, Culture=neutral, PublicKeyToken=token" -RulePath "xmldoc://*"
 
     In the command, replace  _ClassName_ either with **CustomSecurityPreTrimmer** or **CustomSecurityPostTrimmer** and _token_ with the Public Key Token for the CustomSecurityTrimmerSample.dll file. You must associate all post-trimmers with a crawl rule, _"xmldoc://*"_; but this is optional for pre-trimmers.
     
-    > **Note:**
-      > If you have multiple front-end web servers, you must deploy your security trimmer to the global assembly cache on all the front-end web servers in the farm. 
+    > [!NOTE]
+    > If you have multiple front-end web servers, you must deploy your security trimmer to the global assembly cache on all the front-end web servers in the farm. 
+
 6. Überprüfen Sie, ob der Security Trimmer in den folgenden PowerShell-Cmdlets registriert ist:
     
 ```
@@ -447,7 +448,7 @@ net restart sphostcontrollerservice
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_sectrimmer_addlresources"> </a>
 
 

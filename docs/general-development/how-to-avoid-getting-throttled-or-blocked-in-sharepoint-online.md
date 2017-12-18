@@ -3,11 +3,11 @@ title: "Vermeiden von Einschränkungen oder Sperren in SharePoint Online"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 33ed8106-d850-42b1-8d7f-5ba83901149c
-ms.openlocfilehash: 85e7c62014d00e4803f160f1704d3debf7a8393f
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 60c499de684a1ca6d9c6621441390a523312fde3
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="avoid-getting-throttled-or-blocked-in-sharepoint-online"></a>Vermeiden von Einschränkungen oder Sperren in SharePoint Online
 In diesem Artikel erfahren Sie mehr über das Thema Drosselung in SharePoint Online. Außerdem erläutern wir Ihnen, wie Sie eine Drosselung oder Sperre vermeiden können, und stellen Ihnen CSOM- und REST-Beispielcode bereit, mit denen Sie die nötigen Aufgaben leichter umsetzen können.
@@ -297,7 +297,7 @@ Blockieren ist die äußerste Form der Einschränkung. Wir blockiert selten jema
   
 Wenn wir Ihr Abonnement zu blockieren, sehen Sie die HTTP-Statuscode 503 und benachrichtigen wir Sie den Block in Office 365 Message Center. Die Nachricht wird beschrieben, was die Optionen blockieren verursacht, enthält Anleitungen zur Behebung des Problems problematischen und informiert Sie, wer kontaktieren, um den Block abrufen entfernt.
   
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="BKMK_Additionalresources"> </a>
 
 -  [Diagnosing performance issues with SharePoint Online](https://support.office.com/de-DE/article/3c364f9e-b9f6-4da4-a792-c8e8c8cd2e86)

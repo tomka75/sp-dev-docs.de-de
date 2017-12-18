@@ -3,11 +3,11 @@ title: Erstellen einer minimale Gestaltungsvorlage in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 634aa471-07e1-41d6-aa80-27f7ef7e9dc8
-ms.openlocfilehash: 2788840a18f9fac02f545b461576a8c6a30afe52
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: c7554383f757c5f70b87ab7eabd8651272da6275
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-a-minimal-master-page-in-sharepoint"></a>Erstellen einer minimale Gestaltungsvorlage in SharePoint
 
@@ -99,7 +99,7 @@ Wenn Sie eine minimale Gestaltungsvorlage erstellen, eine HTML-Datei wird erstel
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="Additional"> </a>
 
 

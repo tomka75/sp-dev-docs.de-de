@@ -3,11 +3,11 @@ title: "Erstellen Filterdatenanbietern für PerformancePoint-Dienste in SharePoi
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 25508ec6-86bf-4eea-acf0-00f88e4faa55
-ms.openlocfilehash: 12aa96215ad74fd29663a81a7e7197992fd44ecb
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 8b1057a13b9ae052d86b6d507d8f6e6bc0ece9f7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-filter-data-providers-for-performancepoint-services-in-sharepoint"></a>Erstellen Filterdatenanbietern für PerformancePoint-Dienste in SharePoint
 
@@ -306,7 +306,7 @@ Nach dem Erstellen Sie eines Datenanbieters und ein Filter-Editor (einschließli
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_next"> </a>
 
 
