@@ -1,15 +1,16 @@
 ---
-title: Vorgehensweise erweitern den Geolocation-Feldtyp verwenden clientseitiges Rendering
+title: Erweitern des Geolocation-Feldtyps mithilfe von clientseitigem Rendering
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7360633a-a7cf-4194-8bbd-8dd7c323e80b
-ms.openlocfilehash: 5aa36ee943f1a368bab0dad3e08384a6ad8319bf
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: d0b285a0768551adbef4f3b08ffe6f704e75c1ee
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-extend-the-geolocation-field-type-using-client-side-rendering"></a>Vorgehensweise: Erweitern des Geolocation-Feldtyps mithilfe von clientseitigem Rendering
+# <a name="extend-the-geolocation-field-type-by-using-client-side-rendering"></a>Erweitern des Geolocation-Feldtyps mithilfe von clientseitigem Rendering
+
 In diesem Artikel erfahren Sie, wie Sie den Geolocation-Feldtyp von SharePoint programmgesteuert mithilfe von clientseitigem Rendering anpassen.
 
 SharePoint führt einen neuen Feldtyp namens Geolocation, die Ihnen das Hinzufügen von SharePoint-Listen mit Standortinformationen Anmerkungen ermöglicht. In Spalten vom Typ Geolocation können Sie Standortinformationen als ein Paar von Breiten- und Längengrad Koordinaten in decimal Grad eingeben, oder die Koordinaten des aktuellen Standort des Benutzers vom Browser abrufen, wenn sie die W3C Geolocation-API implementiert. Weitere Informationen über das Geolocation-Feld finden Sie unter  [Integrieren von Standort- und Kartenfunktionen in SharePoint](integrating-location-and-map-functionality-in-sharepoint.md). Geolocation-Feldtyp ist in den Standardinhaltstyp eine beliebige Liste oder Dokumentbibliothek in SharePoint nicht verfügbar. Geolocation-Feldtyp in SharePoint enthalten ist, jedoch nicht auf der Seite der Spalte erstellen für die Liste sichtbar ist; Sie müssen den Geolocation-Feldtyp programmgesteuert hinzufügen. Weitere Informationen finden Sie unter  [Vorgehensweise: Hinzufügen einer Geolocation-Spalte einer Liste in SharePoint programmgesteuert](how-to-add-a-geolocation-column-to-a-list-programmatically-in-sharepoint.md). 

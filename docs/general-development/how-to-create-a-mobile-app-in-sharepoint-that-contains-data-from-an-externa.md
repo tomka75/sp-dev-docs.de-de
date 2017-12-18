@@ -1,15 +1,16 @@
 ---
-title: "Vorgehensweise Erstellen eine mobile app in SharePoint, die Daten aus einer externen Datenquelle enthält."
+title: "Erstellen einer mobilen App in SharePoint, die Daten aus einer externen Datenquelle enthält"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f1d62256-aca0-4a59-8145-0add9e68a449
-ms.openlocfilehash: cd5c036ac63df1a11f6812bd44af407ad56cb27a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 9a76bf3a652e116d175227e9dff7563c8cd0e327
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-a-mobile-app-in-sharepoint-that-contains-data-from-an-external-data-source"></a>Vorgehensweise: Erstellen eine mobile app in SharePoint, die Daten aus einer externen Datenquelle enthält.
+# <a name="create-a-mobile-app-in-sharepoint-that-contains-data-from-an-external-data-source"></a>Erstellen einer mobilen App in SharePoint, die Daten aus einer externen Datenquelle enthält
+
 Hier erfahren Sie, wie Sie eine einfache mobile app in SharePoint erstellen, die Daten aus externen Datenquelle enthält, indem Sie mithilfe von Business Connectivity Services und Herstellen einer Verbindung mit einer externen Liste. SharePoint ermöglicht Ihnen, mobile Anwendungen zu erstellen, mit die externe Daten in Datenbanken, Unternehmensanwendungen und Web 2.0-Diensten mithilfe von Business Connectivity Services zugreifen können. Sie können auch vollständigen Interaktion mit den externen Daten einschließlich rückschreibfunktionen aus dem mobilen Gerät bereitstellen. Zu diesem Zweck erstellen von apps, die mit externen Listen, die einen besonderen Typ von Listen in SharePoint sind herzustellen, die basieren auf externe Inhaltstypen und Daten aus externen Systemen enthalten. Die neue SharePoint-Liste für Windows Phone-Vorlage in Visual Studio 2010 Express können Sie schnell und problemlos Erstellen von apps für Windows Phone, die mit externen Listen eine Verbindung herstellt. Beispielsweise können Sie eine Windows Phone-app erstellen, die den Produktkatalog für eine Inventarliste in SharePoint auf das Telefon für die Vertriebsmitarbeiter bereitstellt. In diesem Thema wird das Erstellen einer Windows Phone-app, die externe Daten aus der Northwind-Beispieldatenbank anzeigt, indem es eine Verbindung mit einer externen Liste in SharePoint. Beachten Sie, dass in diesem Beispiel wird die externe Liste zu Northwind-Datenbank mit einer benutzerdefinierten OData-Dienst herstellt. Es ist jedoch möglich, Verbinden mit Datenbanken direkt als auch für alle externen Systeme, die von Business Connectivity Services, mithilfe von externen Listen unterstützt wird. Mit der neuen SharePoint-Liste Vorlage in Visual Studio erstellen Sie eine mobile app, die auf eine externe Liste auf einer SharePoint-Website zugreifen können. Dieser Artikel enthält eine schrittweise Anleitung, die mit einer externen Business Data Connectivity (BDC)-Dienst Modell hochladen beginnt und endet mit der neuen mobilen Anwendung zu testen.
   
     
@@ -78,7 +79,7 @@ Ein BDC-Modell ist das Herzstück von Business Connectivity Services. Es ist ein
 ## <a name="step-2-grant-permissions"></a>Schritt 2: Gewähren von Berechtigungen
 <a name="HowToCreateSimpleExternalListBasedPhoneApp_Step2"> </a>
 
-Als Nächstes müssen Sie zum Festlegen von Berechtigungen für das BDC-Modell, um anzugeben, die im Modell beschriebenen Methoden ausgeführt werden kann. Dies ist ein erforderlicher Schritt. Es wird empfohlen, dass Sie bestimmte Berechtigungen, jedem Benutzer oder Gruppe, die sie so benötigt erteilen, dass die Anmeldeinformationen der geringsten Rechte zum Ausführen der erforderlichen Aufgaben erforderlich. Weitere Informationen zum Festlegen von Berechtigungen finden Sie unter Übersicht über Business Connectivity Service-Berechtigungen in  [Business Connectivity Services-Sicherheit (Übersicht) (SharePoint Server 2010)](http://technet.microsoft.com/en-us/library/ee661740.aspx). In diesem Schritt erteilen Sie die Berechtigung an sich selbst zum Ausführen der Methods beschrieben, die in der Northwind-Beispiel BDC-Modell.
+Als Nächstes müssen Sie zum Festlegen von Berechtigungen für das BDC-Modell, um anzugeben, die im Modell beschriebenen Methoden ausgeführt werden kann. Dies ist ein erforderlicher Schritt. Es wird empfohlen, dass Sie bestimmte Berechtigungen, jedem Benutzer oder Gruppe, die sie so benötigt erteilen, dass die Anmeldeinformationen der geringsten Rechte zum Ausführen der erforderlichen Aufgaben erforderlich. Weitere Informationen zum Festlegen von Berechtigungen finden Sie unter Übersicht über Business Connectivity Service-Berechtigungen in  [Business Connectivity Services-Sicherheit (Übersicht) (SharePoint Server 2010)](http://technet.microsoft.com/de-DE/library/ee661740.aspx). In diesem Schritt erteilen Sie die Berechtigung an sich selbst zum Ausführen der Methods beschrieben, die in der Northwind-Beispiel BDC-Modell.
   
     
     
@@ -281,8 +282,7 @@ Nun, dass die app ausgeführt werden kann, können Sie ihn mit Phone-Emulator te
 -  [Überblick über Anwendungsvorlagen für Windows Phone SharePoint in Visual Studio](overview-of-windows-phone-sharepoint-application-templates-in-visual-studio.md)
     
   
--  
-  [Vorgehensweise: Erstellen externer Listen in SharePoint](http://msdn.microsoft.com/en-us/library/ee558778.aspx)
+-  [Vorgehensweise: Erstellen externer Listen in SharePoint](http://msdn.microsoft.com/de-DE/library/ee558778.aspx)
     
   
 -  [Vorgehensweise: Erstellen eine Windows Phone SharePoint Liste app](how-to-create-a-windows-phone-sharepoint-list-app.md)

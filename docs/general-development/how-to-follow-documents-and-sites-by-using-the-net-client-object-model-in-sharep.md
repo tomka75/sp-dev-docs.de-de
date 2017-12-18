@@ -1,16 +1,18 @@
 ---
-title: "Vorgehensweise Führen Sie Dokumente und Websites mit .NET Client-Objektmodell in SharePoint"
+title: Folgen von Dokumenten und Websites mithilfe des .NET-Client-Objektmodells in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 84366e01-4961-459d-8109-2f1d2d714353
-ms.openlocfilehash: 7b5ba3031c5c02784b00da46d91105c729119d4a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6e6690c40b37b65fe58100f7412e68ee827a970e
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-follow-documents-and-sites-by-using-the-net-client-object-model-in-sharepoint"></a>Vorgehensweise: Folgen von Dokumenten und Websites mithilfe des .NET-Clientobjektmodells in SharePoint
+# <a name="follow-documents-and-sites-by-using-the-net-client-object-model-in-sharepoint"></a>Folgen von Dokumenten und Websites mithilfe des .NET-Client-Objektmodells in SharePoint
+
 In diesem Artikel erfahren Sie, wie Sie mithilfe des .NET-Clientobjektmodells in SharePoint mit Features zum Folgen von Inhalten arbeiten.
+
 ## <a name="how-do-i-use-the-net-client-object-model-to-follow-content"></a>Wie verwende ich das .NET-Clientobjektmodell zum Folgen von Inhalten?
 <a name="bk_intro"> </a>
 

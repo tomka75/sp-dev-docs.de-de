@@ -1,16 +1,19 @@
 ---
-title: "Vorgehensweise Erstellen externer Inhaltstypen für SQL Server in SharePoint"
+title: "Erstellen externer Inhaltstypen für SQL Server in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7fe2fbf0-546b-4a16-b02e-a0960bfb3842
-ms.openlocfilehash: c8640567852751db426ebad7e6e2cfd0e3b93231
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: df39aa0e0f31f8252756b63b4d9ec2f2fcc83bc3
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-external-content-types-for-sql-server-in-sharepoint"></a>Vorgehensweise: Erstellen externer Inhaltstypen für SQL Server in SharePoint
-Erfahren Sie, wie Sie in SharePoint für SQL Server einen externen Inhaltstyp erstellen. Das Erstellen eines externen Inhaltstyps ist eine wichtige Aufgabe, wenn Sie mit externen Daten arbeiten. Ein externer Inhaltstyp enthält wichtige Informationen zu Verbindungen, Zugriff, Betriebsarten, Spalten, Filtern und anderen Metadaten, die zum Abrufen von Daten aus der externen Datenquelle dienen.
+# <a name="create-external-content-types-for-sql-server-in-sharepoint"></a>Erstellen externer Inhaltstypen für SQL Server in SharePoint
+
+In diesem Artikel erfahren Sie, wie Sie einen externen Inhaltstyp für SQL Server in SharePoint erstellen.
+
+Das Erstellen eines externen Inhaltstyps ist eine wichtige Aufgabe, wenn Sie mit externen Daten arbeiten. Ein externer Inhaltstyp enthält wichtige Informationen zu Verbindungen, Zugriff, Betriebsarten, Spalten, Filtern und anderen Metadaten, die zum Abrufen von Daten aus der externen Datenquelle dienen.
   
     
     

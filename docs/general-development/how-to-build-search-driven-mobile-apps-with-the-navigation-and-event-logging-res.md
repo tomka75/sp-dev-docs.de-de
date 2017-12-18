@@ -1,15 +1,16 @@
 ---
-title: "Vorgehensweise Erstellen Suchvorgänge gesteuerte mobile Anwendungen mit der Navigation und Ereignis protokollieren von REST-Schnittstellen"
+title: "Erstellen von suchgesteuerten mobilen Apps mit den REST-Schnittstellen für Navigation und Ereignisprotokollierung"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 5b313130-500c-4ccf-80ea-b102f30e5afb
-ms.openlocfilehash: 0139a99c5955d5fde6416c13e35664705b9fe523
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 98ba8acf95b52ddc183574684901923b4544e37c
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-build-search-driven-mobile-apps-with-the-navigation-and-event-logging-rest-interfaces"></a>Vorgehensweise: Erstellen suchgesteuerter mobiler Apps mit der Navigation und Ereignisprotokollierung von REST-Schnittstellen
+# <a name="build-search-driven-mobile-apps-with-the-navigation-and-event-logging-rest-interfaces"></a>Erstellen von suchgesteuerten mobilen Apps mit den REST-Schnittstellen für Navigation und Ereignisprotokollierung
+
 In SharePoint werden die REST-Schnittstellen für Navigation und Ereignisprotokollierung eingeführt, die es Ihnen ermöglichen, eine suchgesteuerte mobile App für mobile Geräte wie Smartphones und Tablets zu erstellen, auf denen andere Betriebssysteme (keine Windows-Betriebssysteme) wie beispielsweise Android und iOS ausgeführt werden.
 ## <a name="how-apps-work-with-the-product-catalog"></a>Zusammenarbeit von Apps mit dem Produktkatalog
 <a name="mobile_app_and_product_catalog"> </a>

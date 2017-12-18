@@ -1,20 +1,17 @@
 ---
-title: Vorgehensweise Anpassen eines Feldtyps mithilfe vom clientseitigem Rendering
+title: Anpassen eines Feldtyps mithilfe vom clientseitigem Rendering
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 18e32537-d7ed-4fe7-90cf-b6cfab3f85a3
-ms.openlocfilehash: 093deb2b9204f4bfff2fa0227097332f5bea1d50
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: dd6a1f5ac337d61c273d416bdc20c06117298e1e
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-customize-a-field-type-using-client-side-rendering"></a>Vorgehensweise: Anpassen eines Feldtyps mithilfe vom clientseitigem Rendering
-In diesem Artikel erfahren Sie, wie Sie einen Feldtyp mithilfe der clientseitigen Renderingtechnologie in SharePoint anpassen. Durch clientseitiges Rendering wird ein Mechanismus verfügbar, mit dem Sie Ihre eigene Ausgabe für eine Gruppe von Steuerelementen, die in einer SharePoint-Seite gehostet sind, generieren können. Dieser Mechanismus ermöglicht Ihnen die Verwendung bekannter Technologien, wie HTML und JavaScript, um die Rendering-Logik von SharePoint-Listenansichten zu definieren. Beim clientseitigen Rendering können Sie Ihre eigenen JavaScript-Ressourcen angeben und sie in den für Ihre Farmlösung verfügbaren Datenspeicheroptionen, wie z. B. dem _layouts-Ordner, hosten.
-  
-    
-    
+# <a name="customize-a-field-type-using-client-side-rendering"></a>Anpassen eines Feldtyps mithilfe vom clientseitigem Rendering
 
+In diesem Artikel erfahren Sie, wie Sie einen Feldtyp mithilfe der clientseitigen Renderingtechnologie in SharePoint anpassen. Durch clientseitiges Rendering wird ein Mechanismus verfügbar, mit dem Sie Ihre eigene Ausgabe für eine Gruppe von Steuerelementen, die in einer SharePoint-Seite gehostet sind, generieren können. Dieser Mechanismus ermöglicht Ihnen die Verwendung bekannter Technologien, wie HTML und JavaScript, um die Rendering-Logik von SharePoint-Listenansichten zu definieren. Beim clientseitigen Rendering können Sie Ihre eigenen JavaScript-Ressourcen angeben und sie in den für Ihre Farmlösung verfügbaren Datenspeicheroptionen, wie z. B. dem _layouts-Ordner, hosten.
 
 ## <a name="prerequisites-for-using-the-examples-in-this-article"></a>Voraussetzungen für die Verwendung der Beispiele in diesem Artikel
 <a name="SP15CustomizeafieldtypeusingCSR_Prereq"> </a>
@@ -51,8 +48,7 @@ In der folgenden Tabelle sind hilfreiche Artikel aufgeführt, die ein besseres V
 |**Titel des Artikels**|**Beschreibung**|
 |:-----|:-----|
 | [Erstellen von Farmlösungen in SharePoint](build-farm-solutions-in-sharepoint.md) <br/> |Erfahren Sie mehr über die Entwicklung, Verpackung und Bereitstellung von administrativen Erweiterungen für SharePoint mit Farmlösungen.  <br/> |
-| 
-  [Benutzerdefinierte Feldtypen](http://msdn.microsoft.com/en-us/library/ms446361.aspx) <br/> |Erfahren Sie mehr über das Erstellen von benutzerdefinierten Feldtypen. Beim Speichern Ihrer Unternehmensinformationen in SharePoint kann es vorkommen, dass Ihre Daten nicht den Feldtypen entsprechen, die in SharePoint Foundation verfügbar sind, oder Sie möchten vielleicht einfach diese Feldtypen anpassen. Benutzerdefinierte Felder können eine benutzerdefinierte Datenüberprüfung und benutzerdefiniertes Feldrendering umfassen.  <br/> |
+| [Benutzerdefinierte Feldtypen](http://msdn.microsoft.com/de-DE/library/ms446361.aspx) <br/> |Erfahren Sie mehr über das Erstellen von benutzerdefinierten Feldtypen. Beim Speichern Ihrer Unternehmensinformationen in SharePoint kann es vorkommen, dass Ihre Daten nicht den Feldtypen entsprechen, die in SharePoint Foundation verfügbar sind, oder Sie möchten vielleicht einfach diese Feldtypen anpassen. Benutzerdefinierte Felder können eine benutzerdefinierte Datenüberprüfung und benutzerdefiniertes Feldrendering umfassen.  <br/> |
    
 
 ## <a name="code-example-customize-the-rendering-process-for-a-custom-field-type-in-a-view-form"></a>Codebeispiel: Anpassen des Renderingprozesses für einen benutzerdefinierten Feldtyp in einem Ansichtsformular
@@ -334,12 +330,10 @@ In diesem Artikel wird beschrieben, wie der Renderingprozess für einen benutzer
     
     
 
--  
-  [Vorgehensweise: Erstellen eines benutzerdefinierten Feldtyps](http://msdn.microsoft.com/en-us/library/bb862248.aspx)
+-  [Vorgehensweise: Erstellen eines benutzerdefinierten Feldtyps](http://msdn.microsoft.com/de-DE/library/bb862248.aspx)
     
   
--  
-  [ Exemplarische Vorgehensweise: Erstellen eines benutzerdefinierten Feldtyps](http://msdn.microsoft.com/en-us/library/bb861799.aspx)
+-  [ Exemplarische Vorgehensweise: Erstellen eines benutzerdefinierten Feldtyps](http://msdn.microsoft.com/de-DE/library/bb861799.aspx)
     
   
 -  [Anpassen einer Listenansicht in Add-Ins für SharePoint durch clientseitiges Rendering](http://msdn.microsoft.com/library/8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86%28Office.15%29.aspx)

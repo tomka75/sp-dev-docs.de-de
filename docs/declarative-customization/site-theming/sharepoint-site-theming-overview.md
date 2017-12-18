@@ -1,16 +1,18 @@
 # <a name="sharepoint-site-theming"></a>SharePoint-Websitedesign
 
-SharePoint-Websitebesitzer haben neue Optionen zum Anwenden benutzerdefinierter Formatvorlagen und Farben auf Websites, die das Definieren und Verwalten von Designs für Websitesammlungen vereinfachen. Die neuen Features umfassen Folgendes:
+Besitzer von SharePoint-Websites stehen jetzt neue Optionen zum Anwenden benutzerdefinierter Formatvorlagen und Farben auf Websites zur Verfügung. Sie machen es einfacher, Designs in Websitesammlungen zu definieren und zu verwalten. Die neuen Features umfassen Folgendes:
 
-* Die Möglichkeit zum Definieren von benutzerdefinierten Designs und Verfügbarmachen für Websitebesitzer . Designs werden in einem [JSON-Schema](sharepoint-site-theming-json-schema.md) definiert, das Farbeinstellungen und verwandte Metadaten für jedes Design speichert.
-* Ein vereinfachter Satz von Standarddesigns mit sechs hellen Designs und zwei dunklen Designs ist momentan verfügbar.
-* Steuern Sie, welche Designs für die Verwendung auf Seiten auf Ihren Websites zur Verfügung stehen. Sie können z. B. benutzerdefinierte Designs basierend auf dem Branding oder der Identität Ihrer Organisation definieren und diese zu den einzig verfügbaren Designs auf Ihren Websites machen.
+* Die Möglichkeit, benutzerdefinierte Designs zu definieren und für Websitebesitzer verfügbar zu machen. Designs werden in einem [JSON-Schema](sharepoint-site-theming-json-schema.md) definiert, in dem die Farbeinstellungen und Metadaten des Designs gespeichert sind.
+* Ein Online-[Design-Generator-Tool](https://developer.microsoft.com/de-DE/fabric#/styles/themegenerator), mit dem Sie neue benutzerdefinierte Designs definieren können.
+* Ein vereinfachter Satz von Standarddesigns mit sechs hellen Designs und zwei dunklen Designs
+* Eine aktualisierte Farbpalette mit 12 hellen Farben und 6 dunklen Farben sowie 16 ergänzenden Designs.
+* Die Möglichkeit, zu steuern, welche Designs auf den Seiten Ihrer Website verfügbar sind. Sie können z. B. benutzerdefinierte Designs basierend auf dem Branding oder der Identität Ihrer Organisation definieren und festlegen, dass nur diese Designs auf Ihren Websites verfügbar sind.
 
-Diese Funktionen stehen für Administratoren über [PowerShell-Cmdlets](sharepoint-site-theming-powershell.md) und für Entwickler über das [clientseitige SharePoint-Objektmodell (Client Side Object Model, CSOM)](sharepoint-site-theming-csom.md) oder die SharePoint- [REST-API-](sharepoint-site-theming-rest-api.md) zur Verfügung.
+Administratoren können diese Features über [PowerShell-Cmdlets](sharepoint-site-theming-powershell.md) nutzen, Entwickler über das [clientseitige Objektmodell (CSOM)](sharepoint-site-theming-csom.md) von SharePoint oder die [REST-API](sharepoint-site-theming-rest-api.md) von SharePoint.
 
-Allgemeine Informationen zum Arbeiten mit Designs, um das Aussehen Ihrer Websites anzupassen, finden Sie unter [Ändern des Aussehens Ihrer SharePoint-Website](https://support.office.com/en-us/article/Change-the-look-of-your-SharePoint-site-06bbadc3-6b04-4a60-9d14-894f6a170818).
+Allgemeine Informationen zur Anpassung von Websites mithilfe von Designs finden Sie unter [Ändern des Aussehens Ihrer SharePoint-Website](https://support.office.com/de-DE/article/Change-the-look-of-your-SharePoint-site-06bbadc3-6b04-4a60-9d14-894f6a170818).
 
-## <a name="default-themes"></a>Standardmäßige Designs
+## <a name="default-themes"></a>Standarddesigns
 
 Die folgenden vordefinierten Designs sind standardmäßig verfügbar:
 
@@ -23,34 +25,39 @@ Die folgenden vordefinierten Designs sind standardmäßig verfügbar:
 * __Dunkelgelb__ (invertiertes Design)
 * __Dunkelblau__ (invertiertes Design)
 
-Diese Designs wurde zur besseren Lesbarkeit entwickelt. Sie sind möglicherweise hilfreich als Ausgangspunkte für das Erstellen von benutzerdefinierten Designs. Weitere Informationen zu Standarddesigns finden Sie unter [SharePoint-Websitedesign: JSON-Schema](sharepoint-site-theming-json-schema.md).
+Diese Designs wurden für optimale Lesbarkeit entwickelt und sind eine gute Grundlage für die Erstellung benutzerdefinierter Designs. Weitere Informationen zu den Standarddesigns finden Sie unter [SharePoint-Websitedesign: JSON-Schema](sharepoint-site-theming-json-schema.md).
+
+Zusätzlich zu den Standarddesigns stehen ergänzende Designs zur Auswahl. Die folgenden Anpassungen stehen zur Verfügung:
+
+* Helle Designs: Gold, Teal, Dark Blue, Indigo, Plum, Warm Gray
+* Dunkle Designs: Red, Green, Purple, Gray
 
 ## <a name="selecting-a-modern-theme"></a>Auswählen eines modernen Designs
 
 <!-- Verify that it's okay to use the concept of "modern" themes/pages here? -->
 
-Um aus den verfügbaren Designs einer SharePoint-Website auszuwählen, wählen Sie in der oberen rechten Ecke des Bildschirms das __Zahnradsymbol (⚙️)__, und wählen Sie dann __ Erscheinungsbild ändern__ aus. Es wird eine Liste von Designs zur Auswahl präsentiert, die Standarddesigns und/oder benutzerdefinierte Designs enthalten kann, je nachdem, wie Ihre Website konfiguriert wurde.
+Zur Auswahl eines der für eine SharePoint-Website verfügbaren Designs klicken Sie rechts oben auf dem Bildschirm auf das __Zahnradsymbol (⚙️)__ und anschließend auf __Change the look__. Ihnen wird dann eine Liste von Designs zur Auswahl präsentiert, die Standarddesigns und/oder benutzerdefinierte Designs enthalten kann, je nachdem, wie Ihre Website konfiguriert wurde.
 
-Die folgende Abbildung zeigt, wie die Standarddesigns im Dialogfeld der Designauswahl angezeigt werden.
+Auf der Abbildung unten sehen Sie, wie die Standarddesigns im Designauswahl-Dialogfeld dargestellt werden.
 
-![Abbildung mit einer Liste von standardmäßigen und dunklen (invertierten) Designs](../../images/theme-defaults.png)
+![Abbildung mit einer Liste von Standarddesigns und dunklen Designs (invertiert)](../../images/theme-defaults.png)
 
-Wenn Sie in der Liste ein Design auswählen, werden diese Farbeinstellungen sofort auf der Seite angewendet, damit Sie sehen können, wie das ausgewählte Design aussieht. Die folgende Abbildung zeigt ein Beispiel mit dem Standarddesign __Grün__.
+Sobald Sie in der Liste ein Design auswählen, werden diese Farbeinstellungen sofort auf die Seite angewendet, damit Sie sich ein Bild von dem ausgewählten Design machen können.
 
-![Abbildung einer SharePoint-Website mit einem grünen Design](../../images/theme-greenselected.png)
-
-Nachdem Sie ein Design gefunden haben, das Sie verwenden möchten, wählen Sie **Speichern**, um Ihre Auswahl zu speichern, oder **Abbrechen**, um das aktuelle Design wiederherzustellen.
+Sobald Sie ein Design gefunden haben, das Sie verwenden möchten, speichern Sie Ihre Auswahl mit einem Klick auf **Speichern**. Mit einem Klick auf **Abbrechen** können Sie die Seite auf das aktuelle Design zurücksetzen.
 
 ## <a name="working-with-classic-themes"></a>Arbeiten mit klassischen Designs
 
-Sie können weiterhin die klassischen Designs verwenden, indem Sie den Link zu _klassischen Optionen (Erscheinungsbild ändern)_ unter den modernen Designs unter _ Erscheinungsbild ändern_ wählen. Da sich die moderne SharePoint-Benutzeroberfläche von der klassischen Benutzeroberfläche unterscheidet, gelten jedoch einige Einschränkungen, wenn Sie klassische Designs mit modernen Seiten verwenden.
+Sie können weiterhin die klassischen Designs verwenden. Klicken Sie dazu auf den Link _Classic change the look options_ unter den im Dialogfeld _Change the look_ aufgeführten modernen Designs. Da sich die moderne SharePoint-Benutzeroberfläche von der klassischen Benutzeroberfläche unterscheidet, gelten jedoch einige Einschränkungen, wenn Sie klassische Designs auf modernen Seiten verwenden.
 
-Wenn Sie ein klassisches Design auswählen, wird ein modernes Design aus den Einstellungen im klassischen Design generiert, einschließlich der isInverted-Kennzeichnung, des Hintergrundbilds und der Farbeinstellungen für COntentAccent1, PageBackground und BackgroundOverlay. Wenn isInverted auf „True“ festgelegt ist, werden neutrale Farben wie NeutralDark und NeutralLight umgekehrt.
+Wenn Sie ein klassisches Design auswählen, wird ein modernes Design aus den Einstellungen im klassischen Design generiert, einschließlich des Flag „isInverted“, des Hintergrundbilds und der Farbeinstellungen für „COntentAccent1“, „PageBackground“ und „BackgroundOverlay“. Wenn „isInverted“ auf „True“ gesetzt ist, werden neutrale Farben wie „NeutralDark“ und „NeutralLight“ umgekehrt.
 
-Für Benutzerfreundlichkeit empfehlen wir, dass Sie moderne Designs mit modernen Seiten verwenden. Wenn Sie klassische Designs mit modernen Seiten verwenden müssen, testen Sie Ihre Website sorgfältig, um sicherzustellen, dass Ihre Inhalte lesbar und zugänglich sind.
+Für optimale Benutzerfreundlichkeit empfehlen wir Ihnen, auf modernen Seiten auch moderne Designs zu verwenden. Wenn Sie klassische Designs auf modernen Seiten verwenden müssen, sollten Sie Ihre Website sorgfältig testen, um sicherzustellen, dass Ihre Inhalte lesbar und barrierefrei sind.
 
 ## <a name="see-also"></a>Siehe auch
 
+* [Ändern des Erscheinungsbilds Ihrer SharePoint-Website](https://support.office.com/de-DE/article/Change-the-look-of-your-SharePoint-site-06bbadc3-6b04-4a60-9d14-894f6a170818?ui=en-US&rs=en-US&ad=US#ID0EAACAAA=Online)
+* [Design-Generator-Tool](https://developer.microsoft.com/de-DE/fabric#/styles/themegenerator)
 * [SharePoint-Websitedesign: JSON-Schema](sharepoint-site-theming-json-schema.md)
 * [SharePoint-Websitedesign: PowerShell-Cmdlets](sharepoint-site-theming-powershell.md)
 * [SharePoint-Websitedesign: CSOM](sharepoint-site-theming-csom.md)

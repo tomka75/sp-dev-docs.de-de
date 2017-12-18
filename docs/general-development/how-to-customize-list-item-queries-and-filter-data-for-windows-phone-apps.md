@@ -3,11 +3,11 @@ title: "Anpassen von Listenelementabfragen und Filtern von Daten für Windows Ph
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 32f89b97-8274-4cb0-9164-7898735a18aa
-ms.openlocfilehash: c7347e36ce052f8b8f341689a633ac9a6850247f
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 07e87f7dfef948adb11a13607fdabcb4cb0053a1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="customize-list-item-queries-and-filter-data-for-windows-phone-apps"></a>Anpassen von Listenelementabfragen und Filtern von Daten für Windows Phone-Apps
 
@@ -204,8 +204,8 @@ static Dictionary<string, string> ViewXmls = new Dictionary<string, string>()
 ```
 
 
-    > **Note:**
-      >  In particular that the value of the **Name** attribute ("View2") of the **PivotItem** control is the same as the key value of the entry added to the **Dictionary** type defined in step 2. This value is used to identify the appropriate CAML query to use to retrieve the data to be displayed in the **PivotItem**. Also note that the **ListBox** declared here (named "lstBox2" simply to distinguish it from the **ListBox** for the default view) is also bound to the view.
+    > [!NOTE]
+    > In particular that the value of the **Name** attribute ("View2") of the **PivotItem** control is the same as the key value of the entry added to the **Dictionary** type defined in step 2. This value is used to identify the appropriate CAML query to use to retrieve the data to be displayed in the **PivotItem**. Also note that the **ListBox** declared here (named "lstBox2" simply to distinguish it from the **ListBox** for the default view) is also bound to the view.
 
     
     
@@ -251,7 +251,7 @@ Sie können viele weitere Anpassungen vor tätigen, um die CAML-Abfragen, auf de
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15Custlistitem_addlresources"> </a>
 
 

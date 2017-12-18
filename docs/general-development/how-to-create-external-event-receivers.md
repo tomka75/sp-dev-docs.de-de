@@ -1,16 +1,19 @@
 ---
-title: "Vorgehensweise Erstellen von externen Ereignisempfängern"
+title: "Erstellen von externen Ereignisempfängern"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c6d5f486-6247-47f9-9876-fab12f13342f
-ms.openlocfilehash: 638e2df70d22bd82a1f6eb0ba710515392642702
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e243dd8542fd7a6d56f72350c2325d2c5d0e7faa
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-external-event-receivers"></a>Vorgehensweise: Erstellen von externen Ereignisempfängern
-Informationen Sie zu den Schritten zum Erstellen von externen-Ereignisempfänger für lokale Installationen von Business Connectivity Services (BCS) externer Listen. Externe Ereignisempfänger sind Klassen, mit die SharePoint-Add-Ins auf Ereignisse reagieren, die auf SharePoint-Elemente wie Listen oder Listenelemente auftreten können. Beispielsweise können Sie auf die listenereignisse, z. B. hinzufügen oder Entfernen eines Felds reagieren; Listen Sie Elementereignisse wie hinzufügen oder Entfernen eines Listenelements oder einer Anlage zu einem Listenelement auf. oder Webereignisse wie beispielsweise hinzufügen oder Löschen einer Website oder Websitesammlung. Sie können einer vorhandenen Visual Studio-Lösung einen remote-Ereignisempfänger hinzufügen, die ein SharePoint-Add-In enthält.
+# <a name="create-external-event-receivers"></a>Erstellen von externen Ereignisempfängern
+
+Informationen zum Erstellen von externen Ereignisempfängern für lokale Installationen externen Listen für Business Connectivity Services (BCS).
+
+Bei externen Ereignisempfängern handelt es sich um Klassen, mit denen SharePoint-Add-Ins auf Ereignisse reagieren können, die in SharePoint-Elementen auftreten, z. B. Listen oder Listenelemente. Sie können beispielsweise auf Listenereignisse, z. B. das Hinzufügen oder Entfernen eines Felds, auf Listenelementereignisse, z. B. das Hinzufügen oder Entfernen eines Listenelements oder einer Anlage zu einem Listenelement, oder auf Webereignisse reagieren, z. B. das Hinzufügen oder Löschen einer Website oder Websitesammlung. Einer vorhandenen Visual Studio-Projektmappe, die ein SharePoint-Add-In enthält, kann ein Remoteereignisempfänger hinzugefügt werden.
   
     
     

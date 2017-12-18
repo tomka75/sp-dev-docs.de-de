@@ -1,16 +1,18 @@
 ---
-title: Vorgehensweise Sichern und Wiederherstellen von SharePoint verwenden eines VSS-Requestors
+title: Sichern und Wiederherstellen von SharePoint unter Verwendung eines VSS-Anforderers
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: cab5ba90-bd23-4cec-82d7-529e3f86ba88
-ms.openlocfilehash: e4a4134f22ab22e778d48b0c6f3e980ae6c38c5d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 76664d750be4e8ecf98dae4fc5aa106d2c8864e7
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-back-up-and-restore-sharepoint-using-a-vss-requestor"></a>Vorgehensweise: Sichern und Wiederherstellen von SharePoint verwenden eines VSS-Requestors
- **Zusammenfassung:** Informationen Sie zum Sichern und Wiederherstellen von mithilfe eines Gruppenrichtlinien-Verwaltungskonsole (Volume Shadow Copy Service, VSS)-Anforderers für Microsoft SharePoint.
+# <a name="back-up-and-restore-sharepoint-using-a-vss-requestor"></a>Sichern und Wiederherstellen von SharePoint unter Verwendung eines VSS-Anforderers
+
+Informationen Sie zum Sichern und Wiederherstellen von mithilfe eines Gruppenrichtlinien-Verwaltungskonsole (Volume Shadow Copy Service, VSS)-Anforderers für Microsoft SharePoint.
+
 ## <a name="backing-up-and-restoring-with-the-requestor"></a>Sicherung und Wiederherstellung mit der Anforderer
 
 Verwenden Sie das folgende Verfahren zum Sichern und Wiederherstellen von Microsoft SharePoint Foundation -Daten mithilfe des VSS-Requestors.
@@ -30,7 +32,7 @@ Verwenden Sie das folgende Verfahren zum Sichern und Wiederherstellen von Micros
 3. Wiederholen Sie die Schritte 1 und 2 auf allen für SharePoint Foundation-Servern.
     
   
-4. Verwenden Sie den Requestor, um Daten zu sichern und wiederherzustellen. Sie können entweder Ihren Requestor (wie unter  [Übersicht über den Volumeschattenkopie-Dienst](http://msdn.microsoft.com/en-us/library/aa384649%28VS.85%29.aspx) beschrieben) oder das Testprogramm BETest (erhältlich im [VSS SDK](http://www.microsoft.com/downloads/details.aspx?FamilyID=0B4F56E4-0CCC-4626-826A-ED2C4C95C871&amp;displaylang=en)) verwenden, um eine Sicherung oder Wiederherstellung aus SharePoint Foundation durchzuführen. 
+4. Verwenden Sie den Requestor, um Daten zu sichern und wiederherzustellen. Sie können entweder Ihren Requestor (wie unter  [Übersicht über den Volumeschattenkopie-Dienst](http://msdn.microsoft.com/de-DE/library/aa384649%28VS.85%29.aspx) beschrieben) oder das Testprogramm BETest (erhältlich im [VSS SDK](http://www.microsoft.com/downloads/details.aspx?FamilyID=0B4F56E4-0CCC-4626-826A-ED2C4C95C871&amp;displaylang=en)) verwenden, um eine Sicherung oder Wiederherstellung aus SharePoint Foundation durchzuführen. 
     
   
 

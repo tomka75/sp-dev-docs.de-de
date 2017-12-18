@@ -1,16 +1,18 @@
 ---
-title: "Vorgehensweise Erstellen von Anbietern für tabellarische Datenquellen für PerformancePoint Services in SharePoint"
+title: "Erstellen von Anbietern für tabellarische Datenquellen für PerformancePoint-Dienste in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 8d734ed6-7636-40c5-a99b-bc038362cffe
-ms.openlocfilehash: 9e74fd9d39a3db99eecbba4b2eb2f640606fd8a5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4421efa84a8a313b0ed666df72335134aae3e489
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-tabular-data-source-providers-for-performancepoint-services-in-sharepoint"></a>Vorgehensweise: Erstellen von Anbietern für tabellarische Datenquellen für PerformancePoint Services in SharePoint
+# <a name="create-tabular-data-source-providers-for-performancepoint-services-in-sharepoint"></a>Erstellen von Anbietern für tabellarische Datenquellen für PerformancePoint-Dienste in SharePoint
+
 In diesem Artikel erfahren Sie, wie die Datenquellenanbieter-Komponente in einer benutzerdefinierten Datenquellenerweiterung in Tabellenform für PerformancePoint-Dienste erstellt wird.
+
 ## <a name="what-are-custom-data-source-providers-for-performancepoint-services"></a>Was sind benutzerdefinierte Datenquellenanbieter für PerformancePoint-Dienste ?
 <a name="bk_intro"> </a>
 

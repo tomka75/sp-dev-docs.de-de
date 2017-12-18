@@ -3,11 +3,11 @@ title: Ermitteln der installierten SKU von SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d5d84d6f-6a8e-4ead-9296-7025baf1e154
-ms.openlocfilehash: 4e7d8343d3151ac3fc0c4514e7bddfbf0f0ddd65
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 94036f746306de05ef6be5abc17a5d1898824ac7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="detect-the-installed-sku-of-sharepoint"></a>Ermitteln der installierten SKU von SharePoint
 
@@ -102,7 +102,7 @@ namespace GetInstalledSharePointSku
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_SP15DetectSKUaddresources"> </a>
 
 

@@ -1,16 +1,18 @@
 ---
-title: "Vorgehensweise Hinzufügen eines Webpart-Zonenausschnitts in SharePoint"
+title: "Hinzufügen eines Webpart-Zonenausschnitts in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7583b217-200c-4569-8f88-fe975c8ebd72
-ms.openlocfilehash: 5085f1a8fa2a79e78cc8c337bab0e03fe924f65d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e30c323a5f168a30e749f73d4b34da6d5b0ad3d7
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-add-a-web-part-zone-snippet-in-sharepoint"></a>Vorgehensweise: Hinzufügen eines Webpart-Zonenausschnitts in SharePoint
+# <a name="add-a-web-part-zone-snippet-in-sharepoint"></a>Hinzufügen eines Webpart-Zonenausschnitts in SharePoint
+
 Eine Webpartzone ist ein Ausschnitt, den Sie einem Seitenlayout hinzufügen können, damit Inhaltsautoren Webparts in dieser Zone hinzufügen, bearbeiten und löschen können.
+
 ## <a name="introduction-to-the-web-part-zone-snippet"></a>Einführung in den Codeausschnitt "Webpartzone"
 <a name="Introduction"> </a>
 
@@ -226,12 +228,10 @@ Der folgende Code enthält weitere Eigenschaft zum Einschränken, wie Inhaltsaut
 -  [Codeausschnitte des SharePoint-Entwurfs-Managers](sharepoint-design-manager-snippets.md)
     
   
--  
-  [WebPartZone-Klasse](http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.webparts.webpartzone.aspx)
+-  [WebPartZone-Klasse](http://msdn.microsoft.com/de-DE/library/system.web.ui.webcontrols.webparts.webpartzone.aspx)
     
   
--  
-  [WebPartZoneBase-Eigenschaften](http://msdn.microsoft.com/en-us/library/335sw9k3.aspx)
+-  [WebPartZoneBase-Eigenschaften](http://msdn.microsoft.com/de-DE/library/335sw9k3.aspx)
     
   
 -  [Erstellen von Websites für SharePoint](build-sites-for-sharepoint.md)

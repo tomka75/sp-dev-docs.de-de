@@ -1,15 +1,16 @@
 ---
-title: "Vorgehensweise Einrichten einer Umgebung für die Entwicklung von mobilen Anwendungen für SharePoint"
+title: "Einrichten einer Umgebung für die Entwicklung mobiler Apps für SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: acaf556d-e20d-478d-8c59-2efd8efb9dcb
-ms.openlocfilehash: ad2e9ecac7cb9129b5df24abc57b126e2cd139c8
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 9c18eb3fa355abd5f96b2620bd0ee8aed825cdb4
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint"></a>Vorgehensweise: Einrichten einer Umgebung für die Entwicklung von mobilen Anwendungen für SharePoint
+# <a name="set-up-an-environment-for-developing-mobile-apps-for-sharepoint"></a>Einrichten einer Umgebung für die Entwicklung mobiler Apps für SharePoint
+
 In diesem Artikel erhalten Sie Informationen zu den Systemanforderungen und zum Konfigurieren einer Entwicklungsumgebung für SharePoint-Mobilitätsprojekte. Mindestkonfiguration für die Arbeit mit SharePoint-Mobilitätsprojekte erfordert einen Server mit SharePoint (oder ein Konto SharePoint Online ) und einer Entwicklungsumgebung auf einem separaten Client-Betriebssystem. Installieren von SharePoint auf Clientbetriebssysteme (beispielsweise Windows 7 ) ist nicht unterstützte und Installieren von erforderlichen Tools für die Entwicklung für Windows Phone wird nicht auf Server-Betriebssystemen (beispielsweise Windows Server 2008 ).
   
     

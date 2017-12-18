@@ -1,16 +1,18 @@
 ---
-title: Vorgehensweise durchforsten binary large Objects () in SharePoint
+title: "Durchforsten binärer großer Objekte (BLOBs) in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 99b3dd51-1651-4300-a2de-33681f4cc258
-ms.openlocfilehash: 6189c821032c5e6707bdc6d699dace29cdb77f64
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: d7fec8ce2a152b72c80d0a6776947d136638fb13
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-crawl-binary-large-objects-blobs-in-sharepoint"></a>Vorgehensweise: durchforsten binary large Objects () in SharePoint
+# <a name="crawl-binary-large-objects-blobs-in-sharepoint"></a>Durchforsten binärer großer Objekte (BLOBs) in SharePoint
+
 In diesem Artikel erfahren sie, wie Sie die BDC-Modelldatei für den BCS-Indizierungsconnector einer Datenbank ändern können, um es dem Suche in SharePoint-Crawler zu ermöglichen, in einer SQL Server-Datenbank gespeicherte BLOB-Daten (Binary Large Object) zu durchforsten.
+
 ## <a name="crawling-blob-data"></a>Durchforsten von BLOB-Daten
 <a name="HowToCrawlBlobs_CrawlingBlobData"> </a>
 

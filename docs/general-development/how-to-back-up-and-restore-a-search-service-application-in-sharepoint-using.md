@@ -1,16 +1,18 @@
 ---
-title: Vorgehensweise Sichern und Wiederherstellen eine Suchdienstanwendung in SharePoint mit VSS
+title: Sichern und Wiederherstellen einer Suchdienstanwendung in SharePoint mit VSS
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 87ee28e6-8170-4dba-8c9d-f04ab9e632dc
-ms.openlocfilehash: 20d1cfd4d8056c3b38405b3e14f4351eb3454322
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 7b0e93318f0eaddb08643e139de0b16e9a3a169b
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-back-up-and-restore-a-search-service-application-in-sharepoint-using-vss"></a>Vorgehensweise: Sichern und Wiederherstellen eine Suchdienstanwendung in SharePoint mit VSS
- **Zusammenfassung:** Informationen Sie zum Sichern und Wiederherstellen einer Suchdienstanwendung in SharePoint mithilfe der Gruppenrichtlinien-Verwaltungskonsole (Volume Shadow Copy Service, VSS).
+# <a name="back-up-and-restore-a-search-service-application-in-sharepoint-using-vss"></a>Sichern und Wiederherstellen einer Suchdienstanwendung in SharePoint mit VSS
+
+Informationen zum Sichern und Wiederherstellen einer Suchdienstanwendung in SharePoint mithilfe des Volumeschattenkopie-Diensts (Volume Shadow Copy Service, VSS).
+
 ## <a name="prerequisites-for-backing-up-and-restoring-sharepoint-with-the-volume-shadow-copy-service"></a>Voraussetzungen für das Sichern und Wiederherstellen von SharePoint mit den Volumeschattenkopie-Dienst
 
 Um eine Sicherung und Wiederherstellung-Lösung für SharePoint, müssen Sie verstehen, wie VSS funktioniert und mit der SharePoint-Benutzeroberfläche.
@@ -23,15 +25,14 @@ Um eine Sicherung und Wiederherstellung-Lösung für SharePoint, müssen Sie ver
 
 |**Artikel**|**Beschreibung**|
 |:-----|:-----|
-| 
-  [Volumeschattenkopie-Dienst](http://msdn.microsoft.com/en-us/library/windows/desktop/bb968832%28v=vs.85%29.aspx) und seine untergeordneten Artikel. <br/> |Informationen Sie zu den VSS und zum Programmieren dafür.  <br/> |
+| [Volumeschattenkopie-Dienst](http://msdn.microsoft.com/de-DE/library/windows/desktop/bb968832%28v=vs.85%29.aspx) und seine untergeordneten Artikel. <br/> |Informationen Sie zu den VSS und zum Programmieren dafür.  <br/> |
 | [SharePoint Foundation und der Volumeschattenkopie-Dienst](http://msdn.microsoft.com/library/adae101a-078e-40b9-9cfa-db2cfb10270a%28Office.15%29.aspx) und seine untergeordneten Artikel. <br/> |Allgemeine Informationen und Vorgehensweisen schrittweise Verfahren zum Sichern und Wiederherstellen von SharePoint Daten mit der VSS und der SharePoint-Benutzeroberfläche mit VSS an.  <br/> |
    
 
 ## <a name="use-the-volume-shadow-copy-service-to-back-up-and-restore-a-search-service-application"></a>Verwenden Sie den Volumeschattenkopie-Dienst zum Sichern und Wiederherstellen einer Suchdienstanwendung
 <a name="Use"> </a>
 
-Die folgenden Verfahren dienen zur Unterstützung der Entwickler Erstellen einer Sichern/Wiederherstellen der Anwendung, die die VSS verwendet Wenn Sie die IT-Experten finden Anweisungen zum Sichern oder Wiederherstellen einer Suchdienstanwendung SharePoint haben, finden Sie unter  [Sichern und Wiederherstellen von SharePoint](http://technet.microsoft.com/en-us/library/ee662536.aspx). 
+Die folgenden Verfahren dienen zur Unterstützung der Entwickler Erstellen einer Sichern/Wiederherstellen der Anwendung, die die VSS verwendet Wenn Sie die IT-Experten finden Anweisungen zum Sichern oder Wiederherstellen einer Suchdienstanwendung SharePoint haben, finden Sie unter  [Sichern und Wiederherstellen von SharePoint](http://technet.microsoft.com/de-DE/library/ee662536.aspx). 
   
     
     
@@ -40,8 +41,7 @@ Die folgenden Verfahren dienen zur Unterstützung der Entwickler Erstellen einer
     
     
 
-> 
->   **Tipp:** Ausführliche Informationen zu den in diesem Artikel erwähnten Windows PowerShell-Cmdlets finden Sie unter  [Windows PowerShell für SharePoint (Referenz)](http://technet.microsoft.com/en-us/library/ee890108.aspx). 
+> **Tipp:** Ausführliche Informationen zu den in diesem Artikel erwähnten Windows PowerShell-Cmdlets finden Sie unter  [Windows PowerShell für SharePoint (Referenz)](http://technet.microsoft.com/de-DE/library/ee890108.aspx). 
   
     
     

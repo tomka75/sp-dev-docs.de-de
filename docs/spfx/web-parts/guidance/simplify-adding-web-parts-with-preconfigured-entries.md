@@ -2,11 +2,11 @@
 title: "Vereinfachen des Hinzufügens von Webparts mit vorkonfigurierten Einträgen"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 6adeab3325aa9ba73b16ee9a182825d48b2eb300
-ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.openlocfilehash: 0527787f8365e94accfc3454fdc717edbc970c95
+ms.sourcegitcommit: 46d5fee38ab8849df2d47541ee53b4dd71a613db
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="simplify-adding-web-parts-with-preconfigured-entries"></a>Vereinfachen des Hinzufügens von Webparts mit vorkonfigurierten Einträgen
 
@@ -31,7 +31,7 @@ Eine der im Webpartmanifest angegebenen Eigenschaften ist die **preconfiguredEnt
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "6737645a-4443-4210-a70e-e5e2a219133a",
+    "groupId": "1edbd9a8-0bfb-4aa2-9afd-14b8c45dd489", // Discover
     "group": { "default": "Under Development" },
     "title": { "default": "Gallery" },
     "description": { "default": "Shows items from the selected list" },
@@ -57,22 +57,10 @@ title                   |ILocalizedString|ja     |Der Webparttitel, der in der T
 description             |ILocalizedString|ja     |Die Webpartbeschreibung, die in den Toolbox-QuickInfos angezeigt wird.|`"description": { "default": "Shows weather in the given location", "nl-nl": "Toont weerbericht voor de opgegeven locatie" } `
 officeFabricIconFontName|string          |nein      |Das Symbol für das Webpart, das in der Toolbox angezeigt wird. Dessen Wert muss einer der [Office UI Fabric-Symbolnamen](https://dev.office.com/fabric#/styles/icons) sein. Wenn diese Eigenschaft einen Wert hat, wird die **iconImageUrl**-Eigenschaft ignoriert.|`"officeFabricIconFontName": "Sunny"`
 iconImageUrl            |string          |nein      |Das Symbol für das Webpart, das in der Toolbox angezeigt und von einer Bild-URL dargestellt wird. Das Bild an der URL muss genau 40x28 px sein. Wenn die **officeFabricIconName**-Eigenschaft nicht über einen Wert verfügt, muss diese Eigenschaft einen Wert aufweisen.|`"iconImageUrl": "https://cdn.contoso.com/weather.png"`
-groupId                 |string          |ja     |Die Gruppen-ID bestimmt, welche Toolboxgruppe das Webpart enthalten soll. Das SharePoint Framework reserviert Gruppen-IDs für Standardgruppen. Der Entwickler kann eine dieser Gruppen auswählen. Wenn eine Gruppen-ID angegeben ist, wird die **group**-Eigenschaft ignoriert. Alternativ kann der Entwickler eine eindeutige ID und einen eindeutigen Gruppennamen auswählen. In der Toolbox wird das Webpart dann in seiner eigenen Gruppe angezeigt.|`"groupId": "6737645a-4443-4210-a70e-e5e2a219133a"`
-Gruppe                   |ILocalizedString|nein      |Der Name der Gruppe in der Toolbox, in der das Webpart angezeigt werden soll. Wenn kein Wert angegeben ist, wird das Webpart in der **Custom**-Gruppe angezeigt.|`"group": { "default": "Content", "nl-nl": "Inhoud" }`
+groupId                 |string          |ja     |Die Gruppen-ID, um zu ermitteln, welche moderne Gruppe das Webpart auf der modernen Seite enthält. Das SharePoint Framework reserviert Gruppen-IDs für [vordefinierte Gruppen](#predefined-modern-groups). Der Entwickler kann eine dieser Gruppen auswählen. Wenn der Entwickler eine ID ausfüllt, die sich in den vordefinierten Gruppen befindet, wird wieder die Gruppe **Other** verwendet.|`"groupId": "1edbd9a8-0bfb-4aa2-9afd-14b8c45dd489"`
+Gruppe                   |ILocalizedString|nein      |Der Gruppenname in der Webpartauswahl für das Webpart auf der klassischen Seite. Wenn kein Wert angegeben ist, wird das Webpart in der **Custom**-Gruppe angezeigt.|`"group": { "default": "Content", "nl-nl": "Inhoud" }`
 dataVersion             |string          |nein      |Verwenden Sie dieses Feld, um die Datenversion der vorkonfigurierten Daten anzugeben, die dem Webpart bereitgestellt werden. Beachten Sie, dass sich die Datenversion vom Versionsfeld im Manifest unterscheidet. Die Manifestversion wird zum Steuern der Versionsverwaltung des Webpartcodes verwendet, die Datenversion wird hingegen zum Steuern der Versionsverwaltung der serialisierten Daten des Webparts verwendet. Weitere Informationen finden Sie im dataVersion-Feld Ihres Webparts. Unterstützte Werte: MAJOR.MINOR Version.|`"dataVersion": "1.0"`
 properties              |TProperties     |ja     |Ein Schlüssel-Wert-Paarobjekt mit Standardwerten für Webparteigenschaften.|`"properties": { "location": "Redmond", "numberOfDays": 3, "showIcon": true }`
-
-Folgende vordefinierte Kategorien können für die `groupId`-Eigenschaft verwendet werden.
-
-Kategoriename |Guid |Webpart-Auswahl zuordnen |Beschreibung        
---- |--- |--- |---
-Text, Medien und Inhalt | `cf066440-0614-43d6-98ae-0b31cf14c7c3`| Medien und Inhalt  |Diese Kategorie enthält Webparts, die Text, Multimedia, Dokumente, Informationen aus dem Web und andere formatierte Inhalte anzeigen.   
-Ermitteln | `1edbd9a8-0bfb-4aa2-9afd-14b8c45dd489`| Suche  |Diese Kategorie enthält Webparts, die Inhalte organisieren, gruppieren und filtern, um Benutzer bei der Suche nach Informationen zu helfen. 
-Kommunikation und Zusammenarbeit | `75e22ed5-fa14-4829-850a-c890608aca2d`| Zusammenarbeit im sozialen Netzwerk |Diese Kategorie enthält Webparts, die die gemeinsame Nutzung von Informationen, Teamarbeit und soziale Interaktionen vereinfachen.
-Planung und Durchführung | `1bc7927e-4a5e-4520-b540-71305c79c20a`| Geschäftsdaten | Diese Kategorie enthält Webparts, die die Produktivität im Team durch Verwendung von Planungs- und Durchführungstools fördern. 
-Business und Intelligence | `4aca9e90-eff5-4fa1-bac7-728f5f157b66`| Geschäftsdaten | Diese Kategorie enthält Webparts für das Nachverfolgen und Analysieren von Daten sowie für die Integration von geschäftlichen Abläufen in Seiten. 
-Websitetools | `070951d7-94da-4db8-b06e-9d581f1f55b1`| Websitetools  |Diese Kategorie enthält Webparts für Websiteinformationen und -verwaltung. 
-Sonstiges | `5c03119e-3074-46fd-976b-c60198311f70`| Sonstige | Diese Kategorie enthält Webparts, die nicht in anderen Kategorien enthalten sind.            
 
 Einige Webparteigenschaften weisen einen Wert vom Typ **ILocalizedString** auf. Dieser Typ ist ein Schlüssel-Wert-Paarobjekt, mit dem Entwickler Zeichenfolgen für die unterschiedlichen Gebietsschemas angeben können. Mindestens ein Wert vom Typ **ILocalizedString** muss den **Standardwert** enthalten. Entwickler können optional die Übersetzungen dieses Werts in die unterschiedlichen Gebietsschemas bereitstellen, die ihr Webpart unterstützt. Wenn das Webpart auf einer Seite in einem Gebietsschema platziert wird, das nicht in der lokalisierten Zeichenfolge aufgeführt ist, wird stattdessen der Standardwert verwendet.
 
@@ -98,6 +86,22 @@ Ein **ILocalizedString**-Wert, der nicht gültig ist, da der **default** -Schlü
   "en-us": "Weather"
 }
 ```
+
+### <a name="predefined-modern-groups"></a>Vordefinierte moderne Gruppen
+
+Wie in der folgenden Tabelle dargestellt, gibt es 7 sofort verwendbare Gruppen. Verwenden Sie die Gruppen-ID in der `groupId`-Eigenschaft.
+
+| Gruppenname                      | ID                                     | Beschreibung                                                                                                                |
+|---------------------------------|----------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| Text, Medien und Inhalt        | `cf066440-0614-43d6-98ae-0b31cf14c7c3` | Diese Gruppe enthält Webparts, die Text, Multimedia, Dokumente, Informationen aus dem Web und andere formatierte Inhalte anzeigen. |
+| Ermitteln                        | `1edbd9a8-0bfb-4aa2-9afd-14b8c45dd489` | Diese Gruppe enthält Webparts, die Inhalte organisieren, gruppieren und filtern, um Benutzer bei der Suche nach Informationen zu helfen.                 |
+| Kommunikation und Zusammenarbeit | `75e22ed5-fa14-4829-850a-c890608aca2d` | Diese Gruppe enthält Webparts, die die gemeinsame Nutzung von Informationen, Teamarbeit und soziale Interaktionen vereinfachen.                     |
+| Planung und Durchführung            | `1bc7927e-4a5e-4520-b540-71305c79c20a` | Diese Gruppe enthält Webparts, die die Produktivität im Team durch Verwendung von Planungs- und Durchführungstools fördern.                   |
+| Business und Intelligence       | `4aca9e90-eff5-4fa1-bac7-728f5f157b66` | Diese Gruppe enthält Webparts für das Nachverfolgen und Analysieren von Daten sowie für die Integration von geschäftlichen Abläufen in Seiten.               |
+| Websitetools                      | `070951d7-94da-4db8-b06e-9d581f1f55b1` | Diese Gruppe enthält Webparts für Websiteinformationen und -verwaltung.                                                         |
+| Sonstiges                           | `5c03119e-3074-46fd-976b-c60198311f70` | Diese Gruppe umfasst Webparts, die sich nicht in anderen Gruppen befinden.                                                                         |
+
+Wenn der Entwickler eine ID ausfüllt, die sich nicht in der obigen Liste befindet, wird für das Webpart wieder die Gruppe **Other** verwendet.
 
 ## <a name="using-preconfigured-entries-in-web-parts"></a>Verwenden vorkonfigurierter Einträge in Webparts
 

@@ -1,16 +1,18 @@
 ---
-title: 'Vorgehensweise: Branding von Codeausschnitten mithilfe von CSS in SharePoint'
+title: Branding von Codeausschnitten mithilfe von CSS in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d18d07b6-1a6b-4589-a65c-932b67cef595
-ms.openlocfilehash: 2dad9df9f9d61abb0cdeb75de243d47826735411
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 43292df391d739aa031370a659bac821ac60ab16
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-brand-snippets-by-using-css-in-sharepoint"></a>Vorgehensweise: Branding von Codeausschnitten mithilfe von CSS in SharePoint
+# <a name="brand-snippets-by-using-css-in-sharepoint"></a>Branding von Codeausschnitten mithilfe von CSS in SharePoint
+
 Um einen Codeausschnitt zu formatieren, überschreiben Sie die Standardformatvorlagen mit benutzerdefiniertem CSS. Sie können CSS-IDs und Elementselektoren verwenden, um alle auf Elemente angewendeten Standardformatvorlagen zu überschreiben, oder Sie können einen HTML-Editor oder ein Tool wie die F12-Entwicklertools in Internet Explorer verwenden, um bestimmte Standardformatvorlagen zu identifizieren und zu überschreiben.
+
 ## <a name="introduction-to-styling-snippets-with-css"></a>Einführung in die Formatierung von Codeausschnitten mit CSS
 <a name="Introduction"> </a>
 
@@ -111,7 +113,7 @@ Bevor Sie beim Entwerfen des HTML-Modells für Ihre Masterseite den Entwurfs-Man
 
 ### <a name="sample-2-navigation-div-styled-with-custom-css"></a>Beispiel 2: Navigation \<div\> formatiert mit benutzerdefiniertem CSS
 
-Um die SharePoint-Standardformatvorlagen zu überschreiben, fügen Sie in die HTML-Modelldatei einen Standardlink zu Ihrer CSS-Datei  ein, unmittelbar vor dem schließenden **\</head\>**-Tag.
+Um die SharePoint-Standardformatvorlagen zu überschreiben, fügen Sie in die HTML-Modelldatei einen Standardlink zu Ihrer CSS-Datei `(<link rel="stylesheet" type="text/css" href="URLtoYourCustomCSSFile"/>` ein, unmittelbar vor dem schließenden **\</head\>**-Tag.
   
     
     
@@ -126,7 +128,7 @@ Beachten Sie in diesen HTML-und CSS-Beispielen Folgendes:
 - Formatvorlagen verwenden die Syntax `.msax-Navigation ul li` anstelle von `.msax-Navigation ul>li`, da das Codeausschnitt-Markup möglicherweise intervenierende **\<div\>**-Tags zwischen den ausgewählten Elementen enthält.
     
   
-- Der HTML-Modell enthält ein leeres **\<li\>\</li\>**- Element als letzten Eintrag von **\<ul\>** auf oberster Ebene. Dies liegt daran, dass SharePoint bei aktivierter verwalteter Navigation den Befehl **Links bearbeiten** als letzten Eintrag für die obere Navigationsleiste hinzufügt, und die finale Website muss diese Option in der Regel nicht anzeigen. Das CSS-Beispiel verwendet , um diesen Eintrag auszuwählen und den Anzeigewert auf `none` festzulegen. Das leere **\<li\>\</li\>**-Element in der HTML-Datei ist ein temporärer Ersatz für den standardmäßigen Eintrag Links bearbeiten. Beachten Sie dieses finale **\<li\>**-Element, wenn Ihre Website die verwaltete Navigation und CSS `li:last-child`-Selektoren verwendet.
+- Der HTML-Modell enthält ein leeres **\<li\>\</li\>**- Element als letzten Eintrag von **\<ul\>** auf oberster Ebene. Dies liegt daran, dass SharePoint bei aktivierter verwalteter Navigation den Befehl **Links bearbeiten** als letzten Eintrag für die obere Navigationsleiste hinzufügt, und die finale Website muss diese Option in der Regel nicht anzeigen. Das CSS-Beispiel verwendet `.msax-Navigation ul li:last-child`, um diesen Eintrag auszuwählen und den Anzeigewert auf `none` festzulegen. Das leere **\<li\>\</li\>**-Element in der HTML-Datei ist ein temporärer Ersatz für den standardmäßigen Eintrag **Links bearbeiten**. Beachten Sie dieses finale **\<li\>**-Element, wenn Ihre Website die verwaltete Navigation und CSS `li:last-child`-Selektoren verwendet.
     
   
 
@@ -223,19 +225,19 @@ Beachten Sie im Codeausschnittkatalog Folgendes, wenn Sie die Eigenschaften des 
 - Nehmen Sie keine Änderungen an Eigenschaften unter der Überschrift **AjaxDelta** vor, da diese Eigenschaften im Zusammenhang mit den MDS-Eigenschaften stehen, die SharePoint verwendet, um den HTML-Codeausschnitt in den entsprechenden ASP.NET-Codeausschnitt zu konvertieren. Dies gilt für alle Codeausschnitte, nicht nur für den Codeausschnitt der oberen Navigationsleiste.
     
   
-- Wenn Sie beabsichtigen, die SharePoint-Standardformatvorlagen zu überschreiben, legen Sie Codeausschnittkatalog im Abschnitt **Behavior** unter **AspMenu** (wenn der Codeausschnitt mehrere Steuerelemente enthält, z. B. ein delegate-Steuerelement, sind möglicherweise mehrere Abschnitte **Behavior** vorhanden) die Option **ClientIDMode** auf **Static**. Wenn Sie die Option **ClientIDMode** auf die Standardeinstellung **Inherit** festgelegt lassen, ändern sich die angewendeten CSS-Klassen des Codeausschnitts basierend auf der Sortierung der Codeausschnitte auf der Seite. Weitere Informationen zu **ClientIDMode** finden Sie unter [Control.ClientIDMode-Eigenschaft](http://msdn.microsoft.com/en-us/library/system.web.ui.control.clientidmode.aspx).
+- Wenn Sie beabsichtigen, die SharePoint-Standardformatvorlagen zu überschreiben, legen Sie Codeausschnittkatalog im Abschnitt **Behavior** unter **AspMenu** (wenn der Codeausschnitt mehrere Steuerelemente enthält, z. B. ein delegate-Steuerelement, sind möglicherweise mehrere Abschnitte **Behavior** vorhanden) die Option **ClientIDMode** auf **Static**. Wenn Sie die Option **ClientIDMode** auf die Standardeinstellung **Inherit** festgelegt lassen, ändern sich die angewendeten CSS-Klassen des Codeausschnitts basierend auf der Sortierung der Codeausschnitte auf der Seite. Weitere Informationen zu **ClientIDMode** finden Sie unter [Control.ClientIDMode-Eigenschaft](http://msdn.microsoft.com/de-DE/library/system.web.ui.control.clientidmode.aspx).
     
     Standardmäßig verwendet das Steuerelement der oberen Navigationsleiste beispielsweise standardmäßige SharePoint-ID-Attribute wie **zz5_TopNavigationMenu** und **zz6_RootAspMenu**. Durch Ändern von **ClientIDMode** in **Static** ermöglichen Sie die Verwendung dieser Standard-IDs als Selektoren in Ihrer eigenen CSS, um die SharePoint-Standardformatvorlagen zu überschreiben.
     
   
-- Einige Eigenschaften sind bereits so konfiguriert, dass das Branding des Codeausschnitts der oberen Navigationsleiste vereinfacht wird, indem die standardmäßigen Verhaltensweisen von dynamischem CSS und JavaScript eliminiert werden. **UseSimpleRendering** wird beispielsweise standardmäßig auf **True** festgelegt, und **MaximumDynamicDisplayLevels** wird auf **0** festgelegt. Weitere Informationen zu bestimmten Eigenschaften des Codeausschnitts der oberen Navigationsleiste finden Sie unter [AspMenu-Eigenschaften](http://msdn.microsoft.com/en-us/library/ms412476.aspx) und [Menu-Eigenschaften](http://msdn.microsoft.com/en-us/library/282668a1.aspx).
+- Einige Eigenschaften sind bereits so konfiguriert, dass das Branding des Codeausschnitts der oberen Navigationsleiste vereinfacht wird, indem die standardmäßigen Verhaltensweisen von dynamischem CSS und JavaScript eliminiert werden. **UseSimpleRendering** wird beispielsweise standardmäßig auf **True** festgelegt, und **MaximumDynamicDisplayLevels** wird auf **0** festgelegt. Weitere Informationen zu bestimmten Eigenschaften des Codeausschnitts der oberen Navigationsleiste finden Sie unter [AspMenu-Eigenschaften](http://msdn.microsoft.com/de-DE/library/ms412476.aspx) und [Menu-Eigenschaften](http://msdn.microsoft.com/de-DE/library/282668a1.aspx).
     
   
 Nachdem Sie den Codeausschnitt der oberen Navigationsleiste im Codeausschnittkatalog konfiguriert haben, wählen Sie **Aktualisieren** und dann **In die Zwischenablage kopieren** aus. Löschen Sie auf der HTML-Masterseite den Inhalt der Navigation `<div id="navigation" class="msax-Navigation">`, die das Modellsteuerelement enthält (löschen Sie nur den Inhalt des **\<div\>**-Tags und nicht das **\<div\>**-Tag selbst), und kopieren Sie dann den Codeausschnitt in die Navigation **\<div\>**. Ändern Sie, falls erforderlich, die Position der **\<#div\>**-Navigation, in der Regel direkt nach Beginn des `<div id="s4-bodyContainer">`-Tags, jedoch vor dem **\<#div\>** mit `PlaceHolderMain`.
   
     
     
-Für einen einfachen Vergleich mit dem HTML-Code der #div-Navigation oben, enthält das folgende Beispiel den **div-Teil der Navigation des Codeausschnitts der oberen Navigationsleiste. Beachten Sie, dass dies nicht der gesamte Codeausschnitt ist.
+Für einen einfachen Vergleich mit dem HTML-Code der **\<#div\>**-Navigation oben, enthält das folgende Beispiel den **\<div\>**-Teil der Navigation des Codeausschnitts der oberen Navigationsleiste. Beachten Sie, dass dies nicht der gesamte Codeausschnitt ist.
   
     
     

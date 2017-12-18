@@ -1,37 +1,19 @@
 ---
-title: Vorgehensweise Legen Sie die Bing Maps-Taste auf Ordnerebene Web und Farm in SharePoint
+title: "Festlegen des Bing Maps-Schlüssels auf Web- und Farmebene in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 507ed9de-c349-44b5-b182-e838795dd862
-ms.openlocfilehash: f433e66bf82336b2450382bef1a3e34df5feeb62
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bef24775bb6e5bafc64d3d21ef4dcb25ed6c2be3
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-set-the-bing-maps-key-at-the-web-and-farm-level-in-sharepoint"></a>Vorgehensweise: Legen Sie die Bing Maps-Taste auf Ordnerebene Web und Farm in SharePoint
+# <a name="set-the-bing-maps-key-at-the-web-and-farm-level-in-sharepoint"></a>Festlegen des Bing Maps-Schlüssels auf Web- und Farmebene in SharePoint
 
-  
-    
-    
 ![Thema mit Anleitung](../images/mod_icon_howto.png)
-  
-    
-    
 
-  
-    
-    
-
-  
-    
-    
 In diesem Artikel erfahren Sie, wie Sie den Bing Maps-Schlüssel programmgesteuert auf der Web- und der Farmebene mithilfe des SharePoint-Clientobjektmodells und von Windows PowerShell festlegen, um die Bing Maps-Funktionen in SharePoint-Listen sowie standortbasierten Web-Apps und mobilen Apps zu aktivieren.
-
-  
-    
-    
-
 
 ## <a name="prerequisites-for-setting-the-bing-maps-key"></a>Erforderliche Komponenten für die Festlegung des Bing Maps-Schlüssels
 <a name="SP15Bing_prereq"> </a>

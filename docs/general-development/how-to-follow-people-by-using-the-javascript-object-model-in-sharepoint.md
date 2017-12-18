@@ -1,16 +1,18 @@
 ---
-title: Vorgehensweise folgen Sie Menschen mit der JavaScript-Objektmodell in SharePoint
+title: Folgen von Personen mithilfe des JavaScript-Objektmodell in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 2643c286-47c9-4a7a-9273-7474394477d6
-ms.openlocfilehash: 56c38ff03d11fc9c66d885d92d572aa1a5bf9286
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 32f8d67f05048a15d3c1e2d0d1313f38945ff593
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint"></a>Vorgehensweise: Folgen von Personen mithilfe des JavaScript-Objektmodells in SharePoint
-In diesem Artikel erfahren Sie, wie Sie mithilfe des JavaScript-Objektmodells in SharePoint mit Features zum Folgen von Personen arbeiten.
+# <a name="follow-people-by-using-the-javascript-object-model-in-sharepoint"></a>Folgen von Personen mithilfe des JavaScript-Objektmodell in SharePoint
+
+In diesem Artikel erfahren Sie, wie Sie mithilfe des SharePoint JavaScript-Objektmodells mit Features zum Folgen von Personen arbeiten.
+
 ## <a name="why-use-following-people-features-in-sharepoint"></a>Gründe für die Verwendung von Features zum Folgen von Personen in SharePoint
 <a name="bk_FollowingPeopleFeatures"> </a>
 

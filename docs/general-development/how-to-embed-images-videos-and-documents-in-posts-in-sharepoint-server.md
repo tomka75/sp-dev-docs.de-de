@@ -3,14 +3,15 @@ title: "Einbetten von Bildern, Videos und Dokumenten in Beiträgen in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 9927b9e7-daea-4261-80fa-4cc25f489e22
-ms.openlocfilehash: 13724f464dab3f1b5da94e65df7728b38976ec2a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f06a936839773e58837042fea884082aaeabe36e
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-embed-images-videos-and-documents-in-posts-in-sharepoint"></a>Vorgehensweise: Einbetten von Bildern, Videos und Dokumenten in Beiträgen in SharePoint
-In diesem Artikel erfahren Sie, wie Sie Mikroblogbeiträgen  [SocialAttachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx)-Objekte hinzufügen, die als eingebettete Bilder, Videos und Dokumente in sozialen Feeds für SharePoint gerendert werden.
+# <a name="embed-images-videos-and-documents-in-posts-in-sharepoint"></a>Einbetten von Bildern, Videos und Dokumenten in Beiträgen in SharePoint
+
+In diesem Artikel erfahren Sie, wie Sie Mikroblogbeiträgen [SocialAttachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx)-Objekte hinzufügen, die als eingebettete Bilder, Videos und Dokumente in sozialen Feeds für SharePoint gerendert werden.
 Die einfachste Form von Beitragsinhalten in einem sozialen Feed enthält nur Text, aber Sie können auch eingebettete Bilder, Videos und Dokumente hinzufügen. Zu diesem Zweck verwenden Sie die [Attachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.Attachment.aspx)-Eigenschaft des [SocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx)-Objekts, das den Beitrag definiert. Beiträge können eine Anlage enthalten, die durch ein [SocialAttachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx)-Objekt dargestellt wird.
   
     
@@ -46,7 +47,7 @@ Die Codebeispiele in diesem Artikel wird gezeigt, wie hinzuzufügende Bild, vide
 - Microsoft.SharePoint.Client.UserProfilies
     
   
-Um die Beispiele in diesem Artikel zu verwenden, müssen Sie ein Bild, ein Video und ein Dokument hochladen. Damit Sie das Videobeispiel verwenden können, muss das Feature „Video“ auf dem Server aktiviert sein, und die Videodatei muss in einer Objektbibliothek gespeichert sein. Zum Verwendung des Dokumentbeispiels in einer lokalen Umgebung muss Office Online in der Umgebung konfiguriert sein. Weitere Informationen finden Sie unter [Planen digitaler Objektbibliotheken in SharePoint](http://technet.microsoft.com/en-us/library/ee414275.aspx) und [Konfigurieren von SharePoint für die Verwendung von Office Online](http://technet.microsoft.com/en-us/library/ff431687.aspx).
+Um die Beispiele in diesem Artikel zu verwenden, müssen Sie ein Bild, ein Video und ein Dokument hochladen. Damit Sie das Videobeispiel verwenden können, muss das Feature „Video“ auf dem Server aktiviert sein, und die Videodatei muss in einer Objektbibliothek gespeichert sein. Zum Verwendung des Dokumentbeispiels in einer lokalen Umgebung muss Office Online in der Umgebung konfiguriert sein. Weitere Informationen finden Sie unter [Planen digitaler Objektbibliotheken in SharePoint](http://technet.microsoft.com/de-DE/library/ee414275.aspx) und [Konfigurieren von SharePoint für die Verwendung von Office Online](http://technet.microsoft.com/de-DE/library/ff431687.aspx).
   
     
     

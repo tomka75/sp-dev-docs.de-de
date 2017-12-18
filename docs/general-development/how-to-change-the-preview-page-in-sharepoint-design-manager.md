@@ -1,15 +1,15 @@
 ---
-title: "Vorgehensweise ändern die Vorschauseite in SharePoint-Design-Manager"
+title: "Ändern der Vorschauseite im SharePoint-Entwurfs-Manager"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e5dfd8df-65de-44fc-aa97-23b4685d33ee
-ms.openlocfilehash: 69eb9b302fc77d38f9724ecc0a671a0315d1f05c
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 1e461af4186d957b75b9bee327f6d0f0e85f7221
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-change-the-preview-page-in-sharepoint-design-manager"></a>Vorgehensweise: ändern die Vorschauseite in SharePoint-Design-Manager
+# <a name="change-the-preview-page-in-sharepoint-design-manager"></a>Ändern der Vorschauseite im SharePoint-Entwurfs-Manager
 Informationen Sie zum Festlegen, erstellen und Ändern der Vorschauseite im Entwurfs-Manager in SharePoint. Die Vorschauseite ist die Seite der Website, mit denen Sie Ihren Entwurf aussehen. Sie können entweder eine bestimmte Seite innerhalb Ihrer Website oder eine generische Vorschau die Vorschauseite festlegen. Wenn Sie die generische Vorschau auswählen, sehen Sie die Masterseite mit nur einem Platzhalter für Inhalt. Auch sehen eine Nachricht im Banner Sie, dass aktuell die Gestaltungsvorlage ohne Inhalt in der Vorschau angezeigt werden. Wenn Sie eine bestimmte Seite auswählen, sehen Sie sich, dass der Seiteninhalt mit dem Master Seite und das entsprechende Seitenlayout gerendert.
   
     

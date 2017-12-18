@@ -1,16 +1,18 @@
 ---
-title: Vorgehensweise Erstellen eine minimale Gestaltungsvorlage in SharePoint
+title: Erstellen einer minimale Gestaltungsvorlage in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 634aa471-07e1-41d6-aa80-27f7ef7e9dc8
-ms.openlocfilehash: bd05d04226815c4ddb0c0c46252a6cc3088e2ac3
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2788840a18f9fac02f545b461576a8c6a30afe52
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-a-minimal-master-page-in-sharepoint"></a>Vorgehensweise: Erstellen eine minimale Gestaltungsvorlage in SharePoint
+# <a name="create-a-minimal-master-page-in-sharepoint"></a>Erstellen einer minimale Gestaltungsvorlage in SharePoint
+
 Eine minimale Gestaltungsvorlage enthält nur die Seitenelemente, die zum Rendern der Seite im Browser ordnungsgemäß SharePoint erforderlich. Mit Entwurfs-Manager können Sie schnell erstellen eine minimale Gestaltungsvorlage ohne zuvor zum Entwerfen und Konvertieren einer HTML-Datei.
+
 ## <a name="introduction-to-the-minimal-master-page"></a>Einführung in die minimale Gestaltungsvorlage
 <a name="Introduction"> </a>
 
@@ -75,9 +77,9 @@ Beginnend mit eine minimale Gestaltungsvorlage ist hilfreich, wenn:
     
     Die Vorschauseite enthält außerdem einen Link **Ausschnitten** in der oberen rechten Ecke. Dieser Link öffnet im Codeausschnittkatalog, wo Sie beginnen können statisch oder Modell Steuerelemente in Ihrem Entwurf mit dynamischen SharePoint-Steuerelemente ersetzen. Weitere Informationen finden Sie unter [Codeausschnitte des SharePoint-Entwurfs-Managers](sharepoint-design-manager-snippets.md).
     
-    Nachdem eine Vorschau der Gestaltungsvorlage angezeigt wurde, wird ein ** \<div\> **-Tag Ihrer HTML-Datei hinzugefügt. Sie müssen möglicherweise bis zum Ende der Seite scrollen, um das ** \<div\>**-Tag zu sehen.
+    Nachdem eine Vorschau der Gestaltungsvorlage angezeigt wurde, wird ein ** \<div\> **-Tag Ihrer HTML-Datei hinzugefügt. Sie müssen möglicherweise bis zum Ende der Seite scrollen, um das **\<div\>**-Tag zu sehen.
     
-    Dieses ** \<div\> **-Tag ist im Hauptinhaltsblock vorhanden. Es befindet sich in einem Inhaltsplatzhalter **ContentPlaceHolderMain**. Wenn ein Besucher zur Laufzeit Ihre Website durchsucht und eine Seite anfordert, wird dieser Platzhalter mit Inhalt aus einem Seitenlayout gefüllt, der die Inhalte in einem passenden Inhaltsbereich enthält. Sie sollten das ** \<div\> **-Tag dort positionieren, wo Ihre Seitenlayouts in der Gestaltungsvorlage angezeigt werden sollen.
+    Dieses **\<div\>**-Tag ist im Hauptinhaltsblock vorhanden. Es befindet sich in einem Inhaltsplatzhalter **ContentPlaceHolderMain**. Wenn ein Besucher zur Laufzeit Ihre Website durchsucht und eine Seite anfordert, wird dieser Platzhalter mit Inhalt aus einem Seitenlayout gefüllt, der die Inhalte in einem passenden Inhaltsbereich enthält. Sie sollten das ** \<div\> **-Tag dort positionieren, wo Ihre Seitenlayouts in der Gestaltungsvorlage angezeigt werden sollen.
     
   
 7. Sie können die HTML-Datei bearbeiten, die sich direkt auf dem Server mit einem HTML-Editor zu öffnen und Bearbeiten von HTML-Datei in ein zugeordnetes Laufwerk befindet. Jedes Mal, wenn Sie die HTML-Datei speichern, werden alle Änderungen mit der zugehörigen Master-Datei synchronisiert. Weitere Informationen finden Sie unter  [Gewusst wie: Zuordnen eines Netzlaufwerks zum SharePoint-Gestaltungsvorlagenkatalog](how-to-map-a-network-drive-to-the-sharepoint-master-page-gallery.md).

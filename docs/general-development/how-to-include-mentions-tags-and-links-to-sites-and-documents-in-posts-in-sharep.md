@@ -3,14 +3,15 @@ title: "Einschließen von Erwähnungen, Tags und Links zu Websites und Dokumente
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 975da333-372b-4bf6-a3f4-7452db369f04
-ms.openlocfilehash: 3ca0f7365a2000525cef8492ff685ac3a514a86f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f0af1c97baf6da530358f2a2ff86f29e2f9bb03e
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharepoint"></a>Vorgehensweise: Einschließen von Erwähnungen, Tags und Links zu Websites und Dokumenten in Beiträgen in SharePoint
-In diesem Artikel erfahren Sie, wie Sie Mikroblogbeiträgen  [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx)-Objekte hinzufügen, die als Erwähnungen, Tags oder Links in sozialen Feeds für SharePoint gerendert werden.
+# <a name="include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharepoint"></a>Einschließen von Erwähnungen, Tags und Links zu Websites und Dokumenten in Beiträgen in SharePoint
+
+In diesem Artikel erfahren Sie, wie Sie Mikroblogbeiträgen [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx)-Objekte hinzufügen, die als Erwähnungen, Tags oder Links in sozialen Feeds für SharePoint gerendert werden.
 Die einfachste Form von Beitragsinhalten in sozialen Feeds enthält nur Text, aber Sie können auch Links hinzufügen, die als Erwähnungen, Tags oder Links zu Websites, SharePoint-Websites und Dokumenten gerendert werden. Zu diesem Zweck fügen Sie [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx)-Objekte zur [ContentItems](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.ContentItems.aspx)-Eigenschaft des [SocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx)-Objekts hinzu, das den Beitrag definiert. Beiträge können mehrere Links enthalten.
   
     

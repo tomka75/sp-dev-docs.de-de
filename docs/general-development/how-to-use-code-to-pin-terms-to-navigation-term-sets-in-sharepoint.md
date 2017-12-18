@@ -1,21 +1,22 @@
 ---
-title: Vorgehensweise Verwendung Code Pin Bedingungen Navigation Begriff wird im SharePoint
+title: "Verwenden von Code zum Anheften von Ausdrücken zu Ausdruckssätzen in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 4a2811dc-25fd-4eb2-b0ab-1edded64c556
-ms.openlocfilehash: 51fd92462a452a66e7344f9c0f0b6870602b6481
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c04261b5106e2c66a308b0f96afd09b2065e41d4
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-use-code-to-pin-terms-to-navigation-term-sets-in-sharepoint"></a>Vorgehensweise: Verwendung Code Pin Bedingungen Navigation Begriff wird im SharePoint
-In diesem Artikel erfahren Sie, wie Sie Code verwenden, um Ausdrücke an Navigationsausdruckssätze anzuheften. Taxonomie beim Erstellen ist Verankern die Möglichkeit zum Anfügen eines Ausdrucks zu einem Ziel aus. SharePoint führt Begriff verankern. Ein Begriff angehefteter verhält sich wie ein Begriff, der wiederverwendet wird, außer es schreibgeschützt ist und kann nicht geändert werden, an dem Speicherort, in dem der Begriff verwendet wird.
-  
-    
-    
+# <a name="use-code-to-pin-terms-to-navigation-term-sets-in-sharepoint"></a>Verwenden von Code zum Anheften von Ausdrücken zu Ausdruckssätzen in SharePoint
+
+In diesem Artikel erfahren Sie, wie Sie Code verwenden, um Ausdrücke an Navigationsausdruckssätze anzuheften.
+
+Bei der Taxonomieerstellung ist das Anheften die Möglichkeit, einen Ausdruck an ein Ziel anzufügen. In SharePoint wurde das Anheften von Ausdrücken eingeführt. Ein angehefteter Ausdruck ist einfach ein Ausdruck, der wiederverwendet wird, mit der Ausnahme, dass er schreibgeschützt ist und nicht an dem Ort geändert werden kann, an dem der Ausdruck verwendet wird.
 
 In der SharePoint verwaltete Navigation können Sie die API zur Pin neue oder vorhandene Ausdrücke auf ein  [NavigationTermSet](https://msdn.microsoft.com/library/Microsoft.SharePoint.Publishing.Navigation.NavigationTermSet.aspx) -Objekt. In Microsoft SharePoint Server 2010 konnten Benutzer Begriffe (und alle geschachtelten den wiederverwendete Bestimmungen Begriffe) an anderen Stellen in der Hierarchie Begriff wiederverwenden. Nach dieser Begriffe wiederverwendet wurden, sie an einem Standort geändert werden konnte und Änderungen überall angezeigt werden würde, wurden die Begriffe wiederverwendet.
+
 ## <a name="term-pinning-essentials"></a>Feste Essentials Begriff
 <a name="SP15_H2UseCodeToPinTerms_TermPinningEssentials"> </a>
 

@@ -1,16 +1,18 @@
 ---
-title: Vorgehensweise Konvertieren einer HTML-Datei in eine Gestaltungsvorlage in SharePoint
+title: Konvertieren einer HTML-Datei in eine Gestaltungsvorlage in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a76ab289-3256-45de-ac63-d5112a74e3c7
-ms.openlocfilehash: e8dbc28be842cfc2b39d8cfb81ab00fced22368a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: df93a6b57fc719e83f337b061e575b7caa97eba6
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-convert-an-html-file-into-a-master-page-in-sharepoint"></a>Vorgehensweise: Konvertieren einer HTML-Datei in eine Gestaltungsvorlage in SharePoint
+# <a name="convert-an-html-file-into-a-master-page-in-sharepoint"></a>Konvertieren einer HTML-Datei in eine Gestaltungsvorlage in SharePoint
+
 Mit dem Entwurfs-Manager können Sie eine HTML-Datei in eine SharePoint-Gestaltungsvorlage (MASTER-Datei) konvertieren. Nach der Konvertierung wird die HTML-Datei mit der Gestaltungsvorlage verknüpft, sodass nach dem Bearbeiten und Speichern der HTML-Datei die Änderungen mit der zugeordneten Gestaltungsvorlage synchronisiert werden.
+
 ## <a name="introduction-to-converting-a-master-page"></a>Einführung in das Konvertieren in eine Gestaltungsvorlage
 <a name="Introduction"> </a>
 

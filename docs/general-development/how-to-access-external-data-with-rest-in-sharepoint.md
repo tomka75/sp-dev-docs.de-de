@@ -1,15 +1,16 @@
 ---
-title: Vorgehensweise Zugriff auf externe Daten mit REST in der SharePoint
+title: Zugriff auf externe Daten mit REST in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 0663cc8c-a736-434d-9858-6ce12ce7f748
-ms.openlocfilehash: c2043eb097ba6b8db294737f413cf91dd2e7c8ab
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3b51aeb585db992208117c2ddcc014425c87822c
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-access-external-data-with-rest-in-sharepoint"></a>Vorgehensweise: Zugriff auf externe Daten mit REST in der SharePoint
+# <a name="access-external-data-by-using-rest-in-sharepoint"></a>Zugriff auf externe Daten mit REST in SharePoint
+
 Erfahren Sie, wie externe Daten mithilfe von Representational State Transfer (REST) URLs für Business Connectivity Services (BCS)SharePoint zugreifen. In diesem Artikel veranschaulicht, wie eine externe Liste einrichten, die Daten aus einer Open Data Protocol (OData) Datenquelle abruft.
   
     

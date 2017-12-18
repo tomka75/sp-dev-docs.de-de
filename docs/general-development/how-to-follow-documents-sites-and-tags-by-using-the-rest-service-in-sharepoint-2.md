@@ -1,16 +1,18 @@
 ---
-title: "Vorgehensweise führen Sie Dokumente, Websites und Tags mithilfe des REST-Diensts in SharePoint"
+title: Folgen von Dokumenten, Websites und Kategorien mithilfe des REST-Diensts in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 989a5873-49f9-49e4-8d0f-439dde891cc2
-ms.openlocfilehash: 05348a84843074ee7c859847c006565edf05df4a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 73796b89f04291d86072234833953c97881cdff8
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint"></a>Vorgehensweise: führen Sie Dokumente, Websites und Tags mithilfe des REST-Diensts in SharePoint
+# <a name="follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint"></a>Folgen von Dokumenten, Websites und Kategorien mithilfe des REST-Diensts in SharePoint
+
 Erstellen Sie von SharePoint gehostete Apps, die den REST-Dienst verwenden, um Inhalten (Dokumente, Websites und Tags) zu folgen und gefolgte Inhalte zu erhalten.
+
 ## <a name="how-do-i-use-the-sharepoint-rest-service-to-follow-content"></a>Wie verwende ich den REST-Dienst von SharePoint, um Inhalten zu folgen?
 <a name="bk_intro"> </a>
 

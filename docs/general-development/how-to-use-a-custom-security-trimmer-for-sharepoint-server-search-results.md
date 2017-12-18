@@ -1,16 +1,19 @@
 ---
-title: "Vorgehensweise verwenden ein benutzerdefinierten Security Trimmer für SharePoint Server-Suchergebnisse"
+title: "Verwenden eines benutzerdefinierten Security Trimmers für Suchergebnisse für SharePoint Server"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e1a8664e-fb43-45c2-83aa-9635fe1efc99
-ms.openlocfilehash: 32260af258ca3c1f2acd714fabde74b9ed621171
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f661cf012664960bc703e9bebed1cb9e0d00c214
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-use-a-custom-security-trimmer-for-sharepoint-server-search-results"></a>Vorgehensweise: verwenden ein benutzerdefinierten Security Trimmer für SharePoint Server-Suchergebnisse
-Diese Vorgehensweise führt Sie durch die Schritte zum Implementieren - erstellen, bereitstellen und registrieren - einen benutzerdefinierten Security Trimmer für Suche in SharePoint mithilfe von Microsoft Visual Studio 2010. Suche in SharePoint führt Abfragezeit die Einschränkung aus Sicherheitsgründen von Suchergebnissen. Möglicherweise gibt es jedoch Szenarien, in denen Sie benutzerdefinierte Sicherheitskürzung ausführen möchten. Suche in SharePoint bietet Unterstützung für diese Szenarien über die  [Microsoft.Office.Server.Search.Query.ISecurityTrimmerPre](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ISecurityTrimmerPre.aspx) , [Microsoft.Office.Server.Search.Query.ISecurityTrimmerPost](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ISecurityTrimmerPost.aspx) und Schnittstellen im Namespace [Microsoft.Office.Server.Search.Query](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.aspx) [ISecurityTrimmer2](https://msdn.microsoft.com/library/Microsft.Office.Server.Search.Query.ISecurityTrimmer2.aspx) (veraltet).
+# <a name="use-a-custom-security-trimmer-for-sharepoint-server-search-results"></a>Verwenden eines benutzerdefinierten Security Trimmers für Suchergebnisse für SharePoint Server
+
+Dieser Artikel führt Sie durch die Schritte zum Implementieren, Erstellen, Bereitstellen und Registrieren eines benutzerdefinierten Security Trimmers für die Suche in SharePoint mithilfe von Microsoft Visual Studio 2010.
+
+Die Suche in SharePoint führt eine Sicherheitskürzung von Suchergebnissen zur Abfragezeit durch. Es gibt jedoch Szenarios, in denen Sie eine benutzerdefinierte Sicherheitskürzung durchführen möchten. Die Suche in SharePoint bietet über die folgenden Schnittstellen im [Microsoft.Office.Server.Search.Query](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.aspx)-Namespace Unterstützung für diese Szenarios: [Microsoft.Office.Server.Search.Query.ISecurityTrimmerPre](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ISecurityTrimmerPre.aspx) , [Microsoft.Office.Server.Search.Query.ISecurityTrimmerPost](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ISecurityTrimmerPost.aspx)  und [ISecurityTrimmer2](https://msdn.microsoft.com/library/Microsft.Office.Server.Search.Query.ISecurityTrimmer2.aspx) (veraltet).
   
     
     

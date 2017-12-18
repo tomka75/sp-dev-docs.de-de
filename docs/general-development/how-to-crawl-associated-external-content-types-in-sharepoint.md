@@ -1,16 +1,18 @@
 ---
-title: 'Vorgehensweise: durchforsten zugeordneter externe Inhaltstypen in SharePoint'
+title: Durchforsten zugeordneter externer Inhaltstypen in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 187ec42e-f749-4e22-abef-1df604143063
-ms.openlocfilehash: 492c481703b7bb16a4c709d65f1698a06e024ded
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c6aaedd3271255c03840d8fd7c26abe689286f2b
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-crawl-associated-external-content-types-in-sharepoint"></a>Vorgehensweise: durchforsten zugeordneter externe Inhaltstypen in SharePoint
-In diesem Artikel lernen Sie die suchspezifischen Eigenschaften im Business Data Connectivity (BDC)-Dienst-Metadatenmodell für das Durchforsten von Zuordnungen und die verschiedenen Benutzerumgebungen kennen, die Sie aktivieren können.
+# <a name="crawl-associated-external-content-types-in-sharepoint"></a>Durchforsten zugeordneter externer Inhaltstypen in SharePoint
+
+In diesem Artikel erfahren Sie, wie Sie die suchspezifischen Eigenschaften im Business Data Connectivity (BDC)-Dienst-Metadatenmodell zum Durchforsten von Zuordnungen und für die verschiedenen Benutzeroberflächen, die Sie aktivieren können, verwenden können.
+
 ## <a name="crawling-the-associated-external-content-type"></a>Durchforsten des zugeordneten externen Inhaltstyps
 <a name="HowToCrawlAssociations_CrawlingAssociatedExternalTypes"> </a>
 

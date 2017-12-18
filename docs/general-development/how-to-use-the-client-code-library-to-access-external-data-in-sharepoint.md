@@ -1,16 +1,19 @@
 ---
-title: Vorgehensweise Verwenden Sie die Code-Clientbibliothek Zugriff auf externe Daten in SharePoint
+title: "Verwenden der Code-Clientbibliothek für den Zugriff auf externe Daten in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c280ae92-c52b-4658-b0f3-805fb215ef8e
-ms.openlocfilehash: 33d7be96c78828dc657331876ff03fb72f02c044
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2f4e7a87db95ee5d1105111a5f5cdab9d1d6242b
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-use-the-client-code-library-to-access-external-data-in-sharepoint"></a>Vorgehensweise: Verwenden Sie die Code-Clientbibliothek Zugriff auf externe Daten in SharePoint
-Informationen Sie zur Verwendung des Clientobjektmodells SharePointBusiness Connectivity Services (BCS)-Objekte in SharePoint mithilfe von Skripts browserbasierte entwickelt. In diesem Artikel wird gezeigt, wie eine externe Liste einrichten, die Daten aus der Verwendung des Clientobjektmodells in SharePoint Open Data Protocol (OData) Datenquelle abruft.
+# <a name="use-the-client-code-library-to-access-external-data-in-sharepoint"></a>Verwenden der Code-Clientbibliothek für den Zugriff auf externe Daten in SharePoint
+
+In diesem Artikel erfahren Sie, wie Sie das Clientobjektmodell in SharePoint verwenden, um mit Business Connectivity Services (BCS)-Objekten in SharePoint mithilfe von browserbasierten Skripts zu arbeiten.
+
+In diesem Artikel wird gezeigt, wie eine externe Liste eingerichtet wird, die Daten von einer Open Data-Protokollquelle (OData) mithilfe des Clientobjektmodells in SharePoint abruft.
   
     
     

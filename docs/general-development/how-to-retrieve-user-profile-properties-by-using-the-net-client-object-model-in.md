@@ -1,16 +1,18 @@
 ---
-title: Vorgehensweise Abrufen von Benutzerprofileigenschaften mithilfe des .NET-Clientobjektmodells in SharePoint
+title: Abrufen von Benutzerprofileigenschaften mithilfe des .NET-Clientobjektmodells in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 236ebaf8-f92e-4192-9b51-0a9de0210885
-ms.openlocfilehash: b825ec245435a9d172c8fdc8064be7d92b0de38f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 1d77fdaccfeeefafc9a7d43476140a0c8a632515
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-retrieve-user-profile-properties-by-using-the-net-client-object-model-in-sharepoint"></a>Vorgehensweise: Abrufen von Benutzerprofileigenschaften mithilfe des .NET-Clientobjektmodells in SharePoint
+# <a name="retrieve-user-profile-properties-by-using-the-net-client-object-model-in-sharepoint"></a>Abrufen von Benutzerprofileigenschaften mithilfe des .NET-Clientobjektmodells in SharePoint
+
 In diesem Artikel erfahren Sie, wie Sie Benutzerprofileigenschaften programmgesteuert mithilfe des .NET-Clientobjektmodells in SharePoint abrufen.
+
 ## <a name="what-are-user-profile-properties-in-sharepoint"></a>Was sind Benutzerprofileigenschaften in SharePoint?
 <a name="bkmk_WhatIs"> </a>
 

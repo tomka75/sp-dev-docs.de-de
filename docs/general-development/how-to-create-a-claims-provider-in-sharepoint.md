@@ -1,15 +1,16 @@
 ---
-title: Vorgehensweise Erstellen ein anspruchsanbieters in SharePoint
+title: Erstellen eines Anspruchsanbieters in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 8f3228ca-57fd-4253-a07d-abeb63298c58
-ms.openlocfilehash: 12d42c832cfe9741306adf78ba3d1bc4a708ac5d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bcc75f6c67d1941197bf60ec07457d456149e1ff
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-a-claims-provider-in-sharepoint"></a>Vorgehensweise: Erstellen ein anspruchsanbieters in SharePoint
+# <a name="create-a-claims-provider-in-sharepoint"></a>Erstellen eines Anspruchsanbieters in SharePoint
+
 In diesem Artikel erfahren Sie, wie ein SharePoint-Anspruchsanbieter erstellt und implementiert wird, der die Voraussetzungen für die Steigerung von Ansprüchen und die Auswahl von Ansprüchen erfüllt. Ein Forderungsanbieter gibt Forderungen heraus und packt Forderungen in Sicherheitstoken. Ein Forderungsanbieter erfüllt zwei Aufgaben: Erweiterung und Auswahl.
   
     
@@ -21,7 +22,7 @@ Die anspruchserweiterung kann eine Anwendung zusätzliche Ansprüchen Token des 
     
 
 
-> **Hinweis:** Eine Personenauswahl mit Funktionen zur Auswahl von Ansprüchen wird manchmal auch als Anspruchsauswahl bezeichnet. Weitere Informationen finden Sie unter [Planen für die Personenauswahl und für Anspruchsanbieter](http://technet.microsoft.com/en-us/library/gg602063.aspx). 
+> **Hinweis:** Eine Personenauswahl mit Funktionen zur Auswahl von Ansprüchen wird manchmal auch als Anspruchsauswahl bezeichnet. Weitere Informationen finden Sie unter [Planen für die Personenauswahl und für Anspruchsanbieter](http://technet.microsoft.com/de-DE/library/gg602063.aspx). 
   
     
     

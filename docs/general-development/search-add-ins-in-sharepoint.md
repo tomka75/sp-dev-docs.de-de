@@ -3,11 +3,11 @@ title: Such-Add-Ins in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 21682e45-dd78-4f3c-8f1e-cdd48de3bde2
-ms.openlocfilehash: 30eea1616bceb6754883056339ad4642de8acb9f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 79522329a6a06808be5e3034a5d82ed9c3a35590
+ms.sourcegitcommit: 4ceb9b0dd0a9974df6180ca9959a1e9f452c7518
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="search-add-ins-in-sharepoint"></a>Such-Add-Ins in SharePoint
 Informationen Sie zur Suche SharePoint-Add-Ins und wie Sie Ihre eigene Search-add-ins erstellen können. Die Add-ins, die Sie erstellen können SharePoint-Add-ins Katalog hinzugefügt werden, damit sie in der lokalen Bereitstellung und Office 365 verwendet werden können. Search-add-ins funktionieren nur mit Daten, die im Suchindex gespeichert sind und nicht mit den ursprünglichen Quelldokumenten. SharePoint-Add-Ins sind eigenständig der Funktionalität, die Erweiterung der Fähigkeiten einer SharePoint-Website. Diese-add-ins zu spezifische Bedürfnissen von Geschäfts- und Endbenutzer durch die Integration von das beste aus dem Web- und SharePoint lösen. Ein Add-In kann verschiedene SharePoint Elemente wie Listen, Remote-Ereignisempfänger, Inhaltstypen, Workflows, benutzerdefinierte Workflowaktivitäten, Websitespalten, Module, im Menü Element benutzerdefinierte Aktionen, Client-Webparts und Suchkonfigurationen enthalten. Weitere Informationen finden Sie unter  [SharePoint-Add-Ins](http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx).
@@ -39,16 +39,13 @@ Es gibt zwei Methoden, um Ihre Suche-add-in bereitstellen:
 ## <a name="search-add-in-development-environment"></a>Add-in-Entwicklung suchumgebung
 <a name="SP15_Search_app_dev_environment"> </a>
 
-Um ein Search-add-in zu erstellen, verwenden Sie eine der folgenden zwei Umgebungen:
+Verwenden Sie die folgende Umgebung, um ein Such-Add-In zu erstellen.
   
     
     
 
 - Microsoft Visual Studio 2012 oder Microsoft Visual Studio 2013 oder Visual Studio 2015
-    
-  
-- Napa Office 365 Development Tools
-    
+        
   
 Mit Visual Studio 2013 und höher können Sie Ihre Such-Add-Ins sowohl lokal als auch in Office 365 veröffentlichen. Weitere Informationen zu den Entwicklungsumgebungen und zu deren Verwendung für die Erstellung von Such-Add-Ins finden Sie unter [Einrichten einer allgemeinen Entwicklungsumgebung für SharePoint](set-up-a-general-development-environment-for-sharepoint.md).
   
@@ -251,8 +248,7 @@ Die Manifestdatei-Add-in wird im XML-Format und kann direkt bearbeitet werden. W
 -  [Exportieren und Importieren von Konfigurationseinstellungen für Suche in SharePoint](exporting-and-importing-search-configuration-settings-in-sharepoint.md)
     
   
--  
-  [Exportieren und Importieren von benutzerdefinierten Suchkonfigurationseinstellungen in SharePoint (TechNet)](http://technet.microsoft.com/en-us/library/jj871675.aspx)
+-  [Exportieren und Importieren von benutzerdefinierten Suchkonfigurationseinstellungen in SharePoint (TechNet)](http://technet.microsoft.com/de-DE/library/jj871675.aspx)
     
   
 

@@ -1,15 +1,15 @@
 ---
-title: Vorgehensweise Erstellen eine Windows Phone SharePoint Liste app
+title: Erstellen einer Windows Phone SharePoint-Listen-App
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3e40c475-f4c1-4a4f-a3e5-1a55f814d272
-ms.openlocfilehash: 79c763ceaa201007d9a43047c7e71ab0682a4e04
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6d3a9f1f13f5c84a4a4260a7a68edfba6cef1264
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-a-windows-phone-sharepoint-list-app"></a>Vorgehensweise: Erstellen eine Windows Phone SharePoint Liste app
+# <a name="create-a-windows-phone-sharepoint-list-app"></a>Erstellen einer Windows Phone SharePoint-Listen-App
 Erstellen Sie eine Windows Phone-App in Visual Studio basierend auf der Vorlage "Windows Phone - SharePoint-Listenanwendung". Installieren von Windows Phone SharePoint SDK stellt zwei SharePoint-Anwendung für Windows Phone-Vorlagen zur Verfügung Sie in Visual Studio 2010 oder Visual Studio 2010 Express für Windows Phone. (Siehe  [Vorgehensweise: Einrichten einer Umgebung für die Entwicklung von mobilen Anwendungen für SharePoint](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md)). Mit der Vorlage Windows Phone SharePoint List Application können Sie die Schritte eines Assistenten zum Erstellen einer funktionalen Windows Phone-app ausführen, die zugreifen und Bearbeiten von Daten in einer SharePoint-Liste.
 
 

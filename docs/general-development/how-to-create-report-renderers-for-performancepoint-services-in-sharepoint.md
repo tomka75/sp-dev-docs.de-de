@@ -2,11 +2,11 @@
 title: "Erstellen von Berichtsrenderern für PerformancePoint-Dienste in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 44a84b222c6bb661b1b4560ab7b72a9063507d4e
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 14533254c82bcca8e5aaa53c7b37c54824106842
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-report-renderers-for-performancepoint-services-in-sharepoint"></a>Erstellen von Berichtsrenderern für PerformancePoint-Dienste in SharePoint
 
@@ -270,7 +270,7 @@ Nach dem Erstellen Sie eines Berichtsrenderers und eines Bericht-Editors (einsch
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addResources"> </a>
 
 

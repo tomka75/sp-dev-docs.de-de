@@ -3,11 +3,11 @@ title: Verwenden von SAP-Berichterstellung mit Duet Enterprise 2.0
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a54c6cd2-2283-440d-af55-e98e3212caa1
-ms.openlocfilehash: 089a22b0f96c4dd2cb5d4a7ad1808b4307986fb2
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 7d78e274bce0f3219dde79fd2cffa32c6ed9121c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-sap-reporting-with-duet-enterprise-20"></a>Verwenden von SAP-Berichterstellung mit Duet Enterprise 2.0
 
@@ -98,7 +98,7 @@ Innerhalb einer app ein Entwickler auch erstellen Sie eigene benutzerdefinierte 
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

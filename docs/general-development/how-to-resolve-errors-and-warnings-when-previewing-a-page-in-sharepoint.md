@@ -3,11 +3,11 @@ title: Beheben von Fehlern und Warnungen bei der Vorschau einer Seite in SharePo
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 03f72f65-b22b-4304-be92-f44ce0619372
-ms.openlocfilehash: 73895457694d250f1527b69bd558335fd573263c
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 455d7b7646ce2202c2333133f8c07c19ac9cf49c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="resolve-errors-and-warnings-when-previewing-a-page-in-sharepoint"></a>Beheben von Fehlern und Warnungen bei der Vorschau einer Seite in SharePoint
 
@@ -86,10 +86,8 @@ Sie können Ihrer Seite auch das HTML-Formularwebpart oder das InfoPath-Formular
 
 Für die Konvertierung einer HTML-Datei in die entsprechende ASP.NET-Datei muss die HTML-Datei XML-konform sein. Dieser Fehler gibt bestimmtes Markup in der HTML-Datei an, das nicht XML-kompatibel ist. Führen Sie die HTML-Datei über eine XML-Bestätigung aus, beheben Sie etwaige Probleme mit Ihrem HTML-Editor, speichern Sie die Datei und aktualisieren Sie dann die Vorschau.
   
-    
-    
-
-> **Hinweis:** Diese Anforderung setzt einige HTML 5-Normen außer Kraft. Beispielsweise können Sie den Dokumenttyp (doctype) in HTML 5 in Kleinschreibung angeben, während er in XML in Großbuchstaben geschrieben sein muss. 
+> [!NOTE]
+> Diese Anforderung setzt einige HTML 5-Normen außer Kraft. Beispielsweise können Sie den Dokumenttyp (doctype) in HTML 5 in Kleinschreibung angeben, während er in XML in Großbuchstaben geschrieben sein muss. 
   
     
     
@@ -171,7 +169,7 @@ Diese Meldung wird angezeigt, wenn Sie keine SharePoint-Liveseite verwenden, um 
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

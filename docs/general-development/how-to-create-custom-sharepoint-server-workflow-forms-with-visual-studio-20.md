@@ -3,23 +3,21 @@ title: Erstellen von benutzerdefinierten SharePoint-Workflowformularen mit Visua
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 26873259-330c-493f-b935-297a7a5a086d
-ms.openlocfilehash: 2a7b764a58e41ed8001da6bc5fde3fc1c398ed81
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6a6c2666c51b051bb715f2053cda41b441e8f8a9
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-custom-sharepoint-workflow-forms-with-visual-studio-2012"></a>Erstellen von benutzerdefinierten SharePoint-Workflowformularen mit Visual Studio 2012
+# <a name="create-custom-sharepoint-workflow-forms-with-visual-studio-2012"></a>Erstellen von benutzerdefinierten SharePoint-Workflowformularen mit Visual Studio 2012
+
 Stellt Workflowformulare in SharePoint vor. In diesem Artikel werden SharePoint mit dem öffentlichen Update vom März 2013 und Office Developer Tools für Visual Studio 2012 verwendet. Alle Informationen in diesem Artikel beziehen sich sowohl auf lokale Bereitstellungen von SharePoint als auch auf Office 365.
- **Bereitgestellt von:** [Andrew Connell](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/), [www.AndrewConnell.com](http://www.andrewconnell.com)
-  
-    
-    
+
+**Bereitgestellt von:** [Andrew Connell](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/), [www.AndrewConnell.com](http://www.andrewconnell.com)
 
 Seit der Einführung von Microsoft SharePoint 2007 unterstützt die SharePoint-Plattform Workflows zur Automatisierung von Geschäftsprozessen. Die SharePoint-Workflowplattform ist auf Windows Workflow Foundation aufgebaut, einem Teil des .NET Framework. Während die Workflowumgebung (Workflow Foundation) zahlreiche Funktionen zum Erstellen benutzerdefinierter Workflows und Verwalten automatisierter Geschäftsprozesse bereitstellt, ergänzt SharePoint darüber hinaus die Endbenutzerintegration. Diese Integration wird in zwei Teilen implementiert: 
 - Benutzern und Gruppen zugewiesene **Aufgaben**, die durch die Workflows erstellt und überwacht werden können.
-    
-  
+
 - **Formulare**, in denen Informationen von Benutzern erfasst werden, wenn Workflows einem Inhaltstyp (zum Beispiel einer Website, Liste oder Bibliothek) zugeordnet werden oder wenn ein Workflow gestartet wird.
     
   
@@ -663,8 +661,7 @@ In SharePoint wurden mehrere Verbesserungen für Workflows eingeführt. In diese
 <a name="sec7"> </a>
 
 
--  
-  [Zuordnungs- und -Initiierungsformulare für Workflows (SharePoint Foundation)](http://msdn.microsoft.com/en-us/library/office/ms481192%28v=office.14%29.aspx)
+-  [Zuordnungs- und -Initiierungsformulare für Workflows (SharePoint Foundation)](http://msdn.microsoft.com/de-DE/library/office/ms481192%28v=office.14%29.aspx)
     
   
 -  [Arbeiten mit dem clientseitigen Objektmodell in SharePoint-Workflowdiensten](working-with-the-sharepoint-workflow-services-client-side-object-model.md)

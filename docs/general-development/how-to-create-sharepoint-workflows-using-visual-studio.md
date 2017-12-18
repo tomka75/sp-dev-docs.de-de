@@ -1,39 +1,24 @@
 ---
-title: Gewusst wie Erstellen von SharePoint-Workflows mit Visual Studio
+title: Erstellen von SharePoint-Workflows mit Visual Studio
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 739af178-96b3-4630-bbc0-5def02065eeb
-ms.openlocfilehash: cd88dd212f9d025cf53293f5bea980443b9e8595
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2fcfd7a42984ccd1505cff600d75612e80b18f69
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-sharepoint-workflows-using-visual-studio"></a>Gewusst wie: Erstellen von SharePoint-Workflows mit Visual Studio
-Erfahren Sie mehr über die Grundlagen des Erstellens eines SharePoint-Workflows auf der neuen SharePoint-Workflowplattform. **Bereitgestellt von:** [Andrew Connell](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/),  [AndrewConnell.com](http://www.andrewconnell.com)
-  
-    
-    
+# <a name="create-sharepoint-workflows-using-visual-studio"></a>Erstellen von SharePoint-Workflows mit Visual Studio
 
+Erfahren Sie mehr über die Grundlagen des Erstellens eines SharePoint-Workflows auf der neuen SharePoint-Workflowplattform.
 
-  
-    
-    
+**Bereitgestellt von:** [Andrew Connell](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/), [www.AndrewConnell.com](http://www.andrewconnell.com)
 
-> **Hinweis:** Dieser Artikel enthält ein durchgängiges Codebeispiel, das Sie als Grundlage für eigene SharePoint-Workflowprojekte verwenden können oder um dem Artikel zu folgen. Den herunterladbaren Code finden Sie hier: LINK. 
-  
-    
-    
-
-
-  
-    
-    
-
-  
-    
+> **Hinweis:** Dieser Artikel enthält ein durchgängiges Codebeispiel. Sie können es nutzen, um die Informationen im Artikel nachzuvollziehen, oder es als Grundlage für die Erstellung eigener SharePoint-Workflows verwenden. Den herunterladbaren Code finden Sie hier: LINK. 
     
 Microsoft hat in SharePoint einen ganz anderen Ansatz für Workflows umgesetzt als in früheren Versionen. SharePoint-Workflows basieren jetzt auf Windows Workflow Foundation 4, und ihre Ausführung wird von einer neuen Komponente namens Workflow-Manager gesteuert, die extern von SharePoint ausgeführt wird.Workflow-Manager übernimmt die Rolle als Host für die Windows Workflow Foundation-Runtime und alle erforderlichen Dienste in einer hoch verfügbaren und skalierbaren Weise. Er nutzt Service Bus für Leistung und Skalierbarkeit und wird bei Bereitstellung in einer lokalen Bereitstellung exakt auf dieselbe Weise ausgeführt wie bei einer Bereitstellung an einen Cloud-basierten Dienst wie Office 365, da er für die Weitergabe der gesamten Workflowausführung und zugehöriger Aufgaben an die Workflow-Manager-Farm konfiguriert ist.Die drastische Änderung in der Workflowarchitektur machte einige Änderungen an den beiden primären Workflowerstellungstools für das Erstellen von benutzerdefinierten Workflows - Visual Studio und SharePoint Designer - erforderlich. In diesem Artikel wird die Verwendung von Visual Studio 2012 als Workflowerstellungstool zum Erstellen benutzerdefinierter Workflows zur Verwendung in **sp15allshort** -Bereitstellungen dargestellt, sowohl für lokale als auch für Office 365-Bereitstellungen
+
 ## <a name="types-of-workflows-in-visual-studio-2012"></a>Workflowtypen in Visual Studio 2012
 <a name="bm1"> </a>
 

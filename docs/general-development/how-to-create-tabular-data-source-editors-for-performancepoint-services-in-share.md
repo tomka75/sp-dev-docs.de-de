@@ -1,16 +1,18 @@
 ---
-title: "Vorgehensweise Erstellen tabellarische Datenquelle-Editoren für PerformancePoint Services in SharePoint"
+title: "Erstellen von tabellarischen Datenquellen-Editoren für PerformancePoint-Dienste in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3136420a-f8a2-4677-8b69-1d5d9705d96f
-ms.openlocfilehash: e17519a120a9a5d0c0c587adc1d9b8e9fc576200
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2ea178c0f757520bb65ac2d840022fcd2891b1fe
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-tabular-data-source-editors-for-performancepoint-services-in-sharepoint"></a>Vorgehensweise: Erstellen tabellarische Datenquelle-Editoren für PerformancePoint Services in SharePoint
+# <a name="create-tabular-data-source-editors-for-performancepoint-services-in-sharepoint"></a>Erstellen von tabellarischen Datenquellen-Editoren für PerformancePoint-Dienste in SharePoint
+
 In diesem Artikel erfahren Sie, wie die Editor-Komponente einer benutzerdefinierten Datenquellenerweiterung in Tabellenform für PerformancePoint-Dienste erstellt wird.
+
 ## <a name="what-are-custom-data-source-editors-for-performancepoint-services"></a>Was sind benutzerdefinierte Daten Editoren für PerformancePoint-Dienste ?
 <a name="bk_intro"> </a>
 

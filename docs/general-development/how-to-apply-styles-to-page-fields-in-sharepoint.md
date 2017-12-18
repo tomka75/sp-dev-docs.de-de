@@ -1,15 +1,15 @@
 ---
-title: Gewusst wie Anwenden von Formatvorlagen auf Seitenfelder in SharePoint
+title: Anwenden von Formatvorlagen auf Seitenfelder in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e227613d-0e4d-4312-924d-bb55e1fe4293
-ms.openlocfilehash: f8651a073c67d67e5a20a805c6bb9a2356141ae8
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 9804ef7fe338f668dd843f3c79c6a77d92310f17
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-apply-styles-to-page-fields-in-sharepoint"></a>Gewusst wie: Anwenden von Formatvorlagen auf Seitenfelder in SharePoint
+# <a name="apply-styles-to-page-fields-in-sharepoint"></a>Anwenden von Formatvorlagen auf Seitenfelder in SharePoint
 In einem Seitenlayout können Sie Formate auf ein Seitenfeld anwenden. Diese Formate werden dann auf alle Inhalte angewendet, die von Inhaltsautoren hinzugefügt werden, wenn sie eine Seite mithilfe dieses Seitenlayouts erstellen. Darüber hinaus stehen Ihnen weitere Optionen zur Verfügung, mit denen Sie steuern können, wie Inhalte in einem RichHtmlField-Seitenfeld formatiert werden.
 ## <a name="introduction-to-applying-styles-to-page-fields"></a>Einführung in das Anwenden von Formatvorlagen für Seitenfelder
 <a name="Introduction"> </a>
@@ -107,7 +107,7 @@ Wenn Sie diese Eigenschaften im Codeausschnittkatalog konfiguriert haben und dan
     
     
 
-Ein RichHtmlField-Seitenfeld enthält 28 verschiedene **Allow**-Eigenschaften. Weitere Informationen dazu, was die jeweiligen Eigenschaften steuern, finden Sie unter  [RichHtmlField-Eigenschaften](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.publishing.webcontrols.richhtmlfield_properties) Weitere Informationen zum Hinzufügen und Konfigurieren von Codeausschnitten finden Sie unter [Codeausschnitte des SharePoint-Entwurfs-Managers](sharepoint-design-manager-snippets.md).
+Ein RichHtmlField-Seitenfeld enthält 28 verschiedene **Allow**-Eigenschaften. Weitere Informationen dazu, was die jeweiligen Eigenschaften steuern, finden Sie unter  [RichHtmlField-Eigenschaften](http://msdn.microsoft.com/de-DE/library/microsoft.sharepoint.publishing.webcontrols.richhtmlfield_properties) Weitere Informationen zum Hinzufügen und Konfigurieren von Codeausschnitten finden Sie unter [Codeausschnitte des SharePoint-Entwurfs-Managers](sharepoint-design-manager-snippets.md).
   
     
     

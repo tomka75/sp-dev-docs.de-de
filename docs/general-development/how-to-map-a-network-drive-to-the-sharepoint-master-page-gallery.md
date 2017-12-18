@@ -1,15 +1,16 @@
 ---
-title: Gewusst wie Zuordnen eines Netzlaufwerks zum SharePoint-Gestaltungsvorlagenkatalog
+title: Zuordnen eines Netzlaufwerks zum SharePoint-Gestaltungsvorlagenkatalog
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7d416f6e-2471-4d03-97ae-4e8d907784c6
-ms.openlocfilehash: 39067623f653eec5764652255590ab5edf7e3741
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 7b86188fe330436d271cd4568dd161bb000e85c5
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-map-a-network-drive-to-the-sharepoint-master-page-gallery"></a>Vorgehensweise: Zuordnen eines Netzlaufwerks zum SharePoint-Gestaltungsvorlagenkatalog
+# <a name="map-a-network-drive-to-the-sharepoint-master-page-gallery"></a>Zuordnen eines Netzlaufwerks zum SharePoint-Gestaltungsvorlagenkatalog
+
 In diesem Artikel erfahren Sie, wie Sie dem Gestaltungsvorlagenkatalog ein Netzlaufwerk zuordnen, damit Sie den Entwurfs-Manager zum Hochladen von Designdateien in SharePoint verwenden können.
 Sie können mithilfe eines beliebigen Webdesigntools oder HTML-Editors ein visuelles Design für Ihre Website erstellen und dieses Design dann mit dem Entwurfs-Manager in SharePoint importieren. Zu diesem Zweck müssen Sie sicherstellen, dass das Designtool seine Dateien im Gestaltungsvorlagenkatalog Ihrer Website speichert; dies ist der Ort, an dem SharePoint die Dateien zu finden erwartet. Es wird empfohlen, dem Gestaltungsvorlagenkatalog ein Netzlaufwerk zuzuordnen, um das Speichern von Dateien am richtigen Speicherort zu vereinfachen.
   
@@ -33,13 +34,13 @@ Ermitteln Sie zunächst den Speicherort des Gestaltungsvorlagenkatalogs.
     
   
 Ordnen Sie auf dem Computer, auf dem das Designtool oder der HTML-Editor ausgeführt wird, dem soeben kopierten Speicherort ein Netzlaufwerk zu. Das Verfahren zum Zuordnen von Netzwerklaufwerken unterscheidet sich je nach Betriebssystem des Computers:
-- Führen Sie für einen Computer unter Windows 8 die Schritte aus, die in der Windows 8-Version des Artikels  [Erstellen einer Verknüpfung (Zuordnung) mit einem Netzlaufwerk](http://windows.microsoft.com/en-us/windows-8/create-shortcut-to-map-network-drive) beschrieben werden.
+- Führen Sie für einen Computer unter Windows 8 die Schritte aus, die in der Windows 8-Version des Artikels  [Erstellen einer Verknüpfung (Zuordnung) mit einem Netzlaufwerk](http://windows.microsoft.com/de-DE/windows-8/create-shortcut-to-map-network-drive) beschrieben werden.
     
   
-- Führen Sie für einen Computer unter Windows 7 die Schritte aus, die in der Windows 7-Version des Artikels  [Erstellen einer Verknüpfung (Zuordnung) mit einem Netzlaufwerk](http://windows.microsoft.com/en-US/windows7/Create-a-shortcut-to-map-a-network-drive) beschrieben werden.
+- Führen Sie für einen Computer unter Windows 7 die Schritte aus, die in der Windows 7-Version des Artikels  [Erstellen einer Verknüpfung (Zuordnung) mit einem Netzlaufwerk](http://windows.microsoft.com/de-DE/windows7/Create-a-shortcut-to-map-a-network-drive) beschrieben werden.
     
   
-- Führen Sie für einen Computer unter Windows Vista die Schritte aus, die in der -Version des Artikels  [Erstellen einer Verknüpfung (Zuordnung) mit einem Netzlaufwerk](http://windows.microsoft.com/en-US/windows-vista/Create-a-shortcut-to-map-a-network-drive) beschrieben werden.
+- Führen Sie für einen Computer unter Windows Vista die Schritte aus, die in der -Version des Artikels  [Erstellen einer Verknüpfung (Zuordnung) mit einem Netzlaufwerk](http://windows.microsoft.com/de-DE/windows-vista/Create-a-shortcut-to-map-a-network-drive) beschrieben werden.
     
   
 - Führen Sie auf einem Computer unter Windows XP die im Artikel  [Verbinden und Trennen eines Netzlaufwerks in Windows XP](http://support.microsoft.com/kb/308582) beschriebenen Schritte aus.

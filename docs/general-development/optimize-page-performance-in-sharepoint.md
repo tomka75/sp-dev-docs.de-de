@@ -3,11 +3,11 @@ title: Optimieren der Leistung in SharePoint Seite
 ms.date: 11/01/2017
 ms.prod: sharepoint
 ms.assetid: 262caeef-64fd-4e02-b947-d772faf01159
-ms.openlocfilehash: 628d42cd5c3deaf9fbf2d06a4024a9b97311154e
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 02b95e8c2b30c5236af293cde9c5b213f24c0d5e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="optimize-page-performance-in-sharepoint"></a>Optimieren der Leistung in SharePoint Seite
 
@@ -529,7 +529,7 @@ Es muss berücksichtigt werden, wohin die Anforderungen weitergeleitet oder wie 
 
 Ein Großteil der Richtlinien für die SharePoint 2010 Seite zur Optimierung der Leistung auf SharePoint angewendet wird. Dieser Artikel enthält einige der Elemente von Richtlinien für die SharePoint 2010 beim Einstieg in die neuen Bereiche, die speziell Leistung profitieren würden. Wir haben behandelt einige Verbesserungen, beispielsweise MDS und die erweiterte Entwicklerdashboard oder offensichtlich geändert wird. Wir mit der klassischen Anleitung eingeschlossen: Crunch nach unten JavaScript und cascading Stylesheets, ein CDN für allgemeine JavaScript Bibliotheken nach Möglichkeit zum Zwischenspeichern, kombinieren und Bilder so weit wie möglich komprimieren, beschränken oder Entfernen nicht benötigte Daten aus der Ansicht und erstellen Listenansichten überlegt, verwenden. Die Techniken und Funktionen, die in diesem Artikel erläuterten mitwirken für die Unterstützung der Leistungsziele.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Erstellen von Websites für SharePoint](build-sites-for-sharepoint.md)  

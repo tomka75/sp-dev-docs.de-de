@@ -1,16 +1,19 @@
 ---
-title: Gewusst wie Erstellen einer Gestaltungsvorlagen-Vorschaudatei in SharePoint
+title: Erstellen einer Gestaltungsvorlagen-Vorschaudatei in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 6825518d-eeb2-40b0-8a5b-897025f13796
-ms.openlocfilehash: 6082fd640879ce63e40889e95362195ab7e343b4
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 0b0b4cfcc06b8b72e30d92d80b568496d990b44a
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-a-master-page-preview-file-in-sharepoint"></a>Gewusst wie: Erstellen einer Gestaltungsvorlagen-Vorschaudatei in SharePoint
-Informationen zum Erstellen von Gestaltungsvorlagen-Vorschaudateien, die auf der SharePoint-Designoberfläche verwendet werden, um eine Vorschau ausgewählter Designkomponenten anzuzeigen. Der Assistent **Aussehen ändern** bietet den Einstiegspunkt in die Designoberfläche von SharePoint. Die Design Gallery ist die erste Seite im Assistenten **Aussehen ändern**. Sie enthält eine Miniaturansicht sämtlicher verfügbarer Designs. Benutzer wählen ein Design für ihre Website aus und können dieses dann auf der nächsten Seite anpassen. Anschließend können Benutzer eine Vorschau der Website anzeigen, bevor sie das Design auf ihre Website anwenden. Die Gestaltungsvorlagen-Vorschaudatei wird zur Generierung der Miniaturansichten und der Vorschaubilder verwendet. Wenn eine Gestaltungsvorlage nicht über eine zugehörige Vorschaudatei verfügt, kann sie nicht auf der Designoberfläche verwendet werden.
+# <a name="create-a-master-page-preview-file-in-sharepoint"></a>Erstellen einer Gestaltungsvorlagen-Vorschaudatei in SharePoint
+
+Informationen zum Erstellen von Gestaltungsvorlagen-Vorschaudateien, die auf der SharePoint-Designoberfläche verwendet werden, um eine Vorschau ausgewählter Designkomponenten anzuzeigen.
+
+Der Assistent **Aussehen ändern** bietet den Einstiegspunkt in die Designoberfläche von SharePoint. Die Design Gallery ist die erste Seite des Assistenten **Erscheinungsbild ändern**. In der Design Gallery wird eine Miniaturansicht sämtlicher verfügbarer Designs angezeigt. Benutzer wählen ein Design für ihre Website aus und können dieses dann auf der nächsten Seite anpassen. Anschließend können Benutzer eine Vorschau der Website anzeigen, bevor sie das Design auf ihre Website anwenden. Die Gestaltungsvorlagen-Vorschaudatei wird zur Generierung der Miniaturansichten und der Vorschaubilder verwendet. Wenn eine Gestaltungsvorlage nicht über eine zugehörige Vorschaudatei verfügt, kann sie nicht auf der Designoberfläche verwendet werden.
   
     
     
@@ -30,7 +33,7 @@ Tabelle 1 enthält Artikel, die die Kernkonzepte für die Verwendung von Gestalt
 |**Titel des Artikels**|**Beschreibung**|
 |:-----|:-----|
 | [Übersicht über Designs für SharePoint](themes-overview-for-sharepoint.md) <br/> |Informationen zur Designoberfläche in SharePoint.  <br/> |
-| [Auswählen eines Designs für Ihre Veröffentlichungswebsite](http://office.microsoft.com/en-us/office365-sharepoint-online-enterprise-help/choose-a-theme-for-your-publishing-site-HA102891580.aspx) <br/> |Erfahren Sie, wie Sie das Aussehen und Verhalten einer SharePoint-Website mithilfe des Assistenten **Aussehen ändern** ändern können. <br/> |
+| [Auswählen eines Designs für Ihre Veröffentlichungswebsite](http://office.microsoft.com/de-DE/office365-sharepoint-online-enterprise-help/choose-a-theme-for-your-publishing-site-HA102891580.aspx) <br/> |Erfahren Sie, wie Sie das Aussehen und Verhalten einer SharePoint-Website mithilfe des Assistenten **Aussehen ändern** ändern können. <br/> |
    
 
 ## <a name="what-is-a-master-page-preview-file"></a>Was ist eine Gestaltungsvorlagen-Vorschaudatei?

@@ -2,11 +2,11 @@
 title: "Übersicht über SharePoint-Webhooks"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 519ed85118d4295772c74fcc06ded68110497262
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: fa9edc4423c4e6ab7e1f3ff97dab8be10ff6d7f0
+ms.sourcegitcommit: 0d04831f6f30e5fbcf38d6509d602628552d0b28
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="overview-of-sharepoint-webhooks"></a>Übersicht über SharePoint-Webhooks
 
@@ -128,15 +128,13 @@ Der Hauptteil der HTTP-Anforderung an die Dienstbenachrichtigungs-URL enthält e
 }
 ```
 
-Die Benachrichtigung umfasst keine Informationen zu den Änderungen, durch die sie ausgelöst wurde. Ihre Anwendung verwendet die [GetChanges-API](https://msdn.microsoft.com/EN-US/library/office/dn531433.aspx#bk_ListGetChanges) in der Liste, um die Sammlung von Änderungen aus dem Änderungsprotokoll abzufragen und den Änderungstokenwert für alle nachfolgenden Aufrufe zu speichern, wenn die Anwendung benachrichtigt wird.
+Die Benachrichtigung umfasst keine Informationen zu den Änderungen, durch die sie ausgelöst wurde. Ihre Anwendung verwendet die [GetChanges-API](https://msdn.microsoft.com/de-DE/library/office/dn531433.aspx#bk_ListGetChanges) in der Liste, um die Sammlung von Änderungen aus dem Änderungsprotokoll abzufragen und den Änderungstokenwert für alle nachfolgenden Aufrufe zu speichern, wenn die Anwendung benachrichtigt wird.
 
 ## <a name="event-types"></a>Ereignistypen
 SharePoint-Webhooks unterstützen nur asynchrone Ereignisse. Das bedeutet, dass Webhooks nur nach einer Änderung ausgelöst werden (ähnlich wie **-ed**-Ereignisse). Somit sind synchrone Ereignisse (**-ing**-Ereignisse) nicht möglich.
 
 ## <a name="error-handling"></a>Fehlerbehandlung
-Wenn beim Senden der Benachrichtigung an Ihre Anwendung ein Fehler auftritt, folgt SharePoint der exponentiellen Back-off-Logik. Jede Antwort, die einen HTTP-Statuscode außerhalb des Bereichs 200-299 aufweist oder abläuft, wird in den nächsten Minuten wiederholt. Wenn die Anforderung nach 15 Minuten nicht erfolgreich ist, wird die Benachrichtigung gelöscht.
-
-Zukünftige Benachrichtigungen werden immer noch an Ihrer Anwendung gesendet, obwohl der Dienst möglicherweise das Abonnement entfernt, wenn eine ausreichende Anzahl fehlgeschlagener Versuche erkannt wird.
+Wenn beim Senden der Benachrichtigung an Ihre Anwendung ein Fehler auftritt, versucht SharePoint bis zu 5 Mal, die Benachrichtigung zuzustellen. Jede Antwort, die einen HTTP-Statuscode außerhalb des Bereichs 200-299 aufweist oder die abläuft, wird in 5 Minuten erneut versucht. Wenn die Anforderung nach 5 Versuchen nicht erfolgreich ist, wird die Benachrichtigung gelöscht. Weitere Benachrichtigungen an Ihre Anwendung werden weiterhin ausgeführt.
 
 ## <a name="expiration"></a>Ablauf
 Webhook-Abonnements laufen standardmäßig nach 6 Monaten ab, wenn kein **ExpirationDateTime**-Wert angegeben wird. 

@@ -1,16 +1,19 @@
 ---
-title: Vorgehensweise Erstellen einer OData-Datendiensts zur Verwendung als einer externen BCS-System
+title: "Erstellen eines OData-Datendiensts für die Verwendung als BCS-externes System"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7d7b3aa6-85b7-400d-8ea5-50bebac56a1d
-ms.openlocfilehash: 288a2b15329c934de74436e3bef4c319a07e6d7d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 71c2397d1064746db45a55b05452352dc6c8ef5c
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-an-odata-data-service-for-use-as-a-bcs-external-system"></a>Vorgehensweise: Erstellen einer OData-Datendiensts zur Verwendung als einer externen BCS-System
-In diesem Artikel erfahren sie, wie Sie einen im Internet aufrufbaren WCF-Dienst erstellen, der OData zum Senden von Benachrichtigungen an SharePoint verwendet, wenn die zugrunde liegenden Daten geändert werden. Mithilfe dieser Benachrichtigungen werden Ereignisse ausgelöst, die mit externen Listen verknüpft sind. In diesem Artikel wird beschrieben, wie zum Erstellen einer ASP.NET Windows Communication Foundation (WCF) Data-Dienst, die 2012 LT AdventureWorks-Beispieldatenbank verfügbar zu machen. So können Sie für den Datenzugriff über die Open Data Protocol (OData). Beim Zugriff über OData hergestellt wurde, können Sie einen externen Inhaltstyp für Business Connectivity Services (BCS) konfigurieren, mit der SharePoint, die Daten aus einer externen Datenbank verwenden können. Um diese OData-Quelle zu erhöhen, können Sie mit dem Dienst WCF Serviceverträge hinzufügen, mit die BCS, um Benachrichtigungen zu abonnieren, die angeben, dass die externen Daten geändert hat, kann.
+# <a name="create-an-odata-data-service-for-use-as-a-bcs-external-system"></a>Erstellen eines OData-Datendiensts für die Verwendung als BCS-externes System
+
+In diesem Artikel erfahren sie, wie Sie einen im Internet aufrufbaren WCF-Dienst erstellen, der OData zum Senden von Benachrichtigungen an SharePoint verwendet, wenn die zugrunde liegenden Daten geändert werden. Mithilfe dieser Benachrichtigungen werden Ereignisse ausgelöst, die mit externen Listen verknüpft sind.
+
+In diesem Artikel wird beschrieben, wie ein  ASP.NET Windows Communication Foundation (WCF)-Datendienst erstellt wird, um die AdventureWorks 2012 LT-Beispieldatenbank verfügbar zu  machen. Auf diese Weise können Sie über das Open Data-Protokoll (OData) auf die Daten zugreifen. Wenn der Zugriff über OData hergestellt wurde, können Sie den externen Inhaltstyp „Business Connectivity Services (BCS)“ konfigurieren, der ermöglicht, dass SharePoint die Daten aus der externen Datenbank verwendet. Zur weiteren Verbesserung dieser OData-Quelle können Sie Dienstverträge zum WCF-Dienst hinzufügen, sodass BCS Benachrichtigungen abonnieren kann, die darauf hinweisen, dass sich die externen Daten geändert haben.
   
     
     
@@ -65,8 +68,8 @@ In Tabelle 1 sind Artikel aufgeführt, Ihnen das Verständnis der Kernkonzepte d
 | [Verwenden von OData-Quellen mit Business Connectivity Services in SharePoint](using-odata-sources-with-business-connectivity-services-in-sharepoint.md) <br/> |Enthält Informationen, die Sie mit dem Erstellen von externer Inhaltstypen basierend auf OData-Quellen und Verwenden der Daten in SharePoint oder Office 2013-Komponenten unterstützen.  <br/> |
 | [Gewusst wie: Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint](how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint.md) <br/> |Erfahren Sie, wie Visual Studio 2012 verwenden, um eine veröffentlichte OData-Quelle ermitteln und erstellen Sie einen wiederverwendbaren externen Inhaltstyp im BCS in SharePoint verwenden.  <br/> |
 | [Open Data Protocol](http://www.odata.org) <br/> |Enthält Informationen zu den Open Data Protocol, einschließlich Definitionen des Protokolls, architektonische Informationen und Beispiele für die Verwendung.  <br/> |
-| [WCF Data Services (Übersicht)](http://msdn.microsoft.com/en-us/library/cc668794.aspx) <br/> |WCF Data Services ermöglicht die Erstellung und Verwendung von Data Services für das Internet oder Intranet mithilfe von OData. OData können Sie Ihre Daten als Ressourcen verfügbar machen, adressierbar über URIs sind.  <br/> |
-| [Entwickeln und Bereitstellen von WCF Data Services](http://msdn.microsoft.com/en-us/library/gg258442) <br/> |Enthält Informationen zu entwickeln und Bereitstellen von WCF Data Services.  <br/> |
+| [WCF Data Services (Übersicht)](http://msdn.microsoft.com/de-DE/library/cc668794.aspx) <br/> |WCF Data Services ermöglicht die Erstellung und Verwendung von Data Services für das Internet oder Intranet mithilfe von OData. OData können Sie Ihre Daten als Ressourcen verfügbar machen, adressierbar über URIs sind.  <br/> |
+| [Entwickeln und Bereitstellen von WCF Data Services](http://msdn.microsoft.com/de-DE/library/gg258442) <br/> |Enthält Informationen zu entwickeln und Bereitstellen von WCF Data Services.  <br/> |
    
 
 ### <a name="steps-involved-in-creating-the-external-system"></a>Schritte zum Erstellen des externen Systems

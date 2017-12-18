@@ -2,11 +2,11 @@
 title: "Übersicht über das SharePoint Framework"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: afb4f919b242e7409141cf771c88711025f9fdbb
-ms.sourcegitcommit: 11d9185437fc819ab41421c0f4fe06aa300b9d28
+ms.openlocfilehash: e0614bc85a914178a01d0030748461901aa0b563
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="overview-of-the-sharepoint-framework"></a>Übersicht über das SharePoint-Framework
 
@@ -65,7 +65,7 @@ Wenn Sie noch Fragen haben, stellen Sie diese auf [SharePoint StackExchange](htt
 
 Sie können auch Probleme, Fragen oder Feedback zu den Dokumenten oder dem SharePoint Framework in unserem [GitHub-Repository](https://github.com/SharePoint/sp-dev-docs/issues) veröffentlichen.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 
 - [Übersicht über clientseitige SharePoint-Webparts](./web-parts/overview-client-side-web-parts.md)
 - [Übersicht über SharePoint-Framework-Erweiterungen](./extensions/overview-extensions.md)

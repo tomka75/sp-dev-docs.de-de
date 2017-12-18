@@ -1,16 +1,18 @@
 ---
-title: Vorgehensweise Erstellen eines Seitenlayouts in SharePoint
+title: Erstellen eines Seitenlayouts in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 5447e6a1-2f14-4667-81d0-7514b468be80
-ms.openlocfilehash: b00f4d5982a854596cc9e57b7a2f2e132f3826c1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: d339ad79d6cc0aff74fe3e01dc4a310b32769f0a
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-a-page-layout-in-sharepoint"></a>Vorgehensweise: Erstellen eines Seitenlayouts in SharePoint
-Wenn Sie den Entwurfs-Manager zum Erstellen eines Seitenlayouts verwenden, werden zwei Dateien erstellt: eine .aspx-Datei, die SharePoint verwendet, und eine HTML-Version dieses Seitenlayouts, die Sie in Ihrem HTML-Editor bearbeiten können. Die HTML-Datei und das HTML-Seitenlayout sind verknüpft, sodass Ihre Änderungen mit dem entsprechenden Seitenlayout synchronisiert werden, wenn Sie die HTML-Datei bearbeiten und speichern.
+# <a name="create-a-page-layout-in-sharepoint"></a>Erstellen eines Seitenlayouts in SharePoint
+
+Wenn Sie den Entwurfs-Manager zum Erstellen eines Seitenlayouts verwenden, werden zwei Dateien erstellt: eine ASPX-Datei, die SharePoint verwendet, und eine HTML-Version dieses Seitenlayouts, die Sie in Ihrem HTML-Editor bearbeiten können. Die HTML-Datei und das HTML-Seitenlayout sind verknüpft, sodass Ihre Änderungen mit dem entsprechenden Seitenlayout synchronisiert werden, wenn Sie die HTML-Datei bearbeiten und speichern.
+
 ## <a name="introduction-to-page-layouts"></a>Einführung in Seitenlayouts
 <a name="Introduction"> </a>
 

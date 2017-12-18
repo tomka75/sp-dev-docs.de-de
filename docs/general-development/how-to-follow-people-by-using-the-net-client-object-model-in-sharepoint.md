@@ -1,16 +1,18 @@
 ---
-title: "Vorgehensweise führen Sie die Personen mithilfe des clientobjektmodells .NET SharePoint"
+title: Folgen von Personen mithilfe des .NET-Clientobjektmodells in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 0fdb7ca5-d408-4256-b52b-886c4bc3b5b8
-ms.openlocfilehash: 3c097c476f3bb020a26f0baf9b2dcdb23babb1a3
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 7bef2d0bdef87db1d0234acba60341ff22254df8
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint"></a>Vorgehensweise: Folgen von Personen mithilfe des .NET-Clientobjektmodells in SharePoint
+# <a name="follow-people-by-using-the-net-client-object-model-in-sharepoint"></a>Folgen von Personen mithilfe des .NET-Clientobjektmodells in SharePoint
+
 In diesem Artikel erfahren Sie, wie Sie mithilfe des .NET-Clientobjektmodells in SharePoint mit Features zum Folgen von Personen arbeiten.
+
 ## <a name="why-use-following-people-features-in-sharepoint"></a>Gründe für die Verwendung von Features zum Folgen von Personen in SharePoint
 
 Wenn in SharePoint ein Benutzer Personen folgt, werden die Beiträge und Aktivitäten der gefolgten Personen im Newsfeed des Benutzers angezeigt. Indem Sie Features zum Folgen von Personen nutzen, damit sich Benutzer auf die Personen konzentrieren können, die für sie wichtig sind, können Sie die Relevanz Ihrer App oder Lösung verbessern. Im .NET-Clientobjektmodell werden Personen, denen Sie folgen, durch [SocialActor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActor.aspx)-Objekte dargestellt. Zum Durchführen der Hauptaufgaben zum Folgen von Personen im .NET-Clientobjektmodell verwenden Sie das [SocialFollowingManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx)-Objekt. In diesem Artikel erfahren Sie, wie Sie mithilfe des .NET-Clientobjektmodells mit Features zum Folgen von Personen arbeiten.

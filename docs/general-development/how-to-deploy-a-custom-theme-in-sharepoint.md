@@ -1,15 +1,16 @@
 ---
-title: Vorgehensweise Bereitstellen eines benutzerdefinierten Designs in SharePoint
+title: Bereitstellen eines benutzerdefinierten Designs in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f703df24-8e56-4e6a-bc37-95acbb3c83e8
-ms.openlocfilehash: 002ee3e01c3d68f28ceb4ac3e8c9f66b4a1dec8c
-ms.sourcegitcommit: 11d9185437fc819ab41421c0f4fe06aa300b9d28
+ms.openlocfilehash: 0f292d4d51cdce69b5828bdbd39c3514cc7ece27
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-deploy-a-custom-theme-in-sharepoint"></a>Vorgehensweise: Bereitstellen eines benutzerdefinierten Designs in SharePoint
+# <a name="deploy-a-custom-theme-in-sharepoint"></a>Bereitstellen eines benutzerdefinierten Designs in SharePoint
+
 Hier finden Sie Informationen dazu, wie Sie mithilfe der Benutzeroberfläche oder durch Implementierung eines Featureempfängers ein benutzerdefiniertes Design auf einer SharePoint-Website bereitstellen. SharePoint enthält vorinstallierte Designs. Sie können zusätzliche Farbpaletten, Schriftartenschemas und Gestaltungsvorlagen erstellen und so benutzerdefinierte Designs erstellen. Sobald die Dateien in die Design Gallery und den Gestaltungsvorlagenkatalog hochgeladen wurden, können Sie ein Design mithilfe der Benutzeroberfläche oder mithilfe von Code bereitstellen. Weitere Informationen zu Farbpaletten und Schriftartenschemas finden Sie unter  [Farbpaletten und Schriftarten in SharePoint](color-palettes-and-fonts-in-sharepoint.md).
   
     

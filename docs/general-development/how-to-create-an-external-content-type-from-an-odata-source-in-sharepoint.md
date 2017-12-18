@@ -1,16 +1,18 @@
 ---
-title: Gewusst wie Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint
+title: Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: bc60ea49-c44e-4531-af62-06b8cf77d35d
-ms.openlocfilehash: addfafb7917d3e4c5c35c3f5c2e67dbb4051fa43
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 9ddf00811e05fcca25b4c4f406ac22ce5de9aca0
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint"></a>Gewusst wie: Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint
+# <a name="create-an-external-content-type-from-an-odata-source-in-sharepoint"></a>Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint
+
 In diesem Artikel erfahren Sie, wie Sie Visual Studio 2012 verwenden, um eine veröffentlichte OData-Quelle zu erkennen und einen wieder verwendbaren externen Inhaltstyp für die Verwendung in Business Connectivity Services (BCS) in SharePoint zu erstellen.
+
 ## <a name="prerequisites-for-creating-odata-based-external-content-types"></a>Voraussetzungen für das Erstellen von OData-basierten externen Inhaltstypen
 <a name="bkmk_Prerequisites"> </a>
 
