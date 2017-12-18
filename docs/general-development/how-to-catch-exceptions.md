@@ -1,19 +1,19 @@
 ---
-title: How to Catch Exceptions
+title: Erfassen von Ausnahmen
 ms.date: 09/25/2017
 keywords: errors,how to,howdoi,howto
 f1_keywords: errors,how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: de5fdb67-201b-4d7a-90a8-99ab7e51ea4e
-ms.openlocfilehash: de6e3df6cdc37eade4d3c52c843b7c70278f3300
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6cddc476c859aef2993bfd6192337c9b8df524a1
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-catch-exceptions"></a><span data-ttu-id="73d0c-103">How to: Catch Exceptions</span><span class="sxs-lookup"><span data-stu-id="73d0c-103">How to: Catch Exceptions</span></span>
+# <a name="catch-exceptions"></a><span data-ttu-id="99514-103">Erfassen von Ausnahmen</span><span class="sxs-lookup"><span data-stu-id="99514-103">How to: Catch Exceptions</span></span>
 
-<span data-ttu-id="73d0c-p101">You place the sections of code that might throw exceptions in a try block and place code that handles exceptions in a catch block. The order of catch statements is important. When an exception occurs, it is passed up the stack and each catch block is given the opportunity to handle it. The catch block that should handle the exception is determined by matching the type of the exception to the name of the exception specified in the catch block. For example, the following catch block catches Simple Object Access Protocol (SOAP) exceptions:</span><span class="sxs-lookup"><span data-stu-id="73d0c-p101">You place the sections of code that might throw exceptions in a try block and place code that handles exceptions in a catch block. The order of catch statements is important. When an exception occurs, it is passed up the stack and each catch block is given the opportunity to handle it. The catch block that should handle the exception is determined by matching the type of the exception to the name of the exception specified in the catch block. For example, the following catch block catches Simple Object Access Protocol (SOAP) exceptions:</span></span>
+<span data-ttu-id="99514-p101">You place the sections of code that might throw exceptions in a try block and place code that handles exceptions in a catch block. The order of catch statements is important. When an exception occurs, it is passed up the stack and each catch block is given the opportunity to handle it. The catch block that should handle the exception is determined by matching the type of the exception to the name of the exception specified in the catch block. For example, the following catch block catches Simple Object Access Protocol (SOAP) exceptions:</span><span class="sxs-lookup"><span data-stu-id="99514-p101">You place the sections of code that might throw exceptions in a try block and place code that handles exceptions in a catch block. The order of catch statements is important. When an exception occurs, it is passed up the stack and each catch block is given the opportunity to handle it. The catch block that should handle the exception is determined by matching the type of the exception to the name of the exception specified in the catch block. For example, the following catch block catches Simple Object Access Protocol (SOAP) exceptions:</span></span>
   
     
     
@@ -39,7 +39,7 @@ Catch e As SoapException
 End Try
 ```
 
-<span data-ttu-id="73d0c-p102">If no type-specific catch block exists, the exception is caught by a general catch block, if one exists. For example, you can catch general exceptions by adding the following code:</span><span class="sxs-lookup"><span data-stu-id="73d0c-p102">If no type-specific catch block exists, the exception is caught by a general catch block, if one exists. For example, you can catch general exceptions by adding the following code:</span></span>
+<span data-ttu-id="99514-p102">If no type-specific catch block exists, the exception is caught by a general catch block, if one exists. For example, you can catch general exceptions by adding the following code:</span><span class="sxs-lookup"><span data-stu-id="99514-p102">If no type-specific catch block exists, the exception is caught by a general catch block, if one exists. For example, you can catch general exceptions by adding the following code:</span></span>
 
 
 ```cs
@@ -60,8 +60,8 @@ Catch e As Exception
 End Try
 ```
 
-<span data-ttu-id="73d0c-p103">You place catch blocks targeted to specific types of exceptions before a general exception. The common language runtime catches exceptions that are not caught by a catch block. Depending on how the runtime is configured, either a debug dialog box appears, or the program stops executing and a dialog box with exception information appears. For information about debugging, see  [Debugging and Profiling Applications](http://go.microsoft.com/fwlink/?LinkId=64641) (http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpcondebuggingprofiling.asp).For more information about how to handle exceptions, see  [Best Practices for Handling Exceptions](http://go.microsoft.com/fwlink/?LinkId=64480) (http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconbestpracticesforhandlingexceptions.asp).</span><span class="sxs-lookup"><span data-stu-id="73d0c-p103">You place catch blocks targeted to specific types of exceptions before a general exception. The common language runtime catches exceptions that are not caught by a catch block. Depending on how the runtime is configured, either a debug dialog box appears, or the program stops executing and a dialog box with exception information appears. For information about debugging, see  [Debugging and Profiling Applications](http://go.microsoft.com/fwlink/?LinkId=64641) (http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpcondebuggingprofiling.asp).For more information about how to handle exceptions, see  [Best Practices for Handling Exceptions](http://go.microsoft.com/fwlink/?LinkId=64480) (http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconbestpracticesforhandlingexceptions.asp).</span></span>
-## <a name="example"></a><span data-ttu-id="73d0c-115">Beispiel</span><span class="sxs-lookup"><span data-stu-id="73d0c-115">Example</span></span>
+<span data-ttu-id="99514-p103">You place catch blocks targeted to specific types of exceptions before a general exception. The common language runtime catches exceptions that are not caught by a catch block. Depending on how the runtime is configured, either a debug dialog box appears, or the program stops executing and a dialog box with exception information appears. For information about debugging, see  [Debugging and Profiling Applications](http://go.microsoft.com/fwlink/?LinkId=64641) (http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpcondebuggingprofiling.asp).For more information about how to handle exceptions, see  [Best Practices for Handling Exceptions](http://go.microsoft.com/fwlink/?LinkId=64480) (http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconbestpracticesforhandlingexceptions.asp).</span><span class="sxs-lookup"><span data-stu-id="99514-p103">You place catch blocks targeted to specific types of exceptions before a general exception. The common language runtime catches exceptions that are not caught by a catch block. Depending on how the runtime is configured, either a debug dialog box appears, or the program stops executing and a dialog box with exception information appears. For information about debugging, see  [Debugging and Profiling Applications](http://go.microsoft.com/fwlink/?LinkId=64641) (http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpcondebuggingprofiling.asp).For more information about how to handle exceptions, see  [Best Practices for Handling Exceptions](http://go.microsoft.com/fwlink/?LinkId=64480) (http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconbestpracticesforhandlingexceptions.asp).</span></span>
+## <a name="example"></a><span data-ttu-id="99514-115">Beispiel</span><span class="sxs-lookup"><span data-stu-id="99514-115">Example</span></span>
 
 
 ```cs
@@ -198,47 +198,47 @@ End Namespace
 ```
 
 
-## <a name="see-also"></a><span data-ttu-id="73d0c-116">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="73d0c-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="99514-116">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="99514-116">See also</span></span>
 
 
-#### <a name="tasks"></a><span data-ttu-id="73d0c-117">Aufgaben</span><span class="sxs-lookup"><span data-stu-id="73d0c-117">Tasks</span></span>
-
-
-  
-    
-    
- [<span data-ttu-id="73d0c-118">How to: Trust a Location</span><span class="sxs-lookup"><span data-stu-id="73d0c-118">How to: Trust a Location</span></span>](how-to-trust-a-location.md)
-  
-    
-    
- [<span data-ttu-id="73d0c-119">How to: Save from Excel Client to the Server</span><span class="sxs-lookup"><span data-stu-id="73d0c-119">How to: Save from Excel Client to the Server</span></span>](how-to-save-from-excel-client-to-the-server.md)
-  
-    
-    
- [<span data-ttu-id="73d0c-120">How to: Use the SubCode Property to Capture Error Codes</span><span class="sxs-lookup"><span data-stu-id="73d0c-120">How to: Use the SubCode Property to Capture Error Codes</span></span>](how-to-use-the-subcode-property-to-capture-error-codes.md)
-#### <a name="concepts"></a><span data-ttu-id="73d0c-121">Konzepte</span><span class="sxs-lookup"><span data-stu-id="73d0c-121">Concepts</span></span>
+#### <a name="tasks"></a><span data-ttu-id="99514-117">Aufgaben</span><span class="sxs-lookup"><span data-stu-id="99514-117">Tasks</span></span>
 
 
   
     
     
- [<span data-ttu-id="73d0c-122">Accessing the SOAP API</span><span class="sxs-lookup"><span data-stu-id="73d0c-122">Accessing the SOAP API</span></span>](accessing-the-soap-api.md)
+ [<span data-ttu-id="99514-118">How to: Trust a Location</span><span class="sxs-lookup"><span data-stu-id="99514-118">How to: Trust a Location</span></span>](how-to-trust-a-location.md)
   
     
     
- [<span data-ttu-id="73d0c-123">Excel Services Alerts</span><span class="sxs-lookup"><span data-stu-id="73d0c-123">Excel Services Alerts</span></span>](excel-services-alerts.md)
+ [<span data-ttu-id="99514-119">How to: Save from Excel Client to the Server</span><span class="sxs-lookup"><span data-stu-id="99514-119">How to: Save from Excel Client to the Server</span></span>](how-to-save-from-excel-client-to-the-server.md)
   
     
     
- [<span data-ttu-id="73d0c-124">Excel Services Known Issues and Tips</span><span class="sxs-lookup"><span data-stu-id="73d0c-124">Excel Services Known Issues and Tips</span></span>](excel-services-known-issues-and-tips.md)
-  
-    
-    
- [<span data-ttu-id="73d0c-125">Loop-Back SOAP Calls and Direct Linking</span><span class="sxs-lookup"><span data-stu-id="73d0c-125">Loop-Back SOAP Calls and Direct Linking</span></span>](loop-back-soap-calls-and-direct-linking.md)
-#### <a name="other-resources"></a><span data-ttu-id="73d0c-126">Sonstige Ressourcen</span><span class="sxs-lookup"><span data-stu-id="73d0c-126">Other resources</span></span>
+ [<span data-ttu-id="99514-120">How to: Use the SubCode Property to Capture Error Codes</span><span class="sxs-lookup"><span data-stu-id="99514-120">How to: Use the SubCode Property to Capture Error Codes</span></span>](how-to-use-the-subcode-property-to-capture-error-codes.md)
+#### <a name="concepts"></a><span data-ttu-id="99514-121">Konzepte</span><span class="sxs-lookup"><span data-stu-id="99514-121">Concepts</span></span>
 
 
   
     
     
- [<span data-ttu-id="73d0c-127">Walkthrough: Developing a Custom Application Using Excel Web Services</span><span class="sxs-lookup"><span data-stu-id="73d0c-127">Walkthrough: Developing a Custom Application Using Excel Web Services</span></span>](walkthrough-developing-a-custom-application-using-excel-web-services.md)
+ [<span data-ttu-id="99514-122">Accessing the SOAP API</span><span class="sxs-lookup"><span data-stu-id="99514-122">Accessing the SOAP API</span></span>](accessing-the-soap-api.md)
+  
+    
+    
+ [<span data-ttu-id="99514-123">Excel Services Alerts</span><span class="sxs-lookup"><span data-stu-id="99514-123">Excel Services Alerts</span></span>](excel-services-alerts.md)
+  
+    
+    
+ [<span data-ttu-id="99514-124">Excel Services Known Issues and Tips</span><span class="sxs-lookup"><span data-stu-id="99514-124">Excel Services Known Issues and Tips</span></span>](excel-services-known-issues-and-tips.md)
+  
+    
+    
+ [<span data-ttu-id="99514-125">Loop-Back SOAP Calls and Direct Linking</span><span class="sxs-lookup"><span data-stu-id="99514-125">Loop-Back SOAP Calls and Direct Linking</span></span>](loop-back-soap-calls-and-direct-linking.md)
+#### <a name="other-resources"></a><span data-ttu-id="99514-126">Sonstige Ressourcen</span><span class="sxs-lookup"><span data-stu-id="99514-126">Other resources</span></span>
+
+
+  
+    
+    
+ [<span data-ttu-id="99514-127">Walkthrough: Developing a Custom Application Using Excel Web Services</span><span class="sxs-lookup"><span data-stu-id="99514-127">Walkthrough: Developing a Custom Application Using Excel Web Services</span></span>](walkthrough-developing-a-custom-application-using-excel-web-services.md)
