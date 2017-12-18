@@ -1,25 +1,25 @@
 ---
-title: How to Set Various Credentials
+title: Festlegen von verschiedenen Anmeldeinformationen
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: eb819681-5a4f-49ae-b7f4-334366c51112
-ms.openlocfilehash: a1faa07c07c24886d73874af54d125e713fd7c87
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 03efdb576c70191c911d7668a3343b5ad832ea0e
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-set-various-credentials"></a><span data-ttu-id="58d93-102">How to: Set Various Credentials</span><span class="sxs-lookup"><span data-stu-id="58d93-102">How to: Set Various Credentials</span></span>
+# <a name="set-various-credentials"></a><span data-ttu-id="ea56a-102">Festlegen von verschiedenen Anmeldeinformationen</span><span class="sxs-lookup"><span data-stu-id="ea56a-102">How to: Set Various Credentials</span></span>
 
-<span data-ttu-id="58d93-p101">You must set credentials for your users before they can call Excel Web Services by using your custom application. You must explicitly set credentials even if you intend to use the default credentials. Excel Web Services uses the authentication schemes that Microsoft SharePoint Foundation supports. For more information about SharePoint Foundation authentication schemes, see the SharePoint Foundation documentation in this SDK and  [Eingehende Ansprüche: Anmelden bei SharePoint](incoming-claims-signing-into-sharepoint.md).</span><span class="sxs-lookup"><span data-stu-id="58d93-p101">You must set credentials for your users before they can call Excel Web Services by using your custom application. You must explicitly set credentials even if you intend to use the default credentials. Excel Web Services uses the authentication schemes that Microsoft SharePoint Foundation supports. For more information about SharePoint Foundation authentication schemes, see the SharePoint Foundation documentation in this SDK and  [Incoming claims: Signing into SharePoint](incoming-claims-signing-into-sharepoint.md).</span></span>
+<span data-ttu-id="ea56a-p101">You must set credentials for your users before they can call Excel Web Services by using your custom application. You must explicitly set credentials even if you intend to use the default credentials. Excel Web Services uses the authentication schemes that Microsoft SharePoint Foundation supports. For more information about SharePoint Foundation authentication schemes, see the SharePoint Foundation documentation in this SDK and  [Eingehende Ansprüche: Anmelden bei SharePoint](incoming-claims-signing-into-sharepoint.md).</span><span class="sxs-lookup"><span data-stu-id="ea56a-p101">You must set credentials for your users before they can call Excel Web Services by using your custom application. You must explicitly set credentials even if you intend to use the default credentials. Excel Web Services uses the authentication schemes that Microsoft SharePoint Foundation supports. For more information about SharePoint Foundation authentication schemes, see the SharePoint Foundation documentation in this SDK and  [Incoming claims: Signing into SharePoint](incoming-claims-signing-into-sharepoint.md).</span></span>
   
     
     
 
-<span data-ttu-id="58d93-107">The following examples show how to set credentials.</span><span class="sxs-lookup"><span data-stu-id="58d93-107">The following examples show how to set credentials.</span></span>
-## <a name="to-use-the-current-users-credentials"></a><span data-ttu-id="58d93-108">To use the current user's credentials</span><span class="sxs-lookup"><span data-stu-id="58d93-108">To use the current user's credentials</span></span>
+<span data-ttu-id="ea56a-107">The following examples show how to set credentials.</span><span class="sxs-lookup"><span data-stu-id="ea56a-107">The following examples show how to set credentials.</span></span>
+## <a name="to-use-the-current-users-credentials"></a><span data-ttu-id="ea56a-108">To use the current user's credentials</span><span class="sxs-lookup"><span data-stu-id="ea56a-108">To use the current user's credentials</span></span>
 
-<span data-ttu-id="58d93-109">The following code uses the current user's logon credentials to make a request to the Web service.</span><span class="sxs-lookup"><span data-stu-id="58d93-109">The following code uses the current user's logon credentials to make a request to the Web service.</span></span> 
+<span data-ttu-id="ea56a-109">The following code uses the current user's logon credentials to make a request to the Web service.</span><span class="sxs-lookup"><span data-stu-id="ea56a-109">The following code uses the current user's logon credentials to make a request to the Web service.</span></span> 
   
     
     
@@ -43,13 +43,13 @@ xlService.Credentials = System.Net.CredentialCache.DefaultCredentials
 ```
 
 
-## <a name="to-use-various-sets-of-credentials"></a><span data-ttu-id="58d93-110">To use various sets of credentials</span><span class="sxs-lookup"><span data-stu-id="58d93-110">To use various sets of credentials</span></span>
+## <a name="to-use-various-sets-of-credentials"></a><span data-ttu-id="ea56a-110">To use various sets of credentials</span><span class="sxs-lookup"><span data-stu-id="ea56a-110">To use various sets of credentials</span></span>
 
-<span data-ttu-id="58d93-111">The following code uses the current user's logon credentials to make a request to the Web service.</span><span class="sxs-lookup"><span data-stu-id="58d93-111">The following code uses the current user's logon credentials to make a request to the Web service.</span></span> 
+<span data-ttu-id="ea56a-111">The following code uses the current user's logon credentials to make a request to the Web service.</span><span class="sxs-lookup"><span data-stu-id="ea56a-111">The following code uses the current user's logon credentials to make a request to the Web service.</span></span> 
   
     
     
- <span data-ttu-id="58d93-112">**Sample code provided by:** Saif Ullah Baig, Microsoft Corporation.</span><span class="sxs-lookup"><span data-stu-id="58d93-112">**Sample code provided by:** Saif Ullah Baig, Microsoft Corporation.</span></span>
+ <span data-ttu-id="ea56a-112">**Sample code provided by:** Saif Ullah Baig, Microsoft Corporation.</span><span class="sxs-lookup"><span data-stu-id="ea56a-112">**Sample code provided by:** Saif Ullah Baig, Microsoft Corporation.</span></span>
   
     
     
@@ -179,9 +179,9 @@ xlService.Credentials = System.Net.CredentialCache.DefaultCredentials
 ```
 
 
-## <a name="to-use-a-different-set-of-credentials"></a><span data-ttu-id="58d93-113">To use a different set of credentials</span><span class="sxs-lookup"><span data-stu-id="58d93-113">To use a different set of credentials</span></span>
+## <a name="to-use-a-different-set-of-credentials"></a><span data-ttu-id="ea56a-113">To use a different set of credentials</span><span class="sxs-lookup"><span data-stu-id="ea56a-113">To use a different set of credentials</span></span>
 
-<span data-ttu-id="58d93-114">The following code uses the current user's logon credentials to make a request to the Web service.</span><span class="sxs-lookup"><span data-stu-id="58d93-114">The following code uses the current user's logon credentials to make a request to the Web service.</span></span> 
+<span data-ttu-id="ea56a-114">The following code uses the current user's logon credentials to make a request to the Web service.</span><span class="sxs-lookup"><span data-stu-id="ea56a-114">The following code uses the current user's logon credentials to make a request to the Web service.</span></span> 
   
     
     
@@ -236,45 +236,45 @@ Public Sub VerifyCredentials()
 End Sub
 ```
 
-<span data-ttu-id="58d93-115">In this example, **LoginNameTextBox**, **LoginPWDTextBox**, and **LoginDomainTextBox** are the **Name** property values of the logon text boxes.</span><span class="sxs-lookup"><span data-stu-id="58d93-115">In this example, **LoginNameTextBox**, **LoginPWDTextBox**, and **LoginDomainTextBox** are the **Name** property values of the logon text boxes.</span></span>
+<span data-ttu-id="ea56a-115">In this example, **LoginNameTextBox**, **LoginPWDTextBox**, and **LoginDomainTextBox** are the **Name** property values of the logon text boxes.</span><span class="sxs-lookup"><span data-stu-id="ea56a-115">In this example, **LoginNameTextBox**, **LoginPWDTextBox**, and **LoginDomainTextBox** are the **Name** property values of the logon text boxes.</span></span>
   
     
     
-<span data-ttu-id="58d93-116">For more information about how to use the **CredentialCache** class and the **NetworkCredential** class, and how to use them securely, see the Microsoft Visual Studio documentation, or [NetworkCredential Class](http://msdn.microsoft.com/library/60b63419-9606-4fdc-a30f-257ded236f16.aspx).</span><span class="sxs-lookup"><span data-stu-id="58d93-116">For more information about how to use the **CredentialCache** class and the **NetworkCredential** class, and how to use them securely, see the Microsoft Visual Studio documentation, or [NetworkCredential Class](http://msdn.microsoft.com/library/60b63419-9606-4fdc-a30f-257ded236f16.aspx).</span></span>
+<span data-ttu-id="ea56a-116">For more information about how to use the **CredentialCache** class and the **NetworkCredential** class, and how to use them securely, see the Microsoft Visual Studio documentation, or [NetworkCredential Class](http://msdn.microsoft.com/library/60b63419-9606-4fdc-a30f-257ded236f16.aspx).</span><span class="sxs-lookup"><span data-stu-id="ea56a-116">For more information about how to use the **CredentialCache** class and the **NetworkCredential** class, and how to use them securely, see the Microsoft Visual Studio documentation, or [NetworkCredential Class](http://msdn.microsoft.com/library/60b63419-9606-4fdc-a30f-257ded236f16.aspx).</span></span>
   
     
     
 
-## <a name="see-also"></a><span data-ttu-id="58d93-117">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="58d93-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ea56a-117">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="ea56a-117">See also</span></span>
 
 
-#### <a name="concepts"></a><span data-ttu-id="58d93-118">Konzepte</span><span class="sxs-lookup"><span data-stu-id="58d93-118">Concepts</span></span>
-
-
-  
-    
-    
- [<span data-ttu-id="58d93-119">Accessing the SOAP API</span><span class="sxs-lookup"><span data-stu-id="58d93-119">Accessing the SOAP API</span></span>](accessing-the-soap-api.md)
-#### <a name="other-resources"></a><span data-ttu-id="58d93-120">Sonstige Ressourcen</span><span class="sxs-lookup"><span data-stu-id="58d93-120">Other resources</span></span>
+#### <a name="concepts"></a><span data-ttu-id="ea56a-118">Konzepte</span><span class="sxs-lookup"><span data-stu-id="ea56a-118">Concepts</span></span>
 
 
   
     
     
- [<span data-ttu-id="58d93-121">Step 1: Creating the Web Service Client Project</span><span class="sxs-lookup"><span data-stu-id="58d93-121">Step 1: Creating the Web Service Client Project</span></span>](step-1-creating-the-web-service-client-project.md)
+ [<span data-ttu-id="ea56a-119">Accessing the SOAP API</span><span class="sxs-lookup"><span data-stu-id="ea56a-119">Accessing the SOAP API</span></span>](accessing-the-soap-api.md)
+#### <a name="other-resources"></a><span data-ttu-id="ea56a-120">Sonstige Ressourcen</span><span class="sxs-lookup"><span data-stu-id="ea56a-120">Other resources</span></span>
+
+
   
     
     
- [<span data-ttu-id="58d93-122">Step 2: Adding a Web Reference</span><span class="sxs-lookup"><span data-stu-id="58d93-122">Step 2: Adding a Web Reference</span></span>](step-2-adding-a-web-reference.md)
+ [<span data-ttu-id="ea56a-121">Step 1: Creating the Web Service Client Project</span><span class="sxs-lookup"><span data-stu-id="ea56a-121">Step 1: Creating the Web Service Client Project</span></span>](step-1-creating-the-web-service-client-project.md)
   
     
     
- [<span data-ttu-id="58d93-123">Step 3: Accessing the Web Service</span><span class="sxs-lookup"><span data-stu-id="58d93-123">Step 3: Accessing the Web Service</span></span>](step-3-accessing-the-web-service.md)
+ [<span data-ttu-id="ea56a-122">Step 2: Adding a Web Reference</span><span class="sxs-lookup"><span data-stu-id="ea56a-122">Step 2: Adding a Web Reference</span></span>](step-2-adding-a-web-reference.md)
   
     
     
- [<span data-ttu-id="58d93-124">Step 4: Building and Testing the Application</span><span class="sxs-lookup"><span data-stu-id="58d93-124">Step 4: Building and Testing the Application</span></span>](step-4-building-and-testing-the-application.md)
+ [<span data-ttu-id="ea56a-123">Step 3: Accessing the Web Service</span><span class="sxs-lookup"><span data-stu-id="ea56a-123">Step 3: Accessing the Web Service</span></span>](step-3-accessing-the-web-service.md)
   
     
     
- [<span data-ttu-id="58d93-125">Walkthrough: Developing a Custom Application Using Excel Web Services</span><span class="sxs-lookup"><span data-stu-id="58d93-125">Walkthrough: Developing a Custom Application Using Excel Web Services</span></span>](walkthrough-developing-a-custom-application-using-excel-web-services.md)
+ [<span data-ttu-id="ea56a-124">Step 4: Building and Testing the Application</span><span class="sxs-lookup"><span data-stu-id="ea56a-124">Step 4: Building and Testing the Application</span></span>](step-4-building-and-testing-the-application.md)
+  
+    
+    
+ [<span data-ttu-id="ea56a-125">Walkthrough: Developing a Custom Application Using Excel Web Services</span><span class="sxs-lookup"><span data-stu-id="ea56a-125">Walkthrough: Developing a Custom Application Using Excel Web Services</span></span>](walkthrough-developing-a-custom-application-using-excel-web-services.md)
