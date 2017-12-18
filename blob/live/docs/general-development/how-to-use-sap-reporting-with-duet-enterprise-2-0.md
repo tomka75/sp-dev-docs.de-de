@@ -1,61 +1,61 @@
 ---
-title: Vorgehensweise Verwenden von SAP-Berichterstellung mit Duet Enterprise 2.0
+title: Verwenden von SAP-Berichterstellung mit Duet Enterprise 2.0
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a54c6cd2-2283-440d-af55-e98e3212caa1
-ms.openlocfilehash: 0d4e3b0f8ec5d3c54a52017b75768d8bbf6ac748
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 7d78e274bce0f3219dde79fd2cffa32c6ed9121c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="how-to-use-sap-reporting-with-duet-enterprise-20"></a><span data-ttu-id="2fb54-102">Vorgehensweise: Verwenden von SAP-Berichterstellung mit Duet Enterprise 2.0</span><span class="sxs-lookup"><span data-stu-id="2fb54-102">How to: Use SAP Reporting with Duet Enterprise 2.0</span></span>
+# <a name="use-sap-reporting-with-duet-enterprise-20"></a><span data-ttu-id="f8050-102">Verwenden von SAP-Berichterstellung mit Duet Enterprise 2.0</span><span class="sxs-lookup"><span data-stu-id="f8050-102">Use SAP Reporting with Duet Enterprise 2.0</span></span>
 
-## <a name="introduction"></a><span data-ttu-id="2fb54-103">Einführung</span><span class="sxs-lookup"><span data-stu-id="2fb54-103">Introduction</span></span>
-<span data-ttu-id="2fb54-104"><a name="bkmk_Introduction"> </a></span><span class="sxs-lookup"><span data-stu-id="2fb54-104"><a name="bkmk_Introduction"> </a></span></span>
+## <a name="introduction"></a><span data-ttu-id="f8050-103">Einführung</span><span class="sxs-lookup"><span data-stu-id="f8050-103">Introduction</span></span>
+<span data-ttu-id="f8050-104"><a name="bkmk_Introduction"> </a></span><span class="sxs-lookup"><span data-stu-id="f8050-104"><a name="bkmk_Introduction"> </a></span></span>
 
-<span data-ttu-id="2fb54-105">Duet Enterprise 2.0 ermöglicht die Duet-Berichtsfeatures innerhalb Ihrer SharePoint-Add-In integrieren, indem Sie wie folgt ein wenig Anpassung.</span><span class="sxs-lookup"><span data-stu-id="2fb54-105">Duet Enterprise 2.0 gives you the ability to integrate the Duet reporting features within your SharePoint Add-in by doing a little customization.</span></span>
+<span data-ttu-id="f8050-105">Duet Enterprise 2.0 ermöglicht die Duet-Berichtsfeatures innerhalb Ihrer SharePoint-Add-In integrieren, indem Sie wie folgt ein wenig Anpassung.</span><span class="sxs-lookup"><span data-stu-id="f8050-105">Duet Enterprise 2.0 gives you the ability to integrate the Duet reporting features within your SharePoint Add-in by doing a little customization.</span></span>
   
     
     
-<span data-ttu-id="2fb54-p101">Das Kennwort für die Aktivierung der berichterstellung für Ihre app ist mithilfe von einem ausgeblendeten Feature von Duet installiert. Sie müssen dieses Feature benutzerdefinierte Features Heften, damit die Instanziierung die app wird der SAP-Berichterstellungsfeatures die app zur Verfügung gestellt werden werden.</span><span class="sxs-lookup"><span data-stu-id="2fb54-p101">The secret to enabling reporting for your app is by using a hidden feature installed by Duet. You will need to staple this feature to custom features, so that when the app is instantiated, the SAP reporting features will be made available to the app.</span></span>
-  
-    
-    
-
-## <a name="enabling-the-features"></a><span data-ttu-id="2fb54-108">Aktivieren Sie die Funktionen</span><span class="sxs-lookup"><span data-stu-id="2fb54-108">Enabling the features</span></span>
-<span data-ttu-id="2fb54-109"><a name="bkmk_EnablingTheFeatures"> </a></span><span class="sxs-lookup"><span data-stu-id="2fb54-109"><a name="bkmk_EnablingTheFeatures"> </a></span></span>
-
-<span data-ttu-id="2fb54-110">Um die reporting Duet-Funktionen zu aktivieren, muss die Abfolge der Aktivierung sorgfältig folgen.</span><span class="sxs-lookup"><span data-stu-id="2fb54-110">To enable the Duet reporting features, the sequence of activation must be carefully followed.</span></span>
+<span data-ttu-id="f8050-p101">Das Kennwort für die Aktivierung der berichterstellung für Ihre app ist mithilfe von einem ausgeblendeten Feature von Duet installiert. Sie müssen dieses Feature benutzerdefinierte Features Heften, damit die Instanziierung die app wird der SAP-Berichterstellungsfeatures die app zur Verfügung gestellt werden werden.</span><span class="sxs-lookup"><span data-stu-id="f8050-p101">The secret to enabling reporting for your app is by using a hidden feature installed by Duet. You will need to staple this feature to custom features, so that when the app is instantiated, the SAP reporting features will be made available to the app.</span></span>
   
     
     
 
-### <a name="to-create-a-feature-to-add-the-app-scoped-external-content-type"></a><span data-ttu-id="2fb54-111">So erstellen Sie eine Funktion, um den app-bezogenen externen Inhaltstyp hinzuzufügen:</span><span class="sxs-lookup"><span data-stu-id="2fb54-111">To create a feature to add the app-scoped external content type:</span></span>
+## <a name="enabling-the-features"></a><span data-ttu-id="f8050-108">Aktivieren Sie die Funktionen</span><span class="sxs-lookup"><span data-stu-id="f8050-108">Enabling the features</span></span>
+<span data-ttu-id="f8050-109"><a name="bkmk_EnablingTheFeatures"> </a></span><span class="sxs-lookup"><span data-stu-id="f8050-109"><a name="bkmk_EnablingTheFeatures"> </a></span></span>
+
+<span data-ttu-id="f8050-110">Um die reporting Duet-Funktionen zu aktivieren, muss die Abfolge der Aktivierung sorgfältig folgen.</span><span class="sxs-lookup"><span data-stu-id="f8050-110">To enable the Duet reporting features, the sequence of activation must be carefully followed.</span></span>
+  
+    
+    
+
+### <a name="to-create-a-feature-to-add-the-app-scoped-external-content-type"></a><span data-ttu-id="f8050-111">So erstellen Sie eine Funktion, um den app-bezogenen externen Inhaltstyp hinzuzufügen:</span><span class="sxs-lookup"><span data-stu-id="f8050-111">To create a feature to add the app-scoped external content type:</span></span>
 
 
-1. <span data-ttu-id="2fb54-p102">Innerhalb Ihrer app, die Sie im **Projektmappen-Explorer** reporting Duet klicken Sie mit der rechten Maustaste auf den Projektnamen. Wählen Sie **Hinzufügen**, **Inhaltstypen für eine externe Datenquelle**. Klicken Sie auf **Weiter**.</span><span class="sxs-lookup"><span data-stu-id="2fb54-p102">Inside your Duet reporting app, in the **Solution Explorer**, right click the project name. Choose **Add**, **Content Types for an External Data Source**. Click **Next**.</span></span>
+1. <span data-ttu-id="f8050-p102">Innerhalb Ihrer app, die Sie im **Projektmappen-Explorer** reporting Duet klicken Sie mit der rechten Maustaste auf den Projektnamen. Wählen Sie **Hinzufügen**, **Inhaltstypen für eine externe Datenquelle**. Klicken Sie auf **Weiter**.</span><span class="sxs-lookup"><span data-stu-id="f8050-p102">Inside your Duet reporting app, in the **Solution Explorer**, right click the project name. Choose **Add**, **Content Types for an External Data Source**. Click **Next**.</span></span>
     
   
-2. <span data-ttu-id="2fb54-115">Geben Sie die URL für den Endpunkt SAP Reporting als OData-Quelle.</span><span class="sxs-lookup"><span data-stu-id="2fb54-115">Enter the URL for the SAP Reporting endpoint as the OData Source.</span></span>
+2. <span data-ttu-id="f8050-115">Geben Sie die URL für den Endpunkt SAP Reporting als OData-Quelle.</span><span class="sxs-lookup"><span data-stu-id="f8050-115">Enter the URL for the SAP Reporting endpoint as the OData Source.</span></span>
     
   
-3. <span data-ttu-id="2fb54-116">Wählen Sie die Entitäten, und wählen Sie **Fertig stellen**.</span><span class="sxs-lookup"><span data-stu-id="2fb54-116">Select the Entities, and choose **Finish**.</span></span>
+3. <span data-ttu-id="f8050-116">Wählen Sie die Entitäten, und wählen Sie **Fertig stellen**.</span><span class="sxs-lookup"><span data-stu-id="f8050-116">Select the Entities, and choose **Finish**.</span></span>
     
   
-4. <span data-ttu-id="2fb54-p103">Öffnen Sie den neu erstellten externen Inhaltstyp, um die LSI-Eigenschaften anzuzeigen. Sie sehen, dass sie die gleichen wie für die Farm-bezogenen externen Inhaltstyp mit Ausnahme der **ODataconnectionSettingsId**sind.</span><span class="sxs-lookup"><span data-stu-id="2fb54-p103">Open the newly created external content type to view the LSI properties. You will notice that they are the same as for the farm-scoped external content type except for the **ODataconnectionSettingsId**.</span></span>
+4. <span data-ttu-id="f8050-p103">Öffnen Sie den neu erstellten externen Inhaltstyp, um die LSI-Eigenschaften anzuzeigen. Sie sehen, dass sie die gleichen wie für die Farm-bezogenen externen Inhaltstyp mit Ausnahme der **ODataconnectionSettingsId**sind.</span><span class="sxs-lookup"><span data-stu-id="f8050-p103">Open the newly created external content type to view the LSI properties. You will notice that they are the same as for the farm-scoped external content type except for the **ODataconnectionSettingsId**.</span></span>
     
   
 
-### <a name="to-create-a-feature-to-enable-the-hidden-duet-features"></a><span data-ttu-id="2fb54-119">So erstellen Sie ein Feature, das die ausgeblendeten Duet-Funktionen zu aktivieren:</span><span class="sxs-lookup"><span data-stu-id="2fb54-119">To create a feature to enable the hidden Duet features:</span></span>
+### <a name="to-create-a-feature-to-enable-the-hidden-duet-features"></a><span data-ttu-id="f8050-119">So erstellen Sie ein Feature, das die ausgeblendeten Duet-Funktionen zu aktivieren:</span><span class="sxs-lookup"><span data-stu-id="f8050-119">To create a feature to enable the hidden Duet features:</span></span>
 
 
-1. <span data-ttu-id="2fb54-p104">Fügen Sie dem Projekt ein weiteres neues Feature hinzu. Name des Titels **AddDuetReporting**.</span><span class="sxs-lookup"><span data-stu-id="2fb54-p104">Add another new feature to your project. Name the title **AddDuetReporting**.</span></span>
+1. <span data-ttu-id="f8050-p104">Fügen Sie dem Projekt ein weiteres neues Feature hinzu. Name des Titels **AddDuetReporting**.</span><span class="sxs-lookup"><span data-stu-id="f8050-p104">Add another new feature to your project. Name the title **AddDuetReporting**.</span></span>
     
-    <span data-ttu-id="2fb54-122">Dieses Feature wird eine Abhängigkeit von der **AddReportingModel** und die **DuetReportingForApps** Features haben.</span><span class="sxs-lookup"><span data-stu-id="2fb54-122">This feature will have a dependency on the **AddReportingModel** and the **DuetReportingForApps** features.</span></span>
+    <span data-ttu-id="f8050-122">Dieses Feature wird eine Abhängigkeit von der **AddReportingModel** und die **DuetReportingForApps** Features haben.</span><span class="sxs-lookup"><span data-stu-id="f8050-122">This feature will have a dependency on the **AddReportingModel** and the **DuetReportingForApps** features.</span></span>
     
   
-2. <span data-ttu-id="2fb54-123">Fügen Sie den folgenden Code in die Datei **Elemente**.</span><span class="sxs-lookup"><span data-stu-id="2fb54-123">Add the following code to the **Elements** file.</span></span>
+2. <span data-ttu-id="f8050-123">Fügen Sie den folgenden Code in die Datei **Elemente**.</span><span class="sxs-lookup"><span data-stu-id="f8050-123">Add the following code to the **Elements** file.</span></span>
     
 ```
   
@@ -69,46 +69,46 @@ ms.lasthandoff: 10/13/2017
 
 ```
 
-<span data-ttu-id="2fb54-p105">Beachten Sie, dass die Reihenfolge in aktivierungsabhängigkeit wichtig ist. Zunächst müssen Sie den externen Inhaltstyp erstellen und aktivieren Sie das Feature **SAPReportingForApps**. Beachten Sie außerdem, dass das zweite Feature (ID: **9b60ccba-ebfd-4e38-87c8-3dea9cc2680a**) ist im Lieferumfang von Duet Enterprise 2.0, ist aber markiert als ausgeblendet. Bei diesem Ansatz kann Entwickler stellen dieses Feature und können auch die in Duet Reporting-Funktionen zu einer app.</span><span class="sxs-lookup"><span data-stu-id="2fb54-p105">Please note that the sequence in activation dependency is important. First, you must create the external content type and then activate the **SAPReportingForApps** feature. Also, note that the second feature (ID: **9b60ccba-ebfd-4e38-87c8-3dea9cc2680a**) is shipped with Duet Enterprise 2.0, but it is marked as hidden. With this approach, a developer can make use of this feature and can bring in Duet Reporting capabilities to an app.</span></span>
+<span data-ttu-id="f8050-p105">Beachten Sie, dass die Reihenfolge in aktivierungsabhängigkeit wichtig ist. Zunächst müssen Sie den externen Inhaltstyp erstellen und aktivieren Sie das Feature **SAPReportingForApps**. Beachten Sie außerdem, dass das zweite Feature (ID: **9b60ccba-ebfd-4e38-87c8-3dea9cc2680a**) ist im Lieferumfang von Duet Enterprise 2.0, ist aber markiert als ausgeblendet. Bei diesem Ansatz kann Entwickler stellen dieses Feature und können auch die in Duet Reporting-Funktionen zu einer app.</span><span class="sxs-lookup"><span data-stu-id="f8050-p105">Please note that the sequence in activation dependency is important. First, you must create the external content type and then activate the **SAPReportingForApps** feature. Also, note that the second feature (ID: **9b60ccba-ebfd-4e38-87c8-3dea9cc2680a**) is shipped with Duet Enterprise 2.0, but it is marked as hidden. With this approach, a developer can make use of this feature and can bring in Duet Reporting capabilities to an app.</span></span>
   
     
     
-<span data-ttu-id="2fb54-p106">Sobald das **DuetReportingForApps** -Feature aktiviert ist, es bringt die Artefakte (Berichtsliste, Lib, Formulare usw.) und Anpassung auf der Website apps jedoch wie die app-Websitevorlage standard Navigationslinks nicht vorhanden ist, muss der app-Entwickler benutzerdefinierte Seitenelemente, aufzurufen, die Duet-Features (z. B. Berichtseinstellungen, Bibliothek Listenansicht und Formulare) hinzufügen. Der Entwickler sollte in der standard Duet-Dokumentation für Berichtsfeature erfahren Sie mehr über das Feature und seine Elemente der Benutzeroberfläche. Entwickler kann auswählen, um eine benutzerdefinierte Benutzeroberfläche für Einstiegspunkte Feature erstellen, wodurch die besser mit dem allgemeinen Design der app entspricht kann.</span><span class="sxs-lookup"><span data-stu-id="2fb54-p106">Once the **DuetReportingForApps** feature is activated, it will bring all the artifacts (Report List, Lib, forms, etc.) and customization on the apps site but as the app site template does not have standard navigation links, the app developer needs to add custom page elements to bring out the Duet features (e.g. Report Settings, library list view, and forms). The developer should consult standard Duet documentation for Reporting feature to learn more about the feature and its UI elements. A developer may choose to build up a custom UI for feature entry points which may suit better with the general theme of the app.</span></span>
-  
-    
-    
-
-## <a name="viewing-the-results"></a><span data-ttu-id="2fb54-131">Anzeigen der Ergebnisse</span><span class="sxs-lookup"><span data-stu-id="2fb54-131">Viewing the results</span></span>
-<span data-ttu-id="2fb54-132"><a name="bkmk_ViewingTheResults"> </a></span><span class="sxs-lookup"><span data-stu-id="2fb54-132"><a name="bkmk_ViewingTheResults"> </a></span></span>
-
-<span data-ttu-id="2fb54-133">Um die Einstellungen die Standardseite-Bericht angezeigt wird, navigieren Sie zu: **~/Lists/ReportSetting/AllReportTemplate.aspx**.</span><span class="sxs-lookup"><span data-stu-id="2fb54-133">To see the default report settings page, navigate to: **~/Lists/ReportSetting/AllReportTemplate.aspx**.</span></span>
-  
-    
-    
-<span data-ttu-id="2fb54-134">Um die Standardansicht für die Dokumentbibliothek Bericht angezeigt wird, navigieren Sie zu: **~/ReportsLib/Forms/AllItems.aspx**.</span><span class="sxs-lookup"><span data-stu-id="2fb54-134">To see the default view for the report document library, navigate to: **~/ReportsLib/Forms/AllItems.aspx**.</span></span>
+<span data-ttu-id="f8050-p106">Sobald das **DuetReportingForApps** -Feature aktiviert ist, es bringt die Artefakte (Berichtsliste, Lib, Formulare usw.) und Anpassung auf der Website apps jedoch wie die app-Websitevorlage standard Navigationslinks nicht vorhanden ist, muss der app-Entwickler benutzerdefinierte Seitenelemente, aufzurufen, die Duet-Features (z. B. Berichtseinstellungen, Bibliothek Listenansicht und Formulare) hinzufügen. Der Entwickler sollte in der standard Duet-Dokumentation für Berichtsfeature erfahren Sie mehr über das Feature und seine Elemente der Benutzeroberfläche. Entwickler kann auswählen, um eine benutzerdefinierte Benutzeroberfläche für Einstiegspunkte Feature erstellen, wodurch die besser mit dem allgemeinen Design der app entspricht kann.</span><span class="sxs-lookup"><span data-stu-id="f8050-p106">Once the **DuetReportingForApps** feature is activated, it will bring all the artifacts (Report List, Lib, forms, etc.) and customization on the apps site but as the app site template does not have standard navigation links, the app developer needs to add custom page elements to bring out the Duet features (e.g. Report Settings, library list view, and forms). The developer should consult standard Duet documentation for Reporting feature to learn more about the feature and its UI elements. A developer may choose to build up a custom UI for feature entry points which may suit better with the general theme of the app.</span></span>
   
     
     
 
-## <a name="customizing-the-reports"></a><span data-ttu-id="2fb54-135">Anpassen der Berichte</span><span class="sxs-lookup"><span data-stu-id="2fb54-135">Customizing the reports</span></span>
-<span data-ttu-id="2fb54-136"><a name="bkmk_CustomizingTheReports"> </a></span><span class="sxs-lookup"><span data-stu-id="2fb54-136"><a name="bkmk_CustomizingTheReports"> </a></span></span>
+## <a name="viewing-the-results"></a><span data-ttu-id="f8050-131">Anzeigen der Ergebnisse</span><span class="sxs-lookup"><span data-stu-id="f8050-131">Viewing the results</span></span>
+<span data-ttu-id="f8050-132"><a name="bkmk_ViewingTheResults"> </a></span><span class="sxs-lookup"><span data-stu-id="f8050-132"><a name="bkmk_ViewingTheResults"> </a></span></span>
 
-<span data-ttu-id="2fb54-p107">Innerhalb einer app ein Entwickler auch erstellen Sie eigene benutzerdefinierte Benutzeroberfläche (mit HTML/JavaScript/Jquery usw.) und der BCS-CSOM verwenden, um ein besseres Benutzererlebnis zu erstellen. Eine ähnliche-app, in dem benutzerdefinierte HTML Benutzeroberfläche basierend, baut auf folgenden Screenshots zeigt mit Hilfe von OOB Artefakte und clientseitigen BCS-APIs.</span><span class="sxs-lookup"><span data-stu-id="2fb54-p107">Inside an app, a developer can also create his own custom UI (using HTML/JavaScript/Jquery etc.) and make use of BCS CSOM to build a richer user experience. Following screenshots shows a similar app where custom HTML based UI is built with the help of OOB artifacts and client side BCS APIs.</span></span>
+<span data-ttu-id="f8050-133">Um die Einstellungen die Standardseite-Bericht angezeigt wird, navigieren Sie zu: **~/Lists/ReportSetting/AllReportTemplate.aspx**.</span><span class="sxs-lookup"><span data-stu-id="f8050-133">To see the default report settings page, navigate to: **~/Lists/ReportSetting/AllReportTemplate.aspx**.</span></span>
+  
+    
+    
+<span data-ttu-id="f8050-134">Um die Standardansicht für die Dokumentbibliothek Bericht angezeigt wird, navigieren Sie zu: **~/ReportsLib/Forms/AllItems.aspx**.</span><span class="sxs-lookup"><span data-stu-id="f8050-134">To see the default view for the report document library, navigate to: **~/ReportsLib/Forms/AllItems.aspx**.</span></span>
   
     
     
 
-## <a name="additional-resources"></a><span data-ttu-id="2fb54-139">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="2fb54-139">Additional resources</span></span>
-<span data-ttu-id="2fb54-140"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="2fb54-140"><a name="bk_addresources"> </a></span></span>
+## <a name="customizing-the-reports"></a><span data-ttu-id="f8050-135">Anpassen der Berichte</span><span class="sxs-lookup"><span data-stu-id="f8050-135">Customizing the reports</span></span>
+<span data-ttu-id="f8050-136"><a name="bkmk_CustomizingTheReports"> </a></span><span class="sxs-lookup"><span data-stu-id="f8050-136"><a name="bkmk_CustomizingTheReports"> </a></span></span>
+
+<span data-ttu-id="f8050-p107">Innerhalb einer app ein Entwickler auch erstellen Sie eigene benutzerdefinierte Benutzeroberfläche (mit HTML/JavaScript/Jquery usw.) und der BCS-CSOM verwenden, um ein besseres Benutzererlebnis zu erstellen. Eine ähnliche-app, in dem benutzerdefinierte HTML Benutzeroberfläche basierend, baut auf folgenden Screenshots zeigt mit Hilfe von OOB Artefakte und clientseitigen BCS-APIs.</span><span class="sxs-lookup"><span data-stu-id="f8050-p107">Inside an app, a developer can also create his own custom UI (using HTML/JavaScript/Jquery etc.) and make use of BCS CSOM to build a richer user experience. Following screenshots shows a similar app where custom HTML based UI is built with the help of OOB artifacts and client side BCS APIs.</span></span>
+  
+    
+    
+
+## <a name="see-also"></a><span data-ttu-id="f8050-139">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="f8050-139">See also</span></span>
+<span data-ttu-id="f8050-140"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="f8050-140"><a name="bk_addresources"> </a></span></span>
 
 
--  [<span data-ttu-id="2fb54-141">Bei der Entwicklung mit Duet Enterprise 2.0</span><span class="sxs-lookup"><span data-stu-id="2fb54-141">Developing with Duet Enterprise 2.0</span></span>](developing-with-duet-enterprise-2-0.md)
+-  [<span data-ttu-id="f8050-141">Bei der Entwicklung mit Duet Enterprise 2.0</span><span class="sxs-lookup"><span data-stu-id="f8050-141">Developing with Duet Enterprise 2.0</span></span>](developing-with-duet-enterprise-2-0.md)
     
   
--  [<span data-ttu-id="2fb54-142">Gewusst wie: Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint</span><span class="sxs-lookup"><span data-stu-id="2fb54-142">How to: Create an external content type from an OData source in SharePoint</span></span>](how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint.md)
+-  [<span data-ttu-id="f8050-142">Gewusst wie: Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint</span><span class="sxs-lookup"><span data-stu-id="f8050-142">How to: Create an external content type from an OData source in SharePoint</span></span>](how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint.md)
     
   
--  [<span data-ttu-id="2fb54-143">Verwenden von OData-Quellen mit Business Connectivity Services in SharePoint</span><span class="sxs-lookup"><span data-stu-id="2fb54-143">Using OData sources with Business Connectivity Services in SharePoint</span></span>](using-odata-sources-with-business-connectivity-services-in-sharepoint.md)
+-  [<span data-ttu-id="f8050-143">Verwenden von OData-Quellen mit Business Connectivity Services in SharePoint</span><span class="sxs-lookup"><span data-stu-id="f8050-143">Using OData sources with Business Connectivity Services in SharePoint</span></span>](using-odata-sources-with-business-connectivity-services-in-sharepoint.md)
     
   
 
