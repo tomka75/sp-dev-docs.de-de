@@ -1,15 +1,15 @@
 ---
-title: "Gewusst wie Anpassen der Benutzeroberfläche einer SharePoint-Listen-App für Windows Phone"
+title: "Anpassen der Benutzeroberfläche einer SharePoint-Listen-App für Windows Phone"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 09ed59af-5e2b-4716-a9e4-a015e4793d85
-ms.openlocfilehash: 81e6202027a0c94af385bb5c586521995ba6c182
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 856716c69bdf77c497ccc3f0fa0a0ba960c6fac4
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-customize-the-user-interface-of-a-sharepoint-list-app-for-windows-phone"></a>Gewusst wie: Anpassen der Benutzeroberfläche einer SharePoint-Listen-App für Windows Phone
+# <a name="customize-the-user-interface-of-a-sharepoint-list-app-for-windows-phone"></a>Anpassen der Benutzeroberfläche einer SharePoint-Listen-App für Windows Phone
 Passen Sie die durch die Vorlage „Windows Phone - SharePoint-Listenanwendung" generierte Windows Phone-Benutzeroberfläche an. SharePoint-Listen-Apps, die über die Vorlage „Windows Phone - SharePoint-Listenanwendung" erstellt werden, basieren auf dem Silverlight für Windows Phone-Framework. Alle von der Silverlight-Plattform auf einem Windows Phone bereitgestellten Funktionen stehen für Entwickler für die Anpassung der Benutzeroberfläche einer für ein Windows Phone entworfenen SharePoint-Listen-App zur Verfügung.
   
     

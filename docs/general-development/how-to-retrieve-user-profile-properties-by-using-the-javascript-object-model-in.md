@@ -1,16 +1,18 @@
 ---
-title: Vorgehensweise Abrufen von Benutzerprofileigenschaften mithilfe des JavaScript-Objektmodells in SharePoint
+title: Abrufen von Benutzerprofileigenschaften mithilfe des JavaScript-Objektmodells in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c6e1ca38-134f-428a-8d21-b8b2615b161b
-ms.openlocfilehash: a308df72d1aa24e853b38a5dacf4b7f8d1a21e3b
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 364e948834758c1fda52afebd2b1648d0e726b0b
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-retrieve-user-profile-properties-by-using-the-javascript-object-model-in-sharepoint"></a>Vorgehensweise: Abrufen von Benutzerprofileigenschaften mithilfe des JavaScript-Objektmodells in SharePoint
-Informationen zum programmtechnischen Abrufen von Benutzereigenschaften und Benutzerprofileigenschaften über das SharePoint JavaScript-Objektmodell.
+# <a name="retrieve-user-profile-properties-by-using-the-javascript-object-model-in-sharepoint"></a>Abrufen von Benutzerprofileigenschaften mithilfe des JavaScript-Objektmodells in SharePoint
+
+In diesem Artikel erfahren Sie, wie Sie Benutzereigenschaften und Benutzerprofileigenschaften programmgesteuert mithilfe des JavaScript-Objektmodells in SharePoint abrufen.
+
 ## <a name="what-are-user-properties-and-user-profile-properties-in-sharepoint"></a>Was sind Benutzereigenschaften und Benutzerprofileigenschaften in SharePoint?
 <a name="bkmk_WhatIs"> </a>
 

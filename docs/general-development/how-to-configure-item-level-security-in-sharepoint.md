@@ -1,16 +1,18 @@
 ---
-title: Vorgehensweise Konfigurieren der Sicherheit auf Elementebene in SharePoint
+title: Konfigurieren der Sicherheit auf Elementebene in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: ffd730f2-e7b7-4707-b677-d073da7df7d7
-ms.openlocfilehash: 4513b317f79dfe5a5382e162d931db9bd980a32f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ce2ece9f7f4f35fa3235d26ab384dc3783b333c7
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-configure-item-level-security-in-sharepoint"></a>Vorgehensweise: Konfigurieren der Sicherheit auf Elementebene in SharePoint
+# <a name="configure-item-level-security-in-sharepoint"></a>Konfigurieren der Sicherheit auf Elementebene in SharePoint
+
 In diesem Artikel erfahren Sie, wie Sie die Sicherheit auf Elementebene konfigurieren, wenn externe Daten mit BCS-Indizierungsconnectors in SharePoint durchforstet werden.
+
 ## <a name="external-systems-with-ntlm-authentication"></a>Externe Systeme mit NTLM-Authentifizierung
 <a name="ItemLevelSecurity_NTLMAuth"> </a>
 

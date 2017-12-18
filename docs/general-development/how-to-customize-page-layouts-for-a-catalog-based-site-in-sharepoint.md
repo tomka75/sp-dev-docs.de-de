@@ -1,16 +1,18 @@
 ---
-title: "Vorgehenweise Anpassen der Seitenlayouts für eine katalogbasierte Website in SharePoint"
+title: "Anpassen der Seitenlayouts für eine katalogbasierte Website in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 21d8db99-73b3-4429-b6cb-04e375af9f55
-ms.openlocfilehash: 33c3859956e80ceae0c3171906b0784fb6726146
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 9e7c7811531f4dd01f890eddd705fcb882f90128
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-customize-page-layouts-for-a-catalog-based-site-in-sharepoint"></a>Vorgehenweise: Anpassen der Seitenlayouts für eine katalogbasierte Website in SharePoint
+# <a name="customize-page-layouts-for-a-catalog-based-site-in-sharepoint"></a>Anpassen der Seitenlayouts für eine katalogbasierte Website in SharePoint
+
 Hier erfahren Sie, wie Sie Layouts für Kategorieseiten und Katalogelementseiten für eine websiteübergreifende SharePoint-Veröffentlichungswebsite erstellen und anpassen können.
+
 ## <a name="prerequisites-for-creating-and-customizing-page-layouts-for-a-catalog-based-site"></a>Voraussetzungen für die Erstellung und Anpassung von Seitenlayouts für eine katalogbasierte Website
 <a name="bk_prereqs"> </a>
 
@@ -25,7 +27,7 @@ Um die Schritte in diesem Beispiel ausführen zu können, benötigen Sie Folgend
 - Eine websiteübergreifende SharePoint-Veröffentlichungsumgebung
     
   
-Informationen zur Konfiguration einer websiteübergreifenden SharePoint-Veröffentlichungsumgebung finden Sie unter  [Konfigurieren der websiteübergreifenden Veröffentlichung in SharePoint](http://technet.microsoft.com/en-us/library/jj656774.aspx).
+Informationen zur Konfiguration einer websiteübergreifenden SharePoint-Veröffentlichungsumgebung finden Sie unter  [Konfigurieren der websiteübergreifenden Veröffentlichung in SharePoint](http://technet.microsoft.com/de-DE/library/jj656774.aspx).
   
     
     
@@ -42,8 +44,7 @@ In Tabelle 1 sind nützliche Artikel aufgeführt, die Ihnen die Konzepte und Arb
 
 |**Titel des Artikels**|**Beschreibung**|
 |:-----|:-----|
-| 
-  [Übersicht über die websiteübergreifende Veröffentlichung in SharePoint](http://technet.microsoft.com/en-us/library/jj635883.aspx) <br/> |Erfahren Sie, wie Sie mit der websiteübergreifenden Veröffentlichung und Such-Webparts anpassungsfähige SharePoint-Websites für das Internet, Intranet und Extranet erstellen können.  <br/> |
+| [Übersicht über die websiteübergreifende Veröffentlichung in SharePoint](http://technet.microsoft.com/de-DE/library/jj635883.aspx) <br/> |Erfahren Sie, wie Sie mit der websiteübergreifenden Veröffentlichung und Such-Webparts anpassungsfähige SharePoint-Websites für das Internet, Intranet und Extranet erstellen können.  <br/> |
 | [Vorgehensweise: Erstellen eines Seitenlayouts in SharePoint](how-to-create-a-page-layout-in-sharepoint.md) <br/> |Erfahren Sie, wie Sie Seitenlayouts in SharePoint Server erstellen können.  <br/> |
 | [Vorgehensweise: Beheben von Fehlern und Warnungen bei der Vorschau einer Seite in SharePoint](how-to-resolve-errors-and-warnings-when-previewing-a-page-in-sharepoint.md) <br/> |Erfahren Sie, wie Sie Probleme beheben, die verhindern, dass die serverseitige Vorschau Ihre Seite rendert.  <br/> |
 | [Codeausschnitte des SharePoint-Entwurfs-Managers](sharepoint-design-manager-snippets.md) <br/> |Erfahren Sie, wie Sie mit Codeausschnitten der HTML-Masterseite oder dem Seitenlayout SharePoint-Funktionen hinzufügen.  <br/> |
@@ -52,7 +53,7 @@ In Tabelle 1 sind nützliche Artikel aufgeführt, die Ihnen die Konzepte und Arb
 ## <a name="introduction-to-category-page-layouts-and-catalog-item-page-layouts"></a>Einführung in Layouts für Kategorieseiten und Katalogelementseiten
 <a name="bk_introduction"> </a>
 
-Kategorieseiten und Katalogobjektseiten sind Seitenlayouts, die Sie zum konsistenten Anzeigen von strukturiertem Kataloginhalt auf einer Website verwenden können. SharePoint kann standardmäßig ein Kategorieseitenlayout und ein Katalogobjektseiten-Layout pro Katalogverbindung erstellen. Seiten, die auf diesen Layouts basieren, werden in der Seitenbibliothek einer Veröffentlichungswebsite erstellt, wenn Sie die Website mit einem Katalog verbinden. Weitere Informationen zu Seitenlayouts finden Sie unter  [Vorgehensweise: Erstellen eines Seitenlayouts in SharePoint](how-to-create-a-page-layout-in-sharepoint.md). Weitere Informationen zu Features, die für kategoie-Seitenlayouts und Katalogelement-Seitenlayouts spezifisch sind, finden Sie unter[Übersicht über websiteübergreifende Veröffentlichung in SharePoint](http://technet.microsoft.com/en-us/library/jj635883.aspx).
+Kategorieseiten und Katalogobjektseiten sind Seitenlayouts, die Sie zum konsistenten Anzeigen von strukturiertem Kataloginhalt auf einer Website verwenden können. SharePoint kann standardmäßig ein Kategorieseitenlayout und ein Katalogobjektseiten-Layout pro Katalogverbindung erstellen. Seiten, die auf diesen Layouts basieren, werden in der Seitenbibliothek einer Veröffentlichungswebsite erstellt, wenn Sie die Website mit einem Katalog verbinden. Weitere Informationen zu Seitenlayouts finden Sie unter  [Vorgehensweise: Erstellen eines Seitenlayouts in SharePoint](how-to-create-a-page-layout-in-sharepoint.md). Weitere Informationen zu Features, die für kategoie-Seitenlayouts und Katalogelement-Seitenlayouts spezifisch sind, finden Sie unter[Übersicht über websiteübergreifende Veröffentlichung in SharePoint](http://technet.microsoft.com/de-DE/library/jj635883.aspx).
   
     
     
@@ -148,7 +149,7 @@ Die einfachste Methode besteht darin, ein Layout für eine Kategorieseite automa
   
 9. Um den HTML-Code für den Inhaltssuche-Codeausschnitt und alle weiteren Codeausschnitte, die Sie der Seite hinzufügen möchten, zu konfigurieren und zu kopieren, befolgen Sie die Schritte 1 bis 11 im Abschnitt „Einfügen eines Codeausschnitts aus dem Codeausschnittkatalog" unter  [Codeausschnitte des SharePoint-Entwurfs-Managers](sharepoint-design-manager-snippets.md).
     
-    > **Hinweis:** Wenn Sie den Inhaltssuche-Codeausschnitt zum Seitenlayout hinzufügen, ändern Sie die Abfrage so, dass die Ergebnisquelle verwendet wird, die erstellt wurde, als Sie die Veröffentlichungswebsite mit einem Katalog verbunden haben. Weitere Informationen finden Sie unter [Konfigurieren von Ergebnisquellen für Web Content Management in SharePoint](http://technet.microsoft.com/en-us/library/jj715262.aspx). 
+    > **Hinweis:** Wenn Sie den Inhaltssuche-Codeausschnitt zum Seitenlayout hinzufügen, ändern Sie die Abfrage so, dass die Ergebnisquelle verwendet wird, die erstellt wurde, als Sie die Veröffentlichungswebsite mit einem Katalog verbunden haben. Weitere Informationen finden Sie unter [Konfigurieren von Ergebnisquellen für Web Content Management in SharePoint](http://technet.microsoft.com/de-DE/library/jj715262.aspx). 
 10. Nehmen Sie alle weiteren gewünschten Änderungen am Markup vor, und speichern Sie die Datei.
     
   
@@ -475,7 +476,7 @@ Wenn das Katalogelement-Seitenlayout automatisch bei der Verbindung der Veröffe
 |**PublishingPageLayoutOWSURLH** <br/> |Die URL zum Seitenlayout, das zum Erstellen der Seite verwendet wurde.  <br/> |Nur Bibliothek für Seiten  <br/> |
 |**Title** <br/> |Der Titel der Seite oder des Listenelements.  <br/> |Bibliothek für Seiten und Liste  <br/> |
    
-Die verwalteten Eigenschaften für benutzerdefinierte Spalten, die Sie der Bibliothek für Seiten oder der Liste hinzufügen, werden ebenfalls in Codeausschnitte zur Wiederverwendung von Katalogelementen eingeschlossen. Der Name der verwalteten Eigenschaft variiert je nach dem Typ der Website, die Sie beim Erstellen der Websitespalte verwenden. Weitere Informationen finden Sie unter [Automatisch erstellte verwaltete Eigenschaften in SharePoint](http://technet.microsoft.com/en-us/library/jj613136.aspx) und [Übersicht über das Suchschema in SharePoint](http://technet.microsoft.com/en-us/library/jj219669.aspx).
+Die verwalteten Eigenschaften für benutzerdefinierte Spalten, die Sie der Bibliothek für Seiten oder der Liste hinzufügen, werden ebenfalls in Codeausschnitte zur Wiederverwendung von Katalogelementen eingeschlossen. Der Name der verwalteten Eigenschaft variiert je nach dem Typ der Website, die Sie beim Erstellen der Websitespalte verwenden. Weitere Informationen finden Sie unter [Automatisch erstellte verwaltete Eigenschaften in SharePoint](http://technet.microsoft.com/de-DE/library/jj613136.aspx) und [Übersicht über das Suchschema in SharePoint](http://technet.microsoft.com/de-DE/library/jj219669.aspx).
   
     
     

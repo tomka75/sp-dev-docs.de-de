@@ -1,22 +1,23 @@
 ---
-title: "Vorgehensweise Anpassen der Liste Element Abfragen und Filtern von Daten für Windows Phone-apps"
+title: "Anpassen von Listenelementabfragen und Filtern von Daten für Windows Phone-Apps"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 32f89b97-8274-4cb0-9164-7898735a18aa
-ms.openlocfilehash: 17e1916fbcc6578994a8c0f357234a434f8d6013
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c7347e36ce052f8b8f341689a633ac9a6850247f
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-customize-list-item-queries-and-filter-data-for-windows-phone-apps"></a>Vorgehensweise: Anpassen der Liste Element Abfragen und Filtern von Daten für Windows Phone-apps
+# <a name="customize-list-item-queries-and-filter-data-for-windows-phone-apps"></a>Anpassen von Listenelementabfragen und Filtern von Daten für Windows Phone-Apps
+
 Passen Sie die Datenabfragen an, auf denen die Ansichten in einer Windows Phone-App basieren. Mit Projekten, die aus der Vorlage für Windows Phone SharePoint List Application erstellt haben können Entwickler nutzen ein Entwurfsmuster in die Vorlage, die sie zum Anpassen von Komponenten der Datenebene für eine Windows Phone-app kann implementiert. Eine Ansicht einer SharePoint-Liste in einer Windows Phone-app enthalten, wie in der app auf dem Telefon wird und in Microsoft SharePoint Server konfiguriert werden kann, oder eine benutzerdefinierte Ansicht für die app erstellt werden.
   
     
     
 
 
-> **Wichtig:** Wenn Sie eine App für Windows Phone 8 entwickeln, müssen Sie Visual Studio Express 2012 anstelle von Visual Studio 2010 Express verwenden. Mit Ausnahme der Entwicklungsumgebung gelten alle Informationen in diesem Artikel für das Erstellen von Apps sowohl unter Windows Phone 8 als auch unter Windows Phone 7. Weitere Informationen finden Sie unter [Vorgehensweise: Einrichten einer Umgebung für die Entwicklung mobiler Apps für SharePoint](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md). 
+> **Wichtig:** Wenn Sie eine App für Windows Phone 8 entwickeln, müssen Sie Visual Studio Express 2012 anstelle von Visual Studio 2010 Express verwenden. Mit Ausnahme der Entwicklungsumgebung gelten alle Informationen in diesem Artikel für das Erstellen von Apps sowohl auf Windows Phone 8 als auch auf Windows Phone 7. Weitere Informationen finden Sie unter [Vorgehensweise: Einrichten einer Umgebung für die Entwicklung mobiler Apps für SharePoint](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md). 
   
     
     
@@ -257,8 +258,7 @@ Sie können viele weitere Anpassungen vor tätigen, um die CAML-Abfragen, auf de
 -  [Erstellen von Windows Phone-Apps, die auf SharePoint zugreifen](build-windows-phone-apps-that-access-sharepoint.md)
     
   
--  
-  [Einführung in Collaborative Application Markup Language (CAML)](http://msdn.microsoft.com/en-us/library/ms426449.aspx)
+-  [Einführung in Collaborative Application Markup Language (CAML)](http://msdn.microsoft.com/de-DE/library/ms426449.aspx)
     
   
 -  [Vorgehensweise: Einrichten einer Umgebung für die Entwicklung von mobilen Anwendungen für SharePoint](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md)

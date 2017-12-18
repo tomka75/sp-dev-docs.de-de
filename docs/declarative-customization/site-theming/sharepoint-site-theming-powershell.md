@@ -144,8 +144,6 @@ Set-HideDefaultThemes $true
 ```
 Wenn Sie das Design „Custom Cyan“ erstellen und anschließend die Standarddesigns ausblenden, wird in der Designliste unter **Change the look** nur noch dieses eine benutzerdefinierte Design angezeigt.
 
-![Feld „Change the look“ mit dem Design „Custom Cyan“ und ausgeblendeten Standarddesigns](../../images/theme-hidedefaults.png)
-
 Sollen die Standarddesigns wieder in der Designauswahl angezeigt werden, können Sie das folgende Cmdlet verwenden.
 ```powershell
 Set-HideDefaultThemes $false

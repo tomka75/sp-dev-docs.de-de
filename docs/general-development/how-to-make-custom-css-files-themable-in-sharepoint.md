@@ -1,16 +1,18 @@
 ---
-title: "Gewusst wie Benutzerdefinierte CSS-Dateien in SharePoint designfähig gestalten"
+title: Gestalten von flexiblen benutzerdefinierten CSS-Dateien in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: b8c82c77-c836-47f9-a11e-6c9c656d436b
-ms.openlocfilehash: 24d22d47c8c53b0aeb33a14bef989ab3138a06f8
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6a2febe12c0420a75024937b3127504ca00592f6
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-make-custom-css-files-themable-in-sharepoint"></a>Gewusst wie: Benutzerdefinierte CSS-Dateien in SharePoint designfähig gestalten
+# <a name="make-custom-css-files-themable-in-sharepoint"></a>Gestalten von flexiblen benutzerdefinierten CSS-Dateien in SharePoint
+
 Erfahren Sie mehr über das Hinzufügen von Kommentarstil-Markups zu einer CSS-Datei, sodass sie im SharePoint-Designmodul verwendet werden kann.
+
 ## <a name="introduction-to-annotations"></a>Einführung in Anmerkungen
 <a name="Intro"> </a>
 
@@ -188,7 +190,7 @@ Legen Sie die benutzerdefinierten CSS-Dateien im Ordner "Themable" der Formatbib
     
     
 
-> **Hinweis:** Der Name des _language_-Ordners muss im 4-stelligen Format _ll-cc_ angegeben sein, um die Sprache und die Kultur zu identifizieren. Beispiel: en-us oder de-de. Weitere Informationen finden Sie unter [Sprachen-IDs und ID-Werte für „OptionState“ in Office 2013](http://technet.microsoft.com/en-us/library/cc179219.aspx). 
+> **Hinweis:** Der Name des _language_-Ordners muss im 4-stelligen Format _ll-cc_ angegeben sein, um die Sprache und die Kultur zu identifizieren. Beispiel: en-us oder de-de. Weitere Informationen finden Sie unter [Sprachen-IDs und ID-Werte für „OptionState“ in Office 2013](http://technet.microsoft.com/de-DE/library/cc179219.aspx). 
   
     
     

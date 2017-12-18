@@ -1,15 +1,16 @@
 ---
-title: Vorgehensweise Konvertieren ein Add-in-bezogenen externes Inhaltstyps in mandantenbereichsbezogenen
+title: Konvertieren eines externen Inhaltstyps auf Add-In-Ebene auf Mandantenbereich
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 35c5d670-e402-4641-b3c5-6f61ae1ec69b
-ms.openlocfilehash: 2e52c54b30f2e22017682edb01d1d00fefd90359
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: a6790c1f756ab06cb9e00efe7eeac2675eb5bc85
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-convert-an-add-in-scoped-external-content-type-to-tenant-scoped"></a>Vorgehensweise: Konvertieren ein Add-in-bezogenen externes Inhaltstyps in mandantenbereichsbezogenen
+# <a name="convert-an-add-in-scoped-external-content-type-to-tenant-scoped"></a>Konvertieren eines externen Inhaltstyps auf Add-In-Ebene auf Mandantenbereich
+
 Informationen Sie zum Erstellen eines OData-basierten externen Inhaltstyps mithilfe von Visual Studio 2012 automatische Generierung Tools und importieren es in die Business Connectivity Services (BCS)-Metadaten gespeichert, damit sie über eine gesamte Mandanten Workspace verwendet werden kann. BDC-Modelle werden komplexe XML-Definitionen von einer externen Datenquelle. Sie werden beim Definieren der externer Inhaltstypen für BCS verwendet. Sie sind sehr schwer zu manuell erstellen, damit Tools erstellt wurden, wenn die Dateien mit Visual Studio 2012 und Office Developer Tools für Visual Studio 2012 automatisch generiert werden soll. Verwendung dieser Tools, können Sie ein App-Paket mit Visual Studio-Veröffentlichung erstellen, und öffnen Sie das Paket zum Extrahieren der Modelldatei.
   
     

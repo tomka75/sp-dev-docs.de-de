@@ -1,17 +1,17 @@
 ---
-title: How to Get Values from Ranges
+title: Abrufen von Werten aus Bereichen
 ms.date: 09/25/2017
 keywords: get range,how to,howdoi,howto
 f1_keywords: get range,how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: ab2c0f60-b7df-46a1-9105-eb85ce817431
-ms.openlocfilehash: 173a2f231b8361f71b6bfb7affa7bb032ee88073
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 38223c877a834ffa49605b33abc616f6f65c4886
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-get-values-from-ranges"></a>How to: Get Values from Ranges
+# <a name="get-values-from-ranges"></a>Abrufen von Werten aus Bereichen
 
 Excel Web Services exposes four methods for getting values from an Excel workbook: **GetCell**, **GetCellA1**, **GetRange**, and **GetRangeA1**. 
   
@@ -43,7 +43,7 @@ object[] rangeResult2 = xlservice.GetCell(sessionId, sheetName, 0, 0, true, out 
 Dim rangeResult2() As Object = xlservice.GetCell(sessionId, sheetName, 0, 0, True, outStatus)
 ```
 
-If you are getting values from multiple adjacent cells, you may want to consider using the **GetRange** method instead of making multiple calls to the **GetCell** method. This results in a single roundtrip to the server instead of multiple roundtrips. Therefore, in some cases, you may gain a noticeable performance improvement by using the **GetRange** method instead of the **GetCell** method.When getting a range of cells using the **GetRange** and **GetRangeA1** methods, you get back an object array ( **object[]** in C# and **Object ()** in Visual Basic .NET). The object array is actually a jagged array. Each entry in the array you get back will be another array of objects representing the cells. For more information about jagged arrays, see [Jagged Arrays (C# Programming Guide)](http://msdn.microsoft.com/en-us/library/2s05feca.aspx) (http://msdn.microsoft.com/en-us/library/2s05feca.aspx).
+If you are getting values from multiple adjacent cells, you may want to consider using the **GetRange** method instead of making multiple calls to the **GetCell** method. This results in a single roundtrip to the server instead of multiple roundtrips. Therefore, in some cases, you may gain a noticeable performance improvement by using the **GetRange** method instead of the **GetCell** method.When getting a range of cells using the **GetRange** and **GetRangeA1** methods, you get back an object array ( **object[]** in C# and **Object ()** in Visual Basic .NET). The object array is actually a jagged array. Each entry in the array you get back will be another array of objects representing the cells. For more information about jagged arrays, see [Jagged Arrays (C# Programming Guide)](http://msdn.microsoft.com/de-DE/library/2s05feca.aspx) (http://msdn.microsoft.com/de-DE/library/2s05feca.aspx).
 ### <a name="to-get-values-using-the-getcell-and-getrange-methods"></a>To get values using the GetCell and GetRange methods
 
 

@@ -1,15 +1,16 @@
 ---
-title: "Vorgehensweise Support- und konvertieren SharePoint FieldTypes für Windows Phone-apps"
+title: "Unterstützen und Konvertieren von SharePoint-Feldtypen für Windows Phone-Apps"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 301e6e58-5153-4ca9-a419-8ae0535ebbed
-ms.openlocfilehash: 50e7405ed9390000f3152dfd06c3103b1b42d037
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 22a2f1dccbaa825fa53bf85225de2018b5ecffda
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-support-and-convert-sharepoint-field-types-for-windows-phone-apps"></a>Vorgehensweise: Support- und konvertieren SharePoint FieldTypes für Windows Phone-apps
+# <a name="support-and-convert-sharepoint-field-types-for-windows-phone-apps"></a>Unterstützen und Konvertieren von SharePoint-Feldtypen für Windows Phone-Apps
+
 Implementieren Sie die Datenkonvertierungslogik, um SharePoint-Feldtypen in Windows Phone-Apps zu unterstützen. In Projekten basierend auf die Vorlage Windows Phone SharePoint List Application die Daten der viele SharePoint-Feldtypen verarbeitet und vom Standard Konvertierungslogik, eignet sich für die Anzeige und Bearbeitung in der Silverlight-Benutzeroberfläche von einer Windows Phone koordiniert, jedoch Entwickler können auch ihre eigenen benutzerdefinierten Datenverarbeitung Routinen implementieren.
   
     

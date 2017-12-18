@@ -1,16 +1,18 @@
 ---
-title: Vorgehensweise Abrufen die URL einer Bibliothek Seiten
+title: Abrufen der URL einer Seitenbibliothek
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d9922e4b-4948-4c4a-a8ca-1623168143a3
-ms.openlocfilehash: c1ad399ddf59d928ca46356be1fc762b2312443e
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 8f132495459b0b581be648942c81dbf60382cac0
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-retrieve-the-url-of-a-pages-library"></a>Vorgehensweise: Abrufen die URL einer Bibliothek Seiten
+# <a name="retrieve-the-url-of-a-pages-library"></a>Abrufen der URL einer Seitenbibliothek
+
 Hier erfahren Sie, wie Sie die URL für die Liste der Seiten für eine Web Veröffentlichen in einer Websitesammlung, die unterscheidet sich aus dem aktuellen Kontext abrufen.
+
 ## <a name="core-concepts-to-know-for-retrieving-the-url-of-a-pages-list"></a>Kernkonzepte für das Abrufen des URL einer Liste von Seiten
 <a name="SP15_Core_Concepts_URL_MP"> </a>
 

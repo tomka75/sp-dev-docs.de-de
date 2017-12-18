@@ -1,16 +1,18 @@
 ---
-title: Vorgehensweise Erkennen von SharePoint installierte SKU
+title: Ermitteln der installierten SKU von SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d5d84d6f-6a8e-4ead-9296-7025baf1e154
-ms.openlocfilehash: 34c6fb7ee7f980a67b51aa4f31c7c612eac9cd39
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4e7d8343d3151ac3fc0c4514e7bddfbf0f0ddd65
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-detect-the-installed-sku-of-sharepoint"></a>Vorgehensweise: Erkennen von SharePoint installierte SKU
+# <a name="detect-the-installed-sku-of-sharepoint"></a>Ermitteln der installierten SKU von SharePoint
+
 Wenn das Verhalten von Lösungen der lokal installierten SKU von SharePoint oder Project Server 2013 abhängt, verwenden Sie das Codebeispiel in diesem Artikel die SKU-Informationen zu suchen, die Sie benötigen.
+
 ## <a name="detect-the-installed-sku-of-sharepoint-or-project-server-2013-by-using-code"></a>Bestimmen der installierten SKU von SharePoint oder Project Server 2013 mithilfe von code
 <a name="SP15DetectSKU_detect"> </a>
 

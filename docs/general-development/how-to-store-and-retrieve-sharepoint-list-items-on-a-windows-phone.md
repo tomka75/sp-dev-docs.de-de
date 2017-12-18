@@ -1,15 +1,16 @@
 ---
-title: Vorgehensweise anmelden und Fortsetzen von Anrufen SharePoint Listenelementen auf einem Telefon mit Windows
+title: Speichern und Abrufen von SharePoint-Listenelementen auf einem Windows Phone
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 14ca37a2-5b45-430d-9004-ff3016f89834
-ms.openlocfilehash: 90a2028958d05bcb88a6d6f2dec2d3f30b86524c
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f55cdc8e1a104a2827a4b06341e9415d6da8e5aa
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-store-and-retrieve-sharepoint-list-items-on-a-windows-phone"></a>Vorgehensweise: anmelden und Fortsetzen von Anrufen SharePoint Listenelementen auf einem Telefon mit Windows
+# <a name="store-and-retrieve-sharepoint-list-items-on-a-windows-phone"></a>Speichern und Abrufen von SharePoint-Listenelementen auf einem Windows Phone
+
 In diesem Artikel erhalten Sie Informationen zum Windows Phone-Anwendungslebenszyklus und zum lokalen Speichern von Netzwerkdaten. Einer der wichtigsten Aspekte bei der Entwicklung von apps für Windows Phone ist die Verwaltung von Zustandsinformationen, sowohl für die gesamte Anwendung als auch für einzelne Seiten oder Daten Elemente in der Anwendung. Wenn Sie Windows Phone-apps entwickeln, müssen Sie berücksichtigen, dass Benutzer Ihre Apps Konnektivität zu Netzwerkressourcen verlieren möglicherweise (z. B. SharePoint-Listen). Die Entwicklungsinfrastruktur für Windows Phone-apps bietet Mechanismen für die Verarbeitung von Statusinformationen in verschiedenen Phasen im Lebenszyklus einer app.
   
     
@@ -25,7 +26,7 @@ In diesem Artikel erhalten Sie Informationen zum Windows Phone-Anwendungslebensz
 ## <a name="store-sharepoint-list-data-locally-on-a-windows-phone"></a>Lokales Speichern von SharePoint-Listendaten auf einem Windows Phone
 <a name="BKMK_StoringDataLocally"> </a>
 
-Auf einem Windows Phone nur eine app ausgeführt wird, zu einem Zeitpunkt und, wenn ein Benutzer auf einer anderen Anwendung auf dem Telefon umschaltet (durch Drücken der Schaltfläche **Start** auf dem Telefon, beispielsweise), die zurzeit ausgeführte app deaktiviert ist, oder die Begriffe Windows Phone-Entwicklung, dieals veraltet markiert. Wechselt von der Benutzer wieder auf die deaktivierte app (durch Drücken der Schaltfläche **zurück** ), kann die app reaktiviert werden, aber es sei denn, Sie Logik zur Verarbeitung von Anwendungsinformationen Status im Verlauf des Lebenszyklus der app bereitstellen, wird diese Statusinformationen nicht standardmäßig in der Übergang vom Aktivierung, Deaktivierung und wieder zu beibehalten. (Weitere Informationen zum Lebenszyklus Anwendung für Windows Phone-apps finden Sie unter [Ausführung Model Overview for Windows Phone](http://msdn.microsoft.com/en-us/library/ff817008%28v=VS.92%29.aspx).)
+Auf einem Windows Phone nur eine app ausgeführt wird, zu einem Zeitpunkt und, wenn ein Benutzer auf einer anderen Anwendung auf dem Telefon umschaltet (durch Drücken der Schaltfläche **Start** auf dem Telefon, beispielsweise), die zurzeit ausgeführte app deaktiviert ist, oder die Begriffe Windows Phone-Entwicklung, dieals veraltet markiert. Wechselt von der Benutzer wieder auf die deaktivierte app (durch Drücken der Schaltfläche **zurück** ), kann die app reaktiviert werden, aber es sei denn, Sie Logik zur Verarbeitung von Anwendungsinformationen Status im Verlauf des Lebenszyklus der app bereitstellen, wird diese Statusinformationen nicht standardmäßig in der Übergang vom Aktivierung, Deaktivierung und wieder zu beibehalten. (Weitere Informationen zum Lebenszyklus Anwendung für Windows Phone-apps finden Sie unter [Ausführung Model Overview for Windows Phone](http://msdn.microsoft.com/de-DE/library/ff817008%28v=VS.92%29.aspx).)
   
     
     
@@ -58,7 +59,7 @@ Die **Application_Launching** und **Application_Closing** Handler für diese Ere
     
     
 
-> **Tipp:** Daten sollten vor dem Speichern auf einem lokalen Gerät verschlüsselt werden. Weitere Informationen zum Verschlüsseln von Daten finden Sie unter  [Vorgehensweise: Verschlüsseln von Daten in einer Windows Phone-Anwendung](http://msdn.microsoft.com/en-us/library/hh487164%28v=vs.92%29.aspx)
+> **Tipp:** Daten sollten vor dem Speichern auf einem lokalen Gerät verschlüsselt werden. Weitere Informationen zum Verschlüsseln von Daten finden Sie unter  [Vorgehensweise: Verschlüsseln von Daten in einer Windows Phone-Anwendung](http://msdn.microsoft.com/de-DE/library/hh487164%28v=vs.92%29.aspx)
   
     
     

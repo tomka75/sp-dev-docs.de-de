@@ -1,8 +1,5 @@
 # <a name="use-column-formatting-to-customize-sharepoint"></a>Anpassen von SharePoint mithilfe von Spaltenformatierungen
 
-> [!IMPORTANT]
-> Spaltenformatierungen sind derzeit noch kein produktiv nutzbares Feature. Dieser Dokumentationsartikel ist vorläufig und kann noch verändert werden.
-
 Mithilfe von Spaltenformatierungen können Sie anpassen, wie Felder in SharePoint-Listen und SharePoint-Bibliotheken angezeigt werden. Dazu erstellen Sie ein JSON-Objekt. Es beschreibt die Elemente, die bei der Aufnahme eines Felds in eine Listenansicht angezeigt werden, sowie die Formatvorlagen, die auf diese Elemente angewendet werden sollen. Spaltenformatierungen haben keine Auswirkungen auf die Daten in einem Listenelement oder einer Datei. Sie ändern nur, wie das Element oder die Datei visuell dargestellt werden, wenn der Benutzer durch die Liste navigiert. Jeder Benutzer mit Berechtigungen zur Erstellung und Verwaltung von Listenansichten kann Spaltenformatierungen definieren, um die Darstellung von Ansichtsfeldern zu konfigurieren. 
 
 Eine Liste mit den Feldern „Title“, „Effort“, „Assigned To“ und „Status“ ohne jegliche Anpassungen könnte beispielsweise so aussehen: 
@@ -37,7 +34,7 @@ Auf Felder ohne Formatierung werden die Standardeinstellungen für das Rendering
 
 Eine Vorschau der Formatierung können Sie über **Vorschau** aufrufen. Zum Übernehmen der Änderungen klicken Sie auf **Speichern**. Sobald Sie gespeichert haben, ist die angewendete Anpassung für jeden Benutzer sichtbar, der die Liste aufruft.
 
-Am einfachsten können Sie Spalten formatieren, wenn Sie ein Beispiel als Grundlage übernehmen und an Ihr spezifisches Feld anpassen. In den folgenden Abschnitten finden Sie Beispiele, die Sie kopieren, einfügen und gemäß Ihren Szenarien bearbeiten können.
+Am einfachsten können Sie Spalten formatieren, wenn Sie ein Beispiel als Grundlage übernehmen und an Ihr spezifisches Feld anpassen. In den folgenden Abschnitten finden Sie Beispiele, die Sie kopieren, einfügen und gemäß Ihren Szenarien bearbeiten können. Es stehen auch verschiedene Beispiele im [SharePoint/sp-dev-column-formatting-Repository](https://github.com/SharePoint/sp-dev-column-formatting) zur Verfügung.
 
 ## <a name="display-field-values-basic"></a>Anzeigen von Feldwerten (einfach)
 
@@ -49,12 +46,12 @@ Die einfachste Spaltenformatierung ist eine Formatierung, die den Wert des Felds
    "txtContent": "@currentField"
 }
 ```
-Bei einigen Feldtypen ist zum Abrufen der Werte etwas mehr Code erforderlich. Personenfelder werden im System als Objekte dargestellt. Dabei ist der Anzeigename der Person in der Eigenschaft **Title** des Objekts enthalten. Hier sehen Sie dasselbe Beispiel wie oben, angepasst für Personenfelder:
+Bei einigen Feldtypen ist zum Abrufen der Werte etwas mehr Code erforderlich. Personenfelder werden im System als Objekte dargestellt. Dabei ist der Anzeigename der Person in der Eigenschaft **title** des Objekts enthalten. Hier sehen Sie dasselbe Beispiel wie oben, angepasst für Personenfelder:
 
 ```JSON
 {
    "elmType": "div",
-   "txtContent": "@currentField.Title"
+   "txtContent": "@currentField.title"
 }
 ```
 Nachschlagefelder werden ebenfalls als Objekte dargestellt. Der Anzeigetext wird in der Eigenschaft **lookupValue** gespeichert. Dieses Beispiel kann auf Nachschlagefelder angewendet werden:
@@ -74,28 +71,58 @@ Die Abbildung unten ist ein Beispiel für eine auf einen Zahlenbereich angewende
 
 ![Schweregradwarnung von 70 auf orangefarbenem Hintergrund](../images/sp-columnformatting-conditionalbasic.png)
 
-In diesem Beispiel wird mithilfe des bedingten Operators `?` eine Klasse (`sp-field-severity--warning`) auf das übergeordnete Element des Typs `<div />` angewendet, sobald der Wert im aktuellen Feld kleiner oder gleich 70 ist.  Das Feld wird also farblich hervorgehoben, sobald sein Wert kleiner oder gleich 70 ist, und normal dargestellt bei einem Wert größer als 70.
+In diesem Beispiel wird mithilfe des bedingten Operators `?` eine Klasse (`sp-field-severity--warning`) auf das übergeordnete Element des Typs `<div />` angewendet, sobald der Wert im aktuellen Feld kleiner oder gleich 70 ist. Das Feld wird also farblich hervorgehoben, sobald sein Wert kleiner oder gleich 70 ist, und normal dargestellt bei einem Wert größer als 70.
 
 ```JSON
 {
-   "elmType": "div",
-   "txtContent": "@currentField",
-   "attributes": {
-      "class": {
-         "operator": "?",
-         "operands": [
-            {
-               "operator": "<=",
-               "operands": [
-                  "@currentField",
-                  70
-               ]
+    "$schema": "http://columnformatting.sharepointpnp.com/columnFormattingSchema.json",
+    "debugMode": true,
+    "elmType": "div",
+    "attributes": {
+       "class": {
+          "operator": "?",
+          "operands": [
+             {
+                "operator": "<=",
+                "operands": [
+                   "@currentField",
+                   70
+                ]
+             },
+             "sp-field-severity--warning",
+             ""
+          ]
+       }
+    },
+    "children": [
+        {
+            "elmType": "span",
+            "style": {
+                "display": "inline-block",
+                "padding": "0 4px"
             },
-            "sp-field-severity--warning",
-            ""
-         ]
-      }
-   }
+            "attributes": {
+                "iconName": {
+                    "operator": "?",
+                    "operands": [
+                        {
+                            "operator": "<=",
+                            "operands": [
+                                "@currentField",                  
+                                70
+                            ]
+                        },
+                        "Error",
+                        ""
+                    ]
+                }
+            }
+        },
+        {
+            "elmType": "span",
+            "txtContent": "@currentField"
+        }
+    ]
 }
 ```
 
@@ -108,7 +135,7 @@ Die Abbildung unten ist ein Beispiel für eine auf ein Text- oder Auswahlfeld an
 Eine bedingte Formatierung lässt sich auf Text- oder Auswahlfelder mit einem festgelegten Satz von Werten anwenden. Im folgenden Beispiel werden unterschiedliche Klassen angewendet, je nachdem, ob das Feld den Wert „Done“, den Wert „In review“, den Wert „Blocked“ oder einen anderen Wert hat. Konkret wird hier basierend auf dem Feldwert eine CSS-Klasse (`sp-field-severity--low, sp-field-severity--good, sp-field-severity--warning, sp-field-severity--blocked`) auf das Element des Typs `<div />` angewendet. Anschließend wird ein Element des Typs `<span />` mit einem Attribut `IconName` ausgegeben. Dieses Attribut wendet eine weitere CSS-Klasse auf das Element des Typs `<span />` an, die innerhalb des Elements ein [Office UI Fabric](https://dev.office.com/fabric#/)-Symbol anzeigt. Abschließend wird ein weiteres Element des Typs `<span />` ausgegeben, das den Wert des Felds enthält.
 
 Dieses Muster ist nützlich, wenn Sie unterschiedlichen Werten jeweils eine andere Dringlichkeitsstufe oder einen anderen Schweregrad zuordnen möchten. Sie können das Beispiel unten bearbeiten, indem Sie eigene Feldwerte angeben und die Formatvorlagen und Symbole definieren, die diesen Werten zugeordnet werden sollen.
-<!-- The schema URL will need to be updated when it is changed from customformatter to columnformatting -->
+
 ```JSON
 {
     "$schema": "http://columnformatting.sharepointpnp.com/columnFormattingSchema.json",
@@ -286,11 +313,14 @@ Termine und wichtige Projektzeitachsen werden häufig anhand von Datumsangaben n
 
 ### <a name="formatting-an-item-when-a-date-column-is-before-or-after-todays-date-advanced"></a>Formatieren eines Elements, sobald der Wert einer Datumsspalte ein Datum vor oder nach dem aktuellen Datum ist (komplex)
 
-Die folgende Abbildung zeigt ein Feld, auf das eine bedingte Datumsformatierung angewendet wurde.
+Die folgende Abbildung zeigt ein Feld, auf das eine bedingte Datumsformatierung angewendet wurde:
 
 ![Feld „Status“ mit dem Text „Overdue“ in Rot](../images/sp-columnformatting-overdue.png)
 
-Bei diesem Beispiel wird das aktuelle Feld rot gefärbt, wenn der Wert des Felds „DueDate“ vor dem aktuellen Datum/der aktuellen Uhrzeit liegt. Im Gegensatz zu einigen der vorherigen Beispiele ist die Formatierung des Felds also abhängig vom Wert eines anderen Felds. Wie Sie sehen, wird zur Referenzierung des Felds „DueDate“ die Syntax [$FieldName] verwendet. Dabei ist „FieldName“ der interne Name des Feldes. Außerdem wird in diesem Beispiel ein besonderer Wert gesetzt, der speziell in Datum/Uhrzeit-Feldern verwendet werden kann: `@now`, der auf das aktuelle Datum/die aktuelle Uhrzeit auflöst und ausgewertet wird, sobald der Benutzer die Listenansicht lädt.
+Bei diesem Beispiel wird das aktuelle Feld rot gefärbt, wenn der Wert des Felds „DueDate“ vor dem aktuellen Datum/der aktuellen Uhrzeit liegt. Im Gegensatz zu einigen der vorherigen Beispiele ist die Formatierung des Felds also abhängig vom Wert eines anderen Felds. Wie Sie sehen, wird zur Referenzierung des Felds „DueDate“ die Syntax `[$FieldName]` verwendet. Dabei ist „FieldName“ der interne Name des Feldes. Außerdem wird in diesem Beispiel ein besonderer Wert gesetzt, der speziell in Datum/Uhrzeit-Feldern verwendet werden kann: `@now`, der auf das aktuelle Datum/die aktuelle Uhrzeit auflöst und ausgewertet wird, sobald der Benutzer die Listenansicht lädt.
+
+> [!NOTE]
+> Wenn Leerzeichen im Feldnamen vorhanden sind, werden diese als `_x0020_` definiert. Beispielsweise sollte ein Feld mit dem Namen „DueDate“ als `$Due_x0020_Date` angegeben werden.
 
 ```JSON
 {
@@ -317,7 +347,7 @@ Bei diesem Beispiel wird das aktuelle Feld rot gefärbt, wenn der Wert des Felds
 ```
 
 ### <a name="formatting-items-based-on-arbitrary-dates-advanced"></a>Formatieren von Elementen auf Basis zufälliger Datumsangaben (komplex)
-Mithilfe des Musters im folgenden Beispiel können Sie den Wert eines Datum/Uhrzeit-Felds mit einem anderen Datum als dem im Wert `@now` definierten Datum vergleichen. Das Beispiel unten färbt das aktuelle Feld rot, wenn der Wert für „DueDate“ kleiner oder gleich dem jeweils morgigen Datum ist. Dazu wird mit Datumsmathematik gearbeitet. Wenn zu einem Datum Millisekunden addiert werden, erhalten Sie als Ergebnis ein neues Datum. Soll zu einem Datum beispielsweise 1 Tag hinzuaddiert werden, würden Sie (246060 × 1000 = 86.400.000) hinzuaddieren. 
+Mithilfe des Musters im folgenden Beispiel können Sie den Wert eines Datum/Uhrzeit-Felds mit einem anderen Datum als dem im Wert `@now` definierten Datum vergleichen. Das Beispiel unten färbt das aktuelle Feld rot, wenn der Wert für „DueDate“ kleiner oder gleich dem jeweils morgigen Datum ist. Dazu wird mit Datumsmathematik gearbeitet. Wenn zu einem Datum Millisekunden addiert werden, erhalten Sie als Ergebnis ein neues Datum. Soll zu einem Datum beispielsweise 1 Tag hinzuaddiert werden, würden Sie (24\*60\*60\*1000 = 86,400,000) hinzuaddieren. 
 ```JSON
 {
    "elmType": "div",
@@ -346,7 +376,7 @@ Mithilfe des Musters im folgenden Beispiel können Sie den Wert eines Datum/Uhrz
    }
 }
 ```
-Wenn Sie den Wert eines Datum/Uhrzeit-Felds mit einer anderen Datumskonstante abgleichen möchten, konvertieren Sie mithilfe der Methode **Date()** eine Zeichenfolge in ein Datum. Das Beispiel unten färbt das aktuelle Feld rot, wenn der Wert im Feld „DueDate“ ein früheres Datum ist als der 22.03.2017.
+Wenn Sie den Wert eines Datum/Uhrzeit-Felds mit einer anderen Datumskonstante abgleichen möchten, konvertieren Sie mithilfe der Methode `Date()` eine Zeichenfolge in ein Datum. Das Beispiel unten färbt das aktuelle Feld rot, wenn der Wert im Feld „DueDate“ ein früheres Datum ist als der 22.03.2017.
 ```JSON
 {
    "elmType": "div",
@@ -376,7 +406,8 @@ Wenn Sie den Wert eines Datum/Uhrzeit-Felds mit einer anderen Datumskonstante ab
 ```
 
 ## <a name="create-clickable-actions"></a>Erstellen klickbarer Aktionen
-Mithilfe von Spaltenformatierungen können Sie Links implementieren, die auf andere Webseiten führen oder benutzerdefinierte Funktionen starten. Diese Funktionen sind auf statische Links des Typs `http://` beschränkt, die sich mit Werten aus Feldern in der Liste parametrisieren lassen. Eine Ausgabe von Links zu anderen Protokollen als `http://` ist mithilfe von Spaltenformatierungen nicht möglich.
+
+Mithilfe von Spaltenformatierungen können Sie Links implementieren, die auf andere Webseiten führen oder benutzerdefinierte Funktionen starten. Diese Funktionen sind auf statische Links beschränkt, die sich mit Werten aus Feldern in der Liste parametrisieren lassen. Eine Ausgabe von Links zu anderen Protokollen als `http://`, `https://` oder `mailto:` ist mithilfe von Spaltenformatierungen nicht möglich.
 
 ### <a name="turn-field-values-into-hyperlinks-basic"></a>Umwandeln von Feldwerten in Links (einfach)
 In diesem Beispiel demonstrieren wir Ihnen, wie Sie ein Textfeld mit Börsenticker-Symbolen in einen Link umwandeln, der auf die Yahoo! Finanzen-Seite mit den Echtzeit-Kursen für den betreffenden Börsenticker verweist. Das Beispiel verwendet einen Operator des Typs `+` der den Wert des aktuellen Felds an den statischen Link <a>http://finance.yahoo.com/quote/</a> anfügt. Sie können dieses Muster an jedes Szenario anpassen, in dem Benutzer Kontextinformationen zu einem Element abrufen können sollen oder in dem ein Geschäftsprozess auf das jeweils aktuelle Element angewendet werden soll. Voraussetzung ist lediglich, dass die Informationen oder der Prozess über einen Link abgerufen werden können, der mit Werten aus dem Listenelement parametrisiert wurde.
@@ -424,7 +455,7 @@ Mithilfe von Spaltenformatierungen können Sie Direktlinks zu Aktionen neben Fel
             "elmType": "a",
             "attributes": {
                 "iconName": "Mail",
-                "class": "sp-field-quickActions",
+                "class": "sp-field-quickAction",
                 "href": {
                     "operator": "+",
                     "operands": [
@@ -445,7 +476,7 @@ Mithilfe von Spaltenformatierungen können Sie Direktlinks zu Aktionen neben Fel
 Mithilfe von Spaltenformatierungen können Sie bedingte und arithmetische Operationen kombinieren und so grundlegende Datenvisualisierungen erstellen.
 
 ### <a name="format-a-number-column-as-a-data-bar-advanced"></a>Formatieren von Zahlenspalten als Datenbalken (komplex)
-Die folgende Abbildung zeigt eine als Datenbalken formatierte Zahlenspalte.
+Die folgende Abbildung zeigt eine als Datenbalken formatierte Zahlenspalte:
 
 ![Liste „Effort“ mit als Balken formatierten Listenelementen des Typs Zahl](../images/sp-columnformatting-databars.png)
 
@@ -495,7 +526,7 @@ In diesem Beispiel werden die Formatvorlagen `background-color` und `border-top`
 ```
 
 ### <a name="show-trending-uptrending-down-icons-advanced"></a>Rendern von Aufwärtstrend- und Abwärtstrend-Symbolen (komplex)
-Die folgende Abbildung zeigt eine Liste mit Aufwärtstrend- und Abwärtstrend-Symbolen.
+Die folgende Abbildung zeigt eine Liste mit Aufwärtstrend- und Abwärtstrend-Symbolen:
 
 ![Liste mit Aufwärtstrend- und Abwärtstrend-Symbolen neben den Listenelementen](../images/sp-columnformatting-trending.png)
 
@@ -567,7 +598,7 @@ Spaltenformatierungen können auf folgende Spaltentypen angewendet werden:
 * Auswahl
 * Person oder Gruppe
 * Ja/Nein
-* Link 
+* Hyperlink 
 * Bild
 * Datum/Uhrzeit
 * Nachschlagen
@@ -781,8 +812,7 @@ Eine optionale Eigenschaft, die die Formatattribute des in `elmType` definierten
     'word-break'
     'word-wrap'
 
-Das Beispiel unten zeigt den Wert eines Objekts des Typs „style“. Wie Sie sehen, werden zwei Formateigenschaften angewendet (`padding` und `background-color`). Der Wert für `padding` ist ein hartcodierter Zeichenfolgenwert. Der Wert für `background-color` ist ein Objekt des Typs „Expression“, das entweder in Rot (#ff0000) oder in Grün (#00ff00) ausgewertet wird, je nachdem, ob der Wert des aktuellen Felds (@currentField) kleiner als 40 ist. Weitere Informationen finden Sie im Abschnitt zu Objekten des Typs „Expression“. 
-
+Das Beispiel unten zeigt den Wert eines Objekts des Typs „style“. Wie Sie sehen, werden zwei Formateigenschaften angewendet (`padding` und `background-color`). Der Wert für `padding` ist ein hartcodierter Zeichenfolgenwert. Der Wert für `background-color` ist ein Objekt des Typs „Expression“, das entweder in Rot (`#ff0000`) oder in Grün (`#00ff00`) ausgewertet wird, je nachdem, ob der Wert des aktuellen Felds (`@currentField`) kleiner als 40 ist. Weitere Informationen finden Sie im Abschnitt zu Objekten des Typs „Expression“. 
 
 ```JSON
 {
@@ -819,7 +849,7 @@ Eine optionale Eigenschaft, die zusätzliche Attribute für das in `elmType` def
 - d
 - aria
 
-Bei allen anderen Attributnamen wird ein Fehler zurückgegeben. Attributwerte können entweder Objekte des Typs „Expression“ oder Zeichenfolgen sein. Das folgende Beispiel fügt dem in `elmType` definierten Element zwei Attribute hinzu (`target` und `href`). Das Attribut `target` ist eine hartcodierte Zeichenfolge. Das Attribut `href` ist ein Ausdruck, der zur Laufzeit ausgewertet wird in „http://finance.yahoo.com/quote/“, ergänzt um den Wert des aktuellen Felds (@currentField). 
+Bei allen anderen Attributnamen wird ein Fehler zurückgegeben. Attributwerte können entweder Objekte des Typs „Expression“ oder Zeichenfolgen sein. Das folgende Beispiel fügt dem in `elmType` definierten Element zwei Attribute hinzu (`target` und `href`). Das Attribut `target` ist eine hartcodierte Zeichenfolge. Das Attribut `href` ist ein Ausdruck, der zur Laufzeit ausgewertet wird in „http://finance.yahoo.com/quote/“, ergänzt um den Wert des aktuellen Felds (`@currentField`). 
 ```JSON
 {
    "target": "_blank",
@@ -835,9 +865,7 @@ Bei allen anderen Attributnamen wird ein Fehler zurückgegeben. Attributwerte k�
 
 ### <a name="children"></a>children
 
-Eine optionale Eigenschaft, die die untergeordneten Elemente des in `elmType` definierten Elements festlegt. Der Wert wird als Array von Objekten des Typs `CustomFormatter` angegeben. Er kann beliebig geschachtelt werden. Ist für ein Element die Eigenschaft `txtContent` festgelegt, werden die Eigenschaften der untergeordneten Elemente ignoriert. 
-
-<!-- Verify that CustomFormatter is the correct object name? -->
+Eine optionale Eigenschaft, die die untergeordneten Elemente des in `elmType` definierten Elements festlegt. Der Wert wird als Array von Objekten des Typs `elm` angegeben. Er kann beliebig geschachtelt werden. Ist für ein Element die Eigenschaft `txtContent` festgelegt, werden die Eigenschaften der untergeordneten Elemente ignoriert. 
 
 ### <a name="debugmode"></a>debugMode
 
@@ -845,7 +873,7 @@ Eine optionale Eigenschaft, die zum Debuggen gedacht ist. Sie gibt Fehlermeldung
 
 ### <a name="expression-object"></a>Objekt „Expression“
 
-Die Werte für `txtContent` sowie für Formateigenschaften und Attributeigenschaften können auch als Ausdrücke definiert werden, die zur Laufzeit auf Basis des Kontexts des aktuellen Objekts (oder der aktuellen Zeile) ausgewertet werden. Objekte des Typs „Expression“ können geschachtelt werden. Das heißt, sie dürfen andere Objekte des Typs „Expression“ enthalten. 
+Die Werte für `txtContent` sowie für Formateigenschaften und Attributeigenschaften können auch als Ausdrücke definiert werden, die zur Laufzeit auf Basis des Kontexts des aktuellen Feldes (oder der aktuellen Zeile) ausgewertet werden. Objekte des Typs „Expression“ können geschachtelt werden. Das heißt, sie dürfen andere Objekte des Typs „Expression“ enthalten. 
 
 Das folgende Beispiel zeigt ein Objekt des Typs „Expression“, das den folgenden Ausdruck ausführt:
 
@@ -907,6 +935,9 @@ Operatoren legen fest, welcher Typ von Operation ausgeführt werden soll. Die fo
 - cos
 - sin
 - ? 
+- toLocaleString()
+- toLocaleDateString()
+- toLocaleTimeString()
 
 **Binäre Operatoren:** Unten sehen Sie die standardmäßigen arithmetischen binären Operatoren. Diese erwarten zwei Operanden. 
 
@@ -925,7 +956,10 @@ Operatoren legen fest, welcher Typ von Operation ausgeführt werden soll. Die fo
 - Number()
 - Date()
 - cos
-- sin  
+- sin
+- toLocaleString()
+- toLocaleDateString()
+- toLocaleTimeString()
 
 **Bedingter Operator:** Unten sehen Sie den bedingten Operator.
 
@@ -942,11 +976,14 @@ Die Werte für `txtContent`, Formatvorlagen und Attribute können entweder Zeich
 #### <a name="currentfield"></a>„@currentField“
 Wird ausgewertet in den Wert des aktuellen Felds. 
 
-Einige Feldtypen werden als Objekte dargestellt. Zum Abrufen eines Werts aus einem Objekt verweisen Sie auf eine Eigenschaft innerhalb des Objekts. Beispiel: Ist das aktuelle Feld ein Personen- oder Gruppenfeld, würden Sie „@currentField.title“ angeben, um den Namen der Person abzurufen, wie er in der Regel in Listenansichten angezeigt wird. Nachfolgend sind die Feldtypen aufgeführt, die als Objekte dargestellt werden, inklusive einer Liste ihrer jeweiligen Eigenschaften.
+Einige Feldtypen werden als Objekte dargestellt. Zum Abrufen eines Werts aus einem Objekt verweisen Sie auf eine Eigenschaft innerhalb des Objekts. Beispiel: Ist das aktuelle Feld ein Personen- oder Gruppenfeld, würden Sie `@currentField.title` angeben, um den Namen der Person abzurufen, wie er in der Regel in Listenansichten angezeigt wird. Nachfolgend sind die Feldtypen aufgeführt, die als Objekte dargestellt werden, inklusive einer Liste ihrer jeweiligen Eigenschaften.
+
+> [!NOTE]
+> `@currentField.title` gibt standardmäßig den Namen einer Person zurück. Wenn jedoch der Wert „Show Field“ des Personenfelds angepasst wurde, wird möglicherweise der Wert der Eigenschaft `title` geändert. Wird zum Beispiel der Wert „Show Field“ eines Personenfelds als „Abteilung“ konfiguriert, erhält die Eigenschaft `title` als Wert die Abteilung der Person.
 
 **Personenfelder**
 
-Objekte des Typs Personenfeld verfügen über die folgenden Eigenschaften:
+Das Objekte des Personenfelds verfügt über die folgenden Eigenschaften (es sind auch Beispiele aufgeführt):
 
 ```JSON
 {
@@ -954,9 +991,7 @@ Objekte des Typs Personenfeld verfügen über die folgenden Eigenschaften:
    "title": "Kalya Tucker",
    "email": "kaylat@contoso.com",
    "sip": "kaylat@contoso.com",
-   "picture": "https://contoso.sharepoint.com/kaylat_contoso_com_MThumb.jpg?t=63576928822",
-   "jobTitle": "",
-   "department": ""
+   "picture": "https://contoso.sharepoint.com/kaylat_contoso_com_MThumb.jpg?t=63576928822"
 }
 ```
 
@@ -964,9 +999,9 @@ Objekte des Typs Personenfeld verfügen über die folgenden Eigenschaften:
 
 Es gibt mehrere Möglichkeiten, den Wert eines Datum/Uhrzeit-Felds abzurufen, je nachdem, welches Datumsformat angezeigt werden soll. Unterstützt werden die folgenden Methoden zur Konvertierung von Datumswerten in bestimmte Formate: 
 
-* ```toLocaleString()```: Gibt einen komplett erweiterten Datentyp mit Datum und Uhrzeit aus.
-* ```toLocaleDateString()```: Gibt einen Datentyp aus, der nur das Datum anzeigt.
-* ```toLocaleTimeString()```: Gibt einen Datentyp aus, der nur die Uhrzeit anzeigt.
+* `toLocaleString()`: Gibt einen komplett erweiterten Datentyp mit Datum und Uhrzeit aus.
+* `toLocaleDateString()`: Gibt einen Datentyp aus, der nur das Datum anzeigt.
+* `toLocaleTimeString()`: Gibt einen Datentyp aus, der nur die Uhrzeit anzeigt.
 
 Der folgende JSON-Code beispielsweise würde das aktuelle Feld als Datum/Uhrzeit-Zeichenfolge anzeigen (sofern es sich um ein Datumsfeld handelt).
 
@@ -982,7 +1017,7 @@ Der folgende JSON-Code beispielsweise würde das aktuelle Feld als Datum/Uhrzeit
 
 **Nachschlagefelder**
 
-Objekte des Typs Nachschlagefeld verfügen über die folgenden Eigenschaften:
+Das Objekte des Nachschlagefelds verfügt über die folgenden Eigenschaften (es sind auch Beispiele aufgeführt):
 
 ```JSON
 {
@@ -1009,12 +1044,37 @@ Das folgende Beispiel demonstriert die Anwendung eines Nachschlagefelds auf ein 
 ``` 
 
 #### <a name="fieldname"></a>„[$FieldName]“ 
-Als Kontext wird die gesamte Zeile übergeben. Mithilfe dieses Kontexts können Sie auf andere Felder verweisen. Beispiel: Zum Abrufen des Werts eines Felds namens „MarchSales“ würden Sie „[$MarchSales]“ verwenden.
+Die Spalte wird im Kontext der gesamten Zeile formatiert. Sie können diesen Kontext verwenden, um auf andere Felder innerhalb der gleichen Zeile zu verweisen. Beispiel: Zum Abrufen des Werts eines Felds namens „MarchSales“ würden Sie `[$MarchSales]` verwenden.
 
-Ist der Wert eines Felds ein Objekt, können Sie auf die Eigenschaften dieses Objekts zugreifen. Die Eigenschaft „Title“ eines Felds „MarchSales“ würden Sie beispielsweise mit „[$MarchSales].Title“ abrufen.  
+Ist der Wert eines Felds ein Objekt, können Sie auf die Eigenschaften dieses Objekts zugreifen. Wenn Sie z. B. auf die Eigenschaft „Titel“ eines Personenfelds mit dem Namen „SalesLead“ zugreifen möchten, verwenden Sie „[$SalesLead.title]“.
 
 #### <a name="me"></a>„@me“
-Wird ausgewertet in die E-Mail-Adresse des aktuell angemeldeten Benutzers. 
+Wird ausgewertet in die E-Mail-Adresse des aktuell angemeldeten Benutzers.
+
+Dieses Feld kann verwendet werden, um die aktuelle E-Mail-Adresse des Benutzers anzuzeigen, aber viel wahrscheinlicher wird es unter Bedingungen verwendet. Nachfolgend finden Sie ein Beispiel für das Festlegen einer Farbe für ein Personenfeld auf Rot, wenn es dem aktuell angemeldeten Benutzer entspricht, und auf Blau, wenn dies nicht der Fall ist: 
+
+```JSON
+{
+   "elmType": "div",
+   "txtContent": "@currentField.title",
+   "style": {
+      "color": {
+         "operator": "?",
+         "operands": [
+            {
+               "operator": "==",
+               "operands": [
+                  "@me",
+                  "@currentField.email"
+               ]
+            },
+            "red",
+            "blue"
+         ]
+      }
+   }
+}
+```
 
 #### <a name="now"></a>„@now“
 Wird ausgewertet in das aktuelle Datum und die aktuelle Uhrzeit. 

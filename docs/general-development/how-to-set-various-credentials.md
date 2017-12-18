@@ -1,15 +1,15 @@
 ---
-title: How to Set Various Credentials
+title: Festlegen von verschiedenen Anmeldeinformationen
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: eb819681-5a4f-49ae-b7f4-334366c51112
-ms.openlocfilehash: a1faa07c07c24886d73874af54d125e713fd7c87
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 03efdb576c70191c911d7668a3343b5ad832ea0e
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-set-various-credentials"></a>How to: Set Various Credentials
+# <a name="set-various-credentials"></a>Festlegen von verschiedenen Anmeldeinformationen
 
 You must set credentials for your users before they can call Excel Web Services by using your custom application. You must explicitly set credentials even if you intend to use the default credentials. Excel Web Services uses the authentication schemes that Microsoft SharePoint Foundation supports. For more information about SharePoint Foundation authentication schemes, see the SharePoint Foundation documentation in this SDK and  [Eingehende Ansprüche: Anmelden bei SharePoint](incoming-claims-signing-into-sharepoint.md).
   

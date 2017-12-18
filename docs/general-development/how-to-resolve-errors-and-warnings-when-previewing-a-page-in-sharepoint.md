@@ -1,16 +1,18 @@
 ---
-title: Vorgehensweise Beheben von Fehlern und Warnungen bei der Vorschau einer Seite in SharePoint
+title: Beheben von Fehlern und Warnungen bei der Vorschau einer Seite in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 03f72f65-b22b-4304-be92-f44ce0619372
-ms.openlocfilehash: fc31a94d4fb8cc195bfe66bc75ff453bd80b6bfc
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 73895457694d250f1527b69bd558335fd573263c
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-resolve-errors-and-warnings-when-previewing-a-page-in-sharepoint"></a>Vorgehensweise: Beheben von Fehlern und Warnungen bei der Vorschau einer Seite in SharePoint
-Nach dem Konvertieren einer HTML-Datei in eine SharePoint-Gestaltungsvorlage oder nach dem Erstellen eines Seitenlayouts können Sie eine Vorschau dieser Seite im Browser anzeigen. Bevor Sie eine Gestaltungsvorlage oder ein Seitenlayout in der Vorschau anzeigen können, müssen Sie jedoch alle Probleme beheben, die das Rendern der Seite in der serverseitigen Vorschau verhindern.
+# <a name="resolve-errors-and-warnings-when-previewing-a-page-in-sharepoint"></a>Beheben von Fehlern und Warnungen bei der Vorschau einer Seite in SharePoint
+
+Nach dem Konvertieren einer HTML-Datei in eine SharePoint-Gestaltungsvorlage oder nach dem Erstellen eines Seitenlayouts können Sie eine Vorschau dieser Seite im Browser anzeigen. Bevor Sie eine Gestaltungsvorlage oder ein Seitenlayout in der Vorschau anzeigen können, müssen Sie jedoch alle Probleme beheben, die verhindern, dass die Seite in der serverseitigen Vorschau gerendert wird.
+
 ## <a name="introduction-to-resolving-preview-errors"></a>Einführung in das Beheben von Fehlern der Vorschau
 <a name="Introduction"> </a>
 

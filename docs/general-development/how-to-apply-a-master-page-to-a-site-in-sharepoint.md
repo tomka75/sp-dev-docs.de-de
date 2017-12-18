@@ -1,16 +1,19 @@
 ---
-title: Vorgehensweise Anwenden einer Gestaltungsvorlage auf eine Website in SharePoint
+title: >+
+  Anwenden einer Gestaltungsvorlage auf eine Website in SharePoint
+
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 04861390-84d5-40ea-b0db-6c0748eff196
-ms.openlocfilehash: a015d4d276933219a548693e11e6e67671cef983
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 8ee3d32510e02ffd6874dda5bbad9846e5a16442
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-apply-a-master-page-to-a-site-in-sharepoint"></a>Vorgehensweise: Anwenden einer Gestaltungsvorlage auf eine Website in SharePoint
-Erfahren Sie, wie Sie eine Gestaltungsvorlage zu einer SharePoint-Website zuordnen.
+# <a name="apply-a-master-page-to-a-site-in-sharepoint"></a>Anwenden einer Gestaltungsvorlage auf eine Website in SharePoint
+
+In diesem Artikel erfahren Sie, wie Sie eine Gestaltungsvorlage einer SharePoint-Website zuordnen.
 ## <a name="mapping-a-master-page-to-a-site"></a>Zuordnen einer Gestaltungsvorlage zu einer Website
 
 In SharePoint definiert eine Gestaltungsvorlage die gemeinsam genutzten Rahmenelemente, z. B. den Chrom, für alle Seiten Ihrer Website. Nach der Erstellung der Gestaltungsvorlage kann diese einer Website zugeordnet werden. Dies kann für alle Veröffentlichungsseiten erfolgen, die für alle Benutzer vorgesehen sind, aber auch für die administrativen Seiten, die zur Verwaltung der Website verwendet werden. Wenn Sie die untergeordnete Website einer übergeordneten Website konfigurieren, können Sie alternativ die Gestaltungsvorlage der übergeordneten Website übernehmen. In diesem Artikel sind die Schritte zum Zuordnen einer erstellten Gestaltungsvorlage zu einer Website, zum Übernehmen der Gestaltungsvorlage von einer übergeordneten Website, oder zum Zuordnen einer Gestaltungsseite zu einem bestimmten Gerätekanal enthalten.

@@ -1,24 +1,24 @@
 ---
-title: How to Trust a Location
+title: Aufbauen einer Vertrauensstellung zu einem Speicherort
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,trusted location
 f1_keywords: how to,howdoi,howto,trusted location
 ms.prod: sharepoint
 ms.assetid: 0f396c0b-f578-4d1a-9e6b-a75f352265ab
-ms.openlocfilehash: 9c769a0d046a112253a61265373355eece0dade9
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2f22c1aa22fd81890d629c01ccdf8ba9adc50c66
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-trust-a-location"></a>How to: Trust a Location
+# <a name="trust-a-location"></a>Aufbauen einer Vertrauensstellung zu einem Speicherort
 
 Workbooks that you want to access must be placed in a trusted location. If they are not, calls to open the workbooks will fail. This example shows you how to trust a location by using the SharePoint Central Administration page. 
   
     
     
 
-You can also trust a location by using Windows PowerShell. For more information, see the Microsoft SharePoint Server 2010 IT Pro and administration documentation on  [TechNet](http://technet.microsoft.com/en-us/library/ee428287%28office.14%29.aspx). 
+You can also trust a location by using Windows PowerShell. For more information, see the Microsoft SharePoint Server 2010 IT Pro and administration documentation on  [TechNet](http://technet.microsoft.com/de-DE/library/ee428287%28office.14%29.aspx). 
 > **Tipp:** Weitere Informationen über die Administrationsverbesserung und das Anzeigen von Screenshots der Seite Trusted File Locations finden Sie im Blog-Eintrag [Administrationsverbesserungen für Excel Services in SharePoint 2010](http://blogs.msdn.com/excel/archive/2009/11/16/excel-services-in-sharepoint-2010-administration-improvements.aspx). 
   
     

@@ -1,16 +1,18 @@
 ---
-title: Vorgehensweise erstellen ein Add-in-bezogenen externes Inhaltstyps in SharePoint
+title: Erstellen externer Inhaltstypen auf Add-In-Ebene in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: de4b50a3-84da-48ce-9ba0-fe06571e52a8
-ms.openlocfilehash: 385bec9d7904031dee03347afc83974da7c3b6a0
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b223f4925792bc7765792cdbb6f71aae8b3832c3
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-an-add-in-scoped-external-content-type-in-sharepoint"></a>Vorgehensweise: erstellen ein Add-in-bezogenen externes Inhaltstyps in SharePoint
+# <a name="create-an-add-in-scoped-external-content-type-in-sharepoint"></a>Erstellen externer Inhaltstypen auf Add-In-Ebene in SharePoint
+
 In diesem Artikel erfahren Sie, wie Sie externe Inhaltstypen erstellen, die in einer SharePoint-Add-In installiert, gesichert und verwendet werden können.
+
 ## <a name="prerequisites-for-developing-add-in-scoped-external-content-types"></a>Erforderliche Komponenten für die Entwicklung von add-in-bezogenen externen Inhaltstypen
 <a name="bkmk_Prerequisites"> </a>
 

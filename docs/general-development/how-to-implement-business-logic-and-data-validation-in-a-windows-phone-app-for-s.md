@@ -1,15 +1,16 @@
 ---
-title: "Vorgehensweise Implementieren von Validierung von Business Logik und die Daten in einem Windows Phone-app für SharePoint"
+title: "Implementieren von Geschäftslogik und Datenüberprüfung in einer Windows Phone-App für SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: fbbedc38-9651-4cd6-b523-d93cbf1cd39d
-ms.openlocfilehash: e520f6e5237d5adbf405a292b78b2e62b69be1b2
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 1d122bef142048a6175d3e6c6a9a83bb34f702be
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-implement-business-logic-and-data-validation-in-a-windows-phone-app-for-sharepoint"></a>Vorgehensweise: Implementieren von Validierung von Business Logik und die Daten in einem Windows Phone-app für SharePoint
+# <a name="implement-business-logic-and-data-validation-in-a-windows-phone-app-for-sharepoint"></a>Implementieren von Geschäftslogik und Datenüberprüfung in einer Windows Phone-App für SharePoint
+
 Implementieren Sie Datenvalidierung in einer Windows Phone-App, die mithilfe der Windows Phone - SharePoint-Listenanwendungsvorlage erstellt wurde. Verwenden Sie in einer Windows Phone-app für die Produktionsumgebung vorgesehen ist, müssen Sie wahrscheinlich von Benutzern auf, Geschäftslogik für den bestimmten Umständen relevant erzwungen, um sicherzustellen, dass geeignete Formatierung der eingegebenen Werte oder einfach zum Abfangen von Fehlern vor dem Speichern von Werten in einer SharePoint-Liste eingegebene Daten zu überprüfen. Projekte, die basierend auf der Vorlage Windows Phone SharePoint List Application standardmäßig Daten Überprüfungslogik unter anderem solche Projekte auch einen Mechanismus für Entwickler zum Implementieren der benutzerdefinierten Datenüberprüfung bereitstellen.
   
     
@@ -310,8 +311,7 @@ The validation logic in this sample enforces given business rules by indicating 
 -  [Erstellen von Windows Phone-Apps, die auf SharePoint zugreifen](build-windows-phone-apps-that-access-sharepoint.md)
     
   
--  
-  [Binden von Silverlight-Daten](http://msdn.microsoft.com/en-us/library/cc278072.aspx)
+-  [Binden von Silverlight-Daten](http://msdn.microsoft.com/de-DE/library/cc278072.aspx)
     
   
 -  [Vorgehensweise: Einrichten einer Umgebung für die Entwicklung von mobilen Anwendungen für SharePoint](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md)

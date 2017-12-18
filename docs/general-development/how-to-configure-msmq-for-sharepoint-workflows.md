@@ -1,16 +1,18 @@
 ---
-title: "Vorgehensweise Konfigurieren von MSMQ für SharePoint-Workflows"
+title: "Konfigurieren von MSMQ für SharePoint-Workflows"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c0e130f6-c210-44ea-83ed-b327f04551d6
-ms.openlocfilehash: 40ad8b9b742a19a24e0e2dfa648efeda623a892a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3b6e7082898073404259563dd7eb67ef2db9c3b0
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-configure-msmq-for-sharepoint-workflows"></a>Vorgehensweise: Konfigurieren von MSMQ für SharePoint-Workflows
+# <a name="configure-msmq-for-sharepoint-workflows"></a>Konfigurieren von MSMQ für SharePoint-Workflows
+
 Informationen Sie zum Konfigurieren von Microsoft Message Queuing (MSMQ) in SharePoint asynchrones Ereignis messaging in SharePoint-Workflows unterstützen. 
+
 ## <a name="enabling-msmq"></a>Aktivieren von MSMQ
 
 MSMQ ist ein Windows Server-Feature, das Sie auf Ihrem Computer SharePoint Server aktivieren können, um asynchrones Ereignis messaging in SharePoint-Workflows zu ermöglichen. Um asynchrones Ereignis messaging unterstützen möchten, müssen Sie MSMQ auf Ihrem Computer SharePoint Server aktivieren.
@@ -83,16 +85,13 @@ Windows-Entwicklercenter bietet ausführliche Dokumentation von MSMQ. Es folgen 
     
     
 
--  
-  [Zu Message Queuing](http://msdn.microsoft.com/en-us/library/windows/desktop/ms706032%28v=vs.85%29.aspx)
+-  [Zu Message Queuing](http://msdn.microsoft.com/de-DE/library/windows/desktop/ms706032%28v=vs.85%29.aspx)
     
   
--  
-  [Message Queuing-Referenz (engl.)](http://msdn.microsoft.com/en-us/library/windows/desktop/ms700112%28v=vs.85%29.aspx)
+-  [Message Queuing-Referenz (engl.)](http://msdn.microsoft.com/de-DE/library/windows/desktop/ms700112%28v=vs.85%29.aspx)
     
   
--  
-  [Message Queuing-Fehler und Codes für Statusangaben](http://msdn.microsoft.com/en-us/library/windows/desktop/ms700106%28v=vs.85%29.aspx)
+-  [Message Queuing-Fehler und Codes für Statusangaben](http://msdn.microsoft.com/de-DE/library/windows/desktop/ms700106%28v=vs.85%29.aspx)
     
   
 
@@ -100,8 +99,7 @@ Windows-Entwicklercenter bietet ausführliche Dokumentation von MSMQ. Es folgen 
 <a name="bk_addresources"> </a>
 
 
--  
-  [Message Queuing (MSMQ)](http://msdn.microsoft.com/en-us/library/windows/desktop/ms711472%28v=vs.85%29.aspx)
+-  [Message Queuing (MSMQ)](http://msdn.microsoft.com/de-DE/library/windows/desktop/ms711472%28v=vs.85%29.aspx)
     
   
 

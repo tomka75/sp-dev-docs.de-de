@@ -1,29 +1,26 @@
 ---
-title: "Vorgehensweise verwenden die Anreicherung Web Service als Legende für SharePoint Server"
+title: "Verwenden der Content Enrichment-Webdienstlegende für SharePoint Server"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d4e44498-9a3d-4f2f-b5ba-6ebef9971dcb
-ms.openlocfilehash: cd0c56acb2b806bcaf2718f0702729d005711f78
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f0b9fc5e96448361dab885c14a8663b90770b7ee
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-use-the-content-enrichment-web-service-callout-for-sharepoint-server"></a>Anleitung: Aufrufen des Inhaltserweiterungs-Webdiensts in SharePoint Server
+# <a name="use-the-content-enrichment-web-service-callout-for-sharepoint-server"></a>Verwenden der Content Enrichment-Webdienstlegende für SharePoint Server
+
 In diesem Artikel erfahren Sie, wie Sie den Inhaltserweiterungs-Webdienst in SharePoint implementieren, um verwaltete Eigenschaften von durchforsteten Elementen zu ändern, noch bevor die Elemente indiziert werden.
+
 Entwickler können die Inhaltsverarbeitung in der SharePoint-Suche um einen benutzerdefinierten Schritt ergänzen, in dem die verwalteten Eigenschaften von durchforsteten Elementen noch vor der Indizierung der Elemente verändert werden. Für diesen benutzerdefinierten Schritt muss ein externer Webdienst implementiert werden, der die verwalteten Eigenschaften von Elementen noch während der Elementverarbeitung erweitern kann: der Inhaltserweiterungs-Webdienst. Anschließend muss das System so konfiguriert werden, dass dieser externe Webdienst aufgerufen wird.
-  
-    
-    
 
 Zur Implementierung des externen Inhaltserweiterungs-Webdiensts werden die Schnittstellen im Namespace [Microsoft.Office.Server.Search.ContentProcessingEnrichment](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.ContentProcessingEnrichment.aspx) verwendet.
+
 ## <a name="windows-powershell-cmdlets-to-use-with-the-content-enrichment-web-service"></a>Windows PowerShell-Cmdlets zur Verwendung mit dem Inhaltserweiterung-Webdienst
 <a name="SP15_PowerShell_Cmdlets_Content_Enrichment"> </a>
 
 Die Funktionalität Inhaltserweiterung, konfiguriert und mit den folgenden Cmdlets Windows PowerShell aktiviert:
-  
-    
-    
 
 -  [Get-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-DE/library/jj219783%28office.15%29.aspx)
     

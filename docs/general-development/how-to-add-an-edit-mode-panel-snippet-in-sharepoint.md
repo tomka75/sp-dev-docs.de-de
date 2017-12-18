@@ -1,16 +1,18 @@
 ---
-title: "Vorgehensweise hinzufügen einen Ausschnitt Bearbeiten Modus Systemsteuerung SharePoint"
+title: "Hinzufügen eines Bearbeitungsmodusbereichs-Codeausschnitts in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 39fa1e32-9129-407d-914f-96f4c6e66dc8
-ms.openlocfilehash: 6a2b599f3d41e98b06e500fce734ac30fd80573a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 09082485506e6894e3188d1334880196c03d212d
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-add-an-edit-mode-panel-snippet-in-sharepoint"></a>Vorgehensweise: hinzufügen einen Ausschnitt Bearbeiten Modus Systemsteuerung SharePoint
+# <a name="add-an-edit-mode-panel-snippet-in-sharepoint"></a>Hinzufügen eines Bearbeitungsmodusbereichs-Codeausschnitts in SharePoint
+
 Ein Bearbeitungsmodusbereich ist ein Codeausschnitt, den Sie verwenden können, um Anweisungen oder andere Inhalte für Inhaltsautoren anzuzeigen, die Inhalte dieses Bereichs nur sehen können, wenn sie eine Seite bearbeiten. Dieser Codeausschnitt kann hingegen auch so konfiguriert werden, dass seine Inhalte nur im regulären Modus (Ansichtsmodus) statt im Bearbeitungsmodus angezeigt werden.
+
 ## <a name="introduction-to-the-edit-mode-panel"></a>Einführung in die Bearbeitungsbereich Modus
 <a name="Introduction"> </a>
 

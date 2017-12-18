@@ -1,15 +1,16 @@
 ---
-title: Vorgehensweise Erstellen eine externe Liste mithilfe einer in SharePoint OData-Datenquelle
+title: Erstellen einer externen Liste mithilfe einer OData-Datenquelle in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 601fbfce-a0c6-43dd-8398-540d094c083c
-ms.openlocfilehash: c0fe48ca9061d22f5aade9b3afbf15ba306f0ae0
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: a926f2a85678a35e41cb590da67eae1724cdd29c
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-an-external-list-using-an-odata-data-source-in-sharepoint"></a>Vorgehensweise: Erstellen eine externe Liste mithilfe einer in SharePoint OData-Datenquelle
+# <a name="create-an-external-list-using-an-odata-data-source-in-sharepoint"></a>Erstellen einer externen Liste mithilfe einer OData-Datenquelle in SharePoint
+
 In diesem Artikel erfahren Sie, wie Sie externe Listen programmgesteuert erstellen und an OData-basierte externe Inhaltstypen in SharePoint binden. Obwohl Hauptbenutzer oder SharePoint-Administrator eine externe Liste mithilfe von SharePoint Designer 2013 wahrscheinlich erstellen, wird ein Entwickler die Möglichkeit zum Erstellen von externer Listen mithilfe der Tools von deren Handel, Visual Studio 2012 und die Office Developer Tools für Visual Studio 2012 interessiert sein. Wird dadurch mehr Flexibilität zu Funktionen hinzuzufügen und um eine Lösung zu packen, die umfasst Features zur späteren Bereitstellung in eine Business Connectivity Services (BCS) oder viele Umgebungen hosten.
   
     

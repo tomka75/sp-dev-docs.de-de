@@ -1,15 +1,17 @@
 ---
-title: "Vorgehensweise erstellen Bericht-Editoren für PerformancePoint Services in SharePoint"
+title: "Erstellen von Berichts-Editoren für PerformancePoint-Dienste in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: f9675950d272a1bd90efa4eb26a6772f13dd24bc
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 64e2ba69caccae2580f34c973a4be340e19ec6c2
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-report-editors-for-performancepoint-services-in-sharepoint"></a>Vorgehensweise: erstellen Bericht-Editoren für PerformancePoint Services in SharePoint
+# <a name="create-report-editors-for-performancepoint-services-in-sharepoint"></a>Erstellen von Berichts-Editoren für PerformancePoint-Dienste in SharePoint
+
 In diesem Artikel erfahren Sie, wie die Editor-Komponente einer benutzerdefinierten Berichtserweiterung für PerformancePoint-Dienste erstellt wird.
+
 ## <a name="what-are-custom-report-editors-for-performancepoint-services"></a>Was sind benutzerdefinierte Bericht-Editoren für PerformancePoint-Dienste ?
 <a name="bi_intro"> </a>
 

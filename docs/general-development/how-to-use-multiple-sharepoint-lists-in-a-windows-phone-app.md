@@ -1,15 +1,15 @@
 ---
-title: "Vorgehensweise Verwenden mehrerer 2013 für SharePoint-in ein Windows Phone-app Listen"
+title: Verwenden mehrerer SharePoint-Listen in einer Windows Phone-App
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 5251d35a-d659-49b3-8e0d-dfd4a7faee6b
-ms.openlocfilehash: 736b7ce59201c41637d3ab89242251b875674d99
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 08638a14c0cd602dfb4cb1288fbe089ccace16fc
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-use-multiple-sharepoint-lists-in-a-windows-phone-app"></a>Vorgehensweise: Verwenden mehrerer 2013 für SharePoint-in ein Windows Phone-app Listen
+# <a name="use-multiple-sharepoint-lists-in-a-windows-phone-app"></a>Verwenden mehrerer SharePoint-Listen in einer Windows Phone-App
 Erstellen Sie Windows Phone-Apps, die Daten aus mehreren SharePoint-Listen verwenden. Sie können mehrere SharePoint-Listen in Ihrer app auf verschiedene Weise verwenden. Beim Erstellen einer Windows Phone-app basierend auf der Vorlage Windows Phone SharePoint List Application Angabe eines einzelnen Ziels SharePoint-Liste, aber die Architektur des resultierenden Projekts ist erweiterbar sein müssen, um die Integration von mehreren Listen zu berücksichtigen.
   
     

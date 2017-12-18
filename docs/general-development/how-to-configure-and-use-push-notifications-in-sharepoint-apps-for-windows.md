@@ -1,21 +1,22 @@
 ---
-title: "Vorgehensweise Konfigurieren und Verwenden von Pushbenachrichtigungen in SharePoint-apps für Windows Phone"
+title: "Konfigurieren und Verwenden von Pushbenachrichtigungen in SharePoint-Apps für Windows Phone"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 68fa2138-86d9-4e35-9c7c-5cd292087b80
-ms.openlocfilehash: 393dc7654777122ec5761486e97c1114db0be8e3
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b9e6c480be922250a62a524a703ea2cd0925b548
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-configure-and-use-push-notifications-in-sharepoint-apps-for-windows-phone"></a>Vorgehensweise: Konfigurieren und Verwenden von Pushbenachrichtigungen in SharePoint-apps für Windows Phone
+# <a name="configure-and-use-push-notifications-in-sharepoint-apps-for-windows-phone"></a>Konfigurieren und Verwenden von Pushbenachrichtigungen in SharePoint-Apps für Windows Phone
+
 Erstellen Sie eine Lösung in SharePoint Server, um Pushbenachrichtigungen zu senden, und entwickeln Sie eine Windows Phone-App, um die Benachrichtigungen zu empfangen. Verwenden die Microsoft Push Notification Service (MPNS), können Windows Phone-apps Benachrichtigungen über das Internet über Ereignisse ausgelöst werden auf Microsoft SharePoint Server empfangen. Phone-app keinen Server für Änderungen an, beispielsweise die Elemente in einer Liste die Abfragen auf der Phone-app basiert. Die app Erhalt von Benachrichtigungen auf dem Server registriert werden, und ein Ereignisempfänger initiieren Sie eine Benachrichtigung und senden Sie sie an die empfangende app für die Behandlung von kann. Das Push Notification wird an der Windows Phone-Geräten von MPNS weitergeleitet.
   
     
     
 
-Windows Phone 7 unterstützt nicht mehrere apps gleichzeitig ausgeführt. Als die Komponenten des Betriebssystems Windows Phone (OS) selbst kann nur eine app auf dem Telefon zu einem Zeitpunkt ausgeführt werden. Ein Ereignis, die einer bestimmten Phone-app für die Überprüfung relevante auftreten (z. B., beispielsweise ein Listenelement zu einer Liste hinzugefügte) Wenn die app auf dem Telefon im Vordergrund ausgeführt nicht zur Verfügung (d. h., wenn die app veraltete oder geschlossen ist). Konnten Sie einen Hintergrunddienst auf dem Telefon mit einem periodischen Vorgang, der Überprüfung auf Änderungen an der Liste auf dem Server möglicherweise entwickeln, aber diese Vorgehensweise würde Ressourcen (z. B. Netzwerk Bandbreite und Batterie Power) auf dem Telefon nutzen. Mit MPNS und die Komponenten, die in der Windows Phone 7-Betriebssystem integrierten Benachrichtigungen zu unterstützen, kann das Telefon selbst eine Benachrichtigung, die über eine bestimmte app für den Kontext relevant empfangen - selbst wenn diese app ausgeführt wird nicht - der Benutzer die Möglichkeit zum Starten der relevanten app als Antwort auf die Benachrichtigung gewährt werden kann. (Weitere Informationen zu Pushbenachrichtigungen, finden Sie unter  [Push Notifications Overview for Windows Phone](http://msdn.microsoft.com/en-us/library/ff402558%28VS.92%29.aspx) in der MSDN Library). In diesem Thema erstellen Sie eine serverseitige Lösung zum Senden von Pushbenachrichtigungen zu einer Phone-app basierend auf eine Änderung in der Liste auf der die app basiert. Erstellen Sie dann die Phone-app für den Empfang von diese Benachrichtigungen.
+Windows Phone 7 unterstützt nicht mehrere apps gleichzeitig ausgeführt. Als die Komponenten des Betriebssystems Windows Phone (OS) selbst kann nur eine app auf dem Telefon zu einem Zeitpunkt ausgeführt werden. Ein Ereignis, die einer bestimmten Phone-app für die Überprüfung relevante auftreten (z. B., beispielsweise ein Listenelement zu einer Liste hinzugefügte) Wenn die app auf dem Telefon im Vordergrund ausgeführt nicht zur Verfügung (d. h., wenn die app veraltete oder geschlossen ist). Konnten Sie einen Hintergrunddienst auf dem Telefon mit einem periodischen Vorgang, der Überprüfung auf Änderungen an der Liste auf dem Server möglicherweise entwickeln, aber diese Vorgehensweise würde Ressourcen (z. B. Netzwerk Bandbreite und Batterie Power) auf dem Telefon nutzen. Mit MPNS und die Komponenten, die in der Windows Phone 7-Betriebssystem integrierten Benachrichtigungen zu unterstützen, kann das Telefon selbst eine Benachrichtigung, die über eine bestimmte app für den Kontext relevant empfangen - selbst wenn diese app ausgeführt wird nicht - der Benutzer die Möglichkeit zum Starten der relevanten app als Antwort auf die Benachrichtigung gewährt werden kann. (Weitere Informationen zu Pushbenachrichtigungen, finden Sie unter  [Push Notifications Overview for Windows Phone](http://msdn.microsoft.com/de-DE/library/ff402558%28VS.92%29.aspx) in der MSDN Library). In diesem Thema erstellen Sie eine serverseitige Lösung zum Senden von Pushbenachrichtigungen zu einer Phone-app basierend auf eine Änderung in der Liste auf der die app basiert. Erstellen Sie dann die Phone-app für den Empfang von diese Benachrichtigungen.
   
     
     
@@ -1356,8 +1357,7 @@ Wenn Sie ein Element der Aufträge SharePoint-Liste, den Code hinzufügen in der
 -  [Erstellen von Windows Phone-Apps, die auf SharePoint zugreifen](build-windows-phone-apps-that-access-sharepoint.md)
     
   
--  
-  [Push Notifications-Übersicht für Windows Phone](http://msdn.microsoft.com/en-us/library/ff402558%28VS.92%29.aspx)
+-  [Push Notifications-Übersicht für Windows Phone](http://msdn.microsoft.com/de-DE/library/ff402558%28VS.92%29.aspx)
     
   
 -  [Vorgehensweise: Einrichten einer Umgebung für die Entwicklung von mobilen Anwendungen für SharePoint](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md)

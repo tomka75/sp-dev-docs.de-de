@@ -2,14 +2,16 @@
 title: "Erstellen von Berichtsrenderern für PerformancePoint-Dienste in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: eeab12ad6c73463b15e9086b18cc054b501b71d5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 44a84b222c6bb661b1b4560ab7b72a9063507d4e
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-report-renderers-for-performancepoint-services-in-sharepoint"></a>Vorgehensweise: Erstellen von Berichtsrenderern für PerformancePoint-Dienste in SharePoint
+# <a name="create-report-renderers-for-performancepoint-services-in-sharepoint"></a>Erstellen von Berichtsrenderern für PerformancePoint-Dienste in SharePoint
+
 In diesem Artikel erfahren Sie, wie die Rendererkomponente in einer benutzerdefinierten Berichtserweiterung für PerformancePoint-Dienste erstellt wird.
+
 ## <a name="what-are-custom-report-renderers-for-performancepoint-services"></a>Was sind benutzerdefinierte Berichtsrenderer für PerformancePoint-Dienste ?
 <a name="bk_intro"> </a>
 

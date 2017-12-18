@@ -1,16 +1,18 @@
 ---
-title: Vorgehensweise POST eines anspruchsanbieters in SharePoint
+title: Bereitstellen eines Anspruchsanbieters in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3a5fcedc-aa9a-4ff4-95c0-0e0a7dea9d1f
-ms.openlocfilehash: bdf882e8a6e59a74c351f2c76427442fcd790fcf
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ef8377ceea402d2cc0573fbd5443974284f8ee7f
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-deploy-a-claims-provider-in-sharepoint"></a>Vorgehensweise: POST eines anspruchsanbieters in SharePoint
+# <a name="deploy-a-claims-provider-in-sharepoint"></a>Bereitstellen eines Anspruchsanbieters in SharePoint
+
 In diesem Artikel erfahren Sie, wie Sie einen SharePoint-Anspruchsanbieter mithilfe der Featureinfrastruktur und durch Erstellen einer Klasse, die von  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) erbt, bereitstellen.
+
 ## <a name="deploying-a-claims-provider-as-part-of-a-setup"></a>Bereitstellen eines Anspruchsanbieters im Rahmen einer Installation
 <a name="SP15_HowToDeployClaimsProvider_DeployingClaimsSetup"> </a>
 

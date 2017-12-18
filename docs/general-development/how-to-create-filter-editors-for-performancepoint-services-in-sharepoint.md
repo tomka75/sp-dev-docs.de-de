@@ -1,15 +1,17 @@
 ---
-title: "Vorgehensweise Erstellen Filter-Editoren für PerformancePoint Services in SharePoint"
+title: "Erstellen von Filter-Editoren für PerformancePoint-Dienste in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: f4d9584f81f607714e5d06bcfb445fe76e7531f5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 0d04a5b6b0d102890b60b6fcea9e234155694213
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-filter-editors-for-performancepoint-services-in-sharepoint"></a>Vorgehensweise: Erstellen Filter-Editoren für PerformancePoint Services in SharePoint
+# <a name="create-filter-editors-for-performancepoint-services-in-sharepoint"></a>Erstellen von Filter-Editoren für PerformancePoint-Dienste in SharePoint
+
 In diesem Artikel erfahren Sie, wie die Editor-Komponente einer benutzerdefinierten Filtererweiterung für PerformancePoint-Dienste erstellt wird.
+
 ## <a name="what-are-custom-filter-editors-for-performancepoint-services"></a>Was sind benutzerdefinierte Filter-Editoren für PerformancePoint-Dienste ?
 <a name="bk_intro"> </a>
 
@@ -1173,12 +1175,10 @@ Nach dem Erstellen Sie eines Filter-Editors (einschließlich der Benutzeroberfl�
 <a name="bk_addResources"> </a>
 
 
--  
-  [Vorgehensweise: Erstellen Filter von Datenanbietern für PerformancePoint Services in SharePoint](https://msdn.microsoft.com/en-us/library/office/cc159445.aspx)
+-  [Vorgehensweise: Erstellen Filter von Datenanbietern für PerformancePoint Services in SharePoint](https://msdn.microsoft.com/de-DE/library/office/cc159445.aspx)
     
   
--  
-  [PerformancePoint-Dienste in SharePoint](https://msdn.microsoft.com/en-us/library/office/ee559635.aspx)
+-  [PerformancePoint-Dienste in SharePoint](https://msdn.microsoft.com/de-DE/library/office/ee559635.aspx)
     
   
 

@@ -1,16 +1,18 @@
 ---
-title: Vorgehensweise Lesen und Schreiben der sozialen Feed mithilfe des REST-Diensts in SharePoint
+title: "Lesen und Schreiben in den Feed für soziale Netzwerke mithilfe des REST-Diensts in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 1da8d484-3666-42c3-8a8f-8b3ef93e96e9
-ms.openlocfilehash: 359ac864ffa30f4577859f7dbf80233bf6731cc2
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2fafda13f6d5c6e62f7519bd9896c91a87dcc5f3
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-learn-to-read-and-write-to-the-social-feed-by-using-the-rest-service-in-sharepoint"></a>Vorgehensweise: Lesen und Schreiben der sozialen Feed mithilfe des REST-Diensts in SharePoint
+# <a name="read-and-write-to-the-social-feed-by-using-the-rest-service-in-sharepoint"></a>Lesen und Schreiben in den Feed für soziale Netzwerke mithilfe des REST-Diensts in SharePoint
+
 Erstellen Sie eine von SharePoint gehostete App, die den REST-Dienst zum Veröffentlichen eines Beitrags und zum Abrufen des persönlichen Feeds für den aktuellen Benutzer verwendet.
+
 ## <a name="prerequisites-for-creating-a-sharepoint-hosted-sharepoint-add-in-that-publishes-a-post-and-gets-the-social-feed-by-using-the-sharepoint-rest-service"></a>Voraussetzungen für das Erstellen einer SharePoint-Hosting SharePoint-Add-In, die einen Beitrag veröffentlicht und ruft den Feed für soziale Netzwerke mithilfe des REST-Diensts SharePoint
 <a name="bkmk_Prereqs"> </a>
 

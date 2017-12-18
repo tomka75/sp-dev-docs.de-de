@@ -1,16 +1,18 @@
 ---
-title: "Vorgehensweise Lesen und schreiben für soziale Netzwerke-Feed mithilfe des clientobjektmodells .NET SharePoint lernen"
+title: "Lesen und Schreiben in den Feed für soziale Netzwerke mithilfe des .NET-Clientobjektmodells in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3c15ede5-8a59-47e6-a0b2-c17ec6bf4ae1
-ms.openlocfilehash: 52a67e44daccd4a9d86bb110f16f99da011e64ea
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 73eaf6bf117694cd1c4378bde0541e7db782a079
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-learn-to-read-and-write-to-the-social-feed-by-using-the-net-client-object-model-in-sharepoint"></a>How to: Refresh Datan und schreiben für soziale Netzwerke-Feed mithilfe des clientobjektmodells .NET SharePoint lernen
+# <a name="read-and-write-to-the-social-feed-by-using-the-net-client-object-model-in-sharepoint"></a>Lesen und Schreiben in den Feed für soziale Netzwerke mithilfe des .NET-Clientobjektmodells in SharePoint
+
 Erstellen Sie eine Konsolenanwendung, die den sozialen Feed mithilfe des .NET-Clientobjektmodells in SharePoint liest bzw. in den sozialen Feed schreibt.
+
 ## <a name="prerequisites-for-creating-a-console-application-that-reads-and-writes-to-the-social-feed-by-using-the-sharepoint-net-client-object-model"></a>Voraussetzungen für das Erstellen einer Konsolenanwendung, die Lese- und Schreibvorgänge auf den Feed für soziale Netzwerke mithilfe des Clientobjektmodells für SharePoint.NET
 <a name="bkmk_Prereqs"> </a>
 
