@@ -1,408 +1,343 @@
 ---
 title: "Hinzufügen der Logik für die erste Ausführung zum vom Anbieter gehosteten Add-In"
-ms.date: 09/25/2017
+description: "Fügen Sie „Erste Ausführung“-Code zu einer vom Anbieter gehosteten SharePoint Add-In hinzu, indem Sie die grundlegende Klasse für die Bereitstellung von Komponenten erstellen, die grundlegende Startlogik hinzufügen und programmgesteuert eine SharePoint-Liste bereitstellen."
+ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 25a58f26e386a043e1a6c1ee9fedf5043d7191bc
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 37070e3f71066bd4fee5be0d9a1f05c870e51821
+ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="add-first-run-logic-to-the-provider-hosted-add-in"></a>Hinzufügen der Logik für die erste Ausführung zum vom Anbieter gehosteten Add-In
-Erfahren Sie, wie Sie Code für die erste Ausführung in ein vom Anbieter gehostetes SharePoint-Add-In einfügen.
- 
-
- **Hinweis** Der Name „Apps für SharePoint“ wird in „SharePoint-Add-Ins“ geändert. Während des Übergangszeitraums wird in der Dokumentation und der Benutzeroberfläche einiger SharePoint-Produkte und Visual Studio-Tools möglicherweise weiterhin der Begriff „Apps für SharePoint“ verwendet. Weitere Informationen finden Sie unter [Neuer Name für Office- und SharePoint-Apps](new-name-for-apps-for-sharepoint.md#bk_newname).
- 
 
 Dies ist der achte in einer Reihe von Artikeln über die Grundlagen der Entwicklung von vom Anbieter gehosteten SharePoint-Add-Ins. Sie sollten sich zuerst mit [SharePoint Add-Ins](sharepoint-add-ins.md) und den vorherigen Artikeln in dieser Reihe vertraut machen:
- 
 
 -  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
-    
- 
 -  [Übertragen des SharePoint-Aussehens und -Verhaltens auf Ihr vom Anbieter gehostetes Add-In](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md)
-    
- 
 -  [Einfügen einer benutzerdefinierten Schaltfläche in das vom Anbieter gehostete Add-In](include-a-custom-button-in-the-provider-hosted-add-in.md)
-    
- 
 -  [Schnelle Übersicht über das SharePoint-Objektmodell](get-a-quick-overview-of-the-sharepoint-object-model.md)
-    
- 
 -  [Hinzufügen von SharePoint-Schreibvorgängen zum vom Anbieter gehosteten Add-In](add-sharepoint-write-operations-to-the-provider-hosted-add-in.md)
-    
- 
 -  [Einfügen eines Add-In-Webparts in das vom Anbieter gehostete Add-In](include-an-add-in-part-in-the-provider-hosted-add-in.md)
-    
- 
 -  [Verarbeiten von Add-In-Ereignissen im vom Anbieter gehosteten Add-In](handle-add-in-events-in-the-provider-hosted-add-in.md)
-    
- 
 
- **Hinweis** Wenn Sie diese Reihe zu vom Anbieter gehosteten Add-Ins durchgearbeitet haben, haben Sie eine Visual Studio-Projektmappe, die Sie verwenden können, um mit diesem Thema fortzufahren. Sie können außerdem das Repository unter [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) herunterladen und die Datei „BeforeFirstRunLogic.sln“ öffnen.
- 
+> [!NOTE]
+> Wenn Sie unsere Artikelreihe zum Thema anbietergehostete Add-Ins durchgearbeitet haben, haben Sie bereits eine Visual Studio-Lösung, die Sie für diesen Artikel verwenden können. Sie können auch das Repository unter [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) herunterladen und die Datei „BeforeFirstRunLogic.sln“ öffnen.
 
 In diesem Artikel fügen Sie Code zur Startseite des ChainStore-SharePoint-Add-Ins hinzu, der überprüft, ob die aktuelle Instanz des Add-Ins zum ersten Mal ausgeführt wird. Wenn es das erste Mal ist, stellt Ihr Code die Liste **Lokale Mitarbeiter** und die benutzerdefinierte Menübandschaltfläche bereit.
- 
 
 ## <a name="create-the-basic-class-for-deploying-sharepoint-components"></a>Erstellen der Basisklasse für die Bereitstellung von SharePoint-Komponenten
 
+> [!NOTE]
+> Die Einstellungen für Startprojekte in Visual Studio werden in der Regel nach jedem erneuten Öffnen der Lösung wieder auf die Standardwerte zurückgesetzt. Wann immer Sie beim Durcharbeiten dieser Artikelreihe die Beispiellösung erneut öffnen, müssen Sie umgehend die folgenden Schritte durchführen: 
+> 1. Klicken Sie oben im **Projektmappen-Explorer** mit der rechten Maustaste auf den Lösungsknoten, und wählen Sie die Option **Startprojekte festlegen** aus.  
+> 2. Stellen Sie sicher, dass alle drei Projekte in der Spalte **Aktion** auf **Start** festgelegt sind.
 
- 
+1. Klicken Sie im **ChainStoreWeb**-Projekt im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner **Dienstprogramme**, und wählen Sie dann **Hinzufügen** > **Vorhandenes Element** aus.
+    
+2. Wechseln Sie vom **Datei-Explorer** zum Projektmappenordner, dem **ChainStoreWeb**-Ordner, und öffnen Sie dann den Ordner **Dienstprogramme**.
 
- 
+3. Wählen Sie „SharePointComponentDeployer.cs“ aus, und wählen Sie dann **Hinzufügen** aus.
 
- **Hinweis** Die Einstellungen für Startprojekte in Visual Studio werden normalerweise auf die Standardwerte zurückgesetzt, wann immer die Projektmappe erneut geöffnet wird. Führen Sie die folgenden Schritte immer unmittelbar nach dem erneuten Öffnen der Beispielprojektmappe in dieser Artikelreihe durch: Klicken Sie mit der rechten Maustaste oben im **Projektmappen-Explorer** auf den Projektmappenknoten, und wählen Sie **Startprojekte festlegen** aus. Stellen Sie sicher, dass alle drei Projekte in der Spalte **Aktion** auf **Starten** festgelegt sind.
- 
+4. Öffnen Sie die Datei SharePointComponentDeployer.cs. Sie enthält eine statische Klasse und zwei statische Methoden, die die Add-In-Version in der Tabelle **Mandanten** der Unternehmensdatenbank abrufen und festlegen. Diese Methoden werden nicht besprochen, da diese Artikelreihe nicht dafür vorgesehen ist, Kenntnissse der ASP.NET- oder SQL Server-/Azure-Programmierung zu vermitteln.
 
+5. Fügen Sie die folgenden **using**-Anweisungen an den Anfang der Datei hinzu.
+    
+    ```C#
+      using System.Web;
+      using System.Linq;
+      using System.Collections.Generic;
+      using Microsoft.SharePoint.Client;
+    ```
 
-1. Klicken Sie im **ChainStoreWeb**-Projekt im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner **Dienstprogramme**, und wählen Sie dann **Hinzufügen | Vorhandenes Element** aus.
-    
- 
-2. Navigieren Sie im daraufhin geöffneten **Datei-Explorer** zum Projektmappenordner, dem **ChainStoreWeb**-Ordner, und öffnen Sie dann den Ordner **Dienstprogramme**.
-    
- 
-3. Wählen Sie „SharePointComponentDeployer.cs“ aus, und klicken Sie auf **Hinzufügen**.
-    
- 
-4. Öffnen Sie die Datei „SharePointComponentDeployer.cs“. Sie enthält eine statische Klasse und zwei statische Methoden, die die Add-In-Version in der Tabelle **Mandanten** der Unternehmensdatenbank abrufen und festlegen. Diese Methoden werden nicht besprochen, da diese Artikelreihe nicht dafür vorgesehen ist, Kenntnissse der ASP.NET- oder SQL Server-/Azure-Programmierung zu vermitteln.
-    
- 
-5. Fügen Sie die folgenden **using**-Anweisungen am Anfang der Datei hinzu.
-    
-```
-  using System.Web;
-using System.Linq;
-using System.Collections.Generic;
-using Microsoft.SharePoint.Client;
-```
+6. Fügen Sie am oberen Rand der `SharePointComponentDeployer`-Klasse die folgenden zwei statischen Felder hinzu. Diese werden in der **Page_Load**-Methode der Add-In-Startseite initialisiert (Sie fügen den Code in einem späteren Schritt hinzu). 
 
-6. Fügen Sie oben in der Klasse  `SharePointComponentDeployer` die folgenden zwei statischen Felder hinzu. Beide werden in der Methode **Page_Load** Startseite des Add-Ins initialisiert. Sie fügen diesen Code in einem späteren Schritt hinzu. Das erste Feld enthält das Objekt **SharePointContext**, das zum Durchführen der CRUD-Vorgänge in SharePoint erforderlich ist. Das zweite enthält die Versionsnummer des Add-Ins, das im Hostweb installiert ist. Dieser Wert weicht anfangs vom Standardwert ab ( **0000.0000.0000.0000** ), der in der Tabelle **Mandanten** des Unternehmen aufgezeichnet wird, wenn der Handler für die Installation den Mandanten registriert. Die erste Version des Add-Ins ist z. B. **1.0.0.0**.
-    
-```C#
-  internal static SharePointContext sPContext;
-internal static Version localVersion;
-```
+    ```C#
+      internal static SharePointContext sPContext;
+      internal static Version localVersion;
+    ```
+
+   Beachten Sie Folgendes zu diesem Code:
+   
+   - Das erste Feld enthält das `SharePointContext`-Objekt, das erforderlich ist, um CRUD-Vorgänge in SharePoint durchzuführen. 
+   
+   - Das zweite Feld enthält die Versionsnummer des Add-Ins, das im Hostweb installiert ist. Dieser Wert weicht anfänglich vom Standardwert (**0000.0000.0000.0000**) ab, der in der **Mandanten**-Tabelle aufgezeichnet wird, wenn der Installationshandler den Mandanten registriert. Die erste Version des Add-Ins lautet z. B. **1.0.0.0**.
 
 7. Erstellen Sie die folgende statische Eigenschaft für die Version des Add-Ins, die derzeit in der Tabelle **Mandanten** des Unternehmens aufgezeichnet ist. Sie verwendet die zwei Methoden, die bereits in der Datei vorhanden waren, um diesen Wert abzurufen und festzulegen.
     
-```C#
-  internal static Version RemoteTenantVersion
-{
-    get
+    ```C#
+      internal static Version RemoteTenantVersion
     {
-        return GetTenantVersion();
+        get
+        {
+            return GetTenantVersion();
+        }
+        set
+        {
+            SetTenantVersion(value);
+        }
     }
-    set
+    ```
+
+8. Erstellen Sie nun die folgende `IsDeployed`-Eigenschaft. 
+
+    ```C#
+      public static bool IsDeployed
     {
-        SetTenantVersion(value);
+        get
+        {
+            if (RemoteTenantVersion < localVersion)
+                return false; 
+            else
+                return true; 
+        }
     }
-}
-```
+    ```
 
-8. Fügen Sie der Datei die folgende `IsDeployed`-Eigenschaft hinzu. Beachten Sie Folgendes zu diesem Code:
-    
-      - Die Methode **Page_Load** der Startseite für das Add-In verwendet den Wert dieser Eigenschaft, um zu bestimmen, ob das Add-In zum ersten Mal ausgeführt wird. Der Wert **false** signalisiert, dass das Add-In im aktuellen Hostweb noch nicht ausgeführt wurde und deshalb seine Komponenten bereitgestellt werden müssen.
-    
- 
-  - Das Kriterium ist, ob die in der Tabelle **Mandanten** registrierte Versionsnummer niedriger als die tatsächlich installierte Version ist. Bei der ersten Ausführung des Add-Ins ist die Nummer kleiner. In einem späteren Schritt geschriebener Code legt die Version in der Tabelle **Mandanten** auf dieselbe Version wie die tatsächlich installierte fest. Wenn das Add-In also erneut ausgeführt wird, gibt `IsDeployed` den Wert **true** zurück, und die Bereitstellungslogik wird nicht erneut ausgeführt.
-    
- 
+   Beachten Sie Folgendes zu diesem Code:
 
-```C#
-  public static bool IsDeployed
-{
-    get
+   - Die **Page_Load**-Methode für die Stadtseite des Add-Ins verwendet den Wert dieser Eigenschaft, um zu bestimmen, ob das Add-In zum ersten Mal ausgeführt wird. Der Wert **false** besagt, dass das Add-In zuvor noch nicht auf dem aktuellen Hostweb ausgeführt wurde, also müssen die Komponenten bereitgestellt werden.
+
+   - Dabei ist das entscheidende Kriterium, ob die Versionsnummer in der **Mandanten**-Tabelle niedriger als die aktuell installierte Version ist. Wenn das Add-In zum ersten Mal ausgeführt wird, ist die Version niedriger. Code, den Sie in einem späteren Schritt schreiben, legt die Version in der **Mandanten**-Tabelle auf die gleiche Version wie die tatsächlich installierte fest. Wenn das Add-In also erneut ausgeführt wird, gibt `IsDeployed` den Wert **true** zurück und die Bereitstellungslogik wird nicht noch einmal ausgeführt.
+ 
+9. Fügen Sie der Klasse `SharePointComponentDeployer` die folgende Methode hinzu: Beachten Sie, dass die letzte Aktion, die die Methode ausführt, das Aktualisieren der Mandantenversion ist, die in der Datenbank des Unternehmens registriert ist (**0000.0000.0000.0000**), damit sie mit der aktuellen Version des Add-Ins im Hostweb übereinstimmt (**1.0.0.0**). Sie schließen diese Methode in einem späteren Schritt ab.
+    
+    ```C#
+      internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
     {
-        if (RemoteTenantVersion < localVersion)
-            return false; 
-        else
-            return true; 
+        // TODO4: Deployment code goes here.
+
+        RemoteTenantVersion = localVersion;
     }
-}
-```
+    ```
 
-9. Fügen Sie die folgende Methode zur Klasse  `SharePointComponentDeployer` hinzu. Beachten Sie, dass die letzte Aktion, die die Methode ausführt, das Aktualisieren der Mandantenversion ist, die in der Datenbank des Unternehmens registriert ist ( **0000.0000.0000.0000** ), damit sie mit der aktuellen Version des Add-Ins im Hostweb übereinstimmt ( **1.0.0.0** ). Sie schließen diese Methode in einem späteren Schritt ab.
-    
-```C#
-  internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
-{
-    // TODO4: Deployment code goes here.
+> [!NOTE]
+> Sie Fragen sich nun vielleicht, warum das Add-In den „Versionsnummer niedriger als“-Test durchführt, um die Antwort auf die einfache Ja/Nein-Frage: „Wird das Add-in zum ersten Mal ausgeführt?“ zu bestimmen. Wir könnten auch ein einfaches Zeichenfolgefeld in der **Mandanten**-Tabelle verwenden, das im Installationshandler auf *Noch nicht ausgeführt* gesetzt und dann von der „Erste Ausführung“-Logik auf *Bereits einmal ausgeführt* festgelegt wird, nachdem die SharePoint-Komponenten bereitgestellt wurden. 
 
-    RemoteTenantVersion = localVersion;
-}
-```
+> Für das ChainStore-Add-In funktioniert ein einfacher Test. Es empfiehlt sich jedoch im Allgemeinen, Versionsnummern zu verwenden. Der Grund ist, dass ein Produktions-Add-In in Zukunft wahrscheinlich direkt aktualisiert wird, d. h. nachdem es bereits installiert wurde. Dann muss Ihre Add-In-Logik auf mehr als die zwei Möglichkeiten *Noch nicht ausgeführt* und *Bereits einmal ausgeführt* reagieren können. 
 
-
- **Hinweis** Sie fragen sich vielleicht, warum das Add-In Versionsnummern und einen „Kleiner als“-Test verwendet, um die Antwort auf eine einfache Ja/Nein-Frage zu ermitteln: Wird das Add-In zum ersten Mal ausgeführt? Es könnte ebenso gut ein einfaches Zeichenfolgenfeld in der Tabelle **Mandanten** vorhanden sein, das im Installationshandler auf „Noch nicht ausgeführt“ und dann von der Logik für die erste Ausführung in „Bereits einmal ausgeführt“ geändert wird, nachdem die SharePoint-Komponenten bereitgestellt wurden. Für das ChainStore-Add-In funktioniert ein einfacher Test. Es empfiehlt sich jedoch im Allgemeinen, Versionsnummern zu verwenden. Der Grund ist, dass ein Produktions-Add-In in Zukunft wahrscheinlich direkt aktualisiert wird, d. h. nachdem es bereits installiert wurde. Dann muss Ihre Add-In-Logik auf mehr als die zwei Möglichkeiten „Noch nicht ausgeführt“ und „Bereits einmal ausgeführt“ reagieren können. Angenommen, Sie möchten beispielsweise eine weitere Liste zum Hostweb im Upgrade von Version 1.0.0.0 auf 2.0.0.0 hinzufügen. Sie könnten dies mit einem Updateereignishandler durchführen oder in einer „Erste Ausführung nach Update“-Logik. In beiden Fällen muss Ihre Bereitstellungslogik neue Komponenten bereitstellen, aber auch vermeiden, dass versucht wird, Komponenten erneut bereitzustellen, die in einer früheren Version des Add-Ins bereitgestellt wurden. Die Versionsnummer 1.0.0.0 würde signalisieren, dass die Komponenten der Version 1.0.0.0 bereitgestellt wurden, aber die Logik für die erste Ausführung nach dem Update noch nicht ausgeführt wurde.
- 
-
+> Angenommen Sie möchten beispielsweise eine weitere Liste zum Hostweb im Upgrade von Version 1.0.0.0 auf 2.0.0.0 hinzufügen. Sie könnten dies mit einem Updateereignishandler durchführen oder in einer „Erste Ausführung nach Update"-Logik. In beiden Fällen muss Ihre Bereitstellungslogik neue Komponenten bereitstellen, aber auch vermeiden, dass versucht wird, Komponenten erneut bereitzustellen, die in einer früheren Version des Add-Ins bereitgestellt wurden. Die Versionsnummer 1.0.0.0 würde signalisieren, dass die Komponenten der Version 1.0.0.0 bereitgestellt wurden, aber die Logik für die erste Ausführung nach dem Update noch nicht ausgeführt wurde.
 
 ## <a name="add-the-basic-startup-logic"></a>Hinzufügen der grundlegenden Startlogik
 
+Das SharePoint-Hostweb muss der Remote-Webanwendung mitteilen, welche Version des Add-Ins installiert ist. Zu diesem Zweck verwenden wir einen Abfrageparameter. 
 
- 
+1. Öffnen Sie im **ChainStore**-Projekt die Datei „AppManifest.xml“. Im Designer finden Sie den Platzhalter *{StandardTokens}* als Wert für das **Abfragezeichenfolge**-Feld. Fügen Sie die Zeichenfolge `"&amp;SPAddInVersion=1.0.0.0"` zum Textende hinzu. 
 
- 
+   Der Manifest-Designer sollte ähnlich wie im folgenden Beispiel aussehen. *Beachten Sie, dass die Versionsnummer, die Sie in der Abfragezeichenfolge übergeben haben, dem Wert des Feldes __Version__ des Designers entsprechen muss.* Wenn Sie das Add-In aktualisieren sollten, müssen Sie diese beiden Werte auf den gleichen Wert erhöhen.
 
-1. Das SharePoint-Hostweb muss der Remotewebanwendung mitteilen, welche Version des Add-Ins installiert wurde. Dafür wird ein Abfrageparameter verwendet. Öffen Sie die Datei „AppManifest.xml“ im **ChainStore**-Projekt. Im Designer sehen Sie den Platzhalter **{StandardTokens}** als Wert für das Feld **Abfragezeichenfolge**. Fügen Sie die Zeichenfolge „&amp;SPAddInVersion=1.0.0.0“ am Ende hinzu. Der Manifest-Designer sollte etwa wie folgt aussehen. *Beachten Sie, dass die Versionsnummer, die Sie in der Abfragezeichenfolge übergeben, mit dem Wert im Feld **Version** des Designers übereinstimmen muss.* (Wenn Sie das Add-In aktualisieren, besteht eine Ihrer Aufgaben darin, diese zwei Werte zu erhöhen und gleich zu halten.)
-    
-  ![Die Registerkarte „Allgemein“ des Manifest-Designers. Das Versionsfeld enthält den Wert „eins null null null“. Der Wert im Feld „Abfragezeichenfolge“ lautet „{StandardTokens}&amp;SPAddInVersion=1.0.0.0“.](../images/db71c411-10c5-43d8-bb5e-3388d2f6f7bc.PNG)
- 
+   *Abbildung 1. Registerkarte „Allgemein“ des Manifest-Designers*
 
- 
+   ![Die Registerkarte „Allgemein“ des Manifest-Designers. Das Versionsfeld enthält den Wert „eins null null null“. Der Wert im Feld „Abfragezeichenfolge“ lautet „{StandardTokens}&amp;SPAddInVersion=1.0.0.0“.](../images/db71c411-10c5-43d8-bb5e-3388d2f6f7bc.PNG)
 
- 
-2. Öffnen Sie die Datei „CorporateDataViewer.aspx.cs“, und fügen Sie den folgenden Code zur Methode **Page_Load** hinzu, direkt unter der Zeile, die das `spContext`-Objekt initialisiert. Beachten Sie Folgendes bei diesem Code:
-    
-      - Er beginnt mit der Festlegung der zwei statischen Felder in der statischen  `SharePointComponentDeployer`-Klasse. Er übergibt das Objekt **SharePointContext**, da der Code in  `SharePointComponentDeployer` SharePoint aufruft und den Abfrageparameter verwendet, den Sie hinzugefügt haben, um die Eigenschaft `localVersion` festzulegen.
-    
- 
-  - Es geschieht nichts, wenn  `IsDeployed` true ist. Das heißt, wenn die Logik für die „erste Ausführung" bereits ausgeführt wurde. Andernfalls wird die Bereitstellungsmethode aufgerufen, und das ASP.NET-Anforderungsobjekt wird übergeben.
-    
- 
+2. Öffnen Sie die Datei „CorporateDataViewer.aspx.cs“, und fügen Sie den folgenden Code zur Methode **Page_Load** hinzu, direkt unter der Zeile, die das `spContext`-Objekt initialisiert. 
 
-```C#
-  SharePointComponentDeployer.sPContext = spContext;
-SharePointComponentDeployer.localVersion = new Version(Request.QueryString["SPAddInVersion"]);
+    ```C#
+     SharePointComponentDeployer.sPContext = spContext;
+     SharePointComponentDeployer.localVersion = new Version(Request.QueryString["SPAddInVersion"]);
 
-if (!SharePointComponentDeployer.IsDeployed)
-{
-    SharePointComponentDeployer.DeployChainStoreComponentsToHostWeb(Request);
-}
-```
+     if (!SharePointComponentDeployer.IsDeployed)
+     {
+         SharePointComponentDeployer.DeployChainStoreComponentsToHostWeb(Request);
+     }
+    ```
 
+   Beachten Sie Folgendes zu diesem Code:
+
+   - Er beginnt mit der Festlegung der zwei statischen Felder in der statischen `SharePointComponentDeployer`-Klasse.  Er übergibt das Objekt **SharePointContext**, da der Code in `SharePointComponentDeployer`SharePoint aufruft und den Abfrageparameter verwendet, den Sie hinzugefügt haben, um die Eigenschaft `localVersion` festzulegen.  
+
+   - Es geschieht nichts, wenn `IsDeployed` „true“ ist, d. h., wenn die erste Ausführungslogik bereits ausgeführt wurde. Andernfalls wird die Bereitstellungsmethode aufgegeben, die das ASP.NET-**Anforderungs**objekt übergibt.
 
 ## <a name="programmatically-deploy-a-sharepoint-list"></a>Programmgesteuertes Bereitstellen einer SharePoint-Liste
 
-
- 
-
- 
-
-1. Ersetzen Sie in der Datei „SharePointComponentDeployer.cs“ `TODO4` durch die folgende Zeile. Im nächsten Schritt erstellen Sie diese Methode.
+1. Ersetzen Sie in der Datei „SharePointComponentDeployer.cs“ `TODO4` durch die folgende Zeile. (Im nächsten Schritt erstellen Sie diese Methode.)
     
-```C#
-  CreateLocalEmployeesList();
-```
+    ```C#
+      CreateLocalEmployeesList();
+    ```
 
-2. Fügen Sie der `SharePointComponentDeployer`-Klasse die folgende Methode hinzu. Beachten Sie Folgendes zu diesem Code:
-    
-      - Er enthält zwei Aufrufe von **ExecuteQuery**. Der erste ist erforderlich, um festzustellen, ob die Liste bereits vorhanden ist. Der zweite erstellt die Liste.
-    
- 
-  - Die Methode **ClientContext.LoadQuery** ist vergleichbar mit **ClientContext.Load**, mit der Ausnahme, dass keine Entität wie z. B. eine Liste, sondern die aufzählbaren Ergebnisse einer Abfrage auf den Client gebracht werden.
-    
- 
+2. Fügen Sie der Klasse `SharePointComponentDeployer` die folgende Methode hinzu: 
 
-```C#
-  private static void CreateLocalEmployeesList()
-{
-    using (var clientContext = sPContext.CreateUserClientContextForSPHost())
+    ```C#
+      private static void CreateLocalEmployeesList()
     {
-        var query = from list in clientContext.Web.Lists
-                    where list.Title == "Local Employees"
-                    select list;
-        IEnumerable<List> matchingLists = clientContext.LoadQuery(query);
-        clientContext.ExecuteQuery();
-
-        if (matchingLists.Count() == 0)
+        using (var clientContext = sPContext.CreateUserClientContextForSPHost())
         {
-           // TODO5: Create the list 
-
-           // TODO6: Rename the Title field on the list 
-
-           // TODO7: Add "Added to Corporate DB" field to the list 
-
-           clientContext.ExecuteQuery();
-        }
-    }
-}
-```
-
-3. Ersetzen Sie `TODO5` durch die nachfolgende Zeile. Beachten Sie Folgendes zu diesem Code:
-    
-      - Die Klasse **ListCreationInformation** ist vergleichbar mit der Klasse **ListItemCreationInformation**, die Sie in einem früheren Artikel dieser Reihe gesehen haben. Es ist eine einfache Klasse, die sich besser für das Senden von Informationen aus der Webanwendung an SharePoint eignet als die vollständige **List**-Klasse.
-    
- 
-  - Es gibt viele Arten von Listenvorlagen, z. B. den Typ „Aufgaben“ für eine To-Do-Liste und den Typ „Ereignisse“ für einen Kalender. Die Liste **Lokale Mitarbeiter**basiert auf der einfachsten Art: dem Typ „Generisch“.
-    
- 
-  - Die Eigenschaft **ListCreationInformation.Url** enthält die URL der Liste *relativ* zum Hostweb. Durch Angeben von „Listen/LokaleMitarbeiter§ legt der Code die vollständige URL der Liste auf „https:// *{SharePointDomain}*/hongkong/_layouts/15/start.aspx#/Lists/Local%20Employees“ fest.
-    
- 
-
-```C#
-  ListCreationInformation listInfo = new ListCreationInformation();
-listInfo.Title = "Local Employees";
-listInfo.TemplateType = (int)ListTemplateType.GenericList;
-listInfo.Url = "Lists/Local Employees";
-List localEmployeesList = clientContext.Web.Lists.Add(listInfo);
-```
-
-4. Ersetzen Sie  `TODO6` durch den folgenden Code, der den öffentlichen Namen des Felds „Titel" (Spalte) von „Titel" in „Name" ändert. Diese Aktion haben Sie auf auf der Seite **Listeneinstellungen** durchgeführt, als Sie die Liste manuell erstellt haben.
-    
-```C#
-  Field field = localEmployeesList.Fields.GetByInternalNameOrTitle("Title");
-field.Title = "Name";
-field.Update();
-```
-
-5. Sie haben außerdem manuell ein Feld namens **Zu Unternehmens-DB hinzugefügt** erstellt. Um diese Aktion programmgesteuert durchzuführen, fügen Sie den folgenden Code anstelle von `TODO7` hinzu. Beachten Sie Folgendes bei diesem Code:
-    
-      - Die wichtigsten Eigenschaften des Felds werden mit einem XML-Blob angegeben. Hierbei handelt es sich um ein Relikt aus der SharePoint-Architektur: Websites, Listen, Felder, Inhaltstypen und die meisten anderen Arten von SharePoint-Komponenten werden im XML-Format definiert. In diesem Fall geben wir den Anzeigenamen, den Datentyp und den Standardwert für das Feld an.
-    
- 
-  - Der zweite Parameter bestimmt, ob das Feld in der Standardansicht der Liste angezeigt wird. Er wird auf **true** festgelegt. 
-    
- 
-  - Der dritte Parameter kann verwendet werden, um zu bestimmen, welchen Inhaltstypen das Feld hinzugefügt wird. Wenn Sie **DefaultValue** übergeben, wird es nur zum Standardinhaltstyp der Liste hinzugefügt.
-    
- 
-
-```C#
-  localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate DB'"
-                                         +"Type='Boolean'>"
-                                         + "<Default>FALSE</Default></Field>",
-                                         true,
-                                         AddFieldOptions.DefaultValue);
-```
-
-6. Sie erinnern sich, dass **Zu Unternehmens-DB hinzugefügt** standardmäßig **Nein** ist (d. h. false), die benutzerdefinierte Menübandschaltfläche im Add-In dies aber auf **Ja** festlegt, nachdem Mitarbeiter zur Unternehmensdatenbank hinzugefügt wurden. Dieses System funktioniert nur am besten, wenn Benutzer den Wert des Felds nicht manuell ändern können. Um dies sicherzustellen, machen Sie das Feld in den Formularen für das Erstellen und Bearbeiten von Elementen in der Liste **Lokale Mitarbeiter** unsichtbar. Dazu müssen wir zwei weitere Attribute zum ersten Parameter hinzufügen, wie im Folgenden dargestellt.
-    
-```C#
-  localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate DB'" 
-                                         + " Type='Boolean'"  
-                                         + " ShowInEditForm='FALSE' "
-                                         + " ShowInNewForm='FALSE'>"
-                                         + "<Default>FALSE</Default></Field>",
-                                         true,
-                                         AddFieldOptions.DefaultValue);
-```
-
-
-    The entire  `CreateLocalEmployeesList` should now look like the following.
-    
-
-
-```C#
-  private static void CreateLocalEmployeesList()
-{
-    using (var clientContext = sPContext.CreateUserClientContextForSPHost())
-    {
-        var query = from list in clientContext.Web.Lists
-                    where list.Title == "Local Employees"
-                    select list;
-        IEnumerable<List> matchingLists = clientContext.LoadQuery(query);
-        clientContext.ExecuteQuery();
-
-        if (matchingLists.Count() == 0)
-        {
-            ListCreationInformation listInfo = new ListCreationInformation();
-            listInfo.Title = "Local Employees";
-            listInfo.TemplateType = (int)ListTemplateType.GenericList;
-            listInfo.Url = "LocalEmployees";
-            List localEmployeesList = clientContext.Web.Lists.Add(listInfo);
-
-            Field field = localEmployeesList.Fields.GetByInternalNameOrTitle("Title");
-            field.Title = "Name";
-            field.Update();
-
-            localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate DB'" 
-                                                    + " Type='Boolean'"  
-                                                   + " ShowInEditForm='FALSE' "
-                                                   + " ShowInNewForm='FALSE'>"
-                                                   + "<Default>FALSE</Default></Field>",
-                                                    true,
-                                                    AddFieldOptions.DefaultValue);
+            var query = from list in clientContext.Web.Lists
+                        where list.Title == "Local Employees"
+                        select list;
+            IEnumerable<List> matchingLists = clientContext.LoadQuery(query);
             clientContext.ExecuteQuery();
+
+            if (matchingLists.Count() == 0)
+            {
+               // TODO5: Create the list 
+
+               // TODO6: Rename the Title field on the list 
+
+               // TODO7: Add "Added to Corporate DB" field to the list 
+
+               clientContext.ExecuteQuery();
+            }
         }
     }
-}
-```
+    ```
 
+   Beachten Sie Folgendes zu diesem Code:
+
+   - Er enthält zwei Aufrufe von **ExecuteQuery**. Die erste ist erforderlich, um festzustellen, ob die Liste bereits vorhanden ist. Die zweite erstellt die Liste.
+
+   - Die Methode **ClientContext.LoadQuery** ist vergleichbar mit **ClientContext.Load**-Methode, mit der Ausnahme, dass keine Entität wie z. B. eine Liste, sondern die aufzählbaren Ergebnisse einer Abfrage auf den Client gebracht werden.
+
+3. Ersetzen Sie `TODO5` durch den folgenden Code. 
+
+    ```C#
+      ListCreationInformation listInfo = new ListCreationInformation();
+      listInfo.Title = "Local Employees";
+      listInfo.TemplateType = (int)ListTemplateType.GenericList;
+      listInfo.Url = "Lists/Local Employees";
+      List localEmployeesList = clientContext.Web.Lists.Add(listInfo);
+    ```
+
+   Beachten Sie Folgendes zu diesem Code:
+
+   - Die **ListCreationInformation**-Klasse ist vergleichbar mit der **ListItemCreationInformation**-Klasse, die Sie in einem vorherigen Artikel dieser Reihe bereits gesehen haben. Es handelt sich um eine einfache Klasse, die zum Übersenden von Informationen von der Webanwendung zu SharePoint besser geeignet ist, als die vollständige **Listen**-Klasse.
+
+   - Es gibt viele Arten von Listenvorlagen, z. B. den Typ „Aufgaben" für eine To-Do-Liste und den Typ „Ereignisse" für einen Kalender. Die Liste **Lokale Mitarbeiter**basiert auf der einfachsten Art: dem Typ „Generisch".
+
+   - Die **ListCreationInformation.Url**-Eigenschaft enthält die URL der Liste *relativ* zum Hostweb. Durch die Angabe von `"Lists/LocalEmployees"` setzt der Code die vollständige URL auf `https://{SharePointDomain}/hongkong/_layouts/15/start.aspx#/Lists/Local%20Employees`.
+
+4. Ersetzen Sie `TODO6` mit dem folgenden Code, der den öffentlichen Namen des Felds „Titel“ (Spalte) zu „Name“ ändert. Dies haben Sie auf der Seite **Listeneinstellungen** getan, als Sie die Liste manuell erstellt haben.
+    
+    ```C#
+      Field field = localEmployeesList.Fields.GetByInternalNameOrTitle("Title");
+      field.Title = "Name";
+      field.Update();
+    ```
+
+5. Sie können auch manuell ein Feld namens **Zur Unternehmensdatenbank hinzugefügt** erstellen. Fügen Sie den folgenden Code anstelle von `TODO7` ein, um dies programmgesteuert durchzuführen. 
+
+    ```C#
+          localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate DB'"
+                                                 +"Type='Boolean'>"
+                                                 + "<Default>FALSE</Default></Field>",
+                                                 true,
+                                                 AddFieldOptions.DefaultValue);
+    ```
+
+   Beachten Sie Folgendes zu diesem Code:
+
+   - Die wichtigsten Eigenschaften des Felds werden mit einem XML-Blob angegeben. Dies ist eine Legacy der SharePoint-Architektur, in der Websites, Listen, Felder, Inhaltstypen und die meisten anderen Arten von SharePoint-Komponenten im XML-Format definiert sind. In diesem Fall haben wir den Anzeigename, den Datentyp und den Standardwert des Felds angegeben.
+
+   - Der zweite Parameter bestimmt, ob das Feld in der Standardansicht der Liste angezeigt wird.  Er wird auf **true** festgelegt. 
+
+   - Der dritte Parameter bestimmt, welche Inhaltstypen dem Feld hinzugefügt werden. Das Übergeben des **Standardwerts** bedeutet, dass dieser nur zum Standard-Inhaltstyp der Liste hinzugefügt wird.
+
+
+6. Denken Sie daran, dass **Zur Unternehmensdatenbank hinzugefügt** standardmäßig **Nein** (d. h. „false“) ist, die Schaltfläche des benutzerdefinierten Menübands des Add-Ins den Wert jedoch auf **Ja** setzt, nachdem der Mitarbeiter zur Unternehmensdatenbank hinzugefügt wurde. Dieses System funktioniert am besten, wenn Benutzer den Wert des Felds nicht manuell ändern können. Um dies sicherzustellen, blenden Sie das Feld in den Formularen für das Erstellen und Bearbeiten von Elementen in der Liste **Lokale Mitarbeiter** aus. Dazu müssen Sie zwei weitere Attribute zum ersten Parameter hinzufügen, wie im folgenden Code dargestellt.
+    
+     ```C#
+       localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate DB'" 
+                                              + " Type='Boolean'"  
+                                              + " ShowInEditForm='FALSE' "
+                                              + " ShowInNewForm='FALSE'>"
+                                              + "<Default>FALSE</Default></Field>",
+                                              true,
+                                              AddFieldOptions.DefaultValue);
+     ```
+     
+     
+7. Die gesamte `CreateLocalEmployeesList` sollte jetzt wie folgt aussehen.
+
+    ```C#
+           private static void CreateLocalEmployeesList()
+         {
+             using (var clientContext = sPContext.CreateUserClientContextForSPHost())
+             {
+                 var query = from list in clientContext.Web.Lists
+                             where list.Title == "Local Employees"
+                             select list;
+                 IEnumerable<List> matchingLists = clientContext.LoadQuery(query);
+                 clientContext.ExecuteQuery();
+
+                 if (matchingLists.Count() == 0)
+                 {
+                     ListCreationInformation listInfo = new ListCreationInformation();
+                     listInfo.Title = "Local Employees";
+                     listInfo.TemplateType = (int)ListTemplateType.GenericList;
+                     listInfo.Url = "LocalEmployees";
+                     List localEmployeesList = clientContext.Web.Lists.Add(listInfo);
+
+                     Field field = localEmployeesList.Fields.GetByInternalNameOrTitle("Title");
+                     field.Title = "Name";
+                     field.Update();
+
+                     localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate DB'" 
+                                                             + " Type='Boolean'"  
+                                                            + " ShowInEditForm='FALSE' "
+                                                            + " ShowInNewForm='FALSE'>"
+                                                            + "<Default>FALSE</Default></Field>",
+                                                             true,
+                                                             AddFieldOptions.DefaultValue);
+                     clientContext.ExecuteQuery();
+                 }
+             }
+         }
+    ```
 
 ## <a name="temporarily-remove-the-custom-button-from-the-project"></a>Vorübergehendes Entfernen der benutzerdefinierten Schaltfläche aus dem Projekt
 
 Aus technischen Gründen, die wir im nächsten Artikel behandeln, kann die benutzerdefinierte Schaltfläche, die wir erstellt haben, nicht ohne Änderung installiert werden, wenn sie auf dem Menüband einer Liste eingefügt wird, die programmgesteuert bereitgestellt wird. Wir müssen sie vorübergehend aus dem Projekt entfernen, damit wir unsere Logik für die erste Ausführung testen können. Im nächsten Artikel wird die Schaltfläche wieder in das Menüband zurückgebracht.
- 
 
- 
-Klicken Sie im **Projektmappen-Explorer** im **ChainStore**-Projekt mit der rechten Maustaste auf den Knoten **AddEmployeeToCorpDB**, und wählen Sie **Aus Projekt ausschließen** aus.
- 
-
- 
+- Klicken Sie im **Projektmappen-Explorer** im **ChainStore**-Projekt mit der rechten Maustaste auf den Knoten **AddEmployeeToCorpDB**, und wählen Sie dann **Aus Projekt ausschließen** aus.
 
 ## <a name="request-permission-to-manage-lists-on-the-host-web"></a>Anfordern der Berechtigung zum Verwalten von Listen im Hostweb
 
-Da das Add-In jetzt eine Liste zum Hostweb und nicht nur Elemente zu einer vorhandenen Liste hinzufügt, müssen die Berechtigungen, die das Add-In anfordert, von „Schreiben" zu „Verwalten" eskaliert werden. Gehen Sie folgendermaßen vor.
- 
+Da das Add-In jetzt eine Liste zum Hostweb und nicht nur Elemente zu einer vorhandenen Liste hinzufügt, müssen die Berechtigungen, die das Add-In anfordert, von „Schreiben" zu „Verwalten" eskaliert werden.
 
- 
+1. Öffnen Sie im **Projektmappen-Explorer** die Datei AppManifest.xml im **ChainStore**-Projekt.
 
-1. Öffnen Sie im **Projektmappen-Explorer** die Datei „AppManifest.xml“ im **ChainStore**-Projekt.
-    
- 
-2. Öffnen Sie die Registerkarte **Berechtigungen**, und behalten Sie für den Wert **Bereich** die Einstellung „Web“ bei, aber wählen Sie im Feld **Berechtigung** die Option **Verwalten** aus der Dropdownliste.
-    
+2. Behalten Sie auf der Registerkarte **Berechtigungen** für den Wert **Bereich** die Einstellung „Web“ bei, aber wählen Sie im Feld **Berechtigung** die Option **Verwalten** aus der Dropdownliste.
  
 3. Speichern Sie die Datei.
-    
- 
 
 ## <a name="run-the-add-in-and-test-the-first-run-logic"></a>Ausführen des Add-Ins und Testen der Logik für die erste Ausführung
 
+1. Öffnen Sie die Seite **Websiteinhalte** der Website des Hongkong-Stores, und entfernen Sie dann die Liste **Lokale Mitarbeiter**. 
 
- 
+2. Drücken Sie auf die F5-TASTE, um Ihr Add-In bereitzustellen und auszuführen. Visual Studio hostet die Remotewebanwendung in IIS Express und die SQL-Datenbank in SQL Express. Zudem installiert Visual Studio das Add-In vorübergehend auf Ihrer SharePoint-Testwebsite und führt es sofort aus. Bevor die Startseite des Add-Ins geöffnet wird, werden Sie aufgefordert, dem Add-In Berechtigungen zu erteilen.
 
- 
-
-1. Öffnen Sie die Seite **Websiteinhalte** der Website des Hongkong-Stores, *und entfernen Sie die Liste **Lokale Mitarbeiter**.* 
-    
- 
-2. Verwenden Sie die F5-TASTE, um Ihr Add-In bereitzustellen und auszuführen. Visual Studio hostet die Remotewebanwendung in IIS Express und die SQL-Datenbank in SQL Express. Außerdem wird eine temporäre Installation des Add-Ins auf Ihrer SharePoint-Testwebsite durchgeführt, und das Add-In wird sofort ausgeführt. Sie werden aufgefordert, Berechtigungen für das Add-In zu erteilen, bevor die Startseite geöffnet wird.
-    
- 
 3. Wenn die Add-In-Startseite geöffnet wird, wählen Sie den Link **Zurück zur Website** auf dem Chromesteuerelement im oberen Bereich aus.
+
+4. Wechseln Sie auf die Seite **Websiteinhalte**. Die Liste **Lokale Mitarbeiter** wird angezeigt, da sie von der First-Run-Logik hinzugefügt wurde.
     
- 
-4. Navigieren Sie zur Seite **Websiteinhalte**. Die Liste **Lokale Mitarbeiter** ist vorhanden, da Ihre Logik für die erste Ausführung sie hinzugefügt hat.
-    
-     **Hinweis** Wenn die Liste nicht vorhanden ist oder Sie andere Anzeichen haben, dass der Code für die erste Ausführung nicht ausgeführt wird, wird möglicherweise die Tabelle **Mandanten** nicht in einen leeren Zustand zurückgesetzt, wenn Sie F5 drücken. Die häufigste Ursache hierfür ist, dass das Projekt **ChainCorporateDB** nicht mehr als Startprojekt in Visual Studio festgelegt ist. Im oberen Bereich dieses Artikels finden Sie Informationen, wie Sie dies beheben. Stellen Sie außerdem sicher, dass Sie die Datenbank so konfiguriert haben, dass sie wie unter [Konfigurieren von Visual Studio zum erneuten Erstellen der Unternehmensdatenbank bei jeder Debugsitzung](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md#Rebuild) beschrieben neu erstellt wird.
+   > [!NOTE]
+   > Falls die Liste nicht angezeigt wird oder Sie Grund zu der Annahme haben, dass die First-Run-Logik nicht ausgeführt wird, kann das daran liegen, wird möglicherweise die Tabelle **Mandanten** beim Drücken von F5 nicht in den leeren Zustand zurückgesetzt. Die häufigste Ursache hierfür: Das Projekt **ChainCorporateDB** ist in Visual Studio nicht mehr als Startprojekt gekennzeichnet. Eine Lösung für dieses Problem finden Sie in dem [Hinweis oben in diesem Artikel](#create-the-basic-class-for-deploying-sharepoint-components). Vergewissern Sie sich außerdem, dass die Datenbank so konfiguriert ist, dass sie neu erstellt wird (siehe [Konfigurieren von Visual Studio zum Neuerstellen der Unternehmensdatenbank in jeder Debugsitzung](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md#Rebuild)).
+
 5. Öffnen Sie die Liste, und fügen Sie ein Element hinzu. Beachten Sie, dass im Formular für neue Elemente das Feld **Zu Unternehmens-DB hinzugefügt** nicht mehr vorhanden ist und deshalb nicht manuell festgelegt werden kann. Dies gilt auch für das Formular zum Bearbeiten von Elementen.
     
-  ![The new item form for the Local Employees list. The "Added to Corporate DB" field is no longer on the form. Only the name field and buttons for OK and Cancel.](../images/3fdc6752-4184-4928-9423-0bc7c0206c62.PNG)
- 
+   *Abbildung 2. Neues Elementformular für die Liste der lokalen Mitarbeiter*
 
- 
+   ![Neues Elementformular für die Liste der lokalen Mitarbeiter Das Feld „Zur Unternehmensdatenbank hinzugefügt" ist nicht mehr im Formular enthalten, sondern nur noch das Namensfeld und die Schaltflächen für OK und Abbrechen.](../images/3fdc6752-4184-4928-9423-0bc7c0206c62.PNG)
 
- 
-6. Verwenden Sie im Browser die Schaltfläche „Zurück“, um zurück zur Startseite für das Add-In zu navigieren.
-    
- 
-7. Klicken Sie auf das Zahnradsymbol des Chromsteuerelements im oberen Bereich, und wählen Sie **Kontoeinstellungen** aus.
-    
- 
-8. Klicken Sie auf der Seite **Konten** auf die Schaltfläche **Add-In-Version anzeigen**. Als Version wird **1.0.0.0** angezeigt, da die Logik für die erste Ausführung sie geändert hat.
-    
-  ![Der Kontoeinstellungsseite mit der Versionsnummer 1.0.0.0.](../images/4c6d82a7-7c40-4190-b7e3-1337275e1e60.PNG)
- 
+6. Klicken Sie im Browser auf die Schaltfläche „Zurück“, um zurück zur Startseite für das Add-In zu navigieren.
 
- 
+7. Wählen Sie das Zahnradsymbol des Chromsteuerelements im oberen Bereich, und wählen Sie dann **Kontoeinstellungen** aus.
 
- 
-9. Schließen Sie zum Beenden der Debugsitzung das Browserfenster, oder beenden Sie das Debuggen in Visual Studio. Jedes Mal, wenn Sie F5 drücken, zieht Visual Studio die vorherige Version des Add-Ins zurück und installiert die neueste.
-    
- 
-10. Da Sie mit diesem Add-In und dieser Visual Studio-Lösung in anderen Artikeln arbeiten werden, hat es sich bewähr, das Add-In ein letztes Mal zurückzuziehen, wenn Sie Ihre Arbeit daran für eine Weile abgeschlossen haben. Klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer**, und wählen Sie **Zurückziehen** aus.
-    
- 
+8. Klicken Sie auf der Seite **Kontoeinstellungen** auf die Schaltfläche **Add-In-Version anzeigen**. Die Version wird als **1.0.0.0** angezeigt, da die erste Ausführungslogik die Version geändert hat.
+  
+   *Abbildung 3: Seite „Kontoeinstellungen“*
 
-## 
+   ![Der Kontoeinstellungsseite mit der Versionsnummer 1.0.0.0.](../images/4c6d82a7-7c40-4190-b7e3-1337275e1e60.PNG)
+
+9. Schließen Sie zum Beenden der Debugsitzung das Browserfenster, oder beenden Sie das Debuggen in Visual Studio. Jedes Mal, wenn Sie F5 drücken, zieht Visual Studio die vorherige Version des Add-Ins zurück und installiert die neueste.
+
+10. Da Sie mit diesem Add-In und dieser Visual Studio-Lösung in anderen Artikeln arbeiten werden, hat es sich bewährt, das Add-In ein letztes Mal zurückzuziehen, wenn Sie Ihre Arbeit daran für eine Weile abgeschlossen haben. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie die Option **Zurückziehen** aus.
+
+## <a name="next-steps"></a>Nächste Schritte
 <a name="Nextsteps"> </a>
 
- Im nächsten Artikel wird gezeigt, wie Sie die benutzerdefinierte Schaltfläche für das Menüband **Lokale Mitarbeiter** zurück in das Add-In bringen, nachdem die Liste jetzt programmgesteuert bereitgestellt wird: [Programmgesteuerte Bereitstellung einer benutzerdefinierten Schaltfläche im vom Anbieter gehosteten Add-In](programmatically-deploy-a-custom-button-in-the-provider-hosted-add-in.md)
+Im nächsten Artikel wird gezeigt, wie Sie die benutzerdefinierte Schaltfläche für das Menüband **Lokale Mitarbeiter** zurück in das Add-In bringen, nachdem die Liste jetzt programmgesteuert bereitgestellt wird: [Programmgesteuerte Bereitstellung einer benutzerdefinierten Schaltfläche im vom Anbieter gehosteten Add-In](programmatically-deploy-a-custom-button-in-the-provider-hosted-add-in.md)
  
 
  

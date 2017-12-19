@@ -2,20 +2,20 @@
 
 Mithilfe der SharePoint-REST-Schnittstelle können Sie grundlegende CRUD-Operationen auf Websitedesigns anwenden, d. h: Erstellen, Lesen, Aktualisieren und Löschen (Create, Read, Update, Delete).
 
-Der REST-Dienst in SharePoint Online (sowie in lokalen Bereitstellungen von SharePoint 2016 und höher) erlaubt die Zusammenfassung mehrerer Anforderungen in einem einzigen Aufruf an den Service mittels der ODATA-Abfrageoption „$batch“. Einzelheiten und Links zu Codebeispielen finden Sie unter [Durchführen von Batchanforderungen mit den REST-APIs](https://dev.office.com/sharepoint/docs/apis/rest/make-batch-requests-with-the-rest-apis.md).
+Der REST-Dienst in SharePoint Online (sowie in lokalen Bereitstellungen von SharePoint 2016 und höher) erlaubt die Zusammenfassung mehrerer Anforderungen in einem einzigen Aufruf an den Service mittels der ODATA-Abfrageoption „$batch“. Einzelheiten und Links zu Codebeispielen finden Sie unter [Durchführen von Batchanforderungen mit den REST-APIs](https://dev.office.com/sharepoint/docs/apis/rest/make-batch-requests-with-the-rest-apis).
 
 ## <a name="prerequisites"></a>Voraussetzungen
 Lesen Sie vor der Umsetzung der Beispiele in diesem Artikel zunächst die folgenden Artikel:
-- [Grundlegendes zum SharePoint-REST-Dienst](https://dev.office.com/sharepoint/docs/apis/rest/get-to-know-the-sharepoint-rest-service.md) 
-- [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten](https://dev.office.com/sharepoint/docs/apis/rest/complete-basic-operations-using-sharepoint-rest-endpoints.md)
+- [Grundlegendes zum SharePoint-REST-Dienst](https://dev.office.com/sharepoint/docs/apis/rest/get-to-know-the-sharepoint-rest-service) 
+- [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten](https://dev.office.com/sharepoint/docs/apis/rest/complete-basic-operations-using-sharepoint-rest-endpoints)
 
 ## <a name="rest-commands-for-site-themes"></a>REST-Befehle für Websitedesigns
 
 Für Websitedesigns stehen die folgenden REST-Befehle zur Verfügung:
 
 * __AddTenantTheme__ &mdash; Erstellt ein neues Design, ähnlich wie das SharePoint-Cmdlet „Add-SPOTheme“.
-* __RemoveTenantTheme__ &mdash; Entfernt ein Design aus dem Mandanten-Store, ähnlich wie das PowerShell-Cmdlet „Remove-SPOTheme“.
-* __GetTenantThemingOptions__ &mdash; List die Designeinstellungen.
+* __RemoveTenantTheme__ &mdash; Entfernt ein Design aus dem Store des Mandanten, ähnlich wie das PowerShell-Cmdlet „Remove-SPOTheme“.
+* __GetTenantThemingOptions__ &mdash; Ruft die Designeinstellungen ab.
 
 Basis für die URL von REST-Befehlen zur Designverwaltung ist die Zeichenfolge „_api/thememanager“. Die Endpunkte für die oben aufgeführten Befehle beispielsweise sehen wie folgt aus:
 
@@ -131,6 +131,6 @@ RestRequest("/_api/thememanager/GetTenantThemingOptions");
 * [SharePoint-Websitedesign: JSON-Schema](sharepoint-site-theming-json-schema.md)
 * [SharePoint-Websitedesign: PowerShell-Cmdlets](sharepoint-site-theming-powershell.md)
 * [SharePoint-Websitedesign: CSOM](sharepoint-site-theming-csom.md)
-* [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten](https://dev.office.com/sharepoint/docs/apis/rest/complete-basic-operations-using-sharepoint-rest-endpoints.md)
+* [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten](https://dev.office.com/sharepoint/docs/apis/rest/complete-basic-operations-using-sharepoint-rest-endpoints)
 * [Making REST calls with C# and JavaScript for SharePoint 2013](http://www.microsoft.com/resources/msdn/en-us/office/media/video/video.mdl?cid=sdc&from=mscomsdc&VideoID=4e4cc094-ff69-405b-852f-2ac7c41293c5)
 
