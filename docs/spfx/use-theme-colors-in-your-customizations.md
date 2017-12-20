@@ -2,17 +2,18 @@
 title: Verwenden von Designfarben in Ihren SharePoint Framework-Anpassungen
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: f7f8c24bb2483064504e75e71a19caf1914874f4
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4db918474530525278463c3cebfac29f6376e296
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-theme-colors-in-your-sharepoint-framework-customizations"></a>Verwenden von Designfarben in Ihren SharePoint Framework-Anpassungen
 
 Beim Erstellen von SharePoint Framework-Anpassungen sollten Sie Designfarben verwenden, damit Ihre Anpassungen wie ein Teil der Website aussehen. In diesem Artikel wird erläutert, wie Sie auf die Designfarben der Kontextwebsite in Ihrer SharePoint Framework-Lösung verweisen können.
 
-> **Hinweis:** In diesem Artikel wird zwar ein clientseitiges SharePoint Framework-Webpart als Beispiel verwendet, die beschriebenen Techniken gelten jedoch für alle Typen von SharePoint Framework-Anpassungen.
+> [!NOTE] 
+> In diesem Artikel wird zwar ein clientseitiges SharePoint-Framework-Webpart als Beispiel verwendet, die beschriebenen Techniken gelten jedoch für alle Typen von SharePoint-Framework-Anpassungen.
 
 ## <a name="fixed-colors-vs-theme-colors"></a>Feste Farben im Vergleich zu Designfarben
 
@@ -63,13 +64,15 @@ Token|Standardwert auf einer modernen Teamwebsite, auf der die rote Palette verw
 `themeTertiary`|`#fd969b`|
 `themeTertiaryAlt`|`#fd969b`|
 
-> **Hinweis:** Es gibt weitere Token, die in SharePoint Framework registriert sind. Alle diese Token weisen Werte auf, die in klassischen Websites angegeben sind, nur die zuvor erwähnte Untergruppe weist Werte für moderne SharePoint-Websites auf. Die vollständige Liste verfügbarer Token finden Sie im Wert der `window.__themeState__.theme`-Eigenschaft mithilfe der Konsole in den Entwicklertools Ihres Webbrowsers.
+> [!NOTE] 
+> Es gibt weitere Token, die im SharePoint-Framework registriert sind. Alle diese Token weisen Werte auf, die in klassischen Websites angegeben sind, nur die zuvor erwähnte Untergruppe weist Werte für moderne SharePoint-Websites auf. Die vollständige Liste verfügbarer Token finden Sie im Wert der Eigenschaft `window.__themeState__.theme` mithilfe der Konsole in den Entwicklertools Ihres Webbrowsers.
 
 ## <a name="use-theme-colors-in-your-customizations"></a>Verwenden von Designfarben in Ihren Anpassungen
 
 Wenn Sie ein Gerüst für ein neues clientseitiges SharePoint Framework-Webpart erstellen, wird standardmäßig die feste Palette für Blautöne verwendet. In den folgenden Schritten werden die Anpassungen beschrieben, die erforderlich sind, damit das Webpart stattdessen Designfarben verwendet.
 
-> **Hinweis:** In den folgenden Schritten wird ein clientseitiges SharePoint Framework-Webpart mit dem Namen _HelloWorld_ mithilfe von React angewendet. Für Webparts, die mit anderen Bibliotheken und anderen Anpassungstypen erstellt wurden, müssen Sie die Änderungen möglicherweise entsprechend anpassen.
+> [!NOTE] 
+> In den folgenden Schritten wird ein clientseitiges SharePoint-Framework-Webpart mit dem Namen _HelloWorld_ mithilfe von React angewendet. Für Webparts, die mit anderen Bibliotheken und anderen Anpassungstypen erstellt wurden, müssen Sie die Änderungen möglicherweise entsprechend anpassen.
 
 Öffnen Sie im Code-Editor die Datei **./src/webparts/helloWorld/components/HelloWorld.tsx**, und entfernen Sie aus dem Div mit der Klasse **ms-Raster-Row** die Klasse **ms-BgColor-ThemeDark**Klasse.
 

@@ -2,11 +2,11 @@
 title: Verweisen auf CSS-Formatvorlagen von Drittanbietern in SharePoint Framework-Webparts
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 9f85911dd2696fcb4c3dff7430883bd19a0ceb70
-ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.openlocfilehash: 1ab9f28dad1a77af1cb652f29e4f5b23c1c96e4a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="reference-third-party-css-styles-in-sharepoint-framework-web-parts"></a>Verweisen auf CSS-Formatvorlagen von Drittanbietern in SharePoint Framework-Webparts
 
@@ -14,7 +14,8 @@ Es gibt viele Bibliotheken von Drittanbietern, die Sie nutzen können, um vielf�
 
 ![Von einem clientseitigen Webpart gerendertes jQuery UI-Accordion](../../../images/thirdpartycss-accordion-styled.png)
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment.md).
+> [!NOTE] 
+> Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment.md).
 
 ## <a name="prepare-the-project"></a>Vorbereiten des Projekts
 

@@ -2,17 +2,18 @@
 title: "Überprüfen von Webpart-Eigenschaftswerten"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 290fea0bf884e16b266ab2d2f7f493174374d350
-ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.openlocfilehash: d2e042743a2c374a811fce9bc54f4e6dfd5ea3d2
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="validate-web-part-property-values"></a>Überprüfen von Webpart-Eigenschaftswerten
 
 Wenn Sie mit Webparts arbeiten, können Benutzer diese mithilfe der Eigenschaften entsprechend der jeweiligen Bedürfnisse konfigurieren. Überprüfen Sie die bereitgestellten Konfigurationswerte und erleichtern Sie es Benutzern auf diese Weise, den Webpart zu konfigurieren und das Arbeiten mit dem Webpart insgesamt zu verbessern. In diesem Artikel erfahren Sie, wie Sie Eigenschaftswerte in clientseitigen Webparts in SharePoint Framework überprüfen.
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment.md), in der Sie SharePoint Framework-Lösungen erstellen können.
+> [!NOTE] 
+> Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment.md), in der Sie SharePoint-Framework-Lösungen erstellen können.
 
 ## <a name="create-new-project"></a>Erstellen eines neuen Projekts
 

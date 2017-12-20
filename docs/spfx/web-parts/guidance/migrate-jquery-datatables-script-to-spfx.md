@@ -2,11 +2,11 @@
 title: "Migrieren von jQuery- und DataTables-Lösungen, die mit Script Editor-Webpart erstellt wurden, in SharePoint Framework"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: a50a56f3b433d9152e047bd51525747abf9d2865
-ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.openlocfilehash: 4a7092759ceb458b5f3036a627dd3e4411bec147
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="migrate-jquery-and-datatables-solution-built-using-script-editor-web-part-to-sharepoint-framework"></a>Migrieren von jQuery- und DataTables-Lösungen, die mit Script Editor-Webpart erstellt wurden, in SharePoint Framework
 
@@ -127,7 +127,8 @@ Durch die Verwendung von DataTables erhalten Endbenutzer eine leistungsfähige L
 
 ## <a name="migrate-the-it-requests-overview-solution-from-the-script-editor-web-part-to-the-sharepoint-framework"></a>Migrieren der Übersichtslösung für IT-Anfragen vom Script Editor-Webpart in das SharePoint-Framework
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment.md), in der Sie SharePoint Framework-Lösungen erstellen können.
+> [!NOTE] 
+> Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment.md), in der Sie SharePoint-Framework-Lösungen erstellen können.
 
 Das Umwandeln dieser Anpassung in das SharePoint-Framework bietet eine Reihe von Vorteilen, wie z. B. eine benutzerfreundlichere Konfiguration und die zentrale Verwaltung der Lösung. Es folgt eine Schritt-für-Schritt-Beschreibung dazu, wie Sie die Lösung in das SharePoint-Framework migrieren können. Sie migrieren die Lösung zunächst in das SharePoint-Framework, wobei so wenige Änderungen am ursprünglichen Code wie möglich vorgenommen werden. Später transformieren Sie den Code der Lösung in TypeScript, um die Sicherheitsfeatures nutzen zu können, die es während der Entwicklung bietet.
 
@@ -289,7 +290,8 @@ Damit das Webpart das Plug-In lädt, muss es die neu erstellte Datei **moment-pl
 import './moment-plugin';
 ```
 
-> **Hinweis:** Sie müssen beim Referenzieren von anderen Dateien die Erweiterung **js** nicht einbeziehen. SharePoint-Framework löst die Erweiterung automatisch auf.
+> [!NOTE] 
+> Sie müssen beim Referenzieren von anderen Dateien die Erweiterung **js** nicht einbeziehen. Das SharePoint-Framework löst die Erweiterung automatisch auf.
 
 ### <a name="initiate-datatables-and-load-data"></a>Initiieren von DataTables und laden der Daten
 

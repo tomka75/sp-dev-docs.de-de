@@ -1,16 +1,22 @@
 ---
 title: Bereitstellen von SharePoint-Ressourcen aus Ihrem clientseitigen SharePoint-Webpart
-ms.date: 09/25/2017
+ms.date: 12/05/2017
 ms.prod: sharepoint
-ms.openlocfilehash: d8092cc92e1922cc4fd7ecb71a6121cb097727f5
-ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.openlocfilehash: d0ad7fa6f6ed3ef2ba0f28bf2a8a029f7d8e0d0f
+ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/08/2017
 ---
 # <a name="provisioning-sharepoint-assets-from-your-sharepoint-client-side-web-part"></a>Bereitstellen von SharePoint-Ressourcen aus Ihrem clientseitigen SharePoint-Webpart
 
 In diesem Artikel wird beschrieben, wie SharePoint-Ressourcen als Teil der SharePoint Framework-Lösung bereitgestellt werden. Diese Ressourcen werden auf SharePoint-Websites bereitgestellt, wenn die Lösung darauf installiert wird. Der Artikel behandelt auch die erforderlichen Schritte zur Einführung möglicher Updates als Teil von neuen Versionen des Pakets. Dieses Verfahren ist identisch mit dem Add-in-Update.
+
+Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=qAqNk_X82QM&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=8) nachvollziehen: 
+
+<a href="https://www.youtube.com/watch?v=qAqNk_X82QM&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=8">
+<img src="../../../images/spfx-youtube-tutorial2.png" alt="Screenshot of the YouTube video player for this tutorial" />
+</a>
 
 ## <a name="prerequisites"></a>Voraussetzungen
 Führen Sie die folgenden Schritte aus, bevor Sie sich mit dem grundlegenden Fluss des Erstellens eines benutzerdefinierten, clientseitigen Webparts vertraut machen:
@@ -47,13 +53,18 @@ yo @microsoft/sharepoint
 Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
 * Akzeptieren Sie den Standardnamen **asset-deployment-webpart** als Lösungsnamen, und drücken Sie die **EINGABETASTE**.
+* Wählen Sie **Nur SharePoint Online (aktuell)**, und drücken Sie die **EINGABETASTE**.
 * Wählen Sie **Aktuellen Ordner verwenden** als Speicherort für die Dateien aus.
+* Wählen Sie **N**, damit die Erweiterung auf jeder Website explizit installiert werden muss, wenn sie verwendet wird. 
+* Wählen Sie **Webpart** als den zu erstellenden Typ der clientseitigen Komponente aus. 
 
 Über die nächsten Eingabeaufforderungen werden spezifische Informationen zum Webpart abgefragt:
 
-* Akzeptieren Sie die Standardeinstellung **No javascript web framework** als Framework, und drücken Sie die **EINGABETASTE**, um fortzufahren.
 * Geben Sie **AssetDeployment** als Webpartnamen ein, und drücken Sie die **EINGABETASTE**.
 * Geben Sie**AssetDeployment-Webpart** als Beschreibung des Webparts ein, und drücken Sie die **EINGABETASTE**. 
+* Akzeptieren Sie die Standardeinstellung **No javascript web framework** als Framework, und drücken Sie die **EINGABETASTE**, um fortzufahren.
+
+![Yeoman-Eingabeaufforderungen](../../../images/asset-deployment-yeoman.png)
 
 An diesem Punkt installiert Yeoman die erforderlichen Abhängigkeiten und erstellt ein Gerüst für die Lösungsdateien. Das kann einige Minuten dauern. Yeoman erstellt ein Gerüst für das Projekt, um auch das **AssetDeployment**-Webpart einzuschließen.
 
@@ -208,31 +219,36 @@ Nun haben wir die erforderlichen Strukturen für das Bereitstellen von SharePoin
 
 ```json
 {
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
     "name": "asset-deployment-webpart-client-side-solution",
-    "id": "31086065-dbdb-493f-b02e-7b7f97f45bd9",
-    "version": "1.0.0.0"
+    "id": "6690f11b-012f-4268-bc33-3086eb2dd287",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
   },
   "paths": {
     "zippedPackage": "solution/asset-deployment-webpart.sppkg"
   }
 }
+
 ```
 
 Um sicherzustellen, dass unsere neu hinzugefügten Featureframeworkdateien beim Verpacken der Lösung berücksichtigt werden, müssen wir eine Featureframework-Featuredefinition für das Lösungspaket einschließen. Wir werden eine JSON-Definition für erforderliche Features innerhalb der Lösungsstruktur einschließen, wie im folgenden Code dargestellt.
 
 ```json
 {
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
     "name": "asset-deployment-webpart-client-side-solution",
-    "id": "31086065-dbdb-493f-b02e-7b7f97f45bd9",
+    "id": "6690f11b-012f-4268-bc33-3086eb2dd287",
     "version": "1.0.0.0",
+    "includeClientSideAssets": true,
     "features": [{
       "title": "asset-deployment-webpart-client-side-solution",
       "description": "asset-deployment-webpart-client-side-solution",
       "id": "523fe887-ced5-4036-b564-8dad5c6c6e24",
       "version": "1.0.0.0",
-      "assets": {        
+      "assets": {
         "elementManifests": [
           "elements.xml"
         ],
@@ -246,7 +262,6 @@ Um sicherzustellen, dass unsere neu hinzugefügten Featureframeworkdateien beim 
     "zippedPackage": "solution/asset-deployment-webpart.sppkg"
   }
 }
-
 ```
 
 Beachten Sie bei den hinzugefügten JSON-Definitionen Folgendes:
@@ -272,25 +287,27 @@ Der Befehl erstellt das Paket im `sharepoint/solution`-Ordner:
 ```
 asset-deployment-webpart.sppkg
 ```
+
 Vor dem Testen des Pakets in SharePoint sehen wir uns schnell die Standardstrukturen an, die für das Paket um die definierten Featureframeworkelemente herum erstellt wurden. Wechseln Sie zurück zu Visual Studio Code, und erweitern Sie den Ordner `sharepoint/solution/debug`, der die raw.xml-Strukturen enthält, die in das tatsächliche **sppkg**-Paket eingeschlossen werden sollen.
 
 ![Screenshot, in dem der Debugordner unter dem SharePoint-Ordner in der Lösungsstruktur angezeigt wird](../../../images/tutorial-feature-solution-debug-folder.png)
 
 Als Nächstes müssen Sie das Paket, das generiert wurde, im App-Katalog bereitstellen.
 
-Wechseln Sie zum App-Katalog der Website.
+Wechseln Sie zum App-Katalog des Mandanten.
 
 Laden Sie das Paket „asset-deployment-webpart.sppkg“, das sich im Ordner `sharepoint/solution` befindet, in den App-Katalog hoch, oder platzieren Sie es dort per Drag & Drop. In SharePoint wird ein Dialogfeld angezeigt, und Sie werden aufgefordert, der clientseitigen Lösung, die bereitgestellt werden soll, zu vertrauen.
 
 ![Dialogfeld für die Vertrauensstellung für die Bereitstellung des Lösungspakets](../../../images/tutorial-feature-solution-trust-app-catalog.png)
 
-> Hinweis:  SharePoint überprüft das veröffentlichte Paket, wenn es bereitgestellt wird, und Sie sehen nur das Dialogfeld für die Vertrauensstellung, wenn das Paket bereitgestellt werden kann. Sie können auch den Status dieser Überprüfung in der Spalte „Gültiges App-Paket“ im App-Katalog anzeigen.
+> [!NOTE]
+> SharePoint überprüft das veröffentlichte Paket, wenn es bereitgestellt wird, und Sie sehen nur das Dialogfeld für die Vertrauensstellung, wenn das Paket bereitgestellt werden kann. Sie können auch den Status dieser Überprüfung in der Spalte „Gültiges App-Paket“ im App-Katalog anzeigen.
 
-Wechseln Sie zu der Website, auf der Sie die Bereitstellung der SharePoint-Ressource testen möchten. Dies könnte eine Websitesammlung im Mandanten sein, auf dem Sie dieses Lösungspaket bereitgestellt haben. 
+Wechseln Sie zu der Website, auf der Sie die Bereitstellung der SharePoint-Ressource testen möchten. Dies könnte eine Websitesammlung im Mandanten sein, auf dem Sie dieses Lösungspaket bereitgestellt haben.
 
 Wählen Sie das Zahnräder-Symbol in der oberen Navigationsleiste auf der rechten Seite und dann **Eine App hinzufügen** aus, um zu Ihrer Apps-Seite zu wechseln.
 
-Geben Sie in das Feld **Suchen** die Zeichenfolge **Bereitstellung** ein, und drücken Sie die **Eingabetaste**, um Ihre Apps zu filtern. 
+Geben Sie in das Feld **Suchen** die Zeichenfolge **Bereitstellung** ein, und drücken Sie die **EINGABETASTE**, um Ihre Apps zu filtern.
 
 ![Suchen nach der App auf der Website](../../../images/tutorial-feature-solution-add-app.png)
 
@@ -313,6 +330,7 @@ SharePoint Framework-Lösungen unterstützen die folgenden Upgradeaktionsdefinit
 * ApplyElementManifest
 * AddContentTypeField
 
+> [!TIP]
 > Weitere Informationen zu den Upgradeaktionsdefinitionen für das Featureframework finden Sie im Artikel [Aktualisierungsverfahren für Add-Ins für SharePoint](https://msdn.microsoft.com/de-DE/library/office/fp179904.aspx) auf MSDN.
 
 ### <a name="add-new-elementxml-file-for-the-new-version"></a>Hinzufügen einer neuen „element.xml“-Datei für die neue Version
@@ -349,44 +367,49 @@ Kopieren Sie die folgende XML-Struktur in **upgrade-actions-v2.xml**. Beachten S
 
 ### <a name="deploy-new-version-to-sharepoint"></a>Bereitstellen der neuen Version in SharePoint
 
-Als Nächstes müssen wir sowohl die Lösungsversion als auch die Featureversion aktualisieren, die für die Bereitstellung der Ressource verantwortlich ist. 
+Als Nächstes müssen wir sowohl die Lösungsversion als auch die Featureversion aktualisieren, die für die Bereitstellung der Ressource verantwortlich ist.
 
+> [!IMPORTANT]
 > Die Lösungsversion gibt für SharePoint an, dass eine neue Version der SharePoint Framework-Lösung zur Verfügung steht. Durch eine Erhöhung der Featureversion wird sichergestellt, dass die Upgradeaktionen entsprechend ausgeführt werden, wenn das Lösungspaket auf den vorhandenen Websites aktualisiert wird.
 
-Öffnen Sie **package-solution.json** im Ordner „config“, und aktualisieren Sie die Versionswerte sowohl für die Lösung als auch für das Feature auf „2.0.0.0“. Außerdem müssen **elements-v2.xml** im Abschnitt „elementManifest“ und das „upgradeActions“-Element in einen Zeiger auf die soeben erstelle **upgrade-actions-v2.xml**-Datei eingeschlossen werden. 
+Öffnen Sie **package-solution.json** im Ordner „config“, und aktualisieren Sie die Versionswerte sowohl für die Lösung als auch für das Feature auf „2.0.0.0“. Außerdem müssen **elements-v2.xml** im Abschnitt „elementManifest“ und das „upgradeActions“-Element in einen Zeiger auf die soeben erstelle **upgrade-actions-v2.xml**-Datei eingeschlossen werden.
 
 Nachfolgend sehen Sie eine vollständige **package-solution.json**-Datei mit den erforderlichen Änderungen. Beachten Sie, dass die Bezeichner für Ihre Lösung etwas anders aussehen könnten, konzentrieren Sie sich daher nur auf das Hinzufügen der fehlenden Teile.
 
 ```json
 {
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
     "name": "asset-deployment-webpart-client-side-solution",
-    "id": "31086065-dbdb-493f-b02e-7b7f97f45bd9",
+    "id": "6690f11b-012f-4268-bc33-3086eb2dd287",
     "version": "2.0.0.0",
+    "includeClientSideAssets": true,
     "features": [{
-        "title": "asset-deployment-webpart-client-side-solution",
-        "description": "asset-deployment-webpart-client-side-solution",
-        "id": "523fe887-ced5-4036-b564-8dad5c6c6e24",
-        "version": "2.0.0.0",
-        "assets": {
-          "elementManifests": [
-            "elements.xml",
-            "elements-v2.xml"
-          ],
-          "elementFiles": [
-            "schema.xml"
-          ],
-          "upgradeActions":[
-            "upgrade-actions-v2.xml"
+      "title": "asset-deployment-webpart-client-side-solution",
+      "description": "asset-deployment-webpart-client-side-solution",
+      "id": "523fe887-ced5-4036-b564-8dad5c6c6e24",
+      "version": "2.0.0.0",
+      "assets": {
+        "elementManifests": [
+          "elements.xml",
+          "elements-v2.xml"
+        ],
+        "elementFiles":[
+          "schema.xml"
+        ],
+        "upgradeActions":[
+          "upgrade-actions-v2.xml"
         ]
-        }
-      }]
+      }
+    }]
   },
   "paths": {
     "zippedPackage": "solution/asset-deployment-webpart.sppkg"
   }
 }
 ```
+
+> [!IMPORTANT]
 > Beachten Sie, dass auch das **elements-v2.xml**-Element unter dem Abschnitt „elementManifest“ eingeschlossen wurde. Dadurch wird sichergestellt, dass das Endergebnis bei Installation dieses Pakets auf einer bereinigten Website als Version 2.0 mit den aktualisierten Paketen übereinstimmt.
 
 Geben Sie im Konsolenfenster den folgenden Befehl ein, um Ihre clientseitige Lösung, die das Webpart enthält, erneut zu verpacken, damit die grundlegende Struktur für das Verpacken vorbereitet wird:
@@ -399,6 +422,7 @@ Führen Sie als Nächstes den folgenden Befehl aus, damit das Lösungspaket erst
 ```
 gulp package-solution
 ```
+
 Der Befehl erstellt eine neue Version des Lösungspakets im Ordner `sharepoint/solution`. Beachten Sie, dass Sie am Ordner `sharepoint/solution/debug` leicht erkennen können, dass die aktualisierten XML-Dateien im Lösungspaket enthalten sind.
 
 Als Nächstes müssen Sie die neue Version, die generiert wurde, im App-Katalog bereitstellen.
@@ -409,7 +433,9 @@ Laden Sie das Paket „asset-deployment-webpart.sppkg“, das sich im Ordner `sh
 
 ![Ersetzen der Frage aus dem App-Katalog](../../../images/tutorial-feature-solution-override-sppkg.png)
 
-Klicken Sie auf **Ersetzen**, um eine Aktualisierung auf die neueste Version im App-Katalog durchzuführen.
+Klicken Sie auf **Ersetzen**, um ein Update auf die neueste Version im App-Katalog durchzuführen.
+
+Klicken Sie auf **Bereitstellen**, um auch der neuesten Version* zu vertrauen*. 
 
 Beachten Sie, dass die Spalte „App-Version“ für die **asset-deployment-webpart-client-side-solution** nun auf „2.0.0.0“ aktualisiert wurde.
 
@@ -418,9 +444,11 @@ Beachten Sie, dass die Spalte „App-Version“ für die **asset-deployment-webp
 ### <a name="update-existing-instance-in-the-site"></a>Aktualisieren der vorhandenen Instanz auf der Website
 Da das Paket nun im App-Katalog aktualisiert wurde, können wir zur tatsächlichen SharePoint-Inhaltswebsite wechseln und das Upgrade für die vorhandene Instanz durchführen.
 
-Wechseln zu der Website, auf der Sie die erste Version der SharePoint Framework-Lösung bereitgestellt haben
+Wechseln zu der Website, auf der Sie die erste Version der SharePoint-Framework-Lösung bereitgestellt haben
 
-Wählen Sie aus dem Kontextmenü der Lösung **asset-deployment-webpart-client-side-solution** die Option **Info** aus.
+Wechseln zur Seite **Websiteinhalte**
+
+Wählen der Option **Details** aus dem Kontextmenü der Lösung **asset-deployment-webpart-client-side-solution**
 
 ![Kontextmenü des vorhandenen Pakets auf der Website](../../../images/tutorial-feature-solution-hover-menu.png)
 
@@ -432,8 +460,18 @@ Klicken Sie auf die Schaltfläche **HERUNTERLADEN**, um den Updateprozess für d
 
 ![App-Status wurde zu Updates auf der Seite der Websiteinhalte aktualisiert](../../../images/tutorial-feature-solution-updating-app.png)
 
-Das Update kann eine Weile dauern, wenn der Add-In-Status jedoch wieder zu „normal“ wechselt, können Sie auf **F5** klicken, um die Seite mit den Websiteinhalten zu aktualisieren, um zu bestätigen, dass die neue Liste erfolgreich als Teil des Updateprozesses bereitgestellt wurde.
+Wenn Sie zur klassischen Umgebung wechseln, sehen Sie weitere Details zur tatsächlichen Upgrade-Aktion, die für die SharePoint-Frameworklösung angewendet wird. 
+
+![App-Status wurde zu Updates auf der Seite der Websiteinhalte aktualisiert](../../../images/tutorial-feature-solution-updating-app-classic.png)
+
+> [!NOTE]
+> Da das SharePoint-Framework dieselbe App-Struktur wie SharePoint-Add-Ins verwendet, weist der Status für das Upgrade auf ein Update für ein Add-In oder eine App hin. 
+
+Das Update kann eine Weile dauern, wenn der Lösungsstatus jedoch wieder zu „normal“ wechselt, können Sie auf **F5** klicken, um die Seite mit den Websiteinhalten zu aktualisieren, um zu bestätigen, dass die neue Liste *`New List`* erfolgreich als Teil des Updateprozesses bereitgestellt wurde.
 
 ![Die Seite mit den Websiteinhalten mit einer zusätzlichen neuen Liste, die erstellt wird](../../../images/tutorial-feature-solution-new-list.png)
 
-Wir haben jetzt diese Instanz erfolgreich auf die neueste Version aktualisiert. Diese Option des Featureframeworks für die SharePoint-Ressourcenbereitstellung ist nahezu identisch wie beim SharePoint-Add-In-Modell. Der wichtigste Unterschied besteht jedoch darin, dass die Ressourcen direkt auf der normalen SharePoint-Website bereitgestellt werden, da es das Konzept „App-/Add-In-Web“ bei SharePoint Framework-Lösungen nicht gibt. 
+Wir haben jetzt diese Instanz erfolgreich auf die neueste Version aktualisiert. Diese Option des Featureframeworks für die SharePoint-Ressourcenbereitstellung ist nahezu identisch wie beim SharePoint-Add-In-Modell. Der wichtigste Unterschied besteht jedoch darin, dass die Ressourcen direkt auf der normalen SharePoint-Website bereitgestellt werden, da es das Konzept „App-/Add-In-Web“ bei SharePoint Framework-Lösungen nicht gibt.
+
+> [!NOTE]
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository](https://github.com/SharePoint/sp-dev-docs/issues). Vielen Dank im Voraus für Ihr Feedback.

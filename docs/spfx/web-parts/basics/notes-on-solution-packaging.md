@@ -2,11 +2,11 @@
 title: "Hinweise zu Lösungspaketen"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 41baeeed27f08f155b425d7886f1f54aae4e670d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 10bc8317561516a03ab1c212f66f34aeb7f509ff
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="notes-on-solution-packaging"></a>Hinweise zu Lösungspaketen
 
@@ -52,7 +52,8 @@ Jede Lösungsdatei muss einen **Namen** haben, der das Paket in der SharePoint-B
 
 Die Lösungsdefinition enthält optional eine Liste der SharePoint-Featuredefinitionen.
 
-> **Hinweis:** Wenn dies nicht angegeben oder leer ist, erstellt die Aufgabe eine einzelne Funktion für jede Komponente (eine 1:1-Zuordnung).
+> [!NOTE] 
+> Wenn dies nicht angegeben oder leer ist, erstellt die Aufgabe eine einzelne Funktion für jede Komponente (eine 1:1-Zuordnung).
 
 ### <a name="feature-definition-ifeature"></a>Funktionsdefinition (_IFeature_)
 

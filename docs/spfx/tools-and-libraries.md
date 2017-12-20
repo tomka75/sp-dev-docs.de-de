@@ -2,11 +2,11 @@
 title: "Entwicklungstools und -bibliotheken für das SharePoint Framework"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 2df6ebaaf1d56b20e2ae96063c9d6bff339603c5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: a8a75e7161cce1de606161bd589042a9a38e26c4
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-framework-development-tools-and-libraries"></a>Entwicklungstools und -bibliotheken für das SharePoint Framework
 
@@ -109,7 +109,7 @@ Es wird empfohlen, dass Sie sich mit den folgenden REST-APIs vertraut machen:
 
 Die Initiative[Office Dev Patterns and Practices/SharePoint Pattern and Practices (PnP)](http://aka.ms/officedevpnp) bietet Codebeispiele, Muster und andere Ressourcen, die Ihnen bei der Umwandlung Ihrer vorhandenen Lösung in das SharePoint Framework behilflich sind. Machen Sie sich unbedingt mit den Codebeispielen und Anweisungen der PnP-Initiative vertraut.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 
 * [SharePoint Framework](sharepoint-framework-overview.md)
 * [Erstellen eines clientseitigen Hallo Welt-Webparts](web-parts/get-started/build-a-hello-world-web-part.md)

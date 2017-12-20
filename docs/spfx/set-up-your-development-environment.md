@@ -2,11 +2,11 @@
 title: "Einrichten Ihrer SharePoint-Entwicklungsumgebung für clientseitige Webparts"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: c7e48ed9dfc32d4e7aa04502507d0df532e8ed50
-ms.sourcegitcommit: 53385f08de7c705ba76c6e4985c33d27ee76307e
+ms.openlocfilehash: e43d49cdcad92833bce84151962df6a33605b21a
+ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 12/08/2017
 ---
 # <a name="set-up-your-sharepoint-client-side-web-part-development-environment"></a>Einrichten Ihrer SharePoint-Entwicklungsumgebung für clientseitige Webparts
 
@@ -14,9 +14,9 @@ Sie können Visual Studio oder Ihre eigene benutzerdefinierte Entwicklungsumgebu
 
 >**Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [Ihren Office 365-Mandanten einrichten](./set-up-your-developer-tenant.md).
 
-Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=_fxYexlUhe0&t=5s&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=1) nachvollziehen:
+Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=MvlOEzTASXU&index=1&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq) nachvollziehen:
 
-<a href="https://www.youtube.com/watch?v=_fxYexlUhe0&t=5s&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq"> <img src="../images/spfx-youtube-tutorial0.png" alt="Screenshot of the YouTube video player for this tutorial" />
+<a href="https://www.youtube.com/watch?v=MvlOEzTASXU&index=1&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq"> <img src="../images/spfx-youtube-tutorial0.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 ## <a name="install-developer-tools"></a>Installieren von Entwicklertools
@@ -96,3 +96,6 @@ Hier sind einige Tools, die auch nützlich sein können:
 ## <a name="next-steps"></a>Nächste Schritte
 
 Sie können jetzt [Ihren ersten clientseitigen Webpart erstellen](web-parts/get-started/build-a-hello-world-web-part.md)!
+
+> [!NOTE]
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository](https://github.com/SharePoint/sp-dev-docs/issues). Vielen Dank im Voraus für Ihr Feedback.

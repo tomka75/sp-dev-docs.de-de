@@ -56,7 +56,8 @@ In den folgenden Schritten ändern wir den Hello World-Anwendungsanpasser, um au
 
 4. Aktualisieren Sie **AppCustomizer.module.scss** wie folgt:
 
-    >**Hinweis:** Hierbei handelt es sich um die Formatvorlagen, die in der HTML-Ausgabe für die Kopf- und Fußzeilenplatzhalter verwendet werden.
+    > [!NOTE] 
+    > Hierbei handelt es sich um die Formatvorlagen, die in der HTML-Ausgabe für die Kopf- und Fußzeilenplatzhalter verwendet werden.
 
       ```css
       .app {
@@ -84,7 +85,8 @@ In den folgenden Schritten ändern wir den Hello World-Anwendungsanpasser, um au
 
 5. Aktualisieren Sie in der Datei **HelloWorldApplicationCustomizer.ts** die **IHelloWorldApplicationCustomizerProperties**-Oberfläche wie folgt, um bestimmte Eigenschaften für Kopf- und Fußzeile hinzuzufügen.
 
-      **Hinweis:**Wenn Ihr Befehlssatz die JSON-Eingabe „ClientSideComponentProperties“ verwendet, wird sie in das Objekt `BaseExtension.properties` deserialisiert. Sie können eine Benutzeroberfläche definieren, um sie zu beschreiben.
+    > [!NOTE] 
+    > Wenn Ihr Befehlssatz die ClientSideComponentProperties JSON-Eingabe verwendet, wird sie in das Objekt `BaseExtension.properties` deserialisert. Sie können eine Benutzeroberfläche definieren, um sie zu beschreiben.
 
     ```ts
     export interface IHelloWorldApplicationCustomizerProperties {
@@ -245,3 +247,6 @@ Sie sollten jetzt den benutzerdefinierten Kopf- und Fußzeileninhalt auf der Sei
 
 ## <a name="next-steps"></a>Nächste Schritte
 Herzlichen Glückwunsch, Sie haben Ihre eigenen benutzerdefinierte Kopf- und Fußzeile mithilfe des Anwendungsanpassers erstellt! Informationen zum Fortsetzen der Erstellung Ihrer Erweiterung finden Sie unter [Bereitstellen Ihrer Erweiterung in SharePoint (Hello World, Teil 3)](./serving-your-extension-from-sharepoint.md). Sie erfahren, wie die Hello World-Erweiterung in einer SharePoint-Websitesammlung bereitgestellt und in der Vorschau angezeigt wird, ohne die **Debug**-Abfrageparameter zu verwenden. 
+
+> [!NOTE]
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository](https://github.com/SharePoint/sp-dev-docs/issues). Vielen Dank im Voraus für Ihr Feedback.
