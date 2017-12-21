@@ -2,11 +2,11 @@
 title: "Hinzufügen einer externen Bibliothek zu Ihrem clientseitigen SharePoint-Webpart"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 1dd951a3f2e07c263ae1b5d8fba697365bf454c8
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c811190ac84b97273f16cafea60ca0882846be2d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="add-an-external-library-to-your-sharepoint-client-side-web-part"></a>Hinzufügen einer externen Bibliothek zu Ihrem clientseitigen SharePoint-Webpart
 
@@ -26,11 +26,13 @@ Laden Sie das validator-Paket von npm herunter:
 npm install validator --save
 ```
 
->**Hinweis:** Da Sie TypeScript verwenden, benötigen Sie für das Paket, das Sie hinzufügen, Eingaben. Dies ist wichtig, wenn Sie Code schreiben, da TypeScript nur eine Obermenge von JavaScript ist. Der gesamte TypeScript-Code wird beim Kompilieren nach wie vor in JavaScript-Code konvertiert. Sie können mithilfe von  **npm** nach Eingaben suchen, beispielsweise: `npm install @types/{package} --save`
+> [!NOTE] 
+> Da Sie TypeScript verwenden, benötigen Sie für das Paket, das Sie hinzufügen, Eingaben. Dies ist wichtig, wenn Sie Code schreiben, da TypeScript nur eine Obermenge von JavaScript ist. Der gesamte TypeScript-Code wird beim Kompilieren nach wie vor in JavaScript-Code konvertiert. Sie können mithilfe von **npm** nach Eingaben suchen, beispielsweise: `npm install @types/{package} --save`
 
 Erstellen Sie im Ordner Ihres Webparts eine Datei mit dem Namen `validator.d.ts`, und fügen Sie den nachfolgenden Code in die Datei ein:
 
->**Hinweis:** Einige Bibliotheken verfügen nicht über Eingaben. Zwar gibt es für die Bibliothek „Validator“ eine [von der Community bereitgestellte Eingabendatei](https://www.npmjs.com/package/@types/validator); in diesem Artikel gehen wir aber davon aus, dass keine solche Datei existiert. In einem solchen Fall müssen Sie eine eigene Eingabendefinitionsdatei `.d.ts` für die Bibliothek erstellen. Der Code unten ist hierfür ein Beispiel.
+> [!NOTE] 
+> Einige Bibliotheken verfügen nicht über Eingaben. Zwar gibt es für die Bibliothek „Validator“ eine von der [Community bereitgestellte Eingabendatei](https://www.npmjs.com/package/@types/validator); in diesem Artikel gehen wir aber davon aus, dass keine solche Datei existiert. In einem solchen Fall müssen Sie eine eigene Eingabendefinitionsdatei `.d.ts` für die Bibliothek erstellen. Der Code unten ist hierfür ein Beispiel.
 
 ```typescript
 declare module "validator" {
