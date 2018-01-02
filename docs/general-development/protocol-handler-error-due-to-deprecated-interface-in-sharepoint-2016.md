@@ -3,11 +3,11 @@ title: "Protokollhandlerfehler aufgrund von nicht mehr unterstützter SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c80cb77c-89db-4c78-b576-f63d39ca330a
-ms.openlocfilehash: 1d2a5974bd8bd386c35d7f016cccec0a8237a2ec
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 571d35db7935027236c486cc279aa83684e201d8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="protocol-handler-error-due-to-deprecated-interface-in-sharepoint-2016"></a>Protokollhandlerfehler aufgrund von nicht mehr unterstützter SharePoint 2016-Oberfläche
 
@@ -193,10 +193,10 @@ struct AccessorInitParameters
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
-Weitere Informationen finden Sie unter [Enterprise Search-Protokollhandler](https://msdn.microsoft.com/en-us/library/office/aa981260%28v=office.12%29.aspx).
+Weitere Informationen finden Sie unter [Enterprise Search-Protokollhandler](https://msdn.microsoft.com/de-DE/library/office/aa981260%28v=office.12%29.aspx).
   
     
     

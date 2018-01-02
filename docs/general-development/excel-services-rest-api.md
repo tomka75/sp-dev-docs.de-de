@@ -3,22 +3,19 @@ title: Excel Services-REST-API
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 32033fea-873c-4781-900a-6946906066b0
-ms.openlocfilehash: 9672a0013f82b2878cda45a8936cade24aa29412
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 634ef9fb8e4e097af4f98539e66344410a256bb9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="excel-services-rest-api"></a>Excel Services-REST-API
 
 Dieser Abschnitt enthält Informationen zur REST-API (Representational State Transfer) in Excel Services und erläutert deren Verwendungsweise.
   
-    
-    
-
-
-> **Hinweis:** Die Excel Services-REST-API bezieht sich auf SharePoint und SharePoint 2016 (lokal). Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> )-Endpunkts sind.
+> [!NOTE]
+> Die Excel Services-REST-API kann in lokalen Bereitstellungen von SharePoint und SharePoint 2016 verwendet werden. Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+)-Endpunkts sind.
   
     
     

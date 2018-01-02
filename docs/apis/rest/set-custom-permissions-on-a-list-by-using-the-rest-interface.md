@@ -2,11 +2,11 @@
 title: Festlegen von benutzerdefinierten Berechtigungen in einer Liste mithilfe der REST-Schnittstelle
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 20e1b305fb19a010e8a5b60ab12ffb43cff61cf5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2fe15a33964aadcae0c1aa3495251a2475335c3f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="set-custom-permissions-on-a-list-by-using-the-rest-interface"></a>Festlegen von benutzerdefinierten Berechtigungen in einer Liste mithilfe der REST-Schnittstelle
 Informationen zum Definieren von benutzerdefinierten abgestimmten Berechtigungen in einer SharePoint-Liste mithilfe der REST-Schnittstelle und JavaScript.
@@ -268,7 +268,7 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Grundlegendes zum SharePoint REST-Dienst](get-to-know-the-sharepoint-rest-service.md) 
@@ -285,12 +285,9 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
     
  
 - TechNet-Artikel:
-     - 
-  [Referenz zu abgestimmten Berechtigungen für SharePoint Server 2013](http://technet.microsoft.com/en-us/library/dn169567.aspx)
-     - 
-  [Bewährte Methoden für die Verwendung abgestimmter Berechtigungen in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/gg128955.aspx)
-     - 
-  [Benutzerberechtigungen und Berechtigungsstufen in SharePoint 2013](http://technet.microsoft.com/en-us/library/cc721640.aspx)
+     - [Referenz zu abgestimmten Berechtigungen für SharePoint Server 2013](http://technet.microsoft.com/de-DE/library/dn169567.aspx)
+     - [Bewährte Methoden für die Verwendung abgestimmter Berechtigungen in SharePoint Server 2013](http://technet.microsoft.com/de-DE/library/gg128955.aspx)
+     - [Benutzerberechtigungen und Berechtigungsstufen in SharePoint 2013](http://technet.microsoft.com/de-DE/library/cc721640.aspx)
     
  
 

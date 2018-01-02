@@ -3,11 +3,11 @@ title: Excel Services in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f7e13fcb-a86a-4a1e-af59-3bace98ce9d7
-ms.openlocfilehash: 2621e87cfaf5fb2de6da2b1f518bf5828101044d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ee4ce478992dabf3d6ca4bd3c512983432589d43
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="excel-services-in-sharepoint"></a>Excel Services in SharePoint
 Erfahren Sie mehr über die neuen Funktionen in Excel Services in SharePoint und darüber, wie Sie diese in Ihren eigenen Entwicklungsarbeiten verwenden können.
@@ -38,8 +38,8 @@ In SharePoint Server 2010 wurde die REST-API für die Verwendung beim Abrufen un
 ### 
 <a name="xlsOdata"> </a>
 
-
-> **Hinweis:** Das Feature „Interaktive Excel-Ansicht“ wurde deaktiviert. Informationen zum Entfernen dieses Features von Ihrer Website finden Sie unter [Entfernen der interaktiven Excel-Ansicht von einer Webseite](removing-excel-interactive-view-from-a-webpage.md). 
+> [!NOTE]
+> Das Feature „Interaktive Excel-Ansicht“ wurde deaktiviert. Informationen zum Entfernen dieses Features von Ihrer Website finden Sie unter [Entfernen der interaktiven Excel-Ansicht von einer Webseite](removing-excel-interactive-view-from-a-webpage.md). 
   
     
     
@@ -74,7 +74,7 @@ In SharePoint Server 2010 wurde die REST-API für die Verwendung beim Abrufen un
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

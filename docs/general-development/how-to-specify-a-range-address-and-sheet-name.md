@@ -5,11 +5,11 @@ keywords: how to,howdoi,howto,set range
 f1_keywords: how to,howdoi,howto,set range
 ms.prod: sharepoint
 ms.assetid: 8bfefc48-1fbc-4b65-8156-1b7d0a8453ee
-ms.openlocfilehash: e3eef43bdbeea5b1c5c2b3ac9e499ccc14f39e40
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 803f786e522bc70753459e5a3d18d1d7f5b50efc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="specify-a-range-address-and-sheet-name"></a>Eingeben einer Bereichsadresse und eines Blattnamens
 
@@ -75,8 +75,8 @@ xlServices.SetCellA1(sessionId, String.Empty, "MyNamedRange", 8)
 If you specify a sheet name, the ranges you reference must exist on the sheet you specify. If you specify a sheet that does not exist, the call will fail and you will get a Simple Object Access Protocol (SOAP) exception, saying that the sheet does not exist.
 ## <a name="example"></a>Beispiel
 
-
-> **Hinweis:** Es wird vorausgesetzt, dass Sie bereits eine SharePoint-Dokumentbibliothek erstellt und diese als vertrauenswürdigen Speicherort definiert haben. Weitere Informationen dazu erhalten Sie unter [Vorgehensweise: Einem Speicherort vertrauen](how-to-trust-a-location.md) und [Vorgehensweise: Speicherorten für Arbeitsmappen mit Skript vertrauen](http://msdn.microsoft.com/library/79ab6ced-7a0c-4275-b852-bb246fc6be57%28Office.15%29.aspx). 
+> [!NOTE]
+> Es wird vorausgesetzt, dass Sie bereits eine SharePoint-Dokumentbibliothek erstellt und diese als vertrauenswürdigen Speicherort definiert haben. Weitere Informationen dazu erhalten Sie unter [Vorgehensweise: Einem Speicherort vertrauen](how-to-trust-a-location.md) und [Vorgehensweise: Speicherorten für Arbeitsmappen mit Skript vertrauen](http://msdn.microsoft.com/library/79ab6ced-7a0c-4275-b852-bb246fc6be57%28Office.15%29.aspx). 
   
     
     

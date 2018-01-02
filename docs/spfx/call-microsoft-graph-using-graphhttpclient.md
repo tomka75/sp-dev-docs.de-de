@@ -10,13 +10,13 @@ Sie können die **get()**-Methode verwenden, um einen REST-Aufruf an Microsoft G
 
 ### <a name="create-a-new-web-part-project"></a>Erstellen eines neuen Webpart-Projekts
 
-1. Erstellen Sie an einem Speicherort Ihrer Wahl ein neues Projektverzeichnis. 
+1. Erstellen Sie an einem Speicherort Ihrer Wahl ein neues Projektverzeichnis: 
 
   ```
   mkdir hellograph-webpart
   ```
 
-2. Wechseln Sie in das Projektverzeichnis.
+2. Wechseln Sie in das Projektverzeichnis:
 
   ```
   cd hellograph-webpart

@@ -3,11 +3,11 @@ title: Office 2013- und SharePoint-Anwendungsdienste
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f962922c-2967-492f-9a89-5ad10a1a6dd3
-ms.openlocfilehash: d976ee840824abe4a12e7cacc28b1cf46cb11c94
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e649ad7e40cada921cbee105d69668bf0633cc6f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="office-2013-and-sharepoint-application-services"></a>Office 2013- und SharePoint-Anwendungsdienste
 Erfahren Sie mehr über Access Services, Excel Services, Dienst für maschinelle Übersetzung, PerformancePoint-Dienste, PowerPoint Automation Services, Visio Services und Word Automation Services.
@@ -50,7 +50,8 @@ Die folgende Tabelle zeigt allgemeine Szenarien, die für die in diesem Abschnit
 |Word Automation Services  <br/> |||X  <br/> ||
    
 
-> **Hinweis:** In diesem Abschnitt werden nicht alle Dienste und Szenarien dargestellt. Links zu Entwicklerdokumentationen für andere Dienste finden Sie unter [Weitere Ressourcen](#bkmk_Resources). 
+> [!NOTE]
+> In diesem Abschnitt sind nicht alle Dienste und Szenarien dargestellt. Links zu Dokumentation für Entwickler für andere Dienste finden Sie unter  [Zusätzliche Ressourcen](#bkmk_Resources). 
   
     
     
@@ -82,7 +83,7 @@ In diesem Abschnitt sind nicht alle Dienste und Szenarien dargestellt. Links zu 
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkmk_Resources"> </a>
 
 
@@ -95,8 +96,7 @@ In diesem Abschnitt sind nicht alle Dienste und Szenarien dargestellt. Links zu 
 -  [Suche in SharePoint](search-in-sharepoint.md)
     
   
--  
-  [Installieren von SQL Server-BI-Features mit SharePoint (PowerPivot und Reporting Services)](http://msdn.microsoft.com/en-us/library/hh231671)
+-  [Installieren von SQL Server-BI-Features mit SharePoint (PowerPivot und Reporting Services)](http://msdn.microsoft.com/de-DE/library/hh231671)
     
   
 

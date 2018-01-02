@@ -3,11 +3,11 @@ title: "Übertragen eines Workflows zwischen SharePoint Designer 2013 und Visio 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: dbe6f019-b4f2-480f-a8e7-bcb8842ab924
-ms.openlocfilehash: 42d3743885eeea645e2f8a5a88b8646c68379d91
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: fed1dc9c7c69538f615d9f25f16d16140e24ad77
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="transfer-a-workflow-between-sharepoint-designer-2013-and-visio-professional-2013-sharepoint-2010-workflow-platform"></a>Übertragen eines Workflows zwischen SharePoint Designer 2013 und Visio Professional 2013 (SharePoint 2010-Workflow-Plattform)
 Verwenden Sie SharePoint Designer zum Importieren eines Workflows aus Visio oder Exportieren eines Workflows zu Visio.
@@ -135,10 +135,8 @@ Wenn der Workflow in SharePoint Designer importiert wurde, kann er bearbeitet. E
 
 Nachdem Sie einen Workflow in SharePoint Designer 2013 erstellt oder bearbeitet haben, können Sie den Workflow als Visio-Zeichnung exportieren, die in Visio Professional 2013 geöffnet werden kann. Die Möglichkeit, einen Workflow zurück zu Visio exportieren zu können, nachdem er in SharePoint Designer bearbeitet wurde, auch Roundtrips genannt, ermöglicht eine stärkere Zusammenarbeit zwischen Geschäftsbenutzern und Workflowdesignern. Wenn Sie den Workflowentwurf auf diese Weise durchlaufen, können Sie Visio zum Definieren der Geschäftsanforderungen verwenden und dann Roundtrips verwenden, um Änderungen zu koordinieren und zu genehmigen.
   
-    
-    
-
-> **Hinweis:** Visio Professional 2013 bietet keine Unterstützung für Schritte. In SharePoint Designer hinzugefügte Schrittinformationen gehen möglicherweise verloren, wenn der Workflow in Visio geöffnet und dann zurück in SharePoint Designer importiert wird. 
+> [!NOTE] 
+> Visio Professional 2013 bietet keine Unterstützung für Schritte. In SharePoint Designer hinzugefügte Schrittinformationen gehen möglicherweise verloren, wenn der Workflow in Visio geöffnet und dann zurück in SharePoint Designer importiert wird. 
   
     
     
@@ -158,7 +156,7 @@ Gehen Sie wie folgt vor, um einen Workflow zu exportieren:
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

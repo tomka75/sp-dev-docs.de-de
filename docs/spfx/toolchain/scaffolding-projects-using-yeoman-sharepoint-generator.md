@@ -10,7 +10,8 @@ Der Yeoman SharePoint-Generator steht als Teil des Framework als ein [npm-Paket]
 npm install @microsoft/generator-sharepoint -g
 ```
 
->**Hinweis:** Der Yeoman-Generator für SharePoint ist für die globale Bereitstellung mit der Erstversion General Availability (GA) vorgesehen. Bei lokaler Installation im Projekt treten bekannte Probleme auf, die nach der GA-Version behoben werden.
+> [!NOTE] 
+> Der Yeoman-Generator für SharePoint ist für die globale Bereitstellung mit der Erstversion General Availability (GA) vorgesehen. Bei lokaler Installation im Projekt treten bekannte Probleme auf, die nach der GA-Version behoben werden.
 
 Es wird empfohlen, dass Sie [die Einrichtung Ihrer Entwicklungsumgebung](../set-up-your-development-environment.md) befolgen, um Ihren Computer mit dem vollständigen Satz der Entwicklertools, einschließlich Yeoman SharePoint-Generator, zu konfigurieren. 
 
@@ -63,19 +64,18 @@ yo @microsoft/sharepoint --solutionName "hello-world" --framework "react" --comp
 
 > Beachten Sie, dass bei einigen Optionen Abhängigkeiten untereinander bestehen. Sie können zum Beispiel die Erweiterung nicht mit der lokalen Option erstellen.
 
-### <a name="notes-on---skip-install"></a>Hinweise zu --skip-install 
+> [!NOTE]
+> Mithilfe des `--skip-install`-Befehls wird ein Gerüst für das Projekt erstellt, und die Installation von Abhängigkeiten wird übersprungen. Dies bedeutet, dass Sie für ein erfolgreiches Erstellen des Projekts die Abhängigkeiten später installieren müssen, nachdem ein Gerüst für das Projekt erstellt wurde. 
 
-Mithilfe des `--skip-install`-Befehls wird ein Gerüst für das Projekt erstellt, und die Installation von Abhängigkeiten wird übersprungen. Dies bedeutet, dass Sie für ein erfolgreiches Erstellen des Projekts die Abhängigkeiten später installieren müssen, nachdem ein Gerüst für das Projekt erstellt wurde. 
+> Wenn Sie versuchen, das Projekt zu erstellen, ohne die Abhängigkeiten zu installieren, wird der folgende Fehler zurückgegeben. Dies deutet darauf hin, dass Sie die Abhängigkeiten installieren müssen, bevor Sie das Projekt erstellen:
 
-Wenn Sie versuchen, das Projekt zu erstellen, ohne die Abhängigkeiten zu installieren, wird der folgende Fehler zurückgegeben. Dies deutet darauf hin, dass Sie die Abhängigkeiten installieren müssen, bevor Sie das Projekt erstellen:
+> ```
+> Local gulp not found in ~/<project-name>
+> Try running: npm install gulp
+> ```
 
-```
-Local gulp not found in ~/<project-name>
-Try running: npm install gulp
-```
+> Zum Installieren der Abhängigkeiten können Sie den folgenden Befehl ausführen:
 
-Zum Installieren der Abhängigkeiten können Sie den folgenden Befehl ausführen:
-
-```
-npm install
-```
+> ```
+> npm install
+> ```

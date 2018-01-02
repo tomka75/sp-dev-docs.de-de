@@ -3,22 +3,20 @@ title: Grundlegende URI-Struktur und Pfad
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d73cf6c2-0677-4726-8a3e-2ad130e1a12c
-ms.openlocfilehash: 2902dca96c5325250d8e1cd31647172e6968d632
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3cb8133b01c2a7ec88e954c6a455e80677b53b38
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="basic-uri-structure-and-path"></a>Grundlegende URI-Struktur und Pfad
 
 In diesem Thema wird erläutert, wie Sie die URI-Struktur und den Pfad für die Befehle des REST-Diensts in Excel Services erstellen.
   
-    
-    
-
-
-> **Hinweis:** Die Excel Services-REST-API bezieht sich auf SharePoint und SharePoint 2016 (lokal). Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> )-Endpunkts sind.
+> [!NOTE]
+> 
+> Die Excel Services-REST-API kann in lokalen Bereitstellungen von SharePoint und SharePoint 2016 verwendet werden. Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+)-Endpunkts sind.
   
     
     

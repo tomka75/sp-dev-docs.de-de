@@ -2,11 +2,11 @@
 title: Grundlegendes zum SharePoint REST-Dienst
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 9e00064652e04941c578c82754191836c38d2449
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 09d2ed5800e7a16cc005f37c3e83c0b99cdec76c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="get-to-know-the-sharepoint-rest-service"></a>Grundlegendes zum SharePoint REST-Dienst
 Erhalten Sie grundlegende Informationen zum Verwenden des SharePoint REST-Diensts zum Zugreifen auf und Aktualisieren von SharePoint-Daten mithilfe der REST- und OData-Webprotokollstandards.
@@ -114,7 +114,7 @@ Die folgende Tabelle enthält Beispiele für typische REST-Endpunkt-URLs, um Ihn
 
 Der SharePoint Online-REST-Dienst (und der Dienst von SharePoint 2016 (lokal) oder höher) unterstützt die Kombination mehrerer Anforderungen in einem einzelnen Dienstaufruf mithilfe der OData-Abfrageoption `$batch`. Einzelheiten und Links zu Codebeispielen finden Sie unter [Make batch requests with the REST APIs](make-batch-requests-with-the-rest-apis.md) (Erstellen von Batchanforderungen mit den REST-APIs).
  
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_learnmore"> </a> Verwenden Sie die unten aufgeführten Ressourcen, um weitere Informationen zum Verwenden des SharePoint REST-Diensts zu erhalten.
  
 |||
@@ -136,9 +136,8 @@ Der SharePoint Online-REST-Dienst (und der Dienst von SharePoint 2016 (lokal) od
 ## <a name="odata-resources"></a>OData-Ressourcen
 <a name="SP15startREST_bk_addlresources"> </a>
 
--  [Einführung OData](http://msdn.microsoft.com/en-us/data/hh237663) 
--  
-  [Open Data Protocol – Beispiel](http://msdn.microsoft.com/en-us/library/ff478141.aspx)
+-  [Einführung OData](http://msdn.microsoft.com/de-DE/data/hh237663) 
+-  [Open Data Protocol – Beispiel](http://msdn.microsoft.com/de-DE/library/ff478141.aspx)
 -  [Open Data Protocol](http://www.odata.org/)
 -  [OData-Protokoll – URI-Konventionen](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/)
 -  [Adressieren von Dienstvorgängen](http://www.odata.org/documentation/odata-version-2-0/uri-conventions#AddressingServiceOperations)

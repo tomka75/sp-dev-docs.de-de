@@ -5,26 +5,24 @@ keywords: how to,howdoi,howto
 f1_keywords: how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 28716ba5-0774-44df-833b-0034d2c63319
-ms.openlocfilehash: 1601689491584b8a359a5bffa4b0596d10ab9e6f
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 18868cec79119123cf8262b9b93e9fd7eca1571f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="save-from-excel-client-to-the-server"></a>Speichern vom Excel-Client auf dem Server
 
 This example shows you how to:
-  
-    
-    
-
 
 1. Create a workbook with editable ranges.
     
   
 2. Speichern Sie die Arbeitsmappe in einer SharePoint-Dokumentbibliothek, die einen vertrauenswürdigen Speicherort darstellt.
     
-    > **Hinweis:** Es wird vorausgesetzt, dass Sie bereits eine SharePoint-Dokumentbibliothek erstellt und diese als vertrauenswürdigen Speicherort definiert haben. Weitere Informationen finden Sie unter [Vorgehensweise: Aufbauen einer Vertrauensstellung zu einem Speicherort](how-to-trust-a-location.md). 
+    > [!NOTE]
+    > Es wird vorausgesetzt, dass Sie bereits eine SharePoint-Dokumentbibliothek erstellt und diese als vertrauenswürdigen Speicherort definiert haben. Weitere Informationen finden Sie unter [Gewusst wie: Vertrauen zu einem Standort](how-to-trust-a-location.md).
+
 3. Ändern Sie Werte in einer Arbeitsmappe mithilfe des Parameterbereich in Excel Web Access.
     
   

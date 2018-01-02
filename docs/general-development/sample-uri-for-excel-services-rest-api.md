@@ -3,22 +3,19 @@ title: "Beispiel-URI für Excel Services-REST-API"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 4ebe1da2-9861-416f-bef1-4a62599efe2e
-ms.openlocfilehash: 003f7097ee68e014f232b3e4817ab397202675d0
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 221b89caf533a3f430a467f6eef68b4713c9de3e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sample-uri-for-excel-services-rest-api"></a>Beispiel-URI für Excel Services-REST-API
 
 Dieses Thema enthält Beispiel-URIs für die REST-Dienstbefehle (Representational State Transfer) in Excel Services.
   
-    
-    
-
-
-> **Hinweis:** Die Excel Services-REST-API bezieht sich auf SharePoint und SharePoint 2016 (lokal). Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> )-Endpunkts sind.
+> [!NOTE]
+> Die Excel Services-REST-API kann in lokalen Bereitstellungen von SharePoint und SharePoint 2016 verwendet werden. Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+)-Endpunkts sind.
   
     
     

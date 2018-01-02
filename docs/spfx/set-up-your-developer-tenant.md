@@ -2,11 +2,11 @@
 title: Einrichten des Office 365-Mandanten
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 3f9b57d55b0e23c3acb4587552a2fad5626bbbd0
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 77de8b0b91c0c67cb9149bd5bbc38b21c1e432f9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="set-up-your-office-365-tenant"></a>Einrichten des Office 365-Mandanten
 
@@ -17,7 +17,8 @@ Wenn Sie bereits einen Office 365-Mandanten haben, finden Sie Informationen unte
 
 Wenn Sie keinen Mandanten haben, können Sie einen Testmandanten erstellen, oder melden Sie sich beispielsweise für das [Office Developer-Programm](https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=7a6e3d71-b057-49cc-b2aa-158ff23432f3&lcid=1033&culture=en-us&dir=LTR) an. Sie erhalten eine Willkommens-E-Mail mit einem Link zum Registrieren für einen Office 365-Entwicklermandanten. 
 
->**Hinweis:** Stellen Sie sicher, dass Sie von allen vorhandenen Office 365-Mandanten abgemeldet sind, bevor Sie sich anmelden.
+> [!NOTE] 
+> Stellen Sie sicher, dass Sie von allen vorhandenen Office 365-Mandanten abgemeldet sind, bevor Sie sich anmelden.
 
 ## <a name="create-app-catalog-site"></a>Erstellen der App-Katalogwebsite
 Sie benötigen einen App-Katalog zum Hochladen und Bereitstellen von Webparts. Wenn Sie bereits einen App-Katalog eingerichtet haben, finden Sie Informationen unter [Erstellen einer neuen Entwicklerwebsitesammlung](#create-a-new-developer-site-collection).  

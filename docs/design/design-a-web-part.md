@@ -1,11 +1,11 @@
 ---
 title: Entwerfen eines SharePoint-Webparts
-ms.date: 11/22/2017
-ms.openlocfilehash: c299b734c9cff3d41b36befd6609e9a228d467e0
-ms.sourcegitcommit: 3276e9b281b227fb2f1a131ab4ac54ae212ce5cf
+ms.date: 11/30/2017
+ms.openlocfilehash: ebedff90d0bfeb16aa27d1c384c7fc7bf04aed8b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/24/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="designing-a-sharepoint-web-part"></a>Entwerfen eines SharePoint-Webparts
 
@@ -75,4 +75,11 @@ In Schritt 2 ist sowohl die „Back“-Schaltfläche als auch die „Next“-Sc
 
 In Schritt 3 ist die „Next“-Schaltfläche deaktiviert und die „Back“-Schaltfläche aktiviert.
 
-![Schrittbasierter Bereich mit aktivierter „Back“-Schaltfläche](../images/design-web-part-step-pane-03.png)
+![Schrittbasierter Bereich mit aktivierter „Back“-Schaltfläche](../images/design-web-part-steps-pane-03.png)
+
+
+## <a name="see-also"></a>Siehe auch
+
+- [Entwerfen von benutzerfreundlichen SharePoint-Umgebungen](design-guidance-overview.md)
+
+

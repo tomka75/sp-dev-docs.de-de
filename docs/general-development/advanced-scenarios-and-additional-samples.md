@@ -3,11 +3,11 @@ title: Erweiterte Szenarien und weitere Beispiele
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 110bcc88-2b55-4d80-ab5c-dc3b9658e48d
-ms.openlocfilehash: 5ea2b20a7b94eb7fef7d414ae317c9b430d23e94
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 841135ef768c4d6c0d901b79cd869244aac38b49
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="advanced-scenarios-and-additional-samples"></a>Erweiterte Szenarien und weitere Beispiele
 
@@ -17,8 +17,9 @@ In diesem Thema werden einige erweiterte REST-Szenarien und weitere Beispiele au
     
 
 
-> **Hinweis:** Die Excel Services-REST-API bezieht sich auf SharePoint und SharePoint 2016 (lokal). Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> )-Endpunkts sind.
+> [!NOTE]
+> Die Excel Services-REST-API kann in lokalen Bereitstellungen von SharePoint und SharePoint 2016 verwendet werden. Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+)-Endpunkts sind.
   
     
     

@@ -3,11 +3,11 @@ title: "Neuerungen für Entwickler in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 068d0b99-1762-42de-b6c9-acb1cffc6e31
-ms.openlocfilehash: 07e78edc42f4c9277047950a3a8554917a1f4e91
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e797ca0b367e19b7bc67ead4e46490d7caba4848
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="whats-new-for-developers-in-sharepoint"></a>Neuerungen für Entwickler in SharePoint
 Informationen zu den Features und Funktionen in SharePoint, einschließlich des neuen Cloud-Add-In-Modells, der Entwicklungstools, Plattformverbesserungen, mobilen Add-Ins und vieles mehr.
@@ -95,7 +95,7 @@ SharePoint umfasst verschiedene Dienste für das Arbeiten mit den Daten Ihrer Sh
 <a href="external-events-and-alerts-in-sharepoint.md"><img alt="Translation Services" src="../images/wn_appServices_1.png" /></a>&nbsp;&nbsp;<a href="powerpoint-automation-services-in-sharepoint.md"><img alt="PowerPoint Automation Services" src="../images/wn_appServices_2.png" /></a>&nbsp;&nbsp;<a href="what-s-new-in-access.md"><img alt="Enhanced Access Services" src="../images/wn_appServices_3.png" /></a>&nbsp;&nbsp;<a href="https://msdn.microsoft.com/library/fp161347.aspx" target="_blank"><img alt="Enhanced Excel Services" src="../images/wn_appServices_4.png" /></a>
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bm_Addres"> </a>
 
 

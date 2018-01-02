@@ -3,11 +3,11 @@ title: Bereitstellen eines benutzerdefinierten Designs in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f703df24-8e56-4e6a-bc37-95acbb3c83e8
-ms.openlocfilehash: 0f292d4d51cdce69b5828bdbd39c3514cc7ece27
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 79f8fe2d2f364ebf29d4c7252d7687e6e5caafab
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="deploy-a-custom-theme-in-sharepoint"></a>Bereitstellen eines benutzerdefinierten Designs in SharePoint
 
@@ -55,9 +55,11 @@ Sie können benutzerdefinierte Designs erstellen, indem Sie zusätzliche Farbpal
   
 - **Formatbibliothek** Führt die benutzerdefinierten CSS-Dateien auf, die Sie in der Designoberfläche verwenden möchten. Sie können direkt zur Formatbibliothek navigieren (ersetzen Sie _SiteCollectionName_ und _language_ in dieser URL: http:// _SiteCollectionName_/Style Library/ _language_/Themable/).
     
-    > **Hinweis:** Legen Sie die benutzerdefinierten CSS-Dateien im Ordner „Themable“ in der Formatvorlagenbibliothek ab, nicht im Ordner „Themable“ im Gestaltungsvorlagenkatalog. Das Designmodul erkennt ausschließlich die CSS-Dateien im Ordner „Themable“ in der Formatvorlagenbibliothek. 
+    > [!NOTE]
+    > Legen Sie die benutzerdefinierten CSS-Dateien im Ordner "Themable" in der Formatbibliothek ab, nicht im Ordner "Themable" im Gestaltungsvorlagenkatalog. Vom Designmodul werden nur CSS-Dateien erkannt, die im Ordner "Themable" in der Formatbibliothek gespeichert sind. 
 
-> **Hinweis:** Wenn Sie im Gestaltungsvorlagenkatalog und im Designkatalog die Versionsverwaltung aktiviert haben, müssen Sie die Designdateien außerdem zuerst veröffentlichen, damit das Designmodul sie verwenden kann. 
+> [!NOTE]
+> Wenn Sie im Gestaltungsvorlagenkatalog und der Design Gallery Versionsverwaltung aktiviert haben, müssen Sie auch die Designdateien veröffentlichen, bevor sie vom Designmodul verwendet werden können. 
   
     
     
@@ -68,10 +70,8 @@ Sie können benutzerdefinierte Designs erstellen, indem Sie zusätzliche Farbpal
 
 Unter einem durchkomponierten Look oder einem Design versteht man die Farbpalette, das Schriftartenschema, das Hintergrundbild und die Gestaltungsvorlage, welche das Erscheinungsbild einer Website bestimmen. Die Liste "Durchkomponierte Looks" enthält die durchkomponierten Looks, die in der Design Gallery verfügbar sind. Sie können ein Design erstellen, indem Sie in der Liste "Durchkomponierte Looks" ein Listenelement hinzufügen und angeben, welche Gestaltungsvorlage, welche Farbpalette, welches Schriftartenschema und welches Hintergrundbild verwendet werden soll.
   
-    
-    
-
-> **Hinweis:** Soll die Gestaltungsvorlage im Designkatalog verfügbar sein, benötigen Sie für die Gestaltungsvorlage eine Vorschaudatei. 
+> [!NOTE]
+> Sie benötigen eine Vorschaudatei für Gestaltungsvorlagen, wenn die Gestaltungsvorlage in der Design Gallery verfügbar sein soll. 
   
     
     
@@ -112,8 +112,10 @@ Unter einem durchkomponierten Look oder einem Design versteht man die Farbpalett
   
 11. Klicken Sie auf **Speichern**.
     
-    > **Hinweis:** Sind die Werte des durchkomponierten Looks fehlerhaft, wird der durchkomponierte Look nicht zum Designkatalog hinzugefügt. In einem solchen Fall wird keine Meldung in die Protokolldateien geschrieben. Wenn ein durchkomponierter Look nicht hinzugefügt werden kann, kann das folgende Gründe haben: Eine Datei wurde nicht gefunden, in einer der Dateien gibt es Formatierungsfehler, oder SharePoint kann nicht auf die Dateien zugreifen. 
-      > Nun können Sie das neue Design über den Designkatalog auf Ihre Website anwenden. Weitere Informationen finden Sie unter [Auswählen eines Designs für Ihre Veröffentlichungswebsite](http://office.microsoft.com/de-DE/office365-sharepoint-online-enterprise-help/choose-a-theme-for-your-publishing-site-HA102891580.aspx) auf Office.com.
+    > [!NOTE]
+    > Liegt ein Problem mit den Werten des durchkomponierten Looks vor, wird der durchkomponierte Look der Design Gallery nicht hinzugefügt, und in den Protokolldateien wird keine Meldung aufgezeichnet. Mögliche Gründe dafür, warum ein durchkomponierter Look nicht hinzugefügt werden kann, sind: Eine Datei kann nicht gefunden werden, bei einer der Dateien liegt ein Formatierungsproblem vor, oder SharePoint kann auf die Dateien nicht zugreifen. 
+
+Nun können Sie das neue Design über den Designkatalog auf Ihre Website anwenden. Weitere Informationen finden Sie unter [Auswählen eines Designs für Ihre Veröffentlichungswebsite](http://office.microsoft.com/de-DE/office365-sharepoint-online-enterprise-help/choose-a-theme-for-your-publishing-site-HA102891580.aspx) auf Office.com.
   
     
     
@@ -170,8 +172,8 @@ theme.ApplyTo(Web, true);
 ```
 
 
-    > **Note:**
-      > The  _shareGenerated_ parameter in the **ApplyTo** method specifies whether the themed files can be shared across sites in a site collection. In general, it is set to **true** for SharePoint Server and SharePoint Online sites and set to **false** for SharePoint Foundation sites. The _shareGenerated_ parameter must be set to **true** if you intend the themed files to be shared. For more information, see [ApplyTo(SPWeb, Boolean)](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPTheme.ApplyTo.aspx) .
+    > [!NOTE]
+    > The  _shareGenerated_ parameter in the **ApplyTo** method specifies whether the themed files can be shared across sites in a site collection. In general, it is set to **true** for SharePoint Server and SharePoint Online sites and set to **false** for SharePoint Foundation sites. The _shareGenerated_ parameter must be set to **true** if you intend the themed files to be shared. For more information, see [ApplyTo(SPWeb, Boolean)](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPTheme.ApplyTo.aspx) .
 
     When a user applies a theme in the **Change the look** wizard, the wizard also updates a theme named Current in the Composed Looks list and the design gallery. When you apply a theme programmatically, you have to update the Current theme manually. The following example shows how to update the Current theme.
     
@@ -225,7 +227,7 @@ currentItem.Update();
 ```
 
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

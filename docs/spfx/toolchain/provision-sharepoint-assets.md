@@ -2,11 +2,11 @@
 title: "Bereitstellen von SharePoint-Objekten mit dem Lösungspaket"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 9da564c257f513b40fc036b9656d11972d5dc530
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6eccc159dc5fbe47b23de477914c46e05dee5457
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="provision-sharepoint-assets-with-your-solution-package"></a>Bereitstellen von SharePoint-Objekten mit dem Lösungspaket
 
@@ -271,7 +271,8 @@ gulp package-solution
 
 Der oben aufgeführte Befehl verpackt eine oder mehrere clientseitige Komponentenmanifeste, z. B. WebParts, zusammen mit den Feature-XML-Dateien, auf die in der `package-solution.json`-Konfigurationsdatei verwiesen wird.
 
->**HINWEIS:** Sie können das `--ship`-Flag verwenden, um minimierte Versionen Ihrer Komponenten zu verpacken. 
+> [!NOTE] 
+> Sie können das `--ship`-Flag verwenden, um minimierte Versionen Ihrer Komponenten zu verpacken. 
 
 #### <a name="upgrade-sharepoint-items"></a>Aktualisieren von SharePoint-Elementen
 
@@ -327,7 +328,7 @@ Fügt ein vorhandenes Element zu einem vorhandenen Feature hinzu. Wenn eine Funk
 
 Gibt einen Versionsbereich an, auf den die angegebenen Upgradeaktionen angewendet werden.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [SharePoint PnP-Webcast: Provisioning SharePoint assets for your SPFx solution](https://www.youtube.com/watch?v=r-UdJhhHlEQ&list=PLR9nK3mnD-OUnJytlXlO84fQnYt50iTmS)

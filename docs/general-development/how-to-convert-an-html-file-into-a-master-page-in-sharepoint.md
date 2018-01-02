@@ -3,11 +3,11 @@ title: Konvertieren einer HTML-Datei in eine Gestaltungsvorlage in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a76ab289-3256-45de-ac63-d5112a74e3c7
-ms.openlocfilehash: df93a6b57fc719e83f337b061e575b7caa97eba6
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: d76397e79d1580c2b113810523c2ce119a731ba4
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="convert-an-html-file-into-a-master-page-in-sharepoint"></a>Konvertieren einer HTML-Datei in eine Gestaltungsvorlage in SharePoint
 
@@ -40,9 +40,8 @@ Beim Konvertieren einer HTML-Datei in eine Gestaltungsvorlage passiert Folgendes
   
 - Die HTML-Datei und Gestaltungsvorlage werden miteinander verknüpft, damit spätere Änderungen an der HTML-Datei mit der MASTER-Datei synchronisiert werden, sobald die HTML-Datei gespeichert wird.
     
-  
-
-> **Hinweis:** Die Synchronisierung erfolgt nur in eine Richtung. Änderungen an der HTML-Gestaltungsvorlage werden mit der zugehörigen .master-Datei synchronisiert, aber wenn Sie die .master-Datei direkt bearbeiten, werden diese Änderungen nicht mit der HTML-Datei synchronisiert. Jede HTML-Gestaltungsvorlage (und jedes HTML-Seitenlayout) verfügt über eine Eigenschaft mit dem Namen **Zugeordnete Datei**, die standardmäßig auf **True** festgelegt ist und mit deren Hilfe die Zuordnung und die Synchronisierung zwischen Dateien eingerichtet wird.
+> [!NOTE]
+> Die Synchronisierung erfolgt nur in eine Richtung. Änderungen an der HTML-Gestaltungsvorlage werden mit der zugehörigen .master-Datei synchronisiert, aber wenn Sie die .master-Datei direkt bearbeiten, werden diese Änderungen nicht mit der HTML-Datei synchronisiert. Jede HTML-Gestaltungsvorlage (und jedes HTML-Seitenlayout) verfügt über eine Eigenschaft mit dem Namen **Zugeordnete Datei**, die standardmäßig auf **True** festgelegt ist und mit deren Hilfe die Zuordnung und die Synchronisierung zwischen Dateien eingerichtet wird.
   
     
     
@@ -139,7 +138,8 @@ Bevor Sie eine HTML-Datei konvertieren, müssen Sie zunächst alle Ihre Entwurfs
   
 5. Wählen Sie im Dialogfeld **Ein Objekt auswählen** die HTML-Datei aus, die Sie konvertieren möchten.
     
-    > **Hinweis:** Wenn Sie Ihre Entwurfsdateien hochladen, sollten Sie alle Dateien, die sich auf einen einzelnen Entwurf beziehen, in einem eigenen Ordner im Gestaltungsvorlagenkatalog aufbewahren. Wenn Sie Ihren Entwurfordner auf das zugeordnete Netzlaufwerk kopieren, behält der Gestaltungsvorlagenkatalog die erstellte Ordnerstruktur bei. 
+    > [!NOTE]
+    > Wenn Sie Ihre Entwurfsdateien hochladen, sollten Sie alle Dateien im Zusammenhang mit einem einzelnen Entwurf in einem eigenen Ordner im Gestaltungsvorlagenkatalog ablegen. Wenn Sie Ihren Entwurfsordner auf das zugeordnete Netzwerklaufwerk kopieren, behält der Gestaltungsvorlagenkatalog Ihre angelegte Ordnerstruktur bei. 
 6. Wählen Sie **Einfügen**.
     
     An dieser Stelle konvertiert SharePoint Ihre HTML-Datei in eine MASTER-Datei mit demselben Namen.
@@ -497,7 +497,7 @@ Es folgt ein Beispiel des Markups, das einer HTML-Datei hinzugefügt wird, nachd
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="Additional"> </a>
 
 

@@ -2,11 +2,11 @@
 title: "Erstellen von clientseitigen SharePoint Framework-Webparts mit AngularJS"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: dea4a6c45f08228c57c4cd4f821cdcca7c12d713
-ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.openlocfilehash: c5ff6b791ec15f9aa89e65d27e305a0bc7085283
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="build-sharepoint-framework-client-side-web-parts-with-angularjs"></a>Erstellen von clientseitigen SharePoint Framework-Webparts mit AngularJS
 
@@ -16,7 +16,8 @@ Clientseitige Webparts lassen sich auch mit dem sehr beliebten Framework Angular
 
 Der Quellcode des Webparts, mit dem wir arbeiten, steht auf GitHub zur Verfügung, unter [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo).
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment.md), in der Sie SharePoint-Framework-Lösungen erstellen können.
+> [!NOTE] 
+> Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment.md), in der Sie SharePoint-Framework-Lösungen erstellen können.
 
 ## <a name="create-new-project"></a>Erstellen eines neuen Projekts
 

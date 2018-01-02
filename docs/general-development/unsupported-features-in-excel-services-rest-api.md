@@ -3,22 +3,19 @@ title: "Nicht unterstützte Features in Excel Services-REST-API"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 4139901f-255b-4556-b8c8-3d986a07c587
-ms.openlocfilehash: ca6b94c9743c251acd034cfd42126bbec623163c
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 1e8bf0ba8947391e0479aded0086a8c836ce38bb
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="unsupported-features-in-excel-services-rest-api"></a>Nicht unterstützte Features in Excel Services-REST-API
 
 Die erste Version der Excel Services-REST-API unterstützt nicht alle Excel-Features. 
   
-    
-    
-
-
-> **Hinweis:** Die Excel Services-REST-API bezieht sich auf SharePoint und SharePoint 2016 (lokal). Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> )-Endpunkts sind.
+> [!NOTE] 
+> Die Excel Services-REST-API kann in lokalen Bereitstellungen von SharePoint und SharePoint 2016 verwendet werden. Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+)-Endpunkts sind.
   
     
     
