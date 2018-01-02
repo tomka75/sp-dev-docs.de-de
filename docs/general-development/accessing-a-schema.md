@@ -3,31 +3,29 @@ title: Zugreifen auf ein Schema
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 02613912-36f6-4edc-a915-165d12e60bc8
-ms.openlocfilehash: 9f9bb2513eb8c2dbbe5951d86391ebb239a6c389
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: be1ae13fdef00d69d887859b3881c8cef28ac9a4
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="accessing-a-schema"></a><span data-ttu-id="7bcd7-102">Zugreifen auf ein Schema</span><span class="sxs-lookup"><span data-stu-id="7bcd7-102">Accessing a Schema</span></span>
+# <a name="accessing-a-schema"></a><span data-ttu-id="acde6-102">Zugreifen auf ein Schema</span><span class="sxs-lookup"><span data-stu-id="acde6-102">Accessing a Schema</span></span>
 
-<span data-ttu-id="7bcd7-p101">In diesem Thema zeigt ein Beispiel zum zugreifen und Anzeigen eines Schemas für den REST-Dienst in Excel Services. In diesem Thema wird davon ausgegangen, dass Sie  [Beispiel-URI für die REST-API in Excel Services](sample-uri-for-excel-services-rest-api.md).d gelesen haben.</span><span class="sxs-lookup"><span data-stu-id="7bcd7-p101">This topic shows one example of how you can access and look at a schema for the REST service in Excel Services. This topic assumes that you have read  [Sample URI For Excel Services REST API](sample-uri-for-excel-services-rest-api.md).d</span></span>
+<span data-ttu-id="acde6-p101">In diesem Thema zeigt ein Beispiel zum zugreifen und Anzeigen eines Schemas für den REST-Dienst in Excel Services. In diesem Thema wird davon ausgegangen, dass Sie  [Beispiel-URI für die REST-API in Excel Services](sample-uri-for-excel-services-rest-api.md).d gelesen haben.</span><span class="sxs-lookup"><span data-stu-id="acde6-p101">This topic shows one example of how you can access and look at a schema for the REST service in Excel Services. This topic assumes that you have read  [Sample URI For Excel Services REST API](sample-uri-for-excel-services-rest-api.md).d</span></span>
   
-    
-    
-
-
-> <span data-ttu-id="7bcd7-105">**Hinweis:** Die Excel Services-REST-API bezieht sich auf SharePoint und SharePoint 2016 (lokal).</span><span class="sxs-lookup"><span data-stu-id="7bcd7-105">**Note:** The Excel Services REST API applies to SharePoint and SharePoint 2016 on-premises.</span></span> <span data-ttu-id="7bcd7-106">Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/de-de/docs/api-reference/v1.0/resources/excel
-> )-Endpunkts sind.</span><span class="sxs-lookup"><span data-stu-id="7bcd7-106">Note The Excel Services REST API applies to SharePoint and SharePoint 2016 on-premises. For Office 365 Education, Business, and Enterprise accounts, use the Excel REST APIs that are part of the  [Microsoft Graph](http://graph.microsoft.io/de-de/docs/api-reference/v1.0/resources/excel
+> [!NOTE]
+> 
+> <span data-ttu-id="acde6-105">Die Excel Services-REST-API kann in lokalen Bereitstellungen von SharePoint und SharePoint 2016 verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="acde6-105">Note: The Excel Services REST API applies to SharePoint and SharePoint 2016 on-premises.</span></span> <span data-ttu-id="acde6-106">Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+)-Endpunkts sind.</span><span class="sxs-lookup"><span data-stu-id="acde6-106">For Office 365 Education, Business, and Enterprise accounts, use the Excel REST APIs that are part of the  [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
 ) endpoint.</span></span>
   
     
     
 
 
-## <a name="viewing-a-schema"></a><span data-ttu-id="7bcd7-107">Anzeigen eines Schemas</span><span class="sxs-lookup"><span data-stu-id="7bcd7-107">Viewing a Schema</span></span>
+## <a name="viewing-a-schema"></a><span data-ttu-id="acde6-107">Anzeigen eines Schemas</span><span class="sxs-lookup"><span data-stu-id="acde6-107">Viewing a Schema</span></span>
 
- <span data-ttu-id="7bcd7-108">Geben Sie in der Adressleiste des Browsers den URI zu einem ATOM-XML-Feed mithilfe des folgenden URI ein:</span><span class="sxs-lookup"><span data-stu-id="7bcd7-108">In the browser address bar, type the URI to an Atom XML feed by using a URI, as follows:</span></span>
+ <span data-ttu-id="acde6-108">Geben Sie in der Adressleiste des Browsers den URI zu einem ATOM-XML-Feed mithilfe des folgenden URI ein:</span><span class="sxs-lookup"><span data-stu-id="acde6-108">In the browser address bar, type the URI to an Atom XML feed by using a URI, as follows:</span></span>
   
     
     
@@ -37,11 +35,11 @@ ms.lasthandoff: 10/13/2017
 http://myserver/_vti_bin/ExcelRest.aspx/Docs/Documents/sampleWorkbook.xlsx/model/Ranges('Sheet1!A1|H3')?$format=atom
 ```
 
-<span data-ttu-id="7bcd7-109">Klicken Sie mit der rechten Maustaste auf die Webseite, und klicken Sie dann auf **Quelltext anzeigen**.</span><span class="sxs-lookup"><span data-stu-id="7bcd7-109">Right-click the Web page, and then click **View Source**.</span></span>
+<span data-ttu-id="acde6-109">Klicken Sie mit der rechten Maustaste auf die Webseite, und klicken Sie dann auf **Quelltext anzeigen**.</span><span class="sxs-lookup"><span data-stu-id="acde6-109">Right-click the Web page, and then click **View Source**.</span></span>
   
     
     
-<span data-ttu-id="7bcd7-110">Es sollte ein Schema ähnlich dem folgenden Beispiel angezeigt werden:</span><span class="sxs-lookup"><span data-stu-id="7bcd7-110">You should see a schema that looks similar to the following example:</span></span>
+<span data-ttu-id="acde6-110">Es sollte ein Schema ähnlich dem folgenden Beispiel angezeigt werden:</span><span class="sxs-lookup"><span data-stu-id="acde6-110">You should see a schema that looks similar to the following example:</span></span>
   
     
     

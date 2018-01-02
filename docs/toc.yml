@@ -57,11 +57,15 @@
           items:
             - name: Migrieren vorhandener Anpassungen
               items:
-                - name: Menüelement „Edit Control Block (ECB)“
-                  href: spfx/extensions/guidance/migrate-from-ecb-to-spfx-extensions.md
                 - name: Clientseitiges Rendering (JSLink)
-                  href: spfx/extensions/guidance/migrate-from-jslink-to-spfx-extensions.md
+                  href: spfx/extensions/guidance/migrate-jslink-to-spfx-extensions.md
                 - name: JavaScript-Einbettung (UserCustomAction)
+                  href: spfx/extensions/guidance/migrate-user-customactions-to-spfx-extensions.md
+                - name: Menüelement „Edit Control Block (ECB)“ – Lernprogramm
+                  href: spfx/extensions/guidance/migrate-from-ecb-to-spfx-extensions.md
+                - name: Clientseitiges Rendering (JSLink) – Lernprogramm
+                  href: spfx/extensions/guidance/migrate-from-jslink-to-spfx-extensions.md
+                - name: JavaScript-Einbettung (UserCustomAction) – Lernprogramm
                   href: spfx/extensions/guidance/migrate-from-usercustomactions-to-spfx-extensions.md
     - name: Webparts
       href: spfx/web-parts/overview-client-side-web-parts.md
@@ -77,16 +81,16 @@
               href: spfx/web-parts/get-started/connect-to-sharepoint.md
             - name: Bereitstellen des Webparts auf einer SharePoint-Seite
               href: spfx/web-parts/get-started/serve-your-web-part-in-a-sharepoint-page.md
-            - name: Bereitstellen in einem Azure-CDN
-              href: spfx/web-parts/get-started/deploy-web-part-to-cdn.md
+            - name: "Bereitstellen in Office\_365\_CDN"
+              href: spfx/web-parts/get-started/hosting-webpart-from-office-365-cdn.md
             - name: "Hinzufügen eines jQuery\_UI-Akkordeons"
               href: spfx/web-parts/get-started/add-jqueryui-accordion-to-web-part.md
             - name: "Verwenden von Office\_UI\_Fabric\_React-Komponenten"
               href: spfx/web-parts/get-started/use-fabric-react-components.md
             - name: Bereitstellen von Objekten aus der Lösung
               href: spfx/web-parts/get-started/provision-sp-assets-from-package.md
-            - name: "Bereitstellen in Office\_365\_CDN"
-              href: spfx/web-parts/get-started/hosting-webpart-from-office-365-cdn.md
+            - name: Bereitstellen in einem Azure-CDN
+              href: spfx/web-parts/get-started/deploy-web-part-to-cdn.md
         - name: Grundlagen
           items:
             - name: Benutzerdefinierte Eigenschaften
@@ -258,6 +262,23 @@
           href: declarative-customization/site-theming/sharepoint-site-theming-csom.md
     - name: Spaltenformatierungen
       href: declarative-customization/column-formatting.md
+    - name: Websitedesign
+      href: declarative-customization/site-design-overview.md
+      items:
+        - name: Erste Schritte
+          href: declarative-customization/get-started-create-site-design.md
+        - name: Festlegen des Gültigkeitsbereichs
+          href: declarative-customization/site-design-scoping.md
+        - name: Anpassen eines standardmäßigen Websitedesigns
+          href: declarative-customization/customize-default-site-design.md
+        - name: JSON-Schemareferenz
+          href: declarative-customization/site-design-json-schema.md
+        - name: PowerShell-Cmdlets
+          href: declarative-customization/site-design-powershell.md
+        - name: REST-API
+          href: declarative-customization/site-design-rest-api.md
+        - name: Aufrufen des PnP-Bereitstellungsmoduls
+          href: declarative-customization/site-design-pnp-provisioning.md
 - name: SharePoint-APIs
   items:
     - name: Erstellen von Kommunikationswebsites
@@ -1007,6 +1028,10 @@
       href: general-development/code-samples-for-sharepoint.md
     - name: Auswählen des richtigen API-Satzes in SharePoint
       href: general-development/choose-the-right-api-set-in-sharepoint.md
+    - name: Verwenden des Websitesammlungs-App-Katalogs
+      href: general-development/site-collection-app-catalog.md
+    - name: Wartungsmodus für clientseitige-Webparts
+      href: general-development/client-side-web-parts-maintenance-mode.md
     - name: Einrichten und Konfigurieren von SharePoint-Workflow-Manager
       href: general-development/set-up-and-configure-sharepoint-workflow-manager.md
     - name: Anwendungslebenszyklus-Verwaltung für SharePoint Server
@@ -1335,6 +1360,8 @@
           href: solution-guidance/modern-experience-customizations-customize-lists-and-libraries.md
         - name: Anpassen von „modernen“ Websiteseiten
           href: solution-guidance/modern-experience-customizations-customize-pages.md
+        - name: Klassifizierung von „modernen“ SharePoint-Websites
+          href: solution-guidance/modern-experience-site-classification.md
     - name: Leitfaden zum SharePoint Multi-Geo-Mandanten
       href: solution-guidance/multigeo-introduction.md
       items:
@@ -1431,6 +1458,8 @@
               href: solution-guidance/security-apponly-azureacs.md
         - name: Implementieren einer Web-App-Richtlinienalternative
           href: solution-guidance/security-webapppolicies.md
+        - name: Migrieren der Mandanteneinstellung „Berechtigt“ zu „Streng“
+          href: solution-guidance/security-permissivesetting.md
         - name: Autorisieren der Benutzer von vom Anbieter gehosteter Add-Ins zur Laufzeit
           href: solution-guidance/authorize-provider-hosted-add-in-users-at-run-time-by-using-oauth.md
         - name: Domänenübergreifende Bilder in vom Anbieter gehosteter SharePoing-Add-Ins
