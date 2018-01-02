@@ -5,78 +5,84 @@ keywords: how to,howdoi,howto,udf list,WSS Solutions
 f1_keywords: how to,howdoi,howto,udf list,WSS Solutions
 ms.prod: sharepoint
 ms.assetid: 97751a6c-ef73-4d95-a3c4-98014d84ba48
-ms.openlocfilehash: 48f06c78c96dac5c0d81b35aa5f6fb4d7d2aa1ae
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: e731eee138d97bd80cea236f78fd760cf7af2e7a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="deploy-udfs-using-sharepoint-foundation-solutions"></a><span data-ttu-id="a2eac-103">Bereitstellen von UDFs mit SharePoint Foundation-Lösungen</span><span class="sxs-lookup"><span data-stu-id="a2eac-103">How to: Deploy UDFs Using SharePoint Foundation Solutions</span></span>
+# <a name="deploy-udfs-using-sharepoint-foundation-solutions"></a><span data-ttu-id="3d9e2-103">Bereitstellen von UDFs mit SharePoint Foundation-Lösungen</span><span class="sxs-lookup"><span data-stu-id="3d9e2-103">Deploy UDFs using SharePoint Foundation solutions</span></span>
 
-<span data-ttu-id="a2eac-104">This example shows how to deploy a user-defined function (UDF) DLL by using the Microsoft SharePoint Foundation solution framework.</span><span class="sxs-lookup"><span data-stu-id="a2eac-104">This example shows how to deploy a user-defined function (UDF) DLL by using the Microsoft SharePoint Foundation solution framework.</span></span>
-  
-    
-    
-
-<span data-ttu-id="a2eac-p101">The SharePoint Foundation solution framework lets you bundle all the components to extend SharePoint Foundation in a new file called a solution file (a CAB-based format with a .wsp extension). A solution is a deployable, reusable package that can contain a set of features, site definitions, and assemblies that you can apply to a site, and individually enable or disable. Additionally, you can use the solution file to deploy the contents of a Web Part package, including assemblies, class resources, .dwp files, and other package components. For more information about the SharePoint Foundation solution framework, see the SharePoint Foundation node in the  [Erste Schritte bei der Entwicklung für SharePoint Foundation](http://msdn.microsoft.com/library/ef1187aa-e007-4490-8191-db36a50b3ae4%28Office.15%29.aspx) (http://msdn.microsoft.com/de-DE/library/ee539432(office.14).aspx). The procedure for creating and deploying a UDF assembly by using SharePoint Foundation solution framework is as follows:</span><span class="sxs-lookup"><span data-stu-id="a2eac-p101">The SharePoint Foundation solution framework lets you bundle all the components to extend SharePoint Foundation in a new file called a solution file (a CAB-based format with a .wsp extension). A solution is a deployable, reusable package that can contain a set of features, site definitions, and assemblies that you can apply to a site, and individually enable or disable. Additionally, you can use the solution file to deploy the contents of a Web Part package, including assemblies, class resources, .dwp files, and other package components. For more information about the SharePoint Foundation solution framework, see the SharePoint Foundation node in the  [Getting Started with Development for SharePoint Foundation 2010](http://msdn.microsoft.com/library/ef1187aa-e007-4490-8191-db36a50b3ae4%28Office.15%29.aspx) (http://msdn.microsoft.com/en-us/library/ee539432(office.14).aspx). The procedure for creating and deploying a UDF assembly by using SharePoint Foundation solution framework is as follows:</span></span>
+<span data-ttu-id="3d9e2-104">This example shows how to deploy a user-defined function (UDF) DLL by using the Microsoft SharePoint Foundation solution framework.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-104">This example shows how to deploy a user-defined function (UDF) DLL by using the Microsoft SharePoint Foundation solution framework.</span></span>
   
     
     
 
-
-1. <span data-ttu-id="a2eac-110">Create the solution manifest file, Manifest.xml.</span><span class="sxs-lookup"><span data-stu-id="a2eac-110">Create the solution manifest file, Manifest.xml.</span></span>
-    
-    <span data-ttu-id="a2eac-p102">The solution manifest (always called Manifest.xml) is stored at the root of a solution file. This file defines the list of features, site definitions, resource files, Web Part files, and assemblies to be processed. It does not define the file structure; if files are included in a solution but not listed in the manifest XML file, they are not processed in any way.</span><span class="sxs-lookup"><span data-stu-id="a2eac-p102">The solution manifest (always called Manifest.xml) is stored at the root of a solution file. This file defines the list of features, site definitions, resource files, Web Part files, and assemblies to be processed. It does not define the file structure; if files are included in a solution but not listed in the manifest XML file, they are not processed in any way.</span></span>
-    
-    > <span data-ttu-id="a2eac-114">**Hinweis:** Weitere Informationen zur Struktur der XML-Manifestdatei finden Sie in der Dokumentation zu SharePoint Foundation.</span><span class="sxs-lookup"><span data-stu-id="a2eac-114">**Note:** For more information about the structure of the manifest XML file, see the SharePoint Foundation documentation.</span></span> 
-2. <span data-ttu-id="a2eac-115">Packen Sie die UDF-Assembly und die Datei „Manifest.xml“ in einer CAB-Datei.</span><span class="sxs-lookup"><span data-stu-id="a2eac-115">Package the UDF assembly and Manifest.xml into a CAB file.</span></span>
-    
-  
-3. <span data-ttu-id="a2eac-116">Make sure that the SharePoint Foundation Administration service is running on the server.</span><span class="sxs-lookup"><span data-stu-id="a2eac-116">Make sure that the SharePoint Foundation Administration service is running on the server.</span></span>
-    
-  
-4. <span data-ttu-id="a2eac-117">Add the solution to the server by using stsadm.exe.</span><span class="sxs-lookup"><span data-stu-id="a2eac-117">Add the solution to the server by using stsadm.exe.</span></span>
-    
-  
-5. <span data-ttu-id="a2eac-118">Deploy the solution by using stsadm.exe.</span><span class="sxs-lookup"><span data-stu-id="a2eac-118">Deploy the solution by using stsadm.exe.</span></span>
-    
-  
-<span data-ttu-id="a2eac-119">Jeder vertrauenswürdige Excel Services-Speicherort verfügt über ein **AllowUdfs**-Flag.</span><span class="sxs-lookup"><span data-stu-id="a2eac-119">Each Excel Services trusted location has an **AllowUdfs** flag.</span></span>
-> <span data-ttu-id="a2eac-120">**Hinweis:** Das **AllowUdfs**-Flag wird durch die Option **Benutzerdefinierte Funktionen sind zugelassen** auf der Seite „Vertrauenswürdige Dateispeicherorte von Excel Services“ bezeichnet.</span><span class="sxs-lookup"><span data-stu-id="a2eac-120">**Note:** The **AllowUdfs** flag is denoted by the **User-defined functions allowed** option on the Excel Services Trusted File Locations page.</span></span> <span data-ttu-id="a2eac-121">Informationen zum Navigieren zur Seite „Vertrauenswürdige Dateispeicherorte“ finden Sie in [Schritt 3: Bereitstellen und Aktivieren von UDFs](step-3-deploying-and-enabling-udfs.md).</span><span class="sxs-lookup"><span data-stu-id="a2eac-121">To learn how to navigate to the Trusted File Locations page, see [Step 3: Deploying and Enabling UDFs](step-3-deploying-and-enabling-udfs.md).</span></span> 
-  
-    
-    
-
-<span data-ttu-id="a2eac-122">Damit UDFs von einem bestimmten vertrauenswürdigen Speicherort aufgerufen werden können, müssen Sie folgende Schritte ausführen:</span><span class="sxs-lookup"><span data-stu-id="a2eac-122">In order to allow UDFs to be called from a specific trusted location, you must:</span></span>
-- <span data-ttu-id="a2eac-p104">Set the **AllowUdfs** value to **true**. The default value is **false**.</span><span class="sxs-lookup"><span data-stu-id="a2eac-p104">Set the **AllowUdfs** value to **true**. The default value is **false**.</span></span> 
-    
-  
-- <span data-ttu-id="a2eac-125">Add the UDF assembly to the trusted UDF list to allow the UDF to be called from a workbook.</span><span class="sxs-lookup"><span data-stu-id="a2eac-125">Add the UDF assembly to the trusted UDF list to allow the UDF to be called from a workbook.</span></span>
-    
-  
-<span data-ttu-id="a2eac-126">Weitere Informationen zum Aktivieren von UDFs und Hinzufügen von UDFs zur Liste vertrauenswürdiger UDFs finden Sie unter [Vorgehensweise: Aktivieren von UDFs](how-to-enable-udfs.md).</span><span class="sxs-lookup"><span data-stu-id="a2eac-126">For more information on how to enable UDFs and add UDFs to the trusted UDF list, see  [How to: Enable UDFs](how-to-enable-udfs.md).</span></span>
-> <span data-ttu-id="a2eac-127">**Hinweis:** Um Namenskonflikte zu vermeiden, weisen Sie Ihren UDF-Assemblys und deren Abhängigkeiten starke Namen zu, und benennen Sie sie so eindeutig wie möglich.</span><span class="sxs-lookup"><span data-stu-id="a2eac-127">**Note:** To avoid name collision, give your UDF assemblies and their dependencies strong names, and name them as uniquely as possible.</span></span> <span data-ttu-id="a2eac-128">Weitere Informationen finden Sie unter [Bewährte Methoden für Excel Services](excel-services-best-practices.md) und [Bekannte Probleme und Tipps für Excel Services](excel-services-known-issues-and-tips.md).</span><span class="sxs-lookup"><span data-stu-id="a2eac-128">For more information, see  [Excel Services Best Practices](excel-services-best-practices.md) and [Excel Services Known Issues and Tips](excel-services-known-issues-and-tips.md).</span></span> 
+<span data-ttu-id="3d9e2-p101">The SharePoint Foundation solution framework lets you bundle all the components to extend SharePoint Foundation in a new file called a solution file (a CAB-based format with a .wsp extension). A solution is a deployable, reusable package that can contain a set of features, site definitions, and assemblies that you can apply to a site, and individually enable or disable. Additionally, you can use the solution file to deploy the contents of a Web Part package, including assemblies, class resources, .dwp files, and other package components. For more information about the SharePoint Foundation solution framework, see the SharePoint Foundation node in the  [Erste Schritte bei der Entwicklung für SharePoint Foundation](http://msdn.microsoft.com/library/ef1187aa-e007-4490-8191-db36a50b3ae4%28Office.15%29.aspx) (http://msdn.microsoft.com/de-DE/library/ee539432(office.14).aspx). The procedure for creating and deploying a UDF assembly by using SharePoint Foundation solution framework is as follows:</span><span class="sxs-lookup"><span data-stu-id="3d9e2-p101">The SharePoint Foundation solution framework lets you bundle all the components to extend SharePoint Foundation in a new file called a solution file (a CAB-based format with a .wsp extension). A solution is a deployable, reusable package that can contain a set of features, site definitions, and assemblies that you can apply to a site, and individually enable or disable. Additionally, you can use the solution file to deploy the contents of a Web Part package, including assemblies, class resources, .dwp files, and other package components. For more information about the SharePoint Foundation solution framework, see the SharePoint Foundation node in the  [Getting Started with Development for SharePoint Foundation 2010](http://msdn.microsoft.com/library/ef1187aa-e007-4490-8191-db36a50b3ae4%28Office.15%29.aspx) (http://msdn.microsoft.com/en-us/library/ee539432(office.14).aspx). The procedure for creating and deploying a UDF assembly by using SharePoint Foundation solution framework is as follows:</span></span>
   
     
     
 
 
-## <a name="procedure"></a><span data-ttu-id="a2eac-129">Verfahren</span><span class="sxs-lookup"><span data-stu-id="a2eac-129">Procedure</span></span>
+1. <span data-ttu-id="3d9e2-110">Create the solution manifest file, Manifest.xml.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-110">Create the solution manifest file, Manifest.xml.</span></span>
+    
+    <span data-ttu-id="3d9e2-p102">The solution manifest (always called Manifest.xml) is stored at the root of a solution file. This file defines the list of features, site definitions, resource files, Web Part files, and assemblies to be processed. It does not define the file structure; if files are included in a solution but not listed in the manifest XML file, they are not processed in any way.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-p102">The solution manifest (always called Manifest.xml) is stored at the root of a solution file. This file defines the list of features, site definitions, resource files, Web Part files, and assemblies to be processed. It does not define the file structure; if files are included in a solution but not listed in the manifest XML file, they are not processed in any way.</span></span>
+    
+    > [!NOTE]
+    > <span data-ttu-id="3d9e2-114">Weitere Informationen zur Struktur der XML-Manifestdatei finden Sie in der Dokumentation zu SharePoint Foundation.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-114">Note: For more information about the structure of the manifest XML file, see the SharePoint Foundation documentation.</span></span> 
 
-
-### <a name="to-create-the-manifestxml-file"></a><span data-ttu-id="a2eac-130">To create the Manifest.xml file</span><span class="sxs-lookup"><span data-stu-id="a2eac-130">To create the Manifest.xml file</span></span>
-
-
-1. <span data-ttu-id="a2eac-131">Right-click your project in **Solution Explorer**, point to **Add**, and then click **New Item**.</span><span class="sxs-lookup"><span data-stu-id="a2eac-131">Right-click your project in **Solution Explorer**, point to **Add**, and then click **New Item**.</span></span>
+2. <span data-ttu-id="3d9e2-115">Packen Sie die UDF-Assembly und die Datei „Manifest.xml“ in einer CAB-Datei.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-115">Package the UDF assembly and Manifest.xml into a CAB file.</span></span>
     
   
-2. <span data-ttu-id="a2eac-132">Select **XML File**, and name the file Manifest.xml.</span><span class="sxs-lookup"><span data-stu-id="a2eac-132">Select **XML File**, and name the file Manifest.xml.</span></span>
+3. <span data-ttu-id="3d9e2-116">Make sure that the SharePoint Foundation Administration service is running on the server.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-116">Make sure that the SharePoint Foundation Administration service is running on the server.</span></span>
     
   
-3. <span data-ttu-id="a2eac-133">Klicken Sie auf **Hinzufügen**.</span><span class="sxs-lookup"><span data-stu-id="a2eac-133">Click **Add**.</span></span>
+4. <span data-ttu-id="3d9e2-117">Add the solution to the server by using stsadm.exe.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-117">Add the solution to the server by using stsadm.exe.</span></span>
     
   
-4. <span data-ttu-id="a2eac-134">Fügen Sie der Datei den folgenden Inhalt hinzu:</span><span class="sxs-lookup"><span data-stu-id="a2eac-134">Add the following content to the file:</span></span>
+5. <span data-ttu-id="3d9e2-118">Deploy the solution by using stsadm.exe.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-118">Deploy the solution by using stsadm.exe.</span></span>
+    
+  
+<span data-ttu-id="3d9e2-119">Jeder vertrauenswürdige Excel Services-Speicherort verfügt über ein **AllowUdfs**-Flag.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-119">Each Excel Services trusted location has an **AllowUdfs** flag.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="3d9e2-120">Das **AllowUdfs**-Flag wird durch die Option **Benutzerdefinierte Funktionen sind zugelassen** auf der Seite „Vertrauenswürdige Dateispeicherorte von Excel Services“ bezeichnet.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-120">The **AllowUdfs** flag is denoted by the **User-defined functions allowed** option on the Excel Services Trusted File Locations page.</span></span> <span data-ttu-id="3d9e2-121">Informationen zum Navigieren zur Seite „Vertrauenswürdige Dateispeicherorte“ finden Sie in [Schritt 3: Bereitstellen und Aktivieren von UDFs](step-3-deploying-and-enabling-udfs.md).</span><span class="sxs-lookup"><span data-stu-id="3d9e2-121">To learn how to navigate to the Trusted File Locations page, see [Step 3: Deploying and Enabling UDFs](step-3-deploying-and-enabling-udfs.md).</span></span> 
+  
+    
+    
+
+<span data-ttu-id="3d9e2-122">Damit UDFs von einem bestimmten vertrauenswürdigen Speicherort aufgerufen werden können, müssen Sie folgende Schritte ausführen:</span><span class="sxs-lookup"><span data-stu-id="3d9e2-122">In order to allow UDFs to be called from a specific trusted location, you must:</span></span>
+- <span data-ttu-id="3d9e2-p104">Set the **AllowUdfs** value to **true**. The default value is **false**.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-p104">Set the **AllowUdfs** value to **true**. The default value is **false**.</span></span> 
+    
+  
+- <span data-ttu-id="3d9e2-125">Add the UDF assembly to the trusted UDF list to allow the UDF to be called from a workbook.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-125">Add the UDF assembly to the trusted UDF list to allow the UDF to be called from a workbook.</span></span>
+    
+  
+<span data-ttu-id="3d9e2-126">Weitere Informationen zum Aktivieren von UDFs und Hinzufügen von UDFs zur Liste vertrauenswürdiger UDFs finden Sie unter [Vorgehensweise: Aktivieren von UDFs](how-to-enable-udfs.md).</span><span class="sxs-lookup"><span data-stu-id="3d9e2-126">For more information on how to enable UDFs and add UDFs to the trusted UDF list, see  [How to: Enable UDFs](how-to-enable-udfs.md).</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="3d9e2-127">Um Namenskonflikte zu vermeiden, weisen Sie Ihren UDF-Assemblys und deren Abhängigkeiten starke Namen zu, und benennen Sie sie so eindeutig wie möglich.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-127">Note: To avoid name collision, give your UDF assemblies and their dependencies strong names, and name them as uniquely as possible.</span></span> <span data-ttu-id="3d9e2-128">Weitere Informationen finden Sie unter [Bewährte Methoden für Excel Services](excel-services-best-practices.md) und [Bekannte Probleme und Tipps für Excel Services](excel-services-known-issues-and-tips.md).</span><span class="sxs-lookup"><span data-stu-id="3d9e2-128">For more information, see  [Excel Services Best Practices](excel-services-best-practices.md) and [Excel Services Known Issues and Tips](excel-services-known-issues-and-tips.md).</span></span> 
+  
+    
+    
+
+
+## <a name="procedure"></a><span data-ttu-id="3d9e2-129">Verfahren</span><span class="sxs-lookup"><span data-stu-id="3d9e2-129">Procedure</span></span>
+
+
+### <a name="to-create-the-manifestxml-file"></a><span data-ttu-id="3d9e2-130">To create the Manifest.xml file</span><span class="sxs-lookup"><span data-stu-id="3d9e2-130">To create the Manifest.xml file</span></span>
+
+
+1. <span data-ttu-id="3d9e2-131">Right-click your project in **Solution Explorer**, point to **Add**, and then click **New Item**.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-131">Right-click your project in **Solution Explorer**, point to **Add**, and then click **New Item**.</span></span>
+    
+  
+2. <span data-ttu-id="3d9e2-132">Select **XML File**, and name the file Manifest.xml.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-132">Select **XML File**, and name the file Manifest.xml.</span></span>
+    
+  
+3. <span data-ttu-id="3d9e2-133">Klicken Sie auf **Hinzufügen**.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-133">Click **Add**.</span></span>
+    
+  
+4. <span data-ttu-id="3d9e2-134">Fügen Sie der Datei den folgenden Inhalt hinzu:</span><span class="sxs-lookup"><span data-stu-id="3d9e2-134">Add the following content to the file:</span></span>
     
 ```XML
   
@@ -89,94 +95,96 @@ ms.lasthandoff: 11/15/2017
 ```
 
 
-    > **Note:**
-      > You should generate a unique GUID for each solution. For more information about **Solution** element, see the SharePoint Foundation [Solutions and Web Part Packages](http://msdn.microsoft.com/library/a145a5eb-fbb6-4328-b5b3-96bf5ce89a19%28Office.15%29.aspx) (http://msdn.microsoft.com/en-us/library/ms413687.aspx).
+    > [!NOTE]
+    > You should generate a unique GUID for each solution. For more information about **Solution** element, see the SharePoint Foundation [Solutions and Web Part Packages](http://msdn.microsoft.com/library/a145a5eb-fbb6-4328-b5b3-96bf5ce89a19%28Office.15%29.aspx) (http://msdn.microsoft.com/en-us/library/ms413687.aspx).
 
-### <a name="to-create-a-solution-package"></a><span data-ttu-id="a2eac-135">So erstellen Sie ein Lösungspaket</span><span class="sxs-lookup"><span data-stu-id="a2eac-135">To create a solution package</span></span>
+### <a name="to-create-a-solution-package"></a><span data-ttu-id="3d9e2-135">So erstellen Sie ein Lösungspaket</span><span class="sxs-lookup"><span data-stu-id="3d9e2-135">To create a solution package</span></span>
 
 
-- <span data-ttu-id="a2eac-136">For information about how to create the solution file, see the "Creating a Solution" topic under the "Solutions and Web Part Packages" node in the SharePoint Foundation SDK.</span><span class="sxs-lookup"><span data-stu-id="a2eac-136">For information about how to create the solution file, see the "Creating a Solution" topic under the "Solutions and Web Part Packages" node in the SharePoint Foundation SDK.</span></span> 
+- <span data-ttu-id="3d9e2-136">For information about how to create the solution file, see the "Creating a Solution" topic under the "Solutions and Web Part Packages" node in the SharePoint Foundation SDK.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-136">For information about how to create the solution file, see the "Creating a Solution" topic under the "Solutions and Web Part Packages" node in the SharePoint Foundation SDK.</span></span> 
     
   
 
-### <a name="to-verify-whether-sharepoint-foundation-administration-is-running"></a><span data-ttu-id="a2eac-137">To verify whether SharePoint Foundation Administration is running</span><span class="sxs-lookup"><span data-stu-id="a2eac-137">To verify whether SharePoint Foundation Administration is running</span></span>
+### <a name="to-verify-whether-sharepoint-foundation-administration-is-running"></a><span data-ttu-id="3d9e2-137">To verify whether SharePoint Foundation Administration is running</span><span class="sxs-lookup"><span data-stu-id="3d9e2-137">To verify whether SharePoint Foundation Administration is running</span></span>
 
 
-1. <span data-ttu-id="a2eac-138">Click **Start**, point to **Administrative Tools**, and then double-click **Services**.</span><span class="sxs-lookup"><span data-stu-id="a2eac-138">Click **Start**, point to **Administrative Tools**, and then double-click **Services**.</span></span> 
+1. <span data-ttu-id="3d9e2-138">Click **Start**, point to **Administrative Tools**, and then double-click **Services**.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-138">Click **Start**, point to **Administrative Tools**, and then double-click **Services**.</span></span> 
     
-    <span data-ttu-id="a2eac-139">The **Services** dialog box appears.</span><span class="sxs-lookup"><span data-stu-id="a2eac-139">The **Services** dialog box appears.</span></span>
+    <span data-ttu-id="3d9e2-139">The **Services** dialog box appears.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-139">The **Services** dialog box appears.</span></span>
     
   
-2. <span data-ttu-id="a2eac-p106">Make sure that the status of SharePoint Foundation Administration service shows **Started**. If it does not, right-click SharePoint Foundation Administration, and then select **Start**.</span><span class="sxs-lookup"><span data-stu-id="a2eac-p106">Make sure that the status of SharePoint Foundation Administration service shows **Started**. If it does not, right-click SharePoint Foundation Administration, and then select **Start**.</span></span>
-    
-  
-
-### <a name="to-add-the-solution"></a><span data-ttu-id="a2eac-142">To add the solution</span><span class="sxs-lookup"><span data-stu-id="a2eac-142">To add the solution</span></span>
-
-
-1. <span data-ttu-id="a2eac-143">Click **Start**, click **Run**, and then typecmd.</span><span class="sxs-lookup"><span data-stu-id="a2eac-143">Click **Start**, click **Run**, and then typecmd.</span></span> 
-    
-    <span data-ttu-id="a2eac-144">The command prompt console appears.</span><span class="sxs-lookup"><span data-stu-id="a2eac-144">The command prompt console appears.</span></span>
-    
-  
-2. <span data-ttu-id="a2eac-145">Run the following script to add the solution to SharePoint server:</span><span class="sxs-lookup"><span data-stu-id="a2eac-145">Run the following script to add the solution to SharePoint server:</span></span> 
-    
-    <span data-ttu-id="a2eac-146">stsadm.exe -o addsolution -filename <pathtoCAB></span><span class="sxs-lookup"><span data-stu-id="a2eac-146">stsadm.exe -o addsolution -filename <pathtoCAB></span></span>
-    
-    > <span data-ttu-id="a2eac-147">**Hinweis:** Die Datei „Stsadm.exe“ finden Sie unter: > C:\\Programme\\Gemeinsame Dateien\\Microsoft Shared\\web server extensions\\12\\BIN.</span><span class="sxs-lookup"><span data-stu-id="a2eac-147">**Note:** You can find the Stsadm.exe at: > C:\\Program Files\\Common Files\\Microsoft Shared\\web server extensions\\12\\BIN.</span></span> 
-
-    > <span data-ttu-id="a2eac-148">**Hinweis:** Weitere Informationen zu Optionen des Befehls „Stsadm.exe“ finden Sie unter [Zuordnung von Stsadm-Vorgängen zu Windows PowerShell (SharePoint Foundation 2010)](http://technet.microsoft.com/de-DE/library/ff621081.aspx) (http://technet.microsoft.com/de-de/library/ff621081.aspx).</span><span class="sxs-lookup"><span data-stu-id="a2eac-148">**Note:** For more information about Stsadm.exe command options, see the  [Stsadm to Windows PowerShell Mapping (SharePoint Foundation 2010)](http://technet.microsoft.com/de-DE/library/ff621081.aspx) (http://technet.microsoft.com/de-DE/library/ff621081.aspx).</span></span>
-
-  
-    
-    
-
-### <a name="to-deploy-the-solution"></a><span data-ttu-id="a2eac-149">So stellen Sie die Lösung bereit</span><span class="sxs-lookup"><span data-stu-id="a2eac-149">To deploy the solution</span></span>
-
-
-1. <span data-ttu-id="a2eac-150">Click **Start**, click **Run**, and then typecmd.</span><span class="sxs-lookup"><span data-stu-id="a2eac-150">Click **Start**, click **Run**, and then typecmd.</span></span> 
-    
-    <span data-ttu-id="a2eac-151">The command prompt console appears.</span><span class="sxs-lookup"><span data-stu-id="a2eac-151">The command prompt console appears.</span></span>
-    
-  
-2. <span data-ttu-id="a2eac-152">Run the following script to deploy the solution to SharePoint server.</span><span class="sxs-lookup"><span data-stu-id="a2eac-152">Run the following script to deploy the solution to SharePoint server.</span></span> 
-    
-    <span data-ttu-id="a2eac-153">stsadm.exe -o deploysolution -name <filename of the CAB> -immediate -allowGacDeployment</span><span class="sxs-lookup"><span data-stu-id="a2eac-153">stsadm.exe -o deploysolution -name <filename of the CAB> -immediate -allowGacDeployment</span></span>
-    
-    <span data-ttu-id="a2eac-154">You should now see your UDF DLL in the global assembly cache.</span><span class="sxs-lookup"><span data-stu-id="a2eac-154">You should now see your UDF DLL in the global assembly cache.</span></span>
+2. <span data-ttu-id="3d9e2-p106">Make sure that the status of SharePoint Foundation Administration service shows **Started**. If it does not, right-click SharePoint Foundation Administration, and then select **Start**.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-p106">Make sure that the status of SharePoint Foundation Administration service shows **Started**. If it does not, right-click SharePoint Foundation Administration, and then select **Start**.</span></span>
     
   
 
-## <a name="see-also"></a><span data-ttu-id="a2eac-155">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="a2eac-155">See also</span></span>
+### <a name="to-add-the-solution"></a><span data-ttu-id="3d9e2-142">To add the solution</span><span class="sxs-lookup"><span data-stu-id="3d9e2-142">To add the solution</span></span>
 
 
-#### <a name="tasks"></a><span data-ttu-id="a2eac-156">Aufgaben</span><span class="sxs-lookup"><span data-stu-id="a2eac-156">Tasks</span></span>
+1. <span data-ttu-id="3d9e2-143">Click **Start**, click **Run**, and then typecmd.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-143">Click **Start**, click **Run**, and then typecmd.</span></span> 
+    
+    <span data-ttu-id="3d9e2-144">The command prompt console appears.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-144">The command prompt console appears.</span></span>
+    
+  
+2. <span data-ttu-id="3d9e2-145">Run the following script to add the solution to SharePoint server:</span><span class="sxs-lookup"><span data-stu-id="3d9e2-145">Run the following script to add the solution to SharePoint server:</span></span> 
+    
+    <span data-ttu-id="3d9e2-146">stsadm.exe -o addsolution -filename <pathtoCAB></span><span class="sxs-lookup"><span data-stu-id="3d9e2-146">stsadm.exe -o addsolution -filename <pathtoCAB></span></span>
+    
+    > [!NOTE]
+    > <span data-ttu-id="3d9e2-147">Die Datei „Stsadm.exe“ finden Sie unter: > C:\\Program Files\\Common Files\\Microsoft Shared\\web server extensions\\12\\BIN.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-147">\\ You can find the Stsadm.exe at: > C:\\Program Files\\Common Files\\Microsoft Shared\\web server extensions\\12BIN.</span></span> 
 
+    > [!NOTE]
+    > <span data-ttu-id="3d9e2-148">Weitere Informationen zu Optionen des Befehls „Stsadm.exe“ finden Sie unter [Zuordnung von Stsadm-Vorgängen zu Windows PowerShell (SharePoint Foundation 2010)](http://technet.microsoft.com/de-DE/library/ff621081.aspx) (http://technet.microsoft.com/de-de/library/ff621081.aspx).</span><span class="sxs-lookup"><span data-stu-id="3d9e2-148">[Note:](http://technet.microsoft.com/de-DE/library/ff621081.aspx) For more information about Stsadm.exe command options, see the  Stsadm to Windows PowerShell Mapping (SharePoint Foundation 2010) (http://technet.microsoft.com/de-DE/library/ff621081.aspx).</span></span>
 
   
     
     
- [<span data-ttu-id="a2eac-157">How to: Create a UDF That Calls a Web Service</span><span class="sxs-lookup"><span data-stu-id="a2eac-157">How to: Create a UDF That Calls a Web Service</span></span>](how-to-create-a-udf-that-calls-a-web-service.md)
+
+### <a name="to-deploy-the-solution"></a><span data-ttu-id="3d9e2-149">So stellen Sie die Lösung bereit</span><span class="sxs-lookup"><span data-stu-id="3d9e2-149">To deploy the solution</span></span>
+
+
+1. <span data-ttu-id="3d9e2-150">Click **Start**, click **Run**, and then typecmd.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-150">Click **Start**, click **Run**, and then typecmd.</span></span> 
+    
+    <span data-ttu-id="3d9e2-151">The command prompt console appears.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-151">The command prompt console appears.</span></span>
+    
   
+2. <span data-ttu-id="3d9e2-152">Run the following script to deploy the solution to SharePoint server.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-152">Run the following script to deploy the solution to SharePoint server.</span></span> 
     
+    <span data-ttu-id="3d9e2-153">stsadm.exe -o deploysolution -name <filename of the CAB> -immediate -allowGacDeployment</span><span class="sxs-lookup"><span data-stu-id="3d9e2-153">stsadm.exe -o deploysolution -name <filename of the CAB> -immediate -allowGacDeployment</span></span>
     
- [<span data-ttu-id="a2eac-158">How to: Enable UDFs</span><span class="sxs-lookup"><span data-stu-id="a2eac-158">How to: Enable UDFs</span></span>](how-to-enable-udfs.md)
+    <span data-ttu-id="3d9e2-154">You should now see your UDF DLL in the global assembly cache.</span><span class="sxs-lookup"><span data-stu-id="3d9e2-154">You should now see your UDF DLL in the global assembly cache.</span></span>
+    
   
-    
-    
- [<span data-ttu-id="a2eac-159">How to: Restrict UDF Code Access Security Permissions</span><span class="sxs-lookup"><span data-stu-id="a2eac-159">How to: Restrict UDF Code Access Security Permissions</span></span>](how-to-restrict-udf-code-access-security-permissions.md)
-#### <a name="concepts"></a><span data-ttu-id="a2eac-160">Konzepte</span><span class="sxs-lookup"><span data-stu-id="a2eac-160">Concepts</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="3d9e2-155">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="3d9e2-155">See also</span></span>
+
+
+#### <a name="tasks"></a><span data-ttu-id="3d9e2-156">Aufgaben</span><span class="sxs-lookup"><span data-stu-id="3d9e2-156">Tasks</span></span>
 
 
   
     
     
- [<span data-ttu-id="a2eac-161">Walkthrough: Developing a Managed-Code UDF</span><span class="sxs-lookup"><span data-stu-id="a2eac-161">Walkthrough: Developing a Managed-Code UDF</span></span>](walkthrough-developing-a-managed-code-udf.md)
+ [<span data-ttu-id="3d9e2-157">How to: Create a UDF That Calls a Web Service</span><span class="sxs-lookup"><span data-stu-id="3d9e2-157">How to: Create a UDF That Calls a Web Service</span></span>](how-to-create-a-udf-that-calls-a-web-service.md)
   
     
     
- [<span data-ttu-id="a2eac-162">Frequently Asked Questions About Excel Services UDFs</span><span class="sxs-lookup"><span data-stu-id="a2eac-162">Frequently Asked Questions About Excel Services UDFs</span></span>](frequently-asked-questions-about-excel-services-udfs.md)
+ [<span data-ttu-id="3d9e2-158">How to: Enable UDFs</span><span class="sxs-lookup"><span data-stu-id="3d9e2-158">How to: Enable UDFs</span></span>](how-to-enable-udfs.md)
   
     
     
- [<span data-ttu-id="a2eac-163">Understanding Excel Services UDFs</span><span class="sxs-lookup"><span data-stu-id="a2eac-163">Understanding Excel Services UDFs</span></span>](understanding-excel-services-udfs.md)
+ [<span data-ttu-id="3d9e2-159">How to: Restrict UDF Code Access Security Permissions</span><span class="sxs-lookup"><span data-stu-id="3d9e2-159">How to: Restrict UDF Code Access Security Permissions</span></span>](how-to-restrict-udf-code-access-security-permissions.md)
+#### <a name="concepts"></a><span data-ttu-id="3d9e2-160">Konzepte</span><span class="sxs-lookup"><span data-stu-id="3d9e2-160">Concepts</span></span>
+
+
+  
+    
+    
+ [<span data-ttu-id="3d9e2-161">Walkthrough: Developing a Managed-Code UDF</span><span class="sxs-lookup"><span data-stu-id="3d9e2-161">Walkthrough: Developing a Managed-Code UDF</span></span>](walkthrough-developing-a-managed-code-udf.md)
+  
+    
+    
+ [<span data-ttu-id="3d9e2-162">Frequently Asked Questions About Excel Services UDFs</span><span class="sxs-lookup"><span data-stu-id="3d9e2-162">Frequently Asked Questions About Excel Services UDFs</span></span>](frequently-asked-questions-about-excel-services-udfs.md)
+  
+    
+    
+ [<span data-ttu-id="3d9e2-163">Understanding Excel Services UDFs</span><span class="sxs-lookup"><span data-stu-id="3d9e2-163">Understanding Excel Services UDFs</span></span>](understanding-excel-services-udfs.md)

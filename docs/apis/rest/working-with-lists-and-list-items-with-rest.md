@@ -2,22 +2,22 @@
 title: Arbeiten mit Listen und Listenelementen unter Verwendung von REST
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 66e9b7f7e622fe3df661c102fc1d62fde421f31e
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ec63b7dcf294e4a6248ca5c6014b6807f116f655
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="working-with-lists-and-list-items-with-rest"></a><span data-ttu-id="90f62-102">Arbeiten mit Listen und Listenelementen unter Verwendung von REST</span><span class="sxs-lookup"><span data-stu-id="90f62-102">Working with lists and list items with REST</span></span>
-<span data-ttu-id="90f62-103">In diesem Artikel erfahren Sie, wie Sie grundlegende Erstellungs-, Lese-, Aktualisierungs- und Löschoperationen, auch als CRUD-Operationen (Create, Read, Update, Delete) bezeichnet, für Listen und Listenelemente mit der SharePoint REST-Schnittstelle durchführen.</span><span class="sxs-lookup"><span data-stu-id="90f62-103">Learn how to perform basic create, read, update, and delete (CRUD) operations on lists and list items with the SharePoint REST interface.</span></span>
+# <a name="working-with-lists-and-list-items-with-rest"></a><span data-ttu-id="bc6ab-102">Arbeiten mit Listen und Listenelementen unter Verwendung von REST</span><span class="sxs-lookup"><span data-stu-id="bc6ab-102">Working with lists and list items with REST</span></span>
+<span data-ttu-id="bc6ab-103">In diesem Artikel erfahren Sie, wie Sie grundlegende Erstellungs-, Lese-, Aktualisierungs- und Löschoperationen, auch als CRUD-Operationen (Create, Read, Update, Delete) bezeichnet, für Listen und Listenelemente mit der SharePoint REST-Schnittstelle durchführen.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-103">Learn how to perform basic create, read, update, and delete (CRUD) operations on lists and list items with the SharePoint REST interface.</span></span>
  
- <span data-ttu-id="90f62-p101">**Tipp**  Der SharePoint Online-REST-Dienst (und der Dienst von SharePoint 2016 (lokal) und höher) unterstützt die Kombination mehrerer Anforderungen in einem einzelnen Dienstaufruf mithilfe der OData-Abfrageoption `$batch`. Einzelheiten und Links zu Codebeispielen finden Sie unter [Make batch requests with the REST APIs](make-batch-requests-with-the-rest-apis.md) (Erstellen von Batchanforderungen mit den REST-APIs).</span><span class="sxs-lookup"><span data-stu-id="90f62-p101">**Tip**  The SharePoint Online (and on-premise SharePoint 2016 and later) REST service supports combining multiple requests into a single call to the service by using the OData  `$batch` query option. For details and links to code samples, see [Make batch requests with the REST APIs](make-batch-requests-with-the-rest-apis.md).</span></span>
+ <span data-ttu-id="bc6ab-p101">**Tipp**  Der SharePoint Online-REST-Dienst (und der Dienst von SharePoint 2016 (lokal) und höher) unterstützt die Kombination mehrerer Anforderungen in einem einzelnen Dienstaufruf mithilfe der OData-Abfrageoption `$batch`. Einzelheiten und Links zu Codebeispielen finden Sie unter [Make batch requests with the REST APIs](make-batch-requests-with-the-rest-apis.md) (Erstellen von Batchanforderungen mit den REST-APIs).</span><span class="sxs-lookup"><span data-stu-id="bc6ab-p101">**Tip**  The SharePoint Online (and on-premise SharePoint 2016 and later) REST service supports combining multiple requests into a single call to the service by using the OData  `$batch` query option. For details and links to code samples, see [Make batch requests with the REST APIs](make-batch-requests-with-the-rest-apis.md).</span></span>
  
-## <a name="prerequisites"></a><span data-ttu-id="90f62-106">Voraussetzungen</span><span class="sxs-lookup"><span data-stu-id="90f62-106">Prerequisites</span></span>
-<span data-ttu-id="90f62-p102">In diesem Artikel setzen wir voraus, dass Sie bereits den Artikel zum Thema [Einführung in den SharePoint-REST-Dienst](get-to-know-the-sharepoint-rest-service.md) sowie den Artikel zum Thema [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten](complete-basic-operations-using-sharepoint-rest-endpoints.md) gelesen haben. Es werden keine Codeausschnitte bereitgestellt.</span><span class="sxs-lookup"><span data-stu-id="90f62-p102">This topic assumes that you are already familiar with the topics  [Get to know the SharePoint REST service](get-to-know-the-sharepoint-rest-service.md) and [Complete basic operations using SharePoint REST endpoints](complete-basic-operations-using-sharepoint-rest-endpoints.md). It does not provide code snippets.</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="bc6ab-106">Voraussetzungen</span><span class="sxs-lookup"><span data-stu-id="bc6ab-106">Prerequisites</span></span>
+<span data-ttu-id="bc6ab-p102">In diesem Artikel setzen wir voraus, dass Sie bereits den Artikel zum Thema [Einführung in den SharePoint-REST-Dienst](get-to-know-the-sharepoint-rest-service.md) sowie den Artikel zum Thema [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten](complete-basic-operations-using-sharepoint-rest-endpoints.md) gelesen haben. Es werden keine Codeausschnitte bereitgestellt.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-p102">This topic assumes that you are already familiar with the topics  [Get to know the SharePoint REST service](get-to-know-the-sharepoint-rest-service.md) and [Complete basic operations using SharePoint REST endpoints](complete-basic-operations-using-sharepoint-rest-endpoints.md). It does not provide code snippets.</span></span>
 
-## <a name="retrieving-lists-and-list-properties-with-rest"></a><span data-ttu-id="90f62-109">Abrufen von Listen und Listeneigenschaften mit REST</span><span class="sxs-lookup"><span data-stu-id="90f62-109">Retrieving lists and list properties with REST</span></span>
-<span data-ttu-id="90f62-110"><a name="RetrieveLists"> </a> Das folgende Beispiel zeigt, wie Sie eine bestimmte Liste **abrufen**, wenn ihre GUID bekannt ist.</span><span class="sxs-lookup"><span data-stu-id="90f62-110">The following example shows how to  **retrieve** a specific list if you know its GUID.</span></span>
+## <a name="retrieving-lists-and-list-properties-with-rest"></a><span data-ttu-id="bc6ab-109">Abrufen von Listen und Listeneigenschaften mit REST</span><span class="sxs-lookup"><span data-stu-id="bc6ab-109">Retrieving lists and list properties with REST</span></span>
+<span data-ttu-id="bc6ab-110"><a name="RetrieveLists"> </a> Das folgende Beispiel zeigt, wie Sie eine bestimmte Liste **abrufen**, wenn ihre GUID bekannt ist.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-110"><a name="RetrieveLists"> </a> The following example shows how to  **retrieve** a specific list if you know its GUID.</span></span>
 
 ```
 url: http://site url/_api/web/lists(guid'list GUID'),
@@ -27,9 +27,10 @@ Headers:
     accept: "application/json;odata=verbose" or "application/atom+xml"
 
 ```
- <span data-ttu-id="90f62-p103">**Hinweis**  Verwenden Sie  `application/json;odata=verbose` in der Kopfzeile `accept`, wenn Sie die Antwort in JSON wünschen. Verwenden Sie `application/atom+xml` in der Kopfzeile `accept`, wenn Sie die Antwort im Format Atom wünschen.</span><span class="sxs-lookup"><span data-stu-id="90f62-p103">**Note**  Use  `application/json;odata=verbose` in the `accept` header if you want the response in JSON. Use `application/atom+xml` in the `accept` header if you want the response in Atom format.</span></span>
+> [!NOTE]
+> <span data-ttu-id="bc6ab-p103">Verwenden Sie `application/json;odata=verbose` im `accept`-Header, wenn die Antwort im JSON-Format erfolgen soll. Verwenden Sie `application/atom+xml` im `accept`-Header, wenn die Antwort im Atom-Format erfolgen soll.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-p103">`application/json;odata=verbose`  Use  `accept` in the `application/atom+xml` header if you want the response in JSON. Use `accept` in the  header if you want the response in Atom format.</span></span>
  
-<span data-ttu-id="90f62-113">Das folgende Beispiel zeigt, wie Sie eine bestimmte Liste **abrufen**, wenn ihr Titel bekannt ist.</span><span class="sxs-lookup"><span data-stu-id="90f62-113">The following example shows how to  **retrieve** a specific list if you know its title.</span></span>
+<span data-ttu-id="bc6ab-113">Das folgende Beispiel zeigt, wie Sie eine bestimmte Liste **abrufen**, wenn ihr Titel bekannt ist.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-113">The following example shows how to  **retrieve** a specific list if you know its title.</span></span>
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')
@@ -39,7 +40,7 @@ Headers:
     accept: "application/json;odata=verbose" or "application/atom+xml"
 
 ```
-<span data-ttu-id="90f62-114">Der folgende XML-Code zeigt ein Beispiel für die Listeneigenschaften, die beim Anfordern des XML-Inhaltstyps zurückgegeben werden.</span><span class="sxs-lookup"><span data-stu-id="90f62-114">The following XML shows an example of the list properties that are returned when you request the XML content type.</span></span>
+<span data-ttu-id="bc6ab-114">Der folgende XML-Code zeigt ein Beispiel für die Listeneigenschaften, die beim Anfordern des XML-Inhaltstyps zurückgegeben werden.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-114">The following XML shows an example of the list properties that are returned when you request the XML content type.</span></span>
 
 ```XML
   <content type="application/xml">
@@ -84,10 +85,11 @@ Headers:
     </m:properties>
   </content>
 ```
- <span data-ttu-id="90f62-p104">**Hinweis**  Die Eigenschaft  **ListItemEntityTypeFullName** ( **SP.Data.ProjectPolicyItemListItem** im vorhergehenden Beispiel) ist wichtig, wenn Sie Listenelemente erstellen und aktualisieren möchten. Dieser Wert muss als **type**-Eigenschaft in den Metadaten übergeben werden, die Sie im Textkörper der HTTP-Anforderung übergeben, wenn Sie Listenelemente erstellen und aktualisieren.</span><span class="sxs-lookup"><span data-stu-id="90f62-p104">**Note**  The  **ListItemEntityTypeFullName** property ( **SP.Data.ProjectPolicyItemListItem** in the previous example) is especially important if you want to create and update list items. This value must be passed as the **type** property in the metadata that you pass in the body of the HTTP request whenever you create and update list items.</span></span>
+> [!NOTE]
+> <span data-ttu-id="bc6ab-p104">Die Eigenschaft **ListItemEntityTypeFullName** (**SP.Data.ProjectPolicyItemListItem** im vorhergehenden Beispiel) ist wichtig, wenn Sie Listenelemente erstellen und aktualisieren möchten. Dieser Wert muss als **type**-Eigenschaft in den Metadaten übergeben werden, die Sie im Textkörper der HTTP-Anforderung übergeben, wenn Sie Listenelemente erstellen und aktualisieren.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-p104">**Note**  The  **ListItemEntityTypeFullName** property ( **SP.Data.ProjectPolicyItemListItem** in the previous example) is especially important if you want to create and update list items. This value must be passed as the type property in the metadata that you pass in the body of the HTTP request whenever you create and update list items.</span></span>
 
-## <a name="working-with-lists-by-using-rest"></a><span data-ttu-id="90f62-117">Arbeiten mit Listen unter Verwendung von REST</span><span class="sxs-lookup"><span data-stu-id="90f62-117">Working with lists by using REST</span></span>
-<span data-ttu-id="90f62-118"><a name="WorkLists"> </a> Das folgende Beispiel zeigt, wie Sie eine Liste **erstellen**.</span><span class="sxs-lookup"><span data-stu-id="90f62-118">The following example shows how to  **create** a list.</span></span>
+## <a name="working-with-lists-by-using-rest"></a><span data-ttu-id="bc6ab-117">Arbeiten mit Listen unter Verwendung von REST</span><span class="sxs-lookup"><span data-stu-id="bc6ab-117">Working with lists by using REST</span></span>
+<span data-ttu-id="bc6ab-118"><a name="WorkLists"> </a> Das folgende Beispiel zeigt, wie Sie eine Liste **erstellen**.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-118"><a name="WorkLists"> </a> The following example shows how to  **create** a list.</span></span>
 
 ```
 url: http://site url/_api/web/lists
@@ -102,7 +104,7 @@ Headers:
     content-length:length of post body
 ```
 
-<span data-ttu-id="90f62-119">Das folgende Beispiel zeigt, wie Sie eine Liste **aktualisieren** und dazu die **MERGE**-Methode verwenden.</span><span class="sxs-lookup"><span data-stu-id="90f62-119">The following example shows how to  **update** a list by using the **MERGE** method.</span></span>
+<span data-ttu-id="bc6ab-119">Das folgende Beispiel zeigt, wie Sie eine Liste **aktualisieren** und dazu die **MERGE**-Methode verwenden.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-119">The following example shows how to  **update** a list by using the **MERGE** method.</span></span>
 
 ```
 url: http://site url/_api/web/lists(guid'list GUID')
@@ -117,7 +119,7 @@ Headers:
     content-type: "application/json;odata=verbose"
     content-length:length of post body
 ```
-<span data-ttu-id="90f62-120">Das folgende Beispiel zeigt, wie Sie ein **benutzerdefiniertes Feld** für eine Liste **erstellen**.</span><span class="sxs-lookup"><span data-stu-id="90f62-120">The following example shows how to  **create** a **custom field** for a list.</span></span>
+<span data-ttu-id="bc6ab-120">Das folgende Beispiel zeigt, wie Sie ein **benutzerdefiniertes Feld** für eine Liste **erstellen**.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-120">The following example shows how to  **create** a **custom field** for a list.</span></span>
 
 ```
 Url: url: http://site url/_api/web/lists(guid'list GUID')/Fields
@@ -130,7 +132,7 @@ Headers:
     content-length:length of post body
 ```
 
-<span data-ttu-id="90f62-121">Das folgende Beispiel zeigt, wie Sie eine Liste **löschen**.</span><span class="sxs-lookup"><span data-stu-id="90f62-121">The following example shows how to  **delete** a list.</span></span>
+<span data-ttu-id="bc6ab-121">Das folgende Beispiel zeigt, wie Sie eine Liste **löschen**.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-121">The following example shows how to  **delete** a list.</span></span>
 
 ```
 url: http://site url/_api/web/lists(guid'list GUID')
@@ -143,10 +145,11 @@ Headers:
 
 ```
 
-## <a name="working-with-list-items-by-using-rest"></a><span data-ttu-id="90f62-122">Arbeiten mit Listenelementen unter Verwendung von REST</span><span class="sxs-lookup"><span data-stu-id="90f62-122">Working with list items by using REST</span></span>
-<span data-ttu-id="90f62-123"><a name="ListItems"> </a> Das folgende Beispiel zeigt, wie Sie alle Elemente einer Liste **abrufen**.</span><span class="sxs-lookup"><span data-stu-id="90f62-123">The following example shows how to  **retrieve** all of a list's items.</span></span>
+## <a name="working-with-list-items-by-using-rest"></a><span data-ttu-id="bc6ab-122">Arbeiten mit Listenelementen unter Verwendung von REST</span><span class="sxs-lookup"><span data-stu-id="bc6ab-122">Working with list items by using REST</span></span>
+<span data-ttu-id="bc6ab-123"><a name="ListItems"> </a> Das folgende Beispiel zeigt, wie Sie alle Elemente einer Liste **abrufen**.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-123"><a name="ListItems"> </a> The following example shows how to  **retrieve** all of a list's items.</span></span>
  
- <span data-ttu-id="90f62-p105">**Hinweis**  Die OData-Abfrageoption „$skip“ funktioniert nicht für das Abfragen von Listenelementen. In vielen Fällen können Sie stattdessen die Option  [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx) verwenden.</span><span class="sxs-lookup"><span data-stu-id="90f62-p105">**Note**  The OData $skip query option does not work when querying list items. In may situations, you can use the  [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx) option instead.</span></span>
+> [!NOTE]
+> <span data-ttu-id="bc6ab-p105">Die OData-Abfrageoption $skip funktioniert nicht beim Abfragen von Listenelementen. In vielen Situationen können Sie stattdessen die Option [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx) verwenden.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-p105">The OData $skip query option does not work when querying list items. In may situations, you can use the [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx) option instead.</span></span>
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
@@ -157,7 +160,7 @@ headers:
 
 ```
 
-<span data-ttu-id="90f62-126">Das folgende Beispiel zeigt, wie sie ein bestimmtes Listenelement **abrufen**.</span><span class="sxs-lookup"><span data-stu-id="90f62-126">The following example shows how to  **retrieve** a specific list item.</span></span>
+<span data-ttu-id="bc6ab-126">Das folgende Beispiel zeigt, wie sie ein bestimmtes Listenelement **abrufen**.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-126">The following example shows how to  **retrieve** a specific list item.</span></span>
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
@@ -168,7 +171,7 @@ headers:
 
 ```
 
-<span data-ttu-id="90f62-127">Der folgende XML-Code zeigt ein Beispiel für die Listenelementeigenschaften, die beim Anfordern des XML-Inhaltstyps zurückgegeben werden.</span><span class="sxs-lookup"><span data-stu-id="90f62-127">The following XML shows an example of the list item properties that are returned when you request the XML content type.</span></span>
+<span data-ttu-id="bc6ab-127">Der folgende XML-Code zeigt ein Beispiel für die Listenelementeigenschaften, die beim Anfordern des XML-Inhaltstyps zurückgegeben werden.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-127">The following XML shows an example of the list item properties that are returned when you request the XML content type.</span></span>
  
 ```XML
 <content type="application/xml">
@@ -189,9 +192,10 @@ headers:
 </content>
 ```
 
-<span data-ttu-id="90f62-128">Das folgende Beispiel zeigt, wie Sie ein Listenelement **erstellen**.</span><span class="sxs-lookup"><span data-stu-id="90f62-128">The following example shows how to  **create** a list item.</span></span>
+<span data-ttu-id="bc6ab-128">Das folgende Beispiel zeigt, wie Sie ein Listenelement **erstellen**.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-128">The following example shows how to  **create** a list item.</span></span>
 
- <span data-ttu-id="90f62-129">**Hinweis**  Zum Ausführen dieses Vorgangs müssen Sie die Eigenschaft **ListItemEntityTypeFullName** der Liste kennen und sie als Wert von **type** im HTTP-Anforderungstext weitergeben.</span><span class="sxs-lookup"><span data-stu-id="90f62-129">**Note**  To do this operation, you must know the  **ListItemEntityTypeFullName** property of the list and pass that as the value of **type** in the HTTP request body.</span></span>
+> [!NOTE]
+> <span data-ttu-id="bc6ab-129">Um diese Operation durchzuführen, müssen Sie die Eigenschaft **ListItemEntityTypeFullName** der Liste kennen und sie als Wert von **type** im Textkörper der HTTP-Anforderung übergeben.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-129">To do this operation, you must know the **ListItemEntityTypeFullName** property of the list and pass that as the value of **type** in the HTTP request body.</span></span>
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
@@ -205,9 +209,10 @@ headers:
     content-length:length of post body
 ```
 
-<span data-ttu-id="90f62-130">Das folgende Beispiel zeigt, wie Sie ein Listenelement **aktualisieren**.</span><span class="sxs-lookup"><span data-stu-id="90f62-130">The following example shows how to  **update** a list item.</span></span>
+<span data-ttu-id="bc6ab-130">Das folgende Beispiel zeigt, wie Sie ein Listenelement **aktualisieren**.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-130">The following example shows how to  **update** a list item.</span></span>
 
- <span data-ttu-id="90f62-131">**Hinweis**  Zum Ausführen dieses Vorgangs müssen Sie die Eigenschaft **ListItemEntityTypeFullName** der Liste kennen und sie als Wert von **type** im HTTP-Anforderungstext weitergeben.</span><span class="sxs-lookup"><span data-stu-id="90f62-131">**Note**  To do this operation, you must know the  **ListItemEntityTypeFullName** property of the list and pass that as the value of **type** in the HTTP request body.</span></span>
+> [!NOTE]
+> <span data-ttu-id="bc6ab-131">Um diese Operation durchzuführen, müssen Sie die Eigenschaft **ListItemEntityTypeFullName** der Liste kennen und sie als Wert von **type** im Textkörper der HTTP-Anforderung übergeben.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-131">To do this operation, you must know the **ListItemEntityTypeFullName** property of the list and pass that as the value of **type** in the HTTP request body.</span></span>
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
@@ -223,7 +228,7 @@ headers:
     content-length:length of post body
 ```
 
-<span data-ttu-id="90f62-132">Das folgende Beispiel zeigt, wie Sie ein Listenelement **löschen**.</span><span class="sxs-lookup"><span data-stu-id="90f62-132">The following example shows how to  **delete** a list item.</span></span>
+<span data-ttu-id="bc6ab-132">Das folgende Beispiel zeigt, wie Sie ein Listenelement **löschen**.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-132">The following example shows how to  **delete** a list item.</span></span>
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
@@ -236,24 +241,24 @@ headers:
 
 ```
 
-## <a name="using-etag-values-to-determine-document-and-list-item-versioning"></a><span data-ttu-id="90f62-133">Verwenden von ETag-Werten zum Bestimmen der Version von Dokument- und Listenelementen</span><span class="sxs-lookup"><span data-stu-id="90f62-133">Using ETag values to determine document and list item versioning</span></span>
-<span data-ttu-id="90f62-134"><a name="Etag"> </a> Der SharePoint REST-Dienst, der sich nach dem  [OData-Standard](http://www.odata.org/developers/protocols/operations) richtet, verwendet  [HTML ETags für die Gleichzeitigkeitssteuerung](http://www.odata.org/developers/protocols/operations#ConcurrencycontrolandETags) von SharePoint-Listen und -Listenelementen.</span><span class="sxs-lookup"><span data-stu-id="90f62-134"><a name="Etag"> </a> The SharePoint REST service, which follows the  [OData standard](http://www.odata.org/developers/protocols/operations), uses  [HTML ETags for concurrency control](http://www.odata.org/developers/protocols/operations#ConcurrencycontrolandETags) of SharePoint lists and list items. To check on an item's version when you perform a PUT,  MERGE, or  DELETE request, specify an ETag in the If-Match HTTP request header.</span></span> <span data-ttu-id="90f62-135">Um die Version eines Elements beim Ausführen einer **PUT**-,  **MERGE**- oder  **DELETE**-Anforderung zu prüfen, geben Sie ein **ETag** im HTTP-Anforderungskopf **If-Match** an.</span><span class="sxs-lookup"><span data-stu-id="90f62-135">The SharePoint REST service, which follows the  OData standard, uses  HTML ETags for concurrency control of SharePoint lists and list items. To check on an item's version when you perform a **PUT**,  **MERGE**, or  **DELETE** request, specify an **ETag** in the **If-Match** HTTP request header.</span></span>
+## <a name="using-etag-values-to-determine-document-and-list-item-versioning"></a><span data-ttu-id="bc6ab-133">Verwenden von ETag-Werten zum Bestimmen der Version von Dokument- und Listenelementen</span><span class="sxs-lookup"><span data-stu-id="bc6ab-133">Using ETag values to determine document and list item versioning</span></span>
+<span data-ttu-id="bc6ab-134"><a name="Etag"> </a> Der SharePoint REST-Dienst, der sich nach dem  [OData-Standard](http://www.odata.org/developers/protocols/operations) richtet, verwendet  [HTML ETags für die Gleichzeitigkeitssteuerung](http://www.odata.org/developers/protocols/operations#ConcurrencycontrolandETags) von SharePoint-Listen und -Listenelementen.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-134"><a name="Etag"> </a> The SharePoint REST service, which follows the  [OData standard](http://www.odata.org/developers/protocols/operations), uses  [HTML ETags for concurrency control](http://www.odata.org/developers/protocols/operations#ConcurrencycontrolandETags) of SharePoint lists and list items.</span></span> <span data-ttu-id="bc6ab-135">Um die Version eines Elements beim Ausführen einer **PUT**-,  **MERGE**- oder  **DELETE**-Anforderung zu prüfen, geben Sie ein **ETag** im HTTP-Anforderungskopf **If-Match** an.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-135">To check on an item's version when you perform a **PUT**,  **MERGE**, or  **DELETE** request, specify an **ETag** in the **If-Match** HTTP request header.</span></span>
  
-<span data-ttu-id="90f62-136">Wenn das in Ihrer Anforderung angegebene **ETag** nicht mit dem **ETag** des Dokument- oder Listenelements auf dem Server übereinstimmt, gibt der REST-Dienst gemäß der OData-Spezifikation eine 412-Ausnahme zurück.</span><span class="sxs-lookup"><span data-stu-id="90f62-136">If the  **ETag** you specify in your request does not match the **ETag** of the document or list item on the server, the REST service returns a 412 exception, per the OData specification.</span></span>
+<span data-ttu-id="bc6ab-136">Wenn das in Ihrer Anforderung angegebene **ETag** nicht mit dem **ETag** des Dokument- oder Listenelements auf dem Server übereinstimmt, gibt der REST-Dienst gemäß der OData-Spezifikation eine 412-Ausnahme zurück.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-136">If the  **ETag** you specify in your request does not match the **ETag** of the document or list item on the server, the REST service returns a 412 exception, per the OData specification.</span></span>
  
-- <span data-ttu-id="90f62-137">Wenn Sie ein Überschreiben des Elements unabhängig von der Version erzwingen möchten, legen Sie den **ETag**-Wert auf **"*"** fest.</span><span class="sxs-lookup"><span data-stu-id="90f62-137">To force an overwrite of the item regardless of version, set the  **ETag** value to **"*"**.</span></span>
+- <span data-ttu-id="bc6ab-137">Wenn Sie ein Überschreiben des Elements unabhängig von der Version erzwingen möchten, legen Sie den **ETag**-Wert auf **"*"** fest.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-137">To force an overwrite of the item regardless of version, set the  **ETag** value to **"*"**.</span></span>
     
-- <span data-ttu-id="90f62-138">Wenn Sie kein **ETag** angeben, überschreibt SharePoint das Element unabhängig von der Version.</span><span class="sxs-lookup"><span data-stu-id="90f62-138">If you do not specify an  **ETag**, SharePoint overwrites the item regardless of version.</span></span>
+- <span data-ttu-id="bc6ab-138">Wenn Sie kein **ETag** angeben, überschreibt SharePoint das Element unabhängig von der Version.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-138">If you do not specify an  **ETag**, SharePoint overwrites the item regardless of version.</span></span>
     
-<span data-ttu-id="90f62-139">In SharePoint gelten ETags nur für SharePoint-Listen und Listenelemente.</span><span class="sxs-lookup"><span data-stu-id="90f62-139">Within SharePoint, ETags apply only to SharePoint lists and list items.</span></span>
+<span data-ttu-id="bc6ab-139">In SharePoint gelten ETags nur für SharePoint-Listen und Listenelemente.</span><span class="sxs-lookup"><span data-stu-id="bc6ab-139">Within SharePoint, ETags apply only to SharePoint lists and list items.</span></span>
 
-## <a name="additional-resources"></a><span data-ttu-id="90f62-140">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="90f62-140">Additional resources</span></span>
-<span data-ttu-id="90f62-141"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="90f62-141"></span></span>
+## <a name="see-also"></a><span data-ttu-id="bc6ab-140">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="bc6ab-140">See also</span></span>
+<span data-ttu-id="bc6ab-141"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="bc6ab-141"><a name="bk_addresources"> </a></span></span>
 
--  [<span data-ttu-id="90f62-142">Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten</span><span class="sxs-lookup"><span data-stu-id="90f62-142">Complete basic operations using SharePoint REST endpoints</span></span>](complete-basic-operations-using-sharepoint-rest-endpoints.md)
--  [<span data-ttu-id="90f62-143">Arbeiten mit Ordnern und Dateien unter Verwendung von REST</span><span class="sxs-lookup"><span data-stu-id="90f62-143">Working with folders and files with REST</span></span>](working-with-folders-and-files-with-rest.md)
--  [<span data-ttu-id="90f62-144">SharePoint-Add-in-REST-OData-BasicDataOperations</span><span class="sxs-lookup"><span data-stu-id="90f62-144">SharePoint-Add-in-REST-OData-BasicDataOperations</span></span>](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
--  [<span data-ttu-id="90f62-145">SharePoint 2013: Ausführen grundlegender Datenzugriffsvorgänge für Dateien und Ordner mithilfe von REST</span><span class="sxs-lookup"><span data-stu-id="90f62-145">SharePoint 2013: Perform basic data access operations on files and folders by using REST</span></span>](http://code.msdn.microsoft.com/SharePoint-2013-Perform-ab9c4ae5)
--  [<span data-ttu-id="90f62-146">Durchführen von REST-Aufrufen mit C# und JavaScript für SharePoint 2013</span><span class="sxs-lookup"><span data-stu-id="90f62-146">Making REST calls with C# and JavaScript for SharePoint 2013</span></span>](http://www.microsoft.com/resources/msdn/en-us/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;VideoID=4e4cc094-ff69-405b-852f-2ac7c41293c5)
--  [<span data-ttu-id="90f62-147">Open Data Protocol</span><span class="sxs-lookup"><span data-stu-id="90f62-147">Open Data Protocol</span></span>](http://www.odata.org/)
--  [<span data-ttu-id="90f62-148">OData: JSON(JavaScript Object Notation)-Format</span><span class="sxs-lookup"><span data-stu-id="90f62-148">OData: JavaScript Object Notation (JSON) Format</span></span>](http://www.odata.org/documentation/odata-version-2-0/json-format/)
+-  [<span data-ttu-id="bc6ab-142">Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten</span><span class="sxs-lookup"><span data-stu-id="bc6ab-142">Complete basic operations using SharePoint REST endpoints</span></span>](complete-basic-operations-using-sharepoint-rest-endpoints.md)
+-  [<span data-ttu-id="bc6ab-143">Arbeiten mit Ordnern und Dateien unter Verwendung von REST</span><span class="sxs-lookup"><span data-stu-id="bc6ab-143">Working with folders and files with REST</span></span>](working-with-folders-and-files-with-rest.md)
+-  [<span data-ttu-id="bc6ab-144">SharePoint-Add-in-REST-OData-BasicDataOperations</span><span class="sxs-lookup"><span data-stu-id="bc6ab-144">SharePoint-Add-in-REST-OData-BasicDataOperations</span></span>](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
+-  [<span data-ttu-id="bc6ab-145">SharePoint 2013: Ausführen grundlegender Datenzugriffsvorgänge für Dateien und Ordner mithilfe von REST</span><span class="sxs-lookup"><span data-stu-id="bc6ab-145">SharePoint 2013: Perform basic data access operations on files and folders by using REST</span></span>](http://code.msdn.microsoft.com/SharePoint-2013-Perform-ab9c4ae5)
+-  [<span data-ttu-id="bc6ab-146">Durchführen von REST-Aufrufen mit C# und JavaScript für SharePoint 2013</span><span class="sxs-lookup"><span data-stu-id="bc6ab-146">Making REST calls with C# and JavaScript for SharePoint 2013</span></span>](http://www.microsoft.com/resources/msdn/en-us/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;VideoID=4e4cc094-ff69-405b-852f-2ac7c41293c5)
+-  [<span data-ttu-id="bc6ab-147">Open Data Protocol</span><span class="sxs-lookup"><span data-stu-id="bc6ab-147">Open Data Protocol</span></span>](http://www.odata.org/)
+-  [<span data-ttu-id="bc6ab-148">OData: JSON(JavaScript Object Notation)-Format</span><span class="sxs-lookup"><span data-stu-id="bc6ab-148">OData: JavaScript Object Notation (JSON) Format</span></span>](http://www.odata.org/documentation/odata-version-2-0/json-format/)

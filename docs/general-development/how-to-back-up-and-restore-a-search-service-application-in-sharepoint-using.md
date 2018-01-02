@@ -3,71 +3,71 @@ title: Sichern und Wiederherstellen einer Suchdienstanwendung in SharePoint mit 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 87ee28e6-8170-4dba-8c9d-f04ab9e632dc
-ms.openlocfilehash: 7b0e93318f0eaddb08643e139de0b16e9a3a169b
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 15538df022c8caffcae9fe75ed7fed22efaa043b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="back-up-and-restore-a-search-service-application-in-sharepoint-using-vss"></a><span data-ttu-id="d82ff-102">Sichern und Wiederherstellen einer Suchdienstanwendung in SharePoint mit VSS</span><span class="sxs-lookup"><span data-stu-id="d82ff-102">How to: Back up and restore a search service application in SharePoint using VSS</span></span>
+# <a name="back-up-and-restore-a-search-service-application-in-sharepoint-using-vss"></a><span data-ttu-id="d8472-102">Sichern und Wiederherstellen einer Suchdienstanwendung in SharePoint mit VSS</span><span class="sxs-lookup"><span data-stu-id="d8472-102">Back up and restore a search service application in SharePoint using VSS</span></span>
 
-<span data-ttu-id="d82ff-103">Informationen zum Sichern und Wiederherstellen einer Suchdienstanwendung in SharePoint mithilfe des Volumeschattenkopie-Diensts (Volume Shadow Copy Service, VSS).</span><span class="sxs-lookup"><span data-stu-id="d82ff-103">Summary: Learn how to back up and restore a search service application in SharePoint by using the Volume Shadow Copy Service (VSS).</span></span>
+<span data-ttu-id="d8472-103">Informationen zum Sichern und Wiederherstellen einer Suchdienstanwendung in SharePoint mithilfe des Volumeschattenkopie-Diensts (Volume Shadow Copy Service, VSS).</span><span class="sxs-lookup"><span data-stu-id="d8472-103">Summary: Learn how to back up and restore a search service application in SharePoint by using the Volume Shadow Copy Service (VSS).</span></span>
 
-## <a name="prerequisites-for-backing-up-and-restoring-sharepoint-with-the-volume-shadow-copy-service"></a><span data-ttu-id="d82ff-104">Voraussetzungen für das Sichern und Wiederherstellen von SharePoint mit den Volumeschattenkopie-Dienst</span><span class="sxs-lookup"><span data-stu-id="d82ff-104">Prerequisites for backing up and restoring SharePoint with the Volume Shadow Copy Service</span></span>
+## <a name="prerequisites-for-backing-up-and-restoring-sharepoint-with-the-volume-shadow-copy-service"></a><span data-ttu-id="d8472-104">Voraussetzungen für das Sichern und Wiederherstellen von SharePoint mit den Volumeschattenkopie-Dienst</span><span class="sxs-lookup"><span data-stu-id="d8472-104">Prerequisites for backing up and restoring SharePoint with the Volume Shadow Copy Service</span></span>
 
-<span data-ttu-id="d82ff-105">Um eine Sicherung und Wiederherstellung-Lösung für SharePoint, müssen Sie verstehen, wie VSS funktioniert und mit der SharePoint-Benutzeroberfläche.</span><span class="sxs-lookup"><span data-stu-id="d82ff-105">To program a backup and restore solution for SharePoint, you need to understand how VSS works and the SharePoint interface with it.</span></span>
+<span data-ttu-id="d8472-105">Um eine Sicherung und Wiederherstellung-Lösung für SharePoint, müssen Sie verstehen, wie VSS funktioniert und mit der SharePoint-Benutzeroberfläche.</span><span class="sxs-lookup"><span data-stu-id="d8472-105">To program a backup and restore solution for SharePoint, you need to understand how VSS works and the SharePoint interface with it.</span></span>
   
     
     
 
-<span data-ttu-id="d82ff-106">**In Tabelle 1. Kernkonzepte für das Sichern und Wiederherstellen von SharePoint mit den Volumeschattenkopie-Dienst**</span><span class="sxs-lookup"><span data-stu-id="d82ff-106">**Table 1. Core concepts for backing up and restoring SharePoint with the Volume Shadow Copy Service**</span></span>
+<span data-ttu-id="d8472-106">**In Tabelle 1. Kernkonzepte für das Sichern und Wiederherstellen von SharePoint mit den Volumeschattenkopie-Dienst**</span><span class="sxs-lookup"><span data-stu-id="d8472-106">**Table 1. Core concepts for backing up and restoring SharePoint with the Volume Shadow Copy Service**</span></span>
 
 
-|<span data-ttu-id="d82ff-107">**Artikel**</span><span class="sxs-lookup"><span data-stu-id="d82ff-107">**Article**</span></span>|<span data-ttu-id="d82ff-108">**Beschreibung**</span><span class="sxs-lookup"><span data-stu-id="d82ff-108">**Description**</span></span>|
+|<span data-ttu-id="d8472-107">**Artikel**</span><span class="sxs-lookup"><span data-stu-id="d8472-107">**Article**</span></span>|<span data-ttu-id="d8472-108">**Beschreibung**</span><span class="sxs-lookup"><span data-stu-id="d8472-108">**Description**</span></span>|
 |:-----|:-----|
-| <span data-ttu-id="d82ff-109">[Volumeschattenkopie-Dienst](http://msdn.microsoft.com/de-DE/library/windows/desktop/bb968832%28v=vs.85%29.aspx) und seine untergeordneten Artikel.</span><span class="sxs-lookup"><span data-stu-id="d82ff-109">[Volume Shadow Copy Service](http://msdn.microsoft.com/de-DE/library/windows/desktop/bb968832%28v=vs.85%29.aspx) and its child articles.</span></span> <br/> |<span data-ttu-id="d82ff-110">Informationen Sie zu den VSS und zum Programmieren dafür.</span><span class="sxs-lookup"><span data-stu-id="d82ff-110">Learn about the VSS and how to program for it.</span></span>  <br/> |
-| <span data-ttu-id="d82ff-111">[SharePoint Foundation und der Volumeschattenkopie-Dienst](http://msdn.microsoft.com/library/adae101a-078e-40b9-9cfa-db2cfb10270a%28Office.15%29.aspx) und seine untergeordneten Artikel.</span><span class="sxs-lookup"><span data-stu-id="d82ff-111">[Windows SharePoint Services and the Volume Shadow Copy Service](http://msdn.microsoft.com/library/adae101a-078e-40b9-9cfa-db2cfb10270a%28Office.15%29.aspx) and its child articles.</span></span> <br/> |<span data-ttu-id="d82ff-112">Allgemeine Informationen und Vorgehensweisen schrittweise Verfahren zum Sichern und Wiederherstellen von SharePoint Daten mit der VSS und der SharePoint-Benutzeroberfläche mit VSS an.</span><span class="sxs-lookup"><span data-stu-id="d82ff-112">Overview information and step-by-step, how-to procedures for backing up and restoring SharePoint data using the VSS and the SharePoint interface with VSS.</span></span>  <br/> |
+| <span data-ttu-id="d8472-109">[Volumeschattenkopie-Dienst](http://msdn.microsoft.com/de-DE/library/windows/desktop/bb968832%28v=vs.85%29.aspx) und seine untergeordneten Artikel.</span><span class="sxs-lookup"><span data-stu-id="d8472-109">[Volume Shadow Copy Service](http://msdn.microsoft.com/de-DE/library/windows/desktop/bb968832%28v=vs.85%29.aspx) and its child articles.</span></span> <br/> |<span data-ttu-id="d8472-110">Informationen Sie zu den VSS und zum Programmieren dafür.</span><span class="sxs-lookup"><span data-stu-id="d8472-110">Learn about the VSS and how to program for it.</span></span>  <br/> |
+| <span data-ttu-id="d8472-111">[SharePoint Foundation und der Volumeschattenkopie-Dienst](http://msdn.microsoft.com/library/adae101a-078e-40b9-9cfa-db2cfb10270a%28Office.15%29.aspx) und seine untergeordneten Artikel.</span><span class="sxs-lookup"><span data-stu-id="d8472-111">[Windows SharePoint Services and the Volume Shadow Copy Service](http://msdn.microsoft.com/library/adae101a-078e-40b9-9cfa-db2cfb10270a%28Office.15%29.aspx) and its child articles.</span></span> <br/> |<span data-ttu-id="d8472-112">Allgemeine Informationen und Vorgehensweisen schrittweise Verfahren zum Sichern und Wiederherstellen von SharePoint Daten mit der VSS und der SharePoint-Benutzeroberfläche mit VSS an.</span><span class="sxs-lookup"><span data-stu-id="d8472-112">Overview information and step-by-step, how-to procedures for backing up and restoring SharePoint data using the VSS and the SharePoint interface with VSS.</span></span>  <br/> |
    
 
-## <a name="use-the-volume-shadow-copy-service-to-back-up-and-restore-a-search-service-application"></a><span data-ttu-id="d82ff-113">Verwenden Sie den Volumeschattenkopie-Dienst zum Sichern und Wiederherstellen einer Suchdienstanwendung</span><span class="sxs-lookup"><span data-stu-id="d82ff-113">Use the Volume Shadow Copy Service to back up and restore a search service application</span></span>
-<span data-ttu-id="d82ff-114"><a name="Use"> </a></span><span class="sxs-lookup"><span data-stu-id="d82ff-114"><a name="Use"> </a></span></span>
+## <a name="use-the-volume-shadow-copy-service-to-back-up-and-restore-a-search-service-application"></a><span data-ttu-id="d8472-113">Verwenden Sie den Volumeschattenkopie-Dienst zum Sichern und Wiederherstellen einer Suchdienstanwendung</span><span class="sxs-lookup"><span data-stu-id="d8472-113">Use the Volume Shadow Copy Service to back up and restore a search service application</span></span>
+<span data-ttu-id="d8472-114"><a name="Use"> </a></span><span class="sxs-lookup"><span data-stu-id="d8472-114"><a name="Use"> </a></span></span>
 
-<span data-ttu-id="d82ff-p101">Die folgenden Verfahren dienen zur Unterstützung der Entwickler Erstellen einer Sichern/Wiederherstellen der Anwendung, die die VSS verwendet Wenn Sie die IT-Experten finden Anweisungen zum Sichern oder Wiederherstellen einer Suchdienstanwendung SharePoint haben, finden Sie unter  [Sichern und Wiederherstellen von SharePoint](http://technet.microsoft.com/de-DE/library/ee662536.aspx).</span><span class="sxs-lookup"><span data-stu-id="d82ff-p101">The following procedures are intended to help developers with creating a backup/restore application that uses the VSS. If you are an IT professional looking for instructions for how to back up or restore a SharePoint search service application, see  [Backup and restore SharePoint](http://technet.microsoft.com/de-DE/library/ee662536.aspx).</span></span> 
+<span data-ttu-id="d8472-p101">Die folgenden Verfahren dienen zur Unterstützung der Entwickler Erstellen einer Sichern/Wiederherstellen der Anwendung, die die VSS verwendet Wenn Sie die IT-Experten finden Anweisungen zum Sichern oder Wiederherstellen einer Suchdienstanwendung SharePoint haben, finden Sie unter  [Sichern und Wiederherstellen von SharePoint](http://technet.microsoft.com/de-DE/library/ee662536.aspx).</span><span class="sxs-lookup"><span data-stu-id="d8472-p101">The following procedures are intended to help developers with creating a backup/restore application that uses the VSS. If you are an IT professional looking for instructions for how to back up or restore a SharePoint search service application, see  [Backup and restore SharePoint](http://technet.microsoft.com/de-DE/library/ee662536.aspx).</span></span> 
   
     
     
- <span data-ttu-id="d82ff-p102">**Erforderliche:** Herunterladen und Installieren von [Microsoft Windows SDK für Windows 7 und .NET Framework 4](http://www.microsoft.com/en-us/download/details.aspx?id=8279) mit dem Server mit der Suchdienstanwendung (SSA) und auf jedem Server mit einer Suchkomponente Index. Unter anderem wird dies `C:\\Program Files\\Microsoft SDKs\\Windows\\v7.1\\Bin\\x64\\vsstools`vshadow.exe und betest.exe installieren.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p102">**Prerequisite:** Download and install [Microsoft Windows SDK for Windows 7 and .NET Framework 4](http://www.microsoft.com/en-us/download/details.aspx?id=8279) to the server with the search service application (SSA) and to every server with a search index component. Among other things, this will install vshadow.exe and betest.exe to `C:\\Program Files\\Microsoft SDKs\\Windows\\v7.1\\Bin\\x64\\vsstools`.</span></span>
-  
-    
-    
-
-> <span data-ttu-id="d82ff-119">**Tipp:** Ausführliche Informationen zu den in diesem Artikel erwähnten Windows PowerShell-Cmdlets finden Sie unter  [Windows PowerShell für SharePoint (Referenz)](http://technet.microsoft.com/de-DE/library/ee890108.aspx).</span><span class="sxs-lookup"><span data-stu-id="d82ff-119">**Tip:** For details about the Windows PowerShell cmdlets mentioned in this article, see  [Windows PowerShell for SharePoint reference](http://technet.microsoft.com/de-DE/library/ee890108.aspx).</span></span> 
+ <span data-ttu-id="d8472-p102">**Erforderliche:** Herunterladen und Installieren von [Microsoft Windows SDK für Windows 7 und .NET Framework 4](http://www.microsoft.com/en-us/download/details.aspx?id=8279) mit dem Server mit der Suchdienstanwendung (SSA) und auf jedem Server mit einer Suchkomponente Index. Unter anderem wird dies `C:\\Program Files\\Microsoft SDKs\\Windows\\v7.1\\Bin\\x64\\vsstools`vshadow.exe und betest.exe installieren.</span><span class="sxs-lookup"><span data-stu-id="d8472-p102">**Prerequisite:** Download and install [Microsoft Windows SDK for Windows 7 and .NET Framework 4](http://www.microsoft.com/en-us/download/details.aspx?id=8279) to the server with the search service application (SSA) and to every server with a search index component. Among other things, this will install vshadow.exe and betest.exe to `C:\\Program Files\\Microsoft SDKs\\Windows\\v7.1\\Bin\\x64\\vsstools`.</span></span>
   
     
     
 
-
-### <a name="to-register-the-sharepoint-vss-writer-and-prepare-the-servers-for-backing-up-and-restoring"></a><span data-ttu-id="d82ff-120">So registrieren Sie den SharePoint VSS Writer und bereiten die Server für das Sichern und Wiederherstellen vor</span><span class="sxs-lookup"><span data-stu-id="d82ff-120">To register the SharePoint VSS Writer and prepare the servers for backing up and restoring</span></span>
-
-
-- <span data-ttu-id="d82ff-121">Registrieren Sie die SharePoint-VSS-Writer mit beiden Methoden:</span><span class="sxs-lookup"><span data-stu-id="d82ff-121">Register the SharePoint VSS Writer with either of these methods:</span></span>
+> <span data-ttu-id="d8472-119">**Tipp:** Ausführliche Informationen zu den in diesem Artikel erwähnten Windows PowerShell-Cmdlets finden Sie unter  [Windows PowerShell für SharePoint (Referenz)](http://technet.microsoft.com/de-DE/library/ee890108.aspx).</span><span class="sxs-lookup"><span data-stu-id="d8472-119">**Tip:** For details about the Windows PowerShell cmdlets mentioned in this article, see  [Windows PowerShell for SharePoint reference](http://technet.microsoft.com/de-DE/library/ee890108.aspx).</span></span> 
+  
     
-  - <span data-ttu-id="d82ff-122">Öffnen Sie **Dienste** in **Verwaltung**, und starten Sie den **SharePoint VSS Writer**-Dienst.</span><span class="sxs-lookup"><span data-stu-id="d82ff-122">Open **Services** in **Administrative Tools** and start the **SharePoint VSS Writer** service.</span></span>
+    
+
+
+### <a name="to-register-the-sharepoint-vss-writer-and-prepare-the-servers-for-backing-up-and-restoring"></a><span data-ttu-id="d8472-120">So registrieren Sie den SharePoint VSS Writer und bereiten die Server für das Sichern und Wiederherstellen vor</span><span class="sxs-lookup"><span data-stu-id="d8472-120">To register the SharePoint VSS Writer and prepare the servers for backing up and restoring</span></span>
+
+
+- <span data-ttu-id="d8472-121">Registrieren Sie die SharePoint-VSS-Writer mit beiden Methoden:</span><span class="sxs-lookup"><span data-stu-id="d8472-121">Register the SharePoint VSS Writer with either of these methods:</span></span>
+    
+  - <span data-ttu-id="d8472-122">Öffnen Sie **Dienste** in **Verwaltung**, und starten Sie den **SharePoint VSS Writer**-Dienst.</span><span class="sxs-lookup"><span data-stu-id="d8472-122">Open **Services** in **Administrative Tools** and start the **SharePoint VSS Writer** service.</span></span>
     
   
-  - <span data-ttu-id="d82ff-p103">Öffnen Sie eine Befehlskonsole und führen Sie  `stsadm.exe -o registerwsswriter` aus. Dienstprogramm Stsadm befindet sich im %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\ BIN. Stellen Sie sicher, dass der Dienst **Dienste** in **Verwaltung** ausgeführt wird.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p103">Open a command console and execute  `stsadm.exe -o registerwsswriter`. The stsadm utility is found in %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\BIN. Verify that the service is running in **Services** in **Administrative Tools**.</span></span>
+  - <span data-ttu-id="d8472-p103">Öffnen Sie eine Befehlskonsole und führen Sie  `stsadm.exe -o registerwsswriter` aus. Dienstprogramm Stsadm befindet sich im %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\ BIN. Stellen Sie sicher, dass der Dienst **Dienste** in **Verwaltung** ausgeführt wird.</span><span class="sxs-lookup"><span data-stu-id="d8472-p103">Open a command console and execute  `stsadm.exe -o registerwsswriter`. The stsadm utility is found in %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\BIN. Verify that the service is running in **Services** in **Administrative Tools**.</span></span>
     
   
 
-### <a name="to-back-up-a-sharepoint-search-service-application-using-vss"></a><span data-ttu-id="d82ff-126">So sichern Sie eine SharePoint-Suchdienstanwendung mit VSS</span><span class="sxs-lookup"><span data-stu-id="d82ff-126">To back up a SharePoint search service application using VSS</span></span>
+### <a name="to-back-up-a-sharepoint-search-service-application-using-vss"></a><span data-ttu-id="d8472-126">So sichern Sie eine SharePoint-Suchdienstanwendung mit VSS</span><span class="sxs-lookup"><span data-stu-id="d8472-126">To back up a SharePoint search service application using VSS</span></span>
 
 
-1. <span data-ttu-id="d82ff-p104">Rufen Sie VSS-Metadaten  `vshadow.exe -wm > writers.txt` an der Befehlszeile ausführen, auf jedem Server, die eine Indexkomponente enthält und auch auf dem Computer, auf der SQL Server ausgeführt wird, wo sich die Suchdatenbanken befinden. Die erstellte Datei writers.txt enthält alle VSS Writer-Server zugeordnet. Verwenden Sie diese Datei in den nächsten Schritten, um Manifestdateien für die Suchdienstanwendung (SSA) und den Suchindex zu generieren.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p104">Get VSS metadata by executing  `vshadow.exe -wm > writers.txt` at a command line on each server that contains an index component and also on the computer that is running SQL Server where the search databases are located. The writers.txt file that is created lists all VSS writers associated with the server. You use this file in the next steps to generate manifest files for the search service application (SSA) and search index.</span></span>
+1. <span data-ttu-id="d8472-p104">Rufen Sie VSS-Metadaten  `vshadow.exe -wm > writers.txt` an der Befehlszeile ausführen, auf jedem Server, die eine Indexkomponente enthält und auch auf dem Computer, auf der SQL Server ausgeführt wird, wo sich die Suchdatenbanken befinden. Die erstellte Datei writers.txt enthält alle VSS Writer-Server zugeordnet. Verwenden Sie diese Datei in den nächsten Schritten, um Manifestdateien für die Suchdienstanwendung (SSA) und den Suchindex zu generieren.</span><span class="sxs-lookup"><span data-stu-id="d8472-p104">Get VSS metadata by executing  `vshadow.exe -wm > writers.txt` at a command line on each server that contains an index component and also on the computer that is running SQL Server where the search databases are located. The writers.txt file that is created lists all VSS writers associated with the server. You use this file in the next steps to generate manifest files for the search service application (SSA) and search index.</span></span>
     
   
-2. <span data-ttu-id="d82ff-130">Führen Sie diese Schritte zum Erstellen eines Manifests für die SSA auf dem Computer, auf dem SQL Server ausgeführt wird, wo sich die Suchdatenbanken befinden.</span><span class="sxs-lookup"><span data-stu-id="d82ff-130">Follow these steps to create a manifest for the SSA on the computer that is running SQL Server where the search databases are located.</span></span>
+2. <span data-ttu-id="d8472-130">Führen Sie diese Schritte zum Erstellen eines Manifests für die SSA auf dem Computer, auf dem SQL Server ausgeführt wird, wo sich die Suchdatenbanken befinden.</span><span class="sxs-lookup"><span data-stu-id="d8472-130">Follow these steps to create a manifest for the SSA on the computer that is running SQL Server where the search databases are located.</span></span>
     
-1. <span data-ttu-id="d82ff-131">Erstellen Sie eine XML-Datei, und fügen Sie die folgenden:</span><span class="sxs-lookup"><span data-stu-id="d82ff-131">Create an XML file and copy the following into it:</span></span> 
+1. <span data-ttu-id="d8472-131">Erstellen Sie eine XML-Datei, und fügen Sie die folgenden:</span><span class="sxs-lookup"><span data-stu-id="d8472-131">Create an XML file and copy the following into it:</span></span> 
     
 ```XML
   
@@ -88,68 +88,69 @@ ms.lasthandoff: 11/15/2017
 
 ```
 
-2. <span data-ttu-id="d82ff-p105">Ersetzen Sie die 10 Platzhalter in der Datei durch die entsprechenden Werte aus der writer.txt-Datei, die Sie im ersten Schritt generiert. Anhand der folgenden Tabelle als Leitfaden.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p105">Replace the 10 placeholders in this file with appropriate values from the writer.txt file that you generated in the first step. Use the following table as a guide.</span></span> 
+2. <span data-ttu-id="d8472-p105">Ersetzen Sie die 10 Platzhalter in der Datei durch die entsprechenden Werte aus der writer.txt-Datei, die Sie im ersten Schritt generiert. Anhand der folgenden Tabelle als Leitfaden.</span><span class="sxs-lookup"><span data-stu-id="d8472-p105">Replace the 10 placeholders in this file with appropriate values from the writer.txt file that you generated in the first step. Use the following table as a guide.</span></span> 
     
-    > <span data-ttu-id="d82ff-134">**Hinweis:** In der rechten Spalte ist  _SSA_ selbst ein Platzhalter für den Namen der Suchdienstanwendung.</span><span class="sxs-lookup"><span data-stu-id="d82ff-134">**Note:** In the right-hand column,  _SSA_ is itself a placeholder for the name of the Search Service Application.</span></span>
+    > [!NOTE]
+    > <span data-ttu-id="d8472-134">In der rechten Spalte ist _SSA_ selbst ein Platzhalter für den Namen der Suchdienstanwendung.</span><span class="sxs-lookup"><span data-stu-id="d8472-134">_Note:_ In the right-hand column,  SSA is itself a placeholder for the name of the Search Service Application.</span></span>
 
-   <span data-ttu-id="d82ff-135">**Tabelle 2. Platzhalter für SSA-Manifestdatei und Werte aus „writers.txt“**</span><span class="sxs-lookup"><span data-stu-id="d82ff-135">**Table 2. SSA manifest file placeholders and values from writers.txt**</span></span>
+   <span data-ttu-id="d8472-135">**Tabelle 2. Platzhalter für SSA-Manifestdatei und Werte aus „writers.txt“**</span><span class="sxs-lookup"><span data-stu-id="d8472-135">**Table 2. SSA manifest file placeholders and values from writers.txt**</span></span>
 
 
-|<span data-ttu-id="d82ff-136">**Platzhalter**</span><span class="sxs-lookup"><span data-stu-id="d82ff-136">**Placeholder**</span></span>|<span data-ttu-id="d82ff-137">**Wo befindet sich die Informationen im writers.txt.**</span><span class="sxs-lookup"><span data-stu-id="d82ff-137">**Where the information is located in writers.txt.**</span></span>|
-|:-----|:-----|
-| <span data-ttu-id="d82ff-138">_SharePoint Services Writer ID_</span><span class="sxs-lookup"><span data-stu-id="d82ff-138">_SharePoint Services Writer ID_</span></span> <br/> |<span data-ttu-id="d82ff-139">Die WriterId-GUID angezeigt, unter dem Eintrag "SharePoint Services-Writer"</span><span class="sxs-lookup"><span data-stu-id="d82ff-139">The WriterId GUID listed under the "SharePoint Services Writer" entry</span></span>  <br/> |
-| <span data-ttu-id="d82ff-140">_PathSSA_</span><span class="sxs-lookup"><span data-stu-id="d82ff-140">_PathSSA_</span></span> <br/> |<span data-ttu-id="d82ff-141">Der logische Path-Eintrag mit dem Namen der Suchdienstanwendung in den Eintrag "SharePoint Services-Writer" aufgeführt</span><span class="sxs-lookup"><span data-stu-id="d82ff-141">The logical path entry listed with the name of the Search Service Application in the "SharePoint Services Writer" entry</span></span>  <br/> |
-| <span data-ttu-id="d82ff-142">_PathC_</span><span class="sxs-lookup"><span data-stu-id="d82ff-142">_PathC_</span></span> <br/> |<span data-ttu-id="d82ff-143">Der logische Path-Eintrag aufgelistet, für die Komponente mit dem Namen" _SSA__CrawlStore" im "SharePoint Services-Writer"-Eintrag</span><span class="sxs-lookup"><span data-stu-id="d82ff-143">The logical path entry listed for the component named " _SSA__CrawlStore" in the "SharePoint Services Writer" entry</span></span>  <br/> |
-| <span data-ttu-id="d82ff-144">_PathA_</span><span class="sxs-lookup"><span data-stu-id="d82ff-144">_PathA_</span></span> <br/> |<span data-ttu-id="d82ff-145">Der logische Path-Eintrag aufgelistet, für die Komponente mit dem Namen" _SSA_ _AnalyticsReportingStore" im "SharePoint Services-Writer"-Eintrag</span><span class="sxs-lookup"><span data-stu-id="d82ff-145">The logical path entry listed for the component named " _SSA_ _AnalyticsReportingStore" in the "SharePoint Services Writer" entry</span></span> <br/> |
-| <span data-ttu-id="d82ff-146">_PathL_</span><span class="sxs-lookup"><span data-stu-id="d82ff-146">_PathL_</span></span> <br/> |<span data-ttu-id="d82ff-147">Der logische Path-Eintrag aufgelistet, für die Komponente mit dem Namen" _SSA__LinksStore" im "SharePoint Services-Writer"-Eintrag</span><span class="sxs-lookup"><span data-stu-id="d82ff-147">The logical path entry listed for the component named " _SSA__LinksStore" in the "SharePoint Services Writer" entry</span></span>  <br/> |
-| <span data-ttu-id="d82ff-148">_SQL Server Writer ID_</span><span class="sxs-lookup"><span data-stu-id="d82ff-148">_SQL Server Writer ID_</span></span> <br/> |<span data-ttu-id="d82ff-149">Die WriterId-GUID angezeigt, unter dem Eintrag "SqlServerWriter"</span><span class="sxs-lookup"><span data-stu-id="d82ff-149">The WriterId GUID listed under the "SqlServerWriter" entry</span></span>  <br/> |
-| <span data-ttu-id="d82ff-150">_PathDbSSA_</span><span class="sxs-lookup"><span data-stu-id="d82ff-150">_PathDbSSA_</span></span> <br/> |<span data-ttu-id="d82ff-151">Der logische Path-Eintrag für die Komponente mit dem Namen der Suchdienstanwendung in der Eintrag "SqlServerWriter" aufgeführt</span><span class="sxs-lookup"><span data-stu-id="d82ff-151">The logical path entry listed for the component with the name of the Search Service Application in the "SqlServerWriter" entry</span></span>  <br/> |
-| <span data-ttu-id="d82ff-152">_PathDbC_</span><span class="sxs-lookup"><span data-stu-id="d82ff-152">_PathDbC_</span></span> <br/> |<span data-ttu-id="d82ff-153">Der logische Path-Eintrag für die Komponente mit dem Namen" _SSA__CrawlStore" in den Eintrag "SqlServerWriter" aufgeführt</span><span class="sxs-lookup"><span data-stu-id="d82ff-153">The logical path entry listed for the component named " _SSA__CrawlStore" in the "SqlServerWriter" entry</span></span>  <br/> |
-| <span data-ttu-id="d82ff-154">_PathDbA_</span><span class="sxs-lookup"><span data-stu-id="d82ff-154">_PathDbA_</span></span> <br/> |<span data-ttu-id="d82ff-155">Der logische Path-Eintrag für die Komponente mit dem Namen" _SSA__AnalyticsReportingStore" in den Eintrag "SqlServerWriter" aufgeführt</span><span class="sxs-lookup"><span data-stu-id="d82ff-155">The logical path entry listed for the component named " _SSA__AnalyticsReportingStore" in the "SqlServerWriter" entry</span></span>  <br/> |
-| <span data-ttu-id="d82ff-156">_PathDbL_</span><span class="sxs-lookup"><span data-stu-id="d82ff-156">_PathDbL_</span></span> <br/> |<span data-ttu-id="d82ff-157">Der logische Path-Eintrag für die Komponente mit dem Namen" _SSA__LinksStore" in den Eintrag "SqlServerWriter" aufgeführt</span><span class="sxs-lookup"><span data-stu-id="d82ff-157">The logical path entry listed for the component named " _SSA__LinksStore" in the "SqlServerWriter" entry</span></span>  <br/> |
+  |<span data-ttu-id="d8472-136">**Platzhalter**</span><span class="sxs-lookup"><span data-stu-id="d8472-136">**Placeholder**</span></span>|<span data-ttu-id="d8472-137">**Wo befindet sich die Informationen im writers.txt.**</span><span class="sxs-lookup"><span data-stu-id="d8472-137">**Where the information is located in writers.txt.**</span></span>|
+  |:-----|:-----|
+  | <span data-ttu-id="d8472-138">_SharePoint Services Writer ID_</span><span class="sxs-lookup"><span data-stu-id="d8472-138">_SharePoint Services Writer ID_</span></span> <br/> |<span data-ttu-id="d8472-139">Die WriterId-GUID angezeigt, unter dem Eintrag "SharePoint Services-Writer"</span><span class="sxs-lookup"><span data-stu-id="d8472-139">The WriterId GUID listed under the "SharePoint Services Writer" entry</span></span>  <br/> |
+  | <span data-ttu-id="d8472-140">_PathSSA_</span><span class="sxs-lookup"><span data-stu-id="d8472-140">_PathSSA_</span></span> <br/> |<span data-ttu-id="d8472-141">Der logische Path-Eintrag mit dem Namen der Suchdienstanwendung in den Eintrag "SharePoint Services-Writer" aufgeführt</span><span class="sxs-lookup"><span data-stu-id="d8472-141">The logical path entry listed with the name of the Search Service Application in the "SharePoint Services Writer" entry</span></span>  <br/> |
+  | <span data-ttu-id="d8472-142">_PathC_</span><span class="sxs-lookup"><span data-stu-id="d8472-142">_PathC_</span></span> <br/> |<span data-ttu-id="d8472-143">Der logische Path-Eintrag aufgelistet, für die Komponente mit dem Namen" _SSA__CrawlStore" im "SharePoint Services-Writer"-Eintrag</span><span class="sxs-lookup"><span data-stu-id="d8472-143">The logical path entry listed for the component named " _SSA__CrawlStore" in the "SharePoint Services Writer" entry</span></span>  <br/> |
+  | <span data-ttu-id="d8472-144">_PathA_</span><span class="sxs-lookup"><span data-stu-id="d8472-144">_PathA_</span></span> <br/> |<span data-ttu-id="d8472-145">Der logische Path-Eintrag aufgelistet, für die Komponente mit dem Namen" _SSA_ _AnalyticsReportingStore" im "SharePoint Services-Writer"-Eintrag</span><span class="sxs-lookup"><span data-stu-id="d8472-145">The logical path entry listed for the component named " _SSA_ _AnalyticsReportingStore" in the "SharePoint Services Writer" entry</span></span> <br/> |
+  | <span data-ttu-id="d8472-146">_PathL_</span><span class="sxs-lookup"><span data-stu-id="d8472-146">_PathL_</span></span> <br/> |<span data-ttu-id="d8472-147">Der logische Path-Eintrag aufgelistet, für die Komponente mit dem Namen" _SSA__LinksStore" im "SharePoint Services-Writer"-Eintrag</span><span class="sxs-lookup"><span data-stu-id="d8472-147">The logical path entry listed for the component named " _SSA__LinksStore" in the "SharePoint Services Writer" entry</span></span>  <br/> |
+  | <span data-ttu-id="d8472-148">_SQL Server Writer ID_</span><span class="sxs-lookup"><span data-stu-id="d8472-148">_SQL Server Writer ID_</span></span> <br/> |<span data-ttu-id="d8472-149">Die WriterId-GUID angezeigt, unter dem Eintrag "SqlServerWriter"</span><span class="sxs-lookup"><span data-stu-id="d8472-149">The WriterId GUID listed under the "SqlServerWriter" entry</span></span>  <br/> |
+  | <span data-ttu-id="d8472-150">_PathDbSSA_</span><span class="sxs-lookup"><span data-stu-id="d8472-150">_PathDbSSA_</span></span> <br/> |<span data-ttu-id="d8472-151">Der logische Path-Eintrag für die Komponente mit dem Namen der Suchdienstanwendung in der Eintrag "SqlServerWriter" aufgeführt</span><span class="sxs-lookup"><span data-stu-id="d8472-151">The logical path entry listed for the component with the name of the Search Service Application in the "SqlServerWriter" entry</span></span>  <br/> |
+  | <span data-ttu-id="d8472-152">_PathDbC_</span><span class="sxs-lookup"><span data-stu-id="d8472-152">_PathDbC_</span></span> <br/> |<span data-ttu-id="d8472-153">Der logische Path-Eintrag für die Komponente mit dem Namen" _SSA__CrawlStore" in den Eintrag "SqlServerWriter" aufgeführt</span><span class="sxs-lookup"><span data-stu-id="d8472-153">The logical path entry listed for the component named " _SSA__CrawlStore" in the "SqlServerWriter" entry</span></span>  <br/> |
+  | <span data-ttu-id="d8472-154">_PathDbA_</span><span class="sxs-lookup"><span data-stu-id="d8472-154">_PathDbA_</span></span> <br/> |<span data-ttu-id="d8472-155">Der logische Path-Eintrag für die Komponente mit dem Namen" _SSA__AnalyticsReportingStore" in den Eintrag "SqlServerWriter" aufgeführt</span><span class="sxs-lookup"><span data-stu-id="d8472-155">The logical path entry listed for the component named " _SSA__AnalyticsReportingStore" in the "SqlServerWriter" entry</span></span>  <br/> |
+  | <span data-ttu-id="d8472-156">_PathDbL_</span><span class="sxs-lookup"><span data-stu-id="d8472-156">_PathDbL_</span></span> <br/> |<span data-ttu-id="d8472-157">Der logische Path-Eintrag für die Komponente mit dem Namen" _SSA__LinksStore" in den Eintrag "SqlServerWriter" aufgeführt</span><span class="sxs-lookup"><span data-stu-id="d8472-157">The logical path entry listed for the component named " _SSA__LinksStore" in the "SqlServerWriter" entry</span></span>  <br/> |
    
 
-    This is the SSA manifest file. For an example of a completed SSA manifest file, see  [Example manifest files](#Examples).
+    <span data-ttu-id="d8472-158">Dies ist die SSA-Manifestdatei.</span><span class="sxs-lookup"><span data-stu-id="d8472-158">This is the SSA manifest file.</span></span> <span data-ttu-id="d8472-159">Ein Beispiel für eine fertige SSA-Manifestdatei finden Sie unter [Beispiele für Manifestdateien](#Examples).</span><span class="sxs-lookup"><span data-stu-id="d8472-159">For an example of a completed SSA manifest file, see  [Example manifest files](#Examples).</span></span>
     
   
-3. <span data-ttu-id="d82ff-p106">Befolgen Sie diese Schritte zum Erstellen eines Manifests für die Suche Indexdateien. Wiederholen Sie diese Schritte auf jedem Server, der eine Indexkomponente hat.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p106">Follow these steps to create a manifest for the search index files. Repeat these steps on every server that has an index component.</span></span>
+3. <span data-ttu-id="d8472-p107">Befolgen Sie diese Schritte zum Erstellen eines Manifests für die Suche Indexdateien. Wiederholen Sie diese Schritte auf jedem Server, der eine Indexkomponente hat.</span><span class="sxs-lookup"><span data-stu-id="d8472-p107">Follow these steps to create a manifest for the search index files. Repeat these steps on every server that has an index component.</span></span>
     
-1. <span data-ttu-id="d82ff-160">Erstellen Sie eine XML-Datei, und fügen Sie die folgenden:</span><span class="sxs-lookup"><span data-stu-id="d82ff-160">Create an XML file and copy the following into it:</span></span>
+1. <span data-ttu-id="d8472-162">Erstellen Sie eine XML-Datei, und fügen Sie die folgenden:</span><span class="sxs-lookup"><span data-stu-id="d8472-162">Create an XML file and copy the following into it:</span></span>
     
-```XML
-  
-<BETest>
-   <Writer writerid="SharePoint Services Writer ID">
-      <Component logicalPath="PathIndex" componentName="NameIndex" />
-   </Writer>
-   <Writer writerid="OSearch15 Writer ID">
-      <Component logicalPath="PathOSearch15" componentName="IndexComponentGroup" />
-   </Writer>    
-</BETest>
-```
+    ```XML
+      
+    <BETest>
+      <Writer writerid="SharePoint Services Writer ID">
+          <Component logicalPath="PathIndex" componentName="NameIndex" />
+      </Writer>
+      <Writer writerid="OSearch15 Writer ID">
+          <Component logicalPath="PathOSearch15" componentName="IndexComponentGroup" />
+      </Writer>    
+    </BETest>
+    ```
 
-2. <span data-ttu-id="d82ff-p107">Ersetzen Sie die sechs Platzhalter in der Datei durch die entsprechenden Werte aus der writer.txt-Datei, die Sie im ersten Schritt generiert. Anhand der folgenden Tabelle als Leitfaden.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p107">Replace the six placeholders in this file with appropriate values from the writer.txt file that you generated in the first step. Use the following table as a guide.</span></span>
+2. <span data-ttu-id="d8472-p108">Ersetzen Sie die sechs Platzhalter in der Datei durch die entsprechenden Werte aus der writer.txt-Datei, die Sie im ersten Schritt generiert. Anhand der folgenden Tabelle als Leitfaden.</span><span class="sxs-lookup"><span data-stu-id="d8472-p108">Replace the six placeholders in this file with appropriate values from the writer.txt file that you generated in the first step. Use the following table as a guide.</span></span>
     
-   <span data-ttu-id="d82ff-163">**Tabelle 3. Search Index Manifestdatei Platzhalter und Werten aus writer.txt**</span><span class="sxs-lookup"><span data-stu-id="d82ff-163">**Table 3. Search index manifest file placeholders and values from writer.txt**</span></span>
+   <span data-ttu-id="d8472-165">**Tabelle 3. Search Index Manifestdatei Platzhalter und Werten aus writer.txt**</span><span class="sxs-lookup"><span data-stu-id="d8472-165">**Table 3. Search index manifest file placeholders and values from writer.txt**</span></span>
 
 
-|<span data-ttu-id="d82ff-164">**Platzhalter**</span><span class="sxs-lookup"><span data-stu-id="d82ff-164">**Placeholder**</span></span>|<span data-ttu-id="d82ff-165">**Wo die Informationen im writers.txt befindet**</span><span class="sxs-lookup"><span data-stu-id="d82ff-165">**Where the information is located in writers.txt**</span></span>|
-|:-----|:-----|
-| <span data-ttu-id="d82ff-166">_SharePoint Services Writer ID_</span><span class="sxs-lookup"><span data-stu-id="d82ff-166">_SharePoint Services Writer ID_</span></span> <br/> |<span data-ttu-id="d82ff-167">Die WriterId-GUID angezeigt, unter dem Eintrag "SharePoint Services-Writer"</span><span class="sxs-lookup"><span data-stu-id="d82ff-167">The WriterId GUID listed under the "SharePoint Services Writer" entry</span></span>  <br/> |
-| <span data-ttu-id="d82ff-168">_PathIndex_</span><span class="sxs-lookup"><span data-stu-id="d82ff-168">_PathIndex_</span></span> <br/> |<span data-ttu-id="d82ff-169">Der logische Path-Eintrag aufgelistet, die für die Komponente, deren Namen mit "IndexComponentGroup" in den Eintrag "SharePoint Services-Writer" beginnt</span><span class="sxs-lookup"><span data-stu-id="d82ff-169">The logical path entry listed for the component whose name starts with "IndexComponentGroup" in the "SharePoint Services Writer" entry</span></span>  <br/> |
-| <span data-ttu-id="d82ff-170">_NameIndex_</span><span class="sxs-lookup"><span data-stu-id="d82ff-170">_NameIndex_</span></span> <br/> |<span data-ttu-id="d82ff-171">Den Eintrag aufgeführt, die für die Komponente, deren Namen mit "IndexComponentGroup" in den Eintrag "SharePoint Services-Writer" beginnt</span><span class="sxs-lookup"><span data-stu-id="d82ff-171">The name entry listed for the component whose name starts with "IndexComponentGroup" in the "SharePoint Services Writer" entry</span></span>  <br/> |
-| <span data-ttu-id="d82ff-172">_OSearch15 Writer ID_</span><span class="sxs-lookup"><span data-stu-id="d82ff-172">_OSearch15 Writer ID_</span></span> <br/> |<span data-ttu-id="d82ff-173">Die WriterId-GUID angezeigt, unter dem Eintrag "OSearch15 VSS Writer"</span><span class="sxs-lookup"><span data-stu-id="d82ff-173">The WriterId GUID listed under the "OSearch15 VSS Writer" entry</span></span>  <br/> |
-| <span data-ttu-id="d82ff-174">_PathOSearch15_</span><span class="sxs-lookup"><span data-stu-id="d82ff-174">_PathOSearch15_</span></span> <br/> |<span data-ttu-id="d82ff-p108">Der logische Path-Eintrag aufgelistet, die für die Komponente, deren Namen mit "IndexComponentGroup" in den Eintrag "OSearch15 VSS Writer" beginnt. Es ist normalerweise leer.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p108">The logical path entry listed for the component whose name starts with "IndexComponentGroup" in the "OSearch15 VSS Writer" entry. It is normally empty.</span></span>  <br/> |
-| <span data-ttu-id="d82ff-177">_IndexComponentGroup_</span><span class="sxs-lookup"><span data-stu-id="d82ff-177">_IndexComponentGroup_</span></span> <br/> |<span data-ttu-id="d82ff-178">Den Eintrag aufgeführt, die für die Komponente, deren Namen mit "IndexComponentGroup" in den Eintrag "OSearch15 VSS Writer" beginnt</span><span class="sxs-lookup"><span data-stu-id="d82ff-178">The name entry listed for the component whose name starts with "IndexComponentGroup" in the "OSearch15 VSS Writer" entry</span></span>  <br/> |
+    |<span data-ttu-id="d8472-166">**Platzhalter**</span><span class="sxs-lookup"><span data-stu-id="d8472-166">**Placeholder**</span></span>|<span data-ttu-id="d8472-167">**Wo die Informationen im writers.txt befindet**</span><span class="sxs-lookup"><span data-stu-id="d8472-167">**Where the information is located in writers.txt**</span></span>|
+    |:-----|:-----|
+    | <span data-ttu-id="d8472-168">_SharePoint Services Writer ID_</span><span class="sxs-lookup"><span data-stu-id="d8472-168">_SharePoint Services Writer ID_</span></span> <br/> |<span data-ttu-id="d8472-169">Die WriterId-GUID angezeigt, unter dem Eintrag "SharePoint Services-Writer"</span><span class="sxs-lookup"><span data-stu-id="d8472-169">The WriterId GUID listed under the "SharePoint Services Writer" entry</span></span>  <br/> |
+    | <span data-ttu-id="d8472-170">_PathIndex_</span><span class="sxs-lookup"><span data-stu-id="d8472-170">_PathIndex_</span></span> <br/> |<span data-ttu-id="d8472-171">Der logische Path-Eintrag aufgelistet, die für die Komponente, deren Namen mit "IndexComponentGroup" in den Eintrag "SharePoint Services-Writer" beginnt</span><span class="sxs-lookup"><span data-stu-id="d8472-171">The logical path entry listed for the component whose name starts with "IndexComponentGroup" in the "SharePoint Services Writer" entry</span></span>  <br/> |
+    | <span data-ttu-id="d8472-172">_NameIndex_</span><span class="sxs-lookup"><span data-stu-id="d8472-172">_NameIndex_</span></span> <br/> |<span data-ttu-id="d8472-173">Den Eintrag aufgeführt, die für die Komponente, deren Namen mit "IndexComponentGroup" in den Eintrag "SharePoint Services-Writer" beginnt</span><span class="sxs-lookup"><span data-stu-id="d8472-173">The name entry listed for the component whose name starts with "IndexComponentGroup" in the "SharePoint Services Writer" entry</span></span>  <br/> |
+    | <span data-ttu-id="d8472-174">_OSearch15 Writer ID_</span><span class="sxs-lookup"><span data-stu-id="d8472-174">_OSearch15 Writer ID_</span></span> <br/> |<span data-ttu-id="d8472-175">Die WriterId-GUID angezeigt, unter dem Eintrag "OSearch15 VSS Writer"</span><span class="sxs-lookup"><span data-stu-id="d8472-175">The WriterId GUID listed under the "OSearch15 VSS Writer" entry</span></span>  <br/> |
+    | <span data-ttu-id="d8472-176">_PathOSearch15_</span><span class="sxs-lookup"><span data-stu-id="d8472-176">_PathOSearch15_</span></span> <br/> |<span data-ttu-id="d8472-p109">Der logische Path-Eintrag aufgelistet, die für die Komponente, deren Namen mit "IndexComponentGroup" in den Eintrag "OSearch15 VSS Writer" beginnt. Es ist normalerweise leer.</span><span class="sxs-lookup"><span data-stu-id="d8472-p109">The logical path entry listed for the component whose name starts with "IndexComponentGroup" in the "OSearch15 VSS Writer" entry. It is normally empty.</span></span>  <br/> |
+    | <span data-ttu-id="d8472-179">_IndexComponentGroup_</span><span class="sxs-lookup"><span data-stu-id="d8472-179">_IndexComponentGroup_</span></span> <br/> |<span data-ttu-id="d8472-180">Namenseintrag für die Komponente, deren Name mit „IndexComponentGroup“ im Eintrag „OSearch15 VSS Writer“ beginnt</span><span class="sxs-lookup"><span data-stu-id="d8472-180">The name entry listed for the component whose name starts with "IndexComponentGroup" in the "OSearch15 VSS Writer" entry</span></span>  <br/> |
    
 
-    This is the search index manifest file. For an example of a completed search index manifest file, see  [Example manifest files](#Examples).
+    <span data-ttu-id="d8472-181">Dies ist die Suchindex-Manifestdatei.</span><span class="sxs-lookup"><span data-stu-id="d8472-181">This is the search index manifest file.</span></span> <span data-ttu-id="d8472-182">Ein Beispiel für eine fertige Suchindex-Manifestdatei finden Sie unter [Beispiele für Manifestdateien](#Examples).</span><span class="sxs-lookup"><span data-stu-id="d8472-182">For an example of a completed search index manifest file, see  [Example manifest files](#Examples).</span></span>
     
   
-4. <span data-ttu-id="d82ff-p109">(Optional) Notieren Sie die Größe der **IndexComponent** Ordner auf jedem Server, die eine Indexkomponente enthält. Sie können diese Informationen später so überprüfen Sie die Sicherung verwenden.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p109">(Optional) Record the sizes of **IndexComponent** folders on each server that contains an index component. You can use this information later to verify the backup.</span></span>
+4. <span data-ttu-id="d8472-p111">(Optional) Notieren Sie die Größe der **IndexComponent** Ordner auf jedem Server, die eine Indexkomponente enthält. Sie können diese Informationen später so überprüfen Sie die Sicherung verwenden.</span><span class="sxs-lookup"><span data-stu-id="d8472-p111">(Optional) Record the sizes of **IndexComponent** folders on each server that contains an index component. You can use this information later to verify the backup.</span></span>
     
   
-5. <span data-ttu-id="d82ff-p110">Öffnen Sie bei jedem Server in der Farm die SharePoint-Verwaltungsshell, und führen Sie die folgenden Zeilen, wobei  _name of search service application_ die SSA ist, die Sie sichern möchten. Lassen Sie das Fenster SharePoint-Verwaltungsshell geöffnet danach.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p110">On any server in the farm, open the SharePoint Management Shell and execute the following lines, where  _name of search service application_ is the SSA that you want to back up. Leave the SharePoint Management Shell window open afterward.</span></span>
+5. <span data-ttu-id="d8472-p112">Öffnen Sie bei jedem Server in der Farm die SharePoint-Verwaltungsshell, und führen Sie die folgenden Zeilen, wobei  _name of search service application_ die SSA ist, die Sie sichern möchten. Lassen Sie das Fenster SharePoint-Verwaltungsshell geöffnet danach.</span><span class="sxs-lookup"><span data-stu-id="d8472-p112">On any server in the farm, open the SharePoint Management Shell and execute the following lines, where  _name of search service application_ is the SSA that you want to back up. Leave the SharePoint Management Shell window open afterward.</span></span>
     
 ```
   
@@ -157,38 +158,38 @@ $ssa = Get-SpenterpriseSearchServiceApplication -Identity "name of search servic
 Suspend-SPEnterpriseSearchServiceApplication -Identity $ssa
 ```
 
-6. <span data-ttu-id="d82ff-183">Führen Sie Sicherungen der SSA Datenbanken und der Index folgende Schritte aus:</span><span class="sxs-lookup"><span data-stu-id="d82ff-183">Perform backups of the SSA databases and the index by following these steps:</span></span>
+6. <span data-ttu-id="d8472-187">Führen Sie Sicherungen der SSA Datenbanken und der Index folgende Schritte aus:</span><span class="sxs-lookup"><span data-stu-id="d8472-187">Perform backups of the SSA databases and the index by following these steps:</span></span>
     
-1. <span data-ttu-id="d82ff-184">Führen Sie auf dem Server mit den Datenbanken SSA den folgenden Befehl an der Befehlszeile aus, wobei  _destination backup folder_ ist der vollständige Pfad des Ordners für die Sicherungsdateien, _backup log file_ ist der vollständige Pfad und Namen der Protokolldatei der Sicherung und _SSA manifest file_ ist der Pfad und Dateiname der Manifestdatei SSA.</span><span class="sxs-lookup"><span data-stu-id="d82ff-184">On the server with the SSA databases, execute the following command at a command line, where  _destination backup folder_ is the full path of the folder for the backup files, _backup log file_ is the full path and name of the backup log file, and _SSA manifest file_ is the path and file name of the SSA manifest file.</span></span>
+1. <span data-ttu-id="d8472-188">Führen Sie auf dem Server mit den Datenbanken SSA den folgenden Befehl an der Befehlszeile aus, wobei  _destination backup folder_ ist der vollständige Pfad des Ordners für die Sicherungsdateien, _backup log file_ ist der vollständige Pfad und Namen der Protokolldatei der Sicherung und _SSA manifest file_ ist der Pfad und Dateiname der Manifestdatei SSA.</span><span class="sxs-lookup"><span data-stu-id="d8472-188">On the server with the SSA databases, execute the following command at a command line, where  _destination backup folder_ is the full path of the folder for the backup files, _backup log file_ is the full path and name of the backup log file, and _SSA manifest file_ is the path and file name of the SSA manifest file.</span></span>
     
 ```
   
 betest.exe /v /b /d "destination backup folder" /s "backup log file" /x "SSA manifest file"
 ```
 
-2. <span data-ttu-id="d82ff-p111">Führen Sie auf dem Server mit dem open SharePoint-Verwaltungsshell-Fenster die folgende Zeile, wobei  _topology file name_ den vollständigen Pfad und Namen der exportierten Datei, die die Topologieinformationen enthält. Sie verwenden diese Datei in der Wiederherstellungsvorgang für die SSA.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p111">On the server with the open SharePoint Management Shell window, execute the following line, where  _topology file name_ is the full path and name of the exported file containing the topology information. You will use this file in the restore procedure for the SSA.</span></span>
+2. <span data-ttu-id="d8472-p113">Führen Sie auf dem Server mit dem open SharePoint-Verwaltungsshell-Fenster die folgende Zeile, wobei  _topology file name_ den vollständigen Pfad und Namen der exportierten Datei, die die Topologieinformationen enthält. Sie verwenden diese Datei in der Wiederherstellungsvorgang für die SSA.</span><span class="sxs-lookup"><span data-stu-id="d8472-p113">On the server with the open SharePoint Management Shell window, execute the following line, where  _topology file name_ is the full path and name of the exported file containing the topology information. You will use this file in the restore procedure for the SSA.</span></span>
     
 ```
   Export-SPEnterpriseSearchTopology -SearchApplication $ssa -Filename "topology file name"
 ```
 
-3. <span data-ttu-id="d82ff-187">Stellen Sie sicher, dass die Datei erstellt wird.</span><span class="sxs-lookup"><span data-stu-id="d82ff-187">Verify that the file is created.</span></span>
+3. <span data-ttu-id="d8472-191">Stellen Sie sicher, dass die Datei erstellt wird.</span><span class="sxs-lookup"><span data-stu-id="d8472-191">Verify that the file is created.</span></span>
     
   
-4. <span data-ttu-id="d82ff-188">Führen Sie auf jedem Server, der eine Indexkomponente verfügt folgenden Befehl an der Befehlszeile aus, wobei  _destination backup folder_ ist der vollständige Pfad des Ordners für die Sicherungsdateien, _backup log file_ ist der vollständige Pfad und Namen der Protokolldatei der Sicherung und _index manifest file_ ist der Pfad und Dateiname des Manifests Index.</span><span class="sxs-lookup"><span data-stu-id="d82ff-188">On each server that has an index component, execute the following at a command line, where  _destination backup folder_ is the full path of the folder for the backup files, _backup log file_ is the full path and name of the backup log file, and _index manifest file_ is the path and file name of the index manifest.</span></span>
+4. <span data-ttu-id="d8472-192">Führen Sie auf jedem Server, der eine Indexkomponente verfügt folgenden Befehl an der Befehlszeile aus, wobei  _destination backup folder_ ist der vollständige Pfad des Ordners für die Sicherungsdateien, _backup log file_ ist der vollständige Pfad und Namen der Protokolldatei der Sicherung und _index manifest file_ ist der Pfad und Dateiname des Manifests Index.</span><span class="sxs-lookup"><span data-stu-id="d8472-192">On each server that has an index component, execute the following at a command line, where  _destination backup folder_ is the full path of the folder for the backup files, _backup log file_ is the full path and name of the backup log file, and _index manifest file_ is the path and file name of the index manifest.</span></span>
     
 ```
   betest.exe /v /b /d "destination backup folder" /s "backup log file" /x "index manifest file"
 ```
 
-5. <span data-ttu-id="d82ff-p112">(Optional) Prüfen Sie die Index-Ordner, die gesichert wurde. Stellen Sie sicher, dass Ordnernamen und Größen mit den im vorherigen Schritt aufgezeichnet werden soll.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p112">(Optional) Inspect the index folders that have been backed up. Verify that folder names and sizes match with those recorded in the earlier step.</span></span>
+5. <span data-ttu-id="d8472-p114">(Optional) Prüfen Sie die Index-Ordner, die gesichert wurde. Stellen Sie sicher, dass Ordnernamen und Größen mit den im vorherigen Schritt aufgezeichnet werden soll.</span><span class="sxs-lookup"><span data-stu-id="d8472-p114">(Optional) Inspect the index folders that have been backed up. Verify that folder names and sizes match with those recorded in the earlier step.</span></span>
     
   
 
-### <a name="to-restore-a-sharepoint-search-service-application-using-vss"></a><span data-ttu-id="d82ff-191">Wiederherstellen eine SharePoint-Suchdienstanwendung mit VSS</span><span class="sxs-lookup"><span data-stu-id="d82ff-191">To restore a SharePoint search service application using VSS</span></span>
+### <a name="to-restore-a-sharepoint-search-service-application-using-vss"></a><span data-ttu-id="d8472-195">Wiederherstellen eine SharePoint-Suchdienstanwendung mit VSS</span><span class="sxs-lookup"><span data-stu-id="d8472-195">To restore a SharePoint search service application using VSS</span></span>
 
 
-1. <span data-ttu-id="d82ff-p113">Öffnen Sie bei jedem Server in der Farm die SharePoint-Verwaltungsshell, und führen Sie die folgenden Zeilen, um die vorhandene Suchdienstanwendung und Stellvertreter, wobei  _name of search service application_ die SSA aus, die Sie wiederherstellen möchten und _name of proxy_ ist seine Anwendungsproxy zu entfernen. Hinweis: Diese _name of SSA proxy_ normalerweise identisch mit den Namen der SSA mit dem Wort "Proxy" Ende hinzugefügten ist. Die Option `RemoveData` wird sichergestellt, dass die Suchdatenbanken entfernt werden.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p113">On any server in the farm, open the SharePoint Management Shell and execute the following lines to remove the existing search service application and its proxy, where  _name of search service application_ is the SSA that you want to restore and _name of proxy_ is its application proxy. Note that _name of SSA proxy_ is normally the same as the name of the SSA with the word "Proxy" added to the end. The `RemoveData` switch ensures that the search databases are removed.</span></span>
+1. <span data-ttu-id="d8472-p115">Öffnen Sie bei jedem Server in der Farm die SharePoint-Verwaltungsshell, und führen Sie die folgenden Zeilen, um die vorhandene Suchdienstanwendung und Stellvertreter, wobei  _name of search service application_ die SSA aus, die Sie wiederherstellen möchten und _name of proxy_ ist seine Anwendungsproxy zu entfernen. Hinweis: Diese _name of SSA proxy_ normalerweise identisch mit den Namen der SSA mit dem Wort "Proxy" Ende hinzugefügten ist. Die Option `RemoveData` wird sichergestellt, dass die Suchdatenbanken entfernt werden.</span><span class="sxs-lookup"><span data-stu-id="d8472-p115">On any server in the farm, open the SharePoint Management Shell and execute the following lines to remove the existing search service application and its proxy, where  _name of search service application_ is the SSA that you want to restore and _name of proxy_ is its application proxy. Note that _name of SSA proxy_ is normally the same as the name of the SSA with the word "Proxy" added to the end. The `RemoveData` switch ensures that the search databases are removed.</span></span>
     
 ```
   $ssa = Get-SPEnterpriseSearchServiceApplication -Identity "name of search service application"
@@ -196,23 +197,24 @@ Remove-SPEnterpriseSearchServiceApplication -Identity $ssa -RemoveData
 Remove-SPEnterpriseSearchServiceApplicationProxy -Identity "name of SSA proxy"
 ```
 
-2. <span data-ttu-id="d82ff-195">Führen Sie auf dem gleichen Server Folgendes an der Befehlszeile zum Wiederherstellen der Datenbanken SSA where  _destination backup folder_ ist der vollständige Pfad des Ordners für die Sicherungsdateien, _backup log file_ ist der vollständige Pfad und Namen der Protokolldatei der Sicherung und _SSA manifest file_ ist der Pfad und Dateiname der Manifestdatei SSA.</span><span class="sxs-lookup"><span data-stu-id="d82ff-195">On the same server, execute the following at a command line to restore the SSA databases, where  _destination backup folder_ is the full path of the folder for the backup files, _backup log file_ is the full path and name of the backup log file, and _SSA manifest file_ is the path and file name of the SSA manifest file.</span></span>
+2. <span data-ttu-id="d8472-199">Führen Sie auf dem gleichen Server Folgendes an der Befehlszeile zum Wiederherstellen der Datenbanken SSA where  _destination backup folder_ ist der vollständige Pfad des Ordners für die Sicherungsdateien, _backup log file_ ist der vollständige Pfad und Namen der Protokolldatei der Sicherung und _SSA manifest file_ ist der Pfad und Dateiname der Manifestdatei SSA.</span><span class="sxs-lookup"><span data-stu-id="d8472-199">On the same server, execute the following at a command line to restore the SSA databases, where  _destination backup folder_ is the full path of the folder for the backup files, _backup log file_ is the full path and name of the backup log file, and _SSA manifest file_ is the path and file name of the SSA manifest file.</span></span>
     
 ```
   
 betest.exe /v /r /d "destination backup folder" /s "backup log file" /x SSA_manifest_file
 ```
 
-3. <span data-ttu-id="d82ff-196">Öffnen Sie auf dem gleichen Server ein SharePoint-Verwaltungsshell, und führen Sie die folgenden Zeilen, um die SSA wiederherzustellen, wobei  _application pool name_ ist der Name des neuen Pools, _domain\\user_ ist der Domänenname des Benutzers, der der zu verwendenden Anwendungspool als von in der Ereignisprotokollen, _name of the search service application_ ist der Name der SSA und _topology_file_name_ ist der Pfad und Name der Aufschlüsselung-Datei, die Sie erstellt haben, wenn die SSA gesichert wurde.</span><span class="sxs-lookup"><span data-stu-id="d82ff-196">On the same server, open a SharePoint Management Shell and execute the following lines to restore the SSA, where  _application pool name_ is the name of the new pool, _domain\\user_ is the domain name of the user that the application pool logs in as, _name of the search service application_ is the name of the SSA, and _topology_file_name_ is the path and name of the typology file you created when the SSA was backed up.</span></span>
+3. <span data-ttu-id="d8472-200">Öffnen Sie auf dem gleichen Server ein SharePoint-Verwaltungsshell, und führen Sie die folgenden Zeilen, um die SSA wiederherzustellen, wobei  _application pool name_ ist der Name des neuen Pools, _domain\\user_ ist der Domänenname des Benutzers, der der zu verwendenden Anwendungspool als von in der Ereignisprotokollen, _name of the search service application_ ist der Name der SSA und _topology_file_name_ ist der Pfad und Name der Aufschlüsselung-Datei, die Sie erstellt haben, wenn die SSA gesichert wurde.</span><span class="sxs-lookup"><span data-stu-id="d8472-200">On the same server, open a SharePoint Management Shell and execute the following lines to restore the SSA, where  _application pool name_ is the name of the new pool, _domain\\user_ is the domain name of the user that the application pool logs in as, _name of the search service application_ is the name of the SSA, and _topology_file_name_ is the path and name of the typology file you created when the SSA was backed up.</span></span>
     
-    > <span data-ttu-id="d82ff-197">**Tipp:** Dieser Code erstellt eine neue Anwendungspoolidentität für die Ausführung der wiederhergestellten SSA. Sie können aber auch ein vorhandenes Konto mit dem Cmdlet **Get-SPServiceApplicationPool** verwenden.</span><span class="sxs-lookup"><span data-stu-id="d82ff-197">**Tip:** This code creates a new application pool identity to run the restored SSA, but you can also use an existing account with the **Get-SPServiceApplicationPool** cmdlet.</span></span>
+    > [!TIP]
+    > <span data-ttu-id="d8472-201">Dieser Code erstellt eine neue Anwendungspoolidentität für die Ausführung der wiederhergestellten SSA. Sie können aber auch ein vorhandenes Konto mit dem Cmdlet **Get-SPServiceApplicationPool** verwenden.</span><span class="sxs-lookup"><span data-stu-id="d8472-201">Tip: This code creates a new application pool identity to run the restored SSA, but you can also use an existing account with the **Get-SPServiceApplicationPool** cmdlet.</span></span>
 
 ```
   $applicationPool = New-SPServiceApplicationPool -name "application pool name" -account "domain\\user"
 Restore-SPEnterpriseSearchServiceApplication -Name "name of the search service application" -ApplicationPool $applicationPool -TopologyFile "topology_file_name" -KeepId
 ```
 
-4. <span data-ttu-id="d82ff-p114">Erstellen Sie einen Proxy für die SSA mit den folgenden Cmdlets. Es wird empfohlen, dass Sie die gleichen Werte für  _name of the search service application_ und _name of SSA proxy_ verwenden, wie Sie in Schritt 1 verwendet.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p114">Create a proxy for the SSA with the following cmdlets. We recommend that you use the same values for  _name of the search service application_ and _name of SSA proxy_ as you used in step 1.</span></span>
+4. <span data-ttu-id="d8472-p116">Erstellen Sie einen Proxy für die SSA mit den folgenden Cmdlets. Es wird empfohlen, dass Sie die gleichen Werte für  _name of the search service application_ und _name of SSA proxy_ verwenden, wie Sie in Schritt 1 verwendet.</span><span class="sxs-lookup"><span data-stu-id="d8472-p116">Create a proxy for the SSA with the following cmdlets. We recommend that you use the same values for  _name of the search service application_ and _name of SSA proxy_ as you used in step 1.</span></span>
     
 ```
   
@@ -220,76 +222,76 @@ $ssa = Get-SpenterpriseSearchServiceApplication -Identity "name of search servic
 New-SPEnterpriseSearchServiceApplicationProxy -Name "name of SSA proxy" -SearchApplication $ssa
 ```
 
-5. <span data-ttu-id="d82ff-p115">(Optional) Stellen Sie sicher, dass die SSA und dessen Proxy vorhanden sind, indem **Zentraladministration** öffnen. Wählen Sie **Dienstanwendungen verwalten**, und stellen Sie sicher, dass die SSA und dessen Proxy aufgeführt sind.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p115">(Optional) Verify that the SSA and its proxy exist by opening **Central Administration**. Choose **Manage Service Applications** and verify that the SSA and its proxy are listed.</span></span>
+5. <span data-ttu-id="d8472-p117">(Optional) Stellen Sie sicher, dass die SSA und dessen Proxy vorhanden sind, indem **Zentraladministration** öffnen. Wählen Sie **Dienstanwendungen verwalten**, und stellen Sie sicher, dass die SSA und dessen Proxy aufgeführt sind.</span><span class="sxs-lookup"><span data-stu-id="d8472-p117">(Optional) Verify that the SSA and its proxy exist by opening **Central Administration**. Choose **Manage Service Applications** and verify that the SSA and its proxy are listed.</span></span>
     
   
-6. <span data-ttu-id="d82ff-p116">(Optional) Klicken Sie auf die SSA in der Liste der Dienste, und klicken Sie dann auf der Seite, die geöffnet wird, überprüfen Sie, ob die **Suchtopologie**-Tabelle der Aufschlüsselung gesucht, die Sie in den Sicherungsvorgang exportiert haben. (Sie können auch die Topologie mit dem Cmdlet **Get-SPEnterpriseSearchStatus**überprüfen.)</span><span class="sxs-lookup"><span data-stu-id="d82ff-p116">(Optional) Click the SSA on the list of services, and then, on the page that opens, verify that the **Search Application Topology** table matches the typology that you exported in the backup procedure. (You can also verify the topology with the cmdlet **Get-SPEnterpriseSearchStatus**.)</span></span>
+6. <span data-ttu-id="d8472-p118">(Optional) Klicken Sie auf die SSA in der Liste der Dienste, und klicken Sie dann auf der Seite, die geöffnet wird, überprüfen Sie, ob die **Suchtopologie**-Tabelle der Aufschlüsselung gesucht, die Sie in den Sicherungsvorgang exportiert haben. (Sie können auch die Topologie mit dem Cmdlet **Get-SPEnterpriseSearchStatus**überprüfen.)</span><span class="sxs-lookup"><span data-stu-id="d8472-p118">(Optional) Click the SSA on the list of services, and then, on the page that opens, verify that the **Search Application Topology** table matches the typology that you exported in the backup procedure. (You can also verify the topology with the cmdlet **Get-SPEnterpriseSearchStatus**.)</span></span>
     
   
-7. <span data-ttu-id="d82ff-204">Stellen Sie die Indexdateien mit dem folgenden Verfahren **auf allen Servern mit indexkomponenten** wieder her.</span><span class="sxs-lookup"><span data-stu-id="d82ff-204">Restore the index files with the following procedure **on all servers with index components**.</span></span>
+7. <span data-ttu-id="d8472-208">Stellen Sie die Indexdateien mit dem folgenden Verfahren **auf allen Servern mit indexkomponenten** wieder her.</span><span class="sxs-lookup"><span data-stu-id="d8472-208">Restore the index files with the following procedure **on all servers with index components**.</span></span>
     
-1. <span data-ttu-id="d82ff-205">Beenden Sie den Hostcontroller service entweder in **Verwaltung > Dienste**, oder indem Sie das folgende Cmdlet in SharePoint-Verwaltungsshell ausführen:</span><span class="sxs-lookup"><span data-stu-id="d82ff-205">Stop the Host Controller service either in **Administrative Tools > Services**, or by executing the following cmdlet in SharePoint Management Shell:</span></span>
+1. <span data-ttu-id="d8472-209">Beenden Sie den Hostcontroller service entweder in **Verwaltung > Dienste**, oder indem Sie das folgende Cmdlet in SharePoint-Verwaltungsshell ausführen:</span><span class="sxs-lookup"><span data-stu-id="d8472-209">Stop the Host Controller service either in **Administrative Tools > Services**, or by executing the following cmdlet in SharePoint Management Shell:</span></span>
     
 ```
   
 stop-service SPSearchHostController
 ```
 
-2. <span data-ttu-id="d82ff-206">Führen Sie auf den gleichen Servern folgenden Befehl an der Befehlszeile aus, wobei  _index manifest file_ der Pfad und Dateiname des Manifests Index ist, die Sie in den Sicherungsvorgang erstellt haben.</span><span class="sxs-lookup"><span data-stu-id="d82ff-206">On the same servers, execute the following at a command line, where  _index manifest file_ is the path and file name of the index manifest that you created in the backup procedure.</span></span>
+2. <span data-ttu-id="d8472-210">Führen Sie auf den gleichen Servern folgenden Befehl an der Befehlszeile aus, wobei  _index manifest file_ der Pfad und Dateiname des Manifests Index ist, die Sie in den Sicherungsvorgang erstellt haben.</span><span class="sxs-lookup"><span data-stu-id="d8472-210">On the same servers, execute the following at a command line, where  _index manifest file_ is the path and file name of the index manifest that you created in the backup procedure.</span></span>
     
 ```
   betest.exe /v /r /d "destination backup folder" /s "backup log file" /x "index manifest file"
 ```
 
-3. <span data-ttu-id="d82ff-207">(Optional) Stellen Sie sicher, dass die Ordnernamen und Größen übereinstimmen, die Sie in den Sicherungsvorgang aufgezeichnet.</span><span class="sxs-lookup"><span data-stu-id="d82ff-207">(Optional) Verify that the folder names and sizes match those that you recorded in the backup procedure.</span></span>
+3. <span data-ttu-id="d8472-211">(Optional) Stellen Sie sicher, dass die Ordnernamen und Größen übereinstimmen, die Sie in den Sicherungsvorgang aufgezeichnet.</span><span class="sxs-lookup"><span data-stu-id="d8472-211">(Optional) Verify that the folder names and sizes match those that you recorded in the backup procedure.</span></span>
     
   
-4. <span data-ttu-id="d82ff-208">Benennen Sie für jede Indexkomponente Daten unter den Datenordner, indem Sie folgende Schritte:</span><span class="sxs-lookup"><span data-stu-id="d82ff-208">For every index component, rename data under the data folder by following these steps:</span></span>
+4. <span data-ttu-id="d8472-212">Benennen Sie für jede Indexkomponente Daten unter den Datenordner, indem Sie folgende Schritte:</span><span class="sxs-lookup"><span data-stu-id="d8472-212">For every index component, rename data under the data folder by following these steps:</span></span>
     
-1. <span data-ttu-id="d82ff-209">Führen Sie das folgende Cmdlet in SharePoint-Verwaltungsshell.</span><span class="sxs-lookup"><span data-stu-id="d82ff-209">In SharePoint Management Shell, execute the following cmdlet.</span></span>
+1. <span data-ttu-id="d8472-213">Führen Sie das folgende Cmdlet in SharePoint-Verwaltungsshell.</span><span class="sxs-lookup"><span data-stu-id="d8472-213">In SharePoint Management Shell, execute the following cmdlet.</span></span>
     
 ```
   Get-SPEnterpriseSearchVssDataPath
 ```
 
-2. <span data-ttu-id="d82ff-p117">Tragen Sie anhand der Ausgabe des Cmdlets den letzten Teil der einzelnen GUID. Beispielsweise ist eine Zeile der Ausgabe  `IndexComponentGroup_e255918b-6ab0-4d7c-8049-720b2744c62f`, zeichnen Sie 720b2744c62f auf.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p117">From the output of the cmdlet, record the last part of each GUID. For example, if one line of the output is  `IndexComponentGroup_e255918b-6ab0-4d7c-8049-720b2744c62f`, record 720b2744c62f.</span></span>
+2. <span data-ttu-id="d8472-p119">Tragen Sie anhand der Ausgabe des Cmdlets den letzten Teil der einzelnen GUID. Beispielsweise ist eine Zeile der Ausgabe  `IndexComponentGroup_e255918b-6ab0-4d7c-8049-720b2744c62f`, zeichnen Sie 720b2744c62f auf.</span><span class="sxs-lookup"><span data-stu-id="d8472-p119">From the output of the cmdlet, record the last part of each GUID. For example, if one line of the output is  `IndexComponentGroup_e255918b-6ab0-4d7c-8049-720b2744c62f`, record 720b2744c62f.</span></span>
     
   
-3. <span data-ttu-id="d82ff-212">Navigieren Sie zu  `C:\\Program Files\\Microsoft Office Servers\\15.0\\Data\\Office Server\\Applications\\Search\\Nodes\\24488A\\IndexComponentN\\storage\\data`, wobei  *N*  die Anzahl der eine Indexkomponente ist, im **Datei-Explorer** (oder **Windows-Explorer** unter Windows Server 2008).</span><span class="sxs-lookup"><span data-stu-id="d82ff-212">In **File Explorer** (or **Windows Explorer** on Windows Server 2008), navigate to `C:\\Program Files\\Microsoft Office Servers\\15.0\\Data\\Office Server\\Applications\\Search\\Nodes\\24488A\\IndexComponentN\\storage\\data`, where  *N*  is the number of an index component.</span></span>
+3. <span data-ttu-id="d8472-216">Navigieren Sie zu  `C:\\Program Files\\Microsoft Office Servers\\15.0\\Data\\Office Server\\Applications\\Search\\Nodes\\24488A\\IndexComponentN\\storage\\data`, wobei  *N*  die Anzahl der eine Indexkomponente ist, im **Datei-Explorer** (oder **Windows-Explorer** unter Windows Server 2008).</span><span class="sxs-lookup"><span data-stu-id="d8472-216">In **File Explorer** (or **Windows Explorer** on Windows Server 2008), navigate to `C:\\Program Files\\Microsoft Office Servers\\15.0\\Data\\Office Server\\Applications\\Search\\Nodes\\24488A\\IndexComponentN\\storage\\data`, where  *N*  is the number of an index component.</span></span>
     
   
-4. <span data-ttu-id="d82ff-p118">Jeder dieser Ordner ist einen Unterordner, deren Namen mit "SP", gefolgt von 12 hex-Ziffern, gefolgt von einer Version Zahl beginnt. Benennen Sie für jede der folgenden Unterordner, bei denen die 12 hex-Ziffern eines der Endung GUID übereinstimmen, die Sie im vorherigen Schritt notiert haben den Unterordner in Importindex. Im als fortlaufendes Beispiel würden Sie die Unterordner  `SP720b2744c62f.1.I.1.0` inImportindexumbenennen.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p118">Each of these folders has a subfolder whose name begins with "SP" followed by 12 hex digits followed by a version number. For each of these subfolders where the 12 hex digits match one of the GUID endings that you recorded in the earlier step, rename the subfolder to importindex. In the continuing example, you would rename the subfolder  `SP720b2744c62f.1.I.1.0` toimportindex.</span></span>
+4. <span data-ttu-id="d8472-p120">Jeder dieser Ordner ist einen Unterordner, deren Namen mit "SP", gefolgt von 12 hex-Ziffern, gefolgt von einer Version Zahl beginnt. Benennen Sie für jede der folgenden Unterordner, bei denen die 12 hex-Ziffern eines der Endung GUID übereinstimmen, die Sie im vorherigen Schritt notiert haben den Unterordner in Importindex. Im als fortlaufendes Beispiel würden Sie die Unterordner  `SP720b2744c62f.1.I.1.0` inImportindexumbenennen.</span><span class="sxs-lookup"><span data-stu-id="d8472-p120">Each of these folders has a subfolder whose name begins with "SP" followed by 12 hex digits followed by a version number. For each of these subfolders where the 12 hex digits match one of the GUID endings that you recorded in the earlier step, rename the subfolder to importindex. In the continuing example, you would rename the subfolder  `SP720b2744c62f.1.I.1.0` toimportindex.</span></span>
     
   
-5. <span data-ttu-id="d82ff-216">Neustart der Hostcontroller service entweder in **Verwaltung > Dienste**, oder indem Sie das folgende Cmdlet in SharePoint-Verwaltungsshell ausführen:</span><span class="sxs-lookup"><span data-stu-id="d82ff-216">Restart the host controller service either in **Administrative Tools > Services**, or by executing the following cmdlet in SharePoint Management Shell:</span></span>
+5. <span data-ttu-id="d8472-220">Neustart der Hostcontroller service entweder in **Verwaltung > Dienste**, oder indem Sie das folgende Cmdlet in SharePoint-Verwaltungsshell ausführen:</span><span class="sxs-lookup"><span data-stu-id="d8472-220">Restart the host controller service either in **Administrative Tools > Services**, or by executing the following cmdlet in SharePoint Management Shell:</span></span>
     
 ```
   start-service SPSearchHostController
 ```
 
-6. <span data-ttu-id="d82ff-p119">Stellen Sie sicher, dass die Index Daten Ordnernamen wieder auf den vorherigen Namen wiederhergestellt haben. (In der als fortlaufendes Beispiel wäre "" SP720b2744c62f.1.I.1.0 ".)</span><span class="sxs-lookup"><span data-stu-id="d82ff-p119">Verify that the index data folder names have reverted back to their previous name. (In the continuing example, this would be "'SP720b2744c62f.1.I.1.0".)</span></span>
+6. <span data-ttu-id="d8472-p121">Stellen Sie sicher, dass die Index Daten Ordnernamen wieder auf den vorherigen Namen wiederhergestellt haben. (In der als fortlaufendes Beispiel wäre "" SP720b2744c62f.1.I.1.0 ".)</span><span class="sxs-lookup"><span data-stu-id="d8472-p121">Verify that the index data folder names have reverted back to their previous name. (In the continuing example, this would be "'SP720b2744c62f.1.I.1.0".)</span></span>
     
   
-8. <span data-ttu-id="d82ff-219">(Optional) Stellen Sie sicher, dass die Größe der **IndexComponent** Ordner die Größen entsprechen, die Sie in den Sicherungsvorgang notiert haben.</span><span class="sxs-lookup"><span data-stu-id="d82ff-219">(Optional) Verify that the sizes of **IndexComponent** folders match the sizes you recorded in the backup procedure.</span></span>
+8. <span data-ttu-id="d8472-223">(Optional) Stellen Sie sicher, dass die Größe der **IndexComponent** Ordner die Größen entsprechen, die Sie in den Sicherungsvorgang notiert haben.</span><span class="sxs-lookup"><span data-stu-id="d8472-223">(Optional) Verify that the sizes of **IndexComponent** folders match the sizes you recorded in the backup procedure.</span></span>
     
   
-9. <span data-ttu-id="d82ff-220">Starten Sie die SSA neu.</span><span class="sxs-lookup"><span data-stu-id="d82ff-220">Restart the SSA.</span></span>
+9. <span data-ttu-id="d8472-224">Starten Sie die SSA neu.</span><span class="sxs-lookup"><span data-stu-id="d8472-224">Restart the SSA.</span></span>
     
   
-10. <span data-ttu-id="d82ff-221">Führen Sie das folgende Cmdlet in SharePoint-Verwaltungsshell, um sicherzustellen, dass der Suchdienst für die Anwendung ordnungsgemäß ausgeführt wird, auf den betroffenen Servern:</span><span class="sxs-lookup"><span data-stu-id="d82ff-221">On all the affected servers, run the following cmdlet in SharePoint Management Shell to verify that the search application service is running properly:</span></span>
+10. <span data-ttu-id="d8472-225">Führen Sie das folgende Cmdlet in SharePoint-Verwaltungsshell, um sicherzustellen, dass der Suchdienst für die Anwendung ordnungsgemäß ausgeführt wird, auf den betroffenen Servern:</span><span class="sxs-lookup"><span data-stu-id="d8472-225">On all the affected servers, run the following cmdlet in SharePoint Management Shell to verify that the search application service is running properly:</span></span>
     
 ```
   Get-SPEnterpriseSearchStatus
 ```
 
-11. <span data-ttu-id="d82ff-p120">Stellen Sie sicher, dass Zuführung und für neue Dokumente durchsuchen funktioniert. Überprüfen Sie die Größe des Indexes beispielsweise mithilfe der Abfrage "Größe > = 0". Außerdem ein neues Dokument hinzufügen, und stellen Sie sicher, dass es durchsuchbar ist.</span><span class="sxs-lookup"><span data-stu-id="d82ff-p120">Verify that feeding and searching for new documents works. For example, check the size of the index by using the query "size>=0". Also add a new document and verify that it is searchable.</span></span>
+11. <span data-ttu-id="d8472-p122">Stellen Sie sicher, dass Zuführung und für neue Dokumente durchsuchen funktioniert. Überprüfen Sie die Größe des Indexes beispielsweise mithilfe der Abfrage "Größe > = 0". Außerdem ein neues Dokument hinzufügen, und stellen Sie sicher, dass es durchsuchbar ist.</span><span class="sxs-lookup"><span data-stu-id="d8472-p122">Verify that feeding and searching for new documents works. For example, check the size of the index by using the query "size>=0". Also add a new document and verify that it is searchable.</span></span>
     
   
 
-## <a name="example-manifest-files"></a><span data-ttu-id="d82ff-225">Beispiel-Manifestdateien</span><span class="sxs-lookup"><span data-stu-id="d82ff-225">Example manifest files</span></span>
-<span data-ttu-id="d82ff-226"><a name="Examples"> </a></span><span class="sxs-lookup"><span data-stu-id="d82ff-226"><a name="Examples"> </a></span></span>
+## <a name="example-manifest-files"></a><span data-ttu-id="d8472-229">Beispiel-Manifestdateien</span><span class="sxs-lookup"><span data-stu-id="d8472-229">Example manifest files</span></span>
+<span data-ttu-id="d8472-230"><a name="Examples"> </a></span><span class="sxs-lookup"><span data-stu-id="d8472-230"></span></span>
 
- <span data-ttu-id="d82ff-227">**Manifestdatei SSA**</span><span class="sxs-lookup"><span data-stu-id="d82ff-227">**SSA manifest file**</span></span>
+ <span data-ttu-id="d8472-231">**Manifestdatei SSA**</span><span class="sxs-lookup"><span data-stu-id="d8472-231">**SSA manifest file**</span></span>
   
     
     
@@ -312,7 +314,7 @@ stop-service SPSearchHostController
 
 ```
 
- <span data-ttu-id="d82ff-228">**Index-Manifestdatei**</span><span class="sxs-lookup"><span data-stu-id="d82ff-228">**Index manifest file**</span></span>
+ <span data-ttu-id="d8472-232">**Index-Manifestdatei**</span><span class="sxs-lookup"><span data-stu-id="d8472-232">**Index manifest file**</span></span>
   
     
     
@@ -332,11 +334,11 @@ stop-service SPSearchHostController
 ```
 
 
-## <a name="additional-resources"></a><span data-ttu-id="d82ff-229">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="d82ff-229">Additional resources</span></span>
-<span data-ttu-id="d82ff-230"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="d82ff-230"><a name="bk_addresources"> </a></span></span>
+## <a name="see-also"></a><span data-ttu-id="d8472-233">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="d8472-233">See also</span></span>
+<span data-ttu-id="d8472-234"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="d8472-234"></span></span>
 
 
--  [<span data-ttu-id="d82ff-231">SharePoint Foundation und der Volumeschattenkopie-Dienst</span><span class="sxs-lookup"><span data-stu-id="d82ff-231">Windows SharePoint Services and the Volume Shadow Copy Service</span></span>](http://msdn.microsoft.com/library/adae101a-078e-40b9-9cfa-db2cfb10270a%28Office.15%29.aspx)
+-  [<span data-ttu-id="d8472-235">SharePoint Foundation und der Volumeschattenkopie-Dienst</span><span class="sxs-lookup"><span data-stu-id="d8472-235">Windows SharePoint Services and the Volume Shadow Copy Service</span></span>](http://msdn.microsoft.com/library/adae101a-078e-40b9-9cfa-db2cfb10270a%28Office.15%29.aspx)
     
   
 
