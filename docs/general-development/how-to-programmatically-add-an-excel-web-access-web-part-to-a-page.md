@@ -5,11 +5,11 @@ keywords: how to,howdoi,howto,webpart
 f1_keywords: how to,howdoi,howto,webpart
 ms.prod: sharepoint
 ms.assetid: 858bb0f6-654a-4f12-ba0b-4776bda5ff6d
-ms.openlocfilehash: 3b7a2529cfa7f79ccadd8ac2f78babe2682c54f1
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 940389dc1ff428ae01e932beb4c7c5d267490760
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="programmatically-add-an-excel-web-access-web-part-to-a-page"></a>Programmgesteuertes Hinzufügen eines Excel Web Access-Webparts zu einer Seite
 
@@ -19,13 +19,12 @@ This example shows how to programmatically add an Excel Web Access Web Part to a
     
 
 Im folgenden Projekt wird Microsoft Visual Studio verwendet.
-> **Hinweis** Abhängig von der Visual Studio-Version und den Einstellungen der Visual Studio IDE (integrierte Entwicklungsumgebung) weichen der Prozess und die Schritte zum Erstellen eines Visual Studio-Projekts möglicherweise geringfügig von den in diesem Thema erläuterten Verfahren ab. 
+
+> [!NOTE]
+> Abhängig von der Visual Studio-Version und den Einstellungen der Visual Studio IDE (integrierte Entwicklungsumgebung) weichen der Prozess und die Schritte zum Erstellen eines Visual Studio-Projekts möglicherweise geringfügig von den in diesem Thema erläuterten Verfahren ab. 
   
-    
-    
-
-
-> **Hinweis:** Es wird vorausgesetzt, dass Sie bereits eine SharePoint-Dokumentbibliothek erstellt und diese als vertrauenswürdigen Speicherort definiert haben. Weitere Informationen finden Sie unter [Vorgehensweise: Vertrauen zu einem Standort](how-to-trust-a-location.md). 
+> [!NOTE]
+> Es wird vorausgesetzt, dass Sie bereits eine SharePoint-Dokumentbibliothek erstellt und diese als vertrauenswürdigen Speicherort definiert haben. Weitere Informationen finden Sie unter [Vorgehensweise: Vertrauen zu einem Standort](how-to-trust-a-location.md). 
   
     
     
@@ -35,10 +34,8 @@ Im folgenden Projekt wird Microsoft Visual Studio verwendet.
 
 In den folgenden Schritten wird erläutert, wie Sie nach „Microsoft.Office.Excel.WebUI.dll“ suchen und einen Verweis darauf hinzufügen. Wiederholen Sie das Verfahren für „Microsoft.Office.Excel.WebUI.Internal.dll“ und „Microsoft.SharePoint.dll“.
   
-    
-    
-
-> **Hinweis:** Es wird davon ausgegangen, dass Sie „Microsoft.Office.Excel.WebUI.dll“ und „Microsoft.Office.Excel.WebUI.Internal.dll“ bereits aus dem globalen Assemblycache in einen Ordner Ihrer Wahl kopiert haben. Weitere Informationen zum Suchen und Kopieren von „Microsoft.Office.Excel.WebUI.dll“ und „Microsoft.Office.Excel.WebUI.Internal.dll“ finden Sie unter [Vorgehensweise: Suchen und Kopieren von „Microsoft.Office.Excel.WebUI.dll“ und „Microsoft.Office.Excel.WebUI.Internal.dll“](how-to-locate-and-copy-microsoft-office-excel-webui-dll-and-microsoft-office-exc.md). 
+> [!NOTE]
+> s wird davon ausgegangen, dass Sie „Microsoft.Office.Excel.WebUI.dll“ und „Microsoft.Office.Excel.WebUI.Internal.dll“ bereits aus dem globalen Assemblycache in einen Ordner Ihrer Wahl kopiert haben. Weitere Informationen zum Suchen und Kopieren von „Microsoft.Office.Excel.WebUI.dll“ und „Microsoft.Office.Excel.WebUI.Internal.dll“ finden Sie unter [Vorgehensweise: Suchen und Kopieren von „Microsoft.Office.Excel.WebUI.dll“ und „Microsoft.Office.Excel.WebUI.Internal.dll“](how-to-locate-and-copy-microsoft-office-excel-webui-dll-and-microsoft-office-exc.md). 
   
     
     
@@ -52,7 +49,9 @@ In den folgenden Schritten wird erläutert, wie Sie nach „Microsoft.Office.Exc
   
 2. Klicken Sie im Dialogfeld **Verweis hinzufügen** auf **Durchsuchen**.
     
-    > **Hinweis:** Sie können das Dialogfeld **Verweis hinzufügen** auch im Bereich **Projektmappen-Explorer** öffnen, indem Sie mit der rechten Maustaste auf **Verweise** klicken und **Verweis hinzufügen** auswählen. 
+    > [!NOTE]
+    > Sie können das Dialogfeld **Verweis hinzufügen** auch im Bereich **Projektmappen-Explorer** öffnen, indem Sie mit der rechten Maustaste auf **Verweise** klicken und **Verweis hinzufügen** auswählen. 
+    
 3. Navigieren Sie zum Speicherort von „Microsoft.Office.Excel.WebUI.dll“.
     
   

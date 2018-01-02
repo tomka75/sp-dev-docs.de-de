@@ -3,11 +3,11 @@ title: Erstellen einer SharePoint-Workflow-App mit Visual Studio 2012
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7923d60d-84b9-44d6-8185-e5236efaf502
-ms.openlocfilehash: a17204aae4e5f6d846f27912e30d5c4b553737f7
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 51bf25139db0984f2c402eaa16221cc9eabcdc1f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-a-sharepoint-workflow-app-using-visual-studio-2012"></a>Erstellen einer SharePoint-Workflow-App mit Visual Studio 2012
 Exemplarische Vorgehensweise zum Erstellen einer Workflow-SharePoint-Add-In mit Microsoft Visual Studio 2012
@@ -37,8 +37,8 @@ In diesem Entwicklungsszenario wird davon ausgegangen, dass eine SharePoint-Farm
   
   - Office Developer Tools für Visual Studio 2013
     
-    > **Hinweis:** Office Developer Tools für Visual Studio 2013 ist nur erforderlich, wenn Sie Visual Studio 2012 verwenden. Höhere Versionen von Visual Studio enthalten die Office Developer Tools. 
-      > Hilfe beim Einrichten und Konfigurieren Ihrer SharePoint-Workflow-Entwicklungsumgebung finden Sie hier:
+    > [!NOTE]
+    > Office Developer Tools für Visual Studio 2013 ist nur erforderlich, wenn Sie Visual Studio 2012 verwenden. Höhere Versionen von Visual Studio enthalten die Office Developer Tools. Hilfe beim Einrichten und Konfigurieren Ihrer SharePoint-Workflow-Entwicklungsumgebung finden Sie hier:
   
     
     
@@ -46,12 +46,10 @@ In diesem Entwicklungsszenario wird davon ausgegangen, dass eine SharePoint-Farm
 -  [Vorbereiten auf das Einrichten und Konfigurieren einer SharePoint-Workflowentwicklungsumgebung](prepare-to-set-up-and-configure-a-sharepoint-workflow-development-environment.md)
     
   
--  
-  [Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/en-us/library/jj658586%28v=office.15%29)
+-  [Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/de-DE/library/jj658586%28v=office.15%29)
     
   
--  
-  [Videoreihe: Installieren und Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/en-us/library/dn201724%28v=office.15%29)
+-  [Videoreihe: Installieren und Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/de-DE/library/dn201724%28v=office.15%29)
     
   
 
@@ -103,7 +101,7 @@ Zusammengefasst führt der Workflow Folgendes aus:
   
 
     
-> **Wichtig:** Bevor Sie mit dieser exemplarischen Vorgehensweise beginnen, stellen Sie sicher, dass die Workflowentwicklungsumgebung korrekt installiert und konfiguriert ist. Weitere Informationen finden Sie unter [Vorbereiten auf das Einrichten und Konfigurieren einer SharePoint-Workflowentwicklungsumgebung](prepare-to-set-up-and-configure-a-sharepoint-workflow-development-environment.md). Stellen Sie außerdem sicher, dass Sie über eine SharePoint-Instanz verfügen, mit der Sie Ihren Workflow entwickeln können. Weitere Informationen finden Sie unter [Installieren von SharePoint](http://technet.microsoft.com/en-us/library/cc303424.aspx). 
+> **Wichtig:** Bevor Sie mit dieser exemplarischen Vorgehensweise beginnen, stellen Sie sicher, dass die Workflowentwicklungsumgebung korrekt installiert und konfiguriert ist. Weitere Informationen finden Sie unter [Vorbereiten auf das Einrichten und Konfigurieren einer SharePoint-Workflowentwicklungsumgebung](prepare-to-set-up-and-configure-a-sharepoint-workflow-development-environment.md). Stellen Sie außerdem sicher, dass Sie über eine SharePoint-Instanz verfügen, mit der Sie Ihren Workflow entwickeln können. Weitere Informationen finden Sie unter [Installieren von SharePoint](http://technet.microsoft.com/de-DE/library/cc303424.aspx). 
   
     
     
@@ -119,7 +117,8 @@ Im ersten Schritt wird die SharePoint-Website mit Dokumentbibliotheken vorbereit
 
 1. Starten Sie Visual Studio 2012, und erstellen Sie ein neues Projekt unter Verwendung der Vorlage **App für SharePoint **, wie in Abbildung 2 dargestellt.
     
-    > **Hinweis:** In dieser exemplarischen Vorgehensweise heißt die Lösungsdatei „DocApprovalWorkflow1“. Es wird empfohlen, dass Sie denselben Namen verwenden. Wenn Sie der Lösung jedoch einen anderen Namen geben, stellen Sie sicher, dass Sie entsprechende Anpassungen an den folgenden Anweisungen vornehmen. 
+    > [!NOTE]
+    > In dieser exemplarischen Vorgehensweise wird die Lösungsdatei "DocApprovalWorkflow1" genannt. Es wird empfohlen, denselben Namen zu verwenden. Wenn Sie Ihre Lösung anders nennen, müssen Sie darauf achten, in den folgenden Anweisungen die nötigen Anpassungen vorzunehmen. 
 
    **Abbildung 2. Erstellen eines neuen Projekts in Visual Studio 2012**
 
@@ -245,7 +244,8 @@ Nun sind wir bereit, den Workflow selbst zu erstellen.
   
 
     
-    > **Hinweis:** Sie können den Workflowzuordnungstyp nach Erstellen des Workflows im Eigenschaftenraster ändern, während der Workflow im **Projektmappen-Explorer** ausgewählt ist (siehe Abbildung 9). Klicken Sie dann auf **Fertig stellen**. 
+    > [!NOTE]
+    > Sie können den Workflowzuordnungstyp nach Erstellen des Workflows im Eigenschaftenraster ändern, während der Workflow im **Projektmappen-Explorer** ausgewählt ist (siehe Abbildung 9). Klicken Sie dann auf **Fertig stellen**. 
 
    **Abbildung 9. Das Eigenschaftsraster des Workflows**
 
@@ -257,7 +257,7 @@ Nun sind wir bereit, den Workflow selbst zu erstellen.
   
 
   
-5. Konfigurieren Sie schließlich Ihren SharePoint Server für die Verwaltung ausgehender E-Mails über den SMTP-Dienst. Anweisungen finden Sie unter  [Konfigurieren ausgehender E-Mails für eine SharePoint-Farm](http://technet.microsoft.com/en-us/library/cc263462.aspx). Dies ist nötig, damit vom Workflow E-Mail-Benachrichtigungen im Zusammenhang mit Workflowaufgaben gesendet werden können.
+5. Konfigurieren Sie schließlich Ihren SharePoint Server für die Verwaltung ausgehender E-Mails über den SMTP-Dienst. Anweisungen finden Sie unter  [Konfigurieren ausgehender E-Mails für eine SharePoint-Farm](http://technet.microsoft.com/de-DE/library/cc263462.aspx). Dies ist nötig, damit vom Workflow E-Mail-Benachrichtigungen im Zusammenhang mit Workflowaufgaben gesendet werden können.
     
   
 
@@ -272,7 +272,7 @@ Nachdem wir unseren SharePoint Server eingerichtet und den grundlegenden Workflo
 1. Öffnen Sie den Workflow-Designer durch Doppelklicken auf das Workflow-Projektelement im **Projektmappen-Explorer**. Sie sehen die Workflow-Designeroberfläche (und die Workflow-Toolbox). Der Designer wird mit einer anfänglichen Workflowphase namens **Sequenz** aufgefüllt.
     
   
-2. Unser erster Schritt besteht darin, die **LookupSPListItem**-Aktivität aus der Toolbox (siehe Abbildung 10) in die Phase **Sequenz** auf der Designeroberfläche zu ziehen. Wir verwenden diese Aktivität, um zu einem beliebigen Zeitpunkt den Status des Dokuments abzurufen. Die **LookupSPListItem**-Aktivität gibt diesen als  [DynamicValue](http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.activities.dynamicvalue%28v=azure.10%29.aspx)-Objekt zurück, das einen Satz von SharePoint-Listenelementeigenschaften als Schlüssel-Wert-Paare enthält.
+2. Unser erster Schritt besteht darin, die **LookupSPListItem**-Aktivität aus der Toolbox (siehe Abbildung 10) in die Phase **Sequenz** auf der Designeroberfläche zu ziehen. Wir verwenden diese Aktivität, um zu einem beliebigen Zeitpunkt den Status des Dokuments abzurufen. Die **LookupSPListItem**-Aktivität gibt diesen als  [DynamicValue](http://msdn.microsoft.com/de-DE/library/windowsazure/microsoft.activities.dynamicvalue%28v=azure.10%29.aspx)-Objekt zurück, das einen Satz von SharePoint-Listenelementeigenschaften als Schlüssel-Wert-Paare enthält.
     
    **Abbildung 10. "LookupSPListItem"-Aktivitätsauswahl.**
 
@@ -404,7 +404,8 @@ Nachdem wir unseren SharePoint Server eingerichtet und den grundlegenden Workflo
     
     Notieren Sie den Namen der **Outcome**-Variablen:  _outcome_0_ (oder ähnlich). Wir verwenden diese Variable, um das Ergebnis des Vorgangs zu überprüfen - d. h., ob die genehmigende Person das Dokument genehmigt oder abgelehnt hat.
     
-    > **Hinweis:** Das **Outcome**-Argument gibt einen **Int32**-Wert entsprechend dem Index des Ergebnisses zurück, d. h. **0** für „Genehmigt“ und **1** für „Abgelehnt“. Diese ganze Zahlen sind die Standardwerte, die in der Out-Of-Box-SharePoint-Websitespalte mit dem Namen „Ergebnis der Aufgabe“ bereitgestellt werden.
+    > [!NOTE]
+    > Das **Outcome**-Argument gibt einen **Int32**-Wert entsprechend dem Index des Ergebnisses zurück, d. h. **0** für „Genehmigt“ und **1** für „Abgelehnt“. Diese ganze Zahlen sind die Standardwerte, die in der Out-Of-Box-SharePoint-Websitespalte mit dem Namen „Ergebnis der Aufgabe“ bereitgestellt werden.
 8. Damit der Workflow das Ergebnis des Vorgangs überprüft, müssen wir nun eine weitere **If**-Aktivität hinzufügen. Sie wird hinter der **SingleTask**-Aktivität, aber innerhalb des **Then**-Bereichs platziert, wie in Abbildung 17 dargestellt. Durch Festlegen der **If**-Bedingung auf " `outcome_0 == 0`" wird mitgeteilt, ob das Dokument genehmigt wurde.
     
    **Abbildung 17. Hinzufügen der IF-Aktivität zum Überprüfen des Aufgabenstatus**
@@ -460,7 +461,8 @@ Nachdem wir unseren SharePoint Server eingerichtet und den grundlegenden Workflo
   
 
     
-    > **Hinweis:** Für diese exemplarische Vorgehensweise werden wir davon ausgehen, dass alle unsere veröffentlichten Dokumente aus der Bibliothek Entwurfsdokumente stammen. Daher müssen wir uns nicht um doppelte Dateinamen kümmern. 
+    > [!NOTE]
+    > Für diese exemplarische Vorgehensweise werden wir davon ausgehen, dass alle unsere veröffentlichten Dokumente aus der Bibliothek Entwurfsdokumente stammen. Daher müssen wir uns nicht um doppelte Dateinamen kümmern. 
 11. Schließlich müssen wir eine Aktivität hinzufügen, um den Fall zu behandeln, dass der Prüfer das Dokument ablehnt. Dazu fügen wir eine **UpdateListItem**-Aktivität im **Else**-Bereich der aktuellen **If**-Aktivität hinzu. Konfigurieren Sie diese **UpdateListItem**-Aktivität genau so wie die vorherige in Schritt 9(c), allerdings legen wir den Dokumentstatus jetzt auf "Abgelehnt" fest, wie in Abbildung 21 dargestellt.
     
    **Abbildung 21. Konfigurieren von Eigenschaften der "UpdateListItem"-Aktivität für abgelehnte Dokumente**
@@ -508,16 +510,13 @@ Die folgenden Ressourcen bieten Hilfestellung für das Packen und Bereitstellen 
     
     
 
--  
-  [Bereitstellen und Installieren von Apps für SharePoint: Methoden und Optionen](http://msdn.microsoft.com/en-us/library/fp179933.aspx)
+-  [Bereitstellen und Installieren von Apps für SharePoint: Methoden und Optionen](http://msdn.microsoft.com/de-DE/library/fp179933.aspx)
     
   
--  
-  [Veröffentlichen von Apps für SharePoint](http://msdn.microsoft.com/en-us/library/jj164070.aspx)
+-  [Veröffentlichen von Apps für SharePoint](http://msdn.microsoft.com/de-DE/library/jj164070.aspx)
     
   
--  
-  [Vorgehensweise: Erstellen und Bereitstellen deklarativer Workflows in Sandkastenlösungen (mithilfe von SharePoint Designer 2013](http://msdn.microsoft.com/en-us/library/gg615452%28v=office.14%29.aspx)
+-  [Vorgehensweise: Erstellen und Bereitstellen deklarativer Workflows in Sandkastenlösungen (mithilfe von SharePoint Designer 2013](http://msdn.microsoft.com/de-DE/library/gg615452%28v=office.14%29.aspx)
     
   
 
@@ -536,7 +535,7 @@ Die folgenden Ressourcen bieten Hilfestellung für das Packen und Bereitstellen 
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

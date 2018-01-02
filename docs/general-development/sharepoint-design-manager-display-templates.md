@@ -3,11 +3,11 @@ title: Anzeigevorlagen im SharePoint-Entwurfs-Manager
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 1a782bac-48ee-4baf-8751-0f943a306e0f
-ms.openlocfilehash: a2bd189e535d3d62e0fbc234e0ed9a35a907d309
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 337336c6d40db8db4cab7b73f070cf2a6ab59e08
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-design-manager-display-templates"></a>Anzeigevorlagen im SharePoint-Entwurfs-Manager
 Hier finden Sie Informationen zu Anzeigevorlagen. Es wird erläutert, in welchem Zusammenhang diese mit Suche-Webparts stehen, wie die Vorlagen strukturiert sind, wie Eigenschaften zugeordnet und Variablen und jQuery verwendet werden und wie eine benutzerdefinierte Anzeigevorlage in SharePoint erstellt wird.
@@ -16,10 +16,8 @@ Hier finden Sie Informationen zu Anzeigevorlagen. Es wird erläutert, in welchem
 
 Anzeigevorlagen in SharePoint sind Vorlagen in Webparts, die Suchtechnologie verwenden (in diesem Artikel als Suche-Webparts bezeichnet), um die Ergebnisse einer Abfrage des Suchindex anzuzeigen. Anzeigevorlagen steuern, welche verwalteten Eigenschaften in den Suchergebnissen angezeigt werden und wie diese im Webpart angezeigt werden. Jede Anzeigevorlage besteht aus zwei Dateien: einer HTML-Version der Anzeigevorlage, die Sie im HTML-Editor bearbeiten können, und einer .js-Datei, die SharePoint verwendet.
   
-    
-    
-
-> **Hinweis:** Nur Suche-Webparts können Anzeigevorlagen verwenden. Das Inhaltsabfrage-Webpart ist nicht suchgesteuert und verwendet daher keine Anzeigevorlagen. 
+> [!NOTE]
+> Nur Such-Webparts können Anzeigevorlagen verwenden. Das Inhaltsabfrage-Webpart ist nicht suchgesteuert und verwendet daher keine Anzeigevorlagen. 
   
     
     
@@ -34,7 +32,9 @@ Sie können vorhandene Anzeigevorlagen im Entwurfs-Manager anzeigen. Sie können
   
 - Öffnen Sie einen der vier Ordner im Ordner **Anzeigevorlagen** .
     
-    > **Hinweis:** Der Ordner Ihrer Wahl hängt vom Typ der zu verwendenden Anzeigevorlage ab. Wenn Ihre Website beispielsweise websiteübergreifende Veröffentlichung verwendet, kopieren Sie eine Anzeigevorlage aus dem Ordner **Inhalt-WebParts**. Weitere Informationen finden Sie unter [Anzeigen der Vorlagenreferenz in SharePoint Server](http://technet.microsoft.com/en-us/library/jj944947.aspx). 
+    > [!NOTE]
+    > Der Ordner Ihrer Wahl hängt vom Typ der zu verwendenden Anzeigevorlage ab. Wenn Ihre Website beispielsweise websiteübergreifende Veröffentlichung verwendet, kopieren Sie eine Anzeigevorlage aus dem Ordner **Inhalt-WebParts**. Weitere Informationen finden Sie unter [Anzeigen der Vorlagenreferenz in SharePoint Server](http://technet.microsoft.com/de-DE/library/jj944947.aspx). 
+
 - Kopieren Sie die HTML-Datei für eine vorhandene Anzeigevorlage, die derjenigen ähnelt, die Sie erstellen möchten. Der genaue Speicherort, an den Sie die Datei kopieren, ist nicht wichtig, solange sich dieser im **Gestaltungsvorlagenkatalog** befindet.
     
   
@@ -58,9 +58,8 @@ Wenn Sie durch Kopieren der HTML-Datei für eine vorhandene Anzeigevorlage im Or
   
 - Die HTML-Datei und die JS-Datei werden verknüpft, sodass spätere Änderungen an der HTML-Datei mit der JS-Datei synchronisiert werden, wenn die HTML-Datei gespeichert wird.
     
-  
-
-> **Hinweis:** Die Synchronisierung erfolgt nur in eine Richtung. Änderungen an der HTML-Anzeigevorlage werden mit der zugehörigen .js-Datei synchronisiert. Im Gegensatz zu Gestaltungsvorlagen und Seitenlayouts können Sie beim Arbeiten mit Anzeigevorlagen nicht nur mit der .js-Datei arbeiten, indem Sie die Zuordnung zwischen den Dateien trennen. Sie müssen HTML und JavaScript komplett in der HTML-Datei eingeben. 
+> [!NOTE]
+> Die Synchronisierung erfolgt nur in eine Richtung. Änderungen an der HTML-Anzeigevorlage werden mit der verknüpften JS-Datei synchronisiert. Anders als bei Gestaltungsvorlagen und Seitenlayouts können Sie beim Arbeiten mit Anzeigevorlagen nicht nur mit der JS-Datei arbeiten, indem Sie die Verknüpfung zwischen den Dateien aufheben. Sie müssen sämtliches HTML und JavaScript in die HTML-Datei eingeben. 
   
     
     
@@ -80,7 +79,7 @@ Es gibt grundsätzlich zwei Arten von Anzeigevorlagen:
 - **Elementvorlagen** bestimmen, wie jedes Ergebnis im Satz angezeigt wird. Beinhaltet Bilder, Text, Video und andere Elemente.
     
   
-Weitere Informationen zu diesen und anderen Anzeigevorlagen finden Sie unter  [Referenz der Anzeigevorlagen in SharePoint](http://technet.microsoft.com/en-us/library/jj944947.aspx).
+Weitere Informationen zu diesen und anderen Anzeigevorlagen finden Sie unter  [Referenz der Anzeigevorlagen in SharePoint](http://technet.microsoft.com/de-DE/library/jj944947.aspx).
   
     
     
@@ -171,10 +170,8 @@ Direkt nach dem Tag **\<title\>** findet sich ein Satz benutzerdefinierter Eleme
 
 Diese Elemente und deren Eigenschaften liefern der SharePoint-Umgebung wichtige Informationen zur Anzeigevorlage. Tabelle 1 beschreibt die benutzerdefinierten Eigenschaften, die in Anzeigevorlagen verwendet werden.
   
-    
-    
-
-> **Hinweis:** Nicht alle benutzerdefinierten Eigenschaften in jeder Anzeigevorlage werden verwendet. Außerdem können einige Eigenschaften geändert werden, indem die Eigenschaften der Anzeigevorlagendatei im Entwurfs-Manager bearbeitet werden. 
+> [!NOTE]
+> Nicht alle benutzerdefinierten Eigenschaften werden in jeder Anzeigevorlage verwendet. Außerdem können einige Eigenschaften geändert werden, indem die Eigenschaften der Anzeigevorlagendatei im Entwurfs-Manager bearbeitet werden. 
   
     
     
@@ -225,8 +222,8 @@ Standardmäßig ist diese Zeile in allen Anzeigevorlagen enthalten. Sie können 
 |Eine CSS-Datei, die Teil der aktuellen Websitesammlung ist  <br/> | `$includeCSS(this.url, "~sitecollection/_catalogs/masterpage/Display Templates/Content Web Parts/MyCSS.css");` <br/> |
 |Eine CSS-Datei, die sich an einem Speicherort relativ zur aktuellen Anzeigevorlage befindet  <br/> | `$includeCSS(this.url,"../../MyStyles/MyCSS.css");` <br/> |
    
-
-> **Hinweis:** Wenn für Elemente im Gestaltungsvorlagenkatalog eine **Inhaltsgenehmigung** erforderlich ist, müssen alle Ressourcendateien (einschließlich CSS- und .js-Dateien) veröffentlicht werden, bevor sie für Gestaltungsvorlagen und Seitenlayouts verfügbar sind. Weitere Informationen finden Sie unter [Festlegen einer Genehmigungsanforderung für Elemente in einer Websiteliste oder -bibliothek](http://office.microsoft.com/en-us/sharepoint-help/require-approval-of-items-in-a-site-list-or-library-HA102853936.aspx?CTT=1). 
+> [!NOTE]
+> Wenn für Elemente im Gestaltungsvorlagenkatalog eine **Inhaltsgenehmigung** erforderlich ist, müssen alle Ressourcendateien (einschließlich CSS- und .js-Dateien) veröffentlicht werden, bevor sie für Gestaltungsvorlagen und Seitenlayouts verfügbar sind. Weitere Informationen finden Sie unter [Festlegen einer Genehmigungsanforderung für Elemente in einer Websiteliste oder -bibliothek](http://office.microsoft.com/en-us/sharepoint-help/require-approval-of-items-in-a-site-list-or-library-HA102853936.aspx?CTT=1). 
   
     
     
@@ -237,10 +234,8 @@ Standardmäßig ist diese Zeile in allen Anzeigevorlagen enthalten. Sie können 
 
 Dem Tag **\<script\>** folgt das Tag **\<div\>** mit einer ID. Standardmäßig entspricht die ID für das Tag ** \<div\> ** dem Namen der HTML-Datei. HTML oder Code, die/den die Anzeigevorlage bereitstellen soll, muss im Tag **\<div\>** enthalten sein. Aber das Tag selbst ist nicht im Markup enthalten, das auf der Webseite zur Laufzeit wiedergegeben wird.
   
-    
-    
-
-> **Hinweis:** Wenn Sie eine CSS-Formatvorlage oder eine ID zum HTML-Block zuweisen, der auf der Seite zur Laufzeit zurückgegeben wird, können Sie ein neues Tag im ersten **\<div\>**-Tag hinzufügen. Sie können eine CSS-Formatvorlage oder ID auch zum HTML-Code zuweisen, der die Variable `_#= ctx.RenderGroups(ctx) =#_` in der Steuerelementvorlage umgibt. Die Variable `_#= ctx.RenderGroups(ctx) =#_` wird verwendet, um den HTML-Code wiederzugeben, der die Abfrageergebnisse umgibt, die von der Elementvorlage wiedergegeben werden.
+> [!NOTE]
+> Wenn Sie eine CSS-Formatvorlage oder eine ID zum HTML-Block zuweisen, der auf der Seite zur Laufzeit zurückgegeben wird, können Sie ein neues Tag im ersten **\<div\>**-Tag hinzufügen. Sie können eine CSS-Formatvorlage oder ID auch zum HTML-Code zuweisen, der die Variable `_#= ctx.RenderGroups(ctx) =#_` in der Steuerelementvorlage umgibt. Die Variable `_#= ctx.RenderGroups(ctx) =#_` wird verwendet, um den HTML-Code wiederzugeben, der die Abfrageergebnisse umgibt, die von der Elementvorlage wiedergegeben werden.
   
     
     
@@ -338,7 +333,7 @@ Bevor Sie mithilfe des folgenden Verfahrens eine Anzeigevorlage erstellen könne
 2. Öffnen Sie den Ordner **Anzeigevorlagen** und dann den Ordner **Inhalt-Webparts**.
     
   
-3. Kopieren Sie die HTML-Datei für eine Anzeigevorlage, die dem ähnelt, was Sie erstellen möchten. Eine Liste der Standardanzeigevorlagen und ihre Beschreibungen finden Sie unter  [Anzeigen der Vorlagenreferenz in SharePoint Server](http://technet.microsoft.com/en-us/library/jj944947.aspx).
+3. Kopieren Sie die HTML-Datei für eine Anzeigevorlage, die dem ähnelt, was Sie erstellen möchten. Eine Liste der Standardanzeigevorlagen und ihre Beschreibungen finden Sie unter  [Anzeigen der Vorlagenreferenz in SharePoint Server](http://technet.microsoft.com/de-DE/library/jj944947.aspx).
     
     SharePoint kopiert jetzt die HTML-Datei in eine .js-Datei mit demselben Namen. Wenn die kopierte HTML-Datei beispielsweise „Item_Picture3Line_copy.html“ heißt, wird auch eine entsprechende .js-Datei mit dem Namen „Item_Picture3Lines_copy.js“ erstellt. Wenn Sie die Datei umbenennen, ändert sich auch der Name der entsprechenden .js-Datei.
     
@@ -358,30 +353,21 @@ Bevor Sie mithilfe des folgenden Verfahrens eine Anzeigevorlage erstellen könne
     
   
   - **Konvertierung erfolgreich**
-    
-  
 
-    > **Hinweis:** Im Gegensatz zu Gestaltungsvorlagen und Seitenlayouts können Sie nicht die Vorschauseite verwenden, um eine serverseitige Livevorschau Ihrer Anzeigevorlage anzuzeigen. Um eine Vorschau der Anzeigevorlage anzuzeigen, müssen Sie ein Inhaltssuche-Webpart zu einer Seite hinzufügen und dann die Anzeigevorlage im Bearbeitungsbereich des Inhaltssuche-Webpart anwenden. Wenn in der Anzeigevorlage Fehler vorhanden sind, zeigt das Inhaltssuche-Webpart eine Fehlermeldung an. Fehler müssen behoben werden, bevor die Anzeigevorlage korrekt angezeigt wird. 
+    > [!NOTE]
+    > Sie können nicht wie bei Gestaltungsvorlagen und Seitenlayouts die Vorschauseite verwenden, um eine serverseitige Livevorschau Ihrer Anzeigevorlage anzuzeigen. Um eine Vorschau der Anzeigevorlage anzuzeigen, müssen Sie einer Seite ein Inhaltssuche-Webpart hinzufügen und dann die Anzeigevorlage im Bearbeitungsbereich des Inhaltssuche-Webparts anwenden. Weist die Anzeigevorlage Fehler auf, zeigt das Inhaltssuche-Webpart eine Fehlermeldung an. Fehler müssen behoben werden, bevor die Anzeigevorlage korrekt angezeigt werden kann. 
+
 8. Bearbeiten Sie zur Behebung von Fehlern die HTML-Datei auf dem Server. Verwenden Sie zum Öffnen und Bearbeiten der HTML-Datei auf dem zugeordneten Laufwerk einen HTML-Editor. Speichern Sie die Anzeigevorlage, und laden Sie dann die Seite mit dem Inhaltssuche-Webpart, welche die Anzeigevorlage verwendet, neu.
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
-
 -  [Übersicht über den Entwurfs-Manager in SharePoint](overview-of-design-manager-in-sharepoint.md)
-    
-  
 -  [Entwickeln des Website-Designs in SharePoint](develop-the-site-design-in-sharepoint.md)
-    
-  
 -  [Vorgehensweise: Konvertieren einer HTML-Datei in eine Gestaltungsvorlage in SharePoint](how-to-convert-an-html-file-into-a-master-page-in-sharepoint.md)
-    
-  
 -  [Vorgehensweise: Erstellen eines Seitenlayouts in SharePoint](how-to-create-a-page-layout-in-sharepoint.md)
-    
-  
 -  [SharePoint Design Manager - Branding- und Designfunktionen](sharepoint-design-manager-branding-and-design-capabilities.md)
     
   

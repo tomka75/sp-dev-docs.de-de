@@ -3,11 +3,11 @@ title: "REST-API-Referenz für sozialen Feed für SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f1cb914f-1e91-4e23-bf53-d2ab323eac13
-ms.openlocfilehash: 90b0bfe6f81335b27300f9ef5af332177cd7e8c1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2cb778e590d8c504bcaf5b962a6345cf581e9e6b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="social-feed-rest-api-reference-for-sharepoint"></a>REST-API-Referenz für sozialen Feed für SharePoint
 Suchen Sie SharePoint-REST-Endpunkte, um mithilfe der **SocialRestFeedManager**-Ressource Beiträge in sozialen Feeds zu lesen und zu verfassen. Sie können den REST-Dienst (Representational State Transfer) in SharePoint für die gleichen Dinge verwenden, die Sie auch mit den .NET-Clientobjektmodellen und dem JavaScript-Objektmodell ausführen können. Der REST-Dienst macht Ressourcen verfügbar, die SharePoint-Objekten, -Eigenschaften und -Methoden entsprechen. Um den REST-Dienst zu verwenden, erstellen und senden Sie HTTP- **GET**- und **POST**-Anforderungen an die Ressourcenendpunkte, die den Aufgaben entsprechen, die Sie ausführen möchten.
@@ -48,16 +48,16 @@ Wenn der Ressourcenendpunkt einen Parameter verwendet, werden die Parametermetad
 | [Post/Unlike](social-feed-rest-api-reference-for-sharepoint.md#bk_postUnlike)|Entfernt den aktuellen Benutzer aus der Liste der Benutzer, denen der angegebene Beitrag gefällt.|
 | [Post/Likers](social-feed-rest-api-reference-for-sharepoint.md#bk_postLikers)|Ruft die Benutzer ab, denen der angegebene Beitrag gefällt.|
 | [Post/Lock](social-feed-rest-api-reference-for-sharepoint.md#bk_postLock)|Sperrt den angegebenen Thread.|
-| [Post/Unlock](social-feed-rest-api-reference-for-sharepoint.md#bk_postUnlock)|Entsperrt den angegebenen Thread.|
+| [Post/Unlock](social-feed-rest-api-reference-for-sharepoint.md#bk_postUnlock)|Hebt die Sperre für den angegebenen Thread auf.|
    
-
-> **Hinweis:** Die folgenden Feed-bezogenen REST-Ressourcen verwenden für die Erstellung des Endpunkt-URI dasselbe Muster wie die übrigen SharePoint-REST-APIs. Im Fall von **CreateImageAttachment** senden Sie eine Anforderung des Typs **POST** an `http://<siteCollection>/<site>/_api/SP.Social.SocialFeedManager/CreateImageAttachment`. Im Fall von **GetPreview** senden Sie eine Anforderung des Typs **POST** an `http://<siteCollection>/<site>/_api/SP.Social.SocialFeedManager/GetPreview`. Im Fall von **SuppressThreadNotifications** senden Sie eine Anforderung des Typs **POST** an `http://<siteCollection>/<site>/_api/SP.Social.SocialFeedManager/SuppressThreadNotifications`.
+> [!NOTE]
+> Die folgenden Feed-bezogenen REST-Ressourcen verwenden für die Erstellung des Endpunkt-URI dasselbe Muster wie die übrigen SharePoint-REST-APIs. Im Fall von **CreateImageAttachment** senden Sie eine Anforderung des Typs **POST** an `http://<siteCollection>/<site>/_api/SP.Social.SocialFeedManager/CreateImageAttachment`. Im Fall von **GetPreview** senden Sie eine Anforderung des Typs **POST** an `http://<siteCollection>/<site>/_api/SP.Social.SocialFeedManager/GetPreview`. Im Fall von **SuppressThreadNotifications** senden Sie eine Anforderung des Typs **POST** an `http://<siteCollection>/<site>/_api/SP.Social.SocialFeedManager/SuppressThreadNotifications`.
   
     
     
 
 
-## <a name="my"></a>My
+## <a name="my"></a>Eigene
 <a name="bk_my"> </a>
 
 Ruft Informationen zu dem aktuellen Benutzer ab.
@@ -147,16 +147,14 @@ Erstellt einen Stammbeitrag in dem Feed des aktuellen Benutzers.
     
 Sie können nur im Kontext des aktuellen Benutzers Beiträge posten. Sie können keinen Stammbeitrag im Feed eines anderen Benutzers erstellen, Sie können aber auf den Beitrag eines anderen Benutzers antworten. Weitere Informationen finden Sie unter  [Post/Reply](social-feed-rest-api-reference-for-sharepoint.md#bk_postReply).
   
-    
-    
-
-> **Hinweis:** Verwechseln Sie diese Ressource des Typs `Post` nicht mit der Ressource des Typs `Post`, die einen bestimmten Thread oder Beitrag darstellt.
+> [!NOTE]
+> Verwechseln Sie diese `Post`-Ressource nicht mit der `Post`-Ressource, die einen bestimmten Thread oder Beitrag darstellt.
   
     
     
 
 
-### <a name="endpoint-uri-structure"></a>Struktur des Endpunkt-URI
+### <a name="endpoint-uri-structure"></a>Endpunkt-URI-Struktur
 
  **POST** `http://<siteCollection>/<site>/_api/social.feed/my/feed/post`
   
@@ -1702,12 +1700,10 @@ Im folgenden Antwortbeispiel ist die Anzahl 1 für ungelesene Erwähnungen darge
 ## <a name="actor"></a>Akteur
 <a name="bk_actor"> </a>
 
-Ruft Informationen zu dem angegebenen Benutzer und dem aktuellen Benutzer ab.
+Ruft Informationen zu dem angegebenen und dem aktuellen Benutzer ab.
   
-    
-    
-
-> **Hinweis:** Der Endpunkt `actor` legt den angegebenen Benutzer- oder Websitefeed als Kontext für alle zukünftigen Ressourcen in dem URI fest. So ruft beispielsweise `http://contoso.com/_api/social.feed/actor(item='domain\\user')/feed` den persönlichen Feed des angegebenen Benutzers ab und `http://contoso.com/_api/social.feed/actor(item=@v)/feed?@v='http://<server>/<teamSite>/newsfeed.aspx'` den Websitefeed der angegebenen Teamwebsite.
+> [!NOTE]
+> Der Endpunkt `actor` legt den angegebenen Benutzer- oder Websitefeed als Kontext für alle zukünftigen Ressourcen in dem URI fest. So ruft beispielsweise `http://contoso.com/_api/social.feed/actor(item='domain\\user')/feed` den persönlichen Feed des angegebenen Benutzers ab und `http://contoso.com/_api/social.feed/actor(item=@v)/feed?@v='http://<server>/<teamSite>/newsfeed.aspx'` den Websitefeed der angegebenen Teamwebsite.
   
     
     
@@ -2060,16 +2056,14 @@ Erstellt einen Stammbeitrag in dem angegebenen Websitefeed.
     
 Sie können nur im Kontext des aktuellen Benutzers Beiträge posten. Sie können keinen Stammbeitrag im Feed eines anderen Benutzers erstellen, Sie können aber auf den Beitrag eines anderen Benutzers antworten. Weitere Informationen finden Sie unter  [Post/Reply](social-feed-rest-api-reference-for-sharepoint.md#bk_postReply).
   
-    
-    
-
-> **Hinweis:** Verwechseln Sie diese Ressource des Typs `Post` nicht mit der Ressource des Typs `Post`, die einen bestimmten Thread oder Beitrag darstellt.
+> [!NOTE]
+> Verwechseln Sie diese `Post`-Ressource nicht mit der `Post`-Ressource, die einen bestimmten Thread oder Beitrag darstellt.
   
     
     
 
 
-### <a name="endpoint-uri-structure"></a>Struktur des Endpunkt-URI
+### <a name="endpoint-uri-structure"></a>Endpunkt-URI-Struktur
 
  **POST** `http://<siteCollection>/<site>/_api/social.feed/actor(item=@v)/feed/post?@v='http://<siteCollection>/<teamSite>/newsfeed.aspx'`
   
@@ -3273,10 +3267,8 @@ Im folgenden Antwortbeispiel ist ein entsperrter Thread dargestellt. Die **Attri
     
  **Beispiel:** Angeben des Parameters _ID_ im Anforderungstext (im Attribut **data**)
   
-    
-    
-
-> **Hinweis:** Die Werte für die Eigenschaft **Id** von Threads und Beiträgen sind zu lang, um als URL gesendet werden zu können. Sie müssen im Anforderungstext gesendet werden. Selbst schreibgeschützte Vorgänge, die logisch gesehen Anforderungen des Typs **GET** sind, müssen daher als Anforderungen des Typs **POST** gesendet werden. Wenn Sie beispielsweise einen Thread abrufen möchten, müssen Sie eine Anforderung des Typs **POST** senden und den Wert **Id** des Threads als Entität im Anforderungstext übergeben.
+> [!NOTE]
+> Die Werte für die Eigenschaft **Id** von Threads und Beiträgen sind zu lang, um als URL gesendet werden zu können. Sie müssen im Anforderungstext gesendet werden. Selbst schreibgeschützte Vorgänge, die logisch gesehen Anforderungen des Typs **GET** sind, müssen daher als Anforderungen des Typs **POST** gesendet werden. Wenn Sie beispielsweise einen Thread abrufen möchten, müssen Sie eine Anforderung des Typs **POST** senden und den Wert **Id** des Threads als Entität im Anforderungstext übergeben.
   
     
     
@@ -3564,7 +3556,7 @@ Das Objekt **SocialThread** hat die folgenden Eigenschaften:
 |TotalReplyCount|**Int32**|Die Gesamtanzahl von Antworten für den Thread.|
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

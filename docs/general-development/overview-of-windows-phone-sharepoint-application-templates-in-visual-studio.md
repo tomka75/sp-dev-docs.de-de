@@ -3,11 +3,11 @@ title: "Übersicht über Windows Phone SharePoint-Anwendungsvorlagen in Visual S
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 6ae27957-fa41-4e6f-92e3-db11dae1f6c2
-ms.openlocfilehash: c1cd9e144b5fa71d64b0a3bac46420bcc86c8b85
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 552055e08e4f0d370fd6c4a870f6a76e4039baa6
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="overview-of-windows-phone-sharepoint-application-templates-in-visual-studio"></a>Übersicht über Windows Phone SharePoint-Anwendungsvorlagen in Visual Studio
 Hier erfahren Sie mehr über die Visual Studio-Vorlagen, die vom Windows Phone SharePoint Software Development Kit für die Entwicklung mobiler Apps installiert werden.
@@ -27,10 +27,8 @@ Nachdem Sie Ihre Entwicklungsumgebung einrichten und Windows Phone SharePoint So
   
 Diese Vorlagen dienen derzeit nur in C#-Projekten verwendet werden. Sie sind nicht verfügbar für Visual Basic Projekte. Die Vorlagen sind verfügbar, jedoch für die Verwendung in Visual Studio 2012 und Visual Studio Express 2012 für Windows Phone 8 und Visual Studio 2010 und Visual Studio 2010 Express für Windows Phone 7.
   
-    
-    
-
-> **Hinweis:** Windows Phone SharePoint-Vorlagen werden nicht im Menü **Neues Projekt** von Expression Blend angezeigt. Sie können jedoch ein Projekt in Expression Blend bearbeiten, indem Sie **In Expression Blend öffnen** aus dem Kontextmenü in Visual Studio wählen.
+> [!NOTE]
+> Windows Phone SharePoint-Vorlagen werden nicht im Menü **Neues Projekt** von Expression Blend angezeigt. Sie können jedoch ein Projekt in Expression Blend bearbeiten, indem Sie **In Expression Blend öffnen** aus dem Kontextmenü in Visual Studio wählen.
   
     
     
@@ -47,9 +45,8 @@ Wenn Sie ein Projekt basierend auf einer der folgenden Vorlagen erstellen, erhal
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
 ```
 
-
-> 
->   **Hinweis:** Weitere Informationen zu den Einstellungen in der Datei WMAppManifest.xml finden Sie unter  [Application Manifest-Datei für Windows Phone](http://msdn.microsoft.com/en-us/library/ff769509.aspx). 
+> [!NOTE]
+> Weitere Informationen zu den Einstellungen in der Datei WMAppManifest.xml finden Sie unter [Application Manifest-Datei für Windows Phone](http://msdn.microsoft.com/de-DE/library/ff769509.aspx). 
   
     
     
@@ -60,10 +57,8 @@ Wenn Sie ein Projekt basierend auf einer der folgenden Vorlagen erstellen, erhal
 
 Wenn Sie ein Visual Studio Projekt basierend auf der Vorlage Windows Phone leeres SharePoint-Anwendung erstellen, ähnelt das Startprojekt eines Projekts mithilfe der Windows Phone-Anwendung-Basisvorlage (von der Windows Phone SDK 7.1 installiert), durch das Hinzufügen von Verweisen auf DLLs von Windows Phone SharePoint SDK (Microsoft.SharePoint.Client.Phone.dll, Microsoft.SharePoint.Client.Phone.Auth.UI und Microsoft.SharePoint.Client.Phone.Runtime.dll wie in Abbildung 1 dargestellt), und einigen andere Neukonfiguration installiert erstellt.
   
-    
-    
-
-> **Hinweis:** Die gleichen Vorlagen stehen für Windows Phone 8 in Visual Studio Express 2012 zur Verfügung. 
+> [!NOTE]
+> Die gleichen Vorlagen stehen für Windows Phone 8 in Visual Studio Express 2012 zur Verfügung. 
   
     
     
@@ -82,7 +77,7 @@ Wenn Sie ein Visual Studio Projekt basierend auf der Vorlage Windows Phone leere
   
     
     
-Die Dateien in einem Projekt auf Grundlage der Vorlage Windows Phone leeres SharePoint-Anwendung sind die standard-Dateien einer Silverlight Windows Phone-App. Die Datei MainPage.xaml enthält XAML-Deklarationen, die die Benutzeroberfläche (UI) der app zu bilden. Eine Code-Behind-Datei MainPage.xaml.cs, ist die Verwendung des Mechanismus für das partielle Klassen zugeordnet, mit der Datei MainPage.xaml, wie die anderen CodeBehind-Dateien im Projekt sind. (Siehe  [partielle Klassen und Code-Behind](http://msdn.microsoft.com/en-us/library/cc221357.aspx).) Die Datei MainPage.xaml.cs enthält Prozedurcode zum Implementieren der Logik für Vorgänge und Ereignisse in der Benutzeroberfläche zu unterstützen. Objektebene stellt die allgemeine Windows-app. Die zugeordneten Code-Behind-Datei App.xaml.cs, umfasst Prozedurcode zum Behandeln von Ereignissen für die app-Lebenszyklus.
+Die Dateien in einem Projekt auf Grundlage der Vorlage Windows Phone leeres SharePoint-Anwendung sind die standard-Dateien einer Silverlight Windows Phone-App. Die Datei MainPage.xaml enthält XAML-Deklarationen, die die Benutzeroberfläche (UI) der app zu bilden. Eine Code-Behind-Datei MainPage.xaml.cs, ist die Verwendung des Mechanismus für das partielle Klassen zugeordnet, mit der Datei MainPage.xaml, wie die anderen CodeBehind-Dateien im Projekt sind. (Siehe  [partielle Klassen und Code-Behind](http://msdn.microsoft.com/de-DE/library/cc221357.aspx).) Die Datei MainPage.xaml.cs enthält Prozedurcode zum Implementieren der Logik für Vorgänge und Ereignisse in der Benutzeroberfläche zu unterstützen. Objektebene stellt die allgemeine Windows-app. Die zugeordneten Code-Behind-Datei App.xaml.cs, umfasst Prozedurcode zum Behandeln von Ereignissen für die app-Lebenszyklus.
   
     
     
@@ -92,10 +87,8 @@ Die Dateien in einem Projekt auf Grundlage der Vorlage Windows Phone leeres Shar
 
 Die Vorlage Windows Phone SharePoint List Application ist erheblich leistungsstärker als die Vorlage Windows Phone leeres SharePoint-Anwendung. Diese Vorlage wurde entwickelt, beim Erstellen von Windows Phone-apps zur Verarbeitung von einem wahrscheinlich Szenario in die Entwicklung mobiler Anwendungen für SharePoint: Zugreifen auf und Bearbeiten von Daten in einer SharePoint-Liste aus einer Windows Phone gespeichert. Wenn Sie ein auf dieser Vorlage basierende Visual Studio-Projekt erstellen, ist ein Assistent führt Sie durch die erforderlichen Konfigurationsschritte aus und generiert Lösungsdateien für eine funktionale Windows Phone-app, die mit SharePoint-Listendaten arbeiten können. Sie können erstellen und Bereitstellen die app aus dem generierten Dateien mit geringer oder ohne Änderung.
   
-    
-    
-
-> **Hinweis:** Die gleichen Vorlagen stehen für Windows Phone 8 in Visual Studio Express 2012 zur Verfügung. 
+> [!NOTE]
+> Die gleichen Vorlagen stehen für Windows Phone 8 in Visual Studio Express 2012 zur Verfügung. 
   
     
     
@@ -152,7 +145,7 @@ Die Informationen über die Schritte zum Erstellen einer Windows Phone-app mithi
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15winphoneover_addlresources"> </a>
 
 
@@ -174,8 +167,7 @@ Die Informationen über die Schritte zum Erstellen einer Windows Phone-app mithi
 -  [Microsoft SharePoint SDK for Windows Phone 7.1](http://www.microsoft.com/en-us/download/details.aspx?id=30476)
     
   
--  
-  [Windows Phone-Entwicklung](http://msdn.microsoft.com/en-us/library/ff402535%28v=vs.92%29.aspx)
+-  [Windows Phone-Entwicklung](http://msdn.microsoft.com/de-DE/library/ff402535%28v=vs.92%29.aspx)
     
   
 

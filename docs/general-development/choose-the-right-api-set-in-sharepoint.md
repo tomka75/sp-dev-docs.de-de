@@ -3,11 +3,11 @@ title: "Auswählen des richtigen API-Satzes in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f36645da-77c5-47f1-a2ca-13d4b62b320d
-ms.openlocfilehash: 2cfe9766b0a765fc3ca2abedfa91c92f6db7b9b1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 7d2fb4dadd47e19483ff22e93f0b990c41a75540
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="choose-the-right-api-set-in-sharepoint"></a>Auswählen des richtigen API-Satzes in SharePoint
 Erfahren Sie mehr über die verschiedenen API-Gruppen, die in SharePoint bereitgestellt werden, einschließlich des Serverobjektmodells und der verschiedenen Clientobjektmodellen und des REST/OData-Webdiensts.
@@ -109,16 +109,14 @@ Auf der SharePoint-Ebene werden noch viele weitere Klassen hinzugefügt, um die 
   
     
     
-Sie können  [LINQ to Objects](http://msdn.microsoft.com/en-us/library/bb397919.aspx) verwenden, um jede **IEnumerable**-Sammlung im Speicher abzufragen, mit  [LINQ to SharePoint-Anbieter](http://msdn.microsoft.com/library/3fa2dc5f-d308-4337-aefd-191a5df8dbbe%28Office.15%29.aspx) haben Sie jedoch die Möglichkeit, die Listen direkt in den SharePoint-Inhaltsdatenbanken abzufragen. Genau genommen ist dieser Anbieter nicht für die anderen in diesem Thema erläuterten API-Gruppen verfügbar; es gibt jedoch Möglichkeiten, LINQ-Syntax für den Großteil der anderen Gruppen zu verwenden.
+Sie können  [LINQ to Objects](http://msdn.microsoft.com/de-DE/library/bb397919.aspx) verwenden, um jede **IEnumerable**-Sammlung im Speicher abzufragen, mit  [LINQ to SharePoint-Anbieter](http://msdn.microsoft.com/library/3fa2dc5f-d308-4337-aefd-191a5df8dbbe%28Office.15%29.aspx) haben Sie jedoch die Möglichkeit, die Listen direkt in den SharePoint-Inhaltsdatenbanken abzufragen. Genau genommen ist dieser Anbieter nicht für die anderen in diesem Thema erläuterten API-Gruppen verfügbar; es gibt jedoch Möglichkeiten, LINQ-Syntax für den Großteil der anderen Gruppen zu verwenden.
   
     
     
 Die Assemblys, die die integrierten serverseitigen Klassen definieren, sind im globalen Assemblycache jedes Servers installiert, wenn SharePoint installiert ist. Wenn Sie etwas für das Serverobjektmodell programmieren, werden Ihre Assemblys als Farmlösungen im globalen Assemblycache installiert.
   
-    
-    
-
-> **Hinweis:** Das Entwickeln von neuen Sandkastenlösungen für SharePoint ist eine veraltete Methode, die dem Entwickeln von SharePoint-Add-Ins gewichen ist. Sandkastenlösungen können jedoch weiterhin in Websitesammlungen in SharePoint installiert werden. Die Assemblys dieser Lösungen verbleiben im Paket, sofern sie nicht verwendet werden, ansonsten werden sie temporär in einem Ordner auf dem Server installiert. Weitere Informationen finden Sie unter [Wo werden Assemblys in Sandkastenlösungen bereitgestellt?](http://msdn.microsoft.com/library/dadbb20b-1bf7-442c-9eeb-bd9f01dbda45%28Office.15%29.aspx). 
+> [!NOTE]
+> Das Entwickeln von neuen Sandkastenlösungen für SharePoint ist eine veraltete Methode, die dem Entwickeln von SharePoint-Add-Ins gewichen ist. Sandkastenlösungen können jedoch weiterhin in Websitesammlungen in SharePoint installiert werden. Die Assemblys dieser Lösungen verbleiben im Paket, sofern sie nicht verwendet werden, ansonsten werden sie temporär in einem Ordner auf dem Server installiert. Weitere Informationen finden Sie unter [Wo werden Assemblys in Sandkastenlösungen bereitgestellt?](http://msdn.microsoft.com/library/dadbb20b-1bf7-442c-9eeb-bd9f01dbda45%28Office.15%29.aspx). 
   
     
     
@@ -163,7 +161,7 @@ Um die Leistung zu verbessern, werden im .NET Framework-Clientobjektmodell gesch
   
     
     
-Sie können LINQ-Abfragesyntax in Ihrem Clientcode verwenden, um beliebige **IEnumerable**-Objekte abzufragen, dazu gehören auch SharePoint-Objekte, in denen **IEnumerable** implementiert ist. Wenn Sie so vorgehen, verwenden Sie jedoch [LINQ to Objects](http://msdn.microsoft.com/en-us/library/bb397919.aspx) und nicht [LINQ to SharePoint-Anbieter](http://msdn.microsoft.com/library/3fa2dc5f-d308-4337-aefd-191a5df8dbbe%28Office.15%29.aspx), die dazugehörige Dokumentation ist also für clientseitigen Code nicht relevant.
+Sie können LINQ-Abfragesyntax in Ihrem Clientcode verwenden, um beliebige **IEnumerable**-Objekte abzufragen, dazu gehören auch SharePoint-Objekte, in denen **IEnumerable** implementiert ist. Wenn Sie so vorgehen, verwenden Sie jedoch [LINQ to Objects](http://msdn.microsoft.com/de-DE/library/bb397919.aspx) und nicht [LINQ to SharePoint-Anbieter](http://msdn.microsoft.com/library/3fa2dc5f-d308-4337-aefd-191a5df8dbbe%28Office.15%29.aspx), die dazugehörige Dokumentation ist also für clientseitigen Code nicht relevant.
   
     
     
@@ -173,10 +171,8 @@ Die Assemblys für das .NET Framework-Clientobjektmodel muss auf dem Client inst
     
 Beispiele zur Verwendung des .NET Framework-Objektmodells finden Sie unter [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode](http://msdn.microsoft.com/library/5a69c9e3-73bf-4ed5-bc19-182056bdb394%28Office.15%29.aspx).
   
-    
-    
-
-> **Hinweis:** Sie können auch die SharePoint REST/OData-Endpunkte in einer .NET Framework-Anwendung verwenden. Einen Vergleich des .NET Framework-Clientobjektmodells mit den SharePoint REST-/OData-Endpunkten finden Sie im Abschnitt [REST-/OData-Endpunkte](#RESTOData) weiter unten in diesem Artikel.
+> [!NOTE]
+> Sie können auch die SharePoint REST/OData-Endpunkte in einer .NET Framework-Anwendung verwenden. Einen Vergleich des .NET Framework-Clientobjektmodells mit den SharePoint REST-/OData-Endpunkten finden Sie im Abschnitt [REST-/OData-Endpunkte](#RESTOData) weiter unten in diesem Artikel.
   
     
     
@@ -194,10 +190,8 @@ Die Assemblys für das Silverlight-Clientobjektmodel werden auf jedem SharePoint
     
 Silverlight XAP-Dateien können einer SharePoint-Add-Ins hinzugefügt werden, darunter auch von SharePoint gehostete Apps. Dabei wird die XAP-Datei in einer Bibliothek im App-Web bereitgestellt. (Weitere Informationen zu App-Webs finden Sie unter [Hostwebsites, Add-In-Websites und SharePoint-Komponenten in SharePoint](http://msdn.microsoft.com/library/b791cdf5-8aa2-47fa-bc4c-aee437354759%28Office.15%29.aspx).) So erhält man mit der Silverlight-App eine nützliche Methode zum Hinzufügen von benutzerdefiniertem SharePoint-Code in einer App, da benutzerdefinierter serverseitiger Code in SharePoint-Add-Ins nicht zulässig ist. Zudem können Silverlight-Entwickler für die Erstellung von SharePoint-Anwendungen mit einer minimalen Lernkurve nutzen.
   
-    
-    
-
-> **Hinweis:** Sie können auch die SharePoint REST-/OData-Endpunkte in einer Silverlight-Anwendung verwenden. Einen Vergleich des Silverlight-Clientobjektmodells mit den SharePoint REST-/OData-Endpunkten finden Sie im Abschnitt [REST-/OData-Endpunkte](#RESTOData) weiter unten in diesem Artikel.
+> [!NOTE]
+> Sie können auch die SharePoint REST-/OData-Endpunkte in einer Silverlight-Anwendung verwenden. Einen Vergleich des Silverlight-Clientobjektmodells mit den SharePoint REST-/OData-Endpunkten finden Sie im Abschnitt [REST-/OData-Endpunkte](#RESTOData) weiter unten in diesem Artikel.
   
     
     
@@ -231,10 +225,8 @@ Das JavaScript-Objektmodell ist in einer JS-Dateigruppe definiert, die sich auf 
     
 Beispiele zur Verwendung des .NET Framework-Objektmodells finden Sie unter [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](http://msdn.microsoft.com/library/29089af8-dbc0-49b7-a1a0-9e311f49c826%28Office.15%29.aspx).
   
-    
-    
-
-> **Hinweis:** Sie können auch die SharePoint REST-/OData-Endpunkte in einer JavaScript-Anwendung verwenden. Einen Vergleich des JavaScript-Clientobjektmodells mit den SharePoint REST-/OData-Endpunkten finden Sie im Abschnitt [REST-/OData-Endpunkte](#RESTOData). 
+> [!NOTE]
+> Sie können auch die SharePoint REST-/OData-Endpunkte in einer JavaScript-Anwendung verwenden. Einen Vergleich des JavaScript-Clientobjektmodells mit den SharePoint REST-/OData-Endpunkten finden Sie im Abschnitt [REST-/OData-Endpunkte](#RESTOData). 
   
     
     
@@ -276,7 +268,7 @@ In einigen Situationen ist die Verwendung von REST-Endpunkten möglicherweise vo
 ## <a name="wcf-data-services-framework"></a>Framework für die WCF Data Services
 <a name="WCFDataServices"> </a>
 
-Wenn Sie LINQ-Syntax in .NET Framework- oder Silverlight-Clientanwendungen bevorzugen, unterstützt SharePoint die  [WCF Data Services](http://msdn.microsoft.com/en-us/library/cc668792.aspx) als LINQ-Anbieter. Sie können wie in vorherigen Versionen von SharePoint Foundation die "listdata.svc" (nur für Listendaten) vorgeben, oder die gleiche "client.svc" vorgeben, die die OData-Schnittstelle für den Zugriff auf alle SharePoint-Entitäten und Listendaten unterstützt. Weitere Informationen dazu finden Sie unter [Abfragen von SharePoint Foundation mit ADO.NET Data Services](http://msdn.microsoft.com/library/3e3e16f7-620a-4710-a3f3-19d0236f4b4a%28Office.15%29.aspx).
+Wenn Sie LINQ-Syntax in .NET Framework- oder Silverlight-Clientanwendungen bevorzugen, unterstützt SharePoint die  [WCF Data Services](http://msdn.microsoft.com/de-DE/library/cc668792.aspx) als LINQ-Anbieter. Sie können wie in vorherigen Versionen von SharePoint Foundation die "listdata.svc" (nur für Listendaten) vorgeben, oder die gleiche "client.svc" vorgeben, die die OData-Schnittstelle für den Zugriff auf alle SharePoint-Entitäten und Listendaten unterstützt. Weitere Informationen dazu finden Sie unter [Abfragen von SharePoint Foundation mit ADO.NET Data Services](http://msdn.microsoft.com/library/3e3e16f7-620a-4710-a3f3-19d0236f4b4a%28Office.15%29.aspx).
   
     
     
@@ -315,7 +307,7 @@ Zwei API-Gruppen werden weiterhin im SharePoint-Framework für die Abwärtskompa
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

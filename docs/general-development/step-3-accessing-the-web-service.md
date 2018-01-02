@@ -3,11 +3,11 @@ title: Step 3 Accessing the Web Service
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d27f654d-242f-4f34-8385-be857c170532
-ms.openlocfilehash: be159956d3799a2c9dac2d3aef309a178889f494
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 9ba31951d530f3051f6233fb6f6f1bd5c4b37360
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="step-3-accessing-the-web-service"></a>Step 3: Accessing the Web Service
 
@@ -82,39 +82,40 @@ Dim rangeCoordinates As New RangeCoordinates()
 
 3. Fügen Sie den Code hinzu, der auf die Arbeitsmappe zeigt, auf die Sie zugreifen möchten. In diesem Beispiel heißt die Arbeitsmappe "Sheet1". Fügen Sie Folgendes in den Code ein: 
     
-```cs
-  
-string sheetName = "Sheet1";
-```
+    ```cs
+    
+    string sheetName = "Sheet1";
+    ```
 
 
-```VB.net
-  Dim sheetName As String = "Sheet1"
-```
+    ```VB.net
+    Dim sheetName As String = "Sheet1"
+    ```
+    > [!NOTE]
+    > Stellen Sie sicher, dass die gewünschte Arbeitsmappe ein Arbeitsblatt mit dem Namen "Sheet1" enthält, das Werte beinhaltet. Alternativ dazu können Sie die Bezeichnung "Sheet1" im Code auf den Namen der verwendeten Arbeitsmappe ändern.  
 
-
-    > **Note:**
-      > Make sure the workbook you want to open has a worksheet called "Sheet1" that contains values. Alternatively, you can change "Sheet1" in the code to the name of your worksheet. 
 4.  `Add the following code to point to the workbook you want to open`:
     
-```cs
-  string targetWorkbookPath = "http://myserver02/example/Shared%20Documents/Book1.xlsx";
-```
+        ```cs
+        string targetWorkbookPath = "http://myserver02/example/Shared%20Documents/Book1.xlsx";
+        ```
 
 
-```VB.net
-  Dim targetWorkbookPath As String = "http://myserver02/example/Shared%20Documents/Book1.xlsx"
-```
+        ```VB.net
+        Dim targetWorkbookPath As String = "http://myserver02/example/Shared%20Documents/Book1.xlsx"
+        ```
 
 
-    > **Important:**
-      > Change the workbook path to match the location of the workbook you are using for this walkthrough. Make sure the workbook exists and that the location where the workbook is saved is a trusted location. Using an HTTP URL to point to the location of a workbook allows you to access it remotely. 
+    > [!IMPORTANT]
+    > Ändern Sie den Arbeitsmappenpfad auf den Speicherort der Arbeitsmappe, die Sie für diese exemplarische Vorgehensweise verwenden. Stellen Sie sicher, dass die Arbeitsmappe vorhanden und der Speicherort, an dem die Arbeitsmappe gespeichert ist, vertrauenswürdig ist. Wenn Sie mithilfe einer HTTP-URL auf den Speicherort einer Arbeitsmappe zeigen, können Sie remote auf diese Arbeitsmappe zugreifen. 
 
-    > **Note:**
-      > You can get the path to a workbook in Microsoft SharePoint Server 2010 by right-clicking the workbook and selecting **Copy Shortcut**. Alternatively, you can select **Properties** and copy the path to the workbook from there.
+    > [!NOTE]
+    > Den Pfad zu einer Arbeitsmappe können Sie in Microsoft SharePoint Server 2010 übertragen, indem Sie mit der rechten Maustaste auf die Arbeitsmappe klicken und dann **Verknüpfung kopieren**. Alternativ dazu können Sie **Eigenschaften** auswählen und den Arbeitsmappenpfad von dort kopieren.
+
 5. Fügen Sie den folgenden Code hinzu, um die Anmeldeinformationen für die Anforderung festzulegen. 
     
-    > **Hinweis:** Sie müssen die Anmeldeinformationen explizit festlegen, selbst dann, wenn Sie vorhaben, die Standardanmeldeinformationen zu verwenden. 
+    > [!NOTE]
+    > Sie müssen die Anmeldeinformationen explizit festlegen, selbst dann, wenn Sie vorhaben, die Standardanmeldeinformationen zu verwenden. 
 
 ```cs
   es.Credentials = System.Net.CredentialCache.DefaultCredentials;

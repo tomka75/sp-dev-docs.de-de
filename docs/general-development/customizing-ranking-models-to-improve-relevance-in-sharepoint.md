@@ -3,11 +3,11 @@ title: Anpassen von Bewertungsmodellen zur Verbesserung der Relevanz in SharePoi
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c166ecdd-7f93-4bbb-b543-2687992dd2bc
-ms.openlocfilehash: cd400db9e50b83f5399727f0660165418bb6fdb5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 7ae4fa9e6b3dabe64899656e057f1e23f5bf922b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="customizing-ranking-models-to-improve-relevance-in-sharepoint"></a>Anpassen von Bewertungsmodellen zur Verbesserung der Relevanz in SharePoint
 Verbessern Sie die Suchrelevanz, indem Sie die Bewerungsmodelle so anpassen, dass das Bewertungsergebnis (Relevanzbewertung) mithilfe der Bewertungsfunktionen in SharePoint berechnet wird.
@@ -60,20 +60,16 @@ Verwenden Sie zum Anpassen von Bewertungsmodellen folgende Windows PowerShell-Cm
     
     
 
--  
-  [Get-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607990.aspx)
+-  [Get-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/de-DE/library/ff607990.aspx)
     
   
--  
-  [New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607980.aspx)
+-  [New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/de-DE/library/ff607980.aspx)
     
   
--  
-  [Remove-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff608045.aspx)
+-  [Remove-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/de-DE/library/ff608045.aspx)
     
   
--  
-  [Set-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607940.aspx)
+-  [Set-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/de-DE/library/ff607940.aspx)
     
   
 
@@ -153,7 +149,7 @@ $rm.RankingModelXML > myrm.xml
 3. Bearbeiten Sie die  `myrm.xml`-Datei in einem XML-Editor. Sie müssen neue GUID-Werte für die **id**-Attribute im  _RankModel2Stage_-Element und alle  _RankingModel2NN_-Elemente verwenden. Um einen neuen GUID-Wert abzurufen, können Sie beispielsweise folgenden Windows PowerShell-Befehl verwenden:  `[guid]::NewGuid()`
     
   
-4. Erstellen Sie ein neues Bewertungsmodell mit dem  [New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607980.aspx)-Cmdlet, indem Sie folgende Befehle ausführen.
+4. Erstellen Sie ein neues Bewertungsmodell mit dem  [New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/de-DE/library/ff607980.aspx)-Cmdlet, indem Sie folgende Befehle ausführen.
     
 ```powershell
   
@@ -280,10 +276,8 @@ Bewertungsfunktionen funktionieren wie Optimierungsskalen für ein Bewertungsmod
 
 Die BM25-Bewertungsfunktion bewertet Elemente basierend auf der Anzeige der Abfragebegriffe im Volltextindex. Die Eingabe in BM25 kann eine beliebige der verwalteten Eigenschaften im Volltextindex sein.
   
-    
-    
-
-> **Hinweis:** Die in diesem Kontext verwendete BM25-Bewertungsfunktion ist die Feldversion BM25F. 
+> [!NOTE]
+> Die in diesem Kontext verwendete BM25-Bewertungsfunktion ist die Feldversion BM25F. 
   
     
     
@@ -651,10 +645,8 @@ Sie müssen die in den Näherungsbewertungsfunktionen verwendeten verwalteten Ei
 
 Die dynamische Bewertungsfunktion bewert ein Element abhängig davon, ob die Abfrageeigenschaft mit einer angegebenen verwalteten Eigenschaft übereinstimmt. Wenn es eine Übereinstimmung gibt, wird das Bewertungsergebnis des Elements mit einem bestimmten Wert multipliziert, um das Element zu ermitteln. Das Gewichtungsattribut wird verwendet, um zu steuern, welche Auswirkungen diese Funktion auf das Gesamtbewertungsergebnis hat.
   
-    
-    
-
-> **Hinweis:** Die dynamische Bewertungsfunktion kann nicht angepasst werden und dient nur zu internen Zwecken. Wenn Sie jedoch das kumulative Update von August 2013 für SharePoint installieren, ist die AnchortextComplete-Bewertungsfunktion eine anpassbare dynamische Bewertungsfunktion, die Teil des Standardbewertungsmodells ist. 
+> [!NOTE]
+> Die dynamische Bewertungsfunktion kann nicht angepasst werden und dient nur zu internen Zwecken. Wenn Sie jedoch das kumulative Update von August 2013 für SharePoint installieren, ist die AnchortextComplete-Bewertungsfunktion eine anpassbare dynamische Bewertungsfunktion, die Teil des Standardbewertungsmodells ist. 
   
     
     
@@ -777,10 +769,8 @@ Nachdem der Bewertungsvorgang in der ersten Stufe abgeschlossen ist, sortiert da
     
 Um jedoch gewährleisten zu können, dass das Suchmodul die Elemente genau sortiert, müssen Elemente aus der zweiten Stufe ein höheres Bewertungsergebnis aufweisen als die Elemente aus der ersten Stufe. Um dieses Problem zu lösen, werden die Bewertungsergebnisse der zweiten Stufe verstärkt. Das Suchmodul führt diese Berechnung basierend auf einer Kombination von Bewertungsfunktionen automatisch durch.
   
-    
-    
-
-> **Hinweis:** Wenn Sie das kumulative Update vom August 2013 für SharePoint installieren, verwendet das Standardbewertungsmodell eine lineare erste Stufe und eine zweite Stufe eines neuralen Netzwerks. Das **Suchbewertungsmodell mit zwei linearen Stufen** ist eine Kopie des **Standardsuchmodells** mit zwei linearen Stufen. Es wird empfohlen, dieses Modell als Basismodell für Ihr benutzerdefiniertes Bewertungsmodell zu verwenden, da es einfacher ist, ein lineares Modell anstelle eines Modells mit einem neuralen Netzwerk zu optimieren.
+> [!NOTE]
+> Wenn Sie das kumulative Update vom August 2013 für SharePoint installieren, verwendet das Standardbewertungsmodell eine lineare erste Stufe und eine zweite Stufe eines neuralen Netzwerks. Das **Suchbewertungsmodell mit zwei linearen Stufen** ist eine Kopie des **Standardsuchmodells** mit zwei linearen Stufen. Es wird empfohlen, dieses Modell als Basismodell für Ihr benutzerdefiniertes Bewertungsmodell zu verwenden, da es einfacher ist, ein lineares Modell anstelle eines Modells mit einem neuralen Netzwerk zu optimieren.
   
     
     
@@ -1007,7 +997,8 @@ Dieses Bewertungsmodell mit einer linearen Stufe enthält vier Bewertungsfunktio
   
 -  `InternalFileType` Diese Bewertungsfunktion erhöht Dokumente des Typs HTML, DOC, XLS oder PPT. Die Namen der Buckets in der Definition des Bewertungsmodells dienen nur der einfacheren Lesbarkeit.
     
-    > Hinweis: Die verwaltete Eigenschaft , die standardmäßig verfügbar ist, verwendet den Wert 0 (), um HTML-Dokumente zu codieren, den Wert  für DOC und den Wert `2` für XLS usw. Eine Liste aller Dateitypen, die für die verwaltete Eigenschaft**FileType** verwendet werden, finden Sie in der Definition des Standardbewertungsmodells in SharePoint.
+    > [!NOTE]
+    > Die verwaltete Eigenschaft `InternalFileType`, die standardmäßig verfügbar ist, verwendet den Wert 0 (`0`), um HTML-Dokumente zu codieren, den Wert `1` für DOC und den Wert `2` für XLS usw. Eine Liste aller Dateitypen, die für die verwaltete Eigenschaft**FileType** verwendet werden, finden Sie in der Definition des Standardbewertungsmodells in SharePoint.
 
 ```xml
 
@@ -1077,7 +1068,7 @@ Dieses Bewertungsmodell mit einer linearen Stufe enthält vier Bewertungsfunktio
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

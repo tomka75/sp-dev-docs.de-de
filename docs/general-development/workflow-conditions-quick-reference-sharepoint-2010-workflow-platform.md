@@ -3,11 +3,11 @@ title: "Kurzübersicht zu Workflowbedingungen (SharePoint 2010-Workflowplattform
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 71fab25b-d4f3-4871-b9ad-08d3537098fc
-ms.openlocfilehash: e850ccfa11014f1032e298196ebaf0212afa3019
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ec960bde2df5a6b323c5bd292bda9ceff6001e0e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="workflow-conditions-quick-reference-sharepoint-2010-workflow-platform"></a>Kurzübersicht zu Workflowbedingungen (SharePoint 2010-Workflowplattform)
 Erfahren Sie mehr über die Workflowbedingungen, die in der SharePoint 2010-Workflowplattform in Microsoft SharePoint Designer 2013 verfügbar sind.Verwenden Sie diesen Artikel  *nur*  , wenn Sie in SharePoint Designer 2013 arbeiten, weiterhin jedoch die SharePoint 2010-Workflowplattform verwenden möchten.Wenn Sie stattdessen die SharePoint-Workflowplattform verwenden möchten, finden Sie unter  [Workflowaktions- und -aktivitätenreferenz für SharePoint](workflow-actions-and-activities-reference-for-sharepoint.md) und weiteren im Abschnitt „Zusätzliche Ressourcen" aufgeführten Artikeln Informationen zu neuen Funktionen, die in der neueren Plattformversion zur Verfügung stehen.Wählen Sie zum Erstellen eines Workflows mithilfe der 2010-Workflowplattform im Dialogfeld **Workflow erstellen** im Feld **Plattformtyp** **SharePoint 2010-Workflow** aus.
@@ -97,10 +97,8 @@ Es gibt zwei Varianten der Operatoren **entspricht** und **enthält**:
   
 Die Option, die Sie für den zweiten **Wert** in der Bedingung verwenden, hängt auch zu einem gewissen Grad davon ab, auf was der erste **Wert** festgelegt wird. Nehmen wir beispielsweise an, dass Sie den ersten **Wert** auf **erstellt** festlegen und dann den zweiten **Wert** suchen, indem Sie eine Variable verwenden, die eine Zeichenfolge wie **Letzte 10 Zeichen** ist. Sie möchten wahrscheinlich die Zeichenfolge **Als Datum/Uhrzeit** zurückgeben, damit der Vergleich mit **erstellt** vorhersagbare Ergebnisse zurückgibt.
   
-    
-    
-
->  **Hinweis:** Sie können logische Operatoren wie**||**(oder) oder **&amp;&amp;** (und) in der Bedingung verwenden.
+> [!NOTE] 
+> Sie können logische Operatoren wie**||**(oder) oder **&amp;&amp;** (und) in der Bedingung verwenden.
   
     
     
@@ -141,10 +139,8 @@ Es gibt zwei Varianten der Operatoren **entspricht** und **enthält**. Bei den O
     
 Die Option, die Sie für **Wert** auswählen, hängt zu einem gewissen Grad auch von dem ab, auf das **Feld** festgelegt ist. Nehmen wir beispielsweise an, dass Sie **Feld** auf **erstellt** festlegen und dann nach dem **Wert** mit einer Variable suchen, die eine Zeichenfolge wie **Letzte 10 Zeichen** ist. Sie möchten wahrscheinlich die Zeichenfolge **Als Datum/Uhrzeit** zurückgeben, damit der Vergleich mit **erstellt** vorhersagbare Ergebnisse zurückgibt.
   
-    
-    
-
->  **Hinweis:** Sie können logische Operatoren wie**||**(oder) oder **&amp;&amp;** (und) in der Bedingung verwenden.
+> [!NOTE] 
+> Sie können logische Operatoren wie**||**(oder) oder **&amp;&amp;** (und) in der Bedingung verwenden.
   
     
     
@@ -165,10 +161,8 @@ Im Folgenden finden Sie Beispiele dazu, wie die Bedingung in einem Workflowschri
 
 Diese Bedingung wird anfänglich in einem Workflowschritt als **Wenn von bestimmter Person erstellt** angezeigt. Verwenden Sie diese Bedingung, um zu ermitteln, ob ein Element von einem angegebenen Benutzer erstellt wurde. Sie können den Benutzer angeben, indem Sie entweder den Benutzernamen oder die E-Mail-Adresse manuell eingeben (z. B. Olivier@contoso.com) oder indem Sie den Benutzer aus Benutzern auswählen, die bereits in SharePoint, Exchange oder Active Directory aufgelistet sind.
   
-    
-    
-
-> **Hinweis:** Da beim Benutzername und der E-Mail-Adresse die Groß-/Kleinschreibung beachtet werden muss, wird empfohlen, dass Sie die zweite Methode verwenden, um sicherzustellen, dass die Eingabe korrekt erfolgt. Wenn Sie einen Benutzernamen oder eine E-Mail-Adresse manuell eingeben müssen, achten Sie bitte genau auf die Groß-/Kleinschreibung. Beispielsweise wird die Bedingung **Wenn von contoso\\molly erstellt** nicht als "Wahr" ausgewertet, wenn das Benutzerkonto als Contoso\\Molly registriert ist.
+> [!NOTE] 
+> Da bei Benutzernamen und E-Mail-Adressen die Groß-/Kleinschreibung beachtet werden muss, wird empfohlen, dass Sie die zweite Methode verwenden, um sicherzustellen, dass die Eingabe korrekt erfolgt. Wenn Sie einen Benutzernamen oder eine E-Mail-Adresse manuell eingeben müssen, achten Sie bitte genau auf die Groß-/Kleinschreibung. Beispielsweise wird die Bedingung **Wenn von contoso\\molly erstellt** nicht als "Wahr" ausgewertet, wenn das Benutzerkonto als Contoso\\Molly registriert ist.
   
     
     
@@ -201,10 +195,8 @@ Im Folgenden finden Sie ein Beispiel dazu, wie die Bedingung in einem Workflowsc
 
 Diese Bedingung wird anfänglich in einem Workflowschritt als **Wenn von einer bestimmten Person geändert** angezeigt. Verwenden Sie diese Bedingung, um zu ermitteln, ob ein Element von einem bestimmten Benutzer geändert wurde. Der Benutzer kann als E-Mail-Adresse wie olivier@contoso.com angegeben oder aus SharePoint-, Exchange- oder Active Directory-Benutzern ausgewählt werden.
   
-    
-    
-
-> **Hinweis:** Beim Benutzernamen und der E-Mail-Adresse muss die Groß-/Kleinschreibung beachtet werden. Es wird empfohlen, dass Sie einen Benutzernamen oder eine E-Mail-Adresse auswählen, um sicherzustellen, dass Sie die richtige Schreibweise verwenden. Wenn Sie einen Benutzernamen oder eine E-Mail-Adresse eingeben, müssen Sie die für das Konto verwendete Groß-/Kleinschreibung beachten. Beispielsweise wird **Wenn geändert von contoso\\molly** nicht als "Wahr" ausgewertet, wenn das Benutzerkonto Contoso\\Molly lautet.
+> [!NOTE] 
+> Bei Benutzernamen und E-Mail-Adressen ist die Groß- und Kleinschreibung zu beachten. Wir empfehlen Ihnen, einen Benutzernamen oder eine E-Mail-Adresse auszuwählen, um die korrekte Groß- und Kleinschreibung zu gewährleisten. Wenn Sie einen Benutzernamen oder eine E-Mail-Adresse eingeben, müssen Sie die für das Konto verwendete Groß-/Kleinschreibung beachten. Beispielsweise wird **Wenn geändert von contoso\\molly** nicht als "Wahr" ausgewertet, wenn das Benutzerkonto Contoso\\Molly lautet.
   
     
     
@@ -260,10 +252,8 @@ Die Bedingung **Wenn Person ein gültiger SharePoint-Benutzer ist** ist eine von
 
 Diese Bedingung wird anfänglich in einem Workflowschritt als **Wenn Titelfeld Stichwörter enhält** angezeigt. Verwenden Sie diese Bedingung, um zu ermitteln, ob das Feld **Titel** für ein Element angegebenen Text enthält. Sie können dem Text im Zeichenfolgen-Generator (als statischen Wert, dynamische Zeichenfolge oder eine Kombination der beiden) angeben oder eine Suche für ein Feld oder eine Variable einfügen.
   
-    
-    
-
-> **Hinweis:** Bei Verwendung der Bedingung **Titelfeld enthält Schlüsselwörter** können Sie nur nach einem Schlüsselworttext suchen. Wenn Sie nach mehreren alternativen Schlüsselworttexten suchen möchten, können Sie logische Operatoren wie z. B. **||**(oder) und **&amp;&amp;** (und) unter einer der folgenden beiden Bedingung verwenden: **Wenn ein Wert gleich dem Wert ** ist und **Wenn das aktuelle Elementfeld gleich dem Wert** ist. (Verwenden Sie die zweite Bedingung, wenn Sie nur im Feld **Titel** suchen möchten). Sehen Sie sich beispielsweise das folgende Bild an:> 
+> [!NOTE] 
+> Bei Verwendung der Bedingung **Titelfeld enthält Schlüsselwörter** können Sie nur nach einem Schlüsselworttext suchen. Wenn Sie nach mehreren alternativen Schlüsselworttexten suchen möchten, können Sie logische Operatoren wie z. B. **||**(oder) und **&amp;&amp;** (und) unter einer der folgenden beiden Bedingung verwenden: **Wenn ein Wert gleich dem Wert ** ist und **Wenn das aktuelle Elementfeld gleich dem Wert** ist. (Verwenden Sie die zweite Bedingung, wenn Sie nur im Feld **Titel** suchen möchten). Sehen Sie sich beispielsweise das folgende Bild an:> 
   
     
     
@@ -294,10 +284,8 @@ Standardmäßig werden beim manuellen Starten eines Workflows die Berechtigungen
     
 In solchen Fällen können Sie einen oder mehrere Identitätswechselschritte im Workflow verwenden. Ein Identitätswechselschritt verwendet die Berechtigungen der Person, die die Workflowvorlage zuletzt gespeichert hat - in der Regel ist das der Autor der Vorlage, der normalerweise über die erforderlichen Berechtigungen für alle Workflowvorgänge verfügt, einschließlich der Berechtigung zum Archivieren des Dokuments in der richtigen Bibliothek für diesen Fall. 
   
-    
-    
-
-> **Hinweis:** Für beide Bedingungen müssen *alle* angegebenen Benutzer und Gruppen den Vergleich bestehen, mit dem die Bedingung als wahr bewertet wird.>  Für beide Bedingungen spielt es keine Rolle, ob die angegebenen Berechtigungen *explizit* den angegebenen einzelnen Benutzern zugewiesen wurden oder ob diese einzelnen Benutzer nur *implizit* über die Berechtigungen verfügen (z. B. als Mitglieder einer Gruppe, der die Berechtigungen zugewiesen wurden). Für angegebene *Gruppen* dagegen müssen die Berechtigungen *explizit*  zugewiesen und *nicht* von einer übergeordneten Gruppe vererbt sein.
+> [!NOTE] 
+> Für beide Bedingungen müssen *alle* angegebenen Benutzer und Gruppen den Vergleich bestehen, mit dem die Bedingung als wahr bewertet wird.>  Für beide Bedingungen spielt es keine Rolle, ob die angegebenen Berechtigungen *explizit* den angegebenen einzelnen Benutzern zugewiesen wurden oder ob diese einzelnen Benutzer nur *implizit* über die Berechtigungen verfügen (z. B. als Mitglieder einer Gruppe, der die Berechtigungen zugewiesen wurden). Für angegebene *Gruppen* dagegen müssen die Berechtigungen *explizit* zugewiesen und *nicht* von einer übergeordneten Gruppe vererbt sein.
   
     
     
@@ -387,9 +375,8 @@ Im Folgenden finden Sie ein Beispiel dazu, wie die Bedingung in einem Workflowsc
 
 - Wenn die Dateigröße zwischen 1023 und 1048577 Kilobyte beträgt
     
-  
-
-> **Hinweis:** Die angegebenen oberen und unteren Grenzwerte sind nicht im definierten Bereich enthalten. In dem hier angegebenen Beispiel würde eine Datei, die 1023 KB groß ist, als falsch ausgewertet, da die Größe nicht zwischen 1023 ist und 1048577 liegt. 
+> [!NOTE] 
+> Die angegebenen oberen und unteren Grenzwerte sind nicht im definierten Bereich enthalten. In dem hier angegebenen Beispiel würde eine Datei, die 1023 KB groß ist, als falsch ausgewertet, da die Größe nicht zwischen 1023 ist und 1048577 liegt. 
   
     
     
@@ -443,7 +430,7 @@ Weitere Informationen zu Bedingungen finden Sie im Abschnitt  [Allgemeine Beding
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

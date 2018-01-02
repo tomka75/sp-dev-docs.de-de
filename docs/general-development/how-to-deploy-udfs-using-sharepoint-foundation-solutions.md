@@ -5,11 +5,11 @@ keywords: how to,howdoi,howto,udf list,WSS Solutions
 f1_keywords: how to,howdoi,howto,udf list,WSS Solutions
 ms.prod: sharepoint
 ms.assetid: 97751a6c-ef73-4d95-a3c4-98014d84ba48
-ms.openlocfilehash: 48f06c78c96dac5c0d81b35aa5f6fb4d7d2aa1ae
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: e731eee138d97bd80cea236f78fd760cf7af2e7a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="deploy-udfs-using-sharepoint-foundation-solutions"></a>Bereitstellen von UDFs mit SharePoint Foundation-Lösungen
 
@@ -28,7 +28,9 @@ The SharePoint Foundation solution framework lets you bundle all the components 
     
     The solution manifest (always called Manifest.xml) is stored at the root of a solution file. This file defines the list of features, site definitions, resource files, Web Part files, and assemblies to be processed. It does not define the file structure; if files are included in a solution but not listed in the manifest XML file, they are not processed in any way.
     
-    > **Hinweis:** Weitere Informationen zur Struktur der XML-Manifestdatei finden Sie in der Dokumentation zu SharePoint Foundation. 
+    > [!NOTE]
+    > Weitere Informationen zur Struktur der XML-Manifestdatei finden Sie in der Dokumentation zu SharePoint Foundation. 
+
 2. Packen Sie die UDF-Assembly und die Datei „Manifest.xml“ in einer CAB-Datei.
     
   
@@ -42,7 +44,9 @@ The SharePoint Foundation solution framework lets you bundle all the components 
     
   
 Jeder vertrauenswürdige Excel Services-Speicherort verfügt über ein **AllowUdfs**-Flag.
-> **Hinweis:** Das **AllowUdfs**-Flag wird durch die Option **Benutzerdefinierte Funktionen sind zugelassen** auf der Seite „Vertrauenswürdige Dateispeicherorte von Excel Services“ bezeichnet. Informationen zum Navigieren zur Seite „Vertrauenswürdige Dateispeicherorte“ finden Sie in [Schritt 3: Bereitstellen und Aktivieren von UDFs](step-3-deploying-and-enabling-udfs.md). 
+
+> [!NOTE]
+> Das **AllowUdfs**-Flag wird durch die Option **Benutzerdefinierte Funktionen sind zugelassen** auf der Seite „Vertrauenswürdige Dateispeicherorte von Excel Services“ bezeichnet. Informationen zum Navigieren zur Seite „Vertrauenswürdige Dateispeicherorte“ finden Sie in [Schritt 3: Bereitstellen und Aktivieren von UDFs](step-3-deploying-and-enabling-udfs.md). 
   
     
     
@@ -55,7 +59,9 @@ Damit UDFs von einem bestimmten vertrauenswürdigen Speicherort aufgerufen werde
     
   
 Weitere Informationen zum Aktivieren von UDFs und Hinzufügen von UDFs zur Liste vertrauenswürdiger UDFs finden Sie unter [Vorgehensweise: Aktivieren von UDFs](how-to-enable-udfs.md).
-> **Hinweis:** Um Namenskonflikte zu vermeiden, weisen Sie Ihren UDF-Assemblys und deren Abhängigkeiten starke Namen zu, und benennen Sie sie so eindeutig wie möglich. Weitere Informationen finden Sie unter [Bewährte Methoden für Excel Services](excel-services-best-practices.md) und [Bekannte Probleme und Tipps für Excel Services](excel-services-known-issues-and-tips.md). 
+
+> [!NOTE]
+> Um Namenskonflikte zu vermeiden, weisen Sie Ihren UDF-Assemblys und deren Abhängigkeiten starke Namen zu, und benennen Sie sie so eindeutig wie möglich. Weitere Informationen finden Sie unter [Bewährte Methoden für Excel Services](excel-services-best-practices.md) und [Bekannte Probleme und Tipps für Excel Services](excel-services-known-issues-and-tips.md). 
   
     
     
@@ -89,8 +95,8 @@ Weitere Informationen zum Aktivieren von UDFs und Hinzufügen von UDFs zur Liste
 ```
 
 
-    > **Note:**
-      > You should generate a unique GUID for each solution. For more information about **Solution** element, see the SharePoint Foundation [Solutions and Web Part Packages](http://msdn.microsoft.com/library/a145a5eb-fbb6-4328-b5b3-96bf5ce89a19%28Office.15%29.aspx) (http://msdn.microsoft.com/en-us/library/ms413687.aspx).
+    > [!NOTE]
+    > You should generate a unique GUID for each solution. For more information about **Solution** element, see the SharePoint Foundation [Solutions and Web Part Packages](http://msdn.microsoft.com/library/a145a5eb-fbb6-4328-b5b3-96bf5ce89a19%28Office.15%29.aspx) (http://msdn.microsoft.com/en-us/library/ms413687.aspx).
 
 ### <a name="to-create-a-solution-package"></a>So erstellen Sie ein Lösungspaket
 
@@ -123,9 +129,11 @@ Weitere Informationen zum Aktivieren von UDFs und Hinzufügen von UDFs zur Liste
     
     stsadm.exe -o addsolution -filename <pathtoCAB>
     
-    > **Hinweis:** Die Datei „Stsadm.exe“ finden Sie unter: > C:\\Programme\\Gemeinsame Dateien\\Microsoft Shared\\web server extensions\\12\\BIN. 
+    > [!NOTE]
+    > Die Datei „Stsadm.exe“ finden Sie unter: > C:\\Program Files\\Common Files\\Microsoft Shared\\web server extensions\\12\\BIN. 
 
-    > **Hinweis:** Weitere Informationen zu Optionen des Befehls „Stsadm.exe“ finden Sie unter [Zuordnung von Stsadm-Vorgängen zu Windows PowerShell (SharePoint Foundation 2010)](http://technet.microsoft.com/de-DE/library/ff621081.aspx) (http://technet.microsoft.com/de-de/library/ff621081.aspx).
+    > [!NOTE]
+    > Weitere Informationen zu Optionen des Befehls „Stsadm.exe“ finden Sie unter [Zuordnung von Stsadm-Vorgängen zu Windows PowerShell (SharePoint Foundation 2010)](http://technet.microsoft.com/de-DE/library/ff621081.aspx) (http://technet.microsoft.com/de-de/library/ff621081.aspx).
 
   
     

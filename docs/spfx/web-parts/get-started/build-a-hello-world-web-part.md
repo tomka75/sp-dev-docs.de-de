@@ -1,12 +1,12 @@
 ---
 title: "Erstellen Ihres ersten clientseitigen SharePoint-Webparts („Hello World“ Teil 1)"
-ms.date: 09/25/2017
+ms.date: 12/05/2017
 ms.prod: sharepoint
-ms.openlocfilehash: de8b72f32fa4e6539edf9b818169d7a13828a651
-ms.sourcegitcommit: 3276e9b281b227fb2f1a131ab4ac54ae212ce5cf
+ms.openlocfilehash: 9a5fefeb0e5dac79958534dd4819a905ff608635
+ms.sourcegitcommit: 6018dbb696faef5f60ebf0f79f830385fab2a4d8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/24/2017
+ms.lasthandoff: 12/11/2017
 ---
 # <a name="build-your-first-sharepoint-client-side-web-part-hello-world-part-1"></a>Erstellen Ihres ersten clientseitigen SharePoint-Webparts („Hello World“ Teil 1)
 
@@ -20,9 +20,9 @@ Clientseitige Webparts unterstützen:
 > [!NOTE]
 > Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [Ihre Entwicklungsumgebung einrichten](../../set-up-your-development-environment.md).
 
-Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=QbDtsMg88Js&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq) nachvollziehen: 
+Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=YqUIX2pMUzg&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=2) nachvollziehen: 
 
-<a href="https://www.youtube.com/watch?v=QbDtsMg88Js&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
+<a href="https://www.youtube.com/watch?v=YqUIX2pMUzg&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=2">
 <img src="../../../images/spfx-youtube-tutorial1.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
@@ -105,8 +105,6 @@ Die SharePoint-Tools für clientseitige Entwicklung verwenden [gulp](http://gulp
 * Kompilieren von SASS-Dateien in CSS
 * Kompilieren von TypeScript-Dateien in JavaScript
 
-Wenn Sie mit gulp nicht vertraut sind, empfiehlt sich der Artikel [Using Gulp](http://docs.asp.net/en/latest/client-side/using-gulp.html). Er beschreibt, wie Sie mit gulp und Visual Studio ASP.NET 5-Projekte erstellen können.
-
 Visual Studio Code bietet integrierte Unterstützung für gulp und andere Tools zur Taskausführung. Drücken Sie **STRG + UMSCHALT + B** unter Windows oder **BEFEHL + UMSCHALT + B** auf dem Mac, um Ihr Webpart zu debuggen und eine Vorschau anzuzeigen. 
 
 ### <a name="sharepoint-workbench"></a>SharePoint Workbench
@@ -122,7 +120,7 @@ Wählen Sie **HelloWorld** aus, um das Webpart zur Seite hinzuzufügen:
    
 ![HelloWorld-Webpart in SharePoint Workbench](../../../images/sp-workbench-helloworld-wp.png)
 
-Ausgezeichnet! Sie haben Ihr erstes clientseitiges Webpart zu einer clientseitigen Seite hinzugefügt.
+**Ausgezeichnet.** Sie haben Ihr erstes clientseitiges Webpart zu einer clientseitigen Seite hinzugefügt.
    
 Klicken Sie nun auf das Stiftsymbol links oben neben dem Webpart, um den Eigenschaftenbereich des Webparts anzuzeigen.
    
@@ -161,7 +159,7 @@ Nachfolgend beschreiben wir einige der wichtigsten Dateien eines Projekts.
 
 Die Webpart-Klasse ist dabei so definiert, dass sie den Eigenschaftentyp **IHelloWorldWebPartProps** akzeptiert.
 
-Der Eigenschaftentyp ist als Schnittstelle vor **HelloWorldWebPart** definiert.
+Der Eigenschaftentyp ist als Schnittstelle vor der **HelloWorldWebPart**-Klasse in der Datei **HelloWorldWebPart.ts** definiert.
 
 ```ts
 export interface IHelloWorldWebPartProps {
@@ -364,7 +362,7 @@ gulp serve
 
 SharePoint Workbench lässt sich auch in SharePoint hosten, um während der Entwicklung lokaler Webparts eine Webpart-Vorschau anzuzeigen und Tests durchzuführen. Der entscheidende Vorteil: Sie führen Ihr Webpart dann im SharePoint-Kontext aus und können mit SharePoint-Daten interagieren.
 
-Rufen Sie die folgende URL auf: „https://your-sharepoint-site/_layouts/workbench.aspx“.
+Rufen Sie die folgende URL auf: „https://your-sharepoint-tenant.sharepoint.com/_layouts/workbench.aspx“.
 
 > [!NOTE]
 > Wenn Sie das SPFx-Entwicklerzertifikat noch nicht installiert haben, meldet Workbench, dass das Laden von Skripts von „localhost“ nicht konfiguriert ist. Beenden Sie den Prozess, der derzeit im Konsolenfenster ausgeführt wird, führen Sie den Befehl `gulp trust-dev-cert` im Projektverzeichnis aus, um das Entwicklerzertifikat zu installieren, und führen Sie dann den Befehl `gulp serve` erneut aus.
@@ -387,4 +385,7 @@ Fügen Sie **HelloWorld** aus der Toolbox hinzu. Das Webpart wird jetzt auf eine
 Da die Entwicklung und die Tests Ihres Webparts noch nicht abgeschlossen sind, müssen Sie es weder packen noch auf SharePoint bereitstellen. 
 
 ## <a name="next-steps"></a>Nächste Schritte
-Herzlichen Glückwunsch! Ihr erstes HelloWorld-Webpart läuft. Jetzt können Sie das HelloWorld-Webpart weiter ausbauen. Wie das funktioniert, erfahren Sie im nächsten Artikel, [Verbinden mit SharePoint](./connect-to-sharepoint.md). Dort verwenden Sie dasselbe HelloWorld-Webpart-Projekt und ergänzen es um eine Funktion zur Interaktion mit REST-APIs für SharePoint-Listen. Ihnen wird bereits aufgefallen sein, dass der Befehl `gulp serve` immer noch im Konsolenfenster ausgeführt wird (oder in Visual Studio Code, falls Sie editor.md verwenden). Sie können ihn einfach weiterlaufen lassen und zum nächsten Artikel wechseln.
+Herzlichen Glückwunsch! Ihr erstes HelloWorld-Webpart läuft. Jetzt können Sie das HelloWorld-Webpart weiter ausbauen. Wie das funktioniert, erfahren Sie im nächsten Artikel, [Verbinden mit SharePoint](./connect-to-sharepoint.md). Dort verwenden Sie dasselbe HelloWorld-Webpart-Projekt und ergänzen es um eine Funktion zur Interaktion mit REST-APIs für SharePoint-Listen. Ihnen wird bereits aufgefallen sein, dass der Befehl `gulp serve` immer noch im Konsolenfenster ausgeführt wird (oder in Visual Studio Code, falls Sie den Editor verwenden). Sie können ihn einfach weiterlaufen lassen und zum nächsten Artikel wechseln.
+
+> [!NOTE]
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository](https://github.com/SharePoint/sp-dev-docs/issues). Vielen Dank im Voraus für Ihr Feedback.

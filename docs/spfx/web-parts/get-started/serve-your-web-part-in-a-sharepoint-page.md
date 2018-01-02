@@ -1,25 +1,25 @@
 ---
 title: "Bereitstellen des clientseitigen SharePoint-Webparts auf einer SharePoint-Seite („Hello World“ Teil 3)"
-ms.date: 09/25/2017
+ms.date: 12/05/2017
 ms.prod: sharepoint
-ms.openlocfilehash: a2cb54bbf984f18e74c07ec2dd44af73c8d715f1
-ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.openlocfilehash: 60d205a9c4acddb72cf4b14deebf9e1c37543771
+ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/08/2017
 ---
 # <a name="deploy-your-client-side-web-part-to-a-sharepoint-page-hello-world-part-3"></a>Bereitstellen des clientseitigen SharePoint-Webparts auf einer SharePoint-Seite („Hello World“ Teil 3)
 
-In diesem Artikel erfahren Sie, wie Sie den clientseitigen Webpart in SharePoint bereitstellen und wie es auf einer klassischen serverseitigen SharePoint-Seite ausgeführt wird. In diesem Artikel wird weiterhin der „Hello World“-Webpart verwendet, der im vorherigen Artikel [Verbinden des clientseitigen Webparts mit SharePoint](./connect-to-sharepoint.md) erstellt wurde.
+In diesem Artikel erfahren Sie, wie Sie den clientseitigen Webpart in SharePoint bereitstellen und wie es auf einer klassischen SharePoint-Seite ausgeführt wird. In diesem Artikel wird weiterhin der „Hello World“-Webpart verwendet, der im vorherigen Artikel [Verbinden des clientseitigen Webparts mit SharePoint](./connect-to-sharepoint.md) erstellt wurde.
 
 Achten Sie darauf, dass Sie die Verfahren in den folgenden Artikeln abgeschlossen haben, bevor Sie beginnen:
 
 * [Erstellen des ersten clientseitigen SharePoint-Webparts](./build-a-hello-world-web-part.md)
 * [Verbinden des clientseitigen Webparts mit SharePoint](./connect-to-sharepoint.md)
 
-Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=asmQIfgaKSw&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq) nachvollziehen: 
+Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=BpJ01ahxbiY&index=4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq) nachvollziehen: 
 
-<a href="https://www.youtube.com/watch?v=asmQIfgaKSw&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
+<a href="https://www.youtube.com/watch?v=BpJ01ahxbiY&index=4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
 <img src="../../../images/spfx-youtube-tutorial3.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
@@ -48,7 +48,8 @@ Die Datei **package-solution.json** definiert die Paketmetadaten, wie im folgend
   "solution": {
     "name": "helloworld-webpart-client-side-solution",
     "id": "4432f33b-5845-4ca0-827e-a8ae68c7b945",
-    "version": "1.0.0.0"
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
   },
   "paths": {
     "zippedPackage": "solution/helloworld-webpart.sppkg"
@@ -79,7 +80,11 @@ Sie können die unformatierten Paketinhalte im Ordner **sharepoint/debug** anzei
 
 Die Inhalte werden dann in eine **.sppkg**-Datei gepackt. Das Paketformat ähnelt einem SharePoint-Add-Ins-Paket und verwendet Microsoft Open Packaging Conventions, um Ihre Lösung zu packen. 
 
-Die JavaScript-Dateien, CSS und andere Elemente werden nicht gepackt, und Sie müssen sie an einem externen Speicherort, z. B. ein CDN, bereitstellen. Um das Webpart während der Entwicklung zu testen, können Sie alle Elemente von Ihrem lokalen Computer laden. 
+Die JavaScript-Dateien, CSS und andere Objekte werden auch in das Paket gepackt, wenn die `--ship`-Option verwendet wird. In diesem Fall werden jedoch zunächst die Bereitstellung und die Funktionen getestet, indem JavaScript-Dateien von Localhost gehostet werden. Diese Bereitstellungsoption wird im nächsten Lernprogramm erläutert. 
+
+> [!NOTE]
+> Ab SharePoint-Framework v1. 4 werden statische Objekte standardmäßig in das .sppkg-Paket gepackt. Wenn das Paket im App-Katalog bereitgestellt wird, werden sie automatisch in Office 365 CDN (falls aktiviert) oder in der App-Katalog-URL gehostet. Sie können dieses Verhalten mit der `includeClientSideAssets`-Einstellung in der `package-solution.json`-Datei steuern.
+
 
 ## <a name="deploy-the-helloworld-package-to-app-catalog"></a>Bereitstellen der HelloWorld-Pakets im App-Katalog
 
@@ -109,7 +114,7 @@ Geben Sie in das Feld **Suchen** die Zeichenfolge **helloworld** ein, und drück
     
 Wählen Sie die App **helloworld-webpart-client-side-solution** aus, um die App auf der Website zu installieren.
     
-![Vertrauen der App](../../../images/app-installed-your-site.png) 
+![Vertrauen der App](../../../images/app-installed-your-site.png)
 
 Die clientseitige Lösung und das Webpart werden Ihrer Entwicklerwebsite installiert.
 
@@ -142,11 +147,11 @@ gulp serve --nobrowser
 
 ## <a name="add-the-helloworld-web-part-to-modern-page"></a>Hinzufügen des HelloWorld-Webparts zur modernen Seite
 
-Wechseln Sie im Browser zu Ihrer Websitesammlung.
+Wechseln Sie in Ihrem Browser zu der Website, auf der die Lösung installiert wurde.
     
 Wählen Sie das Zahnräder-Symbol in der oberen Navigationsleiste auf der rechten Seite und dann **Seite hinzufügen** aus.
     
-Öffnen Sie die Webpart-Auswahl, und wählen Sie Ihren **HelloWorld**-Webpart.
+**Bearbeiten** Sie die Seite. Öffnen Sie die Webpart-Auswahl, und wählen Sie Ihren **HelloWorld**-Webpart.
         
 Die Webpart-Objekte werden aus der lokalen Umgebung geladen. Um die Skripts zu laden, die auf Ihrem lokalen Computer gehostet werden, müssen Sie es dem Browser ermöglichen, unsichere Skripts zu laden. Stellen Sie je nach verwendetem Browser sicher, dass Sie das Laden unsicherer Skripts für diese Sitzung aktivieren.
     
@@ -174,4 +179,7 @@ Wählen Sie in der Symbolleiste **peichern und schließen**, um die Seite zu spe
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Ausgezeichnet. Sie haben einen clientseitigen Webpart auf einer modernen SharePoint-Seite bereitgestellt. Im nächsten Thema [Bereitstellen Ihrer clientseitigen Webpartquelle für einen CDN](./deploy-web-part-to-cdn.md) können Sie mit der Weiterentwicklung des „Hello World“-Webparts fortfahren. Dort erhalten Sie Informationen zum Bereitstellen und Laden der Webpart-Objekte von einem CDN anstelle von Localhost.
+Ausgezeichnet. Sie haben einen clientseitigen Webpart auf einer modernen SharePoint-Seite bereitgestellt. Im nächsten Thema [Hosten clientseitiger Webparts im Office 365 CDN](./hosting-webpart-from-office-365-cdn.md) können Sie mit der Weiterentwicklung des „Hello World“-Webparts fortfahren. Dort erhalten Sie Informationen zum Bereitstellen und Laden der Webpart-Objekte von einem Office 365 CDN anstelle von Localhost.
+
+> [!NOTE]
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository](https://github.com/SharePoint/sp-dev-docs/issues). Vielen Dank im Voraus für Ihr Feedback.

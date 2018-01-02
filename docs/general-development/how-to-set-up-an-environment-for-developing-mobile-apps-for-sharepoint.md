@@ -3,11 +3,11 @@ title: "Einrichten einer Umgebung für die Entwicklung mobiler Apps für SharePo
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: acaf556d-e20d-478d-8c59-2efd8efb9dcb
-ms.openlocfilehash: 9c18eb3fa355abd5f96b2620bd0ee8aed825cdb4
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: b17c804dc00fd8aa64c070c13a709e463d531c60
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="set-up-an-environment-for-developing-mobile-apps-for-sharepoint"></a>Einrichten einer Umgebung für die Entwicklung mobiler Apps für SharePoint
 
@@ -52,7 +52,9 @@ Informationen zum Entwickeln von SharePoint-Add-Ins für die Verwendung auf Wind
     
     Die Windows Phone SDK 8.0 ist eine voll funktionsfähige Entwicklungsumgebung zum Erstellen von apps und Spiele für Windows Phone 8.0 und Windows Phone 7.5 verwenden. Windows Phone SDK bietet eine eigenständige Version von Visual Studio Express 2012 für Windows Phone oder als ein Add-in auf Visual Studio 2012 Professional, Premium oder Ultimate Edition funktioniert. Mit dem SDK können Sie Ihre vorhandenen programming Fähigkeiten und Code verwenden, verwalteten oder systemeigenen Code apps erstellen. Das SDK enthält darüber hinaus mehrere Emulatoren und weitere Tools für das Profil erstellen und Testen Ihrer Windows Phone-app unter Umständen Praxis.
     
-    > **Hinweis:** Wenn Ihr Computer die Hardware- und Betriebssystemanforderungen erfüllt, nicht jedoch die Anforderungen für den Windows Phone 8-Emulator, lässt sich Windows Phone SDK 8.0 installieren und ausführen. Der Windows Phone 8-Emulator jedoch funktioniert dann nicht. Das heißt: Sie können keine Apps im Windows Phone 8-Emulator bereitstellen oder testen. Informationen zu den Systemanforderungen für den Windows Phone-Emulator finden Sie unter [Setup and System Requirements for Windows Phone Emulator](http://msdn.microsoft.com/de-DE/library/ff626524). 
+    > [!NOTE]
+    > Wenn Ihr Computer die Hardware- und Betriebssystemanforderungen erfüllt, nicht jedoch die Anforderungen für den Windows Phone 8-Emulator, lässt sich Windows Phone SDK 8.0 installieren und ausführen. Der Windows Phone 8-Emulator jedoch funktioniert dann nicht. Das heißt: Sie können keine Apps im Windows Phone 8-Emulator bereitstellen oder testen. Informationen zu den Systemanforderungen für den Windows Phone-Emulator finden Sie unter [Setup and System Requirements for Windows Phone Emulator](http://msdn.microsoft.com/de-DE/library/ff626524). 
+
 2. Installieren Sie das [Microsoft SharePoint-SDK für Windows Phone 8](http://www.microsoft.com/en-us/download/details.aspx?id=36818).
     
     SharePoint SDK für Windows Phone installiert zwei Silverlight für Windows Phone-Vorlagen (neben von Windows Phone SDK installiert): die Vorlage Windows Phone leeres SharePoint-Anwendung und die Vorlage Windows Phone SharePoint List Application. Das SDK auch installiert, SharePoint-CSOM-Bibliotheken, eine Authentifizierungsbibliothek und Windows Phone-Projektvorlagen und es nun die NTLM-Authentifizierung unterstützt. Die gebündelten-APIs und Vorlagen können Sie um Windows Phone 8 Applications gegen SharePoint zu erstellen.
@@ -72,8 +74,8 @@ Informationen zum Entwickeln von SharePoint-Add-Ins für die Verwendung auf Wind
     
   
 
-    > **Hinweis:** Die Vorlagen im SharePoint-SDK für Windows Phone sind derzeit nur für C#-Projekte verfügbar. 
-      > Weitere Informationen zu den Vorlagen im SharePoint-SDK für Windows Phone finden Sie unter [Übersicht über Windows Phone SharePoint-Anwendungsvorlagen in Visual Studio](overview-of-windows-phone-sharepoint-application-templates-in-visual-studio.md).
+    > [!NOTE]
+    > Die Vorlagen im SharePoint-SDK für Windows Phone sind derzeit nur für C#-Projekte verfügbar. Weitere Informationen zu den Vorlagen im SharePoint-SDK für Windows Phone finden Sie unter [Übersicht über Windows Phone SharePoint-Anwendungsvorlagen in Visual Studio](overview-of-windows-phone-sharepoint-application-templates-in-visual-studio.md).
   
     
     
@@ -87,7 +89,8 @@ Informationen zum Entwickeln von SharePoint-Add-Ins für die Verwendung auf Wind
 
 1. Installieren Sie [Windows Phone SDK 7.1](http://www.microsoft.com/en-us/download/details.aspx?id=27570) auf einem Computer mit einem unterstützten Clientbetriebssystem.
     
-    > **Hinweis:** Eine frühere Version des Windows Phone SDK hieß Windows Phone Developer Tools. 
+    > [!NOTE]
+    > Eine frühere Version des Windows Phone SDK hieß Windows Phone Developer Tools. 
 
     Windows Phone SDK installiert Microsoft Visual Studio 2010 Express für Windows Phone, die Windows Phone-Emulator, XNA Spiel Studio und Microsoft Expression Blend für Windows Phone. Visual Studio 2010 Express For Windows Phone ist eine geeignete Entwicklungsumgebung für die meisten Windows Phone-Lösungen. Sie können auch Visual Studio 2010 Professional als Ihre bevorzugten Entwicklungsumgebung, aber noch Windows Phone SDK, installieren Sie die Visual Studio die erforderliche add-ins installiert werden müssen. (Windows Phone SDK wird nicht aktuell für die Verwendung mit Visual Studio 2012 unterstützt.)
     
@@ -113,13 +116,13 @@ Informationen zum Entwickeln von SharePoint-Add-Ins für die Verwendung auf Wind
     
   
 
-    > **Hinweis:** Die Vorlagen im SharePoint-SDK für Windows Phone sind derzeit nur für C#-Projekte verfügbar. 
-      > Weitere Informationen zu den Vorlagen im SharePoint-SDK für Windows Phone finden Sie unter [Übersicht über Windows Phone SharePoint-Anwendungsvorlagen in Visual Studio](overview-of-windows-phone-sharepoint-application-templates-in-visual-studio.md).
+    > [!NOTE]
+    > Die Vorlagen im SharePoint-SDK für Windows Phone sind derzeit nur für C#-Projekte verfügbar. Weitere Informationen zu den Vorlagen im SharePoint-SDK für Windows Phone finden Sie unter [Übersicht über Windows Phone SharePoint-Anwendungsvorlagen in Visual Studio](overview-of-windows-phone-sharepoint-application-templates-in-visual-studio.md).
   
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15Setupmobile_addlresources"> </a>
 
 

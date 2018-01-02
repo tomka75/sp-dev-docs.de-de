@@ -1,16 +1,13 @@
 ---
 title: Barrierefreiheit im SharePoint-Webpartdesign
-ms.date: 9/25/2017
-ms.openlocfilehash: 55dcf68b350ca7ae004a1caad958f623394551be
-ms.sourcegitcommit: b05e9f1edb1a23b07b7986655fac92c24dd62f5a
+ms.date: 11/21/2017
+ms.openlocfilehash: b1c2e0819d15e470d1502deee79f8d6ab9254213
+ms.sourcegitcommit: 068729a51c9e2c1a83e7e33d28149ab79bfbd06e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/29/2017
 ---
 <!--Based on how rough this content is in it's current state, i'm going to pull it from this initial release so we can edit and better prepare. -->
-
-
-
 
 # <a name="accessibility-in-sharepoint-web-part-design"></a>Barrierefreiheit im SharePoint-Webpartdesign
 
@@ -26,9 +23,8 @@ Alle Microsoft-Produkte müssen die [Microsoft-Eingabehilfenstandards](https://m
 
 Wenn Sie ein Dialogfeld, eine Dateiauswahl oder eine beliebige andere [Office-UI-Fabric](https://dev.office.com/fabric#/components)-Komponente erstellen, befolgen Sie die Anleitungen in diesem Artikel, um sicherzustellen, dass Ihre Inhalte barrierefrei sind. 
 
-<!-- Not sure why we have that link? It currently goes to the OneNote file. Where is the Common UI Controls content? Is that related to accessibility? -->
-
-[Allgemeine Benutzeroberflächensteuerelemente](https://microsoft.sharepoint.com/teams/STS/_layouts/OneNote.aspx?id=%2Fteams%2FSTS%2FShared%20Documents%2FSP%20Accessibility%2FAccessibility%20Guidance&wd=target%28Accessibility%20101.one%7C0005C142-938C-4411-B543-B9F4199E19B3%2FEverything%20you%20need%20to%20know%20about%20Accessibility%7CE099AFE3-8804-4E1F-BA50-99493AB8A3D0%2F%29 "Link zu allgemeinen Benutzeroberflächensteuerelementen")
+<!-- Not sure why we have that link? It currently goes to the OneNote file. Where is the Common UI Controls content? Is that related to accessibility? [v-licapu] - I agree; we shouldn't be linking to this unless it's live to external audiences; even I can't access it. I moved it to within the comment: 
+[Common UI Controls](https://microsoft.sharepoint.com/teams/STS/_layouts/OneNote.aspx?id=%2Fteams%2FSTS%2FShared%20Documents%2FSP%20Accessibility%2FAccessibility%20Guidance&wd=target%28Accessibility%20101.one%7C0005C142-938C-4411-B543-B9F4199E19B3%2FEverything%20you%20need%20to%20know%20about%20Accessibility%7CE099AFE3-8804-4E1F-BA50-99493AB8A3D0%2F%29 "Link to Common UI Controls") -->
 
 ## <a name="accessibility-testing"></a>Barrierefreiheitsprüfung
 
@@ -67,6 +63,9 @@ The first tab is the list item.
 The second tab is the command.
 The third tab is the navigation.
 -->
+
+*Abbildung 1: Tabstopps einer SharePoint-Seite*
+
 ![Darstellung der Tabstopps einer SharePoint-Seite](https://i.imgur.com/Vn3VosN.png)
 
 ### <a name="navigation-within-a-control"></a>Navigation innerhalb eines Steuerelements
@@ -75,31 +74,41 @@ Sie können die Pfeiltasten verwenden, um zu Objekten eines Steuerelements, z. B
 
 <!-- This image is not very clear. Do you need to have the "blank" list box on the left? -->
 
+*Abbildung 2: Verwenden der Pfeiltasten zum Navigieren innerhalb eines Steuerelements*
+
 ![Verwenden der Pfeiltasten zum Navigieren innerhalb eines Steuerelements](https://i.imgur.com/vF0Nk73.png)
 
 ### <a name="selecting-the-current-item"></a>Auswählen des aktuellen Elements
 
 Verwenden Sie die Leertaste oder deaktivieren Sie das derzeit gewählte Element in einem Steuerelement.
 
+*Abbildung 3: Verwenden der Leertaste zum Auswählen eines Elements in einer Liste*
+
 ![Verwenden der Leertaste zum Auswählen eines Elements in einer Liste](https://i.imgur.com/j3fBKPl.png)
 
 ### <a name="run-a-control"></a>Ausführen eines Steuerelements
 
-Drücken Sie **Enter** oder die Eingabetaste, um ein Steuerelement auszuführen.
+Drücken Sie die **Eingabetaste**, um ein Steuerelement auszuführen.
 
-![Drücken von Enter zum Ausführen eines Steuerelements](https://i.imgur.com/s0nMPdT.png)
+*Abbildung 4: Drücken der EINGABETASTE zum Ausführen eines Steuerelements*
+
+![Drücken der EINGABTASTE zum Ausführen eines Steuerelements](https://i.imgur.com/s0nMPdT.png)
 
 ### <a name="leave-a-control"></a>Verlassen eines Steuerelements
 
-Drücken Sie **Escape**, um ein Steuerelement zu verlassen und zum Container zurückkehren.
+Drücken Sie die **ESC-Taste**, um ein Steuerelement zu verlassen und zum Container zurückkehren.
 
-![Drücken von Escape, um ein Steuerelement zu verlassen und zum Container zurückkehren](https://i.imgur.com/uD99zIX.png)
+*Abbildung 5: Drücken der ESC-Taste zum Verlassen eines Steuerelements und zum Zurückkehren zum Container*
 
-### <a name="go-to-the-first-or-last-item"></a>Zum ersten bzw. letzten Element wechseln
+![Drücken der ESC-Taste zum Verlassen eines Steuerelements und zum Zurückkehren zum Container](https://i.imgur.com/uD99zIX.png)
+
+### <a name="go-to-the-first-or-last-item"></a>Wechseln zum ersten bzw. letzten Element
 
 Drücken Sie **POS1** oder **Ende**, um direkt zum ersten oder letzten Element einer Liste, eines Menüs usw. zu springen.
 
-![Drücken von  POS1 oder Ende, um zum ersten oder letzten Element einer Liste zu springen](https://i.imgur.com/gGKsh74.png)
+*Abbildung 6: Drücken von POS1 oder Ende, um zum ersten oder letzten Element einer Liste zu springen*
+
+![Drücken von POS1 oder Ende, um zum ersten oder letzten Element einer Liste zu springen](https://i.imgur.com/gGKsh74.png)
 
 
 ## <a name="screen-reader-navigation"></a>Navigation per Sprachausgabe
@@ -107,6 +116,8 @@ Drücken Sie **POS1** oder **Ende**, um direkt zum ersten oder letzten Element e
 Benutzer mit Sehschwächen navigieren die Benutzeroberfläche der Website per Sprachausgabe 
 
 <!-- Narrator isn't a third-party product. This image needs more text/explanation; please also clarify the alt text. Is this section important, or can it be removed, given the previous mention of testing with Narrator and JAWS? Again, the intent/target audience for this information isn't clear - is it for the user, or the designer? Can you explain why this information is important from the designer's POV? -->
+
+*Abbildung 7: Navigation per Sprachausgabe einer SharePoint-Website*
 
 ![Navigation per Sprachausgabe einer SharePoint-Website](https://i.imgur.com/ar23o3X.png)
 
@@ -123,15 +134,89 @@ Um eine vollständige Konformität mit den Eingabehilfenstandards zu erreichen, 
 Ein minimaler Kontrast ist dringend erforderlich, damit Benutzer mit Sehschwächen die Inhalte der Seite erfassen können. Dies ist ebenfalls wichtig, um eine Lesbarkeit bei schwacher Beleuchtung oder störenden Effekten wie Blendung zu gewährleisten. 
 
 <!-- Convert this image into a table, for accessibility. ;) -->
+<!-- ![Neutral, Theme, and Alert colors for minimum readable contrast](https://i.imgur.com/L7pSF1w.png)-->
 
-![Lesbarkeit durch Kontrast: Neutrale, Theme- und Signalfarben](https://i.imgur.com/L7pSF1w.png)
+![Farben für Lesbarkeit durch Kontrast](../images/wcag-2aa-compliance-colors.png)
 
+### <a name="theme-colors-blue-and-neutral-colors"></a>Designfarben (Blau) und neutrale Farben
+
+<table>
+<tr>
+<td style="color:white; background-color:#004578">themeDarker: #004578</td>
+<td style="color:white; background-color:#000000">black: #000000</td>
+</tr>
+<tr>
+<td style="color:white; background-color:#005a9e">themeDark: #005a9e</td>
+<td style="color:white; background-color:#212121">neutralDark: #212121</td>
+</tr>
+<tr>
+<td style="color:white; background-color:#106ebe">themeDarkAlt: #106ebe</td>
+<td style="color:white; background-color:#333">neutralPrimary: #333</td>
+</tr>
+<tr>
+<td rowspan="3" style="font-weight:bold; vertical-align:middle; color:white; background-color:#0078d7">themePrimary: #0078d7</td>
+<td style="color:white; background-color:#3c3c3c">neutralPrimaryAlt: #3c3c3c</td>
+</tr>
+<tr>
+<td style="color:white; background-color:#666666">neutralSecondary: #666666</td>
+</tr>
+<tr>
+<td style="color:black; background-color:#a6a6a6">neutralTertiary: #a6a6a6</td>
+</tr>
+<tr>
+<td style="color:white; background-color:#2b88d8">themeSecondary: #2b88d8</td>
+<td style="color:black; background-color:#c8c8c8">neutralTertiaryAlt: #c8c8c8</td>
+</tr>
+<tr>
+<td style="color:black; background-color:#71afe5">themeTertiary: #71afe5</td>
+<td style="color:black; background-color:#eaeaea">neutralLight: #eaeaea</td>
+</tr>
+<tr>
+<td style="color:black; background-color:#c7e0f4">themeLight: #c7e0f4</td>
+<td style="color:black; background-color:#f4f4f4">neutralLighter: #f4f4f4</td>
+</tr>
+<tr>
+<td style="color:black; background-color:#deecf9">themeLighter: #deecf9</td>
+<td style="color:black; background-color:#f8f8f8">neutralLighterAlt: #f8f8f8</td>
+</tr>
+<tr>
+<td style="color:black; background-color:#eff6fc">themeLighterAlt: #eff6fc</td>
+<td style="color:black; background-color:#fff">white: #fff</td>
+</tr>
+</table>
+
+### <a name="alert-colors"></a>Farben für Warnungen
+
+<table>
+<tr>
+<td style="color:white; background-color:#952226">themeDark: #952226</td>
+</tr>
+<tr>
+<td style="color:black; background-color:#f6d6d8">themeLight: #f6d6d8</td>
+</tr>
+<tr>
+<td style="color:white; background-color:#e55c12">themeSecondary: #e55c12</td>
+</tr>
+</table>
+
+<br/>
+
+<table>
+<tr>
+<td style="color:white; background-color:#0f7c39">themeDarkAlt: #0f7c39</td>
+</tr>
+<tr>
+<td style="color:black; background-color:#bff7d5">themeLight: #bff7d5</td>
+</tr>
+</table>
 
 ## <a name="high-contrast"></a>Hoher Kontrast
 
 Verwenden Sie Farben mit hohem Kontrast für die Auswahl von Komponenten und Merkmalen im Internet. Windows-Computer können nur erkennen, ob ein PC mit der Einstellung „Hoher Kontrast“ oder „Hoher Kontrast Weiß“ ausgeführt wird. Verwenden Sie aus diesem Grund die standardmäßige Einstellung „Hoher Kontrast Schwarz“ für alle kontrastreichen, nicht weißen Designs.
 
 <!-- In the left part of the image, I think the title should be "High Contrast Black". -->
+
+*Abbildung 8: Einstellungen „Hoher Kontrast Schwarz“ und „Hoher Kontrast Weiß“*
 
 ![Einstellungen „Hoher Kontrast Schwarz“ und „Hoher Kontrast Weiß“](https://i.imgur.com/qvTFzd4.png)
 

@@ -3,11 +3,11 @@ title: "Anpassen der Seitenlayouts für eine katalogbasierte Website in SharePoi
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 21d8db99-73b3-4429-b6cb-04e375af9f55
-ms.openlocfilehash: 9e7c7811531f4dd01f890eddd705fcb882f90128
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: d5606b864544072f0cde253363144f400d98414d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="customize-page-layouts-for-a-catalog-based-site-in-sharepoint"></a>Anpassen der Seitenlayouts für eine katalogbasierte Website in SharePoint
 
@@ -149,7 +149,9 @@ Die einfachste Methode besteht darin, ein Layout für eine Kategorieseite automa
   
 9. Um den HTML-Code für den Inhaltssuche-Codeausschnitt und alle weiteren Codeausschnitte, die Sie der Seite hinzufügen möchten, zu konfigurieren und zu kopieren, befolgen Sie die Schritte 1 bis 11 im Abschnitt „Einfügen eines Codeausschnitts aus dem Codeausschnittkatalog" unter  [Codeausschnitte des SharePoint-Entwurfs-Managers](sharepoint-design-manager-snippets.md).
     
-    > **Hinweis:** Wenn Sie den Inhaltssuche-Codeausschnitt zum Seitenlayout hinzufügen, ändern Sie die Abfrage so, dass die Ergebnisquelle verwendet wird, die erstellt wurde, als Sie die Veröffentlichungswebsite mit einem Katalog verbunden haben. Weitere Informationen finden Sie unter [Konfigurieren von Ergebnisquellen für Web Content Management in SharePoint](http://technet.microsoft.com/de-DE/library/jj715262.aspx). 
+    > [!NOTE]
+    > Wenn Sie den Inhaltssuche-Codeausschnitt zum Seitenlayout hinzufügen, ändern Sie die Abfrage so, dass die Ergebnisquelle verwendet wird, die erstellt wurde, als Sie die Veröffentlichungswebsite mit einem Katalog verbunden haben. Weitere Informationen finden Sie unter [Konfigurieren von Ergebnisquellen für Web Content Management in SharePoint](http://technet.microsoft.com/de-DE/library/jj715262.aspx). 
+
 10. Nehmen Sie alle weiteren gewünschten Änderungen am Markup vor, und speichern Sie die Datei.
     
   
@@ -199,10 +201,8 @@ Die Komponente im Inhaltsplatzhalter mit dem Attribut **id="PlaceHolderPageTitle
 
 Die Komponente, die auf den Seiteninhalts-Codeausschnitt im Inhaltsplatzhalter mit dem Attribut **id="PlaceHolderMain"** folgt, enthält Markup für einen Webpart-Zonencodeausschnitt mit vier Webpartzonen. Die erste Webpartzone enthält einen Inhaltssuche-Codeausschnitt, mit dem ein Inhaltssuche-Webpart auf der Seite angezeigt wird. Dieser Codeausschnitt enthält des Weiteren Informationen, die zur Abfrage der Ergebnisquelle und Anzeige der Ergebnisse auf der Seite benötigt werden. Die weiteren drei Webpartzonen sind leer. Möchten Sie ein benutzerdefiniertes Layout für Kategorieseiten erstellen, muss das Markup für den Inhaltssuche-Codeausschnitt in der HTML-Datei des Seitenlayouts eingefügt werden. Das folgende Codebeispiel zeigt das Markup für den Inhaltssuche-Codeausschnitt. Ersetzen Sie _ResultSourceID_ durch die GUID der Ergebnisquelle und _CatalogURL_ durch die URL des Katalogs.
   
-    
-    
-
-> **Hinweis:** Die GUIDS für **ID** und **\_\_WebPartId** werden von SharePoint nach dem Zufallsprinzip generiert, wenn dem Seitenlayout Codeausschnitte hinzugefügt werden.
+> [!NOTE]
+> Die GUIDS für **ID** und **\_\_WebPartId** werden von SharePoint nach dem Zufallsprinzip generiert, wenn dem Seitenlayout Codeausschnitte hinzugefügt werden.
   
     
     
@@ -325,10 +325,8 @@ Wenn Sie ein Seitenlayout erstellen, wird eine ASPX-Datei zur Verwendung durch S
 
 Die Komponente im Inhaltsplatzhalter mit dem Attribut **id="PlaceHolderPageTitle"** enthält einen Codeausschnitt zur Wiederverwendung von Katalogelementen, mit dem SharePoint angewiesen wird, den Namen des Katalogelements als Seitentitel im Browserfenster zu verwenden, anstelle des Standardseiten-Feldwerts. Dieses Markup wird im folgenden Codebeispiel dargestellt.
   
-    
-    
-
-> **Hinweis:** Die GUIDS für **ID** und **__WebPartId** werden von SharePoint nach dem Zufallsprinzip generiert, wenn dem Seitenlayout Codeausschnitte hinzugefügt werden.
+> [!NOTE]
+> Die GUIDS für **ID** und **__WebPartId** werden von SharePoint nach dem Zufallsprinzip generiert, wenn dem Seitenlayout Codeausschnitte hinzugefügt werden.
   
     
     
@@ -451,10 +449,8 @@ ResultType="" NumberOfItems="1" AddSEOPropertiesFromSearch="True" LogAnalyticsVi
 
 Wenn das Katalogelement-Seitenlayout automatisch bei der Verbindung der Veröffentlichungswebsite mit dem Katalog erstellt wurde oder indem ein Remotekatalog bei der Erstellung des Seitenlayouts ausgewählt wurde, enthält die restliche Seite Codeausschnitte zur Wiederverwendung von Katalogelementen, die den verwalteten Eigenschaften des Katalogs auf der Erstellungsseite entsprechen. Über diese verwalteten Eigenschaften werden die Details zu einem bestimmten Katalogelement unter Verwendung des Seitenlayouts für Katalogelemente angezeigt. Diese Codesausschnitte zur Wiederverwendung von Katalogelementen erscheinen außerhalb der Webpartzone und werden direkt auf der Seite gerendert, wenn ein Element auf der Kategorieseite ausgewählt wird. In Tabelle 2 sind die verwalteten Eigenschaften aufgeführt, die automatisch im Katalogelement-Seitenlayout enthalten sind.
   
-    
-    
-
-> **Hinweis:** Einige verwaltete Eigenschaften sind nur enthalten, wenn der Katalog eine Bibliothek für Seiten ist. In Tabelle 2 wird in der Spalte **Verwendet von** angegeben, welche verwalteten Eigenschaften von Bibliotheken für Seiten und von Listen verwendet werden und welche ausschließlich von Bibliotheken für Seiten.
+> [!NOTE]
+> Einige verwaltete Eigenschaften sind nur enthalten, wenn der Katalog eine Bibliothek für Seiten ist. In Tabelle 2 wird in der Spalte **Verwendet von** angegeben, welche verwalteten Eigenschaften von Bibliotheken für Seiten und von Listen verwendet werden und welche ausschließlich von Bibliotheken für Seiten.
   
     
     
@@ -512,10 +508,8 @@ MissingAssembly="Cannot import this Web Part." ID="g_UniqueID" __WebPartId="{Uni
 
 Wenn Sie mit dem Entwurfs-Manager ein neues Katalogelement-Seitenlayout erstellen und einen Inhaltstyp anstellen eines Remotekatalogs auswählen, können Sie Codeausschnitte zur Wiederverwendung von Katalogelementen im Codeausschnittkatalog auswählen. Das folgende Codebeispiel zeigt das Markup der Codeausschnitte zur Wiederverwendung von Katalogelementen für die verwalteten Eigenschaften **Title**, **PublishingPageContentOWSHTML**, **CreatedOWSDATE** und **owstaxIdPageCategory**.
   
-    
-    
-
-> **Hinweis:** Die GUIDS für **ID** und **__WebPartId** werden von SharePoint nach dem Zufallsprinzip generiert, wenn dem Seitenlayout Codeausschnitte hinzugefügt werden.
+> [!NOTE]
+> Die GUIDS für **ID** und **__WebPartId** werden von SharePoint nach dem Zufallsprinzip generiert, wenn dem Seitenlayout Codeausschnitte hinzugefügt werden.
   
     
     
@@ -593,7 +587,7 @@ __WebPartId="{22e39e9d-1b25-42c7-bf2a-7ebca37616d4}">-->
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

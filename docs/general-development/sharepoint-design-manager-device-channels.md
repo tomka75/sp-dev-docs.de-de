@@ -3,11 +3,11 @@ title: "SharePoint-Design-Manager-Gerätekanäle"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a924bd7b-a5e3-41bf-b0a7-3e43945fa951
-ms.openlocfilehash: a0b13b9e4fcecc9ede05c79eb5965b301a252014
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ecc48554bef69bc0ca66c89f16d498146edc619e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-design-manager-device-channels"></a>SharePoint-Design-Manager-Gerätekanäle
 Erfahren Sie mehr über das Planen und Konfigurieren einer Gerätekanälefunktion auf einer SharePoint-Website.
@@ -59,12 +59,8 @@ Sie können einen Gerätekanal über das Menü **Websiteeinstellungen** im Absch
 |Aktiv  <br/> |Nein  <br/> |Wenn Sie dieses Kontrollkästchen aktivieren, wird Ihr Gerätekanal aktiviert. Wenn Sie an einer Livewebsite arbeiten, sollten Sie den Kanal erst aktivieren, wenn Sie das Entwerfen abgeschlossen haben. Verwenden Sie für Tests die Abfragezeichenfolge  `?DeviceChannel=alias` in einem Browser, um eine Vorschau Ihrer Website für einen bestimmten Kanal anzuzeigen.<br/> |
    
 
-  
-    
-    
-
-    
-> **Hinweis:** Weitere Informationen und Schritte zum Erstellen eines Gerätekanals finden Sie im Abschnitt  [Erstellen eines Gerätekanals](sharepoint-design-manager-device-channels.md#create) in diesem Artikel.
+> [!NOTE]
+> Weitere Informationen und Schritte zum Erstellen eines Gerätekanals finden Sie im Abschnitt [Erstellen eines Gerätekanals](sharepoint-design-manager-device-channels.md#create) in diesem Artikel.
   
     
     
@@ -112,20 +108,16 @@ Wenn Sie einen Gerätekanal erstellen, werden Sie aufgefordert, eine Benutzer-Ag
    
 Im Feld **Geräteeinschlussregeln** fügen Sie nur den jeweiligen Teilzeichenfolgenwert für die Geräte ein, die Sie einschließen möchten.
   
-    
-    
-
-> **Wichtig:** Benutzer-Agent-Teilzeichenfolgewerte sind von Gerätehersteller zu Gerätehersteller und möglicherweise auch innerhalb einer Reihe firmenspezifischer Geräte unterschiedlich  (siehe Windows Phone oben). Um den Datenverkehr erfolgreich zu einem bestimmten Pool umzuleiten, müssen Sie einen eindeutigen Bezeichner für die Benutzer-Agent-Teilzeichenfolge bereitstellen. Weitere Informationen dazu, wie Sie eine Teilzeichenfolge auf unterschiedlichen Geräten isolieren, finden Sie im Abschnitt [Planen Ihrer Gerätekanalerfahrung](sharepoint-design-manager-device-channels.md#plan) dieses Artikels.
+> [!IMPORTANT]
+> Benutzer-Agent-Teilzeichenfolgewerte sind von Gerätehersteller zu Gerätehersteller und möglicherweise auch innerhalb einer Reihe firmenspezifischer Geräte unterschiedlich  (siehe Windows Phone oben). Um den Datenverkehr erfolgreich zu einem bestimmten Pool umzuleiten, müssen Sie einen eindeutigen Bezeichner für die Benutzer-Agent-Teilzeichenfolge bereitstellen. Weitere Informationen dazu, wie Sie eine Teilzeichenfolge auf unterschiedlichen Geräten isolieren, finden Sie im Abschnitt [Planen Ihrer Gerätekanalerfahrung](sharepoint-design-manager-device-channels.md#plan) dieses Artikels.
   
     
     
 
 Nach ihrer Erstellung werden Gerätekanäle in einer Liste sortiert und gespeichert. Sie können bis zu 10 Gerätekanäle pro Website in SharePoint unterstützen, sodass es möglicherweise erforderlich ist, den Kanäle für ein ordnungsgemäßes Weiterleiten von Datenverkehr einen Rang zuzuweisen. Sie sollten die spezifischsten Regeln für eine höhere Priorität oben anordnen. Angenommen, Sie haben verschiedene Betriebssystemversionen für mobile Geräte in Ihrer Organisation und möchten eine eindeutige Masterseite für das Rendering für Windows Phone 7.5-Geräte erstellen. Alle anderen Windows Phone-Geräten würden eine andere Masterseite für die mobile Ansicht erhalten. In Tabelle 3 sind zwei Sortierungsschemas, die angewendet werden können, und die Auswirkungen auf die Weiterleitungsentscheidung gezeigt.
   
-    
-    
-
-> **Hinweis:** Weitere Informationen zum Neuanordnen von Gerätekanälen finden Sie im Abschnitt  [Erstellen eines Gerätekanals](sharepoint-design-manager-device-channels.md#create) in diesem Artikel.
+> [!NOTE]
+> Weitere Informationen zum Neuanordnen von Gerätekanälen finden Sie im Abschnitt [Erstellen eines Gerätekanals](sharepoint-design-manager-device-channels.md#create) in diesem Artikel.
   
     
     
@@ -142,10 +134,8 @@ Nach ihrer Erstellung werden Gerätekanäle in einer Liste sortiert und gespeich
    
 Wenn Sie Sortierung 1 auswählen, bei der die Teilzeichenfolge für die Geräteeinschlussregel auf **Windows Phone OS 7.5** festgelegt ist, wird ein Benutzer, der mit einem Windows Phone 7.5-Gerät zu Ihrer Website navigiert, an Gerätekanal 1 umgeleitet. Ein Benutzer mit einer anderen Windows Phone-Version wird an Gerätekanal 2 umgeleitet, und jeder Benutzer mit einem anderen Betriebssystem als Windows Phone erhält Kanal 3. Wenn Sie jedoch Sortierung 2 auswählen, die die generische Windows Phone OS-Teilzeichenfolge priorisiert, wird der gesamte Windows Phone-Datenverkehr an Gerätekanal 1 umgeleitet. Gerätekanal 2 wird aufgrund der Priorisierung und generischen Beschaffenheit von Gerätekanal 1 nicht aufgerufen Wenn Sie mehrere Gerätekanäle erstellen, müssen Sie verstehen, wie sich die Sortierung und Bewertung auf die Umleitung des Datenverkehrs für Ihre Gerätepools auswirken.
   
-    
-    
-
-> **Hinweis:** Weitere Informationen und Schritte für die Sortierung von Gerätekanälen finden Sie im Abschnitt [Ändern der Reihenfolge von Gerätekanälen](sharepoint-design-manager-device-channels.md#reorder) in diesem Artikel.
+> [!NOTE]
+> Weitere Informationen und Schritte für die Sortierung von Gerätekanälen finden Sie unter im Abschnitt [Ändern der Sortierung von Gerätekanäle](sharepoint-design-manager-device-channels.md#reorder) in diesem Artikel.
   
     
     
@@ -226,10 +216,8 @@ Um die Anzahl der Gerätekanäle zu ermitteln, sollten Sie die zu Ihren Websitez
 
 Es gibt einige Benutzer-Agent-Teilzeichenfolgen von Originalherstellern, die Sie für die Geräteumleitung wie Windows Phone OS oder iPhone verwenden können, wie in Tabelle 2 dargestellt. Die im Feld **Geräteeinschlussregeln** benötigte Teilzeichenfolge ist in der Regel eine Teilmenge der viel größeren Benutzer-Agent-Zeichenfolge, die bereitgestellt wird, wenn sich das Gerät mit der Website verbindet. Es wird empfohlen, auf der Website des Herstellers oder Softwareanbieters nach einer gerätespezifischen Teilzeichenfolge zu suchen oder eine allgemeine webbasierte Suche durchzuführen. Manchmal ist möglicherweise schwierig, aufgrund der Ähnlichkeiten in der Benutzer-Agent-Zeichenfolgenzusammensetzung eine spezielle Teilzeichenfolge für eine bestimmte Version zu finden. Tabelle 4 enthält zwei Beispiele für Benutzer-Agent-Zeichenfolgen für Windows 8-Desktop und für ein Tabletgerät.
   
-    
-    
-
-> **Hinweis:** Die folgenden Zeichenfolgen sind Beispiele und kein originalen Zeichenfolgen für die behandelten Windows-Geräte. Sie werden bereitgestellt, um die Isolierung einer Teilzeichenfolge zu veranschaulichen. 
+> [!NOTE]
+> Die folgenden Zeichenfolgen sind Beispiele und keine Originalzeichenfolgen für die dargestellten Windows-Geräte. Sie werden bereitgestellt, um den Punkt der Isolierung einer Teilzeichenfolge darzustellen, falls dies erforderlich ist. 
   
     
     
@@ -316,16 +304,14 @@ Verwenden Sie das folgende Verfahren, um einen neuen Gerätekanal zu erstellen.
 
 Verwenden Sie das folgende Verfahren, um einen vorhandenen Gerätekanal zu ändern.
   
-    
-    
-
-> **Hinweis:** Der Standardkanal kann nicht geändert werden. 
+> [!NOTE]
+> Der Standardkanal kann nicht geändert werden. 
   
     
     
 
 
-### <a name="to-change-a-device-channel"></a>Ändern eines Gerätekanals
+### <a name="to-change-a-device-channel"></a>So ändern Sie einen Gerätekanal
 
 
 1. Starten Sie den Entwurfs-Manager. (Wählen Sie z. B. im Menü **Einstellungen** die Option **Entwurfs-Manager** aus.)
@@ -345,7 +331,9 @@ Verwenden Sie das folgende Verfahren, um einen vorhandenen Gerätekanal zu ände
   
 6. Um den Alias des Gerätekanals zu ändern, geben Sie einen neuen Alias in das Textfeld **Alias** ein.
     
-    > **Hinweis:** Wenn Sie den Alias eines Gerätekanals ändern, müssen Sie den Alias an anderen Stellen, an denen er verwendet wird, manuell ändern. Sie müssen beispielsweise den Alias in benutzerdefiniertem Code oder Markup manuell ändern, und Sie müssen die Zuordnungen zwischen dem Gerätekanal und den Gestaltungsvorlagen manuell ändern. 
+    > [!NOTE]
+    > Wenn Sie des Alias eines Gerätekanals ändern, müssen Sie den Alias an anderen Stellen manuell ändern, an dem Sie ihn verwenden. Beispielsweise müssen Sie den Alias in benutzerdefiniertem Code oder in einem Markup manuell ändern, und Sie müssen die Zuordnungen zwischen dem Gerätekanal und Masterseiten manuell ändern. 
+
 7. Um die Beschreibung des Gerätekanals zu ändern, geben Sie eine neue Beschreibung in das Textfeld **Beschreibung** ein.
     
   
@@ -364,16 +352,10 @@ Verwenden Sie das folgende Verfahren, um einen vorhandenen Gerätekanal zu ände
 
 Verwenden Sie das folgende Verfahren, um einen vorhandenen Gerätekanal zu löschen.
   
-    
-    
+> [!NOTE]
+> Der Standardkanal kann nicht gelöscht werden. 
 
-> **Hinweis:** Der Standardkanal kann nicht gelöscht werden. 
-  
-    
-    
-
-
-### <a name="to-delete-a-device-channel"></a>Löschen eines Gerätekanals
+### <a name="to-delete-a-device-channel"></a>So löschen Sie einen Gerätekanal
 
 
 1. Starten Sie den Entwurfs-Manager. (Wählen Sie z. B. im Menü **Einstellungen** die Option **Entwurfs-Manager** aus.)
@@ -425,7 +407,7 @@ Verwenden Sie das folgende Verfahren, um die Reihenfolge von Gerätekanälen zu 
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="PlanDeviceChannels_addresources"> </a>
 
 

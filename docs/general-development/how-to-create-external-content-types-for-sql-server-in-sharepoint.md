@@ -3,11 +3,11 @@ title: "Erstellen externer Inhaltstypen für SQL Server in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7fe2fbf0-546b-4a16-b02e-a0960bfb3842
-ms.openlocfilehash: df39aa0e0f31f8252756b63b4d9ec2f2fcc83bc3
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: d27d71887195026571d440b6484fad2876acf9ea
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-external-content-types-for-sql-server-in-sharepoint"></a>Erstellen externer Inhaltstypen für SQL Server in SharePoint
 
@@ -59,7 +59,9 @@ Das Arbeiten mit externen Daten erfordert einige vorbereitende Aufgaben zum Erm�
   
 3. Wählen Sie im **Navigationsbereich** unter **Websiteobjekte** die Option **Externe Inhaltstypen**.
     
-    > **Hinweis:** SharePoint Designer 2013 gruppiert externe Inhaltstypen nach dem Namespace im ersten Fenster des Designers für externe Inhaltstypen. 
+    > [!NOTE]
+    > SharePoint Designer 2013 gruppiert externe Inhaltstypen nach dem Namespace im ersten Fenster des Designers für externe Inhaltstypen. 
+
 4. Klicken Sie zum Öffnen des Designers für externe Inhaltstypen im Menüband auf **Externer Inhaltstyp**.
     
   
@@ -86,9 +88,11 @@ Das Arbeiten mit externen Daten erfordert einige vorbereitende Aufgaben zum Erm�
   
 2. Stellen Sie sicher, dass für das Kontrollkästchen **Offlinesynchronisierung für externe Liste** die Option **Aktiviert** (Standardeinstellung) ausgewählt ist.
     
-    > **Hinweis:** Wenn Sie diese Option deaktivieren, ist der Befehl **SharePoint mit Outlook verbinden** für eine externe Liste nicht verfügbar.
+    > [!NOTE]
+    > Wenn Sie diese Option deaktivieren, ist der Befehl **SharePoint mit Outlook verbinden** für eine externe Liste nicht verfügbar.
 
-> **Hinweis:** Das Farm- und Website-Feature **Offline-Synchronisierung für externe Listen** muss ebenfalls aktiv sein. Dieses Feature ist standardmäßig auf der Farmebene, aber nicht standardmäßig auf der Websiteebene aktiv. 
+> [!NOTE]
+> Das Farm- und Website-Feature **Offline-Synchronisierung für externe Listen** muss ebenfalls aktiv sein. Dieses Feature ist standardmäßig auf der Farmebene, aber nicht standardmäßig auf der Websiteebene aktiv. 
   
     
     
@@ -148,8 +152,9 @@ SharePoint Designer 2013 überprüft und testet die Verbindungsinformationen. We
     
   - **Alle Vorgänge erstellen** Dient zum Definieren der Vorgänge "Element erstellen", "Element löschen", "Element lesen", "Liste lesen" und "Element aktualisieren".
     
-    > **Hinweis:**
-      > **Alle Vorgänge erstellen** ist nur für Tabellen und Ansichten verfügbar. Routinen benötigen spezifische Vorgänge.
+    > [!NOTE]
+    > **Alle Vorgänge erstellen** ist nur für Tabellen und Ansichten verfügbar. Routinen benötigen spezifische Vorgänge.
+
   - **Neuer Elementlesevorgang** Dient zum Definieren eines Elementlesevorgangs.
     
   
@@ -168,18 +173,10 @@ SharePoint Designer 2013 überprüft und testet die Verbindungsinformationen. We
 2. Klicken Sie auf **Weiter**.
     
   
- **Hinweise**
-  
-    
-    
-
-- Stellen Sie bei Ansichten, die mehrere Tabellen umfassen, sicher, dass Schreibvorgänge unterstützt werden. Andernfalls sind die Befehle **Alle Vorgänge erstellen** oder **Neuer Aktualisierungsvorgang** nicht erfolgreich.
-    
-  
-- Definieren Sie stets mindestens einen **Neuen Elementlesevorgang** und **Neuen Listenlesevorgang**, da SharePoint-Features wie externe Listen von diesen Vorgängen abhängig sind.
-    
-  
-- Entscheiden Sie sich für spezifische Vorgänge anstatt für **Alle Vorgänge erstellen**, wenn die Tabelle oder Ansicht bestimmte Vorgänge nicht unterstützt.
+> [!NOTE]
+> - Stellen Sie bei Ansichten, die mehrere Tabellen umfassen, sicher, dass Schreibvorgänge unterstützt werden. Andernfalls sind die Befehle **Alle Vorgänge erstellen** oder **Neuer Aktualisierungsvorgang** nicht erfolgreich.
+> - Definieren Sie stets mindestens einen **Neuen Elementlesevorgang** und **Neuen Listenlesevorgang**, da SharePoint-Features wie externe Listen von diesen Vorgängen abhängig sind.
+> - Entscheiden Sie sich für spezifische Vorgänge anstatt für **Alle Vorgänge erstellen**, wenn die Tabelle oder Ansicht bestimmte Vorgänge nicht unterstützt.
     
   
 
@@ -192,26 +189,16 @@ SharePoint Designer 2013 überprüft und testet die Verbindungsinformationen. We
   
 2. Im Dialogfeld **Parameterkonfiguration** sind standardmäßig alle Spalten (als **Datenquellenelemente** bezeichnet) ausgewählt. Zum Entfernen nicht benötigter Spalten deaktivieren Sie die entsprechenden Kontrollkästchen.
     
-    > **Hinweis:** Anders als bei einer systemeigenen SharePoint-Liste können Sie den Namen der Spalte einer externen Liste nicht ändern. Erwägen Sie die Verwendung eines SQL-Spalten-Alias, um einen aussagekräftigeren oder kürzeren Namen anzugeben. 
+    > [!NOTE]
+    > Im Gegensatz zu einer SharePoint-eigenen Liste kann der Spaltenname einer externen Liste nicht geändert werden. Erwägen Sie einen SQL-Spaltenalias, um einen aussagekräftigeren Namen bereitzustellen, oder verwenden Sie einen kürzeren Namen. 
+
 3. Um ein ID-Feld auszuwählen, klicken Sie auf ein Feld und markieren Sie es (in der Regel ein Feld mit einem eindeutigen Werten). Klicken Sie dann unter **Eigenschaften** auf **Zu ID zuordnen**.
     
+> [!IMPORTANT]
+> Um zu verhindern, dass bestimmte Felder aktualisiert werden, z. B. eine ID oder ein Primärschlüsselfeld, deaktivieren Sie das Kontrollkästchen **Erforderlich**. Aktivieren Sie hingegen das Kontrollkästchen **Schreibgeschützt**, was zum Abrufen von Elementen nötig ist, damit Sie andere Felder aktualisieren können.
   
-
-> **Wichtig:** Um zu verhindern, dass bestimmte Felder aktualisiert werden, z. B. eine ID oder ein Primärschlüsselfeld, deaktivieren Sie das Kontrollkästchen **Erforderlich**. Aktivieren Sie hingegen das Kontrollkästchen **Schreibgeschützt**, was zum Abrufen von Elementen nötig ist, damit Sie andere Felder aktualisieren können.
-  
-    
-    
-
-  
-    
-    
-
-
-> **Tipp:** Lesen Sie sich die Meldungen im Bereich **Fehler und Warnungen** immer sorgfältig durch. Sie enthalten nützliche Informationen zur Bestätigung Ihrer Aktionen oder zur Behandlung von Problemen. Klicken Sie regelmäßig in den Bereich **Fehler und Warnungen**, und stellen Sie sicher, dass keine weiteren Fehler oder Warnungen vorhanden sind.
-  
-    
-    
-
+> [!TIP]
+> Lesen Sie sich die Meldungen im Bereich **Fehler und Warnungen** immer sorgfältig durch. Sie enthalten nützliche Informationen zur Bestätigung Ihrer Aktionen oder zur Behandlung von Problemen. Klicken Sie regelmäßig in den Bereich **Fehler und Warnungen**, und stellen Sie sicher, dass keine weiteren Fehler oder Warnungen vorhanden sind.
 
 ## <a name="map-outlook-fields"></a>Outlook-Felder zuordnen
 <a name="section8"> </a>
@@ -228,13 +215,8 @@ Falls Ihr externer Inhaltstyp einem Outlook-Elementtyp zugeordnet ist, müssen S
   
 2. Klicken Sie unter **Eigenschaften** neben **Office-Eigenschaft** auf den Abwärtspfeil, und wählen Sie dann das entsprechende übereinstimmende Feld. 
     
-  
-
-> **Hinweis:** Sie müssen nicht alle entsprechenden Feldern zuordnen. Die Felder aus der folgenden Tabelle müssen jedoch zugeordnet werden. 
-  
-    
-    
-
+> [!NOTE]
+> Es müssen zwar nicht alle entsprechenden Felder zugeordnet werden, die in der folgenden Tabelle aber auf jeden Fall. 
 
 **Tabelle: Outlook-Elementfeld zugeordneter Outlook-Elementtyp**
 
@@ -271,9 +253,8 @@ Das Steuerelement für das Auswahltool für externe Elemente ermöglicht Benutze
   
 2. Klicken Sie auf **Weiter**.
     
-  
-
-> **Hinweis:** Alle Filter, die Sie definieren, werden im Steuerelement für das Auswahltool für externe Elemente angezeigt. Obwohl sich bestimmte Filter nicht aus dem Steuerelement für das Auswahltool für externe Elemente entfernen lassen, können Sie einen Standardfilter definieren, indem Sie im Dialogfeld **Filterkonfiguration** auf **Ist Standard** klicken, wenn Sie den Filter erstellen oder ändern.
+> [!NOTE]
+> Alle Filter, die Sie definieren, werden im Steuerelement für das Auswahltool für externe Elemente angezeigt. Obwohl sich bestimmte Filter nicht aus dem Steuerelement für das Auswahltool für externe Elemente entfernen lassen, können Sie einen Standardfilter definieren, indem Sie im Dialogfeld **Filterkonfiguration** auf **Ist Standard** klicken, wenn Sie den Filter erstellen oder ändern.
   
     
     
@@ -411,17 +392,9 @@ Sie können verschiedene Arten von Filtern erstellen. Führen Sie für jeden Fil
   
 5. Klicken Sie auf **OK**. 
   
-    
-    
+    > [!NOTE]
+    > Der SQL Server-Administrator kann zudem spezielle Tabellen, Ansichten, Indizes und optimierte Abfragen erstellen, um die Ergebnisse auf die benötigten Elemente zu beschränken und die Leistung zu verbessern. 
 
-    
-  
-
-    > **Hinweis:** Der SQL Server-Administrator kann zudem spezielle Tabellen, Ansichten, Indizes und optimierte Abfragen erstellen, um die Ergebnisse auf die benötigten Elemente zu beschränken und die Leistung zu verbessern. 
-
-    
-  
-    
     
  **Seitenzahl**
   
@@ -492,9 +465,8 @@ Sie können verschiedene Arten von Filtern erstellen. Führen Sie für jeden Fil
 
 - Klicken Sie auf der Symbolleiste für den Schnellzugriff auf **Speichern**. Dadurch wird die Definition des externen Inhaltstyps im Business Data Connectivity-Metadatenspeicher gespeichert.
     
-  
-
-> **Hinweis:** Um eine bessere Leistung zu erzielen, speichert Business Data Connectivity alle Objekte im Metadatenspeicher zwischen und aktualisiert Änderungen mit einem Zeitgeberauftrag, der jede Minute ausgeführt wird. Es kann bis zu einer Minute dauern, bis die Änderungen an alle Server in der Farm weitergegeben wurden, aber die Änderungen auf dem Server, auf dem Sie die Änderung vorgenommen haben, treten sofort in Kraft. 
+> [!NOTE]
+> Um eine bessere Leistung zu bieten, speichert Business Data Connectivity alle Objekte im Metadatenspeicher zwischen und nimmt Änderungen mithilfe eines Zeitgeberauftrags vor, der minütlich ausgeführt wird. Es kann bis zu einer Minute dauern, bis Änderungen von allen Servern in der Farm übernommen wurden, erfolgen aber auf dem Server unmittelbar, auf dem Sie die Änderungen vornehmen. 
   
     
     
@@ -504,7 +476,7 @@ Den hinzugefügten Benutzern steht jetzt der externe Inhaltstyp für die Verwend
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="AR"> </a>
 
 

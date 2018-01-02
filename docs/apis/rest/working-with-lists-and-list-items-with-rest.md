@@ -2,11 +2,11 @@
 title: Arbeiten mit Listen und Listenelementen unter Verwendung von REST
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 66e9b7f7e622fe3df661c102fc1d62fde421f31e
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ec63b7dcf294e4a6248ca5c6014b6807f116f655
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="working-with-lists-and-list-items-with-rest"></a>Arbeiten mit Listen und Listenelementen unter Verwendung von REST
 In diesem Artikel erfahren Sie, wie Sie grundlegende Erstellungs-, Lese-, Aktualisierungs- und Löschoperationen, auch als CRUD-Operationen (Create, Read, Update, Delete) bezeichnet, für Listen und Listenelemente mit der SharePoint REST-Schnittstelle durchführen.
@@ -27,7 +27,8 @@ Headers:
     accept: "application/json;odata=verbose" or "application/atom+xml"
 
 ```
- **Hinweis**  Verwenden Sie  `application/json;odata=verbose` in der Kopfzeile `accept`, wenn Sie die Antwort in JSON wünschen. Verwenden Sie `application/atom+xml` in der Kopfzeile `accept`, wenn Sie die Antwort im Format Atom wünschen.
+> [!NOTE]
+> Verwenden Sie `application/json;odata=verbose` im `accept`-Header, wenn die Antwort im JSON-Format erfolgen soll. Verwenden Sie `application/atom+xml` im `accept`-Header, wenn die Antwort im Atom-Format erfolgen soll.
  
 Das folgende Beispiel zeigt, wie Sie eine bestimmte Liste **abrufen**, wenn ihr Titel bekannt ist.
 
@@ -84,7 +85,8 @@ Der folgende XML-Code zeigt ein Beispiel für die Listeneigenschaften, die beim 
     </m:properties>
   </content>
 ```
- **Hinweis**  Die Eigenschaft  **ListItemEntityTypeFullName** ( **SP.Data.ProjectPolicyItemListItem** im vorhergehenden Beispiel) ist wichtig, wenn Sie Listenelemente erstellen und aktualisieren möchten. Dieser Wert muss als **type**-Eigenschaft in den Metadaten übergeben werden, die Sie im Textkörper der HTTP-Anforderung übergeben, wenn Sie Listenelemente erstellen und aktualisieren.
+> [!NOTE]
+> Die Eigenschaft **ListItemEntityTypeFullName** (**SP.Data.ProjectPolicyItemListItem** im vorhergehenden Beispiel) ist wichtig, wenn Sie Listenelemente erstellen und aktualisieren möchten. Dieser Wert muss als **type**-Eigenschaft in den Metadaten übergeben werden, die Sie im Textkörper der HTTP-Anforderung übergeben, wenn Sie Listenelemente erstellen und aktualisieren.
 
 ## <a name="working-with-lists-by-using-rest"></a>Arbeiten mit Listen unter Verwendung von REST
 <a name="WorkLists"> </a> Das folgende Beispiel zeigt, wie Sie eine Liste **erstellen**.
@@ -146,7 +148,8 @@ Headers:
 ## <a name="working-with-list-items-by-using-rest"></a>Arbeiten mit Listenelementen unter Verwendung von REST
 <a name="ListItems"> </a> Das folgende Beispiel zeigt, wie Sie alle Elemente einer Liste **abrufen**.
  
- **Hinweis**  Die OData-Abfrageoption „$skip“ funktioniert nicht für das Abfragen von Listenelementen. In vielen Fällen können Sie stattdessen die Option  [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx) verwenden.
+> [!NOTE]
+> Die OData-Abfrageoption $skip funktioniert nicht beim Abfragen von Listenelementen. In vielen Situationen können Sie stattdessen die Option [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx) verwenden.
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
@@ -191,7 +194,8 @@ Der folgende XML-Code zeigt ein Beispiel für die Listenelementeigenschaften, di
 
 Das folgende Beispiel zeigt, wie Sie ein Listenelement **erstellen**.
 
- **Hinweis**  Zum Ausführen dieses Vorgangs müssen Sie die Eigenschaft **ListItemEntityTypeFullName** der Liste kennen und sie als Wert von **type** im HTTP-Anforderungstext weitergeben.
+> [!NOTE]
+> Um diese Operation durchzuführen, müssen Sie die Eigenschaft **ListItemEntityTypeFullName** der Liste kennen und sie als Wert von **type** im Textkörper der HTTP-Anforderung übergeben.
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
@@ -207,7 +211,8 @@ headers:
 
 Das folgende Beispiel zeigt, wie Sie ein Listenelement **aktualisieren**.
 
- **Hinweis**  Zum Ausführen dieses Vorgangs müssen Sie die Eigenschaft **ListItemEntityTypeFullName** der Liste kennen und sie als Wert von **type** im HTTP-Anforderungstext weitergeben.
+> [!NOTE]
+> Um diese Operation durchzuführen, müssen Sie die Eigenschaft **ListItemEntityTypeFullName** der Liste kennen und sie als Wert von **type** im Textkörper der HTTP-Anforderung übergeben.
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
@@ -247,7 +252,7 @@ Wenn das in Ihrer Anforderung angegebene **ETag** nicht mit dem **ETag** des Dok
     
 In SharePoint gelten ETags nur für SharePoint-Listen und Listenelemente.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten](complete-basic-operations-using-sharepoint-rest-endpoints.md)

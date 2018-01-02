@@ -1,12 +1,12 @@
 ---
 title: SharePoint Framework-Roadmap
-ms.date: 09/25/2017
+ms.date: 12/15/2017
 ms.prod: sharepoint
-ms.openlocfilehash: a5097e0f7d465ab00c5c7a76a8ee78e10f737d7d
-ms.sourcegitcommit: 11d9185437fc819ab41421c0f4fe06aa300b9d28
+ms.openlocfilehash: fd8577a51c3a16ffec94cca3958c8853a8ea9dcb
+ms.sourcegitcommit: 202dd467c8e5b62c6469808226ad334061f70aa2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="sharepoint-framework-roadmap"></a>SharePoint-Framework-Roadmap
 
@@ -16,6 +16,9 @@ Die Erstveröffentlichung von SharePoint-Framework enthielt nur Unterstützung f
 - [Lokale Unterstützung für SharePoint 2016 (Feature Pack 2)](./sharepoint-2016-support.md)
 - [SharePoint-Framework-Erweiterungen](./extensions/overview-extensions.md)
 - [Mandanteneigenschaften](./tenant-properties.md)
+- [ALM-APIs für SPFx-Lösungen und -Add-Ins](../apis/alm-api-for-spfx-add-ins.md)
+- [Unterstützung für Office UI Fabric Core](https://dev.office.com/blogs/improved-support-for-office-ui-fabric-core)
+- [Verpacken von Objekten und Websitesammlungs-App-Katalog](../general-development/site-collection-app-catalog.md)
 
 
 > [!NOTE]
@@ -24,9 +27,7 @@ Die Erstveröffentlichung von SharePoint-Framework enthielt nur Unterstützung f
 ## <a name="general-improvements"></a>Allgemeine Verbesserungen
 
 - Einfacher Zugriff auf die Graph-API zum Zugreifen auf benutzerspezifische Informationen (GraphHttpClient in der Vorschau)
-- Websitesammlungs-App-Katalog mit Steuerung auf Mandantenebene für eine einfachere Bereitstellung von Lösungen – Ende 2017
 - Webhooks auf Website-Ebene
-- Unterstützung für Office-UI-Fabric Core
 
 ## <a name="client-side-web-parts-and-add-ins"></a>Clientseitige Webparts und Add-Ins
 
@@ -48,11 +49,6 @@ Die Erstveröffentlichung von SharePoint-Framework enthielt nur Unterstützung f
     - Mandantenadministrator wird automatisch benachrichtigt 
     - Einstellungen zum Steuern der Standardoberfläche um den Genehmigungsprozess herum
 
-- ALM-REST-APIs - Bereitstellen, Aktivieren, Löschen und Aktualisieren von Apps und Add-Ins
-- ALM-REST-APIs zielen darauf ab, *alles* aus dem App-Katalog zu unterstützen, einschließlich Add-Ins
-- Automatisches CDN-Hosting für Code
-    - Das JavaScript-Bundle wird im App-Paket verpackt, das dann automatisch in einer Bibliothek bereitgestellt wird, die auf dem Mandanten-Office 365-CDN gehostet wird.
-
 
 ## <a name="developer-experience"></a>Entwickleroberfläche
 - SharePoint-Framework-Workbench 2.0: Entwicklungsgeschichte für SharePoint-Framework-Erweiterungen
@@ -62,6 +58,16 @@ Die Erstveröffentlichung von SharePoint-Framework enthielt nur Unterstützung f
 ## <a name="already-shipped-capabilities"></a>Bereits ausgeliefert Funktionen
 
 In den folgenden Kapiteln werden ältere Elemente auf der Roadmap-Seite erläutert, die bereits ausgeliefert wurden.
+
+### <a name="asset-packaging"></a>Verpacken von Objekten
+
+- Automatisches CDN-Hosting für Code – Das JavaScript-Bundle wird im App-Paket verpackt, das dann automatisch in einer Bibliothek bereitgestellt wird, die auf dem Mandanten-Office 365-CDN gehostet wird.
+
+### <a name="alm-rest-apis"></a>ALM-REST-APIs
+
+- ALM-REST-APIs - Bereitstellen, Aktivieren, Löschen und Aktualisieren von Apps und Add-Ins
+- ALM-REST-APIs zielen darauf ab, *alles* aus dem App-Katalog zu unterstützen, einschließlich Add-Ins
+- CSOM und PowerShell-Cmdlets als Initiative der Open-Source-Community
 
 ### <a name="javascript-embedding-support-jslink-user-custom-actions"></a>Eingebettete JavaScript-Unterstützung (JSLink, benutzerdefinierte Benutzeraktionen) 
 
@@ -79,7 +85,7 @@ In den folgenden Kapiteln werden ältere Elemente auf der Roadmap-Seite erläute
 - Abzielen auf SharePoint 2016-Version während des Kalenderjahrs 2017
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 Verwenden Sie die folgenden Ressourcen, um über die neuen Versionen und Funktionen auf dem Laufenden zu bleiben, die für SharePoint Framework veröffentlicht werden.
 
 * [dev.office.com-Blog](https://dev.office.com/blogs)

@@ -3,22 +3,19 @@ title: Abrufen von Bereichen mithilfe von Atom-Feed und HTML-Fragment
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 45d4ef08-02d6-48dd-b0ef-a748db1a0c6a
-ms.openlocfilehash: 6ef960fc7a64fa2817373366219936d7ce362aaa
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2624ac1e92c03e462883ec7a4c412857faf95c80
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="getting-ranges-using-atom-feed-and-html-fragment"></a>Abrufen von Bereichen mithilfe von Atom-Feed und HTML-Fragment
 
 In diesem Thema werden zwei Methoden zum Zugreifen auf Bereiche beschrieben: Atom-Feed und HTML-Fragment unter Verwendung der REST-API in Excel Services.
   
-    
-    
-
-
-> **Hinweis:** Die Excel Services-REST-API bezieht sich auf SharePoint und SharePoint 2016 (lokal). Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> )-Endpunkts sind.
+> [!NOTE]
+> Die Excel Services-REST-API kann in lokalen Bereitstellungen von SharePoint und SharePoint 2016 verwendet werden. Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+)-Endpunkts sind.
   
     
     
@@ -58,13 +55,11 @@ Wenn Sie den im Thema [Ermittlung in der Excel Services-REST-API](discovery-in-e
     
     
 
-> **Wichtig:** Sie können auch beliebige Bereiche angeben, nicht nur die von der Suche zurückgegebenen Bereiche. Der Doppelpunkt „:“ muss durch „|“ ersetzt werden. Verwenden Sie z. B. „A1|G5“ anstelle von „A1:G5“. 
+> [!IMPORTANT]
+> Sie können auch beliebige Bereiche angeben, nicht nur die von der Suche zurückgegebenen Bereiche. Der Doppelpunkt „:“ muss durch „|“ ersetzt werden. Verwenden Sie z. B. „A1|G5“ anstelle von „A1:G5“. 
   
-    
-    
-
-
-> **Hinweis:** Zeichen wie „?“ und „#“ werden nicht unterstützt. Um ordnungsgemäß auf Blattnamen zu verweisen, die Sonderzeichen enthalten, gilt die Grundregel „Feststellen, was der Excel-Client macht“, wenn Sie in einer Formel auf ein Blatt mit Sonderzeichen verweisen, und diesem Beispiel folgen. 
+> [!NOTE]
+> Zeichen wie „?“ und „#“ werden nicht unterstützt. Um ordnungsgemäß auf Blattnamen zu verweisen, die Sonderzeichen enthalten, gilt die Grundregel „Feststellen, was der Excel-Client macht“, wenn Sie in einer Formel auf ein Blatt mit Sonderzeichen verweisen, und diesem Beispiel folgen. 
   
     
     
@@ -225,30 +220,14 @@ http://<ServerName>/_vti_bin/ExcelRest.aspx/Docs/Documents/sampleWorkbook.xlsx/m
 
 In Internet Explorer ähnelt die Seite der folgenden Abbildung.
   
-    
-    
-
-> **Hinweis:** Dieser HTML-Code kann in einem **IFRAME**-Element direkt genutzt werden. Sie können ihn aber auch in JavaScript verwenden, um ein nahtloses Arbeiten zu ermöglichen. 
+> [!NOTE]
+> Dieser HTML-Code kann in einem **IFRAME**-Element direkt genutzt werden. Sie können ihn aber auch in JavaScript verwenden, um ein nahtloses Arbeiten zu ermöglichen. 
   
-    
-    
 
-
-  
-    
     
 ![Ermittlung von Excel Services REST – Abrufen von Bereichen mithilfe von HTML](../images/558e6305-5a42-4b5c-9a70-1116ddcf6637.gif)
   
-    
-    
 
-  
-    
-    
-
-  
-    
-    
 
 ## <a name="see-also"></a>Siehe auch
 

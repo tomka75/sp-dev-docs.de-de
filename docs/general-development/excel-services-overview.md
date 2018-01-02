@@ -3,11 +3,11 @@ title: "Übersicht über Excel Services"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 5fa22ebb-e507-4ffc-a425-e755502feae2
-ms.openlocfilehash: 6159be4d43d4b1d7b15d7545e8fe0e132ce176b1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f460fb94b6a18af7a544006b078995f95ce36e69
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="excel-services-overview"></a>Übersicht über Excel Services
 
@@ -33,27 +33,32 @@ Mit Excel Services können Excel-Arbeitsmappen auf SharePoint-Portalen und -Dash
   
 - Eine REST-API (Representational State Transfer) für den direkten Zugriff auf Arbeitsmappenteile über eine URL
     
-  
-
-> **Hinweis:** Das Feature „Interaktive Excel-Ansicht“ wurde deaktiviert. Informationen zum Entfernen dieses Features von Ihrer Website finden Sie unter  [Entfernen der interaktiven Excel-Ansicht von einer Webseite](removing-excel-interactive-view-from-a-webpage.md). 
+> [!NOTE]
+> Das Feature „Interaktive Excel-Ansicht“ wurde deaktiviert. Informationen zum Entfernen dieses Features von Ihrer Website finden Sie unter [Entfernen der interaktiven Excel-Ansicht von einer Webseite](removing-excel-interactive-view-from-a-webpage.md). 
   
     
     
 
 Sie können die Dienste für Excel Berechnungen auch mithilfe von benutzerdefinierten Funktionen (User-defined Functions, UDFs) erweitern.
-> **Hinweis:** Weitere Informationen zu den Diensten für Excel-Berechnungen finden Sie unter  [Excel Services-Architektur](excel-services-architecture.md). 
+
+> [!NOTE]
+> Weitere Informationen zu den Diensten für Excel-Berechnungen finden Sie unter [Excel Services-Architektur](excel-services-architecture.md). 
   
     
     
 
 Mit Excel Services können Sie interaktive Live-Arbeitsmappen lediglich mithilfe eines Browsers anzeigen. Das heißt, Sie können Excel-Arbeitsmappen speichern und damit auf Portalwebsites interagieren.Darüber hinaus können Sie mit Excel-basierten Daten interagieren, indem Sie PivotTables sortieren, filtern, erweitern oder reduzieren und indem Sie Parameter übergeben. Dies ermöglicht das Analysieren von veröffentlichten Arbeitsmappen. Sie können mit einer Arbeitsmappe interagieren, ohne die veröffentlichte Arbeitsmappe zu ändern. Dies ist für Berichtsautoren und Berichtsconsumer hilfreich.Excel Services unterstützt Arbeitsmappen, die mit externen Datenquellen verbunden sind. Sie können Verbindungszeichenfolgen für externe Datenquellen in die Arbeitsmappe einbetten oder die Verbindungszeichenfolgen zentral in einer Datenverbindungsbibliothek-Datei speichern.Darüber hinaus können Zellen in Arbeitsmappen bearbeitbar gemacht werden, indem sie als benannte Bereiche (Parameter) festgelegt werden. Elemente, die Sie beim Speichern in Excel Services als sichtbar festlegen, werden im Bereich **Parameter** in Excel Web Access angezeigt. Sie können die Werte dieser benannten Bereiche im Bereich **Parameter** ändern und die Arbeitsmappe aktualisieren. Außerdem können Sie mit dem Filter-Webpart des Portals mehrere Webparts (Excel Web Access-Webparts und andere Arten von Webparts) gemeinsam filtern.Es ist jedoch nicht möglich, mit Excel Services neue Arbeitsmappen zu erstellen oder vorhandene Arbeitsmappen zu bearbeiten. Verwenden Sie Microsoft Excel 2013, um eine Arbeitsmappe für die Verwendung mit Excel Services zu erstellen.
-> **Hinweis:** In Microsoft Excel Online, Bestandteil von Office Online, werden auch Excel-Arbeitsmappen im Browser unterstützt. Weitere Informationen zu Excel Online finden Sie unter [Erste Schritte mit dem neuen Office](http://office.microsoft.com/en-us/support/getting-started-with-office-FX102809998.aspx). 
+
+> [!NOTE]
+> In Microsoft Excel Online, Bestandteil von Office Online, werden auch Excel-Arbeitsmappen im Browser unterstützt. Weitere Informationen zu Excel Online finden Sie unter [Erste Schritte mit dem neuen Office](http://office.microsoft.com/de-DE/support/getting-started-with-office-FX102809998.aspx). 
   
     
     
 
 Excel Services weist auch einen Webdienst auf. Mit Excel Web Services können Sie Arbeitsmappen laden, Werte in Zellen und Bereichen festlegen, externe Datenverbindungen aktualisieren, Arbeitsmappen berechnen und berechnete Ergebnisse extrahieren (einschließlich Zellwerten, der gesamten berechneten Arbeitsmappe oder einer Momentaufnahme der Arbeitsmappe). In SharePoint können Sie mit Excel Web Services auch speichern, eine Kopie speichern und an gemeinsamen Bearbeitungssitzungen teilnehmen.
-> **Hinweis:** Weitere Informationen zu Momentaufnahmen finden Sie unter  [Vorgehensweise: Abrufen einer kompletten Arbeitsmappe oder einer Momentaufnahme](how-to-get-an-entire-workbook-or-a-snapshot.md). 
+
+> [!NOTE]
+> Weitere Informationen zu Momentaufnahmen finden Sie unter [Gewusst wie: Abrufen einer kompletten Arbeitsmappe oder einer Momentaufnahme](how-to-get-an-entire-workbook-or-a-snapshot.md). 
   
     
     
@@ -100,11 +105,8 @@ Neben der Beteiligung an integrierten Dashboards können mit Excel Services auch
     
 Wenn Sie bestimmte Funktionen in Excel verwenden oder eine Arbeitsmappe mithilfe aller Excel-Funktionen analysieren möchten, können Sie durch Klicken auf **In Excel öffnen** eine Arbeitsmappe in Excel öffnen. Eine Arbeitsmappe können Sie auch in Excel öffnen, um sie zu drucken und um offline zu arbeiten.
   
-    
-    
-
-    
-> **Hinweis:** Zum Öffnen einer Arbeitsmappe mit dem Befehl **In Excel öffnen** müssen Sie über die Berechtigung "Öffnen" verfügen. Weitere Informationen finden Sie im nächsten Abschnitt **Verwalten von Arbeitsmappen** und unter [Benutzerberechtigungen und Berechtigungsstufen](http://technet.microsoft.com/en-us/library/cc721640%28office.14%29.aspx) auf [TechNet](http://technet.microsoft.com/en-us/library/cc263215%28office.14%29.aspx). Benutzer, die nicht über die Berechtigung "Öffnen" verfügen, können dennoch eine Momentaufnahme in Excel öffnen. 
+> [!NOTE]
+> Zum Öffnen einer Arbeitsmappe mit dem Befehl **In Excel öffnen** müssen Sie über die Berechtigung „Öffnen“ verfügen. Weitere Informationen finden Sie im nächsten Abschnitt **Verwalten von Arbeitsmappen** und unter [Benutzerberechtigungen und Berechtigungsstufen](http://technet.microsoft.com/de-DE/library/cc721640%28office.14%29.aspx) auf [TechNet](http://technet.microsoft.com/de-DE/library/cc263215%28office.14%29.aspx). Benutzer, die nicht über die Berechtigung "Öffnen" verfügen, können dennoch eine Momentaufnahme in Excel öffnen. 
   
     
     
@@ -152,7 +154,7 @@ Excel Services ist für viele Benutzer und viele Arbeitsmappen optimiert. Hiermi
   
     
     
-Weitere Informationen zum Verwalten von Arbeitsmappen mithilfe von Excel Services finden Sie in der SharePoint Server-Dokumentation auf  [TechNet](http://technet.microsoft.com/en-us/library/ee424405%28office.14%29.aspx) oder in der Hilfe zu SharePoint Server.
+Weitere Informationen zum Verwalten von Arbeitsmappen mithilfe von Excel Services finden Sie in der SharePoint Server-Dokumentation auf  [TechNet](http://technet.microsoft.com/de-DE/library/ee424405%28office.14%29.aspx) oder in der Hilfe zu SharePoint Server.
   
     
     
@@ -198,7 +200,7 @@ In Microsoft Excel Services und Microsoft SharePoint können Sie nun mithilfe vo
   
     
     
-JavaScript-UDFs ähneln  [UDFs](http://msdn.microsoft.com/en-us/library/ms499792.aspx), die Sie für Microsoft Excel erstellen können. Der Unterschied besteht darin, dass JavaScript-UDFs nur in Arbeitsmappen verwendet werden, die in eine Webseite eingebettet sind, und nur auf dieser Webseite vorhanden sind.
+JavaScript-UDFs ähneln  [UDFs](http://msdn.microsoft.com/de-DE/library/ms499792.aspx), die Sie für Microsoft Excel erstellen können. Der Unterschied besteht darin, dass JavaScript-UDFs nur in Arbeitsmappen verwendet werden, die in eine Webseite eingebettet sind, und nur auf dieser Webseite vorhanden sind.
   
     
     
@@ -247,7 +249,7 @@ http://\<ServerName\>/_vti_bin/ExcelRest.aspx/Docs/Documents/SampleWorkbook.xlsx
   
     
     
- Dokumentation zur [Excel Services 2010 REST-API](http://msdn.microsoft.com/en-us/library/ee556413.aspx) in der Dokumentation zum SharePoint SDK.
+ Dokumentation zur [Excel Services 2010 REST-API](http://msdn.microsoft.com/de-DE/library/ee556413.aspx) in der Dokumentation zum SharePoint SDK.
   
     
     
@@ -264,7 +266,7 @@ Von dort aus können Sie OData-Systemabfrageoptionen verwenden, um spezielle Inf
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 
 
 -  [Excel Services Development Roadmap](excel-services-development-roadmap.md)

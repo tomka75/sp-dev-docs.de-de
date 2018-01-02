@@ -3,11 +3,11 @@ title: Sichern und Wiederherstellen einer Suchdienstanwendung in SharePoint mit 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 87ee28e6-8170-4dba-8c9d-f04ab9e632dc
-ms.openlocfilehash: 7b0e93318f0eaddb08643e139de0b16e9a3a169b
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 15538df022c8caffcae9fe75ed7fed22efaa043b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="back-up-and-restore-a-search-service-application-in-sharepoint-using-vss"></a>Sichern und Wiederherstellen einer Suchdienstanwendung in SharePoint mit VSS
 
@@ -90,60 +90,61 @@ Die folgenden Verfahren dienen zur Unterstützung der Entwickler Erstellen einer
 
 2. Ersetzen Sie die 10 Platzhalter in der Datei durch die entsprechenden Werte aus der writer.txt-Datei, die Sie im ersten Schritt generiert. Anhand der folgenden Tabelle als Leitfaden. 
     
-    > **Hinweis:** In der rechten Spalte ist  _SSA_ selbst ein Platzhalter für den Namen der Suchdienstanwendung.
+    > [!NOTE]
+    > In der rechten Spalte ist _SSA_ selbst ein Platzhalter für den Namen der Suchdienstanwendung.
 
    **Tabelle 2. Platzhalter für SSA-Manifestdatei und Werte aus „writers.txt“**
 
 
-|**Platzhalter**|**Wo befindet sich die Informationen im writers.txt.**|
-|:-----|:-----|
-| _SharePoint Services Writer ID_ <br/> |Die WriterId-GUID angezeigt, unter dem Eintrag "SharePoint Services-Writer"  <br/> |
-| _PathSSA_ <br/> |Der logische Path-Eintrag mit dem Namen der Suchdienstanwendung in den Eintrag "SharePoint Services-Writer" aufgeführt  <br/> |
-| _PathC_ <br/> |Der logische Path-Eintrag aufgelistet, für die Komponente mit dem Namen" _SSA__CrawlStore" im "SharePoint Services-Writer"-Eintrag  <br/> |
-| _PathA_ <br/> |Der logische Path-Eintrag aufgelistet, für die Komponente mit dem Namen" _SSA_ _AnalyticsReportingStore" im "SharePoint Services-Writer"-Eintrag <br/> |
-| _PathL_ <br/> |Der logische Path-Eintrag aufgelistet, für die Komponente mit dem Namen" _SSA__LinksStore" im "SharePoint Services-Writer"-Eintrag  <br/> |
-| _SQL Server Writer ID_ <br/> |Die WriterId-GUID angezeigt, unter dem Eintrag "SqlServerWriter"  <br/> |
-| _PathDbSSA_ <br/> |Der logische Path-Eintrag für die Komponente mit dem Namen der Suchdienstanwendung in der Eintrag "SqlServerWriter" aufgeführt  <br/> |
-| _PathDbC_ <br/> |Der logische Path-Eintrag für die Komponente mit dem Namen" _SSA__CrawlStore" in den Eintrag "SqlServerWriter" aufgeführt  <br/> |
-| _PathDbA_ <br/> |Der logische Path-Eintrag für die Komponente mit dem Namen" _SSA__AnalyticsReportingStore" in den Eintrag "SqlServerWriter" aufgeführt  <br/> |
-| _PathDbL_ <br/> |Der logische Path-Eintrag für die Komponente mit dem Namen" _SSA__LinksStore" in den Eintrag "SqlServerWriter" aufgeführt  <br/> |
+  |**Platzhalter**|**Wo befindet sich die Informationen im writers.txt.**|
+  |:-----|:-----|
+  | _SharePoint Services Writer ID_ <br/> |Die WriterId-GUID angezeigt, unter dem Eintrag "SharePoint Services-Writer"  <br/> |
+  | _PathSSA_ <br/> |Der logische Path-Eintrag mit dem Namen der Suchdienstanwendung in den Eintrag "SharePoint Services-Writer" aufgeführt  <br/> |
+  | _PathC_ <br/> |Der logische Path-Eintrag aufgelistet, für die Komponente mit dem Namen" _SSA__CrawlStore" im "SharePoint Services-Writer"-Eintrag  <br/> |
+  | _PathA_ <br/> |Der logische Path-Eintrag aufgelistet, für die Komponente mit dem Namen" _SSA_ _AnalyticsReportingStore" im "SharePoint Services-Writer"-Eintrag <br/> |
+  | _PathL_ <br/> |Der logische Path-Eintrag aufgelistet, für die Komponente mit dem Namen" _SSA__LinksStore" im "SharePoint Services-Writer"-Eintrag  <br/> |
+  | _SQL Server Writer ID_ <br/> |Die WriterId-GUID angezeigt, unter dem Eintrag "SqlServerWriter"  <br/> |
+  | _PathDbSSA_ <br/> |Der logische Path-Eintrag für die Komponente mit dem Namen der Suchdienstanwendung in der Eintrag "SqlServerWriter" aufgeführt  <br/> |
+  | _PathDbC_ <br/> |Der logische Path-Eintrag für die Komponente mit dem Namen" _SSA__CrawlStore" in den Eintrag "SqlServerWriter" aufgeführt  <br/> |
+  | _PathDbA_ <br/> |Der logische Path-Eintrag für die Komponente mit dem Namen" _SSA__AnalyticsReportingStore" in den Eintrag "SqlServerWriter" aufgeführt  <br/> |
+  | _PathDbL_ <br/> |Der logische Path-Eintrag für die Komponente mit dem Namen" _SSA__LinksStore" in den Eintrag "SqlServerWriter" aufgeführt  <br/> |
    
 
-    This is the SSA manifest file. For an example of a completed SSA manifest file, see  [Example manifest files](#Examples).
+    Dies ist die SSA-Manifestdatei. Ein Beispiel für eine fertige SSA-Manifestdatei finden Sie unter [Beispiele für Manifestdateien](#Examples).
     
   
 3. Befolgen Sie diese Schritte zum Erstellen eines Manifests für die Suche Indexdateien. Wiederholen Sie diese Schritte auf jedem Server, der eine Indexkomponente hat.
     
 1. Erstellen Sie eine XML-Datei, und fügen Sie die folgenden:
     
-```XML
-  
-<BETest>
-   <Writer writerid="SharePoint Services Writer ID">
-      <Component logicalPath="PathIndex" componentName="NameIndex" />
-   </Writer>
-   <Writer writerid="OSearch15 Writer ID">
-      <Component logicalPath="PathOSearch15" componentName="IndexComponentGroup" />
-   </Writer>    
-</BETest>
-```
+    ```XML
+      
+    <BETest>
+      <Writer writerid="SharePoint Services Writer ID">
+          <Component logicalPath="PathIndex" componentName="NameIndex" />
+      </Writer>
+      <Writer writerid="OSearch15 Writer ID">
+          <Component logicalPath="PathOSearch15" componentName="IndexComponentGroup" />
+      </Writer>    
+    </BETest>
+    ```
 
 2. Ersetzen Sie die sechs Platzhalter in der Datei durch die entsprechenden Werte aus der writer.txt-Datei, die Sie im ersten Schritt generiert. Anhand der folgenden Tabelle als Leitfaden.
     
    **Tabelle 3. Search Index Manifestdatei Platzhalter und Werten aus writer.txt**
 
 
-|**Platzhalter**|**Wo die Informationen im writers.txt befindet**|
-|:-----|:-----|
-| _SharePoint Services Writer ID_ <br/> |Die WriterId-GUID angezeigt, unter dem Eintrag "SharePoint Services-Writer"  <br/> |
-| _PathIndex_ <br/> |Der logische Path-Eintrag aufgelistet, die für die Komponente, deren Namen mit "IndexComponentGroup" in den Eintrag "SharePoint Services-Writer" beginnt  <br/> |
-| _NameIndex_ <br/> |Den Eintrag aufgeführt, die für die Komponente, deren Namen mit "IndexComponentGroup" in den Eintrag "SharePoint Services-Writer" beginnt  <br/> |
-| _OSearch15 Writer ID_ <br/> |Die WriterId-GUID angezeigt, unter dem Eintrag "OSearch15 VSS Writer"  <br/> |
-| _PathOSearch15_ <br/> |Der logische Path-Eintrag aufgelistet, die für die Komponente, deren Namen mit "IndexComponentGroup" in den Eintrag "OSearch15 VSS Writer" beginnt. Es ist normalerweise leer.  <br/> |
-| _IndexComponentGroup_ <br/> |Den Eintrag aufgeführt, die für die Komponente, deren Namen mit "IndexComponentGroup" in den Eintrag "OSearch15 VSS Writer" beginnt  <br/> |
+    |**Platzhalter**|**Wo die Informationen im writers.txt befindet**|
+    |:-----|:-----|
+    | _SharePoint Services Writer ID_ <br/> |Die WriterId-GUID angezeigt, unter dem Eintrag "SharePoint Services-Writer"  <br/> |
+    | _PathIndex_ <br/> |Der logische Path-Eintrag aufgelistet, die für die Komponente, deren Namen mit "IndexComponentGroup" in den Eintrag "SharePoint Services-Writer" beginnt  <br/> |
+    | _NameIndex_ <br/> |Den Eintrag aufgeführt, die für die Komponente, deren Namen mit "IndexComponentGroup" in den Eintrag "SharePoint Services-Writer" beginnt  <br/> |
+    | _OSearch15 Writer ID_ <br/> |Die WriterId-GUID angezeigt, unter dem Eintrag "OSearch15 VSS Writer"  <br/> |
+    | _PathOSearch15_ <br/> |Der logische Path-Eintrag aufgelistet, die für die Komponente, deren Namen mit "IndexComponentGroup" in den Eintrag "OSearch15 VSS Writer" beginnt. Es ist normalerweise leer.  <br/> |
+    | _IndexComponentGroup_ <br/> |Namenseintrag für die Komponente, deren Name mit „IndexComponentGroup“ im Eintrag „OSearch15 VSS Writer“ beginnt  <br/> |
    
 
-    This is the search index manifest file. For an example of a completed search index manifest file, see  [Example manifest files](#Examples).
+    Dies ist die Suchindex-Manifestdatei. Ein Beispiel für eine fertige Suchindex-Manifestdatei finden Sie unter [Beispiele für Manifestdateien](#Examples).
     
   
 4. (Optional) Notieren Sie die Größe der **IndexComponent** Ordner auf jedem Server, die eine Indexkomponente enthält. Sie können diese Informationen später so überprüfen Sie die Sicherung verwenden.
@@ -205,7 +206,8 @@ betest.exe /v /r /d "destination backup folder" /s "backup log file" /x SSA_mani
 
 3. Öffnen Sie auf dem gleichen Server ein SharePoint-Verwaltungsshell, und führen Sie die folgenden Zeilen, um die SSA wiederherzustellen, wobei  _application pool name_ ist der Name des neuen Pools, _domain\\user_ ist der Domänenname des Benutzers, der der zu verwendenden Anwendungspool als von in der Ereignisprotokollen, _name of the search service application_ ist der Name der SSA und _topology_file_name_ ist der Pfad und Name der Aufschlüsselung-Datei, die Sie erstellt haben, wenn die SSA gesichert wurde.
     
-    > **Tipp:** Dieser Code erstellt eine neue Anwendungspoolidentität für die Ausführung der wiederhergestellten SSA. Sie können aber auch ein vorhandenes Konto mit dem Cmdlet **Get-SPServiceApplicationPool** verwenden.
+    > [!TIP]
+    > Dieser Code erstellt eine neue Anwendungspoolidentität für die Ausführung der wiederhergestellten SSA. Sie können aber auch ein vorhandenes Konto mit dem Cmdlet **Get-SPServiceApplicationPool** verwenden.
 
 ```
   $applicationPool = New-SPServiceApplicationPool -name "application pool name" -account "domain\\user"
@@ -332,7 +334,7 @@ stop-service SPSearchHostController
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

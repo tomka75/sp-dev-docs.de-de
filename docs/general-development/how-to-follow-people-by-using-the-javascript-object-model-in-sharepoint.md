@@ -3,11 +3,11 @@ title: Folgen von Personen mithilfe des JavaScript-Objektmodell in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 2643c286-47c9-4a7a-9273-7474394477d6
-ms.openlocfilehash: 32f8d67f05048a15d3c1e2d0d1313f38945ff593
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 441c7e8085f28ddf58e627b8f8261d04a035c916
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="follow-people-by-using-the-javascript-object-model-in-sharepoint"></a>Folgen von Personen mithilfe des JavaScript-Objektmodell in SharePoint
 
@@ -18,9 +18,7 @@ In diesem Artikel erfahren Sie, wie Sie mithilfe des SharePoint JavaScript-Objek
 
 In SharePoint helfen Features zum Folgen von Personen den Benutzern, miteinander verbunden zu bleiben. Wenn beispielsweise ein Benutzer einer Person folgt, werden die Beiträge und Aktivitäten dieser Person im Newsfeed des Benutzers angezeigt. Indem Sie Features zum Folgen von Personen nutzen, damit sich Benutzer auf die Personen konzentrieren können, die für sie wichtig sind, können Sie die Relevanz Ihrer App oder Lösung verbessern. Im JavaScript-Objektmodell werden Personen, denen Sie folgen, durch [SocialActor](http://msdn.microsoft.com/library/4e369fd5-b9b0-9804-957e-b3e39c559cd4%28Office.15%29.aspx)-Objekte dargestellt. Zum Durchführen der Hauptaufgaben zum Folgen von Personen im JavaScript-Objektmodel verwenden Sie das [SocialFollowingManager](http://msdn.microsoft.com/library/9ee1c0c0-b864-f0c3-f0cb-4dd4f1870dfa%28Office.15%29.aspx)-Objekt. In diesem Artikel erfahren Sie, wie Sie mithilfe des JavaScript-Objektmodells mit Features zum Folgen von Personen arbeiten.
   
-    
-    
-> **Hinweis:**
+> [!NOTE]
 > [SocialFollowingManager](http://msdn.microsoft.com/library/9ee1c0c0-b864-f0c3-f0cb-4dd4f1870dfa%28Office.15%29.aspx) ist die empfohlene API zum Folgen von Personen und Inhalten. Das [PeopleManager](http://msdn.microsoft.com/library/985fd2df-0e31-6ece-b846-ba2ccb156d00%28Office.15%29.aspx)-Objekt enthält jedoch zusätzliche Funktionen zum Folgen von Personen, wie die Methode [amIFollowedBy](http://msdn.microsoft.com/library/3641c469-0063-054d-355d-e56697cb08ae%28Office.15%29.aspx) und Methoden, die den Folgen-Status anderer Benutzer abrufen.
   
     
@@ -75,7 +73,8 @@ Zum Erstellen der Farmlösung, die das JavaScript-Objektmodell verwendet, um mit
   
 7. Öffnen Sie im Ordner **Layouts** das Kontextmenü für den Ordner **FollowPeopleJSOM**, und fügen Sie anschließend eine neue SharePoint-Anwendungsseite namens „FollowPeople.aspx“ hinzu.
     
-   > **Hinweis:** Die Codebeispiele in diesem Artikel legen benutzerdefinierten Code im Seitenmarkup fest, verwenden jedoch nicht die Code-Behind-Klasse, die Visual Studio für die Seite erstellt. 
+    > [!NOTE]
+    > Die Codebeispiele in diesem Artikel definieren benutzerdefinierten Code im Seitenmarkup, verwenden jedoch keine Code-Behind-Klasse, die Visual Studio für die Seite erstellt. 
 
 8. Öffnen Sie das Kontextmenü für die Seite „FollowPeople.aspx“, und wählen Sie dann **Als Startelement festlegen** aus.
     
@@ -95,7 +94,8 @@ Zum Erstellen der Farmlösung, die das JavaScript-Objektmodell verwendet, um mit
 </script>
 ```
 
-   > **Hinweis:** Im Beispiel „Abrufen von Followern und gefolgten Personen“ wird das Schaltflächen-Steuerelement oder das Formulardigest-Steuerelement nicht verwendet, da es nur für Vorgänge erforderlich ist, die Serverinhalte aktualisieren. Ein Formulardigest generiert einen Nachrichtenhash zur Sicherheitsprüfung.  
+    > [!NOTE]
+    > The "Get followers and followed people" example doesn't use the button control or the form digest control, which is only required for operations that update server content. A form digest generates a message digest used for security validation. 
 
 10. Ersetzen Sie den Kommentar zwischen den **script**-Tags durch den Beispielcode aus einem der folgenden Szenarios:
     
@@ -127,7 +127,8 @@ Im folgenden Codebeispiel wird der aktuelle Benutzer Start nach oder einen Zielb
     
   
 
-> **Hinweis:** Fügen Sie den folgenden Code zwischen den **script**-Tags ein, die Sie im Verfahren [Erstellen einer Farmlösung und Anwendungsseite](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_CreateSolution) hinzugefügt haben. Ändern Sie dann den Platzhalterwert für die Variable **targetUser**, bevor Sie den Code ausführen.
+> [!NOTE]
+>  Fügen Sie den folgenden Code zwischen den **script**-Tags ein, die Sie im Verfahren [Erstellen einer Farmlösung und Anwendungsseite](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_CreateSolution) hinzugefügt haben. Ändern Sie dann den Platzhalterwert für die Variable **targetUser**, bevor Sie den Code ausführen.
   
     
     
@@ -220,9 +221,8 @@ Das folgende Codebeispiel ruft die Personen, die der aktuelle Benutzer folgt und
   
 - Iterieren Sie durch die Gruppen von Personen, und rufen Sie den Anzeigenamen, den persönlichen Website-URI und den Bild-URI jeder Person ab.
     
-  
-
-> **Hinweis:** Fügen Sie den folgenden Code zwischen den **script**-Tags ein, die Sie im Verfahren [Erstellen einer Farmlösung und Anwendungsseite](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_CreateSolution) hinzugefügt haben.
+> [!NOTE]
+> Fügen Sie den folgenden Code zwischen den **script**-Tags ein, die Sie im Verfahren [Erstellen einer Farmlösung und Anwendungsseite](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_CreateSolution) hinzugefügt haben.
   
     
     
@@ -291,7 +291,7 @@ function requestFailed(sender, args) {
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_AdditionalResources"> </a>
 
 

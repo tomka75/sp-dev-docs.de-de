@@ -3,11 +3,11 @@ title: SharePoint Design Manager - Bilddarstellungen
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d08a74c0-5674-4f26-8646-11ea1f081c85
-ms.openlocfilehash: 8ec58978836a572cc7452af4d7ad28c18e215089
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e62a7097a7667fb9df993496f158a4f4e80a202f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-design-manager-image-renditions"></a>SharePoint Design Manager - Bilddarstellungen
 Erfahren Sie, wie Sie eine Bilddarstellung erstellen, zu einer Seite hinzufügen und zuschneiden. Eine Bilddarstellung definiert die Maße, die zur Anzeige von Bildern auf SharePoint-Veröffentlichungswebsites verwendet werden. Mit Bilddarstellungen können Sie unterschiedlich große Versionen eines Bilds, die alle auf demselben Quellbild basieren, auf verschiedenen Seiten einer Veröffentlichungswebsite anzeigen. Wenn Sie eine Bilddarstellung erstellen, geben Sie die Breite und/oder die Höhe für alle Bilder an, die diese Bilddarstellung verwenden. Die Bilddarstellungen sind für jedes Bild verfügbar, das in eine Bibliothek der betreffenden Websitesammlung hochgeladen wird. Designer können beispielsweise eine Bilddarstellung zur Anzeige von Miniaturbildern und eine weitere Bilddarstellung zur Anzeige von Bannerbildern erstellen. Wenn ein Bild zu einer Seite hinzugefügt wird, kann der Autor die für das Bild zu verwendende Bilddarstellung angeben. Autoren können die Bilddarstellung außerdem zuschneiden, um den Teil des Bilds anzugeben, der in der Bilddarstellung verwendet werden soll. Beim Rendern der Seite wird die korrekte Bildgröße angezeigt.
@@ -24,15 +24,13 @@ Da Bilddarstellungen von anderen Features in SharePoint abhängen, müssen Sie s
     
     
 
-- 
-  **Eine Veröffentlichungswebsitesammlung** - Die Websitesammlung, der Sie Bilddarstellungen hinzufügen, muss mithilfe des Veröffentlichungsportals oder der Websitesammlungsvorlage des Produktkatalogs erstellt worden sein. Alternativ müssen Veröffentlichungsfeatures in der Websitesammlung aktiviert sein, in der Sie Bilddarstellungen verwenden möchten. Weitere Informationen finden Sie unter [Übersicht über die Veröffentlichung auf Internet-, Intranet und Extranet-Websites](http://technet.microsoft.com/en-us/library/jj635881%28office.15%29.aspx) in der TechNet-Bibliothek.
+- **Eine Veröffentlichungswebsitesammlung** - Die Websitesammlung, der Sie Bilddarstellungen hinzufügen, muss mithilfe des Veröffentlichungsportals oder der Websitesammlungsvorlage des Produktkatalogs erstellt worden sein. Alternativ müssen Veröffentlichungsfeatures in der Websitesammlung aktiviert sein, in der Sie Bilddarstellungen verwenden möchten. Weitere Informationen finden Sie unter [Übersicht über die Veröffentlichung auf Internet-, Intranet und Extranet-Websites](http://technet.microsoft.com/de-DE/library/jj635881%28office.15%29.aspx) in der TechNet-Bibliothek.
     
   
-- 
-  **Ein konfigurierter BLOB-Cache** - Der datenträgerbasierte BLOB-Cache steuert das Zwischenspeichern für Binary Large Objects (BLOBs), wie z. B. häufig verwendete Bild-, Audio- und Videodateien, sowie andere Dateien, die zum Anzeigen von Webseiten verwendet werden, wie z. B. CSS- und JS-Dateien. Der BLOB-Cache muss auf jedem Front-End-Webserver aktiviert werden, auf dem Sie Bilddarstellungen verwenden möchten. Wenn der BLOB-Cache nicht aktiviert ist, wird immer das ursprüngliche Bild verwendet. Weitere Informationen finden Sie unter [Konfigurieren von Cacheeinstellungen für eine Webanwendung](http://technet.microsoft.com/en-us/library/cc770229.aspx) in der TechNet-Bibliothek.
+- **Ein konfigurierter BLOB-Cache** - Der datenträgerbasierte BLOB-Cache steuert das Zwischenspeichern für Binary Large Objects (BLOBs), wie z. B. häufig verwendete Bild-, Audio- und Videodateien, sowie andere Dateien, die zum Anzeigen von Webseiten verwendet werden, wie z. B. CSS- und JS-Dateien. Der BLOB-Cache muss auf jedem Front-End-Webserver aktiviert werden, auf dem Sie Bilddarstellungen verwenden möchten. Wenn der BLOB-Cache nicht aktiviert ist, wird immer das ursprüngliche Bild verwendet. Weitere Informationen finden Sie unter [Konfigurieren von Cacheeinstellungen für eine Webanwendung](http://technet.microsoft.com/de-DE/library/cc770229.aspx) in der TechNet-Bibliothek.
     
   
-- **Eine Objektbibliothek (empfohlen)** - Sie können die Objektbibliotheksvorlage verwenden, um eine Bibliothek einzurichten, mit der Sie bequem umfangreiche Medienobjekte wie z. B. Bild-, Audio- oder Videodateien speichern, organisieren und suchen können. Weitere Informationen finden Sie unter [Einrichten einer Objektbibliothek zum Speichern von Bild-, Audio- oder Videodateien](http://office.microsoft.com/en-us/sharepoint-server-help/set-up-an-asset-library-to-store-image-audio-or-video-files-HA102785730.aspx) auf Office.com.
+- **Eine Objektbibliothek (empfohlen)** - Sie können die Objektbibliotheksvorlage verwenden, um eine Bibliothek einzurichten, mit der Sie bequem umfangreiche Medienobjekte wie z. B. Bild-, Audio- oder Videodateien speichern, organisieren und suchen können. Weitere Informationen finden Sie unter [Einrichten einer Objektbibliothek zum Speichern von Bild-, Audio- oder Videodateien](http://office.microsoft.com/de-DE/sharepoint-server-help/set-up-an-asset-library-to-store-image-audio-or-video-files-HA102785730.aspx) auf Office.com.
     
   
 
@@ -55,7 +53,9 @@ Wenn eine Bildwiedergabe erstellt wurde, erstellt SharePoint eine eindeutige ID,
   
 3. Wählen Sie das Symbol **Einstellungen**. Wählen Sie auf der Seite **Webseiteeinstellungen** des Abschnitts **Aussehen und Verhalten** **Bildwiedergaben**.
     
-    > **Hinweis:** Die Seite Bildwiedergaben kann auch über die standardmäßige Homepage der Veröffentlichungswebsite geöffnet werden. Wählen Sie im Abschnitt **Ich bin der Visual Designer** **Bildwiedergaben konfigurieren**. 
+    > [!NOTE]
+    > Die Seite „Bildwiedergaben“ kann auch über die standardmäßige Homepage der Veröffentlichungswebsite geöffnet werden. Wählen Sie im Abschnitt **Ich bin der Visual Designer** **Bildwiedergaben konfigurieren**. 
+
 4. Wählen Sie auf der Seite **Bildwiedergaben** die Option **Neues Element hinzufügen**.
     
   
@@ -85,7 +85,9 @@ Wenn eine Bilddarstellung bearbeitet wird, werden die neuen Maße bei der nächs
   
 3. Wählen Sie das Symbol **Einstellungen**. Wählen Sie auf der Seite **Webseiteeinstellungen** des Abschnitts **Aussehen und Verhalten** **Bildwiedergaben**.
     
-    > **Hinweis:** Die Seite **Bildwiedergaben** kann auch über die standardmäßige Homepage der Veröffentlichungswebsite geöffnet werden. Wählen Sie im Abschnitt **Ich bin der Visual Designer** **Bildwiedergaben konfigurieren**. 
+    > [!NOTE]
+    > Die Seite **Bildwiedergaben** kann auch über die standardmäßige Homepage der Veröffentlichungswebsite geöffnet werden. Wählen Sie im Abschnitt **Ich bin der Visual Designer** **Bildwiedergaben konfigurieren**. 
+
 4. Wählen Sie auf der Seite **Bildwiedergaben** die Bildwiedergabe, die Sie bearbeiten möchten.
     
   
@@ -131,7 +133,9 @@ Wenn ein Bild auf einer Seite eingefügt wird, können Sie die zu verwendende Bi
   
 7. Klicken Sie auf der Registerkarte **Design** in der Gruppe **Auswählen** auf **Formatvariante auswählen**, und wählen Sie dann eine Bilddarstellung aus. Das Bild wird entsprechend der für die Bilddarstellung angegebenen Größe angezeigt.
     
-    > **Hinweis:** Der Befehl **Formatvariante auswählen** ist nur für Bilder verfügbar, die in derselben Websitesammlung gespeichert sind wie die aktuell bearbeitete Seite.
+    > [!NOTE]
+    > Der Befehl **Formatvariante auswählen** ist nur für Bilder verfügbar, die in derselben Websitesammlung gespeichert sind wie die aktuell bearbeitete Seite.
+
 8. Wenn Sie die Bildwiedergabe zuschneiden möchten, wählen Sie **Formatvariante auswählen** und dann **Bildwiedergaben bearbeiten**.
     
     Weitere Informationen zum Zuschneiden von Bilddarstellungen finden Sie im Abschnitt  [Zuschneiden einer Bilddarstellung](#Crop) dieses Artikels.
@@ -158,10 +162,8 @@ Sie können die Bilddarstellung angeben, indem Sie die Parameter "RenditionID", 
     
  **Width und Height** - Bei Angabe der Parameter "Width" und "Height" versucht SharePoint Server, eine Bilddarstellung mit der angegebenen Breite und Höhe zu finden. Als Nächstes versucht SharePoint Server eine Bilddarstellung zu finden, die dem angegebenen Breiten-/Höhen-Verhältnis am nächsten kommt. Wenn es mehrere Übereinstimmungen gibt, wird die Bilddarstellung mit dem nächstgrößeren Breiten-/Höhen-Verhältnis im Vergleich zur angeforderten Größe ausgewählt.
   
-    
-    
-
->  **Hinweis:** Wenn die Bild-URL die Parameter "RenditionID", "Width" und "Height" enthält, werden die Parameter "Width" und "Height" ignoriert. 
+> [!NOTE]
+> Wenn die Bild-URL die Parameter „RenditionID“, „Width“ und „Height“ enthält, werden die Parameter „Width“ und „Height“ ignoriert. 
   
     
     
@@ -246,7 +248,8 @@ Bilddarstellungen können folgendermaßen zugeschnitten werden:
   
 - Autoren können eine Bilddarstellung zuschneiden, wenn sie ein Bild in eine Seite einfügen. Dadurch können sie das Erscheinungsbild der Seite anpassen. Wenn ein Autor eine Bilddarstellung zuschneidet, wird auch die Bilddarstellung für das Bild geändert. Jedem Benutzer der Bilddarstellung wird das zugeschnittene Bild angezeigt.
     
-    > **Hinweis:** Ein Autor kann eine Bildwiedergabe nur zuschneiden, wenn das Originalbild in einer Bibliothek gespeichert ist, die sich in der gleichen Websitesammlung wie die Seite befindet, die gerade bearbeitet wird. In Szenarien für die websiteübergreifende Veröffentlichung, kann ein Autor die Bildwiedergabe beispielsweise nur zuschneiden, wenn das Bild in der gleichen Websitesammlung wie der Kataloginhalt gespeichert ist. Andernfalls muss die Bildwiedergabe in der Objektbibliothek zugeschnitten werden. 
+    > [!NOTE]
+    > Ein Autor kann eine Bilddarstellung nur zuschneiden, wenn das ursprüngliche Bild in einer Bibliothek gespeichert ist, die sich in derselben Websitesammlung befindet wie die aktuell bearbeitete Seite. In websiteübergreifenden Veröffentlichungsszenarios kann ein Autor die Bilddarstellung beispielsweise nur zuschneiden, wenn das Bild in derselben Websitesammlung gespeichert ist wie der Kataloginhalt. Andernfalls muss die Bilddarstellung in der Objektbibliothek zugeschnitten werden. 
 
 ### <a name="crop-an-image-rendition-in-the-asset-library"></a>Zuschneiden ein Bildwiedergabe in der Objektbibliothek
 
@@ -266,7 +269,8 @@ Designer können eine Bilddarstellung in der Objektbibliothek zuschneiden.
   
 3. Positionieren Sie den Mauszeiger in der unteren rechten Ecke des Bilds, dessen Darstellung Sie ändern möchten, wählen Sie die angezeigten Ellipsen ( **...**) aus, und klicken Sie dann auf **BEARBEITEN VON FORMATVARIANTEN**.
     
-    > **Hinweis:** Sie können die Seite **Bearbeiten von Formatvarianten** auch öffnen, indem Sie den Mauszeiger über dem Vorschaubild in der Objektbibliothek positionieren und dann das Kontrollkästchen aktivieren, das unter dem Vorschaubild angezeigt wird. Klicken Sie auf die Registerkarte **Entwurf** und wählen Sie **Bearbeiten von Formatvarianten**. 
+    > [!NOTE]
+    > Sie können die Seite **Bearbeiten von Formatvarianten** auch öffnen, indem Sie den Mauszeiger über dem Vorschaubild in der Objektbibliothek positionieren und dann das Kontrollkästchen aktivieren, das unter dem Vorschaubild angezeigt wird. Klicken Sie auf die Registerkarte **Entwurf** und wählen Sie **Bearbeiten von Formatvarianten**. 
 
     Auf der Seite Bearbeiten von Formatvarianten wird ein Vorschaubild für jede Bildwiedergabe angezeigt, die in der Websitesammlung definiert ist.
     
@@ -311,8 +315,10 @@ Autoren können eine Bilddarstellung zuschneiden, wenn sie ein Bild in eine Seit
     
     Auf der Seite **Bearbeiten von Formatvarianten** wird ein Vorschaubild für jede Bildwiedergabe angezeigt, die in der Websitesammlung definiert ist.
     
-    > **Hinweis:** Der Befehl **Formatvariante auswählen** ist nur für Bilder verfügbar, die in derselben Websitesammlung gespeichert sind wie die aktuell bearbeitete Seite.
-6. Suchen Sie die Bildwiedergabe, die Sie ändern möchten, und wählen Sie dann **Zum Ändern klicken**.
+    > [!NOTE]
+    > Der Befehl **Formatvariante auswählen** ist nur für Bilder verfügbar, die in derselben Websitesammlung gespeichert sind wie die aktuell bearbeitete Seite.
+
+6. Suchen Sie nach der Bilddarstellung, die Sie ändern möchten, und klicken Sie dann auf **Zu ändernde Formatierung**.
     
   
 7. Verwenden Sie im Fenster **Darstellung zuschneiden** das Bildtool, um den Teil des Bilds auszuwählen, der in der Bilddarstellung verwendet werden soll.
@@ -341,21 +347,18 @@ Wenn eine Bilddarstellung gelöscht wird, wird sie nicht mehr für Bilder generi
   
 3. Wählen Sie das Symbol **Einstellungen**. Wählen Sie auf der Seite **Webseiteeinstellungen** des Abschnitts **Aussehen und Verhalten** **Bildwiedergaben**.
     
-    > **Hinweis:** Die Seite **Bildwiedergaben** kann auch über die standardmäßige Homepage der Veröffentlichungswebsite geöffnet werden. Wählen Sie im Abschnitt **Ich bin der Visual Designer** **Bildwiedergaben konfigurieren**. 
+    > [!NOTE]
+    > Die Seite **Bildwiedergaben** kann auch über die standardmäßige Homepage der Veröffentlichungswebsite geöffnet werden. Wählen Sie im Abschnitt **Ich bin der Visual Designer** **Bildwiedergaben konfigurieren**. 
+
 4. Suchen Sie auf der Seite **Bildwiedergaben** die Bildwiedergabe, die Sie löschen möchten, und wählen Sie dann **Löschen**.
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="Additional"> </a>
 
-
--  [Entwickeln des Website-Designs in SharePoint](develop-the-site-design-in-sharepoint.md)
-    
-  
+-  [Entwickeln des Website-Designs in SharePoint](develop-the-site-design-in-sharepoint.md) 
 -  [SharePoint Design Manager - Branding- und Designfunktionen](sharepoint-design-manager-branding-and-design-capabilities.md)
-    
-  
 -  [Erstellen von Websites für SharePoint](build-sites-for-sharepoint.md)
     
   

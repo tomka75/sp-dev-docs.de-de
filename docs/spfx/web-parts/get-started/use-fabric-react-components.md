@@ -1,12 +1,12 @@
 ---
 title: "Verwenden von Office UI Fabric React-Komponenten in clientseitigen SharePoint-Webparts"
-ms.date: 09/25/2017
+ms.date: 12/05/2017
 ms.prod: sharepoint
-ms.openlocfilehash: ba0c27ed1feeefd8a7762fbf1979c291d33879ff
-ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.openlocfilehash: c522ec86e6c15886f82661ff9f4edec7427ce40f
+ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/08/2017
 ---
 # <a name="use-office-ui-fabric-react-components-in-your-sharepoint-client-side-web-part"></a>Verwenden von Office UI Fabric React-Komponenten in clientseitigen SharePoint-Webparts
 
@@ -16,16 +16,14 @@ Die folgende Abbildung zeigt eine DocumentCard-Komponente, die mit Office UI F
 
 ![Abbildung der Fabric-Komponente „DocumentCard“ in einer SharePoint Workbench](../../../images/fabric-components-doc-card-view-ex.png)
 
-Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=1N6kNvLxyg4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq) nachvollziehen: 
+Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=1YRu4-nZot4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=7) nachvollziehen: 
 
-<a href="https://www.youtube.com/watch?v=1N6kNvLxyg4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
+<a href="https://www.youtube.com/watch?v=1YRu4-nZot4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=7">
 <img src="../../../images/spfx-youtube-tutorial6.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 
 ## <a name="creating-a-new-web-part-project"></a>Erstellen eines neuen Webpartprojekts
-
-Stellen Sie sicher, dass Sie die aktuelle Version von X verwenden. Führen Sie `yo` aus, und befolgen Sie die Anweisungen, um ein Projektgerüst zu erstellen.
 
 Erstellen Sie an einem Speicherort Ihrer Wahl ein neues Projektverzeichnis:
 
@@ -124,7 +122,7 @@ Die *neuen modernen Benutzeroberflächen* in SharePoint verwenden die Office UI 
 Da wir bei der Erstellung der Lösung React als Framework ausgewählt haben, hat der Generator auch die richtige Version von Office UI Fabric React installiert. Sie können die Fabric-Komponenten ohne weiteren Aufwand direkt in Ihre React-Komponenten importieren. 
 
 > [!NOTE]
-> Bei der Erstveröffentlichung von SharePoint-Framework empfehlen wir, jeweils die Office-UI-Fabric- und Fabric React-Version zu verwenden, die mit dem Generator ausgeliefert wird. Von einer separaten Aktualisierung der Office-UI-Fabric- und Fabric React-Pakete raten wir ab. Sie könnte zu Konflikten mit der jeweils bereits in SharePoint verfügbaren Version führen. In einem solchen Fall würde Ihr Webpart möglicherweise nicht wie erwartet arbeiten.
+> Bei der aktuellen Version von SharePoint-Framework empfehlen wir, jeweils die Office UI Fabric- und Fabric React-Version zu verwenden, die mit dem Generator ausgeliefert wird. Von einer separaten Aktualisierung der Office UI Fabric- und Fabric React-Pakete raten wir ab. Sie könnte zu Konflikten mit der jeweils bereits in SharePoint verfügbaren Version führen. In einem solchen Fall würde Ihr Webpart möglicherweise nicht wie erwartet arbeiten.
 
 Öffnen Sie **DocumentCardExample.tsx** im Ordner **src\webparts\documentCardExample\components**. 
 
@@ -215,21 +213,22 @@ Die vollständige Datei **gulpfile.js** sollte wie folgt aussehen:
 
 const gulp = require('gulp');
 const build = require('@microsoft/sp-build-web');
+build.addSuppression(`Warning - [sass] The local CSS class 'ms-Grid' is not camelCase and will not be type-safe.`);
 
-build.configureWebpack.mergeConfig({  
-    additionalConfiguration: (generatedConfiguration) => {
-        if (build.getConfig().production) {
-            var basePath = build.writeManifests.taskConfig.cdnBasePath;
-            if (!basePath.endsWith('/')) {
-                basePath += '/';
-            }
-            generatedConfiguration.output.publicPath = basePath;
-        }
-        else {
-            generatedConfiguration.output.publicPath = "/dist/";
-        }
-        return generatedConfiguration;
-    }
+build.configureWebpack.mergeConfig({
+  additionalConfiguration: (generatedConfiguration) => {
+      if (build.getConfig().production) {
+          var basePath = build.writeManifests.taskConfig.cdnBasePath;
+          if (!basePath.endsWith('/')) {
+              basePath += '/';
+          }
+          generatedConfiguration.output.publicPath = basePath;
+      }
+      else {
+          generatedConfiguration.output.publicPath = "/dist/";
+      }
+      return generatedConfiguration;
+  }
 });
 
 build.initialize(gulp);
@@ -255,3 +254,6 @@ gulp serve
 Wählen Sie in der Toolbox Ihr `DocumentCardExample`-Webpart aus, das hinzugefügt werden soll:
     
 ![Abbildung der Fabric-Komponente „DocumentCard“ in einer SharePoint Workbench](../../../images/fabric-components-doc-card-view-ex.png)
+
+> [!NOTE]
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository](https://github.com/SharePoint/sp-dev-docs/issues). Vielen Dank im Voraus für Ihr Feedback.

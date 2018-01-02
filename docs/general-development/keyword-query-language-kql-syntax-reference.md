@@ -3,11 +3,11 @@ title: "Syntaxreferenz für die Keyword Query Language (KQL)"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d8489f59-522f-433c-b9c1-69e597be51c7
-ms.openlocfilehash: ae8691e371220e8c796267bba2f940a45219004d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 1811632c8449618cf7b2f88cfc0b4ed926015a68
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="keyword-query-language-kql-syntax-reference"></a>Syntaxreferenz für die Keyword Query Language (KQL)
 Erfahren Sie, wie Sie KQL-Abfragen für Suche in SharePoint erstellen können. In dieser Syntaxreferenz werden die KQL-Abfrageelemente und die Vorgehensweise zum Verwenden der Eigenschaftseinschränkungen und -operatoren in KQL-Abfragen erläutert.
@@ -31,10 +31,8 @@ Sie können KQL-Abfrageelemente mit einem oder mehreren der verfügbaren Operato
     
 Wenn die KQL-Abfrage nur Operatoren enthält oder leer ist, ist sie ungültig. Bei KQL-Abfragen muss die Groß- und Kleinschreibung nicht beachtet werden, bei den Operatoren hingegen schon (Großbuchstaben).
   
-    
-    
-
-> **Hinweis:** Die Längenbegrenzung einer KQL-Abfrage ist abhängig von der Erstellung unterschiedlich. Wenn Sie die KQL-Abfrage mit dem standardmäßigen SharePoint-Suche-Front-End erstellt haben, beträgt die Längenbegrenzung 2.048 Zeichen. KQL-Abfragen, die Sie programmgesteuert mit dem Abfrage-Objektmodell erstellt haben, besitzen eine Längenbegrenzung von 4.096 Zeichen. Mit der Eigenschaft [MaxKeywordQueryTextLength](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Administration.SearchServiceApplication.MaxKeywordQueryTextLength.aspx) oder [DiscoveryMaxKeywordQueryTextLength](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Administration.SearchServiceApplication.DiscoveryMaxKeywordQueryTextLength.aspx) (für eDiscovery) können Sie den Grenzwert auf bis zu 20.480 Zeichen erhöhen.
+> [!NOTE]
+> Die Längenbegrenzung einer KQL-Abfrage ist abhängig von der Erstellung unterschiedlich. Wenn Sie die KQL-Abfrage mit dem standardmäßigen SharePoint-Suche-Front-End erstellt haben, beträgt die Längenbegrenzung 2.048 Zeichen. KQL-Abfragen, die Sie programmgesteuert mit dem Abfrage-Objektmodell erstellt haben, besitzen eine Längenbegrenzung von 4.096 Zeichen. Mit der Eigenschaft [MaxKeywordQueryTextLength](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Administration.SearchServiceApplication.MaxKeywordQueryTextLength.aspx) oder [DiscoveryMaxKeywordQueryTextLength](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Administration.SearchServiceApplication.DiscoveryMaxKeywordQueryTextLength.aspx) (für eDiscovery) können Sie den Grenzwert auf bis zu 20.480 Zeichen erhöhen.
   
     
     
@@ -168,7 +166,7 @@ Sie müssen einen gültigen verwalteten Eigenschaftsnamen für die Eigenschaftse
   
     
     
-Um eine Eigenschaftseinschränkung für einen durchforsteten Eigenschaftswert anzugeben, müssen Sie die durchforstete Eigenschaft zunächst der verwalteten Eigenschaft zuordnen. Weitere Informationen dazu finden Sie unter **Verwaltete und durchforstete Eigenschaften** unter [Planen der Endbenutzer-Sucherfahrung](http://technet.microsoft.com/en-us/library/cc263089.aspx). 
+Um eine Eigenschaftseinschränkung für einen durchforsteten Eigenschaftswert anzugeben, müssen Sie die durchforstete Eigenschaft zunächst der verwalteten Eigenschaft zuordnen. Weitere Informationen dazu finden Sie unter **Verwaltete und durchforstete Eigenschaften** unter [Planen der Endbenutzer-Sucherfahrung](http://technet.microsoft.com/de-DE/library/cc263089.aspx). 
   
     
     
@@ -314,7 +312,9 @@ In diesen **datetime**-Formaten:
 
 -  _YYYY_ gibt eine vierziffrige Jahreszahl an.
     
-    > **Hinweis:** Es werden nur vierziffrige Jahresangaben unterstützt. 
+    > [!NOTE]
+    > Es werden nur vierziffrige Jahresangaben unterstützt. 
+
 -  _MM_ gibt einen zweiziffrigen Monat an, z.B. 01 = Januar.
     
   
@@ -471,10 +471,8 @@ Wenn ein geringerer Abstand zwischen den Begriffen liegen soll, können Sie ihn 
     
  `"acquisition" NEAR(n=3) "debt"`
   
-    
-    
-
-> **Hinweis:** In SharePoint behält der **NEAR**-Operator nicht mehr die Reihenfolge der Token bei. Darüber hinaus erhält der **NEAR**-Operator jetzt einen optionalen Parameter, der einen maximalen Tokenabstand angibt. Der Standardwert ist jedoch weiterhin **8**. Wenn Sie das vorherige Verhalten verwenden müssen, verwenden Sie stattdessen **ONEAR**.
+> [!NOTE]
+> In SharePoint behält der **NEAR**-Operator nicht mehr die Reihenfolge der Token bei. Darüber hinaus erhält der **NEAR**-Operator jetzt einen optionalen Parameter, der einen maximalen Tokenabstand angibt. Der Standardwert ist jedoch weiterhin **8**. Wenn Sie das vorherige Verhalten verwenden müssen, verwenden Sie stattdessen **ONEAR**.
   
     
     
@@ -569,10 +567,8 @@ Sie können den Operator **XRANK** verwenden, um den dynamischen Rang der Elemen
     
  _Match expressions_ kann ein beliebiger gültiger KQL-Ausdruck sein, einschließlich verschachtelter **XRANK**-Ausdrücke.  _Rank expressions_ kann ein beliebiger gültiger KQL-Ausdruck ohne **XRANK**-Ausdrücke sein. Wenn Ihre KQL-Abfragen über mehrere **XRANK**-Operatoren verfügt, wird der endgültige dynamische Rangfolgewert als Summe der Verstärkungen aller **XRANK**-Operatoren berechnet.
   
-    
-    
-
-> **Hinweis:** Verwenden Sie Klammern, um die Reihenfolge der Berechnungen für die KQL-Abfragen explizit anzugeben, die über mehr als einen **XRANK**-Operator auf der gleichen Ebene verfügen.
+> [!NOTE]
+> Verwenden Sie Klammern, um die Reihenfolge der Berechnungen für die KQL-Abfragen explizit anzugeben, die über mehr als einen **XRANK**-Operator auf der gleichen Ebene verfügen.
   
     
     
@@ -683,7 +679,7 @@ Sie können verschiedene Teile einer Stichwortabfrage kombinieren, indem Sie ein
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15KQL_addlresources"> </a>
 
 

@@ -10,6 +10,9 @@ Eine Liste, in der die Felder „Effort“, „Assigned To“ und „Status“ m
 
 ![SharePoint-Liste mit drei formatierten Spalten](../images/sp-columnformatting-all.png)
 
+> [!TIP]
+> Beispiele aus diesem Artikel und zahlreiche weitere Beispiele der Community stehen im GitHub-Repository für Open-Source-Definitionen von Spaltenformatierungen zur Verfügung. Sie finden diese Beispiele im Repository [sp-dev-column-formatting](https://github.com/SharePoint/sp-dev-column-formatting) unter [SharePoint](https://github.com/SharePoint) GitHub-Organisation.
+
 ## <a name="how-is-column-formatting-different-than-the-field-customizer"></a>Was unterscheidet Spaltenformatierungen und den Field Customizer?
 Sowohl mithilfe von Spaltenformatierungen als auch mithilfe der Erweiterung [SharePoint Framework Field Customizer](https://docs.microsoft.com/de-DE/sharepoint/dev/spfx/extensions/get-started/building-simple-field-customizer) können Sie anpassen, wie Felder in SharePoint-Listen visuell dargestellt werden. Der Field Customizer ist leistungsfähiger, da Sie mit seiner Hilfe beliebigen Code zur Steuerung der Felddarstellung programmieren können. Spaltenformatierungen lassen sich einfacher und großflächiger anwenden. Sie sind jedoch weniger flexibel, da sie statt benutzerdefiniertem Code nur einige vordefinierte Elemente und Attribute unterstützen. 
 
@@ -1079,6 +1082,6 @@ Dieses Feld kann verwendet werden, um die aktuelle E-Mail-Adresse des Benutzers 
 #### <a name="now"></a>„@now“
 Wird ausgewertet in das aktuelle Datum und die aktuelle Uhrzeit. 
 
-## <a name="see-also"></a>Weitere Artikel
+## <a name="see-also"></a>Siehe auch
 
 - [Formatieren einer Spalte](https://support.office.com/en-us/article/Column-formatting-1f927342-2bed-4745-b727-ff8b7ff96b22?ui=en-US&rs=en-US&ad=US)

@@ -3,11 +3,11 @@ title: "Syntaxreferenz für die FAST Query Language (FQL)"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: bd98a41b-623c-41d4-a15d-26c0d4ba4311
-ms.openlocfilehash: cb907c3d043f95d79d117bb8bf11afc0a8c5c822
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 861199598dc650932416a5537dd3f5a3af47a1cd
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="fast-query-language-fql-syntax-reference"></a>Syntaxreferenz für die FAST Query Language (FQL)
 In diesem Artikel erfahren Sie mehr über den Aufbau komplexer Suchabfragen für Suche in SharePoint mit FQL (FAST Query Language). In dieser Referenz sind die Elemente einer FQL-Abfrage beschrieben, und es wird erläutert, wie Eigenschaftsspezifikationen, Tokenausdrücke und Operatoren in FQL-Abfragen verwendet werden.
@@ -194,7 +194,9 @@ In diesen **datetime**-Formaten:
 
 -  _YYYY_ gibt eine vierziffrige Jahreszahl an.
     
-    > **Hinweis:** Es werden nur vierziffrige Jahresangaben unterstützt. 
+    > [!NOTE]
+    > Es werden nur vierziffrige Jahresangaben unterstützt. 
+
 -  _MM_ gibt einen zweiziffrigen Monat an, z.B. 01 = Januar.
     
   
@@ -355,8 +357,8 @@ Tabelle 4 enthält eine Liste der unterstützten Operatoren.
 | [STRING](fast-query-language-fql-syntax-reference.md#fql_string_operator) <br/> |Definiert eine übereinstimmende boolesche Bedingung für eine Textzeichenfolge.  <br/> |Zeichenfolge  <br/> |
 | [XRANK](fast-query-language-fql-syntax-reference.md#fql_xrank_operator) <br/> |Ermöglicht es Ihnen, die dynamische Rangfolge von Elementen basierend auf bestimmten Begriffsvorkommen zu erhöhen, ohne zu ändern, welche Elemente mit der Abfrage übereinstimmen. Ein **XRANK** -Ausdruck enthält eine Komponente, die abgeglichen werden muss, und eine oder mehrere Komponenten, die nur für die dynamische Rangfolge relevant sind.<br/> |Relevanz  <br/> |
    
-
-> **Hinweis:** In SharePoint wird der Operator **RANK** nicht mehr unterstützt und ist daher wirkungslos. Verwenden Sie stattdessen den Operator **XRANK**.
+> [!NOTE]
+> In SharePoint wird der Operator **RANK** nicht mehr unterstützt und ist daher wirkungslos. Verwenden Sie stattdessen den Operator **XRANK**.
   
     
     
@@ -439,8 +441,8 @@ Nicht zutreffend
 ### <a name="any"></a>ANY
 <a name="fql_any_operator"> </a>
 
-
-> **Hinweis:** In SharePoint wird der **ANY**-Operator nicht mehr unterstützt. Verwenden Sie stattdessen den **OR**-Operator.
+> [!NOTE]
+> In SharePoint wird der **ANY**-Operator nicht mehr unterstützt. Verwenden Sie stattdessen den **OR**-Operator.
   
     
     
@@ -451,10 +453,8 @@ Nicht zutreffend
     
 Die dynamische Rangkomponente für diesen Teil der Abfrage basiert auf dem am besten passenden Begriff im **ANY**-Ausdruck.
   
-    
-    
-
-> **Hinweise:** Der Unterschied zu **OR** bezieht sich nur auf die Rangfolge innerhalb der Ergebnismenge. Die Abfrage gleicht dieselbe Gesamtmenge von Elementen ab.
+> [!NOTE]
+> Der Unterschied zu **OR** bezieht sich nur auf die Rangfolge innerhalb der Ergebnismenge. Die Abfrage gleicht dieselbe Gesamtmenge von Elementen ab.
   
     
     
@@ -1274,8 +1274,8 @@ Der Parameter **STRING** kann auch als Typumwandlung verwendet werden. Die Abfra
 | _linguistics_ <br/> |**on\|off** <br/> |Deaktiviert/Aktiviert alle Linguistik-Features für die Zeichenfolge (Lemmatisierung, Synonyme, Rechtschreibprüfung), wenn sie für die Abfrage aktiviert wurden.  <br/> Mit diesem Parameter können Sie die linguistische Verarbeitung für einen bestimmten Begriff oder eine bestimmte Zeichenfolge ändern, während der Begriff oder die Zeichenfolge weiterhin für die Rangfolge relevant sein soll.  <br/> Standard: **"ON"** <br/> |
 | _wildcard_ <br/> |**on\|off** <br/> | Dieser Parameter steuert die Platzhaltererweiterung von Begriffen innerhalb der _\<Textzeichenfolge\>_. Diese Einstellung setzt alle Platzhaltereinstellungen in Abfrageparametern außer Kraft und ermöglicht die Aktivierung oder Deaktivierung von erweiterten Platzhalterzeichen für bestimmte Teile der Abfrage.    <br/>  Die folgenden Werte sind gültig: <br/><ul><li> **"ON"**  Gibt an, dass das Zeichen "\*" als Platzhalter ausgewertet wird. Ein "\*"-Zeichen entspricht null oder mehr Zeichen.  </li><li>  **"OFF"**  Gibt an, dass das Zeichen "\*" nicht als Platzhalter ausgewertet wird.  </li></ul>  Standard: **"ON"** <br/> |
    
-
-> **Hinweis:** In SharePoint gelten die Parameter  _minexpansion_,  _maxexpansion_ und _annotation_class_ für den Operator **STRING** als veraltet.
+> [!NOTE]
+> In SharePoint gelten die Parameter _minexpansion_,  _maxexpansion_ und _annotation_class_ für den Operator **STRING** als veraltet.
   
     
     
@@ -1447,10 +1447,8 @@ Verstärkt den dynamischen Rang von Elementen basierend auf bestimmten Vorkommni
     
  _Match expressions_ kann ein beliebiger gültiger FQL-Ausdruck sein, einschließlich geschachtelter **XRANK** -Ausdrücke. _Rank expressions_ kann ein beliebiger gültiger FQL-Ausdruck ohne **XRANK**-Ausdrücke sein. Wenn Ihre FQL-Abfragen über mehrere **XRANK**-Operatoren verfügen, wird der endgültige dynamische Rangfolgewert als Summe der Verstärkungen aller **XRANK**-Operatoren berechnet.
   
-    
-    
-
-> **Hinweis:** In SharePoint Server 2010 besaß der **XRANK**-Operator die beiden Parameter _boostn_ und _Boostall_ sowie die folgende Syntax: `xrank(operand, rank-operand [, rank-operand]* [,boost=n] [,boostall=yes])` . Diese Syntax und die dazugehörigen Parametern werden in SharePoint nicht mehr unterstützt. Wir empfehlen stattdessen, eine neue Syntax und neue Parameter zu verwenden. 
+> [!NOTE]
+> In SharePoint Server 2010 besaß der **XRANK**-Operator die beiden Parameter _boost_ und _boostall_ sowie die folgende Syntax: `xrank(operand, rank-operand [, rank-operand]* [,boost=n] [,boostall=yes])` . Diese Syntax und die dazugehörigen Parametern werden in SharePoint nicht mehr unterstützt. Wir empfehlen stattdessen, eine neue Syntax und neue Parameter zu verwenden. 
   
     
     
@@ -1558,7 +1556,7 @@ Außerdem sind folgende erweiterte Parameter verfügbar. In der Regel werden sie
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15FQL_addlresources"> </a>
 
 

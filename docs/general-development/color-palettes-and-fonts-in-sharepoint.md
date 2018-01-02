@@ -3,11 +3,11 @@ title: Farbpaletten und Schriftarten in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c17d375b-151f-48ae-ac32-f2ce9e68d63f
-ms.openlocfilehash: ec01f0c272c9ce3d7362e16f1bc73a4918373507
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 0ae750c42451986a7f3bdc50111759a69e8a84db
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="color-palettes-and-fonts-in-sharepoint"></a>Farbpaletten und Schriftarten in SharePoint
 Verwenden Sie diese Übersicht, um die in einer SharePoint-Website verwendeten Farbpaletten oder Schriftartenschemas zu definieren.
@@ -92,10 +92,8 @@ Eine Farbpalette stellt die Kombination der Farben dar, die in einer SharePoint-
 
 Tabelle 1 beschreibt die verfügbaren Farbmodule und wo diese Farbmodule auf einer SharePoint-Website verwendet werden.
   
-    
-    
-
-> **Hinweis:** Bei der Erläuterung von Navigationselementen bedeutet „Pressed“ (Gedrückt), dass ein Benutzer auf ein Navigationselement klickt oder es berührt. „Selected“ (Ausgewählt) bezieht sich darauf, dass ein Benutzer auf die Seite geleitet wird.> Nachfolgend finden Sie eine Zusammenfassung einer normalen Aktionenfolge und des Farbmoduls für den Navigationselement-Link in jedem Schritt:> Der Basistext eines Navigationselement-Links: HeaderNavigationText> Ein Benutzer bewegt den Cursor über den Navigationselement-Link: HeaderNavigationHoverText> Ein Benutzer klickt auf, berührt oder wählt den Navigationselement-Link: HeaderNavigationPressedText> Der Benutzer wird auf die ausgewählten Seite geleitet. Das Farbmodul, das sich auf das Navigationselement für die Seite bezieht, auf der sich der Benutzer nun befindet: HeaderNavigationSelectedText
+> [!NOTE]
+> Bei der Erläuterung von Navigationselementen bedeutet „Pressed“ (Gedrückt), dass ein Benutzer auf ein Navigationselement klickt oder es berührt. „Selected“ (Ausgewählt) bezieht sich darauf, dass ein Benutzer auf die Seite geleitet wird.> Nachfolgend finden Sie eine Zusammenfassung einer normalen Aktionenfolge und des Farbmoduls für den Navigationselement-Link in jedem Schritt:> Der Basistext eines Navigationselement-Links: HeaderNavigationText> Ein Benutzer bewegt den Cursor über den Navigationselement-Link: HeaderNavigationHoverText> Ein Benutzer klickt auf, berührt oder wählt den Navigationselement-Link: HeaderNavigationPressedText> Der Benutzer wird auf die ausgewählten Seite geleitet. Das Farbmodul, das sich auf das Navigationselement für die Seite bezieht, auf der sich der Benutzer nun befindet: HeaderNavigationSelectedText
   
     
     
@@ -246,7 +244,8 @@ In einer .spfont-Datei werden die folgenden Platzhalter ersetzt:
   
 -  _LatinScriptFont_ ist die Schriftart, die für lateinische Skripts verwendet werden soll. Diese Schriftart ist ebenfalls die Fallbackschriftart. Das bedeutet, dass diese Schriftart für eine Sprache verwendet wird, die kein im Schriftartenschema explizit festgelegtes Skript aufweist.
     
-    > **Hinweis:** Sie müssen zusätzliche Informationen bereitstellen, wenn Sie Webschriftarten in Ihrem Schriftartenschema verwenden möchten. Weitere Informationen finden Sie im Abschnitt [Webschriftarten](#webFont) dieses Artikels.
+    > [!NOTE]
+    > Sie müssen zusätzliche Informationen bereitstellen, wenn Sie Webschriftarten in Ihrem Schriftartenschema verwenden möchten. Weitere Informationen finden Sie im Abschnitt [Webschriftarten](#webFont) dieses Artikels.
 -  _EAScriptFont_ ist die Schriftart, die für ostasiatische Skripts verwendet werden soll. Das **<s:ea>**-Element wird von SharePoint derzeit nicht verwendet. Das **<s:ea>**-Element wird im Schriftartenschema dennoch benötigt.
     
   
@@ -404,7 +403,7 @@ Tabelle 1 beschreibt die verfügbaren Schriftartenplätze und die Stellen, an de
 |body  <br/> |Die Basisschriftart, die an allen anderen Stellen auf der Seite verwendet wird  <br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

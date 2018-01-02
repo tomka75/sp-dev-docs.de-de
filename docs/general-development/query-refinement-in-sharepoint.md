@@ -3,11 +3,11 @@ title: Abfrageverfeinerung in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: ec31782e-1bc5-4dc3-8df7-c29cd5f7f05c
-ms.openlocfilehash: 4fcad16df080ba2bd6a8e6bea378e258559305e5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 379307fb0cb2867e79a74b4dee9e404243d47ddf
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="query-refinement-in-sharepoint"></a>Abfrageeinschränkung in SharePoint
 In diesem Artikel erfahren Sie, wie Sie die SharePoint-Features zur Abfrageeinschränkung bei der Arbeit mit Suchabfragen und Suchergebnissen programmgesteuert einsetzen können.
@@ -73,9 +73,8 @@ Dabei gilt Folgendes:
   
 - Die optionale Liste von  `parameter=value`-Paaren gibt die nicht standardmäßigen Konfigurationswerte für die benannte Einschränkung an. Wenn ein Parameter für eine Einschränkung nicht innerhalb der Klammern aufgeführt ist, erhalten Sie von der Suchschemakonfiguration die Standardeinstellung. In Tabelle 1 sind mögliche Werte für die  `parameter=value`-Paare aufgeführt.
     
-  
-
-> **Hinweis:** Bei der Angabe von Einschränkungen müssen Sie zumindest einen Wert `refiner-name` angeben, also eine verwaltete Eigenschaft. 
+> [!NOTE]
+> Bei der Angabe von Einschränkungen müssen Sie zumindest einen Wert `refiner-name` angeben, also eine verwaltete Eigenschaft. 
 
 **Beispiel**
 
@@ -321,7 +320,7 @@ query.Refiners);
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15_Query_refinement_addresources"> </a>
 
 
@@ -332,7 +331,7 @@ query.Refiners);
     
   
 
-## <a name="see-also"></a>Weitere Artikel
+## <a name="see-also"></a>Siehe auch
 <a name="SP15_Query_refinement_addresources"> </a>
 
 

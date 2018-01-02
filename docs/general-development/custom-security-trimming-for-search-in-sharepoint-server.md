@@ -3,11 +3,11 @@ title: "Benutzerdefinierte Sicherheitskürzung für die Suche in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: fbbf0cc4-e135-426a-9996-34eb954dbd5a
-ms.openlocfilehash: d42bb0cbc5bf1976fd772b0ad900c5f550907d9f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e88ad2c0ee1af00255d607d94f81693011fd9851
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="custom-security-trimming-for-search-in-sharepoint"></a>Benutzerdefinierte Sicherheitskürzung für die Suche in SharePoint
 Erfahren Sie mehr über die zwei Arten von benutzerdefinierten Security Trimmer Schnittstellen, **ISecurityTrimmerPre** und **ISecurityTrimmerPost**, und die Schritte, die Sie ausführen müssen, um ein benutzerdefinierter Security Trimmer zu erstellen. Zum Zeitpunkt der Abfrage führt Suche in SharePoint sicherheitskürzung von Suchergebnissen, die auf die Identität des Benutzers, senden Sie die Abfrage, mithilfe der Sicherheitsinformationen aus der Durchforstungskomponente basieren.
@@ -15,13 +15,16 @@ Erfahren Sie mehr über die zwei Arten von benutzerdefinierten Security Trimmer 
     
     
 
-Sie müssen bestimmte Szenarien, jedoch in denen die integrierte Sicherheit verkürzen Ergebnisse für Ihren Anforderungen nicht ausreichend. In solchen Szenarien müssen Sie benutzerdefinierte sicherheitskürzung implementieren. Suche in SharePoint bietet Unterstützung für benutzerdefinierte sicherheitskürzung durch die  [ISecurityTrimmerPre](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ISecurityTrimmerPre.aspx) Benutzeroberflächen, [ISecurityTrimmerPost](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ISecurityTrimmerPost.aspx) Benutzeroberflächen und [ISecurityTrimmer2](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ISecurityTrimmer2.aspx) Benutzeroberflächen (veraltet) im Namespace [Microsoft.Office.Server.Search.Query](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.aspx) . **Hinweis:** Benutzerdefinierte Pre Rasentrimmer unterstützt nicht Windows SIDs in Zugriffssteuerungslisten, nur Ansprüche. Wenn der SID Ansprüche, die Typen von einer benutzerdefinierten Pre Trimmer zurückgegeben werden, werden die resultierende ACE-Einträge in den Index als Anspruch, nicht als SID codiert werden. Sie daher nicht Windows-Benutzeridentitäten übereinstimmen, die auf SIDs basieren.
+Für bestimmte Szenarien sind die Ergebnisse der integrierten Sicherheitskürzung jedoch möglicherweise nicht ausreichend. In solchen Szenarien müssen Sie benutzerdefinierte Sicherheitskürzung implementieren. Die Suche in SharePoint bietet Unterstützung für benutzerdefinierte Sicherheitskürzung über die [ISecurityTrimmerPre](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ISecurityTrimmerPre.aspx)-, [ISecurityTrimmerPost](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ISecurityTrimmerPost.aspx)- und [ISecurityTrimmer2](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ISecurityTrimmer2.aspx)-Schnittstellen (veraltet) im Namespace [Microsoft.Office.Server.Search.Query](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.aspx).
+
+> [!NOTE]
+> Benutzerdefinierte Prä-Trimmer bieten keine Unterstützung für Windows-SIDs in Zugriffssteuerungslisten, sondern nur für Ansprüche. Wenn SID-Anspruchstypen von einem benutzerdefinierten Prä-Trimmer zurückgegeben werden, werden die resultierenden ACEs im Index als Ansprüche codiert, nicht als SIDs. Daher stimmen diese nicht mit Windows-Benutzeridentitäten überein, die auf SIDs basieren.
   
     
     
 
 
-## <a name="implementing-the-interfaces-for-custom-security-trimming"></a>Implementieren der Schnittstellen für benutzerdefinierte sicherheitskürzung
+## <a name="implementing-the-interfaces-for-custom-security-trimming"></a>Implementieren der Schnittstellen für benutzerdefinierte Sicherheitskürzung
 <a name="Implementing_the_interfaces"> </a>
 
 Die Benutzeroberfläche **ISecurityTrimmerPre** führt vor dem Zuschneiden oder vor dem Abfrage Auswertung, wo die Suchabfrage portiert ist Sicherheitsinformationen hinzufügen, bevor die Suchabfrage an den Suchindex verglichen wird. Die Benutzeroberfläche **ISecurityTrimmerPost** führt nach der verkürzen, oder nach der Abfrage Auswertung, wo die Suchergebnisse gelöscht werden, bevor sie an den Benutzer zurückgegeben werden.
@@ -112,16 +115,13 @@ An diese Methode werden vier Parameter übergeben:
     
     
 
--  
-  _documentUrls_: Ein  [IList\<T\>](http://msdn2.microsoft.com/EN-US/library/5y536ey6)-Objekt, das die URLs für jedes Inhaltselement in den Suchergebnissen enthält, das der Durchforstungsregel entspricht.
+-  _documentUrls_: Ein  [IList\<T\>](http://msdn2.microsoft.com/de-DE/library/5y536ey6)-Objekt, das die URLs für jedes Inhaltselement in den Suchergebnissen enthält, das der Durchforstungsregel entspricht.
     
   
--  
-  _documentAcls_: Ein [IList\<T\>](http://msdn2.microsoft.com/EN-US/library/5y536ey6)-Objekt, das Element-ACLs für jedes Inhaltselement enthält, dessen Zugriff von der Security Trimmer-Implementierung zu bestimmen ist.
+-  _documentAcls_: Ein [IList\<T\>](http://msdn2.microsoft.com/de-DE/library/5y536ey6)-Objekt, das Element-ACLs für jedes Inhaltselement enthält, dessen Zugriff von der Security Trimmer-Implementierung zu bestimmen ist.
     
   
--  
-  _sessionProperties_: Ein [IDictionary\<TKey, TValue\>](http://msdn2.microsoft.com/EN-US/library/s4ys34ea)-Objekt, das den vorübergehenden Eigenschaftenbehälter enthält.
+-  _sessionProperties_: Ein [IDictionary\<TKey, TValue\>](http://msdn2.microsoft.com/de-DE/library/s4ys34ea)-Objekt, das den vorübergehenden Eigenschaftenbehälter enthält.
     
   
 -  _userIdentity_: Ein  [IIdentity](https://msdn.microsoft.com/library/System.Security.Principal.IIdentity.aspx)-Objekt, aus dem Implementierer die Identität des Benutzers abrufen können.
@@ -247,7 +247,7 @@ Ein Beispiel für einen einfachen Befehl für die Registrierung ein benutzerdefi
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_sectrimmer_addlresources"> </a>
 
 
@@ -260,7 +260,6 @@ Ein Beispiel für einen einfachen Befehl für die Registrierung ein benutzerdefi
 -  [ISecurityTrimmerPost](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ISecurityTrimmerPost.aspx)
     
   
--  
-  [Übersicht über Business Connectivity Services in SharePoint](http://technet.microsoft.com/en-us/library/ee661740.aspx)
+-  [Übersicht über Business Connectivity Services in SharePoint](http://technet.microsoft.com/de-DE/library/ee661740.aspx)
     
   

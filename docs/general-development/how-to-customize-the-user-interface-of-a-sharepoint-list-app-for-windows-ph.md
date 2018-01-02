@@ -3,11 +3,11 @@ title: "Anpassen der Benutzeroberfläche einer SharePoint-Listen-App für Window
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 09ed59af-5e2b-4716-a9e4-a015e4793d85
-ms.openlocfilehash: 856716c69bdf77c497ccc3f0fa0a0ba960c6fac4
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 86bc5d4e648e7c423c55f3458dd0c12d634e7ff1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="customize-the-user-interface-of-a-sharepoint-list-app-for-windows-phone"></a>Anpassen der Benutzeroberfläche einer SharePoint-Listen-App für Windows Phone
 Passen Sie die durch die Vorlage „Windows Phone - SharePoint-Listenanwendung" generierte Windows Phone-Benutzeroberfläche an. SharePoint-Listen-Apps, die über die Vorlage „Windows Phone - SharePoint-Listenanwendung" erstellt werden, basieren auf dem Silverlight für Windows Phone-Framework. Alle von der Silverlight-Plattform auf einem Windows Phone bereitgestellten Funktionen stehen für Entwickler für die Anpassung der Benutzeroberfläche einer für ein Windows Phone entworfenen SharePoint-Listen-App zur Verfügung.
@@ -68,7 +68,9 @@ Basierend auf dem von der Vorlage generierten Projekt sind die Felder in der Lis
   
 3. Navigieren Sie auf der Registerkarte **Durchsuche** zu der Assembly „Microsoft.Phone.Controls.Toolkit.dll“, die vom Silverlight für Windows Phone-Toolkit installiert wurde.
     
-    > **Hinweis:** Sie finden die Assembly „Microsoft.Phone.Controls.Toolkit.dll“ unter %PROGRAMFILES%(x86)\\Microsoft SDKs\\Windows Phone\\v7.1\\Toolkit\\< *MonatJahr*  >\\ in einer Standardinstallation des Toolkits, wobei < *MonatJahr*  > etwas wie „Oct11" sein kann, je nachdem, welche Version des Toolkits installiert ist. (Die vom Toolkit installierten Assemblys können Sie auch auf Ihrem System finden, indem Sie auf die Schaltfläche **Start** klicken, auf **Alle Programme** zeigen, das Element **Microsoft Silverlight für Windows Phone-Toolkit** Menü „Programme“ erweitern und auf **Binärdateien** klicken.) 
+    > [!NOTE]
+    > Sie finden die Assembly „Microsoft.Phone.Controls.Toolkit.dll“ unter %PROGRAMFILES%(x86)\\Microsoft SDKs\\Windows Phone\\v7.1\\Toolkit\\< *MonthYear*  >\\Bin in einer Standardinstallation des Toolkits, wobei < *MonthYear*  > etwas wie „Oct11" sein kann, je nachdem, welche Version des Toolkits installiert ist. (Die vom Toolkit installierten Assemblys können Sie auch auf Ihrem System finden, indem Sie auf die Schaltfläche **Start** klicken, auf **Alle Programme** zeigen, das Element **Microsoft Silverlight für Windows Phone-Toolkit** Menü „Programme“ erweitern und auf **Binärdateien** klicken.) 
+
 4. Wählen Sie im **Projektmappen-Explorer** die Datei „EditForm.xaml“ unter dem Knoten **Ansichten** aus.
     
   
@@ -165,7 +167,9 @@ Basierend auf dem von der Vorlage generierten Projekt sind die Felder in der Lis
   
 15. Navigieren Sie zu dem Ordner, in dem die unterstützenden Symbolbilder, „ApplicationBar.Cancel.png“ und „ApplicationBar.Check.png“ vom Silverlight für Windows Phone-Toolkit installiert wurden.
     
-    > **Hinweis:** Sie finden die Bilder unter%PROGRAMFILES%(x86)\\Microsoft SDKs\\Windows Phone\\v7.1\\Toolkit\\< *MonatJahr*  >\\Bin\\Icons in einer Standardinstallation des Toolkits, wobei < *MonatJahr*  > etwas wie „Oct11" sein kann, je nachdem, welche Version des Toolkits installiert ist.
+    > [!NOTE]
+    > Sie finden die Bilder unter %PROGRAMFILES%(x86)\\Microsoft SDKs\\Windows Phone\\v7.1\\Toolkit\\< *MonthYear*  >\\Bin\\Icons in einer Standardinstallation des Toolkits, wobei < *MonthYear*  > etwas wie „Oct11" sein kann, je nachdem, welche Version des Toolkits installiert ist.
+
 16. Wählen Sie beide Bilder aus, und klicken Sie auf **Hinzufügen**. Die Bilddateien werden dem Projekt unter dem Knoten **Toolkit.Content** hinzugefügt.
     
     > **Wichtig:** Damit die Komponenten des Silverlight für Windows Phone-Toolkits die Symbolbilder verwenden können, müssen diese an dem Standort in Ihrem Projekt abgelegt werden, den Sie in den vorherigen Schritten angegeben haben. 
@@ -174,22 +178,14 @@ Basierend auf dem von der Vorlage generierten Projekt sind die Felder in der Lis
   
 18. Legen Sie im **Eigenschaftenfenster** die Eigenschaft **Buildvorgang** für die Bilder auf „Inhalt" und die Eigenschaft **In Ausgabeverzeichnis kopieren** auf „Kopieren, wenn neuer" fest.
     
-    > **Hinweis:** Wenn das **Eigenschaftenfenster** nicht sichtbar ist, drücken Sie STRG+W und dann P, um das Fenster in Visual Studio anzuzeigen.
-      > Wenn Sie das Projekt (durch Drücken von F5) starten, um es im Windows Phone-Emulator bereitzustellen, können Sie zum Formular **Bearbeiten** für ein Element navigieren (indem Sie in der Hauptseite der Listenansicht auf ein Element und dann auf die Schaltfläche **Bearbeiten** in der **Anwendungsleiste** in der App klicken). Die **DateTime**-Felder im Formular sind jetzt mit dem Steuerelement **DatePicker** verknüpft, wie in Abbildung 1 dargestellt.
-  
-    
-    
+    > [!NOTE]
+    > Wenn das **Eigenschaftenfenster** nicht sichtbar ist, drücken Sie STRG+W und dann P, um das Fenster in Visual Studio anzuzeigen.
 
-**Abbildung 1: Bearbeitungsformular mit DatePicker-Steuerelement**
+    Wenn Sie das Projekt (durch Drücken von F5) starten, um es im Windows Phone-Emulator bereitzustellen, können Sie zum Formular **Bearbeiten** für ein Element navigieren (indem Sie in der Hauptseite der Listenansicht auf ein Element und dann auf die Schaltfläche **Bearbeiten** in der **Anwendungsleiste** in der App klicken). Die **DateTime**-Felder im Formular sind jetzt mit dem Steuerelement **DatePicker** verknüpft, wie in Abbildung 1 dargestellt.
+ 
+    **Abbildung 1: Bearbeitungsformular mit DatePicker-Steuerelement**
 
-  
-    
-    
-
-  
-    
-    
-![Formular "Bearbeiten" mit DatePicker-Steuerelement](../images/787df903-833d-4a12-a692-716ceaf54c10.gif)
+    ![Formular "Bearbeiten" mit DatePicker-Steuerelement](../images/787df903-833d-4a12-a692-716ceaf54c10.gif)
   
     
     
@@ -239,9 +235,8 @@ In den folgenden Verfahren werden Sie Folgendes durchführen:
   
 - Ändern der Code-Behind-Datei EditForm.xaml.cs, die mit dem Formular „Bearbeiten" verbunden ist, um eine **set** -Funktion für den Wertkonverter für das Feld zum Bearbeiten für Choice-Felder zu registrieren und Ereignishandler für die Steuerelemente zu implementieren, die dem Formular „Bearbeiten" hinzugefügt werden.
     
-  
-
-> **Hinweis:** Weitere Informationen zu Feldwertkonvertern finden Sie unter  [Vorgehensweise: Unterstützen und Konvertieren von SharePoint-Feldtypen für Windows Phone-Apps](how-to-support-and-convert-sharepoint-field-types-for-windows-phone-apps.md). 
+> [!NOTE]
+> Weitere Informationen zu Feldwertkonvertern finden Sie unter [Vorgehensweise: Unterstützen und Konvertieren von SharePoint-Feldtypen für Windows Phone-Apps](how-to-support-and-convert-sharepoint-field-types-for-windows-phone-apps.md). 
   
     
     
@@ -502,7 +497,7 @@ Für Elemente in der Liste „Product Orders", die bereits mit einem benutzerdef
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="BKMK_AddingControlsForChoiceFields"> </a>
 
 

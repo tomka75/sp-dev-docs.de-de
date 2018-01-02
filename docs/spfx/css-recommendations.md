@@ -1,12 +1,12 @@
 ---
 title: "Empfehlungen für das Arbeiten mit CSS in SharePoint-Framework-Lösungen"
-ms.date: 09/25/2017
+ms.date: 11/18/2017
 ms.prod: sharepoint
-ms.openlocfilehash: c55b5362b4a1426c44cc0e7c53eacfe08982de64
-ms.sourcegitcommit: 3276e9b281b227fb2f1a131ab4ac54ae212ce5cf
+ms.openlocfilehash: 0e65926fda0ff1a788388e23d1d7df2e4b9ea32a
+ms.sourcegitcommit: 0350850e0f46841a7eaadcc69d0fb90739fcd654
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/24/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="recommendations-for-working-with-css-in-sharepoint-framework-solutions"></a>Empfehlungen für das Arbeiten mit CSS in SharePoint-Framework-Lösungen
 
@@ -224,9 +224,56 @@ Nach der Übertragung sieht die generierte CSS-Datei in etwa wie folgt aus:
 
 Da der Selektor mit dem eindeutigen Klassennamen beginnt, der spezifisch für die Komponente ist, gilt die alternative Präsentation nur für Hyperlinks innerhalb der Komponenten.
 
+## <a name="handling-of-css-vendor-prefix"></a>Verwenden von CSS-Anbieterpräfixen
+In SPFx sind keine Formatvorlagen mit Anbieterpräfix in SASS- oder CSS-Dateien eines Projekts erforderlich. Wenn für einige Browser mit SPFx-Unterstützung Präfixe erforderlich sind, wurden diese automatisch nach der Kompilierung von SASS zu CSS hinzugefügt. Diese Methode wird auch als automatisches Voranstellen von Präfixen bezeichnet und ist grundlegender Bestandteil der CSS-Buildkette in SPFx.
+
+Falls ein Webpart das neue Flexboxmodell verwenden sollte, das von der `display: flex`-Deklaration definiert wird. Für einige ältere WebKit-basierte und Internet Explorer-Versionen muss ein bestimmtes Anbieterpräfix in der CSS-Datei definiert sein.
+
+```css
+.container{
+  display: flex;
+}
+```
+
+Im SASS-Code des SPFx-Artefakts müssen keine Anbieterpräfixe enthalten sein. Nach der Kompilierung von SASS zu CSS wurden diese automatisch hinzugefügt, sodass die CSS-Deklaration wie folgt aussieht.
+
+```css
+.container_7e976ae1 {
+  display: -webkit-box; // older Safari on MacOS and iOS
+  display: -ms-flexbox; // IE 10 - 11
+  display: flex;
+}
+```
+
+Durch das Entfernen bereits angewendeter Präfixe wird der Code des Artefakts nicht nur übersichtlicher. Er wird auch lesbarer und zukunftsorientiert. Dieser Vorgang wird auch konfiguriert, um nur Browser mit SPFx-Unterstützung zu unterstützen, und sorgt für weniger Fehler.
+Falls ein Webpart bereits Anbieterpräfixe in den SASS-Dateien enthält, die nicht mehr benötigt werden, werden diese Deklarationen mit demselben Vorgang automatisch entfernt.
+
+Im folgenden Beispiel wird die `border-radius`-Eigenschaft verwendet. Eine Eigenschaft, für die keine Anbieterpräfixe auf den unterstützten Systemen erforderlich sind.
+
+```css
+.container {
+  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  -webkit-border-radius: 7px;
+  /* Firefox 1-3.6 */
+  -moz-border-radius: 7px;
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  border-radius: 7px;
+}
+```
+
+Die resultierende CSS-Datei in dem Paket wird in den folgenden Code konvertiert.
+
+```css
+.container_9e54c0b0 {
+  border-radius: 7px
+}
+```
+
+Weitere Informationen zum automatischen Voranstellen von Präfixen finden Sie in der Dokumentation im GitHub-Repository unter „[autoprefix](https://github.com/postcss/autoprefixer)“. Die Datenbank während des gesamten Prozesses ist unter [caniuse.com](https://caniuse.com) verfügbar.
+
 ## <a name="integrate-office-ui-fabric"></a>Integration von Office UI Fabric
 
-Wenn Sie die Darstellung und das Verhalten Ihrer Anpassungen so nah wie möglich an den Standardfunktionen von SharePoint und Office 365 halten, wird dies den Endbenutzern das Arbeiten mit diesen erleichtern. Office-UI-Fabric bietet eine Reihe von Steuerelementen und Formatvorlagen für die Verwendung in Ihren Anpassungen, die sich nahtlos in die vorhandene Benutzeroberfläche integrieren. Weitere Informationen zur Verwendung von Office-UI-Fabric in SharePoint-Framework finden Sie im [Integrationshandbuch für Office-UI-Fabric](office-ui-fabric-integration.md).
+Indem Sie dafür sorgen, dass Ihre Anpassungen wie die Standardfunktionen von SharePoint und Office 365 aussehen und sich so verhalten, können Sie Endbenutzern das Arbeiten damit erleichtern. Office UI Fabric bietet Ihnen eine Reihe von Steuerelementen und Formatvorlagen, die Sie in Ihren Anpassungen verwenden können, um eine nahtlose Integration in die vorhandene Benutzeroberfläche zu gewährleisten. Weitere Informationen zur Verwendung von Office UI Fabric im SharePoint Framework finden Sie im [Office UI Fabric-Integrationsleitfaden](./office-ui-fabric-integration.md).
 
 ## <a name="use-theme-colors"></a>Verwenden von Designfarben
 

@@ -44,7 +44,8 @@ Dieser Artikel beschreibt, wie Sie Ihre erste SharePoint-Framework-Erweiterung �
 
     ![Yeoman-SharePoint-Generator mit Eingabeaufforderungen zur Erstellung einer Erweiterungslösung](../../../images/ext-yeoman-app-prompts.png)
 
-    > **Hinweis:** Wenn der verwendete Erweiterungsname zu lang ist, können Probleme auftreten. Mit den bereitgestellten Eingaben wird ein Aliaseintrag für die JSON-Manifestdatei des Application Customizer generiert. Falls der Alias mehr als 40 Zeichen enthält, wird eine Ausnahme ausgelöst, wenn Sie versuchen, die Erweiterung mit `gulp serve --nobrowser` zu verarbeiten. Sie können dieses Problem beheben, indem Sie den Aliaseintrag später aktualisieren.
+    > [!NOTE] 
+    > Wenn der verwendete Erweiterungsname zu lang ist, können Probleme auftreten. Mit den bereitgestellten Eingaben wird ein Aliaseintrag für die JSON-Manifestdatei des Application Customizer generiert. Falls der Alias mehr als 40 Zeichen enthält, wird eine Ausnahme ausgelöst, wenn Sie versuchen, die Erweiterung mit `gulp serve --nobrowser` zu verarbeiten. Sie können dieses Problem beheben, indem Sie den Aliaseintrag später aktualisieren.
 
     An diesem Punkt installiert Yeoman die erforderlichen Abhängigkeiten und erstellt ein Gerüst für die Lösungsdateien sowie die **HelloWorld**-Erweiterung. Das kann einige Minuten dauern. 
 
@@ -66,7 +67,8 @@ Dieser Artikel beschreibt, wie Sie Ihre erste SharePoint-Framework-Erweiterung �
     code .
     ```
 
-    >**Hinweis:** Da die clientseitige SharePoint-Lösung auf HTML/TypeScript basiert, können Sie zur Erstellung Ihrer Erweiterung jeden Code-Editor verwenden, der clientseitige Entwicklung unterstützt.
+    > [!NOTE] 
+    > Da die clientseitige SharePoint-Lösung auf HTML/TypeScript basiert, können Sie zur Erstellung Ihrer Erweiterung jeden Code-Editor verwenden, der clientseitige Entwicklung unterstützt.
 
     Wie Sie sehen, sieht die Standardlösungsstruktur wie die Lösungsstruktur clientseitiger Webparts aus. Hierbei handelt es sich um die grundlegende SharePoint-Framework-Lösungsstruktur, die für alle Lösungstypen vergleichbare Konfigurationsoptionen bereitstellt.
 
@@ -89,7 +91,8 @@ Die Logik für den Anwendungsanpasser ist in der **onInit**-Methode enthalten
 
 - **onInit()** wird aufgerufen, wenn die clientseitige Erweiterung das erste Mal auf der Seite aktiviert wird. Dieses Ereignis tritt auf, nachdem ```this.context``` und ```this.properties``` zugeordnet wurden. Wie bei Webparts gibt ```onInit()``` eine Zusage zurück, die Sie zum Ausführen von asynchronen Vorgängen verwenden können.
 
->**Hinweis:** Der Klassenkonstruktor wird in einer frühen Phase aufgerufen, wenn ```this.context``` und ```this.properties``` noch nicht definiert sind. Benutzerdefinierte Initiierungslogik wird an dieser Stelle nicht unterstützt.
+> [!NOTE] 
+> Der Klassenkonstruktor wird in einer frühen Phase aufgerufen, wenn ```this.context``` und ```this.properties``` noch nicht definiert sind. Benutzerdefinierte Initiierungslogik wird an dieser Stelle nicht unterstützt.
 
 Im Folgenden werden die Inhalte von **onInit()** in der Standardlösung aufgelistet. Die Standardlösung schreibt ein Protokoll in das Dev Dashboard und zeigt dann beim Rendern der Seite eine einfache JavaScript-Warnung an.
 
@@ -106,7 +109,8 @@ Zunächst führen Sie den folgenden Befehl aus, um den Code zu kompilieren und d
 gulp serve --nobrowser
 ```
 
->**Hinweis:** Wenn Sie das SPFx-Entwicklerzertifikat noch nicht installiert haben, meldet Workbench, dass das Laden von Skripts von „localhost“ nicht konfiguriert ist. Halten Sie in diesem Fall den aktuell im Konsolenfenster ausgeführten Prozess an, und führen Sie in der Konsole des Projektverzeichnisses den Befehl `gulp trust-dev-cert` aus, um das Entwicklerzertifikat zu installieren; führen Sie dann den Befehl `gulp serve --nobrowser` erneut aus.
+> [!NOTE] 
+> Wenn Sie das SPFx-Entwicklerzertifikat noch nicht installiert haben, meldet Workbench, dass das Laden von Skripts von „localhost“ nicht konfiguriert ist. Beenden Sie in diesem Fall den Prozess, der derzeit im Konsolenfenster ausgeüfhrt wird, führen Sie den Befehl `gulp trust-dev-cert` im Projektverzeichnis aus, um das Entwicklerzertifikat zu installieren, und führen Sie dann den Befehl `gulp serve --nobrowser` erneut aus.
 
 Sie verwenden die Option ```--nobrowser```, da ein Start der lokalen Workbench nicht nötig ist, weil Erweiterungen nicht lokal gedebuggt werden können.
 
@@ -152,7 +156,11 @@ Das Dialogmeldung sollte nun auf Ihrer Seite angezeigt werden.
 
 Dieses Dialogfeld wird von der SharePoint-Framework-Erweiterung ausgelöst. Da Sie die **testMessage**-Eigenschaft als Teil der Debug-Abfrageparameter bereitgestellt haben, ist diese in der Warnmeldung enthalten. Sie können Ihre Erweiterungsinstanzen basierend auf den Clientkomponenteneigenschaften konfigurieren, die für die Instanz auch im Laufzeitmodus übergeben werden.
 
-> **Hinweis:** Wenn Sie Probleme beim Debuggen haben, überprüfen Sie die URL-Abfrageparameter für die Abfrage. Einige Browser codieren die Parameter, und in einigen Fällen wirkt sich dies auf das Verhalten aus.
+> [!NOTE] 
+> Wenn Probleme beim Debuggen auftreten, überprüfen Sie die URL-Abfrageparameter, die für die Abfrage verwendet wurden. In einigen Browsern werden die Parameter codiert, und in einigen Szenarien hat sich Auswirkungen auf das Verhalten.
 
 ## <a name="next-steps"></a>Nächste Schritte
 Herzlichen Glückwunsch! Ihre erste SharePoint-Framework-Erweiterung läuft. Informationen zum weiteren Ausbau der Erweiterung erfahren Sie unter [Verwenden von Seitenplatzhaltern aus dem Application Customizer (Hello World, Teil 2)](./using-page-placeholder-with-extensions.md). Dort verwenden Sie dasselbe Projekt und nutzen spezifische Inhaltsplatzhalter zum Ändern der Benutzeroberfläche von SharePoint. Beachten Sie, dass der Befehl ```gulp serve``` immer noch im Konsolenfenster ausgeführt wird (oder in Visual Studio Code, falls Sie den Editor verwenden). Sie können ihn einfach weiterlaufen lassen und zum nächsten Artikel wechseln.
+
+> [!NOTE]
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository](https://github.com/SharePoint/sp-dev-docs/issues). Vielen Dank im Voraus für Ihr Feedback.

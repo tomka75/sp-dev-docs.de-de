@@ -1,14 +1,14 @@
 ---
 title: "Vorgehensweisen für SharePoint"
 description: "Hier finden Sie Artikel zur Vorgehensweise und zugehörige Codebeispiele, die zeigen, wie grundlegende Entwicklungsaufgaben in SharePoint durchgeführt werden. Dazu zählt auch die Einrichtung der Entwicklungsumgebung sowie der Einstieg in die Erstellung von Websites, mobilen Apps und SharePoint-Add-Ins."
-ms.date: 11/10/2017
+ms.date: 11/30/2017
 ms.prod: sharepoint
 ms.assetid: ca78b080-0be4-4da4-b112-b86b1bde66e4
-ms.openlocfilehash: e88a4c269eaa29aa5f69768de948725210212302
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 8d6979d77a3a33446889b4774eef2e7e0f3c17eb
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="how-tos-for-sharepoint"></a>Vorgehensweisen für SharePoint
 
@@ -25,13 +25,10 @@ Hier finden Sie Artikel zur Vorgehensweise und zugehörige Codebeispiele, die ze
 | [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](../sp-add-ins/get-started-creating-provider-hosted-sharepoint-add-ins.md) <br/> |In diesem Artikel erfahren Sie, wie Sie mit den Office Developer Tools für Visual Studio 2012 eine grundlegende vom Anbieter gehostete SharePoint-Add-In erstellen, mithilfe des SharePoint-CSOM mit SharePoint-Websites interagieren und OAuth in einer SharePoint-Add-In implementieren.  <br/> |
 | [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](../sp-add-ins/get-started-creating-sharepoint-hosted-sharepoint-add-ins.md) <br/> |In diesem Artikel erfahren Sie, wie Sie mit den Office Developer Tools für Visual Studio 2012 eine grundlegende in SharePoint gehostete SharePoint-Add-In erstellen.  <br/> |
    
-
-## <a name="development-how-tos-for-sharepoint-add-ins"></a>Entwicklung - Artikel mit Vorgehensweisen für SharePoint-Add-Ins
 <a name="bk_devhowtos"> </a>
+## <a name="development-how-tos-for-sharepoint-add-ins"></a>Entwicklung - Artikel mit Vorgehensweisen für SharePoint-Add-Ins
 
-
-
-|**Title**|**Zusammenfassung**|
+|**Titel**|**Zusammenfassung**|
 |:-----|:-----|
 | [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode](../sp-add-ins/complete-basic-operations-using-sharepoint-client-library-code.md) <br/> |In diesem Artikel erfahren Sie, wie Sie Code zum Ausführen grundlegender Vorgänge mit dem SharePoint .NET Framework-Clientobjektmodell (CSOM) schreiben.  <br/> |
 | [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](../sp-add-ins/complete-basic-operations-using-javascript-library-code-in-sharepoint.md) <br/> |In diesem Artikel erfahren Sie, wie Sie Code zum Ausführen grundlegender Vorgänge unter Verwendung des JavaScript-Clientobjektmodells in SharePoint schreiben.  <br/> |
@@ -53,58 +50,46 @@ Hier finden Sie Artikel zur Vorgehensweise und zugehörige Codebeispiele, die ze
 | [Erstellen besonders vertrauenswürdiger Add-Ins für SharePoint](../sp-add-ins/create-high-trust-sharepoint-add-ins.md) <br/> |In diesem Artikel erfahren Sie, wie eine besonders vertrauenswürdige App für SharePoint erstellt wird. Eine besonders vertrauenswürdige App ist eine von einem Anbieter gehostete App, die zur lokalen Verwendung auf dem Firmengelände vorgesehen ist und für die ein Server-zu-Server-Protokoll genutzt wird.  <br/> |
 | [Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint](../sp-add-ins/package-and-publish-high-trust-sharepoint-add-ins.md) <br/> |Hier erfahren Sie, wie eine besonders vertrauenswürdige SharePoint-Add-Ins für die lokale Nutzung packen und veröffentlichen.  <br/> |
    
-
-## <a name="publishing-how-tos-for-office-and-sharepoint-add-ins"></a>Veröffentlichung - Artikel mit Vorgehensweisen für Office- und SharePoint-Add-Ins
 <a name="bk_pubhowtos"> </a>
+## <a name="publishing-how-tos-for-office-and-sharepoint-add-ins"></a>Veröffentlichung - Artikel mit Vorgehensweisen für Office- und SharePoint-Add-Ins
 
-
-
-|**Title**|**Zusammenfassung**|
+|**Titel**|**Zusammenfassung**|
 |:-----|:-----|
-| [Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio](http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx) <br/> |In diesem Artikel erfahren Sie, wie Sie die SharePoint-Add-In mit Visual Studio 2012 als Paket veröffentlichen.  <br/> |
-| [Erstellen oder Bearbeiten eines Verkäuferkontos für das Verkäuferdashboard und Hinzufügen von Auszahlungsinformationen](http://msdn.microsoft.com/library/6bd49ce6-c428-499c-96bb-6c857e48ecab%28Office.15%29.aspx) <br/> |Das Microsoft Verkäuferdashboard ist der zentrale Ort, an den Entwickler ihre Office- und SharePoint-Add-Ins übermitteln. In diesem Artikel erfahren Sie, wie Sie ein Verkäuferkonto einschließlich Marketingprofil erstellen, um Apps zur Aufnahme in den Office Store übermitteln zu können.  <br/> |
-| [Erstellen oder Aktualisieren von Client-IDs und geheimen Clientschlüsseln im Verkäuferdashboard](http://msdn.microsoft.com/library/f7852781-922f-4499-9dd4-c266907a8c14%28Office.15%29.aspx) <br/> |In diesem Artikel erfahren Sie, wie Sie Client-IDs und geheime Schlüssel erstellen und sie Ihren Apps im Verkäuferdashboard zuordnen, um OAuth-Autorisierungsdienste (Open Authorization) in Ihrer Office- und SharePoint-Add-Ins zu aktivieren.  <br/> |
-| [Verwenden des Verkäuferdashboards zum Übermitteln von Office- und SharePoint-Add-Ins und Office 365-Apps an den Office Store](http://msdn.microsoft.com/library/260ef238-0be4-42d6-ba15-1249a8e2ff12%28Office.15%29.aspx) <br/> |Das Microsoft Verkäuferdashboard ermöglicht es Softwareentwicklern, Apps für SharePoint und Office an den Office Store zu übermitteln. In diesem Artikel erfahren Sie, wie Sie Ihre Apps zur Genehmigung und Aufnahme in den Office Store übermitteln.  <br/> |
-| [Erstellen effektiver Office Store-Apps und -Add-Ins](http://msdn.microsoft.com/library/c66a6e6b-2e96-458f-8f8c-2a499fe942c9%28Office.15%29.aspx) <br/> |In diesem Artikel wird die Erstellung eines wirksamen Office Store-Eintrags beschrieben: Auswahl eines geeigneten App-Namens, Verfassen einer wirksamen, ansprechenden App-Beschreibung und Einfügen einheitlich und richtig formatierter Logos bei der Übermittlung der App an Verkäuferdashboard.  <br/> |
+| [Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio](../sp-add-ins/publish-sharepoint-add-ins-by-using-visual-studio.md) <br/> |In diesem Artikel erfahren Sie, wie Sie die SharePoint-Add-In mit Visual Studio 2012 als Paket veröffentlichen.  <br/> |
+| [Erstellen oder Bearbeiten eines Verkäuferkontos für das Verkäuferdashboard und Hinzufügen von Auszahlungsinformationen](https://developer.microsoft.com/de-DE/store/register) <br/> |Das Microsoft Verkäuferdashboard ist der zentrale Ort, an den Entwickler ihre Office- und SharePoint-Add-Ins übermitteln. In diesem Artikel erfahren Sie, wie Sie ein Verkäuferkonto einschließlich Marketingprofil erstellen, um Apps zur Aufnahme in den Office Store übermitteln zu können.  <br/> |
+| [Erstellen oder Aktualisieren von Client-IDs und geheimen Clientschlüsseln im Verkäuferdashboard](https://docs.microsoft.com/de-DE/office/dev/store/create-or-update-client-ids-and-secrets) <br/> |In diesem Artikel erfahren Sie, wie Sie Client-IDs und geheime Schlüssel erstellen und sie Ihren Apps im Verkäuferdashboard zuordnen, um OAuth-Autorisierungsdienste (Open Authorization) in Ihrer Office- und SharePoint-Add-Ins zu aktivieren.  <br/> |
+| [Verwenden des Verkäuferdashboards zum Übermitteln von Office- und SharePoint-Add-Ins und Office 365-Apps an den Office Store](https://docs.microsoft.com/de-DE/office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store) <br/> |Das Microsoft Verkäuferdashboard ermöglicht es Softwareentwicklern, Apps für SharePoint und Office an den Office Store zu übermitteln. In diesem Artikel erfahren Sie, wie Sie Ihre Apps zur Genehmigung und Aufnahme in den Office Store übermitteln.  <br/> |
+| [Erstellen effektiver Office Store-Apps und -Add-Ins](https://docs.microsoft.com/de-DE/office/dev/store/create-effective-office-store-listings) <br/> |In diesem Artikel wird die Erstellung eines wirksamen Office Store-Eintrags beschrieben: Auswahl eines geeigneten App-Namens, Verfassen einer wirksamen, ansprechenden App-Beschreibung und Einfügen einheitlich und richtig formatierter Logos bei der Übermittlung der App an Verkäuferdashboard.  <br/> |
    
-
-## <a name="licensing-how-tos-for-office-and-sharepoint-add-ins"></a>Lizenzierung - Artikel mit Vorgehensweisen für Office- und SharePoint-Add-Ins
 <a name="bk_lichowtos"> </a>
+## <a name="licensing-how-tos-for-office-and-sharepoint-add-ins"></a>Lizenzierung - Artikel mit Vorgehensweisen für Office- und SharePoint-Add-Ins
 
-
-
-|**Title**|**Zusammenfassung**|
+|**Titel**|**Zusammenfassung**|
 |:-----|:-----|
-| [Vorgehensweise: Hinzufügen von Lizenzprüfungen zu Ihren Apps für Office](http://msdn.microsoft.com/library/996c5f3c-2cb0-474f-b452-0d835949bdf7%28Office.15%29.aspx) <br/> |In diesem Artikel erfahren Sie, wie Sie Ihrer Office-Add-In Code hinzufügen, mit dem die Gültigkeit der App-Lizenz eines Benutzers überprüft und eine Aktion basierend auf den App-Lizenzeigenschaften ausgeführt wird. Laden Sie App-Testlizenztoken, um den Lizenzprüfcode zu testen.  <br/> |
-| [Hinzufügen von Lizenzprüfungen zu Office- und SharePoint-Add-Ins](http://msdn.microsoft.com/library/eec76f9d-134a-4e88-b0c8-3d3067da2f61%28Office.15%29.aspx) <br/> |In diesem Artikel erfahren Sie, wie Sie Ihrer SharePoint-Add-In Code hinzufügen, mit dem die Gültigkeit der App-Lizenz eines Benutzers überprüft und eine Aktion basierend auf den App-Lizenzeigenschaften ausgeführt wird. Laden Sie App-Testlizenztoken, um den Lizenzprüfcode zu testen.  <br/> |
+| [Vorgehensweise: Hinzufügen von Lizenzprüfungen zu Ihren Apps für Office](https://msdn.microsoft.com/library/fp161347.aspx) <br/> |In diesem Artikel erfahren Sie, wie Sie Ihrer Office-Add-In Code hinzufügen, mit dem die Gültigkeit der App-Lizenz eines Benutzers überprüft und eine Aktion basierend auf den App-Lizenzeigenschaften ausgeführt wird. Laden Sie App-Testlizenztoken, um den Lizenzprüfcode zu testen.  <br/> |
+| [Hinzufügen von Lizenzprüfungen zu Office- und SharePoint-Add-Ins](https://docs.microsoft.com/de-DE/office/dev/store/add-license-checks-to-office-and-sharepoint-add-ins) <br/> |In diesem Artikel erfahren Sie, wie Sie Ihrer SharePoint-Add-In Code hinzufügen, mit dem die Gültigkeit der App-Lizenz eines Benutzers überprüft und eine Aktion basierend auf den App-Lizenzeigenschaften ausgeführt wird. Laden Sie App-Testlizenztoken, um den Lizenzprüfcode zu testen.  <br/> |
    
-
-## <a name="setting-up-your-dev-environment-how-tos-for-developing-sites-and-solutions-in-sharepoint"></a>Einrichten der Entwicklungsumgebung - Artikel mit Vorgehensweisen zum Entwickeln von Websites und Lösungen in SharePoint
 <a name="bk_setuphowtos"> </a>
+## <a name="setting-up-your-dev-environment-how-tos-for-developing-sites-and-solutions-in-sharepoint"></a>Einrichten der Entwicklungsumgebung - Artikel mit Vorgehensweisen zum Entwickeln von Websites und Lösungen in SharePoint
 
-
-|**Title**|**Zusammenfassung**|
+|**Titel**|**Zusammenfassung**|
 |:-----|:-----|
 | [Ermitteln der installierten SKU von SharePoint](how-to-detect-the-installed-sku-of-sharepoint.md) <br/> |Wenn das Verhalten Ihrer Lösungen von der lokal installierten SKU von SharePoint oder Project Server 2013 abhängig ist, verwenden Sie das Codebeispiel in diesem Artikel, um die benötigten SKU-Informationen zu finden.  <br/> |
 | [Einrichten einer Umgebung für die Entwicklung mobiler Apps für SharePoint](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md) <br/> |In diesem Artikel erhalten Sie Informationen zu den Systemanforderungen und zum Konfigurieren einer Entwicklungsumgebung für SharePoint-Mobilitätsprojekte.  <br/> |
    
-
-## <a name="customization-how-tos-for-sharepoint"></a>Anpassung - Artikel mit Vorgehensweisen für SharePoint
 <a name="bk_customhowtos"> </a>
+## <a name="customization-how-tos-for-sharepoint"></a>Anpassung - Artikel mit Vorgehensweisen für SharePoint
 
-
-|**Title**|**Zusammenfassung**|
+|**Titel**|**Zusammenfassung**|
 |:-----|:-----|
 | [Anpassen eines Feldtyps mithilfe von clientseitigem Rendering](how-to-customize-a-field-type-using-client-side-rendering.md) <br/> |In diesem Artikel erfahren Sie, wie Sie einen Feldtyp mithilfe der clientseitigen Renderingtechnologie in SharePoint anpassen.  <br/> |
 | [Anpassen von Listenelementabfragen und Filtern von Daten für Windows Phone-Apps](how-to-customize-list-item-queries-and-filter-data-for-windows-phone-apps.md) <br/> |Passen Sie die Datenabfragen an, auf denen die Ansichten in einer Windows Phone-App basieren.  <br/> |
-| [Anpassen der Benutzeroberfläche einer SharePoint-Listen-App für Windows Phone](how-to-customize-the-user-interface-of-a-sharepoint-list-app-for-windows-ph.md) <br/> |Passen Sie die durch die Vorlage "Windows Phone - SharePoint-Listenanwendung" generierte Windows Phone-Benutzeroberfläche an.  <br/> |
+| [Anpassen der Benutzeroberfläche einer SharePoint-Listen-App für Windows Phone](how-to-customize-the-user-interface-of-a-sharepoint-list-app-for-windows-ph.md) <br/> |Passen Sie die durch die Vorlage „Windows Phone - SharePoint-Listenanwendung“ generierte Windows Phone-Benutzeroberfläche an.  <br/> |
    
-
-## <a name="building-mobile-apps-how-tos-for-sharepoint"></a>Erstellen mobiler Apps - Artikel mit Vorgehensweisen für SharePoint
 <a name="bk_mobilehowtos"> </a>
+## <a name="building-mobile-apps-how-tos-for-sharepoint"></a>Erstellen mobiler Apps - Artikel mit Vorgehensweisen für SharePoint
 
-
-|**Title**|**Zusammenfassung**|
+|**Titel**|**Zusammenfassung**|
 |:-----|:-----|
 | [Einrichten einer Umgebung für die Entwicklung mobiler Apps für SharePoint](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md) <br/> |In diesem Artikel erhalten Sie Informationen zu den Systemanforderungen und zum Konfigurieren einer Entwicklungsumgebung für SharePoint-Mobilitätsprojekte.  <br/> |
 | [Erstellen einer Windows Phone SharePoint-Listen-App](how-to-create-a-windows-phone-sharepoint-list-app.md) <br/> |Erstellen Sie eine Windows Phone-App in Visual Studio basierend auf der Vorlage "Windows Phone - SharePoint-Listenanwendung".  <br/> |
@@ -120,13 +105,10 @@ Hier finden Sie Artikel zur Vorgehensweise und zugehörige Codebeispiele, die ze
 | [Erstellen von suchgesteuerten mobilen Apps mit den REST-Schnittstellen für Navigation und Ereignisprotokollierung](how-to-build-search-driven-mobile-apps-with-the-navigation-and-event-logging-res.md) <br/> |In SharePoint werden die REST-Schnittstellen für Navigation und Ereignisprotokollierung eingeführt, die es Ihnen ermöglichen, eine suchgesteuerte mobile App für mobile Geräte wie Smartphones und Tablets zu erstellen, auf denen andere Betriebssysteme (keine Windows-Betriebssysteme) wie beispielsweise Android und iOS ausgeführt werden.  <br/> |
 | [Exportieren des Namensfelds einer Dokumentbibliotheksliste in eine mobile App](how-to-export-the-name-field-in-a-document-library-list-to-a-mobile-app.md) <br/> |Exportieren Sie das Feld "Name" einer Dokumentbibliotheksliste mit dem Visual Studio SharePoint-Listen-Assistenten in eine mobile App. Das Feld "Name" wird nicht automatisch angezeigt, wenn Benutzer eine mobile App für eine Dokumentbibliothek in SharePoint erstellen.  <br/> |
    
-
-## <a name="building-sites-using-design-manager-how-tos-for-sharepoint"></a>Erstellen von Websites mit dem Entwurfs-Manager - Artikel zur Vorgehensweise für SharePoint
 <a name="bk_buildsiteshowtos"> </a>
+## <a name="building-sites-using-design-manager-how-tos-for-sharepoint"></a>Erstellen von Websites mit dem Entwurfs-Manager - Artikel zur Vorgehensweise für SharePoint
 
-
-
-|**Title**|**Zusammenfassung**|
+|**Titel**|**Zusammenfassung**|
 |:-----|:-----|
 | [Verwenden von Code zum Anheften von Ausdrücken zu Ausdruckssätzen in SharePoint](how-to-use-code-to-pin-terms-to-navigation-term-sets-in-sharepoint.md) <br/> |In diesem Artikel erfahren Sie, wie Sie Code verwenden, um Ausdrücke an Navigationsausdruckssätze anzuheften.  <br/> |
 | [Vorgehensweise: Erstellen von Gerätekanäle in SharePoint](http://msdn.microsoft.com/library/339c7dba-95ee-46e0-8c76-0fe1adb6f366.aspx) <br/> |In diesem Artikel erfahren Sie, wie Sie einen Gerätekanal erstellen, ändern oder löschen oder die Gerätekanäle in SharePoint neu anordnen.  <br/> |
@@ -141,26 +123,20 @@ Hier finden Sie Artikel zur Vorgehensweise und zugehörige Codebeispiele, die ze
 | [Hinzufügen eines Webpart-Zonenausschnitts in SharePoint](how-to-add-a-web-part-zone-snippet-in-sharepoint.md) <br/> |Eine Webpartzone ist ein Ausschnitt, den Sie einem Seitenlayout hinzufügen können, damit Inhaltsautoren Webparts in dieser Zone hinzufügen, bearbeiten und löschen können.  <br/> |
 | [Hinzufügen eines Sicherheitstrim-Codeausschnitts in SharePoint](how-to-add-a-security-trim-snippet-in-sharepoint.md) <br/> |Sie können einen Codeausschnitt für die Sicherheitskürzung verwenden, um Inhalte nur bestimmten Benutzern basierend auf einer bestimmten Berechtigung, über die diese Benutzer verfügen müssen, und abhängig davon, ob es sich um authentifizierte oder anonyme Benutzer handelt, anzuzeigen.  <br/> |
 | [SharePoint Design Manager - Bilddarstellungen](sharepoint-design-manager-image-renditions.md) <br/> |In diesem Artikel erfahren Sie, wie Sie Bildwiedergaben erstellen, bearbeiten oder löschen. Eine Bildwiedergabe definiert die Dimensionen, die zum Anzeigen von Bildern in SharePoint-Veröffentlichungswebsites verwendet werden.  <br/> |
-| [Vorgehensweise: Hinzufügen einer Bildwiedergabe zu einer Seite in SharePoint](http://msdn.microsoft.com/library/ddf54c98-5ebc-4171-bcbe-927cc982bca5.aspx) <br/> |In diesem Artikel erfahren Sie, wie Sie Bildwiedergaben in einer SharePoint-Veröffentlichungswebsite verwenden.  <br/> |
-| [Vorgehensweise: zuzuschneiden ein Bildwiedergabe in SharePoint](http://msdn.microsoft.com/library/3a6efae9-b18f-4032-b0db-809e611ce9b7.aspx) <br/> |In diesem Artikel erfahren Sie, wie Sie den Teil des Bilds angeben, der in einer Bildwiedergabe verwendet werden soll.  <br/> |
+| [Vorgehensweise: Hinzufügen einer Bildwiedergabe zu einer Seite in SharePoint](https://msdn.microsoft.com/library/fp161347.aspx) <br/> |In diesem Artikel erfahren Sie, wie Sie Bildwiedergaben in einer SharePoint-Veröffentlichungswebsite verwenden.  <br/> |
+| [Vorgehensweise: zuzuschneiden ein Bildwiedergabe in SharePoint](https://msdn.microsoft.com/library/fp161347.aspx) <br/> |In diesem Artikel erfahren Sie, wie Sie den Teil des Bilds angeben, der in einer Bildwiedergabe verwendet werden soll.  <br/> |
    
-
-## <a name="workflow-how-tos-for-sharepoint"></a>Workflow - Artikel mit Vorgehensweisen für SharePoint
 <a name="bk_workflowshowtos"> </a>
+## <a name="workflow-how-tos-for-sharepoint"></a>Workflow - Artikel mit Vorgehensweisen für SharePoint
 
-
-
-|**Title**|**Zusammenfassung**|
+|**Titel**|**Zusammenfassung**|
 |:-----|:-----|
 | [Erstellen und Bereitstellen von benutzerdefinierten Workflowaktionen](how-to-build-and-deploy-workflow-custom-actions.md) <br/> |In diesem Artikel erfahren Sie, wie Sie Geschäftsprozesse entwickeln, deren Anforderungen von der vorhandenen Bibliothek mit Workflowaktionen in SharePoint Designer nicht erfüllt werden, indem Sie benutzerdefinierte Workflowaktionen in SharePoint erstellen.  <br/> |
    
-
-## <a name="social-and-collaboration-how-tos-for-sharepoint"></a>Soziale Funktionen und Zusammenarbeit - Artikel mit Vorgehensweisen für SharePoint
 <a name="bk_socialhowtos"> </a>
+## <a name="social-and-collaboration-how-tos-for-sharepoint"></a>Soziale Funktionen und Zusammenarbeit - Artikel mit Vorgehensweisen für SharePoint
 
-
-
-|**Title**|**Zusammenfassung**|
+|**Titel**|**Zusammenfassung**|
 |:-----|:-----|
 | [ Lesen und Schreiben in den Feed für soziale Netzwerke mithilfe des .NET-Clientobjektmodells in SharePoint](how-to-learn-to-read-and-write-to-the-social-feed-by-using-the-net-client-object.md) <br/> |Erstellen Sie eine Konsolenanwendung, die den sozialen Feed mithilfe des .NET-Clientobjektmodells in SharePoint liest bzw. in den sozialen Feed schreibt.  <br/> |
 | [Lesen und Schreiben in den Feed für soziale Netzwerke mithilfe des REST-Diensts in SharePoint](how-to-learn-to-read-and-write-to-the-social-feed-by-using-the-rest-service-in-s.md) <br/> |Erstellen Sie eine von SharePoint gehostete App, die den REST-Dienst zum Veröffentlichen eines Beitrags und zum Abrufen des persönlichen Feeds für den aktuellen Benutzer verwendet.  <br/> |
@@ -176,24 +152,19 @@ Hier finden Sie Artikel zur Vorgehensweise und zugehörige Codebeispiele, die ze
 | [Abrufen von Benutzerprofileigenschaften mithilfe des JavaScript-Objektmodells in SharePoint](how-to-retrieve-user-profile-properties-by-using-the-javascript-object-model-in.md) <br/> |In diesem Artikel erfahren Sie, wie Sie Benutzereigenschaften und Benutzerprofileigenschaften programmgesteuert mithilfe des JavaScript-Objektmodells in SharePoint abrufen.  <br/> |
 | [Arbeiten mit Benutzerprofilen und Organisationsprofilen mithilfe des Serverobjektmodells in SharePoint](how-to-work-with-user-profiles-and-organization-profiles-by-using-the-server-obj.md) <br/> |In diesem Artikel erfahren Sie, wie Sie Benutzerprofile und Benutzerprofileigenschaften in SharePoint programmgesteuert mithilfe des SharePoint-Serverobjektmodells erstellen, abrufen und ändern können.  <br/> |
    
-
-## <a name="integrating-location-and-map-functionality-how-tos-for-sharepoint"></a>Integration von Standort- und Kartenfunktionen - Artikel mit Vorgehensweisen für SharePoint
 <a name="bk_locationhowtos"> </a>
+## <a name="integrating-location-and-map-functionality-how-tos-for-sharepoint"></a>Integration von Standort- und Kartenfunktionen - Artikel mit Vorgehensweisen für SharePoint
 
-
-|**Title**|**Zusammenfassung**|
+|**Titel**|**Zusammenfassung**|
 |:-----|:-----|
 | [Programmgesteuertes Hinzufügen einer Geolocation-Spalte zu einer Liste in SharePoint](how-to-add-a-geolocation-column-to-a-list-programmatically-in-sharepoint.md) <br/> |In diesem Artikel erfahren Sie, wie Sie programmgesteuert eine Geolocation-Spalte einer Liste in SharePoint hinzufügen. Sie können Standortinformationen und Karten in SharePoint-Listen und standortbasierten Websites mithilfe des neuen Geolocation-Felds hinzufügen, indem Sie Ihren eigenen Geolocation-basierten Feldtyp erstellen.  <br/> |
 | [Festlegen des Bing Maps-Schlüssels auf Web- und Farmebene in SharePoint](how-to-set-the-bing-maps-key-at-the-web-and-farm-level-in-sharepoint.md) <br/> |In diesem Artikel erfahren Sie, wie Sie den Bing Maps-Schlüssel programmgesteuert auf der Web- und der Farmebene mithilfe des SharePoint-Clientobjektmodells und von Windows PowerShell festlegen, um die Bing Maps-Funktionen in SharePoint-Listen sowie standortbasierten Web-Apps und mobilen Apps zu aktivieren.  <br/> |
 | [Erweitern des Geolocation-Feldtyps mithilfe von clientseitigem Rendering](how-to-extend-the-geolocation-field-type-using-client-side-rendering.md) <br/> |In diesem Artikel erfahren Sie, wie Sie den Geolocation-Feldtyp von SharePoint programmgesteuert mithilfe von clientseitigem Rendering anpassen.  <br/> |
    
-
-## <a name="search-how-tos-for-sharepoint"></a>Suche - Artikel mit Vorgehensweisen für SharePoint
 <a name="bk_searchhowtos"> </a>
+## <a name="search-how-tos-for-sharepoint"></a>Suche - Artikel mit Vorgehensweisen für SharePoint
 
-
-
-|**Title**|**Zusammenfassung**|
+|**Titel**|**Zusammenfassung**|
 |:-----|:-----|
 | [Durchforsten zugeordneter externer Inhaltstypen in SharePoint](how-to-crawl-associated-external-content-types-in-sharepoint.md) <br/> |In diesem Artikel erfahren Sie, wie Sie die suchspezifischen Eigenschaften im Business Data Connectivity (BDC)-Dienst-Metadatenmodell zum Durchforsten von Zuordnungen und für die verschiedenen Benutzeroberflächen, die Sie aktivieren können, verwenden können.  <br/> |
 | [Durchforsten binärer großer Objekte (BLOBs) in SharePoint](how-to-crawl-binary-large-objects-blobs-in-sharepoint.md) <br/> |In diesem Artikel erfahren sie, wie Sie die BDC-Modelldatei für den BCS-Indizierungsconnector einer Datenbank ändern können, um es dem Suche in SharePoint-Crawler zu ermöglichen, in einer SQL Server-Datenbank gespeicherte BLOB-Daten (Binary Large Object) zu durchforsten.  <br/> |
@@ -201,12 +172,10 @@ Hier finden Sie Artikel zur Vorgehensweise und zugehörige Codebeispiele, die ze
 | [Verwenden der Content Enrichment-Webdienstlegende für SharePoint Server](how-to-use-the-content-enrichment-web-service-callout-for-sharepoint-server.md) <br/> |In diesem Artikel erfahren Sie, wie Sie den Inhaltserweiterungs-Webdienst in SharePoint implementieren, um verwaltete Eigenschaften von durchforsteten Elementen zu ändern, noch bevor die Elemente indiziert werden.  <br/> |
 | [Verwenden eines benutzerdefinierten Security Trimmer für Suchergebnisse für SharePoint Server](how-to-use-a-custom-security-trimmer-for-sharepoint-server-search-results.md) <br/> |Dieser Artikel führt Sie durch die Schritte zum Implementieren, Erstellen, Bereitstellen und Registrieren eines benutzerdefinierten Security Trimmer für die Suche in SharePoint mithilfe von Visual Studio 2010.  <br/> |
    
-
-## <a name="bcs-how-tos-for-sharepoint"></a>BCS - Artikel zur Vorgehensweise für SharePoint
 <a name="bk_bcshowtos"> </a>
+## <a name="bcs-how-tos-for-sharepoint"></a>BCS - Artikel zur Vorgehensweise für SharePoint
 
-
-|**Title**|**Zusammenfassung**|
+|**Titel**|**Zusammenfassung**|
 |:-----|:-----|
 | [Erstellen externer Inhaltstypen für SQL Server in SharePoint](how-to-create-external-content-types-for-sql-server-in-sharepoint.md) <br/> |In diesem Artikel erfahren Sie, wie Sie einen externen Inhaltstyp für SQL Server in SharePoint erstellen.  <br/> |
 | [Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint](how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint.md) <br/> |In diesem Artikel erfahren Sie, wie Sie Visual Studio 2012 verwenden, um eine veröffentlichte OData-Quelle zu erkennen und einen wieder verwendbaren externen Inhaltstyp für die Verwendung in BCS in SharePoint zu erstellen.  <br/> |
@@ -216,13 +185,10 @@ Hier finden Sie Artikel zur Vorgehensweise und zugehörige Codebeispiele, die ze
 | [Zugriff auf externe Daten mit REST in SharePoint](how-to-access-external-data-with-rest-in-sharepoint.md) <br/> |In diesem Artikel erfahren Sie, wie mithilfe von REST-URLs (Representational State Transfer) für BCS auf externe Daten von SharePoint zugegriffen werden kann.  <br/> |
 | [Verwenden der Code-Clientbibliothek für den Zugriff auf externe Daten in SharePoint](how-to-use-the-client-code-library-to-access-external-data-in-sharepoint.md) <br/> |In diesem Artikel erfahren Sie, wie Sie das Clientobjektmodell in SharePoint verwenden, um mit BCS-Objekten in SharePoint mithilfe von browserbasierten Skripts zu arbeiten.  <br/> |
    
-
-## <a name="office-and-sharepoint-application-services-how-tos-for-sharepoint"></a>Office- und SharePoint-Anwendungsdienste - Artikel zur Vorgehensweise für SharePoint
 <a name="bk_appservhowtos"> </a>
+## <a name="office-and-sharepoint-application-services-how-tos-for-sharepoint"></a>Office- und SharePoint-Anwendungsdienste - Artikel zur Vorgehensweise für SharePoint
 
-
-
-|**Title**|**Zusammenfassung**|
+|**Titel**|**Zusammenfassung**|
 |:-----|:-----|
 | [Erstellen von Berichtsrenderern für PerformancePoint-Dienste in SharePoint](how-to-create-report-renderers-for-performancepoint-services-in-sharepoint.md) <br/> |In diesem Artikel erfahren Sie, wie die Rendererkomponente in einer benutzerdefinierten Berichtserweiterung für PerformancePoint-Dienste erstellt wird.  <br/> |
 | [Erstellen von Berichts-Editoren für PerformancePoint-Dienste in SharePoint](how-to-create-report-editors-for-performancepoint-services-in-sharepoint.md) <br/> |In diesem Artikel erfahren Sie, wie die Editor-Komponente einer benutzerdefinierten Berichtserweiterung für PerformancePoint-Dienste erstellt wird.  <br/> |
@@ -232,23 +198,20 @@ Hier finden Sie Artikel zur Vorgehensweise und zugehörige Codebeispiele, die ze
 | [Erstellen von tabellarischen Datenquellen-Editoren für PerformancePoint-Dienste in SharePoint](how-to-create-tabular-data-source-editors-for-performancepoint-services-in-share.md) <br/> |In diesem Artikel erfahren Sie, wie die Editor-Komponente einer benutzerdefinierten Datenquellenerweiterung in Tabellenform für PerformancePoint-Dienste erstellt wird.  <br/> |
 | [Erstellen von Scorecardtransformationen für PerformancePoint-Dienste in SharePoint](how-to-create-scorecard-transforms-for-performancepoint-services-in-sharepoint-2.md) <br/> |In diesem Artikel erfahren Sie, wie benutzerdefinierte Scorecardtransformationen für PerformancePoint-Dienste in SharePoint erstellt werden.  <br/> |
    
-
-## <a name="authentication-authorization-and-security-how-tos-in-sharepoint"></a>Authentifizierung, Autorisierung und Sicherheit - Artikel zur Vorgehensweise in SharePoint
 <a name="bk_authhowtos"> </a>
+## <a name="authentication-authorization-and-security-how-tos-in-sharepoint"></a>Authentifizierung, Autorisierung und Sicherheit - Artikel zur Vorgehensweise in SharePoint
 
-|**Title**|**Zusammenfassung**|
+|**Titel**|**Zusammenfassung**|
 |:-----|:-----|
 | [Erstellen eines Anspruchsanbieters in SharePoint](how-to-create-a-claims-provider-in-sharepoint.md) <br/> |In diesem Artikel erfahren Sie, wie ein SharePoint-Anspruchsanbieter erstellt und implementiert wird, der die Voraussetzungen für die Steigerung von Ansprüchen und die Auswahl von Ansprüchen erfüllt.  <br/> |
 | [Bereitstellen eines Anspruchsanbieters in SharePoint](how-to-deploy-a-claims-provider-in-sharepoint.md) <br/> |In diesem Artikel erfahren Sie, wie Sie einen SharePoint-Anspruchsanbieter mithilfe der Featureinfrastruktur und durch Erstellen einer Klasse, die von  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) erbt, bereitstellen. <br/> |
    
-
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
 <a name="bk_addresc_howtos"> </a>
+## <a name="see-also"></a>Siehe auch
 
--  [Allgemeine SharePoint-Entwicklung](http://msdn.microsoft.com/library/fc829689-7cef-469d-a04c-4a433e49828a%28Office.15%29.aspx)
+-  [Allgemeine SharePoint-Entwicklung](https://msdn.microsoft.com/de-DE/library/office/mt674607.aspx)
 -  [Codebeispiele für SharePoint](code-samples-for-sharepoint.md)
--  [SharePoint Dev Center](http://msdn.microsoft.com/de-DE/sharepoint)
 -  [SharePoint-Codebeispiele](http://code.msdn.microsoft.com/sharepoint) (im SharePoint Dev Center)
--  [Microsoft SharePoint-Teamblog](http://sharepoint.microsoft.com/blog/Pages/default.aspx)
+-  [Microsoft SharePoint-Teamblog](https://blogs.office.com/de-DE/sharepoint/)
     
   

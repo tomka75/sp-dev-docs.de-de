@@ -2,11 +2,11 @@
 title: "Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 361a82694fc54cb11f1d430b319fdd6f18fd520b
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 03cdeaa7015fa18d929f85e726723a0f522d158e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-odata-query-operations-in-sharepoint-rest-requests"></a>Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen
 Hier erfahren Sie, wie Sie eine Reihe von OData-Abfragezeichenfolgeoperatoren verwenden, um die vom SharePoint REST-Dienst angeforderten Daten auszuwählen, zu filtern und zu ordnen. 
@@ -23,7 +23,8 @@ Der SharePoint REST-Dienst unterstütz eine Reihe von OData-Abfragezeichenfolgeo
 ## <a name="select-fields-to-return"></a>Auswählen der Felder, die zurückgegeben werden sollen
 Verwenden Sie die Abfrageoption [$select](http://www.odata.org/documentation/odata-version-2-0/uri-conventions#SelectSystemQueryOption), um anzugeben, welche Felder für eine bestimmte Liste, ein Listenelement oder ein anderes, durch eine Entitätenmenge dargestelltes SharePoint-Objekt zurückgegeben werden sollen. Sie können `$select=*` verwenden, um alle verfügbaren Felder zurückzugeben.
  
- **Hinweis**  Im Allgemeinen gibt der REST-Dienst standardmäßig alle verfügbaren Felder zurück, wenn Sie die Abfrageoption `$select` nicht angeben. Es kann jedoch manchmal vorkommen, dass einige SharePoint-Objekte Eigenschaften enthalten, deren Abruf äußerst ressourcenintensiv ist. Um die Leistung des REST-Dienstes zu optimieren, sind diese Eigenschaften in der Standardabfrage nicht enthalten und müssen explizit angefordert werden. Beispielsweise wird die Eigenschaft **SPWeb.EffectiveBasePermissions** nicht standardmäßig zurückgegeben und muss explizit mittels der Abfrageoption `$select` angefordert werden.
+> [!NOTE]
+> Im Allgemeinen gibt der REST-Dienst standardmäßig alle verfügbaren Felder zurück, wenn Sie die Abfrageoption `$select` nicht angeben. Es kann jedoch manchmal vorkommen, dass einige SharePoint-Objekte Eigenschaften enthalten, deren Abruf äußerst ressourcenintensiv ist. Um die Leistung des REST-Dienstes zu optimieren, sind diese Eigenschaften in der Standardabfrage nicht enthalten und müssen explizit angefordert werden. Beispielsweise wird die Eigenschaft **SPWeb.EffectiveBasePermissions** nicht standardmäßig zurückgegeben und muss explizit mittels der Abfrageoption `$select` angefordert werden.
  
 Darüber hinaus können Sie angeben, dass die Anforderung projizierte Felder aus anderen Listen und die Werte von Suchvorgängen zurückgeben soll. Geben Sie hierzu in den beiden Abfrageoptionen `$select` und `$expand` den Feldnamen an. Beispiel:
  
@@ -40,7 +41,8 @@ Einzelwert-Suchfelder werden beim SharePoint REST-Dienst als zwei separate Felde
 ## <a name="query-for-users"></a>Abfrage von Benutzern
 Beim SharePoint REST-Dienst werden die Benutzer durch ihren Anzeigennamen repräsentiert und nicht ihrem Alias oder ihrer Domäne\Alias-Kombination. Daher müssen Sie sich bei Benutzerabfragen nach den Anzeigenamen richten.
 
- **Hinweis**  Auf Mitgliedschaft basierende Benutzeranfragen werden nicht unterstützt. Der Operator **Current** zum Ausführen von Abfragen mithilfe der ID des aktuellen Benutzers wird nicht unterstützt.
+> [!NOTE]
+> Auf Mitgliedschaft basierende Benutzeranfragen werden nicht unterstützt. Der Operator **Current** zum Ausführen von Abfragen mithilfe der ID des aktuellen Benutzers wird nicht unterstützt.
 
 ## <a name="query-for-multi-value-lookup-fields-and-users"></a>Abfrage für Suchfelder und Benutzer mit mehreren Werten
 Da Suchfelder mit mehreren Werten als eine Zeichenfolge mehrerer Werte zurückgegeben werden, ist es nicht möglich, sie abzufragen (z. B. wird das Äquivalent eines **Includes**-Elements oder **NotIncludes**-Elements nicht unterstützt).
@@ -51,7 +53,8 @@ Verwenden Sie die Abfrageoption [$orderby](http://www.odata.org/documentation/od
 ## <a name="page-through-returned-items"></a>Unterteilen der zurückgegebenen Elemente
 Verwenden Sie die Abfrageoptionen  [$top](http://www.odata.org/documentation/odata-version-2-0/uri-conventions#TopSystemQueryOption) und [$skiptoken](http://msdn.microsoft.com/library/dd942121.aspx), um eine Teilmenge von Elementen auszuwählen, die nicht von der Abfrage zurückgegeben werden sollen.
 
- **Hinweis** Die Abfrageoption „$skip“ funktioniert nicht bei Abfragen für SharePoint-Listenelemente.
+> [!NOTE]
+> Die Abfrageoption $skip funktioniert nicht bei Abfragen für SharePoint-Listenelemente.
 
 Die Option  `$top` ermöglicht Ihnen, die ersten *n*  Elemente des Rückgabesatzes für die Rückgabe auszuwählen. Die folgende URI fordert beispielsweise an, dass nur die ersten zehn Elemente des potenziellen Rückgabesatzes tatsächlich zurückgegeben werden:
  
@@ -61,7 +64,8 @@ Mit der Option „$skiptoken“ können Sie Elemente bis zum angegebenen Element
  
  `$skiptoken=Paged=TRUE&amp;p_ID=5`
 
- **Hinweis**  Berücksichtigen Sie bei diesen Abfrageoptionen, dass die Seitenverwaltung in OData Ordnungszahlen verwendet. Nehmen wir beispielsweise an, dass Sie eine Schaltfläche „nächste Seite“ für die Anzeige von SharePoint-Listenelementen implementieren. Mithilfe des REST-Diensts aktivieren Sie die Schaltfläche für die Rückgabe der Elemente 1 bis 20, dann 21 bis 40 usw., wenn darauf geklickt wird. Nehmen Sie jedoch an, dass ein anderer Benutzer die Elemente 4 und 18 zwischen den Klicks auf die Schaltfläche löscht. In diesem Fall wird die Positionierung der verbleibenden Elemente zurückgesetzt und beim Anzeigen der Elemente 21 bis 40 werden zwei Elemente übersprungen.
+> [!NOTE]
+> Beachten Sie bei der Verwendung dieser Abfrageoptionen, dass das Unterteilen in OData ordinal ist. Nehmen Sie beispielsweise an, dass Sie eine "Nächste Seite"-Schaltfläche implementieren, um SharePoint-Listenelemente anzuzeigen. Sie verwenden den REST-Dienst, damit die Schaltfläche die Elemente 1 bis 20 zurückgibt, wenn sie angeklickt wird, dann die Elemete 21 bis 40 usw. Nehmen Sie jedoch an, dass ein anderer Benutzer die Elemente 4 und 18 zwischen den Klicks auf "Nächste Seite" löscht. In so einem Fall wird die ordinale Position der verbleibenden Elemente zurückgesetzt und beim Anzeigen der Elemente 21 bis 40 werden eigentlich zwei Elemente übersprungen.
  
 ## <a name="odata-query-operators-supported-in-the-sharepoint-rest-service"></a>Vom SharePoint REST-Dienst unterstützte OData-Abfrageoperatoren
 <a name="bk_supported"> </a>
@@ -77,7 +81,7 @@ Die untenstehende Abbildung zeigt unterstützte OData-Abfrageoptionen.
 
 ![Abfrageoptionssyntax des SharePoint REST-Diensts](../../images/REST_queryOptionSyntax.png)
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Grundlegendes zum SharePoint REST-Dienst](get-to-know-the-sharepoint-rest-service.md)

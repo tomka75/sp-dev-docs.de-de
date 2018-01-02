@@ -3,11 +3,11 @@ title: Erstellen von SharePoint-Workflows mit Visual Studio
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 739af178-96b3-4630-bbc0-5def02065eeb
-ms.openlocfilehash: 2fcfd7a42984ccd1505cff600d75612e80b18f69
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: a76d7c80cf48846b706a68b1a6b111901e478722
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-sharepoint-workflows-using-visual-studio"></a>Erstellen von SharePoint-Workflows mit Visual Studio
 
@@ -15,7 +15,8 @@ Erfahren Sie mehr über die Grundlagen des Erstellens eines SharePoint-Workflows
 
 **Bereitgestellt von:** [Andrew Connell](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/), [www.AndrewConnell.com](http://www.andrewconnell.com)
 
-> **Hinweis:** Dieser Artikel enthält ein durchgängiges Codebeispiel. Sie können es nutzen, um die Informationen im Artikel nachzuvollziehen, oder es als Grundlage für die Erstellung eigener SharePoint-Workflows verwenden. Den herunterladbaren Code finden Sie hier: LINK. 
+> [!NOTE]
+> Dieser Artikel enthält ein durchgängiges Codebeispiel, das Sie beim Folgen des Artikels oder als Grundlage für eigene SharePoint-Workflowprojekte verwenden können. Den herunterladbaren Code finden Sie hier: LINK. 
     
 Microsoft hat in SharePoint einen ganz anderen Ansatz für Workflows umgesetzt als in früheren Versionen. SharePoint-Workflows basieren jetzt auf Windows Workflow Foundation 4, und ihre Ausführung wird von einer neuen Komponente namens Workflow-Manager gesteuert, die extern von SharePoint ausgeführt wird.Workflow-Manager übernimmt die Rolle als Host für die Windows Workflow Foundation-Runtime und alle erforderlichen Dienste in einer hoch verfügbaren und skalierbaren Weise. Er nutzt Service Bus für Leistung und Skalierbarkeit und wird bei Bereitstellung in einer lokalen Bereitstellung exakt auf dieselbe Weise ausgeführt wie bei einer Bereitstellung an einen Cloud-basierten Dienst wie Office 365, da er für die Weitergabe der gesamten Workflowausführung und zugehöriger Aufgaben an die Workflow-Manager-Farm konfiguriert ist.Die drastische Änderung in der Workflowarchitektur machte einige Änderungen an den beiden primären Workflowerstellungstools für das Erstellen von benutzerdefinierten Workflows - Visual Studio und SharePoint Designer - erforderlich. In diesem Artikel wird die Verwendung von Visual Studio 2012 als Workflowerstellungstool zum Erstellen benutzerdefinierter Workflows zur Verwendung in **sp15allshort** -Bereitstellungen dargestellt, sowohl für lokale als auch für Office 365-Bereitstellungen
 
@@ -60,11 +61,8 @@ Das Phasenkonstrukt in einem SharePoint Designer 2013-basierten Workflow basiert
     
 ![Abbildung 1. Flussdiagramm-Workflow](../images/ngWfFig01.png)
   
-    
-    
-
-    
-> **Hinweis:** Sie finden den in Abbildung 1 dargestellten Workflow als Workflowbeispiel hier auf MSDN:  [SharePoint: Genehmigungsworkflow, der ein benutzerdefiniertes Initiierungsformular verwendet](http://code.msdn.microsoft.com/officeapps/SharePoint-Approval-f5ac5eb2). 
+> [!NOTE]
+> Sie finden den in Abbildung 1 dargestellten Workflow als Workflowbeispiel hier auf MSDN:  [SharePoint: Genehmigungsworkflow, der ein benutzerdefiniertes Initiierungsformular verwendet](http://code.msdn.microsoft.com/officeapps/SharePoint-Approval-f5ac5eb2). 
   
     
     
@@ -88,11 +86,8 @@ Zustandsautomatworkflows folgen normalerweise wie Flussdiagrammsorkflows keinem 
     
 ![Abbildung 2. Zustandsautomat-Workflow](../images/ngWfFig02.png)
   
-    
-    
-
-    
-> **Hinweis:** Sie finden den in Abbildung 1 dargestellten Workflow als Workflowbeispiel hier auf MSDN:  [SharePoint: Von Aktionen und Ereignissen abhängiges Weiterleiten von Workflows zu Zuständen](http://code.msdn.microsoft.com/officeapps/SharePoint-Route-25a25d87). 
+> [!NOTE]
+> Sie finden den in Abbildung 1 dargestellten Workflow als Workflowbeispiel hier auf MSDN:  [SharePoint: Von Aktionen und Ereignissen abhängiges Weiterleiten von Workflows zu Zuständen](http://code.msdn.microsoft.com/officeapps/SharePoint-Route-25a25d87). 
   
     
     
@@ -352,9 +347,10 @@ Führen Sie folgende Schritte aus, um Benutzerinformationen abzurufen:
     
     
 
-1. Benennen Sie die erste Sequenz (**Untergeordnete Sequenz 1**) in "Elementeigenschaften abrufen" um, und nennen Sie die zweiteSequenz "Autoreigenschaften abrufen".
+1. Benennen Sie die erste Sequenz (**Untergeordnete Sequenz 1**) in „Elementeigenschaften abrufen“ um, und nennen Sie die zweite Sequenz „Autoreigenschaften abrufen“.
     
-    > **Hinweis:** Stellen Sie sicher, dass für die Variable, die die Benutzer-ID enthält, die Bereichsdefinition auf den gesamten Workflow und nicht nur auf die Sequenz festgelegt wird, an der wir arbeiten. Lassen Sie uns den Bereich für die Variable jetzt ändern, wie in Abbildung 8 gezeigt. 
+    > [!NOTE]
+    > Stellen Sie sicher, dass für die Variable, die die Benutzer-ID enthält, die Bereichsdefinition auf den gesamten Workflow und nicht nur auf die Sequenz festgelegt wird, an der wir arbeiten. Lassen Sie uns den Bereich für die Variable jetzt ändern, wie in Abbildung 8 gezeigt. 
 
    **Abbildung 8. Ändern des Bereichs von Variablen**
 
@@ -434,7 +430,7 @@ In diesem Artikel wurden zunächst die verschiedenen Workflowtypen erläutert, d
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

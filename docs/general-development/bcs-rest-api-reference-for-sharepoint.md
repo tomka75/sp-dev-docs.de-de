@@ -3,11 +3,11 @@ title: "BCS-REST-API-Referenz für SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 364fb8d7-87d9-4be7-affd-90caba3cd0c0
-ms.openlocfilehash: f33adf455a216d1a7dba82832d9bcf7051068cb0
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bf638d39e90dc46df61676625be9ffb11e84f10a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="bcs-rest-api-reference-for-sharepoint"></a>BCS-REST-API-Referenz für SharePoint
 
@@ -36,10 +36,8 @@ Die REST-Schnittstelle bereitgestellt von SharePoint können Sie die meisten Sha
     
 Sie können auf externe Daten zugreifen, indem Sie URLs auf gleiche Weise erstellen wie beim Zugriff auf Standardlistenelemente.
   
-    
-    
-
-> **Hinweis:** Zugriff auf Entitäten über BDC direkt wird nicht bereitgestellt. Zum Arbeiten mit externen Daten müssen Sie eine externe Liste erstellen und die REST-URLs für den Zugriff auf Listenelemente in einer externen Liste verwenden. 
+> [!NOTE]
+> Zugriff auf Entitäten über BDC direkt wird nicht bereitgestellt. Zum Arbeiten mit externen Daten müssen Sie eine externe Liste erstellen und die REST-URLs für den Zugriff auf Listenelemente in einer externen Liste verwenden. 
   
     
     
@@ -86,14 +84,14 @@ Um die zurückgegebene Datenmenge beschränken oder mehr Stellen für den Benutz
 |EQ  <br/> |Gleich  <br/> **Hinweis:** Wenn Sie **EQ** zum Filtern verwenden, werden die Filterkriterien an das externe System übergeben, in dem Fall die Filterung auf dem Server.          |
 |GT  <br/> |Größer als  <br/> **Hinweis:** Wenn Sie den **GT**-Operator verwenden, wird nur eine clientseitige Filterung ausgeführt. > Beispiel: `web/lists/getByTitle('ListName')/Items?$select=Title&amp;$filter=AverageRating gt 3` gibt alle Titel mit einer durchschnittlichen Bewertung über 3 zurück.          |
    
-
-> **Hinweis:** Zum Abrufen von Spalten, die Teil einer Zuordnung sind, müssen Sie explizit die Spalte in der URL mithilfe von **$select** in der Abfragezeichenfolge mit einbeziehen.
+> [!NOTE]
+> Zum Abrufen von Spalten, die Teil einer Zuordnung sind, müssen Sie explizit die Spalte in der URL mithilfe von **$select** in der Abfragezeichenfolge mit einbeziehen.
   
     
     
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkmk_AdditionalResources"> </a>
 
 
