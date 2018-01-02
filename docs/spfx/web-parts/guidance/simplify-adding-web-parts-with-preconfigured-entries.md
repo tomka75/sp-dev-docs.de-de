@@ -2,17 +2,18 @@
 title: "Vereinfachen des Hinzufügens von Webparts mit vorkonfigurierten Einträgen"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 0527787f8365e94accfc3454fdc717edbc970c95
-ms.sourcegitcommit: 46d5fee38ab8849df2d47541ee53b4dd71a613db
+ms.openlocfilehash: 2ed78b779392be0ca61fb7ce84b196760c18770a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="simplify-adding-web-parts-with-preconfigured-entries"></a>Vereinfachen des Hinzufügens von Webparts mit vorkonfigurierten Einträgen
 
 Komplexere clientseitige SharePoint Framework-Webparts können zahlreiche Eigenschaften haben, die vom Benutzer konfiguriert werden müssen. Sie können Benutzer unterstützen, indem Sie vorkonfigurierte Eigenschafteneinträge für bestimmte Szenarien hinzufügen. Ein vorkonfigurierte Eintrag initialisiert das Webpart mit vordefinierten Werten. In diesem Artikel erfahren Sie, wie Sie vorkonfigurierte Einträge in einem clientseitigen SharePoint Framework-Webpart verwenden, um Benutzern vorkonfigurierte Versionen Ihres Webparts bereitzustellen.
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment.md).
+> [!NOTE] 
+> Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment.md).
 
 ## <a name="what-are-web-part-preconfigured-entries"></a>Was sind vorkonfigurierte Einträge für Webparts?
 
@@ -58,7 +59,7 @@ description             |ILocalizedString|ja     |Die Webpartbeschreibung, die i
 officeFabricIconFontName|string          |nein      |Das Symbol für das Webpart, das in der Toolbox angezeigt wird. Dessen Wert muss einer der [Office UI Fabric-Symbolnamen](https://dev.office.com/fabric#/styles/icons) sein. Wenn diese Eigenschaft einen Wert hat, wird die **iconImageUrl**-Eigenschaft ignoriert.|`"officeFabricIconFontName": "Sunny"`
 iconImageUrl            |string          |nein      |Das Symbol für das Webpart, das in der Toolbox angezeigt und von einer Bild-URL dargestellt wird. Das Bild an der URL muss genau 40x28 px sein. Wenn die **officeFabricIconName**-Eigenschaft nicht über einen Wert verfügt, muss diese Eigenschaft einen Wert aufweisen.|`"iconImageUrl": "https://cdn.contoso.com/weather.png"`
 groupId                 |string          |ja     |Die Gruppen-ID, um zu ermitteln, welche moderne Gruppe das Webpart auf der modernen Seite enthält. Das SharePoint Framework reserviert Gruppen-IDs für [vordefinierte Gruppen](#predefined-modern-groups). Der Entwickler kann eine dieser Gruppen auswählen. Wenn der Entwickler eine ID ausfüllt, die sich in den vordefinierten Gruppen befindet, wird wieder die Gruppe **Other** verwendet.|`"groupId": "1edbd9a8-0bfb-4aa2-9afd-14b8c45dd489"`
-Gruppe                   |ILocalizedString|nein      |Der Gruppenname in der Webpartauswahl für das Webpart auf der klassischen Seite. Wenn kein Wert angegeben ist, wird das Webpart in der **Custom**-Gruppe angezeigt.|`"group": { "default": "Content", "nl-nl": "Inhoud" }`
+Gruppe                   |ILocalizedString|nein      |Der Gruppenname in der Webpartauswahl für das Webpart auf der klassischen Seite. Wenn kein Wert angegeben ist, wird das Webpart in der **Miscellaneous**-Gruppe angezeigt.|`"group": { "default": "Content", "nl-nl": "Inhoud" }`
 dataVersion             |string          |nein      |Verwenden Sie dieses Feld, um die Datenversion der vorkonfigurierten Daten anzugeben, die dem Webpart bereitgestellt werden. Beachten Sie, dass sich die Datenversion vom Versionsfeld im Manifest unterscheidet. Die Manifestversion wird zum Steuern der Versionsverwaltung des Webpartcodes verwendet, die Datenversion wird hingegen zum Steuern der Versionsverwaltung der serialisierten Daten des Webparts verwendet. Weitere Informationen finden Sie im dataVersion-Feld Ihres Webparts. Unterstützte Werte: MAJOR.MINOR Version.|`"dataVersion": "1.0"`
 properties              |TProperties     |ja     |Ein Schlüssel-Wert-Paarobjekt mit Standardwerten für Webparteigenschaften.|`"properties": { "location": "Redmond", "numberOfDays": 3, "showIcon": true }`
 
@@ -443,7 +444,8 @@ Starten Sie das Debuggen des Projekts, indem Sie den folgenden Befehl ausführen
 gulp serve
 ```
 
-> **Hinweis**: Wenn Sie das Projekt zuvor bereits gedebuggt haben, stoppen Sie das Debuggen, und starten Sie es erneut. Änderungen, die am Webpartmanifest vorgenommen wurden, werden beim Debuggen nicht automatisch in der Workbench widergespiegelt, und Sie müssen das Projekt neu erstellen, um diese zu sehen.
+> [!NOTE] 
+> Wenn Sie das Projekt zuvor bereits gedebuggt haben, stoppen Sie das Debuggen, und starten Sie es erneut. Änderungen, die am Webpartmanifest vorgenommen wurden, werden beim Debuggen nicht automatisch in der Workbench widergespiegelt, und Sie müssen das Projekt neu erstellen, um diese zu sehen.
 
 Wenn Sie die Webpart-Toolbox öffnen, um das Webpart zum Zeichenbereich hinzuzufügen, werden Sie sehen, dass sich der Name und das Symbol geändert haben und nun die vorkonfigurierten Einstellungen widerspiegeln.
 

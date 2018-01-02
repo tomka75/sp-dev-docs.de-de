@@ -2,11 +2,11 @@
 title: Sortieren von Suchergebnissen in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 143925763fd8cebc94899d53d36f52474d8b0afd
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 5bad3656838a7175e285ee31d9ec8ef9a3756dec
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sorting-search-results-in-sharepoint"></a>Sortieren von Suchergebnissen in SharePoint
 
@@ -50,12 +50,10 @@ Dieser Artikel befasst sich mit der programmgesteuerten Sortierung von Suchergeb
     
 
 
--  
-  [Ändern bewerteter Suchergebnisse in „Abfrageregeln verwalten“](http://technet.microsoft.com/en-us/library/jj871676.aspx#BKMK_ChangeRankedSearchResults)
+-  [Ändern bewerteter Suchergebnisse in „Abfrageregeln verwalten“](http://technet.microsoft.com/de-DE/library/jj871676.aspx#BKMK_ChangeRankedSearchResults)
     
   
--  
-  [„Ändern bewerteter Suchergebnisse" in „Erstellen von Abfrageregeln für das Web Content Management"](http://technet.microsoft.com/en-us/library/jj871014.aspx#BKMK_ChangeRankedSearchResults)
+-  [„Ändern bewerteter Suchergebnisse" in „Erstellen von Abfrageregeln für das Web Content Management"](http://technet.microsoft.com/de-DE/library/jj871014.aspx#BKMK_ChangeRankedSearchResults)
     
   
 
@@ -105,7 +103,7 @@ Sie können die Sortierung der Suchergebnisse basierend auf dem Wert einer oder 
   
     
     
-Sie können basierend auf Texteigenschaften und numerischen Eigenschaften sortieren. Bei Texteigenschaften basiert die Sortierung auf der Standardsortierung von Textzeichenfolgen. Im Gegensatz dazu basiert die Sortierung für numerische Eigenschaften (z. B. verwaltete Eigenschaften vom Typ  [DateTime](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Administration.ManagedDataType.DateTime.aspx) ), auf dem numerischen Wert.
+Sie können basierend auf Texteigenschaften und numerischen Eigenschaften sortieren. Bei Texteigenschaften basiert die Sortierung auf der Standardsortierung von Textzeichenfolgen. Im Gegensatz dazu basiert die Sortierung für numerische Eigenschaften (z. B. verwaltete Eigenschaften vom Typ  [DateTime](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Administration.ManagedDataType.Datetime.aspx) ), auf dem numerischen Wert.
   
     
     
@@ -208,10 +206,8 @@ Die Sortierspezifikation hat folgendes Format:  `[formula:<sort-formula>]`
     
 Im Format ist _<sort-formula>_ der Sortierformelausdruck.
   
-    
-    
-
-> **Hinweis:** Die eckigen Klammern sind Teil der Syntax der Sortierspezifikation. 
+> [!NOTE]
+> Die eckigen Klammern sind Teil der Syntax der Sortierspezifikation. 
   
     
     
@@ -476,10 +472,8 @@ Sie können Abfrageergebnisse zufällig sortieren oder der Ergebnissortierung ei
     
 Die zufällige Sortierspezifikation besitzt das folgende Format: `[random:seed=<seed>:hashfield=<managed property>]`
   
-    
-    
-
-> **Hinweis:** Die eckigen Klammern sind Teil der Syntax der Sortierspezifikation. 
+> [!NOTE]
+> Die eckigen Klammern sind Teil der Syntax der Sortierspezifikation. 
   
     
     
@@ -578,7 +572,7 @@ using (var context = new ClientContext("http://localhost"))
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
@@ -594,8 +588,7 @@ using (var context = new ClientContext("http://localhost"))
 -  [Übersicht über die REST-API für die SharePoint-Suche](sharepoint-search-rest-api-overview.md)
     
   
--  
-  [Übersicht über durchforstete und verwaltete Eigenschaften in SharePoint](http://technet.microsoft.com/en-us/library/jj219630%28office.15%29.aspx)
+-  [Übersicht über durchforstete und verwaltete Eigenschaften in SharePoint](http://technet.microsoft.com/de-DE/library/jj219630%28office.15%29.aspx)
     
   
 

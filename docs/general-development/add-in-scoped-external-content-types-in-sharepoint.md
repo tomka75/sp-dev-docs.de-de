@@ -3,11 +3,11 @@ title: Add-in-bezogenen externen Inhaltstypen in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a34cbbba-dc38-4d3d-b796-d54b5848bdfb
-ms.openlocfilehash: b551602cd4a87422e50e5523e86b6a5e5be8514b
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 32f456c117615566a1b63b8991a231121ae2164f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="add-in-scoped-external-content-types-in-sharepoint"></a>Add-in-bezogenen externen Inhaltstypen in SharePoint
 Erfahren Sie mehr über externe Inhaltstypen, die installiert oder auf der Ebene-Add-Ins in SharePoint ausgelegt sind, und aktivieren Sie reichhaltige SharePoint-Add-Ins mit externen Datenquellen erstellen.
@@ -133,7 +133,8 @@ Im folgenden Beispiel wird gezeigt, wie Sie die **MetadataCatalogFileName**-Eige
 ```
 
 
-> **Hinweis:** Websiteadministratoren können Add-Ins installieren, die App-bezogene externe Inhaltstypen verwenden, nur SiteCollection-Administratoren können jedoch Apps Berechtigungen zum Verwenden von BCS-Verbindungen gewähren. 
+> [!NOTE]
+> Websiteadministratoren können Add-Ins installieren, die App-bezogene externe Inhaltstypen verwenden, nur SiteCollection-Administratoren können jedoch Apps Berechtigungen zum Verwenden von BCS-Verbindungen gewähren. 
   
     
     
@@ -157,13 +158,15 @@ Sie können ein BDC-Modell in eine WSP-Datei für die Bereitstellung einschließ
 ```
 
 
-> **Wichtig:** Es kann nur eine BDC-Modelldatei pro Add-In verwendet werden. In diesem Beispiel lautet der Dateiname BDCMetadata.bdcm, der Modelldateiname kann beliebig sein, solange dieser dem Dateinamen im **Path**-Attribut der BDC-Modelldatei entspricht.
+> [!IMPORTANT]
+> Es kann nur eine BDC-Modelldatei pro Add-In verwendet werden. In diesem Beispiel lautet der Dateiname BDCMetadata.bdcm, der Modelldateiname kann beliebig sein, solange dieser dem Dateinamen im **Path**-Attribut der BDC-Modelldatei entspricht.
   
     
     
 
 
-> **Hinweis:** Nur Open Data Protocol (OData)-Verbindungen sind für Add-In-bezogene externe Inhaltstypen zulässig. 
+> [!NOTE]
+> Nur Open Data Protocol (OData)-Verbindungen sind für Add-In-bezogene externe Inhaltstypen zulässig. 
   
     
     
@@ -210,7 +213,7 @@ Im folgenden Beispiel wird gezeigt, wie durch Bearbeiten der Datei "Elements.xml
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="Appscopedect_Addres"> </a>
 
 

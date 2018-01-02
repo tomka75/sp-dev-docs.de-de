@@ -3,11 +3,11 @@ title: Walkthrough Developing a Custom Application Using Excel Web Services
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 2f9bf243-281a-4d70-917e-9eaf0b867631
-ms.openlocfilehash: 96cbe71ced7143b9888645b3b455c3738f0030a6
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 57f6eb6d15510b1147b82fdce53436dded5fa47a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="walkthrough-developing-a-custom-application-using-excel-web-services"></a>Walkthrough: Developing a Custom Application Using Excel Web Services
 
@@ -45,13 +45,17 @@ In order to complete this walkthrough, you will need:
   
 - Ausreichende Berechtigungen (mindestens die Berechtigung "Anzeigen"), um auf die Excel Web Services auf dem Computer zugreifen zu können, auf dem sich SharePoint Server 2010 befindet. 
     
-    > **Hinweis:** Weitere Informationen zu Arbeitsmappenberechtigungen finden Sie weiter unten im Abschnitt "Arbeitsmappenberechtigungen". 
+    > [!NOTE] 
+    > Weitere Informationen zu Arbeitsmappenberechtigungen finden Sie weiter unten im Abschnitt „Arbeitsmappenberechtigungen“. 
+
 - Eine auf einem lokalen Laufwerk oder in einer lokalen SharePoint-Dokumentbibliothek installierte Beispiel-Arbeitsmappe. 
     
   
 - Einen vertrauenswürdigen Speicherort zum Speichern von Arbeitsmappen, auf die Sie mithilfe der Excel Web Services zugreifen möchten. Wenn die Arbeitsmappen nicht an einem vertrauenswürdigen Speicherort gespeichert sind, führen die Excel Web Services-Aufrufe zum Öffnen der Arbeitsmappe zu einem Fehler. Bei dieser exemplarischen Vorgehensweise wird davon ausgegangen, dass sich die Arbeitsmappe auf dem lokalen Computer befindet. 
     
-    > **Hinweis:** Informationen zum Festlegen eines vertrauenswürdigen Speicherorts finden Sie unter  [Vorgehensweise: Aufbauen einer Vertrauensstellung zu einem Speicherort](how-to-trust-a-location.md) und [Vorgehensweise: Aufbauen einer Vertrauensstellung zu Arbeitsmappen mit Skript](http://msdn.microsoft.com/library/79ab6ced-7a0c-4275-b852-bb246fc6be57%28Office.15%29.aspx). 
+    > [!NOTE] 
+    > Informationen zum Festlegen eines vertrauenswürdigen Speicherorts finden Sie unter [Gewusst wie: Festlegen eines vertrauenswürdigen Speicherorts](how-to-trust-a-location.md) und unter [Gewusst wie: Festlegen von vertrauenswürdigen Speicherorten für Arbeitsmappen mithilfe von Skripts](http://msdn.microsoft.com/library/79ab6ced-7a0c-4275-b852-bb246fc6be57%28Office.15%29.aspx). 
+
 - Erstellen der Arbeitsmappe mithilfe von Excel.
     
   
@@ -74,46 +78,16 @@ Die Arbeitsmappe, die in diesem Beispiel verwendet wird, trägt den Namen "Sheet
   
 - Für die übrigen Excel Web Services-Methoden benötigt der Aufrufer die Berechtigung "Anzeigen" (in Microsoft SharePoint Foundation) oder "Lesen" (auf einer Dateifreigabe ) für die Arbeitsmappe.
     
-    > **Hinweis:** Weitere Informationen zum Festlegen von Berechtigungen finden Sie in der Dokumentation zu SharePoint Foundation. 
+    > [!NOTE] 
+    > Weitere Informationen zum Festlegen von Berechtigungen finden Sie in der Dokumentation zu SharePoint Foundation. 
 
 ## <a name="see-also"></a>Siehe auch
 
-
-#### <a name="concepts"></a>Konzepte
-
-
-  
-    
-    
- [Accessing the SOAP API](accessing-the-soap-api.md)
-  
-    
-    
- [Excel Services Alerts](excel-services-alerts.md)
-  
-    
-    
- [Excel Services Known Issues and Tips](excel-services-known-issues-and-tips.md)
-  
-    
-    
- [Loop-Back SOAP Calls and Direct Linking](loop-back-soap-calls-and-direct-linking.md)
-#### <a name="other-resources"></a>Sonstige Ressourcen
-
-
-  
-    
-    
- [Step 1: Creating the Web Service Client Project](step-1-creating-the-web-service-client-project.md)
-  
-    
-    
- [Step 2: Adding a Web Reference](step-2-adding-a-web-reference.md)
-  
-    
-    
- [Step 3: Accessing the Web Service](step-3-accessing-the-web-service.md)
-  
-    
-    
- [Step 4: Building and Testing the Application](step-4-building-and-testing-the-application.md)
+- [Zugriff auf die SOAP-API](accessing-the-soap-api.md)
+- [Excel Services Alerts](excel-services-alerts.md)
+- [Excel Services Known Issues and Tips](excel-services-known-issues-and-tips.md)
+- [Loop-Back von SOAP-Aufrufen und Direct Linking](loop-back-soap-calls-and-direct-linking.md)
+- [Schritt 1: Erstellen des Webdienst-Client-Projekts](step-1-creating-the-web-service-client-project.md)
+- [Step 2: Adding a Web Reference](step-2-adding-a-web-reference.md)
+- [Step 3: Accessing the Web Service](step-3-accessing-the-web-service.md)
+- [Step 4: Building and Testing the Application](step-4-building-and-testing-the-application.md)

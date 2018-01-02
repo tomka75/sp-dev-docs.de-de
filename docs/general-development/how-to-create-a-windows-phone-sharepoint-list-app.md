@@ -3,11 +3,11 @@ title: Erstellen einer Windows Phone SharePoint-Listen-App
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3e40c475-f4c1-4a4f-a3e5-1a55f814d272
-ms.openlocfilehash: 6d3a9f1f13f5c84a4a4260a7a68edfba6cef1264
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: e70c2f0dedfc629f770616e67e306791e4576e27
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-a-windows-phone-sharepoint-list-app"></a>Erstellen einer Windows Phone SharePoint-Listen-App
 Erstellen Sie eine Windows Phone-App in Visual Studio basierend auf der Vorlage "Windows Phone - SharePoint-Listenanwendung". Installieren von Windows Phone SharePoint SDK stellt zwei SharePoint-Anwendung für Windows Phone-Vorlagen zur Verfügung Sie in Visual Studio 2010 oder Visual Studio 2010 Express für Windows Phone. (Siehe  [Vorgehensweise: Einrichten einer Umgebung für die Entwicklung von mobilen Anwendungen für SharePoint](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md)). Mit der Vorlage Windows Phone SharePoint List Application können Sie die Schritte eines Assistenten zum Erstellen einer funktionalen Windows Phone-app ausführen, die zugreifen und Bearbeiten von Daten in einer SharePoint-Liste.
@@ -51,7 +51,9 @@ In der Windows Phone-SharePoint-Listen-app können Sie die meisten der Listen zu
   
 3. Klicken Sie im Dialogfeld **Neues Projekt** den Knoten **Visual c#**, und wählen Sie dann den Knoten **für Fenster Phone Silverlight**. (Stellen Sie sicher, dass die Zielversion .NET Framework 4 festgelegt ist.)
     
-    > **Hinweis:** Die im Rahmen des Windows Phone SharePoint SDK installierten Vorlagen eignen sich nur für C#-Projekte. Für Visual Basic-Projekte sind die Vorlagen nicht verfügbar. 
+    > [!NOTE]
+    > Die im Rahmen des Windows Phone SharePoint SDK installierten Vorlagen eignen sich nur für C#-Projekte. Für Visual Basic-Projekte sind die Vorlagen nicht verfügbar. 
+
 4. Wählen Sie im Bereich **Vorlagen** die Vorlage **Windows Phone - SharePoint-Listenanwendung** aus, und geben Sie dem Projekt einen Namen, wie z. B. ContosoSPListApp.
     
   
@@ -97,10 +99,14 @@ In der Windows Phone-SharePoint-Listen-app können Sie die meisten der Listen zu
   
 14. Wählen Sie **Weiter**. Der Assistent zeigt die Felder an, die mit der ausgewählten Liste auf der SharePoint-Website verknüpft sind.
     
-    > **Hinweis:** Benutzerdefinierte Felder können im Assistenten für SharePoint-Listen für mobile Geräte nicht ausgewählt werden. Sie können jedoch benutzerdefinierten Code zum Zugriff auf jedes beliebige benutzerdefinierte Feld schreiben. Ein Feld kann nicht mit seinem Inhaltstyp verknüpft werden. Aber wenn für die Liste mehrere Inhaltstypen aktiviert sind, können alle Felder von Entwicklern in ihren Phone-Apps verwendet werden. 
+    > [!NOTE]
+    > Benutzerdefinierte Felder können im Assistenten für SharePoint-Listen für mobile Geräte nicht ausgewählt werden. Sie können jedoch benutzerdefinierten Code zum Zugriff auf jedes beliebige benutzerdefinierte Feld schreiben. Ein Feld kann nicht mit seinem Inhaltstyp verknüpft werden. Aber wenn für die Liste mehrere Inhaltstypen aktiviert sind, können alle Felder von Entwicklern in ihren Phone-Apps verwendet werden. 
+
 15. Aktivieren Sie das Kontrollkästchen neben jedem Feld, das in der Liste enthalten sein, wie es in Ihrer Windows Phone-app angezeigt werden sollen.
     
-    > **Hinweis:** Listenfelder, die in SharePoint Server als Informationen erfordernd vorgesehen sind, sind bereits ausgewählt. Sie können nicht im Assistenten gelöscht werden. 
+    > [!NOTE]
+    > Listenfelder, die in SharePoint Server als Informationen erfordernd vorgesehen sind, sind bereits ausgewählt. Sie können nicht im Assistenten gelöscht werden. 
+
 16. Wählen Sie **Weiter**. Der Assistent bietet Ihnen die Möglichkeit, die Reihenfolge der Felder anzugeben, die Sie im vorherigen Schritt ausgewählt haben.
     
   
@@ -206,7 +212,7 @@ Beachten Sie die **Bearbeiten** und **Löschen von** Schaltflächen auf der Anwe
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15Createwinphoneapp_addlresources"> </a>
 
 

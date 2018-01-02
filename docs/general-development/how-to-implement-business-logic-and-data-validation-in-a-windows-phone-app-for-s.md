@@ -3,11 +3,11 @@ title: "Implementieren von Geschäftslogik und Datenüberprüfung in einer Windo
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: fbbedc38-9651-4cd6-b523-d93cbf1cd39d
-ms.openlocfilehash: 1d122bef142048a6175d3e6c6a9a83bb34f702be
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 2c555c12c46f2b1564033dcd3d497a5d1f66b124
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="implement-business-logic-and-data-validation-in-a-windows-phone-app-for-sharepoint"></a>Implementieren von Geschäftslogik und Datenüberprüfung in einer Windows Phone-App für SharePoint
 
@@ -28,10 +28,8 @@ Implementieren Sie Datenvalidierung in einer Windows Phone-App, die mithilfe der
 
 Einige Datentypen für Felder in SharePoint-Listen sind standardmäßig einfache Formatierung oder Gültigkeitsprüfung zugeordnet. Wenn Sie eingeben eine ungültige URL für ein Feld basierend auf dem Feld Hyperlink oder Bild, geben Sie in einer SharePoint-Liste, und versuchen, die Änderungen zu speichern, eine Meldung angezeigt, die angibt, dass die eingegebene Adresse ungültig ist. Wenn Sie einen Kundennamen als einen Wert eingeben Feldtyp für ein Feld basierend auf Datum und Uhrzeit, eine Meldung leiten Sie ein Datum in einem gültigen Bereich für das Feld eingeben.
   
-    
-    
-
-> **Hinweis:** Die Überprüfung der Datumseingabe erfolgt unter Berücksichtigung des SharePoint-Datumsformats. Wenn das Datumsformat des Gebietsschemas des Smartphones erforderlich ist, passen Sie das Feld an und fügen Sie die entsprechenden Prüfungen hinzu. 
+> [!NOTE]
+> Die Überprüfung der Datumseingabe erfolgt unter Berücksichtigung des SharePoint-Datumsformats. Wenn das Datumsformat des Gebietsschemas des Smartphones erforderlich ist, passen Sie das Feld an und fügen Sie die entsprechenden Prüfungen hinzu. 
   
     
     
@@ -92,10 +90,8 @@ Jedoch einige Felder möglicherweise keine Benachrichtigungen für ungültige Da
 
 You can validate data entered by users of your Windows Phone app in several ways. A project created by using the Windows Phone SharePoint List Application template includes classes that serve as intermediaries between the forms (that is, the views) of the data in the Windows Phone app (for example, the EditForm.xaml file) and the data itself in the SharePoint list on which the app is based. These classes can be considered implementations of the ViewModel component of the  [Model-View-ViewModel design pattern](http://blogs.msdn.com/b/johngossman/archive/2005/10/08/478683.aspx) (Figure 2). (For more information about how the Windows Phone SharePoint List Application template conforms to the MVVM software design pattern, see [Architektur der Vorlage Windows Phone SharePoint-Liste-Anwendung](architecture-of-the-windows-phone-sharepoint-list-application-template.md).)
   
-    
-    
-
-> **Hinweis:** Die SharePoint-Listenvorlagen enthalten keine standardmäßigen Überprüfungen (wie z. B. den Prozentsatz des Abschlusses in einer SharePoint-Aufgabenliste, die vorherige Überprüfung in einer Team-Diskussionsliste und die SP-Dezimalfeld-Typenüberprüfung), aber Sie können solche Überprüfungen implementieren. 
+> [!NOTE]
+> Die SharePoint-Listenvorlagen enthalten keine standardmäßigen Überprüfungen (wie z. B. den Prozentsatz des Abschlusses in einer SharePoint-Aufgabenliste, die vorherige Überprüfung in einer Team-Diskussionsliste und die SP-Dezimalfeld-Typenüberprüfung), aber Sie können solche Überprüfungen implementieren. 
   
     
     
@@ -304,7 +300,7 @@ The validation logic in this sample enforces given business rules by indicating 
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15Implementbuslogic_addlresources"> </a>
 
 

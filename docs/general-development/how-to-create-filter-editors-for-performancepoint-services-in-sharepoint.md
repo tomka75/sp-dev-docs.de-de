@@ -2,11 +2,11 @@
 title: "Erstellen von Filter-Editoren für PerformancePoint-Dienste in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 0d04a5b6b0d102890b60b6fcea9e234155694213
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: ddad9b7357ee041c4eb935fd5baad915915c11f0
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-filter-editors-for-performancepoint-services-in-sharepoint"></a>Erstellen von Filter-Editoren für PerformancePoint-Dienste in SharePoint
 
@@ -99,7 +99,8 @@ Es wird empfohlen, dass Sie den Beispiel-Editor als Vorlage verwenden. Das Beisp
   
 7. Definieren Sie Steuerelemente, mit denen die Eigenschaften verfügbar gemacht werden, die die Benutzer anzeigen oder ändern sollen. Mit dem Beispiel-Filter-Editor werden zunächst Variablen für die Webserversteuerelemente deklariert, die in der Benutzeroberflächenkomponente definiert sind, wobei es sich um eine ASPX-Seite handelt. Außerdem wird mit dem Beispieleditor ein Schaltflächensteuerelement definiert, mit dem Benutzer Änderungen senden können. Anschließend ruft der Editor die  [CreateChildControls()](https://msdn.microsoft.com/library/System.Web.UI.Control.CreateChildControls.aspx) -Methode auf, um die Steuerelemente auf der Seite verfügbar zu machen.
     
-    > **Hinweis:** Im Editor wird die Programmierlogik separat von der Benutzeroberfläche definiert. Anweisungen zum Erstellen der Benutzeroberflächenkomponente würden den Rahmen dieser Dokumentation sprengen. 
+    > [!NOTE]
+    > Im Editor wird die Programmierlogik separat von der Benutzeroberfläche definiert. Anweisungen zum Erstellen der Benutzeroberflächenkomponenten würden den Rahmen dieser Dokumentation sprengen. 
 
     Im Beispiel Filter-Editor führt die Schritte 8 bis 12 in der **Page_Load** -Methode. **Page_Load** wird auch initialisieren und Überprüfen von Variablen und Steuerelemente, füllen Sie Steuerelemente und Statusinformationen für die benutzerdefinierte Filter und Hilfsprogramm-Objekte zu speichern.
     
@@ -210,8 +211,9 @@ End If
 ```
 
 
-    > **Note:**
-      > By default, users can create custom objects from PerformancePoint Dashboard Designer only. To enable users to create a custom object outside of Dashboard Designer, you must add a menu item that sends a  _CreateItem_ request to your editor from the content type in the repository. For more information, see [Editors for Custom PerformancePoint Services Objects](http://msdn.microsoft.com/library/7c5924f1-91f3-436a-9d94-2e0dc454c8cc%28Office.15%29.aspx). 
+    > [!NOTE]
+    > By default, users can create custom objects from PerformancePoint Dashboard Designer only. To enable users to create a custom object outside of Dashboard Designer, you must add a menu item that sends a  _CreateItem_ request to your editor from the content type in the repository. For more information, see [Editors for Custom PerformancePoint Services Objects](http://msdn.microsoft.com/library/7c5924f1-91f3-436a-9d94-2e0dc454c8cc%28Office.15%29.aspx). 
+
 13. Rufen Sie die zugrunde liegende Datenquelle des Filters aus dem Repository ab. Der Beispiel-Filter-Editor verwendet die **FilterRepositoryHelper.DataSourceHelper**-Eigenschaft zum Abrufen der **DataSourceConsumerHelper.GetDataSource**-Methode, mit der die Datenquelle anhand ihres Speicherorts im Repository abgerufen wird. Dies wird im folgenden Codebeispiel demonstriert.
     
 ```cs
@@ -276,7 +278,8 @@ Dim dataSourceCollection As ICollection = filterRepositoryHelper.DataSourceHelpe
     
   
 
-    > **Hinweis:** Die Anzeigedatentabelle wird von der  [DisplayValues](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ParameterDefinition.DisplayValues.aspx)-Eigenschaft zurückgegeben, und sie wird initialisiert, wenn der Filterdatenanbieter die [GetDisplayDataInternal](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Server.Extensions.CustomParameterDataProvider.GetDisplayDataInternal.aspx)-Methode aufruft. Falls die Datentabelle andere Spalten enthält, können Sie andere Spaltenzuordnungen definieren, um zusätzliche Funktionalität anzubieten.
+    > [!NOTE]
+    > Die Anzeigedatentabelle wird von der [DisplayValues](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ParameterDefinition.DisplayValues.aspx)-Eigenschaft zurückgegeben, und sie wird initialisiert, wenn der Filterdatenanbieter die [GetDisplayDataInternal](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Server.Extensions.CustomParameterDataProvider.GetDisplayDataInternal.aspx)-Methode aufruft. Falls die Datentabelle andere Spalten enthält, können Sie andere Spaltenzuordnungen definieren, um zusätzliche Funktionalität anzubieten.
 
 ```cs
   
@@ -336,10 +339,13 @@ End If
   
 16. Initialisieren Sie den Filter, indem Sie die Abfrage des Filters ausführen und Daten aus der Datenquelle abrufen. Mit der **buttonOK_Click**-Methode im Beispiel-Filter-Editor wird die **FilterRepositoryHelper.GetParameterDisplayData**-Methode zum Initialisieren des Filters aufgerufen.
     
-    > **Hinweis:** Der Editor muss **FilterRepositoryHelper.GetParameterDisplayData** mindestens einmal aufrufen, bevor das Filterobjekt aktualisiert wird.
+    > [!NOTE]
+    > Der Editor muss **FilterRepositoryHelper.GetParameterDisplayData** mindestens einmal aufrufen, bevor das Filterobjekt aktualisiert wird.
+
 17. Aktualisieren Sie den Filter mit benutzerdefinierten Änderungen. Mit der **buttonOK_Click**-Methode im Beispiel-Filter-Editor wird die **FilterRepositoryHelper.Update**-Methode zum Aktualisieren der Eigenschaften  [Name](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx) , [Description](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Description.aspx) und [DataSourceLocation](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Filter.DataSourceLocation.aspx) des Filters im Repository aufgerufen. Darüber hinaus werden mit **buttonOK_Click** die Inhalte der Steuerelemente überprüft und Statusinformationen für den benutzerdefinierten Filter und das Hilfsobjekt abgerufen.
     
-    > **Hinweis:** Benutzer können die Eigenschaften [Name](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx), [Description](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Description.aspx) und [Owner](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Owner.aspx) (**Verantwortliche Person**) eines benutzerdefinierten Objekts festlegen und benutzerdefinierte Objekte direkt im Dashboard-Designer und im PerformancePoint-Dienste-Repository löschen. 
+    > [!NOTE]
+    > Benutzer können die Eigenschaften [Name](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx), [Description](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Description.aspx) und [Owner](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Owner.aspx) (**Verantwortliche Person**) eines benutzerdefinierten Objekts festlegen und benutzerdefinierte Objekte direkt im Dashboard-Designer und im PerformancePoint-Dienste-Repository löschen. 
 
 ## <a name="code-example-create-retrieve-and-update-custom-performancepoint-services-filters-in-sharepoint"></a>Codebeispiel: Erstellen, Abrufen und Aktualisieren von benutzerdefinierten PerformancePoint-Dienste-Filtern in SharePoint
 <a name="bk_example"> </a>
@@ -1171,7 +1177,7 @@ Nach dem Erstellen Sie eines Filter-Editors (einschließlich der Benutzeroberfl�
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addResources"> </a>
 
 

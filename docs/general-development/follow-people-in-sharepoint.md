@@ -3,11 +3,11 @@ title: Folgen von Personen in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 0fa2e235-63d0-41b1-9eed-4aeb2f59a14d
-ms.openlocfilehash: e850daf64b3a60d8737e88cbae1408a90eb34c65
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: a381aff03097d52cf611cc93adb49904155ae376
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="follow-people-in-sharepoint"></a>Folgen von Personen in SharePoint
 Informationen Sie zu allgemeinen Programmieraufgaben für das Folgen von Personen in SharePoint.
@@ -49,20 +49,16 @@ Als bewährte Methode bei der Entwicklung von SharePoint wann immer möglich ver
     
 Jede API enthält ein Manager-Objekt, das Sie verwenden, um wichtige Aufgaben für das Folgen von Personen auszuführen.
   
-    
-    
-
-> **Hinweis:** Die gleichen APIs werden verwendet, um Inhalten zu folgen. Einen Überblick über Aufgaben beim Folgen von Inhalten finden Sie unter [Folgen von Inhalten in SharePoint](follow-content-in-sharepoint.md).
+> [!NOTE]
+> Die gleichen APIs werden verwendet, um Inhalten zu folgen. Einen Überblick über Aufgaben beim Folgen von Inhalten finden Sie unter [Folgen von Inhalten in SharePoint](follow-content-in-sharepoint.md).
   
     
     
 
 Tabelle 1 zeigt den Manager und andere Schlüsselobjekte (oder REST-Ressourcen) in den APIs und die Klassenbibliothek (oder Zugriffspunkt), in dem Sie diese finden können.
   
-    
-    
-
-> **Hinweis:** Die Objektmodelle für Silverlight und den mobilen Client sind nicht explizit in Tabelle 1 oder Tabelle 2 enthalten, da sie dieselben Kernfunktionen wie das .NET-Clientobjektmodell bieten und die gleichen Signaturen verwenden. Das Silverlight-Clientobjektmodell ist in Microsoft.SharePoint.Client.UserProfiles.Silverlight.dll definiert und das Objektmodell für den mobilen Client in Microsoft.SharePoint.Client.UserProfiles.Phone.dll. 
+> [!NOTE]
+> Die Objektmodelle für Silverlight und den mobilen Client sind nicht explizit in Tabelle 1 oder Tabelle 2 enthalten, da sie dieselben Kernfunktionen wie das .NET-Clientobjektmodell bieten und die gleichen Signaturen verwenden. Das Silverlight-Clientobjektmodell ist in „Microsoft.SharePoint.Client.UserProfiles.Silverlight.dll“ definiert, das Objektmodell für mobile Clients in „Microsoft.SharePoint.Client.UserProfiles.Phone.dll“. 
   
     
     
@@ -83,10 +79,8 @@ Tabelle 1 zeigt den Manager und andere Schlüsselobjekte (oder REST-Ressourcen) 
 
 In Tabelle 2 sind allgemeine Programmieraufgaben für folgende Personen und die Elemente, mit denen Sie diese ausführen. Elemente werden aus der .NET-Clientobjektmodell (CSOM), JavaScript-Objektmodell (JSOM), REST-Dienst und Serverobjektmodell (SSOM).
   
-    
-    
-
-> **Hinweis:** Die gleichen APIs werden verwendet, um Inhalten zu folgen. Einen Überblick über Aufgaben beim Folgen von Inhalten finden Sie unter [Folgen von Inhalten in SharePoint](follow-content-in-sharepoint.md).
+> [!NOTE]
+> Die gleichen APIs werden verwendet, um Inhalten zu folgen. Einen Überblick über Aufgaben beim Folgen von Inhalten finden Sie unter [Folgen von Inhalten in SharePoint](follow-content-in-sharepoint.md).
   
     
     
@@ -143,7 +137,7 @@ Wenn ein Benutzer auf die Seite **Personen, die ich Folge** öffnet, wird die [P
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addResources"> </a>
 
 

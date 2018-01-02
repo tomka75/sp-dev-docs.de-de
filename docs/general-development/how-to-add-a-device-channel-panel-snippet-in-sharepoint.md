@@ -3,11 +3,11 @@ title: "Hinzufügen eines Gerätekanalbereich-Codeausschnitts in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 612780a8-6267-49f6-a32d-33600bb5f6b4
-ms.openlocfilehash: 8a86abb4f4166da8b63d1ad3c4ec8431ce1ae8fa
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: b5a208a87ee7b8af55fa6c6c1c96a0ae11df5de8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="add-a-device-channel-panel-snippet-in-sharepoint"></a>Hinzufügen eines Gerätekanalbereich-Codeausschnitts in SharePoint
 
@@ -73,7 +73,9 @@ Wie alle Ausschnitte fügen Sie einen Gerät Channel Systemsteuerung Ausschnitt 
     
     Im Abschnitt mit dem Namen **Wichtig** enthält die Eigenschaften, die-Taste, um die Funktionsweise dieser bestimmten Ausschnitts sind. Für ein Gerät Channel-Bereich ist die **IncludedChannels**-Eigenschaft die wichtigste. Geben Sie für diese Eigenschaft den Alias des einzelnen Gerätekanal, die Sie den Inhalt im Kanal dieses Gerät anzeigen möchten. Wenn Sie mehr als einen Alias eingeben, trennen Sie die einzelnen durch ein Komma.
     
-    > **Hinweis:** Wenn Sie den Alias eines Kanals in der Liste „Gerätekanäle“ bearbeiten, müssen Sie den Alias manuell suchen und alle Vorkommen in Ihren Designdateien aktualisieren. Zudem müssen Sie die **IncludedChannels**-Eigenschaft für jeden Gerätekanalbereich aktualisieren, der den Alias verwendet.
+    > [!NOTE]
+    > Wenn Sie den Alias eines Kanals in der Liste „Gerätekanäle“ bearbeiten, müssen Sie den Alias manuell suchen und alle Vorkommen in Ihren Designdateien aktualisieren. Zudem müssen Sie die **IncludedChannels**-Eigenschaft für jeden Gerätekanalbereich aktualisieren, der den Alias verwendet.
+
 8. Nachdem Sie alle anderen Eigenschaften konfiguriert haben, wählen Sie **Aktualisieren**. Den HTML-Codeausschnitt auf der linken Seite der Seite aktualisiert, damit das Markup Ihre benutzerdefinierten Einstellungen widerspiegelt. Sie können immer auf alle Eigenschaften auf die Standardeinstellungen zurück **Zurücksetzen** auswählen.
     
   
@@ -106,10 +108,8 @@ Wie alle Ausschnitte fügen Sie einen Gerät Channel Systemsteuerung Ausschnitt 
 
 Die beiden wichtigsten Teile eines Ausschnitts Gerät Channel Systemsteuerung sind die **IncludedChannels** -Eigenschaft und die **<div>**, in dem `class="DefaultContentBlock"`. Standardmäßig ist die **IncludedChannels** -Eigenschaft leer. Geben Sie im Abschnitt **wichtige** des Eigenschaftenrasters Aliase, durch Kommas getrennt, der die Gerätekanäle, die Sie den Inhalt in diesem Bereich anzeigen möchten.
   
-    
-    
-
-> **Hinweis:** Wenn Sie einen Alias in der Liste „Gerätekanäle“ ändern, müssen Sie alle Vorkommen des Alias im Markup ändern, einschließlich in der **IncludedChannels**-Eigenschaft für jeden Gerätekanalbereich, der den Alias verwendet.
+> [!NOTE]
+> Wenn Sie einen Alias in der Liste „Gerätekanäle“ ändern, müssen Sie alle Vorkommen des Alias im Markup ändern, einschließlich in der **IncludedChannels**-Eigenschaft für jeden Gerätekanalbereich, der den Alias verwendet.
   
     
     
@@ -139,7 +139,7 @@ Die **<div>**, in dem `class="DefaultContentBlock"` ersetzt werden soll, mit dem
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="AdditionalResources"> </a>
 
 

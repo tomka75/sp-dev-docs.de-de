@@ -3,11 +3,11 @@ title: "BDC-Modell-Schemareferenz für SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 979a5ffc-f033-4e72-b2d1-11d8cb1b294a
-ms.openlocfilehash: 712bc6e2413be359159f6bc7389ac0d05c3ded5d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: dd78f6a347894eff60149df672d251cfa4c26bd7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="bdc-model-schema-reference-for-sharepoint"></a>BDC-Modell-Schemareferenz für SharePoint
 Enthält die Referenzdokumentation für das BDC-Modell-Schema (BDCMetadata.xsd), die Sie zum Erstellen von externer Inhaltstypen in SharePoint verwenden können. [BDCMetadata.xsd](http://schemas.microsoft.com/windows/2007/BusinessDataCatalog)
@@ -23,7 +23,7 @@ Enthält einen Zugriffssteuerungseintrag (ACE), der Zugriffsrechte für das übe
   
     
     
-Weitere Informationen zu Business Connectivity Services und zur Sicherheit finden Sie unter  [Business Connectivity Services-Sicherheit (Übersicht)](http://technet.microsoft.com/en-us/library/ee661734%28office.14%29.aspx).
+Weitere Informationen zu Business Connectivity Services und zur Sicherheit finden Sie unter  [Business Connectivity Services-Sicherheit (Übersicht)](http://technet.microsoft.com/de-DE/library/ee661734%28office.14%29.aspx).
   
     
     
@@ -1206,9 +1206,9 @@ Gibt einen Bezeichner eines externen Inhaltstyps an.
  **Schema:** BDCMetadata
   
     
-    
-
-> **Hinweis:** Der Business Data Connectivity (BDC)-Dienst ermöglicht die Zuordnung der Bezeichner zu Feldern mit Datentypen, die Nullwerte zulassen. Für primäre Bezeichner verursacht BDC jedoch einen Fehler, wenn der Wert dieser Bezeichner **null** ist. 
+> [!NOTE]
+> 
+> Der Business Data Connectivity (BDC)-Dienst ermöglicht die Zuordnung der Bezeichner zu Feldern mit Datentypen, die Nullwerte zulassen. Für primäre Bezeichner verursacht BDC jedoch einen Fehler, wenn der Wert dieser Bezeichner **null** ist. 
   
     
     
@@ -2649,7 +2649,7 @@ In den folgenden Abschnitten werden Attribute, untergeordnete und übergeordnete
 |**UpdaterField** <br/> |Optional.  <br/>  Gibt an, ob der **TypeDescriptor** ein Feld für **MethodInstances** vom Typ **Updater** darstellt, die in der **Method** enthalten sind, die den **Parameter** enthält, der wiederum den **TypeDescriptor** enthält. Wenn das Attribut angegeben ist, darf kein **PreUpdaterField**-Attribut angegeben werden. <br/> Standardwert: **false** <br/> Attributtyp: **Boolean** <br/> |
 |**PreUpdaterField** <br/> |Optional.  <br/>  Gibt an, ob in der durch den **TypeDescriptor** dargestellten Datenstruktur der letzte Wert gespeichert wird, der vom externen System für ein Feld für **MethodInstances** vom Typ **Updater** empfangen wird. Wenn das Attribut angegeben ist, darf kein **UpdaterField**-Attribut angegeben werden. <br/> Standardwert: **false** <br/> Attributtyp: **Boolean** <br/> |
 |**Significant** <br/> |Optional.  <br/>  Gibt an, ob in der durch diesen **TypeDescriptor** dargestellten Datenstruktur gespeicherte Werte bei der Berechnung eines Hashcodes oder beim Vergleichen von in den Datenstrukturen gespeicherten Werten enthalten sind. Beispielsweise wird ein **TypeDescriptor**, der den Nachnamen eines Kunden darstellt, berücksichtigt, wenn ermittelt wird, ob ein Datensatz geändert wurde, und ist daher signifikant. Der **TypeDescriptor**, der das Datum der letzten Änderung des Kundendatensatzes darstellt, wird normalerweise nicht berücksichtigt, wenn ermittelt wird, ob ein Datensatz geändert wurde, und ist daher nicht signifikant. <br/> Standardwert: **true** <br/> Attributtyp: **Boolean** <br/> |
-|**Name** <br/> |Erforderlich.  <br/> Der Name für den **TypeDescriptor**.  <br/> Attributtyp: **String** <br/> **Hinweis:** Der Name für einen **TypeDescriptor** sollte nicht die Sonderzeichen "/" (Schrägstrich), "." (Punkt) oder "[" (öffnende eckige Klammer) enthalten.          |
+|**Name** <br/> |Erforderlich.  <br/> Der Name für den **TypeDescriptor**.  <br/> Attributtyp: **String** <br/> **Hinweis:** Der Name für einen **TypeDescriptor** sollte nicht die Sonderzeichen „/“ (Schrägstrich), „.“ (Punkt) oder „[“ (öffnende eckige Klammer) enthalten.          |
 |**DefaultDisplayName** <br/> |Optional.  <br/> Der Anzeigename für den **TypeDescriptor**.  <br/> Attributtyp: **String** <br/> |
 |**IsCached** <br/> |Optional.  <br/> Gibt an, ob der **TypeDescriptor** häufig verwendet wird. <br/> Standardwert: **true** <br/> Attributtyp: **Boolean** <br/> |
    
@@ -2734,7 +2734,7 @@ Keine
 | [TypeDescriptor](http://msdn.microsoft.com/library/30e38d7f-af18-20ec-45ab-0bece071ce67.aspx) <br/> ||
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkmk_Addres"> </a>
 
 

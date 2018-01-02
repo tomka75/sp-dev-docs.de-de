@@ -3,11 +3,11 @@ title: Designpakete des SharePoint-Entwurfs-Managers
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 85ad1993-4d75-4806-9097-b934865a899a
-ms.openlocfilehash: 7f8998bf6ef9f4eca0592c498d377a2920611976
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 7fd5fa67e4e93d3f3110d53ece58fd1ad5f668e3
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-design-manager-design-packages"></a>Designpakete des SharePoint-Entwurfs-Managers
 Informationen zum Erstellen und Exportieren des visuellen Designs einer SharePoint-Websitesammlung als Paket
@@ -58,10 +58,8 @@ In Abbildung 1 wird die Option im Entwurfs-Manager gezeigt, mit der das Designp
 Alternativ können Sie ein Designpaket aus einer anderen SharePoint-Websitesammlung über den Entwurfs-Manager auf der Homepage importieren, oder indem Sie **Designpaket importieren** unter **Websiteeinstellungen** auswählen.
   
     
-    
-
-    
-> **Hinweis:** Weitere Informationen zum Entwurfs-Manager sowie zum Veröffentlichungsprozess finden Sie unter [Overview of Design Manager in SharePoint](overview-of-design-manager-in-sharepoint.md). 
+> [!NOTE]
+> Weitere Informationen zum Entwurfs-Manager und zum Veröffentlichungsvorgang finden Sie unter [Übersicht über den Entwurfs-Manager in SharePoint](overview-of-design-manager-in-sharepoint.md). 
   
     
     
@@ -123,8 +121,8 @@ Das Designpaket (WSP-Datei) enthält verschiedene Dateien, wenn es über den Ent
 |Inhaltstypen, Felder  <br/> | Inhaltstypen, die vom Inhaltstyp "Seite" erben <br/> |
 |Listen  <br/> | Design Gallery <br/>  Durchkomponierte Looks <br/>  Gerätekanäle <br/> |
    
-
-> **Hinweis:** In SharePoint werden ausschließlich angepasste Dateien in Designpakete aufgenommen. Die meisten standardmäßigen, nicht angepassten Systemdateien werden vom Packprozess nicht exportiert. 
+> [!NOTE]
+> In SharePoint werden ausschließlich angepasste Dateien in Designpakete aufgenommen. Die meisten standardmäßigen, nicht angepassten Systemdateien werden vom Packprozess nicht exportiert. 
   
     
     
@@ -161,7 +159,7 @@ Beim Importieren eines Designpakets wird keine alternative CSS-URL festgelegt, s
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="addresources"> </a>
 
 

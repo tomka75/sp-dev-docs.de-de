@@ -3,11 +3,11 @@ title: Erstellen einer Gestaltungsvorlagen-Vorschaudatei in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 6825518d-eeb2-40b0-8a5b-897025f13796
-ms.openlocfilehash: 0b0b4cfcc06b8b72e30d92d80b568496d990b44a
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: fd036ac7d5069f7f3652f04ad50edcaa982485de
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-a-master-page-preview-file-in-sharepoint"></a>Erstellen einer Gestaltungsvorlagen-Vorschaudatei in SharePoint
 
@@ -89,9 +89,8 @@ In der Gestaltungsvorlagenkatalog-Vorschaudatei:
 
 -  _HTML_ ist der HTML-Abschnitt, der die HTML-Struktur der Vorschau definiert.
     
-  
-
-> **Hinweis:** Alle Dimensionswerte sollten als relative Einheiten in der Vorschaudatei der Masterseite angegeben werden. Beispielsweise können Dimensionswerte als Prozentsatz oder als em-Maßeinheit angegeben werden. Weitere Informationen zu em-Maßeinheiten finden Sie im Abschnitt [5.1.1. Font-relative lengths: the 'em', 'ex', 'ch', 'rem' units](http://www.w3.org/TR/2012/WD-css3-values-20120308/#font-relative-lengths) im Arbeitsentwurf „W3C CSS Values and Units Module Level 3“.
+> [!NOTE]
+> Alle Dimensionswerte sollten als relative Einheiten in der Vorschaudatei der Masterseite angegeben werden. Beispielsweise können Dimensionswerte als Prozentsatz oder als em-Maßeinheit angegeben werden. Weitere Informationen zu em-Maßeinheiten finden Sie im Abschnitt [5.1.1. Font-relative lengths: the 'em', 'ex', 'ch', 'rem' units](http://www.w3.org/TR/2012/WD-css3-values-20120308/#font-relative-lengths) im Arbeitsentwurf „W3C CSS Values and Units Module Level 3“.
   
     
     
@@ -227,12 +226,14 @@ Um eine Gestaltungsvorlagen-Vorschaudatei zu erstellen, verwenden Sie eine vorha
   
 5. Verwenden Sie den Assistenten **Erscheinungsbild ändern**, um die Vorschau der Masterseite mit Ihrem Websiteinhalt zu testen.
     
-    > **Hinweis:** Sie können auch ein Design erstellen, das die neue Masterseite verwendet, indem Sie der Liste „Zusammengesetzte Designs“ ein Element hinzufügen. Das Design steht in der Design Gallery (die erste Seite des Assistenten **Erscheinungsbild ändern**) zur Verfügung. Weitere Informationen finden Sie im Verfahren[Bereitstellen eines Designs mithilfe der Benutzeroberfläche](how-to-deploy-a-custom-theme-in-sharepoint.md#section2) in [Vorgehensweise: Bereitstellen eines benutzerdefinierten Designs in SharePoint](how-to-deploy-a-custom-theme-in-sharepoint.md). 
+    > [!NOTE]
+    > Sie können auch ein Design erstellen, das die neue Masterseite verwendet, indem Sie der Liste „Zusammengesetzte Designs“ ein Element hinzufügen. Das Design steht in der Design Gallery (die erste Seite des Assistenten **Erscheinungsbild ändern**) zur Verfügung. Weitere Informationen finden Sie im Verfahren[Bereitstellen eines Designs mithilfe der Benutzeroberfläche](how-to-deploy-a-custom-theme-in-sharepoint.md#section2) in [Vorgehensweise: Bereitstellen eines benutzerdefinierten Designs in SharePoint](how-to-deploy-a-custom-theme-in-sharepoint.md). 
+
 6. Wiederholen Sie die Schritte 3 bis 5, falls erforderlich.
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

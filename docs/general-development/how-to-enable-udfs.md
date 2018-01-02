@@ -5,21 +5,18 @@ keywords: how to,howdoi,howto,UDF list
 f1_keywords: how to,howdoi,howto,UDF list
 ms.prod: sharepoint
 ms.assetid: 8c1af2eb-bb22-45e1-82de-a2b4b53d7a26
-ms.openlocfilehash: 6eb51af89ab003e507ec9acb2f81a70bf843ee99
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: e413bb036e33d905751d7fae0066242d6910c0b5
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="enable-udfs"></a>Aktivieren von UDFs
 
 Jeder vertrauenswürdiger Excel Services-Speicherort in dem Anbieter für gemeinsame Dienste verfügt ein **AllowUdfs**-Flag.
   
-    
-    
-
-
-> **Hinweis:** Das **AllowUdfs**-Flag wird durch die Option **Benutzerdefinierte Funktionen sind zugelassen** auf der Seite „Vertrauenswürdige Dateispeicherorte von Excel Services“ bezeichnet.
+> [!NOTE]
+> Das **AllowUdfs**-Flag wird durch die Option **Benutzerdefinierte Funktionen sind zugelassen** auf der Seite „Vertrauenswürdige Dateispeicherorte von Excel Services“ bezeichnet.
   
     
     
@@ -67,7 +64,9 @@ To do the following steps, you need a computer that has Microsoft SharePoint Ser
   
 7. Klicken Sie unter **Assemblyspeicherort** auf **Lokale Datei**.
     
-    > **Hinweis:** Die Option **Lokale Datei** wird in künftigen Versionen von Excel Services durch **Dateipfad** ersetzt. Wählen Sie dann stattdessen „Dateipfad“ aus. Wenn **Dateipfad** angezeigt wird, wählen Sie dies aus. 
+    > [!NOTE]
+  > Die Option **Lokale Datei** wird in künftigen Versionen von Excel Services durch **Dateipfad** ersetzt. Wählen Sie dann stattdessen „Dateipfad“ aus. Wenn **Dateipfad** angezeigt wird, wählen Sie dies aus.   
+  
 8. Standardmäßig sollte unter **Assembly aktivieren** das Kontrollkästchen **Assembly aktiviert** aktiviert sein.
     
   
@@ -83,7 +82,9 @@ To do the following steps, you need a computer that has Microsoft SharePoint Ser
 
 1. Open the Excel Services Add Trusted File Location page (if you are adding a new trusted location) or Excel Services Edit Trusted File Location page (if you are editing an existing trusted location). 
     
-    > **Hinweis:** Weitere Informationen zum Festlegen eines vertrauenswürdigen Speicherorts finden Sie unter [Gewusst wie: Festlegen eines vertrauenswürdigen Speicherorts](how-to-trust-a-location.md). 
+    > [!NOTE]
+    > Weitere Informationen zum Festlegen eines Speicherorts als vertrauenswürdig finden Sie unter [Gewusst wie: Festlegen eines vertrauenswürdigen Speicherorts](how-to-trust-a-location.md). 
+
 2. Wählen Sie unter **Benutzerdefinierte Funktionen zulassen** die Option **Benutzerdefinierte Funktionen sind zugelassen**, damit UDFs von einer Arbeitsmappe in diesem vertrauenswürdigen Speicherort aufgerufen werden können.
     
   
@@ -93,46 +94,12 @@ To do the following steps, you need a computer that has Microsoft SharePoint Ser
 
 ## <a name="see-also"></a>Siehe auch
 
-
-#### <a name="tasks"></a>Aufgaben
-
-
-  
-    
-    
- [Step 3: Deploying and Enabling UDFs](step-3-deploying-and-enabling-udfs.md)
-  
-    
-    
- [How to: Create a UDF That Calls a Web Service](how-to-create-a-udf-that-calls-a-web-service.md)
-  
-    
-    
- [How to: Trust a Location](how-to-trust-a-location.md)
-#### <a name="concepts"></a>Konzepte
-
-
-  
-    
-    
- [Walkthrough: Developing a Managed-Code UDF](walkthrough-developing-a-managed-code-udf.md)
-  
-    
-    
- [Frequently Asked Questions About Excel Services UDFs](frequently-asked-questions-about-excel-services-udfs.md)
-  
-    
-    
- [Understanding Excel Services UDFs](understanding-excel-services-udfs.md)
-  
-    
-    
- [Excel Services Alerts](excel-services-alerts.md)
-  
-    
-    
- [Excel Services Known Issues and Tips](excel-services-known-issues-and-tips.md)
-  
-    
-    
- [Excel Services Best Practices](excel-services-best-practices.md)
+- [Schritt 3: Bereitstellen und Aktivieren von UDFs](step-3-deploying-and-enabling-udfs.md)
+- [How to: Create a UDF That Calls a Web Service](how-to-create-a-udf-that-calls-a-web-service.md)
+- [Gewusst wie: Festlegen eines vertrauenswürdigen Speicherorts](how-to-trust-a-location.md)
+- [Schritt für Schritt: Entwickeln eines UDF auf Basis von verwaltetem Code](walkthrough-developing-a-managed-code-udf.md)
+- [Frequently Asked Questions About Excel Services UDFs](frequently-asked-questions-about-excel-services-udfs.md)
+- [Understanding Excel Services UDFs](understanding-excel-services-udfs.md)
+- [Excel Services Alerts](excel-services-alerts.md)
+- [Excel Services Known Issues and Tips](excel-services-known-issues-and-tips.md)
+- [Excel Services Best Practices](excel-services-best-practices.md)

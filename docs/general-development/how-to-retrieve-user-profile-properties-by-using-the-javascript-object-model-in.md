@@ -3,11 +3,11 @@ title: Abrufen von Benutzerprofileigenschaften mithilfe des JavaScript-Objektmod
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c6e1ca38-134f-428a-8d21-b8b2615b161b
-ms.openlocfilehash: 364e948834758c1fda52afebd2b1648d0e726b0b
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 23aead2b760bf039faae271ad26ca138e9770244
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="retrieve-user-profile-properties-by-using-the-javascript-object-model-in-sharepoint"></a>Abrufen von Benutzerprofileigenschaften mithilfe des JavaScript-Objektmodells in SharePoint
 
@@ -33,10 +33,8 @@ Das  [PeopleManager](http://msdn.microsoft.com/library/985fd2df-0e31-6ece-b846-b
   
 Benutzerprofileigenschaften von Client-APIs sind schreibgeschützt (mit Ausnahme des Profilbilds, das Sie mithilfe der  [PeopleManager.setMyProfilePicture](http://msdn.microsoft.com/library/a4f8d745-f211-e750-4fd0-047091804683%28Office.15%29.aspx)-Methode ändern können). Wenn Sie weitere Benutzerprofileigenschaften ändern möchten, verwenden Sie das Serverobjektmodell. Weitere Informationen zum Arbeiten mit Benutzerprofilen finden Sie unter  [Arbeiten mit Benutzerprofilen in SharePoint](work-with-user-profiles-in-sharepoint.md).
   
-    
-    
-
-> **Hinweis:** Das clientseitige [UserProfile](http://msdn.microsoft.com/library/f8c4a219-fbaa-2e50-1bd5-fdc80051b33d%28Office.15%29.aspx)-Objekt enthält im Gegensatz zur serverseitigen Version nicht alle Benutzereigenschaften. Allerdings stellt die clientseitige Version die Methoden zum Erstellen einer persönlichen Website für den aktuellen Benutzer bereit. Verwenden Sie zum Abrufen die [ProfileLoader.getUserProfile](http://msdn.microsoft.com/library/8e30e811-5da1-b6d0-a8b5-befea9b22496%28Office.15%29.aspx)-Methode.
+> [!NOTE]
+> Das clientseitige [UserProfile](http://msdn.microsoft.com/library/f8c4a219-fbaa-2e50-1bd5-fdc80051b33d%28Office.15%29.aspx)-Objekt enthält im Gegensatz zur serverseitigen Version nicht alle Benutzereigenschaften. Allerdings stellt die clientseitige Version die Methoden zum Erstellen einer persönlichen Website für den aktuellen Benutzer bereit. Verwenden Sie zum Abrufen die [ProfileLoader.getUserProfile](http://msdn.microsoft.com/library/8e30e811-5da1-b6d0-a8b5-befea9b22496%28Office.15%29.aspx)-Methode.
   
     
     
@@ -131,9 +129,8 @@ Das folgende Codebeispiel erklärt, wie Sie Benutzerprofileigenschaften für ein
   
 - Erhalten Sie eine Eigenschaft von der [userProfileProperties](http://msdn.microsoft.com/library/56516666-7425-4993-222f-f745cf266e89%28Office.15%29.aspx)-Eigenschaft des [PersonProperties](http://msdn.microsoft.com/library/0274d97f-b697-f436-2aaf-f5bcf9b70df8%28Office.15%29.aspx)-Objekts. In diesem Beispiel wird die **Department**-Eigenschaft abgerufen.
     
-  
-
-> **Hinweis:** Fügen Sie den folgenden Code zwischen den **script**-Tags ein, den Sie in der Prozedur [Erstellen der Anwendungsseite](how-to-retrieve-user-profile-properties-by-using-the-javascript-object-model-in.md#bk_CreateAppPage) zur UserProfiles.aspx-Seite hinzugefügt haben. Ersetzen Sie den `domainName\\userName`-Platzhalterwert, bevor Sie den Code ausführen. (In diesem Codebeispiel wird die Code-Behind Class-Datei nicht verwenden.)
+> [!NOTE]
+> Fügen Sie den folgenden Code zwischen den **script**-Tags ein, den Sie in der Prozedur [Erstellen der Anwendungsseite](how-to-retrieve-user-profile-properties-by-using-the-javascript-object-model-in.md#bk_CreateAppPage) zur Seite „UserProfiles.aspx“ hinzugefügt haben. Ersetzen Sie den `domainName\\userName`-Platzhalterwert, bevor Sie den Code ausführen. (In diesem Codebeispiel wird die Code-Behind Class-Datei nicht verwenden.)
   
     
     
@@ -201,9 +198,8 @@ Im folgenden Codebeispiel werden die Werte einer bestimmten Gruppe von Benutzerp
   
 - Rufen Sie die Werte aus dem zurückgegebenen Array von Eigenschaftswerten ab.
     
-  
-
-> **Hinweis:** Fügen Sie den folgenden Code zwischen den **script**-Tags ein, den Sie in der Prozedur [Erstellen der Anwendungsseite](how-to-retrieve-user-profile-properties-by-using-the-javascript-object-model-in.md#bk_CreateAppPage) zur UserProfiles.aspx-Seite hinzugefügt haben. Ersetzen Sie den `domainName\\\\userName`-Platzhalterwert, bevor Sie den Code ausführen. (In diesem Codebeispiel wird die Code-Behind Class-Datei nicht verwenden.)
+> [!NOTE]
+> Fügen Sie den folgenden Code zwischen den **script**-Tags ein, den Sie in der Prozedur [Erstellen der Anwendungsseite](how-to-retrieve-user-profile-properties-by-using-the-javascript-object-model-in.md#bk_CreateAppPage) zur Seite „UserProfiles.aspx“ hinzugefügt haben. Ersetzen Sie den `domainName\\\\userName`-Platzhalterwert, bevor Sie den Code ausführen. (In diesem Codebeispiel wird die Code-Behind Class-Datei nicht verwenden.)
   
     
     
@@ -261,7 +257,7 @@ function onRequestFail(sender, args) {
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

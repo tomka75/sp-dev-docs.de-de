@@ -3,21 +3,18 @@ title: Verweisthreads und Digestthreads in sozialen SharePoint-Feeds
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 58e68fb2-ba40-4861-912f-355e119a1c41
-ms.openlocfilehash: 93a0b2fde471617bf82b4132ceaeb9df0f1ba9de
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b902efe9ba6579d534ebc15bda7a15cf7d7c4ec6
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="reference-threads-and-digest-threads-in-sharepoint-social-feeds"></a>Verweisthreads und Digestthreads in sozialen SharePoint-Feeds
 In diesem Artikel werden die Threadtypen Verweisthread und Digestthread beschrieben. Sie können in den Threadsammlungen enthalten sein, die soziale Feeds in SharePoint bilden.
 Wenn Sie einen sozialen Feed abrufen, gibt SharePoint ein Objekt des Typs [SocialFeed](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeed.aspx) zurück. Dieses Objekt enthält die Sammlung von Objekten des Typs [SocialThread](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialThread.aspx), die den Feed bilden. Diese Threads können Unterhaltungen, einzelne Mikroblogbeiträge oder Benachrichtigungen darstellen, einschließlich Ereignissen und Verweisthreads. Threads, die Unterhaltungen darstellen, werden vom Server möglicherweise als Digestthreads zurückgegeben.
   
-    
-    
-
-
-> **Hinweis:** Die API, auf die in diesem Artikel Bezug genommen wird, stammt aus dem .NET-Clientobjektmodell. Die entsprechenden Objekte in anderen APIs können anders angelegt sein. Links zu anderen themenverwandten APIs finden Sie unter [Zusätzliche Ressourcen](#bk_addresources).
+> [!NOTE]
+> Die API, auf die in diesem Artikel Bezug genommen wird, stammt aus dem .NET-Clientobjektmodell. Die entsprechenden Objekte in anderen APIs können anders angelegt sein. Links zu anderen themenverwandten APIs finden Sie unter [Zusätzliche Ressourcen](#bk_addresources).
   
     
     
@@ -56,10 +53,8 @@ Die  [PostReference](https://msdn.microsoft.com/library/Microsoft.SharePoint.Cli
     
 Nicht alle feedbezogene Aktivitäten werden in den Feed als Referenz Threads gebucht. Beispielsweise sind folgende Benachrichtigungen (beispielsweise wenn eine Person nach einem Standort gestartet wird) nicht Verweis Threads.
   
-    
-    
-
-> **Hinweis:** SharePoint führt für Inhalte in automatisch generierten Beiträgen automatisch Sicherheitskürzungen durch. Gleiches gilt für Websitezugriffe in allen Beiträgen, die auf einen Websitefeed verweisen. Mithilfe des Attributs **SecurityUris** können Sie die Sicherheitskürzung jedoch auch auf jeden beliebigen anderen Beitrag anwenden. Dazu müssen Sie lediglich die URL des Beitrags angeben. Benutzer, die keinen Zugriff auf die URL haben, erhalten den Beitrag nicht.
+> [!NOTE]
+> SharePoint führt für Inhalte in automatisch generierten Beiträgen automatisch Sicherheitskürzungen durch. Gleiches gilt für Websitezugriffe in allen Beiträgen, die auf einen Websitefeed verweisen. Mithilfe des Attributs **SecurityUris** können Sie die Sicherheitskürzung jedoch auch auf jeden beliebigen anderen Beitrag anwenden. Dazu müssen Sie lediglich die URL des Beitrags angeben. Benutzer, die keinen Zugriff auf die URL haben, erhalten den Beitrag nicht.
   
     
     
@@ -81,7 +76,7 @@ Zum Optimieren der Leistung, wenn ein Thread mehr als zwei Antworten enthält, g
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

@@ -2,11 +2,11 @@
 title: Benutzersegmentierung in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 60809bfb16706709b448ba2d0fb3849cf5a33277
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 0086b0eea8bf98348fc4fa1a6596be2543d75910
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="user-segmentation-in-sharepoint"></a>Benutzersegmentierung in SharePoint
 Zeigen Sie maßgeschneiderte Inhalte für von Ihnen definierte Benutzersegmente an – z. B. basierend auf Gebietsschema, Interessen, Geschlecht oder Empfehlungslinks –, indem Sie eine Kombination aus Ausdruckssätzen, dem Inhaltssuche-Webpart und Abfrageregeln in SharePoint verwenden.
@@ -40,7 +40,7 @@ Bevor Sie mit der Implementierung der Benutzersegmentierung in SharePoint beginn
 - Visual Studio 2012
     
   
-In diesem Artikel wird davon ausgegangen, dass Sie Erfahrung zur Entwicklung von Webparts in SharePoint verfügen. Weitere Informationen zur Entwicklung von Webparts finden Sie unter  [Baustein: Webparts](http://msdn.microsoft.com/en-us/library/ee535520%28v=office.14%29.aspx)
+In diesem Artikel wird davon ausgegangen, dass Sie Erfahrung zur Entwicklung von Webparts in SharePoint verfügen. Weitere Informationen zur Entwicklung von Webparts finden Sie unter  [Baustein: Webparts](http://msdn.microsoft.com/de-DE/library/ee535520%28v=office.14%29.aspx)
   
     
     
@@ -78,12 +78,10 @@ Abbildung 1 zeigt die grundlegenden Schritte zum Hinzufügen der benutzersegment
 ## <a name="create-a-term-set"></a>Erstellen des Ausdruckssatzes
 <a name="SP15_Create_a_term_set"> </a>
 
-Ein Ausdruck ist ein Wort oder Satz, das bzw. der einem Element in SharePoint zugeordnet werden kann. Ein Ausdruckssatz ist eine Sammlung verwandter Ausdrücke. Weitere Informationen finden Sie unter [Übersicht über verwaltete Metadaten in SharePoint](http://technet.microsoft.com/en-us/library/ee424402.aspx). Sie können Ausdruckssätze entweder mit dem SharePoint-Terminologiespeicher-Verwaltungstool oder programmgesteuert erstellen. 
+Ein Ausdruck ist ein Wort oder Satz, das bzw. der einem Element in SharePoint zugeordnet werden kann. Ein Ausdruckssatz ist eine Sammlung verwandter Ausdrücke. Weitere Informationen finden Sie unter [Übersicht über verwaltete Metadaten in SharePoint](http://technet.microsoft.com/de-DE/library/ee424402.aspx). Sie können Ausdruckssätze entweder mit dem SharePoint-Terminologiespeicher-Verwaltungstool oder programmgesteuert erstellen. 
   
-    
-    
-
-> **Hinweis:** In den folgenden Themen finden Sie ausführliche Anweisungen zum Erstellen eines Ausdruckssatzes mit dem Terminologiespeicher-Verwaltungstool:> [Einrichten neuer Ausdruckssätze](http://office.microsoft.com/en-us/sharepoint-help/set-up-a-new-term-set-HA102922634.aspx)> [Erstellen und Verwalten von Ausdrücken in einem Ausdruckssatz](http://office.microsoft.com/en-us/office365-sharepoint-online-enterprise-help/create-and-manage-terms-in-a-term-set-HA102771989.aspx)
+> [!NOTE] 
+> In den folgenden Themen finden Sie ausführliche Anweisungen zum Erstellen eines Ausdruckssatzes mit dem Terminologiespeicher-Verwaltungstool:> [Einrichten neuer Ausdruckssätze](http://office.microsoft.com/de-DE/sharepoint-help/set-up-a-new-term-set-HA102922634.aspx)>  [Erstellen und Verwalten von Ausdrücken in einem Ausdruckssatz](http://office.microsoft.com/de-DE/office365-sharepoint-online-enterprise-help/create-and-manage-terms-in-a-term-set-HA102771989.aspx)
   
     
     
@@ -139,12 +137,10 @@ static void CreateNavigationTermSet(string siteUrl)
 ## <a name="create-a-custom-web-part-for-user-segmentation"></a>Erstellen eines benutzerdefinierten Webparts für benutzersegmentierung
 <a name="SP15_Create_a_custom_web_part_user_segmentation"> </a>
 
-Erstellen Sie in Visual Studio 2012 ein benutzerdefiniertes Webpart unter Verwendung der Vorlage für visuelle Webparts in der SharePoint-Kategorie. Ihr benutzerdefiniertes Webpart muss vom [ContentBySearchWebPart](https://msdn.microsoft.com/en-us/library/office/microsoft.office.server.search.webcontrols.contentbysearchwebpart.aspx)-Objekt erben.
+Erstellen Sie in Visual Studio 2012 ein benutzerdefiniertes Webpart unter Verwendung der Vorlage für visuelle Webparts in der SharePoint-Kategorie. Ihr benutzerdefiniertes Webpart muss vom [ContentBySearchWebPart](https://msdn.microsoft.com/de-DE/library/office/microsoft.office.server.search.webcontrols.contentbysearchwebpart.aspx)-Objekt erben.
   
-    
-    
-
-> **Hinweis:** In diesem Artikel wird davon ausgegangen, dass Sie Erfahrung mit der Entwicklung von Webparts in SharePoint haben. Weitere Informationen zur Entwicklung von Webparts finden Sie unter [Baustein: Webparts](http://msdn.microsoft.com/en-us/library/ee535520%28v=office.14%29.aspx)
+> [!NOTE] 
+> In diesem Artikel wird davon ausgegangen, dass Sie Erfahrung zur Entwicklung von Webparts in SharePoint verfügen. Weitere Informationen zur Entwicklung von Webparts finden Sie unter  [Baustein: Webparts](http://msdn.microsoft.com/de-DE/library/ee535520%28v=office.14%29.aspx)
   
     
     
@@ -153,7 +149,7 @@ Erstellen Sie in Visual Studio 2012 ein benutzerdefiniertes Webpart unter Verwen
 ## <a name="configure-a-custom-web-part-with-user-segmentation-logic"></a>Konfigurieren eines benutzerdefinierten-Webparts mit Benutzersegmentierungslogik
 <a name="SP15_Configure_custom_web_part_user_segmentation_logic"> </a>
 
-In Ihrer benutzerdefinierten Webparts können Sie die  [OnLoad()](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.WebControls.ContentBySearchWebPart.OnLoad.aspx) -Methode oder die [OnInit()](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.WebControls.ContentBySearchWebPart.OnInit.aspx) -Methode, um Ihre benutzerdefinierte Logik auszuführen erneut implementieren. Diese beiden Methoden sind hilfreich festzulegen oder Anpassen von Eigenschaften des [ContentBySearchWebPart](https://msdn.microsoft.com/en-us/library/office/microsoft.office.server.search.webcontrols.contentbysearchwebpart.aspx) -Objekts.
+In Ihrer benutzerdefinierten Webparts können Sie die  [OnLoad()](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.WebControls.ContentBySearchWebPart.OnLoad.aspx) -Methode oder die [OnInit()](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.WebControls.ContentBySearchWebPart.OnInit.aspx) -Methode, um Ihre benutzerdefinierte Logik auszuführen erneut implementieren. Diese beiden Methoden sind hilfreich festzulegen oder Anpassen von Eigenschaften des [ContentBySearchWebPart](https://msdn.microsoft.com/de-DE/library/office/microsoft.office.server.search.webcontrols.contentbysearchwebpart.aspx) -Objekts.
   
     
     
@@ -370,7 +366,7 @@ Sie müssen Ihre benutzerdefinierten Webparts zu Ihrer SharePoint-Seite hinzufü
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

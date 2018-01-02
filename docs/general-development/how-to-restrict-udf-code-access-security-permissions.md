@@ -5,11 +5,11 @@ keywords: cas,how to,howdoi,howto,UDF list
 f1_keywords: cas,how to,howdoi,howto,UDF list
 ms.prod: sharepoint
 ms.assetid: 4f022e0d-1fe3-4fab-b41f-82a0d628f77c
-ms.openlocfilehash: 16245fdcbbd67cfd354456d1f72a45b982bcd7cd
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 6a562afe83302a01be3f9a349b61f0e3b6944acc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="restrict-udf-code-access-security-permissions"></a>Einschränken von Sicherheitsberechtigungen für UDF-Code
 
@@ -121,44 +121,18 @@ For more information about configuring code groups, see the following articles o
   
 3. Klicken Sie auf **Anwenden**, und klicken Sie dann auf **OK**.
     
-    > **Hinweis:** Wenn die UDF-Methode eine Ausnahme auslöst, weil der Webdienst nicht aufgerufen werden kann, sollten Sie einen Fehler **#VALUE!** in der Excel-Formel erhalten, die das UDF aufgerufen hat.
+    > [!NOTE]
+    > Wenn die UDF-Methode eine Ausnahme auslöst, weil der Webdienst nicht aufgerufen werden kann, sollten Sie einen Fehler **#VALUE!** in der Excel-Formel erhalten, die das UDF aufgerufen hat.
 
-    > **Hinweis:** Wenn Sie zu Testzwecken den Webzugriff für Ihre UDF-Assembly aktivieren möchten, müssen Sie die entsprechende Berechtigung zu Ihrem benutzerdefinierten Berechtigungssatz hinzufügen. Wählen Sie dazu in Schritt 11 der Prozedur „So erstellen Sie eine neue Codegruppe“ **Webzugriff** aus. 
+    > [!NOTE]
+    > Wenn Sie zu Testzwecken den Webzugriff für Ihre UDF-Assembly aktivieren möchten, müssen Sie die entsprechende Berechtigung zu Ihrem benutzerdefinierten Berechtigungssatz hinzufügen. Wählen Sie dazu in Schritt 11 der Prozedur „So erstellen Sie eine neue Codegruppe“ **Webzugriff** aus. 
 
 ## <a name="see-also"></a>Siehe auch
 
-
-#### <a name="tasks"></a>Aufgaben
-
-
-  
-    
-    
- [How to: Create a UDF That Calls a Web Service](how-to-create-a-udf-that-calls-a-web-service.md)
-  
-    
-    
- [How to: Enable UDFs](how-to-enable-udfs.md)
-  
-    
-    
- [How to: Access an External Data Source from a UDF](how-to-access-an-external-data-source-from-a-udf.md)
-  
-    
-    
- [How to: Deploy UDFs Using SharePoint Foundation Solutions](how-to-deploy-udfs-using-sharepoint-foundation-solutions.md)
-#### <a name="concepts"></a>Konzepte
-
-
-  
-    
-    
- [Walkthrough: Developing a Managed-Code UDF](walkthrough-developing-a-managed-code-udf.md)
-  
-    
-    
- [Frequently Asked Questions About Excel Services UDFs](frequently-asked-questions-about-excel-services-udfs.md)
-  
-    
-    
- [Understanding Excel Services UDFs](understanding-excel-services-udfs.md)
+- [Gewusst wie: Erstellen eines UDF, das einen Webdienst aufruft](how-to-create-a-udf-that-calls-a-web-service.md)
+- [How to: Enable UDFs](how-to-enable-udfs.md)
+- [How to: Access an External Data Source from a UDF](how-to-access-an-external-data-source-from-a-udf.md)
+- [Gewusst wie: Bereitstellen von UDFs mit SharePoint Foundation Solutions](how-to-deploy-udfs-using-sharepoint-foundation-solutions.md)
+- [Schritt für Schritt: Entwickeln eines UDF auf Basis von verwaltetem Code](walkthrough-developing-a-managed-code-udf.md)
+- [Frequently Asked Questions About Excel Services UDFs](frequently-asked-questions-about-excel-services-udfs.md)
+- [Understanding Excel Services UDFs](understanding-excel-services-udfs.md)

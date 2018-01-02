@@ -3,11 +3,11 @@ title: Anwenden von Formatvorlagen auf Seitenfelder in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e227613d-0e4d-4312-924d-bb55e1fe4293
-ms.openlocfilehash: 9804ef7fe338f668dd843f3c79c6a77d92310f17
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 70cc908d0175bb2719e7dac73edaed3aacdea4ed
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="apply-styles-to-page-fields-in-sharepoint"></a>Anwenden von Formatvorlagen auf Seitenfelder in SharePoint
 In einem Seitenlayout können Sie Formate auf ein Seitenfeld anwenden. Diese Formate werden dann auf alle Inhalte angewendet, die von Inhaltsautoren hinzugefügt werden, wenn sie eine Seite mithilfe dieses Seitenlayouts erstellen. Darüber hinaus stehen Ihnen weitere Optionen zur Verfügung, mit denen Sie steuern können, wie Inhalte in einem RichHtmlField-Seitenfeld formatiert werden.
@@ -101,8 +101,8 @@ Wenn Sie diese Eigenschaften im Codeausschnittkatalog konfiguriert haben und dan
 </div>
 ```
 
-
-> **Hinweis:** Wenn Sie **AllowFonts** auf **False** festlegen, können Autoren von Inhalten weiterhin Tastenkombinationen wie STRG+B (fett) verwenden, um Text zu formatieren. Um zu verhindern, dass Autoren Formatvorlagen zu Text hinzufügen, können Sie **AllowTextMarkup** auf **False** festlegen. Bei dieser Einstellung gibt der HTML-Editor im Browser einen Fehler zurück, wenn Autoren von Inhalten versuchen, Inhalte zu speichern, die Formatvorlagen enthalten, die auf Text angewendet wurden. Außerdem wird der Autor aufgefordert, das ungültige Markup zu entfernen. 
+> [!NOTE]
+> Wenn Sie **AllowFonts** auf **False** festlegen, können Autoren von Inhalten weiterhin Tastenkombinationen wie STRG+B (fett) verwenden, um Text zu formatieren. Um zu verhindern, dass Autoren Formatvorlagen zu Text hinzufügen, können Sie **AllowTextMarkup** auf **False** festlegen. Bei dieser Einstellung gibt der HTML-Editor im Browser einen Fehler zurück, wenn Autoren von Inhalten versuchen, Inhalte zu speichern, die Formatvorlagen enthalten, die auf Text angewendet wurden. Außerdem wird der Autor aufgefordert, das ungültige Markup zu entfernen. 
   
     
     
@@ -148,10 +148,8 @@ H1. ms-rteElement-H1
 
 Wenn Sie den Wert der Eigenschaft **PrefixStyleSheet** ändern, sind keine der vorhandenen **ms-rte**-Formatvorlagen im Rich-HTML-Editor verfügbar, und nur erstellte Formatvorlagen, die das neue Präfix verwenden, stehen für Inhaltsautoren zur Verfügung. Das bedeutet, dass Sie, wenn Sie einige der Standardformatvorlagen verwenden möchten, diese in Ihr Stylesheet kopieren und ändern müssen, dass sie das neue Präfix verwenden.
   
-    
-    
-
-> **Hinweis:** Die **PrefixStyleSheet**-Eigenschaft wird pro RichHtmlField-Seitenfeld definiert, mehrere Seitenfelder können aber denselben Wert für diese Eigenschaft verwenden. Wenn also mehrere Seitenlayouts auf dieselbe Formatvorlage verweisen, kann es vorkommen, dass mehrere RichHtmlFields auf diesen Seitenlayouts dasselbe Formatvorlagenpräfix aufweisen und auf dieselben Formatvorlagen verweisen.
+> [!NOTE]
+> Die **PrefixStyleSheet**-Eigenschaft wird pro RichHtmlField-Seitenfeld definiert, mehrere Seitenfelder können aber denselben Wert für diese Eigenschaft verwenden. Wenn also mehrere Seitenlayouts auf dieselbe Formatvorlage verweisen, kann es vorkommen, dass mehrere RichHtmlFields auf diesen Seitenlayouts dasselbe Formatvorlagenpräfix aufweisen und auf dieselben Formatvorlagen verweisen.
   
     
     
@@ -189,7 +187,9 @@ Wenn Sie den Wert der Eigenschaft **PrefixStyleSheet** ändern, sind keine der v
   
 10. Öffnen Sie im zugeordneten Netzwerklaufwerk auf Ihrem Computer das HTML-Seitenlayout im HTML-Editor.
     
-    > **Hinweis**: Weitere Informationen finden Sie unter  [Gewusst wie: Zuordnen eines Netzlaufwerks zum SharePoint-Gestaltungsvorlagenkatalog](how-to-map-a-network-drive-to-the-sharepoint-master-page-gallery.md). 
+    > [!NOTE]
+    > Weitere Informationen finden Sie unter  [Gewusst wie: Zuordnen eines Netzlaufwerks zum SharePoint-Gestaltungsvorlagenkatalog](how-to-map-a-network-drive-to-the-sharepoint-master-page-gallery.md). 
+
 11. Fügen Sie im HTML-Seitenlayout den HTML-Codeausschnitt in **PlaceHolderMain** ein.
     
   
@@ -204,7 +204,9 @@ Wenn Sie den Wert der Eigenschaft **PrefixStyleSheet** ändern, sind keine der v
     
     Es ist nützlich, die Standardformatvorlagen anzuzeigen, zu verstehen, wie sie geschrieben werden, und möglicherweise einige davon wiederzuverwenden, indem Sie sie in Ihre Stylesheet kopieren und dann ändern. Wenn Sie dies tun, ersetzen Sie das Standard- **ms Rte** -Präfix durch Ihr eigenes Präfix.
     
-    > **Wichtig:** Ändern Sie nicht die Standardformatvorlage „HtmlEditorStyles.css“. Dieses Stylesheet enthält Formatvorlagen für jedes RichHtmlField in der Farm. Außerdem kann diese Datei von Dienstupdates oder Upgrades überschrieben werden, sodass alle Änderungen verloren gehen. 
+    > [!IMPORTANT]
+    > Ändern Sie nicht die Standardformatvorlage „HtmlEditorStyles.css“. Dieses Stylesheet enthält Formatvorlagen für jedes RichHtmlField in der Farm. Außerdem kann diese Datei von Dienstupdates oder Upgrades überschrieben werden, sodass alle Änderungen verloren gehen. 
+
 14. Erstellen Sie in der Formatvorlage eine Liste neuer Formatvorlagen, die mit dem neuen Präfix beginnen.
     
     Wenn beispielsweise **customstyle** das neue Präfix ist, enthält Ihr Stylesheet möglicherweise die folgende Formatvorlage.
@@ -264,7 +266,7 @@ font-size: 16pt;
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="Additional"> </a>
 
 

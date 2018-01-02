@@ -3,22 +3,20 @@
 Das clientseitige SharePoint-Objektmodell (Client-Side Object Model, CSOM) bietet Zugriff auf das SharePoint-Objektmodell von Code, der lokal oder auf einem anderen Server als SharePoint ausgeführt wird. 
 
 ## <a name="prerequisites"></a>Voraussetzungen
-Machen Sie sich mit Folgendem vertraut, bevor Sie beginnen:
-- 
-  [Verwenden des Clientobjektmodells](https://msdn.microsoft.com/en-us/library/ff798388.aspx)
-- 
-  [Gängige Programmieraufgaben im verwalteten Clientobjektmodell](https://msdn.microsoft.com/en-us/library/ee537013.aspx)
+Machen Sie sich mit den folgenden Themen vertraut, bevor Sie mit den ersten Schritten beginnen:
+- [Verwenden des Clientobjektmodells](https://msdn.microsoft.com/de-DE/library/ff798388.aspx)
+- [Gängige Programmieraufgaben im verwalteten Clientobjektmodell](https://msdn.microsoft.com/de-DE/library/ee537013.aspx)
 
-Sie müssen auch das [Microsoft.SharePointOnline.CSOM](https://www.nuget.org/packages/Microsoft.SharePointOnline.CSOM/)-NuGet-Paket (Version 16.1.6906.1200 oder höher) referenzieren.
+Sie müssen auch auf das [Microsoft.SharePointOnline.CSOM](https://www.nuget.org/packages/Microsoft.SharePointOnline.CSOM/)-NuGet-Paket (Version 16.1.6906.1200 oder höher) verweisen.
 
 ## <a name="csom-code-example"></a>CSOM-Codebeispiel
 
 Das folgende Beispiel zeigt, wie Sie das Objekt __Microsoft.Online.SharePoint.TenantAdministration.Tenant__ erstellen und die Methode __GetAllTenantThemes__ aufrufen, um eine Liste mit Designs zurückzugeben. 
 
->**Hinweis:**
->* Die URL zum Erstellen des Kontextobjekts enthält das Suffix _-admin_, da **TenantAdministration**-Methoden mit der Adminwebsite funktionieren.
->* Erstellen Sie eine __Tenant__-Instanz mit dem [Tenant-Konstruktor](https://msdn.microsoft.com/en-us/library/dn174852.aspx), und rufen Sie dann die Methoden für diese Instanz auf.
->* Sie können denselben Ansatz verwenden, um andere Designverwaltungsmethoden aufzurufen.
+> [!NOTE]
+> * Die URL zum Erstellen des Kontextobjekts enthält das Suffix _-admin_, da **TenantAdministration**-Methoden mit der Adminwebsite funktionieren.
+> * Erstellen Sie eine __Tenant__-Instanz mit dem [Tenant-Konstruktor](https://msdn.microsoft.com/de-DE/library/dn174852.aspx), und rufen Sie dann die Methoden für diese Instanz auf.
+> * Die können den gleichen Ansatz zum Aufrufen anderer Methoden für die Designverwaltung verwenden.
 
 ```C#
 using System.Security;
@@ -37,9 +35,9 @@ Tenant tenant = new Tenant(ctx);
 ClientObjectList<ThemeProperties> themes = tenant.GetAllTenantThemes();
 ```
 
-## <a name="theme-definition-example"></a>Beispiel für die Definition von Designs
+## <a name="theme-definition-example"></a>Beispiel für Designdefinition
 
-Für Methoden, die ein Designargument verwenden können, definiert der folgende Code eine __SPOTheme__-Klasse zum Erstellen benutzerdefinierter Designs.
+Bei Methoden, die ein Designargument akzeptieren, definiert der folgende Code eine __SPOTheme__-Klasse, die Sie zum Erstellen von benutzerdefinierten Designs verwenden können.
 
 ```C#
 /// <summary> 
@@ -80,7 +78,7 @@ Es ist aktuell keine unterstützte API zum programmgesteuerten Anwenden eines De
 Verwenden Sie die folgenden Methoden, um die Gruppe der verfügbaren Designs für eine SharePoint-Mandantenverwaltungswebsite anzupassen. Sie können ein neues benutzerdefiniertes Design hinzufügen, ein vorhandenes Design aktualisieren oder ein Design löschen und ein bestimmtes Design oder alle Designs abrufen. Sie können auch die Standarddesigns ausblenden oder wiederherstellen, die SharePoint bereitstellt.
 
 ### <a name="addtenanttheme-public-method"></a>Öffentliche Methode „AddTenantTheme“
-Fügen Sie ein Design zum Mandanten hinzu.
+Fügen Sie dem Mandanten ein Design hinzu.
 
 __Namespace:__ Microsoft.Online.SharePoint.TenantAdministration.Tenant<br/>
 __Parameter:__ string name, string themeJson<br/>
@@ -111,7 +109,7 @@ __Rückgabetyp:__ ThemeProperties
 Diese Eigenschaft gibt an, ob die Standarddesigns in der Benutzeroberfläche der Designauswahl  zur Verfügung stehen. Die Standardeinstellung ist __false__ (Standarddesigns sind verfügbar). Sie möchten diese Eigenschaft nach dem Definieren benutzerdefinierter Designs evtl. auf __true__ festlegen, um nur bestimmte Designs zuzulassen.
 
 __Namespace:__ Microsoft.Online.SharePoint.TenantAdministration.Tenant<br/>
-__Typ:__ Boolean
+__Typ:__ Boolesch
 
 ### <a name="updatetenanttheme-public-method"></a>Öffentliche Methode „UpdateTenantTheme“
 Aktualisieren Sie die Einstellungen für ein vorhandenes Design.
@@ -122,10 +120,10 @@ __Rückgabetyp:__ ClientResult<bool>
 
 ## <a name="methods-of-the-microsoftonlinesharepointtenantmanagementtenant-class"></a>Methoden der Klasse „Microsoft.Online.SharePoint.TenantManagement.Tenant“
 
-Dies sind alternative APIs, um Ihre Designs auf Mandantenebene zu verwalten.
+Dies sind alternative APIs zum Verwalten von Designs auf Mandantenebene.
 
 ### <a name="addtenanttheme-public-method"></a>Öffentliche Methode „AddTenantTheme“
-Fügen Sie ein Design zum Mandanten hinzu.
+Fügen Sie dem Mandanten ein Design hinzu.
 
 __Namespace:__ Microsoft.Online.SharePoint.TenantManagement.Tenant<br/>
 __Parameter:__ string name, string themeJson<br/>
@@ -172,7 +170,5 @@ __Rückgabetyp:__ ClientResult<bool>
 * [SharePoint-Websitedesign: JSON-Schema](sharepoint-site-theming-json-schema.md)
 * [SharePoint-Websitedesign: PowerShell-Cmdlets](sharepoint-site-theming-powershell.md)
 * [SharePoint-Websitedesign: REST-API](sharepoint-site-theming-rest-api.md)
-* 
-  [Verwenden des Clientobjektmodells](https://msdn.microsoft.com/en-us/library/ff798388.aspx)
-* 
-  [Gängige Programmieraufgaben im verwalteten Clientobjektmodell](https://msdn.microsoft.com/en-us/library/ee537013.aspx)
+* [Verwenden des Clientobjektmodells](https://msdn.microsoft.com/de-DE/library/ff798388.aspx)
+* [Gängige Programmieraufgaben im verwalteten Clientobjektmodell](https://msdn.microsoft.com/de-DE/library/ee537013.aspx)

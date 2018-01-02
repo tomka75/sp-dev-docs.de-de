@@ -3,11 +3,11 @@ title: "Übersicht über das SharePoint-Objektmodell für die mobile Clientauthe
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 00ee657f-a32a-495e-80b4-83ac0f60df44
-ms.openlocfilehash: c28e4bfd51af86ae91d859432851f31cf4c2b629
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2b85c47729de11fa05cc052c5068eb0638ee9bf2
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="overview-of-the-sharepoint-mobile-client-authentication-object-model"></a>Übersicht über das SharePoint-Objektmodell für die mobile Clientauthentifizierung
 Erhalten Sie eine Übersicht über die Entwicklung mit den Authentifizierung-APIs des SharePoint-Clientobjektmodells für Silverlight.
@@ -16,10 +16,8 @@ Erhalten Sie eine Übersicht über die Entwicklung mit den Authentifizierung-API
 
 Der Prozess der Authentifizierung eines SharePoint-Benutzers auf einem Windows Phone 7.5 ist ein wenig anders als derselbe Prozess auf einem Clientcomputer. Clientcode auf einem Windows Phone 7.5 erstellt zunächst ein Objekt der **Authenticator**-Klasse oder der **ODataAuthenticator**-Klasse, die dem SharePointClientobjektmodell für Microsoft Silverlight für Windows Phone hinzugefügt wurden. Dann wird dieses Objekt als Anmeldeinformationen des Benutzers verwendet.
   
-    
-    
-
-> **Hinweis:** Weitere Informationen über die in diesem Abschnitt erläuterten-APIs finden Sie unter [Übersicht über das mobile Objektmodell von SharePoint](overview-of-the-sharepoint-mobile-object-model.md). Weitere Informationen zum Silverlight-Clientobjektmodell finden Sie unter [Verwaltetes Clientobjektmodell](http://msdn.microsoft.com/en-us/library/ee537247.aspx) und [Verwenden des Silverlight-Objektmodells](http://msdn.microsoft.com/en-us/library/ee538971.aspx). 
+> [!NOTE]
+> Weitere Informationen über die in diesem Abschnitt erläuterten-APIs finden Sie unter [Übersicht über das mobile Objektmodell von SharePoint](overview-of-the-sharepoint-mobile-object-model.md). Weitere Informationen zum Silverlight-Clientobjektmodell finden Sie unter [Verwaltetes Clientobjektmodell](http://msdn.microsoft.com/de-DE/library/ee537247.aspx) und [Verwenden des Silverlight-Objektmodells](http://msdn.microsoft.com/de-DE/library/ee538971.aspx). 
   
     
     
@@ -33,13 +31,15 @@ Nachfolgend finden Sie die erforderlichen Schritte, um ein authentifiziertes Cli
     
     
 
-1. Rufen Sie ein  [ClientContext](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.client.clientcontext.aspx)-Objekt ab.
+1. Rufen Sie ein  [ClientContext](http://msdn.microsoft.com/de-DE/library/microsoft.sharepoint.client.clientcontext.aspx)-Objekt ab.
     
   
 2. Erstellen Sie ein neues **Authenticator**-Objekt und initialisieren Sie seine Eigenschaften.
     
-    > **Hinweis:** Es kann jeweils nur ein **Authenticator**-Objekt mit einem **ClientContext**-Objekt verwendet werden. Sie können kein **Authenticator**-Objekt über mehrere **ClientContext**-Objekte hinweg mit verschiedenen URLs freigeben.
-3. Die **Authenticator**-Klasse implementiert die [ICredentials](http://msdn.microsoft.com/en-us/library/system.net.icredentials.aspx)-Schnittstelle, sodass Sie das Objekt der [Credentials](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.client.clientruntimecontext.credentials.aspx)-Eigenschaft des **ClientContext**-Objekts zuweisen können.
+    > [!NOTE]
+    > Es kann jeweils nur ein **Authenticator**-Objekt mit einem **ClientContext**-Objekt verwendet werden. Sie können kein **Authenticator**-Objekt über mehrere **ClientContext**-Objekte hinweg mit verschiedenen URLs freigeben.
+
+3. Die **Authenticator**-Klasse implementiert die [ICredentials](http://msdn.microsoft.com/de-DE/library/system.net.icredentials.aspx)-Schnittstelle, sodass Sie das Objekt der [Credentials](http://msdn.microsoft.com/de-DE/library/microsoft.sharepoint.client.clientruntimecontext.credentials.aspx)-Eigenschaft des **ClientContext**-Objekts zuweisen können.
     
   
 Sie können dann den restlichen Code des Clientobjektmodells hinzufügen und **ExecuteQueryAsync** aufrufen.
@@ -262,10 +262,8 @@ at.AuthenticationMode = ClientAuthenticationMode.MicrosoftOnline;
 
 Um eine Authentifizierung gegen eine SharePoint Online-URL auszuführen, legen Sie die URL, die **AuthenticationMode**-Eigenschaft des **Authenticator**-Objekt auf **MicrosoftOnline**-Modus fest. Die verbleibenden Schritte des Verfahrens sind dieselben wie für eine lokale SharePoint-URL.
   
-    
-    
-
-> **Hinweis:** Der Benutzername und das Kennwort können für SharePoint Online nicht hartcodiert werden. Der Benutzer wird zur Eingabe von Anmeldeinformationen aufgefordert. 
+> [!NOTE]
+> Der Benutzername und das Kennwort können für SharePoint Online nicht hartcodiert werden. Der Benutzer wird zur Eingabe von Anmeldeinformationen aufgefordert. 
   
     
     
@@ -273,7 +271,7 @@ Um eine Authentifizierung gegen eine SharePoint Online-URL auszuführen, legen S
 
 #### <a name="federation-authentication"></a>Verbundauthentifizierung
 
- Die **FederationAuthURI**-Eigenschaft wird zum Übergeben der **ADFS**-Authentifizierungsschemaeinstellung verwendet, wobei **ADFS** so konfiguriert ist, dass mehrere Authentifizierungshandler verwendet werden. **FederationAuthURI** gibt die Art der Authentifizierung an, die für die Authentifizierungsanforderung erforderlich ist, wenn die SharePoint Online-Authentifizierung mit Verbund verwendet wird. Dieser Parameter kann die Priorität außer Kraft setzen, die von der Reihenfolge der Konfiguration der Authentifizierungshandler aufgestellt wurde. Weitere Informationen zu Authentifizierunghandlern finden Sie unter [Übersicht über Authentifizierungshandler](http://msdn.microsoft.com/en-us/library/ee895365.aspx).
+ Die **FederationAuthURI**-Eigenschaft wird zum Übergeben der **ADFS**-Authentifizierungsschemaeinstellung verwendet, wobei **ADFS** so konfiguriert ist, dass mehrere Authentifizierungshandler verwendet werden. **FederationAuthURI** gibt die Art der Authentifizierung an, die für die Authentifizierungsanforderung erforderlich ist, wenn die SharePoint Online-Authentifizierung mit Verbund verwendet wird. Dieser Parameter kann die Priorität außer Kraft setzen, die von der Reihenfolge der Konfiguration der Authentifizierungshandler aufgestellt wurde. Weitere Informationen zu Authentifizierunghandlern finden Sie unter [Übersicht über Authentifizierungshandler](http://msdn.microsoft.com/de-DE/library/ee895365.aspx).
   
     
     
@@ -310,7 +308,7 @@ Die **Authenticator**-Klasse umfasst auch Elemente, die Sie zum Aktivieren und V
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15Mobileclientauth_addlresources"> </a>
 
 

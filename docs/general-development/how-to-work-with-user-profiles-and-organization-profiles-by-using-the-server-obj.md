@@ -3,11 +3,11 @@ title: Arbeiten mit Benutzerprofilen und Organisationsprofilen mithilfe des Serv
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 13f16dc3-f652-4fb3-996b-5f2166236d2b
-ms.openlocfilehash: 242d2692b87433f5e33969d6d2dbfb037b366fdf
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 0ce295896fc03140ca4330f6ca598a6fe0bc99c9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="work-with-user-profiles-and-organization-profiles-by-using-the-server-object-model-in-sharepoint"></a>Arbeiten mit Benutzerprofilen und Organisationsprofilen mithilfe des Serverobjektmodells in SharePoint
 
@@ -17,10 +17,8 @@ In diesem Artikel erfahren Sie, wie Sie Benutzerprofile und Benutzerprofileigens
 
 Benutzerprofile stellen in SharePoint SharePoint-Benutzer dar. Benutzerprofileigenschaften stellen Informationen über die Benutzer und über die Eigenschaften selbst dar. Eigenschaften umfassen beispielsweise den Kontonamen oder die E-Mail-Adresse eines Benutzers und den Datentyp einer Eigenschaft. Sie können das Serverobjektmodell verwenden, um Benutzerprofile, Profiluntertypen und Profileigenschaften zu erstellen, abzurufen und zu ändern.
   
-    
-    
-
-> **Hinweis:** Weitere Informationen zu gängigen Programmierungsaufgaben bei der Arbeit mit Benutzerprofilen und der zur Aufgabenausführung verwendeten API finden Sie unter [Work with user profiles in SharePoint](work-with-user-profiles-in-sharepoint.md). 
+> [!NOTE]
+> Weitere Informationen zu gängigen Programmierungsaufgaben bei der Arbeit mit Benutzerprofilen und der zur Aufgabenausführung verwendeten API finden Sie unter [Arbeiten mit Benutzerprofilen in SharePoint](work-with-user-profiles-in-sharepoint.md). 
   
     
     
@@ -91,10 +89,8 @@ Benutzerprofile stellen in SharePoint SharePoint-Benutzer dar. Profiltypen und U
     
 Das folgende Codebeispiel erstellt ein  [UserProfile](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.UserProfile.aspx) -Objekt, das dem standardmäßigen Benutzerprofil-Untertyp zugeordnet ist. Einige Benutzerprofileigenschaften werden automatisch mit Informationen gefüllt, die aus dem Verzeichnis mit den Benutzerkonten importiert werden, z. B. Active Directory-Domänendienste. Ein Codebeispiel, mit dem ein benutzerdefinierter Untertyp erstellt wird, finden Sie unter [ProfileSubtype](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.ProfileSubtype.aspx) .
   
-    
-    
-
-> **Hinweis:** Ändern Sie die Werte der Platzhalter „domain\\username“ und „servername“, bevor Sie den Code ausführen.
+> [!NOTE]
+> Ändern Sie die Werte der Platzhalter „domain\\username“ und „servername“, bevor Sie den Code ausführen.
   
     
     
@@ -161,10 +157,8 @@ Eine Profileigenschaft und die dazugehörigen Attribute werden von einem Satz ve
     
 Das folgende Codebeispiel erstellt einen  [CoreProperty](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.CoreProperty.aspx) mit einem URL-Datentyp (oder optional einen [CoreProperty](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.CoreProperty.aspx) mit einem Zeichenfolgentyp mit mehreren Werten). Es erstellt auch einen [ProfileTypeProperty](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.ProfileTypeProperty.aspx) und einen [ProfileTypeProperty](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.ProfileTypeProperty.aspx) , die Verfügbarkeit, Datenschutz und weitere Einstellungen für die Eigenschaft definieren. Die [ProfileSubtypeProperty.DefaultPrivacy](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.ProfileSubtypeProperty.DefaultPrivacy.aspx) -Eigenschaft steuert die Sichtbarkeit der Eigenschaften und weiteren „Meine Website"-Inhalten. Eine vollständige Liste möglicher Datentypen für Profileigenschaftenwerte finden Sie unter [PropertyDataType](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.PropertyDataType.aspx) .
   
-    
-    
-
-> **Hinweis:** Ändern Sie den Wert für den Platzhalter „servername“, bevor Sie den Code ausführen.
+> [!NOTE]
+> Ändern Sie den Platzhalterwert „servername“, bevor Sie den Code ausführen.
   
     
     
@@ -256,10 +250,8 @@ namespace UserProfilesSSOM
 
 Das folgende Codebeispiel ruft alle Benutzerprofile innerhalb des Kontexts ab und ändert den Wert einer  [DisplayName](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.UserProfile.DisplayName.aspx) -Benutzereigenschaft. Auf die meisten Profileigenschaften wird mit dem [UserProfile.Item](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.UserProfile.Item.aspx) -Accessor zugegriffen.
   
-    
-    
-
-> **Hinweis:** Ändern Sie die Werte der Platzhalter „domain\\username“ und „servername“, bevor Sie den Code ausführen.
+> [!NOTE]
+> Ändern Sie die Werte der Platzhalter „domain\\username“ und „servername“, bevor Sie den Code ausführen.
   
     
     
@@ -328,10 +320,8 @@ namespace UserProfilesSSOM
 
 Das folgende Codebeispiel ruft den Eigenschaftensatz ab, der eine bestimmte Benutzereigenschaft und die dazugehörigen Attribute darstellt, und ändert dann die  [CoreProperty.DisplayName](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.CoreProperty.DisplayName.aspx) -, [ProfileTypeProperty.IsVisibleOnViewer](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.ProfileTypeProperty.IsVisibleOnViewer.aspx) - und [ProfileSubtypeProperty.PrivacyPolicy](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.ProfileSubtypeProperty.PrivacyPolicy.aspx) -Attribute. Diese Änderungen gelten global für den Eigenschaftensatz. [ProfileSubtypeProperty.PrivacyPolicy](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.ProfileSubtypeProperty.PrivacyPolicy.aspx) gibt an, ob Benutzer einen Wert für die Eigenschaft angeben müssen. [PrivacyPolicy](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.ProfileSubtypeProperty.PrivacyPolicy.aspx) gilt nur für Benutzerprofileigenschaften.
   
-    
-    
-
-> **Hinweis:** Ändern Sie den Wert für den Platzhalter „servername“, bevor Sie den Code ausführen.
+> [!NOTE]
+> Ändern Sie den Platzhalterwert „servername“, bevor Sie den Code ausführen.
   
     
     
@@ -405,10 +395,8 @@ namespace UserProfilesSSOM
 
 Das folgende Beispiel ruft alle **UserProfile**-Typeigenschaften und Eigenschaftswerte für einen bestimmten Benutzer ab. Anschließend ändert es die  [PictureUrl](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.PropertyConstants.PictureUrl.aspx) -Eigenschaft mit einem Wert und die [PastProjects](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.PropertyConstants.PastProjects.aspx) -Eigenschaft mit mehreren Werten. Eine vollständige Liste der Profileigenschaften-Namenkonstanten finden Sie unter [PropertyConstants](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.PropertyConstants.aspx) .
   
-    
-    
-
-> **Hinweis:** Ändern Sie die Werte für die Platzhalter „domain\\username“, „http://servername/docLib/pic.jpg“ und „servername“, bevor Sie den Code ausführen.
+> [!NOTE]
+> Ändern Sie die Werte für die Platzhalter „domain\\username“, „http://servername/docLib/pic.jpg“ und „servername“, bevor Sie den Code ausführen.
   
     
     
@@ -494,7 +482,7 @@ namespace UserProfilesSSOM
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

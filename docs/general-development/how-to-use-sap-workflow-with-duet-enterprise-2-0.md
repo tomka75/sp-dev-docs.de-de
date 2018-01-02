@@ -3,11 +3,11 @@ title: Verwenden von SAP-Workflows mit Duet Enterprise 2.0
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 816e28ed-8cea-4e33-98e5-d3d27136e2e6
-ms.openlocfilehash: 2b0d1758f4f19941c87f61c3617dfd4e624c25f9
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 77e613f09c0d51da7d7c00c7be76b3cd8028a0b7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-sap-workflow-with-duet-enterprise-20"></a>Verwenden von SAP-Workflows mit Duet Enterprise 2.0
 
@@ -114,11 +114,12 @@ BCS müssen der externen Datenquelle darauf aufmerksam gemacht werden. Dies erfo
 6. Aktivieren Sie das Kontrollkästchen **Listeninstanzen für die ausgewählten Datenentitäten (mit Ausnahme von Dienstvorgänge) erstellen**.
     
   
-7. Klicken Sie auf **Fertig stellen**.
+7. Wählen Sie **Fertig stellen** aus.
     
   
 
-> **Hinweis:** Stellen Sie sicher, dass der SAP-Workflowdienst Standardauthentifizierung zulässt, wie die BDC-Autogenerierungstools in Visual Studio. 
+> [!NOTE]
+> Stellen Sie sicher, dass der SAP-Workflowdienst Standardauthentifizierung zulässt, wie die BDC-Autogenerierungstools in Visual Studio. 
   
     
     
@@ -210,9 +211,8 @@ Um eine Möglichkeit für den Benutzer zum Arbeiten mit der neuen Funktionalitä
   
 5. Wechseln Sie zur Liste **WorkItem** im Hostweb, und klicken Sie im Kontextmenü auf **Details anzeigen**. Sie werden auf die Seite **ViewDetails.aspx** umgeleitet.
     
-  
-
-> **Hinweis:** Stellen Sie sicher, dass der SAP-Workflowdienst Standardauthentifizierung zulässt. Die BDC-Autogenerierungstools in Visual Studio unterstützen derzeit lediglich anonyme Authentifizierung und Standardauthentifizierung. 
+> [!NOTE]
+> Stellen Sie sicher, dass der SAP-Workflowdienst Standardauthentifizierung zulässt. Die BDC-Autogenerierungstools in Visual Studio unterstützen derzeit lediglich anonyme Authentifizierung und Standardauthentifizierung. 
   
     
     
@@ -776,8 +776,9 @@ function RegisterCallOut(divId, displayName, aboutme, userUrl, isFollowed) {
 ```
 
 
-    > **Note:**
-      > The user name of the participant in company's network is same as that in SAP. 
+> [!NOTE]
+> Der Benutzername des Teilnehmers im Netzwerk des Unternehmens entspricht dem in SAP.
+
 3. Öffnen Sie die Seite **AppManifest.xml**.
     
   
@@ -791,14 +792,14 @@ function RegisterCallOut(divId, displayName, aboutme, userUrl, isFollowed) {
 <script src="../Scripts/People.js" type="text/javascript"></script>
 ```
 
-6. Rufen Sie auf, um das Steuerelement Anwesenheitsinformationen für einen Teilnehmer hinzuzufügen, Folgendes: 
+6. Rufen Sie Folgendes auf, um das Steuerelement für Anwesenheitsinformationen für einen Teilnehmer hinzuzufügen: 
     
 ```
   AddPeopleControl(userName);
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
