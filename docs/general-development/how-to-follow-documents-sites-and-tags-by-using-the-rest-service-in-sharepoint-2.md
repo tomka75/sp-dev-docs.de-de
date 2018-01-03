@@ -3,107 +3,103 @@ title: Folgen von Dokumenten, Websites und Kategorien mithilfe des REST-Diensts 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 989a5873-49f9-49e4-8d0f-439dde891cc2
-ms.openlocfilehash: 73796b89f04291d86072234833953c97881cdff8
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 1c27c11c49be77941fd7c7b2e4876f43938dea66
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint"></a><span data-ttu-id="9433c-102">Folgen von Dokumenten, Websites und Kategorien mithilfe des REST-Diensts in SharePoint</span><span class="sxs-lookup"><span data-stu-id="9433c-102">How to: Follow documents, sites, and tags by using the REST service in SharePoint</span></span>
+# <a name="follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint"></a><span data-ttu-id="e369e-102">Folgen von Dokumenten, Websites und Kategorien mithilfe des REST-Diensts in SharePoint</span><span class="sxs-lookup"><span data-stu-id="e369e-102">How to: Follow documents, sites, and tags by using the REST service in SharePoint</span></span>
 
-<span data-ttu-id="9433c-103">Erstellen Sie von SharePoint gehostete Apps, die den REST-Dienst verwenden, um Inhalten (Dokumente, Websites und Tags) zu folgen und gefolgte Inhalte zu erhalten.</span><span class="sxs-lookup"><span data-stu-id="9433c-103">Create SharePoint-hosted apps that use the REST service to follow content (documents, sites, and tags) and to get followed content.</span></span>
+<span data-ttu-id="e369e-103">Erstellen Sie von SharePoint gehostete Apps, die den REST-Dienst verwenden, um Inhalten (Dokumente, Websites und Tags) zu folgen und gefolgte Inhalte zu erhalten.</span><span class="sxs-lookup"><span data-stu-id="e369e-103">Create SharePoint-hosted apps that use the REST service to follow content (documents, sites, and tags) and to get followed content.</span></span>
 
-## <a name="how-do-i-use-the-sharepoint-rest-service-to-follow-content"></a><span data-ttu-id="9433c-104">Wie verwende ich den REST-Dienst von SharePoint, um Inhalten zu folgen?</span><span class="sxs-lookup"><span data-stu-id="9433c-104">How do I use the SharePoint REST service to follow content?</span></span>
-<span data-ttu-id="9433c-105"><a name="bk_intro"> </a></span><span class="sxs-lookup"><span data-stu-id="9433c-105"><a name="bk_intro"> </a></span></span>
+## <a name="how-do-i-use-the-sharepoint-rest-service-to-follow-content"></a><span data-ttu-id="e369e-104">Wie verwende ich den REST-Dienst von SharePoint, um Inhalten zu folgen?</span><span class="sxs-lookup"><span data-stu-id="e369e-104">How do I use the SharePoint REST service to follow content?</span></span>
+<span data-ttu-id="e369e-105"><a name="bk_intro"> </a></span><span class="sxs-lookup"><span data-stu-id="e369e-105"><a name="bk_intro"> </a></span></span>
 
-<span data-ttu-id="9433c-106">SharePoint-Benutzer können Dokumenten, Websites und Tags folgen, um Updates zu den Elementen in ihren Newsfeeds abzurufen und gefolgte Dokumente und Websites schnell zu öffnen.</span><span class="sxs-lookup"><span data-stu-id="9433c-106">SharePoint users can follow documents, sites, and tags to get updates about the items in their newsfeeds and to quickly open followed documents and sites.</span></span> <span data-ttu-id="9433c-107">Sie können die REST-API von SharePoint verwenden, um mit dem Folgen von Inhalten zu beginnen, das Folgen von Inhalten zu beenden und gefolgte Inhalte im Auftrag des aktuellen Benutzers abzurufen.</span><span class="sxs-lookup"><span data-stu-id="9433c-107">You can use the SharePoint REST API in your app or solution to start following content, stop following content, and get followed content on behalf of the current user.</span></span>
+<span data-ttu-id="e369e-106">SharePoint-Benutzer können Dokumenten, Websites und Tags folgen, um Updates zu den Elementen in ihren Newsfeeds abzurufen und gefolgte Dokumente und Websites schnell zu öffnen.</span><span class="sxs-lookup"><span data-stu-id="e369e-106">SharePoint users can follow documents, sites, and tags to get updates about the items in their newsfeeds and to quickly open followed documents and sites.</span></span> <span data-ttu-id="e369e-107">Sie können die REST-API von SharePoint verwenden, um mit dem Folgen von Inhalten zu beginnen, das Folgen von Inhalten zu beenden und gefolgte Inhalte im Auftrag des aktuellen Benutzers abzurufen.</span><span class="sxs-lookup"><span data-stu-id="e369e-107">You can use the SharePoint REST API in your app or solution to start following content, stop following content, and get followed content on behalf of the current user.</span></span>
   
     
     
-<span data-ttu-id="9433c-108">Die folgenden RESET-Ressourcen sind die primären APIs für Aufgaben zum Folgen von Inhalten:</span><span class="sxs-lookup"><span data-stu-id="9433c-108">The following REST resources are the primary API for Following Content tasks:</span></span>
-  
-    
-    
-
-- <span data-ttu-id="9433c-109">**SocialRestFollowingManager** bietet Methoden zum Verwalten eines Benutzers Liste besuchter Akteure.</span><span class="sxs-lookup"><span data-stu-id="9433c-109">**SocialRestFollowingManager** provides methods for managing a user's list of followed actors.</span></span>
-    
-  
-- <span data-ttu-id="9433c-110">**SocialActor** stellt ein Dokument, Website oder Tag, der der Server als Antwort auf eine Anforderung mithilfe der clientseitigen zurückgibt.</span><span class="sxs-lookup"><span data-stu-id="9433c-110">**SocialActor** represents a document, site, or tag that the server returns in response to a client-side request.</span></span>
-    
-  
-- <span data-ttu-id="9433c-111">**SocialActorInfo** gibt ein Dokument, Website oder Tag in clientseitige Anforderungen an den Server.</span><span class="sxs-lookup"><span data-stu-id="9433c-111">**SocialActorInfo** specifies a document, site, or tag in client-side requests to the server.</span></span>
-    
-  
-- <span data-ttu-id="9433c-112">**SocialActorType** und **SocialActorTypes** angeben von Inhaltstypen in clientseitige Anforderungen an den Server.</span><span class="sxs-lookup"><span data-stu-id="9433c-112">**SocialActorType** and **SocialActorTypes** specify content types in client-side requests to the server.</span></span>
-    
-  
-<span data-ttu-id="9433c-p102">Inhalt in der folgenden Aufgaben mithilfe der REST-API, senden Sie HTTP **GET** und HTTP- **POST** Anfragen an den REST-Dienst. REST Endpoint URIs Aufgaben zum folgenden Inhalt mit der Ressource **SocialRestFollowingManager** ( `<siteUri>/_api/social.following`) beginnen und enden mit einer der folgenden Ressourcen:</span><span class="sxs-lookup"><span data-stu-id="9433c-p102">To perform Following Content tasks by using the REST API, you send HTTP **GET** and HTTP **POST** requests to the REST service. REST endpoint URIs for Following Content tasks begin with the **SocialRestFollowingManager** resource ( `<siteUri>/_api/social.following`) and end with one of the following resources:</span></span>
+<span data-ttu-id="e369e-108">Die folgenden RESET-Ressourcen sind die primären APIs für Aufgaben zum Folgen von Inhalten:</span><span class="sxs-lookup"><span data-stu-id="e369e-108">The following REST resources are the primary API for Following Content tasks:</span></span>
   
     
     
 
-- <span data-ttu-id="9433c-115">**follow** starten nach einem Dokument, Website oder tag</span><span class="sxs-lookup"><span data-stu-id="9433c-115">**follow** to start following a document, site, or tag</span></span>
+- <span data-ttu-id="e369e-109">**SocialRestFollowingManager** bietet Methoden zum Verwalten eines Benutzers Liste besuchter Akteure.</span><span class="sxs-lookup"><span data-stu-id="e369e-109">**SocialRestFollowingManager** provides methods for managing a user's list of followed actors.</span></span>
     
   
-- <span data-ttu-id="9433c-116">**stopfollowing** zu einem Dokument, Website oder tag</span><span class="sxs-lookup"><span data-stu-id="9433c-116">**stopfollowing** to stop following a document, site, or tag</span></span>
+- <span data-ttu-id="e369e-110">**SocialActor** stellt ein Dokument, Website oder Tag, der der Server als Antwort auf eine Anforderung mithilfe der clientseitigen zurückgibt.</span><span class="sxs-lookup"><span data-stu-id="e369e-110">**SocialActor** represents a document, site, or tag that the server returns in response to a client-side request.</span></span>
     
   
-- <span data-ttu-id="9433c-117">**isfollowed**, um herauszufinden, ob der Benutzer ein bestimmtes Dokument, eine Website oder ein Tag folgt</span><span class="sxs-lookup"><span data-stu-id="9433c-117">**isfollowed** to find out whether the user is following a specific document, site, or tag</span></span>
+- <span data-ttu-id="e369e-111">**SocialActorInfo** gibt ein Dokument, Website oder Tag in clientseitige Anforderungen an den Server.</span><span class="sxs-lookup"><span data-stu-id="e369e-111">**SocialActorInfo** specifies a document, site, or tag in client-side requests to the server.</span></span>
     
   
-- <span data-ttu-id="9433c-118">**my/followed** abzurufenden beobachteter Dokumente, Websites und tags</span><span class="sxs-lookup"><span data-stu-id="9433c-118">**my/followed** to get followed documents, sites, and tags</span></span>
+- <span data-ttu-id="e369e-112">**SocialActorType** und **SocialActorTypes** angeben von Inhaltstypen in clientseitige Anforderungen an den Server.</span><span class="sxs-lookup"><span data-stu-id="e369e-112">**SocialActorType** and **SocialActorTypes** specify content types in client-side requests to the server.</span></span>
     
   
-- <span data-ttu-id="9433c-119">**my/followedcount** Anzahl der gefolgten Dokumente, Websites und Tags abrufen</span><span class="sxs-lookup"><span data-stu-id="9433c-119">**my/followedcount** to get the count of followed documents, sites, and tags</span></span>
-    
-  
-
-> <span data-ttu-id="9433c-120">**Hinweis:** Sie verwenden diese Endpunkte auch für Aufgaben zum Folgen von Personen, allerdings unterstützen die Ressourcen **followers** und **suggestions**, die über **SocialRestFollowingManager** verfügbar sind, nur das Folgen von Personen, nicht von Inhalten.</span><span class="sxs-lookup"><span data-stu-id="9433c-120">**Note:** You also use these endpoints for Following People tasks, but the **followers** and **suggestions** resources available from **SocialRestFollowingManager** only support following people, not content.</span></span> <span data-ttu-id="9433c-121">Weitere Informationen zur Verwendung von **SocialRestFollowingManager** finden Sie unter [Folgen von Inhalten in SharePoint](follow-content-in-sharepoint.md) und [Folgen von Personen in SharePoint](follow-people-in-sharepoint.md).</span><span class="sxs-lookup"><span data-stu-id="9433c-121">For more information about how you can use **SocialRestFollowingManager**, see  [Follow content in SharePoint](follow-content-in-sharepoint.md) and [Follow people in SharePoint](follow-people-in-sharepoint.md).</span></span> 
+<span data-ttu-id="e369e-p102">Inhalt in der folgenden Aufgaben mithilfe der REST-API, senden Sie HTTP **GET** und HTTP- **POST** Anfragen an den REST-Dienst. REST Endpoint URIs Aufgaben zum folgenden Inhalt mit der Ressource **SocialRestFollowingManager** ( `<siteUri>/_api/social.following`) beginnen und enden mit einer der folgenden Ressourcen:</span><span class="sxs-lookup"><span data-stu-id="e369e-p102">To perform Following Content tasks by using the REST API, you send HTTP **GET** and HTTP **POST** requests to the REST service. REST endpoint URIs for Following Content tasks begin with the **SocialRestFollowingManager** resource ( `<siteUri>/_api/social.following`) and end with one of the following resources:</span></span>
   
     
     
 
-
-## <a name="prerequisites-for-creating-a-sharepoint-hosted-app-that-manages-followed-content-by-using-the-sharepoint-rest-service"></a><span data-ttu-id="9433c-122">Voraussetzungen für die Erstellung einer von SharePoint gehosteten App, die gefolgte Inhalte mit dem REST-Dienst von SharePoint verwaltet</span><span class="sxs-lookup"><span data-stu-id="9433c-122">Prerequisites for creating a SharePoint-hosted app that manages followed content by using the SharePoint REST service</span></span>
-<span data-ttu-id="9433c-123"><a name="bkmk_Prereqs"> </a></span><span class="sxs-lookup"><span data-stu-id="9433c-123"><a name="bkmk_Prereqs"> </a></span></span>
-
-<span data-ttu-id="9433c-p104">In diesem Artikel wird davon ausgegangen, dass Sie die SharePoint-Add-In mithilfe einer Napa- oder Office 365-Entwicklerwebsite erstellen. Wenn Sie diese Entwicklungsumgebung verwenden, sind die Voraussetzungen bereits erfüllt.</span><span class="sxs-lookup"><span data-stu-id="9433c-p104">This article assumes that you create the SharePoint Add-in by using Napa on an Office 365 Developer Site. If you're using this development environment, you've already met the prerequisites.</span></span>
+- <span data-ttu-id="e369e-115">**follow** starten nach einem Dokument, Website oder tag</span><span class="sxs-lookup"><span data-stu-id="e369e-115">**follow** to start following a document, site, or tag</span></span>
+    
+  
+- <span data-ttu-id="e369e-116">**stopfollowing** zu einem Dokument, Website oder tag</span><span class="sxs-lookup"><span data-stu-id="e369e-116">**stopfollowing** to stop following a document, site, or tag</span></span>
+    
+  
+- <span data-ttu-id="e369e-117">**isfollowed**, um herauszufinden, ob der Benutzer ein bestimmtes Dokument, eine Website oder ein Tag folgt</span><span class="sxs-lookup"><span data-stu-id="e369e-117">**isfollowed** to find out whether the user is following a specific document, site, or tag</span></span>
+    
+  
+- <span data-ttu-id="e369e-118">**my/followed** abzurufenden beobachteter Dokumente, Websites und tags</span><span class="sxs-lookup"><span data-stu-id="e369e-118">**my/followed** to get followed documents, sites, and tags</span></span>
+    
+  
+- <span data-ttu-id="e369e-119">**my/followedcount** Anzahl der gefolgten Dokumente, Websites und Tags abrufen</span><span class="sxs-lookup"><span data-stu-id="e369e-119">**my/followedcount** to get the count of followed documents, sites, and tags</span></span>
+    
+> [!NOTE]
+> <span data-ttu-id="e369e-120">Sie verwenden diese Endpunkte auch für Aufgaben zum Folgen von Personen, allerdings unterstützen die Ressourcen **followers** und **suggestions**, die über **SocialRestFollowingManager** verfügbar sind, nur das Folgen von Personen, nicht von Inhalten.</span><span class="sxs-lookup"><span data-stu-id="e369e-120">Note: You also use these endpoints for Following People tasks, but the **followers** and **suggestions** resources available from **SocialRestFollowingManager** only support following people, not content.</span></span> <span data-ttu-id="e369e-121">Weitere Informationen zur Verwendung von **SocialRestFollowingManager** finden Sie unter [Folgen von Inhalten in SharePoint](follow-content-in-sharepoint.md) und [Folgen von Personen in SharePoint](follow-people-in-sharepoint.md).</span><span class="sxs-lookup"><span data-stu-id="e369e-121">For more information about how you can use **SocialRestFollowingManager**, see  [Follow content in SharePoint](follow-content-in-sharepoint.md) and [Follow people in SharePoint](follow-people-in-sharepoint.md).</span></span> 
   
     
     
 
-> <span data-ttu-id="9433c-126">**Hinweis:** Wechseln Sie zur [Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx), um sich für eine Entwicklerwebsite anzumelden und mit der Verwendung von Napa zu beginnen.</span><span class="sxs-lookup"><span data-stu-id="9433c-126">**Note:** Go to  [Set up a development environment for SharePoint Add-ins on Office 365](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx) to sign up for a Developer Site and start using Napa.</span></span>
+
+## <a name="prerequisites-for-creating-a-sharepoint-hosted-app-that-manages-followed-content-by-using-the-sharepoint-rest-service"></a><span data-ttu-id="e369e-122">Voraussetzungen für die Erstellung einer von SharePoint gehosteten App, die gefolgte Inhalte mit dem REST-Dienst von SharePoint verwaltet</span><span class="sxs-lookup"><span data-stu-id="e369e-122">Prerequisites for creating a SharePoint-hosted app that manages followed content by using the SharePoint REST service</span></span>
+<span data-ttu-id="e369e-123"><a name="bkmk_Prereqs"> </a></span><span class="sxs-lookup"><span data-stu-id="e369e-123"><a name="bkmk_Prereqs"> </a></span></span>
+
+<span data-ttu-id="e369e-p104">In diesem Artikel wird davon ausgegangen, dass Sie die SharePoint-Add-In mithilfe einer Napa- oder Office 365-Entwicklerwebsite erstellen. Wenn Sie diese Entwicklungsumgebung verwenden, sind die Voraussetzungen bereits erfüllt.</span><span class="sxs-lookup"><span data-stu-id="e369e-p104">This article assumes that you create the SharePoint Add-in by using Napa on an Office 365 Developer Site. If you're using this development environment, you've already met the prerequisites.</span></span>
+  
+> [!NOTE]
+> <span data-ttu-id="e369e-126">Wechseln Sie zur [Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365]((http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx)), um sich für eine Entwicklerwebsite anzumelden und mit der Verwendung von Napa zu beginnen.</span><span class="sxs-lookup"><span data-stu-id="e369e-126">[Note:]((http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx)) Go to  Set up a development environment for SharePoint Add-ins on Office 365 to sign up for a Developer Site and start using Napa.</span></span>
   
     
     
 
-<span data-ttu-id="9433c-127">Wenn Sie nicht auf eine Office 365 Developer Site Napa verwenden, benötigen Sie die folgenden Anforderungen erfüllen, bevor Sie die SharePoint-Add-In bereitstellen können:</span><span class="sxs-lookup"><span data-stu-id="9433c-127">If you're not using Napa on an Office 365 Developer Site, you'll need to meet the following prerequisites before you can deploy the SharePoint Add-in:</span></span>
+<span data-ttu-id="e369e-127">Wenn Sie nicht auf eine Office 365 Developer Site Napa verwenden, benötigen Sie die folgenden Anforderungen erfüllen, bevor Sie die SharePoint-Add-In bereitstellen können:</span><span class="sxs-lookup"><span data-stu-id="e369e-127">If you're not using Napa on an Office 365 Developer Site, you'll need to meet the following prerequisites before you can deploy the SharePoint Add-in:</span></span>
   
     
     
 
-- <span data-ttu-id="9433c-p105">Eine SharePoint-Entwicklungsumgebung, die für die Anwendungsisolation konfiguriert ist. Wenn Sie Remote-Entwicklung, muss der Server Sideloading Apps Unterstützung oder müssen Sie die app auf einer Entwicklerwebsite installieren.</span><span class="sxs-lookup"><span data-stu-id="9433c-p105">A SharePoint development environment that is configured for app isolation. If you're developing remotely, the server must support sideloading of apps or you must install the app on a Developer Site.</span></span>
+- <span data-ttu-id="e369e-p105">Eine SharePoint-Entwicklungsumgebung, die für die Anwendungsisolation konfiguriert ist. Wenn Sie Remote-Entwicklung, muss der Server Sideloading Apps Unterstützung oder müssen Sie die app auf einer Entwicklerwebsite installieren.</span><span class="sxs-lookup"><span data-stu-id="e369e-p105">A SharePoint development environment that is configured for app isolation. If you're developing remotely, the server must support sideloading of apps or you must install the app on a Developer Site.</span></span>
     
   
-- <span data-ttu-id="9433c-130">Der Meine Website-Host konfiguriert ist, mit einer persönlichen Website für den aktuellen Benutzer erstellt.</span><span class="sxs-lookup"><span data-stu-id="9433c-130">The My Site host configured, with a personal site created for the current user.</span></span>
+- <span data-ttu-id="e369e-130">Der Meine Website-Host konfiguriert ist, mit einer persönlichen Website für den aktuellen Benutzer erstellt.</span><span class="sxs-lookup"><span data-stu-id="e369e-130">The My Site host configured, with a personal site created for the current user.</span></span>
     
   
-- <span data-ttu-id="9433c-131">Visual Studio 2012 oder Visual Studio 2013 mit Office Developer Tools für Visual Studio 2013.</span><span class="sxs-lookup"><span data-stu-id="9433c-131">Visual Studio 2012 or Visual Studio 2013 with Office Developer Tools for Visual Studio 2013.</span></span>
+- <span data-ttu-id="e369e-131">Visual Studio 2012 oder Visual Studio 2013 mit Office Developer Tools für Visual Studio 2013.</span><span class="sxs-lookup"><span data-stu-id="e369e-131">Visual Studio 2012 or Visual Studio 2013 with Office Developer Tools for Visual Studio 2013.</span></span>
     
   
-- <span data-ttu-id="9433c-132">Über ausreichende Berechtigungen für den angemeldeten Benutzer:</span><span class="sxs-lookup"><span data-stu-id="9433c-132">Sufficient permissions for the logged-on user:</span></span>
+- <span data-ttu-id="e369e-132">Über ausreichende Berechtigungen für den angemeldeten Benutzer:</span><span class="sxs-lookup"><span data-stu-id="e369e-132">Sufficient permissions for the logged-on user:</span></span>
     
-  - <span data-ttu-id="9433c-133">Lokale Administratorberechtigungen auf dem Entwicklungscomputer installiert.</span><span class="sxs-lookup"><span data-stu-id="9433c-133">Local administrator permissions on the development computer.</span></span>
-    
-  
-  - <span data-ttu-id="9433c-p106">Verwalten von Website und Erstellen von Unterwebsites von Benutzerberechtigungen für die SharePoint-Website, in dem Sie die app installieren möchten. Standardmäßig sind diese Berechtigungen nur für Benutzer über die Berechtigungsstufe Vollzugriff verfügen oder Personen in der Gruppe Websitebesitzer sind verfügbar.</span><span class="sxs-lookup"><span data-stu-id="9433c-p106">Manage Web Site and Create Subsites user permissions to the SharePoint site where you're installing the app. By default, these permissions are available only to users who have the Full Control permission level or who are in the site Owners group.</span></span>
+  - <span data-ttu-id="e369e-133">Lokale Administratorberechtigungen auf dem Entwicklungscomputer installiert.</span><span class="sxs-lookup"><span data-stu-id="e369e-133">Local administrator permissions on the development computer.</span></span>
     
   
-  - <span data-ttu-id="9433c-p107">Sie müssen sich mit einem anderen Konto als dem Systemkonto anmelden, da das Systemkonto nicht über die Berechtigung zur Installation der App verfügt.</span><span class="sxs-lookup"><span data-stu-id="9433c-p107">You must be logged on as someone other than the system account. The system account does not have permission to install the app.</span></span>
+  - <span data-ttu-id="e369e-p106">Verwalten von Website und Erstellen von Unterwebsites von Benutzerberechtigungen für die SharePoint-Website, in dem Sie die app installieren möchten. Standardmäßig sind diese Berechtigungen nur für Benutzer über die Berechtigungsstufe Vollzugriff verfügen oder Personen in der Gruppe Websitebesitzer sind verfügbar.</span><span class="sxs-lookup"><span data-stu-id="e369e-p106">Manage Web Site and Create Subsites user permissions to the SharePoint site where you're installing the app. By default, these permissions are available only to users who have the Full Control permission level or who are in the site Owners group.</span></span>
     
   
-
-> <span data-ttu-id="9433c-138">**Hinweis:** Informationen zum lokalen Setup (einschließlich der eventuell erforderlichen Deaktivierung der Loopbacküberprüfung) finden Sie unter [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](http://msdn.microsoft.com/library/b0878c12-27c9-4eea-ae3b-7e79e5a8838d%28Office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="9433c-138">**Note:** See  [Set up an on-premises development environment for SharePoint Add-ins](http://msdn.microsoft.com/library/b0878c12-27c9-4eea-ae3b-7e79e5a8838d%28Office.15%29.aspx) for guidance about on-premises setup (including how to disable the loopback check, if necessary).</span></span>
+  - <span data-ttu-id="e369e-p107">Sie müssen sich mit einem anderen Konto als dem Systemkonto anmelden, da das Systemkonto nicht über die Berechtigung zur Installation der App verfügt.</span><span class="sxs-lookup"><span data-stu-id="e369e-p107">You must be logged on as someone other than the system account. The system account does not have permission to install the app.</span></span>
+    
+> [!NOTE]
+> <span data-ttu-id="e369e-138">Informationen zum lokalen Setup (einschließlich der eventuell erforderlichen Deaktivierung der Loopbacküberprüfung) finden Sie unter [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins]((http://msdn.microsoft.com/library/b0878c12-27c9-4eea-ae3b-7e79e5a8838d%28Office.15%29.aspx)).</span><span class="sxs-lookup"><span data-stu-id="e369e-138">[Note:]((http://msdn.microsoft.com/library/b0878c12-27c9-4eea-ae3b-7e79e5a8838d%28Office.15%29.aspx)) See  Set up an on-premises development environment for SharePoint Add-ins for guidance about on-premises setup (including how to disable the loopback check, if necessary).</span></span>
   
     
     
@@ -113,71 +109,71 @@ ms.lasthandoff: 11/15/2017
     
     
 
-## <a name="create-the-sharepoint-add-in-project"></a><span data-ttu-id="9433c-139">Erstellen des SharePoint-Add-In-Projekts</span><span class="sxs-lookup"><span data-stu-id="9433c-139">Create the SharePoint Add-in project</span></span>
-<span data-ttu-id="9433c-140"><a name="bkmk_CreateApp"> </a></span><span class="sxs-lookup"><span data-stu-id="9433c-140"><a name="bkmk_CreateApp"> </a></span></span>
+## <a name="create-the-sharepoint-add-in-project"></a><span data-ttu-id="e369e-139">Erstellen des SharePoint-Add-In-Projekts</span><span class="sxs-lookup"><span data-stu-id="e369e-139">Create the SharePoint Add-in project</span></span>
+<span data-ttu-id="e369e-140"><a name="bkmk_CreateApp"> </a></span><span class="sxs-lookup"><span data-stu-id="e369e-140"><a name="bkmk_CreateApp"> </a></span></span>
 
 
-1. <span data-ttu-id="9433c-141">Klicken Sie auf Ihrer Entwicklerwebsite öffnen Sie Napa, und wählen Sie dann auf **Neues Projekt hinzufügen**.</span><span class="sxs-lookup"><span data-stu-id="9433c-141">On your Developer Site, open Napa, and then choose **Add New Project**.</span></span>
+1. <span data-ttu-id="e369e-141">Klicken Sie auf Ihrer Entwicklerwebsite öffnen Sie Napa, und wählen Sie dann auf **Neues Projekt hinzufügen**.</span><span class="sxs-lookup"><span data-stu-id="e369e-141">On your Developer Site, open Napa, and then choose **Add New Project**.</span></span>
     
   
-2. <span data-ttu-id="9433c-142">Wählen Sie die Vorlage **App für SharePoint**, nennen Sie das Projekt, und wählen Sie dann auf die Schaltfläche **Erstellen**.</span><span class="sxs-lookup"><span data-stu-id="9433c-142">Choose the **App for SharePoint** template, name the project, and then choose the **Create** button.</span></span>
+2. <span data-ttu-id="e369e-142">Wählen Sie die Vorlage **App für SharePoint**, nennen Sie das Projekt, und wählen Sie dann auf die Schaltfläche **Erstellen**.</span><span class="sxs-lookup"><span data-stu-id="e369e-142">Choose the **App for SharePoint** template, name the project, and then choose the **Create** button.</span></span>
     
   
-3. <span data-ttu-id="9433c-143">Legen Sie die Berechtigungen für Ihre app:</span><span class="sxs-lookup"><span data-stu-id="9433c-143">Set the permissions for your app:</span></span>
+3. <span data-ttu-id="e369e-143">Legen Sie die Berechtigungen für Ihre app:</span><span class="sxs-lookup"><span data-stu-id="e369e-143">Set the permissions for your app:</span></span>
     
-   1. <span data-ttu-id="9433c-144">Wählen Sie die Schaltfläche " **Eigenschaften** " am unteren Rand der Seite.</span><span class="sxs-lookup"><span data-stu-id="9433c-144">Choose the **Properties** button at the bottom of the page.</span></span>
-    
-  
-   2. <span data-ttu-id="9433c-145">Wählen Sie im Fenster **Eigenschaften****Berechtigungen**.</span><span class="sxs-lookup"><span data-stu-id="9433c-145">In the **Properties** window, choose **Permissions**.</span></span>
+   1. <span data-ttu-id="e369e-144">Wählen Sie die Schaltfläche " **Eigenschaften** " am unteren Rand der Seite.</span><span class="sxs-lookup"><span data-stu-id="e369e-144">Choose the **Properties** button at the bottom of the page.</span></span>
     
   
-   3. <span data-ttu-id="9433c-146">Legen Sie **die Inhaltskategorie****Write** Berechtigungen für den **Mandanten** Bereich.</span><span class="sxs-lookup"><span data-stu-id="9433c-146">In the **Content** category, set **Write** permissions for the **Tenant** scope.</span></span>
+   2. <span data-ttu-id="e369e-145">Wählen Sie im Fenster **Eigenschaften****Berechtigungen**.</span><span class="sxs-lookup"><span data-stu-id="e369e-145">In the **Properties** window, choose **Permissions**.</span></span>
     
   
-   4. <span data-ttu-id="9433c-147">Legen Sie in der Kategorie **für soziale Netzwerke****Read** -Berechtigungen für den Bereich **Von Benutzerprofilen**.</span><span class="sxs-lookup"><span data-stu-id="9433c-147">In the **Social** category, set **Read** permissions for the **User Profiles** scope.</span></span>
+   3. <span data-ttu-id="e369e-146">Legen Sie **die Inhaltskategorie****Write** Berechtigungen für den **Mandanten** Bereich.</span><span class="sxs-lookup"><span data-stu-id="e369e-146">In the **Content** category, set **Write** permissions for the **Tenant** scope.</span></span>
     
   
-   5. <span data-ttu-id="9433c-148">Das Fenster **Eigenschaften** zu schließen.</span><span class="sxs-lookup"><span data-stu-id="9433c-148">Close the **Properties** window.</span></span>
+   4. <span data-ttu-id="e369e-147">Legen Sie in der Kategorie **für soziale Netzwerke****Read** -Berechtigungen für den Bereich **Von Benutzerprofilen**.</span><span class="sxs-lookup"><span data-stu-id="e369e-147">In the **Social** category, set **Read** permissions for the **User Profiles** scope.</span></span>
     
   
-4. <span data-ttu-id="9433c-149">Erweitern Sie den Knoten **Skripts**, wählen Sie die Datei App.js, und Ersetzen Sie den Inhalt durch den Code aus einem der folgenden Szenarien:</span><span class="sxs-lookup"><span data-stu-id="9433c-149">Expand the **Scripts** node, choose the App.js file and replace its contents with the code from one of the following scenarios:</span></span>
-    
-   -  [<span data-ttu-id="9433c-150">Starten Sie nach und nicht mehr Folgen eines Dokuments</span><span class="sxs-lookup"><span data-stu-id="9433c-150">Start following and stop following a document</span></span>](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bkmk_FollowDocs)
-   -  [<span data-ttu-id="9433c-151">Starten Sie nach und nicht mehr folgen einer Website</span><span class="sxs-lookup"><span data-stu-id="9433c-151">Start following and stop following a site</span></span>](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bkmk_FollowSites)
-   -  [<span data-ttu-id="9433c-152">Nach Starten Sie und beenden Sie einer Kategorie folgen</span><span class="sxs-lookup"><span data-stu-id="9433c-152">Start following and stop following a tag</span></span>](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bkmk_FollowTags)
-   -  [<span data-ttu-id="9433c-153">Abrufen von verfolgten Inhalt</span><span class="sxs-lookup"><span data-stu-id="9433c-153">Get followed content</span></span>](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bkmk_GetFollowed)
-  
-5. <span data-ttu-id="9433c-154">Um die app ausgeführt werden soll, wählen Sie die Schaltfläche " **Projekt ausführen** " am unteren Rand der Seite.</span><span class="sxs-lookup"><span data-stu-id="9433c-154">To run the app, choose the **Run Project** button at the bottom of the page.</span></span>
+   5. <span data-ttu-id="e369e-148">Das Fenster **Eigenschaften** zu schließen.</span><span class="sxs-lookup"><span data-stu-id="e369e-148">Close the **Properties** window.</span></span>
     
   
-6. <span data-ttu-id="9433c-p108">Wählen Sie die Schaltfläche **Vertrauen sie** **Vertrauen Sie** Sie auf der Seite, die geöffnet wird. Die appseite wird geöffnet, und es wird der Code ausgeführt. Debuggen Sie die Seite, wählen die **F12**-Taste, und wählen Sie dann auf der Registerkarte **Skript** App.js aus.</span><span class="sxs-lookup"><span data-stu-id="9433c-p108">In the **Do you trust** page that opens, choose the **Trust It** button. The app page opens and runs the code. To debug the page, choose the **F12** key and then choose App.js on the **Script** tab.</span></span>
+4. <span data-ttu-id="e369e-149">Erweitern Sie den Knoten **Skripts**, wählen Sie die Datei App.js, und Ersetzen Sie den Inhalt durch den Code aus einem der folgenden Szenarien:</span><span class="sxs-lookup"><span data-stu-id="e369e-149">Expand the **Scripts** node, choose the App.js file and replace its contents with the code from one of the following scenarios:</span></span>
+    
+   -  [<span data-ttu-id="e369e-150">Starten Sie nach und nicht mehr Folgen eines Dokuments</span><span class="sxs-lookup"><span data-stu-id="e369e-150">Start following and stop following a document</span></span>](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bkmk_FollowDocs)
+   -  [<span data-ttu-id="e369e-151">Starten Sie nach und nicht mehr folgen einer Website</span><span class="sxs-lookup"><span data-stu-id="e369e-151">Start following and stop following a site</span></span>](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bkmk_FollowSites)
+   -  [<span data-ttu-id="e369e-152">Nach Starten Sie und beenden Sie einer Kategorie folgen</span><span class="sxs-lookup"><span data-stu-id="e369e-152">Start following and stop following a tag</span></span>](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bkmk_FollowTags)
+   -  [<span data-ttu-id="e369e-153">Abrufen von verfolgten Inhalt</span><span class="sxs-lookup"><span data-stu-id="e369e-153">Get followed content</span></span>](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bkmk_GetFollowed)
+  
+5. <span data-ttu-id="e369e-154">Um die app ausgeführt werden soll, wählen Sie die Schaltfläche " **Projekt ausführen** " am unteren Rand der Seite.</span><span class="sxs-lookup"><span data-stu-id="e369e-154">To run the app, choose the **Run Project** button at the bottom of the page.</span></span>
+    
+  
+6. <span data-ttu-id="e369e-p108">Wählen Sie die Schaltfläche **Vertrauen sie** **Vertrauen Sie** Sie auf der Seite, die geöffnet wird. Die appseite wird geöffnet, und es wird der Code ausgeführt. Debuggen Sie die Seite, wählen die **F12**-Taste, und wählen Sie dann auf der Registerkarte **Skript** App.js aus.</span><span class="sxs-lookup"><span data-stu-id="e369e-p108">In the **Do you trust** page that opens, choose the **Trust It** button. The app page opens and runs the code. To debug the page, choose the **F12** key and then choose App.js on the **Script** tab.</span></span>
     
   
 
-## <a name="code-example-start-following-and-stop-following-a-document-by-using-the-sharepoint-rest-service"></a><span data-ttu-id="9433c-158">Codebeispiel: Starten Sie nach und nach einem Dokument mithilfe des REST-Diensts SharePoint beenden</span><span class="sxs-lookup"><span data-stu-id="9433c-158">Code example: Start following and stop following a document by using the SharePoint REST service</span></span>
-<span data-ttu-id="9433c-159"><a name="bkmk_FollowDocs"> </a></span><span class="sxs-lookup"><span data-stu-id="9433c-159"><a name="bkmk_FollowDocs"> </a></span></span>
+## <a name="code-example-start-following-and-stop-following-a-document-by-using-the-sharepoint-rest-service"></a><span data-ttu-id="e369e-158">Codebeispiel: Starten Sie nach und nach einem Dokument mithilfe des REST-Diensts SharePoint beenden</span><span class="sxs-lookup"><span data-stu-id="e369e-158">Code example: Start following and stop following a document by using the SharePoint REST service</span></span>
+<span data-ttu-id="e369e-159"><a name="bkmk_FollowDocs"> </a></span><span class="sxs-lookup"><span data-stu-id="e369e-159"><a name="bkmk_FollowDocs"> </a></span></span>
 
-<span data-ttu-id="9433c-160">Das folgende Codebeispiel stellt den Inhalt der App.js-Datei und zeigt, wie Sie:</span><span class="sxs-lookup"><span data-stu-id="9433c-160">The following code example represents the contents of the App.js file and shows how to:</span></span>
+<span data-ttu-id="e369e-160">Das folgende Codebeispiel stellt den Inhalt der App.js-Datei und zeigt, wie Sie:</span><span class="sxs-lookup"><span data-stu-id="e369e-160">The following code example represents the contents of the App.js file and shows how to:</span></span>
   
     
     
 
-- <span data-ttu-id="9433c-161">Möchten Sie app-Webs URI aus der Abfragezeichenfolge erhalten, und erstellen Sie den  `<siteUri>/_api/social.following` Endpunkt-URI.</span><span class="sxs-lookup"><span data-stu-id="9433c-161">Get the app web URI from the query string and construct the  `<siteUri>/_api/social.following` endpoint URI.</span></span>
+- <span data-ttu-id="e369e-161">Möchten Sie app-Webs URI aus der Abfragezeichenfolge erhalten, und erstellen Sie den  `<siteUri>/_api/social.following` Endpunkt-URI.</span><span class="sxs-lookup"><span data-stu-id="e369e-161">Get the app web URI from the query string and construct the  `<siteUri>/_api/social.following` endpoint URI.</span></span>
     
   
-- <span data-ttu-id="9433c-162">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `isfollowed` , um herauszufinden, ob der aktuelle Benutzer bereits ein angegebenes Dokument folgt.</span><span class="sxs-lookup"><span data-stu-id="9433c-162">Build and send a **POST** request to the `isfollowed` endpoint to find out whether the current user is already following a specified document.</span></span>
+- <span data-ttu-id="e369e-162">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `isfollowed` , um herauszufinden, ob der aktuelle Benutzer bereits ein angegebenes Dokument folgt.</span><span class="sxs-lookup"><span data-stu-id="e369e-162">Build and send a **POST** request to the `isfollowed` endpoint to find out whether the current user is already following a specified document.</span></span>
     
   
-- <span data-ttu-id="9433c-163">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `follow` , um nach dem Dokument zu starten.</span><span class="sxs-lookup"><span data-stu-id="9433c-163">Build and send a **POST** request to the `follow` endpoint to start following the document.</span></span>
+- <span data-ttu-id="e369e-163">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `follow` , um nach dem Dokument zu starten.</span><span class="sxs-lookup"><span data-stu-id="e369e-163">Build and send a **POST** request to the `follow` endpoint to start following the document.</span></span>
     
   
-- <span data-ttu-id="9433c-164">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `stopfollowing` So beenden Sie nach dem Dokument.</span><span class="sxs-lookup"><span data-stu-id="9433c-164">Build and send a **POST** request to the `stopfollowing` endpoint to stop following the document.</span></span>
+- <span data-ttu-id="e369e-164">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `stopfollowing` So beenden Sie nach dem Dokument.</span><span class="sxs-lookup"><span data-stu-id="e369e-164">Build and send a **POST** request to the `stopfollowing` endpoint to stop following the document.</span></span>
     
   
-- <span data-ttu-id="9433c-p109">Lesen Sie die JSON-Antwort von der Anforderung  `isfollowed` und die Anforderung `follow` zurückgegeben. (Die Anforderung `stopfollowing` nicht nichts in der Antwort zurück.) Siehe [Beispiel JSON Antworten](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bk_exampleResponses).</span><span class="sxs-lookup"><span data-stu-id="9433c-p109">Read the JSON response returned by the  `isfollowed` request and the `follow` request. (The `stopfollowing` request doesn't return anything in the response.) See [Example JSON responses](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bk_exampleResponses).</span></span>
+- <span data-ttu-id="e369e-p109">Lesen Sie die JSON-Antwort von der Anforderung  `isfollowed` und die Anforderung `follow` zurückgegeben. (Die Anforderung `stopfollowing` nicht nichts in der Antwort zurück.) Siehe [Beispiel JSON Antworten](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bk_exampleResponses).</span><span class="sxs-lookup"><span data-stu-id="e369e-p109">Read the JSON response returned by the  `isfollowed` request and the `follow` request. (The `stopfollowing` request doesn't return anything in the response.) See [Example JSON responses](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bk_exampleResponses).</span></span>
     
   
-<span data-ttu-id="9433c-167">Bevor Sie den Code ausführen müssen Sie zum Hochladen eines Dokuments und ändern den Platzhalterwert für die Variable **documentUrl** an die URL des Dokuments.</span><span class="sxs-lookup"><span data-stu-id="9433c-167">Before you run the code, you'll need to upload a document and change the placeholder value for the **documentUrl** variable to the document's URL.</span></span>
+<span data-ttu-id="e369e-167">Bevor Sie den Code ausführen müssen Sie zum Hochladen eines Dokuments und ändern den Platzhalterwert für die Variable **documentUrl** an die URL des Dokuments.</span><span class="sxs-lookup"><span data-stu-id="e369e-167">Before you run the code, you'll need to upload a document and change the placeholder value for the **documentUrl** variable to the document's URL.</span></span>
   
     
     
@@ -316,30 +312,30 @@ function requestFailed(xhr, ajaxOptions, thrownError) {
 ```
 
 
-## <a name="code-example-start-following-and-stop-following-a-site-by-using-the-sharepoint-rest-service"></a><span data-ttu-id="9433c-168">Codebeispiel: Starten Sie nach und nach einer Website mithilfe des REST-Diensts SharePoint beenden</span><span class="sxs-lookup"><span data-stu-id="9433c-168">Code example: Start following and stop following a site by using the SharePoint REST service</span></span>
-<span data-ttu-id="9433c-169"><a name="bkmk_FollowSites"> </a></span><span class="sxs-lookup"><span data-stu-id="9433c-169"><a name="bkmk_FollowSites"> </a></span></span>
+## <a name="code-example-start-following-and-stop-following-a-site-by-using-the-sharepoint-rest-service"></a><span data-ttu-id="e369e-168">Codebeispiel: Starten Sie nach und nach einer Website mithilfe des REST-Diensts SharePoint beenden</span><span class="sxs-lookup"><span data-stu-id="e369e-168">Code example: Start following and stop following a site by using the SharePoint REST service</span></span>
+<span data-ttu-id="e369e-169"><a name="bkmk_FollowSites"> </a></span><span class="sxs-lookup"><span data-stu-id="e369e-169"><a name="bkmk_FollowSites"> </a></span></span>
 
-<span data-ttu-id="9433c-170">Das folgende Codebeispiel stellt den Inhalt der App.js-Datei und zeigt, wie Sie:</span><span class="sxs-lookup"><span data-stu-id="9433c-170">The following code example represents the contents of the App.js file and shows how to:</span></span>
+<span data-ttu-id="e369e-170">Das folgende Codebeispiel stellt den Inhalt der App.js-Datei und zeigt, wie Sie:</span><span class="sxs-lookup"><span data-stu-id="e369e-170">The following code example represents the contents of the App.js file and shows how to:</span></span>
   
     
     
 
-- <span data-ttu-id="9433c-171">Möchten Sie app-Webs URI aus der Abfragezeichenfolge erhalten, und erstellen Sie den  `<siteUri>/_api/social.following` Endpunkt-URI.</span><span class="sxs-lookup"><span data-stu-id="9433c-171">Get the app web URI from the query string and construct the  `<siteUri>/_api/social.following` endpoint URI.</span></span>
+- <span data-ttu-id="e369e-171">Möchten Sie app-Webs URI aus der Abfragezeichenfolge erhalten, und erstellen Sie den  `<siteUri>/_api/social.following` Endpunkt-URI.</span><span class="sxs-lookup"><span data-stu-id="e369e-171">Get the app web URI from the query string and construct the  `<siteUri>/_api/social.following` endpoint URI.</span></span>
     
   
-- <span data-ttu-id="9433c-172">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `isfollowed` , um herauszufinden, ob der aktuelle Benutzer eine angegebene Website bereits folgen.</span><span class="sxs-lookup"><span data-stu-id="9433c-172">Build and send a **POST** request to the `isfollowed` endpoint to find out whether the current user is already following a specified site.</span></span>
+- <span data-ttu-id="e369e-172">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `isfollowed` , um herauszufinden, ob der aktuelle Benutzer eine angegebene Website bereits folgen.</span><span class="sxs-lookup"><span data-stu-id="e369e-172">Build and send a **POST** request to the `isfollowed` endpoint to find out whether the current user is already following a specified site.</span></span>
     
   
-- <span data-ttu-id="9433c-173">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `follow` , um nach der Website zu starten.</span><span class="sxs-lookup"><span data-stu-id="9433c-173">Build and send a **POST** request to the `follow` endpoint to start following the site.</span></span>
+- <span data-ttu-id="e369e-173">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `follow` , um nach der Website zu starten.</span><span class="sxs-lookup"><span data-stu-id="e369e-173">Build and send a **POST** request to the `follow` endpoint to start following the site.</span></span>
     
   
-- <span data-ttu-id="9433c-174">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `stopfollowing` So beenden Sie nach der Website.</span><span class="sxs-lookup"><span data-stu-id="9433c-174">Build and send a **POST** request to the `stopfollowing` endpoint to stop following the site.</span></span>
+- <span data-ttu-id="e369e-174">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `stopfollowing` So beenden Sie nach der Website.</span><span class="sxs-lookup"><span data-stu-id="e369e-174">Build and send a **POST** request to the `stopfollowing` endpoint to stop following the site.</span></span>
     
   
-- <span data-ttu-id="9433c-p110">Lesen Sie die JSON-Antwort von der Anforderung  `isfollowed` und die Anforderung `follow` zurückgegeben. (Die Anforderung `stopfollowing` nicht nichts in der Antwort zurück.) Siehe [Beispiel JSON Antworten](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bk_exampleResponses).</span><span class="sxs-lookup"><span data-stu-id="9433c-p110">Read the JSON response returned by the  `isfollowed` request and the `follow` request. (The `stopfollowing` request doesn't return anything in the response.) See [Example JSON responses](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bk_exampleResponses).</span></span>
+- <span data-ttu-id="e369e-p110">Lesen Sie die JSON-Antwort von der Anforderung  `isfollowed` und die Anforderung `follow` zurückgegeben. (Die Anforderung `stopfollowing` nicht nichts in der Antwort zurück.) Siehe [Beispiel JSON Antworten](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bk_exampleResponses).</span><span class="sxs-lookup"><span data-stu-id="e369e-p110">Read the JSON response returned by the  `isfollowed` request and the `follow` request. (The `stopfollowing` request doesn't return anything in the response.) See [Example JSON responses](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bk_exampleResponses).</span></span>
     
   
-<span data-ttu-id="9433c-p111">Bevor Sie den Code ausführen ändern Sie den Platzhalterwert für die Variable **siteUrl** entsprechend die Website, die Sie folgen möchten. Verwenden Sie das Format **http://server/siteCollection/site** für eine Website in einer Websitesammlung. Führen Sie eine Website über eine beliebige Seite oder eine Bibliothek an diesem Standort. Wenn die Website eine Vorlage verwendet wird, die nicht unterstützt erhalten (wie meine Website-Host oder einer persönlichen Website) folgen einen **UnsupportedSite** -Fehler (Fehlercode 10) Sie.</span><span class="sxs-lookup"><span data-stu-id="9433c-p111">Before you run the code, change the placeholder value for the **siteUrl** variable to match the site that you want to follow. Use the format **http://server/siteCollection/site** for a site in a site collection. You can follow a site from any page or library in that site. If the site uses a template that doesn't support following (like the My Site host or a personal site), you'll get an **UnsupportedSite** error (error code 10).</span></span>
+<span data-ttu-id="e369e-p111">Bevor Sie den Code ausführen ändern Sie den Platzhalterwert für die Variable **siteUrl** entsprechend die Website, die Sie folgen möchten. Verwenden Sie das Format **http://server/siteCollection/site** für eine Website in einer Websitesammlung. Führen Sie eine Website über eine beliebige Seite oder eine Bibliothek an diesem Standort. Wenn die Website eine Vorlage verwendet wird, die nicht unterstützt erhalten (wie meine Website-Host oder einer persönlichen Website) folgen einen **UnsupportedSite** -Fehler (Fehlercode 10) Sie.</span><span class="sxs-lookup"><span data-stu-id="e369e-p111">Before you run the code, change the placeholder value for the **siteUrl** variable to match the site that you want to follow. Use the format **http://server/siteCollection/site** for a site in a site collection. You can follow a site from any page or library in that site. If the site uses a template that doesn't support following (like the My Site host or a personal site), you'll get an **UnsupportedSite** error (error code 10).</span></span>
   
     
     
@@ -478,30 +474,30 @@ function requestFailed(xhr, ajaxOptions, thrownError) {
 ```
 
 
-## <a name="code-example-start-following-and-stop-following-a-tag-by-using-the-sharepoint-rest-service"></a><span data-ttu-id="9433c-181">Codebeispiel: nach starten und Beenden einer Kategorie mithilfe des REST-Diensts SharePoint folgen</span><span class="sxs-lookup"><span data-stu-id="9433c-181">Code example: Start following and stop following a tag by using the SharePoint REST service</span></span>
-<span data-ttu-id="9433c-182"><a name="bkmk_FollowTags"> </a></span><span class="sxs-lookup"><span data-stu-id="9433c-182"><a name="bkmk_FollowTags"> </a></span></span>
+## <a name="code-example-start-following-and-stop-following-a-tag-by-using-the-sharepoint-rest-service"></a><span data-ttu-id="e369e-181">Codebeispiel: nach starten und Beenden einer Kategorie mithilfe des REST-Diensts SharePoint folgen</span><span class="sxs-lookup"><span data-stu-id="e369e-181">Code example: Start following and stop following a tag by using the SharePoint REST service</span></span>
+<span data-ttu-id="e369e-182"><a name="bkmk_FollowTags"> </a></span><span class="sxs-lookup"><span data-stu-id="e369e-182"><a name="bkmk_FollowTags"> </a></span></span>
 
-<span data-ttu-id="9433c-183">Das folgende Codebeispiel stellt den Inhalt der App.js-Datei und zeigt, wie Sie:</span><span class="sxs-lookup"><span data-stu-id="9433c-183">The following code example represents the contents of the App.js file and shows how to:</span></span>
+<span data-ttu-id="e369e-183">Das folgende Codebeispiel stellt den Inhalt der App.js-Datei und zeigt, wie Sie:</span><span class="sxs-lookup"><span data-stu-id="e369e-183">The following code example represents the contents of the App.js file and shows how to:</span></span>
   
     
     
 
-- <span data-ttu-id="9433c-184">Möchten Sie app-Webs URI aus der Abfragezeichenfolge erhalten, und erstellen Sie den  `<siteUri>/_api/social.following` Endpunkt-URI.</span><span class="sxs-lookup"><span data-stu-id="9433c-184">Get the app web URI from the query string and construct the  `<siteUri>/_api/social.following` endpoint URI.</span></span>
+- <span data-ttu-id="e369e-184">Möchten Sie app-Webs URI aus der Abfragezeichenfolge erhalten, und erstellen Sie den  `<siteUri>/_api/social.following` Endpunkt-URI.</span><span class="sxs-lookup"><span data-stu-id="e369e-184">Get the app web URI from the query string and construct the  `<siteUri>/_api/social.following` endpoint URI.</span></span>
     
   
-- <span data-ttu-id="9433c-185">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `isfollowed` , um herauszufinden, ob der aktuelle Benutzer ein angegebenes Tag bereits folgen.</span><span class="sxs-lookup"><span data-stu-id="9433c-185">Build and send a **POST** request to the `isfollowed` endpoint to find out whether the current user is already following a specified tag.</span></span>
+- <span data-ttu-id="e369e-185">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `isfollowed` , um herauszufinden, ob der aktuelle Benutzer ein angegebenes Tag bereits folgen.</span><span class="sxs-lookup"><span data-stu-id="e369e-185">Build and send a **POST** request to the `isfollowed` endpoint to find out whether the current user is already following a specified tag.</span></span>
     
   
-- <span data-ttu-id="9433c-186">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `follow` , um die Kategorie folgen zu starten.</span><span class="sxs-lookup"><span data-stu-id="9433c-186">Build and send a **POST** request to the `follow` endpoint to start following the tag.</span></span>
+- <span data-ttu-id="e369e-186">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `follow` , um die Kategorie folgen zu starten.</span><span class="sxs-lookup"><span data-stu-id="e369e-186">Build and send a **POST** request to the `follow` endpoint to start following the tag.</span></span>
     
   
-- <span data-ttu-id="9433c-187">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `stopfollowing` So beenden Sie die Kategorie folgen.</span><span class="sxs-lookup"><span data-stu-id="9433c-187">Build and send a **POST** request to the `stopfollowing` endpoint to stop following the tag.</span></span>
+- <span data-ttu-id="e369e-187">Erstellen Sie und senden Sie eine **POST** -Anforderung an den Endpunkt `stopfollowing` So beenden Sie die Kategorie folgen.</span><span class="sxs-lookup"><span data-stu-id="e369e-187">Build and send a **POST** request to the `stopfollowing` endpoint to stop following the tag.</span></span>
     
   
-- <span data-ttu-id="9433c-p112">Lesen Sie die JSON-Antwort von der Anforderung  `isfollowed` und die Anforderung `follow` zurückgegeben. (Die Anforderung `stopfollowing` nicht nichts in der Antwort zurück.) Weitere Informationen finden Sie unter [Beispiel JSON Antworten](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bk_exampleResponses).</span><span class="sxs-lookup"><span data-stu-id="9433c-p112">Read the JSON response returned by the  `isfollowed` request and the `follow` request. (The `stopfollowing` request doesn't return anything in the response.) For more information, see [Example JSON responses](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bk_exampleResponses).</span></span>
+- <span data-ttu-id="e369e-p112">Lesen Sie die JSON-Antwort von der Anforderung  `isfollowed` und die Anforderung `follow` zurückgegeben. (Die Anforderung `stopfollowing` nicht nichts in der Antwort zurück.) Weitere Informationen finden Sie unter [Beispiel JSON Antworten](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bk_exampleResponses).</span><span class="sxs-lookup"><span data-stu-id="e369e-p112">Read the JSON response returned by the  `isfollowed` request and the `follow` request. (The `stopfollowing` request doesn't return anything in the response.) For more information, see [Example JSON responses](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bk_exampleResponses).</span></span>
     
   
-<span data-ttu-id="9433c-p113">Ändern Sie den Platzhalterwert für die Variable **tagGuid** vor dem Ausführen des Codes die GUID der vorhandene Tags. Die Taxonomie-API, die Sie verwenden, um ein Tag aus der **HashTagsTermSet** abzurufen keine REST-Schnittstelle, daher Sie in das Clientobjektmodell .NET oder das JavaScript-Objektmodell verwenden müssen. Ein Beispiel finden Sie unter [So rufen Sie die GUID eines Tags auf der Basis des Namens des Tags mithilfe des JavaScript-Objektmodells ab](follow-content-in-sharepoint.md#bk_getTagGuid) .</span><span class="sxs-lookup"><span data-stu-id="9433c-p113">Before you run the code, change the placeholder value for the **tagGuid** variable to the GUID of an existing tag. The taxonomy API that you use to retrieve a tag from the **HashTagsTermSet** doesn't have a REST interface, so you have to use the .NET client object model or the JavaScript object model. See [How to get a tag's GUID based on the tag's name by using the JavaScript object model](follow-content-in-sharepoint.md#bk_getTagGuid) for an example.</span></span>
+<span data-ttu-id="e369e-p113">Ändern Sie den Platzhalterwert für die Variable **tagGuid** vor dem Ausführen des Codes die GUID der vorhandene Tags. Die Taxonomie-API, die Sie verwenden, um ein Tag aus der **HashTagsTermSet** abzurufen keine REST-Schnittstelle, daher Sie in das Clientobjektmodell .NET oder das JavaScript-Objektmodell verwenden müssen. Ein Beispiel finden Sie unter [So rufen Sie die GUID eines Tags auf der Basis des Namens des Tags mithilfe des JavaScript-Objektmodells ab](follow-content-in-sharepoint.md#bk_getTagGuid) .</span><span class="sxs-lookup"><span data-stu-id="e369e-p113">Before you run the code, change the placeholder value for the **tagGuid** variable to the GUID of an existing tag. The taxonomy API that you use to retrieve a tag from the **HashTagsTermSet** doesn't have a REST interface, so you have to use the .NET client object model or the JavaScript object model. See [How to get a tag's GUID based on the tag's name by using the JavaScript object model](follow-content-in-sharepoint.md#bk_getTagGuid) for an example.</span></span>
   
     
     
@@ -640,24 +636,24 @@ function requestFailed(xhr, ajaxOptions, thrownError) {
 ```
 
 
-## <a name="code-example-get-followed-content-by-using-the-sharepoint-rest-service"></a><span data-ttu-id="9433c-193">Codebeispiel: Gefolgte Inhalte mit dem REST-Dienst von SharePoint erhalten</span><span class="sxs-lookup"><span data-stu-id="9433c-193">Code example: Get followed content by using the SharePoint REST service</span></span>
-<span data-ttu-id="9433c-194"><a name="bkmk_GetFollowed"> </a></span><span class="sxs-lookup"><span data-stu-id="9433c-194"><a name="bkmk_GetFollowed"> </a></span></span>
+## <a name="code-example-get-followed-content-by-using-the-sharepoint-rest-service"></a><span data-ttu-id="e369e-193">Codebeispiel: Gefolgte Inhalte mit dem REST-Dienst von SharePoint erhalten</span><span class="sxs-lookup"><span data-stu-id="e369e-193">Code example: Get followed content by using the SharePoint REST service</span></span>
+<span data-ttu-id="e369e-194"><a name="bkmk_GetFollowed"> </a></span><span class="sxs-lookup"><span data-stu-id="e369e-194"><a name="bkmk_GetFollowed"> </a></span></span>
 
-<span data-ttu-id="9433c-195">Das folgende Codebeispiel stellt den Inhalt der App.js-Datei und zeigt, wie Sie:</span><span class="sxs-lookup"><span data-stu-id="9433c-195">The following code example represents the contents of the App.js file and shows how to:</span></span>
+<span data-ttu-id="e369e-195">Das folgende Codebeispiel stellt den Inhalt der App.js-Datei und zeigt, wie Sie:</span><span class="sxs-lookup"><span data-stu-id="e369e-195">The following code example represents the contents of the App.js file and shows how to:</span></span>
   
     
     
 
-- <span data-ttu-id="9433c-196">Möchten Sie app-Webs URI aus der Abfragezeichenfolge erhalten, und erstellen Sie den  `<siteUri>/_api/social.following` Endpunkt-URI.</span><span class="sxs-lookup"><span data-stu-id="9433c-196">Get the app web URI from the query string and construct the  `<siteUri>/_api/social.following` endpoint URI.</span></span>
+- <span data-ttu-id="e369e-196">Möchten Sie app-Webs URI aus der Abfragezeichenfolge erhalten, und erstellen Sie den  `<siteUri>/_api/social.following` Endpunkt-URI.</span><span class="sxs-lookup"><span data-stu-id="e369e-196">Get the app web URI from the query string and construct the  `<siteUri>/_api/social.following` endpoint URI.</span></span>
     
   
-- <span data-ttu-id="9433c-197">Erstellen Sie und senden Sie eine **GET** -Anforderung an den Endpunkt `my/followedcount` , um die Anzahl der Inhalte abzurufen, die der aktuelle Benutzer folgt.</span><span class="sxs-lookup"><span data-stu-id="9433c-197">Build and send a **GET** request to the `my/followedcount` endpoint to get the count of content that the current user is following.</span></span>
+- <span data-ttu-id="e369e-197">Erstellen Sie und senden Sie eine **GET** -Anforderung an den Endpunkt `my/followedcount` , um die Anzahl der Inhalte abzurufen, die der aktuelle Benutzer folgt.</span><span class="sxs-lookup"><span data-stu-id="e369e-197">Build and send a **GET** request to the `my/followedcount` endpoint to get the count of content that the current user is following.</span></span>
     
   
-- <span data-ttu-id="9433c-198">Erstellen Sie und senden Sie eine **GET** -Anforderung an den Endpunkt `my/followed` , um den Inhalt abzurufen, den der aktuelle Benutzer folgt.</span><span class="sxs-lookup"><span data-stu-id="9433c-198">Build and send a **GET** request to the `my/followed` endpoint to get the content that the current user is following.</span></span>
+- <span data-ttu-id="e369e-198">Erstellen Sie und senden Sie eine **GET** -Anforderung an den Endpunkt `my/followed` , um den Inhalt abzurufen, den der aktuelle Benutzer folgt.</span><span class="sxs-lookup"><span data-stu-id="e369e-198">Build and send a **GET** request to the `my/followed` endpoint to get the content that the current user is following.</span></span>
     
   
-- <span data-ttu-id="9433c-p114">Lesen Sie die JSON-Antwort von der Anforderungen zurückgegeben. Siehe  [Beispiel JSON Antworten](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bk_exampleResponses).</span><span class="sxs-lookup"><span data-stu-id="9433c-p114">Read the JSON response returned by the requests. See  [Example JSON responses](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bk_exampleResponses).</span></span>
+- <span data-ttu-id="e369e-p114">Lesen Sie die JSON-Antwort von der Anforderungen zurückgegeben. Siehe  [Beispiel JSON Antworten](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bk_exampleResponses).</span><span class="sxs-lookup"><span data-stu-id="e369e-p114">Read the JSON response returned by the requests. See  [Example JSON responses](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md#bk_exampleResponses).</span></span>
     
   
 
@@ -736,25 +732,25 @@ function requestFailed(xhr, ajaxOptions, thrownError) {
 ```
 
 
-## <a name="example-json-responses-for-following-content-requests"></a><span data-ttu-id="9433c-201">Beispiel von JSON Antworten für folgende inhaltsanforderungen</span><span class="sxs-lookup"><span data-stu-id="9433c-201">Example JSON responses for Following Content requests</span></span>
-<span data-ttu-id="9433c-202"><a name="bk_exampleResponses"> </a></span><span class="sxs-lookup"><span data-stu-id="9433c-202"><a name="bk_exampleResponses"> </a></span></span>
+## <a name="example-json-responses-for-following-content-requests"></a><span data-ttu-id="e369e-201">Beispiel von JSON Antworten für folgende inhaltsanforderungen</span><span class="sxs-lookup"><span data-stu-id="e369e-201">Example JSON responses for Following Content requests</span></span>
+<span data-ttu-id="e369e-202"><a name="bk_exampleResponses"> </a></span><span class="sxs-lookup"><span data-stu-id="e369e-202"><a name="bk_exampleResponses"> </a></span></span>
 
-<span data-ttu-id="9433c-p115">Standardmäßig gibt des REST-Diensts Antworten, die mithilfe des Atom-Protokolls formatiert sind, aber Sie können das JSON-Format mithilfe von HTTP-Headers **Accept** anfordern (zum Beispiel: `"accept":"application/json;odata=verbose"`). Die Antwortdaten werden als Zeichenfolge zurückgegeben, und können die **JSON.stringify** und **JSON.parse** konvertiert die Zeichenfolge in ein Objekt, wie in den vorherigen Codebeispielen dargestellt.</span><span class="sxs-lookup"><span data-stu-id="9433c-p115">By default, the REST service returns responses that are formatted by using the Atom protocol, but you can request the JSON format by using an HTTP **Accept** header (for example: `"accept":"application/json;odata=verbose"`). The response data is returned as a string, and you can use the **JSON.stringify** function and **JSON.parse** function to convert the string into an object, as shown in the previous code examples.</span></span>
+<span data-ttu-id="e369e-p115">Standardmäßig gibt des REST-Diensts Antworten, die mithilfe des Atom-Protokolls formatiert sind, aber Sie können das JSON-Format mithilfe von HTTP-Headers **Accept** anfordern (zum Beispiel: `"accept":"application/json;odata=verbose"`). Die Antwortdaten werden als Zeichenfolge zurückgegeben, und können die **JSON.stringify** und **JSON.parse** konvertiert die Zeichenfolge in ein Objekt, wie in den vorherigen Codebeispielen dargestellt.</span><span class="sxs-lookup"><span data-stu-id="e369e-p115">By default, the REST service returns responses that are formatted by using the Atom protocol, but you can request the JSON format by using an HTTP **Accept** header (for example: `"accept":"application/json;odata=verbose"`). The response data is returned as a string, and you can use the **JSON.stringify** function and **JSON.parse** function to convert the string into an object, as shown in the previous code examples.</span></span>
   
     
     
-<span data-ttu-id="9433c-p116">Betrachten Sie um einen von der REST-Dienst im Debugmodus zurückgegebenen Fehler beheben die **responseText** -Eigenschaft, wie die **requestFailed** Rückruffunktionen in den vorherigen Beispielen gezeigt aus. Sie können auch die Korrelations-ID für die Server-ULS-Protokoll aus einem Netzwerksniffer oder HTTP-Debugger, wie beispielsweise Fiddler abrufen. Die Korrelations-ID ist die gleiche wie die-ID in der HTTP-Antwort.</span><span class="sxs-lookup"><span data-stu-id="9433c-p116">To troubleshoot an error returned by the REST service, in debug mode, look at the **responseText** property, as shown in the **requestFailed** callback functions in the previous examples. You can also get the correlation ID for the ULS server log from a network sniffer or HTTP debugger, such as Fiddler. The correlation ID is the same as the request ID in the HTTP response.</span></span>
+<span data-ttu-id="e369e-p116">Betrachten Sie um einen von der REST-Dienst im Debugmodus zurückgegebenen Fehler beheben die **responseText** -Eigenschaft, wie die **requestFailed** Rückruffunktionen in den vorherigen Beispielen gezeigt aus. Sie können auch die Korrelations-ID für die Server-ULS-Protokoll aus einem Netzwerksniffer oder HTTP-Debugger, wie beispielsweise Fiddler abrufen. Die Korrelations-ID ist die gleiche wie die-ID in der HTTP-Antwort.</span><span class="sxs-lookup"><span data-stu-id="e369e-p116">To troubleshoot an error returned by the REST service, in debug mode, look at the **responseText** property, as shown in the **requestFailed** callback functions in the previous examples. You can also get the correlation ID for the ULS server log from a network sniffer or HTTP debugger, such as Fiddler. The correlation ID is the same as the request ID in the HTTP response.</span></span>
   
     
     
 
-### <a name="example-response-for-the-follow-endpoint"></a><span data-ttu-id="9433c-208">Beispielantwort für den Endpunkt folgen</span><span class="sxs-lookup"><span data-stu-id="9433c-208">Example response for the Follow endpoint</span></span>
+### <a name="example-response-for-the-follow-endpoint"></a><span data-ttu-id="e369e-208">Beispielantwort für den Endpunkt folgen</span><span class="sxs-lookup"><span data-stu-id="e369e-208">Example response for the Follow endpoint</span></span>
 
-<span data-ttu-id="9433c-209">Als Reaktion auf Anfragen an den Endpunkt  `follow` mithilfe der clientseitigen gibt der REST-Dienst einen **SocialFollowResult** -Wert, der angibt, ob die Anforderung **Follow** erfolgreich war.</span><span class="sxs-lookup"><span data-stu-id="9433c-209">In response to client-side requests to the  `follow` endpoint, the REST service returns a **SocialFollowResult** value that represents whether the **Follow** request succeeded.</span></span>
+<span data-ttu-id="e369e-209">Als Reaktion auf Anfragen an den Endpunkt  `follow` mithilfe der clientseitigen gibt der REST-Dienst einen **SocialFollowResult** -Wert, der angibt, ob die Anforderung **Follow** erfolgreich war.</span><span class="sxs-lookup"><span data-stu-id="e369e-209">In response to client-side requests to the  `follow` endpoint, the REST service returns a **SocialFollowResult** value that represents whether the **Follow** request succeeded.</span></span>
   
     
     
-<span data-ttu-id="9433c-210">Die folgende Antwort stellt den Status **AlreadyFollowing** dar.</span><span class="sxs-lookup"><span data-stu-id="9433c-210">The following response represents the **AlreadyFollowing** status.</span></span>
+<span data-ttu-id="e369e-210">Die folgende Antwort stellt den Status **AlreadyFollowing** dar.</span><span class="sxs-lookup"><span data-stu-id="e369e-210">The following response represents the **AlreadyFollowing** status.</span></span>
   
     
     
@@ -766,34 +762,34 @@ function requestFailed(xhr, ajaxOptions, thrownError) {
 {"d":{"Follow":1}}
 ```
 
-<span data-ttu-id="9433c-211">Tabelle 1 zeigt **SocialFollowResult** Statuscodes und deren Werte an.</span><span class="sxs-lookup"><span data-stu-id="9433c-211">Table 1 shows **SocialFollowResult** status codes and their values.</span></span>
+<span data-ttu-id="e369e-211">Tabelle 1 zeigt **SocialFollowResult** Statuscodes und deren Werte an.</span><span class="sxs-lookup"><span data-stu-id="e369e-211">Table 1 shows **SocialFollowResult** status codes and their values.</span></span>
   
     
     
 
-<span data-ttu-id="9433c-212">**Tabelle 1: SocialFollowResult-Codes und -Werte**</span><span class="sxs-lookup"><span data-stu-id="9433c-212">**Table 1. SocialFollowResult codes and values**</span></span>
+<span data-ttu-id="e369e-212">**Tabelle 1: SocialFollowResult-Codes und -Werte**</span><span class="sxs-lookup"><span data-stu-id="e369e-212">**Table 1. SocialFollowResult codes and values**</span></span>
 
-|<span data-ttu-id="9433c-213">**Statuscode**</span><span class="sxs-lookup"><span data-stu-id="9433c-213">**Status code**</span></span>|<span data-ttu-id="9433c-214">**Wert**</span><span class="sxs-lookup"><span data-stu-id="9433c-214">**Value**</span></span>|
+|<span data-ttu-id="e369e-213">**Statuscode**</span><span class="sxs-lookup"><span data-stu-id="e369e-213">**Status code**</span></span>|<span data-ttu-id="e369e-214">**Wert**</span><span class="sxs-lookup"><span data-stu-id="e369e-214">**Value**</span></span>|
 |:-----|:-----|
-|<span data-ttu-id="9433c-215">0</span><span class="sxs-lookup"><span data-stu-id="9433c-215">0</span></span>|<span data-ttu-id="9433c-p117">**OK**. Der aktuelle Benutzer ist nun den Akteur folgen.</span><span class="sxs-lookup"><span data-stu-id="9433c-p117">**OK**. The current user is now following the actor.</span></span>|
-|<span data-ttu-id="9433c-218">1</span><span class="sxs-lookup"><span data-stu-id="9433c-218">1</span></span>|<span data-ttu-id="9433c-p118">**AlreadyFollowing**. Der aktuelle Benutzer ist den Akteur bereits folgen.</span><span class="sxs-lookup"><span data-stu-id="9433c-p118">**AlreadyFollowing**. The current user is already following the actor.</span></span>|
-|<span data-ttu-id="9433c-221">2</span><span class="sxs-lookup"><span data-stu-id="9433c-221">2</span></span>|<span data-ttu-id="9433c-p119">**LimitReached**. Fehler bei der Anforderung, da ein internes Limit erreicht wurde.</span><span class="sxs-lookup"><span data-stu-id="9433c-p119">**LimitReached**. The request failed because an internal limit was reached.</span></span>|
-|<span data-ttu-id="9433c-224">3</span><span class="sxs-lookup"><span data-stu-id="9433c-224">3</span></span>|<span data-ttu-id="9433c-p120">**InternalError**. Die Anforderung ist aufgrund eines internen Fehlers fehlgeschlagen.</span><span class="sxs-lookup"><span data-stu-id="9433c-p120">**InternalError**. The request failed due to an internal error.</span></span>|
+|<span data-ttu-id="e369e-215">0</span><span class="sxs-lookup"><span data-stu-id="e369e-215">0</span></span>|<span data-ttu-id="e369e-p117">**OK**. Der aktuelle Benutzer ist nun den Akteur folgen.</span><span class="sxs-lookup"><span data-stu-id="e369e-p117">**OK**. The current user is now following the actor.</span></span>|
+|<span data-ttu-id="e369e-218">1</span><span class="sxs-lookup"><span data-stu-id="e369e-218">1</span></span>|<span data-ttu-id="e369e-p118">**AlreadyFollowing**. Der aktuelle Benutzer ist den Akteur bereits folgen.</span><span class="sxs-lookup"><span data-stu-id="e369e-p118">**AlreadyFollowing**. The current user is already following the actor.</span></span>|
+|<span data-ttu-id="e369e-221">2</span><span class="sxs-lookup"><span data-stu-id="e369e-221">2</span></span>|<span data-ttu-id="e369e-p119">**LimitReached**. Fehler bei der Anforderung, da ein internes Limit erreicht wurde.</span><span class="sxs-lookup"><span data-stu-id="e369e-p119">**LimitReached**. The request failed because an internal limit was reached.</span></span>|
+|<span data-ttu-id="e369e-224">3</span><span class="sxs-lookup"><span data-stu-id="e369e-224">3</span></span>|<span data-ttu-id="e369e-p120">**InternalError**. Die Anforderung ist aufgrund eines internen Fehlers fehlgeschlagen.</span><span class="sxs-lookup"><span data-stu-id="e369e-p120">**InternalError**. The request failed due to an internal error.</span></span>|
    
-
-> <span data-ttu-id="9433c-227">**Hinweis:** Der REST-Dienst gibt keine Antwort für die Anforderung **StopFollowing** zurück.</span><span class="sxs-lookup"><span data-stu-id="9433c-227">**Note:** The REST service doesn't return a response for the **StopFollowing** request.</span></span> <span data-ttu-id="9433c-228">Er gibt `{"d":{"StopFollowing":null}}` zurück.</span><span class="sxs-lookup"><span data-stu-id="9433c-228">It returns `{"d":{"StopFollowing":null}}`.</span></span> 
+> [!NOTE]
+> <span data-ttu-id="e369e-227">Der REST-Dienst gibt keine Antwort für die Anforderung **StopFollowing** zurück.</span><span class="sxs-lookup"><span data-stu-id="e369e-227">Note: The REST service doesn't return a response for the **StopFollowing** request.</span></span> <span data-ttu-id="e369e-228">Er gibt `{"d":{"StopFollowing":null}}` zurück.</span><span class="sxs-lookup"><span data-stu-id="e369e-228">It returns `{"d":{"StopFollowing":null}}`.</span></span> 
   
     
     
 
 
-### <a name="example-response-for-the-isfollowed-endpoint"></a><span data-ttu-id="9433c-229">Beispielantwort für den Endpunkt IsFollowed</span><span class="sxs-lookup"><span data-stu-id="9433c-229">Example response for the IsFollowed endpoint</span></span>
+### <a name="example-response-for-the-isfollowed-endpoint"></a><span data-ttu-id="e369e-229">Beispielantwort für den Endpunkt IsFollowed</span><span class="sxs-lookup"><span data-stu-id="e369e-229">Example response for the IsFollowed endpoint</span></span>
 
-<span data-ttu-id="9433c-230">Als Reaktion auf Anfragen an den Endpunkt  `isfollowed` mithilfe der clientseitigen gibt der REST-Dienst einen **bool** -Wert, der angibt, ob der aktuelle Benutzer den angegebenen Akteur folgt.</span><span class="sxs-lookup"><span data-stu-id="9433c-230">In response to client-side requests to the  `isfollowed` endpoint, the REST service returns a **bool** value that represents whether the current user is following the specified actor.</span></span>
+<span data-ttu-id="e369e-230">Als Reaktion auf Anfragen an den Endpunkt  `isfollowed` mithilfe der clientseitigen gibt der REST-Dienst einen **bool** -Wert, der angibt, ob der aktuelle Benutzer den angegebenen Akteur folgt.</span><span class="sxs-lookup"><span data-stu-id="e369e-230">In response to client-side requests to the  `isfollowed` endpoint, the REST service returns a **bool** value that represents whether the current user is following the specified actor.</span></span>
   
     
     
-<span data-ttu-id="9433c-231">Die folgende Antwort gibt an, dass der aktuelle Benutzer nicht das angegebene Dokument, eine Website oder ein Tag folgt.</span><span class="sxs-lookup"><span data-stu-id="9433c-231">The following response indicates that the current user is not following the specified document, site, or tag.</span></span>
+<span data-ttu-id="e369e-231">Die folgende Antwort gibt an, dass der aktuelle Benutzer nicht das angegebene Dokument, eine Website oder ein Tag folgt.</span><span class="sxs-lookup"><span data-stu-id="e369e-231">The following response indicates that the current user is not following the specified document, site, or tag.</span></span>
   
     
     
@@ -805,13 +801,13 @@ function requestFailed(xhr, ajaxOptions, thrownError) {
 ```
 
 
-### <a name="example-response-for-the-myfollowed-endpoint"></a><span data-ttu-id="9433c-232">Beispielantwort für den Endpunkt Meine/besuchter</span><span class="sxs-lookup"><span data-stu-id="9433c-232">Example response for the My/Followed endpoint</span></span>
+### <a name="example-response-for-the-myfollowed-endpoint"></a><span data-ttu-id="e369e-232">Beispielantwort für den Endpunkt Meine/besuchter</span><span class="sxs-lookup"><span data-stu-id="e369e-232">Example response for the My/Followed endpoint</span></span>
 
-<span data-ttu-id="9433c-233">Als Reaktion auf Anfragen an den Endpunkt  `my/followed` mithilfe der clientseitigen gibt der REST-Dienst ein Array von **SP.Social.SocialActor** -Objekten, die Dokumenten, Websites und Tags, die der aktuelle Benutzer folgt darstellen.</span><span class="sxs-lookup"><span data-stu-id="9433c-233">In response to client-side requests to the  `my/followed` endpoint, the REST service returns an array of **SP.Social.SocialActor** objects that represent documents, sites, and tags that the current user is following.</span></span>
+<span data-ttu-id="e369e-233">Als Reaktion auf Anfragen an den Endpunkt  `my/followed` mithilfe der clientseitigen gibt der REST-Dienst ein Array von **SP.Social.SocialActor** -Objekten, die Dokumenten, Websites und Tags, die der aktuelle Benutzer folgt darstellen.</span><span class="sxs-lookup"><span data-stu-id="e369e-233">In response to client-side requests to the  `my/followed` endpoint, the REST service returns an array of **SP.Social.SocialActor** objects that represent documents, sites, and tags that the current user is following.</span></span>
   
     
     
-<span data-ttu-id="9433c-p122">Die folgende Antwort stellt eine besuchter Dokument, Website und Tag. Die Anforderung gibt die Arten von Inhalt enthalten.</span><span class="sxs-lookup"><span data-stu-id="9433c-p122">The following response represents a followed document, site, and tag. The request specifies the types of content to include.</span></span>
+<span data-ttu-id="e369e-p122">Die folgende Antwort stellt eine besuchter Dokument, Website und Tag. Die Anforderung gibt die Arten von Inhalt enthalten.</span><span class="sxs-lookup"><span data-stu-id="e369e-p122">The following response represents a followed document, site, and tag. The request specifies the types of content to include.</span></span>
   
     
     
@@ -885,13 +881,13 @@ function requestFailed(xhr, ajaxOptions, thrownError) {
 ```
 
 
-### <a name="example-response-for-the-myfollowedcount-endpoint"></a><span data-ttu-id="9433c-236">Beispielantwort für den Endpunkt Meine/FollowedCount</span><span class="sxs-lookup"><span data-stu-id="9433c-236">Example response for the My/FollowedCount endpoint</span></span>
+### <a name="example-response-for-the-myfollowedcount-endpoint"></a><span data-ttu-id="e369e-236">Beispielantwort für den Endpunkt Meine/FollowedCount</span><span class="sxs-lookup"><span data-stu-id="e369e-236">Example response for the My/FollowedCount endpoint</span></span>
 
-<span data-ttu-id="9433c-237">Als Reaktion auf Anfragen an den Endpunkt  `my/followedcount` mithilfe der clientseitigen gibt der REST-Dienst einen **Int32** -Wert, der die Gesamtzahl der angegebenen Actor Typen darstellt, die der aktuelle Benutzer folgt.</span><span class="sxs-lookup"><span data-stu-id="9433c-237">In response to client-side requests to the  `my/followedcount` endpoint, the REST service returns an **Int32** value that represents the total count of specified actor types that the current user is following.</span></span>
+<span data-ttu-id="e369e-237">Als Reaktion auf Anfragen an den Endpunkt  `my/followedcount` mithilfe der clientseitigen gibt der REST-Dienst einen **Int32** -Wert, der die Gesamtzahl der angegebenen Actor Typen darstellt, die der aktuelle Benutzer folgt.</span><span class="sxs-lookup"><span data-stu-id="e369e-237">In response to client-side requests to the  `my/followedcount` endpoint, the REST service returns an **Int32** value that represents the total count of specified actor types that the current user is following.</span></span>
   
     
     
-<span data-ttu-id="9433c-p123">Die folgende Antwort stellt eine Anzahl von drei beobachteter Dokumente, Websites und/oder Tags dar. Die Anforderung gibt die Arten von Inhalt enthalten.</span><span class="sxs-lookup"><span data-stu-id="9433c-p123">The following response represents a count of three followed documents, sites, and/or tags. The request specifies the types of content to include.</span></span>
+<span data-ttu-id="e369e-p123">Die folgende Antwort stellt eine Anzahl von drei beobachteter Dokumente, Websites und/oder Tags dar. Die Anforderung gibt die Arten von Inhalt enthalten.</span><span class="sxs-lookup"><span data-stu-id="e369e-p123">The following response represents a count of three followed documents, sites, and/or tags. The request specifies the types of content to include.</span></span>
   
     
     
@@ -904,17 +900,17 @@ function requestFailed(xhr, ajaxOptions, thrownError) {
 ```
 
 
-## <a name="additional-resources"></a><span data-ttu-id="9433c-240">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="9433c-240">Additional resources</span></span>
-<span data-ttu-id="9433c-241"><a name="bkmk_AddtionalResources"> </a></span><span class="sxs-lookup"><span data-stu-id="9433c-241"><a name="bkmk_AddtionalResources"> </a></span></span>
+## <a name="see-also"></a><span data-ttu-id="e369e-240">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="e369e-240">See also</span></span>
+<span data-ttu-id="e369e-241"><a name="bkmk_AddtionalResources"> </a></span><span class="sxs-lookup"><span data-stu-id="e369e-241"><a name="bkmk_AddtionalResources"> </a></span></span>
 
 
--  [<span data-ttu-id="9433c-242">Folgen von Inhalten in SharePoint</span><span class="sxs-lookup"><span data-stu-id="9433c-242">Follow content in SharePoint</span></span>](follow-content-in-sharepoint.md)
+-  [<span data-ttu-id="e369e-242">Folgen von Inhalten in SharePoint</span><span class="sxs-lookup"><span data-stu-id="e369e-242">Follow content in SharePoint</span></span>](follow-content-in-sharepoint.md)
     
   
--  [<span data-ttu-id="9433c-243">REST-API-Referenz zum Folgen von Personen und Inhalten für SharePoint</span><span class="sxs-lookup"><span data-stu-id="9433c-243">Following people and content REST API reference for SharePoint</span></span>](following-people-and-content-rest-api-reference-for-sharepoint.md)
+-  [<span data-ttu-id="e369e-243">REST-API-Referenz zum Folgen von Personen und Inhalten für SharePoint</span><span class="sxs-lookup"><span data-stu-id="e369e-243">Following people and content REST API reference for SharePoint</span></span>](following-people-and-content-rest-api-reference-for-sharepoint.md)
     
   
--  [<span data-ttu-id="9433c-244">Vorgehensweise: Führen Sie Dokumente und Websites mit .NET Client-Objektmodell in SharePoint</span><span class="sxs-lookup"><span data-stu-id="9433c-244">How to: Follow documents and sites by using the .NET client object model in SharePoint</span></span>](how-to-follow-documents-and-sites-by-using-the-net-client-object-model-in-sharep.md)
+-  [<span data-ttu-id="e369e-244">Vorgehensweise: Führen Sie Dokumente und Websites mit .NET Client-Objektmodell in SharePoint</span><span class="sxs-lookup"><span data-stu-id="e369e-244">How to: Follow documents and sites by using the .NET client object model in SharePoint</span></span>](how-to-follow-documents-and-sites-by-using-the-net-client-object-model-in-sharep.md)
     
   
 
