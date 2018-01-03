@@ -3,22 +3,19 @@ title: "Einschließen von Erwähnungen, Tags und Links zu Websites und Dokumente
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 975da333-372b-4bf6-a3f4-7452db369f04
-ms.openlocfilehash: f0af1c97baf6da530358f2a2ff86f29e2f9bb03e
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 7778161ec06bd2a47012b830617132be3e3cd375
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharepoint"></a>Einschließen von Erwähnungen, Tags und Links zu Websites und Dokumenten in Beiträgen in SharePoint
 
-In diesem Artikel erfahren Sie, wie Sie Mikroblogbeiträgen [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx)-Objekte hinzufügen, die als Erwähnungen, Tags oder Links in sozialen Feeds für SharePoint gerendert werden.
-Die einfachste Form von Beitragsinhalten in sozialen Feeds enthält nur Text, aber Sie können auch Links hinzufügen, die als Erwähnungen, Tags oder Links zu Websites, SharePoint-Websites und Dokumenten gerendert werden. Zu diesem Zweck fügen Sie [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx)-Objekte zur [ContentItems](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.ContentItems.aspx)-Eigenschaft des [SocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx)-Objekts hinzu, das den Beitrag definiert. Beiträge können mehrere Links enthalten.
+In diesem Artikel erfahren Sie, wie Sie Mikroblogbeiträgen [SocialDataItem]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx))-Objekte hinzufügen, die als Erwähnungen, Tags oder Links in sozialen Feeds für SharePoint gerendert werden.
+Die einfachste Form von Beitragsinhalten in sozialen Feeds enthält nur Text, aber Sie können auch Links hinzufügen, die als Erwähnungen, Tags oder Links zu Websites, SharePoint-Websites und Dokumenten gerendert werden. Zu diesem Zweck fügen Sie [SocialDataItem]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx))-Objekte zur [ContentItems]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.ContentItems.aspx))-Eigenschaft des [SocialPostCreationData]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx))-Objekts hinzu, das den Beitrag definiert. Beiträge können mehrere Links enthalten.
   
-    
-    
-
-
-> **Hinweis:** Um eingebettete Bilder, Videos oder Dokumente zum Inhalt eines Beitrags hinzuzufügen, fügen Sie ein [SocialAttachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx)-Objekt zur [SocialPostCreationData.Attachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.Attachment.aspx)-Eigenschaft hinzu. Weitere Informationen finden Sie unter [Vorgehensweise: Einbetten von Bildern, Videos und Dokumenten in Beiträgen in SharePoint](how-to-embed-images-videos-and-documents-in-posts-in-sharepoint-server.md). 
+> [!NOTE]
+> Um eingebettete Bilder, Videos oder Dokumente zum Inhalt eines Beitrags hinzuzufügen, fügen Sie ein [SocialAttachment]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx))-Objekt zur [SocialPostCreationData.Attachment]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.Attachment.aspx))-Eigenschaft hinzu. Weitere Informationen finden Sie unter [Vorgehensweise: Einbetten von Bildern, Videos und Dokumenten in Beiträgen in SharePoint](how-to-embed-images-videos-and-documents-in-posts-in-sharepoint-server.md). 
   
     
     
@@ -60,27 +57,24 @@ Im folgenden Codebeispiel wird veröffentlicht einen Beitrag, der Links zu einer
     
     
 
-- Erstellen Sie  [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx) -Objekten, die Links darstellen. Jede Instanz wird das Feld [SocialDataItemType](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItemType.aspx) für den Link, der Anzeigetext für den Link, und den Link URI festgelegt.
+- Erstellen Sie  [SocialDataItem]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx)) -Objekten, die Links darstellen. Jede Instanz wird das Feld [SocialDataItemType]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItemType.aspx)) für den Link, der Anzeigetext für den Link, und den Link URI festgelegt.
     
   
 - Hinzufügen von Platzhaltern für den Post-Text um anzugeben, wo Anzeigetext für den Link angezeigt werden soll.
     
   
-- Fügen Sie die Linkobjekte zur [ContentItems](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.ContentItems.aspx)-Eigenschaft des [SocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx)-Objekts hinzu, das zum Erstellen des Beitrags verwendet wird.
+- Fügen Sie die Linkobjekte zur [ContentItems]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.ContentItems.aspx))-Eigenschaft des [SocialPostCreationData]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx))-Objekts hinzu, das zum Erstellen des Beitrags verwendet wird.
     
-  
-
-> **Hinweis:** Derzeit werden in SharePoint Links zu Websites, SharePoint-Websites und Dokumenten gleich behandelt. Es empfiehlt sich jedoch, für SharePoint-Websites und Dokumente die Typen [Site](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItemType.Site.aspx) und [Document](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItemType.Document.aspx) zu wählen.
+> [!NOTE]
+> Derzeit werden in SharePoint Links zu Websites, SharePoint-Websites und Dokumenten gleich behandelt. Es empfiehlt sich jedoch, für SharePoint-Websites und Dokumente die Typen [Site]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItemType.Site.aspx)) und [Document]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItemType.Document.aspx)) zu wählen.
   
     
     
 
 Wenn Sie im sozialen Feed auf einen Link zu einer Website, einer SharePoint-Website oder einem Dokument klicken, wird das Element in einem separaten Browserfenster geöffnet.
   
-    
-    
-
-> **Hinweis:** Ändern Sie die Platzhalterwerte für die URL-Variablen vor dem Ausführen des Codes. 
+> [!NOTE]
+> Ändern Sie die Platzhalterwerte für die URL-Variablen vor dem Ausführen des Codes. 
   
     
     
@@ -179,21 +173,19 @@ Im folgenden Codebeispiel wird veröffentlicht einen Beitrag, der einen Benutzer
     
     
 
-- Erstellen Sie ein  [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx) -Objekt, um einen Vermerk darstellen, der eine Verknüpfung zu einem Benutzer ist. Die [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx) gibt das [SocialDataItemType.User](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItemType.User.aspx) -Feld und die weiter oben erwähnt Person Kontonamen. Sie können den Kontonamen mithilfe der Anmeldename der Person oder e-Mail-Adresse festlegen.
+- Erstellen Sie ein  [SocialDataItem]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx)) -Objekt, um einen Vermerk darstellen, der eine Verknüpfung zu einem Benutzer ist. Die [SocialDataItem]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx)) gibt das [SocialDataItemType.User]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItemType.User.aspx)) -Feld und die weiter oben erwähnt Person Kontonamen. Sie können den Kontonamen mithilfe der Anmeldename der Person oder e-Mail-Adresse festlegen.
     
   
 - Hinzufügen eines Platzhalters für den Post-Text um anzugeben, wo der weiter oben erwähnt Person Anzeigename angezeigt werden soll.
     
   
-- Fügen Sie der  [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx) der [ContentItems](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.ContentItems.aspx) -Eigenschaft des [SocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx) -Objekts, das zum Erstellen der POST-Anforderung verwendet wird.
+- Fügen Sie der  [SocialDataItem]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx)) der [ContentItems]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.ContentItems.aspx)) -Eigenschaft des [SocialPostCreationData]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx)) -Objekts, das zum Erstellen der POST-Anforderung verwendet wird.
     
   
 Wenn Sie in einem sozialen Feed auf eine Erwähnung klicken, werden Sie auf die **Info**-Seite der erwähnten Person umgeleitet.
   
-    
-    
-
-> **Hinweis:** Ändern Sie die Platzhalterwerte für die Variablen **serverURL** und **accountName** vor dem Ausführen des Codes.
+> [!NOTE]
+> Ändern Sie die Platzhalterwerte für die Variablen **serverURL** und **accountName** vor dem Ausführen des Codes.
   
     
     
@@ -270,21 +262,19 @@ Im folgenden Codebeispiel wird veröffentlicht einen Beitrag, der ein Tag enthä
     
     
 
-- Erstellen Sie ein  [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx) -Objekt, um das Tag darstellen. Die [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx) gibt das Feld [SocialDataItemType.Tag](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItemType.Tag.aspx) und der Tagname, die ein **#** Zeichen enthalten muss.
+- Erstellen Sie ein  [SocialDataItem]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx)) -Objekt, um das Tag darstellen. Die [SocialDataItem]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx)) gibt das Feld [SocialDataItemType.Tag]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItemType.Tag.aspx)) und der Tagname, die ein **#** Zeichen enthalten muss.
     
   
 - Hinzufügen eines Platzhalters für den Post-Text um anzugeben, wo das Tag angezeigt werden soll.
     
   
-- Fügen Sie der  [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx) der [ContentItems](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.ContentItems.aspx) -Eigenschaft des [SocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx) -Objekts, das zum Erstellen der POST-Anforderung verwendet wird.
+- Fügen Sie der  [SocialDataItem]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx)) der [ContentItems]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.ContentItems.aspx)) -Eigenschaft des [SocialPostCreationData]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx)) -Objekts, das zum Erstellen der POST-Anforderung verwendet wird.
     
   
 Wenn Sie im sozialen Feed auf ein Tag klicken, werden Sie zur **Info**-Seite des Tags umgeleitet. Wenn das Tag noch nicht vorhanden ist, wird es vom Server erstellt.
   
-    
-    
-
-> **Hinweis:** Ändern Sie die Platzhalterwerte für die Variablen **serverURL** und **tagName** vor dem Ausführen des Codes.
+> [!NOTE]
+> Ändern Sie die Platzhalterwerte für die Variablen **serverURL** und **tagName** vor dem Ausführen des Codes.
   
     
     
@@ -354,23 +344,23 @@ namespace IncludeTagInPost
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
 -  [Arbeiten mit sozialen Feeds in SharePoint](work-with-social-feeds-in-sharepoint.md)
     
   
--  [SocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx) und [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx) in die Clientobjektmodelle
+-  [SocialPostCreationData]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx)) und [SocialDataItem]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx)) in die Clientobjektmodelle
     
   
--  [SocialPostCreationData](http://msdn.microsoft.com/library/f0e1fa3e-6fc9-48e0-5570-92091abfef33%28Office.15%29.aspx) und [SocialDataItem](http://msdn.microsoft.com/library/757e7b62-66a6-b03f-0ff0-769a42eb2b4a%28Office.15%29.aspx) im JavaScript-Objektmodell
+-  [SocialPostCreationData]((http://msdn.microsoft.com/library/f0e1fa3e-6fc9-48e0-5570-92091abfef33%28Office.15%29.aspx)) und [SocialDataItem]((http://msdn.microsoft.com/library/757e7b62-66a6-b03f-0ff0-769a42eb2b4a%28Office.15%29.aspx)) im JavaScript-Objektmodell
     
   
 -  [REST-API-Referenz für sozialen Feed für SharePoint](social-feed-rest-api-reference-for-sharepoint.md)
     
   
--  [SPSocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialPostCreationData.aspx) und [SPSocialDataItem](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialDataItem.aspx) im Server-Objektmodell
+-  [SPSocialPostCreationData]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialPostCreationData.aspx)) und [SPSocialDataItem]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialDataItem.aspx)) im Server-Objektmodell
     
   
 

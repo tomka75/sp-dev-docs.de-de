@@ -3,11 +3,11 @@ title: "Neuigkeiten für Entwickler hinsichtlich der thematischen Features und d
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 65365b1d-cde5-47cd-8b04-1b76be0e3490
-ms.openlocfilehash: e07b0d576b096667251b2aff377593bae634823e
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 092dc0278641e7846f4cba5356fb2b072ca2ecb2
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="whats-new-for-developers-in-social-and-collaboration-features-in-sharepoint"></a>Neuigkeiten für Entwickler hinsichtlich der thematischen Features und der Zusammenarbeitsfeatures in SharePoint
 Informationen Sie zu neuen und geänderten thematische Features und Zusammenarbeitsfeatures für Meine Website und Communitywebsite Entwicklungsszenarien in SharePoint. Thematische Features und Zusammenarbeitsfeatures in SharePoint erleichtern Benutzern kommunizieren und bleiben anderweitig und informiert. Der verbesserte für soziale Netzwerke-Feed für persönliche Websites und Teamwebsites hilft Benutzern bei auf dem neuesten Stand mit den Personen und Inhalten, die sie interessieren. Das neue Feature für Communitywebsite bietet umfassende Community, mit der Benutzer auf einfache Weise suchen und Freigeben von Informationen und Personen mit ähnlichen Interessen finden.
@@ -30,12 +30,10 @@ Auf der Seite **Newsfeed** in SharePoint werden mehrere dieser Verbesserungen an
 
 ### <a name="new-social-namespace-provides-apis-for-social-feeds-and-following-people-and-content"></a>Ein neuer sozialer Namespace enthält APIs für Feeds in sozialen Netzwerken und zum Folgen von Personen und Inhalten.
 
-Der **Social** -Namespace enthält die primäre-API für die Arbeit mit Feeds und Microblog-Beiträge und für folgende Personen und Inhalte. Weitere Informationen finden Sie unter [Microsoft.SharePoint.Client.Social](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.aspx) für den .NET Clientobjektmodell [SP. Soziale](http://msdn.microsoft.com/library/43d47f01-c085-0e77-bd01-48bcb7d5bb35%28Office.15%29.aspx) für JavaScript-Objektmodell und [Microsoft.Office.Server.Social](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.aspx) für das Serverobjektmodell.
+Der **Social** -Namespace enthält die primäre-API für die Arbeit mit Feeds und Microblog-Beiträge und für folgende Personen und Inhalte. Weitere Informationen finden Sie unter [Microsoft.SharePoint.Client.Social]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.aspx)) für den .NET Clientobjektmodell [SP. Soziale]((http://msdn.microsoft.com/library/43d47f01-c085-0e77-bd01-48bcb7d5bb35%28Office.15%29.aspx)) für JavaScript-Objektmodell und [Microsoft.Office.Server.Social]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.aspx)) für das Serverobjektmodell.
   
-    
-    
-
-> **Hinweis:** Die API im Namespace [Microsoft.Office.Server.ActivityFeed](https://msdn.microsoft.com/library/Microsoft.Office.Server.ActivityFeed.aspx) wird nicht mehr unterstützt. Siehe [Veraltete und entfernte Meine Website-Soziale Netzwerke-API und -Features](#bkmk_DeprecatedAPI) 
+> [!NOTE] 
+> Die API im Namespace [Microsoft.Office.Server.ActivityFeed]((https://msdn.microsoft.com/library/Microsoft.Office.Server.ActivityFeed.aspx)) wird nicht mehr unterstützt. Siehe [Veraltete und entfernte Meine Website-Soziale Netzwerke-API und -Features](#bkmk_DeprecatedAPI) 
   
     
     
@@ -47,7 +45,7 @@ SharePoint enthält neuen Client-APIs, die Sie zum Arbeiten mit sozialen Feeds, 
   
     
     
-Nicht alle serverseitigen-Funktionen in der Assembly Microsoft.Office.Server.UserProfiles ist von Client-APIs zur Verfügung. Es ist beispielsweise keine clientseitige Zugriff auf die API in der  [Microsoft.Office.Server.Audience](https://msdn.microsoft.com/library/Microsoft.Office.Server.Audience.aspx) -Namespace, den Namespace [Microsoft.Office.Server.ReputationModel](https://msdn.microsoft.com/library/Microsoft.Office.Server.ReputationModel.aspx) oder den [Microsoft.Office.Server.SocialData](https://msdn.microsoft.com/library/Microsoft.Office.Server.SocialData.aspx) -Namespace. Die APIs zur Verfügung stehen, finden Sie unter den [Microsoft.SharePoint.Client.Social](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.aspx) -Namespace und den [Microsoft.SharePoint.Client.UserProfiles](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.aspx) -Namespace.
+Nicht alle serverseitigen-Funktionen in der Assembly Microsoft.Office.Server.UserProfiles ist von Client-APIs zur Verfügung. Es ist beispielsweise keine clientseitige Zugriff auf die API in der  [Microsoft.Office.Server.Audience]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Audience.aspx)) -Namespace, den Namespace [Microsoft.Office.Server.ReputationModel]((https://msdn.microsoft.com/library/Microsoft.Office.Server.ReputationModel.aspx)) oder den [Microsoft.Office.Server.SocialData]((https://msdn.microsoft.com/library/Microsoft.Office.Server.SocialData.aspx)) -Namespace. Die APIs zur Verfügung stehen, finden Sie unter den [Microsoft.SharePoint.Client.Social]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.aspx)) -Namespace und den [Microsoft.SharePoint.Client.UserProfiles]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.aspx)) -Namespace.
   
     
     
@@ -65,10 +63,8 @@ Meine Website Host-Administratoren können die **ProfileLoader.CreatePersonalSit
     
 Im folgenden Codebeispiel verwendet das Clientobjektmodell .NET in eine Konsolenanwendung. Fügen Sie bevor Sie das Beispiel auszuführen Verweise auf Microsoft.SharePoint.Client.dll und Microsoft.SharePoint.Client.Runtime.dll aus zu Microsoft.SharePoint.Client.UserProfiles.dll, und ändern Sie die Platzhalterwerte für die Variablen **userName**, **passwordStr**und **serverUrl**. Die **serverUrl** -Variable muss die URL der SharePoint Online-Verwaltungskonsole.
   
-    
-    
-
-> **Hinweis:** Um den erforderlichen Client-DLLs aufzurufen, laden Sie die  [SharePoint Online-Clientkomponenten- SDK](http://www.microsoft.com/en-us/download/details.aspx?id=42038). 
+> [!NOTE] 
+> Um den erforderlichen Client-DLLs aufzurufen, laden Sie die [SharePoint Online-Clientkomponenten – SDK](http://www.microsoft.com/en-us/download/details.aspx?id=42038). 
   
     
     
@@ -160,7 +156,7 @@ $loader.CreatePersonalSiteEnqueueBulk(@("user1@domain.com"))
 $loader.Context.ExecuteQuery()
 ```
 
-Weitere Informationen finden Sie unter  [, damit Sie programmgesteuert persönliche Websites (ein Drive für Unternehmen) in Office 365 bereitstellen möchten?](http://blogs.msdn.com/b/frank_marasco/archive/2014/03/25/so-you-want-to-programmatically-provision-personal-sites-one-drive-for-business-in-office-365.aspx) und [Use Windows PowerShell zum Verwalten von SharePoint](http://technet.microsoft.com/en-us/library/ee806878%28v=office.15%29.aspx).
+Weitere Informationen finden Sie unter  [, damit Sie programmgesteuert persönliche Websites (ein Drive für Unternehmen) in Office 365 bereitstellen möchten?]((http://blogs.msdn.com/b/frank_marasco/archive/2014/03/25/so-you-want-to-programmatically-provision-personal-sites-one-drive-for-business-in-office-365.aspx)) und [Use Windows PowerShell zum Verwalten von SharePoint](http://technet.microsoft.com/en-us/library/ee806878%28v=office.15%29.aspx).
   
     
     
@@ -173,19 +169,18 @@ SharePoint enthält neue Objekte, die Benutzer und Benutzereigenschaften darstel
     
     
 
-- Das Objekt [SocialActor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActor.aspx) stellt Benutzer (und andere Entitäten) für Feed- und die folgenden anderen Aktivitäten dar.
+- Das Objekt [SocialActor]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActor.aspx)) stellt Benutzer (und andere Entitäten) für Feed- und die folgenden anderen Aktivitäten dar.
     
   
-- Das Objekt [PersonProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.aspx) enthält allgemeine Benutzereigenschaften und Benutzerprofileigenschaften.
+- Das Objekt [PersonProperties]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.aspx)) enthält allgemeine Benutzereigenschaften und Benutzerprofileigenschaften.
     
+> [!NOTE] 
+> Entsprechende Versionen im Serverobjektmodell sind das Objekt [SPSocialActor]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialActor.aspx)) und das Objekt [PersonProperties]((https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.PersonProperties.aspx)).
   
+    
+    
 
-> **Hinweis:** Serverobjektmodellversionen sind das Objekt [SPSocialActor](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialActor.aspx) und das Objekt [PersonProperties](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.PersonProperties.aspx).
-  
-    
-    
-
-SharePoint umfasst auch ein neues clientseitiges [UserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfile.aspx)-Objekt, das Methoden bereitstellt, die Sie zum Erstellen einer persönlichen Website für den aktuellen Benutzer verwenden können. Es enthält jedoch nicht alle Benutzereigenschaften des serverseitigen Objekts [UserProfile](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.UserProfile.aspx). Um auf alle Benutzereigenschaften des clientseitigen Codes zuzugreifen, verwenden Sie die Methode [PeopleManager.GetMyProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetMyProperties.aspx) oder [PeopleManager.GetPropertiesFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetPropertiesFor.aspx) (Benutzerprofileigenschaften werden in der Eigenschaft [PersonProperties.UserProfileProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.UserProfileProperties.aspx) gespeichert). Sie können auch die Methode [PeopleManager.GetUserProfilePropertiesFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertiesFor.aspx) oder [PeopleManager.GetUserProfilePropertyFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertyFor.aspx) verwenden.
+SharePoint umfasst auch ein neues clientseitiges [UserProfile]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfile.aspx))-Objekt, das Methoden bereitstellt, die Sie zum Erstellen einer persönlichen Website für den aktuellen Benutzer verwenden können. Es enthält jedoch nicht alle Benutzereigenschaften des serverseitigen Objekts [UserProfile]((https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.UserProfile.aspx)). Um auf alle Benutzereigenschaften des clientseitigen Codes zuzugreifen, verwenden Sie die Methode [PeopleManager.GetMyProperties]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetMyProperties.aspx)) oder [PeopleManager.GetPropertiesFor]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetPropertiesFor.aspx)) (Benutzerprofileigenschaften werden in der Eigenschaft [PersonProperties.UserProfileProperties]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.UserProfileProperties.aspx)) gespeichert). Sie können auch die Methode [PeopleManager.GetUserProfilePropertiesFor]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertiesFor.aspx)) oder [PeopleManager.GetUserProfilePropertyFor]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertyFor.aspx)) verwenden.
   
     
     
@@ -193,7 +188,7 @@ SharePoint umfasst auch ein neues clientseitiges [UserProfile](https://msdn.micr
 ### <a name="new-client-side-people-picker-control"></a>Neues clientseitiges Steuerelement "Personenauswahl"
 <a name="bkmk_NewUserObjects"> </a>
 
-Das clientseitige Personenauswahl-Steuerelement ist ein HTML- und JavaScript-Steuerelement, das Browserübergreifende Unterstützung für die Auswahl von Personen, Gruppen und Ansprüche bereitstellt. Sie können Konfigurieren der Personenauswahl mit denselben Einstellungen wie die serverseitige Version des Steuerelements, einschließlich der Steuerelement-spezifische Eigenschaften (wie ermöglicht mehrere Benutzer oder Benutzer und Gruppen) und web-Konfigurationseinstellungen auf Anwendungsebene (wie Active Directory-Domänendienste Parameter oder für bestimmte Gesamtstrukturen). Weitere Informationen finden Sie unter  [Verwenden des clientseitigen Steuerelements "Personenauswahl" in von SharePoint gehosteten Share Point-Add-Ins](http://msdn.microsoft.com/library/383f265f-ed44-4d09-b2f6-366f13d52347%28Office.15%29.aspx).
+Das clientseitige Personenauswahl-Steuerelement ist ein HTML- und JavaScript-Steuerelement, das Browserübergreifende Unterstützung für die Auswahl von Personen, Gruppen und Ansprüche bereitstellt. Sie können Konfigurieren der Personenauswahl mit denselben Einstellungen wie die serverseitige Version des Steuerelements, einschließlich der Steuerelement-spezifische Eigenschaften (wie ermöglicht mehrere Benutzer oder Benutzer und Gruppen) und web-Konfigurationseinstellungen auf Anwendungsebene (wie Active Directory-Domänendienste Parameter oder für bestimmte Gesamtstrukturen). Weitere Informationen finden Sie unter  [Verwenden des clientseitigen Steuerelements "Personenauswahl" in von SharePoint gehosteten Share Point-Add-Ins]((http://msdn.microsoft.com/library/383f265f-ed44-4d09-b2f6-366f13d52347%28Office.15%29.aspx)).
   
     
     
@@ -206,7 +201,7 @@ Die folgenden Meine Website-Soziale Netzwerke-APIs und Features sind in SharePoi
     
     
 
-- Die im  [Microsoft.Office.Server.ActivityFeed](https://msdn.microsoft.com/library/Microsoft.Office.Server.ActivityFeed.aspx) -Namespace-API ist veraltet. Der **Social** -Namespace stellt die API für Programmgesteuertes Arbeiten mit sozialen Feeds in SharePoint. Für die Abwärtskompatibilität werden **ActivityEvent** Elemente aus SharePoint 2010 in SharePoint Feeds als Ereignisse angezeigt, die eine Antwort werden nicht möglich. (Legacy-Ereignismigration muss in der Zentraladministration aktiviert sein.)
+- Die im  [Microsoft.Office.Server.ActivityFeed]((https://msdn.microsoft.com/library/Microsoft.Office.Server.ActivityFeed.aspx)) -Namespace-API ist veraltet. Der **Social** -Namespace stellt die API für Programmgesteuertes Arbeiten mit sozialen Feeds in SharePoint. Für die Abwärtskompatibilität werden **ActivityEvent** Elemente aus SharePoint 2010 in SharePoint Feeds als Ereignisse angezeigt, die eine Antwort werden nicht möglich. (Legacy-Ereignismigration muss in der Zentraladministration aktiviert sein.)
     
   
 - Meine Website RSS-feed (ActivityFeed.aspx) wurde mit neuen APIs in der REST-Dienst, das Clientobjektmodell und das Objektmodell JavaScript ersetzt. Um benutzerdefinierte SharePoint 2010 Code zu migrieren, die diese API (vorzugsweise eine Client-API) verwendet, ersetzen Sie alle Anfragen zu ActivityFeed.aspx durch Aufrufe der neuen API und Handle Speisen Sie Daten, die im JavaScript Object Notation (JSON)-Format zurückgegeben wird.
@@ -214,14 +209,16 @@ Die folgenden Meine Website-Soziale Netzwerke-APIs und Features sind in SharePoi
   
 - Das Webpart **Letzte Aktivitäten** wird durch das neue Webpart **Newsfeed** ersetzt, das die Multithread-Konversation und das Abrufen eines dynamischen Feeds unterstützt.
     
-    > **Hinweis:** Die Anpassung des Newsfeed-Webparts oder anderer Feed-Webparts (wie z. B. das Website-Feed-Webpart auf einer Teamwebsite) wird nicht unterstützt. Wenn Sie diese Webparts zum Beispiel durch JavaScript-Außerkraftsetzungen ändern, können diese Anpassungen bei SharePoint-Updates beschädigt werden. 
+    > [!NOTE] 
+    > Die Anpassung des Newsfeed-Webparts oder anderer Feed-Webparts (wie z. B. das Website-Feed-Webpart auf einer Teamwebsite) wird nicht unterstützt. Wenn Sie diese Webparts zum Beispiel durch JavaScript-Außerkraftsetzungen ändern, können diese Anpassungen bei SharePoint-Updates beschädigt werden. 
+
 - Das Webpart **Kommentare in sozialen Netzwerken** ist veraltet.
     
   
 - Die folgenden Aktivitätsereignisse informieren nicht mehr automatisch den Feed: profile Update, anstehende gehören Geburtstage, anstehende Jahrestag im Unternehmen, neue Mitgliedschaft und Ändern des Managers. Sie können jedoch auch benutzerdefinierte Ereignisempfänger für das Rollout erstellen. Keine neuen Ereignisse für soziale Netzwerke wurden hinzugefügt.
     
   
-- Die folgenden Felder in der  [Privacy](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.Privacy.aspx) -Enumeration sind veraltet: **Contacts**, **Organization**und **Manager**. SharePoint bietet nur **Private** ( **Privat** ) und **Public** datenschutzeinstellungen ( **Alle** ). Vorhandene datenschutzeinstellungen werden beibehalten, bis sie vom Benutzer geändert werden. Um benutzerdefinierte SharePoint 2010 Code zu migrieren, die diese API verwendet, ersetzen Sie alle Verweise auf die veraltete Privacy-Felder.
+- Die folgenden Felder in der  [Privacy]((https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.Privacy.aspx)) -Enumeration sind veraltet: **Contacts**, **Organization**und **Manager**. SharePoint bietet nur **Private** ( **Privat** ) und **Public** datenschutzeinstellungen ( **Alle** ). Vorhandene datenschutzeinstellungen werden beibehalten, bis sie vom Benutzer geändert werden. Um benutzerdefinierte SharePoint 2010 Code zu migrieren, die diese API verwendet, ersetzen Sie alle Verweise auf die veraltete Privacy-Felder.
     
   
 - Die **Folgenden Personen** API, die über die **SocialFollowingManager** erfolgt ersetzt die Funktionalität **Kollegen** aus SharePoint Server 2010. Die Seite **Kollegen** wird mit der Seite **Personen, die ich Folge** ersetzt. Das Feature für **Gruppen**, die Benutzern von Kollegen in Gruppen organisieren aktiviert ist nicht mehr verfügbar.
@@ -250,13 +247,13 @@ Die folgende Liste enthält Informationen zum Entwickeln mit Communitywebsite Fe
     
     
 
-- Community-Websites verwenden Sie die Websitevorlage **Community** ( [Id](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebTemplate.Id.aspx) = **62**). Die Websitevorlage ist nicht verfügbar für Öffentliche Websites. Der Vorlage die Pinnwand Diskussionsliste ist  [DiscussionBoard](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ListTemplateType.DiscussionBoard.aspx) (Wert = **108**).
+- Community-Websites verwenden Sie die Websitevorlage **Community** ( [Id]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebTemplate.Id.aspx)) = **62**). Die Websitevorlage ist nicht verfügbar für Öffentliche Websites. Der Vorlage die Pinnwand Diskussionsliste ist  [DiscussionBoard]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ListTemplateType.DiscussionBoard.aspx)) (Wert = **108**).
     
   
 - Aktivieren des Features **Communitywebsite** aktiviert den Ereignisempfänger **CommunityEventReceiver**.
     
   
-- Zum Anpassen der Client-seitigen gerenderte Listenansicht müssen Sie JavaScript Außerkraftsetzungen verwenden, um die Ansicht zu ersetzen. Listenansichten können nicht über die API SharePoint erweitert werden. Weitere Informationen finden Sie unter  [Anpassen einer Listenansicht in Add-Ins für SharePoint durch clientseitiges Rendering](http://msdn.microsoft.com/library/8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86%28Office.15%29.aspx).
+- Zum Anpassen der Client-seitigen gerenderte Listenansicht müssen Sie JavaScript Außerkraftsetzungen verwenden, um die Ansicht zu ersetzen. Listenansichten können nicht über die API SharePoint erweitert werden. Weitere Informationen finden Sie unter  [Anpassen einer Listenansicht in Add-Ins für SharePoint durch clientseitiges Rendering]((http://msdn.microsoft.com/library/8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86%28Office.15%29.aspx)).
     
   
 - Community-Websites verwenden asynchrone Ereignisse, um Objekte zu aktualisieren. Wenn asynchrone Ereignisse im Hintergrund ausgeführt werden soll, können, wenn Sie versuchen, Listen oder Listenelementen aktualisieren und Ihre Handle für das Objekt möglicherweise veraltet  *Speichern*  Konflikte auftreten.
@@ -288,7 +285,7 @@ while (retries <= 10)
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15NewSocial_addlresources"> </a>
 
 

@@ -3,11 +3,11 @@ title: Konvertieren eines externen Inhaltstyps auf Add-In-Ebene auf Mandantenber
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 35c5d670-e402-4641-b3c5-6f61ae1ec69b
-ms.openlocfilehash: a6790c1f756ab06cb9e00efe7eeac2675eb5bc85
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 0304979fc002526faaa390c87575cf8e97574c66
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="convert-an-add-in-scoped-external-content-type-to-tenant-scoped"></a>Konvertieren eines externen Inhaltstyps auf Add-In-Ebene auf Mandantenbereich
 
@@ -30,7 +30,7 @@ Die folgenden Schritte zeigen, wie den OData-basierten externen Inhaltstyp erste
 1. Erstellen Sie in Visual Studio 2012 ein Projekt **-Add-in für SharePoint**.
     
   
-2. Geben Sie die Add-in-Einstellungen, einschließlich der Add-in-Name die URL der Website für das Debuggen des Add-Ins und wie Sie das Add-in ( **automatisch gehostete**, **vom Anbieter gehostete** oder **SharePoint-Hosting** ) hosten möchten. Weitere Informationen finden Sie unter [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint](http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx).
+2. Geben Sie die Add-in-Einstellungen, einschließlich der Add-in-Name die URL der Website für das Debuggen des Add-Ins und wie Sie das Add-in ( **automatisch gehostete**, **vom Anbieter gehostete** oder **SharePoint-Hosting** ) hosten möchten. Weitere Informationen finden Sie unter [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint]((http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx)).
     
   
 3. Wählen Sie auf **Fertig stellen**, um die app zu erstellen.
@@ -45,7 +45,9 @@ Die folgenden Schritte zeigen, wie den OData-basierten externen Inhaltstyp erste
     
     Geben Sie einen Namen für die OData-Quelle an.
     
-    > **Hinweis:** In diesem Beispiel verwenden Sie den Northwind-Dienst, der in der Hersteller-Liste auf der  [OpenData Protocol-Website](http://www.odata.org) befindet. 
+    > [!NOTE]
+    > In diesem Beispiel verwenden Sie den Northwind-Dienst, der in der Hersteller-Liste auf der [OpenData Protocol-Website]((http://www.odata.org)) befindet. 
+
 6. Eine Liste wird angezeigt, mit Datenentitäten, die vom OData Service verfügbar gemacht werden. Wählen Sie eine oder mehrere Entitäten, und wählen Sie **Fertig stellen**.
     
   
@@ -110,7 +112,7 @@ Die folgenden Schritte zeigen, wie den OData-basierten externen Inhaltstyp erste
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
@@ -126,7 +128,7 @@ Die folgenden Schritte zeigen, wie den OData-basierten externen Inhaltstyp erste
 -  [Erste Schritte mit den Business Connectivity Services in SharePoint](get-started-with-business-connectivity-services-in-sharepoint.md)
     
   
--  [Open Data Protocol](http://www.odata.org)
+-  [Open Data Protocol]((http://www.odata.org))
     
   
 

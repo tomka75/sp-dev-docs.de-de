@@ -3,11 +3,11 @@ title: Folgen von Dokumenten und Websites mithilfe des .NET-Client-Objektmodells
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 84366e01-4961-459d-8109-2f1d2d714353
-ms.openlocfilehash: 6e6690c40b37b65fe58100f7412e68ee827a970e
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: b499f866a482eae50a0721382c1ddd28f76d6750
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="follow-documents-and-sites-by-using-the-net-client-object-model-in-sharepoint"></a>Folgen von Dokumenten und Websites mithilfe des .NET-Client-Objektmodells in SharePoint
 
@@ -25,20 +25,19 @@ Die folgenden Objekte sind die primären APIs für Aufgaben zum Folgen von Inhal
     
     
 
--  [SocialFollowingManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx) bietet Methoden zum Verwalten eines Benutzers Liste besuchter Akteure.
+-  [SocialFollowingManager]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx)) bietet Methoden zum Verwalten eines Benutzers Liste besuchter Akteure.
     
   
--  [SocialActor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActor.aspx) stellt ein Dokument, Website oder Tag, der der Server als Antwort auf eine Anforderung mithilfe der clientseitigen zurückgibt.
+-  [SocialActor]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActor.aspx)) stellt ein Dokument, Website oder Tag, der der Server als Antwort auf eine Anforderung mithilfe der clientseitigen zurückgibt.
     
   
--  [SocialActorInfo](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActorInfo.aspx) gibt ein Dokument, Website oder Tag in clientseitige Anforderungen an den Server.
+-  [SocialActorInfo]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActorInfo.aspx)) gibt ein Dokument, Website oder Tag in clientseitige Anforderungen an den Server.
     
   
--  [Microsoft.SharePoint.Client.Social.SocialActorType](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActorType.aspx) und [Microsoft.SharePoint.Client.Social.SocialActorTypes](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActorTypes.aspx) geben Inhaltstypen in clientseitigen Anforderungen an den Server an.
+-  [Microsoft.SharePoint.Client.Social.SocialActorType]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActorType.aspx)) und [Microsoft.SharePoint.Client.Social.SocialActorTypes]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActorTypes.aspx)) geben Inhaltstypen in clientseitigen Anforderungen an den Server an.
     
-  
-
-> **Hinweis:** Sie verwenden diese APIs auch für Aufgaben zum Folgen von Personen, allerdings unterstützen die Methoden **GetSuggestions** und **GetFollowers**, die über [SocialFollowingManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx) verfügbar sind, nur das Folgen von Personen, nicht von Inhalten. Weitere Informationen zur Verwendung von [SocialFollowingManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx) finden Sie unter [Folgen von Inhalten in SharePoint](follow-content-in-sharepoint.md) und [Folgen von Personen in SharePoint](follow-people-in-sharepoint.md). Codebeispiele zum Folgen von Personen finden Sie unter [Vorgehensweise: Folgen von Personen mithilfe des .NET-Clientobjektmodells in SharePoint](how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint.md) 
+> [!NOTE]
+> Sie verwenden diese APIs auch für Aufgaben zum Folgen von Personen, allerdings unterstützen die Methoden **GetSuggestions** und **GetFollowers**, die über [SocialFollowingManager]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx)) verfügbar sind, nur das Folgen von Personen, nicht von Inhalten. Weitere Informationen zur Verwendung von [SocialFollowingManager]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx)) finden Sie unter [Folgen von Inhalten in SharePoint](follow-content-in-sharepoint.md) und [Folgen von Personen in SharePoint](follow-people-in-sharepoint.md). Codebeispiele zum Folgen von Personen finden Sie unter [Vorgehensweise: Folgen von Personen mithilfe des .NET-Clientobjektmodells in SharePoint](how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint.md) 
   
     
     
@@ -60,9 +59,8 @@ Um eine Konsolenanwendung erstellen, die das Clientobjektmodell .NET verwendet f
   
 - Zugriffsberechtigungen vom Typ **Vollzugriff** auf die Benutzerprofil-Dienstanwendung für den angemeldeten Benutzer
     
-  
-
-> **Hinweis:** Wenn Sie die Entwicklungsaufgaben nicht auf dem Computer durchführen, auf dem SharePoint ausgeführt wird, laden Sie die [SharePoint-Clientkomponenten](http://www.microsoft.com/en-us/download/details.aspx?id=35585) herunter, die die SharePoint-Clientassemblys enthalten.
+> [!NOTE]
+> Wenn Sie die Entwicklungsaufgaben nicht auf dem Computer durchführen, auf dem SharePoint ausgeführt wird, laden Sie die [SharePoint-Clientkomponenten](http://www.microsoft.com/en-us/download/details.aspx?id=35585) herunter, die die SharePoint-Clientassemblys enthalten.
   
     
     
@@ -107,24 +105,22 @@ Im folgenden Codebeispiel wird der aktuelle Benutzer Start nach oder nach einem 
     
     
 
-- Überprüfen Sie, ob der aktuelle Benutzer ein bestimmtes Dokument oder Website folgt mithilfe der  [IsFollowed](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.IsFollowed.aspx) -Methode.
+- Überprüfen Sie, ob der aktuelle Benutzer ein bestimmtes Dokument oder Website folgt mithilfe der  [IsFollowed]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.IsFollowed.aspx)) -Methode.
     
   
-- Starten Sie nach einem Dokument oder einer Website mithilfe der  [Follow](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.Follow.aspx) -Methode.
+- Starten Sie nach einem Dokument oder einer Website mithilfe der  [Follow]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.Follow.aspx)) -Methode.
     
   
-- Beenden Sie nach einem Dokument oder einer Website mithilfe der  [StopFollowing](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.StopFollowing.aspx) -Methode.
+- Beenden Sie nach einem Dokument oder einer Website mithilfe der  [StopFollowing]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.StopFollowing.aspx)) -Methode.
     
   
-- Rufen Sie die Anzahl von Dokumenten oder Websites, die der aktuelle Benutzer mithilfe der Methode  [GetFollowedCount](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.GetFollowedCount.aspx) folgt.
+- Rufen Sie die Anzahl von Dokumenten oder Websites, die der aktuelle Benutzer mithilfe der Methode  [GetFollowedCount]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.GetFollowedCount.aspx)) folgt.
     
   
-Dieses Codebeispiel verwendet das  [SocialFollowResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowResult.aspx) -Objekt, das von der [Follow](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.Follow.aspx) -Methode, um festzustellen, ob starten oder beenden Sie das Zielelement folgt zurückgegeben wird.
+Dieses Codebeispiel verwendet das  [SocialFollowResult]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowResult.aspx)) -Objekt, das von der [Follow]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.Follow.aspx)) -Methode, um festzustellen, ob starten oder beenden Sie das Zielelement folgt zurückgegeben wird.
   
-    
-    
-
-> **Hinweis:** Ändern Sie die Platzhalterwerte für die Variablen **serverUrl** und **contentUrl**, bevor Sie den Code ausführen. Wenn Sie eine Website anstelle eines Dokuments verwenden möchten, verwenden Sie die auskommentierten Variablen.
+> [!NOTE]
+> Ändern Sie die Platzhalterwerte für die Variablen **serverUrl** und **contentUrl**, bevor Sie den Code ausführen. Wenn Sie eine Website anstelle eines Dokuments verwenden möchten, verwenden Sie die auskommentierten Variablen.
   
     
     
@@ -238,20 +234,19 @@ Im folgenden Codebeispiel wird dient zum Abrufen der Dokumente und Websites, das
     
     
 
-- Überprüfen Sie, ob der aktuelle Benutzer das Zieldokument und Website folgt mithilfe der  [IsFollowed](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.IsFollowed.aspx) -Methode.
+- Überprüfen Sie, ob der aktuelle Benutzer das Zieldokument und Website folgt mithilfe der  [IsFollowed]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.IsFollowed.aspx)) -Methode.
     
   
-- Rufen Sie die Anzahl von Dokumenten und Websites, die der aktuelle Benutzer mithilfe der Methode  [GetFollowedCount](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.GetFollowedCount.aspx) folgt.
+- Rufen Sie die Anzahl von Dokumenten und Websites, die der aktuelle Benutzer mithilfe der Methode  [GetFollowedCount]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.GetFollowedCount.aspx)) folgt.
     
   
-- Rufen Sie die Dokumente und Websites, die der aktuelle Benutzer mithilfe der Methode  [GetFollowed](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.GetFollowed.aspx) folgt.
+- Rufen Sie die Dokumente und Websites, die der aktuelle Benutzer mithilfe der Methode  [GetFollowed]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.GetFollowed.aspx)) folgt.
     
   
 - Iterieren Sie durch die Inhaltsgruppen, und rufen Sie den Namen, den Inhalts-URI und den URI jedes Elements ab.
     
-  
-
-> **Hinweis:** Ändern Sie den Platzhalterwert für die Variablen **serverUrl**, **docContentUrl** und **siteContentUrl**, bevor Sie den Code ausführen.
+> [!NOTE]
+> Ändern Sie den Platzhalterwert für die Variablen **serverUrl**, **docContentUrl** und **siteContentUrl**, bevor Sie den Code ausführen.
   
     
     
@@ -343,7 +338,7 @@ namespace FollowContentCSOM
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkmk_AddtionalResources"> </a>
 
 

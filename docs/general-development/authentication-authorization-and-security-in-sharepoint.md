@@ -3,11 +3,11 @@ title: Authentifizierung, Autorisierung und Sicherheit in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 8734790c-eb75-4d78-9604-7cc23b33b693
-ms.openlocfilehash: 4814ef614dbf02ca3f203944b21722eefb077039
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 86ef3bb99435bf9a7c5c02e46c4f5a09b2a22765
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="authentication-authorization-and-security-in-sharepoint"></a>Authentifizierung, Autorisierung und Sicherheit in SharePoint
 
@@ -24,7 +24,7 @@ Nachfolgend sind einige der optimierten Features von SharePoint aufgeführt:
   - SharePoint bietet weiter Unterstützung für den anspruchsbasierten und klassischen Authentifizierungsmodus. Die anspruchsbasierte Authentifizierung ist in SharePoint die Standardeinstellung. Der klassische Authentifizierungsmodus gilt als überholt und kann nur noch mithilfe von Windows PowerShell verwaltet werden. Für zahlreiche Features in SharePoint ist der anspruchsbasierte Modus erforderlich. 
     
   
-  - Die **MigrateUsers**-Methode in SharePoint 2010 gilt nun als überholt und eignet sich nicht mehr zum ordnungsgemäßen Migrieren von Konten. Verwenden Sie hierzu das neue Windows PowerShell-Cmdlet  `Convert-SPWebApplication`. Weitere Informationen finden Sie unter  [Migrieren von der klassischen Authentifizierung zur anspruchsbasierten Authentifizierung](http://technet.microsoft.com/en-us/library/gg251985.aspx).
+  - Die **MigrateUsers**-Methode in SharePoint 2010 gilt nun als überholt und eignet sich nicht mehr zum ordnungsgemäßen Migrieren von Konten. Verwenden Sie hierzu das neue Windows PowerShell-Cmdlet  `Convert-SPWebApplication`. Weitere Informationen finden Sie unter  [Migrieren von der klassischen Authentifizierung zur anspruchsbasierten Authentifizierung]((http://technet.microsoft.com/de-DE/library/gg251985.aspx)).
     
   
   - Anspruchsanbieter müssen nicht mehr registriert werden. Anspruchstypen müssen jedoch vorab konfiguriert werden. Sie können die Zeichen für den Anspruchstyp wählen, und für Anspruchstypen gibt es keine zwingende Reihenfolge.
@@ -53,7 +53,8 @@ Von SharePoint wird die Sicherheit für den Benutzerzugriff auf Website-, Listen
     
     
 
-> **Hinweis:** Informationen zur Autorisierung im Zusammenhang mit SharePoint-Add-Ins finden Sie unter  [Autorisierung und Authentifizierung für Add-Ins in SharePoint](http://msdn.microsoft.com/library/bde5647a-fff1-4b51-b67b-2139de79ce4a%28Office.15%29.aspx). 
+> [!NOTE]
+> Informationen zur Autorisierung im Zusammenhang mit SharePoint-Add-Ins finden Sie unter [Autorisierung und Authentifizierung für Add-Ins in SharePoint]((http://msdn.microsoft.com/library/bde5647a-fff1-4b51-b67b-2139de79ce4a%28Office.15%29.aspx)). 
   
     
     
@@ -71,15 +72,15 @@ In SharePoint werden die folgenden Typen von Authentifizierung unterstützt:
     
     Informationen zum Anmelden bei SharePoint mithilfe des Windows-Forderungsmodus finden Sie unter  [Eingehende Ansprüche: Anmelden bei SharePoint](incoming-claims-signing-into-sharepoint.md).
     
-    > 
-      >    **Wichtig:** Weitere Informationen zum Aussetzen des Identitätswechsels finden Sie unter [Vermeiden des Aussetzens des Identitätswechsels durch den aufrufenden Benutzer](http://msdn.microsoft.com/en-us/library/ff407852.aspx). 
+    > **Wichtig:** Weitere Informationen zum Aussetzen des Identitätswechsels finden Sie unter [Vermeiden des Aussetzens des Identitätswechsels durch den aufrufenden Benutzer]((http://msdn.microsoft.com/de-DE/library/ff407852.aspx)). 
 - **ASP.NET-Formulare:** Ein nicht von Windows bereitgestelltes Identitätsverwaltungssystem, das das austauschbare, auf ASP.NET-Formularen basierte Authentifizierungssystem verwendet, wird unterstützt. Mit diesem Modus kann SharePoint mit einer Vielzahl von Identitätsverwaltungssystemen zusammenarbeiten, einschließlich extern definierter Gruppen oder Rollen wie Lightweight Directory Access-Protokoll (LDAP) und schlanker Datenbankidentitäts-Verwaltungssysteme. Dank der Formularauthentifizierung kann ASP.NET die Authentifizierung für SharePoint durchführen, wobei häufig eine Umleitung zu einer Anmeldeseite eingeschlossen ist. In SharePoint werden ASP.NET-Formulare nur bei der anspruchsbasierten Authentifizierung unterstützt. Ein Formularanbieter muss innerhalb einer Webanwendung registriert sein, die für Ansprüche konfiguriert ist.
     
     Informationen zum Anmelden bei SharePoint mithilfe der ASP.NET-Mitgliedschaft und zur passiven Anmeldung mit Rollen finden Sie unter  [Eingehende Ansprüche: Anmelden bei SharePoint](incoming-claims-signing-into-sharepoint.md).
     
   
 
-> **Hinweis:** SharePoint unterstützt nicht die Arbeit mit einem Mitgliedschaftsanbieter, bei dem die Groß-/Kleinschreibung beachtet wird. Es verwendet SQL-Speicher ohne Beachtung der Groß-/Kleinschreibung für alle Benutzer in der Datenbank, unabhängig vom Mitgliedschaftsanbieter. 
+> [!NOTE]
+> SharePoint unterstützt nicht die Arbeit mit einem Mitgliedschaftsanbieter, bei dem die Groß-/Kleinschreibung beachtet wird. Es verwendet SQL-Speicher ohne Beachtung der Groß-/Kleinschreibung für alle Benutzer in der Datenbank, unabhängig vom Mitgliedschaftsanbieter. 
   
     
     
@@ -110,7 +111,8 @@ Wenn sich ein Benutzer an SharePoint anmeldet, wird das Benutzertoken überprüf
     
   
 
-> **Hinweis:** Weitere Informationen zum Anmelden bei SharePoint und zu den verschiedenen Anmeldemodi finden Sie unter  [Eingehende Ansprüche: Anmelden bei SharePoint](incoming-claims-signing-into-sharepoint.md). 
+> [!NOTE]
+> Weitere Informationen zum Anmelden an SharePoint und zu den verschiedenen Anmeldemodi finden Sie unter [Eingehende Ansprüche: Anmelden bei SharePoint](incoming-claims-signing-into-sharepoint.md). 
   
     
     
@@ -141,7 +143,8 @@ Bei diesem Modell trifft die Anwendung Entscheidungen zur Identität basierend a
     
     
 
-> **Hinweis:** Weitere Informationen zur anspruchsbasierten Identität und zu Anspruchsanbietern finden Sie unter  [Anspruchsbasierte Identität und Konzepte in SharePoint](claims-based-identity-and-concepts-in-sharepoint.md) und [Anspruchsanbieter in SharePoint](claims-provider-in-sharepoint.md). 
+> [!NOTE]
+> Weitere Informationen zur anspruchsbasierten Identität und zu Anspruchsanbietern finden Sie unter [Anspruchsbasierte Identität und Konzepte in SharePoint](claims-based-identity-and-concepts-in-sharepoint.md) und [Anspruchsanbieter in SharePoint](claims-provider-in-sharepoint.md). 
   
     
     
@@ -150,36 +153,36 @@ Bei diesem Modell trifft die Anwendung Entscheidungen zur Identität basierend a
 ## <a name="forms-based-authentication"></a>Formularbasierte Authentifizierung
 <a name="SP15_AuthenticationAuthorizationSecurity_FormsBasedAuthentication"> </a>
 
-Die formularbasierte Authentifizierung stellt eine benutzerdefinierte Identitätsverwaltung in SharePoint bereit, indem ein Mitgliedschaftsanbieter implementiert wird, der die Schnittstellen zum Identifizieren und Authentifizieren einzelner Benutzer definiert, und ein Rollen-Manager, der die Schnittstellen zum Gruppieren einzelner Benutzer in logische Gruppen und Rollen definiert. In SharePoint muss ein Mitgliedschaftsanbieter die erforderliche  [System.Web.Security.Membership.ValidateUser](http://msdn.microsoft.com/library/33f4af0b-75c0-4504-b90f-05e742e44a88.aspx)-Methode implementieren. Wenn ein Benutzername angegeben wird, gibt das Rollenanbietersystem eine Liste der Rollen zurück, zu denen der Benutzer gehört.
+Die formularbasierte Authentifizierung stellt eine benutzerdefinierte Identitätsverwaltung in SharePoint bereit, indem ein Mitgliedschaftsanbieter implementiert wird, der die Schnittstellen zum Identifizieren und Authentifizieren einzelner Benutzer definiert, und ein Rollen-Manager, der die Schnittstellen zum Gruppieren einzelner Benutzer in logische Gruppen und Rollen definiert. In SharePoint muss ein Mitgliedschaftsanbieter die erforderliche  [System.Web.Security.Membership.ValidateUser]((http://msdn.microsoft.com/library/33f4af0b-75c0-4504-b90f-05e742e44a88.aspx))-Methode implementieren. Wenn ein Benutzername angegeben wird, gibt das Rollenanbietersystem eine Liste der Rollen zurück, zu denen der Benutzer gehört.
   
     
     
-Der Mitgliedschaftsanbieter ist für die Überprüfung der Anmeldeinformationen mithilfe der  [System.Web.Security.Membership.ValidateUser](http://msdn.microsoft.com/library/33f4af0b-75c0-4504-b90f-05e742e44a88.aspx)-Methode (nun in SharePoint erforderlich) verantwortlich. Das tatsächliche Benutzertoken wird jedoch von einem Sicherheitstokendienst (Security Token Service, STS) erstellt. Der STS erstellt das Benutzertoken aus dem vom Mitgliedschaftsanbieter überprüften Benutzernamen und aus der Menge der dem Benutzernamen zugeordneten Gruppenmitgliedschaften, die vom Mitgliedschaftsanbieter bereitgestellt werden.
-  
-    
-    
-
-> **Hinweis:** Weitere Informationen zu STS finden Sie unter  [Anspruchsbasierte Identität und Konzepte in SharePoint](claims-based-identity-and-concepts-in-sharepoint.md). 
+Der Mitgliedschaftsanbieter ist für die Überprüfung der Anmeldeinformationen mithilfe der  [System.Web.Security.Membership.ValidateUser]((http://msdn.microsoft.com/library/33f4af0b-75c0-4504-b90f-05e742e44a88.aspx))-Methode (nun in SharePoint erforderlich) verantwortlich. Das tatsächliche Benutzertoken wird jedoch von einem Sicherheitstokendienst (Security Token Service, STS) erstellt. Der STS erstellt das Benutzertoken aus dem vom Mitgliedschaftsanbieter überprüften Benutzernamen und aus der Menge der dem Benutzernamen zugeordneten Gruppenmitgliedschaften, die vom Mitgliedschaftsanbieter bereitgestellt werden.
   
     
     
 
-Der Rollen-Manager ist optional. Falls ein benutzerdefiniertes Authentifizierungssystem Gruppen nicht unterstützt, ist auch kein Rollen-Manager erforderlich. SharePoint unterstützt einen Mitgliedschaftsanbieter und einen Rollen-Manager pro URL-Zone ( [SPUrlZone](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.SPUrlZone.aspx) ). Den ASP.NET-Formularrollen sind keine inhärenten Rechte zugeordnet. Stattdessen weist SharePoint den Formularrollen Rechte über seine Richtlinien und Autorisierung zu. In SharePoint ist die formularbasierte Authentifizierung in das anspruchsbasierte Identitätsmodell integriert. Falls Sie eine zusätzliche Erweiterung benötigen, um die Grenze von einem Rollenanbieter pro URL-Zone zu umgehen, können Sie auf Anspruchsanbieter vertrauen.
+> [!NOTE]
+> Weitere Informationen zu STS finden Sie unter [Anspruchsbasierte Identität und Konzepte in SharePoint](claims-based-identity-and-concepts-in-sharepoint.md). 
   
     
     
 
-> **Hinweis:** Weitere Informationen zur anspruchsbasierten Identität und zu Anspruchsanbietern finden Sie unter  [Anspruchsbasierte Identität und Konzepte in SharePoint](claims-based-identity-and-concepts-in-sharepoint.md) und [Anspruchsanbieter in SharePoint](claims-provider-in-sharepoint.md). 
+Der Rollen-Manager ist optional. Falls ein benutzerdefiniertes Authentifizierungssystem Gruppen nicht unterstützt, ist auch kein Rollen-Manager erforderlich. SharePoint unterstützt einen Mitgliedschaftsanbieter und einen Rollen-Manager pro URL-Zone ( [SPUrlZone]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.SPUrlZone.aspx)) ). Den ASP.NET-Formularrollen sind keine inhärenten Rechte zugeordnet. Stattdessen weist SharePoint den Formularrollen Rechte über seine Richtlinien und Autorisierung zu. In SharePoint ist die formularbasierte Authentifizierung in das anspruchsbasierte Identitätsmodell integriert. Falls Sie eine zusätzliche Erweiterung benötigen, um die Grenze von einem Rollenanbieter pro URL-Zone zu umgehen, können Sie auf Anspruchsanbieter vertrauen.
   
     
     
 
-Bei der passiven Anmeldung von Mitgliedern und Rollen in ASP.NET erfolgt die Anmeldung durch das Umleiten des Clients an eine Webseite, auf der die ASP.NET-Anmeldesteuerelemente gehostet sind. Nachdem das Identitätsobjekt, das eine Benutzeridentität darstellt, erstellt wurde, konvertiert SharePoint dies in ein  [ClaimsIdentity](https://msdn.microsoft.com/library/Microsoft.IdentityModel.Claims.ClaimsIdentity.aspx) -Objekt (das eine anspruchsbasierte Darstellung eines Benutzers ist).
+> [!NOTE]
+> Weitere Informationen zur anspruchsbasierten Identität und zu Anspruchsanbietern finden Sie unter [Anspruchsbasierte Identität und Konzepte in SharePoint](claims-based-identity-and-concepts-in-sharepoint.md) und [Anspruchsanbieter in SharePoint](claims-provider-in-sharepoint.md). 
   
     
     
 
-> **Hinweis:** Weitere Informationen zum Anmelden bei SharePoint finden Sie unter  [Eingehende Ansprüche: Anmelden bei SharePoint](incoming-claims-signing-into-sharepoint.md). 
+Bei der passiven Anmeldung von Mitgliedern und Rollen in ASP.NET erfolgt die Anmeldung durch das Umleiten des Clients an eine Webseite, auf der die ASP.NET-Anmeldesteuerelemente gehostet sind. Nachdem das Identitätsobjekt, das eine Benutzeridentität darstellt, erstellt wurde, konvertiert SharePoint dies in ein  [ClaimsIdentity]((https://msdn.microsoft.com/library/Microsoft.IdentityModel.Claims.ClaimsIdentity.aspx)) -Objekt (das eine anspruchsbasierte Darstellung eines Benutzers ist).
+  
+> [!NOTE]
+> Weitere Informationen zum Anmelden an SharePoint finden Sie unter [Eingehende Ansprüche: Anmelden bei SharePoint](incoming-claims-signing-into-sharepoint.md). 
   
     
     
@@ -190,16 +193,14 @@ SharePoint verwendet die standardmäßige ASP.NET-Rollenanbieterschnittstelle zu
     
 Informationen zum austauschbaren Authentifizierungsframework von ASP.NET finden Sie in der ASP.NET-Entwicklerdokumentation.
   
-    
-    
-
-> **Hinweis:** Weitere Informationen zur formularbasierten Authentifizierung finden Sie unter  [Formularbasierte Authentifizierung in SharePoint-Produkten und -Technologien (Teil 1): Einführung](http://msdn.microsoft.com/library/e5efd4d7-b369-49f0-a6f7-431d21daff20%28Office.15%29.aspx). 
+> [!NOTE]
+> Weitere Informationen zur formularbasierten Authentifizierung finden Sie unter [Formularbasierte Authentifizierung in SharePoint-Produkten und -Technologien (Teil 1): Einführung]((http://msdn.microsoft.com/library/e5efd4d7-b369-49f0-a6f7-431d21daff20%28Office.15%29.aspx)). 
   
     
     
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15_AuthenticationAuthorizationSecurity_AdditionalResources"> </a>
 
 

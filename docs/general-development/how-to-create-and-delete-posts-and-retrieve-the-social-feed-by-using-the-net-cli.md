@@ -3,11 +3,11 @@ title: "Erstellen und Löschen von Beiträgen und Abrufen des sozialen Feeds üb
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c8d68632-1b55-454c-961a-f3ddad731bf6
-ms.openlocfilehash: dfbf3dccf1212b967a19385f51d12c6bafcd04a1
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 5ffd9e779ffeb7db7a09144912777dcfc0f417e0
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-net-client-object-model-in-sharepoint"></a>Erstellen und Löschen von Beiträgen und Abrufen des sozialen Feeds über das .NET-Clientobjektmodell in SharePoint
 
@@ -16,11 +16,11 @@ In diesem Artikel erfahren Sie, wie Sie mithilfe des .NET-Clientobjektmodells in
 ## <a name="what-are-social-feeds-in-sharepoint"></a>Was sind thematische Feeds in SharePoint?
 <a name="bk_intro"> </a>
 
-Ein Feed für soziale Netzwerke ist in SharePoint eine Sammlung von Threads, die Unterhaltungen, einzelne Mikroblogbeiträge oder Benachrichtigungen darstellen. Threads enthalten einen Stammbeitrag und eine Sammlung von Antwortbeiträgen und stellen Unterhaltungen, einzelne Mikroblogbeiträge oder Benachrichtigungen dar. Im .NET-Objektmodell werden Feeds durch [SocialFeed](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeed.aspx)-Objekte dargestellt, Threads durch [SocialThread](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialThread.aspx)-Objekte und Beiträge und Antworten durch [SocialPost](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPost.aspx)-Objekte. Um wichtige Feed-bezogene Aufgaben im .NET-Clientobjektmodell auszuführen, verwenden Sie das [SocialFeedManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.aspx)-Objekt. In diesem Artikel wird gezeigt, wie Sie eine Konsolenanwendung erstellen, die das .NET-Clientobjektmodell zum Arbeiten mit sozialen Feeds verwendet.
+Ein Feed für soziale Netzwerke ist in SharePoint eine Sammlung von Threads, die Unterhaltungen, einzelne Mikroblogbeiträge oder Benachrichtigungen darstellen. Threads enthalten einen Stammbeitrag und eine Sammlung von Antwortbeiträgen und stellen Unterhaltungen, einzelne Mikroblogbeiträge oder Benachrichtigungen dar. Im .NET-Objektmodell werden Feeds durch [SocialFeed]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeed.aspx))-Objekte dargestellt, Threads durch [SocialThread]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialThread.aspx))-Objekte und Beiträge und Antworten durch [SocialPost]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPost.aspx))-Objekte. Um wichtige Feed-bezogene Aufgaben im .NET-Clientobjektmodell auszuführen, verwenden Sie das [SocialFeedManager]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.aspx))-Objekt. In diesem Artikel wird gezeigt, wie Sie eine Konsolenanwendung erstellen, die das .NET-Clientobjektmodell zum Arbeiten mit sozialen Feeds verwendet.
   
     
     
-Weitere Informationen zum Arbeiten mit  [SocialFeedManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.aspx) oder Informationen zur Verwendung von anderen APIs mit sozialen Feeds arbeiten finden Sie unter [Arbeiten mit sozialen Feeds in SharePoint](work-with-social-feeds-in-sharepoint.md).
+Weitere Informationen zum Arbeiten mit  [SocialFeedManager]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.aspx)) oder Informationen zur Verwendung von anderen APIs mit sozialen Feeds arbeiten finden Sie unter [Arbeiten mit sozialen Feeds in SharePoint](work-with-social-feeds-in-sharepoint.md).
   
     
     
@@ -41,9 +41,8 @@ Zum Erstellen einer Konsolenanwendung, die das .NET-Clientobjektmodell zum Arbei
   
 - Zugriffsberechtigungen vom Typ **Vollzugriff** auf die Benutzerprofil-Dienstanwendung für den angemeldeten Benutzer
     
-  
-
-> **Hinweis:** Wenn Sie die Entwicklungsaufgaben nicht auf dem Computer durchführen, auf dem SharePoint ausgeführt wird, laden Sie die [SharePoint-Clientkomponenten](http://www.microsoft.com/en-us/download/details.aspx?id=35585) herunter, die die SharePoint-Clientassemblys enthalten.
+> [!NOTE]
+> Wenn Sie die Entwicklungsaufgaben nicht auf dem Computer durchführen, auf dem SharePoint ausgeführt wird, laden Sie die [SharePoint-Clientkomponenten](http://www.microsoft.com/en-us/download/details.aspx?id=35585) herunter, die die SharePoint-Clientassemblys enthalten.
   
     
     
@@ -92,20 +91,19 @@ Im folgenden Codebeispiel wird veröffentlicht ein Beitrag und aus dem aktuellen
 - Nach Inhalt definiert. Dieses Beispiel enthält einen Link in der POST-Anforderung.
     
   
-- Veröffentlichen Sie einen Post im Feed des aktuellen Benutzers mithilfe der  [CreatePost](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.CreatePost.aspx)-Methode, und übergeben Sie dabei **null** als _targetId_-Parameter.
+- Veröffentlichen Sie einen Post im Feed des aktuellen Benutzers mithilfe der  [CreatePost]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.CreatePost.aspx))-Methode, und übergeben Sie dabei **null** als _targetId_-Parameter.
     
   
-- Rufen Sie den **News**-[Feedtyp](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedType.aspx) für den aktuellen Benutzer mithilfe der [GetFeed](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeed.aspx)-Methode ab.
+- Rufen Sie den **News**-[Feedtyp]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedType.aspx)) für den aktuellen Benutzer mithilfe der [GetFeed]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeed.aspx))-Methode ab.
     
   
 - Durchlaufen Sie den Feed, um alle Threads zu finden, die beantwortet werden können, und um Informationen zu Threads und Beiträgen zu erhalten.
     
   
-- Antworten Sie auf einen Beitrag mithilfe der  [CreatePost](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.CreatePost.aspx)-Methode, und übergeben Sie dabei die Thread-ID als _targetId_-Parameter.
+- Antworten Sie auf einen Beitrag mithilfe der  [CreatePost]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.CreatePost.aspx))-Methode, und übergeben Sie dabei die Thread-ID als _targetId_-Parameter.
     
-  
-
-> **Hinweis:** Ändern Sie den Platzhalterwert für die Variable **serverUrl**, bevor Sie den Code ausführen.
+> [!NOTE]
+> Ändern Sie den Platzhalterwert für die Variable **serverUrl**, bevor Sie den Code ausführen.
   
     
     
@@ -218,10 +216,10 @@ Das folgende Codebeispiel ruft Feeds für den aktuellen Benutzer sowie einen Zie
     
     
 
-- Rufen Sie die [Feedtypen](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedType.aspx) **Personal**, **News** und **Timeline** für den aktuellen Benutzer mithilfe der [GetFeed](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeed.aspx)-Methode ab.
+- Rufen Sie die [Feedtypen]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedType.aspx)) **Personal**, **News** und **Timeline** für den aktuellen Benutzer mithilfe der [GetFeed]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeed.aspx))-Methode ab.
     
   
-- Rufen Sie den **Personal**-[Feedtyp](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedType.Personal.aspx) für einen Zielbenutzer mithilfe der [getFeedFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeedFor.aspx)-Methode ab.
+- Rufen Sie den **Personal**-[Feedtyp]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedType.Personal.aspx)) für einen Zielbenutzer mithilfe der [getFeedFor]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeedFor.aspx))-Methode ab.
     
   
 - Durchlaufen Sie die Feeds, um alle Threads im nicht-Verweis zu suchen und Abrufen von Informationen zu Threads und Beiträge. Verweis Threads darstellen Benachrichtigungen, die Informationen zu einem anderen Thread enthalten. Wenn ein Benutzer eine Person in einem Beitrag erwähnt wird, generiert der Server beispielsweise ein **MentionReference**-Thread, der den Link zur ursprünglichen Beitrags und andere Metadaten zu dem Beitrag enthält geben.
@@ -229,10 +227,8 @@ Das folgende Codebeispiel ruft Feeds für den aktuellen Benutzer sowie einen Zie
   
 Weitere Informationen zu Feedtypen finden Sie unter [Übersicht über Feedtypen](work-with-social-feeds-in-sharepoint.md#bkmk_FeedTypes). Weitere Informationen zu Referenzthreads finden Sie unter [Referenzthreads und Digest-Threads in sozialen Feeds für SharePoint](reference-threads-and-digest-threads-in-sharepoint-server-social-feeds.md).
   
-    
-    
-
-> **Hinweis:** Ändern Sie die Platzhalterwerte für die Variablen **serverUrl** und **targetUser**, bevor Sie den Code ausführen.
+> [!NOTE]
+> Ändern Sie die Platzhalterwerte für die Variablen **serverUrl** und **targetUser**, bevor Sie den Code ausführen.
   
     
     
@@ -345,17 +341,16 @@ Das folgende Codebeispiel löscht einen Beitrag oder eine Antwort aus dem persö
     
     
 
-- Rufen Sie den **Personal**-[Feedtyp](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedType.aspx) für den aktuellen Benutzer mithilfe der [GetFeed](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeed.aspx)-Methode ab.
+- Rufen Sie den **Personal**-[Feedtyp]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedType.aspx)) für den aktuellen Benutzer mithilfe der [GetFeed]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeed.aspx))-Methode ab.
     
   
 - Durchlaufen Sie die Threads im Feed, um Informationen zum Stammbeitrag und Antworten zu erhalten.
     
   
-- Löschen Sie einen Stammbeitrag, eine Antwort oder einen Thread mithilfe der [DeletePost](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.DeletePost.aspx)-Methode (durch Löschen eines Stammbeitrags wird der gesamte Thread gelöscht).
+- Löschen Sie einen Stammbeitrag, eine Antwort oder einen Thread mithilfe der [DeletePost]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.DeletePost.aspx))-Methode (durch Löschen eines Stammbeitrags wird der gesamte Thread gelöscht).
     
-  
-
-> **Hinweis:** Ändern Sie den Platzhalterwert für die Variable **serverUrl**, bevor Sie den Code ausführen.
+> [!NOTE]
+> Ändern Sie den Platzhalterwert für die Variable **serverUrl**, bevor Sie den Code ausführen.
   
     
     
@@ -475,7 +470,7 @@ namespace SocialFeedCSOM
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addResources"> </a>
 
 

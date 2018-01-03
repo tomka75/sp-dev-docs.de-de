@@ -3,11 +3,11 @@ title: Workflowentwicklung in SharePoint Designer und Visio
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 496780d5-47d6-4a43-bf14-70aefb8d820c
-ms.openlocfilehash: 7a6e5e4d3cff0289930a34da749fd8fa7ce10585
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 79d3cf98b6468697d1c1cecbd37ea63017761780
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="workflow-development-in-sharepoint-designer-and-visio"></a>Workflowentwicklung in SharePoint Designer und Visio
 Hier erfahren Sie, wie Sie mit Visio 2013 und SharePoint Designer 2013 Workflows erstellen und auf einer SharePoint-Website veröffentlichen, ohne dass Sie Code benötigen.
@@ -16,10 +16,8 @@ Hier erfahren Sie, wie Sie mit Visio 2013 und SharePoint Designer 2013 Workflows
 
 Visio 2013 und SharePoint Designer 2013 machen es Geschäftsanalysten, Prozessberatern und IT-Experten einfach, zusammenzuarbeiten und -Workflows zu erstellen. Sowohl Visio Professional 2013 als auch der Visual Designer in SharePoint Designer 2013 bieten eine optionale Darstellung von Workflows in einem Format, das für Benutzer mit und ohne Programmierkenntnisse gleichermaßen verständlich ist.
   
-    
-    
-
-> **Hinweis:** Hinweise zur Einrichtung und Konfiguration von SharePoint und dem Workflow-Manager-Server finden Sie unter  [Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/de-DE/library/jj658586.aspx). 
+> [!NOTE] 
+> Hinweise zur Einrichtung und Konfiguration von SharePoint und dem Workflow-Manager-Server finden Sie unter [Konfigurieren von Workflows in SharePoint]((http://technet.microsoft.com/de-DE/library/jj658586.aspx)). 
   
     
     
@@ -302,10 +300,8 @@ Nachdem die SharePoint-Website geöffnet wurde, können Sie das Visio 2013-.vsdx
   
 Wenn Sie eine .vsdx-Datei in SharePoint Designer 2013 öffnen, wird die Datei im Visual Designer, einem in SharePoint Designer gehosteten Visio-ActiveX-Steuerelement, angezeigt. Das Visio 2013-Diagramm enthält alle in Visio erstellten Shapes und sämtlichen Shape-Text. 
   
-    
-    
-
-> **Hinweis:** Zum Wechseln zwischen dem Visual Designer und dem Declarative Designer in SharePoint Designer 2013 wählen Sie in der Registerkarte **Workflows** der **Verwalten**-Gruppe die Option **Ansichten**. Dieser Vorgang kann einen Moment dauern, da SharePoint Designer 2013 den Workflow überprüft und dann die Workflow-Informationen von einem Format in ein anderes umwandelt. Während dieses Vorgangs wird eine weitere Überprüfung auf Shape-Ebene durchgeführt. Wenn Fehler im Diagramm erkannt werden, werden die Fehler in einem Fehlerbereich am unteren Rand (wie in Visio) angezeigt. 
+> [!NOTE] 
+> Zum Wechseln zwischen dem Visual Designer und dem Declarative Designer in SharePoint Designer 2013 wählen Sie auf der Registerkarte **Workflows** der Gruppe **Verwalten** die Option **Ansichten**. Dieser Vorgang kann einen Moment dauern, da SharePoint Designer 2013 den Workflow überprüft und dann die Workflow-Informationen von einem Format in ein anderes umwandelt. Während dieses Vorgangs wird eine weitere Überprüfung auf Shape-Ebene durchgeführt. Wenn Fehler im Diagramm erkannt werden, werden die Fehler in einem Fehlerbereich am unteren Rand (wie in Visio) angezeigt. 
   
     
     
@@ -316,10 +312,8 @@ Die im Visual Designer angezeigten Shapes weisen auch Aktionstags auf (unten lin
     
 So sind z. B. mit dem Shape **E-Mail senden** zwei Eigenschaften verknüpft: **E-Mail erstellen** und **Eigenschaften**. Wenn Sie **E-Mail erstellen** auswählen, wird das Dialogfeld **E-Mail-Nachricht definieren** angezeigt, in dem Sie die Nachricht erstellen können, die durch die Aktion gesendet werden soll. Wenn Sie **Eigenschaften** auswählen, wird das Dialogfeld **E-Mail senden - Eigenschaften** angezeigt, das alle Parameter für die Aktion anzeigt.
   
-    
-    
-
-> **Hinweis:** Weitere Informationen zu einzelnen Aktionen, Shapes und deren Eigenschaften finden Sie in den Artikeln  [Shapes in der SharePoint Server-Workflowvorlage in Visio](shapes-in-the-sharepoint-server-workflow-template-in-visio.md) und [Kurzübersicht zu Workflowaktionen (SharePoint-Workflowplattform.md)](workflow-actions-quick-reference-sharepoint-workflow-platform.md). 
+> [!NOTE] 
+> Weitere Informationen zu einzelnen Aktionen, Shapes und deren Eigenschaften finden Sie in den Artikeln [Shapes in der SharePoint Server-Workflowvorlage in Visio](shapes-in-the-sharepoint-server-workflow-template-in-visio.md) und [Kurzübersicht zu Workflowaktionen (SharePoint-Workflowplattform.md)](workflow-actions-quick-reference-sharepoint-workflow-platform.md). 
   
     
     
@@ -353,7 +347,7 @@ Wenn der Workflow überprüft wurde und keine Fehler gefunden wurden, können Si
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="VSSPD_Additional"> </a>
 
 Weitere Informationen finden Sie in den folgenden Ressourcen:
@@ -370,13 +364,13 @@ Weitere Informationen finden Sie in den folgenden Ressourcen:
 -  [Beheben von SharePoint Server 2013-Workflowvalidierungsfehlern in Visio 2013](troubleshooting-sharepoint-server-workflow-validation-errors-in-visio.md)
     
   
--  [Erstellen, Importieren und Exportieren von SharePoint-Workflows in Visio](http://office.microsoft.com/de-DE/visio-help/create-import-and-export-sharepoint-workflows-in-visio-HA101888007.aspx)
+-  [Erstellen, Importieren und Exportieren von SharePoint-Workflows in Visio]((http://office.microsoft.com/de-DE/visio-help/create-import-and-export-sharepoint-workflows-in-visio-HA101888007.aspx))
     
   
--  [SharePoint Developer Center](http://msdn.microsoft.com/de-DE/sharepoint/default.aspx)
+-  [SharePoint Developer Center]((http://msdn.microsoft.com/de-DE/sharepoint/default.aspx))
     
   
--  [Visio Developer Center](http://msdn.microsoft.com/de-DE/office/aa905478)
+-  [Visio Developer Center]((http://msdn.microsoft.com/de-DE/office/aa905478))
     
   
 

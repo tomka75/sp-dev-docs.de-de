@@ -3,11 +3,11 @@ title: PowerPoint-Automatisierungsdienste in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 168c7dc0-fbdc-41a2-84db-65d211d3d673
-ms.openlocfilehash: 38aaa276eb79da8e7ad6a63e4b043c762535923a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: dd7ec35694d14d34fa58b3ec78591b8648063826
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="powerpoint-automation-services-in-sharepoint"></a>PowerPoint-Automatisierungsdienste in SharePoint
 In diesem Artikel erfahren Sie, wie Sie mithilfe von Microsoft PowerPoint Automation Services Präsentationen serverseitig in verschiedene Dateiformate bzw. aus verschiedenen Dateiformaten konvertieren können. 
@@ -21,10 +21,8 @@ Viele Unternehmen unterschiedlichster Größe verwenden ihre Microsoft SharePoi
     
 Mit PowerPoint Automation Services können Sie das PowerPoint-Binärdateiformat (.ppt) und das PowerPoint-Open XML-Dateiformat (.pptx) in andere Formate konvertieren. Sie können beispielsweise mehrere PowerPoint 97-2003-Dateien in Open XML-Präsentationsdateien konvertieren. Sie können auch eine benutzerdefinierte Aktion im Menü **Bearbeiten** erstellen, damit Benutzer bei Bedarf eine PDF-Version ihrer Präsentationen erstellen können.
   
-    
-    
-
-> **Hinweis:** PowerPoint Automation Services nutzt Funktionen von SharePoint und ist selbst ein Feature von SharePoint. Sie können PowerPoint Automation Services nur verwenden, wenn SharePoint installiert ist. Wenn Sie SharePoint in einer Serverfarm verwenden, müssen Sie PowerPoint Automation Services explizit aktivieren. 
+> [!NOTE]
+> PowerPoint Automation Services nutzt Funktionen von SharePoint und ist selbst ein Feature von SharePoint. Sie können PowerPoint Automation Services nur verwenden, wenn SharePoint installiert ist. Wenn Sie SharePoint in einer Serverfarm verwenden, müssen Sie PowerPoint Automation Services explizit aktivieren. 
   
     
     
@@ -98,10 +96,8 @@ Wenn Sie PowerPoint Automation Services verwenden möchten, senden Sie über d
     
 PowerPoint Automation Services verwendet die asynchrone Mustermethode zum Senden und Empfangen von Konvertierungsanforderungen. Sie können somit einen Code schreiben, mit dem mit der Ausführung fortgefahren wird, nachdem eine Konvertierungsanforderung gesendet wurde. Wenn Sie die Benutzer über den Abschluss einer Konvertierungsanforderung benachrichtigen möchten, können Sie eine Stellvertretung angeben, die auf eine auszuführende Rückrufmethode verweist, sobald der Vorgang abgeschlossen ist. 
   
-    
-    
-
-> **Hinweis:** Weitere Informationen zur Arbeit mit dem asynchronen Entwurfsmuster finden Sie in unserem [Übersichtsartikel zum asynchronen Programmiermodell](http://msdn.microsoft.com/de-DE/library/ms228963.aspx). 
+> [!NOTE]
+> Weitere Informationen zur Arbeit mit dem asynchronen Entwurfsmuster finden Sie in unserem [Übersichtsartikel zum asynchronen Programmiermodell]((http://msdn.microsoft.com/de-DE/library/ms228963.aspx)). 
   
     
     
@@ -123,8 +119,8 @@ Die **Request**-Klasse ist die grundlegendste Klasse im **Microsoft.Office.Serve
 
 |**Elementname**|**Beschreibung**|
 |:-----|:-----|
-|**BeginConvert(Microsoft.SharePoint.SPServiceContext, System.AsyncCallback, System.Object)**-Methode <br/> |Startet den Konvertierungsvorgang. Der erste Parameter,  _serviceContext_, gibt den Kontext der SharePoint-Website an, auf der sich die zu konvertierende Datei befindet. Mit dem  _callback_-Parameter können Sie einen Delegaten festlegen, der auf eine Methode verweist, die nach Abschluss des Vorgangs auszuführen ist. Verwenden Sie den  _state_-Parameter, wenn weitere Informationen aus dem aufrufenden Code an die Rückrufmethode übergeben werden müssen.  <br/> Gibt ein  [IAsyncResult](https://msdn.microsoft.com/library/System.IAsyncResult.aspx) -Objekt zurück. <br/> |
-|**EndConvert(IAsyncResult)**-Methode <br/> |Beendet den Konvertierungsvorgang. Der  _result_-Parameter erwartet das resultierende  [IAsyncResult](https://msdn.microsoft.com/library/System.IAsyncResult.aspx) -Objekt, das von der entsprechenden **BeginConvert**-Konvertierungsanforderung zurückgegeben wird. Wenn diese Anforderung zum Zeitpunkt des Aufrufs von **EndConvert**noch nicht abgeschlossen wurde, wird der aufrufende Thread blockiert, bis der Konvertierungsvorgang abgeschlossen ist.  <br/> Gibt keinen Wert zurück.  <br/> |
+|**BeginConvert(Microsoft.SharePoint.SPServiceContext, System.AsyncCallback, System.Object)**-Methode <br/> |Startet den Konvertierungsvorgang. Der erste Parameter,  _serviceContext_, gibt den Kontext der SharePoint-Website an, auf der sich die zu konvertierende Datei befindet. Mit dem  _callback_-Parameter können Sie einen Delegaten festlegen, der auf eine Methode verweist, die nach Abschluss des Vorgangs auszuführen ist. Verwenden Sie den  _state_-Parameter, wenn weitere Informationen aus dem aufrufenden Code an die Rückrufmethode übergeben werden müssen.  <br/> Gibt ein  [IAsyncResult]((https://msdn.microsoft.com/library/System.IAsyncResult.aspx)) -Objekt zurück. <br/> |
+|**EndConvert(IAsyncResult)**-Methode <br/> |Beendet den Konvertierungsvorgang. Der  _result_-Parameter erwartet das resultierende  [IAsyncResult]((https://msdn.microsoft.com/library/System.IAsyncResult.aspx)) -Objekt, das von der entsprechenden **BeginConvert**-Konvertierungsanforderung zurückgegeben wird. Wenn diese Anforderung zum Zeitpunkt des Aufrufs von **EndConvert**noch nicht abgeschlossen wurde, wird der aufrufende Thread blockiert, bis der Konvertierungsvorgang abgeschlossen ist.  <br/> Gibt keinen Wert zurück.  <br/> |
    
 
 ### <a name="presentationrequest-class"></a>PresentationRequest-Klasse
@@ -138,13 +134,13 @@ Die Konstruktormethode für die **PresentationRequest**-klasse verfügt über dr
     
     
 
--  _input_ Wählt die Datei, die Sie in ein [Stream](https://msdn.microsoft.com/library/System.IO.Stream.aspx) -Objekt konvertiert möchten.
+-  _input_ Wählt die Datei, die Sie in ein [Stream]((https://msdn.microsoft.com/library/System.IO.Stream.aspx)) -Objekt konvertiert möchten.
     
   
 -  _extension_ Eine Zeichenfolge, die die Dateierweiterung der zu konvertierenden Datei angibt.
     
   
--  _output_ Ein [SPFileStream](http://msdn.microsoft.com/de-DE/library/microsoft.sharepoint.spfilestream.aspx)-Objekt, das den Speicherort für die Ausgabe festlegt.
+-  _output_ Ein [SPFileStream]((http://msdn.microsoft.com/de-DE/library/microsoft.sharepoint.spfilestream.aspx))-Objekt, das den Speicherort für die Ausgabe festlegt.
     
   
 Die **PresentationRequest**-Klasse verfügt über eine Überladung für die Konstruktormethode, die einen  _settings_-Parameter hinzufügt. Der  _settings_-Parameter lässt ein **PresentationSettings**-Objekt als Argument zu.
@@ -152,7 +148,7 @@ Die **PresentationRequest**-Klasse verfügt über eine Überladung für die Kons
     
     
 
-> **Tipp:** Vergewissern Sie sich bei der Rückkonvertierung des Ausgabeobjekts des Typs [Stream](https://msdn.microsoft.com/library/System.IO.Stream.aspx) in ein Objekt des Typs [SPFile](http://msdn.microsoft.com/de-DE/library/microsoft.sharepoint.spfile.aspx), dass die Dateiendung der ausgegebenen Datei der Dateiendung des gewünschten Dateityps entspricht (.ppt oder .pptx).
+> **Tipp:** Vergewissern Sie sich bei der Rückkonvertierung des Ausgabeobjekts des Typs [Stream]((https://msdn.microsoft.com/library/System.IO.Stream.aspx)) in ein Objekt des Typs [SPFile]((http://msdn.microsoft.com/de-DE/library/microsoft.sharepoint.spfile.aspx)), dass die Dateiendung der ausgegebenen Datei der Dateiendung des gewünschten Dateityps entspricht (.ppt oder .pptx).
   
     
     
@@ -173,7 +169,7 @@ Die **PdfRequest**-Klasse verfügt auch über eine Überladung für die Konstruk
     
     
 
-> **Tipp:** Vergewissern Sie sich bei der Rückkonvertierung des Ausgabeobjekts des Typs [Stream](https://msdn.microsoft.com/library/System.IO.Stream.aspx) in ein Objekt des Typs [SPFile](http://msdn.microsoft.com/de-DE/library/microsoft.sharepoint.spfile.aspx), dass die Dateiendung der ausgegebenen Datei der Dateiendung des gewünschten Dateityps entspricht (.pdf).
+> **Tipp:** Vergewissern Sie sich bei der Rückkonvertierung des Ausgabeobjekts des Typs [Stream]((https://msdn.microsoft.com/library/System.IO.Stream.aspx)) in ein Objekt des Typs [SPFile]((http://msdn.microsoft.com/de-DE/library/microsoft.sharepoint.spfile.aspx)), dass die Dateiendung der ausgegebenen Datei der Dateiendung des gewünschten Dateityps entspricht (.pdf).
   
     
     
@@ -194,7 +190,7 @@ Die Klasse **PictureRequest** hat keine Überladungen für ihre Konstruktormetho
     
     
 
-> **Tipp:** Die Klasse **PictureRequest** gibt einen Datenstrom mit einem Paket von Bilddateien zurück. Vergewissern Sie sich bei der Rückkonvertierung des Ausgabeobjekts des Typs [Stream](https://msdn.microsoft.com/library/System.IO.Stream.aspx) in ein Objekt des Typs [SPFile](http://msdn.microsoft.com/de-DE/library/microsoft.sharepoint.spfile.aspx), dass die ausgegebene Datei die Dateiendung „.zip“ hat.
+> **Tipp:** Die Klasse **PictureRequest** gibt einen Datenstrom mit einem Paket von Bilddateien zurück. Vergewissern Sie sich bei der Rückkonvertierung des Ausgabeobjekts des Typs [Stream]((https://msdn.microsoft.com/library/System.IO.Stream.aspx)) in ein Objekt des Typs [SPFile]((http://msdn.microsoft.com/de-DE/library/microsoft.sharepoint.spfile.aspx)), dass die ausgegebene Datei die Dateiendung „.zip“ hat.
   
     
     
@@ -205,10 +201,8 @@ Die Klasse **PictureRequest** hat keine Überladungen für ihre Konstruktormetho
 
 Am einfachsten kann das Schreiben von Code, der PowerPoint Automation Services verwendet, anhand der Erstellung einer Konsolenanwendung veranschaulicht werden. Sie müssen die Konsolenanwendung auf dem SharePoint Server, und nicht auf einem Clientcomputer erstellen und ausführen. Der Code zum Starten von Konvertierungsanforderung weicht, abhängig davon, ob der Konvertierungsanforderungscode in einem Webpart, einem Workflow oder einem Ereignishandler integriert ist, nur gering ab. In der folgenden Vorgehensweise wird dargestellt, wie eine API bei der Verwendung von PowerPoint Automation Services aus einer Konsolenanwendung ohne zusätzliche Komplexität eines Webparts, eines Ereignishandlers oder eines Workflows verwendet werden kann.
   
-    
-    
-
-> **Hinweis:** Da PowerPoint Automation Services ein SharePoint-Dienst ist, können Sie das Feature nur in Anwendungen verwenden, die direkt unter SharePoint Server ausgeführt werden. Die Anwendung muss als Farmlösung erstellt werden. PowerPoint Automation Services lässt sich nicht in Sandkastenlösungen einsetzen. 
+> [!NOTE]
+> Da PowerPoint Automation Services ein SharePoint-Dienst ist, können Sie das Feature nur in Anwendungen verwenden, die direkt unter SharePoint Server ausgeführt werden. Die Anwendung muss als Farmlösung erstellt werden. PowerPoint Automation Services lässt sich nicht in Sandkastenlösungen einsetzen. 
   
     
     
@@ -231,7 +225,9 @@ Am einfachsten kann das Schreiben von Code, der PowerPoint Automation Services v
   
 5. Vergewissern Sie sich, dass das Visual Studio-Projekt auf .NET Framework 4 verweist.
     
-    > **Hinweis:** Beim Einsatz früherer SharePoint Server-Versionen musste auf .NET Framework 3.5 verwiesen werden. Jetzt verweisen die Microsoft.SharePoint-Bibliotheken auf Assemblys in .NET Framework 4. Stellen Sie außerdem sicher, dass das Projekt auf die Vollversion von .NET Framework 4 verweist, nicht auf das .NET Framework 4 Client Profile. 
+    > [!NOTE]
+    > Beim Einsatz früherer SharePoint Server-Versionen musste auf .NET Framework 3.5 verwiesen werden. Jetzt verweisen die Microsoft.SharePoint-Bibliotheken auf Assemblys in .NET Framework 4. Stellen Sie außerdem sicher, dass das Projekt auf die Vollversion von .NET Framework 4 verweist, nicht auf das .NET Framework 4 Client Profile. 
+
 6. Geben Sie in das Feld **Name** den gewünschten Namen für das Projekt ein, zum Beispiel „PAS_Sample“.
     
   
@@ -459,10 +455,8 @@ End Namespace
   
 Das SharePoint-Feature PowerPoint Automation Services gibt Unternehmen erweiterte Funktionen für die Verwaltung von Präsentationsdateien an die Hand. Die hochleistungsfähige Lösung ermöglicht eine skalierbare, serverseitige Verarbeitung oder Generierung von Präsentationsdateien, entweder batchbasiert oder bedarfsbasiert. 
   
-    
-    
-
-> **Hinweis:** Stellen Sie vor der Ausführung des Beispielcodes sicher, dass PowerPoint Automation Services in der Konsole der SharePoint-Zentraladministration aktiviert ist.<br/>  Sie können wie folgt überprüfen, ob PowerPoint Automation Services aktiviert ist: <ul><li>Wählen Sie in der Zentraladministrationskonsole unter **Systemeinstellungen** **Dienste auf dem Server verwalten**, und vergewissern Sie sich dann, dass der **PowerPoint-Konvertierungsdienst** auf **Gestartet** festgelegt ist.</li><li>Wählen Sie in der Zentraladministrationskonsole unter **Anwendungsverwaltung** **Dienstanwendungen verwalten**, und vergewissern Sie sich dann, dass die **PowerPoint-Konvertierungsdienstanwendung** und der **Proxy der PowerPoint-Konvertierungsdienstanwendung** auf „Gestartet" festgelegt sind.</li></ul>
+> [!NOTE]
+> Stellen Sie vor der Ausführung des Beispielcodes sicher, dass PowerPoint Automation Services in der Konsole der SharePoint-Zentraladministration aktiviert ist.<br/>  Sie können wie folgt überprüfen, ob PowerPoint Automation Services aktiviert ist: <ul><li>Wählen Sie in der Zentraladministrationskonsole unter **Systemeinstellungen** **Dienste auf dem Server verwalten**, und vergewissern Sie sich dann, dass der **PowerPoint-Konvertierungsdienst** auf **Gestartet** festgelegt ist.</li><li>Wählen Sie in der Zentraladministrationskonsole unter **Anwendungsverwaltung** **Dienstanwendungen verwalten**, und vergewissern Sie sich dann, dass die **PowerPoint-Konvertierungsdienstanwendung** und der **Proxy der PowerPoint-Konvertierungsdienstanwendung** auf „Gestartet" festgelegt sind.</li></ul>
   
     
     
@@ -476,17 +470,17 @@ Das SharePoint-Feature PowerPoint Automation Services gibt Unternehmen erweite
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="PAS_Additional"> </a>
 
 
--  [Entwickeln mit SharePoint 2010 Word Automation Services](http://msdn.microsoft.com/de-DE/library/ff742315.aspx)
+-  [Entwickeln mit SharePoint 2010 Word Automation Services]((http://msdn.microsoft.com/de-DE/library/ff742315.aspx))
     
   
--  [PowerPoint Developer Center](http://msdn.microsoft.com/de-DE/office/aa905465)
+-  [PowerPoint Developer Center]((http://msdn.microsoft.com/de-DE/office/aa905465))
     
   
--  [SharePoint Developer Center](http://msdn.microsoft.com/de-DE/sharepoint/default.aspx)
+-  [SharePoint Developer Center]((http://msdn.microsoft.com/de-DE/sharepoint/default.aspx))
     
   
 

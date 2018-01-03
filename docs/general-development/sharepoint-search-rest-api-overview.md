@@ -2,11 +2,11 @@
 title: "Übersicht über die REST-API der SharePoint-Suche"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: d0684be67a04f79cea059564390918be084d9eaf
-ms.sourcegitcommit: d68d6cf927d69696a3561f7d8ffe9a3ed9dbd03c
+ms.openlocfilehash: bddd1291f134e3b0a57f6b6fb74bcc6858865134
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-search-rest-api-overview"></a>Übersicht über die REST-API der SharePoint-Suche
 Fügen Sie Suchfunktionen zu Client- und mobilen Anwendungen hinzu, mit dem Search-REST-Dienst in SharePoint und jeder Technologie, die REST-Webanforderungen unterstützt.
@@ -78,9 +78,9 @@ Die **POST**-HTTP-Version des Search-REST-Diensts unterstützt alle Parameter, d
 |:-----|:-----|
 | [SelectProperties](#bk_SelectProperties) <br/> |string[]  <br/> |
 | [RefinementFilters](#bk_RefinementFilters) <br/> |string[]  <br/> |
-| [SortList](#bk_SortList) <br/> | [Sort](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Search.Query.Sort.aspx) <br/> |
+| [SortList](#bk_SortList) <br/> | [Sort]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Search.Query.Sort.aspx)) <br/> |
 | [HithighlightedProperties](#bk_HithighlightedProperties) <br/> |string[]  <br/> |
-| [Properties](#bk_Properties) <br/> | [Microsoft.SharePoint.Client.Search.Query.KeywordQueryProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Search.Query.KeywordQueryProperties.aspx) <br/> |
+| [Properties](#bk_Properties) <br/> | [Microsoft.SharePoint.Client.Search.Query.KeywordQueryProperties]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Search.Query.KeywordQueryProperties.aspx)) <br/> |
    
 Verwenden Sie **POST**-Anforderungen in den folgenden Szenarios:
   
@@ -412,7 +412,7 @@ http:// _server_/_api/search/query?querytext='sharepoint'&amp;selectproperties='
 ### <a name="culture"></a>Culture
 <a name="bk_Culture"> </a>
 
-Gebietsschema-ID (LCID) für die Abfrage (siehe  [Von Microsoft zugewiesene Gebietsschema-IDs](http://msdn.microsoft.com/en-us/goglobal/bb964664.aspx)).
+Gebietsschema-ID (LCID) für die Abfrage (siehe  [Von Microsoft zugewiesene Gebietsschema-IDs]((http://msdn.microsoft.com/de-DE/goglobal/bb964664.aspx))).
   
     
     
@@ -1083,8 +1083,8 @@ http:// _server_/_api/search/query?querytext='sharepoint'&amp;properties='termid
 }
 ```
 
-
-> **Hinweis:** [QueryPropertyValueType](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.QueryPropertyValueType.aspx) gibt den Typ der Eigenschaft an. Jeder Typ weist einen bestimmten Indexwert auf.
+> [!NOTE]
+> [QueryPropertyValueType]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.QueryPropertyValueType.aspx)) gibt den Typ der Eigenschaft an. Jeder Typ weist einen bestimmten Indexwert auf.
   
     
     
@@ -1133,7 +1133,7 @@ Spezielle Regeln für die Neuanordnung der Suchergebnisse. Diese Regeln können 
   
     
     
-Im folgenden Beispiel bezieht sich  _MatchType_ auf [ReorderingRuleMatchType](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ReorderingRuleMatchType.aspx) . Im folgenden Beispiel spezifiziert `'MatchType' : '0'` Folgendes: [ResultContainsKeyword](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ReorderingRuleMatchType.ResultContainsKeyword.aspx) .
+Im folgenden Beispiel bezieht sich  _MatchType_ auf [ReorderingRuleMatchType]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ReorderingRuleMatchType.aspx)) . Im folgenden Beispiel spezifiziert `'MatchType' : '0'` Folgendes: [ResultContainsKeyword]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ReorderingRuleMatchType.ResultContainsKeyword.aspx)) .
   
     
     
@@ -1405,7 +1405,7 @@ http:// _server_/_api/search/query?querytext='sharepoint'&amp;generateblockrankl
 ### <a name="uilanguage"></a>UIlanguage
 <a name="bk_ProcessPersonalFavorites"> </a>
 
-Gebietsschema-ID (LCID) der Benutzeroberfläche (siehe  [Von Microsoft zugewiesene Gebietsschema-IDs](http://msdn.microsoft.com/en-us/goglobal/bb964664)).
+Gebietsschema-ID (LCID) der Benutzeroberfläche (siehe  [Von Microsoft zugewiesene Gebietsschema-IDs]((http://msdn.microsoft.com/de-DE/goglobal/bb964664))).
   
     
     
@@ -1541,7 +1541,7 @@ Sie können die Suche konfigurieren, um Search-REST-Abfragen von anonymen Benutz
 ### <a name="to-enable-anonymous-search-rest-queries"></a>So ermöglichen Sie anonyme Search-REST-Abfragen
 
 
-1. Ermöglichen Sie den anonymen Zugriff auf die Webanwendung und Veröffentlichungswebsite. Weitere Informationen erhalten Sie unter  [Verwalten von Berechtigungsrichtlinien für eine Webanwendung in SharePoint](http://technet.microsoft.com/en-us/library/ff608071.aspx) und [Planen der Benutzerauthentifizierungsmethoden in SharePoint](http://technet.microsoft.com/en-us/library/cc262350.aspx) in [TechNet](http://technet.microsoft.com/en-US/).
+1. Ermöglichen Sie den anonymen Zugriff auf die Webanwendung und Veröffentlichungswebsite. Weitere Informationen erhalten Sie unter  [Verwalten von Berechtigungsrichtlinien für eine Webanwendung in SharePoint]((http://technet.microsoft.com/de-DE/library/ff608071.aspx)) und [Planen der Benutzerauthentifizierungsmethoden in SharePoint]((http://technet.microsoft.com/de-DE/library/cc262350.aspx)) in [TechNet]((http://technet.microsoft.com/de-DE/)).
     
   
 2. Fügen Sie eine neue Dokumentbibliothek namens QueryPropertiesTemplate zur Veröffentlichungswebsite hinzu.
@@ -1631,7 +1631,7 @@ Die wichtigsten Elemente in der Datei "queryparametertemplate.xml" sind:
   
     
     
-Enthält ein serialisiertes  [QueryProperties](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.QueryProperties.aspx) -Objekt.
+Enthält ein serialisiertes  [QueryProperties]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.QueryProperties.aspx)) -Objekt.
     
   
 - Element **WhiteList**
@@ -1653,20 +1653,20 @@ Wenn eine anonyme Search-REST-Abfrage gesendet wird, wird das Abfrageobjekt mit 
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
 -  [Suche in SharePoint](search-in-sharepoint.md)
     
   
--  [SharePoint: Verwenden des Search-REST-Diensts über eine App für SharePoint](http://code.msdn.microsoft.com/sharepoint/SharePoint-Perform-a-1bf3e87d)
+-  [SharePoint: Verwenden des Search-REST-Diensts über eine App für SharePoint]((http://code.msdn.microsoft.com/sharepoint/SharePoint-Perform-a-1bf3e87d))
     
   
 -  [What's new in SharePoint-Suche für Entwickler](what-s-new-in-sharepoint-search-for-developers.md)
     
   
--  [Programmieren mit dem SharePoint REST-Dienst](http://msdn.microsoft.com/library/d4b5c277-ed50-420c-8a9b-860342284b72%28Office.15%29.aspx)
+-  [Programmieren mit dem SharePoint REST-Dienst]((http://msdn.microsoft.com/library/d4b5c277-ed50-420c-8a9b-860342284b72%28Office.15%29.aspx))
     
   
 

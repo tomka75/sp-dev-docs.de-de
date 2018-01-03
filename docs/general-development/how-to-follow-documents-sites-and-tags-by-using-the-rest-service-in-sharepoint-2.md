@@ -3,11 +3,11 @@ title: Folgen von Dokumenten, Websites und Kategorien mithilfe des REST-Diensts 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 989a5873-49f9-49e4-8d0f-439dde891cc2
-ms.openlocfilehash: 73796b89f04291d86072234833953c97881cdff8
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 1c27c11c49be77941fd7c7b2e4876f43938dea66
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint"></a>Folgen von Dokumenten, Websites und Kategorien mithilfe des REST-Diensts in SharePoint
 
@@ -56,9 +56,8 @@ Inhalt in der folgenden Aufgaben mithilfe der REST-API, senden Sie HTTP **GET** 
   
 - **my/followedcount** Anzahl der gefolgten Dokumente, Websites und Tags abrufen
     
-  
-
-> **Hinweis:** Sie verwenden diese Endpunkte auch für Aufgaben zum Folgen von Personen, allerdings unterstützen die Ressourcen **followers** und **suggestions**, die über **SocialRestFollowingManager** verfügbar sind, nur das Folgen von Personen, nicht von Inhalten. Weitere Informationen zur Verwendung von **SocialRestFollowingManager** finden Sie unter [Folgen von Inhalten in SharePoint](follow-content-in-sharepoint.md) und [Folgen von Personen in SharePoint](follow-people-in-sharepoint.md). 
+> [!NOTE]
+> Sie verwenden diese Endpunkte auch für Aufgaben zum Folgen von Personen, allerdings unterstützen die Ressourcen **followers** und **suggestions**, die über **SocialRestFollowingManager** verfügbar sind, nur das Folgen von Personen, nicht von Inhalten. Weitere Informationen zur Verwendung von **SocialRestFollowingManager** finden Sie unter [Folgen von Inhalten in SharePoint](follow-content-in-sharepoint.md) und [Folgen von Personen in SharePoint](follow-people-in-sharepoint.md). 
   
     
     
@@ -69,10 +68,8 @@ Inhalt in der folgenden Aufgaben mithilfe der REST-API, senden Sie HTTP **GET** 
 
 In diesem Artikel wird davon ausgegangen, dass Sie die SharePoint-Add-In mithilfe einer Napa- oder Office 365-Entwicklerwebsite erstellen. Wenn Sie diese Entwicklungsumgebung verwenden, sind die Voraussetzungen bereits erfüllt.
   
-    
-    
-
-> **Hinweis:** Wechseln Sie zur [Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx), um sich für eine Entwicklerwebsite anzumelden und mit der Verwendung von Napa zu beginnen.
+> [!NOTE]
+> Wechseln Sie zur [Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365]((http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx)), um sich für eine Entwicklerwebsite anzumelden und mit der Verwendung von Napa zu beginnen.
   
     
     
@@ -101,9 +98,8 @@ Wenn Sie nicht auf eine Office 365 Developer Site Napa verwenden, benötigen Sie
   
   - Sie müssen sich mit einem anderen Konto als dem Systemkonto anmelden, da das Systemkonto nicht über die Berechtigung zur Installation der App verfügt.
     
-  
-
-> **Hinweis:** Informationen zum lokalen Setup (einschließlich der eventuell erforderlichen Deaktivierung der Loopbacküberprüfung) finden Sie unter [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](http://msdn.microsoft.com/library/b0878c12-27c9-4eea-ae3b-7e79e5a8838d%28Office.15%29.aspx).
+> [!NOTE]
+> Informationen zum lokalen Setup (einschließlich der eventuell erforderlichen Deaktivierung der Loopbacküberprüfung) finden Sie unter [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins]((http://msdn.microsoft.com/library/b0878c12-27c9-4eea-ae3b-7e79e5a8838d%28Office.15%29.aspx)).
   
     
     
@@ -780,8 +776,8 @@ Tabelle 1 zeigt **SocialFollowResult** Statuscodes und deren Werte an.
 |2|**LimitReached**. Fehler bei der Anforderung, da ein internes Limit erreicht wurde.|
 |3|**InternalError**. Die Anforderung ist aufgrund eines internen Fehlers fehlgeschlagen.|
    
-
-> **Hinweis:** Der REST-Dienst gibt keine Antwort für die Anforderung **StopFollowing** zurück. Er gibt `{"d":{"StopFollowing":null}}` zurück. 
+> [!NOTE]
+> Der REST-Dienst gibt keine Antwort für die Anforderung **StopFollowing** zurück. Er gibt `{"d":{"StopFollowing":null}}` zurück. 
   
     
     
@@ -904,7 +900,7 @@ Die folgende Antwort stellt eine Anzahl von drei beobachteter Dokumente, Website
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkmk_AddtionalResources"> </a>
 
 

@@ -1,6 +1,6 @@
 # <a name="sharepoint-site-theming-csom-development"></a>SharePoint-Websitedesign: CSOM-Entwicklung
 
-Das clientseitige SharePoint-Objektmodell (Client-Side Object Model, CSOM) bietet Zugriff auf das SharePoint-Objektmodell von Code, der lokal oder auf einem anderen Server als SharePoint ausgeführt wird. 
+Das clientseitige SharePoint-Objektmodell (Client-Side Object Model, CSOM) bietet Zugriff auf das SharePoint-Objektmodell von Code, der lokal oder auf einem anderen Server als SharePoint ausgeführt wird.    
 
 ## <a name="prerequisites"></a>Voraussetzungen
 Machen Sie sich mit den folgenden Themen vertraut, bevor Sie mit den ersten Schritten beginnen:

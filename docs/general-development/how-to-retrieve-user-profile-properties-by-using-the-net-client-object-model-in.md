@@ -3,11 +3,11 @@ title: Abrufen von Benutzerprofileigenschaften mithilfe des .NET-Clientobjektmod
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 236ebaf8-f92e-4192-9b51-0a9de0210885
-ms.openlocfilehash: 1d77fdaccfeeefafc9a7d43476140a0c8a632515
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 8ff2bf5802099c70f60cf362916659af1c657a8b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="retrieve-user-profile-properties-by-using-the-net-client-object-model-in-sharepoint"></a>Abrufen von Benutzerprofileigenschaften mithilfe des .NET-Clientobjektmodells in SharePoint
 
@@ -16,27 +16,25 @@ In diesem Artikel erfahren Sie, wie Sie Benutzerprofileigenschaften programmgest
 ## <a name="what-are-user-profile-properties-in-sharepoint"></a>Was sind Benutzerprofileigenschaften in SharePoint?
 <a name="bkmk_WhatIs"> </a>
 
-Benutzereigenschaften und Benutzerprofileigenschaften liefern Informationen zu SharePoint-Benutzern, wie beispielsweise Anzeigename, E-Mail-Adresse, Titel sowie weitere geschäftliche und persönliche Daten. In clientseitigen APIs greifen Sie auf diese Eigenschaften über das  [PersonProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.aspx) -Objekt und seine [UserProfileProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.UserProfileProperties.aspx) -Eigenschaft zu. Die [UserProfileProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.UserProfileProperties.aspx) -Eigenschaft enthält alle Benutzerprofileigenschaften, aber das [PersonProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.aspx) -Objekt enthält alle normalerweise verwendeten Eigenschaften (wie beispielsweise [AccountName](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.AccountName.aspx) , [DisplayName](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.DisplayName.aspx) und [Email](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.Email.aspx) ), auf die einfacher zugegriffen werden kann.
+Benutzereigenschaften und Benutzerprofileigenschaften liefern Informationen zu SharePoint-Benutzern, wie beispielsweise Anzeigename, E-Mail-Adresse, Titel sowie weitere geschäftliche und persönliche Daten. In clientseitigen APIs greifen Sie auf diese Eigenschaften über das  [PersonProperties]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.aspx)) -Objekt und seine [UserProfileProperties]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.UserProfileProperties.aspx)) -Eigenschaft zu. Die [UserProfileProperties]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.UserProfileProperties.aspx)) -Eigenschaft enthält alle Benutzerprofileigenschaften, aber das [PersonProperties]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.aspx)) -Objekt enthält alle normalerweise verwendeten Eigenschaften (wie beispielsweise [AccountName]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.AccountName.aspx)) , [DisplayName]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.DisplayName.aspx)) und [Email]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.Email.aspx)) ), auf die einfacher zugegriffen werden kann.
   
     
     
-Das  [PeopleManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.aspx) -Objekt enthält die folgenden Methoden zum Abrufen von Benutzereigenschaften und Benutzerprofileigenschaften über das .NET-Clientobjektmodell:
-  
-    
-    
-
-- Die  [GetMyProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetMyProperties.aspx) -Methode und die [GetPropertiesFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetPropertiesFor.aspx) -Methode geben ein [PersonProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.aspx) -Objekt zurück.
-    
-  
-- Die  [GetUserProfilePropertiesFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertiesFor.aspx) -Methode und die [GetUserProfilePropertyFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertyFor.aspx) -Methode geben die von Ihnen eingegebenen Werte der Benutzerprofileigenschaften zurück.
-    
-  
-Benutzerprofileigenschaften aus Client-APIs sind schreibgeschützt (mit Ausnahme des Profilbilds, das Sie mithilfe der  [PeopleManager.SetMyProfilePicture](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.SetMyProfilePicture.aspx) -Methode ändern können). Wenn Sie andere Benutzerprofileigenschaften ändern möchten, müssen Sie das Serverobjektmodell verwenden.
+Das  [PeopleManager]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.aspx)) -Objekt enthält die folgenden Methoden zum Abrufen von Benutzereigenschaften und Benutzerprofileigenschaften über das .NET-Clientobjektmodell:
   
     
     
 
-> **Hinweis:** Die Clientversion des [UserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfile.aspx)-Objekts enthält im Gegensatz zur serverseitigen Version nicht alle Benutzereigenschaften. Allerdings stellt die clientseitige Version die Methoden zum Erstellen einer persönlichen Website für den aktuellen Benutzer bereit. Zum Abrufen des clientseitigen [UserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfile.aspx)-Objekts für den aktuellen Benutzer verwenden Sie die [ProfileLoader.GetUserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.ProfileLoader.GetUserProfile.aspx)-Methode.
+- Die  [GetMyProperties]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetMyProperties.aspx)) -Methode und die [GetPropertiesFor]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetPropertiesFor.aspx)) -Methode geben ein [PersonProperties]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.aspx)) -Objekt zurück.
+    
+  
+- Die  [GetUserProfilePropertiesFor]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertiesFor.aspx)) -Methode und die [GetUserProfilePropertyFor]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertyFor.aspx)) -Methode geben die von Ihnen eingegebenen Werte der Benutzerprofileigenschaften zurück.
+    
+  
+Benutzerprofileigenschaften aus Client-APIs sind schreibgeschützt (mit Ausnahme des Profilbilds, das Sie mithilfe der  [PeopleManager.SetMyProfilePicture]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.SetMyProfilePicture.aspx)) -Methode ändern können). Wenn Sie andere Benutzerprofileigenschaften ändern möchten, müssen Sie das Serverobjektmodell verwenden.
+  
+> [!NOTE]
+> Die Clientversion des [UserProfile]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfile.aspx))-Objekts enthält im Gegensatz zur serverseitigen Version nicht alle Benutzereigenschaften. Allerdings stellt die clientseitige Version die Methoden zum Erstellen einer persönlichen Website für den aktuellen Benutzer bereit. Zum Abrufen des clientseitigen [UserProfile]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfile.aspx))-Objekts für den aktuellen Benutzer verwenden Sie die [ProfileLoader.GetUserProfile]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.ProfileLoader.GetUserProfile.aspx))-Methode.
   
     
     
@@ -62,9 +60,8 @@ Zum Erstellen einer Konsolenanwendung, die das .NET-Clientobjektmodell zum Abruf
   
 - Verbindungsberechtigungen **Vollzugriff** zum Zugriff auf die Benutzerprofildienst-Anwendung für den aktuellen Benutzer.
     
-  
-
-> **Hinweis:** Wenn Sie die Entwicklungsaufgaben nicht auf dem Computer durchführen, auf dem SharePoint ausgeführt wird, laden Sie die  [SharePoint-Clientkomponenten](http://www.microsoft.com/en-us/download/details.aspx?id=35585) herunter, die die SharePoint-Clientassemblys enthalten.
+> [!NOTE]
+> Wenn Sie die Entwicklungsaufgaben nicht auf dem Computer durchführen, auf dem SharePoint ausgeführt wird, laden Sie die [SharePoint-Clientkomponenten](http://www.microsoft.com/en-us/download/details.aspx?id=35585) herunter, die die SharePoint-Clientassemblys enthalten.
   
     
     
@@ -145,10 +142,8 @@ foreach (var property in personProperties.UserProfileProperties)
 
 Das folgende Codebeispiel zeigt, wie alle Benutzerprofileigenschaften eines Zielbenutzers abgerufen und durchlaufen werden, wie im  [vorherigen Verfahren](how-to-retrieve-user-profile-properties-by-using-the-net-client-object-model-in.md#bk_RetrieveProps) beschrieben.
   
-    
-    
-
-> **Hinweis:** Ersetzen Sie die Platzhalterwerte  `http://serverName/` und `domainName\\\\userName`, bevor Sie den Code ausführen.
+> [!NOTE]
+> Ersetzen Sie die Platzhalterwerte `http://serverName/` und `domainName\\\\userName`, bevor Sie den Code ausführen.
   
     
     
@@ -242,20 +237,16 @@ if (contextTokenString != null)
 
 Das folgende Codebeispiel zeigt, wie eine bestimmte Gruppe von Benutzerprofileigenschaften für einen Zielbenutzer abgerufen wird.
   
-    
-    
-
-> **Hinweis:** Um nur den Wert für eine einzige Benutzerprofileigenschaft abzurufen, verwenden Sie die  [GetUserProfilePropertyFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertyFor.aspx)-Methode.
+> [!NOTE]
+> Um nur den Wert für eine einzige Benutzerprofileigenschaft abzurufen, verwenden Sie die [GetUserProfilePropertyFor]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertyFor.aspx))-Methode.
   
     
     
 
-Anders als in dem vorherigen Codebeispiel, bei dem ein  [PersonProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.aspx) -Objekt für den Zielbenutzer abgerufen wird, wird mit diesem Beispiel die [PeopleManager.GetUserProfilePropertiesFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertiesFor.aspx) -Methode aufgerufen und ein [UserProfilePropertiesForUser](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfilePropertiesForUser.aspx) -Objekt übergeben, das den Zielbenutzer und die Benutzerprofileigenschaften angibt, die abgerufen werden sollen. [GetUserProfilePropertiesFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertiesFor.aspx) gibt eine **IEnumerable<string>**-Auflistung zurück, die die Werte der von Ihnen angegebenen Eigenschaften enthält.
+Anders als in dem vorherigen Codebeispiel, bei dem ein  [PersonProperties]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.aspx)) -Objekt für den Zielbenutzer abgerufen wird, wird mit diesem Beispiel die [PeopleManager.GetUserProfilePropertiesFor]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertiesFor.aspx)) -Methode aufgerufen und ein [UserProfilePropertiesForUser]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfilePropertiesForUser.aspx)) -Objekt übergeben, das den Zielbenutzer und die Benutzerprofileigenschaften angibt, die abgerufen werden sollen. [GetUserProfilePropertiesFor]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertiesFor.aspx)) gibt eine **IEnumerable<string>**-Auflistung zurück, die die Werte der von Ihnen angegebenen Eigenschaften enthält.
   
-    
-    
-
-> **Hinweis:** Ersetzen Sie die Platzhalterwerte  `http://serverName/` und `domainName\\\\userName`, bevor Sie den Code ausführen.
+> [!NOTE]
+> Ersetzen Sie die Platzhalterwerte `http://serverName/` und `domainName\\\\userName`, bevor Sie den Code ausführen.
   
     
     
@@ -316,7 +307,7 @@ namespace UserProfilesCSOM
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
@@ -329,7 +320,7 @@ namespace UserProfilesCSOM
 -  [Vorgehensweise: Arbeiten mit Benutzerprofilen und Organisationsprofilen mithilfe des Serverobjektmodells in SharePoint](how-to-work-with-user-profiles-and-organization-profiles-by-using-the-server-obj.md)
     
   
--  [Microsoft.SharePoint.Client.UserProfiles](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.aspx)
+-  [Microsoft.SharePoint.Client.UserProfiles]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.aspx))
     
   
 
