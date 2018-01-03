@@ -3,22 +3,19 @@ title: "Ressourcen-URI für Excel Services-REST-API"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 79f95305-ec9e-4842-b937-85f66ced98e4
-ms.openlocfilehash: 01b264b2e668e3779df8fcc08c70142241f7f8db
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e1b77373e293051315900e9fb06cb287c46e509e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="resources-uri-for-excel-services-rest-api"></a>Ressourcen-URI für Excel Services-REST-API
 
 Mit der REST-API in Excel Services können Sie eine direkte Verknüpfung zu Entitäten herstellen.
   
-    
-    
-
-
-> **Hinweis:** Die Excel Services-REST-API bezieht sich auf SharePoint und SharePoint 2016 (lokal). Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> )-Endpunkts sind.
+> [!NOTE]
+> Die Excel Services-REST-API kann in lokalen Bereitstellungen von SharePoint und SharePoint 2016 verwendet werden. Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+)-Endpunkts sind.
   
     
     
@@ -96,20 +93,9 @@ In Tabelle 1 sind alle Ressourcen in der REST-API in Excel Services aufgeführt,
 |/model/PivotTables('[Name]')  <br/> |HTML (Standard)  <br/> |/model/PivotTables('MyPivotTable)?$format=html  <br/> |Ein HTML-Fragment für die angeforderte PivotTable.  <br/> |
 |/model/PivotTables('[Name]')  <br/> |Atom  <br/> |/model/PivotTables('MyPivotTable')?$format=atom  <br/> |Ein Atom-Eintrag, der eine XML-Darstellung der Daten aus den PivotTables enthält.  <br/> |
    
-
-> **Hinweis:** Excel Services begrenzt die Anzahl der Bereiche, die Sie in eine URL einfügen können auf 10. Wenn Sie mehr als 10 Bereiche in eine URL einfügen, erhalten Sie eine Fehlermeldung, die darauf hinweist, dass der Dienst nicht verfügbar ist. 
-  
-    
-    
-
+> [!NOTE]
+> Excel Services begrenzt die Anzahl der Bereiche, die Sie in eine URL einfügen können auf 10. Wenn Sie mehr als 10 Bereiche in eine URL einfügen, erhalten Sie eine Fehlermeldung, die darauf hinweist, dass der Dienst nicht verfügbar ist. 
 
 ## <a name="see-also"></a>Siehe auch
 
-
-#### <a name="concepts"></a>Konzepte
-
-
-  
-    
-    
- [Grundlegende URI-Struktur und Pfad](basic-uri-structure-and-path.md)
+- [Grundlegende URI-Struktur und Pfad](basic-uri-structure-and-path.md)

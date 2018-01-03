@@ -5,11 +5,11 @@ keywords: async,how to,howdoi,howto
 f1_keywords: async,how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 6febe7dc-a552-4c79-aa3e-203d882286e3
-ms.openlocfilehash: 4abef18cee1d669291381a49c1d3b03d60db6da6
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 7720c0d18c101d137906f217e5caf58f3ba6b7d0
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-the-closeworkbook-method-call-asynchronously"></a>Asynchrones Verwenden des CloseWorkbook-Methodenaufrufs
 
@@ -20,11 +20,8 @@ When you are using Excel Web Services, it is good practice to close the workbook
 
 However, any Web service call takes time. Depending on the way your server is installed, the way that you access it, and how much stress the server is under, the call can take anywhere between 50 milliseconds to 500 milliseconds. It can also take longer, but only if your server is under severe stress. Because a failed **CloseWorkbook** method call is not actionable, you do not need to wait for it to finish to see whether it succeeds. Because of this, you can usually make the call asynchronously and save some operation time.
   
-    
-    
-
-
-> **Hinweis:** Wenn Ihre Anwendung einige Aufrufe an Excel Services ausführt und dann beendet wird, möchten Sie eine Arbeitsmappe möglicherweise synchron statt asynchron schließen. Rufen Sie in diesem Fall die Methode **CloseWorkbook** statt der Methode **CloseWorkbookAsync** auf. Begründung: Wenn Sie den Prozess nach der Durchführung eines asynchronen Aufrufs sofort verlassen, ist es gut möglich, dass der Aufruf nicht weitergeleitet wird.
+> [!NOTE]
+> Wenn Ihre Anwendung einige Aufrufe an Excel Services ausführt und dann beendet wird, möchten Sie eine Arbeitsmappe möglicherweise synchron statt asynchron schließen. Rufen Sie in diesem Fall die Methode **CloseWorkbook** statt der Methode **CloseWorkbookAsync** auf. Begründung: Wenn Sie den Prozess nach der Durchführung eines asynchronen Aufrufs sofort verlassen, ist es gut möglich, dass der Aufruf nicht weitergeleitet wird.
   
     
     
@@ -47,7 +44,9 @@ End Sub
 ```
 
 You don't have to implement the event that is called when the **CloseWorkbookAsync** method is called.You can find the signature in the "Reference.cs" file in your project "Web References" directory. 
-> **Hinweis:** Die Methode **CloseWorkbookAsync** finden Sie in der Proxyklasse, die generiert wird, wenn Sie mit Microsoft Visual Studio 2005 einen Webverweis hinzufügen. Wenn Sie Visual Studio 2003 verwenden, rufen Sie die Methode **BeginCloseWorkbook** auf, um eine Arbeitsmappe stattdessen asynchron zu schließen.
+
+> [!NOTE]
+> Die Methode **CloseWorkbookAsync** finden Sie in der Proxyklasse, die generiert wird, wenn Sie mit Microsoft Visual Studio 2005 einen Webverweis hinzufügen. Wenn Sie Visual Studio 2003 verwenden, rufen Sie die Methode **BeginCloseWorkbook** auf, um eine Arbeitsmappe stattdessen asynchron zu schließen.
   
     
     

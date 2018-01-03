@@ -3,15 +3,16 @@ title: Anfordern von Excel-Arbeitsmappendaten von SharePoint Server mithilfe von
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 2f846e96-6c9e-4ed2-9602-4081ad0ab135
-ms.openlocfilehash: 79e7a64b88e54105ad5ad846939836121621cc45
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c7547b4bc0b504780609dffafe7fc15669cd68c4
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="requesting-excel-workbook-data-from-sharepoint-server-using-odata"></a>Anfordern von Excel-Arbeitsmappendaten von SharePoint Server mithilfe von OData
+# <a name="requesting-excel-workbook-data-from-sharepoint-server-using-odata"></a>Anfordern von Excel-Arbeitsmappendaten von SharePoint Server mithilfe von OData
 
-> **Hinweis:** Die Excel Services-REST-API kann in lokalen Bereitstellungen von SharePoint und SharePoint 2016 verwendet werden. Für Konten in Office 365 Education, Office 365 Business und Office 356 Enterprise müssen Sie die Excel-REST-APIs verwenden, die in den [Microsoft Graph](http://graph.microsoft.io/de-DE/docs/api-reference/v1.0/resources/excel)-Endpunkt integriert sind.
+> [!NOTE]
+> Die Excel Services-REST-API kann in lokalen Bereitstellungen von SharePoint und SharePoint 2016 verwendet werden. Für Konten in Office 365 Education, Office 365 Business und Office 356 Enterprise müssen Sie die Excel-REST-APIs verwenden, die in den [Microsoft Graph]((http://graph.microsoft.io/de-DE/docs/api-reference/v1.0/resources/excel))-Endpunkt integriert sind.
   
     
     
@@ -78,22 +79,22 @@ Die Excel Services-Implementierung der OData unterstützt eine Reihe von OData-S
 |**$top** <br/> |Gibt zurück N Zeilen aus der Tabelle, wobei N eine Zahl, die den Wert des **$top**angegeben.  <br/> Das folgende Beispiel gibt die ersten 5 Zeilen from Tabelle1, sortiert nach der Spalte Name in der Arbeitsmappe ProductSales.xlsx.  <br/> http://contoso1/_vti_bin/ExcelRest.aspx/Documents/ProductSales.xlsx/OData/Table1?$orderby=Name&amp;$top=5  <br/> |
 |**$skip** <br/> |Überspringt N Zeilen, wobei N den Wert des **$skip**angegebene Nummer getestet werden, und gibt dann die restlichen Zeilen der Tabelle zurück.  <br/> Das folgende Beispiel gibt alle verbleibende Zeilen nach der fünften Zeile from Tabelle1 in der Arbeitsmappe ProductSales.xlsx zurück.  <br/> http://contoso1/_vti_bin/ExcelRest.aspx/Documents/ProductSales.xlsx/OData/Table1?$skip=5  <br/> |
 |**$skiptoken** <br/> |Der n-te Zeile, wobei N die Ordnungsposition Zeile durch den Wert des **$skiptoken**angegeben ist, sucht und gibt dann alle verbleibende Zeilen, beginnend bei Zeile N + 1 zurück. Die Auflistung ist nullbasiert, damit die zweite Zeile, beispielsweise durch $skiptoken angegebenen = 1.<br/> Das folgende Beispiel gibt alle verbleibende Zeilen nach der zweiten Zeile from Tabelle1 in der Arbeitsmappe ProductSales.xlsx zurück.  <br/> http://contoso1/_vti_bin/ExcelRest.aspx/Documents/ProductSales.xlsx/OData/Table1?$skiptoken=1  <br/> Sie können auch die Abfrageoption **$skiptoken** verwenden, Zeilen in Seiten nach der ersten Seite aus einer Tabelle abrufen, die mehr als 500 Zeilen enthält. Im folgenden Beispiel wird veranschaulicht, die 500th Zeile abgerufen und aus einer Tabelle mit mehr als 500 Zeilen höher.<br/> http://contoso1/_vti_bin/ExcelRest.aspx/Documents/ProductSales.xlsx/OData/Table1?$skiptoken=499  <br/> |
-|**$filter** <br/> |Gibt die Teilmenge der Zeilen, die den Wert der **$filter**angegebenen Bedingungen erfüllen. Weitere Informationen zu den Operatoren und einen Satz von Funktionen, die Sie mit **$filter**verwenden können, finden Sie unter das OData-  [Dokumentation](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/). <br/> Das folgende Beispiel gibt nur die Zeilen, wobei der Wert der Spalte Price größer als 100 ist.  <br/> http://Contoso1/_vti_bin/ExcelRest.aspx/Documents/productsales.xlsx/OData/Table1?$ Filter = Preis Gt 100  <br/> |
+|**$filter** <br/> |Gibt die Teilmenge der Zeilen, die den Wert der **$filter**angegebenen Bedingungen erfüllen. Weitere Informationen zu den Operatoren und einen Satz von Funktionen, die Sie mit **$filter**verwenden können, finden Sie unter das OData-  [Dokumentation](((http://www.odata.org)/documentation/odata-version-2-0/uri-conventions/)). <br/> Das folgende Beispiel gibt nur die Zeilen, wobei der Wert der Spalte Price größer als 100 ist.  <br/> http://Contoso1/_vti_bin/ExcelRest.aspx/Documents/productsales.xlsx/OData/Table1?$ Filter = Preis Gt 100  <br/> |
 |**$format** <br/> |Das Atom-XML-Format ist der einzige unterstützte Wert und ist die Standardeinstellung für die Abfrageoption **$format**. <br/> |
 |**$select** <br/> |Gibt die Entität, die durch **$select**angegebenen zurück.  <br/> Im folgende Beispiel werden die Spalte Name in der Arbeitsmappe ProductSales.xlsx from Tabelle1 markiert.  <br/> http://contoso1/_vti_bin/ExcelRest.aspx/Documents/ProductSales.xlsx/OData/Table1?$select=Name  <br/> |
 |**$inlinecount** <br/> | Gibt die Anzahl der Zeilen in der angegebenen Tabelle zurück. <br/>  $ **inlinecount** können nur 1 von 2 der folgenden Werte verwenden. <br/><ul><li>**allpages** - zurückgegeben Anzahl die für alle Zeilen in der Tabelle.</li><li>**none** - umfasst keine Anzahl der Zeilen in der Tabelle.</li></ul><br/>Im folgende Beispiel werden die Anzahl für die Gesamtanzahl der Zeilen in Tabelle1 in der ProductSales.xlsx Arbeitsmappe zurückgegeben. <br/>  http://contoso1/_vti_bin/ExcelRest.aspx/Documents/ProductSales.xlsx/OData/Table1?$inlinecount=allpages <br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="xlsAdditionalResources"> </a>
 
 
 -  [Verwenden von OData mit Excel Services-REST in SharePoint](using-odata-with-excel-services-rest-in-sharepoint.md)
     
   
--  [Was ist neu in Excel Services für Entwickler](http://msdn.microsoft.com/library/09e96c8b-cb55-4fd1-a797-b50fbf0f9296.aspx)
+-  [Was ist neu in Excel Services für Entwickler]((http://msdn.microsoft.com/library/09e96c8b-cb55-4fd1-a797-b50fbf0f9296.aspx))
     
   
--  [Dokumentation für OData-Spezifikation](http://www.odata.org)
+-  [Dokumentation für OData-Spezifikation]((http://www.odata.org))
     
   

@@ -3,11 +3,11 @@ title: Speichern, Herunter- und Hochladen einer SharePoint-Website als Vorlage
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 2e637172-ddac-4a70-bd77-55a1645a3db1
-ms.openlocfilehash: f018af03acc5536b9abc4abe244664f9d9bed4ab
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b1d44cb47068d39af8411dec6524c9d93e626b76
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="save-download-and-upload-a-sharepoint-site-as-a-template"></a>Speichern, Herunter- und Hochladen einer SharePoint-Website als Vorlage
 Hier erfahren Sie, wie Sie mithilfe von SharePoint-Websitevorlagen stabile Anwendungen entwerfen und erstellen. Sie können zuverlässige SharePoint-Anwendungen entwerfen und erstellen, die mehrere Datenquellen, benutzerorientierte Ansichten und Formulare, hochgradig angepasste Workflows u. v. a. m. beinhalten. Sobald Sie eine Geschäftslösungs-Website erstellt haben, können Sie diese direkt in der SharePoint-Umgebung verwenden. Sie können die Lösung aber auch in eine Vorlage umwandeln und in einer anderen Umgebung bereitstellen und für andere Benutzer verfügbar machen, sodass sie als Vorlage zum Erstellen neuer Websites verwendet oder zur weiteren Entwicklung in Visual Studio weitergegeben werden kann.
@@ -33,10 +33,8 @@ Das Umwandeln einer angepassten Website bzw. einer Geschäftslösung in eine Vor
     
 Beim Speichern der Website als Vorlage wird eine WSP-Datei (Web Solution Package) erstellt. Dabei handelt es sich um eine CAB-Datei mit dem Lösungsmanifest. Die erstellte Lösung wird im Lösungskatalog für die SharePoint-Websitesammlung gespeichert. Sobald Sie die Vorlage speichern, wird eine Lösungsdatei (WSP-Datei) erstellt und im Lösungskatalog gespeichert. Dort können Sie die Lösung herunterladen oder aktivieren.
   
-    
-    
-
-> **Hinweis:** Die erstelle WSP-Datei ist eine teilweise vertrauenswürdige Benutzerlösung, die über das gleiche deklarative Format wie eine voll vertrauenswürdige SharePoint-Lösung verfügt. Er werden jedoch nicht alle Feature-Elementtypen von vollständig vertrauenswürdigen Lösungen unterstützt. 
+> [!NOTE]
+> Die erstellte WSP-Datei ist eine teilweise vertrauenswürdige Anwenderlösung, die das gleiche deklarative Format wie eine voll vertrauenswürdige SharePoint-Lösung aufweist. Allerdings unterstützt sie nicht in vollem Umfang die Typen von Featureelementen, die von voll vertrauenswürdigen Lösungen unterstützt werden. 
   
     
     
@@ -58,7 +56,8 @@ Der Großteil der Objekte in einer Website werden in die Vorlage eingeschlossen 
   
 - **Nicht unterstützt** Angepasste Berechtigungen, ausgeführte Workflowinstanzen, Versionsverlauf von Listenelementen, mit ausgeführten Workflows verknüpfte Workflowaufgaben, Personen- oder Gruppenfeldwerte, Taxonomiefeldwerte, Veröffentlichungsseiten und Veröffentlichungswebsites, Meine Websites, Features zum Anheften, SharePoint-Add-Ins und Remoteereignisempfänger
     
-    > **Hinweis:** Für Veröffentlichungswebsites, können Sie die Websitevorlagen-Definition verwenden. Weitere Informationen finden Sie in den am Ende dieses Themas unter [Zusätzliche Ressourcen](save-download-and-upload-a-sharepoint-site-as-a-template.md#bkmk_additionalresources).
+    > [!NOTE]
+    > Für Veröffentlichungswebsites können Sie die Websitevorlagen-Definition verwenden. Weitere Informationen finden Sie am Ende dieses Themas unter [Zusätzliche Ressourcen](save-download-and-upload-a-sharepoint-site-as-a-template.md#bkmk_additionalresources).
 
 ### <a name="what-can-you-do-with-sharepoint-templates"></a>Was können Sie mit SharePoint-Vorlagen tun?
 
@@ -116,7 +115,9 @@ Nachdem Sie eine Websitevorlage im Lösungskatalog hinzugefügt haben und die Vo
   
 6. Wenn Sie den Inhalt der Website in die Websitevorlage integrieren möchten, wählen Sie das Feld **Inhalte einschließen**.
     
-    > **Hinweis:** Das Einbeziehen des Inhalts der Website kann die Größe die Vorlage erheblich erhöhen. Der Standardgrenzwert für eine Websitevorlage beträgt 50 MB, kann in Ihrer Organisation jedoch auch geringer sein. Sie können Inhalte immer ausschließen und dann später die benötigten Inhalte in die neue Website kopieren. Sie können auch den Grenzwert erhöhen. Wenn Sie den Grenzwert beispielsweise auf ein Maximum erhöhen möchten, verwenden Sie die folgende Stsadm-Befehlssyntax. >  `stsadm -o setproperty -pn max-template-document-size -pv 524288000`
+    > [!NOTE]
+    > Das Einbeziehen des Inhalts der Website kann die Größe die Vorlage erheblich erhöhen. Der Standardgrenzwert für eine Websitevorlage beträgt 50 MB, kann in Ihrer Organisation jedoch auch geringer sein. Sie können Inhalte immer ausschließen und dann später die benötigten Inhalte in die neue Website kopieren. Sie können auch den Grenzwert erhöhen. Wenn Sie den Grenzwert beispielsweise auf ein Maximum erhöhen möchten, verwenden Sie die folgende Stsadm-Befehlssyntax. >  `stsadm -o setproperty -pn max-template-document-size -pv 524288000`
+
 7. Klicken Sie auf **OK**, um die Vorlage zu speichern.
     
     Wenn alle Komponenten auf der Website gültig sind, wird die Vorlage erstellt, und es wird die Meldung angezeigt, dass der Vorgang erfolgreich abgeschlossen wurde.
@@ -171,12 +172,11 @@ Nachdem Sie eine Websitevorlage im Lösungskatalog hinzugefügt haben und die Vo
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkmk_additionalresources"> </a>
 
 
--  
-  [Websitetypen: WebTemplates und Websitedefinitionen](http://msdn.microsoft.com/en-us/library/ms434313.aspx)
+-  [Websitetypen: WebTemplates und Websitedefinitionen]((http://msdn.microsoft.com/de-DE/library/ms434313.aspx))
     
   
 -  
@@ -187,13 +187,13 @@ Nachdem Sie eine Websitevorlage im Lösungskatalog hinzugefügt haben und die Vo
   [Farmlösungen in SharePoint erstellen](http://msdn.microsoft.com/en-us/library/jj163902%28v=office.15%29.aspx)
     
   
--  [Kopieren oder Verschieben einer Liste mithilfe einer Listenvorlage](http://office.com/redir/HA101782479.aspx)
+-  [Kopieren oder Verschieben einer Liste mithilfe einer Listenvorlage]((http://office.com/redir/HA101782479.aspx))
     
   
--  [Kopieren oder Verschieben einer Bibliothek mithilfe einer Bibliotheksvorlage](http://office.com/redir/HA101814157.aspx)
+-  [Kopieren oder Verschieben einer Bibliothek mithilfe einer Bibliotheksvorlage]((http://office.com/redir/HA101814157.aspx))
     
   
--  [Kopieren oder Verschieben von Bibliotheksdateien mit "Öffnen" im Windows-Explorer](http://office.com/redir/HA101811182.aspx)
+-  [Kopieren oder Verschieben von Bibliotheksdateien mit "Öffnen" im Windows-Explorer]((http://office.com/redir/HA101811182.aspx))
     
   
 

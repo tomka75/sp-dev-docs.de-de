@@ -3,11 +3,11 @@ title: Folgen von Personen mithilfe des .NET-Clientobjektmodells in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 0fdb7ca5-d408-4256-b52b-886c4bc3b5b8
-ms.openlocfilehash: 7bef2d0bdef87db1d0234acba60341ff22254df8
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: f910e2cd067ba4cb13d543bc651b779a9a601066
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="follow-people-by-using-the-net-client-object-model-in-sharepoint"></a>Folgen von Personen mithilfe des .NET-Clientobjektmodells in SharePoint
 
@@ -15,12 +15,10 @@ In diesem Artikel erfahren Sie, wie Sie mithilfe des .NET-Clientobjektmodells in
 
 ## <a name="why-use-following-people-features-in-sharepoint"></a>Gründe für die Verwendung von Features zum Folgen von Personen in SharePoint
 
-Wenn in SharePoint ein Benutzer Personen folgt, werden die Beiträge und Aktivitäten der gefolgten Personen im Newsfeed des Benutzers angezeigt. Indem Sie Features zum Folgen von Personen nutzen, damit sich Benutzer auf die Personen konzentrieren können, die für sie wichtig sind, können Sie die Relevanz Ihrer App oder Lösung verbessern. Im .NET-Clientobjektmodell werden Personen, denen Sie folgen, durch [SocialActor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActor.aspx)-Objekte dargestellt. Zum Durchführen der Hauptaufgaben zum Folgen von Personen im .NET-Clientobjektmodell verwenden Sie das [SocialFollowingManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx)-Objekt. In diesem Artikel erfahren Sie, wie Sie mithilfe des .NET-Clientobjektmodells mit Features zum Folgen von Personen arbeiten.
+Wenn in SharePoint ein Benutzer Personen folgt, werden die Beiträge und Aktivitäten der gefolgten Personen im Newsfeed des Benutzers angezeigt. Indem Sie Features zum Folgen von Personen nutzen, damit sich Benutzer auf die Personen konzentrieren können, die für sie wichtig sind, können Sie die Relevanz Ihrer App oder Lösung verbessern. Im .NET-Clientobjektmodell werden Personen, denen Sie folgen, durch [SocialActor]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActor.aspx))-Objekte dargestellt. Zum Durchführen der Hauptaufgaben zum Folgen von Personen im .NET-Clientobjektmodell verwenden Sie das [SocialFollowingManager]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx))-Objekt. In diesem Artikel erfahren Sie, wie Sie mithilfe des .NET-Clientobjektmodells mit Features zum Folgen von Personen arbeiten.
   
-    
-    
-
-> **Hinweis:** Wir konzentrieren uns auf [SocialFollowingManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx), da es die grundlegenden Funktionen zum Folgen von Personen und Inhalten konsolidiert. Das [PeopleManager](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.PeopleManager.aspx)-Objekt enthält jedoch zusätzliche Funktionen zum Folgen von Personen, wie die Methode [AmIFollowedBy(String)](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.AmIFollowedBy.aspx) und Methoden, die den Folgen-Status anderer Benutzer abrufen.
+> [!NOTE]
+> Wir konzentrieren uns auf [SocialFollowingManager]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx)), da es die grundlegenden Funktionen zum Folgen von Personen und Inhalten konsolidiert. Das [PeopleManager]((https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.PeopleManager.aspx))-Objekt enthält jedoch zusätzliche Funktionen zum Folgen von Personen, wie die Methode [AmIFollowedBy(String)]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.AmIFollowedBy.aspx)) und Methoden, die den Folgen-Status anderer Benutzer abrufen.
   
     
     
@@ -41,9 +39,8 @@ Zum Erstellen einer Konsolenanwendung, die das .NET-Clientobjektmodell zum Arbei
   
 - Zugriffsberechtigungen vom Typ **Vollzugriff** auf die Benutzerprofil-Dienstanwendung für den angemeldeten Benutzer
     
-  
-
-> **Hinweis:** Wenn Sie die Entwicklungsaufgaben nicht auf dem Computer durchführen, auf dem SharePoint ausgeführt wird, laden Sie die [SharePoint-Clientkomponenten](http://www.microsoft.com/en-us/download/details.aspx?id=35585) herunter, die die SharePoint-Clientassemblys enthalten.
+> [!NOTE]
+> Wenn Sie die Entwicklungsaufgaben nicht auf dem Computer durchführen, auf dem SharePoint ausgeführt wird, laden Sie die [SharePoint-Clientkomponenten](http://www.microsoft.com/en-us/download/details.aspx?id=35585) herunter, die die SharePoint-Clientassemblys enthalten.
   
     
     
@@ -90,24 +87,22 @@ Im folgenden Codebeispiel wird der aktuelle Benutzer Start nach oder einen Zielb
     
     
 
-- Überprüfen Sie, ob der aktuelle Benutzer einen Zielbenutzer folgt, mit der  [IsFollowed](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.IsFollowed.aspx) -Methode.
+- Überprüfen Sie, ob der aktuelle Benutzer einen Zielbenutzer folgt, mit der  [IsFollowed]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.IsFollowed.aspx)) -Methode.
     
   
-- Rufen Sie die Anzahl der Personen, die der aktuelle Benutzer mithilfe der Methode  [GetFollowedCount](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.GetFollowedCount.aspx) folgt.
+- Rufen Sie die Anzahl der Personen, die der aktuelle Benutzer mithilfe der Methode  [GetFollowedCount]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.GetFollowedCount.aspx)) folgt.
     
   
-- Starten Sie nach der Zielbenutzer mithilfe der  [Follow](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.Follow.aspx) -Methode.
+- Starten Sie nach der Zielbenutzer mithilfe der  [Follow]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.Follow.aspx)) -Methode.
     
   
-- Folgen den Zielbenutzer mithilfe der  [StopFollowing](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.StopFollowing.aspx) -Methode nicht mehr.
+- Folgen den Zielbenutzer mithilfe der  [StopFollowing]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.StopFollowing.aspx)) -Methode nicht mehr.
     
   
-Dieses Codebeispiel verwendet das  [SocialFollowResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowResult.aspx) -Objekt, das von der [Follow](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.Follow.aspx) -Methode zu bestimmen, ob das Starten oder beenden, folgen den Zielbenutzer zurückgegeben wird.
+Dieses Codebeispiel verwendet das  [SocialFollowResult]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowResult.aspx)) -Objekt, das von der [Follow]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.Follow.aspx)) -Methode zu bestimmen, ob das Starten oder beenden, folgen den Zielbenutzer zurückgegeben wird.
   
-    
-    
-
-> **Hinweis:** Ändern Sie die Platzhalterwerte für die Variablen **serverUrl** und **targetUser**, bevor Sie den Code ausführen.
+> [!NOTE]
+> Ändern Sie die Platzhalterwerte für die Variablen **serverUrl** und **targetUser**, bevor Sie den Code ausführen.
   
     
     
@@ -207,23 +202,22 @@ Der folgende Code Beispiel ruft die Personen, die der aktuelle Benutzer folgt, r
     
     
 
-- Überprüfen Sie, ob der aktuelle Benutzer einen Zielbenutzer folgt, mit der  [IsFollowed](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.IsFollowed.aspx) -Methode.
+- Überprüfen Sie, ob der aktuelle Benutzer einen Zielbenutzer folgt, mit der  [IsFollowed]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.IsFollowed.aspx)) -Methode.
     
   
-- Rufen Sie die Anzahl der Personen, die der aktuelle Benutzer mithilfe der Methode  [GetFollowedCount](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.GetFollowedCount.aspx) folgt.
+- Rufen Sie die Anzahl der Personen, die der aktuelle Benutzer mithilfe der Methode  [GetFollowedCount]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.GetFollowedCount.aspx)) folgt.
     
   
-- Rufen Sie die Personen, die der aktuelle Benutzer mithilfe der Methode  [GetFollowed](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.GetFollowed.aspx) folgt.
+- Rufen Sie die Personen, die der aktuelle Benutzer mithilfe der Methode  [GetFollowed]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.GetFollowed.aspx)) folgt.
     
   
-- Rufen Sie die Personen, die den aktuellen Benutzer mithilfe der Methode  [GetFollowers](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.GetFollowers.aspx) folgen.
+- Rufen Sie die Personen, die den aktuellen Benutzer mithilfe der Methode  [GetFollowers]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.GetFollowers.aspx)) folgen.
     
   
 - Iterieren Sie durch die Gruppen von Personen, und rufen Sie den Anzeigenamen, den persönlichen URI und den Bild-URI jeder Person ab.
     
-  
-
-> **Hinweis:** Ändern Sie die Platzhalterwerte für die Variablen **serverUrl** und **targetUser**, bevor Sie den Code ausführen.
+> [!NOTE]
+> Ändern Sie die Platzhalterwerte für die Variablen **serverUrl** und **targetUser**, bevor Sie den Code ausführen.
   
     
     
@@ -301,7 +295,7 @@ namespace FollowPeopleCSOM
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkmk_AdditionalResources"> </a>
 
 

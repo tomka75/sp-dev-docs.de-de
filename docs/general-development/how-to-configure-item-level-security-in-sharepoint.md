@@ -3,11 +3,11 @@ title: Konfigurieren der Sicherheit auf Elementebene in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: ffd730f2-e7b7-4707-b677-d073da7df7d7
-ms.openlocfilehash: ce2ece9f7f4f35fa3235d26ab384dc3783b333c7
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: a04fac042531932e2fefad7c820aee16f3d3386e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="configure-item-level-security-in-sharepoint"></a>Konfigurieren der Sicherheit auf Elementebene in SharePoint
 
@@ -79,8 +79,8 @@ DefaultDisplayName="ReadSecurity">
 </Method>
 ```
 
-
-> **Hinweis:** Wenn Sie die Sicherheitsbeschreibung als Feld des externen Inhaltstyps zurückgeben, können Sie die Clientzwischenspeicherung nicht verwenden. Der Grund hierfür ist, dass zwischengespeicherte Elemente auf eine bestimmte Größe beschränkt sind, die Zugriffssteuerungslisten (ACLs) überschreiten können. Daher ignoriert das Suchconnectorframework Anforderungen zum Zwischenspeichern von Elementen, wenn diese ein Feld mit der Sicherheitsbeschreibung enthalten. 
+> [!NOTE]
+> Der Grund hierfür ist, dass zwischengespeicherte Elemente auf eine bestimmte Größe beschränkt sind, die Zugriffssteuerungslisten (ACLs) überschreiten können. Daher ignoriert das Suchconnectorframework Anforderungen zum Zwischenspeichern von Elementen, wenn diese ein Feld mit der Sicherheitsbeschreibung enthalten. 
   
     
     
@@ -191,14 +191,14 @@ unchecked((int)0xffffffffL), InheritanceFlags.None, PropagationFlags.None);
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15Itemlevelsec_addlresources"> </a>
 
 
 -  [Connector Framework für die Suche in SharePoint](search-connector-framework-in-sharepoint.md)
     
   
--  [Implementieren von "BinarySecurityDescriptorAccessor"](http://msdn.microsoft.com/library/6cf70490-dd3c-49cd-bb13-ed33e938435d%28Office.15%29.aspx)
+-  [Implementieren von "BinarySecurityDescriptorAccessor"]((http://msdn.microsoft.com/library/6cf70490-dd3c-49cd-bb13-ed33e938435d%28Office.15%29.aspx))
     
   
 -  [Optimieren der BDC-Modelldatei für die Suche in SharePoint](enhancing-the-bdc-model-file-for-search-in-sharepoint.md)

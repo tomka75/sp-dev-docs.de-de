@@ -67,7 +67,8 @@ In diesem Artikel wird beschrieben, wie Sie Ihre erste Field Customizer-Erweiter
     code .
     ```
     
-    > **Hinweis:** Da die clientseitige SharePoint-Lösung auf HTML/TypeScript basiert, können Sie zur Erstellung Ihrer Erweiterung jeden Code-Editor verwenden, der clientseitige Entwicklung unterstützt.
+    > [!NOTE] 
+    > Da die clientseitige SharePoint-Lösung auf HTML/TypeScript basiert, können Sie zur Erstellung Ihrer Erweiterung jeden Code-Editor verwenden, der clientseitige Entwicklung unterstützt.
 
     Beachten Sie, dass die Standardlösungsstruktur wie die Lösungsstruktur für clientseitige Webparts aussieht. Dies ist die grundlegende SharePoint-Framework-Lösungsstruktur mit ähnlichen Konfigurationsoptionen über alle Lösungstypen hinweg.
 
@@ -401,3 +402,6 @@ Sie können die Lösung jetzt auf einer SharePoint-Website bereitstellen, wobei 
 In diesem Fall hosten wir den JavaScript-Code weiterhin von Localhost. Sie können die Objekte jedoch auch in ein beliebiges CDN verschieben und die URL aktualisieren, um das Laden von JavaScript-Objekten auch außerhalb von Localhost zu ermöglichen.
 
 Die Vorgehensweise für die Veröffentlichung Ihrer App ist für alle Erweiterungstypen identisch. Sie können die folgenden Schritte für die Veröffentlichung befolgen, um die im CDN gehosteten Objekte zu aktualisieren: [Hosten von Erweiterungen in einem Office 365 CDN](./hosting-extension-from-office365-cdn.md).
+
+> [!NOTE]
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository]((https://github.com/SharePoint/sp-dev-docs/issues)). Vielen Dank im Voraus für Ihr Feedback.

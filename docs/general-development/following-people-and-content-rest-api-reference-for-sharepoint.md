@@ -3,11 +3,11 @@ title: "REST-API-Referenz zum Folgen von Personen und Inhalten für SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c05755df-846d-4a39-941d-950d066cc6d4
-ms.openlocfilehash: d18faadfbb6ea259fb073609e892d2fa4dcd344d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4e2cbe5819a0e5d2e5c58a1675503d5e899d6805
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="following-people-and-content-rest-api-reference-for-sharepoint"></a>REST-API-Referenz zum Folgen von Personen und Inhalten für SharePoint
 Suchen Sie nach SharePoint-REST-Endpunkten, um über die Ressourcen **SocialRestFollowingManager** und **PeopleManager** Personen und Inhalten zu folgen. Sie können den SharePoint-REST-Dienst (Representational State Transfer) verwenden, um dieselben Aufgaben durchzuführen wie bei Verwendung der .NET-Clientobjektmodelle und des JavaScript-Objektmodells. Für die Verwendung des REST-Diensts erstellen und senden Sie HTTP **GET**- und **POST**-Anforderungen an die Ressourcenendpunkte, die die gewünschten Aufgaben darstellen. Diese Ressourcenendpunkte entsprechen SharePoint-Objekten, -Eigenschaften und -Methoden.
@@ -16,12 +16,14 @@ Suchen Sie nach SharePoint-REST-Endpunkten, um über die Ressourcen **SocialRest
     
 
 Der Endpunkt-URI für die meisten Aufgaben zum Folgen beginnt mit der Ressource **SocialRestFollowingManager** ( `social.following`) und endet mit der Ressource, die die bestimmte Aufgabe ausführt. Sie verwenden beispielsweise den URI  `http://www.contoso.com/_api/social.following/follow`, damit der aktuelle Benutzer beginnt, Personen oder Inhalten zu folgen, und den URI  `https://www.contoso.com/sites/devSite/_api/social.following/followed`, um die Personen oder Inhalte abzurufen, denen der aktuelle Benutzer folgt.
-> **Hinweis:** In diesem Artikel werden der Endpunkt-URI und die Parameterkomponenten der HTTP-Anforderungen gezeigt. Beispiele zu vollständigen Anfragen finden Sie unter [Vorgehensweise: Nachverfolgen von Dokumenten, Websites und Tags mit dem REST-Dienst von SharePoint](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md). 
+
+> [!NOTE]
+> In diesem Artikel werden der Endpunkt-URI und die Parameterkomponenten der HTTP-Anforderungen gezeigt. Beispiele zu vollständigen Anfragen finden Sie unter [Vorgehensweise: Nachverfolgen von Dokumenten, Websites und Tags mit dem REST-Dienst von SharePoint](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md). 
   
     
     
 
-Wir empfehlen die Verwendung der **SocialRestFollowingManager**-API für Aufgaben zum Folgen von Personen und Inhalten, aber Sie können auch die Ressource **PeopleManager** für einige Aufgaben rund um das Folgen von Personen verwenden, die **SocialRestFollowingManager** nicht unterstützt. Sie können z. B. herausfinden, ob jemand dem aktuellen Benutzer folgt oder die Follower eines anderen Benutzers abrufen. Für diese Aufgaben senden Sie HTTP **GET**-Anforderungen an Endpunkt-URIs, die mit der Ressource **PeopleManager** ( `sp.userprofiles.peoplemanager`) beginnen und mit der Ressource enden, die die bestimmte Aufgabe ausführt.Wenn der Endpunkt einen Parameter annimmt, werden die Parametermetadaten im URI oder im Anforderungstext im XML- oder JavaScript Object Notation (JSON)-Format gesendet. Sie können HTTP-Anforderungen in jeder Sprache, einschließlich JavaScript und C# durchführen. Standardmäßig gibt der REST-Dienst Antworten zurück, die mithilfe des Atom-Protokolls formatiert sind, aber Sie können das JSON-Format mithilfe von HTTP **Accept**-Headern anfordern. Weitere Informationen finden Sie unter  [Programmieren mit dem SharePoint REST-Dienst](http://msdn.microsoft.com/library/d4b5c277-ed50-420c-8a9b-860342284b72%28Office.15%29.aspx).
+Wir empfehlen die Verwendung der **SocialRestFollowingManager**-API für Aufgaben zum Folgen von Personen und Inhalten, aber Sie können auch die Ressource **PeopleManager** für einige Aufgaben rund um das Folgen von Personen verwenden, die **SocialRestFollowingManager** nicht unterstützt. Sie können z. B. herausfinden, ob jemand dem aktuellen Benutzer folgt oder die Follower eines anderen Benutzers abrufen. Für diese Aufgaben senden Sie HTTP **GET**-Anforderungen an Endpunkt-URIs, die mit der Ressource **PeopleManager** ( `sp.userprofiles.peoplemanager`) beginnen und mit der Ressource enden, die die bestimmte Aufgabe ausführt.Wenn der Endpunkt einen Parameter annimmt, werden die Parametermetadaten im URI oder im Anforderungstext im XML- oder JavaScript Object Notation (JSON)-Format gesendet. Sie können HTTP-Anforderungen in jeder Sprache, einschließlich JavaScript und C# durchführen. Standardmäßig gibt der REST-Dienst Antworten zurück, die mithilfe des Atom-Protokolls formatiert sind, aber Sie können das JSON-Format mithilfe von HTTP **Accept**-Headern anfordern. Weitere Informationen finden Sie unter  [Programmieren mit dem SharePoint REST-Dienst]((http://msdn.microsoft.com/library/d4b5c277-ed50-420c-8a9b-860342284b72%28Office.15%29.aspx)).
 ## <a name="resource-endpoints-for-following-people-and-following-content-tasks"></a>Ressourcenendpunkte für das Folgen von Personen und Inhalten folgen
 <a name="bk_Overview"> </a>
 
@@ -968,10 +970,8 @@ Die folgende Antwort stellt einen Benutzer dar, der dem aktuellen Benutzer folgt
 
 Ruft die Benutzer ab, denen der aktuelle Benutzer möglicherweise folgen möchte.
   
-    
-    
-
-> **Hinweis:** Die Funktion für Personenvorschläge hängt von den Folgeaktivitäten des Benutzers, Suchdurchforstungen und Suchanalysen ab. Siehe [Funktionsweise von Personenvorschlägen auf SharePoint Online](follow-people-in-sharepoint.md#bk_PeopleSuggestions). 
+> [!NOTE]
+> Die Funktion für Personenvorschläge hängt von den Folgeaktivitäten des Benutzers, Suchdurchforstungen und Suchanalysen ab. Siehe [Funktionsweise von Personenvorschlägen auf SharePoint Online](follow-people-in-sharepoint.md#bk_PeopleSuggestions). 
   
     
     
@@ -1011,10 +1011,8 @@ Benutzer, dem der aktuelle Benutzer möglicherweise folgen möchte.
 
 Ruft die Benutzer ab, denen der aktuelle Benutzer möglicherweise folgen möchte.
   
-    
-    
-
-> **Hinweis:** Die Funktion für Personenvorschläge hängt von den Folgeaktivitäten des Benutzers, Suchdurchforstungen und Suchanalysen ab. Siehe [Funktionsweise von Personenvorschlägen auf SharePoint Online](follow-people-in-sharepoint.md#bk_PeopleSuggestions). 
+> [!NOTE]
+> Die Funktion für Personenvorschläge hängt von den Folgeaktivitäten des Benutzers, Suchdurchforstungen und Suchanalysen ab. Siehe [Funktionsweise von Personenvorschlägen auf SharePoint Online](follow-people-in-sharepoint.md#bk_PeopleSuggestions). 
   
     
     
@@ -1560,7 +1558,7 @@ Die folgende Antwort stellt einen Benutzer dar, der dem angegebenen Benutzer fol
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
@@ -1570,7 +1568,7 @@ Die folgende Antwort stellt einen Benutzer dar, der dem angegebenen Benutzer fol
 -  [REST-API-Referenz für sozialen Feed für SharePoint](social-feed-rest-api-reference-for-sharepoint.md)
     
   
--  [SharePoint User Profiles JavaScript Reference (sp.userprofiles.js)](http://msdn.microsoft.com/library/80cf5436-6aa2-6f11-a782-66a04f6e2fb0%28Office.15%29.aspx)
+-  [SharePoint User Profiles JavaScript Reference (sp.userprofiles.js)]((http://msdn.microsoft.com/library/80cf5436-6aa2-6f11-a782-66a04f6e2fb0%28Office.15%29.aspx))
     
   
 -  [Erste Schritte bei der Entwicklung mit thematischen Features in SharePoint](get-started-developing-with-social-features-in-sharepoint.md)

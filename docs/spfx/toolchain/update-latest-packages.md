@@ -1,25 +1,27 @@
 ---
 title: Aktualisieren von SharePoint-Framework-Paketen
-ms.date: 09/25/2017
+ms.date: 11/29/2017
 ms.prod: sharepoint
-ms.openlocfilehash: b8d542ac73d1739faff65f4636cffdef062a3c00
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 665c22ffea27a8b62d433cfb4932625664638e0a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="update-sharepoint-framework-packages"></a>Aktualisieren von SharePoint-Framework-Paketen 
+# <a name="update-sharepoint-framework-packages"></a>Aktualisieren von SharePoint-Framework-Paketen
 
-Die SharePoint-Tools für die clientseitige Entwicklung verwenden den [npm](https://www.npmjs.com/)-Paket-Manager, um Abhängigkeiten und andere erforderliche JavaScript-Hilfsprogramme zu verwalten. npm ist in der Regel als Teil des Node.js-Setups enthalten.
+Die SharePoint-Tools für die clientseitige Entwicklung verwenden den [npm]((https://www.npmjs.com/))-Paket-Manager, um Abhängigkeiten und andere erforderliche JavaScript-Hilfsprogramme zu verwalten. npm ist in der Regel als Teil des Node.js-Setups enthalten.
 
-Beim Erstellen einer neuen clientseitigen Lösung ruft der Yeoman-Generator für SharePoint die neuesten SharePoint-Framework-Pakete ab, die für Ihr clientseitiges Projekt erforderlich sind. Ihre vorhandenen Pakete sind ggf. veraltet und möglicherweise stehen zum Erstellen Ihres Projekts neue Versionen der Pakete zur Verfügung. Entsprechend den [Versionshinweisen](https://aka.ms/spfx-release-notes) für eine bestimmte Version oder das neueste Paket können Sie die in Ihrem Projekt verwendeten SharePoint-Framework-Pakete aktualisieren. SharePoint Framework-Pakete enthalten die npm-Pakete, die Sie in Ihrem Projekt installiert haben (Beispiel: [@microsoft/sp-core-library](https://www.npmjs.com/package/@microsoft/sp-core-library)), sowie die global installierten npm-Pakete (Beispiel: [@microsoft/generator-sharepoint](https://www.npmjs.com/package/@microsoft/generator-sharepoint)). 
+Beim Erstellen einer neuen clientseitigen Lösung ruft der Yeoman-Generator für SharePoint die neuesten SharePoint-Framework-Pakete ab, die für Ihr clientseitiges Projekt erforderlich sind. Ihre vorhandenen Pakete sind ggf. veraltet und möglicherweise stehen zum Erstellen Ihres Projekts neue Versionen der Pakete zur Verfügung. Entsprechend den [Versionshinweisen]((https://aka.ms/spfx-release-notes)) für eine bestimmte Version oder das neueste Paket können Sie die in Ihrem Projekt verwendeten SharePoint-Framework-Pakete aktualisieren. SharePoint Framework-Pakete enthalten die npm-Pakete, die Sie in Ihrem Projekt installiert haben (Beispiel: [@microsoft/sp-core-library]((https://www.npmjs.com/)package/@microsoft/sp-core-library)), sowie die global installierten npm-Pakete (Beispiel: [@microsoft/generator-sharepoint]((https://www.npmjs.com/)package/@microsoft/generator-sharepoint)). 
 
-Obwohl nicht erforderlich, empfiehlt es sich, die SharePoint Framework-Pakete regelmäßig zu aktualisieren, um alle neuesten Änderungen und Updates zu erhalten. 
+> [!TIP]
+> Obwohl nicht erforderlich, empfiehlt es sich, die SharePoint Framework-Pakete regelmäßig zu aktualisieren, um alle neuesten Änderungen und Updates zu erhalten.
 
 ## <a name="find-outdated-packages-in-your-project"></a>Suche nach veralteten Paketen im Projekt
+
 Führen Sie in einer Konsole im selben Verzeichnis wie das Projekt den folgenden Befehl aus, um nach veralteten Paketen in Ihrem clientseitigen Projekt zu suchen, einschließlich SharePoint Framework-Paketen und anderen, von denen Ihr Projekt abhängt. 
 
-```
+```sh
 npm outdated
 ```
 
@@ -33,69 +35,61 @@ Der Befehl listet die folgenden Informationen zu den Paketen auf, von denen Ihr 
 
 Um die SharePoint Framework Pakete zu identifizieren, suchen Sie nach den Paketnamen, die mit dem folgenden npm-Bereich und -Präfix beginnen:
 
-```
+```text
 @microsoft/sp-
 ```
-Zusammen mit den Framework-Paketen müssen Sie ggf. auch die Pakete `react` und `office-ui-fabric-react` aktualisieren. Lesen Sie unbedingt die [Versionshinweise](https://aka.ms/spfx-release-notes) für die jeweilige Version, um zu erfahren, welche Pakete eine Aktualisierung erfordern, und entsprechend planen zu können.
+
+Zusammen mit den Framework-Paketen müssen Sie ggf. auch die Pakete `react` und `office-ui-fabric-react` aktualisieren. Lesen Sie unbedingt die [Versionshinweise]((https://aka.ms/spfx-release-notes)) für die jeweilige Version, um zu erfahren, welche Pakete eine Aktualisierung erfordern, und entsprechend planen zu können.
+
+### <a name="using-npm-outdated-with-project-targeting-sharepoint-2016"></a>Verwenden veralteter npm-Pakete mit Projekten für SharePoint 2016
+
+Ab Feature Pack 2 werden SharePoint-Framework-Lösungen in SharePoint 2016 unterstützt. SharePoint 2016 verwendet eine ältere Version von SharePoint-Framework als die Version, die in SharePoint Online verfügbar ist. Beim Erstellen des Gerüsts für neue Projekte müssen Sie im SharePoint-Framework-Yeoman-Generator angeben, ob Ihre Lösung die aktuelle Version von SharePoint-Framework verwenden und nur mit SharePoint Online verwendet werden kann oder eine ältere Version von SharePoint-Framework verwenden und sowohl mit SharePoint 2016 als auch mit SharePoint Online verwende werden kann.
+
+Beim Ausführen des `npm outdated`-Befehls in einem Projekt, das sowohl für SharePoint Online als auch für SharePoint 2016 entwickelt wurde, werden die aktuellen Versionen der SharePoint-Framework-Pakete angezeigt. Diese Versionen funktionieren jedoch nur mit SharePoint Online. Wenn Sie Ihre Lösung für die Verwendung mit den aktuellen Paketen aktualisieren, funktioniert diese nicht länger mit SharePoint 2016.
+
+Beim Arbeiten mit SharePoint-Framework-Lösungen, die mit lokalen SharePoint-Bereitstellungen kompatibel sind, sollten Sie immer prüfen, welche Patchebene die SharePoint-Zielfarm aufweist und welche Version von SharePoint-Framework unterstützt wird.
 
 ### <a name="update-packages"></a>Aktualisieren der Pakete
-Um ein oder mehrere Pakete auf die neueste Version zu aktualisieren, müssen Sie die Paketinformationen in der Datei `package.json` bearbeiten und dann die neuesten Pakete abrufen.
 
-#### <a name="update-package-versions"></a>Aktualisieren der Paketversionen
-Öffnen Sie das Projekt in Ihrem bevorzugten Codeeditor, und suchen Sie im Stammverzeichnis des Projekts nach der Datei `package.json`.
+Beim Aktualisieren von Paketen auf neuere Versionen sollten Sie immer Ihren Paket-Manager (npm oder Yarn) verwenden. Bearbeiten Sie die Datei `package.json` nicht manuell. Wenn Sie, wie empfohlen, eine Sperrdatei verwenden, werden die Änderungen ignoriert, die Sie an der Datei `package.json` vornehmen.
 
-Suchen Sie in der Datei `package.json` im Abschnitt `dependencies` und `devDependencies` nach den Paketen und aktualisieren Sie diese auf die neueste, im Befehl `npm outdated` aufgeführte Version. Beispiel: Im nachfolgenden Bild sind die Versionsaktualisierungen der SharePoint Framework-Pakete hervorgehoben. Links befinden sich die alten und rechts die neuen Versionen.
+Beginnen Sie damit, zu ermitteln, welche Pakete aktualisiert werden sollen und welche neuere Version verwendet werden soll. Beachten Sie, dass es ggf. nicht möglich ist, die neueste Version des angegebenen Pakets zu verwenden, da sie möglicherweise nicht mit anderen SharePoint-Framework-Abhängigkeiten wie TypeScript kompatibel ist.
 
-![Bearbeiten der Paketversionen in der Datei „package.json“](../../images/npm-update-packagejson-versions.png)
+Führen Sie für jedes Paket, das Sie aktualisieren möchten, den folgenden Befehl aus:
 
-Nachdem Sie die Paketversionen aktualisiert haben, speichern Sie die Datei `package.json`.
-
-#### <a name="update-packages"></a>Aktualisieren der Pakete
-Öffnen Sie Ihre bevorzugte Konsole und navigieren Sie zum Stammverzeichnis des Projekts. Führen Sie zum Aktualisieren der Pakete die nachstehenden Anweisungen aus:
-
-Löschen Sie den Ordner `node_modules`. Dies ist der Ordner, in dem npm die Pakete für Ihr Projekt lokal installiert. Durch Löschen dieses Ordners wird npm gezwungen, die neuesten Pakete abzurufen, anstatt die vorhandenen zu duplizieren.
-
-Wenn Sie eine Mac- oder Linux-Umgebung verwenden, führen Sie den folgenden Befehl aus:
-
-```
-rm -rf node_modules/
+```sh
+npm install mypackage@newversion --save
 ```
 
-Wenn Sie eine Windows-Umgebung verwenden, führen Sie den folgenden Befehl aus:
+Wenn Sie zum Beispiel bisher AngularJS Version v1.5.9 verwendet haben und auf Version 1.6.5 aktualisieren möchten, müssen Sie den folgenden Befehl ausführen:
 
-```
- rd /s /q node_modules/
-```
-
-Führen Sie nun zum Abrufen der neuesten Pakete aus der npm-Registry den folgenden Befehl aus:
-
-```
-npm install
+```sh
+npm install angular@1.6.5 --save
 ```
 
-Mit diesem Befehl wird der Ordner `node_modules` erstellt und es werden auf Grundlage der Informationen aus der Datei `package.json` alle Pakete und Abhängigkeiten installiert, die für Ihr Projekt erforderlich sind. Nach dem Aktualisieren der Datei mit den neuesten Versionen sind nun die neuesten Pakete und Abhängigkeiten installiert. 
+Beim Aktualisieren des Pakets mit npm werden die angegebene Version des Pakets in Ihrem Projekt installiert sowie die Versionsnummer in den Abhängigkeiten der Datei „package.json“ und der im Projekt verwendeten Sperrdatei aktualisiert.
 
 Führen Sie danach den folgenden Befehl aus, um alte Buildartefakte zu entfernen:
 
-```
+```sh
 gulp clean
 ```
 
 ### <a name="update-your-code"></a>Aktualisieren des Codes
-Bei wichtigen API-Änderungen müssen Sie ggf. den vorhandenen Projektcode und die Konfigurationsdateien aktualisieren. In jeder Version werden wichtige Änderungen sowie die an Ihrem Code erforderlichen Änderungen in den [Versionshinweisen](https://aka.ms/spfx-release-notes) hervorgehoben. Sie müssen den Code mit diesen Fehlerbehebungen aktualisieren.
+
+Bei wichtigen API-Änderungen müssen Sie ggf. den vorhandenen Projektcode und die Konfigurationsdateien aktualisieren. In jeder Version werden wichtige Änderungen sowie die an Ihrem Code erforderlichen Änderungen in den [Versionshinweisen]((https://aka.ms/spfx-release-notes)) hervorgehoben. Sie müssen den Code mit diesen Fehlerbehebungen aktualisieren.
 
 Sie können das Projekt jederzeit erstellen, um zu erfahren, ob Fehler und Warnungen vorliegen. Führen Sie dazu den Befehl in einer Konsole im Projektverzeichnis aus:
 
-```
+```sh
 gulp build
 ```
 
 ## <a name="update-yeoman-generator-for-sharepoint"></a>Aktualisieren des Yeoman-Generators für SharePoint
-Im Gegensatz zu den npm-Paketen, die für ein bestimmtes clientseitiges Projekt installiert werden, wird der Yeoman-Generator für SharePoint global auf Ihrem Computer installiert.
 
-Um herauszufinden, ob der Yeoman-Generator für SharePoint aktuell ist, führen Sie den folgenden Befehl in einem Konsolenfenster aus. 
+Wenn Sie den SharePoint-Framework-Yeoman-Generator global installiert haben, können Sie mit dem folgenden Befehl ermitteln, ob eine Aktualisierung erforderlich ist:
 
-```
+```sh
 npm outdated -g
 ```
 
@@ -109,26 +103,25 @@ Der Befehl listet die folgenden Informationen zu den Paketen auf, die global auf
 
 Um das Generator-Paket zu ermitteln, suchen Sie nach folgendem Paketnamen:
 
-```
+```sh
 @microsoft/generator-sharepoint
 ```
 
 ### <a name="update-generator-package"></a>Aktualisieren des Generator-Pakets
+
 Öffnen Sie Ihre bevorzugte Konsole und führen Sie den folgenden Befehl aus, um den Generator auf die neueste veröffentlichte Version zu aktualisieren:
 
-```
+```sh
 npm install @microsoft/generator-sharepoint@latest -g
 ```
 
 Mit dem Befehl wird der Yeoman-Generator für SharePoint zusammen mit allen Abhängigkeiten auf die neueste veröffentlichte Version aktualisiert. Sie können dies überprüfen, indem Sie den folgenden Befehl in der Verwaltungskonsole ausführen:
 
-```
+```sh
 npm ls @microsoft/generator-sharepoint -g --depth=0
 ```
 
+## <a name="see-also"></a>Siehe auch
 
-
-
-
-
- 
+* [Aktualisieren von SharePoint-Framework-Projekten (Anleitung für Team-basierte Entwicklung)](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/team-based-development-on-sharepoint-framework#upgrading-sharepoint-framework-projects)
+* [Aktualisieren von SharePoint-Elementen (Bereitstellen von SharePoint-Objekten)](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/toolchain/provision-sharepoint-assets#upgrade-sharepoint-items)

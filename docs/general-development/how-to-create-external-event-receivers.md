@@ -3,11 +3,11 @@ title: "Erstellen von externen Ereignisempfängern"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c6d5f486-6247-47f9-9876-fab12f13342f
-ms.openlocfilehash: e243dd8542fd7a6d56f72350c2325d2c5d0e7faa
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 598eb37d4a20f323439283901d17fa0784e7a48e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-external-event-receivers"></a>Erstellen von externen Ereignisempfängern
 
@@ -18,7 +18,7 @@ Bei externen Ereignisempfängern handelt es sich um Klassen, mit denen SharePoin
     
     
 
-Zu diesem Artikel gehörende Codebeispiel  [SharePoint: erstellen ein remoteereignissempfängers für externe Daten](http://code.msdn.microsoft.com/SharePoint-Create-a-095c594c). Es veranschaulicht, wie alle Komponenten, die zum Konfigurieren und Verwenden von externen System ereignisbenachrichtigungen benötigt erstellen. In diesem Beispiel wird Folgendes:
+Zu diesem Artikel gehörende Codebeispiel  [SharePoint: erstellen ein remoteereignissempfängers für externe Daten]((http://code.msdn.microsoft.com/SharePoint-Create-a-095c594c)). Es veranschaulicht, wie alle Komponenten, die zum Konfigurieren und Verwenden von externen System ereignisbenachrichtigungen benötigt erstellen. In diesem Beispiel wird Folgendes:
   
     
     
@@ -99,11 +99,11 @@ Der erste Teil der Vorbereitung des Back-End-Systems ist so eine ausgeführte In
   
     
     
-Jedoch, wenn Sie keine Northwind installiert haben, finden Sie unter  [Installieren der Northwind-Beispieldatenbank](http://msdn.microsoft.com/library/2f92cfc3-6310-4327-b2f2-8610f7385c86%28Office.15%29.aspx).
+Jedoch, wenn Sie keine Northwind installiert haben, finden Sie unter  [Installieren der Northwind-Beispieldatenbank]((http://msdn.microsoft.com/library/2f92cfc3-6310-4327-b2f2-8610f7385c86%28Office.15%29.aspx)).
   
     
     
-Die Datenbank ist auch in das Codebeispiel enthalten:  [SharePoint: erstellen ein remoteereignissempfängers für externe Daten](http://code.msdn.microsoft.com/SharePoint-Create-a-095c594c).
+Die Datenbank ist auch in das Codebeispiel enthalten:  [SharePoint: erstellen ein remoteereignissempfängers für externe Daten]((http://code.msdn.microsoft.com/SharePoint-Create-a-095c594c)).
   
     
     
@@ -256,8 +256,8 @@ GO
 
 ```
 
-
-> **Hinweis:** Wenn Sie Ihre eigenen benutzerdefinierten gespeicherten Prozeduren gemäß Definition im BDC-Modell verwenden, sollten Sie auch löschen erstellen und Aktualisieren von Triggern.  Zusätzliche Trigger werden nicht im Rahmen dieses Szenarios behandelt werden. 
+> [!NOTE]
+> Wenn Sie Ihre eigenen benutzerdefinierten gespeicherten Prozeduren gemäß der Definition im BDC-Modell verwenden, möchten Sie ggf. auch Auslöser löschen, erstellen und aktualisieren. Zusätzliche Trigger werden nicht im Rahmen dieses Szenarios behandelt werden. 
   
     
     
@@ -382,7 +382,7 @@ Im nächsten Schritt mit dem Visual Studio-Assistenten, Sie verwenden, um ein AD
   
 5. Verbinden Sie das Datenmodell mit der Datenbank, führen Sie einen der folgenden Schritte aus:
     
-1. Wenn Sie keine datenbankverbindung bereits konfiguriert haben, wählen Sie **Neue Verbindung** aus, und erstellen Sie eine neue Verbindung. Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen von Verbindungen mit SQL Server-Datenbanken](http://msdn.microsoft.com/library/360c340d-e5a6-4a7e-a569-e95d500be43d%28Office.15%29.aspx). Diese Instanz von SQL Server benötigen die Nordwind-Datenbank zugeordnet ist. Wählen Sie auf **Weiter**.
+1. Wenn Sie keine datenbankverbindung bereits konfiguriert haben, wählen Sie **Neue Verbindung** aus, und erstellen Sie eine neue Verbindung. Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen von Verbindungen mit SQL Server-Datenbanken]((http://msdn.microsoft.com/library/360c340d-e5a6-4a7e-a569-e95d500be43d%28Office.15%29.aspx)). Diese Instanz von SQL Server benötigen die Nordwind-Datenbank zugeordnet ist. Wählen Sie auf **Weiter**.
     
     - oder -
     
@@ -489,8 +489,8 @@ public string Subscribe(string deliveryUrl, string eventType)
             }
 ```
 
-
-> **Hinweis:** Wenn SQL Server für die Windows-Authentifizierung eingerichtet ist, versucht das Programm, die Anforderung mit der App-Pool-Identität zu authentifizieren. Stellen Sie sicher, dass das im App-Pool konfigurierte Konto über Berechtigungen zum Lesen und Schreiben in der Datenbank verfügt. 
+> [!NOTE]
+> Wenn SQL Server für die Windows-Authentifizierung eingerichtet ist, versucht das Programm, die Anforderung mit der App-Pool-Identität zu authentifizieren. Stellen Sie sicher, dass das im App-Pool konfigurierte Konto über Berechtigungen zum Lesen und Schreiben in der Datenbank verfügt. 
   
     
     
@@ -958,7 +958,7 @@ Nun können Sie die app in Aktion angezeigt werden.
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkmk_additionalresources"> </a>
 
 

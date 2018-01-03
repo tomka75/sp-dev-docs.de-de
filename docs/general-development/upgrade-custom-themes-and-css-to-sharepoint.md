@@ -3,11 +3,11 @@ title: Aktualisieren benutzerdefinierter Designs und CSS-Dateien auf SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 8d1a4e3a-ae6f-41a5-bd80-3398ba541207
-ms.openlocfilehash: 80f13488c0695ae8656d8f097e40f2f2fed934ee
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: d0e4096ec6f79eb75a9ff386e0f66a88c234d7ad
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="upgrade-custom-themes-and-css-to-sharepoint"></a>Aktualisieren benutzerdefinierter Designs und CSS-Dateien auf SharePoint
 Informationen zu Problemen beim Upgrade von Designanpassungen, z. B. benutzerdefinierten CSS-Dateien und benutzerdefinierten Gestaltungsvorlagen, und zum Aktualisieren von Anpassungen für die Verwendung in SharePoint.
@@ -20,10 +20,8 @@ Die Designerfahrung in SharePoint wurde neu gestaltet, um den Anpassungsvorgang 
     
 Dieser Artikel beschreibt die Probleme, die beim Verwenden benutzerdefinierter SharePoint 2010-Designs, SharePoint 2010 CSS-Dateien und benutzerdefinierter CSS-Dateien mit der neuen Designerfahrung auftreten können. Darüber hinaus werden Änderungen erläutert, die Sie an Ihren benutzerdefinierten SharePoint 2010-Designs, SharePoint 2010 CSS-Dateien und benutzerdefinierten CSS-Dateien vornehmen müssen, um sie auf SharePoint-Websites zu verwenden.
   
-    
-    
-
-> **Hinweis:** SharePoint 2010-Designs können auf Websitesammlungen angewendet werden, die im 2010-Modus ausgeführt werden. Weitere Informationen zu Websitesammlungsmodi finden Sie unter [Planen von Websitesammlungsupgrades in SharePoint](http://technet.microsoft.com/de-DE/library/ff191199.aspx) oder unter [Planen des Upgrades auf SharePoint](https://technet.microsoft.com/de-DE/library/cc303429.aspx). 
+> [!NOTE] 
+> SharePoint 2010-Designs können auf Websitesammlungen angewendet werden, die im 2010-Modus ausgeführt werden. Weitere Informationen zu Websitesammlungsmodi finden Sie unter [Planen von Websitesammlungsupgrades in SharePoint]((http://technet.microsoft.com/de-DE/library/ff191199.aspx)) oder unter [Planen des Upgrades auf SharePoint]((https://technet.microsoft.com/de-DE/library/cc303429.aspx)). 
   
     
     
@@ -76,7 +74,7 @@ Beachten Sie Folgendes, bevor Sie sich zum Anwenden der benutzerdefinierten Shar
     Wenn Sie die benutzerdefinierte Gestaltungsvorlage und die benutzerdefinierten CSS-Dateien mit der SharePoint-Designerfahrung verwenden möchten, müssen Sie die CSS-Dateien aktualisieren, um die neuen SharePoint-Farbmodule zu verwenden. Wenn Sie über die Design-Benutzeroberfläche auf die benutzerdefinierte Gestaltungsvorlage zugreifen möchten, müssen Sie auch eine Gestaltungsvorlagen-Vorschaudatei erstellen. Weitere Informationen finden Sie unter  [Gewusst wie: Erstellen einer Gestaltungsvorlagen-Vorschaudatei in SharePoint](how-to-create-a-master-page-preview-file-in-sharepoint.md)
     
   
-- **Wenn die benutzerdefinierte Gestaltungsvorlage von SharePoint 2010-CSS-Dateien abhängig ist:** Die CSS-Dateien wurden in SharePoint im Vergleich zu SharePoint 2010 erheblich geändert. In vielen Fällen müssen Sie die Gestaltungsvorlage für die Verwendung mit den neuen Klassen überarbeiten, bevor Sie erfolgreich auf die aktualisierte Website angewendet werden kann. Weitere Informationen zu CSS-Klassen finden Sie im Abschnitt **Verwenden von Hostweb-CSS-Dateien in Apps für SharePoint** in den [Designrichtlinien für die Benutzerfreundlichkeit von Add-Ins für SharePoint](http://msdn.microsoft.com/library/a4a8f53c-27d7-43dc-b6db-aa7b1f1c7d45%28Office.15%29.aspx).
+- **Wenn die benutzerdefinierte Gestaltungsvorlage von SharePoint 2010-CSS-Dateien abhängig ist:** Die CSS-Dateien wurden in SharePoint im Vergleich zu SharePoint 2010 erheblich geändert. In vielen Fällen müssen Sie die Gestaltungsvorlage für die Verwendung mit den neuen Klassen überarbeiten, bevor Sie erfolgreich auf die aktualisierte Website angewendet werden kann. Weitere Informationen zu CSS-Klassen finden Sie im Abschnitt **Verwenden von Hostweb-CSS-Dateien in Apps für SharePoint** in den [Designrichtlinien für die Benutzerfreundlichkeit von Add-Ins für SharePoint]((http://msdn.microsoft.com/library/a4a8f53c-27d7-43dc-b6db-aa7b1f1c7d45%28Office.15%29.aspx)).
     
   
 
@@ -97,11 +95,11 @@ Unveränderte SharePoint 2010-CSS-Dateien und benutzerdefinierte CSS-Dateien kö
 - **Neue Anmerkung**. SharePoint verfügt über eine neue Anmerkung, mit der Sie das Hintergrundbild ersetzen können. Weitere Informationen finden Sie unter  [Gewusst wie: Benutzerdefinierte CSS-Dateien in SharePoint designfähig gestalten](how-to-make-custom-css-files-themable-in-sharepoint.md).
     
   
-- **Neue Klassen**. Möglicherweise müssen Sie die CSS-Dateien für die Verwendung mit den neuen Klassen in SharePoint aktualisieren. Weitere Informationen zu CSS-Klassen (auch CSS-Formatvorlagen genannt) finden Sie im Abschnitt **Verwenden von Hostweb-CSS-Dateien in Apps für SharePoint** in den [Designrichtlinien für die Benutzerfreundlichkeit von Add-Ins für SharePoint](http://msdn.microsoft.com/library/a4a8f53c-27d7-43dc-b6db-aa7b1f1c7d45%28Office.15%29.aspx).
+- **Neue Klassen**. Möglicherweise müssen Sie die CSS-Dateien für die Verwendung mit den neuen Klassen in SharePoint aktualisieren. Weitere Informationen zu CSS-Klassen (auch CSS-Formatvorlagen genannt) finden Sie im Abschnitt **Verwenden von Hostweb-CSS-Dateien in Apps für SharePoint** in den [Designrichtlinien für die Benutzerfreundlichkeit von Add-Ins für SharePoint]((http://msdn.microsoft.com/library/a4a8f53c-27d7-43dc-b6db-aa7b1f1c7d45%28Office.15%29.aspx)).
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="addresources"> </a>
 
 
@@ -117,7 +115,7 @@ Unveränderte SharePoint 2010-CSS-Dateien und benutzerdefinierte CSS-Dateien kö
 -  [Farbpaletten und Schriftarten in SharePoint](color-palettes-and-fonts-in-sharepoint.md)
     
   
--  [SharePoint-Teamblog: Beweisen Sie Stil mit SharePoint-Designs](http://blogs.office.com/b/sharepoint/archive/2012/10/29/show-off-your-style-with-sharepoint-theming.aspx)
+-  [SharePoint-Teamblog: Beweisen Sie Stil mit SharePoint-Designs]((http://blogs.office.com/b/sharepoint/archive/2012/10/29/show-off-your-style-with-sharepoint-theming.aspx))
     
   
 -  [SharePoint Design Manager - Branding- und Designfunktionen](sharepoint-design-manager-branding-and-design-capabilities.md)

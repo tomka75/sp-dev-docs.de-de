@@ -2,7 +2,8 @@
 
 Mit SharePoint-Framework-Erweiterungen können Sie die SharePoint-Benutzeroberfläche erweitern. Mit SharePoint-Framework-Erweiterungen können Sie weitere Aspekte der SharePoint-Benutzeroberfläche anpassen, u. a. Benachrichtigungsbereiche, Symbolleisten und Listenansichten. SharePoint-Framework-Erweiterungen sind in allen Office 365-Mandanten für die Produktion verfügbar. 
 
-> **Hinweis:** Sie erhalten einen kostenlosen Office 365-Entwicklermandanten, wenn Sie sich für das [Office 365 Developer Program](http://dev.office.com/devprogram) registrieren.
+> [!NOTE] 
+> Sie erhalten einen kostenlosen Office 365-Entwicklermandanten, wenn Sie sich für das [Office 365 Developer Program]((http://dev.office.com/devprogram)) registrieren.
 
 Mithilfe von SharePoint Framework-Erweiterungen können Sie die SharePoint-Benutzeroberfläche auf modernen Seiten und in Dokumentbibliotheken erweitern. Dabei können Sie für die clientseitige Entwicklung die vertrauten SharePoint Framework-Tools und -Bibliotheken nutzen. Im Besonderen bietet SharePoint Framework drei neue Erweiterungstypen:
 
@@ -29,19 +30,19 @@ Anschließend erstellen Sie Ihre erste SharePoint Framework-Erweiterung mithilf
 ## <a name="stay-up-to-date"></a>Immer auf dem neuen Stand
 Die neuesten Informationen zu SharePoint Framework-Verbesserungen, einschließlich Erweiterungsaktualisierungen, finden Sie hier:
 
-* [@SharePoint](https://twitter.com/sharepoint) und [@OfficeDev](https://twitter.com/officedev) auf Twitter
-* [Office-Entwicklerblog](http://dev.office.com/blogs)
+* [@SharePoint]((https://twitter.com/sharepoint)) und [@OfficeDev]((https://twitter.com/officedev)) auf Twitter
+* [Office-Entwicklerblog]((http://dev.office.com/blogs))
 
 ## <a name="provide-feedback"></a>Übermitteln von Feedback 
 Übermitteln Sie gerne Ihr Feedback zum allgemein verfügbaren SharePoint-Framework. Über die folgenden Ressourcen können Sie Ihr Feedback direkt an das Entwicklungsteam von SharePoint übermitteln:
 
-- [Problemliste im Repository „sp-dev-docs“](https://github.com/SharePoint/sp-dev-docs/issues): Fragen, Probleme und Kommentare
-* [SharePoint StackExchange](http://sharepoint.stackexchange.com/): Verwenden Sie die Tags [#spfx](http://sharepoint.stackexchange.com/tags/spfx/), [#spfx-extensions](http://sharepoint.stackexchange.com/tags/spfx-extensions/) und [#spfx-tooling](http://sharepoint.stackexchange.com/tags/spfx-tooling/).
-* [SharePoint Developer](https://techcommunity.microsoft.com/t5/SharePoint-Developer/bd-p/SharePointDev): Gruppe in der Microsoft Tech Community
-* [SharePoint Developer UserVoice](https://sharepoint.uservoice.com/forums/329220-sharepoint-dev-platform): Plattform zur Anforderung neuer Funktionen und Features
+- [Problemliste im Repository „sp-dev-docs“]((https://github.com/SharePoint/sp-dev-docs/issues)): Fragen, Probleme und Kommentare
+* [SharePoint StackExchange]((http://sharepoint.stackexchange.com/)): Verwenden Sie die Tags [#spfx]((http://sharepoint.stackexchange.com/)tags/spfx/), [#spfx-extensions]((http://sharepoint.stackexchange.com/)tags/spfx-extensions/) und [#spfx-tooling]((http://sharepoint.stackexchange.com/)tags/spfx-tooling/).
+* [SharePoint Developer]((https://techcommunity.microsoft.com/t5/SharePoint-Developer/bd-p/SharePointDev)): Gruppe in der Microsoft Tech Community
+* [SharePoint Developer UserVoice]((https://sharepoint.uservoice.com/forums/329220-sharepoint-dev-platform)): Plattform zur Anforderung neuer Funktionen und Features
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 
 - [Übersicht über das SharePoint Framework](../sharepoint-framework-overview.md)
 - [Entwicklungstools und -bibliotheken für das SharePoint Framework](../tools-and-libraries.md)

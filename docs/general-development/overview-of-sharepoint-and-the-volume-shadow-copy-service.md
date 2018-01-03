@@ -3,11 +3,11 @@ title: "Übersicht über SharePoint und den Volumeschattenkopie-Dienst"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d1cb6653-bfc0-4af2-b221-d7d30cb40d84
-ms.openlocfilehash: 918da2e73f82cc5f674c9a7128a2882453a54374
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 16ba81e41273df0243063aeae3d80030b718fa61
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="overview-of-sharepoint-and-the-volume-shadow-copy-service"></a>Übersicht über SharePoint und den Volumeschattenkopie-Dienst
  **Zusammenfassung:** Lernen Sie die Microsoft SharePoint -Schnittstelle zu Volume Shadow Copy Service (VSS). Für Sicherungsanbieter wird durch den Volumeschattenkopie-Dienst (Volume Shadow Copy Service, VSS) das Sichern von Microsoft-Serverlösungen mit einer zentralisierten API vereinfacht. Microsoft SharePoint Foundation enthält einen referenziellen VSS Writer (nachfolgend "SPF-VSS Writer" genannt), der in das Windows VSS-Sicherungsframework integriert ist. Dadurch wird das Sichern und Wiederherstellen von SharePoint Foundation-Daten durch Sicherungsanwendungen ermöglicht. Es wird ein Überschreibungsszenario mit schwerwiegenden Folgen für die gesamte Farm (einschließlich Suchindex) unterstützt. Bei der Wiederherstellung werden Datenbanken eingebunden und Websitezuordnungen synchronisiert.
@@ -44,11 +44,8 @@ Zur Unterstützung des VSS enthält SharePoint Foundation den SPF-VSS Writer. De
     
 Während einer Wiederherstellung wird der SPF-VSS Writer von der Sicherungs-/Wiederherstellungsanwendung in Koordinierung mit dem SharePoint Foundation-Speicher (der im Auftrag des Anforderers betrieben wird) angewiesen, die Bereitstellung der Speichergruppe aufzuheben, die Datenbankdateien zu ersetzen und die Speichergruppe wieder bereitzustellen.
   
-    
-    
-
-    
-> **Hinweis:** Wichtige Informationen zur Wiederherstellung finden Sie im Abschnitt „Wiederherstellen“ im Artikel [VSS-Anforderer und SharePoint](vss-requestors-and-sharepoint.md).
+> [!NOTE]
+> Wichtige Informationen zur Wiederherstellung finden Sie im Abschnitt „Wiederherstellen“ im Artikel [VSS-Anforderer und SharePoint](vss-requestors-and-sharepoint.md).
   
     
     
@@ -93,7 +90,7 @@ Die Abfolge oberster Ebene von Ergebnissen während der Sicherungs- und Wiederhe
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
@@ -112,13 +109,15 @@ Die Abfolge oberster Ebene von Ergebnissen während der Sicherungs- und Wiederhe
 -  [Vorgehensweise: Sichern und Wiederherstellen eine Suchdienstanwendung in SharePoint mit VSS](how-to-back-up-and-restore-a-search-service-application-in-sharepoint-using.md)
     
   
--  [Starting and Configuring the WSS Writer Service](http://msdn.microsoft.com/library/c9243dd6-e61e-4783-9fef-48d0122f1c09.aspx)
+-  [Starting and Configuring the WSS Writer Service]((http://msdn.microsoft.com/library/c9243dd6-e61e-4783-9fef-48d0122f1c09.aspx))
     
   
--  [Volumeschattenkopie-Dienst](http://msdn.microsoft.com/de-DE/library/windows/desktop/bb968832%28v=vs.85%29.aspx)
+-  
+  [Volumeschattenkopie-Dienst](http://msdn.microsoft.com/en-us/library/windows/desktop/bb968832%28v=vs.85%29.aspx)
     
   
--  [Volume Shadow Copy Service Technical Reference](http://msdn.microsoft.com/de-DE/library/windows/desktop/aa384648%28v=vs.85%29.aspx)
+-  
+  [Volume Shadow Copy Service Technical Reference](http://msdn.microsoft.com/en-us/library/windows/desktop/aa384648%28v=vs.85%29.aspx)
     
   
 

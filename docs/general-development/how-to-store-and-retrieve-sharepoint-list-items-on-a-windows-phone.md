@@ -3,11 +3,11 @@ title: Speichern und Abrufen von SharePoint-Listenelementen auf einem Windows Ph
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 14ca37a2-5b45-430d-9004-ff3016f89834
-ms.openlocfilehash: f55cdc8e1a104a2827a4b06341e9415d6da8e5aa
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 601fdd8c374f822486e6ca9926e1a6d5539e3803
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="store-and-retrieve-sharepoint-list-items-on-a-windows-phone"></a>Speichern und Abrufen von SharePoint-Listenelementen auf einem Windows Phone
 
@@ -26,7 +26,7 @@ In diesem Artikel erhalten Sie Informationen zum Windows Phone-Anwendungslebensz
 ## <a name="store-sharepoint-list-data-locally-on-a-windows-phone"></a>Lokales Speichern von SharePoint-Listendaten auf einem Windows Phone
 <a name="BKMK_StoringDataLocally"> </a>
 
-Auf einem Windows Phone nur eine app ausgeführt wird, zu einem Zeitpunkt und, wenn ein Benutzer auf einer anderen Anwendung auf dem Telefon umschaltet (durch Drücken der Schaltfläche **Start** auf dem Telefon, beispielsweise), die zurzeit ausgeführte app deaktiviert ist, oder die Begriffe Windows Phone-Entwicklung, dieals veraltet markiert. Wechselt von der Benutzer wieder auf die deaktivierte app (durch Drücken der Schaltfläche **zurück** ), kann die app reaktiviert werden, aber es sei denn, Sie Logik zur Verarbeitung von Anwendungsinformationen Status im Verlauf des Lebenszyklus der app bereitstellen, wird diese Statusinformationen nicht standardmäßig in der Übergang vom Aktivierung, Deaktivierung und wieder zu beibehalten. (Weitere Informationen zum Lebenszyklus Anwendung für Windows Phone-apps finden Sie unter [Ausführung Model Overview for Windows Phone](http://msdn.microsoft.com/de-DE/library/ff817008%28v=VS.92%29.aspx).)
+Auf einem Windows Phone nur eine app ausgeführt wird, zu einem Zeitpunkt und, wenn ein Benutzer auf einer anderen Anwendung auf dem Telefon umschaltet (durch Drücken der Schaltfläche **Start** auf dem Telefon, beispielsweise), die zurzeit ausgeführte app deaktiviert ist, oder die Begriffe Windows Phone-Entwicklung, dieals veraltet markiert. Wechselt von der Benutzer wieder auf die deaktivierte app (durch Drücken der Schaltfläche **zurück** ), kann die app reaktiviert werden, aber es sei denn, Sie Logik zur Verarbeitung von Anwendungsinformationen Status im Verlauf des Lebenszyklus der app bereitstellen, wird diese Statusinformationen nicht standardmäßig in der Übergang vom Aktivierung, Deaktivierung und wieder zu beibehalten. (Weitere Informationen zum Lebenszyklus Anwendung für Windows Phone-apps finden Sie unter [Ausführung Model Overview for Windows Phone](http://msdn.microsoft.com/en-us/library/ff817008%28v=VS.92%29.aspx).)
   
     
     
@@ -59,7 +59,7 @@ Die **Application_Launching** und **Application_Closing** Handler für diese Ere
     
     
 
-> **Tipp:** Daten sollten vor dem Speichern auf einem lokalen Gerät verschlüsselt werden. Weitere Informationen zum Verschlüsseln von Daten finden Sie unter  [Vorgehensweise: Verschlüsseln von Daten in einer Windows Phone-Anwendung](http://msdn.microsoft.com/de-DE/library/hh487164%28v=vs.92%29.aspx)
+> **Tipp:** Daten sollten vor dem Speichern auf einem lokalen Gerät verschlüsselt werden. Weitere Informationen zum Verschlüsseln von Daten finden Sie unter  [Vorgehensweise: Verschlüsseln von Daten in einer Windows Phone-Anwendung](http://msdn.microsoft.com/en-us/library/hh487164%28v=vs.92%29.aspx)
   
     
     
@@ -712,7 +712,9 @@ namespace SPListAppLocalStorage
   
 11. Navigieren Sie im Browser, der geöffnet wird zu dem Ordner, in dem die standardmäßigen Windows Phone Symbolbilder durch die Windows Phone SDK 7.1 installiert wurden.
     
-    > **Hinweis:** Die Bilder mit einem hellen Vorder- und einem dunklen Hintergrund befinden sich in `%PROGRAMFILES%(x86)\\Microsoft SDKs\\Windows Phone\\v7.1\\Icons\\dark` in einer Standardinstallation des SDK.
+    > [!NOTE]
+    > Die Bilder mit einem hellen Vorder- und einem dunklen Hintergrund befinden sich in `%PROGRAMFILES%(x86)\\Microsoft SDKs\\Windows Phone\\v7.1\\Icons\\dark` in einer Standardinstallation des SDK.
+
 12. Wählen Sie die Bilddatei "appbar.back.rest.png" und klicken Sie auf **Hinzufügen**. Das Bild wird unter dem **Bilderknoten** zum Projekt hinzugefügt.
     
   
@@ -811,7 +813,9 @@ private void OnSaveDraftButtonClick(object sender, EventArgs e)
   
 5. Navigieren Sie im Browser, der geöffnet wird zu dem Ordner, in dem die standardmäßigen Windows Phone Symbolbilder durch die Windows Phone SDK 7.1 installiert wurden.
     
-    > **Hinweis:** Die Bilder mit einem hellen Vorder- und einem dunklen Hintergrund befinden sich in `%PROGRAMFILES%(x86)\\Microsoft SDKs\\Windows Phone\\v7.1\\Icons\\dark` in einer Standardinstallation des SDK.
+    > [!NOTE]
+    > Die Bilder mit einem hellen Vorder- und einem dunklen Hintergrund befinden sich in `%PROGRAMFILES%(x86)\\Microsoft SDKs\\Windows Phone\\v7.1\\Icons\\dark` in einer Standardinstallation des SDK.
+
 6. Wählen Sie die Bilddatei mit dem Namen appbar.folder.rest.png und dann **Hinzufügen** aus. 
     
     Das Bild wird dem Projekt unter dem Knoten **Bilder** hinzugefügt wird hinzugefügt.
@@ -913,17 +917,17 @@ Beachten Sie die Ähnlichkeit zwischen dem Formular Entwurf Element bearbeiten (
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15StoreSPlist_addlresources"> </a>
 
 
 -  [Erstellen von Windows Phone-Apps, die auf SharePoint zugreifen](build-windows-phone-apps-that-access-sharepoint.md)
     
   
--  [Lokalen Datenspeicher für Windows Phone](http://msdn.microsoft.com/library/fdf7e973-5de5-4cfa-bf63-1e65c90744cc%28Office.15%29.aspx)
+-  [Lokalen Datenspeicher für Windows Phone]((http://msdn.microsoft.com/library/fdf7e973-5de5-4cfa-bf63-1e65c90744cc%28Office.15%29.aspx))
     
   
--  [Vorgehensweise: beibehalten und Wiederherstellung Anwendungszustand für Windows Phone](http://msdn.microsoft.com/library/342e97c1-ff92-4cb2-81fa-e46f87c3cfc2%28Office.15%29.aspx)
+-  [Vorgehensweise: beibehalten und Wiederherstellung Anwendungszustand für Windows Phone]((http://msdn.microsoft.com/library/342e97c1-ff92-4cb2-81fa-e46f87c3cfc2%28Office.15%29.aspx))
     
   
 -  [Windows Phone SDK 8.0](http://www.microsoft.com/en-us/download/details.aspx?id=35471)

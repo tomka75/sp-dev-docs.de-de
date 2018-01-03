@@ -5,11 +5,11 @@ keywords: Richtlinien
 f1_keywords: guidelines
 ms.prod: sharepoint
 ms.assetid: 56fa3913-c156-49da-bed0-a6a106fc129f
-ms.openlocfilehash: 0e425e366f3dd54e1d7eaff609e0854a6f82a9d7
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f2c2e5205b464f0e62e485d2d56e6397a6b581d1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="excel-services-best-practices"></a>Bewährte Methoden für Excel Services
 
@@ -34,9 +34,8 @@ The following settings combination gives anonymous users access to any files in 
   
 - Sie verfügen über einen vertrauenswürdigen UNC-Speicherort und das **Prozesskonto** ist aktiviert.
     
-  
-
-> **Hinweis:** Das **Prozesskonto** ist eine globale Einstellung von Excel Services, die Auswirkung auf alle vertrauenswürdigen Speicherorte hat.
+> [!NOTE]
+> Das **Prozesskonto** ist eine globale Einstellung von Excel Services, die Auswirkung auf alle vertrauenswürdigen Speicherorte hat.
   
     
     
@@ -78,7 +77,7 @@ Use the **maxRequestLength** attribute in the **httpRuntime** element in the **s
   
     
     
-Weitere Informationen finden Sie unter [\<httpRuntime\>-Element](http://msdn.microsoft.com/library/e9b81350-8aaf-47cc-9843-5f7d0c59f369.aspx) und [\<maxRequestLength\>-Element](http://msdn.microsoft.com/library/fd52b2c5-5014-4e6f-b869-4ea666dc83d6.aspx).
+Weitere Informationen finden Sie unter [\<httpRuntime\>-Element]((http://msdn.microsoft.com/library/e9b81350-8aaf-47cc-9843-5f7d0c59f369.aspx)) und [\<maxRequestLength\>-Element]((http://msdn.microsoft.com/library/fd52b2c5-5014-4e6f-b869-4ea666dc83d6.aspx)).
   
     
     
@@ -100,7 +99,7 @@ To help mitigate this threat, we recommend that you:
 - Physically protect the relevant network if a custom application using Excel Web Services is running in a confined networkfor example, if Excel Web Services is deployed on a Web front-end computer within the enterprise.
     
   
-For more information, see  [Securing Your Network](http://msdn.microsoft.com/library/af62ece0-0dd7-4b8e-ad12-4d13f2d60816.aspx) and [SOAP Security](http://msdn.microsoft.com/en-us/library/aa912494.aspx).
+For more information, see  [Securing Your Network]((http://msdn.microsoft.com/library/af62ece0-0dd7-4b8e-ad12-4d13f2d60816.aspx)) and [SOAP Security]((http://msdn.microsoft.com/de-DE/library/aa912494.aspx)).
   
     
     
@@ -119,7 +118,7 @@ The SSL certificate is matched against a few properties, one of which is the IP 
   
     
     
-For more information, see  [Securing Your Network](http://msdn.microsoft.com/library/af62ece0-0dd7-4b8e-ad12-4d13f2d60816.aspx).
+For more information, see  [Securing Your Network]((http://msdn.microsoft.com/library/af62ece0-0dd7-4b8e-ad12-4d13f2d60816.aspx)).
   
     
     
@@ -195,7 +194,7 @@ To avoid name collision, we recommend that you strongly name your dependencies, 
 
 ### <a name="naming-managed-code-dlls"></a>Naming Managed-Code DLLs
 
-To ensure that your assembly names are unique, use the fully qualified class name, following the  [Namespace Naming Guidelines](http://msdn.microsoft.com/library/c08bc0d8-9b3a-4564-9af6-71699f62e00d.aspx).
+To ensure that your assembly names are unique, use the fully qualified class name, following the  [Namespace Naming Guidelines]((http://msdn.microsoft.com/library/c08bc0d8-9b3a-4564-9af6-71699f62e00d.aspx)).
   
     
     

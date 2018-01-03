@@ -3,11 +3,11 @@ title: Erstellen einer externen Liste mithilfe einer OData-Datenquelle in ShareP
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 601fbfce-a0c6-43dd-8398-540d094c083c
-ms.openlocfilehash: a926f2a85678a35e41cb590da67eae1724cdd29c
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 6e437123a2f4d618c8232a3c789df2522cecb433
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-an-external-list-using-an-odata-data-source-in-sharepoint"></a>Erstellen einer externen Liste mithilfe einer OData-Datenquelle in SharePoint
 
@@ -55,8 +55,8 @@ Die folgenden Artikel enthalten Informationen zu SharePoint-Add-Ins und andere H
 |**Titel des Artikels**|**Beschreibung**|
 |:-----|:-----|
 | [Erste Schritte mit den Business Connectivity Services in SharePoint](get-started-with-business-connectivity-services-in-sharepoint.md) <br/> |Informationen Sie zu Business Connectivity Services und wie Sie externe Daten in SharePoint verfügbar machen können.  <br/> |
-| [SharePoint-Add-Ins](http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx) <br/> |Erfahren Sie mehr über das neue App-Modell in SharePoint, mit dem Sie Apps, d. h. kleine, einfach zu verwendende Lösungen für Endbenutzer, erstellen können.  <br/> |
-| [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint](http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx) <br/> |In diesem Artikel erfahren Sie mehr über die verschiedenen Verfahren zum Hosten von SharePoint-Add-Ins.  <br/> |
+| [SharePoint-Add-Ins]((http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx)) <br/> |Erfahren Sie mehr über das neue App-Modell in SharePoint, mit dem Sie Apps, d. h. kleine, einfach zu verwendende Lösungen für Endbenutzer, erstellen können.  <br/> |
+| [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint]((http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx)) <br/> |In diesem Artikel erfahren Sie mehr über die verschiedenen Verfahren zum Hosten von SharePoint-Add-Ins.  <br/> |
    
 
 ## <a name="create-a-new-external-list"></a>Erstellen Sie eine neue externe Liste
@@ -64,10 +64,8 @@ Die folgenden Artikel enthalten Informationen zu SharePoint-Add-Ins und andere H
 
 Die folgenden Verfahren werden gezeigt, wie eine neue externe Liste erstellen, OData-basierten externen Inhaltstyp zu binden und Veröffentlichen in SharePointVisual Studio 2012 verwenden.
   
-    
-    
-
-> **Hinweis:** Im ersten Schritt wird davon ausgegangen, dass Sie erfolgreich einen externen Inhaltstyp erstellt haben, wie unter  [Gewusst wie: Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint](how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint.md) beschrieben. 
+> [!NOTE]
+> Im ersten Schritt wird davon ausgegangen, dass Sie erfolgreich einen externen Inhaltstyp erstellt haben, wie unter [Gewusst wie: Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint](how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint.md) beschrieben. 
   
     
     
@@ -112,7 +110,7 @@ Zu Testzwecken sollten Sie die Datei AppManifest.xml ändern, sodass die Startse
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkmk_AdditionalResources"> </a>
 
 
@@ -125,7 +123,7 @@ Zu Testzwecken sollten Sie die Datei AppManifest.xml ändern, sodass die Startse
 -  [Gewusst wie: Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint](how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint.md)
     
   
--  [So geht's: Erstellen einer einfachen automatisch gehosteten App für SharePoint](http://msdn.microsoft.com/library/0572894d-c437-4b7d-8ac6-8405496e2145%28Office.15%29.aspx)
+-  [So geht's: Erstellen einer einfachen automatisch gehosteten App für SharePoint]((http://msdn.microsoft.com/library/0572894d-c437-4b7d-8ac6-8405496e2145%28Office.15%29.aspx))
     
   
 -  [Verwenden von OData-Quellen mit Business Connectivity Services in SharePoint](using-odata-sources-with-business-connectivity-services-in-sharepoint.md)

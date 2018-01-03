@@ -3,11 +3,11 @@ title: Step 1 Creating a Project and Adding a UDF Reference
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 4c6f1279-28df-45af-8488-42a6573d526d
-ms.openlocfilehash: 530231d09b22be8036a815e6c60945364b5a6ba7
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f4ccef885ce00bdad740154890d81c9495b02c86
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="step-1-creating-a-project-and-adding-a-udf-reference"></a>Step 1: Creating a Project and Adding a UDF Reference
 
@@ -21,10 +21,8 @@ In this step, you will create a project and add a reference to Microsoft.Office.
 
 Im folgenden Projekt wird Microsoft Visual Studio 2005 verwendet.
   
-    
-    
-
-> **Hinweis:** Je nachdem, welche Einstellungen Sie in der integrierten Entwicklungsumgebung von Visual Studio verwenden, kann der Vorgang zum Erstellen eines Projekts leicht unterschiedlich sein kann. 
+> [!NOTE]
+> Je nachdem, welche Einstellungen Sie in der der integrierten Entwicklungsumgebung von Visual Studio verwenden, kann das Verfahren zum Erstellen eines Projekts geringfügig von dem hier beschriebenen Verfahren abweichen. 
   
     
     
@@ -99,41 +97,19 @@ The following steps show how to locate Microsoft.Office.Excel.Server.Udf.dll and
   
 2. Wählen Sie im Dialogfeld **Verweis hinzufügen** der Registerkarte **.NET** **Excel Services UDF Framework**.
     
-    > **Hinweis:** Sie können das Dialogfeld **Verweis hinzufügen** auch im Bereich **Projektmappen-Explorer** öffnen, indem Sie mit der rechten Maustaste auf **Verweise** klicken und **Verweis hinzufügen** auswählen. 
+    > [!NOTE]
+    > Sie können das Dialogfeld **Verweis hinzufügen** auch im Bereich **Projektmappen-Explorer** öffnen, indem Sie mit der rechten Maustaste auf **Verweise** klicken und **Verweis hinzufügen** auswählen. 
+
 3. Klicken Sie auf **OK**.
     
-    > **Hinweis:** Bei den vorherigen Schritten wird vorausgesetzt, dass Sie das Projekt auf einem Computer erstellen, auf dem Microsoft SharePoint Server 2010 installiert ist. Auf dem Computer, auf dem SharePoint Server 2010 installiert ist, finden Sie eine Kopie von Microsoft.Office.Excel.Server.Udf.dll: > [Laufwerk:]\\Program Files\\Common Files\\Microsoft Shared\\web server extensions\\14\\ISAPI 
+    > [!NOTE]
+    > Bei den vorherigen Schritten wird vorausgesetzt, dass Sie das Projekt auf einem Computer erstellen, auf dem Microsoft SharePoint Server 2010 installiert ist. Auf dem Computer, auf dem SharePoint Server 2010 installiert ist, finden Sie eine Kopie von Microsoft.Office.Excel.Server.Udf.dll: > [Laufwerk:]\\Program Files\\Common Files\\Microsoft Shared\\web server extensions\\14\\ISAPI 
 
 ## <a name="see-also"></a>Siehe auch
 
-
-#### <a name="tasks"></a>Aufgaben
-
-
-  
-    
-    
- [Step 2: Creating a Managed-Code UDF](step-2-creating-a-managed-code-udf.md)
-  
-    
-    
- [Step 3: Deploying and Enabling UDFs](step-3-deploying-and-enabling-udfs.md)
-  
-    
-    
- [Step 4: Testing and Calling UDFs from Cells](step-4-testing-and-calling-udfs-from-cells.md)
-  
-    
-    
- [How to: Create a UDF That Calls a Web Service](how-to-create-a-udf-that-calls-a-web-service.md)
-#### <a name="concepts"></a>Konzepte
-
-
-  
-    
-    
- [Walkthrough: Developing a Managed-Code UDF](walkthrough-developing-a-managed-code-udf.md)
-  
-    
-    
- [Understanding Excel Services UDFs](understanding-excel-services-udfs.md)
+- [Schritt 2: Erstellen eines UDF auf Basis von verwaltetem Code](step-2-creating-a-managed-code-udf.md)
+- [Step 3: Deploying and Enabling UDFs](step-3-deploying-and-enabling-udfs.md)
+- [Step 4: Testing and Calling UDFs from Cells](step-4-testing-and-calling-udfs-from-cells.md)
+- [Gewusst wie: Erstellen eines UDF, das einen Webdienst aufruft](how-to-create-a-udf-that-calls-a-web-service.md)
+- [Exemplarische Vorgehensweise: Entwickeln eines UDF auf Basis von verwaltetem Code](walkthrough-developing-a-managed-code-udf.md)
+- [Understanding Excel Services UDFs](understanding-excel-services-udfs.md)

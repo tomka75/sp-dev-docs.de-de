@@ -3,11 +3,11 @@ title: Gestalten von flexiblen benutzerdefinierten CSS-Dateien in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: b8c82c77-c836-47f9-a11e-6c9c656d436b
-ms.openlocfilehash: 6a2febe12c0420a75024937b3127504ca00592f6
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 65eba334096bb40701560e5850dcc3548cf89137
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="make-custom-css-files-themable-in-sharepoint"></a>Gestalten von flexiblen benutzerdefinierten CSS-Dateien in SharePoint
 
@@ -187,10 +187,8 @@ Im Folgenden finden Sie Beispiele zur Verwendung der **RecolorImage** -Anmerkung
 
 Legen Sie die benutzerdefinierten CSS-Dateien im Ordner "Themable" der Formatbibliothek ab (nicht im Ordner "Themable" des Gestaltungsvorlagenkatalogs). Das Designmodul erkennt nur CSS-Dateien, die im Ordner "Themable" der Formatbibliothek gespeichert sind. Der Ordner "Themable" wird für Veröffentlichungswebsites automatisch erstellt. Andernfalls können Sie den Ordner "Themable" auch am entsprechenden Speicherort (http://  _SiteCollectionName_/Style Library/ _language_/Themable/) erstellen.
   
-    
-    
-
-> **Hinweis:** Der Name des _language_-Ordners muss im 4-stelligen Format _ll-cc_ angegeben sein, um die Sprache und die Kultur zu identifizieren. Beispiel: en-us oder de-de. Weitere Informationen finden Sie unter [Sprachen-IDs und ID-Werte für „OptionState“ in Office 2013](http://technet.microsoft.com/de-DE/library/cc179219.aspx). 
+> [!NOTE]
+> Der Name des _language_-Ordners muss im 4-stelligen Format _ll-cc_ angegeben sein, um die Sprache und die Kultur zu identifizieren. Beispiel: en-us oder de-de. Weitere Informationen finden Sie unter [Sprachen-IDs und ID-Werte für „OptionState“ in Office 2013]((http://technet.microsoft.com/de-DE/library/cc179219.aspx)). 
   
     
     
@@ -231,14 +229,14 @@ Im Folgenden finden Sie ein Beispiel für ein **<SharePoint:CssRegistration>**-E
 </head>
 ```
 
-
-> **Hinweis:** Das Token **%$SPUrl** kann nicht in SharePoint Foundation 2013 verwendet werden. Sie müssen eine URL verwenden, um den Speicherort der CSS-Datei anzugeben.
+> [!NOTE]
+> Das Token **%$SPUrl** kann nicht in SharePoint Foundation 2013 verwendet werden. Sie müssen eine URL verwenden, um den Speicherort der CSS-Datei anzugeben.
   
     
     
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="addresources"> </a>
 
 
@@ -257,7 +255,7 @@ Im Folgenden finden Sie ein Beispiel für ein **<SharePoint:CssRegistration>**-E
 -  [Farbpaletten und Schriftarten in SharePoint](color-palettes-and-fonts-in-sharepoint.md)
     
   
--  [SharePoint-Teamblog: Beweisen Sie Stil mit SharePoint-Designs](http://blogs.office.com/b/sharepoint/archive/2012/10/29/show-off-your-style-with-sharepoint-theming.aspx)
+-  [SharePoint-Teamblog: Beweisen Sie Stil mit SharePoint-Designs]((http://blogs.office.com/b/sharepoint/archive/2012/10/29/show-off-your-style-with-sharepoint-theming.aspx))
     
   
 -  [SharePoint Design Manager - Branding- und Designfunktionen](sharepoint-design-manager-branding-and-design-capabilities.md)

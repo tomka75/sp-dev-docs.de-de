@@ -1,12 +1,12 @@
 ---
 title: "Hinzufügen von jQueryUI Accordion zu Ihrem clientseitigen SharePoint-Webpart"
-ms.date: 09/25/2017
+ms.date: 12/05/2017
 ms.prod: sharepoint
-ms.openlocfilehash: fb93d06b47d54a2836c33f832440a054475e563d
-ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.openlocfilehash: ddce5ea3ef89b9cecfb19b57428ee762b58b0d85
+ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/08/2017
 ---
 # <a name="add-jqueryui-accordion-to-your-sharepoint-client-side-web-part"></a>Hinzufügen von jQueryUI Accordion zu Ihrem clientseitigen SharePoint-Webpart
 
@@ -14,9 +14,9 @@ In diesem Artikel wird beschrieben, wie das jQueryUI Accordion zu Ihrem Webpart-
 
 ![Screenshot eines Webparts, das ein jQuery Accordion umfasst](../../../images/jquery-accordion-wb.png)
 
-Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=-3m__hRQxEI&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq) nachvollziehen: 
+Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=7UOxTbMMPrQ&index=6&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq) nachvollziehen: 
 
-<a href="https://www.youtube.com/watch?v=-3m__hRQxEI&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
+<a href="https://www.youtube.com/watch?v=7UOxTbMMPrQ&index=6&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
 <img src="../../../images/spfx-youtube-tutorial5.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
@@ -29,7 +29,7 @@ Führen Sie die folgenden Schritte aus, bevor Sie starten:
 Die Entwicklertoolkette verwendet Webpack, SystemJS und CommonJS zum Bündeln der Webparts. Dies schließt das Laden externer Abhängigkeiten, z. B. jQuery oder jQueryUI, ein. Um externe Abhängigkeiten zu laden, müssen Sie folgende Schritte ausführen:
 
 * Rufen Sie die externe Bibliothek über npm ab oder laden Sie sie vom Anbieter herunter.
-* Falls verfügbar, installieren Sie die [TypeScript-Typdefinitionen](http://definitelytyped.org/) des entsprechenden Frameworks.
+* Falls verfügbar, installieren Sie die [TypeScript-Typdefinitionen]((http://definitelytyped.org/)) des entsprechenden Frameworks.
 * Aktualisieren Sie, falls erforderlich, die Lösungskonfiguration, um die externe Abhängigkeit nicht standardmäßig in das Webpartbundle einzuschließen.
 
 ## <a name="create-a-new-web-part-project"></a>Erstellen eines neuen Webpart-Projekts
@@ -349,3 +349,6 @@ Drücken Sie im Seitenbereich auf das **+** (Pluszeichen), um die Liste von Webp
 ![Screenshot eines Webparts, das ein jQuery Accordion umfasst](../../../images/jquery-accordion-wb.png)
 
 Drücken Sie in der Konsole, in der `gulp serve` ausgeführt wird, auf **STRG + C**, um die Aufgabe abzubrechen.
+
+> [!NOTE]
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository]((https://github.com/SharePoint/sp-dev-docs/issues)). Vielen Dank im Voraus für Ihr Feedback.

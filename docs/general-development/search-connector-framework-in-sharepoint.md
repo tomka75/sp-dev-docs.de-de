@@ -3,11 +3,11 @@ title: "Connector Framework für die Suche in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 38560a3b-69c6-4a56-97ca-3625bbd5755e
-ms.openlocfilehash: 74f2b263b3225e2093920eccfcbefc80759b1f0d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ed9e023bbba020eb5e5deb35ac0c8e96cc9a88bd
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="search-connector-framework-in-sharepoint"></a>Connector Framework für die Suche in SharePoint
 Erfahren Sie mehr über die SharePoint-Indizierungsconnectors, das Connector Framework und das Erstellen von benutzerdefinierten BCS-Indizierungsconnectors zum Durchsuchen externer Systeme.
@@ -128,11 +128,11 @@ BCS stellt die Verbindung mit den externen Daten basierend auf den externen Inha
 - **Vorgänge**Beschreibt Methoden, die für den Zugriff auf die externen Daten verwendet werden. Bei Datenbanken und Webdiensten werden diese Methoden vom externen System unterstützt: SQL-Anweisungen für Datenbankconnectors und Webmethoden für Webdienste. Bei .NET- und benutzerdefinierten BCS-Indizierungsconnectors handelt es sich um Methoden, die in der Connectorassembly implementiert sind, der Komponenten-DLL, die Sie für den Indizierungsconnector erstellen.
     
   
-Diese Informationen sind in der BDC-Modelldatei für den externen Inhaltstyp angegeben. Weitere Informationen zu BDC-Modellen und deren Inhalten finden Sie unter  [BDC-Modellinfrastruktur](http://msdn.microsoft.com/library/2818ebdd-6cda-4d8f-82b2-7fde9fbf2633%28Office.15%29.aspx).
+Diese Informationen sind in der BDC-Modelldatei für den externen Inhaltstyp angegeben. Weitere Informationen zu BDC-Modellen und deren Inhalten finden Sie unter  [BDC-Modellinfrastruktur]((http://msdn.microsoft.com/library/2818ebdd-6cda-4d8f-82b2-7fde9fbf2633%28Office.15%29.aspx)).
   
     
     
-Ausführliche Informationen über die BCS-Architektur und -Funktionalität finden Sie unter  [Business Connectivity Services (Übersicht)](http://msdn.microsoft.com/library/91dd7b01-ead2-4f87-804b-b59ef2245c87%28Office.15%29.aspx) und [Mechanismen im Zusammenhang mit der Verwendung von Business Connectivity Services](http://msdn.microsoft.com/library/ff3e312b-0fbc-48ed-a752-76c50d286533%28Office.15%29.aspx).
+Ausführliche Informationen über die BCS-Architektur und -Funktionalität finden Sie unter  [Business Connectivity Services (Übersicht)]((http://msdn.microsoft.com/library/91dd7b01-ead2-4f87-804b-b59ef2245c87%28Office.15%29.aspx)) und [Mechanismen im Zusammenhang mit der Verwendung von Business Connectivity Services]((http://msdn.microsoft.com/library/ff3e312b-0fbc-48ed-a752-76c50d286533%28Office.15%29.aspx)).
   
     
     
@@ -223,7 +223,9 @@ SharePoint unterstützt die folgenden Typen von BCS-Indizierungsconnectors:
   
 - **WCF-Connector (Webdienste)** SharePoint enthält einen vordefinierten BCS-Connector, der das Herstellen einer Verbindung zu Webdiensten unterstützt, sodass Sie einen Webdienst-BCS-Indizierungsconnector erstellen können, ohne Code schreiben zu müssen - Sie erstellen einfach die BDC-Modelldatei für den Connector.
     
-    > **Hinweis:** Sie müssen zwar keinen Code schreiben, um einen Connector für einen Webdienst zu erstellen; der Webdienst muss jedoch Methoden enthalten, die dieselben Funktionen bereitstellen wie der .NET-BCS-Connector. Nur so lassen sich externe Geschäftsdaten an BCS übergeben. Informationen zur Erstellung von Webdiensten finden Sie unter [Erstellen von .NET-Konnektivitäts-Assemblys und Webdiensten](http://msdn.microsoft.com/library/9a6c6712-868a-4a9c-9645-3aa448ad5092%28Office.15%29.aspx). Codebeispiele finden Sie unter [Codebeispiel: Sample Orders ASP.Net Web Service](http://msdn.microsoft.com/library/10e46860-788f-4ed0-a4d8-1e17ada58e83%28Office.15%29.aspx) und [Codebeispiel: Sample Orders WCF Service](http://msdn.microsoft.com/library/535277c8-9d5c-41eb-ab23-0ae141d726c5%28Office.15%29.aspx). 
+    > [!NOTE]
+    > Sie müssen zwar keinen Code schreiben, um einen Connector für einen Webdienst zu erstellen; der Webdienst muss jedoch Methoden enthalten, die dieselben Funktionen bereitstellen wie der .NET-BCS-Connector. Nur so lassen sich externe Geschäftsdaten an BCS übergeben. Informationen zur Erstellung von Webdiensten finden Sie unter [Erstellen von .NET-Konnektivitäts-Assemblys und Webdiensten]((http://msdn.microsoft.com/library/9a6c6712-868a-4a9c-9645-3aa448ad5092%28Office.15%29.aspx)). Codebeispiele finden Sie unter [Codebeispiel: Sample Orders ASP.Net Web Service]((http://msdn.microsoft.com/library/10e46860-788f-4ed0-a4d8-1e17ada58e83%28Office.15%29.aspx)) und [Codebeispiel: Sample Orders WCF Service]((http://msdn.microsoft.com/library/535277c8-9d5c-41eb-ab23-0ae141d726c5%28Office.15%29.aspx)). 
+
 - **.NET-BCS-Connector**SharePoint enthält keinen vordefinierten BCS-Connector für .NET-Connectors, sodass Sie zusätzlich zum Erstellen einer BDC-Modelldatei auch eine .NET-Komponente für den BCS-Indizierungsconnector erstellen müssen. Sie müssen die erforderlichen stereotypen Vorgänge zur Unterstützung der Durchforstung der Daten sowie Methoden für die Analyse der Zugriffs-URLs und BDC-Kennungen implementieren.
     
   
@@ -261,12 +263,12 @@ In Tabelle 2 sind die stereotypen Vorgänge beschrieben, die für das Erstellen 
 
 |**Vorgang**|**Beschreibung**|
 |:-----|:-----|
-|Finder  <br/> |Kernvorgang, der beim Erstellen eines BCS-Connectors erforderlich ist. Dieser Vorgang ruft die Liste der Elemente der externen Inhaltsquelle ab. Weitere Informationen finden Sie unter  [Implementieren eines Finders](http://msdn.microsoft.com/library/a0cb7cfe-8758-4057-aa85-03071536745e%28Office.15%29.aspx).<br/> |
-|SpecificFinder  <br/> |Kernvorgang, der beim Erstellen eines BCS-Connectors erforderlich ist. Dieser Vorgang ruft einzelne Elemente aus der externen Inhaltsquelle ab. Weitere Informationen finden Sie unter  [Implementieren von SpecificFinder](http://msdn.microsoft.com/library/9b6effa5-20ce-4ce7-a8dc-0fd601eb0f23%28Office.15%29.aspx).<br/> |
-|ChangedIdEnumerator  <br/> |Erforderlich, um inkrementelle Durchforstungen auf der Basis des Änderungsprotokolls zu implementieren. Weitere Informationen finden Sie unter  [Implementieren von ChangedIdEnumerator](http://msdn.microsoft.com/library/19d3c942-f6d7-49e7-853f-4d9b61b10422%28Office.15%29.aspx).<br/> |
-|DeletedIdEnumerator  <br/> |Erforderlich, um inkrementelle Durchforstungen auf der Basis des Änderungsprotokolls zu implementieren. Weitere Informationen finden Sie unter  [Implementieren von DeletedIdEnumerator](http://msdn.microsoft.com/library/aa1c521a-0c9b-4dc0-a32f-fb9e54c52bed%28Office.15%29.aspx).<br/> |
-|BinarySecurityDescriptorAccessor  <br/> |Erforderlich zum Implementieren der Sicherheit auf Elementebene. Gibt die Sicherheitsbeschreibung für ein Element aus der externen Inhaltsquelle zurück. Weitere Informationen finden Sie unter  [Implementieren von BinarySecurityDescriptorAccessor](http://msdn.microsoft.com/library/6cf70490-dd3c-49cd-bb13-ed33e938435d%28Office.15%29.aspx).<br/> |
-|StreamAccessor  <br/> |Erforderlich zum Aktivieren der Durchforstung von Anlagen aus der externen Inhaltsquelle. Gibt die Anlage als Datenstrom zurück. Weitere Informationen finden Sie unter  [Implementieren von StreamAccessor](http://msdn.microsoft.com/library/e3d8053b-90c0-4207-98e3-91e42db13cf1%28Office.15%29.aspx).<br/> |
+|Finder  <br/> |Kernvorgang, der beim Erstellen eines BCS-Connectors erforderlich ist. Dieser Vorgang ruft die Liste der Elemente der externen Inhaltsquelle ab. Weitere Informationen finden Sie unter  [Implementieren eines Finders]((http://msdn.microsoft.com/library/a0cb7cfe-8758-4057-aa85-03071536745e%28Office.15%29.aspx)).<br/> |
+|SpecificFinder  <br/> |Kernvorgang, der beim Erstellen eines BCS-Connectors erforderlich ist. Dieser Vorgang ruft einzelne Elemente aus der externen Inhaltsquelle ab. Weitere Informationen finden Sie unter  [Implementieren von SpecificFinder]((http://msdn.microsoft.com/library/9b6effa5-20ce-4ce7-a8dc-0fd601eb0f23%28Office.15%29.aspx)).<br/> |
+|ChangedIdEnumerator  <br/> |Erforderlich, um inkrementelle Durchforstungen auf der Basis des Änderungsprotokolls zu implementieren. Weitere Informationen finden Sie unter  [Implementieren von ChangedIdEnumerator]((http://msdn.microsoft.com/library/19d3c942-f6d7-49e7-853f-4d9b61b10422%28Office.15%29.aspx)).<br/> |
+|DeletedIdEnumerator  <br/> |Erforderlich, um inkrementelle Durchforstungen auf der Basis des Änderungsprotokolls zu implementieren. Weitere Informationen finden Sie unter  [Implementieren von DeletedIdEnumerator]((http://msdn.microsoft.com/library/aa1c521a-0c9b-4dc0-a32f-fb9e54c52bed%28Office.15%29.aspx)).<br/> |
+|BinarySecurityDescriptorAccessor  <br/> |Erforderlich zum Implementieren der Sicherheit auf Elementebene. Gibt die Sicherheitsbeschreibung für ein Element aus der externen Inhaltsquelle zurück. Weitere Informationen finden Sie unter  [Implementieren von BinarySecurityDescriptorAccessor]((http://msdn.microsoft.com/library/6cf70490-dd3c-49cd-bb13-ed33e938435d%28Office.15%29.aspx)).<br/> |
+|StreamAccessor  <br/> |Erforderlich zum Aktivieren der Durchforstung von Anlagen aus der externen Inhaltsquelle. Gibt die Anlage als Datenstrom zurück. Weitere Informationen finden Sie unter  [Implementieren von StreamAccessor]((http://msdn.microsoft.com/library/e3d8053b-90c0-4207-98e3-91e42db13cf1%28Office.15%29.aspx)).<br/> |
    
 
   
@@ -306,14 +308,14 @@ Das Connector Framework bietet außerdem eine verbesserte Ausnahmeerfassung und 
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15searchconnect_addlresources"> </a>
 
 
 -  [Optimieren der BDC-Modelldatei für die Suche in SharePoint](enhancing-the-bdc-model-file-for-search-in-sharepoint.md)
     
   
--  [SharePoint 2013: MyFileConnector custom BCS indexing connector sample](https://code.msdn.microsoft.com/sharepoint-2013-myfileconne-79d2ea26)
+-  [SharePoint 2013: MyFileConnector custom BCS indexing connector sample]((https://code.msdn.microsoft.com/sharepoint-2013-myfileconne-79d2ea26))
     
   
 -  [How to: Crawl associated external content types in SharePoint](how-to-crawl-associated-external-content-types-in-sharepoint.md)

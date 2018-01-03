@@ -3,22 +3,19 @@ title: Suche in Excel Services-REST-API
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e3a8e057-f803-446d-81c9-4eb8ef3691e1
-ms.openlocfilehash: a667a39d7e66f93367364b36501f52f53d50e401
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3b89c557207195b675224b7be525c5fe670c20a9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="discovery-in-excel-services-rest-api"></a>Suche in Excel Services-REST-API
 
 Dieses Thema behandelt die Ermittlungsmechanismen, die in der Excel Services-REST-API integriert sind.
   
-    
-    
-
-
-> **Hinweis:** Die Excel Services-REST-API bezieht sich auf SharePoint und SharePoint 2016 (lokal). Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> )-Endpunkts sind.
+> [!NOTE]
+> Die Excel Services-REST-API kann in lokalen Bereitstellungen von SharePoint und SharePoint 2016 verwendet werden. Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+)-Endpunkts sind.
   
     
     
@@ -26,7 +23,7 @@ Dieses Thema behandelt die Ermittlungsmechanismen, die in der Excel Services-RES
 
 ## <a name="discovery-base-url-and-discovery-example"></a>Beispiel für Ermittlung der Basis-URL und Ermittlung
 
-Mithilfe der Ermittlung können Entwickler und Benutzer Informationen über und den Inhalt einer Arbeitsmappe manuell oder programmgesteuert ermitteln. Der Ermittlungsmechanismus stellt den  [Atom](http://tools.ietf.org/html/rfc4287)-Feed bereit, der Informationen über die Ressourcen in einer Arbeitsmappe enthält. Sie können mithilfe der Ermittlung die Ressourcen in der Arbeitsmappe erkunden und anzeigen. Hierzu gehören Bereiche, Diagramme, Tabellen und PivotTables.
+Mithilfe der Ermittlung können Entwickler und Benutzer Informationen über und den Inhalt einer Arbeitsmappe manuell oder programmgesteuert ermitteln. Der Ermittlungsmechanismus stellt den  [Atom]((http://tools.ietf.org/html/rfc4287))-Feed bereit, der Informationen über die Ressourcen in einer Arbeitsmappe enthält. Sie können mithilfe der Ermittlung die Ressourcen in der Arbeitsmappe erkunden und anzeigen. Hierzu gehören Bereiche, Diagramme, Tabellen und PivotTables.
   
     
     
@@ -139,7 +136,7 @@ Führen Sie für den Zugriff auf das Diagramm in der Arbeitsmappe mithilfe von E
 
 ## <a name="atom-feed"></a>Atom-Feed
 
-Mithilfe des von der REST-API bereitgestellten  [Atom](http://tools.ietf.org/html/rfc4287)-Feeds können Sie einfacher auf die Daten zugreifen ,die für Sie von Interesse sind. Wenn Sie die Quelle der Webseite anzeigen, erhalten Sie den XML-Code. Ein Beispiel aus den Diagrammen in **sampleWorkbook.xlsx** sehen Sie unten.
+Mithilfe des von der REST-API bereitgestellten  [Atom]((http://tools.ietf.org/html/rfc4287))-Feeds können Sie einfacher auf die Daten zugreifen ,die für Sie von Interesse sind. Wenn Sie die Quelle der Webseite anzeigen, erhalten Sie den XML-Code. Ein Beispiel aus den Diagrammen in **sampleWorkbook.xlsx** sehen Sie unten.
   
     
     

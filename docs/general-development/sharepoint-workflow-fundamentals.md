@@ -3,11 +3,11 @@ title: SharePoint-Workflow-Grundlagen
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 1e622296-f78b-4e3a-a1e7-8effa24111a8
-ms.openlocfilehash: c7b06524d61e25ef28919a0ef5c3ada814afa523
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bc595ebee4d80def6994cbb5b38b406c71cd331a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-workflow-fundamentals"></a>SharePoint-Workflow-Grundlagen
 Bietet eine allgemeine Übersicht über die Workflowinfrastruktur in SharePoint, einschließlich einer Sicht der Plattformarchitektur und der Workflow-Interopbrücke
@@ -111,10 +111,8 @@ Bevor wir über Workflowverknüpfungen und -abonnements sprechen können, müsse
     
 Diese Entkoppelung von Nachrichtenerstellung von der Nachrichtenverwendung ermöglicht Skalierbarkeit und Flexibilität. Sie erlaubt Multicast-Messaging seitens des Herausgebers und promiske Nutzung seitens des Abonnenten.
   
-    
-    
-
-> **Hinweis:** Das Feature PubSub ist ein Bestandteil von Microsoft Azure Service Bus, das Verbindungsoptionen für WCF und andere Dienstendpunkte bereitstellt. Dazu gehören die REST-Endpunkte, die hinter Netzwerkadressübersetzungsgrenzen (NAT) angeordnet und/oder an sich häufig ändernde, dynamisch zugewiesene IP-Adressen gebunden werden. Weitere Informationen zu Azure Service Bus finden Sie unter [Service Bus](http://msdn.microsoft.com/en-us/library/ee732537.aspx). 
+> [!NOTE]
+> Das Feature PubSub ist ein Bestandteil von Microsoft Azure Service Bus, das Verbindungsoptionen für WCF und andere Dienstendpunkte bereitstellt. Dazu gehören die REST-Endpunkte, die hinter Netzwerkadressübersetzungsgrenzen (NAT) angeordnet und/oder an sich häufig ändernde, dynamisch zugewiesene IP-Adressen gebunden werden. Weitere Informationen zu Azure Service Bus finden Sie unter [Service Bus]((http://msdn.microsoft.com/de-DE/library/ee732537.aspx)). 
   
     
     
@@ -131,13 +129,13 @@ Die Messaging-Infrastruktur unterstützt Workflows standardmäßig in den folgen
     
     
 
--  [SPList](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPList.aspx) (für Listenworkflows)
+-  [SPList]((https://msdn.microsoft.com/library/Microsoft.SharePoint.SPList.aspx)) (für Listenworkflows)
     
   
--  [SPWeb](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWeb.aspx) (für Websiteworkflows)
+-  [SPWeb]((https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWeb.aspx)) (für Websiteworkflows)
     
   
-Im Gegensatz zu früheren Versionen unterstützt SharePoint keine Workflows, die einem Inhaltstyp ( [SPContentType](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPContentType.aspx) ) zugeordnet sind. Die Messaging-Infrastruktur ist allerdings erweiterbar, sodass sie jeden beliebigen Bereich unterstützen kann. Als Entwickler können Sie die [EventSourceId](https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowServices.WorkflowSubscription.EventSourceId.aspx) -Eigenschaft auf einer bestimmten [WorkflowSubscription](https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowServices.WorkflowSubscription.aspx) -Instanz auf eine beliebige **guid** festlegen. Sie können diesen **EventSourceId**-Wert dann verwenden, um **PublishEvent(Guid, String, IDictionary<String, Object>)** aufzurufen, wodurch eine neue Workflowinstanz des angegebenen **WorkflowSubscription** ausgelöst wird.
+Im Gegensatz zu früheren Versionen unterstützt SharePoint keine Workflows, die einem Inhaltstyp ( [SPContentType]((https://msdn.microsoft.com/library/Microsoft.SharePoint.SPContentType.aspx)) ) zugeordnet sind. Die Messaging-Infrastruktur ist allerdings erweiterbar, sodass sie jeden beliebigen Bereich unterstützen kann. Als Entwickler können Sie die [EventSourceId]((https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowServices.WorkflowSubscription.EventSourceId.aspx)) -Eigenschaft auf einer bestimmten [WorkflowSubscription]((https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowServices.WorkflowSubscription.aspx)) -Instanz auf eine beliebige **guid** festlegen. Sie können diesen **EventSourceId**-Wert dann verwenden, um **PublishEvent(Guid, String, IDictionary<String, Object>)** aufzurufen, wodurch eine neue Workflowinstanz des angegebenen **WorkflowSubscription** ausgelöst wird.
   
     
     
@@ -197,9 +195,8 @@ Automatisch gestartete Workflows werden mithilfe einer **Add**-Nachricht an den 
   
 - Die Parameter für die Workflowinitiierung.
     
-  
-
-> **Hinweis:** Wenn ein Workflow für ein wiederholbares Ereignis (z. B. das **OnItemChanged**-Ereignis) automatisch startet, kann es erst dann einen anderen Workflow einer bestimmten Zuordnung starten, wenn die vorhandene ausgeführte Instanz des Workflows der Zuordnung abgeschlossen ist.
+> [!NOTE]
+> Wenn ein Workflow für ein wiederholbares Ereignis (z. B. das **OnItemChanged**-Ereignis) automatisch startet, kann es erst dann einen anderen Workflow einer bestimmten Zuordnung starten, wenn die vorhandene ausgeführte Instanz des Workflows der Zuordnung abgeschlossen ist.
   
     
     
@@ -236,7 +233,7 @@ Eine umfassende Erläuterung der SharePoint-Workflowinteroperabilität finden Si
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_additional"> </a>
 
 

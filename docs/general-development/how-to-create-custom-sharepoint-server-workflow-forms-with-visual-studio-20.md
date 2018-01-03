@@ -3,17 +3,17 @@ title: Erstellen von benutzerdefinierten SharePoint-Workflowformularen mit Visua
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 26873259-330c-493f-b935-297a7a5a086d
-ms.openlocfilehash: 6a6c2666c51b051bb715f2053cda41b441e8f8a9
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 5b24361802c0f153563e3bfd099d7b0cc744cab2
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-custom-sharepoint-workflow-forms-with-visual-studio-2012"></a>Erstellen von benutzerdefinierten SharePoint-Workflowformularen mit Visual Studio 2012
 
 Stellt Workflowformulare in SharePoint vor. In diesem Artikel werden SharePoint mit dem öffentlichen Update vom März 2013 und Office Developer Tools für Visual Studio 2012 verwendet. Alle Informationen in diesem Artikel beziehen sich sowohl auf lokale Bereitstellungen von SharePoint als auch auf Office 365.
 
-**Bereitgestellt von:** [Andrew Connell](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/), [www.AndrewConnell.com](http://www.andrewconnell.com)
+**Bereitgestellt von:** [Andrew Connell]((http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/)), [www.AndrewConnell.com]((http://www.andrewconnell.com))
 
 Seit der Einführung von Microsoft SharePoint 2007 unterstützt die SharePoint-Plattform Workflows zur Automatisierung von Geschäftsprozessen. Die SharePoint-Workflowplattform ist auf Windows Workflow Foundation aufgebaut, einem Teil des .NET Framework. Während die Workflowumgebung (Workflow Foundation) zahlreiche Funktionen zum Erstellen benutzerdefinierter Workflows und Verwalten automatisierter Geschäftsprozesse bereitstellt, ergänzt SharePoint darüber hinaus die Endbenutzerintegration. Diese Integration wird in zwei Teilen implementiert: 
 - Benutzern und Gruppen zugewiesene **Aufgaben**, die durch die Workflows erstellt und überwacht werden können.
@@ -79,7 +79,7 @@ Vor der Veröffentlichung von SharePoint gab es drei Typen von benutzerdefiniert
   
     
     
-Mit SharePoint wurde die Arbeitsweise mit Workflowaufgaben dahingehend verbessert, dass Sie benutzerdefinierte Ergebnisschaltflächen für bestimmte Szenarios erstellen können. Sie können auch das Rendern und das Verhalten bestimmter Spalten in Aufgabenelementen mithilfe des neuen clientseitigen Renderings (CSR) anpassen, das in SharePoint eingeführt wurde. Beachten Sie, dass CSR ausgeführtes JavaScript im Client verwendet. Diese Themen werden im Artikel [Arbeiten mit Aufgaben in SharePoint-Workflows mit Visual Studio 2012](working-with-tasks-in-sharepoint-workflows-using-visual-studio-2012.md) behandelt. Weitere Informationen finden Sie auch im Artikel [Anpassen einer Listenansicht in SharePoint-Add-Ins durch clientseitiges Rendering](http://msdn.microsoft.com/library/8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86%28Office.15%29.aspx).
+Mit SharePoint wurde die Arbeitsweise mit Workflowaufgaben dahingehend verbessert, dass Sie benutzerdefinierte Ergebnisschaltflächen für bestimmte Szenarios erstellen können. Sie können auch das Rendern und das Verhalten bestimmter Spalten in Aufgabenelementen mithilfe des neuen clientseitigen Renderings (CSR) anpassen, das in SharePoint eingeführt wurde. Beachten Sie, dass CSR ausgeführtes JavaScript im Client verwendet. Diese Themen werden im Artikel [Arbeiten mit Aufgaben in SharePoint-Workflows mit Visual Studio 2012](working-with-tasks-in-sharepoint-workflows-using-visual-studio-2012.md) behandelt. Weitere Informationen finden Sie auch im Artikel [Anpassen einer Listenansicht in SharePoint-Add-Ins durch clientseitiges Rendering]((http://msdn.microsoft.com/library/8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86%28Office.15%29.aspx)).
   
     
     
@@ -461,9 +461,8 @@ Nachdem das neue Initiierungsformular dem Projekt hinzugefügt wurde, wird es vo
   
 - Aktualisieren des standardmäßigen JavaScript-Blocks, um Benutzereingabewerte aus dem Formular abzurufen und die Eigenschaftsnamen den Namen der Argumente zuzuordnen, die im Workflow erstellt wurden
     
-  
-
-> **Hinweis:** Beachten Sie in der Quelldatei, dass der erste ASP.NET-Inhaltsplatzhalter, **PlaceHolderAdditionalPageHead**, Verweise auf die Workflow Services CSOM-Bibliothek (**sp.workflowservices.js**) und die wichtigsten SharePoint CSOM-Bibliotheken (**sp.js** und **sp.runtime.js**) enthält. Unmittelbar nach diesem Codeabschnitt finden Sie einen serverseitigen Kommentar, der einen kommentierten Hinweis enthält. Beachten Sie, dass dieser Hinweis, der in Abbildung 10 dargestellt ist, irrelevant ist und ignoriert werden sollte.
+> [!NOTE]
+> Beachten Sie in der Quelldatei, dass der erste ASP.NET-Inhaltsplatzhalter, **PlaceHolderAdditionalPageHead**, Verweise auf die Workflow Services CSOM-Bibliothek (**sp.workflowservices.js**) und die wichtigsten SharePoint CSOM-Bibliotheken (**sp.js** und **sp.runtime.js**) enthält. Unmittelbar nach diesem Codeabschnitt finden Sie einen serverseitigen Kommentar, der einen kommentierten Hinweis enthält. Beachten Sie, dass dieser Hinweis, der in Abbildung 10 dargestellt ist, irrelevant ist und ignoriert werden sollte.
   
     
     
@@ -657,17 +656,18 @@ In SharePoint wurden mehrere Verbesserungen für Workflows eingeführt. In diese
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="sec7"> </a>
 
 
--  [Zuordnungs- und -Initiierungsformulare für Workflows (SharePoint Foundation)](http://msdn.microsoft.com/de-DE/library/office/ms481192%28v=office.14%29.aspx)
+-  
+  [Zuordnungs- und -Initiierungsformulare für Workflows (SharePoint Foundation)](http://msdn.microsoft.com/en-us/library/office/ms481192%28v=office.14%29.aspx)
     
   
 -  [Arbeiten mit dem clientseitigen Objektmodell in SharePoint-Workflowdiensten](working-with-the-sharepoint-workflow-services-client-side-object-model.md)
     
   
--  [Anpassen einer Listenansicht in Add-Ins für SharePoint durch clientseitiges Rendering](http://msdn.microsoft.com/library/8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86%28Office.15%29.aspx)
+-  [Anpassen einer Listenansicht in Add-Ins für SharePoint durch clientseitiges Rendering]((http://msdn.microsoft.com/library/8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86%28Office.15%29.aspx))
     
   
 

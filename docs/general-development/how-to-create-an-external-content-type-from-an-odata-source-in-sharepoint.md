@@ -3,11 +3,11 @@ title: Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: bc60ea49-c44e-4531-af62-06b8cf77d35d
-ms.openlocfilehash: 9ddf00811e05fcca25b4c4f406ac22ce5de9aca0
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 7d7343adfee7290e99facd4076814b287e547deb
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-an-external-content-type-from-an-odata-source-in-sharepoint"></a>Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint
 
@@ -35,10 +35,8 @@ Zum Erstellen eines externen Inhaltstyps aus einer Open Data-Protokollquelle (OD
   
 Informationen zum Einrichten Ihrer SharePoint-Entwicklungsumgebung finden Sie unter  [Einrichten einer allgemeinen Entwicklungsumgebung für SharePoint](set-up-a-general-development-environment-for-sharepoint.md).
   
-    
-    
-
-> **Hinweis:** SharePoint Designer 2013kann nicht für die automatische Generierung von BDC-Modellen aus einer OData-Quelle verwendet werden. Sie können stattdessen Visual Studio 2012 verwenden. 
+> [!NOTE]
+> SharePoint Designer 2013kann nicht für die automatische Generierung von BDC-Modellen aus einer OData-Quelle verwendet werden. Sie können stattdessen Visual Studio 2012 verwenden. 
   
     
     
@@ -98,7 +96,9 @@ Nachdem das Projekt erstellt wurde, verwenden Sie das neue Tool für die automat
   
 2. Auf der ersten Seite des Assistenten wird die URL des Datendiensts ermittelt. Geben Sie auf der Seite **OData-Quelle angeben** die URL des OData-Diensts ein, mit dem Sie eine Verbindung herstellen möchten. Die URL sollte etwa folgendermaßen aussehen: `http://services.odata.org/Northwind/Northwind.svc/`.
     
-    > **Hinweis:** Sie zeigen den Northwind-Dienst an, der in der Liste der Produzenten auf der  [Open Data Protocol-Website ](http://www.odata.org/ecosystem#liveservices) verfügbar ist. 
+    > [!NOTE]
+    > Sie zeigen den Northwind-Dienst an, der in der Liste der Produzenten auf der [Open Data Protocol-Website](http://www.odata.org/ecosystem#liveservices) verfügbar ist. 
+
 3. Wählen Sie einen Namen für Ihre OData-Datenquelle, und wählen Sie dann **Weiter**.
     
   
@@ -168,7 +168,7 @@ Weitere Informationen finden Sie unter  [Vorgehensweise: Erstellen eine externe 
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkmk_Addres"> </a>
 
 

@@ -3,24 +3,17 @@ title: Arbeiten mit Webdiensten in SharePoint-Workflows mit Visual Studio 2012
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 5ffaa585-a872-4e14-bc0e-4a38c6a16b04
-ms.openlocfilehash: ead2960605db22556f711a0715874a9832d1c7c2
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f981ecc14fedcec1b682c472ebccf823ad610605
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="working-with-web-services-in-sharepoint-workflows-using-visual-studio-2012"></a>Arbeiten mit Webdiensten in SharePoint-Workflows mit Visual Studio 2012
-In diesem Artikel wird beschrieben, wie Sie Webdienste in Visual Studio 2012-basierten SharePoint-Workflows verwenden können. **Bereitgestellt von:**[Andrew Connell](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/), [AndrewConnell.com](http://www.andrewconnell.com)
+In diesem Artikel wird beschrieben, wie Sie Webdienste in Visual Studio 2012-basierten SharePoint-Workflows verwenden können. **Bereitgestellt von:**[Andrew Connell]((http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/)), [AndrewConnell.com]((http://www.andrewconnell.com))
   
-    
-    
-
-
-  
-    
-    
-
-> **Hinweis:** Dieser Artikel enthält ein durchgängiges Codebeispiel. Sie können es nutzen, um die Informationen im Artikel nachzuvollziehen, oder es als Grundlage für die Erstellung eigener SharePoint-Workflows verwenden. Herunterladen können Sie den Code in der MSDN Code Gallery unter [Working with Web Services in SharePoint Workflows using Visual Studio 2012](http://code.msdn.microsoft.com/Working-with-Web-in-46148199). 
+> [!NOTE] 
+> Dieser Artikel enthält ein durchgängiges Codebeispiel. Sie können es nutzen, um die Informationen im Artikel nachzuvollziehen, oder es als Grundlage für die Erstellung eigener SharePoint-Workflows verwenden. Herunterladen können Sie den Code in der MSDN Code Gallery unter [Arbeiten mit Webdiensten in SharePoint-Workflows mithilfe von Visual Studio 2012]((http://code.msdn.microsoft.com/Working-with-Web-in-46148199)). 
   
     
     
@@ -45,7 +38,7 @@ SharePoint Workflows können jede Art von Webdienst nutzen. Dies bedeutet, dass 
   
     
     
-Darüber hinaus werden sowohl anonyme Webdienste als auch geschützte mit verschiedenen Typen von Authentifizierung unterstützt. Tatsächlich müssen Sie die vollständige Kontrolle über die Anforderung und Antwort für jeden Dienst Anruf behandeln. Folglich beispielsweise können Sie eine Reihe von Aktivitäten innerhalb eines Workflows verwenden, um zuerst authentifizieren einen Dienst verwenden, um ein OAuth-Token abzurufen und fügen Sie dann das Token in zukünftige Anforderungen zu Diensten mit  [OAuth 2.0](http://oauth.net/2/)gesichert.
+Darüber hinaus werden sowohl anonyme Webdienste als auch geschützte mit verschiedenen Typen von Authentifizierung unterstützt. Tatsächlich müssen Sie die vollständige Kontrolle über die Anforderung und Antwort für jeden Dienst Anruf behandeln. Folglich beispielsweise können Sie eine Reihe von Aktivitäten innerhalb eines Workflows verwenden, um zuerst authentifizieren einen Dienst verwenden, um ein OAuth-Token abzurufen und fügen Sie dann das Token in zukünftige Anforderungen zu Diensten mit  [OAuth 2.0]((http://oauth.net/2/))gesichert.
   
     
     
@@ -79,7 +72,7 @@ Beispielsweise, um alle Eigenschaften eines bestimmten Elements erhalten möchte
   
     
     
-Die zweite Phase der Verwendung von Webdiensten, den wir möchten abdecken umfasst das Senden oder Empfangen von Daten von einem Webdienst. Unabhängig davon, ob Sie die **RequestContent** oder **ResponseContent** -Eigenschaften für die Aktivität **HttpSend** verwenden), können Sie übergeben die Daten als eine komplexe Struktur, die als JavaScript Object Notation (JSON) Zeichenfolgen formatiert sind. Die gute Nachricht ist Ihnen keine erstellen und diese Zeichenfolgen Json manuell bearbeiten. Microsoft bietet Ihnen stattdessen einen neuen Objekttyp [DynamicValue](http://msdn.microsoft.com/de-DE/library/windowsazure/jj193446%28v=azure.10%29.aspx), die Ihre Aufgabe erheblich erleichtert. 
+Die zweite Phase der Verwendung von Webdiensten, den wir möchten abdecken umfasst das Senden oder Empfangen von Daten von einem Webdienst. Unabhängig davon, ob Sie die **RequestContent** oder **ResponseContent** -Eigenschaften für die Aktivität **HttpSend** verwenden), können Sie übergeben die Daten als eine komplexe Struktur, die als JavaScript Object Notation (JSON) Zeichenfolgen formatiert sind. Die gute Nachricht ist Ihnen keine erstellen und diese Zeichenfolgen Json manuell bearbeiten. Microsoft bietet Ihnen stattdessen einen neuen Objekttyp [DynamicValue](http://msdn.microsoft.com/en-us/library/windowsazure/jj193446%28v=azure.10%29.aspx), die Ihre Aufgabe erheblich erleichtert. 
   
     
     
@@ -95,7 +88,7 @@ Mit der Unterstützung für das Aufrufen von Webdiensten und mangelnde Unterstü
   
     
     
-OData ist ein Protokoll für das Erstellen und Verarbeiten von Daten basierend auf den Prinzipien von REST-Dienste. Es wurde in einführen, um den Austausch von Daten unter Verwendung des HTTP-Protokolls ausgereiften, zuverlässige und robuste standardisieren entwickelt. Nach die OData-Spezifikation abgeschlossen werden konnte, implementiert verschiedene Organisationen das Protokoll auf ihren eigenen Stapeln Technologie. Microsoft implementiert eine eigene Version der OData und Branding-es  [Windows Communication Foundation (WCF) Data Services 5.0](http://msdn.microsoft.com/de-DE/library/hh487257%28v=vs.103%29.aspx).
+OData ist ein Protokoll für das Erstellen und Verarbeiten von Daten basierend auf den Prinzipien von REST-Dienste. Es wurde in einführen, um den Austausch von Daten unter Verwendung des HTTP-Protokolls ausgereiften, zuverlässige und robuste standardisieren entwickelt. Nach die OData-Spezifikation abgeschlossen werden konnte, implementiert verschiedene Organisationen das Protokoll auf ihren eigenen Stapeln Technologie. Microsoft implementiert eine eigene Version der OData und Branding-es  [Windows Communication Foundation (WCF) Data Services 5.0](http://msdn.microsoft.com/en-us/library/hh487257%28v=vs.103%29.aspx).
   
     
     
@@ -111,7 +104,7 @@ Häufig verwendet für Webdienste führt einfache erstellen, lesen, aktualisiere
     
     
 
-1. Ein Modell von der Datenbank mithilfe der  [Entity Framework](http://msdn.microsoft.com/de-DE/library/bb399567%28v=vs.110%29.aspx)zu erstellen. Es ist kein Code erforderlich (Visual Studio, bietet einen Assistenten).
+1. Ein Modell von der Datenbank mithilfe der  [Entity Framework](http://msdn.microsoft.com/en-us/library/bb399567%28v=vs.110%29.aspx)zu erstellen. Es ist kein Code erforderlich (Visual Studio, bietet einen Assistenten).
     
   
 2. Erstellen einer neuen WCF Data Service. Es ist kein Code erforderlich (Visual Studio bietet einen Assistenten).
@@ -130,7 +123,7 @@ Sie mithilfe von Webdiensten ausführen möchten einer anderen Aufgabe wird Gesc
   
     
     
-OData und WCF-Datendienste unterstützen dieses Szenario, indem mit  [Dienstvorgänge](http://msdn.microsoft.com/de-DE/library/cc668788%28v=vs.110%29.aspx)bereitgestellt. Dienstvorgänge sind allgemeine und sogar dienen innerhalb der SharePoint-Dienste, beispielsweise beim Abrufen einer bestimmten Liste mit der Adresse  `http://[..]/_api/web/lists/GetByTitle('ListTitle')`. Die **GetByTitle** -Methode ist ein Service-Operator, der das Team SharePoint erstellt. Entwickler Erstellen ihrer eigenen benutzerdefinierten Dienstvorgänge in benutzerdefinierten Webdiensten, die mithilfe von WCF Data Services erstellt.
+OData und WCF-Datendienste unterstützen dieses Szenario, indem mit  [Dienstvorgänge](http://msdn.microsoft.com/en-us/library/cc668788%28v=vs.110%29.aspx)bereitgestellt. Dienstvorgänge sind allgemeine und sogar dienen innerhalb der SharePoint-Dienste, beispielsweise beim Abrufen einer bestimmten Liste mit der Adresse  `http://[..]/_api/web/lists/GetByTitle('ListTitle')`. Die **GetByTitle** -Methode ist ein Service-Operator, der das Team SharePoint erstellt. Entwickler Erstellen ihrer eigenen benutzerdefinierten Dienstvorgänge in benutzerdefinierten Webdiensten, die mithilfe von WCF Data Services erstellt.
   
     
     
@@ -138,7 +131,7 @@ OData und WCF-Datendienste unterstützen dieses Szenario, indem mit  [Dienstvorg
 ## <a name="walkthrough-create-a-workflow-with-visual-studio-2012"></a>Exemplarische Vorgehensweise: Erstellen eines Workflows mit Visual Studio 2012
 <a name="sec4"> </a>
 
-Die folgende exemplarische Vorgehensweise veranschaulicht, wie zum Erstellen eines benutzerdefinierten Workflows, das in der Northwind-Datenbank einen OData-Webdienst aufruft. Sie können die Nordwind-Datenbank gehostet unter  [OData.org](http://www.odata.org)suchen. 
+Die folgende exemplarische Vorgehensweise veranschaulicht, wie zum Erstellen eines benutzerdefinierten Workflows, das in der Northwind-Datenbank einen OData-Webdienst aufruft. Sie können die Nordwind-Datenbank gehostet unter  [OData.org]((http://www.odata.org))suchen. 
   
     
     
@@ -239,7 +232,9 @@ Ausführen der Workflow muss zunächst wird die Kunden-ID abrufen vom Benutzer e
     
   - **CustomerItemProperties** (Datentyp = **DynamicValue**; Bereich = **Init**). Verwenden Sie diese Variable zum Speichern des Resultsets von der Aktivität, die alle Eigenschaften aus dem Listenelement abruft.
     
-    > **Hinweis:** Der Datentyp **DynamicValue** wird nicht standardmäßig angezeigt. Sie finden ihn über die Option **Nach Typen suchen** in der Spalte **Variablentyp**. Geben Sie in das Suchfeld oben im Dialogfeld **DynamicValue** ein, und klicken Sie dann auf **Microsoft.Activities.DynamicValue**. 
+    > [!NOTE] 
+    > Der Datentyp **DynamicValue** wird nicht standardmäßig angezeigt. Sie finden ihn über die Option **Nach Typen suchen** in der Spalte **Variablentyp**. Geben Sie in das Suchfeld oben im Dialogfeld **DynamicValue** ein, und klicken Sie dann auf **Microsoft.Activities.DynamicValue**. 
+
   - **CustomerId** (Datentyp = **String**, Bereich = **Root**): In dieser Variable wird die vom Benutzer eingegebene Kunden-ID gespeichert.
     
   
@@ -456,14 +451,15 @@ SharePoint eingeführt, eine neue Workflowarchitektur, die durch ein neues Produ
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
--  [Arbeiten mit komplexen Daten in einem workflow](http://msdn.microsoft.com/de-DE/library/windowsazure/jj193446%28v=azure.10%29.aspx)
+-  
+  [Arbeiten mit komplexen Daten in einem workflow](http://msdn.microsoft.com/en-us/library/windowsazure/jj193446%28v=azure.10%29.aspx)
     
   
--  [Workflows in SharePoint](http://msdn.microsoft.com/de-DE/library/jj163986.aspx)
+-  [Workflows in SharePoint]((http://msdn.microsoft.com/de-DE/library/jj163986.aspx))
     
   
 

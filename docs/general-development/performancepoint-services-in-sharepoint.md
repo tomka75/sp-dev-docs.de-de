@@ -5,11 +5,11 @@ keywords: "Zugreifen auf FCO-Definitionen in SharePoint, BI in SharePoint mithil
 f1_keywords: accessing fco definitions in SharePoint,bi in SharePoint using performancepoint services,business intelligence in SharePoint,business intelligence using performancepoint services in SharePoint,create scorecard transforms using performancepoint in SharePoint,custom filter control in SharePoint,custom performancepoint extensions,customize performancepoint in sharepoint,data source creation in SharePoint,dlls used for performancepoint development,extending performancepoint services for sharepoint,fcos in sharepoint performancepoint,filter creation in SharePoint,filters as fcos in pps performancepoint,getting started with performancepoint services,integration of performancepoint services in sharepoint,performancepoint assemblies used in development,performancepoint custom data sources,performancepoint custom filters,performancepoint custom reports,performancepoint custom scorecard transforms,performancepoint development scenarios,performancepoint services development,performancepoint services development scenarios,performancepoint services programming,performancepoint services sdk,pps custom dashboards in SharePoint,pps development,pps programming,pps sdk,report creation in SharePoint,report renderer in SharePoint,SharePoint service application PerformancePoint
 ms.prod: sharepoint
 ms.assetid: fb159708-d6b4-40c1-b5cc-4bb2071a7930
-ms.openlocfilehash: 50c3e818676191899d2f2c7ad4a492431572b8b8
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ce0a29e9adba8e1606088444a2189f2f62bc4301
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="performancepoint-services-in-sharepoint"></a>PerformancePoint-Dienste in SharePoint
 In diesem Artikel werden die unterstützten Entwicklungsszenarien für die PerformancePoint-Dienste in SharePoint beschrieben sowie deren Erweiterbarkeitsarchitektur.
@@ -22,7 +22,7 @@ Bei den PerformancePoint-Diensten handelt es sich um SharePoint-Dienstanwendunge
 ## <a name="custom-performancepoint-services-reports-filters-and-tabular-data-sources-in-sharepoint"></a>Benutzerdefinierte Berichte, Filter und tabellarische Datenquellen in den PerformancePoint-Diensten in SharePoint
 <a name="bkmk_CreateCustomObjects"> </a>
 
-Sie können systemeigene PerformancePoint-Dienste  [ReportView](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ReportView.aspx) , [Filter](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Filter.aspx) und tabellarischen [DataSource](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.DataSource.aspx) Objekte erweitern, indem Sie benutzerdefinierte Werte für deren Eigenschaften definieren. Benutzerdefinierte Berichte, Filter und tabellarischen Datenquellenerweiterungen umfassen in der Regel drei Komponenten: ein Renderer oder Anbieter, ein Editor-Anwendung und Erweiterungsmetadaten.
+Sie können systemeigene PerformancePoint-Dienste  [ReportView]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ReportView.aspx)) , [Filter]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Filter.aspx)) und tabellarischen [DataSource]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.DataSource.aspx)) Objekte erweitern, indem Sie benutzerdefinierte Werte für deren Eigenschaften definieren. Benutzerdefinierte Berichte, Filter und tabellarischen Datenquellenerweiterungen umfassen in der Regel drei Komponenten: ein Renderer oder Anbieter, ein Editor-Anwendung und Erweiterungsmetadaten.
   
     
     
@@ -81,8 +81,8 @@ Weitere Informationen zum Erstellen von Editoren finden Sie unter den folgenden 
 -  [How to: Create tabular data source editors for PerformancePoint Services in SharePoint](how-to-create-tabular-data-source-editors-for-performancepoint-services-in-share.md)
     
   
-
-> **Hinweis:** Mit PerformancePoint Dashboard-Designer können Sie Objekte erstellen und löschen. Ihr Editor muss also keine Logik zum Erstellen oder Löschen von Objekten bereitstellen. 
+> [!NOTE]
+> Mit PerformancePoint Dashboard-Designer können Sie Objekte erstellen und löschen. Ihr Editor muss also keine Logik zum Erstellen oder Löschen von Objekten bereitstellen. 
   
     
     
@@ -98,7 +98,7 @@ Zum Erstellen eines benutzerdefinierten Objekts Dashboard-Designer Ruft Metadate
   
     
     
-Weitere Informationen zu Erweiterungsmetadaten finden Sie unter [Gewusst wie: Manuelles Registrieren von PerformancePoint-Dienste-Erweiterungen](http://msdn.microsoft.com/library/3aa6d340-4b05-46b3-9648-2b6e18e04e09%28Office.15%29.aspx).
+Weitere Informationen zu Erweiterungsmetadaten finden Sie unter [Gewusst wie: Manuelles Registrieren von PerformancePoint-Dienste-Erweiterungen]((http://msdn.microsoft.com/library/3aa6d340-4b05-46b3-9648-2b6e18e04e09%28Office.15%29.aspx)).
   
     
     
@@ -112,10 +112,8 @@ Transformationen Ändern der Darstellung, den Inhalt oder die Funktionalität de
     
 Weitere Informationen zu Scorecardtransformationen finden Sie unter [Gewusst wie: Erstellen von Scorecardtransformationen für PerformancePoint-Dienste in SharePoint](how-to-create-scorecard-transforms-for-performancepoint-services-in-sharepoint-2.md).
   
-    
-    
-
-> **Hinweis:** Wenn eine Transformation die Datenwerte einer Scorecard ändert, werden die Änderungen direkt in die Strategiekartenberichte übernommen, die diese Scorecard als Datenquelle nutzen. Darüber hinaus können sich Änderungen in Scorecards auch auf KPI-Detailberichte auswirken. 
+> [!NOTE]
+> Wenn eine Transformation die Datenwerte einer Scorecard ändert, werden die Änderungen direkt in Strategiekartenberichte eingefügt, die die Scorecard als Datenquelle verwenden. Darüber hinaus können sich Änderungen an Scorecards auf KPI-Detailberichte auswirken. 
   
     
     
@@ -145,15 +143,15 @@ Unterstützte Anwendungserweiterungen führen innerhalb einer Anwendungsinstanz 
 
 ### <a name="performancepoint-services-extensions-that-run-on-the-sharepoint-front-end-web-server"></a>Auf dem SharePoint-Front-End-Webserver ausgeführte PerformancePoint-Dienste-Erweiterungen
 
-Benutzerdefinierte Editoren (und andere unterstützten benutzerdefinierten Anwendungen) auf dem Front-End-Webserver in einer Instanz einer Anwendung PerformancePoint-Dienste ausführen. Editoren sind in der Regel als ASPX-Seiten bereitgestellt und in den Pfad  `%ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\TEMPLATE\\LAYOUTS`installiert sind. Editoren rufen das  [BIMonitoringServiceApplicationProxy](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.BIMonitoringServiceApplicationProxy.aspx) oder [SPDataStore](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Store.SPDataStore.aspx) -Objekt für den Autor oder Prozesskonto Content wie folgt:
+Benutzerdefinierte Editoren (und andere unterstützten benutzerdefinierten Anwendungen) auf dem Front-End-Webserver in einer Instanz einer Anwendung PerformancePoint-Dienste ausführen. Editoren sind in der Regel als ASPX-Seiten bereitgestellt und in den Pfad  `%ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\TEMPLATE\\LAYOUTS`installiert sind. Editoren rufen das  [BIMonitoringServiceApplicationProxy]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.BIMonitoringServiceApplicationProxy.aspx)) oder [SPDataStore]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Store.SPDataStore.aspx)) -Objekt für den Autor oder Prozesskonto Content wie folgt:
   
     
     
 
-- Berichts- und Filterobjekte sollten  [SPDataStore](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Store.SPDataStore.aspx) für alle Repository-Vorgänge verwenden.
+- Berichts- und Filterobjekte sollten  [SPDataStore]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Store.SPDataStore.aspx)) für alle Repository-Vorgänge verwenden.
     
   
-- Datenquellenobjekte sollten  [BIMonitoringServiceApplicationProxy](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.BIMonitoringServiceApplicationProxy.aspx) verwenden, um **Create** und **Update** Aufgaben ausführen, damit diese Aufgaben im Kontext der PerformancePoint-Dienste-Anwendung ausgeführt werden. **Read** (get) und **Delete** Aufgaben mithilfe von [BIMonitoringServiceApplicationProxy](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.BIMonitoringServiceApplicationProxy.aspx) oder [SPDataStore](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Store.SPDataStore.aspx) ausgeführt werden können. (Allerdings können benutzerdefinierte Datenquelle Anwendungen, die auf dem Anwendungsserver ausgeführt [SPDataStore](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Store.SPDataStore.aspx) direkt aufrufen.)
+- Datenquellenobjekte sollten  [BIMonitoringServiceApplicationProxy]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.BIMonitoringServiceApplicationProxy.aspx)) verwenden, um **Create** und **Update** Aufgaben ausführen, damit diese Aufgaben im Kontext der PerformancePoint-Dienste-Anwendung ausgeführt werden. **Read** (get) und **Delete** Aufgaben mithilfe von [BIMonitoringServiceApplicationProxy]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.BIMonitoringServiceApplicationProxy.aspx)) oder [SPDataStore]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Store.SPDataStore.aspx)) ausgeführt werden können. (Allerdings können benutzerdefinierte Datenquelle Anwendungen, die auf dem Anwendungsserver ausgeführt [SPDataStore]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Store.SPDataStore.aspx)) direkt aufrufen.)
     
   
 
@@ -164,17 +162,17 @@ Benutzerdefinierte Renderer, Anbieter und scorecardtransformationen auf dem Anwe
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkmk_AdditionalResources"> </a>
 
 
--  [Grundlagen der PerformancePoint Services-Entwicklung](http://msdn.microsoft.com/library/5d2c183b-95f8-4930-b6d0-f3ffe1ee166e%28Office.15%29.aspx)
+-  [Grundlagen der PerformancePoint Services-Entwicklung]((http://msdn.microsoft.com/library/5d2c183b-95f8-4930-b6d0-f3ffe1ee166e%28Office.15%29.aspx))
     
   
--  [Codebeispiele für PerformancePoint Services in SharePoint Server 2010](http://msdn.microsoft.com/library/97f0cbd4-03ef-44f8-9869-699df9d9c97f%28Office.15%29.aspx)
+-  [Codebeispiele für PerformancePoint Services in SharePoint Server 2010]((http://msdn.microsoft.com/library/97f0cbd4-03ef-44f8-9869-699df9d9c97f%28Office.15%29.aspx))
     
   
--  [Problembehandlung und FAQs für PerformancePoint Services-Entwicklung](http://msdn.microsoft.com/library/a90156e2-0522-46a1-9fc9-b6c8d2fffad7%28Office.15%29.aspx)
+-  [Problembehandlung und FAQs für PerformancePoint Services-Entwicklung]((http://msdn.microsoft.com/library/a90156e2-0522-46a1-9fc9-b6c8d2fffad7%28Office.15%29.aspx))
     
   
 

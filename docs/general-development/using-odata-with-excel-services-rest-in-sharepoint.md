@@ -3,16 +3,17 @@ title: Verwenden von OData mit Excel Services-REST in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 8a20225a-323c-4420-bbb4-eef60aed4b42
-ms.openlocfilehash: 61d8691d95786ed10a514d0c990b5ab61859faaf
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2e45347cab9befa2bf333339db59fa052ece11af
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="using-odata-with-excel-services-rest-in-sharepoint"></a>Verwenden von OData mit Excel Services-REST in SharePoint
 In SharePoint Server 2010 wurde die REST-API für die Verwendung beim Abrufen und Festlegen von Informationen in Excel-Arbeitsmappen eingeführt, die in SharePoint-Dokumentbibliotheken gespeichert sind. SharePoint fügt eine neue Möglichkeit zum Abrufen von Daten aus Excel Services hinzu, die Open Data Protocol (OData) verwenden. Diese können Sie zum Abrufen von Informationen zu Excel Services-Ressourcen verwenden. Dieser neue Service basiert vor allem auf der vorhandenen Excel Services-REST-API. Dieses Thema bietet eine allgemeine Übersicht über die Verwendung von OData in Excel Services.
-> **Hinweis:** Die Excel Services-REST-API bezieht sich auf SharePoint und SharePoint 2016 (lokal). Für Office 365 Education-, Business- und Enterprise-Konten verwenden Sie die Excel-REST-APIs, die Bestandteil des [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> )-Endpunkts sind.
+
+> [!NOTE] 
+> Die Excel Services-REST-API kann in lokalen Bereitstellungen von SharePoint und SharePoint 2016 verwendet werden. Für Konten in Office 365 Education, Office 365 Business und Office 356 Enterprise müssen Sie die Excel-REST-APIs verwenden, die in den [Microsoft Graph]((http://graph.microsoft.io/de-DE/docs/api-reference/v1.0/resources/excel))-Endpunkt integriert sind.
   
     
     
@@ -25,7 +26,7 @@ OData ist ein offenes Internet-Protokoll zum Abfragen und Aktualisieren von Date
   
     
     
-Weitere Informationen zu OData finden Sie auf der Website für die  [Open Data Protocol-Spezifikation](http://www.odata.org).
+Weitere Informationen zu OData finden Sie auf der Website für die  [Open Data Protocol-Spezifikation]((http://www.odata.org)).
   
     
     
@@ -115,17 +116,17 @@ OData bietet eine einfache Möglichkeit zum Abrufen von Daten aus Excel-Arbeitsm
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="xlsOdataAddRes"> </a>
 
 
--  [Was ist neu in Excel Services für Entwickler](http://msdn.microsoft.com/library/09e96c8b-cb55-4fd1-a797-b50fbf0f9296.aspx)
+-  [Was ist neu in Excel Services für Entwickler]((http://msdn.microsoft.com/library/09e96c8b-cb55-4fd1-a797-b50fbf0f9296.aspx))
     
   
 -  [Excel-Arbeitsmappendaten aus SharePoint Server mithilfe von OData anfordern](requesting-excel-workbook-data-from-sharepoint-server-using-odata.md)
     
   
--  [OData-Spezifikationsdokumentation](http://www.odata.org)
+-  [OData-Spezifikationsdokumentation]((http://www.odata.org))
     
   
 

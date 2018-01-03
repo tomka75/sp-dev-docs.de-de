@@ -3,11 +3,11 @@ title: "Hinzufügen eines Bearbeitungsmodusbereichs-Codeausschnitts in SharePoin
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 39fa1e32-9129-407d-914f-96f4c6e66dc8
-ms.openlocfilehash: 09082485506e6894e3188d1334880196c03d212d
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: c5b971b72d8910ac511b27d96a441400afce5323
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="add-an-edit-mode-panel-snippet-in-sharepoint"></a>Hinzufügen eines Bearbeitungsmodusbereichs-Codeausschnitts in SharePoint
 
@@ -107,15 +107,13 @@ Wie alle Ausschnitte fügen Sie dieser Ausschnitt aus Codeausschnittkatalog. Zum
 
 Die beiden wichtigsten Teile eines Ausschnitts bearbeiten im Bereich der **PageDisplayMode** -Eigenschaft und die **<div>** sind, in dem `class="DefaultContentBlock"`. Die **PageDisplayMode** -Eigenschaft bestimmt, ob der Inhalt des Bereichs angezeigt werden, nur im Bearbeitungsmodus oder reguläre/Anzeigemodus (d. h., wenn die Seite nicht im Bearbeitungsmodus befindet).
   
-    
-    
-
-> **Hinweis:** Diese Eigenschaft wird nicht im Markup angezeigt, es sei denn, Sie ändern den Wert in **Display**. Wenn die Eigenschaft nicht im Markup angezeigt wird, ist der Standardmodus für den Ausschnitt der Bearbeitungsmodus. 
+> [!NOTE]
+> Diese Eigenschaft wird nicht im Markup angezeigt, es sei denn, Sie ändern den Wert in **Display**. Wenn die Eigenschaft nicht im Markup angezeigt wird, ist der Standardmodus für den Ausschnitt der Bearbeitungsmodus. 
   
     
     
 
-Ersetzen Sie die **<div>**`class="DefaultContentBlock"` durch Ihre eigenen Inhalte, die andere Ausschnitte und Steuerelemente enthalten können.
+Die **<div>**, wobei `class="DefaultContentBlock"` ist, was Sie mit Ihren eigenen Inhalt ersetzen die anderen Snippets und Steuerelemente enthalten können.
   
     
     
@@ -139,7 +137,7 @@ Ersetzen Sie die **<div>**`class="DefaultContentBlock"` durch Ihre eigenen Inhal
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="AdditionalResources"> </a>
 
 

@@ -3,11 +3,11 @@ title: "Optimieren der BDC-Modelldatei für die Suche in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3c67b1cf-5fca-4805-a1b5-c9ac1ff8aede
-ms.openlocfilehash: 7ec597c113aec7f5a017dbe233e6a89ef416ec07
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 26b06db6e478c15d47257b8a88de30da1f0bb0c1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="enhancing-the-bdc-model-file-for-search-in-sharepoint"></a>Optimieren der BDC-Modelldatei für die Suche in SharePoint
 Informationen Sie zu den Eigenschaften im BDC-Metadatenmodell, die die BCS-indizierungskonnektoren betreffen die Suche in SharePoint zum Durchforsten der externer Daten zu ermöglichen.
@@ -52,9 +52,9 @@ In der folgenden Tabelle wird beschrieben, die BDC-Modell-Eigenschaften, die auf
 |**Name**|**Metadatenobjekt**|**Beschreibung**|
 |:-----|:-----|:-----|
 |ShowInSearchUI  <br/> |Model  <br/> |Gibt an, dass ein **LobSystemInstance**-Element in der Modelldatei in der Benutzeroberfläche des Suchdiensts angezeigt werden soll. Dieser Wert wird für benutzerdefinierte Konnektoren ignoriert.<br/> |
-|InputUriProcessor  <br/> |LobSystem  <br/> |Gibt den Namen der Klasse, die die eingegebene URL vor der Übergabe an den Connector verarbeitet. Gilt für .NET und benutzerdefinierten BCS Indizierung Connectors. Weitere Informationen finden Sie unter  [Erstellen eines benutzerdefinierten Indizierungskonnektors](http://msdn.microsoft.com/library/ec2df34d-178c-4ae1-a2b0-a6af04ee57bd%28Office.15%29.aspx).<br/> |
-|OutputUriProcessor  <br/> |LobSystem  <br/> |Gibt den Namen der Klasse, die die URL für die Ausgabe vor der Übergabe an das Suchsystem aus den Connector verarbeitet. Gilt für .NET und benutzerdefinierten BCS Indizierung Connectors. Weitere Informationen finden Sie unter  [Erstellen eines benutzerdefinierten Indizierungskonnektors](http://msdn.microsoft.com/library/ec2df34d-178c-4ae1-a2b0-a6af04ee57bd%28Office.15%29.aspx).<br/> |
-|SystemUtilityTypeName  <br/> |LobSystem  <br/> |Gibt den Namen der Klasse, die die **StructuredRepositorySystemUtility** -Klasse implementiert. Gilt für benutzerdefinierte BCS Indizierung Connectors. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten Indizierungskonnektors](http://msdn.microsoft.com/library/ec2df34d-178c-4ae1-a2b0-a6af04ee57bd%28Office.15%29.aspx). <br/> |
+|InputUriProcessor  <br/> |LobSystem  <br/> |Gibt den Namen der Klasse, die die eingegebene URL vor der Übergabe an den Connector verarbeitet. Gilt für .NET und benutzerdefinierten BCS Indizierung Connectors. Weitere Informationen finden Sie unter  [Erstellen eines benutzerdefinierten Indizierungskonnektors]((http://msdn.microsoft.com/library/ec2df34d-178c-4ae1-a2b0-a6af04ee57bd%28Office.15%29.aspx)).<br/> |
+|OutputUriProcessor  <br/> |LobSystem  <br/> |Gibt den Namen der Klasse, die die URL für die Ausgabe vor der Übergabe an das Suchsystem aus den Connector verarbeitet. Gilt für .NET und benutzerdefinierten BCS Indizierung Connectors. Weitere Informationen finden Sie unter  [Erstellen eines benutzerdefinierten Indizierungskonnektors]((http://msdn.microsoft.com/library/ec2df34d-178c-4ae1-a2b0-a6af04ee57bd%28Office.15%29.aspx)).<br/> |
+|SystemUtilityTypeName  <br/> |LobSystem  <br/> |Gibt den Namen der Klasse, die die **StructuredRepositorySystemUtility** -Klasse implementiert. Gilt für benutzerdefinierte BCS Indizierung Connectors. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten Indizierungskonnektors]((http://msdn.microsoft.com/library/ec2df34d-178c-4ae1-a2b0-a6af04ee57bd%28Office.15%29.aspx)). <br/> |
 |Title  <br/> |Entität  <br/> |Gibt den Titel des externen Inhaltstyps an, der in Suchergebnissen angezeigt werden soll.  <br/> |
 |DefaultLocale  <br/> |Entität  <br/> |Gibt die Gebietsschema-Zeichenfolge an. Diesen Wert können Sie mit der **LCIDField**-Eigenschaft oder der **CultureField**-Eigenschaft überschreiben. <br/> |
 |RootFinder  <br/> |Methode  <br/> |Gibt die **Finder**-Methode an, die zum Aufzählen der zu durchforstenden Elemente verwendet werden soll. Beispielsweise könnte dies beim Herstellen einer Verbindung mit einer Datenbank die **SELECT**-Anweisung oder die Liste der zu durchforstenden Tabellen sein. <br/> |
@@ -170,32 +170,27 @@ Wenn das Repository die NTLM-Authentifizierung verwendet, wird empfohlen, für D
     
 Profilseiten können erfordern, dass Sie den Dienst für Einmaliges Anmelden aufgrund des Delegierungsproblems bei Mehrfachhops auf dem Front-End-Webserver verwenden müssen. Bei Auftreten dieses Problems können Sie die Durchforstung optimieren und gleichzeitig das Erstellen von Profilseiten zulassen, indem Sie zwei ähnliche **LobSystemInstance**-Instanzen erstellen. Die erste Instanz muss Anmeldeinformationen aus der Authentifizierung für Einmaliges Anmelden verwenden. Diese Instanz darf nicht die **ShowInSearchUI**-Eigenschaft enthalten. Die zweite Instanz muss die PassThrough-Authentifizierung verwenden und die **ShowInSearchUI**-Eigenschaft enthalten. Profilseiten verwenden die erste **LobSystemInstance**-Instanz, der Crawler die zweite Instanz.
   
-    
-    
-
-> **Hinweis:** Dies erfordert, dass Sie die **ShowInSearchUI**-Eigenschaft auf **LobSystemInstance**-Ebene anstatt auf **LobSystem**-Ebene festlegen.
-  
-    
-    
+> [!NOTE]
+> Dies erfordert, dass Sie die **ShowInSearchUI**-Eigenschaft auf **LobSystemInstance**-Ebene anstatt auf **LobSystem**-Ebene festlegen.
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15enhanceBDC_addlresources"> </a>
 
 
 -  [Connector Framework für die Suche in SharePoint](search-connector-framework-in-sharepoint.md)
     
   
--  [Infrastruktur des BDC-Modells](http://msdn.microsoft.com/library/2818ebdd-6cda-4d8f-82b2-7fde9fbf2633%28Office.15%29.aspx)
+-  [Infrastruktur des BDC-Modells]((http://msdn.microsoft.com/library/2818ebdd-6cda-4d8f-82b2-7fde9fbf2633%28Office.15%29.aspx))
     
   
--  [Erstellen von BDC-Modellen](http://msdn.microsoft.com/library/170d1cfd-cf19-4162-b79f-ba6d3b4ad23b%28Office.15%29.aspx)
+-  [Erstellen von BDC-Modellen]((http://msdn.microsoft.com/library/170d1cfd-cf19-4162-b79f-ba6d3b4ad23b%28Office.15%29.aspx))
     
   
 -  [Einrichten einer Entwicklungsumgebung für BCS in SharePoint](setting-up-a-development-environment-for-bcs-in-sharepoint.md)
     
   
--  [Vorgehensweise: Erstellen einer BDC-Modelldatei für einen benutzerdefinierten Konnektor in SharePoint Designer](http://msdn.microsoft.com/library/8f239482-0c82-4b60-817d-b0c4392e7e2e%28Office.15%29.aspx)
+-  [Vorgehensweise: Erstellen einer BDC-Modelldatei für einen benutzerdefinierten Konnektor in SharePoint Designer]((http://msdn.microsoft.com/library/8f239482-0c82-4b60-817d-b0c4392e7e2e%28Office.15%29.aspx))
     
   
 

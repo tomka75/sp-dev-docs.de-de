@@ -3,15 +3,15 @@ title: "Abrufen von Abfragevorschläge mithilfe des Such-REST-Diensts"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a64c5bec-64a8-4752-9c72-433d1c864aed
-ms.openlocfilehash: d3359be5b2c4f68ea75419babd9ceb8096fc3446
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 64f07696df6df14756303a53dd75f41de9ccbdbf
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="retrieving-query-suggestions-using-the-search-rest-service"></a>Abrufen von Abfragevorschläge mithilfe des Search-REST-Diensts
 Erfahren Sie, wie Sie den Search-REST-Dienst aus Ihren Client- und mobilen Anwendungen verwenden können, um Abfragevorschläge aus der Suche in SharePoint abzurufen.
-Abfragevorschläge, auch Suchvorschläge genannt, sind Ausdrücke, nach denen Benutzer bereits gesucht haben und die beim Eingeben einer Abfrage angezeigt oder "vorgeschlagen" werden. Über die Suche in SharePoint können Sie die Vorschläge nach und vor der Abfrage aktivieren. Die Vorschläge werden in einer Liste unter dem Suchfeld angezeigt, während der Benutzer eine Abfrage eingibt. Weitere Informationen zu Abfragevorschlägen und deren Aktivierung finden Sie unter [Verwalten von Abfragevorschlägen in SharePoint](http://technet.microsoft.com/en-us/library/jj721441.aspx).
+Abfragevorschläge, auch Suchvorschläge genannt, sind Ausdrücke, nach denen Benutzer bereits gesucht haben und die beim Eingeben einer Abfrage angezeigt oder "vorgeschlagen" werden. Über die Suche in SharePoint können Sie die Vorschläge nach und vor der Abfrage aktivieren. Die Vorschläge werden in einer Liste unter dem Suchfeld angezeigt, während der Benutzer eine Abfrage eingibt. Weitere Informationen zu Abfragevorschlägen und deren Aktivierung finden Sie unter [Verwalten von Abfragevorschlägen in SharePoint]((http://technet.microsoft.com/de-DE/library/jj721441.aspx)).
   
     
     
@@ -51,8 +51,8 @@ Die Parameter für die Abfragevorschläge werden in der URL angegeben. Sie könn
 >  `http://server/_api/search/suggest(parameter=value&amp;parameter=value)`
     
   
-
-> **Hinweis:** Der Search-REST-Dienst unterstützt keine anonyme Anfragen an den Endpunkt **Suggest**.
+> [!NOTE]
+> Der Search-REST-Dienst unterstützt keine anonyme Anfragen an den Endpunkt **Suggest**.
   
     
     
@@ -158,7 +158,7 @@ http:// _server_/_api/search/suggest?querytext = "Sharepoint" &amp; Fcapitalizef
 
 ### <a name="culture"></a>Culture
 
-Gebietsschema-ID (LCID) für die Abfrage (siehe  [Von Microsoft zugewiesene Gebietsschema-IDs](http://msdn.microsoft.com/en-us/goglobal/bb964664.aspx)).
+Gebietsschema-ID (LCID) für die Abfrage (siehe  [Von Microsoft zugewiesene Gebietsschema-IDs]((http://msdn.microsoft.com/de-DE/goglobal/bb964664.aspx))).
   
     
     
@@ -231,7 +231,7 @@ http:// _server_/_api/search/suggest?querytext = "Sharepoint" &amp; Fprefixmatch
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
@@ -241,13 +241,13 @@ http:// _server_/_api/search/suggest?querytext = "Sharepoint" &amp; Fprefixmatch
 -  [Suche in SharePoint](search-in-sharepoint.md)
     
   
--  [SharePoint: Verwenden des Search-REST-Diensts über eine App für SharePoint](http://code.msdn.microsoft.com/sharepoint/SharePoint-Perform-a-1bf3e87d)
+-  [SharePoint: Verwenden des Search-REST-Diensts über eine App für SharePoint]((http://code.msdn.microsoft.com/sharepoint/SharePoint-Perform-a-1bf3e87d))
     
   
 -  [What's new in SharePoint-Suche für Entwickler](what-s-new-in-sharepoint-search-for-developers.md)
     
   
--  [Programmieren mit dem SharePoint REST-Dienst](http://msdn.microsoft.com/library/d4b5c277-ed50-420c-8a9b-860342284b72%28Office.15%29.aspx)
+-  [Programmieren mit dem SharePoint REST-Dienst]((http://msdn.microsoft.com/library/d4b5c277-ed50-420c-8a9b-860342284b72%28Office.15%29.aspx))
     
   
 

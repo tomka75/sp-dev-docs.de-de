@@ -3,11 +3,11 @@ title: Branding von Codeausschnitten mithilfe von CSS in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d18d07b6-1a6b-4589-a65c-932b67cef595
-ms.openlocfilehash: 43292df391d739aa031370a659bac821ac60ab16
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 4ed891c06956c4d2ff79cd681b81a3869a03cc3c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="brand-snippets-by-using-css-in-sharepoint"></a>Branding von Codeausschnitten mithilfe von CSS in SharePoint
 
@@ -22,15 +22,13 @@ Nachdem Sie eine HTML-Masterseite konvertiert oder ein HTML-Seitenlayout erstell
     
 Nachdem Sie einen Codeausschnitt in die HTML-Datei auf dem zugeordneten Laufwerk kopiert und dann die Änderungen gespeichert haben, können Sie die serverseitige Vorschau der HTML-Datei aktualisieren, um zu sehen, wie das Steuerelement gerendert wird. Codeausschnitte enthalten Markup, das eine Entwurfszeitvorschau in Ihrem gewünschten HTML-Editor bereitstellt, Sie sollten dieses Markup jedoch nicht bearbeiten, da es schreibgeschützt ist und Auswirkungen darauf hat, wie das Steuerelement auf dem Server gerendert wird. Die serverseitige Vorschau hingegen ist eine Vorschau in voller Genauigkeit mit Live-Daten, falls verfügbar, ein Navigationssteuerelement zeigt z. B. die aktuelle Navigationsstruktur der Website mit Live-Daten aus Ihrer Datenquelle, z. B.ein SharePoint-Terminologiespeicher für die verwaltete Navigation.
   
-    
-    
-
-> **Hinweis:** Weitere Informationen zum Zuordnen eines Netzlaufwerks finden Sie unter [Vorgehensweise: Zuordnen eines Netzlaufwerks zum SharePoint-Gestaltungsvorlagenkatalog](how-to-map-a-network-drive-to-the-sharepoint-master-page-gallery.md). 
+> [!NOTE]
+> Weitere Informationen zum Zuordnen eines Netzlaufwerks finden Sie unter [Vorgehensweise: Zuordnen eines Netzlaufwerks zum SharePoint-Gestaltungsvorlagenkatalog](how-to-map-a-network-drive-to-the-sharepoint-master-page-gallery.md). 
   
     
     
 
-Codeausschnitte erben ihre Formatvorlagen standardmäßig SharePoint-Formatvorlagen, z. B. „corev15.css“. Um einen Codeausschnitt zu formatieren, müssen Sie diese Formatvorlagen mit Ihrem benutzerdefiniertem CSS überschreiben. Zu diesem Zweck können Sie folgende Aktionen ausführen:
+Codeausschnitte erben ihre Formatvorlagen standardmäßig von SharePoint-Formatvorlagen, z. B. „corev15.css“. Um einen Codeausschnitt zu formatieren, müssen Sie diese Formatvorlagen mit Ihrem benutzerdefiniertem CSS überschreiben. Zu diesem Zweck können Sie folgende Aktionen ausführen:
   
     
     
@@ -225,12 +223,12 @@ Beachten Sie im Codeausschnittkatalog Folgendes, wenn Sie die Eigenschaften des 
 - Nehmen Sie keine Änderungen an Eigenschaften unter der Überschrift **AjaxDelta** vor, da diese Eigenschaften im Zusammenhang mit den MDS-Eigenschaften stehen, die SharePoint verwendet, um den HTML-Codeausschnitt in den entsprechenden ASP.NET-Codeausschnitt zu konvertieren. Dies gilt für alle Codeausschnitte, nicht nur für den Codeausschnitt der oberen Navigationsleiste.
     
   
-- Wenn Sie beabsichtigen, die SharePoint-Standardformatvorlagen zu überschreiben, legen Sie Codeausschnittkatalog im Abschnitt **Behavior** unter **AspMenu** (wenn der Codeausschnitt mehrere Steuerelemente enthält, z. B. ein delegate-Steuerelement, sind möglicherweise mehrere Abschnitte **Behavior** vorhanden) die Option **ClientIDMode** auf **Static**. Wenn Sie die Option **ClientIDMode** auf die Standardeinstellung **Inherit** festgelegt lassen, ändern sich die angewendeten CSS-Klassen des Codeausschnitts basierend auf der Sortierung der Codeausschnitte auf der Seite. Weitere Informationen zu **ClientIDMode** finden Sie unter [Control.ClientIDMode-Eigenschaft](http://msdn.microsoft.com/de-DE/library/system.web.ui.control.clientidmode.aspx).
+- Wenn Sie beabsichtigen, die SharePoint-Standardformatvorlagen zu überschreiben, legen Sie Codeausschnittkatalog im Abschnitt **Behavior** unter **AspMenu** (wenn der Codeausschnitt mehrere Steuerelemente enthält, z. B. ein delegate-Steuerelement, sind möglicherweise mehrere Abschnitte **Behavior** vorhanden) die Option **ClientIDMode** auf **Static**. Wenn Sie die Option **ClientIDMode** auf die Standardeinstellung **Inherit** festgelegt lassen, ändern sich die angewendeten CSS-Klassen des Codeausschnitts basierend auf der Sortierung der Codeausschnitte auf der Seite. Weitere Informationen zu **ClientIDMode** finden Sie unter [Control.ClientIDMode-Eigenschaft]((http://msdn.microsoft.com/de-DE/library/system.web.ui.control.clientidmode.aspx)).
     
     Standardmäßig verwendet das Steuerelement der oberen Navigationsleiste beispielsweise standardmäßige SharePoint-ID-Attribute wie **zz5_TopNavigationMenu** und **zz6_RootAspMenu**. Durch Ändern von **ClientIDMode** in **Static** ermöglichen Sie die Verwendung dieser Standard-IDs als Selektoren in Ihrer eigenen CSS, um die SharePoint-Standardformatvorlagen zu überschreiben.
     
   
-- Einige Eigenschaften sind bereits so konfiguriert, dass das Branding des Codeausschnitts der oberen Navigationsleiste vereinfacht wird, indem die standardmäßigen Verhaltensweisen von dynamischem CSS und JavaScript eliminiert werden. **UseSimpleRendering** wird beispielsweise standardmäßig auf **True** festgelegt, und **MaximumDynamicDisplayLevels** wird auf **0** festgelegt. Weitere Informationen zu bestimmten Eigenschaften des Codeausschnitts der oberen Navigationsleiste finden Sie unter [AspMenu-Eigenschaften](http://msdn.microsoft.com/de-DE/library/ms412476.aspx) und [Menu-Eigenschaften](http://msdn.microsoft.com/de-DE/library/282668a1.aspx).
+- Einige Eigenschaften sind bereits so konfiguriert, dass das Branding des Codeausschnitts der oberen Navigationsleiste vereinfacht wird, indem die standardmäßigen Verhaltensweisen von dynamischem CSS und JavaScript eliminiert werden. **UseSimpleRendering** wird beispielsweise standardmäßig auf **True** festgelegt, und **MaximumDynamicDisplayLevels** wird auf **0** festgelegt. Weitere Informationen zu bestimmten Eigenschaften des Codeausschnitts der oberen Navigationsleiste finden Sie unter [AspMenu-Eigenschaften]((http://msdn.microsoft.com/de-DE/library/ms412476.aspx)) und [Menu-Eigenschaften]((http://msdn.microsoft.com/de-DE/library/282668a1.aspx)).
     
   
 Nachdem Sie den Codeausschnitt der oberen Navigationsleiste im Codeausschnittkatalog konfiguriert haben, wählen Sie **Aktualisieren** und dann **In die Zwischenablage kopieren** aus. Löschen Sie auf der HTML-Masterseite den Inhalt der Navigation `<div id="navigation" class="msax-Navigation">`, die das Modellsteuerelement enthält (löschen Sie nur den Inhalt des **\<div\>**-Tags und nicht das **\<div\>**-Tag selbst), und kopieren Sie dann den Codeausschnitt in die Navigation **\<div\>**. Ändern Sie, falls erforderlich, die Position der **\<#div\>**-Navigation, in der Regel direkt nach Beginn des `<div id="s4-bodyContainer">`-Tags, jedoch vor dem **\<#div\>** mit `PlaceHolderMain`.
@@ -332,7 +330,7 @@ Anstatt nur benutzerdefinierte Formatvorlagen zu verwenden, kann es möglicherwe
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="Additional"> </a>
 
 

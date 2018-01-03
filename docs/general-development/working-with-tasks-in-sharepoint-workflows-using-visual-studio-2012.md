@@ -3,31 +3,17 @@ title: Arbeiten mit Aufgaben  in SharePoint-Workflows mit Visual Studio 2012
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f5869fe2-1bef-4e6f-bfdc-3e109501d260
-ms.openlocfilehash: 8bc35420c588eb0e8fb56a08cd39e886b50d563b
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b2bf0f48f395d96cdfe39ba54d0cec0dba622bb7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="working-with-tasks-in-sharepoint-workflows-using-visual-studio-2012"></a>Arbeiten mit Aufgaben  in SharePoint-Workflows mit Visual Studio 2012
-Erfahren Sie mehr über das neue und überarbeitete Framework für Workflowaufgaben, das in SharePoint eingeführt wurde und auf dem neuen Workflow-Manager basiert. **Bereitgestellt von:** [Andrew Connell](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/),  [AndrewConnell.com](http://www.andrewconnell.com)
+Erfahren Sie mehr über das neue und überarbeitete Framework für Workflowaufgaben, das in SharePoint eingeführt wurde und auf dem neuen Workflow-Manager basiert. **Bereitgestellt von:** [Andrew Connell]((http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/)),  [AndrewConnell.com]((http://www.andrewconnell.com))
   
-    
-    
-
-
-  
-    
-    
-
-> **Hinweis:** Dieser Artikel enthält ein durchgängiges Codebeispiel. Sie können es nutzen, um die Informationen im Artikel nachzuvollziehen, oder es als Grundlage für die Erstellung eigener SharePoint-Workflows verwenden. Herunterladen können Sie das Codebeispiel [hier](http://assets.andrewconnell.com/media/Default/Downloads/SP2013Wf-CustomTasks.zip). 
-  
-    
-    
-
-
-  
-    
+> [!NOTE] 
+> Dieser Artikel enthält ein durchgängiges Codebeispiel. Sie können es nutzen, um die Informationen im Artikel nachzuvollziehen, oder es als Grundlage für die Erstellung eigener SharePoint-Workflows verwenden. Herunterladen können Sie das Codebeispiel [hier]((http://assets.andrewconnell.com/media/Default/Downloads/SP2013Wf-CustomTasks.zip)). 
     
 Einer der größten Vorteile, den SharePoint der Windows Workflow Foundation bietet, ist die Implementierung eines neuen und verbesserten Frameworks für das Aufgabenmanagement, das den neuen Workflow-Manager als Hostingumgebung umfasst.
 ## <a name="reviewing-workflow-tasks-in-sharepoint-2007-and-sharepoint-2010"></a>Rückblick auf Workflowaufgaben in SharePoint 2007 und SharePoint 2010
@@ -36,7 +22,7 @@ In SharePoint 2007 und SharePoint 2010 wurden Workflowaufgaben auf ähnliche Wei
   
     
     
-Das standardmäßige Rendern des Aufgabenformulars in SharePoint war jedoch selbst bei benutzerdefinierten Workflows vorgegeben. War Flexibilität gefragt, mussten Sie ASP.NET [Web Forms](http://www.asp.net/web-forms) oder [InfoPath-Formulare](http://msdn.microsoft.com/de-DE/library/ms540731%28v=office.14%29.aspx) zum Erstellen benutzerdefinierter Formularlösungen zum Bewältigen Ihrer Aufgaben verwenden.
+Das standardmäßige Rendern des Aufgabenformulars in SharePoint war jedoch selbst bei benutzerdefinierten Workflows vorgegeben. War Flexibilität gefragt, mussten Sie ASP.NET [Web Forms]((http://www.asp.net/web-forms)) oder [InfoPath-Formulare](http://msdn.microsoft.com/en-us/library/ms540731%28v=office.14%29.aspx) zum Erstellen benutzerdefinierter Formularlösungen zum Bewältigen Ihrer Aufgaben verwenden.
   
     
     
@@ -66,7 +52,7 @@ Möglicherweise müssen Sie mitunter die Darstellung oder das Verhalten der Aufg
   
     
     
-Weitere Informationen zum clientseitigen Rendering finden Sie unter  [Gewusst wie: Anpassen einer Listenansicht in Apps für SharePoint durch clientseitiges Rendering](http://msdn.microsoft.com/de-DE/library/jj220045.aspx).
+Weitere Informationen zum clientseitigen Rendering finden Sie unter  [Gewusst wie: Anpassen einer Listenansicht in Apps für SharePoint durch clientseitiges Rendering]((http://msdn.microsoft.com/de-DE/library/jj220045.aspx)).
   
     
     
@@ -741,17 +727,17 @@ In diesem Artikel wurden die Änderungen in Bezug auf Workflowaufgaben erläuter
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
--  [Workflows in SharePoint](http://msdn.microsoft.com/de-DE/library/jj163986.aspx)
+-  [Workflows in SharePoint]((http://msdn.microsoft.com/de-DE/library/jj163986.aspx))
     
   
--  [Autorisierung und Authentifizierung von Apps für SharePoint](http://msdn.microsoft.com/de-DE/library/office/fp142384.aspx)
+-  [Autorisierung und Authentifizierung von Apps für SharePoint]((http://msdn.microsoft.com/de-DE/library/office/fp142384.aspx))
     
   
--  [Gewusst wie: Anpassen einer Listenansicht in Apps für SharePoint durch clientseitiges Rendering](http://msdn.microsoft.com/de-DE/library/jj220045.aspx)
+-  [Gewusst wie: Anpassen einer Listenansicht in Apps für SharePoint durch clientseitiges Rendering]((http://msdn.microsoft.com/de-DE/library/jj220045.aspx))
     
   
 

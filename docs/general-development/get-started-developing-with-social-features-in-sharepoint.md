@@ -3,11 +3,11 @@ title: Erste Schritte bei der Entwicklung mit thematischen Features in SharePoin
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 8852ce36-8309-45a7-a141-2e10ac17a123
-ms.openlocfilehash: 9566ab4fde6513c7a22e537bac66a6880ded981a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c8ecb5d92ed472137c5053dcb46e81b6d7e72f5f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="get-started-developing-with-social-features-in-sharepoint"></a>Erste Schritte bei der Entwicklung mit thematischen Features in SharePoint
 Erste Schritte zum Programmieren mit sozialen Feeds von SharePoint und Mikroblogeinträgen, Folgen von Personen und Inhalten (Dokumente, Websites und Tags) und Arbeiten mit Benutzerprofilen.
@@ -144,15 +144,15 @@ Zwar apps und -Lösungen SharePoint unterschiedlich zugreifen, nachdem Sie Share
 
 |**API-Name**|**Quell- und Pfad**|
 |:-----|:-----|
-| [.NET-Clientobjektmodell](http://msdn.microsoft.com/library/9cc3f70c-78ac-4d2d-b46e-77522ee5d937%28Office.15%29.aspx)|Microsoft.SharePoint.Client.UserProfiles.dll<br/>im Ordner %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\ISAPI|
+| [.NET-Clientobjektmodell]((http://msdn.microsoft.com/library/9cc3f70c-78ac-4d2d-b46e-77522ee5d937%28Office.15%29.aspx))|Microsoft.SharePoint.Client.UserProfiles.dll<br/>im Ordner %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\ISAPI|
 |Silverlight-Clientobjektmodell|Microsoft.SharePoint.Client.UserProfiles.Silverlight.dll<br/>im Ordner %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\TEMPLATE\\LAYOUTS\\ClientBin|
 |Mobiles Clientobjektmodell|Microsoft.SharePoint.Client.UserProfiles.Phone.dll<br/>im Ordner %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\TEMPLATE\\LAYOUTS\\ClientBin|
-| [JavaScript-Objektmodell](http://msdn.microsoft.com/library/95cb5427-8514-4e9a-8eee-7ed4b82ec01b%28Office.15%29.aspx)|SP.UserProfiles.js<br/>im Ordner %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\TEMPLATE\\LAYOUTS|
+| [JavaScript-Objektmodell]((http://msdn.microsoft.com/library/95cb5427-8514-4e9a-8eee-7ed4b82ec01b%28Office.15%29.aspx))|SP.UserProfiles.js<br/>im Ordner %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\TEMPLATE\\LAYOUTS|
 |REST (Representational State Transfer)-Dienst| [`http://<site url>/_api/social.feed`](social-feed-rest-api-reference-for-sharepoint.md)<br/>[`http://<site url>/_api/social.following`](following-people-and-content-rest-api-reference-for-sharepoint.md)<br/>[`http://<site url>/_api/SP.UserProfiles.PeopleManager`](http://msdn.microsoft.com/library/10757ed1-6e86-474f-89e0-6dec6aa66a2b%28Office.15%29.aspx.md#bk_PeopleManager)|
-| [Serverobjektmodell](http://msdn.microsoft.com/library/87c5118c-ac0e-4bd9-a75f-7452a9eb0e41%28Office.15%29.aspx)|Microsoft.Office.Server.UserProfiles.dll<br/>im Ordner %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\ISAPI|
+| [Serverobjektmodell]((http://msdn.microsoft.com/library/87c5118c-ac0e-4bd9-a75f-7452a9eb0e41%28Office.15%29.aspx))|Microsoft.Office.Server.UserProfiles.dll<br/>im Ordner %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\ISAPI|
    
-
-> **Hinweis:** Nicht alle serverseitigen Funktionen im Assembly Microsoft.Office.Server.UserProfiles sind in den Client-APIs verfügbar. Im Namespace [Microsoft.SharePoint.Client.Social](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.aspx) und im Namespace [Microsoft.SharePoint.Client.UserProfiles](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.aspx) erfahren Sie, welche APIs verfügbar sind.
+> [!NOTE]
+> Nicht alle serverseitigen Funktionen im Assembly Microsoft.Office.Server.UserProfiles sind in den Client-APIs verfügbar. Im Namespace [Microsoft.SharePoint.Client.Social]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.aspx)) und im Namespace [Microsoft.SharePoint.Client.UserProfiles]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.aspx)) erfahren Sie, welche APIs verfügbar sind.
   
     
     
@@ -165,7 +165,7 @@ Eine SharePoint-Add-In muss die für den Zugriff auf SharePoint-Ressourcen benö
   
     
     
-App-Berechtigungsanforderungen sind auf der SharePoint-Bereitstellung im Querformat beschränkt. Tabelle 3 zeigt die Bereichsnamen (mit den entsprechenden Bereich URIs) und die verfügbaren Rechte für den Zugriff auf Features für soziale Netzwerke. Weitere Informationen finden Sie unter  [Add-In-Berechtigungen in SharePoint](http://msdn.microsoft.com/library/5f7a8440-3c09-4cf8-83ec-c236bfa2d6c4%28Office.15%29.aspx),  [Add-In-Autorisierungsrichtlinientypen in SharePoint](http://msdn.microsoft.com/library/124879c7-a746-4c10-96a7-da76ad5327f0%28Office.15%29.aspx)und  [Planen der app-Berechtigungsverwaltung in SharePoint](http://technet.microsoft.com/en-us/library/jj219576%28office.15%29.aspx).
+App-Berechtigungsanforderungen sind auf der SharePoint-Bereitstellung im Querformat beschränkt. Tabelle 3 zeigt die Bereichsnamen (mit den entsprechenden Bereich URIs) und die verfügbaren Rechte für den Zugriff auf Features für soziale Netzwerke. Weitere Informationen finden Sie unter  [Add-In-Berechtigungen in SharePoint]((http://msdn.microsoft.com/library/5f7a8440-3c09-4cf8-83ec-c236bfa2d6c4%28Office.15%29.aspx)),  [Add-In-Autorisierungsrichtlinientypen in SharePoint]((http://msdn.microsoft.com/library/124879c7-a746-4c10-96a7-da76ad5327f0%28Office.15%29.aspx))und  [Planen der app-Berechtigungsverwaltung in SharePoint]((http://technet.microsoft.com/de-DE/library/jj219576%28office.15%29.aspx)).
   
     
     
@@ -197,7 +197,7 @@ Beachten Sie die folgenden Überlegungen beim app-Berechtigungen für Features f
 - Während der Entwicklung der mandantenbereich verwenden, wenn Sie erhalten eine "SocialListNotFound: die Liste für soziale Netzwerke in Ihrer persönlichen Website nicht vorhanden" oder "Datei nicht gefunden" angezeigt. Wenn Sie den Bereich Core oder Newsfeed in Ihrer app verwenden möchten, können Sie die Berechtigungen testen, indem Sie die app aus dem app-Katalog öffnen.
     
   
-- Der Bereich Core gilt für persönliche Websites, die nach Inhalten zu unterstützen. Der Bereich Newsfeed gilt für persönliche Websites, die mikroblogging unterstützen oder Teamwebsites, in dem das **Website-Feed**-Feature aktiviert ist. Wenn die app auf eine andere Art von Website installiert werden sollen, müssen Sie die mandantenbereich verwenden. Finden Sie unter  [Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint](http://msdn.microsoft.com/library/1ceb3142-a7a5-453e-920f-5f953a79401a%28Office.15%29.aspx).
+- Der Bereich Core gilt für persönliche Websites, die nach Inhalten zu unterstützen. Der Bereich Newsfeed gilt für persönliche Websites, die mikroblogging unterstützen oder Teamwebsites, in dem das **Website-Feed**-Feature aktiviert ist. Wenn die app auf eine andere Art von Website installiert werden sollen, müssen Sie die mandantenbereich verwenden. Finden Sie unter  [Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint]((http://msdn.microsoft.com/library/1ceb3142-a7a5-453e-920f-5f953a79401a%28Office.15%29.aspx)).
     
   
 - Apps, die zur Anforderung von Rechten für den Bereich von Benutzerprofilen müssen von einem mandantenadministrator installiert sein, und sie können nicht in Office 365 Small Business Premium-Version von SharePoint Online installiert werden.
@@ -206,11 +206,11 @@ Beachten Sie die folgenden Überlegungen beim app-Berechtigungen für Features f
 - Wenn Lizenzierung oder ein Feature Aktivierung für Features für soziale Netzwerke und mikroblogs nicht erfüllt sind, erhalten die Benutzer eine Meldung angezeigt, dass die app installiert werden kann.
     
   
-- Apps, die außerhalb von SharePoint gestartet werden können Berechtigung auf spontane (mit Ausnahme von **Full Control**) anfordern. Weitere Informationen finden Sie unter  [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins](http://msdn.microsoft.com/library/e89e91c7-ea39-49b9-af5a-7f047a7e2ab7%28Office.15%29.aspx).
+- Apps, die außerhalb von SharePoint gestartet werden können Berechtigung auf spontane (mit Ausnahme von **Full Control**) anfordern. Weitere Informationen finden Sie unter  [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins]((http://msdn.microsoft.com/library/e89e91c7-ea39-49b9-af5a-7f047a7e2ab7%28Office.15%29.aspx)).
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_AddResources"> </a>
 
  **Konzeptionelle Artikel**
@@ -241,10 +241,10 @@ Beachten Sie die folgenden Überlegungen beim app-Berechtigungen für Features f
     
     
 
--  [Clientklassenbibliothek für Funktionen und Daten für das soziale Netzwerk](http://msdn.microsoft.com/library/9cc3f70c-78ac-4d2d-b46e-77522ee5d937%28Office.15%29.aspx)
+-  [Clientklassenbibliothek für Funktionen und Daten für das soziale Netzwerk]((http://msdn.microsoft.com/library/9cc3f70c-78ac-4d2d-b46e-77522ee5d937%28Office.15%29.aspx))
     
   
--  [SP. UserProfiles.js JavaScript-Referenz](http://msdn.microsoft.com/library/80cf5436-6aa2-6f11-a782-66a04f6e2fb0%28Office.15%29.aspx)
+-  [SP. UserProfiles.js JavaScript-Referenz]((http://msdn.microsoft.com/library/80cf5436-6aa2-6f11-a782-66a04f6e2fb0%28Office.15%29.aspx))
     
   
 -  [REST-API-Referenz für sozialen Feed für SharePoint](social-feed-rest-api-reference-for-sharepoint.md)
@@ -253,9 +253,9 @@ Beachten Sie die folgenden Überlegungen beim app-Berechtigungen für Features f
 -  [REST-API-Referenz zum Folgen von Personen und Inhalten für SharePoint](following-people-and-content-rest-api-reference-for-sharepoint.md)
     
   
--  [Benutzerprofile - REST-API-Referenz](http://msdn.microsoft.com/library/10757ed1-6e86-474f-89e0-6dec6aa66a2b%28Office.15%29.aspx)
+-  [Benutzerprofile - REST-API-Referenz]((http://msdn.microsoft.com/library/10757ed1-6e86-474f-89e0-6dec6aa66a2b%28Office.15%29.aspx))
     
   
--  [Serverklassenbibliothek für Funktionen und Daten für das soziale Netzwerk für SharePoint](http://msdn.microsoft.com/library/87c5118c-ac0e-4bd9-a75f-7452a9eb0e41%28Office.15%29.aspx)
+-  [Serverklassenbibliothek für Funktionen und Daten für das soziale Netzwerk für SharePoint]((http://msdn.microsoft.com/library/87c5118c-ac0e-4bd9-a75f-7452a9eb0e41%28Office.15%29.aspx))
     
   

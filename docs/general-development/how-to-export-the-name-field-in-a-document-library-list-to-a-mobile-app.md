@@ -3,21 +3,18 @@ title: Exportieren des Namensfelds einer Dokumentbibliotheksliste in eine mobile
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 901c2012-18c6-4dbd-a787-f8650a0cc7a8
-ms.openlocfilehash: 26d5da7b7e86d4517516827c907793d7b739261c
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: c17eae0cbc62a597ba17e61a47c4bfcb660fd42e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="export-the-name-field-in-a-document-library-list-to-a-mobile-app"></a>Exportieren des Namensfelds einer Dokumentbibliotheksliste in eine mobile App
 
 Exportieren Sie das Feld "Name" einer Dokumentbibliotheksliste mit dem Visual Studio SharePoint-Listen-Assistenten in eine mobile App. Das Feld "Name" wird nicht automatisch angezeigt, wenn Benutzer eine mobile App für eine Dokumentbibliothek in SharePoint erstellen. In einer Liste Dokumentbibliothek kann Benutzer verschiedene Dokumente hochladen. Ein Listenelement für ein Dokument besteht typischerweise als Eigenschaften **Title**, **Name**und eine Verknüpfung mit dem Dokument. Wenn ein Entwickler eine Windows Phone 7-app für die Dokumentbibliothek erstellt, wird das Feld **Name** nicht in der IDE-Assistent exportiert. Daher hat der Entwickler nur schwer feststellen, den Namen des Dokuments. (Dies ist, da SharePoint Felder vom Typ "Datei" standardmäßig nicht unterstützt.)
   
-    
-    
-
-
-> **Hinweis:** Die **Title**-Eigenschaft umfasst nicht die Dateinamenerweiterung.
+> [!NOTE]
+> Die **Title**-Eigenschaft umfasst nicht die Dateinamenerweiterung.
   
     
     
@@ -48,7 +45,7 @@ Wenn Sie einem Dokument abrufen, die vollständige URL des Dokuments erstellen u
 ## <a name="customize-the-generated-classes"></a>Anpassen der generierten Klassen
 <a name="HowToExportTheNameFieldInADocumentLibraryListToAMobileApp_CustomizeTheGeneratedClases"> </a>
 
-Um die **Name** dar und Access-Anlagen aus einer Dokumentbibliothek zu exportieren, müssen Sie einige Änderungen vornehmen, in der **ListDataProvider** -Klasse, DisplayItemViewModel.cs und in der **DisplayForm** -Klasse. Wenn ein Entwickler den Assistenten für neuen SPList aus Visual Studio verwendet, erstellt der Assistent mehrere Klassen, die das Model-View-ViewModel-Entwurfsmuster folgen. (Weitere Informationen finden Sie [unter Verwendung des Model-View-ViewModel-Musters](http://msdn.microsoft.com/de-DE/library/hh821028.aspx).) Es werden zwei Ordner erstellt: eine heißt Ansichten und enthält alle Dateien, die zum Ändern der verschiedenen Listenansichten (beispielsweise DisplayForm, EditForm, Listen- und NewForm) erforderlich. Der andere heißt ViewModels und DisplayItemViewModel, EditItemViewModel, ListViewModel und NewItemViewModel enthält. Sie können einige dieser Klassen, die vom Assistenten generierte ändern.
+Um die **Name** dar und Access-Anlagen aus einer Dokumentbibliothek zu exportieren, müssen Sie einige Änderungen vornehmen, in der **ListDataProvider** -Klasse, DisplayItemViewModel.cs und in der **DisplayForm** -Klasse. Wenn ein Entwickler den Assistenten für neuen SPList aus Visual Studio verwendet, erstellt der Assistent mehrere Klassen, die das Model-View-ViewModel-Entwurfsmuster folgen. (Weitere Informationen finden Sie [unter Verwendung des Model-View-ViewModel-Musters]((http://msdn.microsoft.com/de-DE/library/hh821028.aspx)).) Es werden zwei Ordner erstellt: eine heißt Ansichten und enthält alle Dateien, die zum Ändern der verschiedenen Listenansichten (beispielsweise DisplayForm, EditForm, Listen- und NewForm) erforderlich. Der andere heißt ViewModels und DisplayItemViewModel, EditItemViewModel, ListViewModel und NewItemViewModel enthält. Sie können einige dieser Klassen, die vom Assistenten generierte ändern.
   
     
     
@@ -140,7 +137,7 @@ public string m_fileUrl;
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15StoreSPlist_addlresources"> </a>
 
 

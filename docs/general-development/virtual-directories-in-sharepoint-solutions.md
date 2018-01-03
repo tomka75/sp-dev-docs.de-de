@@ -3,11 +3,11 @@ title: "Virtuelle Verzeichnisse in SharePoint-Lösungen"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c26c4160-31be-4358-89cf-082b8a1e6a6c
-ms.openlocfilehash: 93be71d76718e12439ea7d9d359639a139dfb89d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bba15a4ae1866fe9cc39757442dd8d89fe963950
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="virtual-directories-in-sharepoint-solutions"></a>Virtuelle Verzeichnisse in SharePoint-Lösungen
 Erfahren Sie, wie Änderungen im virtuellen Verzeichnissystem auswirken, wie Sie Farmlösungen in SharePoint erstellen.
@@ -21,25 +21,23 @@ Dieses neue System wirkt sich für Sie bei der Entwicklung SharePoint Lösungen 
   
     
     
-Wenn Sie Ihre Lösung mit Websitesammlungen der beiden Modi kompatibel vornehmen müssen, müssen Sie bestimmen den Modus der aktuellen Websitesammlung und erstellen den virtuellen Pfad entsprechend Logik für die Verzweigung. Die  [CompatibilityLevel](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPSite.CompatibilityLevel.aspx) -Eigenschaft, die in allen SharePoint-Clientobjektmodelle und der REST-Schnittstelle verfügbar ist, wird einer Stelle, wo der Code für den Modus überprüfen können. Die [SPUtility](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPUtility.aspx) -Klasse enthält auch mehrere neue Eigenschaften zur Unterstützung bei der Kompatibilitätsebene in Ihren Lösungen verwalten. Diese sind nicht in der Clientobjektmodelle verfügbar. Es gibt mehrere Steuerelemente in SharePoint, die eine **UIVersion** -Eigenschaft verfügbar, die Ihr Code auch verwenden machen, um den aktuellen Kompatibilitätsgrad finden.
+Wenn Sie Ihre Lösung mit Websitesammlungen der beiden Modi kompatibel vornehmen müssen, müssen Sie bestimmen den Modus der aktuellen Websitesammlung und erstellen den virtuellen Pfad entsprechend Logik für die Verzweigung. Die  [CompatibilityLevel]((https://msdn.microsoft.com/library/Microsoft.SharePoint.SPSite.CompatibilityLevel.aspx)) -Eigenschaft, die in allen SharePoint-Clientobjektmodelle und der REST-Schnittstelle verfügbar ist, wird einer Stelle, wo der Code für den Modus überprüfen können. Die [SPUtility]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPUtility.aspx)) -Klasse enthält auch mehrere neue Eigenschaften zur Unterstützung bei der Kompatibilitätsebene in Ihren Lösungen verwalten. Diese sind nicht in der Clientobjektmodelle verfügbar. Es gibt mehrere Steuerelemente in SharePoint, die eine **UIVersion** -Eigenschaft verfügbar, die Ihr Code auch verwenden machen, um den aktuellen Kompatibilitätsgrad finden.
+  
+> [!NOTE] 
+> Wenn die Datei im virtuellen Pfad *.aspx ist, erkennt SharePoint automatisch den Modus der aktuellen Websitesammlung und gibt die Datei aus dem entsprechenden Hive zurück. Daher brauchen Sie „/15“ nicht in den virtuellen Pfad einzufügen. 
   
     
     
 
->  **Hinweis:** Wenn die Datei im virtuellen Pfad *.aspx ist, erkennt SharePoint automatisch den Modus der aktuellen Websitesammlung und gibt die Datei aus dem entsprechenden Hive zurück. Daher brauchen Sie "/ 15" nicht in den virtuellen Pfad einzufügen. 
-  
-    
-    
 
-
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
 -  [Erstellen von Farmlösungen in SharePoint](build-farm-solutions-in-sharepoint.md)
     
   
--  [Planen der Bereitstellung von Farmlösungen für SharePoint](http://blogs.technet.com/b/mspfe/archive/2013/02/04/planning-deployment-of-farm-solutions-for-sharepoint.aspx)
+-  [Planen der Bereitstellung von Farmlösungen für SharePoint]((http://blogs.technet.com/b/mspfe/archive/2013/02/04/planning-deployment-of-farm-solutions-for-sharepoint.aspx))
     
   
 -  [SPUtility properties](http://msdn.microsoft.com/library/Properties.T:Microsoft.SharePoint.Utilities.SPUtility.aspx)

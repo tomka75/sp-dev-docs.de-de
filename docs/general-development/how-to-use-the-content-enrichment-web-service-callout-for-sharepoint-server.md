@@ -3,11 +3,11 @@ title: "Verwenden der Content Enrichment-Webdienstlegende für SharePoint Server
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d4e44498-9a3d-4f2f-b5ba-6ebef9971dcb
-ms.openlocfilehash: f0b9fc5e96448361dab885c14a8663b90770b7ee
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: a4cfbfeb185b40c1933171dad4326ed74728c950
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-the-content-enrichment-web-service-callout-for-sharepoint-server"></a>Verwenden der Content Enrichment-Webdienstlegende für SharePoint Server
 
@@ -15,23 +15,23 @@ In diesem Artikel erfahren Sie, wie Sie den Inhaltserweiterungs-Webdienst in Sha
 
 Entwickler können die Inhaltsverarbeitung in der SharePoint-Suche um einen benutzerdefinierten Schritt ergänzen, in dem die verwalteten Eigenschaften von durchforsteten Elementen noch vor der Indizierung der Elemente verändert werden. Für diesen benutzerdefinierten Schritt muss ein externer Webdienst implementiert werden, der die verwalteten Eigenschaften von Elementen noch während der Elementverarbeitung erweitern kann: der Inhaltserweiterungs-Webdienst. Anschließend muss das System so konfiguriert werden, dass dieser externe Webdienst aufgerufen wird.
 
-Zur Implementierung des externen Inhaltserweiterungs-Webdiensts werden die Schnittstellen im Namespace [Microsoft.Office.Server.Search.ContentProcessingEnrichment](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.ContentProcessingEnrichment.aspx) verwendet.
+Zur Implementierung des externen Inhaltserweiterungs-Webdiensts werden die Schnittstellen im Namespace [Microsoft.Office.Server.Search.ContentProcessingEnrichment]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.ContentProcessingEnrichment.aspx)) verwendet.
 
 ## <a name="windows-powershell-cmdlets-to-use-with-the-content-enrichment-web-service"></a>Windows PowerShell-Cmdlets zur Verwendung mit dem Inhaltserweiterung-Webdienst
 <a name="SP15_PowerShell_Cmdlets_Content_Enrichment"> </a>
 
 Die Funktionalität Inhaltserweiterung, konfiguriert und mit den folgenden Cmdlets Windows PowerShell aktiviert:
 
--  [Get-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-DE/library/jj219783%28office.15%29.aspx)
+-  [Get-SPEnterpriseSearchContentEnrichmentConfiguration]((http://technet.microsoft.com/de-DE/library/jj219783%28office.15%29.aspx))
     
   
--  [Set-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-DE/library/jj219659%28office.15%29.aspx)
+-  [Set-SPEnterpriseSearchContentEnrichmentConfiguration]((http://technet.microsoft.com/de-DE/library/jj219659%28office.15%29.aspx))
     
   
--  [Remove-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-DE/library/jj219742%28office.15%29.aspx)
+-  [Remove-SPEnterpriseSearchContentEnrichmentConfiguration]((http://technet.microsoft.com/de-DE/library/jj219742%28office.15%29.aspx))
     
   
--  [New-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-DE/library/jj219502%28office.15%29.aspx)
+-  [New-SPEnterpriseSearchContentEnrichmentConfiguration]((http://technet.microsoft.com/de-DE/library/jj219502%28office.15%29.aspx))
     
   
 Diese Windows PowerShell-Cmdlets können Administratoren Folgendes konfigurieren:
@@ -119,12 +119,13 @@ In diesem Schritt werden Sie das Dienstprojekt Implementierung erstellen und fü
   
 2. Wählen Sie **Durchsuchen** aus, und suchen Sie die **Microsoft.Office.Server.Search.ContentProcessingEnrichment** -Assembly im Installationsordner von SharePoint unter _Installation Path_\\Microsoft Office Servers\\15.0\\Search\\Applications\\External. 
     
-    > **Hinweis:** Falls SharePoint auf einem anderen Computer als dem Entwicklungscomputer installiert ist, müssen Sie die Assembly auf den Entwicklungscomputer kopieren und von dort referenzieren. 
+    > [!NOTE]
+    > Falls SharePoint auf einem anderen Computer als dem Entwicklungscomputer installiert ist, müssen Sie die Assembly auf den Entwicklungscomputer kopieren und von dort referenzieren. 
 
 ## <a name="create-a-content-enrichment-service"></a>Erstellen eines Inhaltserweiterungsdiensts
 <a name="SP15ContentEnrich_createservice"> </a>
 
-Ihre Inhalte Verarbeitung Anreicherung Dienst muss die **IContentProcessingEnrichmentService** -Schnittstelle aus dem [Microsoft.Office.Server.Search.ContentProcessingEnrichment](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.ContentProcessingEnrichment.aspx) -Namespace implementieren. Das Codebeispiel in diesem Abschnitt wird eine einfache Implementierung dieser Schnittstelle.
+Ihre Inhalte Verarbeitung Anreicherung Dienst muss die **IContentProcessingEnrichmentService** -Schnittstelle aus dem [Microsoft.Office.Server.Search.ContentProcessingEnrichment]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.ContentProcessingEnrichment.aspx)) -Namespace implementieren. Das Codebeispiel in diesem Abschnitt wird eine einfache Implementierung dieser Schnittstelle.
   
     
     
@@ -309,11 +310,11 @@ Set-SPEnterpriseSearchContentEnrichmentConfiguration -SearchApplication
 $ssa -ContentEnrichmentConfiguration $config
 ```
 
-Die Abfolge der Windows PowerShell-Cmdlets können Sie zunächst ein Konfigurationsobjekt erstellen, mit dem Cmdlet  [New-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-DE/library/jj219502%28office.15%29.aspx) . Configuration-Objekts wird anschließend in Richtung der Service-Implementierung verwiesen; als bewährte Methode verwenden Sie `http://localhost:808` für _Site_URL_.
+Die Abfolge der Windows PowerShell-Cmdlets können Sie zunächst ein Konfigurationsobjekt erstellen, mit dem Cmdlet  [New-SPEnterpriseSearchContentEnrichmentConfiguration]((http://technet.microsoft.com/de-DE/library/jj219502%28office.15%29.aspx)) . Configuration-Objekts wird anschließend in Richtung der Service-Implementierung verwiesen; als bewährte Methode verwenden Sie `http://localhost:808` für _Site_URL_.
   
     
     
-Die verwalteten Eigenschaften **Author** und **Filename** werden an den Dienst für jedes Element gesendet, die verarbeitet wird. Darüber hinaus haben Sie die Webdienstclients darüber informiert, dass der Dienst eine einzelne verwaltete Eigenschaft **Author**ausgegeben wird. In ist zusätzlich zu verwalteten Eigenschaften WebClient-Dienst konfiguriert die Rohdaten des Elements mit einer Einschränkung auf die Größe der Daten senden. Schließlich wird das Cmdlet  [Set-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/de-DE/library/jj219659%28office.15%29.aspx)verwendet, um die gesamte Konfiguration zu speichern. Nachdem dieses Cmdlet zurückgibt, wird die Konfiguration aktiv ist, und die Durchforstungskomponente verwendet diese Konfiguration für den nächsten Durchforstungsvorgang.
+Die verwalteten Eigenschaften **Author** und **Filename** werden an den Dienst für jedes Element gesendet, die verarbeitet wird. Darüber hinaus haben Sie die Webdienstclients darüber informiert, dass der Dienst eine einzelne verwaltete Eigenschaft **Author**ausgegeben wird. In ist zusätzlich zu verwalteten Eigenschaften WebClient-Dienst konfiguriert die Rohdaten des Elements mit einer Einschränkung auf die Größe der Daten senden. Schließlich wird das Cmdlet  [Set-SPEnterpriseSearchContentEnrichmentConfiguration]((http://technet.microsoft.com/de-DE/library/jj219659%28office.15%29.aspx))verwendet, um die gesamte Konfiguration zu speichern. Nachdem dieses Cmdlet zurückgibt, wird die Konfiguration aktiv ist, und die Durchforstungskomponente verwendet diese Konfiguration für den nächsten Durchforstungsvorgang.
   
     
     
@@ -334,11 +335,11 @@ Remove-SPEnterpriseSearchContentEnrichmentConfiguration -SearchApplication $ssa
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15ContentEnrich_addresources"> </a>
 
 
--  [Starten, anhalten, fortsetzen oder Beenden einer Durchforstung](http://technet.microsoft.com/de-DE/library/jj219814%28office.15%29.aspx)
+-  [Starten, anhalten, fortsetzen oder Beenden einer Durchforstung]((http://technet.microsoft.com/de-DE/library/jj219814%28office.15%29.aspx))
     
   
 -  [Konfigurieren der Suche in SharePoint](configure-search-in-sharepoint.md)

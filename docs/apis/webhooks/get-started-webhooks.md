@@ -2,15 +2,15 @@
 title: Erste Schritte mit SharePoint-Webhooks
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 7692a59f944a302bffed2d33bc31d8fe4b9a0318
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 57bdb8406760d8951900353418e6794e9cdf45c9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="get-started-with-sharepoint-webhooks"></a>Erste Schritte mit SharePoint-Webhooks
 
-In diesem Artikel wird beschrieben, wie Sie eine Anwendung zum Hinzufügen und Bearbeiten von SharePoint-Webhook-Anforderungen erstellen. Sie erfahren, wie Sie SharePoint-Webhook-Anforderungen mit dem [Postman-Client](https://www.getpostman.com/) schnell erstellen und ausführen können, unter Verwendung einer einfachen ASP.NET-Web-API als Webhook-Empfänger.
+In diesem Artikel wird beschrieben, wie Sie eine Anwendung zum Hinzufügen und Bearbeiten von SharePoint-Webhook-Anforderungen erstellen. Sie erfahren, wie Sie SharePoint-Webhook-Anforderungen mit dem [Postman-Client]((https://www.getpostman.com/)) schnell erstellen und ausführen können, unter Verwendung einer einfachen ASP.NET-Web-API als Webhook-Empfänger.
 
 Für das Beispiel in diesem Artikel werden Sie mit einfachen HTTP-Anforderungen arbeiten. Sie eignen sich ideal, um Ihnen einen ersten Einblick in die Funktionsweise von Webhooks zu geben.  
 
@@ -18,11 +18,11 @@ Für das Beispiel in diesem Artikel werden Sie mit einfachen HTTP-Anforderungen 
 
 Damit Sie die Schritt-für-Schritt-Anleitungen in diesem Artikel nachvollziehen können, müssen Sie die folgenden Tools herunterladen und installieren:
 
-* [Google Chrome-Browser](http://google.com/chrome)
-* [Postman](https://www.getpostman.com/)
+* [Google Chrome-Browser]((http://google.com/chrome))
+* [Postman]((https://www.getpostman.com/))
 * [Visual Studio Community Edition](https://go.microsoft.com/fwlink/?LinkId=691978&clcid=0x409)
-* [ngrok](https://ngrok.com/) - Informationen zur Installation von ngrok finden Sie in Englisch unter [Download and Installation](https://ngrok.com/download) auf der ngrok-Website.
-* Ein Office 365-Abonnement mit SharePoint Online. Wenn Sie neu bei Office 365 sind, können Sie sich auch [für ein Office 365-Entwicklerkonto registrieren](http://dev.office.com/devprogram).
+* [ngrok]((https://ngrok.com/)) - Informationen zur Installation von ngrok finden Sie in Englisch unter [Download and Installation]((https://ngrok.com/)download) auf der ngrok-Website.
+* Ein Office 365-Abonnement mit SharePoint Online. Wenn Sie neu bei Office 365 sind, können Sie sich auch [für ein Office 365-Entwicklerkonto registrieren]((http://dev.office.com/devprogram)).
 
 ## <a name="step-1-register-a-microsoft-azure-active-directory-ad-application-for-postman-client"></a>Schritt 1: Registrieren einer Microsoft Azure Active Directory (AD)-Anwendung für den Postman-Client
 
@@ -62,7 +62,8 @@ In diesem Beispiel erstellen Sie den Webhook-Empfänger mit einem Visual Studio
 * Ändern Sie die Authentifizierungsoption in **Keine Authentifizierung**. Klicken Sie dazu auf die Schaltfläche **Authentifizierung ändern**.
 * Klicken Sie auf **OK**, um das Web-API-Projekt zu erstellen.
 
-> **Hinweis:** Sie können die Option **Host in the cloud** deaktivieren, da Sie dieses Projekt nicht in der Cloud bereitstellen werden.
+> [!NOTE]
+> Sie können die Option **In der Cloud hosten** deaktivieren, da Sie dieses Projekt nicht in der Cloud bereitstellen werden.
 
 Visual Studio erstellt nun Ihr Projekt.
 

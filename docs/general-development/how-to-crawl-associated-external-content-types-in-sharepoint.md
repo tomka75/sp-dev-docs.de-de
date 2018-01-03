@@ -3,11 +3,11 @@ title: Durchforsten zugeordneter externer Inhaltstypen in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 187ec42e-f749-4e22-abef-1df604143063
-ms.openlocfilehash: c6aaedd3271255c03840d8fd7c26abe689286f2b
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 5524dce752f7cd3a93954942024bcb624da66064
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="crawl-associated-external-content-types-in-sharepoint"></a>Durchforsten zugeordneter externer Inhaltstypen in SharePoint
 
@@ -16,7 +16,7 @@ In diesem Artikel erfahren Sie, wie Sie die suchspezifischen Eigenschaften im Bu
 ## <a name="crawling-the-associated-external-content-type"></a>Durchforsten des zugeordneten externen Inhaltstyps
 <a name="HowToCrawlAssociations_CrawlingAssociatedExternalTypes"> </a>
 
-Microsoft Business Connectivity Services (BCS) können Sie zwei verwandte externe Inhaltstypen, verknüpfen, der dann Sie verwandten externen Inhalte abgerufen werden sollen können. Beispielsweise können Sie externen Inhalte von zwei SQL Server Datenbank Datenbanktabellen basierenden externen Inhaltstypen abgerufen werden, die auf Fremdschlüsseln basieren. Dieses Konzept der Verknüpfung von zwei verwandte externer Inhaltstypen wird als eine  *Zuordnung*  bezeichnet. Weitere Informationen zu Zuordnungen finden Sie unter [Hinzufügen von Zuordnungen zwischen externen Inhaltstypen](http://msdn.microsoft.com/library/791e95ab-9b3c-413b-be12-bd0e59962c93%28Office.15%29.aspx). 
+Microsoft Business Connectivity Services (BCS) können Sie zwei verwandte externe Inhaltstypen, verknüpfen, der dann Sie verwandten externen Inhalte abgerufen werden sollen können. Beispielsweise können Sie externen Inhalte von zwei SQL Server Datenbank Datenbanktabellen basierenden externen Inhaltstypen abgerufen werden, die auf Fremdschlüsseln basieren. Dieses Konzept der Verknüpfung von zwei verwandte externer Inhaltstypen wird als eine  *Zuordnung*  bezeichnet. Weitere Informationen zu Zuordnungen finden Sie unter [Hinzufügen von Zuordnungen zwischen externen Inhaltstypen]((http://msdn.microsoft.com/library/791e95ab-9b3c-413b-be12-bd0e59962c93%28Office.15%29.aspx)). 
   
     
     
@@ -85,7 +85,8 @@ Wenn Sie eine Zuordnung so markieren möchten, dass sie als Anlage durchforstet 
 ```
 
 
-> **Hinweis:** Sie können einen beliebigen Wert für die Eigenschaft **AttachmentAccessor** angeben. Dieser Wert wird von der Suche nicht überprüft.
+> [!NOTE]
+> Sie können einen beliebigen Wert für die Eigenschaft **AttachmentAccessor** angeben. Dieser Wert wird von der Suche nicht überprüft.
   
     
     
@@ -110,27 +111,27 @@ Fügen Sie zum Markieren einer Zuordnung, dass sie als untergeordneter Inhaltsty
 </Association>
 ```
 
-
-> **Hinweis:** Sie können einen beliebigen Wert für die Eigenschaft **DirectoryLink** angeben. Dieser Wert wird von der Suche nicht überprüft.
+> [!NOTE]
+> Sie können einen beliebigen Wert für die Eigenschaft **DirectoryLink** angeben. Dieser Wert wird von der Suche nicht überprüft.
   
     
     
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15crawlects_addlresources"> </a>
 
 
 -  [Connector Framework für die Suche in SharePoint](search-connector-framework-in-sharepoint.md)
     
   
--  [Hinzufügen von Zuordnungen zwischen externen Inhaltstypen](http://msdn.microsoft.com/library/791e95ab-9b3c-413b-be12-bd0e59962c93%28Office.15%29.aspx)
+-  [Hinzufügen von Zuordnungen zwischen externen Inhaltstypen]((http://msdn.microsoft.com/library/791e95ab-9b3c-413b-be12-bd0e59962c93%28Office.15%29.aspx))
     
   
--  [Association-Element in MethodInstances (BDCMetadata-Schema)](http://msdn.microsoft.com/library/9659a1f5-1b12-03ef-f9e3-5c9904cc5dd0%28Office.15%29.aspx)
+-  [Association-Element in MethodInstances (BDCMetadata-Schema)]((http://msdn.microsoft.com/library/9659a1f5-1b12-03ef-f9e3-5c9904cc5dd0%28Office.15%29.aspx))
     
   
--  [Step 4 (Optional): Define Associations](http://msdn.microsoft.com/library/6bc55f46-459a-4986-8744-8c6c5f45097b%28Office.15%29.aspx)
+-  [Step 4 (Optional): Define Associations]((http://msdn.microsoft.com/library/6bc55f46-459a-4986-8744-8c6c5f45097b%28Office.15%29.aspx))
     
   
 

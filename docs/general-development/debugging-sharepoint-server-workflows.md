@@ -3,15 +3,15 @@ title: Debuggen von SharePoint-Workflows
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a5adf39b-8640-4871-be60-b786dcf9fafc
-ms.openlocfilehash: c8bbf5be25d073bdc08cbccfe2642411269a25e1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 49dd0e9ee38d6c1211af4dd813d1e932f480e830
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="debugging-sharepoint-workflows"></a>Debuggen von SharePoint-Workflows
 Hier finden Sie Erläuterungen dazu, wie SharePoint jetzt Workflow-Manager 1.0 für die Workflowverarbeitung und -verwaltung nutzt. Außerdem werden die Debugoptionen vorgestellt.
- **Bereitgestellt von:** [Andrew Connell](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/), [www.AndrewConnell.com](http://www.andrewconnell.com)
+ **Bereitgestellt von:** [Andrew Connell]((http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/)), [www.AndrewConnell.com]((http://www.andrewconnell.com))
   
     
 
@@ -380,9 +380,8 @@ Hierdurch wird das Zertifikat in Windows als vertrauenswürdig konfiguriert, obw
     
 ![Abbildung 7: Registerkarte „HTTPS“](../images/ngDebuggingSP2013Workflows07.png)
   
-    
-    
- >**Hinweis**: Wenn eine Sicherheitswarnung angezeigt wird, dass dem Fiddler-Zertifikat nicht vertraut werden sollte, klicken Sie auf **Ja**, um mit der Installation des Zertifikats fortzufahren.
+> [!NOTE]
+> Wenn eine Sicherheitswarnung angezeigt wird, dass dem Fiddler-Zertifikat nicht vertraut werden sollte, klicken Sie auf **Ja**, um mit der Installation des Zertifikats fortzufahren.
   
     
     
@@ -423,7 +422,7 @@ PS C:\\> New-SPTrustedRootAuthority -Name "Fiddler" -Certificate $fiddlerCertifi
 
 ### <a name="walkthrough-debugging-a-sharepoint-workflow-with-fiddler"></a>Exemplarische Vorgehensweise: Debuggen eines SharePoint-Workflows mit Fiddler
 
-In dieser einfachen exemplarischen Vorgehensweise wird die Verwendung von Fiddler zum Debuggen eines SharePoint-Workflows mithilfe von Visual Studio 2012 veranschaulicht. Wenn der Workflow gestartet wird, wird eine Kunden-ID aus einem Feld in einer benutzerdefinierten Liste abgerufen. Diese Kunden-ID dient zum Abfragen eines öffentlich zugänglich Diensts, um weitere Details über den Kunden abzurufen. Dann werden diese Werte zum Aktualisieren des ursprünglichen Listenelements verwendet. Der Workflow ist im folgenden MSDN-Codebeispiel zu finden: [SharePoint-Workflow: Aufrufen eines externen Webdiensts](http://code.msdn.microsoft.com/officeapps/SharePoint-workflow-48ea87d4.aspx).
+In dieser einfachen exemplarischen Vorgehensweise wird die Verwendung von Fiddler zum Debuggen eines SharePoint-Workflows mithilfe von Visual Studio 2012 veranschaulicht. Wenn der Workflow gestartet wird, wird eine Kunden-ID aus einem Feld in einer benutzerdefinierten Liste abgerufen. Diese Kunden-ID dient zum Abfragen eines öffentlich zugänglich Diensts, um weitere Details über den Kunden abzurufen. Dann werden diese Werte zum Aktualisieren des ursprünglichen Listenelements verwendet. Der Workflow ist im folgenden MSDN-Codebeispiel zu finden: [SharePoint-Workflow: Aufrufen eines externen Webdiensts]((http://code.msdn.microsoft.com/officeapps/SharePoint-workflow-48ea87d4.aspx)).
   
     
     
@@ -554,11 +553,11 @@ Eine Aufgabe, die Sie beim Erstellen von benutzerdefinierten Anwendungen und Ges
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
--  [Fiddler](http://fiddler2.com/home)
+-  [Fiddler]((http://fiddler2.com/home))
     
   
 

@@ -3,11 +3,11 @@ title: Anpassen eines Feldtyps mithilfe vom clientseitigem Rendering
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 18e32537-d7ed-4fe7-90cf-b6cfab3f85a3
-ms.openlocfilehash: dd6a1f5ac337d61c273d416bdc20c06117298e1e
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: fe2c7cf24fd1aeea149bef8c734fdc877865a1d9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="customize-a-field-type-using-client-side-rendering"></a>Anpassen eines Feldtyps mithilfe vom clientseitigem Rendering
 
@@ -48,7 +48,7 @@ In der folgenden Tabelle sind hilfreiche Artikel aufgeführt, die ein besseres V
 |**Titel des Artikels**|**Beschreibung**|
 |:-----|:-----|
 | [Erstellen von Farmlösungen in SharePoint](build-farm-solutions-in-sharepoint.md) <br/> |Erfahren Sie mehr über die Entwicklung, Verpackung und Bereitstellung von administrativen Erweiterungen für SharePoint mit Farmlösungen.  <br/> |
-| [Benutzerdefinierte Feldtypen](http://msdn.microsoft.com/de-DE/library/ms446361.aspx) <br/> |Erfahren Sie mehr über das Erstellen von benutzerdefinierten Feldtypen. Beim Speichern Ihrer Unternehmensinformationen in SharePoint kann es vorkommen, dass Ihre Daten nicht den Feldtypen entsprechen, die in SharePoint Foundation verfügbar sind, oder Sie möchten vielleicht einfach diese Feldtypen anpassen. Benutzerdefinierte Felder können eine benutzerdefinierte Datenüberprüfung und benutzerdefiniertes Feldrendering umfassen.  <br/> |
+| [Benutzerdefinierte Feldtypen]((http://msdn.microsoft.com/de-DE/library/ms446361.aspx)) <br/> |Erfahren Sie mehr über das Erstellen von benutzerdefinierten Feldtypen. Beim Speichern Ihrer Unternehmensinformationen in SharePoint kann es vorkommen, dass Ihre Daten nicht den Feldtypen entsprechen, die in SharePoint Foundation verfügbar sind, oder Sie möchten vielleicht einfach diese Feldtypen anpassen. Benutzerdefinierte Felder können eine benutzerdefinierte Datenüberprüfung und benutzerdefiniertes Feldrendering umfassen.  <br/> |
    
 
 ## <a name="code-example-customize-the-rendering-process-for-a-custom-field-type-in-a-view-form"></a>Codebeispiel: Anpassen des Renderingprozesses für einen benutzerdefinierten Feldtyp in einem Ansichtsformular
@@ -134,7 +134,8 @@ Abbildung 1 zeigt eine Ansichtsformular mit einem benutzerdefinierten, gerendert
   
   - Überschreibt die **JSLink**-Eigenschaft.
     
-    > **Hinweis:** Die JSLink-Eigenschaft wird für Umfrage- oder Ereignislisten nicht unterstützt. Ein SharePoint-Kalender ist eine Ereignisliste. 
+    > [!NOTE]
+    > Die JSLink-Eigenschaft wird nicht für Umfrage- oder Ereignislisten unterstützt. Ein SharePoint-Kalender ist eine Ereignisliste. 
 
 ```cs
 using System;
@@ -296,7 +297,9 @@ function favoriteColorViewTemplate(ctx) {
 
 1. Drücken Sie F5.
     
-    > **Hinweis:** Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, stellt die Lösung bereit und öffnet die SharePoint-Website, auf der die Lösung bereitgestellt wird. 
+    > [!NOTE]
+    > Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, stellt die Lösung bereit und öffnet die SharePoint-Website, auf der die Lösung bereitgestellt wird. 
+
 2. Erstellen Sie eine benutzerdefinierte Liste, und fügen Sie eine neue Feldspalte für die bevorzugte Farbe hinzu.
     
   
@@ -330,17 +333,17 @@ In diesem Artikel wird beschrieben, wie der Renderingprozess für einen benutzer
     
     
 
--  [Vorgehensweise: Erstellen eines benutzerdefinierten Feldtyps](http://msdn.microsoft.com/de-DE/library/bb862248.aspx)
+-  [Vorgehensweise: Erstellen eines benutzerdefinierten Feldtyps]((http://msdn.microsoft.com/de-DE/library/bb862248.aspx))
     
   
--  [ Exemplarische Vorgehensweise: Erstellen eines benutzerdefinierten Feldtyps](http://msdn.microsoft.com/de-DE/library/bb861799.aspx)
+-  [ Exemplarische Vorgehensweise: Erstellen eines benutzerdefinierten Feldtyps]((http://msdn.microsoft.com/de-DE/library/bb861799.aspx))
     
   
--  [Anpassen einer Listenansicht in Add-Ins für SharePoint durch clientseitiges Rendering](http://msdn.microsoft.com/library/8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86%28Office.15%29.aspx)
+-  [Anpassen einer Listenansicht in Add-Ins für SharePoint durch clientseitiges Rendering]((http://msdn.microsoft.com/library/8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86%28Office.15%29.aspx))
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15CustomizeafieldtypeusingCSR_AddResources"> </a>
 
 

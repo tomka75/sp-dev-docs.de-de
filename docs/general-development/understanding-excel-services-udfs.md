@@ -3,11 +3,11 @@ title: Grundlegendes zu Excel Services-UDFs
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a1567278-fac4-4b3b-a814-56f2376c1217
-ms.openlocfilehash: 175e916ef29f1211cc158634a883020da444b49b
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: a0cac568ed46e0b2230b302d514ba8f271ee636d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="understanding-excel-services-udfs"></a>Grundlegendes zu Excel Services-UDFs
 
@@ -119,10 +119,8 @@ UDF assemblies are disabled by default.
     
 Jeder vertrauenswürdige Excel Services-Speicherort verfügt über ein **AllowUdfs**-Flag.
   
-    
-    
-
-> **Hinweis:** Das **AllowUdfs**-Flag wird durch die Option **Benutzerdefinierte Funktionen sind zugelassen** auf der Seite „Vertrauenswürdige Dateispeicherorte von Excel Services“ bezeichnet. Informationen zum Navigieren zur Seite „Vertrauenswürdige Dateispeicherorte“ finden Sie in [Schritt 3: Bereitstellen und Aktivieren von UDFs](step-3-deploying-and-enabling-udfs.md). 
+> [!NOTE] 
+> Das **AllowUdfs**-Flag wird durch die Option **Benutzerdefinierte Funktionen sind zugelassen** auf der Seite „Vertrauenswürdige Dateispeicherorte von Excel Services“ bezeichnet. Informationen zum Navigieren zur Seite „Vertrauenswürdige Dateispeicherorte“ finden Sie in [Schritt 3: Bereitstellen und Aktivieren von UDFs](step-3-deploying-and-enabling-udfs.md). 
   
     
     

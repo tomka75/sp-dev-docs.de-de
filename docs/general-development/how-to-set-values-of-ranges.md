@@ -5,21 +5,18 @@ keywords: how to,howdoi,howto,set range
 f1_keywords: how to,howdoi,howto,set range
 ms.prod: sharepoint
 ms.assetid: ccc7e204-f857-45a9-81ec-3a8484e6d454
-ms.openlocfilehash: 0ed126fe8b25df7b34f05d22f02df6089c4fa55b
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 81f2ea350dff1bd84572cbe222f072b0c5d2c2a5
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="set-values-of-ranges"></a>Festlegen von Bereichswerten
 
 Excel Web Services bietet vier Methoden zum Festlegen von Werten in einer Excel-Arbeitsmappe: **SetCell**, **SetCellA1**, **SetRange** und **SetRangeA1**. 
   
-    
-    
-
-
-> **Hinweis:** Wenn Sie Änderungen an einer Arbeitsmappe vornehmen, z. B. durch Festlegen von Werten für einen Bereich mithilfe von Excel Web Services, bleiben die Änderungen an der Arbeitsmappe nur für diese bestimmte Sitzung erhalten. Die Änderungen werden nicht in der ursprünglichen Arbeitsmappe gespeichert oder persistent gemacht. Wenn die aktuelle Arbeitsmappensitzung endet (z. B. beim Aufruf der Methode **CloseWorkbook** oder bei einem Sitzungstimeout), gehen die vorgenommenen Änderungen verloren.> Wenn Sie Änderungen speichern möchten, die Sie an einer Arbeitsmappe vornehmen, können Sie die Methode **GetWorkbook** verwenden und die Arbeitsmappe dann mit der API der Zieldatei speichern. Weitere Informationen finden Sie unter [Abrufen einer kompletten Arbeitsmappe oder einer Momentaufnahme](how-to-get-an-entire-workbook-or-a-snapshot.md) und [Vorgehensweise: Speichern einer Arbeitsmappe](http://msdn.microsoft.com/library/feb74f7a-2d8f-4672-911b-de85f8852aea%28Office.15%29.aspx). 
+> [!NOTE]
+> Wenn Sie Änderungen an einer Arbeitsmappe vornehmen, z. B. durch Festlegen von Werten für einen Bereich mithilfe von Excel Web Services, bleiben die Änderungen an der Arbeitsmappe nur für diese bestimmte Sitzung erhalten. Die Änderungen werden nicht in der ursprünglichen Arbeitsmappe gespeichert oder persistent gemacht. Wenn die aktuelle Arbeitsmappensitzung endet (z. B. beim Aufruf der Methode **CloseWorkbook** oder bei einem Sitzungstimeout), gehen die vorgenommenen Änderungen verloren.> Wenn Sie Änderungen speichern möchten, die Sie an einer Arbeitsmappe vornehmen, können Sie die Methode **GetWorkbook** verwenden und die Arbeitsmappe dann mit der API der Zieldatei speichern. Weitere Informationen finden Sie unter [Abrufen einer kompletten Arbeitsmappe oder einer Momentaufnahme](how-to-get-an-entire-workbook-or-a-snapshot.md) und [Vorgehensweise: Speichern einer Arbeitsmappe]((http://msdn.microsoft.com/library/feb74f7a-2d8f-4672-911b-de85f8852aea%28Office.15%29.aspx)). 
   
     
     
@@ -50,7 +47,7 @@ xlservice.SetCell(sessionId, sheetName, 0, 0, 8);
 xlservice.SetCell(sessionId, sheetName, 0, 0, 8)
 ```
 
-If you are getting values from multiple adjacent cells, you may want to consider using the **SetRange** method instead of making multiple calls to the **SetCell** method. This results in a single round trip to the server instead of multiple round trips. Therefore, in some cases, you may gain a noticeable performance improvement by using the **SetRange** method instead of the **SetCell** method.When setting values into a range of cells using the **SetRange** and **SetRangeA1** methods, you use an object array ( **object[]** in C# and **Object ()** in Visual Basic .NET). The object array is actually a jagged array; each entry in the array is another array of objects representing the cells. For more information about jagged arrays, see [Jagged Arrays (C# Programming Guide)](http://go.microsoft.com/fwlink/?LinkId=65619) (http://msdn.microsoft.com/de-DE/library/2s05feca.aspx).
+If you are getting values from multiple adjacent cells, you may want to consider using the **SetRange** method instead of making multiple calls to the **SetCell** method. This results in a single round trip to the server instead of multiple round trips. Therefore, in some cases, you may gain a noticeable performance improvement by using the **SetRange** method instead of the **SetCell** method.When setting values into a range of cells using the **SetRange** and **SetRangeA1** methods, you use an object array ( **object[]** in C# and **Object ()** in Visual Basic .NET). The object array is actually a jagged array; each entry in the array is another array of objects representing the cells. For more information about jagged arrays, see [Jagged Arrays (C# Programming Guide)](http://go.microsoft.com/fwlink/?LinkId=65619) (((http://msdn.microsoft.com/de-DE/library/2s05feca.aspx))).
 ### <a name="to-set-values-by-using-the-setcell-and-setrange-methods"></a>To set values by using the SetCell and SetRange methods
 
 

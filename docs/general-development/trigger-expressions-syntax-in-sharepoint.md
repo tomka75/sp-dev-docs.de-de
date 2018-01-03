@@ -2,11 +2,11 @@
 title: "Syntax für Trigger Ausdrücken in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: bb466b4bff566808c970b4015815fd94651aff43
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b8ecbc4a50a26dfa03a612946186ee5a01a6bcc6
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="trigger-expressions-syntax-in-sharepoint"></a>Syntax von Triggerausdrücken in SharePoint
 Dieser Artikel beschreibt Triggerausdrücke, mit denen Sie Triggerbedingungen zur Konfiguration von Webdienstcallouts in SharePoint erstellen können. 
@@ -32,9 +32,8 @@ Elemente, die in einem Ausdruck für Trigger verwendet werden können, sind:
   
 - Konstanten
     
-  
-
-> **Hinweis:** Die Zeichenfolge „**Null**“ ist für den Wert **Null** reserviert. 
+> [!NOTE] 
+> Die Zeichenfolge „**Null**“ ist für den Wert **Null** reserviert. 
   
     
     
@@ -244,7 +243,7 @@ Es gibt zwei Sätze von Konstanten, die mit bestimmten Funktionen verwendet werd
 |**RegexOptionConstant** <br/> |**IgnoreCase** <br/> |Mit den Funktionen **IsMatch**, **Match**, **ReplaceRegex**und **IndexOfRegex**. <br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15triggerex_addresources"> </a>
 
 

@@ -3,24 +3,24 @@ title: "Dienste für maschinelle Übersetzung in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 15a81428-da94-40b8-8ed4-6a12f05661e2
-ms.openlocfilehash: e8a47de97c63f8c438d19e07a549a939cce30357
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b6ca7d803db3befe35d49836d441ea5eeee450b5
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="machine-translation-services-in-sharepoint"></a>Dienste für maschinelle Übersetzung in SharePoint
 Erfahren Sie mehr über Dienst für maschinelle Übersetzung, eine neue Dienstanwendung in SharePoint , die eine automatische maschinelle Übersetzung von Dateien und Websites bietet.
 ## <a name="machine-translation-service-overview"></a>Dienst für maschinelle Übersetzung-Übersicht
 <a name="TranslationSvc_Overview"> </a>
 
-
-> **Hinweis:** Wenn Sie die Funktion für maschinelle Übersetzung verwenden, können Benutzer Ihre Inhalte zwecks Übersetzung an Microsoft senden. Möglicherweise verwendet Microsoft von Benutzern gesendete Inhalte, um die Qualität der Übersetzungen zu verbessern. Wenn Sie den Dienst für maschinelle Übersetzung in Ihrer Anwendung verwenden, obliegt es Ihnen, die Benutzer darüber zu informieren, dass sie Inhalte zwecks Übersetzung an Microsoft senden können und dass Microsoft von Benutzern gesendete Inhalte möglicherweise zur Verbesserung der Qualität der Übersetzungen nutzt. Weitere Informationen finden Sie in den Datenschutzbestimmungen von Microsoft Translator. 
+> [!NOTE]
+> Wenn Sie die Funktion für maschinelle Übersetzung verwenden, können Benutzer Ihre Inhalte zwecks Übersetzung an Microsoft senden. Möglicherweise verwendet Microsoft von Benutzern gesendete Inhalte, um die Qualität der Übersetzungen zu verbessern. Wenn Sie den Dienst für maschinelle Übersetzung in Ihrer Anwendung verwenden, obliegt es Ihnen, die Benutzer darüber zu informieren, dass sie Inhalte zwecks Übersetzung an Microsoft senden können und dass Microsoft von Benutzern gesendete Inhalte möglicherweise zur Verbesserung der Qualität der Übersetzungen nutzt. Weitere Informationen finden Sie in den Datenschutzbestimmungen von Microsoft Translator. 
   
     
     
 
-Dienst für maschinelle Übersetzung ist eine neue Dienstanwendung in SharePoint, die eine automatische maschinelle Übersetzung von Dateien und Websites bietet. Wenn die Dienst für maschinelle Übersetzung-Anwendung eine Übersetzungsanforderung verarbeitet, wird die Anforderung an den in der Cloud gehosteten maschinellen Übersetzungsdienst  [Microsoft Translator](http://www.microsoft.com/de-DE/translator/) weitergeleitet, wo die tatsächliche Übersetzungsarbeit durchgeführt wird. Dieser Clouddienst betreibt auch die Microsoft Office-, Lync-, Yammer und Bing-Übersetzungsfeatures.
+Dienst für maschinelle Übersetzung ist eine neue Dienstanwendung in SharePoint, die eine automatische maschinelle Übersetzung von Dateien und Websites bietet. Wenn die Dienst für maschinelle Übersetzung-Anwendung eine Übersetzungsanforderung verarbeitet, wird die Anforderung an den in der Cloud gehosteten maschinellen Übersetzungsdienst  [Microsoft Translator]((http://www.microsoft.com/de-DE/translator/)) weitergeleitet, wo die tatsächliche Übersetzungsarbeit durchgeführt wird. Dieser Clouddienst betreibt auch die Microsoft Office-, Lync-, Yammer und Bing-Übersetzungsfeatures.
   
     
     
@@ -45,7 +45,7 @@ Synchrone Übersetzungsanforderungen werden verarbeitet, sobald sie gesendet wer
 ### <a name="shared-components-with-word-automation-services"></a>Gemeinsam genutzte Komponenten mit Word Automation Services
 <a name="TranslationSvc_SharedWAS"> </a>
 
-Die Dienst für maschinelle Übersetzung-Architektur verwendet mehrere Komponenten der Microsoft Word Automation Services-Architektur. Weitere Informationen zur Word Automation Services-Architektur finden Sie unter  [Architektur von Word Automation Services](http://msdn.microsoft.com/library/567bf68d-46bb-4ee8-981d-186549b9e5b8%28Office.15%29.aspx).
+Die Dienst für maschinelle Übersetzung-Architektur verwendet mehrere Komponenten der Microsoft Word Automation Services-Architektur. Weitere Informationen zur Word Automation Services-Architektur finden Sie unter  [Architektur von Word Automation Services]((http://msdn.microsoft.com/library/567bf68d-46bb-4ee8-981d-186549b9e5b8%28Office.15%29.aspx)).
   
     
     
@@ -241,7 +241,7 @@ Das Dienst für maschinelle Übersetzung-CSOM umfasst ein .NET-verwaltetes clien
   
     
     
-Weitere Informationen zum SharePoint-CSOM finden Sie unter  [SharePoint 2010-Clientobjektmodell](http://msdn.microsoft.com/library/8c086b11-2b8b-41ec-82ae-cd4fef0aeac6%28Office.15%29.aspx). Weitere Informaitonen zum **ClientContext**-Objekt, das der Einstiegspunkt für das CSOM ist, finden Sie unter  [Clientkontext als zentrales Objekt](http://msdn.microsoft.com/library/6299f0df-ab4c-40e6-b709-ec80271c99b3%28Office.15%29.aspx).
+Weitere Informationen zum SharePoint-CSOM finden Sie unter  [SharePoint 2010-Clientobjektmodell]((http://msdn.microsoft.com/library/8c086b11-2b8b-41ec-82ae-cd4fef0aeac6%28Office.15%29.aspx)). Weitere Informaitonen zum **ClientContext**-Objekt, das der Einstiegspunkt für das CSOM ist, finden Sie unter  [Clientkontext als zentrales Objekt]((http://msdn.microsoft.com/library/6299f0df-ab4c-40e6-b709-ec80271c99b3%28Office.15%29.aspx)).
   
     
     
@@ -277,7 +277,7 @@ Rufen Sie für das .NET-verwaltete CSOM eine **ClientContext**-Instanz ab (diese
   
     
     
-Beispielcode, in dem die Verwendung des .NET-verwalteten CSOMs veranschaulicht wird, finden Sie unter  [SharePoint: Zugreifen auf den maschinellen Übersetzungsdienst mithilfe des Clientobjektmodells](http://code.msdn.microsoft.com/SharePoint-Perform-a-8e53b06a).
+Beispielcode, in dem die Verwendung des .NET-verwalteten CSOMs veranschaulicht wird, finden Sie unter  [SharePoint: Zugreifen auf den maschinellen Übersetzungsdienst mithilfe des Clientobjektmodells]((http://code.msdn.microsoft.com/SharePoint-Perform-a-8e53b06a)).
   
     
     
@@ -293,7 +293,7 @@ Rufen Sie für das Silverlight-CSOM eine **ClientContext**-Instanz ab (diese bef
   
     
     
-Beispielcode, in dem die Verwendung des Silverlight-CSOM veranschaulicht wird, finden Sie unter  [SharePoint: Zugreifen auf den maschinellen Übersetzungsdienst von der Silverlight-Anwendung aus](http://code.msdn.microsoft.com/SharePoint-Access-cdaff6b2).
+Beispielcode, in dem die Verwendung des Silverlight-CSOM veranschaulicht wird, finden Sie unter  [SharePoint: Zugreifen auf den maschinellen Übersetzungsdienst von der Silverlight-Anwendung aus]((http://code.msdn.microsoft.com/SharePoint-Access-cdaff6b2)).
   
     
     
@@ -495,7 +495,7 @@ Rufen Sie für das JavaScript-CSOM eine **SP.ClientContext**-Instanz ab, und ver
   
     
     
-Beispielcode, in dem die Verwendung des JavaScript-CSOM veranschaulicht wird, finden Sie unter  [SharePoint: Zugreifen auf den maschinellen Übersetzungsdienst mit JavaScript](http://code.msdn.microsoft.com/SharePoint-Accessing-647f6dd9).
+Beispielcode, in dem die Verwendung des JavaScript-CSOM veranschaulicht wird, finden Sie unter  [SharePoint: Zugreifen auf den maschinellen Übersetzungsdienst mit JavaScript]((http://code.msdn.microsoft.com/SharePoint-Accessing-647f6dd9)).
   
     
     
@@ -649,7 +649,7 @@ clientContext.executeQueryAsync(Function.createDelegate(this, this.onQuerySuccee
 ## <a name="machine-translation-service-rest-service"></a>Dienst für maschinelle Übersetzung-REST-Dienst
 <a name="TranslationSvc_REST"> </a>
 
-SharePoint umfasst einen REST-Dienst (Representational State Transfer), mit dem Sie remote mit der Dienst für maschinelle Übersetzung-Anwendung unter Verwendung einer Technologie interagieren können, die REST-Webanforderungen unterstützt. Allgemeine Informationen zu REST in SharePoint finden Sie unter  [Programmieren mit dem SharePoint REST-Dienst](http://msdn.microsoft.com/library/d4b5c277-ed50-420c-8a9b-860342284b72%28Office.15%29.aspx).
+SharePoint umfasst einen REST-Dienst (Representational State Transfer), mit dem Sie remote mit der Dienst für maschinelle Übersetzung-Anwendung unter Verwendung einer Technologie interagieren können, die REST-Webanforderungen unterstützt. Allgemeine Informationen zu REST in SharePoint finden Sie unter  [Programmieren mit dem SharePoint REST-Dienst]((http://msdn.microsoft.com/library/d4b5c277-ed50-420c-8a9b-860342284b72%28Office.15%29.aspx)).
   
     
     
@@ -800,7 +800,7 @@ Der SharePoint-Dienst für maschinelle Übersetzungen verwendet beim Übersetzen
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="TranslationSvc_AR"> </a>
 
 

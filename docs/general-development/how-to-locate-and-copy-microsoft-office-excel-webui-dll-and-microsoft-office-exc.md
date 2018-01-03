@@ -5,11 +5,11 @@ keywords: how to,howdoi,howto,WebUI DLL
 f1_keywords: how to,howdoi,howto,WebUI DLL
 ms.prod: sharepoint
 ms.assetid: 09ad5d5e-1678-45e4-8159-23ef56f84215
-ms.openlocfilehash: 07089089b39fec2e6c7bd804f7188b5e0b666859
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 227d8f98a7ab49d090612ed6411b44865a4d2ea8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="locate-and-copy-microsoftofficeexcelwebuidll-and-microsoftofficeexcelwebuiinternaldll"></a>Suchen und Kopieren von Microsoft.Office.Excel.WebUI.dll und Microsoft.Office.Excel.WebUI.Internal.dll
 
@@ -40,9 +40,8 @@ The following steps show how to:
   
 - Kopieren Sie die Microsoft.Office.Excel.WebUI.dll aus dem globalen Assemblycache in einen beliebigen Ordner.
     
-  
-
-> **Hinweis:** Wiederholen Sie die Schritte zum Kopieren der Microsoft.Office.Excel.WebUI.Internal.dll aus dem globalen Assemblycache in einen Ordner. 
+> [!NOTE]
+> Wiederholen Sie diese Schritte, um Microsoft.Office.Excel.WebUI.Internal.dll aus dem globalen Assemblycache in einen Ordner zu kopieren. 
   
     
     
@@ -61,21 +60,23 @@ The following steps show how to:
   
 3. Verwenden Sie den **cd**-Befehl, um zum Verzeichnis „C:\\Windows\\assembly“ zu navigieren:
     
-    > **Hinweis:** Die Verzeichnisstruktur auf Ihrem Computer kann möglicherweise abweichen. In diesem Beispiel wird ein Computer mit Windows Server 2008 verwendet. 
+    > [!NOTE]
+    > Die Verzeichnisstruktur auf Ihrem Computer kann möglicherweise abweichen. In diesem Beispiel wird ein Computer mit Windows Server 2008 verwendet. 
 
-```
-  
-cd C:\\Windows\\assembly
-```
+
+    ```
+      
+    cd C:\\Windows\\assembly
+    ```
 
 4. Verwenden Sie den **dir**-Befehl zum Anzeigen der Inhalte im Verzeichnis „C:\\Windows\\assembly“:
     
-```
-  C:\\Windows\\assembly>dir
-```
+    ```
+      C:\\Windows\\assembly>dir
+    ```
 
 
-    You will see contents similar to the following:
+  You will see contents similar to the following:
     
 
 

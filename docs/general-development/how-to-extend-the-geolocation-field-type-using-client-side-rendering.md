@@ -3,11 +3,11 @@ title: Erweitern des Geolocation-Feldtyps mithilfe von clientseitigem Rendering
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7360633a-a7cf-4194-8bbd-8dd7c323e80b
-ms.openlocfilehash: d0b285a0768551adbef4f3b08ffe6f704e75c1ee
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 581d20c80cb4140d3b4a6d8a936909464c83b83b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="extend-the-geolocation-field-type-by-using-client-side-rendering"></a>Erweitern des Geolocation-Feldtyps mithilfe von clientseitigem Rendering
 
@@ -19,7 +19,9 @@ SharePoint führt einen neuen Feldtyp namens Geolocation, die Ihnen das Hinzufü
     
 
 Nachdem Sie den Geolocation-Feldtyp SharePoint hinzugefügt haben, können Sie es zum Rendern von Karten mithilfe von Bing Maps verwenden. Das integrierte Geolocation-Feld kann nur mit Bing Maps gerendert werden. Jedoch können Sie ein benutzerdefiniertes Feld erstellen, mit der Geolocation-Feld als einen übergeordneten Feldtyp. Benutzerdefiniertes Rendering kann über die **JSLink** -Eigenschaft in clientseitiges Rendering Framework bereitgestellt werden. Clientseitiges Rendering Rahmen wird in SharePoint eingeführt. Weitere Informationen finden Sie unter [Vorgehensweise: Anpassen eines Feldtyps mithilfe vom clientseitigem Rendering](how-to-customize-a-field-type-using-client-side-rendering.md). 
-> **Hinweis:** Die JSLink-Eigenschaft wird für Umfrage- oder Ereignislisten nicht unterstützt. Ein SharePoint-Kalender ist eine Ereignisliste. 
+
+> [!NOTE]
+> Die JSLink-Eigenschaft wird nicht für Umfrage- oder Ereignislisten unterstützt. Ein SharePoint-Kalender ist eine Ereignisliste. 
   
     
     
@@ -128,12 +130,10 @@ Sie müssen über Folgendes verfügen:
 ## <a name="step-2-create-a-custom-field-class"></a>Schritt 2: Erstellen einer benutzerdefinierten Feldklasse
 <a name="CreatingCustomGeolocationStep_2"> </a>
 
- Eine Feldklasse ist eine Klasse, deren Instanzen können bestimmte Felder darstellen, die auf benutzerdefinierten Feldtyps basieren. Diese Klasse muss von **SPField** oder eine der Klassen in SharePoint Foundation, die sich daraus ableiten erben. Diese Klasse muss zum Aktivieren Sie erweitern oder Anpassen des Geolocation-Feldtyps von **SPFieldGeolocation**erben. Weitere Informationen zum Erstellen von Feldtypen finden Sie unter  [Walkthrough: Creating a Custom Field Type](http://msdn.microsoft.com/library/089a1b8a-cafc-4050-b445-16650602fe4f%28Office.15%29.aspx). 
+ Eine Feldklasse ist eine Klasse, deren Instanzen können bestimmte Felder darstellen, die auf benutzerdefinierten Feldtyps basieren. Diese Klasse muss von **SPField** oder eine der Klassen in SharePoint Foundation, die sich daraus ableiten erben. Diese Klasse muss zum Aktivieren Sie erweitern oder Anpassen des Geolocation-Feldtyps von **SPFieldGeolocation**erben. Weitere Informationen zum Erstellen von Feldtypen finden Sie unter  [Walkthrough: Creating a Custom Field Type]((http://msdn.microsoft.com/library/089a1b8a-cafc-4050-b445-16650602fe4f%28Office.15%29.aspx)). 
   
-    
-    
-
-> **Hinweis:** In diesem Beispiel werden die Klasse und die Lösung **CustomGeolocationField** benannt. Sie können den Namen der Klasse und des Projekts beim Erstellen des Visual Studio-Projekts angeben. 
+> [!NOTE]
+> In diesem Beispiel werden die Klasse und die Lösung **CustomGeolocationField** benannt. Sie können den Namen der Klasse und des Projekts beim Erstellen des Visual Studio-Projekts angeben. 
   
     
     
@@ -205,7 +205,7 @@ public override string JSLink
         }
 ```
 
-5. Die **GetFieldValue** -Methode konvertiert den angegebenen Wert in einen Wert vom Typ dar. Weitere Informationen über die **GetFieldValue** -Methode finden Sie unter [GetFieldValue(String)](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPField.GetFieldValue.aspx) . Die folgende Überschreibung der **GetFieldValue** -Methode der **CustomGeolocationField** -Klasse hinzufügen.
+5. Die **GetFieldValue** -Methode konvertiert den angegebenen Wert in einen Wert vom Typ dar. Weitere Informationen über die **GetFieldValue** -Methode finden Sie unter [GetFieldValue(String)]((https://msdn.microsoft.com/library/Microsoft.SharePoint.SPField.GetFieldValue.aspx)) . Die folgende Überschreibung der **GetFieldValue** -Methode der **CustomGeolocationField** -Klasse hinzufügen.
     
 ```cs
   
@@ -221,7 +221,7 @@ public override string JSLink
         }
 ```
 
-6. Die folgende Überschreibung der  [GetValidatedString](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPField.GetValidatedString.aspx) -Methode der **CustomGeolocationField** -Klasse hinzufügen:
+6. Die folgende Überschreibung der  [GetValidatedString]((https://msdn.microsoft.com/library/Microsoft.SharePoint.SPField.GetValidatedString.aspx)) -Methode der **CustomGeolocationField** -Klasse hinzufügen:
     
 ```cs
   
@@ -460,7 +460,7 @@ Das folgende Codebeispiel erstellt neues Rendering für ein neues benutzerdefini
 ## <a name="step-4-create-a-field-type-definition"></a>Schritt 4: Erstellen einer feldtypdefinition
 <a name="CreatingCustomGeolocationStep_4"> </a>
 
-Eine feldtypdefinition ist eine XML-Datei mit dem Namen  _fldtypes*.xml_, die in %ProgramFiles%\\Common Files\\Microsoft Shared\\web Server extensions\\15\\TEMPLATE\\XML bereitgestellt wird. Eine Feld-Definitionsdatei enthält Informationen, SharePoint Foundation benötigt, um das Feld in Listenansichten und Formularen anzeigen, bearbeiten und neu ordnungsgemäß zu rendern. Der wichtigste enthält die Definition Informationen über die Assembly, die den kompilierten Feldtyp enthält. Weitere Informationen zu feldtypdefinitionen finden Sie unter [Vorgehensweise: Erstellen einer Custom Field Type Definition](http://msdn.microsoft.com/library/b3315997-671f-4c29-9518-48cc4592f205%28Office.15%29.aspx).
+Eine feldtypdefinition ist eine XML-Datei mit dem Namen  _fldtypes*.xml_, die in %ProgramFiles%\\Common Files\\Microsoft Shared\\web Server extensions\\15\\TEMPLATE\\XML bereitgestellt wird. Eine Feld-Definitionsdatei enthält Informationen, SharePoint Foundation benötigt, um das Feld in Listenansichten und Formularen anzeigen, bearbeiten und neu ordnungsgemäß zu rendern. Der wichtigste enthält die Definition Informationen über die Assembly, die den kompilierten Feldtyp enthält. Weitere Informationen zu feldtypdefinitionen finden Sie unter [Vorgehensweise: Erstellen einer Custom Field Type Definition]((http://msdn.microsoft.com/library/b3315997-671f-4c29-9518-48cc4592f205%28Office.15%29.aspx)).
   
     
     
@@ -513,7 +513,9 @@ Nachdem Sie ein benutzerdefiniertes Feld in der SharePoint-Server bereitstellen,
 
 1. Drücken Sie F5.
     
-    > **Hinweis:** Wenn Sie F5 drücken, erstellt Visual Studio die Projektmappe, stellt die Lösung bereit und öffnet die SharePoint-Website, auf der die Lösung bereitgestellt wird. 
+    > [!NOTE]
+    > Wenn Sie F5 drücken, erstellt Visual Studio die Projektmappe, stellt die Lösung bereit und öffnet die SharePoint-Website, auf der die Lösung bereitgestellt wird. 
+
 2. Erstellen Sie eine benutzerdefinierte Liste, und fügen Sie eine neue benutzerdefinierte Geolocation-Feldspalte hinzu.
     
   
@@ -533,7 +535,7 @@ Nachdem Sie ein benutzerdefiniertes Feld in der SharePoint-Server bereitstellen,
 
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15Createcustomgeo_addlresources"> </a>
 
 
@@ -546,13 +548,13 @@ Nachdem Sie ein benutzerdefiniertes Feld in der SharePoint-Server bereitstellen,
 -  [Vorgehensweise: Anpassen eines Feldtyps mithilfe vom clientseitigem Rendering](how-to-customize-a-field-type-using-client-side-rendering.md)
     
   
--  [SharePoint: Erstellen eines Geolocation-Felds, das Karten mithilfe von Nokia Maps wiedergibt](http://code.msdn.microsoft.com/SharePoint-Create-a-d9a91551)
+-  [SharePoint: Erstellen eines Geolocation-Felds, das Karten mithilfe von Nokia Maps wiedergibt]((http://code.msdn.microsoft.com/SharePoint-Create-a-d9a91551))
     
   
--  [Vorgehensweise: erstellen ein benutzerdefinierten Feldtyps](http://msdn.microsoft.com/library/aacdc6d1-86c8-4a6b-953d-22ecac209d0f%28Office.15%29.aspx)
+-  [Vorgehensweise: erstellen ein benutzerdefinierten Feldtyps]((http://msdn.microsoft.com/library/aacdc6d1-86c8-4a6b-953d-22ecac209d0f%28Office.15%29.aspx))
     
   
--  [Bereitstellen von Dateien mithilfe von Ordnern zugeordnet sind](http://blogs.msdn.com/b/vssharepointtoolsblog/archive/2010/03/12/deploying-files-using-mapped-folders.aspx)
+-  [Bereitstellen von Dateien mithilfe von Ordnern zugeordnet sind]((http://blogs.msdn.com/b/vssharepointtoolsblog/archive/2010/03/12/deploying-files-using-mapped-folders.aspx))
     
   
 

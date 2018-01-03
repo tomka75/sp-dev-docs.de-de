@@ -2,11 +2,11 @@
 title: Arbeiten mit Ordnern und Dateien unter Verwendung von REST
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: e73431770902a5cfca0d5192f335091f39419f73
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: dd1d975f35dd92ab23a351a19dc52b0a04fa15a6
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="working-with-folders-and-files-with-rest"></a>Arbeiten mit Ordnern und Dateien unter Verwendung von REST
 In diesem Artikel erfahren Sie, wie Sie grundlegende Erstellungs-, Lese-, Aktualisierungs- und Löschoperationen, auch als CRUD-Operationen (Create, Read, Update, Delete) bezeichnet, für Ordner und Dateien mit der SharePoint 2013 REST-Schnittstelle durchführen.
@@ -122,7 +122,8 @@ Headers:
 
 Das folgende Beispiel zeigt, wie Sie eine Datei **aktualisieren** und dazu die **PUT**-Methode verwenden.
 
- **Hinweis**   **PUT** ist die einzige Methode, die Sie zum Aktualisieren einer Datei verwenden können. Die Methode **MERGE** ist nicht zulässig.
+> [!NOTE]
+> **PUT** ist die einzige Methode, die Sie zum Aktualisieren einer Datei verwenden können. Die Methode **MERGE** ist nicht zulässig.
 
 ```
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/$value
@@ -247,7 +248,8 @@ headers:
 
 Das folgende Beispiel zeigt, wie Sie eine an ein Listenelement angefügte Datei **erstellen** und dabei die Methode **PUT** verwenden.
 
- **Hinweis**   **PUT** ist die einzige Methode, die Sie zum Aktualisieren einer Datei verwenden können. Die Methode **MERGE** ist nicht zulässig.
+> [!NOTE]
+> **PUT** ist die einzige Methode, die Sie zum Aktualisieren einer Datei verwenden können. Die Methode **MERGE** ist nicht zulässig.
  
 ```
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles('file name')/$value
@@ -259,15 +261,15 @@ headers:
     X-RequestDigest: form digest value
     content-length:length of post body
 ```
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint REST-Endpunkten](../../sp-add-ins/complete-basic-operations-using-sharepoint-rest-endpoints.md)
--  [Dateien und Ordner – REST-API-Referenz](http://msdn.microsoft.com/library/2c3d2545-1cd7-497e-b535-12199d8edfbb%28Office.15%29.aspx)
+-  [Dateien und Ordner – REST-API-Referenz]((http://msdn.microsoft.com/library/2c3d2545-1cd7-497e-b535-12199d8edfbb%28Office.15%29.aspx))
 -  [Hochladen von Dateien mithilfe der REST-API und jQuery](upload-a-file-by-using-the-rest-api-and-jquery.md)
 -  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest.md)
--  [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
--  [SharePoint 2013: Ausführen grundlegender Datenzugriffsvorgänge für Dateien und Ordner mithilfe von REST](http://code.msdn.microsoft.com/SharePoint-2013-Perform-ab9c4ae5)
+-  [SharePoint-Add-in-REST-OData-BasicDataOperations]((https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations))
+-  [SharePoint 2013: Ausführen grundlegender Datenzugriffsvorgänge für Dateien und Ordner mithilfe von REST]((http://code.msdn.microsoft.com/SharePoint-2013-Perform-ab9c4ae5))
 -  [Durchführen von REST-Aufrufen mit C# und JavaScript für SharePoint 2013](http://www.microsoft.com/resources/msdn/en-us/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;VideoID=4e4cc094-ff69-405b-852f-2ac7c41293c5)
 -  [Durchführen von REST-Aufrufen mit C# und JavaScript für SharePoint 2013 Demo](http://www.microsoft.com/resources/msdn/en-us/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;VideoID=b1e7c9c5-0f62-4a78-bb7b-8e283c86145c)
 -  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint 2013-Clientbibliothekscode](../../sp-add-ins/complete-basic-operations-using-sharepoint-client-library-code.md)
@@ -275,5 +277,5 @@ headers:
 -  [Entwickeln von Add-Ins für SharePoint](../../sp-add-ins/develop-sharepoint-add-ins.md)
 -  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](../../sp-add-ins/secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
 -  [Arbeiten mit externen Daten in SharePoint 2013](../../sp-add-ins/work-with-external-data-in-sharepoint.md)
--  [Open Data Protocol](http://www.odata.org/)
--  [OData: JSON(JavaScript Object Notation)-Format](http://www.odata.org/documentation/odata-version-2-0/JSON-format/)
+-  [Open Data Protocol]((http://www.odata.org/))
+-  [OData: JSON(JavaScript Object Notation)-Format]((http://www.odata.org/)documentation/odata-version-2-0/JSON-format/)

@@ -2,11 +2,11 @@
 title: Hochladen von Dateien mithilfe der REST-API und jQuery
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 891b9682406188b0c5dff9f07161c1da8ca25739
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 58b1dfdee85d3f476285f7486e150d8c79d49e59
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="upload-a-file-by-using-the-rest-api-and-jquery"></a>Hochladen von Dateien mithilfe der REST-API und jQuery
 Erfahren Sie, wie Sie eine lokale Datei mithilfe der REST-API und jQuery AJAX-Anforderungen in einen SharePoint-Ordner hochladen.
@@ -28,7 +28,8 @@ Für dieses Verfahren werden die folgenden allgemeinen Schritte verwendet:
 ## <a name="running-the-code-examples"></a>Ausführen der Codebeispiele
 <a name="RunTheExamples"> </a> In beiden Codebeispielen dieses Artikels werden die REST-API und jQuery AJAX-Anforderungen verwendet, um eine Datei in den Ordner **Shared Documents** hochzuladen und dann die Eigenschaften von Listenelementen zu ändern. Im ersten Beispiel wird **SP.AppContextSite** für SharePoint-domänenübergreifende Aufrufe verwendet. Genauso erfolgt dies beim Hochladen von Dateien in das Hostweb durch ein von SharePoint gehostetes Add-In. Im zweiten Beispiel werden Aufrufe in der gleichen Domäne ausgeführt, wie dies beim Hochladen von Dateien in das Add-in-Web durch ein von SharePoint gehostetes Add-in oder beim Hochladen von Dateien durch eine auf dem Server ausgeführte Lösung der Fall wäre.
 
- **Hinweis**  In JavaScript geschriebene, vom Anbieter gehostete Add-ins müssen die domänenübergreifende Bibliothek „SP.RequestExecutor“ verwenden, um Anforderungen an eine SharePoint-Domäne zu senden. Ein Beispiel finden Sie unter [Upload a file by using the cross-domain library](http://msdn.microsoft.com/library/2c3d2545-1cd7-497e-b535-12199d8edfbb%28Office.15%29.aspx#bk_FileCollectionAdd) (Hochladen einer Datei mithilfe der domänenübergreifenden Bibliothek).
+> [!NOTE]
+> In JavaScript geschriebene, vom Anbieter gehostete Add-ins müssen die domänenübergreifende Bibliothek „SP.RequestExecutor“ verwenden, um Anforderungen an eine SharePoint-Domäne zu senden. Ein Beispiel finden Sie unter [Hochladen einer Datei mithilfe der domänenübergreifenden Bibliothek](http://msdn.microsoft.com/library/2c3d2545-1cd7-497e-b535-12199d8edfbb%28Office.15%29.aspx#bk_FileCollectionAdd).
  
 Um die Beispiele aus diesem Artikel auszuführen, benötigen Sie Folgendes:
  
@@ -363,11 +364,11 @@ function onError(error) {
 }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Grundlegendes zum SharePoint REST-Dienst](get-to-know-the-sharepoint-rest-service.md)
 -  [Arbeiten mit Ordnern und Dateien unter Verwendung von REST](working-with-folders-and-files-with-rest.md)
 -  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest.md)
--  [REST-API-Referenz und Beispiele](http://msdn.microsoft.com/library/02128c70-9d27-4388-9374-a11bce68fdb8%28Office.15%29.aspx)
+-  [REST-API-Referenz und Beispiele]((http://msdn.microsoft.com/library/02128c70-9d27-4388-9374-a11bce68fdb8%28Office.15%29.aspx))
 -  [Zugreifen auf SharePoint-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](../../sp-add-ins/access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md)

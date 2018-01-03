@@ -2,17 +2,18 @@
 title: Lokalisieren von clientseitigen SharePoint-Framework-Webparts
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 98736d394ccfcdfc8dade88ddafb0aff298e7825
-ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.openlocfilehash: 7ea0ef5723102b791f1db98824cc477dd36f4d9f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="localize-sharepoint-framework-client-side-web-parts"></a>Lokalisieren von clientseitigen SharePoint-Framework-Webparts
 
 Sie können die Darstellung Ihres SharePoint Framework mithilfe des clientseitigen-Webparts erweitern, indem Sie ihn für die verschiedenen Sprachen lokalisieren, die von SharePoint-Benutzern weltweit gesprochen werden. In diesem Artikel lokalisieren Sie einen Webpart für das Gebietsschema Niederländisch (Niederlande), und stellen Sie sicher, dass die lokalisierten Werte ordnungsgemäß angezeigt werden.
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen können, müssen Sie [Ihre Entwicklungsumgebung für die Erstellung clientseitiger SharePoint-Webparts einrichten](../../set-up-your-development-environment.md).
+> [!NOTE] 
+> Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment.md).
 
 ## <a name="prepare-the-project"></a>Vorbereiten des Projekts
 
@@ -245,7 +246,8 @@ Führen Sie den folgenden Befehl aus, um sicherzustellen, dass das Projekt ausge
 gulp serve
 ```
 
->**Hinweis:** Leider unterstützt die SharePoint-Workbench derzeit keine Vorschau für die lokalisierten Werte aus dem Webpart-Manifest. Es wird immer die Standard-Übersetzung verwendet.
+> [!NOTE] 
+> Leider unterstützt die SharePoint-Workbench derzeit keine Vorschau für die lokalisierten Werte aus dem Webpart-Manifest. Es wird immer die Standard-Übersetzung verwendet.
 
 ## <a name="localize-the-web-part-property-pane"></a>Lokalisieren des Webpart-Eigenschaftenbereichs
 
@@ -452,7 +454,7 @@ define([], function() {
 });
 ```
 
-> **Tipp:** Sie können die US-englischen Zeichenfolgen unter [http://www.pseudolocalize.com](http://www.pseudolocalize.com) in die entsprechenden Basis-Pseudogebietsschema-Äquivalente konvertieren. Durch eine Erhöhung der Länge der generierten Zeichenfolge von 35 % sollten Sie die Länge der übersetzten Zeichenfolgen in längere Gebietsschemas wie z. B. Deutsch oder Niederländisch simulieren können. Durch das Umschließen der Übersetzungen mit Klammern und Ausrufezeichen können Sie leichter sehen, ob die gesamte Zeichenfolge auf dem Bildschirm angezeigt wird.
+> **Tipp:** Sie können die US-englischen Zeichenfolgen unter [(http://www.pseudolocalize.com)]((http://www.pseudolocalize.com)) in die entsprechenden Basis-Pseudogebietsschema-Äquivalente konvertieren. Durch eine Erhöhung der Länge der generierten Zeichenfolge von 35 % sollten Sie die Länge der übersetzten Zeichenfolgen in längere Gebietsschemas wie z. B. Deutsch oder Niederländisch simulieren können. Durch das Umschließen der Übersetzungen mit Klammern und Ausrufezeichen können Sie leichter sehen, ob die gesamte Zeichenfolge auf dem Bildschirm angezeigt wird.
 
 Testen Sie das Projekt mit dem Basis-Pseudogebietsschema, indem Sie folgenden Befehl ausführen:
 
@@ -482,7 +484,8 @@ Mit vom SharePoint Framework bereitgestellten Bausteinen können Sie Ihren Webpa
 
 ![Mit mehreren im Webparteigenschaftenbereich wiedergegebenen Textfeldern ist die Übersetzung von Webpartwerten möglich](../../../images/localization-multilingual-properties.png)
 
-> **Hinweis:** Bei der zum Testen des in diesem Artikel veranschaulichten Webparts verwendeten SharePoint-Website handelt es sich um eine mehrsprachige Website, bei der als Sprachen US-Englisch, Niederländisch und Deutsch aktiviert sind. Weitere Informationen zum Aktivieren von zusätzlicher Sprachen auf SharePoint-Websites finden Sie in dem Support-Artikel [Auswahl der Sprachen für die Benutzeroberfläche einer Website](https://support.office.com/de-DE/article/Choose-the-languages-you-want-to-make-available-for-a-site-s-user-interface-16d3a83c-05ab-4b50-8fbb-ff576a3351e8).
+> [!NOTE] 
+> Bei der zum Testen des in diesem Artikel veranschaulichten Webparts verwendeten SharePoint-Website handelt es sich um eine mehrsprachige Website, bei der als Sprachen US-Englisch, Niederländisch und Deutsch aktiviert sind. Weitere Informationen zum Aktivieren von zusätzlicher Sprachen auf SharePoint-Websites finden Sie in dem Support-Artikel [Auswahl der Sprachen für die Benutzeroberfläche einer Website]((https://support.office.com/de-DE/article/Choose-the-languages-you-want-to-make-available-for-a-site-s-user-interface-16d3a83c-05ab-4b50-8fbb-ff576a3351e8)).
 
 ### <a name="add-list-of-languages-supported-by-sharepoint-online"></a>Hinzufügen einer von SharePoint Online unterstützten Liste von Sprachen
 

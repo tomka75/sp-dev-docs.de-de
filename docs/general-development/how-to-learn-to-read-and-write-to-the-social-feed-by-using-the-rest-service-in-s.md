@@ -3,11 +3,11 @@ title: "Lesen und Schreiben in den Feed für soziale Netzwerke mithilfe des REST
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 1da8d484-3666-42c3-8a8f-8b3ef93e96e9
-ms.openlocfilehash: 2fafda13f6d5c6e62f7519bd9896c91a87dcc5f3
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 51db8b71573045c030ce7b941344c1203fed2b27
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="read-and-write-to-the-social-feed-by-using-the-rest-service-in-sharepoint"></a>Lesen und Schreiben in den Feed für soziale Netzwerke mithilfe des REST-Diensts in SharePoint
 
@@ -18,10 +18,8 @@ Erstellen Sie eine von SharePoint gehostete App, die den REST-Dienst zum Veröff
 
 In diesem Artikel wird davon ausgegangen, dass Sie die SharePoint-Add-In mithilfe einer Napa- oder Office 365-Entwicklerwebsite erstellen. Wenn Sie diese Entwicklungsumgebung verwenden, sind die Voraussetzungen bereits erfüllt.
   
-    
-    
-
-> **Hinweis:** Unter [Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx) erhalten Sie Informationen zur Registrierung für eine Entwicklerwebsite und zu den ersten Schritten mit Napa.
+> [!NOTE]
+> Unter [Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365]((http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx)) erhalten Sie Informationen zur Registrierung für eine Entwicklerwebsite und zu den ersten Schritten mit Napa.
   
     
     
@@ -39,9 +37,8 @@ Wenn Sie nicht mit Napa auf einer Entwicklerwebsite arbeiten, benötigen Sie Fol
   
 - Zugriffsberechtigungen vom Typ **Vollzugriff** auf die Benutzerprofil-Dienstanwendung für den angemeldeten Benutzer
     
-  
-
-> **Hinweis:** Anleitungen zum Einrichten einer Entwicklungsumgebung, die Ihren Anforderungen entspricht, finden Sie unter [Erste Schritte beim Erstellen von Apps für Office und SharePoint](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea.aspx). 
+> [!NOTE]
+> Anleitungen zum Einrichten einer Entwicklungsumgebung, die Ihren Anforderungen entspricht, finden Sie unter [Erste Schritte beim Erstellen von Apps für Office und SharePoint]((http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea.aspx)). 
   
     
     
@@ -60,7 +57,7 @@ Die SharePoint-hosted app, die Sie in diesem Artikel erstellen verwendet JavaScr
 
 |**Titel des Artikels**|**Beschreibung**|
 |:-----|:-----|
-| [SharePoint-Add-Ins](http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx) <br/> |Informationen Sie zu SharePoint-Add-Ins und grundlegende Konzepte für deren Erstellung.  <br/> |
+| [SharePoint-Add-Ins]((http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx)) <br/> |Informationen Sie zu SharePoint-Add-Ins und grundlegende Konzepte für deren Erstellung.  <br/> |
 | [Erste Schritte bei der Entwicklung mit thematischen Features in SharePoint](get-started-developing-with-social-features-in-sharepoint.md) <br/> |Erfahren Sie, wie Sie die Programmierung mit sozialen Feeds und Microblog Beiträge, folgen von Personen und Inhalten (Dokumente, Websites und tags.md), und Arbeiten mit Benutzerprofilen zu starten.  <br/> |
 | [Arbeiten mit sozialen Feeds in SharePoint](work-with-social-feeds-in-sharepoint.md) <br/> |Informationen Sie zu allgemeinen Programmieraufgaben zum Arbeiten mit sozialen Feeds und die API, die Sie zum Ausführen der Aufgaben verwenden.  <br/> |
    
@@ -329,7 +326,7 @@ Finden Sie unter  [REST-API-Referenz für sozialen Feed für SharePoint](social-
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addResources"> </a>
 
 

@@ -3,11 +3,11 @@ title: "Eingehende Ansprüche Anmelden bei SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 08c687aa-e485-4269-aea8-4333da3588a5
-ms.openlocfilehash: 982b9d2b6f65c73223ed4c317e631b017d87c980
-ms.sourcegitcommit: d68d6cf927d69696a3561f7d8ffe9a3ed9dbd03c
+ms.openlocfilehash: 713327d7f1fddb2f7ad5d9abbc8d9dbfc99eea61
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="incoming-claims-signing-into-sharepoint"></a>Eingehende Ansprüche: Anmelden bei SharePoint
 
@@ -15,10 +15,8 @@ ms.lasthandoff: 10/18/2017
 
 Wenn sich ein Benutzer bei SharePoint Server anmeldet, wird sein Token geprüft und anschließend für die Anmeldung bei SharePoint verwendet. Bei dem Token handelt es sich um ein von einem Forderungsanbieter bereitgestelltes Sicherheitstoken.
   
-    
-    
-
-> **Hinweis:** Weitere Informationen zu anspruchsbasierter Authentifizierung für eine einzelne SharePoint-Farm sowie zu anspruchsbasierter Authentifizierung zwischen verschiedenen SharePoint-Farmen finden Sie im TechNet-Artikel zum Thema [Planen von anspruchsbasierter Authentifizierung](http://technet.microsoft.com/de-DE/library/cc262350.aspx).
+> [!NOTE]
+> Informationen zur forderungsbasierten Authentifizierung für eine einzelne SharePoint-Farm sowie zur farmübergreifenden SharePoint-Forderungsauthentifizierung finden Sie im TechNet unter [Planen der Forderungsauthentifizierung]((http://technet.microsoft.com/de-DE/library/cc262350.aspx)).
   
     
     
@@ -26,7 +24,7 @@ Wenn sich ein Benutzer bei SharePoint Server anmeldet, wird sein Token geprüft 
 
 ### <a name="windows-claims-mode-sign-in"></a>Anmelden im Windows-Anspruchsmodus
 
-Bei der Anmeldung im Windows-Forderungsmodus erfolgt die Anmeldung mit einer Negotiate-Abfrage der integrierten Windows-Authentifizierung (NTLM/Kerberos). Nach der Erstellung des  [WindowsIdentity](https://msdn.microsoft.com/library/System.Security.Principal.WindowsIdentity.aspx) -Objekts (das einen Windows-Benutzer repräsentiert) wird allerdings von SharePoint Server das [WindowsIdentity](https://msdn.microsoft.com/library/System.Security.Principal.WindowsIdentity.aspx) -Objekt in ein [ClaimsIdentity](https://msdn.microsoft.com/library/Microsoft.IdentityModel.Claims.ClaimsIdentity.aspx) -Objekt konvertiert (das eine forderungsbasierte Darstellung eines Benutzers repräsentiert).
+Bei der Anmeldung im Windows-Forderungsmodus erfolgt die Anmeldung mit einer Negotiate-Abfrage der integrierten Windows-Authentifizierung (NTLM/Kerberos). Nach der Erstellung des  [WindowsIdentity]((https://msdn.microsoft.com/library/System.Security.Principal.WindowsIdentity.aspx)) -Objekts (das einen Windows-Benutzer repräsentiert) wird allerdings von SharePoint Server das [WindowsIdentity]((https://msdn.microsoft.com/library/System.Security.Principal.WindowsIdentity.aspx)) -Objekt in ein [ClaimsIdentity]((https://msdn.microsoft.com/library/Microsoft.IdentityModel.Claims.ClaimsIdentity.aspx)) -Objekt konvertiert (das eine forderungsbasierte Darstellung eines Benutzers repräsentiert).
   
     
     
@@ -47,10 +45,8 @@ Bei der passiven SAML-Anmeldung (Security Assertion Markup Language) wird der Cl
     
 Bei SAML-basierten Forderungsanbietern wie dem Forderungsanbieter der Active Directory-Verbunddienste und dem Windows Live ID-Forderungsanbieter wird nur die Anmeldung im passiven SAML-Anmeldungsmodus unterstützt. Die passive SAML-Anmeldung ist das Onlineidentitätsmodell von SharePoint.  
   
-    
-    
-
-> **Hinweis:** Der Begriff passive SAML-Anmeldung beschreibt einen bestimmten Typ Anmeldeprozess. Bei passiver SAML-Anmeldung ist die Anmeldung für eine Webanwendung so konfiguriert, dass Token von einem vertrauenswürdigen Anmeldeanbieter angenommen werden. Ein vertrauenswürdiger Anmeldeanbieter ist ein externer Sicherheitstokendienst (STS, Security Token Service) außerhalb von SharePoint, dem SharePoint vertraut. 
+> [!NOTE]
+> Der Begriff passive SAML-Anmeldung beschreibt einen bestimmten Typ Anmeldeprozess. Bei passiver SAML-Anmeldung ist die Anmeldung für eine Webanwendung so konfiguriert, dass Token von einem vertrauenswürdigen Anmeldeanbieter angenommen werden. Ein vertrauenswürdiger Anmeldeanbieter ist ein externer Sicherheitstokendienst (STS, Security Token Service) außerhalb von SharePoint, dem SharePoint vertraut. 
   
     
     
@@ -62,7 +58,7 @@ Win32-Clients müssen die in Office-Clients implementierte formularbasierte Auth
 
 ### <a name="aspnet-membership-and-role-passive-sign-in"></a>Passive Anmeldung von Mitgliedern und Rollen in ASP.NET
 
-Bei der passiven Anmeldung von Mitgliedern und Rollen in ASP.NET erfolgt die Anmeldung durch das Umleiten des Clients an eine Webseite, auf der die ASP.NET-Anmeldesteuerelemente gehostet sind. Nachdem das Identitätsobjekt, das eine Benutzeridentität darstellt, erstellt wurde, konvertiert SharePoint Server dies in ein  [ClaimsIdentity](https://msdn.microsoft.com/library/Microsoft.IdentityModel.Claims.ClaimsIdentity.aspx) -Objekt (das eine anspruchsbasierte Darstellung eines Benutzers ist).
+Bei der passiven Anmeldung von Mitgliedern und Rollen in ASP.NET erfolgt die Anmeldung durch das Umleiten des Clients an eine Webseite, auf der die ASP.NET-Anmeldesteuerelemente gehostet sind. Nachdem das Identitätsobjekt, das eine Benutzeridentität darstellt, erstellt wurde, konvertiert SharePoint Server dies in ein  [ClaimsIdentity]((https://msdn.microsoft.com/library/Microsoft.IdentityModel.Claims.ClaimsIdentity.aspx)) -Objekt (das eine anspruchsbasierte Darstellung eines Benutzers ist).
   
     
     
@@ -93,7 +89,7 @@ SharePoint Server führt dann eine Forderungsaugmentation durch. Win32-Clients m
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

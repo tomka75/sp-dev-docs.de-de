@@ -2,11 +2,11 @@
 title: Verwenden von kaskadierenden Dropdowns in Webparteigenschaften
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: aecede48a431e42fa2edc3b1040e03d839022907
-ms.sourcegitcommit: 61f26b4fe41d3cd80622d9950d8f6599df48f26f
+ms.openlocfilehash: 9bb9a2e5677827d66e56502dd20f23d912c9ff9c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-cascading-dropdowns-in-web-part-properties"></a>Verwenden von kaskadierenden Dropdowns in Webparteigenschaften
 
@@ -14,9 +14,10 @@ Beim Entwerfen des Eigenschaftenbereichs für Ihre clientseitigen SharePoint-Web
 
 ![Deaktiviertes Elementdropdown und Webpartplatzhalter, die beim Laden der aktualisierten Liste von Elementoptionen kommunizieren](../../../images/react-cascading-dropdowns-loading-indicator-when-loading-items.png)
 
-Der Quellcode des Webparts, mit dem wir arbeiten, steht auf GitHub zur Verfügung, unter [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols).
+Der Quellcode des Webparts, mit dem wir arbeiten, steht auf GitHub zur Verfügung, unter [(https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols)]((https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols)).
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment.md).
+> [!NOTE] 
+> Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment.md).
 
 ## <a name="create-new-project"></a>Erstellen eines neuen Projekts
 
@@ -666,7 +667,8 @@ Nachdem der Benutzer eine Liste ausgewählt hat, wird der neu ausgewählte Wert 
 
 Nachdem die Elemente für die ausgewählte Liste geladen wurden, werden sie der **items**-Klassenvariablen zugewiesen, von wo aus vom Elementdropwon auf sie verwiesen werden kann. Da nun die Informationen zu verfügbaren Listenelementen verfügbar sind, wird das Elementdropdown aktiviert, sodass Benutzer ein Element auswählen können. Die Ladeanzeige wird entfernt. Dadurch wird der Webparttext gelöscht. Dies ist der Grund, warum das Webpart erneut gerendert werden muss. Schließlich wird der Webpart-Eigenschaftenbereich so aktualisiert, dass die letzten Änderungen sichtbar sind.
 
-> **Hinweis:** Ab Drop 6 des SharePoint Frameworks gibt es einen Fehler in der React-Dropdownkomponente der Office UI Fabric, der dazu führt, dass das Dropdownsteuerelement nicht ordnungsgemäß funktioniert. Eine temporäre Problemumgehung besteht darin, die Datei **node_modules/@microsoft/office-ui-fabric-react-bundle/dist/office-ui-fabric-react.bundle.js** zu bearbeiten und die Zeile **12027** von:
+> [!NOTE] 
+> Ab Drop 6 des SharePoint Frameworks gibt es einen Fehler in der React-Dropdownkomponente der Office UI Fabric, der dazu führt, dass das Dropdownsteuerelement nicht ordnungsgemäß funktioniert. Eine temporäre Problemumgehung besteht darin, die Datei **node_modules/@microsoft/office-ui-fabric-react-bundle/dist/office-ui-fabric-react.bundle.js** zu bearbeiten und die Zeile **12027** zu ändern, und zwar von:
 > 
 > ```js
 > isDisabled: this.props.isDisabled !== undefined ? this.props.isDisabled : this.props.disabled

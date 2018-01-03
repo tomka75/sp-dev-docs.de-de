@@ -2,23 +2,24 @@
 title: Migrieren von AngularJS-Anwendungen zu SharePoint-Framework
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: cd07f02873ed476e298dcbbc17014cbc2443639b
-ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.openlocfilehash: ba1ec27694ea9a38afdbd4f173fbcd0d74618b37
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="migrate-angularjs-applications-to-sharepoint-framework"></a>Migrieren von AngularJS-Anwendungen zu SharePoint-Framework
 
-Viele Organisationen haben in der Vergangenheit bereits SharePoint-Lösungen mit AngularJS erstellt. Dieser Artikel beschreibt, wie Sie eine vorhandene AngularJS-Anwendung mit Stilen auf Basis von [ngOfficeUIFabric](http://ngofficeuifabric.com) (AngularJS-Richtlinien für Office UI Fabric) zu einem clientseitigen SharePoint-Framework-Webpart migrieren können. Die Beispielanwendung aus diesem Tutorial verwaltet in einer SharePoint-Liste gespeicherte To-do-Elemente.
+Viele Organisationen haben in der Vergangenheit bereits SharePoint-Lösungen mit AngularJS erstellt. Dieser Artikel beschreibt, wie Sie eine vorhandene AngularJS-Anwendung mit Stilen auf Basis von [ngOfficeUIFabric]((http://ngofficeuifabric.com)) (AngularJS-Richtlinien für Office UI Fabric) zu einem clientseitigen SharePoint-Framework-Webpart migrieren können. Die Beispielanwendung aus diesem Tutorial verwaltet in einer SharePoint-Liste gespeicherte To-do-Elemente.
 
 ![AngularJS-Anwendung zur Verwaltung von in einer SharePoint-Liste gespeicherten To-do-Elementen](../../../images/ng-migration-original-angular-application.png)
 
-Der Quellcode der AngularJS-Anwendung steht auf GitHub zur Verfügung, unter [https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo).
+Der Quellcode der AngularJS-Anwendung steht auf GitHub zur Verfügung, unter [(https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo)]((https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo)).
 
-Der Quellcode der zu SharePoint-Framework migrierten AngularJS-Anwendung steht ebenfalls auf GitHub zur Verfügung, unter [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo).
+Der Quellcode der zu SharePoint-Framework migrierten AngularJS-Anwendung steht ebenfalls auf GitHub zur Verfügung, unter [(https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo)]((https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo)).
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](http://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment), in der Sie SharePoint-Framework-Lösungen erstellen können.
+> [!NOTE] 
+> Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten]((http://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment)), in der Sie SharePoint-Framework-Lösungen erstellen können.
 
 ## <a name="setup-project"></a>Einrichten des Projekts
 

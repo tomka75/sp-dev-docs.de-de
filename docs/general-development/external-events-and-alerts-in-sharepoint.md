@@ -3,11 +3,11 @@ title: Externe Ereignisse und Warnungen in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e48e4812-a185-43c5-b243-04b1d79b88ee
-ms.openlocfilehash: 3d5a845f0865ac51c1a02d561bb55049e305a808
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 287b8f87327973b9fd9ffd720a8f24f60fab3f4e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="external-events-and-alerts-in-sharepoint"></a>Externe Ereignisse und Warnungen in SharePoint
 Hier erfahren Sie, die Konzepte hinter der Erstellung von remote-Ereignisempfänger in SharePoint, die an externen Listen angefügt werden kann, und führen Sie bei der Aktualisierung der externen Daten, die die Liste darstellt.
@@ -60,10 +60,8 @@ Business Connectivity Services (BCS) verwendet remote-Ereignisempfänger, extern
     
 Um dies zu unterstützen, wurden zwei Stereotype zum BDC-Modell hinzugefügt: **EventSubscriber** und **EventUnsubscriber**.
   
-    
-    
-
-> **Hinweis:** Ereignisempfänger werden in Sandkastenlösungen nicht unterstützt. 
+> [!NOTE]
+> Ereignisempfänger werden in Sandkastenlösungen nicht unterstützt. 
   
     
     
@@ -442,9 +440,8 @@ Bei der Erstellung die Benachrichtigung LOB-System eine HTTP-Nutzlast erstellen,
   
 - **Vollständige Element:** In diesem Fall ist die Nutzlast ein vollständiger Datensatz, der im externen System geändert hat. Im Kundenbeispiel wird der gesamte geänderten Kundendatensatz aufgenommen.
     
-  
-
->  **Hinweis:** Das vollständige Element wird nur unterstützt, wenn Sie den OData-Connector verwenden. 
+> [!NOTE]
+> Das vollständige Element wird nur unterstützt, wenn Sie den OData-Connector verwenden. 
   
     
     
@@ -650,7 +647,7 @@ Weitere Informationen über externe Ereignisse und Warnungen finden Sie in der f
 | [Vorgehensweise: Erstellen einer OData-Datendiensts zur Verwendung als einer externen BCS-System](how-to-create-an-odata-data-service-for-use-as-a-bcs-external-system.md) <br/> |Erfahren Sie, wie einen Internet-adressierbaren Windows Communication Foundation (WCF) Dienst erstellen, der OData wird verwendet, um Benachrichtigungen an SharePoint senden, wenn sich die zugrunde liegenden Daten ändert. Diese Benachrichtigungen werden verwendet, um Ereignisse auslösen, die externe Listen angefügt sind.  <br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="Externalevents_Addres"> </a>
 
 

@@ -2,11 +2,11 @@
 title: "Erstellen von Scorecardtransformationen für PerformancePoint-Dienste in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: e19f99c6bceffe5551d2d2f3c2c5e918e78acbb4
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: cdcb54a17b5575524acfaa5400234401f150eaa1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-scorecard-transforms-for-performancepoint-services-in-sharepoint"></a>Erstellen von Scorecardtransformationen für PerformancePoint-Dienste in SharePoint
 
@@ -15,7 +15,7 @@ In diesem Artikel erfahren Sie, wie benutzerdefinierte Scorecardtransformationen
 ## <a name="what-are-scorecard-transforms-in-performancepoint-services"></a>Was sind Scorecardtransformationen für PerformancePoint-Dienste?
 <a name="bk_intro"> </a>
 
-Ändern im PerformancePoint-Dienste scorecardtransformationen die Darstellung, Inhalte oder Ansichten vor dem Rendern in einem Dashboard. Weitere Informationen finden Sie unter  [PerformancePoint Services-Scorecardtransformationen (Übersicht)](http://msdn.microsoft.com/library/d69d171b-827a-48a8-a3e1-7aaf0bfbc7f8%28Office.15%29.aspx).
+Ändern im PerformancePoint-Dienste scorecardtransformationen die Darstellung, Inhalte oder Ansichten vor dem Rendern in einem Dashboard. Weitere Informationen finden Sie unter  [PerformancePoint Services-Scorecardtransformationen (Übersicht)]((http://msdn.microsoft.com/library/d69d171b-827a-48a8-a3e1-7aaf0bfbc7f8%28Office.15%29.aspx)).
   
     
     
@@ -24,12 +24,12 @@ In diesem Artikel erfahren Sie, wie benutzerdefinierte Scorecardtransformationen
 <a name="BKMK_CreateClass"> </a>
 
 
-1. Installieren Sie PerformancePoint-Dienste oder kopieren Sie die DLLs, die mit PerformancePoint-Dienste auf Ihrem Computer installiert sind. Weitere Informationen finden Sie unter  [PerformancePoint-Dienste-DLLs in Entwicklungsszenarios](http://msdn.microsoft.com/library/41e92619-8253-481d-82f9-35b6a6abc477%28Office.15%29.aspx).
+1. Installieren Sie PerformancePoint-Dienste oder kopieren Sie die DLLs, die mit PerformancePoint-Dienste auf Ihrem Computer installiert sind. Weitere Informationen finden Sie unter  [PerformancePoint-Dienste-DLLs in Entwicklungsszenarios]((http://msdn.microsoft.com/library/41e92619-8253-481d-82f9-35b6a6abc477%28Office.15%29.aspx)).
     
   
 2. Erstellen Sie in Visual Studio eine C#-Klassenbibliothek. Sollten Sie bereits eine Klassenbibliothek für die Erweiterung erstellt haben, fügen Sie eine neue C#-Klasse hinzu.
     
-    Sie müssen die DLL mit einem starken Namen signieren, und stellen Sie sicher, dass alle Assemblys, die durch die DLL mit starkem Namen haben. Erfahren, wie beim Signieren einer Assembly mit einem starken Namen und ein öffentliches/privates Schlüsselpaar erstellen, finden Sie unter  [How to: Create a Public/Private Key Pair](http://msdn.microsoft.com/library/05026813-f3bd-4d7c-9e0b-fc588eb3d114.aspx).
+    Sie müssen die DLL mit einem starken Namen signieren, und stellen Sie sicher, dass alle Assemblys, die durch die DLL mit starkem Namen haben. Erfahren, wie beim Signieren einer Assembly mit einem starken Namen und ein öffentliches/privates Schlüsselpaar erstellen, finden Sie unter  [How to: Create a Public/Private Key Pair]((http://msdn.microsoft.com/library/05026813-f3bd-4d7c-9e0b-fc588eb3d114.aspx)).
     
   
 3. Fügen Sie Microsoft.PerformancePoint.Scorecards.Client.dll als Assemblyverweis zum Projekt hinzu.
@@ -46,19 +46,19 @@ In diesem Artikel erfahren Sie, wie benutzerdefinierte Scorecardtransformationen
   - **System.Collections.Generic**
     
   
-5. Implementieren Sie die  [IGridViewTransform](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Extensions.IGridViewTransform.aspx) -Schnittstelle.
+5. Implementieren Sie die  [IGridViewTransform]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Extensions.IGridViewTransform.aspx)) -Schnittstelle.
     
   
-6. Überschreiben Sie die  [GetId](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Extensions.IGridViewTransform.GetId.aspx) -Methode, um die Zeichenfolgebezeichner für Ihre Transformation zurückzugeben. [GetId](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Extensions.IGridViewTransform.GetId.aspx) muss die gleiche Zeichenfolge wie das Attribut **key** zurückgeben, die für die Transformation in der web.config-Datei PerformancePoint-Dienste registriert ist. Weitere Informationen zum Registrieren von Transformationen finden Sie unter [Gewusst wie: Manuelles Registrieren von PerformancePoint-Dienste-Erweiterungen](http://msdn.microsoft.com/library/3aa6d340-4b05-46b3-9648-2b6e18e04e09%28Office.15%29.aspx).
+6. Überschreiben Sie die  [GetId]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Extensions.IGridViewTransform.GetId.aspx)) -Methode, um die Zeichenfolgebezeichner für Ihre Transformation zurückzugeben. [GetId]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Extensions.IGridViewTransform.GetId.aspx)) muss die gleiche Zeichenfolge wie das Attribut **key** zurückgeben, die für die Transformation in der web.config-Datei PerformancePoint-Dienste registriert ist. Weitere Informationen zum Registrieren von Transformationen finden Sie unter [Gewusst wie: Manuelles Registrieren von PerformancePoint-Dienste-Erweiterungen]((http://msdn.microsoft.com/library/3aa6d340-4b05-46b3-9648-2b6e18e04e09%28Office.15%29.aspx)).
     
   
-7. Überschreiben Sie die  [GetTransformType](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Extensions.IGridViewTransform.GetTransformType.aspx) -Methode, um den Ausführungszeitpunkt für die Transformation anzugeben. Der Ausführungszeitpunkt einer Transformation hängt von deren Typ entsprechend der Definition durch die [GridViewTransformType](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Extensions.GridViewTransformType.aspx) -Aufzählung ab: **PreQuery**, **PostQuery** oder **PreRender**. Weitere Informationen finden Sie unter  [PerformancePoint Services-Scorecardtransformationen (Übersicht)](http://msdn.microsoft.com/library/d69d171b-827a-48a8-a3e1-7aaf0bfbc7f8%28Office.15%29.aspx).
+7. Überschreiben Sie die  [GetTransformType]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Extensions.IGridViewTransform.GetTransformType.aspx)) -Methode, um den Ausführungszeitpunkt für die Transformation anzugeben. Der Ausführungszeitpunkt einer Transformation hängt von deren Typ entsprechend der Definition durch die [GridViewTransformType]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Extensions.GridViewTransformType.aspx)) -Aufzählung ab: **PreQuery**, **PostQuery** oder **PreRender**. Weitere Informationen finden Sie unter  [PerformancePoint Services-Scorecardtransformationen (Übersicht)]((http://msdn.microsoft.com/library/d69d171b-827a-48a8-a3e1-7aaf0bfbc7f8%28Office.15%29.aspx)).
     
   
-8. Überschreiben Sie die  [Execute](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Extensions.IGridViewTransform.Execute.aspx) -Methode zum Definieren der Transformation der Scorecard. Die folgenden Codebeispiele veranschaulichen das Hinzufügen einer Spalte zur Scorecardansicht und das Ändern der Formatierung leerer Scorecardzellen.
+8. Überschreiben Sie die  [Execute]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Extensions.IGridViewTransform.Execute.aspx)) -Methode zum Definieren der Transformation der Scorecard. Die folgenden Codebeispiele veranschaulichen das Hinzufügen einer Spalte zur Scorecardansicht und das Ändern der Formatierung leerer Scorecardzellen.
     
   
-Nachdem Sie die DLL signiert und erstellt haben, installieren Sie die Erweiterung wie unter  [Gewusst wie: Manuelles Registrieren von PerformancePoint-Dienste-Erweiterungen](http://msdn.microsoft.com/library/3aa6d340-4b05-46b3-9648-2b6e18e04e09%28Office.15%29.aspx) beschrieben.
+Nachdem Sie die DLL signiert und erstellt haben, installieren Sie die Erweiterung wie unter  [Gewusst wie: Manuelles Registrieren von PerformancePoint-Dienste-Erweiterungen]((http://msdn.microsoft.com/library/3aa6d340-4b05-46b3-9648-2b6e18e04e09%28Office.15%29.aspx)) beschrieben.
 ## <a name="code-example-1-add-a-column-to-performancepoint-services-scorecards"></a>Codebeispiel 1: Hinzufügen einer Spalte zu PerformancePoint-Dienste Scorecards
 <a name="bk_example1"> </a>
 
@@ -155,10 +155,8 @@ namespace Microsoft.PerformancePoint.SDK.Samples.ScorecardTransforms.PreQuery
 
 Im folgenden Codebeispiel wird eine **PreQuery**-Transformation erstellt, die eine graue Hintergrundfarbe auf leere Scorecardzellen anwendet.
   
-    
-    
-
-> **Hinweis:** Bevor Sie dieses Codebeispiel kompilieren können, müssen Sie die Entwicklungsumgebung konfigurieren, wie unter [Erstellen von Transformationen für PerformancePoint-Dienste-Scorecards](#BKMK_CreateClass) beschrieben. Darüber hinaus müssen Sie einen Verweis auf die **System.Drawing**-Assembly zu dem Projekt hinzufügen.
+> [!NOTE]
+> Bevor Sie dieses Codebeispiel kompilieren können, müssen Sie die Entwicklungsumgebung konfigurieren, wie unter  [Erstellen von Transformationen für PerformancePoint-Dienste-Scorecards](#BKMK_CreateClass)beschrieben. Darüber hinaus müssen Sie einen Verweis auf die **System.Drawing**-Assembly zu dem Projekt hinzufügen.
   
     
     
@@ -229,14 +227,14 @@ namespace Microsoft.PerformancePoint.SDK.Samples
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addResources"> </a>
 
 
--  [PerformancePoint-Dienste in SharePoint](https://dev.office.com/sharepoint/docs/general-development/performancepoint-services-in-sharepoint)
+-  [PerformancePoint-Dienste in SharePoint]((https://dev.office.com/sharepoint/docs/general-development/performancepoint-services-in-sharepoint))
     
   
--  [PerformancePoint Services-Scorecards](http://msdn.microsoft.com/library/e77eccdb-82b3-483a-bb91-dfdc716400dd%28Office.15%29.aspx)
+-  [PerformancePoint Services-Scorecards]((http://msdn.microsoft.com/library/e77eccdb-82b3-483a-bb91-dfdc716400dd%28Office.15%29.aspx))
     
   
 

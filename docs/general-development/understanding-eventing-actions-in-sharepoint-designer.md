@@ -3,11 +3,11 @@ title: Verstehen von Ereignisaktionen in SharePoint Designer 2013
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: fe4ad8cf-2c6f-488d-8b33-6bf4357018ac
-ms.openlocfilehash: cae929fc09b460eff0847d060247ec0e235fcfd5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 07ec3fe8c0a131b9f5a87df55e5745a664aba825
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="understanding-eventing-actions-in-sharepoint-designer-2013"></a>Verstehen von Ereignisaktionen in SharePoint Designer 2013
 Informationen zur Verwendung von Ereignisaktionen in SharePoint Designer 2013.
@@ -30,10 +30,8 @@ Ein SharePoint-Workflow kann eine Benachrichtigung beim Hinzufügen oder Ändern
   
 Sie finden die Ereignisaktionen im Dropdownmenü **Aktion** im Menüband von SharePoint Designer 2013 (siehe Abbildungen unten).
   
-    
-    
-
-> **Hinweis:** Die **Project Web App-Aktionen** sind nur verfügbar, wenn Sie mit einer Project Web App-Website arbeiten.
+> [!NOTE] 
+> Die **Project Web App-Aktionen** sind nur verfügbar, wenn Sie mit einer Project Web App-Website arbeiten.
   
     
     
@@ -260,17 +258,17 @@ Sobald ein Feld geändert hat, wird der Workflow fortgesetzt.
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
--  [Workflows in SharePoint ](http://technet.microsoft.com/de-DE/sharepoint/jj556245.aspx)
+-  [Workflows in SharePoint ]((http://technet.microsoft.com/de-DE/sharepoint/jj556245.aspx))
     
   
--  [Neuerungen bei SharePoint-Workflows](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)
+-  [Neuerungen bei SharePoint-Workflows]((http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx))
     
   
--  [Erste Schritte mit SharePoint-Workflows](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)
+-  [Erste Schritte mit SharePoint-Workflows]((http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx))
     
   
 -  [Workflowentwicklung in SharePoint Designer und Visio](workflow-development-in-sharepoint-designer-and-visio.md)

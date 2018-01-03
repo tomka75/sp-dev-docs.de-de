@@ -3,11 +3,11 @@ title: "Festlegen des Bing Maps-Schlüssels auf Web- und Farmebene in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 507ed9de-c349-44b5-b182-e838795dd862
-ms.openlocfilehash: bef24775bb6e5bafc64d3d21ef4dcb25ed6c2be3
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 2414eef9bc3f1781d02c33fbfeaa5824e161b5d9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="set-the-bing-maps-key-at-the-web-and-farm-level-in-sharepoint"></a>Festlegen des Bing Maps-Schlüssels auf Web- und Farmebene in SharePoint
 
@@ -26,7 +26,7 @@ Zum Ausführen der Schritte in diesem Beispiel sollten Sie über Folgendes verf�
 - SharePoint, mit Administratorrechten.
     
   
-- Ein gültiger Bing Maps-Schlüssel, den Sie beim [Bing Maps-Kontocenter](https://www.bingmapsportal.com/) erhalten.
+- Ein gültiger Bing Maps-Schlüssel, den Sie beim [Bing Maps-Kontocenter]((https://www.bingmapsportal.com/)) erhalten.
     
     > **Wichtig:** Bitte beachten Sie, dass Sie für die Einhaltung der für Ihre Nutzung des Bing Maps-Schlüssels anwendbaren Geschäftsbedingungen und alle erforderlichen Veröffentlichungen gegenüber Benutzern Ihrer Anwendung bezüglich an den Bing Daten-Dienst übermittelter Daten verantwortlich sind. 
 
@@ -56,7 +56,8 @@ Ebene der Farm oder Web kann der Bing Maps-Schlüssel festgelegt werden. Um den 
     
     Der Bing Maps-Schlüssel wird nun auf der Farmebene in SharePoint festgelegt. 
     
-    > **Hinweis:** Wenn Sie Windows PowerShell verwenden, kann der Bing Maps-Schlüssel nur auf der Farmebene festgelegt werden. Wenn Sie den Bing Maps-Schlüssel auf der Webebene festlegen möchten, können Sie den Schlüssel, wie im folgenden Abschnitt beschrieben, programmgesteuert festlegen. 
+    > [!NOTE]
+    > Wenn Sie Windows PowerShell verwenden, kann der Bing Maps-Schlüssel nur auf der Farmebene festgelegt werden. Wenn Sie den Bing Maps-Schlüssel auf der Webebene festlegen möchten, können Sie den Schlüssel, wie im folgenden Abschnitt beschrieben, programmgesteuert festlegen. 
 
 ### <a name="to-set-the-bing-maps-key-at-the-farm-or-web-level-using-the-client-object-model"></a>Einrichten des Bing Maps-Schlüssels auf Farm- oder Webebene mithilfe des Clientobjektmodells
 

@@ -5,11 +5,11 @@ keywords: how to,howdoi,howto,UDF
 f1_keywords: how to,howdoi,howto,UDF
 ms.prod: sharepoint
 ms.assetid: 360c5766-4b5d-4a48-9f23-8955036924ce
-ms.openlocfilehash: bc240dfb4d9d398afcc3be2377726da09c977e06
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 37202a89818446d1a3730d09012469a7f7e110d4
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-a-udf-that-calls-a-web-service"></a>Erstellen eines UDF, das einen Webdienst aufruft
 
@@ -20,11 +20,8 @@ This example shows how to call an external Web service from a user-defined funct
 
  `http://webservices.imacination.com/distance/Distance.jws?wsdl` Sie müssen zum Erstellen dieses Beispiels Microsoft Visual Studio 2005 oder ein vergleichbares, mit Microsoft .NET Framework 2.0-kompatibles, Programm verwenden. 
   
-    
-    
-
-
-> **Hinweis:** Stellen Sie vor dem Testen dieses Codes sicher, dass der aufzurufende Webdienst verfügbar ist. Möglicherweise steht der Webdienstserver nicht zur Verfügung oder der Webdienst wird nicht mehr unterstützt. Wenn der Webdienst nicht verfügbar ist, tritt bei den Webdienstaufrufen von Ihrem Code aus ein Fehler auf. Sie können überprüfen, ob ein Webdienst verfügbar ist, indem Sie die Website öffnen. In diesem Beispiel lautet die URL: > `http://webservices.imacination.com/distance/Distance.jws?wsdl`>. Wenn der Webdienst verfügbar ist, wird Web Services Description Language (WSDL) angezeigt. Wenn er nicht verfügbar ist, wird die übliche Fehlermeldung „Webseite nicht gefunden“ angezeigt. 
+> [!NOTE]
+> Stellen Sie vor dem Testen dieses Codes sicher, dass der aufzurufende Webdienst verfügbar ist. Möglicherweise steht der Webdienstserver nicht zur Verfügung oder der Webdienst wird nicht mehr unterstützt. Wenn der Webdienst nicht verfügbar ist, tritt bei den Webdienstaufrufen von Ihrem Code aus ein Fehler auf. Sie können überprüfen, ob ein Webdienst verfügbar ist, indem Sie die Website öffnen. In diesem Beispiel lautet die URL: > `http://webservices.imacination.com/distance/Distance.jws?wsdl`>. Wenn der Webdienst verfügbar ist, wird Web Services Description Language (WSDL) angezeigt. Wenn er nicht verfügbar ist, wird die übliche Fehlermeldung „Webseite nicht gefunden“ angezeigt. 
   
     
     

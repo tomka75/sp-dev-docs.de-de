@@ -3,11 +3,11 @@ title: Erstellen eines Workflows mit erweiterten Berechtigungen mithilfe der Sha
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 4656f6a0-36fd-4b7d-898e-8cd4bdbbda57
-ms.openlocfilehash: 8e3742beba383d3119081f801af52fab3214e507
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: fd9fa5fe19916eb3f5fefba6644484f1700deac8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-a-workflow-with-elevated-permissions-by-using-the-sharepoint-workflow-platform"></a>Erstellen eines Workflows mit erweiterten Berechtigungen mithilfe der SharePoint-Workflow-Plattform
 Erfahren Sie, wie Sie einen Workflow mit erweiterten Berechtigungen mithilfe der SharePoint-Workflow-Plattform erstellen.
@@ -19,7 +19,7 @@ Dieser Artikel beschreibt, wie Sie SharePoint-Workflows erstellen, die auf Objek
     
     
 
-> **Wichtig:** In diesem Artikel wird davon ausgegangen, dass die SharePoint-Workflow-Plattform installiert und konfiguriert wurde und dass SharePoint für Apps konfiguriert wurde. Weitere Informationen zu SharePoint-Workflow und Apps für SharePoint, einschließlich Installation und Konfiguration, finden Sie unter [Workflow in SharePoint](http://technet.microsoft.com/sharepoint/jj556245.aspx) und [Installieren und Verwalten von Apps für SharePoint](http://msdn.microsoft.com/library/733647a3-a5d3-475b-967d-3bb627c2a0c2.aspx). 
+> **Wichtig:** In diesem Artikel wird davon ausgegangen, dass die SharePoint-Workflow-Plattform installiert und konfiguriert wurde und dass SharePoint für Apps konfiguriert wurde. Weitere Informationen zu SharePoint-Workflow und Apps für SharePoint, einschließlich Installation und Konfiguration, finden Sie unter [Workflow in SharePoint]((http://technet.microsoft.com/sharepoint/jj556245.aspx)) und [Installieren und Verwalten von Apps für SharePoint]((http://msdn.microsoft.com/library/733647a3-a5d3-475b-967d-3bb627c2a0c2.aspx)). 
   
     
     
@@ -149,9 +149,10 @@ Damit der Workflow ordnungsgemäß funktionieren kann, muss diesem die Berechtig
     
     Beispiel: http://{hostname}/{Websitesammlung}/_layouts/15/appinv.aspx. 
     
-    > **Hinweis:** "App" bezieht sich in diesem Schritt auf die Workflow-App im Allgemeinen und nicht auf einen bestimmten Workflow. Der Zugriff auf einzelne Workflows kann nicht gesteuert werden. Wenn Sie App-Berechtigungen aktivieren, sind sie für alle Workflows in der Websitesammlung aktiviert. 
+    > [!NOTE]
+    > „App2 bezieht sich in diesem Schritt auf die Workflow-App im Allgemeinen und nicht auf einen bestimmten Workflow. Der Zugriff auf einzelne Workflows kann nicht gesteuert werden. Wenn Sie App-Berechtigungen aktivieren, sind sie für alle Workflows in der Websitesammlung aktiviert. 
 
-    Weitere Informationen zum Einrichten eines Workflows finden Sie unter  [Blogartikel von Sympraxis Consulting: Durchlaufen von Inhalten in einem Website-Workflow in SharePoint](http://sympmarc.com/2016/01/14/looping-through-content-in-a-sharepoint-site-workflow-part-1-introduction)
+    Weitere Informationen zum Einrichten eines Workflows finden Sie unter  [Blogartikel von Sympraxis Consulting: Durchlaufen von Inhalten in einem Website-Workflow in SharePoint]((http://sympmarc.com/2016/01/14/looping-through-content-in-a-sharepoint-site-workflow-part-1-introduction))
     
     Die folgende Abbildung zeigt ein Beispiel.
     
@@ -349,32 +350,32 @@ Das folgende Diagramm veranschaulicht die Änderung der Berechtigungen.
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="section3"> </a>
 
 
--  [Workflow in SharePoint ](http://technet.microsoft.com/en-us/sharepoint/jj556245.aspx)
+-  [Workflow in SharePoint ]((http://technet.microsoft.com/de-DE/sharepoint/jj556245.aspx))
     
   
--  [Installieren und Verwalten von Apps für SharePoint](http://msdn.microsoft.com/library/733647a3-a5d3-475b-967d-3bb627c2a0c2.aspx)
+-  [Installieren und Verwalten von Apps für SharePoint]((http://msdn.microsoft.com/library/733647a3-a5d3-475b-967d-3bb627c2a0c2.aspx))
     
   
--  [Neuigkeiten im Workflow in SharePoint](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)
+-  [Neuigkeiten im Workflow in SharePoint]((http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx))
     
   
--  [Erste Schritte mit SharePoint-Workflow](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)
+-  [Erste Schritte mit SharePoint-Workflows]((http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx))
     
   
--  [Workflowentwicklung in SharePoint Designer und Visio](workflow-development-in-sharepoint-designer-and-visio.md)
+-  [Workflowentwicklung in SharePoint Designer und Visio](workflow-development-in-sharepoint-designer-and-visio.md)
     
   
 -  [Kurzübersicht zu Workflowaktionen (SharePoint-Workflowplattform)](workflow-actions-quick-reference-sharepoint-workflow-platform.md)
     
   
--  [Blogartikel des SharePoint Designer-Teams: Verpackungs- und Bereitstellungsszenario für Workflows](http://blogs.msdn.com/b/sharepointdesigner/archive/2012/08/30/packaging-list-site-and-reusable-workflow-and-how-to-deploy-the-package.aspx)
+-  [Blogartikel des SharePoint Designer-Teams: Verpackungs- und Bereitstellungsszenario für Workflows]((http://blogs.msdn.com/b/sharepointdesigner/archive/2012/08/30/packaging-list-site-and-reusable-workflow-and-how-to-deploy-the-package.aspx))
     
   
--  [Blogartikel von Sympraxis Consulting: Durchlaufen von Inhalten in einem Website-Workflow in SharePoint](http://sympmarc.com/2016/01/14/looping-through-content-in-a-sharepoint-site-workflow-part-1-introduction)
+-  [Blogartikel von Sympraxis Consulting: Durchlaufen von Inhalten in einem Website-Workflow in SharePoint]((http://sympmarc.com/2016/01/14/looping-through-content-in-a-sharepoint-site-workflow-part-1-introduction))
     
   
 

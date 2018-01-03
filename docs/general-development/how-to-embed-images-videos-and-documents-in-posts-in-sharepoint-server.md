@@ -3,22 +3,19 @@ title: "Einbetten von Bildern, Videos und Dokumenten in Beiträgen in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 9927b9e7-daea-4261-80fa-4cc25f489e22
-ms.openlocfilehash: f06a936839773e58837042fea884082aaeabe36e
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: f253398d85d12fc53ce85130fef66c632f22b588
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="embed-images-videos-and-documents-in-posts-in-sharepoint"></a>Einbetten von Bildern, Videos und Dokumenten in Beiträgen in SharePoint
 
-In diesem Artikel erfahren Sie, wie Sie Mikroblogbeiträgen [SocialAttachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx)-Objekte hinzufügen, die als eingebettete Bilder, Videos und Dokumente in sozialen Feeds für SharePoint gerendert werden.
-Die einfachste Form von Beitragsinhalten in einem sozialen Feed enthält nur Text, aber Sie können auch eingebettete Bilder, Videos und Dokumente hinzufügen. Zu diesem Zweck verwenden Sie die [Attachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.Attachment.aspx)-Eigenschaft des [SocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx)-Objekts, das den Beitrag definiert. Beiträge können eine Anlage enthalten, die durch ein [SocialAttachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx)-Objekt dargestellt wird.
+In diesem Artikel erfahren Sie, wie Sie Mikroblogbeiträgen [SocialAttachment]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx))-Objekte hinzufügen, die als eingebettete Bilder, Videos und Dokumente in sozialen Feeds für SharePoint gerendert werden.
+Die einfachste Form von Beitragsinhalten in einem sozialen Feed enthält nur Text, aber Sie können auch eingebettete Bilder, Videos und Dokumente hinzufügen. Zu diesem Zweck verwenden Sie die [Attachment]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.Attachment.aspx))-Eigenschaft des [SocialPostCreationData]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx))-Objekts, das den Beitrag definiert. Beiträge können eine Anlage enthalten, die durch ein [SocialAttachment]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx))-Objekt dargestellt wird.
   
-    
-    
-
-
-> **Hinweis:** Um eine Erwähnung, ein Tag oder einen Link zum Inhalt eines Beitrags hinzuzufügen, fügen Sie ein [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx)-Objekts zur [SocialPostCreationData.ContentItems](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.ContentItems.aspx)-Eigenschaft hinzu. Weitere Informationen finden Sie unter [Vorgehensweise: Einschließen von Erwähnungen, Tags und Links zu Websites und Dokumenten in Beiträgen in SharePoint](how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharep.md). 
+> [!NOTE]
+> Um eine Erwähnung, ein Tag oder einen Link zum Inhalt eines Beitrags hinzuzufügen, fügen Sie ein [SocialDataItem]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx))-Objekt zur [SocialPostCreationData.ContentItems]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.ContentItems.aspx))-Eigenschaft hinzu. Weitere Informationen finden Sie unter [Vorgehensweise: Einschließen von Erwähnungen, Tags und Links zu Websites und Dokumenten in Beiträgen in SharePoint](how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharep.md). 
   
     
     
@@ -47,7 +44,7 @@ Die Codebeispiele in diesem Artikel wird gezeigt, wie hinzuzufügende Bild, vide
 - Microsoft.SharePoint.Client.UserProfilies
     
   
-Um die Beispiele in diesem Artikel zu verwenden, müssen Sie ein Bild, ein Video und ein Dokument hochladen. Damit Sie das Videobeispiel verwenden können, muss das Feature „Video“ auf dem Server aktiviert sein, und die Videodatei muss in einer Objektbibliothek gespeichert sein. Zum Verwendung des Dokumentbeispiels in einer lokalen Umgebung muss Office Online in der Umgebung konfiguriert sein. Weitere Informationen finden Sie unter [Planen digitaler Objektbibliotheken in SharePoint](http://technet.microsoft.com/de-DE/library/ee414275.aspx) und [Konfigurieren von SharePoint für die Verwendung von Office Online](http://technet.microsoft.com/de-DE/library/ff431687.aspx).
+Um die Beispiele in diesem Artikel zu verwenden, müssen Sie ein Bild, ein Video und ein Dokument hochladen. Damit Sie das Videobeispiel verwenden können, muss das Feature „Video“ auf dem Server aktiviert sein, und die Videodatei muss in einer Objektbibliothek gespeichert sein. Zum Verwendung des Dokumentbeispiels in einer lokalen Umgebung muss Office Online in der Umgebung konfiguriert sein. Weitere Informationen finden Sie unter [Planen digitaler Objektbibliotheken in SharePoint]((http://technet.microsoft.com/de-DE/library/ee414275.aspx)) und [Konfigurieren von SharePoint für die Verwendung von Office Online]((http://technet.microsoft.com/de-DE/library/ff431687.aspx)).
   
     
     
@@ -64,10 +61,10 @@ Im folgenden Codebeispiel wird veröffentlicht einen Beitrag, der ein eingebette
     
     
 
-- Erstellen Sie ein  [SocialAttachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx) -Objekt, das das Bild darstellt. Die [SocialAttachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx) gibt das Feld [SocialAttachmentKind.Image](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachmentKind.Image.aspx) und den URI der Bilddatei an.
+- Erstellen Sie ein  [SocialAttachment]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx)) -Objekt, das das Bild darstellt. Die [SocialAttachment]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx)) gibt das Feld [SocialAttachmentKind.Image]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachmentKind.Image.aspx)) und den URI der Bilddatei an.
     
   
-- Fügen Sie das Image-Objekt an die  [Attachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.Attachment.aspx) -Eigenschaft des [SocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx) -Objekts, das zum Erstellen der POST-Anforderung verwendet wird.
+- Fügen Sie das Image-Objekt an die  [Attachment]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.Attachment.aspx)) -Eigenschaft des [SocialPostCreationData]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx)) -Objekts, das zum Erstellen der POST-Anforderung verwendet wird.
     
   
 Ändern Sie die Platzhalterwerte für die URL-Variablen vor dem Ausführen des Codes.
@@ -144,10 +141,10 @@ Im folgenden Codebeispiel wird veröffentlicht einen Beitrag, der ein eingebette
     
     
 
-- Rufen Sie das  [SocialAttachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx) -Objekt, das video Attachment-Objekt darstellt, mithilfe der [SocialFeedManager.GetPreview](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetPreview.aspx) -Methode.
+- Rufen Sie das  [SocialAttachment]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx)) -Objekt, das video Attachment-Objekt darstellt, mithilfe der [SocialFeedManager.GetPreview]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetPreview.aspx)) -Methode.
     
   
-- Fügen Sie das video Attachment-Objekts die  [Attachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.Attachment.aspx) -Eigenschaft des [SocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx) -Objekts, das zum Erstellen der POST-Anforderung verwendet wird.
+- Fügen Sie das video Attachment-Objekts die  [Attachment]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.Attachment.aspx)) -Eigenschaft des [SocialPostCreationData]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx)) -Objekts, das zum Erstellen der POST-Anforderung verwendet wird.
     
   
 Dieses Beispiel erfordert die Videofunktionen in einer Objektbibliothek hochgeladen werden auf dem Server und die Videodatei aktiviert werden soll. Finden Sie unter der  [Voraussetzung für die Verwendung in den Codebeispielen](how-to-embed-images-videos-and-documents-in-posts-in-sharepoint-server.md#bk_preReqs) für Weitere Informationen.
@@ -224,10 +221,10 @@ Im folgenden Codebeispiel wird veröffentlicht einen Beitrag, der ein eingebette
     
     
 
-- Ruft das  [SocialAttachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx) -Objekt, das die Anlage Dokument darstellt, mithilfe der [SocialFeedManager.GetPreview](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetPreview.aspx) -Methode.
+- Ruft das  [SocialAttachment]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx)) -Objekt, das die Anlage Dokument darstellt, mithilfe der [SocialFeedManager.GetPreview]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetPreview.aspx)) -Methode.
     
   
-- Fügen Sie die Dokumentanlage der [Attachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.Attachment.aspx)-Eigenschaft des [SocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx)-Objekts hinzu, das verwendet wird, um den Beitrag zu erstellen.
+- Fügen Sie die Dokumentanlage der [Attachment]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.Attachment.aspx))-Eigenschaft des [SocialPostCreationData]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx))-Objekts hinzu, das verwendet wird, um den Beitrag zu erstellen.
     
   
 Wenn Sie dieses Beispiel in einer lokalen Umgebung verwenden möchten, muss Ihre Umgebung für die Verwendung von Office Online konfiguriert werden. Weitere Informationen finden Sie unter [Voraussetzungen für die Verwendung der Codebeispiele](how-to-embed-images-videos-and-documents-in-posts-in-sharepoint-server.md#bk_preReqs). Andernfalls können Sie einen Link zum Dokument bereitstellen, wie unter [Vorgehensweise: Einschließen von Erwähnungen, Tags und Links zu Websites und Dokumenten in Beiträgen in SharePoint](how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharep.md) beschrieben.
@@ -295,7 +292,7 @@ namespace EmbedDocumentInPost
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
@@ -305,16 +302,16 @@ namespace EmbedDocumentInPost
 -  [Vorgehensweise: Einschließen von Erwähnungen, Tags und Links zu Websites und Dokumenten in Beiträgen in SharePoint](how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharep.md)
     
   
--  [SocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx) und [SocialAttachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx) in den Clientobjektmodellen
+-  [SocialPostCreationData]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx)) und [SocialAttachment]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx)) in den Clientobjektmodellen
     
   
--  [SocialPostCreationData](http://msdn.microsoft.com/library/f0e1fa3e-6fc9-48e0-5570-92091abfef33%28Office.15%29.aspx) und [SocialAttachment](http://msdn.microsoft.com/library/dfdee790-a1b0-19c8-0e92-5a6e058ba4db%28Office.15%29.aspx) im JavaScript-Objektmodell
+-  [SocialPostCreationData]((http://msdn.microsoft.com/library/f0e1fa3e-6fc9-48e0-5570-92091abfef33%28Office.15%29.aspx)) und [SocialAttachment]((http://msdn.microsoft.com/library/dfdee790-a1b0-19c8-0e92-5a6e058ba4db%28Office.15%29.aspx)) im JavaScript-Objektmodell
     
   
 -  [REST-API-Referenz für sozialen Feed für SharePoint](social-feed-rest-api-reference-for-sharepoint.md)
     
   
--  [SPSocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialPostCreationData.aspx) und [SPSocialAttachment](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialAttachment.aspx) im Server-Objektmodell
+-  [SPSocialPostCreationData]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialPostCreationData.aspx)) und [SPSocialAttachment]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialAttachment.aspx)) im Server-Objektmodell
     
   
 

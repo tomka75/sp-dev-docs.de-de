@@ -3,11 +3,11 @@ title: "Erstellen und Löschen von Beiträgen und Abrufen des sozialen Feeds üb
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e8c21960-6ea0-43c0-821e-2db2a0ecec90
-ms.openlocfilehash: 6c9c6f36c5dfbb872f10d175815e6b9f7cfb38b6
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 4963dbb97f6106c9536353112e9f4a2ffb15c5b4
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-javascript-object-model-in-sharepoint"></a>Erstellen und Löschen von Beiträgen und Abrufen des sozialen Feeds über das JavaScript-Objektmodell in SharePoint
 
@@ -16,11 +16,11 @@ In diesem Artikel erfahren Sie, wie Sie mithilfe des SharePoint JavaScript-Objek
 ## <a name="what-are-social-feeds-in-sharepoint"></a>Was sind thematische Feeds in SharePoint?
 <a name="bk_intro"> </a>
 
-Ein Feed für soziale Netzwerke ist in SharePoint eine Sammlung von Threads, die Unterhaltungen, einzelne Mikroblogbeiträge oder Benachrichtigungen darstellen. Threads enthalten einen Stammbeitrag und eine Sammlung von Antwortbeiträgen. Im JavaScript-Objektmodell werden Feeds durch [SocialFeed](http://msdn.microsoft.com/library/356c5475-2fd6-a655-c271-5d7f21af45e2%28Office.15%29.aspx)-Objekte dargestellt, Threads durch [SocialThread](http://msdn.microsoft.com/library/46aa4beb-d708-f20e-471e-626c8a7efab7%28Office.15%29.aspx)-Objekte und Beiträge und Antworten durch [SocialPost](http://msdn.microsoft.com/library/a761ce71-d3d7-420a-1e06-962674124dfa%28Office.15%29.aspx)-Objekte. Um wichtige Feed-bezogene Aufgaben auszuführen, verwenden Sie das [SocialFeedManager](http://msdn.microsoft.com/library/651fdf0f-841d-88f9-1e07-fcb3ad8c9410%28Office.15%29.aspx)-Objekt. In diesem Artikel wird gezeigt, wie Sie eine Anwendungsseite erstellen, die das JavaScript-Objektmodell zum Arbeiten mit sozialen Feeds verwendet.
+Ein Feed für soziale Netzwerke ist in SharePoint eine Sammlung von Threads, die Unterhaltungen, einzelne Mikroblogbeiträge oder Benachrichtigungen darstellen. Threads enthalten einen Stammbeitrag und eine Sammlung von Antwortbeiträgen. Im JavaScript-Objektmodell werden Feeds durch [SocialFeed]((http://msdn.microsoft.com/library/356c5475-2fd6-a655-c271-5d7f21af45e2%28Office.15%29.aspx))-Objekte dargestellt, Threads durch [SocialThread]((http://msdn.microsoft.com/library/46aa4beb-d708-f20e-471e-626c8a7efab7%28Office.15%29.aspx))-Objekte und Beiträge und Antworten durch [SocialPost]((http://msdn.microsoft.com/library/a761ce71-d3d7-420a-1e06-962674124dfa%28Office.15%29.aspx))-Objekte. Um wichtige Feed-bezogene Aufgaben auszuführen, verwenden Sie das [SocialFeedManager]((http://msdn.microsoft.com/library/651fdf0f-841d-88f9-1e07-fcb3ad8c9410%28Office.15%29.aspx))-Objekt. In diesem Artikel wird gezeigt, wie Sie eine Anwendungsseite erstellen, die das JavaScript-Objektmodell zum Arbeiten mit sozialen Feeds verwendet.
   
     
     
-For more information about working with  [SocialFeedManager](http://msdn.microsoft.com/library/651fdf0f-841d-88f9-1e07-fcb3ad8c9410%28Office.15%29.aspx) or for information about using other APIs to work with social feeds, see [Arbeiten mit sozialen Feeds in SharePoint](work-with-social-feeds-in-sharepoint.md).
+For more information about working with  [SocialFeedManager]((http://msdn.microsoft.com/library/651fdf0f-841d-88f9-1e07-fcb3ad8c9410%28Office.15%29.aspx)) or for information about using other APIs to work with social feeds, see [Arbeiten mit sozialen Feeds in SharePoint](work-with-social-feeds-in-sharepoint.md).
   
     
     
@@ -125,9 +125,8 @@ Im folgenden Codebeispiel wird veröffentlicht ein Beitrag und einer Antwort. Au
   
 - Antworten Sie auf einen Beitrag, indem Sie die **createPost**-Methode verwenden und die Thread-ID als _targetId_-Parameter übergeben.
     
-  
-
-> **Hinweis**: Fügen Sie den folgenden Code zwischen den **script**-Tags ein, die Sie in der Prozedur [Erstellen der Anwendungsseite](how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-javascr.md#bk_CreateApp) hinzugefügt haben.
+> [!NOTE]
+> Fügen Sie den folgenden Code zwischen den **script**-Tags ein, die Sie in der Prozedur [Erstellen der Anwendungsseite](how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-javascr.md#bk_CreateApp) hinzugefügt haben.
   
     
     
@@ -202,10 +201,8 @@ Im folgenden Codebeispiel werden die Feeds für den aktuellen Benutzer und einen
   
 Weitere Informationen zu Feedtypen finden Sie unter [Übersicht über Feedtypen in der Meine Website-API](work-with-social-feeds-in-sharepoint.md#bkmk_FeedTypes). Weitere Informationen zu Referenzthreads finden Sie unter [Referenzthreads und Digest-Threads in sozialen Feeds für SharePoint](reference-threads-and-digest-threads-in-sharepoint-server-social-feeds.md).
   
-    
-    
-
-> **Hinweis**: Fügen Sie den folgenden Code zwischen den **script**-Tags ein, die Sie in der Prozedur [Erstellen der Anwendungsseite](how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-javascr.md#bk_CreateApp) hinzugefügt haben. Ändern Sie dann den Platzhalterwert für die Variable s **targetUser**, bevor Sie den Code ausführen.
+> [!NOTE]
+> Fügen Sie den folgenden Code zwischen den **script**-Tags ein, die Sie in der Prozedur [Erstellen der Anwendungsseite](how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-javascr.md#bk_CreateApp) hinzugefügt haben. Ändern Sie dann den Platzhalterwert für die Variable **targetUser**, bevor Sie den Code ausführen.
   
     
     
@@ -334,9 +331,8 @@ Im folgenden Codebeispiel wird Löscht ein Beitrag oder eine Antwort. Außerdem 
   
 - Löschen Sie einen Stammbeitrag oder eine Antwort mithilfe der **deletePost**-Methode (durch Löschen eines Stammbeitrags wird der gesamte Thread gelöscht).
     
-  
-
-> **Hinweis**: Fügen Sie den folgenden Code zwischen den **script**-Tags ein, die Sie in der Prozedur [Erstellen der Anwendungsseite](how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-javascr.md#bk_CreateApp) hinzugefügt haben. In diesem Beispiel wird vorausgesetzt, dass der Newsfeed des aktuellen Benutzers mindestens einen Beitrag enthält.
+> [!NOTE]
+> Fügen Sie den folgenden Code zwischen den **script**-Tags ein, die Sie in der Prozedur [Erstellen der Anwendungsseite](how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-javascr.md#bk_CreateApp) hinzugefügt haben. In diesem Beispiel wird vorausgesetzt, dass der Newsfeed des aktuellen Benutzers mindestens einen Beitrag enthält.
   
     
     
@@ -424,14 +420,14 @@ function RequestFailed(sender, args) {
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addResources"> </a>
 
 
 -  [Arbeiten mit sozialen Feeds in SharePoint](work-with-social-feeds-in-sharepoint.md)
     
   
--  [SP. Social-Namespace (sp.userprofiles)](http://msdn.microsoft.com/library/43d47f01-c085-0e77-bd01-48bcb7d5bb35%28Office.15%29.aspx)
+-  [SP. Social-Namespace (sp.userprofiles)]((http://msdn.microsoft.com/library/43d47f01-c085-0e77-bd01-48bcb7d5bb35%28Office.15%29.aspx))
     
   
 -  [Vorgehensweise: Erstellen und Löschen von Beiträge und Abrufen des für soziale Netzwerke-Feed mithilfe des clientobjektmodells .NET SharePoint](how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-net-cli.md)

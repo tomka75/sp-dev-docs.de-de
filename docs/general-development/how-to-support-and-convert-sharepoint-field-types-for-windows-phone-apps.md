@@ -3,11 +3,11 @@ title: "Unterstützen und Konvertieren von SharePoint-Feldtypen für Windows Pho
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 301e6e58-5153-4ca9-a419-8ae0535ebbed
-ms.openlocfilehash: 22a2f1dccbaa825fa53bf85225de2018b5ecffda
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 7c2c179fc4e0c32ace022e5202947241a65a9e06
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="support-and-convert-sharepoint-field-types-for-windows-phone-apps"></a>Unterstützen und Konvertieren von SharePoint-Feldtypen für Windows Phone-Apps
 
@@ -385,10 +385,8 @@ Auch wenn Sie Konvertierungslogik in Ihrer app für **Text** Felder nicht angebe
     
 Angenommen Sie, Sie erstellen eine Windows Phone-app basierend auf einer SharePoint-Liste mit dem Namen Produkt-IDs, die ein Feld mit einem Datentyp **Guid** enthält. Für die im folgenden Codebeispiel wird davon ausgegangen Sie, dass die Liste ein Feld Product (oder Titel) (der Typ **Text**) und einen Bezeichner dar (der Typ **Guid**) verfügt.
   
-    
-    
-
-> **Hinweis:** SharePoint-Listen mit **Guid**-Feldern müssen programmatisch oder über eine Listenvorlage erstellt werden, die **Guid**-Felder enthält.
+> [!NOTE]
+> SharePoint-Listen mit **Guid**-Feldern müssen programmgesteuert oder über eine Listenvorlage erstellt werden, die **Guid**-Felder enthält.
   
     
     
@@ -602,7 +600,7 @@ Das Feld-ID wird jetzt im Anzeigeformular ebenso wie die Liste im Formular angez
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15Supportwinphone_addlresources"> </a>
 
 

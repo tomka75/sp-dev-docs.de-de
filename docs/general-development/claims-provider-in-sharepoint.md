@@ -3,11 +3,11 @@ title: Anspruchsanbieter in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 5918d5b6-5fd6-4f41-9473-a15b1491d056
-ms.openlocfilehash: cd935e975f4c469079905c1afe242da790f33e2f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 8e1c4ff8f761926a3fb532919a9dac494bb302cc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="claims-provider-in-sharepoint"></a>Anspruchsanbieter in SharePoint
 
@@ -19,10 +19,8 @@ Ein Anspruchsanbieter in SharePoint Server Probleme Ansprüche und Pakete Anspr�
     
 Ein Anspruchsanbieter in SharePoint hat zwei Rollen: Erweiterung und Auswahl.
   
-    
-    
-
-> **Hinweis:** Weitere Informationen zum Erstellen eines Anspruchsanbieters finden Sie unter  [Gewusst wie: Erstellen eines Anspruchsanbieters in SharePoint](how-to-create-a-claims-provider-in-sharepoint.md). 
+> [!NOTE]
+> Weitere Informationen zum Erstellen eines Anspruchsanbieters finden Sie unter [Gewusst wie: Erstellen eines Anspruchsanbieters in SharePoint](how-to-create-a-claims-provider-in-sharepoint.md). 
   
     
     
@@ -68,10 +66,8 @@ Benutzer können den integrierten Anspruchsanbieter zum Implementieren benutzerd
 
 In SharePoint Server sind einige bestimmte integrierte Anspruchsanbietern, die Implementierung von Unterstützung für Konzepte wie authentifizierten Benutzernzu ermöglichen. Dies ist auch bekannt als ein Anspruch Alle Benutzer . In diesem Szenario können Sie alle Benutzer aus einer bestimmten Authentifizierungsanbieter Zugriffsrechte.
   
-    
-    
-
-> **Hinweis:** Bei einem Authentifizierungsanbieter kann es sich um Windows Active Directory, formularbasierte Authentifizierung oder einen vertrauenswürdigen Herausgeber von SAML-Token (d. h. einen STS) handeln. 
+> [!NOTE]
+> Bei einem Authentifizierungsanbieter kann es sich um Windows Active Directory, formularbasierte Authentifizierung oder einen vertrauenswürdigen Herausgeber von SAML-Token (d. h. einen STS) handeln. 
   
     
     
@@ -99,7 +95,7 @@ Nehmen Sie ein Szenario an, in dem das System einige spezifische Anforderungen f
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

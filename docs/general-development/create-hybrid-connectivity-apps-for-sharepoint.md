@@ -3,11 +3,11 @@ title: "Erstellen von Hybridkonnektivitäts-Apps für SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 311f036e-3442-4497-b35e-442b665462d3
-ms.openlocfilehash: 32d6e0471cf2bd5c29b2335edb309e40065e9119
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 19c48b7f0d8da449cd1c96561b8017fb4d7514b1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-hybrid-connectivity-apps-for-sharepoint"></a>Erstellen von Hybridkonnektivitäts-Apps für SharePoint
 Informationen Sie zu den Prozess der entwickeln und Bereitstellen von apps für SharePoint-Diensten hybridlösungen.
@@ -22,12 +22,12 @@ Als Unternehmen mit SharePoint Online zu verschieben, benötigen sie eine Mögli
   
     
     
-Eine vollständige Beschreibung zum Konfigurieren einer funktionierenden Hybrid-Lösung finden Sie unter  [Hybridlösung für SharePoint](http://technet.microsoft.com/en-us/library/jj838715.aspx). Diese Artikelreihe führt Sie durch alle Anforderungen der Konfiguration von Datenquellen, Reverseproxys, Suche, Sicherheit, Netzwerken und anderen Voraussetzungen zum Einrichten des End-to-End-Szenarios.
+Eine vollständige Beschreibung zum Konfigurieren einer funktionierenden Hybrid-Lösung finden Sie unter  [Hybridlösung für SharePoint]((http://technet.microsoft.com/de-DE/library/jj838715.aspx)). Diese Artikelreihe führt Sie durch alle Anforderungen der Konfiguration von Datenquellen, Reverseproxys, Suche, Sicherheit, Netzwerken und anderen Voraussetzungen zum Einrichten des End-to-End-Szenarios.
   
     
     
 
-> **Vorsicht:** Um eine SharePoint-Hybridumgebung zu konfigurieren, benötigen Sie eine Kombination aus Experten-Know-how und erheblicher praktischer Erfahrung mit SharePoint, SharePoint Online und verwandten Produkten und Technologien. Es wird empfohlen, bei Entwurf und Bereitstellung der Hybridumgebung technische Anleitung und Unterstützung durch die Microsoft Beratungsdienste in Anspruch zu nehmen. Weitere Informationen finden Sie unter [Microsoft Services](http://www.microsoft.com/en-us/microsoftservices/deploy.aspx). 
+> **Vorsicht:** Um eine SharePoint-Hybridumgebung zu konfigurieren, benötigen Sie eine Kombination aus Experten-Know-how und erheblicher praktischer Erfahrung mit SharePoint, SharePoint Online und verwandten Produkten und Technologien. Es wird empfohlen, bei Entwurf und Bereitstellung der Hybridumgebung technische Anleitung und Unterstützung durch die Microsoft Beratungsdienste in Anspruch zu nehmen. Weitere Informationen finden Sie unter [Microsoft Services]((http://www.microsoft.com/de-DE/microsoftservices/deploy.aspx)). 
   
     
     
@@ -83,7 +83,9 @@ Um einen OData-Endpunkt zu erstellen, müssen Sie diese Schritte für die Erstel
 
 1. Erstellen Sie eine IIS-Website mit mindestens Microsoft .NET Framework 4. Sichern Sie die Website mit der Standardauthentifizierung.
     
-    > **Hinweis:** Es ist nicht erforderlich, dass SharePoint auf diesem Server installiert ist. Tatsächlich ist es aus Gründen der Einfachheit und Leistung besser, wenn SharePoint nicht auf dem Server installiert ist, der den WCF-Datendienst hostet. 
+    > [!NOTE]
+    > Es ist nicht erforderlich, dass SharePoint auf diesem Server installiert ist. Tatsächlich ist es aus Gründen der Einfachheit und Leistung besser, wenn SharePoint nicht auf dem Server installiert ist, der den WCF-Datendienst hostet. 
+
 2. Erstellen Sie in Visual Studio 2012 ein neues Projekt mithilfe der Vorlage **Leere ASP.NET-Webanwendung**.
     
   
@@ -118,11 +120,10 @@ Ein vollständiges Lernprogramm dafür, wie Sie dies einrichten finden Sie hier:
     
     
 
--  [Erste Schritte mit OData-Teil 1: Erstellen einer OData-Dienst](http://msdn.microsoft.com/en-us/data/gg601462)
+-  [Erste Schritte mit OData-Teil 1: Erstellen einer OData-Dienst]((http://msdn.microsoft.com/de-DE/data/gg601462))
     
   
--  
-  [Schnellstart (WCF Data Services)](http://msdn.microsoft.com/en-us/library/cc668796.aspx)
+-  [Schnellstart (WCF Data Services)]((http://msdn.microsoft.com/de-DE/library/cc668796.aspx))
     
   
 
@@ -201,10 +202,10 @@ Informationen zum Bereitstellen von SharePoint-Add-Ins finden Sie unter den folg
     
     
 
--  [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](http://msdn.microsoft.com/library/d15a74a7-3c10-485a-9885-7ef11aaa0d90%28Office.15%29.aspx)
+-  [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen]((http://msdn.microsoft.com/library/d15a74a7-3c10-485a-9885-7ef11aaa0d90%28Office.15%29.aspx))
     
   
--  [Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio](http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx)
+-  [Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio]((http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx))
     
   
 Außerdem können Sie die BDCM-Datei für den externen Inhaltstyp erstellt und zu extrahieren, die auf jeder Ebene oberhalb der app verwendet werden. Dies ist in  [Vorgehensweise: Konvertieren ein Add-in-bezogenen externes Inhaltstyps in mandantenbereichsbezogenen](how-to-convert-an-add-in-scoped-external-content-type-to-tenant-scoped.md)veranschaulicht.
@@ -212,12 +213,11 @@ Außerdem können Sie die BDCM-Datei für den externen Inhaltstyp erstellt und z
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
--  
-  [Hybridlösung für SharePoint](http://technet.microsoft.com/en-us/library/jj838715.aspx)
+-  [Hybridlösung für SharePoint]((http://technet.microsoft.com/de-DE/library/jj838715.aspx))
     
   
 -  [Business Connectivity Services in SharePoint](business-connectivity-services-in-sharepoint.md)
@@ -226,7 +226,7 @@ Außerdem können Sie die BDCM-Datei für den externen Inhaltstyp erstellt und z
 -  [Gewusst wie: Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint](how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint.md)
     
   
--  [Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio](http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx)
+-  [Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio]((http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx))
     
   
 

@@ -3,11 +3,11 @@ title: "Übersicht über das mobile SharePoint-Objektmodell"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 72319846-d02d-49e7-b830-48eb8f5715cb
-ms.openlocfilehash: 4f2f38a46c0afe3b534b7e2b2ee1c5a8dbbe0300
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 171c14d60a6f3063e8a903387a0faad34cd34308
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="overview-of-the-sharepoint-mobile-object-model"></a>Übersicht über das mobile SharePoint-Objektmodell
 Informationen Sie zu neuen öffentlichen Klassen im Serverobjektmodell SharePoint und Silverlight-Clientobjektmodell, die zum Entwickeln von integrierter Lösungen für SharePoint und Windows Phone 7.5 verwendet werden.
@@ -64,7 +64,7 @@ Ruft die Zone der alternativen URL an.
 public UrlZone UrlZone
 ```
 
-Die UrlZone-Klasse ist die Client-Objektmodellversion der SPUrlZone-Klasse im Serverobjektmodell. Weitere Informationen hierzu finden Sie unter der  [SharePoint 2010 Software Development Kit (SDK)](http://msdn.microsoft.com/de-DE/library/ee557253.aspx).
+Die UrlZone-Klasse ist die Client-Objektmodellversion der SPUrlZone-Klasse im Serverobjektmodell. Weitere Informationen hierzu finden Sie unter der  [SharePoint 2010 Software Development Kit (SDK)]((http://msdn.microsoft.com/de-DE/library/ee557253.aspx)).
   
     
     
@@ -347,7 +347,7 @@ public NetworkCredential GetCredential(Uri uri, string authType)
 -  _authType_ ist die Art der Authentifizierung angefordert.
     
   
-Diese Methode ist nur für die anonyme Authentifizierung verwendet. Wenn  _authType_ nicht "Basic" ist, wird ein leeres Objekt zurückgegeben. Weitere Informationen über die **NetworkCredential** -Klasse finden Sie unter [NetworkCredential-Klasse](http://msdn.microsoft.com/de-DE/library/system.net.networkcredential.aspx).
+Diese Methode ist nur für die anonyme Authentifizierung verwendet. Wenn  _authType_ nicht "Basic" ist, wird ein leeres Objekt zurückgegeben. Weitere Informationen über die **NetworkCredential** -Klasse finden Sie unter [NetworkCredential-Klasse]((http://msdn.microsoft.com/de-DE/library/system.net.networkcredential.aspx)).
   
     
     
@@ -947,10 +947,8 @@ Die folgenden Methoden sind standard Außerkraftsetzungen von geerbten Methoden,
     
 Ruft den Namen der JavaScript-Datei ab, die die Felder des **SPFieldGeolocation**-Typs rendert, oder legt den Namen fest.
   
-    
-    
-
-> **Hinweis:** Die JSLink-Eigenschaft wird für Umfrage- oder Ereignislisten nicht unterstützt. Ein SharePoint-Kalender ist eine Ereignisliste. 
+> [!NOTE]
+> Die JSLink-Eigenschaft wird nicht für Umfrage- oder Ereignislisten unterstützt. Ein SharePoint-Kalender ist eine Ereignisliste. 
   
     
     
@@ -1752,8 +1750,8 @@ Ruft eine Auflistung von pushbenachrichtigungsabonnenten aus der Website Abonnem
 public SPPhoneNotificationSubscriberCollection GetPhoneNotificationSubscribers(string customArgs)
 ```
 
-
-> **Hinweis:** Der Client-Objekt-Modellname lautet **GetPhoneNotificationSubscribersByArgs**. 
+> [!NOTE]
+> Der Client-Objekt-Modellname lautet **GetPhoneNotificationSubscribersByArgs**. 
   
     
     
@@ -1766,8 +1764,8 @@ public SPPhoneNotificationSubscriberCollection GetPhoneNotificationSubscribers(s
 
 ```
 
-
-> **Hinweis:** Der Client-Objekt-Modellname lautet **GetPhoneNotificationSubscribersByUser**. 
+> [!NOTE]
+> Der Client-Objekt-Modellname lautet **GetPhoneNotificationSubscribersByUser**. 
   
     
     
@@ -2265,7 +2263,7 @@ public string MessageId
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15MobileOM_addlresources"> </a>
 
 

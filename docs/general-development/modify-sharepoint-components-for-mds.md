@@ -3,11 +3,11 @@ title: "Ändern der SharePoint-Komponenten für MDS"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c967be7c-f29f-481a-9ce2-915ead315dcd
-ms.openlocfilehash: 697a284f3d07c6b3ddcdad005578ba3f9f7700ac
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4639c5c0c53dfa080081316d744614db1b1bcc68
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="modify-sharepoint-components-for-mds"></a>Ändern der SharePoint-Komponenten für MDS
 Erfahren Sie, wie die Komponenten in Ihrem Projekt SharePoint die Vorteile der minimale herunterladen Strategie (MDS) in SharePoint ändern. Minimale herunterladen Strategie (MDS) wurde die benutzerfreundlichkeit verbessert, indem nur die Teile einer Seite erforderlich, um diese ordnungsgemäß im Browser zu rendern vom Server zurückgegeben. Da die Seite vollständig gerendert nicht an den Client zurückgegeben wird, muss der Server sein um genau die Teile zu identifizieren, die zum Rendern der Seite erforderlich sind. Sie müssen möglicherweise die Komponenten in Ihrem Projekt SharePoint ändern, sodass sie als MDS-kompatiblen erkannt werden, und können mit dem Modul MDS arbeiten. Erfahren Sie mehr über MDS in  [Übersicht über die minimale Strategie herunterladen](minimal-download-strategy-overview.md).
@@ -36,22 +36,12 @@ Die Gestaltungsvorlage bietet eine Vorlage, mit der MDS Inhaltsbereiche zu ident
     
     
 
-**Abbildung 1. Komponenten, die Updates in eine Gestaltungsvorlage erfordern**
-
-  
-    
-    
-
-  
-    
+**Abbildung 1. Komponenten, die Updates in eine Gestaltungsvorlage erfordern**  
     
 ![Komponenten, die Aktualisierungen in der Gestaltungsvorlage erfordern](../images/MDS_SeattleMaster.png)
   
-    
-    
-
-    
-> **Hinweis:** Es gibt viele weitere Komponenten in der Gestaltungsvorlage Seattle.master, wie etwa Stylesheets und JavaScript Dateien, die von Seite zu Seite ändern. Abbildung 1 zeigt nur einige Beispiele. 
+> [!NOTE]
+> Es gibt viele weitere Komponenten in der Gestaltungsvorlage „Seattle.master“, wie etwa Stylesheets und JavaScript Dateien, die sich von Seite zu Seite ändern. Abbildung 1 zeigt nur einige Beispiele. 
   
     
     
@@ -174,30 +164,30 @@ Wenn Ihr Projekt ASP.NET Seiten enthält, müssen Sie CSS- und JavaScript-Dateie
   
     
     
-Ihre Seiten ASP.NET können auch die **Response.Output** -Methode zum Schreiben des Inhalts auf der Seite, der nicht in MDS zulässig ist. Stattdessen können Sie die folgenden MDS-kompatiblen Methoden der [SPHttpUtility](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.aspx) -Klasse:
+Ihre Seiten ASP.NET können auch die **Response.Output** -Methode zum Schreiben des Inhalts auf der Seite, der nicht in MDS zulässig ist. Stattdessen können Sie die folgenden MDS-kompatiblen Methoden der [SPHttpUtility]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.aspx)) -Klasse:
   
     
     
 
--  [WriteNoEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteNoEncode.aspx)
+-  [WriteNoEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteNoEncode.aspx))
     
   
--  [WriteHtmlEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlEncode.aspx)
+-  [WriteHtmlEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlEncode.aspx))
     
   
--  [WriteEcmaScriptStringLiteralEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteEcmaScriptStringLiteralEncode.aspx)
+-  [WriteEcmaScriptStringLiteralEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteEcmaScriptStringLiteralEncode.aspx))
     
   
--  [WriteHtmlEncodeAllowSimpleTextFormatting()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlEncodeAllowSimpleTextFormatting.aspx)
+-  [WriteHtmlEncodeAllowSimpleTextFormatting()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlEncodeAllowSimpleTextFormatting.aspx))
     
   
--  [WriteHtmlUrlAttributeEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlUrlAttributeEncode.aspx)
+-  [WriteHtmlUrlAttributeEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlUrlAttributeEncode.aspx))
     
   
--  [WriteUrlKeyValueEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteUrlKeyValueEncode.aspx)
+-  [WriteUrlKeyValueEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteUrlKeyValueEncode.aspx))
     
   
--  [WriteUrlPathEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteUrlPathEncode.aspx)
+-  [WriteUrlPathEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteUrlPathEncode.aspx))
     
   
 Zusätzlich zum Verweisen auf JavaScript Dateien können Seiten ASP.NETJavaScript Inlinecode enthalten. Mit dem folgenden Muster stellen Sie das Skript blockiert MDS kompatibel.
@@ -230,7 +220,7 @@ namespace VisualWebPartProject2.VisualWebPart1
     // Rest of your control logic
 ```
 
-Darüber hinaus müssen die Steuerelemente und Webparts ihre Ressourcen mithilfe der Methoden in der Klasse  [SPPageContentManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.WebControls.SPPageContentManager.aspx) zu registrieren. Die am häufigsten verwendeten Ressourcen sind JavaScript Snippets und versteckte mithilfe von der **RegisterClientScriptBlock** und **RegisterHiddenField**, registriert werden können.
+Darüber hinaus müssen die Steuerelemente und Webparts ihre Ressourcen mithilfe der Methoden in der Klasse  [SPPageContentManager]((https://msdn.microsoft.com/library/Microsoft.SharePoint.WebControls.SPPageContentManager.aspx)) zu registrieren. Die am häufigsten verwendeten Ressourcen sind JavaScript Snippets und versteckte mithilfe von der **RegisterClientScriptBlock** und **RegisterHiddenField**, registriert werden können.
   
     
     
@@ -248,7 +238,7 @@ Die Steuerelemente und Webparts können XSLT-Dateien auch Renderingprozess steue
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

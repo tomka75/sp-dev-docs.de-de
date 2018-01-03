@@ -3,11 +3,11 @@ title: "Durchforsten binärer großer Objekte (BLOBs) in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 99b3dd51-1651-4300-a2de-33681f4cc258
-ms.openlocfilehash: d7fec8ce2a152b72c80d0a6776947d136638fb13
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 7b2804c5e24e5938ced28926626f2e21a8eb2993
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="crawl-binary-large-objects-blobs-in-sharepoint"></a>Durchforsten binärer großer Objekte (BLOBs) in SharePoint
 
@@ -54,7 +54,7 @@ Die Microsoft SQL Server-Datenbanktabelle muss eine Spalte enthalten, die entwed
 ## <a name="modifying-the-bdc-model-file-to-enable-crawling-of-blob-data"></a>Ändern der BDC-Modelldatei zum Durchforsten von BLOB-Daten aktivieren
 <a name="HowToCrawlBlobs_BDCModelFile"> </a>
 
-Bestätigen Sie, dass die Datenbanktabelle, die Erweiterung oder MIME-Typinformationen für die BLOB-Daten enthält, können Sie Microsoft SharePoint Designer verwenden, um einen externen Inhaltstyp erstellen, der auf die Tabelle mit BLOB-Daten basiert. Anschließend können Sie alle Vorgänge erstellen. Weitere Informationen finden Sie unter  [Gewusst wie: Erstellen externer Inhaltstypen](http://msdn.microsoft.com/library/811b458c-e209-46df-ba02-8db02bc658db%28Office.15%29.aspx) und [Gewusst wie: Erstellen eines externen Inhaltstyps basierend auf einer SQL Server-Tabelle](http://msdn.microsoft.com/library/5c42a679-d71d-46c6-aabc-d63c6cad3846%28Office.15%29.aspx). 
+Bestätigen Sie, dass die Datenbanktabelle, die Erweiterung oder MIME-Typinformationen für die BLOB-Daten enthält, können Sie Microsoft SharePoint Designer verwenden, um einen externen Inhaltstyp erstellen, der auf die Tabelle mit BLOB-Daten basiert. Anschließend können Sie alle Vorgänge erstellen. Weitere Informationen finden Sie unter  [Gewusst wie: Erstellen externer Inhaltstypen]((http://msdn.microsoft.com/library/811b458c-e209-46df-ba02-8db02bc658db%28Office.15%29.aspx)) und [Gewusst wie: Erstellen eines externen Inhaltstyps basierend auf einer SQL Server-Tabelle]((http://msdn.microsoft.com/library/5c42a679-d71d-46c6-aabc-d63c6cad3846%28Office.15%29.aspx)). 
   
     
     
@@ -87,7 +87,8 @@ Nachdem Sie den externen BLOB-Inhaltstyp erstellen, können Sie die BDC-Modellda
   
 2. Erstellen Sie eine neue Methode, die das BLOB-Feld zurückgibt. Sie müssen eine Methodeninstanz vom Typ **StreamAccessor** für dieses Methode definieren (siehe das folgende Beispiel).
     
-    > **Hinweis:** Der Tabellenname lautet in diesem Beispiel „Anlage“. 
+    > [!NOTE]
+    > Der Tabellenname lautet in diesem Beispiel „Anlage“. 
 
 ```XML
   
@@ -167,17 +168,17 @@ durch den folgenden Code:
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15Crawlblobs_addlresources"> </a>
 
 
 -  [Connector Framework für die Suche in SharePoint](search-connector-framework-in-sharepoint.md)
     
   
--  [Gewusst wie: Erstellen externer Inhaltstypen](http://msdn.microsoft.com/library/811b458c-e209-46df-ba02-8db02bc658db%28Office.15%29.aspx)
+-  [Gewusst wie: Erstellen externer Inhaltstypen]((http://msdn.microsoft.com/library/811b458c-e209-46df-ba02-8db02bc658db%28Office.15%29.aspx))
     
   
--  [XML-Ausschnitt: Modellieren einer StreamAccessor-Methode](http://msdn.microsoft.com/library/bd60cc2e-f7f6-421c-9d2a-60e8512b9893%28Office.15%29.aspx)
+-  [XML-Ausschnitt: Modellieren einer StreamAccessor-Methode]((http://msdn.microsoft.com/library/bd60cc2e-f7f6-421c-9d2a-60e8512b9893%28Office.15%29.aspx))
     
   
 

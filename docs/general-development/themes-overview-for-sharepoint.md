@@ -3,11 +3,11 @@ title: "Übersicht über Designs für SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: ae585dd3-82fe-46bb-ac93-065edc0a16f4
-ms.openlocfilehash: 71c89a8e86f50e4716d0a817b0ab818b563ff473
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f86dc2fddd58accb3bff92d9cf4fd914a93ac775
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="themes-overview-for-sharepoint"></a>Übersicht über Designs für SharePoint
 In diesem Artikel erfahren Sie mehr über die Designoberfläche in SharePoint und darüber, wie das Erscheinungsbild von Websites mithilfe von Designs angepasst werden kann.
@@ -18,12 +18,10 @@ Designs stellen einen einfachen und schnellen Weg zur Verfügung, einer SharePoi
   
     
     
-Die Designoberfläche in SharePoint wurde neu gestaltet, um das Verfahren zur Anpassung von Websites zu vereinfachen. Die Designbenutzeroberfläche wurde neu entworfen, und es gibt es eine Reihe neuer Dateiformate für Designs. Der Assistent **Erscheinungsbild ändern** ist der Einstiegspunkt in die Designoberfläche. Hier können Sie das Erscheinungsbild Ihrer Website ändern. Sie können ein Design für die Website auswählen. Anschließend können Sie das Design durch Ändern des Websitelayouts, des Hintergrunds, der Farbpalette oder des Schriftartenschemas anpassen. Bevor Sie das Design übernehmen, können Sie eine Vorschau der Website anzeigen. Weitere Informationen finden Sie unter [Auswählen eines Designs für Ihre Veröffentlichungswebsite](http://office.microsoft.com/en-us/office365-sharepoint-online-enterprise-help/choose-a-theme-for-your-publishing-site-HA102891580.aspx) auf Office.com.
+Die Designoberfläche in SharePoint wurde neu gestaltet, um das Verfahren zur Anpassung von Websites zu vereinfachen. Die Designbenutzeroberfläche wurde neu entworfen, und es gibt es eine Reihe neuer Dateiformate für Designs. Der Assistent **Erscheinungsbild ändern** ist der Einstiegspunkt in die Designoberfläche. Hier können Sie das Erscheinungsbild Ihrer Website ändern. Sie können ein Design für die Website auswählen. Anschließend können Sie das Design durch Ändern des Websitelayouts, des Hintergrunds, der Farbpalette oder des Schriftartenschemas anpassen. Bevor Sie das Design übernehmen, können Sie eine Vorschau der Website anzeigen. Weitere Informationen finden Sie unter [Auswählen eines Designs für Ihre Veröffentlichungswebsite]((http://office.microsoft.com/de-DE/office365-sharepoint-online-enterprise-help/choose-a-theme-for-your-publishing-site-HA102891580.aspx)) auf Office.com.
   
-    
-    
-
-> **Hinweis:** In SharePoint 2010 erstellte Designs können nicht auf SharePoint-Websites verwendet werden. In SharePoint 2010 erstellte Designs können jedoch weiterhin in Websitesammlungen verwendet werden, die nicht aktualisiert wurden, oder in Websitesammlungen, in denen die Oberflächenversion von 2010 verwendet wird. 
+> [!NOTE] 
+> In SharePoint 2010 erstellte Designs können nicht auf SharePoint-Websites verwendet werden. In SharePoint 2010 erstellte Designs können jedoch weiterhin in Websitesammlungen verwendet werden, die nicht aktualisiert wurden, oder in Websitesammlungen, in denen die Oberflächenversion von 2010 verwendet wird. 
   
     
     
@@ -115,7 +113,7 @@ Neue Designs können Sie erstellen, indem Sie neue Listenelemente in der Liste d
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="section4"> </a>
 
 
@@ -131,7 +129,7 @@ Neue Designs können Sie erstellen, indem Sie neue Listenelemente in der Liste d
 -  [Farbpaletten und Schriftarten in SharePoint](color-palettes-and-fonts-in-sharepoint.md)
     
   
--  [SharePoint-Teamblog: Beweisen Sie Stil mit SharePoint-Designs](http://blogs.office.com/b/sharepoint/archive/2012/10/29/show-off-your-style-with-sharepoint-theming.aspx)
+-  [SharePoint-Teamblog: Beweisen Sie Stil mit SharePoint-Designs]((http://blogs.office.com/b/sharepoint/archive/2012/10/29/show-off-your-style-with-sharepoint-theming.aspx))
     
   
 

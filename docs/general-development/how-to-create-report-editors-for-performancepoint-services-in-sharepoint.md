@@ -2,11 +2,11 @@
 title: "Erstellen von Berichts-Editoren für PerformancePoint-Dienste in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 64e2ba69caccae2580f34c973a4be340e19ec6c2
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 8c48ffd7d0029309e9cb816c64e45c5f9caf5a84
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-report-editors-for-performancepoint-services-in-sharepoint"></a>Erstellen von Berichts-Editoren für PerformancePoint-Dienste in SharePoint
 
@@ -15,11 +15,11 @@ In diesem Artikel erfahren Sie, wie die Editor-Komponente einer benutzerdefinier
 ## <a name="what-are-custom-report-editors-for-performancepoint-services"></a>Was sind benutzerdefinierte Bericht-Editoren für PerformancePoint-Dienste ?
 <a name="bi_intro"> </a>
 
-Benutzerdefinierter Bericht-Editoren aktivieren PerformancePoint-Dienste Benutzer Eigenschaften für benutzerdefinierte Berichte fest. Bericht-Editoren initialisieren auch den berichtendpunkt, der Parameterwerte von Scorecard- und filteranbietern empfängt. Weitere Informationen zu Editor Anforderungen und Funktionen finden Sie unter  [Editoren für benutzerdefinierte PerformancePoint Services-Objekte](http://msdn.microsoft.com/library/7c5924f1-91f3-436a-9d94-2e0dc454c8cc%28Office.15%29.aspx).
+Benutzerdefinierter Bericht-Editoren aktivieren PerformancePoint-Dienste Benutzer Eigenschaften für benutzerdefinierte Berichte fest. Bericht-Editoren initialisieren auch den berichtendpunkt, der Parameterwerte von Scorecard- und filteranbietern empfängt. Weitere Informationen zu Editor Anforderungen und Funktionen finden Sie unter  [Editoren für benutzerdefinierte PerformancePoint Services-Objekte]((http://msdn.microsoft.com/library/7c5924f1-91f3-436a-9d94-2e0dc454c8cc%28Office.15%29.aspx)).
   
     
     
-Die folgenden Verfahren und Beispiele basieren auf der **SampleReportViewEditor**-Klasse aus dem [Beispiel für benutzerdefinierte Objekte](http://msdn.microsoft.com/library/af021d52-7562-4e7a-9de4-e1fc5784a59d%28Office.15%29.aspx). Der Editor ist eine schlanke Webanwendung, die es Benutzern ermöglicht, den Namen und die Beschreibung des Berichts zu ändern. Den vollständigen Code für die Klasse finden Sie unter [Codebeispiel: Erstellen, Abrufen und Aktualisieren von benutzerdefinierten PerformancePoint-Dienste-Berichten in SharePoint](#bk_example)
+Die folgenden Verfahren und Beispiele basieren auf der **SampleReportViewEditor**-Klasse aus dem [Beispiel für benutzerdefinierte Objekte]((http://msdn.microsoft.com/library/af021d52-7562-4e7a-9de4-e1fc5784a59d%28Office.15%29.aspx)). Der Editor ist eine schlanke Webanwendung, die es Benutzern ermöglicht, den Namen und die Beschreibung des Berichts zu ändern. Den vollständigen Code für die Klasse finden Sie unter [Codebeispiel: Erstellen, Abrufen und Aktualisieren von benutzerdefinierten PerformancePoint-Dienste-Berichten in SharePoint](#bk_example)
   
     
     
@@ -36,12 +36,12 @@ Es wird empfohlen, dass Sie den Beispiel-Editor als Vorlage verwenden. Das Beisp
     
     
 
-1. Installieren Sie PerformancePoint-Dienste, oder kopieren Sie die DLLs, die die Erweiterung verwendet (siehe Schritt 3) auf Ihrem Computer. Weitere Informationen finden Sie unter  [PerformancePoint-Dienste-DLLs in Entwicklungsszenarios](http://msdn.microsoft.com/library/41e92619-8253-481d-82f9-35b6a6abc477%28Office.15%29.aspx).
+1. Installieren Sie PerformancePoint-Dienste, oder kopieren Sie die DLLs, die die Erweiterung verwendet (siehe Schritt 3) auf Ihrem Computer. Weitere Informationen finden Sie unter  [PerformancePoint-Dienste-DLLs in Entwicklungsszenarios]((http://msdn.microsoft.com/library/41e92619-8253-481d-82f9-35b6a6abc477%28Office.15%29.aspx)).
     
   
 2. Erstellen Sie in Visual Studio eine C#-Klassenbibliothek. Sollten Sie bereits eine Klassenbibliothek für die Erweiterung erstellt haben, fügen Sie eine neue C#-Klasse hinzu.
     
-    Sie müssen die DLL mit einem starken Namen signieren. Stellen Sie außerdem sicher, dass alle Assemblys, auf die von der DLL verwiesen wird, ebenfalls starke Namen haben. Informationen dazu, wie Sie eine Assembly mit einem starken Namen signieren und ein öffentliches/privates Schlüsselpaar erstellen, finden Sie unter  [How to: Create a public/private key pair](http://msdn.microsoft.com/library/05026813-f3bd-4d7c-9e0b-fc588eb3d114.aspx).
+    Sie müssen die DLL mit einem starken Namen signieren. Stellen Sie außerdem sicher, dass alle Assemblys, auf die von der DLL verwiesen wird, ebenfalls starke Namen haben. Informationen dazu, wie Sie eine Assembly mit einem starken Namen signieren und ein öffentliches/privates Schlüsselpaar erstellen, finden Sie unter  [How to: Create a public/private key pair]((http://msdn.microsoft.com/library/05026813-f3bd-4d7c-9e0b-fc588eb3d114.aspx)).
     
   
 3. Fügen Sie dem Projekt die folgenden DLLs als Assemblyverweise hinzu:
@@ -75,9 +75,9 @@ Es wird empfohlen, dass Sie den Beispiel-Editor als Vorlage verwenden. Das Beisp
   
   - IDataSourceConsumer.cs
     
-  
+  > [!NOTE]
+    > Der Beispielbericht erhält Daten aus einem Filter, daher werden keine **DataSourceConsumerHelper**- oder **IDataSourceConsumer**-Objekte verwendet. Aber wenn Ihr Bericht Daten aus einer PerformancePoint-Dienste-Datenquelle erhält, können Sie die von der **DataSourceConsumerHelper**-Klasse verfügbar gemachten Methoden verwenden, um Datenquellen abzurufen, wie in [Vorgehensweise: Erstellen von Filter-Editoren für PerformancePoint-Dienste in SharePoint]((https://officedevcentersite-release.azurewebsites.net/sharepoint/docs/general-development/how-to-create-report-editors-for-performancepoint-services-in-sharepoint)) beschrieben. 
 
-    > **Hinweis:** Der Beispielbericht erhält Daten aus einem Filter, daher werden keine **DataSourceConsumerHelper**- oder **IDataSourceConsumer**-Objekte verwendet. Aber wenn Ihr Bericht Daten aus einer PerformancePoint-Dienste-Datenquelle erhält, können Sie die von der **DataSourceConsumerHelper**-Klasse verfügbar gemachten Methoden verwenden, um Datenquellen abzurufen, wie in [Vorgehensweise: Erstellen von Filter-Editoren für PerformancePoint-Dienste in SharePoint](https://officedevcentersite-release.azurewebsites.net/sharepoint/docs/general-development/how-to-create-report-editors-for-performancepoint-services-in-sharepoint) beschrieben. 
 5. Fügen Sie in Ihrer Editor-Klasse **using**-Direktiven für die folgenden PerformancePoint-Dienste-Namespaces hinzu:
     
   - **Microsoft.PerformancePoint.Scorecards**
@@ -90,17 +90,18 @@ Es wird empfohlen, dass Sie den Beispiel-Editor als Vorlage verwenden. Das Beisp
     Je nach Funktionalität der Erweiterung sind u. U. andere **using**-Direktiven erforderlich.
     
   
-6. Übernehmen Sie von der Basisklasse, die die Implementierung Ihres Editors unterstützt. Da es sich bei dem Beispielbericht-Editor um eine Webanwendung handelt, erbt diese von der  [Page](https://msdn.microsoft.com/library/System.Web.UI.Page.aspx) -Klasse. Andere Implementierungen können von Basisklassen wie der [UserControl](https://msdn.microsoft.com/library/System.Windows.Forms.UserControl.aspx) -Klasse oder der [WebPart](https://msdn.microsoft.com/library/System.Web.UI.WebControls.WebParts.WebPart.aspx) -Klasse erben.
+6. Übernehmen Sie von der Basisklasse, die die Implementierung Ihres Editors unterstützt. Da es sich bei dem Beispielbericht-Editor um eine Webanwendung handelt, erbt diese von der  [Page]((https://msdn.microsoft.com/library/System.Web.UI.Page.aspx)) -Klasse. Andere Implementierungen können von Basisklassen wie der [UserControl]((https://msdn.microsoft.com/library/System.Windows.Forms.UserControl.aspx)) -Klasse oder der [WebPart]((https://msdn.microsoft.com/library/System.Web.UI.WebControls.WebParts.WebPart.aspx)) -Klasse erben.
     
   
-7. Deklarieren Sie Variablen für die Steuerelemente, die die Eigenschaften offenlegen, die Benutzer anzeigen oder ändern sollen. Vom Beispielbericht-Editor werden zunächst Variablen für die Webserversteuerelemente deklariert, die in der Benutzeroberflächenkomponente - einer ASPX-Seite - definiert sind. Vom Beispiel-Editor wird auch ein Schaltflächen-Steuerelement definiert, das es Benutzern ermöglicht, Änderungen zu übermitteln. Der Editor ruft dann die  [CreateChildControls()](https://msdn.microsoft.com/library/System.Web.UI.Control.CreateChildControls.aspx) -Methode auf, um die Steuerelemente auf der Seite zur Verfügung zu stellen.
+7. Deklarieren Sie Variablen für die Steuerelemente, die die Eigenschaften offenlegen, die Benutzer anzeigen oder ändern sollen. Vom Beispielbericht-Editor werden zunächst Variablen für die Webserversteuerelemente deklariert, die in der Benutzeroberflächenkomponente - einer ASPX-Seite - definiert sind. Vom Beispiel-Editor wird auch ein Schaltflächen-Steuerelement definiert, das es Benutzern ermöglicht, Änderungen zu übermitteln. Der Editor ruft dann die  [CreateChildControls()]((https://msdn.microsoft.com/library/System.Web.UI.Control.CreateChildControls.aspx)) -Methode auf, um die Steuerelemente auf der Seite zur Verfügung zu stellen.
     
-    > **Hinweis:** Im Editor wird die Programmierlogik separat von der Benutzeroberfläche definiert. Anweisungen zum Erstellen der Benutzeroberflächenkomponente würden den Rahmen dieser Dokumentation sprengen. 
+    > [!NOTE]
+    > Im Editor wird die Programmierlogik separat von der Benutzeroberfläche definiert. Anweisungen zum Erstellen der Benutzeroberflächenkomponenten würden den Rahmen dieser Dokumentation sprengen. 
 
     Beispiel-Bericht-Editors führt die Schritte 8 bis 12 in der **Page_Load** -Methode. **Page_Load** wird auch initialisieren und Variablen und Steuerelemente zu überprüfen, füllen Sie Steuerelemente und Statusinformationen für den benutzerdefinierten Bericht und Helper-Objekten zu speichern.
     
   
-8. Legen Sie die  [AllowUnsafeUpdates](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ServerCommon.ServerUtils.AllowUnsafeUpdates.aspx) -Eigenschaft auf **true**. Auf diese Weise können die Bericht-Editors zum Schreiben von Daten an das Repository ohne Verwendung des Formulars **POST** Vorgänge.
+8. Legen Sie die  [AllowUnsafeUpdates]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ServerCommon.ServerUtils.AllowUnsafeUpdates.aspx)) -Eigenschaft auf **true**. Auf diese Weise können die Bericht-Editors zum Schreiben von Daten an das Repository ohne Verwendung des Formulars **POST** Vorgänge.
     
   
 9. Rufen Sie die Parameter aus der Abfragezeichenfolge ab, und legen Sie diese als Werte für lokale Variablen fest, wie im folgenden Codebeispiel gezeigt.
@@ -139,9 +140,9 @@ reportviewRepositoryHelper = new ReportViewRepositoryHelper();
   - Zum Abrufen des benutzerdefinierten Berichts verwenden Sie die **ReportViewRepositoryHelper.Get**-Methode.
     
   
-  - Zum Erstellen des benutzerdefinierten Berichts verwenden Sie den **ReportView()**-Konstruktor, und definieren Sie dann die Eigenschaften  [Name](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx) , [RendererClassName](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ReportView.RendererClassName.aspx) und [SubTypeId](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ReportView.SubTypeId.aspx) des Berichts.
+  - Zum Erstellen des benutzerdefinierten Berichts verwenden Sie den **ReportView()**-Konstruktor, und definieren Sie dann die Eigenschaften  [Name]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx)) , [RendererClassName]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ReportView.RendererClassName.aspx)) und [SubTypeId]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ReportView.SubTypeId.aspx)) des Berichts.
     
-     [SubTypeId](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ReportView.SubTypeId.aspx) ist der eindeutige Bezeichner für den Bericht, und es muss übereinstimmen, das **subType** -Attribut, das Sie für den benutzerdefinierten Bericht in der PerformancePoint-Dienste web.config-Datei angeben. [RendererClassName](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ReportView.RendererClassName.aspx) ist den vollqualifizierten Namen der Klasse, die das Webserversteuerelement Renderer definiert. Wenn im Editor nicht definiert ist, ist die Standardeinstellung der Rendererklasse in der Datei web.config angegeben.
+     [SubTypeId]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ReportView.SubTypeId.aspx)) ist der eindeutige Bezeichner für den Bericht, und es muss übereinstimmen, das **subType** -Attribut, das Sie für den benutzerdefinierten Bericht in der PerformancePoint-Dienste web.config-Datei angeben. [RendererClassName]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ReportView.RendererClassName.aspx)) ist den vollqualifizierten Namen der Klasse, die das Webserversteuerelement Renderer definiert. Wenn im Editor nicht definiert ist, ist die Standardeinstellung der Rendererklasse in der Datei web.config angegeben.
     
   
 
@@ -173,8 +174,9 @@ reportviewRepositoryHelper = new ReportViewRepositoryHelper();
 ```
 
 
-    > **Note:**
-      > By default, users can create custom objects from PerformancePoint Dashboard Designer only. To enable users to create a custom object outside of Dashboard Designer, you must add a menu item that sends a  _CreateItem_ request to your editor from the content type in the repository. For more information, see [Editors for Custom PerformancePoint Services Objects](http://msdn.microsoft.com/library/7c5924f1-91f3-436a-9d94-2e0dc454c8cc%28Office.15%29.aspx). 
+    > [!NOTE]
+    > By default, users can create custom objects from PerformancePoint Dashboard Designer only. To enable users to create a custom object outside of Dashboard Designer, you must add a menu item that sends a  _CreateItem_ request to your editor from the content type in the repository. For more information, see [Editors for Custom PerformancePoint Services Objects](http://msdn.microsoft.com/library/7c5924f1-91f3-436a-9d94-2e0dc454c8cc%28Office.15%29.aspx). 
+
 13. Definieren Sie den Endpunkt des Berichts, damit der Bericht Daten von Filtern und Scorecards empfangen kann. Die erforderlichen Eigenschaften für den Endpunkt werden vom Beispielbericht-Editor definiert, wie im folgenden Codebeispiel veranschaulicht.
     
 ```cs
@@ -200,9 +202,10 @@ if (0 == reportview.EndPoints.Count)
     The sample editor defines the endpoint in the **VerifyReportView** method. It also uses **VerifyReportView** to verify that required properties are set and to define the optional [CustomData](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ReportView.CustomData.aspx) property, which you can use to store information for your report.
     
   
-14. Aktualisieren Sie den Bericht durch benutzerdefinierte Änderungen. Die **ReportViewRepositoryHelper.Update**-Methode wird von der **buttonOK_Click**-Methode im Beispielbericht-Editor aufgerufen, um die Eigenschaften  [Name](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx) und [Description](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Description.aspx) des Berichts im Repository zu aktualisieren. **buttonOK_Click** wird ebenfalls zum Überprüfen der Inhalte der Steuerelemente und zum Abrufen von Statusinformationen für den benutzerdefinierten Bericht und das Hilfsobjekt verwendet.
+14. Aktualisieren Sie den Bericht durch benutzerdefinierte Änderungen. Die **ReportViewRepositoryHelper.Update**-Methode wird von der **buttonOK_Click**-Methode im Beispielbericht-Editor aufgerufen, um die Eigenschaften  [Name]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx)) und [Description]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Description.aspx)) des Berichts im Repository zu aktualisieren. **buttonOK_Click** wird ebenfalls zum Überprüfen der Inhalte der Steuerelemente und zum Abrufen von Statusinformationen für den benutzerdefinierten Bericht und das Hilfsobjekt verwendet.
     
-    > **Hinweis;** Benutzer können die  [Name](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx)-, [Description](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Description.aspx)- und [Owner](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Owner.aspx)- (**Person Responsible**)-Eigenschaften eines benutzerdefinierten Objekts bearbeiten und benutzerdefinierte Objekte direkt im Dashboard-Designer und im PerformancePoint-Dienste-Repository löschen. 
+    > [!NOTE]
+    > Benutzer können die [Name]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx))-, [Description]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Description.aspx))- und [Owner]((https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Owner.aspx))- (**Person Responsible**)-Eigenschaften eines benutzerdefinierten Objekts bearbeiten und benutzerdefinierte Objekte direkt in Dashboard-Designer und die PerformancePoint-Dienste-Repository löschen. 
 
 ## <a name="code-example-create-retrieve-and-update-custom-performancepoint-services-reports-in-sharepoint"></a>Codebeispiel: Erstellen, Abrufen und Aktualisieren von benutzerdefinierten PerformancePoint-Dienste-Berichten in SharePoint
 <a name="bk_example"> </a>
@@ -468,12 +471,12 @@ namespace Microsoft.PerformancePoint.SDK.Samples.SampleReport
 ## <a name="next-steps"></a>Nächste Schritte
 <a name="bk_next"> </a>
 
-Nach dem Erstellen Sie eines Bericht-Editors (einschließlich der Benutzeroberfläche, falls erforderlich) und eines berichtrenderers, Bereitstellen Sie die Erweiterung, wie in  [Gewusst wie: Manuelles Registrieren von PerformancePoint-Dienste-Erweiterungen](http://msdn.microsoft.com/library/3aa6d340-4b05-46b3-9648-2b6e18e04e09%28Office.15%29.aspx)beschrieben.
+Nach dem Erstellen Sie eines Bericht-Editors (einschließlich der Benutzeroberfläche, falls erforderlich) und eines berichtrenderers, Bereitstellen Sie die Erweiterung, wie in  [Gewusst wie: Manuelles Registrieren von PerformancePoint-Dienste-Erweiterungen]((http://msdn.microsoft.com/library/3aa6d340-4b05-46b3-9648-2b6e18e04e09%28Office.15%29.aspx))beschrieben.
   
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addResources"> </a>
 
 

@@ -3,11 +3,11 @@ title: "Hinzufügen eines Webpart-Zonenausschnitts in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7583b217-200c-4569-8f88-fe975c8ebd72
-ms.openlocfilehash: e30c323a5f168a30e749f73d4b34da6d5b0ad3d7
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 3fcccf3e3be505706bc97a7f7b343e4a2f48027a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="add-a-web-part-zone-snippet-in-sharepoint"></a>Hinzufügen eines Webpart-Zonenausschnitts in SharePoint
 
@@ -59,10 +59,8 @@ Wenn ein Seitenlayout eine oder mehrere Webpartzonen enthält, stehen diese auf 
     
 Wenn Sie die volle Kontrolle darüber wünschen, wie ein Webpart auf Ihrer Website angezeigt wird, und es auf allen Seiten eines bestimmten Typs angezeigt werden soll, fügen Sie das Webpart direkt einem Seitenlayout hinzu. Wenn ein Webpart auf allen Seiten einer Website angezeigt werden soll, können Sie es auch direkt einer Gestaltungsvorlage hinzufügen.
   
-    
-    
-
->  **Hinweis:** Webpartzonen stehen für Seitenlayouts, aber nicht für Gestaltungsvorlagen zur Verfügung. Zweck der Zonen ist es, Autoren das Ändern von Webparts zu erlauben, denn Autoren bearbeiten in der Regel keine Gestaltungsvorlagen. 
+> [!NOTE]
+> Webpartzonen stehen für Seitenlayouts, aber nicht für Gestaltungsvorlagen zur Verfügung. Zweck der Zonen ist es, Autoren das Ändern von Webparts zu erlauben, denn Autoren bearbeiten in der Regel keine Gestaltungsvorlagen. 
   
     
     
@@ -114,8 +112,8 @@ Tabelle 1 zeigt wichtige Eigenschaften, die beim Einschränken einer Webpartzone
 |**AllowCustomization** <br/> |Gibt an, ob freigegebene Eigenschaftenwerte von Webparts innerhalb der Zone geändert werden können.  <br/> Bei Festlegung auf **True** können Benutzer mit den entsprechenden Berechtigungen Änderungen an der Webparts in der Zone für alle Benutzer vornehmen.  <br/> Bei Festlegung auf **False** können Benutzer auf der Benutzeroberfläche der freigegebenen Ansicht keine Änderungen an den Webparts in der Zone vornehmen. Änderungen können jedoch weiter programmgesteuert und über die Seite Webpartwartung erfolgen.  <br/> |
 |**AllowPersonalization** <br/> |Gibt an, ob persönliche Eigenschaftenwerte von Webparts innerhalb der Zone geändert werden können.  <br/> Bei Festlegung auf **True** können Benutzer mit den entsprechenden Berechtigungen persönliche Änderungen an den Webparts in der Zone vornehmen.  <br/> Bei Festlegung auf **False** können Benutzer auf der Benutzeroberfläche keine persönlichen Änderungen vornehmen, es sei denn, das Webpart ist privat und sie verfügen über die benötigten Berechtigungen.  <br/> |
    
-
-> **Hinweis:** Sie können keine Webpartzone in einen Gerätekanalbereich einfügen. Wenn Sie zulassen möchten, dass Autoren Webparts zu einer Seite hinzufügen können, und wenn Sie sich keine Sorgen über die Seitengewichtung für mobile Geräte machen, können Sie ein Rich-Text-Editor-Seitenfeld in einen Gerätekanalbereich einfügen und dann die Autoren anweisen, Webparts dort hinzuzufügen. Sie können Webparts direkt zu einem Gerätekanalbereich (ohne eine Webpartzone) hinzufügen. Weitere Informationen finden Sie unter [Vorgehensweise: Hinzufügen eines Gerätekanalbereich-Ausschnitts in SharePoint](how-to-add-a-device-channel-panel-snippet-in-sharepoint.md). 
+> [!NOTE]
+> Sie können keine Webpartzone in einen Gerätekanalbereich einfügen. Wenn Sie zulassen möchten, dass Autoren Webparts zu einer Seite hinzufügen können, und wenn Sie sich keine Sorgen über die Seitengewichtung für mobile Geräte machen, können Sie ein Rich-Text-Editor-Seitenfeld in einen Gerätekanalbereich einfügen und dann die Autoren anweisen, Webparts dort hinzuzufügen. Sie können Webparts direkt zu einem Gerätekanalbereich (ohne eine Webpartzone) hinzufügen. Weitere Informationen finden Sie unter [Vorgehensweise: Hinzufügen eines Gerätekanalbereich-Ausschnitts in SharePoint](how-to-add-a-device-channel-panel-snippet-in-sharepoint.md). 
   
     
     
@@ -156,7 +154,9 @@ Wie alle Codeausschnitte können Sie diesen Codeausschnitt aus dem Codeausschnit
     
     Eine Beschreibung der Eigenschaften, die erforderlich sind, um eine Webpartzone einzuschränken (**LockLayout**, **AllowCustomization** und **AllowPersonalization**) finden Sie in Tabelle 1.
     
-    > **Hinweis:** Sie werden möglicherweise feststellen, dass einige Eigenschaftennamen im Eigenschaftenraster des Codeausschnittkatalogs fett formatiert sind. Diese Eigenschaften besitzen Werte, die von der Standardeinstellung für diese Komponente geändert wurden, diese Eigenschaften sind jedoch für ein Designer-Szenario nicht zwingend relevant. In anderen Worten: Eine Eigenschaft ist möglicherweise fett formatiert, aber nicht notwendigerweise wichtig für Ihr Szenario. 
+    > [!NOTE]
+    > Sie werden feststellen, dass einige Eigenschaftennamen im Eigenschaftenraster des Codeausschnittkatalogs fett formatiert sind. Diese Eigenschaften haben Werte, die von der Standardeinstellung dieser Komponente abweichen, doch diese Eigenschaften sind für ein Entwurfsszenario nicht unbedingt relevant. Das heißt, dass eine fett formatierte Eigenschaft für Ihr Szenario ggf. nicht erforderlich ist. 
+
 8. Nachdem Sie Eigenschaften konfiguriert haben, wählen Sie **Aktualisieren**. Dadurch wird der HTML-Codeausschnitt links auf der Seite aktualisiert, sodass das Markup Ihre benutzerdefinierten Einstellungen widerspiegelt. Sie können stets **Zurücksetzen** wählen, um alle Eigenschaften auf ihre Standardeinstellungen zurückzusetzen.
     
   
@@ -192,10 +192,8 @@ Die beiden wichtigsten Teile eines Webpartzonen-Codeausschnitts sind die Eigensc
     
 Der folgende Code enthält weitere Eigenschaft zum Einschränken, wie Inhaltsautoren Zonen verwenden können ( **AllowCustomization**, **AllowPersonalization** und **LockLayout**).
   
-    
-    
-
->  **Hinweis:** Die Eigenschaften **AllowCustomization**, **AllowPersonalization** und **LockLayout** werden nur dann im Markup angezeigt, wenn Sie ihre Standardwerte im Eigenschaftenraster ändern.
+> [!NOTE]
+> Die Eigenschaften **AllowCustomization**, **AllowPersonalization** und **LockLayout** werden nur dann im Markup angezeigt, wenn Sie ihre Standardwerte im Eigenschaftenraster ändern.
   
     
     
@@ -221,17 +219,17 @@ Der folgende Code enthält weitere Eigenschaft zum Einschränken, wie Inhaltsaut
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="AdditionalResources"> </a>
 
 
 -  [Codeausschnitte des SharePoint-Entwurfs-Managers](sharepoint-design-manager-snippets.md)
     
   
--  [WebPartZone-Klasse](http://msdn.microsoft.com/de-DE/library/system.web.ui.webcontrols.webparts.webpartzone.aspx)
+-  [WebPartZone-Klasse]((http://msdn.microsoft.com/de-DE/library/system.web.ui.webcontrols.webparts.webpartzone.aspx))
     
   
--  [WebPartZoneBase-Eigenschaften](http://msdn.microsoft.com/de-DE/library/335sw9k3.aspx)
+-  [WebPartZoneBase-Eigenschaften]((http://msdn.microsoft.com/de-DE/library/335sw9k3.aspx))
     
   
 -  [Erstellen von Websites für SharePoint](build-sites-for-sharepoint.md)

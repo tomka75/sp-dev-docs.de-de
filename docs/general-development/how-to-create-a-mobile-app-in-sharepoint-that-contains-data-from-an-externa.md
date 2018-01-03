@@ -3,11 +3,11 @@ title: "Erstellen einer mobilen App in SharePoint, die Daten aus einer externen 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f1d62256-aca0-4a59-8145-0add9e68a449
-ms.openlocfilehash: 9a76bf3a652e116d175227e9dff7563c8cd0e327
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 43af67e2194905ec7771e8eda2ab8133e661914f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-a-mobile-app-in-sharepoint-that-contains-data-from-an-external-data-source"></a>Erstellen einer mobilen App in SharePoint, die Daten aus einer externen Datenquelle enthält
 
@@ -33,7 +33,7 @@ Hier erfahren Sie, wie Sie eine einfache mobile app in SharePoint erstellen, die
 - Microsoft Visual Studio Express mit den neuen SharePoint phonevorlagen aus  [Microsoft SharePoint SDK for Windows Phone 7.1](http://www.microsoft.com/en-us/download/details.aspx?id=30476)
     
   
-- Das BDC-Modell für unsere exampleNorthwind_oData.bdmc (Laden von  [SharePoint: erstellen eine einfachen externen listenbasierten Phone-app](http://code.msdn.microsoft.com/sharepoint/SharePoint-Create-a-88800202))
+- Das BDC-Modell für unsere exampleNorthwind_oData.bdmc (Laden von  [SharePoint: erstellen eine einfachen externen listenbasierten Phone-app]((http://code.msdn.microsoft.com/sharepoint/SharePoint-Create-a-88800202)))
     
   
 - Eine SharePoint Installation mit Administratorrechten zum Hochladen des BDC-Modells für die Northwind-Datenbank und einer SharePoint-Website, in dem Sie die externe Liste erstellen
@@ -79,7 +79,7 @@ Ein BDC-Modell ist das Herzstück von Business Connectivity Services. Es ist ein
 ## <a name="step-2-grant-permissions"></a>Schritt 2: Gewähren von Berechtigungen
 <a name="HowToCreateSimpleExternalListBasedPhoneApp_Step2"> </a>
 
-Als Nächstes müssen Sie zum Festlegen von Berechtigungen für das BDC-Modell, um anzugeben, die im Modell beschriebenen Methoden ausgeführt werden kann. Dies ist ein erforderlicher Schritt. Es wird empfohlen, dass Sie bestimmte Berechtigungen, jedem Benutzer oder Gruppe, die sie so benötigt erteilen, dass die Anmeldeinformationen der geringsten Rechte zum Ausführen der erforderlichen Aufgaben erforderlich. Weitere Informationen zum Festlegen von Berechtigungen finden Sie unter Übersicht über Business Connectivity Service-Berechtigungen in  [Business Connectivity Services-Sicherheit (Übersicht) (SharePoint Server 2010)](http://technet.microsoft.com/de-DE/library/ee661740.aspx). In diesem Schritt erteilen Sie die Berechtigung an sich selbst zum Ausführen der Methods beschrieben, die in der Northwind-Beispiel BDC-Modell.
+Als Nächstes müssen Sie zum Festlegen von Berechtigungen für das BDC-Modell, um anzugeben, die im Modell beschriebenen Methoden ausgeführt werden kann. Dies ist ein erforderlicher Schritt. Es wird empfohlen, dass Sie bestimmte Berechtigungen, jedem Benutzer oder Gruppe, die sie so benötigt erteilen, dass die Anmeldeinformationen der geringsten Rechte zum Ausführen der erforderlichen Aufgaben erforderlich. Weitere Informationen zum Festlegen von Berechtigungen finden Sie unter Übersicht über Business Connectivity Service-Berechtigungen in  [Business Connectivity Services-Sicherheit (Übersicht) (SharePoint Server 2010)]((http://technet.microsoft.com/de-DE/library/ee661740.aspx)). In diesem Schritt erteilen Sie die Berechtigung an sich selbst zum Ausführen der Methods beschrieben, die in der Northwind-Beispiel BDC-Modell.
   
     
     
@@ -257,18 +257,14 @@ Nun, dass die app ausgeführt werden kann, können Sie ihn mit Phone-Emulator te
 
   ![Demo für mobile BDC-App](../images/SPCon15_BDCMobileAppDemo.png)
   
-
-  
-
-  
-
-> **Hinweis:** Bei Verwendung des Assistenten für SharePoint-Listenvorlagen zum Erstellen einer mobilen App für eine externe Liste, die schreibgeschützte Felder enthält, lässt der vom Assistenten generierte Code nicht zu, dass Benutzer Elemente erstellen oder bearbeiten. 
+> [!NOTE]
+> Bei Verwendung des Assistenten für SharePoint-Listenvorlagen zum Erstellen einer mobilen App für eine externe Liste, die schreibgeschützte Felder enthält, lässt der vom Assistenten generierte Code nicht zu, dass Benutzer Elemente erstellen oder bearbeiten. 
   
     
     
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15createmobileapp_addlresources"> </a>
 
 
@@ -282,7 +278,7 @@ Nun, dass die app ausgeführt werden kann, können Sie ihn mit Phone-Emulator te
 -  [Überblick über Anwendungsvorlagen für Windows Phone SharePoint in Visual Studio](overview-of-windows-phone-sharepoint-application-templates-in-visual-studio.md)
     
   
--  [Vorgehensweise: Erstellen externer Listen in SharePoint](http://msdn.microsoft.com/de-DE/library/ee558778.aspx)
+-  [Vorgehensweise: Erstellen externer Listen in SharePoint]((http://msdn.microsoft.com/de-DE/library/ee558778.aspx))
     
   
 -  [Vorgehensweise: Erstellen eine Windows Phone SharePoint Liste app](how-to-create-a-windows-phone-sharepoint-list-app.md)

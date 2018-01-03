@@ -2,11 +2,11 @@
 title: "Bekannte Probleme und häufig gestellte Fragen"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 9621898741763ed6adf9b967e8c300932bee139a
-ms.sourcegitcommit: 11d9185437fc819ab41421c0f4fe06aa300b9d28
+ms.openlocfilehash: 6fba3eac7cca5200b7593dd51243df41211f6bc1
+ms.sourcegitcommit: 8384d549db4ff023aacac273d74786928ebdeece
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 12/11/2017
 ---
 # <a name="known-issues-and-frequently-asked-questions"></a>Bekannte Probleme und häufig gestellte Fragen
 
@@ -29,7 +29,7 @@ Sie sollten Ihre Yeoman-Vorlagenpakete aktualisieren. Wir haben die Zertifizieru
 
 - *Datum - 6. Juni*
 
-SharePoint Extensions mit zusätzlichen Anpassungsmöglichkeiten für SharePoint Online ist jetzt in SharePoint Online verfügbar. Weitere Informationen zu den SharePoint-Framework-Erweiterungen finden Sie in unserer Dokumentation.
+SharePoint-Framework-Erweiterungen mit zusätzlichen Anpassungsmöglichkeiten sind jetzt in SharePoint Online verfügbar. Weitere Informationen zu den SharePoint-Framework-Erweiterungen finden Sie in unserer Dokumentation.
 
 - [Übersicht über SharePoint-Framework-Erweiterungen](./extensions/overview-extensions.md)
 - [Lernprogramme zu SharePoint-Framework-Erweiterungen](./extensions/get-started/build-a-hello-world-extension.md)
@@ -40,8 +40,8 @@ SharePoint Extensions mit zusätzlichen Anpassungsmöglichkeiten für SharePoint
 
 Die clientseitigen Webparts von SharePoint-Framework auf klassischen Seiten werden im Rahmen des Feature Pack 2 (FP2) mit SharePoint 2016 veröffentlicht. Es gibt derzeit keine Pläne, SharePoint-Framework-Funktionen für SharePoint 2013 bereitzustellen. Es gibt keine bestimmte Liste der SharePoint-Framework-Funktionen, die in der SharePoint 2019-Version enthalten sein sollen.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 Verwenden Sie die folgenden Ressourcen, um den SharePoint-Entwicklern Feedback, Kommentare und Fragen zukommen zu lassen: 
 
-* [Problemliste unter „sp-dev-docs“ in GitHub](https://github.com/SharePoint/sp-dev-docs/issues)
-* [SharePoint Developer-Bereich in der Microsoft Tech Community](https://aka.ms/sppnp-community)
+* [Problemliste unter „sp-dev-docs“ in GitHub]((https://github.com/SharePoint/sp-dev-docs/issues))
+* [SharePoint Developer-Bereich in der Microsoft Tech Community]((https://aka.ms/sppnp-community))

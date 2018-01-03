@@ -3,20 +3,17 @@ title: "Aktivität Workflowklassen in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 70d5ca8d-520d-40a9-b24e-52bb31bd6c22
-ms.openlocfilehash: edfc04ae1f46b9f786c35fdfcda0d39c11d8cbe3
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 8f8b57aca40efecf9a63f2213817c29e1e116837
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="workflow-activity-classes-in-sharepoint"></a>Aktivität Workflowklassen in SharePoint
 Bietet eine Übersicht über die SharePoint-Workflow Aktivitätsklassen, die in SharePoint verfügbar sind. Die Palette von Aktivitätsklassen wurde für SharePoint überarbeitet. Tabelle 1 werden den aktuellen Katalog 49 gruppiert nach ihren jeweiligen Kategorien verfügbaren Aktivitäten aufgelistet.
   
-    
-    
-
-
-> **Hinweis:** In zukünftigen Versionen werden die in der Tabelle aufgeführten Aktivitäten auf die API-Referenzdokumentation für die jeweils zugehörigen verwalteten Klassen verlinken. 
+> [!NOTE] 
+> In zukünftigen Versionen werden die in der Tabelle aufgeführten Aktivitäten auf die API-Referenzdokumentation für die jeweils zugehörigen verwalteten Klassen verlinken. 
   
     
     
@@ -82,7 +79,7 @@ Bietet eine Übersicht über die SharePoint-Workflow Aktivitätsklassen, die in 
 |WriteToHistory  <br/> |Utility  <br/> |Schreibvorgänge angegebenen Kommentar Verlaufsliste.  <br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bkm_addlresource"> </a>
 
 

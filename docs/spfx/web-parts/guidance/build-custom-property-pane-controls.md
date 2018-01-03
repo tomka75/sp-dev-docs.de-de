@@ -2,11 +2,11 @@
 title: "Erstellen benutzerdefinierter Steuerelemente für den Eigenschaftenbereich"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 42b3b6858626ab110aa03202819ea174c0c3fd62
-ms.sourcegitcommit: 3276e9b281b227fb2f1a131ab4ac54ae212ce5cf
+ms.openlocfilehash: cb32315eb070b9e199bba8bb38fcb01d45454de3
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/24/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="build-custom-controls-for-the-property-pane"></a>Erstellen benutzerdefinierter Steuerelemente für den Eigenschaftenbereich
 
@@ -16,9 +16,10 @@ In diesem Artikel erfahren Sie, wie Sie ein benutzerdefiniertes Steuerelement f�
 
 ![Element-Dropdownliste, in der verfügbare Elemente nach dem Auswählen einer Liste im Listen-Dropdown geladen werden](../../../images/custom-property-pane-control-cascading-loading-items.png)
 
-Der Quellcode des Webparts, mit dem wir arbeiten, steht auf GitHub zur Verfügung, unter [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols).
+Der Quellcode des Webparts, mit dem wir arbeiten, steht auf GitHub zur Verfügung, unter [(https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols)]((https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols)).
 
-> **Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment.md), in der Sie SharePoint Framework-Lösungen erstellen können.
+> [!NOTE] 
+> Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment.md), in der Sie SharePoint-Framework-Lösungen erstellen können.
 
 ## <a name="create-new-project"></a>Erstellen eines neuen Projekts
 
@@ -193,7 +194,8 @@ Das SharePoint Framework bietet Ihnen ein standardmäßiges Dropdown-Steuereleme
 
 Wenn Sie ein benutzerdefiniertes Eigenschaftenbereichssteuerelement erstellen, das React im SharePoint Framework verwendet, besteht das Steuerelement aus einer Klasse, die das Steuerelement bei dem Webpart registriert, und einer React-Komponente, die das Dropdown rendert und seine Daten verwaltet.
 
-> **Hinweis:** Ab Drop 6 des SharePoint Frameworks gibt es einen Fehler in der React-Dropdownkomponente der Office UI Fabric, der dazu führt, dass das in diesem Artikel erstellte Steuerelement nicht ordnungsgemäß funktioniert. Eine temporäre Problemumgehung besteht darin, die Datei **node_modules/@microsoft/office-ui-fabric-react-bundle/dist/office-ui-fabric-react.bundle.js** zu bearbeiten und die Zeile **12027** von:
+> [!NOTE] 
+> Ab Drop 6 des SharePoint Frameworks gibt es einen Fehler in der React-Dropdownkomponente der Office UI Fabric, der dazu führt, dass das in diesem Artikel erstellte Steuerelement nicht ordnungsgemäß funktioniert. Eine temporäre Problemumgehung besteht darin, die Datei **node_modules/@microsoft/office-ui-fabric-react-bundle/dist/office-ui-fabric-react.bundle.js** zu bearbeiten und die Zeile **12027** zu ändern, und zwar von:
 > 
 > ```js
 > isDisabled: this.props.isDisabled !== undefined ? this.props.isDisabled : this.props.disabled

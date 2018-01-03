@@ -3,11 +3,11 @@ title: "Aktualisieren von Vorlagen für SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 69048e4c-6d6d-4e4e-b74c-7c72ae444354
-ms.openlocfilehash: cb8e3849b9853d593ce8504814e92066bf08a540
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: efa803c32e4da5c54df61f0647c2685006512916
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="upgrade-web-templates-for-sharepoint"></a>Aktualisieren von Vorlagen für SharePoint
 Informationen Sie zur Aktualisierung der angepassten SharePoint 2010 Webvorlagen für die Verwendung in SharePoint nach einem Upgrade Self-service. SharePoint hat sich die zugrunde liegenden Komponenten zum Rendern der Darstellung von SharePoint-Websites verwendeten erheblich geändert. Für Standard-Komponenten in SharePoint 2010 vorgenommenen Anpassungen schließen Sie diese neuen Änderungen Formatvorlagen, Seitenlayouts, Masterseiten und Designs.
@@ -131,28 +131,16 @@ Um die Standardfunktionalität wieder die Vorlage hinzuzufügen, müssen Sie die
    
 5. Speichern Sie Ihre Änderungen, und führen Sie die Bereitstellung wie gewohnt durch.
     
+> [!NOTE] 
+> Möglicherweise müssen Sie diese Features auch in der Zentraladministration aktivieren. 
   
-
-> **Hinweis:** Möglicherweise müssen Sie diese Features auch in der Zentraladministration aktivieren. 
-  
-    
-    
-
-
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
-
 -  [Aktualisieren von Anpassungen für SharePoint-Websites](upgrade-site-customizations-for-sharepoint.md)
-    
-  
--  [SharePoint 2010 und Webvorlagen](http://blogs.msdn.com/b/vesku/archive/2010/10/14/sharepoint-2010-and-web-templates.aspx)
-    
-  
--  [Planen eines Upgrades eine Websitesammlung](https://technet.microsoft.com/de-DE/library/ff191199.aspx)
-    
-  
--  [Planen von websitesammlungsupgrades in SharePoint](http://technet.microsoft.com/de-DE/library/ff191199.aspx)
+-  [SharePoint 2010 und Webvorlagen]((http://blogs.msdn.com/b/vesku/archive/2010/10/14/sharepoint-2010-and-web-templates.aspx)) 
+-  [Planen eines Upgrades eine Websitesammlung]((https://technet.microsoft.com/de-DE/library/ff191199.aspx))
+-  [Planen von websitesammlungsupgrades in SharePoint]((http://technet.microsoft.com/de-DE/library/ff191199.aspx))
     
   
 

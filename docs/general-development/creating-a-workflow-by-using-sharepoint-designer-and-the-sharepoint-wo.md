@@ -3,11 +3,11 @@ title: Erstellen eines Workflows mithilfe von SharePoint Designer 2013 und der S
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c05e0127-c6f5-48b8-b8f2-cbcc30149c8b
-ms.openlocfilehash: 06d6a0c8b59772bddad4dadd21b3b544868c42f2
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e2b6cd1985f5965e6b39865a69153abbeb167590
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="creating-a-workflow-by-using-sharepoint-designer-2013-and-the-sharepoint-workflow-platform"></a>Erstellen eines Workflows mithilfe von SharePoint Designer 2013 und der SharePoint-Workflowplattform
 Erfahren Sie, wie sie einen Workflow mit SharePoint Designer 2013 und der SharePoint-Workflow-Plattform installieren, öffnen und erstellen. 
@@ -24,7 +24,7 @@ SharePoint Designer 2013 ist ein kostenloser Download. Befolgen Sie diese Schrit
 ### <a name="to-install-sharepoint-designer-2013"></a>So installieren Sie SharePoint Designer 2013
 
 
-1. Öffnen Sie Ihren Webbrowser und navigieren Sie zum Microsoft Download Center:  [http://www.microsoft.com/download/](http://www.microsoft.com/download.aspx). 
+1. Öffnen Sie Ihren Webbrowser und navigieren Sie zum Microsoft Download Center:  [http://www.microsoft.com/download/]((http://www.microsoft.com/download.aspx)). 
     
   
 2. Geben Sie SharePoint Designer 2013 in das Suchfeld ein.
@@ -114,7 +114,9 @@ SharePoint Designer 2013 kann für viele wichtige Aufgaben verwendet werden. Der
   
 4. Geben Sie im Dialogfeld **Listenworkflow erstellen** einen Namen und eine Beschreibung für den Workflow ein und vergewissern Sie sich dann, dass der **Plattformtyp** auf **SharePoint Workflow** eingestellt ist, wie in der Abbildung dargestellt.
     
-    > **Hinweis:** Wenn Ihnen „SharePoint Workflow“ nicht als verfügbarer Plattformtyp angezeigt wird, dann ist Workflow-Manager nicht für die Verwendung mit der SharePoint-Farm konfiguriert. 
+    > [!NOTE]
+    > Wenn Ihnen „SharePoint Workflow“ nicht als verfügbarer Plattformtyp angezeigt wird, dann ist Workflow-Manager nicht für die Verwendung mit der SharePoint-Farm konfiguriert. 
+
 5. Klicken Sie auf **OK**, um den Workflow zu erstellen.
     
   
@@ -178,11 +180,8 @@ Nachdem der Workflow erstellt wurde, können Sie Aktionen, Bedingungen, Stufen, 
     
 ![Workflowelemente im Menüband.](../images/SPD15-install-connect-4.png)
   
-    
-    
-
-    
-> **Hinweis:** Die oben dargestellte Vorgehensweise wird zum Erstellen eines Listenworkflows verwendet. Ein wiederverwendbarer Workflow oder Websiteworkflow kann mithilfe derselben Vorgehensweise mit den folgenden Änderungen erstellt werden. Wählen Sie im Menüband statt der Schaltfläche „Listenworkflow“ die Schaltfläche **Wiederverwendbarer Workflow** oder **Websiteworkflow**, wenn Sie den Workflow erstellen.
+> [!NOTE]
+> Die vorhergehende Vorgehensweise wird zum Erstellen eines Listenworkflows verwendet. Ein wiederverwendbarer Workflow oder Websiteworkflow kann mithilfe derselben Vorgehensweise mit den folgenden Änderungen erstellt werden. Wählen Sie im Menüband statt der Schaltfläche „Listenworkflow“ die Schaltfläche **Wiederverwendbarer Workflow** oder **Websiteworkflow**, wenn Sie den Workflow erstellen.
   
     
     
@@ -192,14 +191,14 @@ Weitere Informationen zu den verfügbaren Komponenten zur Entwicklung von Workfl
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
--  [Neuigkeiten im Workflow in SharePoint](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)
+-  [Neuerungen in SharePoint-Workflows]((http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx))
     
   
--  [Erste Schritte mit SharePoint-Workflow](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)
+-  [Erste Schritte mit SharePoint-Workflows]((http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx))
     
   
 -  [Workflowentwicklung in SharePoint Designer und Visio](workflow-development-in-sharepoint-designer-and-visio.md)

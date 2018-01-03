@@ -5,11 +5,11 @@ keywords: how to,howdoi,howto
 f1_keywords: how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 39115503-8352-4589-87f4-cfa9c07260b6
-ms.openlocfilehash: 113bf67f3abcb3b936c3d1421cae5ea9f7524be6
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 22fa7131e89f660bc9b47aa1c8aa8ba2614bb64f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="get-an-entire-workbook-or-a-snapshot"></a>Abrufen einer kompletten Arbeitsmappe oder einer Momentaufnahme
 
@@ -66,7 +66,7 @@ byte[] workbook = xlService.GetWorkbook(sessionId, WorkbookType.FullWorkbook, ou
 Dim workbook() As Byte = xlService.GetWorkbook(sessionId, WorkbookType.FullWorkbook, status)
 ```
 
-The **WorkbookType.FullWorkbook** option works only if the user has open rights to the file; if the user has view-only rights, the call will fail.In some cases, your code would need to save the result of a **GetWorkbook** call. For a discussion about how to save a workbook, see the [How to: Save a Workbook](http://msdn.microsoft.com/library/feb74f7a-2d8f-4672-911b-de85f8852aea%28Office.15%29.aspx) example.For more information about the **GetWorkbook** method and the **WorkbookType** enumeration, see the Excel Web Services reference documentation.
+The **WorkbookType.FullWorkbook** option works only if the user has open rights to the file; if the user has view-only rights, the call will fail.In some cases, your code would need to save the result of a **GetWorkbook** call. For a discussion about how to save a workbook, see the [How to: Save a Workbook]((http://msdn.microsoft.com/library/feb74f7a-2d8f-4672-911b-de85f8852aea%28Office.15%29.aspx)) example.For more information about the **GetWorkbook** method and the **WorkbookType** enumeration, see the Excel Web Services reference documentation.
 ## <a name="example"></a>Beispiel
 
 The following program (a console application) receives one command-line argument, which is the path to the workbook on the server. The program calls the Web service to open the workbook on the server and get a snapshot. It then writes it to standard output so that you can redirect it to a new snapshot file. 
@@ -219,10 +219,8 @@ C:\\>GetSnapshot.exe http://myServer02/reports/reports/OriginalWorkbook.xlsx > S
 
 Wenn Sie das vorherige Befehlszeilenbeispiel verwenden, platziert das GetSnapshot-Tools eine neue Datei in das Verzeichnis „C:\\“.
   
-    
-    
-
-> **Hinweis:** Die Arbeitsmappe, für die Sie eine Momentaufnahme erstellen möchten, muss sich an einem vertrauenswürdigen Speicherort befinden. 
+> [!NOTE]
+> Die Arbeitsmappe, von der Sie eine Momentaufnahme abrufen möchten, muss sich an einem vertrauenswürdigen Speicherort befinden. 
   
     
     

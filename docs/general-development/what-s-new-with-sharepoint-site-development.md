@@ -3,11 +3,11 @@ title: Neuigkeiten in der SharePoint-Websiteentwicklung
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: ac1e9891-5ce9-4707-84e5-6e2fc02fda6b
-ms.openlocfilehash: aa697345fd77c86159a94de4f5c91b79ead99e73
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 541fb06089538563b54e48f0a6c0741fa73fa811
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="whats-new-with-sharepoint-site-development"></a>Neuigkeiten in der SharePoint-Websiteentwicklung
 Informationen über das neue Erstellungs -und Veröffentlichungsmodell in SharePoint zur Veröffentlichung von Websites.
@@ -25,7 +25,7 @@ In SharePoint können Sie das .NET-Clientobjektmodell (CSOM), Silverlight und di
   
     
     
-Weitere Informationen finden Sie in den Referenzhomepages zu Websites und Inhalten für  [.NET-Server](http://msdn.microsoft.com/library/8a93e838-234c-41d8-b990-7ac1a415dd5e%28Office.15%29.aspx),  [.NET-Client](http://msdn.microsoft.com/library/e6542022-a459-4c3b-aee0-e350c6397139%28Office.15%29.aspx) und [JavaScript](http://msdn.microsoft.com/library/1ead2f8d-a541-4a50-89fa-f195f2ba14e5%28Office.15%29.aspx). Sie können auch mit der  [-Referenzhomepage](http://msdn.microsoft.com/library/7940ba4e-f6f0-4bc0-b995-ceb2d358ca0d%28Office.15%29.aspx) beginnen, falls Sie ganz oben beginnen möchten und dann die Inhalte der einzelnen Programmierungsmodelle kennen lernen wollen.
+Weitere Informationen finden Sie in den Referenzhomepages zu Websites und Inhalten für  [.NET-Server]((http://msdn.microsoft.com/library/8a93e838-234c-41d8-b990-7ac1a415dd5e%28Office.15%29.aspx)),  [.NET-Client]((http://msdn.microsoft.com/library/e6542022-a459-4c3b-aee0-e350c6397139%28Office.15%29.aspx)) und [JavaScript]((http://msdn.microsoft.com/library/1ead2f8d-a541-4a50-89fa-f195f2ba14e5%28Office.15%29.aspx)). Sie können auch mit der  [-Referenzhomepage]((http://msdn.microsoft.com/library/7940ba4e-f6f0-4bc0-b995-ceb2d358ca0d%28Office.15%29.aspx)) beginnen, falls Sie ganz oben beginnen möchten und dann die Inhalte der einzelnen Programmierungsmodelle kennen lernen wollen.
   
     
     
@@ -196,10 +196,8 @@ Wenn Sie ein erfahrener Webdesigner sind, möchten Sie vielleicht einen Entwurf 
     
 In früheren SharePoint-Versionen mussten Sie, wenn Sie einen Entwurf erneut verwenden wollten, Visual Studio installiert haben, um ein SharePoint-Lösungspaket (.wsp-Datei) zu erstellen. Auf der Zielwebsite mussten Sie dann das Paket in den Lösungskatalog hochladen und dort ausführen. In SharePoint können Sie jetzt, nachdem Sie den Entwurf Ihrer Website abgeschlossen haben, im Entwurfs-Manager **Paket exportieren** wählen, um eine einzige .wsp-Datei, das so genannte [Designpaket](sharepoint-design-manager-design-packages.md) zu exportieren. Beim Export eines Designpakets erstellt SharePoint automatisch ein Designpaket des gesamten Inhalts, den Sie im Masterseitenkatalog, in der Formatbibliothek, in der Designgalerie, in der Gerätkanalliste und in den Seiteninhaltstypen hinzugefügt oder geändert haben. 
   
-    
-    
-
-> **Hinweis:** Ein Designpaket enthält keine Seiten, Navigationseinstellungen oder den Terminologiespeicher. 
+> [!NOTE] 
+> Ein Designpaket enthält keine Seiten, Navigationseinstellungen oder den Terminologiespeicher. 
   
     
     
@@ -237,7 +235,7 @@ Verwenden Sie die Themenseitenfunktion, um die Benutzerfreundlichkeit der Starts
   
     
     
-Weitere Informationen zur websiteübergreifenden Veröffentlichung finden Sie unter [Szenario: Erstellen von SharePoint-Websites mit websiteübergreifender Veröffentlichung in SharePoint](http://technet.microsoft.com/en-us/sharepoint/jj872721). Weitere Informationen über Entwicklungsoptionen für die websiteübergreifende Veröffentlichung finden Sie unter [Websiteübergreifende Veröffentlichung in SharePoint](cross-site-publishing-in-sharepoint.md).
+Weitere Informationen zur websiteübergreifenden Veröffentlichung finden Sie unter [Szenario: Erstellen von SharePoint-Websites mit websiteübergreifender Veröffentlichung in SharePoint]((http://technet.microsoft.com/de-DE/sharepoint/jj872721)). Weitere Informationen über Entwicklungsoptionen für die websiteübergreifende Veröffentlichung finden Sie unter [Websiteübergreifende Veröffentlichung in SharePoint](cross-site-publishing-in-sharepoint.md).
   
     
     
@@ -275,14 +273,14 @@ Sie können das Variationsfeature in SharePoint verwenden, um mehrsprachige Webs
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15_WhatsNewSiteDevelopment_AdditionalResources"> </a>
 
 
--  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode](http://msdn.microsoft.com/library/5a69c9e3-73bf-4ed5-bc19-182056bdb394%28Office.15%29.aspx)
+-  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-Clientbibliothekscode]((http://msdn.microsoft.com/library/5a69c9e3-73bf-4ed5-bc19-182056bdb394%28Office.15%29.aspx))
     
   
--  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint](http://msdn.microsoft.com/library/29089af8-dbc0-49b7-a1a0-9e311f49c826%28Office.15%29.aspx)
+-  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint]((http://msdn.microsoft.com/library/29089af8-dbc0-49b7-a1a0-9e311f49c826%28Office.15%29.aspx))
     
   
 -  [Vorgehenweise: Anpassen der Seitenlayouts für eine katalogbasierte Website in SharePoint](how-to-customize-page-layouts-for-a-catalog-based-site-in-sharepoint.md)

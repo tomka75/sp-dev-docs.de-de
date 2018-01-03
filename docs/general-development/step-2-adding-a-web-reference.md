@@ -3,11 +3,11 @@ title: Step 2 Adding a Web Reference
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e9175863-ddb4-4750-847d-d53cb59b33cb
-ms.openlocfilehash: ced2da0e9fcbdfdca79175d0219f13dcce4e63d4
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 8f306628c2fa335631c441c905bfb1d6d87e79d8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="step-2-adding-a-web-reference"></a>Step 2: Adding a Web Reference
 
@@ -30,7 +30,9 @@ In der Dienstbeschreibung werden die verfügbaren Dienste und die Interaktion mi
   
 2. Geben Sie im Feld **URL** im Dialogfeld **Webverweis hinzufügen** die URL zum Abrufen der Dienstbeschreibung des Excel Web Services ein, z. B. `http://<server>/<customsite>/_vti_bin/excelservice.asmx` oder `http://<server>/_vti_bin/excelservice.asmx`. Klicken Sie dann auf **Los**, um Informationen über den Webdienst abzurufen.
     
-    > **Hinweis:** Sie können das Dialogfeld **Webverweis hinzufügen** auch im Bereich **Projektmappen-Explorer** öffnen, indem Sie mit der rechten Maustaste auf **Verweise** klicken und **Webverweis hinzufügen** auswählen. 
+    > [!NOTE]
+    > Sie können das Dialogfeld **Webverweis hinzufügen** auch im Bereich **Projektmappen-Explorer** öffnen, indem Sie mit der rechten Maustaste auf **Verweise** klicken und **Webverweis hinzufügen** auswählen. 
+    
 3. Benennen Sie im Feld **Webverweis-Name** den Webverweis in toExcelWebService um.
     
   

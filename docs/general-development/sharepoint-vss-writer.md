@@ -3,11 +3,11 @@ title: SharePoint VSS Writer
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f83577e4-ebb8-44e5-8dec-a3ca5878b7fd
-ms.openlocfilehash: 017a84bf57af7bf675a3825cb3a8a3dd2a9076fa
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 98e80844bdf8adf482307db51a4b049f8429c1b5
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-vss-writer"></a>SharePoint VSS Writer
  **Zusammenfassung:** Informationen Sie zu den Eigenschaften und Features von der Gruppenrichtlinien-Verwaltungskonsole (Volume Shadow Copy Service, VSS) Writer für Microsoft SharePoint. Der VSS im Lieferumfang von Windows Server ist die Infrastruktur, die Funktionen der integrierten Shadow-Kopien bereitstellt. Schattenkopien erstellt von VSS ergänzen des Administrators die Speicher Band Archivierung Sicherungslösungen, Bereitstellung von High Fidelity Point-in-Time-Kopien, die erstellt werden können und auf einfache Weise und verbessern, damit helfen, die verschiedene Aspekte der Speicherung und Verwaltung vereinfachen wiederhergestellt. Microsoft SharePoint Foundation verwendet VSS zum Vereinfachen der Sicherung und Wiederherstellungsvorgängen. 
@@ -49,12 +49,13 @@ Im folgenden sind die SharePoint Foundation VSS-Lösung Funktionen und Merkmale:
   
 - **Vollständiges Rollback.** Der SPF VSS Writer behandelt alle Komponenten in einer SharePoint Foundation-Bereitstellung, einschließlich der Konfigurationsdatenbank und der Inhaltsdatenbanken und der Suchdatenbank und des Suchindexes. Wie bereits zuvor erwähnt, besitzt der Writer auch eine Abhängigkeit vom Suchschreiber, der alle Suchindexdateien für die Sicherung und Wiederherstellung behandelt. Zum Zeitpunkt der Wiederherstellung kann der Writer ein Rollback der gesamten SharePoint Foundation-Bereitstellung durchführen, indem eine vorherige Farmsicherung wiederhergestellt wird. (Der IIS-Konfigurationsspeicher ist nicht enthalten. Er muss separat gesichert und wiederhergestellt werden.)
     
-    > **Hinweis:** Wichtige Informationen zur Wiederherstellung finden Sie im Abschnitt „Wiederherstellen“ im Artikel [VSS-Anforderer und SharePoint](vss-requestors-and-sharepoint.md).
+    > [!NOTE]
+    > Wichtige Informationen zur Wiederherstellung finden Sie im Abschnitt „Wiederherstellen“ im Artikel [VSS-Anforderer und SharePoint](vss-requestors-and-sharepoint.md).
+
 - **Synchronisierung von Datenbanken nach der Wiederherstellung.** Zur Sicherstellung, dass alle Datenbanken nach Abschluss eines Wiederherstellungsvorgangs mit der Farm synchronisiert werden, wird jede Datenbank automatisch nach der Wiederherstellung getrennt und wieder mit der Farm verbunden. Administratoren müssen keine zusätzlichen Verfahren ausführen, um die wiederhergestellten Datenbanken erneut zu synchronisieren.
     
-  
-
-> **Wichtig:** Wenn Sie in Ihrer SharePoint Foundation-Farm SQL-Aliasse zur Anbindung an SQL Server verwenden, müssen Sie die Komponenten für SQL-Clientkonnektivität auf den Farmservern installieren, um SPF-VSS Writer für Sicherungen/Wiederherstellungen nutzen zu können. Zu diesen Komponenten gehört der SQL-WMI-Anbieter für die Konfigurationsverwaltung. SPF-VSS Writer benötigt diesen Anbieter, um die SQL-Aliasse auf die richtige SQL Server-Instanz auflösen zu können. Eine Installation von Verwaltungstools wie SQL Management Studio ist nicht erforderlich. Sie müssen dieselbe Installationsquelle verwenden wie für die Installation der SQL Server-Vollversion, beispielsweise eine Daten-DVD. (Verwenden Sie auf keinen Fall die separaten, eigenständigen Versionen der Clientkomponenten. Der SQL-WMI-Anbieter ist in diesen Versionen nicht enthalten.) Entscheiden Sie sich für eine benutzerdefinierte Installation, und installieren Sie lediglich die Clientkomponenten. 
+> [!IMPORTANT]
+> Wenn Sie in Ihrer SharePoint Foundation-Farm SQL-Aliasse zur Anbindung an SQL Server verwenden, müssen Sie die Komponenten für SQL-Clientkonnektivität auf den Farmservern installieren, um SPF-VSS Writer für Sicherungen/Wiederherstellungen nutzen zu können. Zu diesen Komponenten gehört der SQL-WMI-Anbieter für die Konfigurationsverwaltung. SPF-VSS Writer benötigt diesen Anbieter, um die SQL-Aliasse auf die richtige SQL Server-Instanz auflösen zu können. Eine Installation von Verwaltungstools wie SQL Management Studio ist nicht erforderlich. Sie müssen dieselbe Installationsquelle verwenden wie für die Installation der SQL Server-Vollversion, beispielsweise eine Daten-DVD. (Verwenden Sie auf keinen Fall die separaten, eigenständigen Versionen der Clientkomponenten. Der SQL-WMI-Anbieter ist in diesen Versionen nicht enthalten.) Entscheiden Sie sich für eine benutzerdefinierte Installation, und installieren Sie lediglich die Clientkomponenten. 
   
     
     
@@ -122,7 +123,7 @@ Erfahren Sie, wie erstellen und Verwenden eines VSS-Requestors für SharePoint:
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

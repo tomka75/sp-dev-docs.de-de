@@ -3,11 +3,11 @@ title: "Konfigurieren und Verwenden von Pushbenachrichtigungen in SharePoint-App
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 68fa2138-86d9-4e35-9c7c-5cd292087b80
-ms.openlocfilehash: b9e6c480be922250a62a524a703ea2cd0925b548
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 249e1a4c3ffb93b04f4ddcf0e1e4df4c33eceaca
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="configure-and-use-push-notifications-in-sharepoint-apps-for-windows-phone"></a>Konfigurieren und Verwenden von Pushbenachrichtigungen in SharePoint-Apps für Windows Phone
 
@@ -16,7 +16,7 @@ Erstellen Sie eine Lösung in SharePoint Server, um Pushbenachrichtigungen zu se
     
     
 
-Windows Phone 7 unterstützt nicht mehrere apps gleichzeitig ausgeführt. Als die Komponenten des Betriebssystems Windows Phone (OS) selbst kann nur eine app auf dem Telefon zu einem Zeitpunkt ausgeführt werden. Ein Ereignis, die einer bestimmten Phone-app für die Überprüfung relevante auftreten (z. B., beispielsweise ein Listenelement zu einer Liste hinzugefügte) Wenn die app auf dem Telefon im Vordergrund ausgeführt nicht zur Verfügung (d. h., wenn die app veraltete oder geschlossen ist). Konnten Sie einen Hintergrunddienst auf dem Telefon mit einem periodischen Vorgang, der Überprüfung auf Änderungen an der Liste auf dem Server möglicherweise entwickeln, aber diese Vorgehensweise würde Ressourcen (z. B. Netzwerk Bandbreite und Batterie Power) auf dem Telefon nutzen. Mit MPNS und die Komponenten, die in der Windows Phone 7-Betriebssystem integrierten Benachrichtigungen zu unterstützen, kann das Telefon selbst eine Benachrichtigung, die über eine bestimmte app für den Kontext relevant empfangen - selbst wenn diese app ausgeführt wird nicht - der Benutzer die Möglichkeit zum Starten der relevanten app als Antwort auf die Benachrichtigung gewährt werden kann. (Weitere Informationen zu Pushbenachrichtigungen, finden Sie unter  [Push Notifications Overview for Windows Phone](http://msdn.microsoft.com/de-DE/library/ff402558%28VS.92%29.aspx) in der MSDN Library). In diesem Thema erstellen Sie eine serverseitige Lösung zum Senden von Pushbenachrichtigungen zu einer Phone-app basierend auf eine Änderung in der Liste auf der die app basiert. Erstellen Sie dann die Phone-app für den Empfang von diese Benachrichtigungen.
+Windows Phone 7 unterstützt nicht mehrere apps gleichzeitig ausgeführt. Als die Komponenten des Betriebssystems Windows Phone (OS) selbst kann nur eine app auf dem Telefon zu einem Zeitpunkt ausgeführt werden. Ein Ereignis, die einer bestimmten Phone-app für die Überprüfung relevante auftreten (z. B., beispielsweise ein Listenelement zu einer Liste hinzugefügte) Wenn die app auf dem Telefon im Vordergrund ausgeführt nicht zur Verfügung (d. h., wenn die app veraltete oder geschlossen ist). Konnten Sie einen Hintergrunddienst auf dem Telefon mit einem periodischen Vorgang, der Überprüfung auf Änderungen an der Liste auf dem Server möglicherweise entwickeln, aber diese Vorgehensweise würde Ressourcen (z. B. Netzwerk Bandbreite und Batterie Power) auf dem Telefon nutzen. Mit MPNS und die Komponenten, die in der Windows Phone 7-Betriebssystem integrierten Benachrichtigungen zu unterstützen, kann das Telefon selbst eine Benachrichtigung, die über eine bestimmte app für den Kontext relevant empfangen - selbst wenn diese app ausgeführt wird nicht - der Benutzer die Möglichkeit zum Starten der relevanten app als Antwort auf die Benachrichtigung gewährt werden kann. (Weitere Informationen zu Pushbenachrichtigungen, finden Sie unter  [Push Notifications Overview for Windows Phone]((http://msdn.microsoft.com/de-DE/library/ff402558%28VS.92%29.aspx)) in der MSDN Library). In diesem Thema erstellen Sie eine serverseitige Lösung zum Senden von Pushbenachrichtigungen zu einer Phone-app basierend auf eine Änderung in der Liste auf der die app basiert. Erstellen Sie dann die Phone-app für den Empfang von diese Benachrichtigungen.
   
     
     
@@ -383,10 +383,8 @@ In diesem Code nach der Liste ein Element hinzugefügt wird, der der Ereignisemp
     
 Eine leere Zeichenfolge ist einfach als Wert des Parameters **toastParam** übergeben wird, der die **Param** -Eigenschaft im XML-Schema für Toast-Benachrichtigung entspricht. Sie können diesen Parameter verwenden, an, beispielsweise eine Seite mit den Phone-app zu öffnen, wenn der Benutzer auf die Benachrichtigung in das Telefon klickt. In der Beispiel-app entwickelt, die weiter unten in diesem Thema für diese Benachrichtigungen werden vom Server empfangen wurde wird die **Param** -Eigenschaft nicht verwendet. Im Formular List (List.xaml) in der app ist einfach geöffnet, wenn der Benutzer auf die Benachrichtigung klickt.
   
-    
-    
-
-> **Hinweis:** Die **Param**-Eigenschaft für Toast-Benachrichtigung wird nur in Windows Phone OS Version 7.1 oder höher unterstützt.
+> [!NOTE]
+> Die **Param**-Eigenschaft für Toast-Benachrichtigung wird nur in Windows Phone OS Version 7.1 oder höher unterstützt.
   
     
     
@@ -1148,7 +1146,9 @@ namespace SPListAppForNotifications
   
 10. Navigieren Sie zu dem Ordner, in dem die standardmäßigen Windows Phone-Symbolbilder durch den Windows Phone SDK 7.1 installiert wurden.
     
-    > **Hinweis:** Die Bilder mit einem hellen Vorder- und ein dunkler Hintergrund sind in % Programme %(x86) \\Microsoft SDKs\\Windows Phone\\v7.1\\Icons\\dark in einer Standardinstallation des SDK. 
+    > [!NOTE]
+    > Die Bilder mit einem hellen Vorder- und ein dunkler Hintergrund sind in % Programme %(x86) \\Microsoft SDKs\\Windows Phone\\v7.1\\Icons\\dark in einer Standardinstallation des SDK enthalten. 
+
 11. Wählen Sie die Bilddatei "appbar.check.rest.png" und klicken Sie auf **Hinzufügen**. Das Bild wird unter dem Bilderknoten zum Projekt hinzugefügt.
     
   
@@ -1350,14 +1350,14 @@ Wenn Sie ein Element der Aufträge SharePoint-Liste, den Code hinzufügen in der
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15Configurepushnot_addlresources"> </a>
 
 
 -  [Erstellen von Windows Phone-Apps, die auf SharePoint zugreifen](build-windows-phone-apps-that-access-sharepoint.md)
     
   
--  [Push Notifications-Übersicht für Windows Phone](http://msdn.microsoft.com/de-DE/library/ff402558%28VS.92%29.aspx)
+-  [Push Notifications-Übersicht für Windows Phone]((http://msdn.microsoft.com/de-DE/library/ff402558%28VS.92%29.aspx))
     
   
 -  [Vorgehensweise: Einrichten einer Umgebung für die Entwicklung von mobilen Anwendungen für SharePoint](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md)

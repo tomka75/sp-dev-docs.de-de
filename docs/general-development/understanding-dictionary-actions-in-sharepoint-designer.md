@@ -3,11 +3,11 @@ title: "Verstehen von Wörterbuchaktionen in SharePoint Designer 2013"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 73df233e-bad8-4ea1-b05d-61ecab597924
-ms.openlocfilehash: d22abbb0202ccd1f1a9dfc39b1013def7d112caf
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 521a83199046ba17636ae41fc8834989d2a7cb91
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="understanding-dictionary-actions-in-sharepoint-designer-2013"></a>Verstehen von Wörterbuchaktionen in SharePoint Designer 2013
 Der Variablentyp "Wörterbuch" ist ein neuer Variablentyp in der Workflowplattform von SharePoint, die Sie mit SharePoint Designer 2013 verwenden können. 
@@ -171,12 +171,8 @@ Ein **Wörterbuch** kann jeden Typ von Variable enthalten, der in der SharePoint
     
 > **Vorsicht:** Sie können das Feld **Name** nur für die Suche verwenden, wenn Sie einen Wert in einem Wörterbuch festlegen. Wenn Sie ein Wörterbuch aufbauen, wird das Feld **Name** nicht für die Suche unterstützt.
   
-    
-    
-
-
-    
-> **Hinweis:** Eine **Wörterbuch**-Variable kann eine Variable vom Typ **Wörterbuch** enthalten. Die Möglichkeit, **Wörterbuch**-Variablen in einem **Wörterbuch** zu speichern, bietet eine Reihe von Vorteilen. Sie können z. B. ein **Wörterbuch** erstellen, um Informationen über Mitarbeiter zu speichern. Innerhalb des **Wörterbuchs** können Sie einen weiteren **Wörterbuch**-Eintrag für jeden Mitarbeiter erstellen. Wenn Sie den Workflow erstellen, können Sie die **Wörterbuch**-Variable verwenden, anstatt ständig neue eigenständige Variablen für jede Information zu jedem Mitarbeiter zu erstellen. Wie in diesem Beispiel gezeigt, kann ein **Wörterbuch** verwendet werden, um komplexe Informationen im Workflow zu organisieren.
+> [!NOTE] 
+> Eine **Dictionary**-Variable kann eine Variable vom Typ **Wörterbuch** enthalten. Die Möglichkeit, **Dictionary**-Variablen in einem **Wörterbuch** zu speichern, bietet eine Reihe von Vorteilen. Sie können z. B. ein **Wörterbuch** erstellen, um Informationen über Mitarbeiter zu speichern. Innerhalb des **Wörterbuchs** können Sie einen weiteren **Wörterbuch**-Eintrag für jeden Mitarbeiter erstellen. Wenn Sie den Workflow erstellen, können Sie die **Wörterbuch**-Variable verwenden, anstatt ständig neue eigenständige Variablen für jede Information zu jedem Mitarbeiter zu erstellen. Wie in diesem Beispiel gezeigt, kann ein **Wörterbuch** verwendet werden, um komplexe Informationen im Workflow zu organisieren.
   
     
     
@@ -248,17 +244,17 @@ Die Abbildung zeigt die Workflowaktion **Ein Element aus einem Wörterbuch abruf
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
--  [Workflow in SharePoint](http://technet.microsoft.com/en-us/sharepoint/jj556245.aspx)
+-  [Workflow in SharePoint]((http://technet.microsoft.com/de-DE/sharepoint/jj556245.aspx))
     
   
--  [Neu in SharePoint-Workflows](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)
+-  [Neu in SharePoint-Workflows]((http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx))
     
   
--  [Erste Schritte mit SharePoint-Workflows](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)
+-  [Erste Schritte mit SharePoint-Workflows]((http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx))
     
   
 

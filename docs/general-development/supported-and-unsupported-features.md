@@ -3,11 +3,11 @@ title: "Unterstützte und nicht unterstützte Features"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 6e4acad6-7665-493c-94cc-d38684b2842f
-ms.openlocfilehash: f930227f6ae373436cd41828dd6e2b79297ee0ab
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ba803fa8728616b8b338c85f4ed69a87d16e2aa7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="supported-and-unsupported-features"></a>Unterstützte und nicht unterstützte Features
 
@@ -18,11 +18,8 @@ ms.lasthandoff: 10/13/2017
 
 Microsoft Excel weist umfangreiche Features auf. Mit jeder Version wird die Funktionslücke zwischen Excel und Excel Services kleiner, und die Anzahl nicht unterstützter Features wird geringer. Allerdings kann nicht jedes Excel-Feature in der zweiten Version von Excel Services, in Microsoft SharePoint Server 2010, unterstützt werden. Es werden bevorzugt Features unterstützt, die in wichtigen Excel Services-Szenarien benötigt werden und mit denen für Excel Services als Serverdienst sichergestellt wird, dass die Erwartungen der Kunden bezüglich Zuverlässigkeit, Skalierbarkeit und Sicherheit erfüllt werden.
   
-    
-    
-
-
-> **Hinweis:** In diesem Artikel setzen wir voraus, dass Sie wissen, welche Features in Microsoft Office SharePoint Server 2007 unterstützt werden und welche nicht. Weitere Informationen zu den Features, die in Office SharePoint Server 2007 nicht unterstützt werden, finden Sie unter [Unsupported Features in Excel Services](http://msdn.microsoft.com/de-DE/library/ms496823.aspx). 
+> [!NOTE]
+> In diesem Artikel setzen wir voraus, dass Sie wissen, welche Features in Microsoft Office SharePoint Server 2007 unterstützt werden und welche nicht. Weitere Informationen zu den Features, die in Office SharePoint Server 2007 nicht unterstützt werden, finden Sie unter [Nicht unterstützte Features in Excel Services]((http://msdn.microsoft.com/de-DE/library/ms496823.aspx)). 
   
     
     
@@ -42,13 +39,13 @@ Die Funktionsweise der meisten neuen Features in Microsoft Excel 2010 ist in Exc
 - Sparklines
     
   
--  [Symbolsatz](http://blogs.msdn.com/excel/archive/2009/08/05/icon-set-improvements-in-excel-2010.aspx) und [Verbesserungen bei den Datenbalken](http://blogs.msdn.com/excel/archive/2009/08/07/data-bar-improvements-in-excel-2010.aspx)
+-  [Symbolsatz]((http://blogs.msdn.com/excel/archive/2009/08/05/icon-set-improvements-in-excel-2010.aspx)) und [Verbesserungen bei den Datenbalken]((http://blogs.msdn.com/excel/archive/2009/08/07/data-bar-improvements-in-excel-2010.aspx))
     
   
--  [Benannte PivotTable-Mengen](http://blogs.msdn.com/excel/archive/2009/10/05/pivottable-named-sets-in-excel-2010.aspx)
+-  [Benannte PivotTable-Mengen]((http://blogs.msdn.com/excel/archive/2009/10/05/pivottable-named-sets-in-excel-2010.aspx))
     
   
--  [Verbesserungen bei PivotTables](http://blogs.msdn.com/excel/archive/2009/10/15/a-few-more-pivottable-improvements-in-excel-2010.aspx)
+-  [Verbesserungen bei PivotTables]((http://blogs.msdn.com/excel/archive/2009/10/15/a-few-more-pivottable-improvements-in-excel-2010.aspx))
     
   
  **Die folgenden neuen Features können angezeigt werden und sind interaktiv:**
@@ -142,11 +139,8 @@ Durch Klicken auf **Weitere Informationen zu nicht unterstützten Features** in 
     
 Zugeschnittene Bilder werden nicht angezeigt (d. h. fehlende Features). 
   
-    
-    
-
-    
-> **Hinweis:** Enthält eine Arbeitsmappe ignorierte oder fehlende nicht unterstützte Features, für die beim Laden im Ansichtsmodus eine Benachrichtigungsleiste angezeigt wurde, werden die nicht unterstützten Features entfernt, wenn eine Kopie der Arbeitsmappe gespeichert wird. Der Benutzer wird durch ein Dialogfeld über diesen Vorgang informiert. 
+> [!NOTE]
+> Wenn Sie für Arbeitsmappen, die ignorierte oder fehlende nicht unterstützte Features enthalten, die im Ansichtsmodus mit einer Benachrichtigungsleiste geladen wurden, eine Kopie der Arbeitsmappe zu speichern versuchen, müssen die nicht unterstützten Features entfernt werden. Der Benutzer wird in einem Dialogfeld darauf hingewiesen. 
   
     
     
@@ -156,16 +150,11 @@ Zugeschnittene Bilder werden nicht angezeigt (d. h. fehlende Features).
 
 Alle anderen unterstützten Features verhalten sich in Excel Services weiterhin wie in Office SharePoint Server 2007. Das heißt, Excel Services verhindert das Laden einer Datei, wenn nicht unterstützte Features gefunden werden. Die Benutzer werden wie im folgenden Bildschirmfoto gezeigt benachrichtigt, dass die Datei nicht geladen werden kann. 
   
-    
-    
-
-> **Hinweis:** Weitere Details zu diesen nicht unterstützten Features finden Sie im Artikel [Unsupported Features in Excel Services](http://msdn.microsoft.com/de-DE/library/ms496823.aspx).
+> [!NOTE]
+> Weitere Details zu diesen nicht unterstützten Features finden Sie im Artikel [Nicht unterstützte Features in Excel Services]((http://msdn.microsoft.com/de-DE/library/ms496823.aspx)).
   
-    
-    
-
-
-> **Vorsicht:** Die Informationsleiste mit der Liste der nicht unterstützten Features wird nicht angezeigt, wenn die Datei über ein Webpart geladen wird. 
+> [!WARNING]
+> Die Informationsleiste mit der Liste nicht unterstützter Features wird nicht angezeigt, wenn die Datei über ein Webpart geladen wird. 
   
     
     

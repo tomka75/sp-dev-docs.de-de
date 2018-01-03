@@ -3,11 +3,11 @@ title: Erstellen eines Anspruchsanbieters in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 8f3228ca-57fd-4253-a07d-abeb63298c58
-ms.openlocfilehash: bcc75f6c67d1941197bf60ec07457d456149e1ff
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 3e7de4f636b1a72cfd7474c054806498a0eea52e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-a-claims-provider-in-sharepoint"></a>Erstellen eines Anspruchsanbieters in SharePoint
 
@@ -18,17 +18,14 @@ In diesem Artikel erfahren Sie, wie ein SharePoint-Anspruchsanbieter erstellt un
 
 Die anspruchserweiterung kann eine Anwendung zusätzliche Ansprüchen Token des Benutzers. Beispielsweise kann mit Windows-basierten Log-in der Active Directory-Verzeichnisdienst aller Sicherheitsgruppen des Benutzers in Windows-Token des Benutzers ergänzen. Mit anspruchsbasierten anmelden kann eine Anwendung Customer Relationship Management (CRM) Rollen aus einer Datenbank CRM ergänzen. Da Sie diese Ansprüche im Token des Benutzers, können Ressourcen gegen diese Ansprüche autorisiert werden. D. h., werden diese Ansprüche verwendet, um festzustellen, ob ein bestimmter Benutzer Zugriff auf bestimmte Ressourcen hat. Ansprüche können im Auswahlsteuerelement über anspruchsauswahl Personen angezeigt werden. Anspruchsauswahl ermöglicht Ansprüche Offenlegen eine Anwendung in der Personenauswahl, beispielsweise beim Konfigurieren der Sicherheits einer SharePoint-Website oder die SharePoint-Dienst. Diese Funktionalität können Sie suchen, auflösen und benutzerfreundliche Anzeige von Ansprüchen bereitstellen.
   
-    
-    
-
-
-> **Hinweis:** Eine Personenauswahl mit Funktionen zur Auswahl von Ansprüchen wird manchmal auch als Anspruchsauswahl bezeichnet. Weitere Informationen finden Sie unter [Planen für die Personenauswahl und für Anspruchsanbieter](http://technet.microsoft.com/de-DE/library/gg602063.aspx). 
+> [!NOTE]
+> Eine Personenauswahl mit einer Funktion zur Forderungsauswahl wird manchmal auch als Forderungsauswahl bezeichnet. Weitere Informationen finden Sie unter [Planen für die Personenauswahl und für Anspruchsanbieter]((http://technet.microsoft.com/de-DE/library/gg602063.aspx)). 
   
     
     
 
 Zum Schreiben eines Anspruchsanbieters erstellen Sie im ersten Schritt eine Klasse, die von der Klasse **SPClaimProvider** abgeleitet wird.
-> **Tipp:** Ein Codebeispiel und weitere Informationen zur Klasse **SPClaimProvider** und ihren Membern finden Sie unter [SPClaimProvider](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProvider.aspx). Exemplarische Vorgehensweisen, Tipps und Codebeispiele finden Sie unter [Ansprüche und Sicherheit: Technische Artikel](http://msdn.microsoft.com/library/f773fd4a-53ec-4656-bd08-e6c435e6f103%28Office.15%29.aspx) auf MSDN. 
+> **Tipp:** Ein Codebeispiel und weitere Informationen zur Klasse **SPClaimProvider** und ihren Membern finden Sie unter [SPClaimProvider]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProvider.aspx)). Exemplarische Vorgehensweisen, Tipps und Codebeispiele finden Sie unter [Ansprüche und Sicherheit: Technische Artikel]((http://msdn.microsoft.com/library/f773fd4a-53ec-4656-bd08-e6c435e6f103%28Office.15%29.aspx)) auf MSDN. 
   
     
     
@@ -44,7 +41,7 @@ Es folgen die erforderlichen Methoden und Eigenschaften zum Schreiben eines Ford
 
 ### <a name="required"></a>Erforderlich
 
-Die folgende  [Name](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProvider.Name.aspx) -Eigenschaft ist erforderlich. Der Name muss in der Farm eindeutig sein.
+Die folgende  [Name]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProvider.Name.aspx)) -Eigenschaft ist erforderlich. Der Name muss in der Farm eindeutig sein.
   
     
     
@@ -58,7 +55,7 @@ public abstract String Name
 
 ### <a name="required-for-claims-picker"></a>Erforderlich für Anspruchsauswahl
 
-Ansprüche können im Personenauswahl-Steuerelement durch Auswahl von Ansprüchen angezeigt werden. Die folgenden Methoden in der Klasse [SPClaimProvider](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProvider.aspx) sind erforderliche Methoden, wenn Sie die Anspruchsauswahl im Personenauswahl-Steuerelement implementieren möchten.
+Ansprüche können im Personenauswahl-Steuerelement durch Auswahl von Ansprüchen angezeigt werden. Die folgenden Methoden in der Klasse [SPClaimProvider]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProvider.aspx)) sind erforderliche Methoden, wenn Sie die Anspruchsauswahl im Personenauswahl-Steuerelement implementieren möchten.
   
     
     
@@ -75,7 +72,7 @@ protected abstract void FillSchema(SPProviderSchema schema);
 
 ### <a name="required-for-claims-augmentation"></a>Erforderlich für Anspruchsaugmentation
 
-Wenn Sie zusätzliche Forderungen in das Sicherheitstoken eines Benutzers einschließen, erweitern Sie Forderungen. Wenn Sie Forderungen erweitern möchten, müssen Sie die folgenden Methoden in der  [SPClaimProvider](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProvider.aspx) -Klasse implementieren.
+Wenn Sie zusätzliche Forderungen in das Sicherheitstoken eines Benutzers einschließen, erweitern Sie Forderungen. Wenn Sie Forderungen erweitern möchten, müssen Sie die folgenden Methoden in der  [SPClaimProvider]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProvider.aspx)) -Klasse implementieren.
   
     
     
@@ -90,7 +87,7 @@ public abstract bool SupportsEntityInformation
 
 ### <a name="required-for-displaying-hierarchy-on-the-left-pane-of-the-claims-picker"></a>Erforderlich zum Anzeigen der Hierarchie im linken Bereich der Forderungsauswahl
 
-Wenn Sie die Hierarchie im linken Bereich der Forderungsauswahl anzeigen möchten, müssen Sie die folgenden Methoden in der  [SPClaimProvider](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProvider.aspx) -Klasse implementieren.
+Wenn Sie die Hierarchie im linken Bereich der Forderungsauswahl anzeigen möchten, müssen Sie die folgenden Methoden in der  [SPClaimProvider]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProvider.aspx)) -Klasse implementieren.
   
     
     
@@ -105,7 +102,7 @@ public abstract bool SupportsHierarchy
 
 ### <a name="required-for-resolving-claims-in-the-type-in-control-of-the-claims-picker"></a>Erforderlich für das Auflösen von Forderungen im Eingabesteuerelement der Forderungsauswahl
 
-Wenn Sie Forderungen mithilfe des Eingabesteuerelements der Forderungsauswahl auflösen möchten, müssen Sie die folgenden Methoden in der  [SPClaimProvider](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProvider.aspx) -Klasse implementieren.
+Wenn Sie Forderungen mithilfe des Eingabesteuerelements der Forderungsauswahl auflösen möchten, müssen Sie die folgenden Methoden in der  [SPClaimProvider]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProvider.aspx)) -Klasse implementieren.
   
     
     
@@ -121,7 +118,7 @@ public abstract bool SupportsResolve
 
 ### <a name="required-for-searching-for-claims-in-the-claims-picker"></a>Erforderlich für die Suche nach Forderungen in der forderungsauswahl
 
-Wenn Sie nach Forderungen in der Forderungsauswahl suchen möchten, müssen Sie die folgende Eigenschaft und Methode in der  [SPClaimProvider](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProvider.aspx) -Klasse implementieren.
+Wenn Sie nach Forderungen in der Forderungsauswahl suchen möchten, müssen Sie die folgende Eigenschaft und Methode in der  [SPClaimProvider]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProvider.aspx)) -Klasse implementieren.
   
     
     
@@ -137,14 +134,14 @@ public abstract bool SupportsSearch
 ## <a name="useful-helper-method"></a>Nützliche Hilfsmethode
 <a name="SP15_HowToCreateClaimsProvider_UsefulHelperMethod"> </a>
 
-Sie können auch eine Hilfsmethode implementieren, die Sie beim Erstellen von  [SPClaim](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaim.aspx) -Objekten unterstützt.
+Sie können auch eine Hilfsmethode implementieren, die Sie beim Erstellen von  [SPClaim]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaim.aspx)) -Objekten unterstützt.
   
     
     
 
 ### <a name="useful-helper-method-for-creating-spclaim-objects"></a>Nützliche Hilfsmethode zum Erstellen von SPClaim-Objekten
 
-Die folgende Hilfsmethode können Sie implementieren, damit Sie sie beim Erstellen von  [SPClaim](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaim.aspx) -Objekten unterstützt.
+Die folgende Hilfsmethode können Sie implementieren, damit Sie sie beim Erstellen von  [SPClaim]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaim.aspx)) -Objekten unterstützt.
   
     
     
@@ -155,7 +152,7 @@ protected SPClaim CreateClaim(String claimType, String value, String valueType)
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15_HowToCreateClaimsProvider_AdditionalResources"> </a>
 
 

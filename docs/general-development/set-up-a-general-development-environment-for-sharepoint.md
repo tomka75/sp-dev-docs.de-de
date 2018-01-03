@@ -5,18 +5,18 @@ keywords: Installieren von SharePoint, Einrichten von SharePoint, SharePoint ein
 f1_keywords: install SharePoint,set up SharePoint,setup SharePoint
 ms.prod: sharepoint
 ms.assetid: 08e4e4e1-d960-43fa-85df-f3c279ed6927
-ms.openlocfilehash: 0535fcc874b1a5f6d83e420e58e7a3ab0e442b2b
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 657d7f9a3a7238e8b3d9862e6ba637ccebdb3f79
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="set-up-a-general-development-environment-for-sharepoint"></a>Einrichten einer allgemeinen Entwicklungsumgebung für SharePoint
 Hier finden Sie Informationen zu den Schritten zur Einrichtung einer SharePoint-Entwicklungsumgebung, indem Sie SharePoint und Visual Studio installieren.
 ## <a name="how-to-determine-the-sharepoint-development-environment-you-need"></a>Ermitteln der benötigten SharePoint-Umgebung
 <a name="SP15_bk_determinedevenv"> </a>
 
-Entscheiden Sie zuerst, welche Art von Lösungen Sie erstellen möchten (weitere Informationen zu SharePoint-Add-Ins finden Sie unter  [SharePoint-Add-Ins](http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx)):
+Entscheiden Sie zuerst, welche Art von Lösungen Sie erstellen möchten (weitere Informationen zu SharePoint-Add-Ins finden Sie unter  [SharePoint-Add-Ins]((http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx))):
   
     
     
@@ -24,7 +24,7 @@ Entscheiden Sie zuerst, welche Art von Lösungen Sie erstellen möchten (weitere
 - Wenn Sie Farmlösungen erstellen möchten, finden Sie in diesem Artikel die entsprechenden Schritte. 
     
   
-- Wenn Sie SharePoint-Add-Ins erstellen möchten, finden Sie weitere Informationen unter  [Tools und Umgebungen für die Entwicklung von Add-Ins für SharePoint](http://msdn.microsoft.com/library/6906eb86-8270-4098-8106-1e8d0d3c212e%28Office.15%29.aspx). 
+- Wenn Sie SharePoint-Add-Ins erstellen möchten, finden Sie weitere Informationen unter  [Tools und Umgebungen für die Entwicklung von Add-Ins für SharePoint]((http://msdn.microsoft.com/library/6906eb86-8270-4098-8106-1e8d0d3c212e%28Office.15%29.aspx)). 
     
   
 
@@ -35,12 +35,10 @@ Wenn Sie über ein MSDN-Abonnement verfügen, können Sie schnell einen virtuell
   
     
     
-Wenn Sie den Microsoft Azure-Vorteil, der mit Ihrem MSDN-Abonnement verbunden ist, nicht aktiviert haben, können Sie sich unter  [Microsoft Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/de-DE/pricing/member-offers/msdn-benefits/) darüber informieren.
+Wenn Sie den Microsoft Azure-Vorteil, der mit Ihrem MSDN-Abonnement verbunden ist, nicht aktiviert haben, können Sie sich unter  [Microsoft Azure-Vorteil für MSDN-Abonnenten]((http://azure.microsoft.com/de-DE/pricing/member-offers/msdn-benefits/)) darüber informieren.
   
-    
-    
-
-> **Hinweis:** Im Microsoft Azure-Image-Katalog werden keine Images mehr bereitgestellt, in denen SharePoint und Visual Studio bereits vorinstalliert sind. Ein virtueller Computer in Microsoft Azure ist aber dennoch eine gute Option für einen Entwicklungscomputer. > Melden Sie sich beim [Microsoft Azure-Verwaltungsportal](https://manage.windowsazure.com) an. > Erstellen Sie einen virtuellen Computer mithilfe eines der Images aus dem Katalog (Windows Server 2008 R2 Service Pack 1 x64, Windows Server 2012 oder höher). Befolgen Sie die Anweisungen im Assistenten für die Erstellung virtueller Computer. Für SharePoint-Entwicklungsprojekte empfehlen wir die VM-Größe **Sehr groß**. > Sobald der virtuelle Computer bereitgestellt wurde und ausgeführt wird, können Sie die Einrichtung abschließen. Befolgen Sie dazu die Anleitung im Abschnitt **Erstellen einer lokalen SharePoint-Entwicklungsumgebung** weiter unten. (Überspringen Sie den Abschnitt zum Thema Betriebssysteminstallation.) > Nachdem Sie Ihre Entwicklungsumgebung eingerichtet haben, können Sie auf dem virtuellen Computer in Visual Studio über eine Azure-Point-to-Site-Verbindung auf Ihre Quellcodeverwaltung zugreifen. Eine Anleitung finden Sie in unserem Artikel zum Thema [Konfigurieren einer Point-to-Site-VPN-Verbindung zu einem virtuellen Azure-Netzwerk](https://azure.microsoft.com/de-DE/documentation/articles/vpn-gateway-point-to-site-create/).
+> [!NOTE]
+> Im Microsoft Azure-Image-Katalog werden keine Images mehr bereitgestellt, in denen SharePoint und Visual Studio bereits vorinstalliert sind. Ein virtueller Computer in Microsoft Azure ist aber dennoch eine gute Option für einen Entwicklungscomputer. > Melden Sie sich beim [Microsoft Azure-Verwaltungsportal]((https://manage.windowsazure.com)) an. > Erstellen Sie einen virtuellen Computer mithilfe eines der Images aus dem Katalog (Windows Server 2008 R2 Service Pack 1 x64, Windows Server 2012 oder höher). Befolgen Sie die Anweisungen im Assistenten für die Erstellung virtueller Computer. Für SharePoint-Entwicklungsprojekte empfehlen wir die VM-Größe **Sehr groß**. > Sobald der virtuelle Computer bereitgestellt wurde und ausgeführt wird, können Sie die Einrichtung abschließen. Befolgen Sie dazu die Anleitung im Abschnitt **Erstellen einer lokalen SharePoint-Entwicklungsumgebung** weiter unten. (Überspringen Sie den Abschnitt zum Thema Betriebssysteminstallation.) > Nachdem Sie Ihre Entwicklungsumgebung eingerichtet haben, können Sie auf dem virtuellen Computer in Visual Studio über eine Azure-Point-to-Site-Verbindung auf Ihre Quellcodeverwaltung zugreifen. Eine Anleitung finden Sie in unserem Artikel zum Thema [Konfigurieren einer Point-to-Site-VPN-Verbindung zu einem virtuellen Azure-Netzwerk]((https://azure.microsoft.com/de-DE/documentation/articles/vpn-gateway-point-to-site-create/)).
   
     
     
@@ -65,7 +63,7 @@ Die Anforderungen für eine Entwicklungsumgebung für eine SharePoint-Installati
 - Installieren Sie SharePoint unter Windows Server 2008 R2 Service Pack 1 x64 oder Windows Server 2012 (oder höher).
     
   
-- Verwenden Sie Microsoft Hyper-V, und installieren Sie SharePoint auf einem virtuellen Computer unter einem Gastbetriebssystem Windows Server 2008 R2 Service Pack 1 x64 oder Windows Server 2012. Eine Anleitung zum Einrichten eines virtuellen Microsoft Hyper-V-Computers für SharePoint finden Sie unter  [Verwenden bewährter Konfigurationsmethoden für virtuelle SharePoint-Computer und die Hyper-V-Umgebung](http://technet.microsoft.com/de-DE/library/ff621103%28v=office.15%29.aspx).
+- Verwenden Sie Microsoft Hyper-V, und installieren Sie SharePoint auf einem virtuellen Computer unter einem Gastbetriebssystem Windows Server 2008 R2 Service Pack 1 x64 oder Windows Server 2012. Eine Anleitung zum Einrichten eines virtuellen Microsoft Hyper-V-Computers für SharePoint finden Sie unter  [Verwenden bewährter Konfigurationsmethoden für virtuelle SharePoint-Computer und die Hyper-V-Umgebung](http://technet.microsoft.com/en-US/library/ff621103%28v=office.15%29.aspx).
     
   
 
@@ -108,7 +106,9 @@ dir /od *.log
 
 6. Nach Abschluss der Installation werden Sie aufgefordert, den Konfigurations-Assistenten für SharePoint-Produkte und -Technologien zu starten.
     
-    > **Hinweis:** Der Konfigurations-Assistent für SharePoint-Produkte und -Technologien kann fehlschlagen, wenn Sie einen Computer verwenden, der zwar Mitglied einer Domäne ist, jedoch nicht an einen Domänencontroller angebunden ist. Falls dieser Fehler auftritt, müssen Sie entweder eine direkte Verbindung oder eine VPN (Virtual Private Network)-Verbindung zu einem Domänencontroller herstellen oder sich mit einem lokalen Konto anmelden, das auf dem Computer über Administratorrechte verfügt. 
+    > [!NOTE]
+    > Der Konfigurations-Assistent für SharePoint-Produkte und -Technologien kann fehlschlagen, wenn Sie einen Computer verwenden, der Mitglied einer Domäne ist, aber mit keinem Domänencontroller verbunden ist. Wenn dieser Fehler auftritt, stellen Sie entweder direkt oder über ein VPN (Virtual Private Network) eine Verbindung zu einem Domänencontroller her, oder melden Sie sich mit einem lokalen Konto an, das auf dem Computer über Administratorrechte verfügt. 
+
 7. Nach Abschluss des Konfigurations-Assistenten wird die Seite **Vorlagenauswahl** der neuen SharePoint-Website angezeigt.
     
    **Abbildung 3: Auswählen der Websitevorlagenseite**
@@ -129,7 +129,7 @@ Wenn Sie Visual Studio installieren, erhalten Sie alle Vorlagen, Tools und Assem
   
     
     
-Unter  [Installieren von Visual Studio](http://msdn.microsoft.com/de-DE/library/e2h7fzkw.aspx) finden Sie Anleitungen zum Installieren von Visual Studio.
+Unter  [Installieren von Visual Studio]((http://msdn.microsoft.com/de-DE/library/e2h7fzkw.aspx)) finden Sie Anleitungen zum Installieren von Visual Studio.
   
     
     
@@ -163,14 +163,15 @@ Wenn Sie Workflows erstellen, fahren Sie mit  [Einrichten und Konfigurieren von 
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15_bk_AddlResources"> </a>
 
 
--  [Installieren von Visual Studio](http://msdn.microsoft.com/de-DE/library/e2h7fzkw%28v=vs.110%29.aspx)
+-  
+  [Installieren von Visual Studio](http://msdn.microsoft.com/en-us/library/e2h7fzkw%28v=vs.110%29.aspx)
     
   
--  [Tools und Umgebungen für die Entwicklung von Add-Ins für SharePoint](http://msdn.microsoft.com/library/6906eb86-8270-4098-8106-1e8d0d3c212e%28Office.15%29.aspx)
+-  [Tools und Umgebungen für die Entwicklung von Add-Ins für SharePoint]((http://msdn.microsoft.com/library/6906eb86-8270-4098-8106-1e8d0d3c212e%28Office.15%29.aspx))
     
   
 

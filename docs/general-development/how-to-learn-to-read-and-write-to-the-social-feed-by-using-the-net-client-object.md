@@ -3,11 +3,11 @@ title: "Lesen und Schreiben in den Feed für soziale Netzwerke mithilfe des .NET
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3c15ede5-8a59-47e6-a0b2-c17ec6bf4ae1
-ms.openlocfilehash: 73eaf6bf117694cd1c4378bde0541e7db782a079
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 74fe67537137ffd6665a1ee0d00afdfa944ecdfa
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="read-and-write-to-the-social-feed-by-using-the-net-client-object-model-in-sharepoint"></a>Lesen und Schreiben in den Feed für soziale Netzwerke mithilfe des .NET-Clientobjektmodells in SharePoint
 
@@ -16,7 +16,7 @@ Erstellen Sie eine Konsolenanwendung, die den sozialen Feed mithilfe des .NET-Cl
 ## <a name="prerequisites-for-creating-a-console-application-that-reads-and-writes-to-the-social-feed-by-using-the-sharepoint-net-client-object-model"></a>Voraussetzungen für das Erstellen einer Konsolenanwendung, die Lese- und Schreibvorgänge auf den Feed für soziale Netzwerke mithilfe des Clientobjektmodells für SharePoint.NET
 <a name="bkmk_Prereqs"> </a>
 
-Die Konsolenanwendung, die Sie erstellen, einen Zielbenutzer Feed abruft und druckt den Stamm-Post von jedem Thread in einer nummerierten Liste. Klicken Sie dann veröffentlicht eine einfache Text-Antwort an den ausgewählten Thread. Die gleiche-Methode ( [CreatePost](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.CreatePost.aspx) ) wird verwendet, um beide Beiträge veröffentlichen und Antworten Sie den Feed.
+Die Konsolenanwendung, die Sie erstellen, einen Zielbenutzer Feed abruft und druckt den Stamm-Post von jedem Thread in einer nummerierten Liste. Klicken Sie dann veröffentlicht eine einfache Text-Antwort an den ausgewählten Thread. Die gleiche-Methode ( [CreatePost]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.CreatePost.aspx)) ) wird verwendet, um beide Beiträge veröffentlichen und Antworten Sie den Feed.
   
     
     
@@ -33,9 +33,8 @@ Zum Erstellen der Konsolenanwendung benötigen Sie Folgendes:
   
 - Zugriffsberechtigungen vom Typ **Vollzugriff** auf die Benutzerprofil-Dienstanwendung für den angemeldeten Benutzer
     
-  
-
-> **Hinweis:** Wenn Sie die Entwicklungsaufgaben nicht auf dem Computer durchführen, auf dem SharePoint ausgeführt wird, laden Sie die  [SharePoint-Clientkomponenten](http://www.microsoft.com/en-us/download/details.aspx?id=35585) herunter, die die SharePoint-Clientassemblys enthalten.
+> [!NOTE]
+> Wenn Sie die Entwicklungsaufgaben nicht auf dem Computer durchführen, auf dem SharePoint ausgeführt wird, laden Sie die [SharePoint-Clientkomponenten](http://www.microsoft.com/en-us/download/details.aspx?id=35585) herunter, die die SharePoint-Clientassemblys enthalten.
   
     
     
@@ -106,49 +105,50 @@ using Microsoft.SharePoint.Client.Social;
 
 1. Deklarieren Sie Variablen für die Server-URL und die Kontoanmeldeinformationen des Zielbenutzers.
     
-```cs
-const string serverUrl = "http://serverName/";
-const string targetUser = "domainName\\userName";
-```
+    ```cs
+    const string serverUrl = "http://serverName/";
+    const string targetUser = "domainName\\userName";
+    ```
 
-   > **Hinweis:** Ersetzen Sie unbedingt die Platzhalterwerte  `http://serverName/` und `domainName\\userName`, bevor Sie den Code ausführen.
+    > [!NOTE]
+    > Ersetzen Sie unbedingt die Platzhalterwerte `http://serverName/` und `domainName\\userName`, bevor Sie den Code ausführen.
    
 2. Initialisieren Sie in der **Main**-Methode den SharePoint-Clientkontext.
     
-```cs
-ClientContext clientContext = new ClientContext(serverUrl);
-```
+    ```cs
+    ClientContext clientContext = new ClientContext(serverUrl);
+    ```
 
-3. Erstellen Sie die  [SocialFeedManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.aspx) -Instanz.
+3. Erstellen Sie die  [SocialFeedManager]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.aspx)) -Instanz.
     
-```cs
-SocialFeedManager feedManager = new SocialFeedManager(clientContext);
-```
+    ```cs
+    SocialFeedManager feedManager = new SocialFeedManager(clientContext);
+    ```
 
 4. Geben Sie die Parameter für den feed Inhalt, den Sie abrufen möchten.
     
-```cs
-  SocialFeedOptions feedOptions = new SocialFeedOptions();
-feedOptions.MaxThreadCount = 10;
-```
+    ```cs
+    SocialFeedOptions feedOptions = new SocialFeedOptions();
+    feedOptions.MaxThreadCount = 10;
+    ```
 
-    The default options return the first 20 threads in the feed, sorted by last modified date.
+    Die Standardoptionen zurückgeben die ersten 20 Threads im Feed, sortiert nach Datum der letzten Änderung.
   
 5. Rufen Sie den Feed des Zielbenutzers ab.
     
-```cs 
-ClientResult<SocialFeed> feed = feedManager.GetFeedFor(targetUser, feedOptions);
-clientContext.ExecuteQuery();
-```
+    ```cs 
+    ClientResult<SocialFeed> feed = feedManager.GetFeedFor(targetUser, feedOptions);
+    clientContext.ExecuteQuery();
+    ```
 
-     [GetFeedFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeedFor.aspx) returns a **ClientResult<T>** object that stores the collection of threads in its [Value](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientResult`1.Value.aspx) property.
+    [GetFeedFor]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeedFor.aspx)) gibt ein **ClientResult<T>** -Objekt, das die Auflistung der Threads im dessen [Value](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientResult`1.Value.aspx) -Eigenschaft gespeichert werden.
     
   
 
 ## <a name="iterate-through-and-read-from-the-social-feed-by-using-the-sharepoint-net-client-object-model"></a>Durchlaufen und Lesen des sozialen Feeds mithilfe des SharePoint .NET-Clientobjektmodells
 <a name="bkmk_ReadFeed"> </a>
 
-Der folgende Code durchläuft die Threads im Feed. Es wird überprüft, ob jeder Thread verfügt über das Attribut  [CanReply](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialThreadAttributes.CanReply.aspx) und ruft dann die Thread-ID und den Text des Beitrags Stamm ab. Der Code auch ein Wörterbuch, das die Thread-ID zu speichern (zu einem Thread Antworten) erstellt und schreibt den Text des Beitrags Stamm in der Konsole angezeigt.
+Der folgende Code durchläuft die Threads im Feed. Es wird überprüft, ob jeder Thread verfügt über das Attribut  [CanReply]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialThreadAttributes.CanReply.aspx)) und ruft dann die Thread-ID und den Text des Beitrags Stamm ab. Der Code auch ein Wörterbuch, das die Thread-ID zu speichern (zu einem Thread Antworten) erstellt und schreibt den Text des Beitrags Stamm in der Konsole angezeigt.
 
 ```cs
 Dictionary<int, string> idDictionary = new Dictionary<int, string>();
@@ -186,20 +186,22 @@ SocialPostCreationData postCreationData = new SocialPostCreationData();
 postCreationData.ContentText = Console.ReadLine();
 ```
 
-3. Veröffentlichen Sie die Antwort. Der _ThreadToReplyTo_-Parameter steht für die [Id](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialThread.Id.aspx)-Eigenschaft des Threads.
+3. Veröffentlichen Sie die Antwort. Der _ThreadToReplyTo_-Parameter steht für die [Id]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialThread.Id.aspx))-Eigenschaft des Threads.
     
 ```cs
 feedManager.CreatePost(threadToReplyTo, postCreationData);
 clientContext.ExecuteQuery();
 ```
 
-   > **Hinweis:** Die  [CreatePost](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.CreatePost.aspx)-Methode wird auch zum Veröffentlichen eines Stammbeitrags im Feed des aktuellen Benutzers verwendet, indem **null** für den ersten Parameter übergeben wird.
+    > [!NOTE]
+    > The  [CreatePost](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.CreatePost.aspx) method is also used to publish a root post to the current user's feed by passing **null** for the first parameter.
+
 4. (Nur in Bezug auf die Benutzeroberfläche) Beenden Sie das Programm.
     
-```cs
-Console.WriteLine("Your reply was published.");
-Console.ReadKey(false);
-```
+    ```cs
+    Console.WriteLine("Your reply was published.");
+    Console.ReadKey(false);
+    ```
 
 5. Wählen Sie zum Testen der Konsolenanwendung, klicken Sie auf der Menüleiste **Debuggen**, **Debuggen starten** aus.
     
@@ -294,11 +296,11 @@ Weitere Informationen zum mehr Aufgaben lesen und Schreiben von Aufgaben mit den
     
     
 
--  [Vorgehensweise: Erstellen und Löschen von Beiträge und Abrufen des für soziale Netzwerke-Feed mithilfe des clientobjektmodells .NET SharePoint](how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-net-cli.md)
+-  [Gewusst wie: Erstellen und Löschen von Beiträgen und Abrufen des sozialen Feeds über das .NET-Clientobjektmodell in SharePoint](how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-net-cli.md)
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15ReadWriteSocial_addlresources"> </a>
 
 

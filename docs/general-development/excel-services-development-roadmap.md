@@ -5,11 +5,11 @@ keywords: roadmap
 f1_keywords: roadmap
 ms.prod: sharepoint
 ms.assetid: 5c789f58-9cdb-4601-9047-9c6f83f2fbba
-ms.openlocfilehash: 3f67b18a438c601ae59effe957d756ebee9117a4
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: fdd3793c25280dd5dd0ae6de26eb7c731048d8fa
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="excel-services-development-roadmap"></a>Excel Services-Entwicklungsroadmap
 
@@ -118,10 +118,8 @@ In this scenario, a custom application uses Excel Web Services to do the followi
   
 The custom application retrieves the live version of the workbook or snapshot and then saves the workbook or snapshot by using Excel Web Services.
   
-    
-    
-
-> **Hinweis:** Wenn Sie Änderungen an einer Arbeitsmappe vornehmen, z. B. durch Festlegen von Werten für einen Bereich mithilfe von Excel Web Services, bleiben die Änderungen an der Arbeitsmappe nur für diese bestimmte Sitzung erhalten. Die Änderungen werden nicht in der ursprünglichen Arbeitsmappe gespeichert oder persistent gemacht. Wenn die aktuelle Arbeitsmappensitzung endet (z. B. beim Aufruf der Methode **CloseWorkbook** oder bei einem Sitzungstimeout), gehen die vorgenommenen Änderungen verloren. Wenn Sie Änderungen speichern möchten, die Sie an einer Arbeitsmappe vornehmen, können Sie die Methode **GetWorkbook** verwenden und die Arbeitsmappe dann mithilfe der Methode **SaveWorkbook** oder **SaveWorkbookCopy** speichern. Weitere Informationen zur Excel Web Services-API finden Sie unter [Microsoft.Office.Excel.Server.WebServices](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx) .
+> [!NOTE]
+> Wenn Sie Änderungen an einer Arbeitsmappe vornehmen, z. B. durch Festlegen von Werten für einen Bereich mithilfe von Excel Web Services, bleiben die Änderungen an der Arbeitsmappe nur für diese bestimmte Sitzung erhalten. Die Änderungen werden nicht in der ursprünglichen Arbeitsmappe gespeichert oder persistent gemacht. Wenn die aktuelle Arbeitsmappensitzung endet (z. B. beim Aufruf der Methode **CloseWorkbook** oder bei einem Sitzungstimeout), gehen die vorgenommenen Änderungen verloren. Wenn Sie Änderungen speichern möchten, die Sie an einer Arbeitsmappe vornehmen, können Sie die Methode **GetWorkbook** verwenden und die Arbeitsmappe dann mithilfe der Methode **SaveWorkbook** oder **SaveWorkbookCopy** speichern. Weitere Informationen zur Excel Web Services-API finden Sie unter [Microsoft.Office.Excel.Server.WebServices](((https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.Webservices.aspx))) .
   
     
     
@@ -144,7 +142,7 @@ For more information about when you should link directly to **Microsoft.Office.E
   
     
     
-For information about the Excel Web Services API, see the  [Microsoft.Office.Excel.Server.Webservices](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.Webservices.aspx) namespace reference documentation. For an example of how to develop a custom application by using Excel Web Services, see [Walkthrough: Developing a Custom Application Using Excel Web Services](walkthrough-developing-a-custom-application-using-excel-web-services.md).
+For information about the Excel Web Services API, see the  [Microsoft.Office.Excel.Server.Webservices](((https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.Webservices.aspx))) namespace reference documentation. For an example of how to develop a custom application by using Excel Web Services, see [Walkthrough: Developing a Custom Application Using Excel Web Services](walkthrough-developing-a-custom-application-using-excel-web-services.md).
   
     
     
@@ -175,7 +173,7 @@ For more information about Excel Services UDFs, see  [Understanding Excel Servic
 
 ### <a name="using-udfs"></a>Using UDFs
 
-For information about Excel Services UDF definitions, see the  [Microsoft.Office.Excel.Server.Udf](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.Udf.aspx) namespace reference documentation.
+For information about Excel Services UDF definitions, see the  [Microsoft.Office.Excel.Server.Udf]((https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.Udf.aspx)) namespace reference documentation.
   
     
     
@@ -224,7 +222,7 @@ In SharePoint Server 2010, Excel Services added support for JavaScript. The Java
   
     
     
-For more information about the JavaScript object model in Excel Services, see the  [Ewa](http://msdn.microsoft.com/library/6fe73191-3213-b986-1ad6-2c3b918a2241%28Office.15%29.aspx) namespace reference documentation.
+For more information about the JavaScript object model in Excel Services, see the  [Ewa]((http://msdn.microsoft.com/library/6fe73191-3213-b986-1ad6-2c3b918a2241%28Office.15%29.aspx)) namespace reference documentation.
   
     
     
@@ -236,7 +234,7 @@ For more information about JavaScript, see the following links:
     
     
 
-- For more information about the JavaScript object model in Excel Services, see the  [Ewa](http://msdn.microsoft.com/library/6fe73191-3213-b986-1ad6-2c3b918a2241%28Office.15%29.aspx) namespace reference documentation.
+- For more information about the JavaScript object model in Excel Services, see the  [Ewa]((http://msdn.microsoft.com/library/6fe73191-3213-b986-1ad6-2c3b918a2241%28Office.15%29.aspx)) namespace reference documentation.
     
   
 - For an example of how to interact with the JavaScript object model in Excel Services by using the Content Editor Web Part, see  [Walkthrough: Developing Using the Content Editor Web Part](walkthrough-developing-using-the-content-editor-web-part.md).

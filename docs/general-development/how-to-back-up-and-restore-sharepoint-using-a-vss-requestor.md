@@ -3,11 +3,11 @@ title: Sichern und Wiederherstellen von SharePoint unter Verwendung eines VSS-An
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: cab5ba90-bd23-4cec-82d7-529e3f86ba88
-ms.openlocfilehash: 76664d750be4e8ecf98dae4fc5aa106d2c8864e7
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: cebe16cbc4a7094658c762664a1088f799492aa6
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="back-up-and-restore-sharepoint-using-a-vss-requestor"></a>Sichern und Wiederherstellen von SharePoint unter Verwendung eines VSS-Anforderers
 
@@ -32,7 +32,7 @@ Verwenden Sie das folgende Verfahren zum Sichern und Wiederherstellen von Micros
 3. Wiederholen Sie die Schritte 1 und 2 auf allen für SharePoint Foundation-Servern.
     
   
-4. Verwenden Sie den Requestor, um Daten zu sichern und wiederherzustellen. Sie können entweder Ihren Requestor (wie unter  [Übersicht über den Volumeschattenkopie-Dienst](http://msdn.microsoft.com/de-DE/library/aa384649%28VS.85%29.aspx) beschrieben) oder das Testprogramm BETest (erhältlich im [VSS SDK](http://www.microsoft.com/downloads/details.aspx?FamilyID=0B4F56E4-0CCC-4626-826A-ED2C4C95C871&amp;displaylang=en)) verwenden, um eine Sicherung oder Wiederherstellung aus SharePoint Foundation durchzuführen. 
+4. Verwenden Sie den Requestor, um Daten zu sichern und wiederherzustellen. Sie können entweder Ihren Requestor (wie unter  [Übersicht über den Volumeschattenkopie-Dienst]((http://msdn.microsoft.com/de-DE/library/aa384649%28VS.85%29.aspx)) beschrieben) oder das Testprogramm BETest (erhältlich im [VSS SDK](http://www.microsoft.com/downloads/details.aspx?FamilyID=0B4F56E4-0CCC-4626-826A-ED2C4C95C871&amp;displaylang=en)) verwenden, um eine Sicherung oder Wiederherstellung aus SharePoint Foundation durchzuführen. 
     
   
 
@@ -57,14 +57,13 @@ Für den Volumeschattenkopie-Dienst (Volume Shadow Copy Service, VSS) gelten bes
   
 Außerdem muss der Writer-Dienst, damit er vom SharePoint Foundation-Timerdienst (owstimer.exe) gehostet wird, unter dem Anwendungspoolkonto der Zentraladministration ausgeführt werden, das in einer einfachen Installation von SharePoint Foundation das Netzwerkdienstkonto ist. 
   
-    
-    
- **Hinweis** Es ist sehr unwahrscheinlich, dass dieses Konto ein Administratorkonto eines lokalen Computers ist, d. h. die Anforderung für VSS nicht erfüllt wird, nach der das verarbeitende Konto als lokales System ausgeführt werden muss.
+> [!NOTE]
+> Es ist sehr unwahrscheinlich, dass dieses Konto ein Administratorkonto eines lokalen Computers ist, d. h. die Anforderung für VSS nicht erfüllt wird, nach der das verarbeitende Konto als lokales System ausgeführt werden muss.
   
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

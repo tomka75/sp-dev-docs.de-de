@@ -5,11 +5,11 @@ keywords: how to,howdoi,howto
 f1_keywords: how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 80b34a29-3d40-4d11-9ba1-b4886ffcfd42
-ms.openlocfilehash: 32162a764919dc313bd1d64e9867029ba7ffb8ee
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 47d2d9cd97c6fff52de770b4701f2c77d830e7ed
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="save-to-the-server-to-prepare-for-programmatic-access"></a>Speichern auf dem Server zur Vorbereitung auf programmgesteuerten Zugriff
 
@@ -20,7 +20,9 @@ In diesem Beispiel wird gezeigt, wie Sie eine Excel-Arbeitsmappe auf dem Server 
   
 2. Speichern Sie die Arbeitsmappe an einem vertrauenswürdigen Speicherort der SharePoint-Bibliothek. 
     
-    > **Hinweis:** Es wird vorausgesetzt, dass Sie bereits eine SharePoint-Dokumentbibliothek erstellt und diese als vertrauenswürdigen Speicherort definiert haben. Weitere Informationen finden Sie unter [Gewusst wie: Vertrauen zu einem Standort](how-to-trust-a-location.md). 
+    > [!NOTE]
+    > Es wird vorausgesetzt, dass Sie bereits eine SharePoint-Dokumentbibliothek erstellt und diese als vertrauenswürdigen Speicherort definiert haben. Weitere Informationen finden Sie unter [Gewusst wie: Vertrauen zu einem Standort](how-to-trust-a-location.md). 
+
 3. Programmatically specify values for the worksheet, named range, and cell value by using the Excel Web Services **SetCellA1** method. The values are passed in as argumentsthat is, _args [1]_ and _args [2]_:
     
 ```cs
@@ -186,7 +188,8 @@ status = xlSrv.SetCellA1(sessionId, String.Empty, args[1], args[2]);
     
   
 
-> **Hinweis:** Weitere Informationen zu Momentaufnahmen finden Sie unter  [Gewusst wie: Abrufen einer kompletten Arbeitsmappe oder einer Momentaufnahme](how-to-get-an-entire-workbook-or-a-snapshot.md). Weitere Informationen zu der **SetCellA1**-Methode finden Sie in der Dokumentation der Excel-Webdienste. Der Namespace des Webdiensts ist [Microsoft.Office.Excel.Server.WebServices](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx).
+> [!NOTE]
+> Weitere Informationen zu Momentaufnahmen finden Sie unter [Gewusst wie: Abrufen einer kompletten Arbeitsmappe oder einer Momentaufnahme](how-to-get-an-entire-workbook-or-a-snapshot.md). Weitere Informationen zu der **SetCellA1**-Methode finden Sie in der Dokumentation der Excel-Webdienste. Der Namespace des Webdiensts ist [Microsoft.Office.Excel.Server.WebServices]((https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx)).
   
     
     
@@ -208,7 +211,7 @@ status = xlSrv.SetCellA1(sessionId, String.Empty, args[1], args[2]);
   
     
     
- [Microsoft.Office.Excel.Server.WebServices](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx)
+ [Microsoft.Office.Excel.Server.WebServices]((https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx))
 #### <a name="concepts"></a>Konzepte
 
 

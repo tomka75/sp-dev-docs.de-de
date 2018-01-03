@@ -3,11 +3,11 @@ title: Erstellen und Bereitstellen von benutzerdefinierten Workflowaktionen
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 9d2fa681-30c2-4549-9df2-ea9ed757fda9
-ms.openlocfilehash: 40613aa426c115c480f3516b6b4fb7b6d33958bf
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 82a45d7b435631096d7ae3507b8a9743c612c0e9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="build-and-deploy-workflow-custom-actions"></a>Erstellen und Bereitstellen von benutzerdefinierten Workflowaktionen
 
@@ -17,7 +17,9 @@ In diesem Artikel erfahren Sie, wie Sie Geschäftsprozesse entwickeln, deren Anf
     
 
 Erkennen, dass Geschäftsprozesse häufig Anforderungen spezielle, können SharePoint Sie benutzerdefinierte Workflowaktionen erstellen. Entwickeln von benutzerdefinierten Aktionen mithilfe von Visual Studio, und klicken Sie dann zu packen, und stellen diese in SharePoint. An dieser Stelle wird die benutzerdefinierte Aktion für Autoren von Workflow in SharePoint Designer, genau wie wäre es zwischen der Bibliothek vorhandener Aktivitäten verfügbar. Diese Funktion können Sie die Funktionalität in Ihrer Umgebung der Workflow authoring keines der spezielle Geschäftsprozesse entsprechend anpassen.
-> **Hinweis:** Es wird ein Beispiel für das Erstellen einer benutzerdefinierten Aktion bereitgestellt. Das Beispiel und eine Infodatei sind hier verfügbar: [SharePoint-Workflow: Erstellen einer benutzerdefinierten Aktion](http://code.msdn.microsoft.com/SharePoint-2013-workflow-41e5c0f9) (http://code.msdn.microsoft.com/SharePoint-2013-workflow-41e5c0f9).
+
+> [!NOTE]
+> Es wird ein Beispiel für das Erstellen einer benutzerdefinierten Aktion bereitgestellt. Das Beispiel und eine Infodatei sind hier verfügbar: [SharePoint-Workflow: Erstellen einer benutzerdefinierten Aktion]((http://code.msdn.microsoft.com/SharePoint-2013-workflow-41e5c0f9)) ((http://code.msdn.microsoft.com/SharePoint-2013-workflow-41e5c0f9)).
   
     
     
@@ -173,7 +175,7 @@ Aktivieren ein benutzerdefiniertes Feature für eine Websitesammlung (d. h., in 
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addlresources"> </a>
 
 

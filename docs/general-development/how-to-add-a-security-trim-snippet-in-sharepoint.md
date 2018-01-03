@@ -3,11 +3,11 @@ title: "Hinzufügen eines Sicherheitstrim-Codeausschnitts in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 4beaab08-760b-408a-b768-906312779379
-ms.openlocfilehash: 823a5fdc6f6f9d229a0020fd42211ffb05df03af
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: e238143422a472ff25922a2b409980176710a439
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="add-a-security-trim-snippet-in-sharepoint"></a>Hinzufügen eines Sicherheitstrim-Codeausschnitts in SharePoint
 
@@ -36,8 +36,10 @@ Einen Bereich Sicherheit erhöhen, können Sie beispielsweise die folgende Inhal
   
 - Ein vom Menüband unabhängiger Anmeldelink für nicht authentifizierte Benutzer oder Benutzer, die noch authentifiziert werden müssen.
     
-    > **Hinweis:** Dieser Anmeldelink wird automatisch in eine Gestaltungsvorlage eingefügt, die mithilfe des Entwurfs-Manager erstellt wird, Sie können ihn jedoch löschen, wenn er nicht benötigt wird. 
-      > Ein Sicherheitskürzungsbereich hat zwei wichtige Eigenschaftseinstellungen, eine für die Authentifizierung und eine für Berechtigungen (oder Autorisierung). Sie können einen Sicherheitskürzungsbereich z. B. verwenden, um bestimmten Benutzern den folgenden Inhalt anzuzeigen:
+    > [!NOTE]
+    > Dieser Anmeldelink wird automatisch in eine Gestaltungsvorlage eingefügt, die mithilfe des Entwurfs-Manager erstellt wird, Sie können ihn jedoch löschen, wenn er nicht benötigt wird. 
+
+Ein Sicherheitskürzungsbereich hat zwei wichtige Eigenschaftseinstellungen, eine für die Authentifizierung und eine für Berechtigungen (oder Autorisierung). Sie können einen Sicherheitskürzungsbereich z. B. verwenden, um bestimmten Benutzern den folgenden Inhalt anzuzeigen:
   
     
     
@@ -47,16 +49,15 @@ Einen Bereich Sicherheit erhöhen, können Sie beispielsweise die folgende Inhal
   
 - **Berechtigungen** Mit dieser Eigenschaft können Sie eine bestimmte Berechtigung auswählen, die Benutzer benötigen, um den Inhalt im Bereich anzuzeigen.
     
-    > **Hinweis:** Sie wählen eine einzelne Berechtigung aus, keine Berechtigungsstufe. (Eine Berechtigungsstufe ist ein Satz erteilter Berechtigungen.) Wenn Sie die Authentifizierung nur auf anonyme Benutzer beschränken, ist es normalerweise nicht erforderlich, eine bestimmte Berechtigung anzugeben, da anonymen Benutzern in der Regel keine SharePoint-Berechtigungen zugewiesen sind. Es ist sinnvoll, Berechtigungen nur für alle Benutzer oder für alle authentifizierten Benutzer zu verwenden.
+    > [!NOTE]
+    > Eine einzelne Berechtigung, die keiner Berechtigungsstufe auswählen. (Eine Berechtigungsstufe ist ein Satz von Berechtigungen erteilt wurden.) Natürlich, wenn Sie die Authentifizierung nur anonyme Benutzer beschränken, ist es normalerweise nicht erforderlich, eine bestimmte Berechtigung anzugeben, da anonyme Benutzer in der Regel keine SharePoint Berechtigungen erteilt wurden. Es ist sinnvoll, nur für alle Benutzer oder mit allen authentifizierten Benutzern Berechtigungen zu verwenden.
   
     
     
 Die Sicherheit erhöhen, Systemsteuerung verfügt über drei Optionen klicken Sie im Menüband in der linken Spalte von Tabelle 1 aufgeführt. Tabelle 1 zeigt, wie diese Einstellungen bestimmen, die bestimmte Berechtigung, die Benutzer verfügen müssen, die niedrigste Standardberechtigungsstufe, die diese bestimmte Berechtigung enthält und die Gruppe, die mit dieser Berechtigungsstufe standardmäßig verknüpft ist.)
   
-    
-    
-
-> **Hinweis** Dies sind die Standardeinstellungen, die für jeden gegebenen Bereich, wie eine Websitesammlung, Website, Liste oder ein Element, geändert werden können. 
+> [!NOTE]
+> Dies sind die Standardeinstellungen, die für jeden gegebenen Bereich, wie eine Websitesammlung, Website, Liste oder ein Element, geändert werden können. 
   
     
     
@@ -162,7 +163,7 @@ Die **<div>**, wobei `class="DefaultContentBlock"` ist, was Sie mit Ihren eigene
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="AdditionalResources"> </a>
 
 

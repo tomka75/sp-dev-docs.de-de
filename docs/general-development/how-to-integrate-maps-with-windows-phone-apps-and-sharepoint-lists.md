@@ -3,11 +3,11 @@ title: Integrieren von Karten in Windows Phone-Apps und SharePoint-Listen
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7e0550bc-92d1-407f-b8ba-1371c63bd16e
-ms.openlocfilehash: 4bbf3bbf37b7317d27abf0c980e31c806023bb20
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 941ad302f9e8183deeeeb95a79aed9b474ff2e3d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="integrate-maps-with-windows-phone-apps-and-sharepoint-lists"></a>Integrieren von Karten in Windows Phone-Apps und SharePoint-Listen
 In diesem Artikel erfahren Sie, wie Sie Standortinformationen und Karten in SharePoint-Listen sowie standortbasierte Web-Apps und mobile SharePoint-Add-Ins mithilfe des neuen Felds "Geolocation" und durch Erstellen Ihrer eigenen auf dem Geolocation-Feld basierenden Feldtypen integrieren. SharePoint führt einen neuen Feldtyp namens Geolocation, die Ihnen das Hinzufügen von SharePoint-Listen mit Standortinformationen Anmerkungen ermöglicht. In Spalten vom Typ Geolocation können Sie Standortinformationen als ein Paar von Breiten- und Längengrad Koordinaten in decimal Grad eingeben oder die Koordinaten des aktuellen Standort des Benutzers vom Browser, abrufen, wenn im Browser die W3C Geolocation-API implementiert. Klicken Sie in der Liste zeigt SharePoint den Speicherort auf einer Karte unterstützt von Bing Maps. Zusammen Geolocation-Feld Kartenansicht ermöglichen es Ihnen, einen räumlichen Kontext für alle Informationen bereitgestellt, durch die Integration von Daten aus SharePoint in einer Zuordnung und können Benutzer ausschließlich auf neue Weise in den Webservern und mobilen apps und -Lösungen zu. Wir helfen Ihnen eine einfache Windows 7-app erstellen, die SharePoint Geolocation-Feld Typ-Funktion verwendet, um Funktionen für die Zuordnung zu verwenden, sodass Sie Karten für mobile SharePoint-Add-In Listenelemente anzeigen können.
@@ -256,17 +256,14 @@ In diesem Schritt können Sie Ihre app ausführen und zu überprüfen.
   ![Kartenansicht in mobiler App](../images/SP15Con_HowToCreateMapBasedPhoneApp_Fig3.png)
   
 
-  
-
-  
-
-> **Hinweis:** Die Benutzeroberfläche des Felds Geolocation kann auf mobilen Geräten anders sein als in Browsern. Die Option **Bestimmten Standort verwenden** des Browsers steht nicht für mobile Geräte zur Verfügung. Für mobile Geräte ist nur eine Option verfügbar: **Meinen Standort verwenden**. 
+> [!NOTE]
+> Die Benutzeroberfläche des Felds Geolocation kann auf mobilen Geräten anders sein als in Browsern. Die Option **Bestimmten Standort verwenden** des Browsers steht nicht für mobile Geräte zur Verfügung. Für mobile Geräte ist nur eine Option verfügbar: **Meinen Standort verwenden**. 
   
     
     
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15Integmaps_addlresources"> </a>
 
 

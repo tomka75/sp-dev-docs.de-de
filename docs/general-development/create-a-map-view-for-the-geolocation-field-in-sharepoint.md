@@ -3,11 +3,11 @@ title: "Erstellen einer Kartenansicht für das Geolocation-Feld in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 0cd8ba27-3326-4b60-a2d0-d289a94f11bb
-ms.openlocfilehash: 73201de63af15725fc54a52fb6d3a0e7cde38105
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 8fa7cb80a9261f9e64b30cdc305f3c7d0b9cfb15
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-a-map-view-for-the-geolocation-field-in-sharepoint"></a>Erstellen einer Kartenansicht für das Geolocation-Feld in SharePoint
 Erfahren Sie, wie Standortinformationen mithilfe einer Kartenansicht in SharePoint Listen anzeigen. Sie können eine Kartenansicht über die SharePoint-Benutzeroberfläche (UI) manuell oder programmgesteuert mit den neuen Feldtyp für **Geolocation** erstellen. SharePoint führt einen neuen Feldtyp mit dem Namen **Geolocation**, die Ihnen das Hinzufügen von SharePoint-Listen mit Standortinformationen Anmerkungen ermöglicht. Beispielsweise können jetzt stellen "Standortbasierte" enthält und Breiten- und Längengrad Koordinaten über Bing Maps anzuzeigen. Ein Eintrag wird in der Regel als eine PIN auf einer Kartenansicht betrachtet.
@@ -31,7 +31,7 @@ Sie müssen ein MSI-Paket mit dem Namen "SQLSysClrTypes.msi" auf jedem SharePoin
 - Eine Liste von SharePoint, die mit der **Geolocation** -Spalte enthält
     
   
-- Ein gültiger Bing Karten-Schlüssel, festgelegt auf Farm- oder Webebene, der aus dem  [Bing Karten-Kontocenter](http://www.bingmapsportal.com/) abgerufen werden kann
+- Ein gültiger Bing Karten-Schlüssel, festgelegt auf Farm- oder Webebene, der aus dem  [Bing Karten-Kontocenter]((http://www.bingmapsportal.com/)) abgerufen werden kann
     
     > **Wichtig:** Sie sind verantwortlich für die Einhaltung der für Ihre Nutzung des Bing Karten-Schlüssels anwendbaren Geschäftsbedingungen und alle erforderlichen Veröffentlichungen gegenüber Benutzern Ihrer Anwendung bezüglich an den Bing Daten-Dienst übermittelter Daten. 
 - Visual Studio 2012 oder Visual Studio 2010
@@ -43,10 +43,8 @@ Sie müssen ein MSI-Paket mit dem Namen "SQLSysClrTypes.msi" auf jedem SharePoin
 
 Eine Kartenansicht ist eine SharePoint-Ansicht, die eine Zuordnung anzeigt (mit Daten aus der Bing Maps-Dienst), Länge und Breite Einträge aus der **Geolocation** -Feldtyp verwenden. Wenn der Feldtyp **Geolocation** auf der SharePoint-Liste verfügbar ist, kann eine Kartenansicht entweder programmgesteuert oder über die SharePoint-UI erstellt werden. Klicken Sie in der Liste zeigt SharePoint den Speicherort auf einer Karte unterstützt von Bing Maps. Darüber hinaus werden ein neuen Ansicht vom Typ mit dem Namen **Kartenansicht** die Listenelemente als Pins für eine Bing Maps-Ajax-Steuerelement, Version 7 mit den Listenelementen als Karten im linken Bereich angezeigt.
   
-    
-    
-
-> **Hinweis:** Jede SharePoint-Liste kann bis zu zwei **Geolocation**-Spalten enthalten. Sie können keine dritte **Geolocation**-Spalte in derselben Liste hinzufügen. Eine Kartenansicht kann nur eine **Geolocation**-Spalte enthalten. Sie können mehrere Kartenansichten mit unterschiedlichen **Geolocation**-Spalten erstellen.
+> [!NOTE]
+> Jede SharePoint-Liste kann bis zu zwei **Geolocation**-Spalten enthalten. Sie können keine dritte **Geolocation**-Spalte in derselben Liste hinzufügen. Eine Kartenansicht kann nur eine **Geolocation**-Spalte enthalten. Sie können mehrere Kartenansichten mit unterschiedlichen **Geolocation**-Spalten erstellen.
   
     
     
@@ -97,7 +95,8 @@ Die folgenden Schritte führen Sie zum Erstellen einer Kartenansicht aus der Sha
   
 
     
-    > **Hinweis:** Mindestens ein **Geolocation**-Feld ist erforderlich, um eine Kartenansicht zu erstellen. Sie können nicht mehrere **Geolocation**-Felder für eine Kartenansicht auswählen, aber Sie können zwei unterschiedliche Kartenansichten erstellen, die zwei unterschiedliche **Geolocation**-Felder verwenden.
+    > [!NOTE]
+    > Mindestens ein **Geolocation**-Feld ist erforderlich, um eine Kartenansicht zu erstellen. Sie können nicht mehrere **Geolocation**-Felder für eine Kartenansicht auswählen, aber Sie können zwei unterschiedliche Kartenansichten erstellen, die zwei unterschiedliche **Geolocation**-Felder verwenden.
 5. Nach dem Hinzufügen der erforderlichen **Geolocation** dar und den anderen Feldern, die, den Sie benötigen, wählen Sie **OK**. Eine Kartenansicht wird erstellt, wie in Abbildung 4 dargestellt.
     
    **Abbildung 4. Vollständige Kartenansicht**
@@ -146,7 +145,8 @@ Befolgen Sie diese Schritte, um einer Kartenansicht für eine SharePoint-Liste p
   
 7. Fügen Sie den folgenden Code zur **Main**-Methode in der CS-Datei hinzu.
     
-    > **Hinweis:** Die JSLink-Eigenschaft wird für Umfrage- oder Ereignislisten nicht unterstützt. Ein SharePoint-Kalender ist eine Ereignisliste. 
+    > [!NOTE]
+    > Die JSLink-Eigenschaft wird nicht für Umfrage- oder Ereignislisten unterstützt. Ein SharePoint-Kalender ist eine Ereignisliste. 
 
 ```cs
   
@@ -239,7 +239,7 @@ Nachdem Sie eine Kartenansicht erstellt haben, werden alle Elemente als Pins ang
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15CreatingMapViews_AdditionalResources"> </a>
 
 

@@ -5,11 +5,11 @@ keywords: excel services design
 f1_keywords: excel services design
 ms.prod: sharepoint
 ms.assetid: e0349b4a-2d52-46c4-a167-801e9c24eaca
-ms.openlocfilehash: c1abeb724ec1174e66355530e58f9b4d3ab07453
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3202d7163ad080462e98dd73fb05bf3f60eae7cd
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="excel-services-architecture"></a>Excel Services-Architektur
 
@@ -36,9 +36,8 @@ Excel Services ist Bestandteil von Microsoft SharePoint Server 2010. Excel Servi
   
 - Dienste für Excel-Berechnungen
     
-  
-
-> **Hinweis:** In Microsoft Excel Online, Bestandteil von Office Online, werden auch Excel-Arbeitsmappen im Browser unterstützt. Weitere Informationen zu Excel Online finden Sie in der [Dokumentation zu Office Web Apps](https://technet.microsoft.com/en-us/library/ee855124.aspx). 
+> [!NOTE]
+> In Microsoft Excel Online, Bestandteil von Office Online, werden auch Excel-Arbeitsmappen im Browser unterstützt. Weitere Informationen zu Excel Online finden Sie in der [Dokumentation zu Office Web Apps]((https://technet.microsoft.com/de-DE/library/ee855124.aspx)). 
   
     
     
@@ -75,7 +74,7 @@ In der einfachsten Konfiguration in SharePoint Server 2010, das heißt, auf eine
   
     
     
-Informationen zu Excel Services Topologie, Skalierbarkeit, Leistung und Sicherheit finden Sie unter der SharePoint Server 2010-Dokumentation auf  [TechNet](http://technet.microsoft.com/en-us/library/cc303422%28office.14%29.aspx). 
+Informationen zu Excel Services Topologie, Skalierbarkeit, Leistung und Sicherheit finden Sie unter der SharePoint Server 2010-Dokumentation auf  [TechNet]((http://technet.microsoft.com/de-DE/library/cc303422%28office.14%29.aspx)). 
   
     
     
@@ -95,10 +94,8 @@ Die Eigenschaften des Excel Web Access-Webparts können auch angepasst werden. W
 
 Excel Web Services ist die Excel Services-Komponente, die programmgesteuerten Zugriff auf seinen Webdienst bereitstellt. Sie können Anwendungen entwickeln, die Excel Web Services aufrufen, um Werte aus Arbeitsmappen zu berechnen, festzulegen und zu extrahieren und um externe Datenverbindungen zu aktualisieren. Wenn Sie Excel Web Services verwenden, können Sie serverseitige Arbeitsmappenlogik in eine Anwendung integrieren, die Aktualisierung von Excel-Arbeitsmappen automatisieren und anwendungsspezifische Benutzeroberflächen für serverseitige Excel-Berechnungen erstellen. 
   
-    
-    
-
-> **Hinweis:** Wenn Sie Änderungen an einer Arbeitsmappe vornehmen, z. B. durch Festlegen von Werten für einen Bereich mithilfe von Excel Web Services, bleiben die Änderungen an der Arbeitsmappe nur für die jeweilige Sitzung erhalten. Die Änderungen werden nicht in der ursprünglichen Arbeitsmappe gespeichert oder persistent gemacht. Wenn die aktuelle Arbeitsmappensitzung endet (z. B. beim Aufruf der Methode **CloseWorkbook** oder bei einem Sitzungstimeout), gehen die vorgenommenen Änderungen verloren. Wenn Sie Änderungen speichern möchten, die Sie an einer Arbeitsmappe vornehmen, können Sie die Methode **GetWorkbook** verwenden und die Arbeitsmappe dann speichern. Weitere Informationen finden Sie unter [Microsoft.Office.Excel.Server.WebServices](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx) . Sie können die Arbeitsmappe auch im Bearbeitungsmodus öffnen und die Änderungen speichern.
+> [!NOTE]
+> Wenn Sie Änderungen an einer Arbeitsmappe vornehmen, z. B. durch Festlegen von Werten für einen Bereich mithilfe von Excel Web Services, bleiben die Änderungen an der Arbeitsmappe nur für die jeweilige Sitzung erhalten. Die Änderungen werden nicht in der ursprünglichen Arbeitsmappe gespeichert oder persistent gemacht. Wenn die aktuelle Arbeitsmappensitzung endet (z. B. beim Aufruf der Methode **CloseWorkbook** oder bei einem Sitzungstimeout), gehen die vorgenommenen Änderungen verloren. Wenn Sie Änderungen speichern möchten, die Sie an einer Arbeitsmappe vornehmen, können Sie die Methode **GetWorkbook** verwenden und die Arbeitsmappe dann speichern. Weitere Informationen finden Sie unter [Microsoft.Office.Excel.Server.WebServices]((https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx)) . Sie können die Arbeitsmappe auch im Bearbeitungsmodus öffnen und die Änderungen speichern.
   
     
     
@@ -121,7 +118,7 @@ Das JavaScript-Objektmodell in Excel Services ermöglicht Entwicklern, die Excel
   
     
     
-For more information about the JavaScript object model in Excel Services, see the  [Ewa](http://msdn.microsoft.com/library/6fe73191-3213-b986-1ad6-2c3b918a2241%28Office.15%29.aspx) namespace reference documentation.
+For more information about the JavaScript object model in Excel Services, see the  [Ewa]((http://msdn.microsoft.com/library/6fe73191-3213-b986-1ad6-2c3b918a2241%28Office.15%29.aspx)) namespace reference documentation.
   
     
     

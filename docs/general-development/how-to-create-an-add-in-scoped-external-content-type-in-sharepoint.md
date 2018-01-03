@@ -3,11 +3,11 @@ title: Erstellen externer Inhaltstypen auf Add-In-Ebene in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: de4b50a3-84da-48ce-9ba0-fe06571e52a8
-ms.openlocfilehash: b223f4925792bc7765792cdbb6f71aae8b3832c3
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 3a89995c1362d50b65b7277416ff165cd4d3db47
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-an-add-in-scoped-external-content-type-in-sharepoint"></a>Erstellen externer Inhaltstypen auf Add-In-Ebene in SharePoint
 
@@ -55,7 +55,7 @@ Die folgenden Schritte zeigen zum Erstellen eines externen Inhaltstyps basierend
 2. Erstellen Sie ein Projekt **-Add-in für SharePoint**.
     
   
-3. Geben Sie die Add-in-Einstellungen, einschließlich der Add-in-Name die URL der Website für das Debuggen des Add-Ins und wie Sie das Add-in (automatisch gehostet, vom Anbieter gehostete oder SharePoint-Hosting) hosten möchten. Weitere Informationen finden Sie unter  [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint](http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx).
+3. Geben Sie die Add-in-Einstellungen, einschließlich der Add-in-Name die URL der Website für das Debuggen des Add-Ins und wie Sie das Add-in (automatisch gehostet, vom Anbieter gehostete oder SharePoint-Hosting) hosten möchten. Weitere Informationen finden Sie unter  [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint]((http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx)).
     
   
 4. Wählen Sie auf **Fertig stellen**, um die app zu erstellen.
@@ -66,13 +66,13 @@ Führen Sie die Schritte zum Erstellen von SharePoint-Add-Ins finden Sie in der 
     
     
 
--  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](http://msdn.microsoft.com/library/3038dd73-41ee-436f-8c78-ef8e6869bf7b%28Office.15%29.aspx)
+-  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins]((http://msdn.microsoft.com/library/3038dd73-41ee-436f-8c78-ef8e6869bf7b%28Office.15%29.aspx))
     
   
--  [So geht's: Erstellen einer einfachen automatisch gehosteten App für SharePoint](http://msdn.microsoft.com/library/0572894d-c437-4b7d-8ac6-8405496e2145%28Office.15%29.aspx)
+-  [So geht's: Erstellen einer einfachen automatisch gehosteten App für SharePoint]((http://msdn.microsoft.com/library/0572894d-c437-4b7d-8ac6-8405496e2145%28Office.15%29.aspx))
     
   
--  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](http://msdn.microsoft.com/library/1b992485-6efe-4ea4-a18c-221689b0b66f%28Office.15%29.aspx)
+-  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins]((http://msdn.microsoft.com/library/1b992485-6efe-4ea4-a18c-221689b0b66f%28Office.15%29.aspx))
     
   
 
@@ -88,7 +88,9 @@ Führen Sie die Schritte zum Erstellen von SharePoint-Add-Ins finden Sie in der 
     
     Geben Sie einen Namen für die OData-Quelle an.
     
-    > **Hinweis:** In diesem Beispiel verwenden Sie den Northwind-Dienst, der in der Hersteller-Liste auf der  [OpenData Protocol-Website](http://www.odata.org) befindet. 
+    > [!NOTE]
+    > In diesem Beispiel verwenden Sie den Northwind-Dienst, der sich in der Hersteller-Liste auf der [OpenData Protocol-Website]((http://www.odata.org)) befindet. 
+
 3. Eine Liste wird angezeigt, mit Datenentitäten, die vom OData Service verfügbar gemacht werden. Wählen Sie eine oder mehrere Entitäten, und wählen Sie **Fertig stellen**.
     
   
@@ -100,17 +102,17 @@ Führen Sie die Schritte zum Erstellen von SharePoint-Add-Ins finden Sie in der 
     
   
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
 -  [Add-in-bezogenen externen Inhaltstypen in SharePoint](add-in-scoped-external-content-types-in-sharepoint.md)
     
   
--  [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint](http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx)
+-  [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint]((http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx))
     
   
--  [SharePoint-Add-Ins](http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx)
+-  [SharePoint-Add-Ins]((http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx))
     
   
 -  [Externe Inhaltstypen in SharePoint](external-content-types-in-sharepoint.md)

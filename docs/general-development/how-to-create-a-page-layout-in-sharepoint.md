@@ -3,11 +3,11 @@ title: Erstellen eines Seitenlayouts in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 5447e6a1-2f14-4667-81d0-7514b468be80
-ms.openlocfilehash: d339ad79d6cc0aff74fe3e01dc4a310b32769f0a
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: fcb7b5e647fa53da5af3ad73718f7972a4f4692c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-a-page-layout-in-sharepoint"></a>Erstellen eines Seitenlayouts in SharePoint
 
@@ -43,9 +43,8 @@ Bei der Erstellung eines Seitenlayouts geschieht Folgendes:
   
 - Die HTML-Datei und die .aspx-Datei sind verknüpft, sodass spätere Bearbeitungen an der HTML-Datei mit der .aspx-Datei synchronisiert werden, wenn die HTML-Datei gespeichert wird. Sonstiges Markup wie Kommentare, **<div>**-Tags, Codeausschnitte und Inhaltsplatzhalter werden der HTML-Datei hinzugefügt.
     
-  
-
-> **Hinweis:** Die Synchronisierung erfolgt nur in eine Richtung. Änderungen am HTML-Seitenlayout werden mit der zugehörigen ASPX-Datei synchronisiert, aber wenn Sie die ASPX-Datei direkt bearbeiten, werden diese Änderungen nicht mit der HTML-Datei synchronisiert. Jedes HTML-Seitenlayout (und jede HTML-Gestaltungsvorlage) verfügt über eine Eigenschaft mit dem Namen **Zugeordnete Datei**, die standardmäßig auf **True** festgelegt ist und mit deren Hilfe die Zuordnung und die Synchronisierung zwischen Dateien eingerichtet wird.
+> [!NOTE]
+> Die Synchronisierung erfolgt nur in eine Richtung. Änderungen am HTML-Seitenlayout werden mit der zugehörigen ASPX-Datei synchronisiert, aber wenn Sie die ASPX-Datei direkt bearbeiten, werden diese Änderungen nicht mit der HTML-Datei synchronisiert. Jedes HTML-Seitenlayout (und jede HTML-Gestaltungsvorlage) verfügt über eine Eigenschaft mit dem Namen **Zugeordnete Datei**, die standardmäßig auf **True** festgelegt ist und mit deren Hilfe die Zuordnung und die Synchronisierung zwischen Dateien eingerichtet wird.
   
     
     
@@ -141,7 +140,9 @@ Bevor Sie beginnen, müssen Sie wissen, mit welchem Inhaltstyp und welcher Gesta
     
     Die hier von Ihnen gewählte Gestaltungsvorlage wird in der Vorschau für dieses Seitenlayout angezeigt. Von dieser Gestaltungsvorlage hängt auch ab, welche Inhaltsplatzhalter dem Seitenlayout hinzugefügt werden.
     
-    > **Hinweis:** Nachdem Sie diese Gestaltungsvorlage ausgewählt haben, können Sie keine Vorschau des Seitenlayouts mit einer anderen Gestaltungsvorlage anzeigen. Dies gilt auch dann, wenn Sie auf die Live-Website eine andere Gestaltungsvorlage angewendet haben. 
+    > [!NOTE]
+    > Nachdem Sie diese Gestaltungsvorlage ausgewählt haben, können Sie keine Vorschau des Seitenlayouts mit einer anderen Gestaltungsvorlage anzeigen. Dies gilt auch dann, wenn Sie auf die Live-Website eine andere Gestaltungsvorlage angewendet haben. 
+
 7. Wählen Sie einen Inhaltstyp aus. Vom Inhaltstyp für dieses Seitenlayout hängt ab, welche Seitenfelder für dieses Seitenlayout in der Codeausschnittgalerie verfügbar sind.
     
   
@@ -184,10 +185,8 @@ Wenn Sie HTML-Modelle für Ihre Website erstellen, haben Sie möglicherweise HTM
     
 Sie können die Formate für ein oder mehrere Seitenlayouts einfach im gleichen Stylesheet ablegen, mit dem die Gestaltungsvorlage verknüpft ist. Wenn Sie aber die Größe der CSS minimieren möchten, die pro Seite geladen werden, können Sie auch unterschiedliche Stylesheets für unterschiedliche Seitenlayouts verwenden. In diesem Fall ist es wichtig zu wissen, dass ein Link zu einem Stylesheet nicht in das **<head>**-Tag eines Seitenlayouts eingefügt werden kann. Stattdessen muss der Link in den Inhaltsplatzhalter mit der Bezeichnung **PlaceHolderAdditionalPageHead** eingefügt werden. 
   
-    
-    
-
-> **Hinweis:** In diesem Markup schließt das Attribut  `ms-design-css-conversion="no"` das Stylesheet vom Design aus. Außerdem sollte der Link zum Stylesheet nach den mit **<!--SPM** kommentierten Zeilen angezeigt werden. 
+> [!NOTE]
+> In diesem Markup schließt das Attribut `ms-design-css-conversion="no"` das Stylesheet vom Design aus. Außerdem sollte der Link zum Stylesheet nach den mit **<!--SPM** kommentierten Zeilen angezeigt werden. 
   
     
     
@@ -328,7 +327,7 @@ Das Markup, das für Seitenlayouts eindeutig ist, sind Seitenfelder, die dem Sei
 ```
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="AdditionalResources"> </a>
 
 

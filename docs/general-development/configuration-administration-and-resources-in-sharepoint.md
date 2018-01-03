@@ -3,90 +3,74 @@ title: Konfiguration, Verwaltung und Ressourcen in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e7d8c919-7aa6-466a-acb0-27366129061c
-ms.openlocfilehash: d2fa033b86a3036647248d50d393d9f6add503bf
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: a165add5f6c80df634a960e665f29813e2177bb9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="configuration-administration-and-resources-in-sharepoint"></a>Konfiguration, Verwaltung und Ressourcen in SharePoint
 
-Informationen zu Planung, Verwaltung, Konfiguration, Bereitstellung, Migration, Upgrades, Einrichtung von Ansprüchen oder Sicherheit im Allgemeinen finden Sie in der IT- und Administratordokumentation und den Anleitungen unter  [Microsoft TechNet](http://technet.microsoft.com/en-us/sharepoint/ee263910.aspx).
+Informationen zu Planung, Verwaltung, Konfiguration, Bereitstellung, Migration, Upgrades, Einrichtung von Ansprüchen oder Sicherheit im Allgemeinen finden Sie in der IT- und Administratordokumentation und den Anleitungen unter  [Microsoft TechNet]((http://technet.microsoft.com/de-DE/sharepoint/ee263910.aspx)).
   
     
     
 
 Es folgen Links zu einigen der Dokumentationen und Anleitungen auf TechNet:
--  
-  [Planen von Authentifizierungsmethoden](http://technet.microsoft.com/en-us/library/cc288475.aspx)
+-  [Planen von Authentifizierungsmethoden]((http://technet.microsoft.com/de-DE/library/cc288475.aspx))
     
   
--  
-  [Konfigurieren der anspruchsbasierten Authentifizierung](http://technet.microsoft.com/en-us/library/ee806886.aspx)
+-  [Konfigurieren der anspruchsbasierten Authentifizierung]((http://technet.microsoft.com/de-DE/library/ee806886.aspx))
     
   
--  
-  [Sicherheit und Schutz für SharePoint Foundation 2010](http://technet.microsoft.com/en-us/library/cc287860.aspx)
+-  [Sicherheit und Schutz für SharePoint Foundation 2010]((http://technet.microsoft.com/de-DE/library/cc287860.aspx))
     
   
--  
-  [Benutzerdefinierte Anspruchsanbieter für die Personenauswahl](http://technet.microsoft.com/en-us/library/gg602065.aspx)
+-  [Benutzerdefinierte Anspruchsanbieter für die Personenauswahl]((http://technet.microsoft.com/de-DE/library/gg602065.aspx))
     
   
--  
-  [Personenauswahl und Anspruchsanbietern](http://technet.microsoft.com/en-us/library/gg602063.aspx)
+-  [Personenauswahl und Anspruchsanbietern]((http://technet.microsoft.com/de-DE/library/gg602063.aspx))
     
   
--  
-  [Planen der Sicherheit für Websites und Inhalte](http://technet.microsoft.com/en-us/library/cc288189.aspx)
+-  [Planen der Sicherheit für Websites und Inhalte]((http://technet.microsoft.com/de-DE/library/cc288189.aspx))
     
   
--  
-  [Planen der Verstärkung der Sicherheit](http://technet.microsoft.com/en-us/library/cc288143.aspx)
+-  [Planen der Verstärkung der Sicherheit]((http://technet.microsoft.com/de-DE/library/cc288143.aspx))
     
   
--  
-  [Planen von Sandkastenlösungen](http://technet.microsoft.com/en-us/library/ff603638.aspx)
+-  [Planen von Sandkastenlösungen]((http://technet.microsoft.com/de-DE/library/ff603638.aspx))
     
   
--  
-  [Planen von Websiteberechtigungen](http://technet.microsoft.com/en-us/library/cc287752.aspx)
+-  [Planen von Websiteberechtigungen]((http://technet.microsoft.com/de-DE/library/cc287752.aspx))
     
   
--  
-  [Planen der automatischen Kennwortänderung](http://technet.microsoft.com/en-us/library/ee428296.aspx)
+-  [Planen der automatischen Kennwortänderung]((http://technet.microsoft.com/de-DE/library/ee428296.aspx))
     
   
--  
-  [Verwalten von Sicherheit und Berechtigungen](http://technet.microsoft.com/en-us/library/cc288468.aspx)
+-  [Verwalten von Sicherheit und Berechtigungen]((http://technet.microsoft.com/de-DE/library/cc288468.aspx))
     
   
--  
-  [Benutzerberechtigungen und Berechtigungsstufen](http://technet.microsoft.com/en-us/library/cc288074.aspx)
+-  [Benutzerberechtigungen und Berechtigungsstufen]((http://technet.microsoft.com/de-DE/library/cc288074.aspx))
     
   
--  
-  [Business Connectivity Services-Sicherheit (Übersicht)](http://technet.microsoft.com/en-us/library/ee661734.aspx)
+-  [Business Connectivity Services-Sicherheit (Übersicht)]((http://technet.microsoft.com/de-DE/library/ee661734.aspx))
     
   
--  
-  [Konfigurieren der formularbasierten Authentifizierung für eine anspruchsbasierte Webanwendung](http://technet.microsoft.com/en-us/library/ee806890.aspx)
+-  [Konfigurieren der formularbasierten Authentifizierung für eine anspruchsbasierte Webanwendung]((http://technet.microsoft.com/de-DE/library/ee806890.aspx))
     
   
--  
-  [Konfigurieren des Sicherheitstokendiensts](http://technet.microsoft.com/en-us/library/ee806864.aspx)
+-  [Konfigurieren des Sicherheitstokendiensts]((http://technet.microsoft.com/de-DE/library/ee806864.aspx))
     
   
--  
-  [Konfigurieren der Kerberos-Authentifizierung für Claims to Windows Token Service](http://technet.microsoft.com/en-us/library/ee806887.aspx)
+-  [Konfigurieren der Kerberos-Authentifizierung für Claims to Windows Token Service]((http://technet.microsoft.com/de-DE/library/ee806887.aspx))
     
   
--  
-  [Sicherheit-Cmdlets (SharePoint Foundation 2010)](http://technet.microsoft.com/en-us/library/ee890118.aspx)
+-  [Cmdlets für die Sicherheit (SharePoint Foundation 2010)]((http://technet.microsoft.com/de-DE/library/ee890118.aspx))
     
   
 
-> **Hinweis:** Informationen zu Windows Identity Foundation (WIF) finden Sie unter  [Windows Identity Foundation SDK](http://www.microsoft.com/downloads/en/details.aspx?FamilyID=C148B2DF-C7AF-46BB-9162-2C9422208504&amp;amp;displaylang=en). 
+> [!NOTE]
+> Informationen zu Windows Identity Foundation (WIF) finden Sie unter [Windows Identity Foundation SDK](http://www.microsoft.com/downloads/en/details.aspx?FamilyID=C148B2DF-C7AF-46BB-9162-2C9422208504&amp;amp;displaylang=en). 
   
     
     
@@ -97,8 +81,8 @@ In den folgenden Tabellen werden Blogs, Foren und zusätzliche Ressourcen zur an
 
 |**Blogname**|**Links**|
 |:-----|:-----|
-|Share-n-dipity  <br/> | [Homepage des Blogs](http://blogs.technet.com/speschka/) <br/> |
-|Microsoft SharePoint-Entwicklerteams  <br/> | [Blog-Homepage](http://blogs.msdn.com/b/sharepointdev/) <br/> |
+|Share-n-dipity  <br/> | [Homepage des Blogs]((http://blogs.technet.com/speschka/)) <br/> |
+|Microsoft SharePoint-Entwicklerteams  <br/> | [Blog-Homepage]((http://blogs.msdn.com/b/sharepointdev/)) <br/> |
 |||
    
 
@@ -107,7 +91,7 @@ In den folgenden Tabellen werden Blogs, Foren und zusätzliche Ressourcen zur an
 
 |**Name des Forums**|**Links**|
 |:-----|:-----|
-|Foren zu SharePoint-Produkten und -Technologien  <br/> | [Homepage des Forums](http://social.msdn.microsoft.com/Forums/en-US/category/sharepoint) <br/> |
+|Foren zu SharePoint-Produkten und -Technologien  <br/> | [Homepage des Forums]((http://social.msdn.microsoft.com/Forums/de-DE/category/sharepoint)) <br/> |
    
 
 **Tabelle 3. Weitere Ressourcen**
@@ -115,24 +99,19 @@ In den folgenden Tabellen werden Blogs, Foren und zusätzliche Ressourcen zur an
 
 |**Weitere Ressourcen**|**Links**|
 |:-----|:-----|
-|Ansprüche und Sicherheit:  Technische Artikel  <br/> | 
-  [Ansprüche und Sicherheit: technische Artikel und Codebeispiele in MSDN](http://msdn.microsoft.com/en-us/library/gg430136.aspx) <br/> |
+|Ansprüche und Sicherheit:  Technische Artikel  <br/> | [Ansprüche und Sicherheit: technische Artikel und Codebeispiele in MSDN]((http://msdn.microsoft.com/de-DE/library/gg430136.aspx)) <br/> |
 |||
-|Sicherheit und Authentifizierung für SharePoint Foundation 2010  <br/> | [Sicherheit und Authentifizierung für SharePoint Foundation 2010-Ressourcencenter bei TechNet](http://technet.microsoft.com/en-us/sharepoint/ff601873.aspx) <br/> |
-|Microsoft SharePoint Foundation 2010 auf TechNet  <br/> | [Microsoft SharePoint Foundation 2010 auf TechNet](http://technet.microsoft.com/en-us/sharepoint/ee263910.aspx) <br/> |
-|Ressourcencenter für Sicherheit  <br/> | [Ressourcencenter für Sicherheit auf MSDN](http://msdn.microsoft.com/en-us/sharepoint/ff660758.aspx) <br/> |
-|Referenz für Windows PowerShell für SharePoint Foundation 2010  <br/> | 
-  [Cmdlets für die Sicherheit (SharePoint Foundation 2010)](http://technet.microsoft.com/en-us/library/ee890118.aspx) <br/> |
-|Ressourcencenter für Sicherheit  <br/> | [Security Resource Center auf der TechNet-Website](http://technet.microsoft.com/en-us/office/sharepointserver/cc979168.aspx) <br/> |
-|Windows Identity Foundation (WIF)-SDK  <br/> | 
-  [Windows Identity Foundation Documentation auf der MSDN-Website](http://msdn.microsoft.com/en-us/library/ee748484.aspx) <br/> |
-|Microsoft Patterns &amp; practices  <br/> | 
-  [Leitfaden zur anspruchsbasierten Identität und Zugriffssteuerung](http://msdn.microsoft.com/en-us/library/ff423674.aspx) <br/> |
-|.NET Framework-Klassenbibliothek  <br/> | 
-  [.NET Framework-Klassenbibliothek](http://msdn.microsoft.com/en-us/library/ms229335.aspx) <br/> |
+|Sicherheit und Authentifizierung für SharePoint Foundation 2010  <br/> | [Sicherheit und Authentifizierung für SharePoint Foundation 2010-Ressourcencenter bei TechNet]((http://technet.microsoft.com/de-DE/sharepoint/ff601873.aspx)) <br/> |
+|Microsoft SharePoint Foundation 2010 auf TechNet  <br/> | [Microsoft SharePoint Foundation 2010 auf TechNet]((http://technet.microsoft.com/de-DE/sharepoint/ee263910.aspx)) <br/> |
+|Ressourcencenter für Sicherheit  <br/> | [Ressourcencenter für Sicherheit auf MSDN]((http://msdn.microsoft.com/de-DE/sharepoint/ff660758.aspx)) <br/> |
+|Referenz für Windows PowerShell für SharePoint Foundation 2010  <br/> | [Cmdlets für die Sicherheit (SharePoint Foundation 2010)]((http://technet.microsoft.com/de-DE/library/ee890118.aspx)) <br/> |
+|Ressourcencenter für Sicherheit  <br/> | [Security Resource Center auf der TechNet-Website]((http://technet.microsoft.com/de-DE/office/sharepointserver/cc979168.aspx)) <br/> |
+|Windows Identity Foundation (WIF)-SDK  <br/> | [Windows Identity Foundation Documentation auf der MSDN-Website]((http://msdn.microsoft.com/de-DE/library/ee748484.aspx)) <br/> |
+|Microsoft Patterns &amp; practices  <br/> | [Leitfaden zur anspruchsbasierten Identität und Zugriffssteuerung]((http://msdn.microsoft.com/de-DE/library/ff423674.aspx)) <br/> |
+|.NET Framework-Klassenbibliothek  <br/> | [.NET Framework-Klassenbibliothek]((http://msdn.microsoft.com/de-DE/library/ms229335.aspx)) <br/> |
    
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

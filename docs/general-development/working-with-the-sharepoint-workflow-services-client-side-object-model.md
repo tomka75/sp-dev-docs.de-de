@@ -3,14 +3,14 @@ title: "Arbeiten mit dem clientseitigen Objektmodell für SharePoint-Workflow-Di
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e180c2fb-a903-4ded-884e-b7584fa99189
-ms.openlocfilehash: fb4915824deed5872df048566920e904216ddc72
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b1c9e9e4e08004a0b190292b70add1c70ccb4e75
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="working-with-the-sharepoint-workflow-services-client-side-object-model"></a>Arbeiten mit dem clientseitigen Objektmodell für SharePoint-Workflow-Dienste
-Zeigt, wie die clientseitige SharePoint-Objektmodell-API (CSOM) zum Erstellen und Steuern von Workflow-Manager 1.0-Workflowdefinitionen und -Instanzen verwendet wird. **Bereitgestellt von:** [Andrew Connell](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/),  [AndrewConnell.com](http://www.andrewconnell.com)
+Zeigt, wie die clientseitige SharePoint-Objektmodell-API (CSOM) zum Erstellen und Steuern von Workflow-Manager 1.0-Workflowdefinitionen und -Instanzen verwendet wird. **Bereitgestellt von:** [Andrew Connell]((http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/)),  [AndrewConnell.com]((http://www.andrewconnell.com))
   
     
     
@@ -26,7 +26,7 @@ In SharePoint 2010 hat Microsoft Features und Funktionen eingeführt, die Kunden
   
     
     
-In SharePoint hat Microsoft noch weitere Funktionen hinzugefügt. Diese Updates waren an Cloud-Bereitstellungen orientiert. Insbesondere führte Microsoft das neue SharePoint-App-Modell ein, das einen Schritt weiter als die Sandkastenlösung geht, da im Gegensatz zu Sandkastenlösung die Ausführung von serverseitigem Code im SharePoint-Prozess ausdrücklich blockiert wird. Microsoft erweiterte außerdem vorhandene Technologien in SharePoint, z. B. das clientseitige Objektmodell (CSOM), und führte neue Funktionen ein, darunter die Unterstützung für App-Identitäten über  [OAuth](http://msdn.microsoft.com/library/office/fp142382.aspx).
+In SharePoint hat Microsoft noch weitere Funktionen hinzugefügt. Diese Updates waren an Cloud-Bereitstellungen orientiert. Insbesondere führte Microsoft das neue SharePoint-App-Modell ein, das einen Schritt weiter als die Sandkastenlösung geht, da im Gegensatz zu Sandkastenlösung die Ausführung von serverseitigem Code im SharePoint-Prozess ausdrücklich blockiert wird. Microsoft erweiterte außerdem vorhandene Technologien in SharePoint, z. B. das clientseitige Objektmodell (CSOM), und führte neue Funktionen ein, darunter die Unterstützung für App-Identitäten über  [OAuth]((http://msdn.microsoft.com/library/office/fp142382.aspx)).
   
     
     
@@ -70,10 +70,8 @@ Dieser Artikel konzentriert sich auf das Thema Workflowformulare im Kontext von 
 
 In diesem Artikel liegt der Schwerpunkt auf der Workflowdienste-CSOM-API und infolgedessen auch auf der JSOM-API. Die serverseitige Workflowdienste-API wird hier nicht behandelt. Das Workflowdienste-CSOM besteht aus mehreren Diensten, die zum Ausführen verschiedener Aufgaben verwendet werden. Diese werden in den folgenden Abschnitten erläutert. 
   
-    
-    
-
-> **Hinweis:** Es existiert ein weiterer Dienst, der nicht in der CSOM-API enthalten ist, sondern in der serverseitigen API. Konkret handelt es sich um den Nachrichtendienst, der Nachrichtenwarteschlangen sowie die Nachrichtenübermittlung verwaltet. 
+> [!NOTE] 
+> Es gibt einen zusätzlichen Dienst, der nicht im CSOM, sondern in der serverseitigen API vorhanden ist. Dabei handelt es sich um den Nachrichtendienst, der zum Verwalten von Nachrichtenwarteschlangen und den Nachrichtentransport verwendet wird. 
   
     
     
@@ -109,7 +107,7 @@ Zum Arbeiten mit den Workflowdienste-CSOM- und JSOM-APIs müssen Entwickler die 
 
 ### <a name="workflow-service-manager"></a>Workflowdienst-Manager
 
-Das Gateway zu alle in der Workflowdienste-CSOM-API enthaltenen Dienste ist der Workflowdienst-Manager. Dieses Objekt wird von Entwicklern verwendet, um Instanzen für alle anderen Dienste zu erhalten, die in den folgenden Abschnitten beschrieben sind. Ähnlich wie andere CSOM-API-Implementierungen hängt der  [WorkflowServicesManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowServices.WorkflowServicesManager.aspx) vom Kern-SharePoint-CSOM ab, und deshalb müssen Sie einen gültigen Clientkontext und einen Verweis auf die SharePoint-Website übergeben, mit der Sie eine Verbindung herstellen möchten, wie in den folgenden Codebeispielen für CSOM und JSOM dargestellt.
+Das Gateway zu alle in der Workflowdienste-CSOM-API enthaltenen Dienste ist der Workflowdienst-Manager. Dieses Objekt wird von Entwicklern verwendet, um Instanzen für alle anderen Dienste zu erhalten, die in den folgenden Abschnitten beschrieben sind. Ähnlich wie andere CSOM-API-Implementierungen hängt der  [WorkflowServicesManager]((https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowServices.WorkflowServicesManager.aspx)) vom Kern-SharePoint-CSOM ab, und deshalb müssen Sie einen gültigen Clientkontext und einen Verweis auf die SharePoint-Website übergeben, mit der Sie eine Verbindung herstellen möchten, wie in den folgenden Codebeispielen für CSOM und JSOM dargestellt.
   
     
     
@@ -207,7 +205,7 @@ Dies sollte also verdeutlichen, warum Workflowzuordnungen jetzt in der API als A
   
     
     
-Das Objekt  [WorkflowSubscriptionService](https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowServices.WorkflowSubscriptionService.aspx) steht über die Klasse **WorkflowServicesManager** zur Verfügung, wie in den folgenden Codebeispielen gezeigt.
+Das Objekt  [WorkflowSubscriptionService]((https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowServices.WorkflowSubscriptionService.aspx)) steht über die Klasse **WorkflowServicesManager** zur Verfügung, wie in den folgenden Codebeispielen gezeigt.
   
     
     
@@ -242,7 +240,7 @@ Der letzte Dienst, den wir darstellen, ist der Instanzdienst. Sie können diesen
   
     
     
-Das Objekt  [WorkflowInstanceService](https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowServices.WorkflowInstanceService.aspx) steht über die Klasse **WorkflowServicesManager** zur Verfügung, wie in den folgenden Codebeispielen gezeigt.
+Das Objekt  [WorkflowInstanceService]((https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowServices.WorkflowInstanceService.aspx)) steht über die Klasse **WorkflowServicesManager** zur Verfügung, wie in den folgenden Codebeispielen gezeigt.
   
     
     
@@ -279,19 +277,17 @@ In früheren Versionen von SharePoint, insbesondere in SharePoint 2007 und Share
     
 Um jedoch eine Abwärtskompatibilität bereitzustellen, hat Microsoft das Vorgängermodell mit dem Hosten von vor SharePoint erstellten Workflows in SharePoint aufrechterhalten, indem das Windows Workflow Foundation-Runtimemodul beibehalten wurde. Daher können alle SharePoint 2010 erstellten Workflows trotdem erwartungsgemäß in einer SharePoint-Umgebung ausgeführt werden. Darüber hinaus hat Microsoft eine neue Aktivität, **InvokeSharePointWorkflow** eingeführt, die in einem SharePoint-Workflow verwendet werden kann, um einen vorhandenen Workflow im SharePoint 2010-Workflowhost zu starten, der in SharePoint enthalten ist. Damit können Sie vorhandene Workflowinvestitionen nutzen, die aus früheren Versionen migriert wurden.
   
-    
-    
-
-> **Hinweis:** Die Aktivität **InvokeSharePointWorkflow** ist ein Wrapper für die CSOM-Methode [StartWorkflow](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.InteropService.StartWorkflow.aspx).
+> [!NOTE] 
+> Die Aktivität **InvokeSharePointWorkflow** ist ein Wrapper für die CSOM-Methode [StartWorkflow]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.InteropService.StartWorkflow.aspx)).
   
     
     
 
-Das SharePoint-Workflowdienste-CSOM umfasst außerdem einen speziellen Dienst, über den Entwickler mit diesen älteren Workflows interagieren können. Mit dem  [InteropService](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.InteropService.aspx) können Sie Workflows starten und beenden sowie Ereignisbenachrichtigungen für ausgeführte Workflows aktivieren und deaktivieren.
+Das SharePoint-Workflowdienste-CSOM umfasst außerdem einen speziellen Dienst, über den Entwickler mit diesen älteren Workflows interagieren können. Mit dem  [InteropService]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.InteropService.aspx)) können Sie Workflows starten und beenden sowie Ereignisbenachrichtigungen für ausgeführte Workflows aktivieren und deaktivieren.
   
     
     
-Das Objekt  [WorkflowDeploymentService](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowDeploymentService.aspx) steht über die Klasse **WorkflowServicesManager** zur Verfügung, wie in den folgenden CSOM- und JSOM-Codebeispielen gezeigt.
+Das Objekt  [WorkflowDeploymentService]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowDeploymentService.aspx)) steht über die Klasse **WorkflowServicesManager** zur Verfügung, wie in den folgenden CSOM- und JSOM-Codebeispielen gezeigt.
   
     
     
@@ -333,7 +329,7 @@ Die meisten der anderen Diensten im Workflowdienste-CSOM erfordern, dass Sie Ver
   
     
     
-Zum Abrufen einer Liste aller veröffentlichten Workflowdefinitionen rufen Sie zunächst eine Instanz des Bereitstellungsdienst auf, indem Sie die Methode  [GetWorkflowDeploymentService](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowServicesManager.GetWorkflowDeploymentService.aspx) verwenden. Rufen Sie dann die Sammlung aller Workflowdefinitionen ab, indem Sie die Methode [EnumerateDefinitions(Boolean)](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowDeploymentService.EnumerateDefinitions.aspx) verwenden. Im Folgenden finden Sie einen Beispielcode:
+Zum Abrufen einer Liste aller veröffentlichten Workflowdefinitionen rufen Sie zunächst eine Instanz des Bereitstellungsdienst auf, indem Sie die Methode  [GetWorkflowDeploymentService]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowServicesManager.GetWorkflowDeploymentService.aspx)) verwenden. Rufen Sie dann die Sammlung aller Workflowdefinitionen ab, indem Sie die Methode [EnumerateDefinitions(Boolean)]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowDeploymentService.EnumerateDefinitions.aspx)) verwenden. Im Folgenden finden Sie einen Beispielcode:
   
     
     
@@ -368,21 +364,21 @@ Zum Starten einer neuen Workflowinstanz müssen Sie zunächst einen Verweis zu e
   
     
     
-Nachdem Sie eine Workflowdefinition über das obige Beispiel abgerufen haben, verwenden Sie die Methode  [GetWorkflowSubscriptionService](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowServicesManager.GetWorkflowSubscriptionService.aspx) , um eine Instanz des Abonnementdiensts zu erstellen. Verwenden Sie dann die Methode [EnumerateSubscriptionsByDefinition](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowSubscriptionService.EnumerateSubscriptionsByDefinition.aspx) (und übergeben Sie die ID einer Workflowdefinition), um eine Liste aller Zuordnungen abzurufen, die für den angegebenen Workflow vorhanden sind. Beachten Sie, dass verschiedene Methoden zum Abrufen von Workflowzuordnungen verfügbar sind, darunter die folgenden:
+Nachdem Sie eine Workflowdefinition über das obige Beispiel abgerufen haben, verwenden Sie die Methode  [GetWorkflowSubscriptionService]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowServicesManager.GetWorkflowSubscriptionService.aspx)) , um eine Instanz des Abonnementdiensts zu erstellen. Verwenden Sie dann die Methode [EnumerateSubscriptionsByDefinition]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowSubscriptionService.EnumerateSubscriptionsByDefinition.aspx)) (und übergeben Sie die ID einer Workflowdefinition), um eine Liste aller Zuordnungen abzurufen, die für den angegebenen Workflow vorhanden sind. Beachten Sie, dass verschiedene Methoden zum Abrufen von Workflowzuordnungen verfügbar sind, darunter die folgenden:
   
     
     
 
--  [EnumerateSubscriptions](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowSubscriptionService.EnumerateSubscriptions.aspx)
+-  [EnumerateSubscriptions]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowSubscriptionService.EnumerateSubscriptions.aspx))
     
   
--  [EnumerateSubscriptionsByDefinition](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowSubscriptionService.EnumerateSubscriptionsByDefinition.aspx)
+-  [EnumerateSubscriptionsByDefinition]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowSubscriptionService.EnumerateSubscriptionsByDefinition.aspx))
     
   
--  [EnumerateSubscriptionsByEventSource](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowSubscriptionService.EnumerateSubscriptionsByEventSource.aspx)
+-  [EnumerateSubscriptionsByEventSource]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowSubscriptionService.EnumerateSubscriptionsByEventSource.aspx))
     
   
--  [EnumerateSubscriptionsByList](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowSubscriptionService.EnumerateSubscriptionsByList.aspx)
+-  [EnumerateSubscriptionsByList]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowSubscriptionService.EnumerateSubscriptionsByList.aspx))
     
   
 Im folgenden Codebeispiel wird gezeigt, wie Sie Zuordnungen und Abonnements abrufen.
@@ -457,7 +453,7 @@ Für das Erstellen einer neuen Workflowzuordnung, die auch als Abonnement bezeic
 ### <a name="creating-a-custom-workflow-association"></a>Erstellen einer benutzerdefinierten Workflowzuordnung
 
 
-1. Zum Erstellen einer benutzerdefinierten Zuordnung verwenden Sie zunächst die Methode  [GetWorkflowSubscriptionService](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowServicesManager.GetWorkflowSubscriptionService.aspx) , um einen Verweis auf den Abonnementdienst abzurufen.
+1. Zum Erstellen einer benutzerdefinierten Zuordnung verwenden Sie zunächst die Methode  [GetWorkflowSubscriptionService]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowServicesManager.GetWorkflowSubscriptionService.aspx)) , um einen Verweis auf den Abonnementdienst abzurufen.
     
 ```
   
@@ -477,7 +473,7 @@ var workflowSubscriptionService = workflowServicesManager.GetWorkflowSubscriptio
 
 ```
 
-2. Erstellen Sie eine neue Instanz der Klasse  [WorkflowSubscription](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowSubscription.aspx) .
+2. Erstellen Sie eine neue Instanz der Klasse  [WorkflowSubscription]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowSubscription.aspx)) .
     
   
 3. Leben Sie die erforderlichen Eigenschaften für das Objekt **WorkflowSubscription** fest, wie im folgenden Codebeispiel gezeigt. Im Beispiel werden die einzelnen Eigenschaftseinstellungen anhand von Codekommentaren erläutert. Beachten Sie, dass einige Eigenschaften, die für CSOM-Workflowdienste nicht relevant sind, aus Gründen der besseren Lesbarkeit ausgelassen wurden. Die folgenden Eigenschaften wurden ausgelassen:
@@ -491,7 +487,7 @@ var workflowSubscriptionService = workflowServicesManager.GetWorkflowSubscriptio
 3. **taskListId**. Die ID der Liste, in der alle Aufgaben für die Zuordnung gespeichert werden.
     
   
-4. Nach der Erstellung muss das Abonnement auf SharePoint veröffentlicht werden, indem Sie die Methode  [PublishSubscriptionForList](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowSubscriptionService.PublishSubscriptionForList.aspx) wie im folgenden Beispiel gezeigt verwenden:
+4. Nach der Erstellung muss das Abonnement auf SharePoint veröffentlicht werden, indem Sie die Methode  [PublishSubscriptionForList]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowSubscriptionService.PublishSubscriptionForList.aspx)) wie im folgenden Beispiel gezeigt verwenden:
     
 ```
   
@@ -535,21 +531,21 @@ Sie können den Instanzdienst der Workflowdienste auch verwenden, um alle Workfl
   
     
     
-Beginnen Sie dafür mit der Methode  [GetWorkflowInstanceService](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowServicesManager.GetWorkflowInstanceService.aspx) , um einen Verweis auf den Instanzdienst abzurufen. Beachten Sie, dass der [WorkflowInstanceService](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.aspx) mehrere Methoden zum Abrufen der Sammlung von ausgeführten Workflowinstanzen bereitstellt:
+Beginnen Sie dafür mit der Methode  [GetWorkflowInstanceService]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowServicesManager.GetWorkflowInstanceService.aspx)) , um einen Verweis auf den Instanzdienst abzurufen. Beachten Sie, dass der [WorkflowInstanceService]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.aspx)) mehrere Methoden zum Abrufen der Sammlung von ausgeführten Workflowinstanzen bereitstellt:
   
     
     
 
--  [Enumerate](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.Enumerate.aspx) . Akzeptiert eine Workflowzuordnung (d. h. ein Abonnement) als Parameter und kann verwendet werden, um alle Instanzen abzurufen, die basierend auf der angegebenen Zuordnung erstellt wurden.
+-  [Enumerate]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.Enumerate.aspx)) . Akzeptiert eine Workflowzuordnung (d. h. ein Abonnement) als Parameter und kann verwendet werden, um alle Instanzen abzurufen, die basierend auf der angegebenen Zuordnung erstellt wurden.
     
   
--  [EnumerateInstancesForSite](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.EnumerateInstancesForSite.aspx) : Ruft eine Liste aller Workflowinstanzen ab, die auf der SharePoint-Website gestartet wurden, die festgelegt wurde, als das ursprüngliche **WorkflowServiceManager**-Objekt erstellt wurde.
+-  [EnumerateInstancesForSite]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.EnumerateInstancesForSite.aspx)) : Ruft eine Liste aller Workflowinstanzen ab, die auf der SharePoint-Website gestartet wurden, die festgelegt wurde, als das ursprüngliche **WorkflowServiceManager**-Objekt erstellt wurde.
     
   
--  [EnumerateInstancesForListItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.EnumerateInstancesForListItem.aspx) . Akzeptiert eine Listen-ID und eine Element-ID. Verwenden Sie diese Methode, um alle Workflowinstanzen abzurufen, die für ein bestimmtes Listenelement erstellt wurden.
+-  [EnumerateInstancesForListItem]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.EnumerateInstancesForListItem.aspx)) . Akzeptiert eine Listen-ID und eine Element-ID. Verwenden Sie diese Methode, um alle Workflowinstanzen abzurufen, die für ein bestimmtes Listenelement erstellt wurden.
     
   
-Jede dieser Methoden verfügt auch über eine alternative ***WithOffset()**-Methode (z. B.  [EnumerateWithOffset](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.EnumerateWithOffset.aspx) ). Mit diesen alternativen Methoden können Sie eine Teilmenge der Workflowinstanzen in Situationen abrufen, in denen das Arbeiten mit der gesamten Websitesammlung umständlich wäre. Verwenden Sie zum Abrufen der Anzahl der Workflowinstanzen die Methode [CountInstances](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.CountInstances.aspx) oder die Methode [CountInstancesWithStatus](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.CountInstancesWithStatus.aspx) .
+Jede dieser Methoden verfügt auch über eine alternative ***WithOffset()**-Methode (z. B.  [EnumerateWithOffset]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.EnumerateWithOffset.aspx)) ). Mit diesen alternativen Methoden können Sie eine Teilmenge der Workflowinstanzen in Situationen abrufen, in denen das Arbeiten mit der gesamten Websitesammlung umständlich wäre. Verwenden Sie zum Abrufen der Anzahl der Workflowinstanzen die Methode [CountInstances]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.CountInstances.aspx)) oder die Methode [CountInstancesWithStatus]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.CountInstancesWithStatus.aspx)) .
   
     
     
@@ -583,15 +579,15 @@ Für das Starten einer neuen Instanz einer Workflowzuordnung werden viele der Sc
   
     
     
-Verwensen Sie aufbauend auf den vorherigen Beispielen die Methode  [GetWorkflowInstanceService](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowServicesManager.GetWorkflowInstanceService.aspx) , um eine Instanz des Workflowinstanzdiensts abzurufen. Danach starten Sie den Workflow, indem Sie eine der zwei Methoden aufrufen. Die eine startet den Workflow auf einer Website, während die andere den Workflow in einem Listenelement startet.
+Verwensen Sie aufbauend auf den vorherigen Beispielen die Methode  [GetWorkflowInstanceService]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowServicesManager.GetWorkflowInstanceService.aspx)) , um eine Instanz des Workflowinstanzdiensts abzurufen. Danach starten Sie den Workflow, indem Sie eine der zwei Methoden aufrufen. Die eine startet den Workflow auf einer Website, während die andere den Workflow in einem Listenelement startet.
   
     
     
 
--  [StartWorkflow](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.StartWorkflow.aspx) . Startet einen Workflow auf der SharePoint-Website, die festgelegt wurde, als das ursprüngliche [WorkflowServicesManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowServicesManager.aspx) -Objekt erstellt wurde. Wenn Sie diese Methode verwenden, müssen Sie die Workflowzuordnung und alle zusätzlichen Starteigenschaften übergeben, die im Initiierungsformular vorhanden sind.
+-  [StartWorkflow]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.StartWorkflow.aspx)) . Startet einen Workflow auf der SharePoint-Website, die festgelegt wurde, als das ursprüngliche [WorkflowServicesManager]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowServicesManager.aspx)) -Objekt erstellt wurde. Wenn Sie diese Methode verwenden, müssen Sie die Workflowzuordnung und alle zusätzlichen Starteigenschaften übergeben, die im Initiierungsformular vorhanden sind.
     
   
--  [StartWorkflowOnListItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.StartWorkflowOnListItem.aspx) . Startet einen Workflow für ein bestimmtes Listenelement. Bei dieser Methode müssen Sie die ID des gewünschten Listenelements sowie andere Parameterwerte übergeben, die für die Methode **StartWorkflow** erforderlich sind.
+-  [StartWorkflowOnListItem]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.StartWorkflowOnListItem.aspx)) . Startet einen Workflow für ein bestimmtes Listenelement. Bei dieser Methode müssen Sie die ID des gewünschten Listenelements sowie andere Parameterwerte übergeben, die für die Methode **StartWorkflow** erforderlich sind.
     
   
 Im folgenden Codebeispiel wird veranschaulicht, wie Sie eine Workflowinstanz starten.
@@ -642,7 +638,7 @@ Eine weitere leistungsstarke Funktion, die in SharePoint hinzugefügt wurde, ist
   
     
     
-Wenn Sie ein Ereignis vom Client mithilfe des Workflowdienste-CSOM veröffentlichen möchten, rufen Sie zunächst einen Verweis auf die bestimmte Workflowinstanz ab, an die das Ereignis veröffentlicht werden soll. Veröffentlichen Sie das dann mithilfe des Instanzdiensts über die Methode  [PublishCustomEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.PublishCustomEvent.aspx) . Bei Verwendung dieser Methode müssen Sie die gewünschte Instanz, den Ereignisnamen und eine optionale Nutzlast übergeben, wie im folgenden Codebeispiel gezeigt.
+Wenn Sie ein Ereignis vom Client mithilfe des Workflowdienste-CSOM veröffentlichen möchten, rufen Sie zunächst einen Verweis auf die bestimmte Workflowinstanz ab, an die das Ereignis veröffentlicht werden soll. Veröffentlichen Sie das dann mithilfe des Instanzdiensts über die Methode  [PublishCustomEvent]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WorkflowServices.WorkflowInstanceService.PublishCustomEvent.aspx)) . Bei Verwendung dieser Methode müssen Sie die gewünschte Instanz, den Ereignisnamen und eine optionale Nutzlast übergeben, wie im folgenden Codebeispiel gezeigt.
   
     
     
@@ -698,14 +694,15 @@ Eine der wichtigsten Verbesserungen für Workflows in SharePoint ist die Erweite
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
--  [Workflows in SharePoint](http://msdn.microsoft.com/de-DE/library/jj163986.aspx)
+-  [Workflows in SharePoint]((http://msdn.microsoft.com/de-DE/library/jj163986.aspx))
     
   
--  [Was ist Workflow-Manager 1.0?](http://msdn.microsoft.com/de-DE/library/windowsazure/jj193471%28v=azure.10%29.aspx)
+-  
+  [Was ist Workflow-Manager 1.0?](http://msdn.microsoft.com/en-us/library/windowsazure/jj193471%28v=azure.10%29.aspx)
     
   
 

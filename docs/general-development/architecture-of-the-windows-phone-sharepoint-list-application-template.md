@@ -3,11 +3,11 @@ title: Architektur der Windows Phone SharePoint-Listenanwendungsvorlage
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 2c09bd02-bed0-4293-a4d4-1778692e246a
-ms.openlocfilehash: 0e2c348460bf4095b684e1e7f76ebe6e61974fd4
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e9b6fb4ea3e5832b668f677578e0f549a8a00b65
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="architecture-of-the-windows-phone-sharepoint-list-application-template"></a>Architektur der Windows Phone SharePoint-Listenanwendungsvorlage
 Verstehen Sie das Entwurfsmuster von Projekten, die aus der Vorlage für Windows Phone SharePoint List Application erstellt. Die Windows Phone SharePoint List Application-Vorlage vom Windows Phone SharePoint Software Development Kit installiert wurde entwickelt, um Windows Phone-apps basierend auf einem Muster, die Teile des Projekts in verschiedenen Komponenten trennt generieren. Die Vorlage funktioniert über das Erstellen der Klassen und Dateien herstellen das Muster, da Entwickler zur Erweiterung konzentrieren generiert Projekten basierend auf ihren bestimmte Anforderungen, die Geschäftslogik und die Daten.
@@ -140,7 +140,8 @@ Auf MVVM-Mustern basierende Software-Designs beschränken häufig die Geschäfts
     
 
     
-> **Hinweis:** Das **ListDataProvider**-Objekt lädt die Daten nur vom Server. Andere Vorgänge, wie z. B. **Hinzufügen**, **Aktualisieren** und **Löschen**, werden im ViewModel selbst durchgeführt. Anschließend erfolgt ein Aktualisierungsaufruf, um die ViewModel-Daten vom Server zu aktualisieren. Dieses Design reduziert die Überladung des Codes. 
+> [!NOTE]
+> Das **ListDataProvider**-Objekt lädt die Daten nur vom Server. Andere Vorgänge, wie z. B. **Hinzufügen**, **Aktualisieren** und **Löschen**, werden im ViewModel selbst durchgeführt. Anschließend erfolgt ein Aktualisierungsaufruf, um die ViewModel-Daten vom Server zu aktualisieren. Dieses Design reduziert die Überladung des Codes. 
   
     
     
@@ -149,7 +150,7 @@ Auf MVVM-Mustern basierende Software-Designs beschränken häufig die Geschäfts
 ## <a name="the-appxaml-file-and-the-silverlight-application-model"></a>Die Datei App.xaml und das Silverlight-Anwendungsmodell
 <a name="BKMK_ApplicationModel"> </a>
 
-Objektebene und seine zugeordneten Code-Behind-Datei App.xaml.cs, sind Standardkomponenten einer verwalteten Silverlight-Anwendung. Anwendungen, mit denen die verwaltete API für Silverlight müssen eine Klasse, die von der Silverlight-  [Anwendung](http://msdn.microsoft.com/en-us/library/system.windows.application%28VS.95%29.aspx) -Klasse abgeleitet sind, um das Silverlight-Anwendungsmodell implementieren enthalten. Die **Application** -Klasse unterstützt Anwendung Lebenszyklusereignisse und Funktionen für die Verwaltung von Ressourcen wie Bilder, Zeichenfolgen und XAML-Vorlagen.
+Objektebene und seine zugeordneten Code-Behind-Datei App.xaml.cs, sind Standardkomponenten einer verwalteten Silverlight-Anwendung. Anwendungen, mit denen die verwaltete API für Silverlight müssen eine Klasse, die von der Silverlight-  [Anwendung]((http://msdn.microsoft.com/de-DE/library/system.windows.application%28VS.95%29.aspx)) -Klasse abgeleitet sind, um das Silverlight-Anwendungsmodell implementieren enthalten. Die **Application** -Klasse unterstützt Anwendung Lebenszyklusereignisse und Funktionen für die Verwaltung von Ressourcen wie Bilder, Zeichenfolgen und XAML-Vorlagen.
   
     
     
@@ -158,27 +159,23 @@ Informationen dazu, welche Arten von Änderungen, die Sie an der Datei App.xaml.
     
     
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15Winphoneover_addlresources"> </a>
 
 
--  
-  [Unter Verwendung des Model-View-ViewModel-Musters](http://msdn.microsoft.com/en-us/library/hh821028.aspx)
+-  [Unter Verwendung des Model-View-ViewModel-Musters]((http://msdn.microsoft.com/de-DE/library/hh821028.aspx))
     
   
--  
-  [Architektur des Pivot-Steuerelements für Windows Phone](http://msdn.microsoft.com/en-us/library/ff941097%28VS.92%29.aspx)
+-  [Architektur des Pivot-Steuerelements für Windows Phone]((http://msdn.microsoft.com/de-DE/library/ff941097%28VS.92%29.aspx))
     
   
--  
-  [Silverlight-Anwendungsmodell](http://msdn.microsoft.com/en-us/library/cc872869%28VS.95%29.aspx)
+-  [Silverlight-Anwendungsmodell]((http://msdn.microsoft.com/de-DE/library/cc872869%28VS.95%29.aspx))
     
   
--  
-  [Entwickeln einer Windows Phone-Anwendung mit dem MVVM-Muster](http://msdn.microsoft.com/en-us/library/hh848247.aspx)
+-  [Entwickeln einer Windows Phone-Anwendung mit dem MVVM-Muster]((http://msdn.microsoft.com/de-DE/library/hh848247.aspx))
     
   
--  [Die Model-View-ViewModel Entwurfsmuster WPF-Apps](http://msdn.microsoft.com/en-us/magazine/dd419663.aspx)
+-  [Die Model-View-ViewModel Entwurfsmuster WPF-Apps]((http://msdn.microsoft.com/de-DE/magazine/dd419663.aspx))
     
   
 -  [Windows Phone SDK 8.0](http://www.microsoft.com/en-us/download/details.aspx?id=35471)

@@ -3,11 +3,11 @@ title: "Anspruchsbasierte Identität und Konzepte in SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d96c7cf4-2e48-4223-a3c0-42368d079b74
-ms.openlocfilehash: c14b3bd07cb6453633ef618649548a2f1f45c6cf
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 45834f7699463a2ee849edc78e9c7d34166d3bbb
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="claims-based-identity-and-concepts-in-sharepoint"></a>Anspruchsbasierte Identität und Konzepte in SharePoint
 
@@ -135,16 +135,14 @@ Wenn die relying Party-Anwendung als lokales Systemkonto ausgeführt wird, muss 
     
 Nehmen Sie an, dass Sie über eine Webfarm verfügen, die von einem Server besteht, die eine Anwendung ASP.NET greift auf einer SQL-Datenbank auf einem Back-End-Server ausgeführt. Diese Anwendung Ansprüche unterstützenden werden sollen. Aber die Anwendung kann nicht mit den Anspruch, den sie aus einem STS erhält die SQL-Datenbank zugreifen. Stattdessen wird die c2WTS umzuwandelnde UPN-Anspruch auf einem Windows-Sicherheitstoken verwendet. Dies ermöglicht es Zugriff auf die SQL-Datenbank.
   
-    
-    
-
-> **Hinweis:** Wenn Sie den Zugriff auf Ressourcen auf einem anderen Server für eine Anwendung ermöglichen, muss ein Domänenadministrator den Active Directory-Verzeichnisdienst für eingeschränkte Delegierung konfigurieren. Informationen zum Aktivieren der eingeschränkten Delegierung finden Sie unter [Gewusst wie: Verwenden des Protokollübergangs und der eingeschränkten Delegierung in ASP.NET 2.0](http://msdn.microsoft.com/en-us/library/ms998355.aspx). 
+> [!NOTE]
+> Wenn Sie den Zugriff auf Ressourcen auf einem anderen Server für eine Anwendung ermöglichen, muss ein Domänenadministrator den Active Directory-Verzeichnisdienst für eingeschränkte Delegierung konfigurieren. Informationen zum Aktivieren der eingeschränkten Delegierung finden Sie unter [Gewusst wie: Verwenden des Protokollübergangs und der eingeschränkten Delegierung in ASP.NET 2.0]((http://msdn.microsoft.com/de-DE/library/ms998355.aspx)). 
   
     
     
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 

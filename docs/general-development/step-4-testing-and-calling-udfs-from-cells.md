@@ -3,11 +3,11 @@ title: Step 4 Testing and Calling UDFs from Cells
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d3e6aa72-2eb8-4b4b-a0eb-273486890d00
-ms.openlocfilehash: 9c9c16029c58d217e860259abc9f11a4ee015dd3
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 0227b7961e0d533e3c35af13ceb707642cb911ea
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="step-4-testing-and-calling-udfs-from-cells"></a>Step 4: Testing and Calling UDFs from Cells
 
@@ -22,7 +22,9 @@ In this step, you will test the SampleUdf.dll assembly you created, deployed, an
   
 2. Speichern Sie die Arbeitsmappe in einer SharePoint-Dokumentbibliothek, die einen vertrauenswürdigen Speicherort darstellt.
     
-    > **Hinweis:** Es wird vorausgesetzt, dass Sie bereits eine SharePoint-Dokumentbibliothek erstellt und diese als vertrauenswürdigen Speicherort definiert haben. Informationen dazu, wie Sie einen Speicherort als vertrauenswürdig einstufen, finden Sie im Abschnitt [Schritt 3: Bereitstellen und Aktivieren von UDFs](step-3-deploying-and-enabling-udfs.md). 
+    > [!NOTE]
+    > Es wird vorausgesetzt, dass Sie bereits eine SharePoint-Dokumentbibliothek erstellt und diese als vertrauenswürdigen Speicherort definiert haben. Informationen dazu, wie Sie einen Speicherort als vertrauenswürdig einstufen, finden Sie im Abschnitt [Schritt 3: Bereitstellen und Aktivieren von UDFs](step-3-deploying-and-enabling-udfs.md). 
+
 3. Ändern Sie die Parameter, um die Arbeitsmappe neu zu berechnen.
     
   
@@ -38,9 +40,12 @@ In this step, you will test the SampleUdf.dll assembly you created, deployed, an
   
 2. In cell A1, type the formula to call the  `MyDouble` function in SampleUdf.dll. The `MyDouble` function takes an argument of type **double**. In this example, you will take the argument from cell B1. In cell A1, type =MyDouble(B1).
     
-    > **Hinweis:** Die Formel lautet "#NAME?" in Excel. Diese Formel wird nur verwendet, wenn die Arbeitsmappe in Excel Services angezeigt wird. 
+    > [!NOTE]
+    > Die Formel lautet „#NAME?“ in Excel. Diese Formel wird nur verwendet, wenn die Arbeitsmappe in Excel Services angezeigt wird. 
 
-    > **Hinweis:** Sie können die UDFs sowohl auf dem Client als auch auf dem Server ausführen. Auf MSDN wird ein Artikel mit den Einzelheiten veröffentlicht werden. Sie werden hier der Einfachheit halber ausgelassen. 
+    > [!NOTE]
+    > Sie können UDFs sowohl auf dem Client als auch auf dem Server ausführen. Einzelheiten dazu werden in einem noch in MSDN zu veröffentlichenden Artikel erklärt, bleiben hier jedoch aus Gründen der Einfachheit unberücksichtigt. 
+
 3. Geben Sie in Zelle B1 die Zahl 8 ein.
     
   
@@ -95,7 +100,8 @@ In this step, you will test the SampleUdf.dll assembly you created, deployed, an
   
 10. Click **Save**. You should see TestSampleUdf.xlsx in Excel Web Access. In cell A1, you should see the number "72" because cell B1 * 9 = 8 * 9, which is 72. In cell A2 you should see a number. In cell A3, you should see the current date. 
     
-    > **Hinweis:** In Zelle A2 gibt die Zahl die Anzahl der Tage seit dem 01.01.1900 an (oder 01.01.1904, wenn Sie „Datumssystem 1904 verwenden“ aktiviert haben). Auf diese Weise stellt Excel intern Daten dar. 
+    > [!NOTE]
+    > Die Zahl in Zelle A2 stellt die Anzahl der Tage seit 1/1/1900 (bzw. 1/1/1904, wenn 1904-Datumswerte verwenden aktiviert ist) dar. So werden Datumsangaben in Excel intern dargestellt. 
 
 ### <a name="to-change-parameters-to-test-the-udf"></a>Ändern von Parametern zum Testen der UDF
 

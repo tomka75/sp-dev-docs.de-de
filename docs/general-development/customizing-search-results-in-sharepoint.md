@@ -3,11 +3,11 @@ title: Anpassen von Suchergebnissen in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 1b30f6df-643a-4570-ae5c-d3d8df5609b8
-ms.openlocfilehash: 66856c768d51d8de633bc7419148aa9d8b48a7e8
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e14e8f47074b9277167b7049c0d9ddb1d335416c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="customizing-search-results-in-sharepoint"></a>Anpassen von Suchergebnissen in SharePoint
 In diesem Artikel erfahren Sie, wie Sie in einem Suchergebnissatz in SharePoint ähnliche Elemente gruppieren oder doppelte Elemente entfernen, sodass die Ergebnisse übersichtlich und gut lesbar angezeigt werden.
@@ -26,20 +26,20 @@ Im Folgenden sehen Sie Beispiele für Methoden zur Gruppierung von Suchergebniss
 - Dokumentenmappenreduzierung - hierbei wird nur ein Treffer für jede Dokumentbibliothek in SharePoint angezeigt.
     
   
-Sie können die Kriterien zum Reduzieren oder zum Entfernen von Duplikaten programmgesteuert mithilfe der folgenden  [KeywordQuery](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.aspx) -Eigenschaften im Abfrageobjektmodell angeben:
--  [CollapseSpecification](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.CollapseSpecification.aspx)
+Sie können die Kriterien zum Reduzieren oder zum Entfernen von Duplikaten programmgesteuert mithilfe der folgenden  [KeywordQuery]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.aspx)) -Eigenschaften im Abfrageobjektmodell angeben:
+-  [CollapseSpecification]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.CollapseSpecification.aspx))
     
   
--  [TrimDuplicates](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.Query.TrimDuplicates.aspx)
+-  [TrimDuplicates]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.Query.TrimDuplicates.aspx))
     
   
--  [TrimDuplicatesOnProperty](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesOnProperty.aspx)
+-  [TrimDuplicatesOnProperty]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesOnProperty.aspx))
     
   
--  [TrimDuplicatesKeepCount](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesKeepCount.aspx)
+-  [TrimDuplicatesKeepCount]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesKeepCount.aspx))
     
   
--  [TrimDuplicatesIncludeId](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesIncludeId.aspx)
+-  [TrimDuplicatesIncludeId]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesIncludeId.aspx))
     
   
 
@@ -231,10 +231,8 @@ Verwenden Sie **TrimDuplicatesOnProperty**, um anzugeben, ob eine nicht standard
     
  `TrimDuplicatesOnProperty = <managed property>`
   
-    
-    
-
-> **Hinweis:** Verwenden Sie in SharePoint nach Möglichkeit **CollapseSpecification**. **TrimDuplicatesOnProperty** steht nur für Abwärtskompatibilität zur Verfügung.
+> [!NOTE]
+> Verwenden Sie in SharePoint nach Möglichkeit **CollapseSpecification**. **TrimDuplicatesOnProperty** steht nur für Abwärtskompatibilität zur Verfügung.
   
     
     
@@ -273,24 +271,21 @@ Die Dokument-ID ( _docid_) wird zum Abrufen der Duplikate eines bestimmten Dokum
     
  `TrimDuplicatesIncludeId = <docid>`
   
-    
-    
-
-> **Hinweis:** Die verwaltete Eigenschaft _fcoid_ in FAST Search Server 2010 for SharePoint wurde durch die verwaltete Eigenschaft _docid_ in SharePoint ersetzt.
+> [!NOTE]
+> Die verwaltete Eigenschaft _fcoid_ in FAST Search Server 2010 for SharePoint wurde durch die verwaltete Eigenschaft _docid_ in SharePoint ersetzt.
   
     
     
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 
--  [KeywordQuery](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.aspx)
+-  [KeywordQuery]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.aspx))
     
   
--  
-  [Übersicht über das Suchschema in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/jj219669%28office.15%29.aspx)
+-  [Übersicht über das Suchschema in SharePoint Server 2013]((http://technet.microsoft.com/de-DE/library/jj219669%28office.15%29.aspx))
     
   
 
