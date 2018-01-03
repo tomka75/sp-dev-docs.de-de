@@ -5,38 +5,35 @@ keywords: how to,howdoi,howto,UDF
 f1_keywords: how to,howdoi,howto,UDF
 ms.prod: sharepoint
 ms.assetid: 360c5766-4b5d-4a48-9f23-8955036924ce
-ms.openlocfilehash: bc240dfb4d9d398afcc3be2377726da09c977e06
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 37202a89818446d1a3730d09012469a7f7e110d4
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="create-a-udf-that-calls-a-web-service"></a><span data-ttu-id="42d03-103">Erstellen eines UDF, das einen Webdienst aufruft</span><span class="sxs-lookup"><span data-stu-id="42d03-103">How to: Create a UDF That Calls a Web Service</span></span>
+# <a name="create-a-udf-that-calls-a-web-service"></a><span data-ttu-id="68235-103">Erstellen eines UDF, das einen Webdienst aufruft</span><span class="sxs-lookup"><span data-stu-id="68235-103">Create a UDF that calls a web service</span></span>
 
-<span data-ttu-id="42d03-p101">This example shows how to call an external Web service from a user-defined function (UDF). The Web service used in this example is:</span><span class="sxs-lookup"><span data-stu-id="42d03-p101">This example shows how to call an external Web service from a user-defined function (UDF). The Web service used in this example is:</span></span>
+<span data-ttu-id="68235-p101">This example shows how to call an external Web service from a user-defined function (UDF). The Web service used in this example is:</span><span class="sxs-lookup"><span data-stu-id="68235-p101">This example shows how to call an external Web service from a user-defined function (UDF). The Web service used in this example is:</span></span>
   
     
     
 
- <span data-ttu-id="42d03-106">`http://webservices.imacination.com/distance/Distance.jws?wsdl` Sie müssen zum Erstellen dieses Beispiels Microsoft Visual Studio 2005 oder ein vergleichbares, mit Microsoft .NET Framework 2.0-kompatibles, Programm verwenden.</span><span class="sxs-lookup"><span data-stu-id="42d03-106">`http://webservices.imacination.com/distance/Distance.jws?wsdl` You must use Microsoft Visual Studio 2005 or a similar Microsoft .NET Framework 2.0-compatible development tool to create this sample.</span></span> 
+ <span data-ttu-id="68235-106">`http://webservices.imacination.com/distance/Distance.jws?wsdl` Sie müssen zum Erstellen dieses Beispiels Microsoft Visual Studio 2005 oder ein vergleichbares, mit Microsoft .NET Framework 2.0-kompatibles, Programm verwenden.</span><span class="sxs-lookup"><span data-stu-id="68235-106">`http://webservices.imacination.com/distance/Distance.jws?wsdl` You must use Microsoft Visual Studio 2005 or a similar Microsoft .NET Framework 2.0-compatible development tool to create this sample.</span></span> 
+  
+> [!NOTE]
+> <span data-ttu-id="68235-107">Stellen Sie vor dem Testen dieses Codes sicher, dass der aufzurufende Webdienst verfügbar ist.</span><span class="sxs-lookup"><span data-stu-id="68235-107">Note: Before testing the code, make sure that the Web service you are calling is available.</span></span> <span data-ttu-id="68235-108">Möglicherweise steht der Webdienstserver nicht zur Verfügung oder der Webdienst wird nicht mehr unterstützt.</span><span class="sxs-lookup"><span data-stu-id="68235-108">The Web service server could be down or the Web service discontinued.</span></span> <span data-ttu-id="68235-109">Wenn der Webdienst nicht verfügbar ist, tritt bei den Webdienstaufrufen von Ihrem Code aus ein Fehler auf.</span><span class="sxs-lookup"><span data-stu-id="68235-109">If the Web service is unavailable, the calls you make to the Web service from your code will fail.</span></span> <span data-ttu-id="68235-110">Sie können überprüfen, ob ein Webdienst verfügbar ist, indem Sie die Website öffnen.</span><span class="sxs-lookup"><span data-stu-id="68235-110">> You can check if a Web service is available by visiting its site.</span></span> <span data-ttu-id="68235-111">In diesem Beispiel lautet die URL: > `http://webservices.imacination.com/distance/Distance.jws?wsdl`>. Wenn der Webdienst verfügbar ist, wird Web Services Description Language (WSDL) angezeigt.</span><span class="sxs-lookup"><span data-stu-id="68235-111">In this example, the URL is: >  `http://webservices.imacination.com/distance/Distance.jws?wsdl`> If the Web service is available, you will be able to see the Web Services Description Language (WSDL).</span></span> <span data-ttu-id="68235-112">Wenn er nicht verfügbar ist, wird die übliche Fehlermeldung „Webseite nicht gefunden“ angezeigt.</span><span class="sxs-lookup"><span data-stu-id="68235-112">If it is not available, you will get the usual "Web page not found" error.</span></span> 
   
     
     
 
 
-> <span data-ttu-id="42d03-107">**Hinweis:** Stellen Sie vor dem Testen dieses Codes sicher, dass der aufzurufende Webdienst verfügbar ist.</span><span class="sxs-lookup"><span data-stu-id="42d03-107">**Note:** Before testing the code, make sure that the Web service you are calling is available.</span></span> <span data-ttu-id="42d03-108">Möglicherweise steht der Webdienstserver nicht zur Verfügung oder der Webdienst wird nicht mehr unterstützt.</span><span class="sxs-lookup"><span data-stu-id="42d03-108">The Web service server could be down or the Web service discontinued.</span></span> <span data-ttu-id="42d03-109">Wenn der Webdienst nicht verfügbar ist, tritt bei den Webdienstaufrufen von Ihrem Code aus ein Fehler auf.</span><span class="sxs-lookup"><span data-stu-id="42d03-109">If the Web service is unavailable, the calls you make to the Web service from your code will fail.</span></span> <span data-ttu-id="42d03-110">Sie können überprüfen, ob ein Webdienst verfügbar ist, indem Sie die Website öffnen.</span><span class="sxs-lookup"><span data-stu-id="42d03-110">> You can check if a Web service is available by visiting its site.</span></span> <span data-ttu-id="42d03-111">In diesem Beispiel lautet die URL: > `http://webservices.imacination.com/distance/Distance.jws?wsdl`>. Wenn der Webdienst verfügbar ist, wird Web Services Description Language (WSDL) angezeigt.</span><span class="sxs-lookup"><span data-stu-id="42d03-111">In this example, the URL is: >  `http://webservices.imacination.com/distance/Distance.jws?wsdl`> If the Web service is available, you will be able to see the Web Services Description Language (WSDL).</span></span> <span data-ttu-id="42d03-112">Wenn er nicht verfügbar ist, wird die übliche Fehlermeldung „Webseite nicht gefunden“ angezeigt.</span><span class="sxs-lookup"><span data-stu-id="42d03-112">If it is not available, you will get the usual "Web page not found" error.</span></span> 
+## <a name="example"></a><span data-ttu-id="68235-113">Beispiel</span><span class="sxs-lookup"><span data-stu-id="68235-113">Example</span></span>
+
+<span data-ttu-id="68235-114">You can learn more about the Web service used in this example by examining its WSDL.</span><span class="sxs-lookup"><span data-stu-id="68235-114">You can learn more about the Web service used in this example by examining its WSDL.</span></span>
   
     
     
-
-
-## <a name="example"></a><span data-ttu-id="42d03-113">Beispiel</span><span class="sxs-lookup"><span data-stu-id="42d03-113">Example</span></span>
-
-<span data-ttu-id="42d03-114">You can learn more about the Web service used in this example by examining its WSDL.</span><span class="sxs-lookup"><span data-stu-id="42d03-114">You can learn more about the Web service used in this example by examining its WSDL.</span></span>
-  
-    
-    
-<span data-ttu-id="42d03-p103">One service it provides is to return geographical coordinates in decimal form. In this sample, the  `ToDegreeNotation` function has been added to show how you can convert coordinates to degrees/minutes/seconds, which is more appropriate for displaying coordinates.</span><span class="sxs-lookup"><span data-stu-id="42d03-p103">One service it provides is to return geographical coordinates in decimal form. In this sample, the  `ToDegreeNotation` function has been added to show how you can convert coordinates to degrees/minutes/seconds, which is more appropriate for displaying coordinates.</span></span>
+<span data-ttu-id="68235-p103">One service it provides is to return geographical coordinates in decimal form. In this sample, the  `ToDegreeNotation` function has been added to show how you can convert coordinates to degrees/minutes/seconds, which is more appropriate for displaying coordinates.</span><span class="sxs-lookup"><span data-stu-id="68235-p103">One service it provides is to return geographical coordinates in decimal form. In this sample, the  `ToDegreeNotation` function has been added to show how you can convert coordinates to degrees/minutes/seconds, which is more appropriate for displaying coordinates.</span></span>
   
     
     
@@ -74,7 +71,7 @@ Public Function ToDegreeNotation(ByVal angle As Double) As String
 End Function
 ```
 
-<span data-ttu-id="42d03-p104">If your Internet Explorer LAN setting is configured to use a proxy server, your code must explicitly make a call to set the proxy server. Otherwise, your Web service calls will fail. You can set the proxy server in the constructor as follows:</span><span class="sxs-lookup"><span data-stu-id="42d03-p104">If your Internet Explorer LAN setting is configured to use a proxy server, your code must explicitly make a call to set the proxy server. Otherwise, your Web service calls will fail. You can set the proxy server in the constructor as follows:</span></span>
+<span data-ttu-id="68235-p104">If your Internet Explorer LAN setting is configured to use a proxy server, your code must explicitly make a call to set the proxy server. Otherwise, your Web service calls will fail. You can set the proxy server in the constructor as follows:</span><span class="sxs-lookup"><span data-stu-id="68235-p104">If your Internet Explorer LAN setting is configured to use a proxy server, your code must explicitly make a call to set the proxy server. Otherwise, your Web service calls will fail. You can set the proxy server in the constructor as follows:</span></span>
   
     
     
@@ -113,7 +110,7 @@ Namespace ZipCodeUdfSample
         End Sub
 ```
 
-<span data-ttu-id="42d03-120">For more information about how to test and call UDFs from cells, see  [Walkthrough: Developing a Managed-Code UDF](walkthrough-developing-a-managed-code-udf.md).</span><span class="sxs-lookup"><span data-stu-id="42d03-120">For more information about how to test and call UDFs from cells, see  [Walkthrough: Developing a Managed-Code UDF](walkthrough-developing-a-managed-code-udf.md).</span></span>
+<span data-ttu-id="68235-120">For more information about how to test and call UDFs from cells, see  [Walkthrough: Developing a Managed-Code UDF](walkthrough-developing-a-managed-code-udf.md).</span><span class="sxs-lookup"><span data-stu-id="68235-120">For more information about how to test and call UDFs from cells, see  [Walkthrough: Developing a Managed-Code UDF](walkthrough-developing-a-managed-code-udf.md).</span></span>
   
     
     
@@ -284,47 +281,47 @@ End Namespace
 ```
 
 
-## <a name="see-also"></a><span data-ttu-id="42d03-121">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="42d03-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="68235-121">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="68235-121">See also</span></span>
 
 
-#### <a name="tasks"></a><span data-ttu-id="42d03-122">Aufgaben</span><span class="sxs-lookup"><span data-stu-id="42d03-122">Tasks</span></span>
-
-
-  
-    
-    
- [<span data-ttu-id="42d03-123">Step 1: Creating a Project and Adding a UDF Reference</span><span class="sxs-lookup"><span data-stu-id="42d03-123">Step 1: Creating a Project and Adding a UDF Reference</span></span>](step-1-creating-a-project-and-adding-a-udf-reference.md)
-  
-    
-    
- [<span data-ttu-id="42d03-124">Step 2: Creating a Managed-Code UDF</span><span class="sxs-lookup"><span data-stu-id="42d03-124">Step 2: Creating a Managed-Code UDF</span></span>](step-2-creating-a-managed-code-udf.md)
-  
-    
-    
- [<span data-ttu-id="42d03-125">Step 3: Deploying and Enabling UDFs</span><span class="sxs-lookup"><span data-stu-id="42d03-125">Step 3: Deploying and Enabling UDFs</span></span>](step-3-deploying-and-enabling-udfs.md)
-  
-    
-    
- [<span data-ttu-id="42d03-126">Step 4: Testing and Calling UDFs from Cells</span><span class="sxs-lookup"><span data-stu-id="42d03-126">Step 4: Testing and Calling UDFs from Cells</span></span>](step-4-testing-and-calling-udfs-from-cells.md)
-#### <a name="concepts"></a><span data-ttu-id="42d03-127">Konzepte</span><span class="sxs-lookup"><span data-stu-id="42d03-127">Concepts</span></span>
+#### <a name="tasks"></a><span data-ttu-id="68235-122">Aufgaben</span><span class="sxs-lookup"><span data-stu-id="68235-122">Tasks</span></span>
 
 
   
     
     
- [<span data-ttu-id="42d03-128">Accessing the SOAP API</span><span class="sxs-lookup"><span data-stu-id="42d03-128">Accessing the SOAP API</span></span>](accessing-the-soap-api.md)
-#### <a name="other-resources"></a><span data-ttu-id="42d03-129">Sonstige Ressourcen</span><span class="sxs-lookup"><span data-stu-id="42d03-129">Other resources</span></span>
+ [<span data-ttu-id="68235-123">Step 1: Creating a Project and Adding a UDF Reference</span><span class="sxs-lookup"><span data-stu-id="68235-123">Step 1: Creating a Project and Adding a UDF Reference</span></span>](step-1-creating-a-project-and-adding-a-udf-reference.md)
+  
+    
+    
+ [<span data-ttu-id="68235-124">Step 2: Creating a Managed-Code UDF</span><span class="sxs-lookup"><span data-stu-id="68235-124">Step 2: Creating a Managed-Code UDF</span></span>](step-2-creating-a-managed-code-udf.md)
+  
+    
+    
+ [<span data-ttu-id="68235-125">Step 3: Deploying and Enabling UDFs</span><span class="sxs-lookup"><span data-stu-id="68235-125">Step 3: Deploying and Enabling UDFs</span></span>](step-3-deploying-and-enabling-udfs.md)
+  
+    
+    
+ [<span data-ttu-id="68235-126">Step 4: Testing and Calling UDFs from Cells</span><span class="sxs-lookup"><span data-stu-id="68235-126">Step 4: Testing and Calling UDFs from Cells</span></span>](step-4-testing-and-calling-udfs-from-cells.md)
+#### <a name="concepts"></a><span data-ttu-id="68235-127">Konzepte</span><span class="sxs-lookup"><span data-stu-id="68235-127">Concepts</span></span>
 
 
   
     
     
- [<span data-ttu-id="42d03-130">Step 2: Adding a Web Reference</span><span class="sxs-lookup"><span data-stu-id="42d03-130">Step 2: Adding a Web Reference</span></span>](step-2-adding-a-web-reference.md)
+ [<span data-ttu-id="68235-128">Accessing the SOAP API</span><span class="sxs-lookup"><span data-stu-id="68235-128">Accessing the SOAP API</span></span>](accessing-the-soap-api.md)
+#### <a name="other-resources"></a><span data-ttu-id="68235-129">Sonstige Ressourcen</span><span class="sxs-lookup"><span data-stu-id="68235-129">Other resources</span></span>
+
+
   
     
     
- [<span data-ttu-id="42d03-131">Step 3: Accessing the Web Service</span><span class="sxs-lookup"><span data-stu-id="42d03-131">Step 3: Accessing the Web Service</span></span>](step-3-accessing-the-web-service.md)
+ [<span data-ttu-id="68235-130">Step 2: Adding a Web Reference</span><span class="sxs-lookup"><span data-stu-id="68235-130">Step 2: Adding a Web Reference</span></span>](step-2-adding-a-web-reference.md)
   
     
     
- [<span data-ttu-id="42d03-132">Walkthrough: Developing a Custom Application Using Excel Web Services</span><span class="sxs-lookup"><span data-stu-id="42d03-132">Walkthrough: Developing a Custom Application Using Excel Web Services</span></span>](walkthrough-developing-a-custom-application-using-excel-web-services.md)
+ [<span data-ttu-id="68235-131">Step 3: Accessing the Web Service</span><span class="sxs-lookup"><span data-stu-id="68235-131">Step 3: Accessing the Web Service</span></span>](step-3-accessing-the-web-service.md)
+  
+    
+    
+ [<span data-ttu-id="68235-132">Walkthrough: Developing a Custom Application Using Excel Web Services</span><span class="sxs-lookup"><span data-stu-id="68235-132">Walkthrough: Developing a Custom Application Using Excel Web Services</span></span>](walkthrough-developing-a-custom-application-using-excel-web-services.md)
