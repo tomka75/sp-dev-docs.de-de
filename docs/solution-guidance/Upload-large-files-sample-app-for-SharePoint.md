@@ -1,11 +1,11 @@
 ---
 title: "Beispiel-Add-In zum Hochladen großer Dateien für SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 1d9df7d05d92e79b89dd4d552522eeb3447b2d56
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: a6c04ffcdf8d6714250dee1ba0709c869c338b9f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="upload-large-files-sample-add-in-for-sharepoint"></a>Beispiel-Add-In zum Hochladen großer Dateien für SharePoint
 
@@ -13,13 +13,13 @@ Hochladen von Dateien, die größer als 2 MB sind, in SharePoint und SharePoint
 
 _**Gilt für:** Add-Ins für SharePoint | SharePoint 2013 | SharePoint Online_
 
-In dem [Core.LargeFileUpload](https://github.com/SharePoint/PnP/tree/master/Samples/Core.LargeFileUpload)-Beispiel wird gezeigt, wie Sie mit einem vom Anbieter gehosteten Add-In große Dateien in SharePoint hochladen und die maximale Dateigröße von 2 MB beim Hochladen umgehen können. Verwenden Sie diese Lösung, wenn Sie Dateien, die größer als 2 MB sind, in SharePoint hochladen möchten. In diesem Beispiel wird eine Konsolenanwendung ausgeführt, mit der große Dateien mithilfe einer der folgenden Methoden in einer Dokumentbibliothek hochgeladen werden:
+In dem [Core.LargeFileUpload]((https://github.com/SharePoint/PnP/tree/master/Samples/Core.LargeFileUpload))-Beispiel wird gezeigt, wie Sie mit einem vom Anbieter gehosteten Add-In große Dateien in SharePoint hochladen und die maximale Dateigröße von 2 MB beim Hochladen umgehen können. Verwenden Sie diese Lösung, wenn Sie Dateien, die größer als 2 MB sind, in SharePoint hochladen möchten. In diesem Beispiel wird eine Konsolenanwendung ausgeführt, mit der große Dateien mithilfe einer der folgenden Methoden in einer Dokumentbibliothek hochgeladen werden:
 
-- Die  ** [SaveBinaryDirect](https://msdn.microsoft.com/library/office/ee538285.aspx)**-Methode der **Microsoft.SharePoint.Client.File **-Klasse.
+- Die  ** [SaveBinaryDirect]((https://msdn.microsoft.com/library/office/ee538285.aspx))**-Methode der **Microsoft.SharePoint.Client.File **-Klasse.
     
-- Die  ** [ContentStream](https://msdn.microsoft.com/library/office/microsoft.sharepoint.client.filecreationinformation.contentstream.aspx)**-Eigenschaft der **FileCreationInformation**-Klasse.
+- Die  ** [ContentStream]((https://msdn.microsoft.com/library/office/microsoft.sharepoint.client.filecreationinformation.contentstream.aspx))**-Eigenschaft der **FileCreationInformation**-Klasse.
     
-- Die  ** [StartUpload](https://msdn.microsoft.com/library/office/microsoft.sharepoint.client.file.startupload.aspx)**-,  ** [ContinueUpload](https://msdn.microsoft.com/library/office/microsoft.sharepoint.client.file.continueupload.aspx)**- und ** [FinishUpload](https://msdn.microsoft.com/library/office/microsoft.sharepoint.client.file.finishupload.aspx)**-Methoden in der **File**-Klasse.
+- Die  ** [StartUpload]((https://msdn.microsoft.com/library/office/microsoft.sharepoint.client.file.startupload.aspx))**-,  ** [ContinueUpload]((https://msdn.microsoft.com/library/office/microsoft.sharepoint.client.file.continueupload.aspx))**- und ** [FinishUpload]((https://msdn.microsoft.com/library/office/microsoft.sharepoint.client.file.finishupload.aspx))**-Methoden in der **File**-Klasse.
     
 In der folgenden Tabelle werden die Methoden zum Hochladen von Dateien und deren Verwendung erläutert.
 
@@ -27,7 +27,7 @@ In der folgenden Tabelle werden die Methoden zum Hochladen von Dateien und deren
 
 |**Option für das Hochladen der Datei**|**Überlegungen**|**Wann sollte sie verwendet werden**|**Unterstützte Plattformen**|
 |:-----|:-----|:-----|:-----|
-| Die [Content](https://msdn.microsoft.com/library/office/microsoft.sharepoint.client.filecreationinformation.content.aspx)-Eigenschaft der **FileCreationInformation**-Klasse.|Maximale Dateigröße, die hochgeladen werden kann, beträgt 2 MB. Zeitüberschreitung nach 30 Minuten.|Verwenden Sie diese Methode, wenn Sie Dateien hochladen, die kleiner als 2 MB sind. |SharePoint Server 2013, SharePoint Online|
+| Die [Content]((https://msdn.microsoft.com/library/office/microsoft.sharepoint.client.filecreationinformation.content.aspx))-Eigenschaft der **FileCreationInformation**-Klasse.|Maximale Dateigröße, die hochgeladen werden kann, beträgt 2 MB. Zeitüberschreitung nach 30 Minuten.|Verwenden Sie diese Methode, wenn Sie Dateien hochladen, die kleiner als 2 MB sind. |SharePoint Server 2013, SharePoint Online|
 | **SaveBinaryDirect**-Methode der **File**-Klasse.|Keine Dateigrößenbeschränkungen. Zeitüberschreitung nach 30 Minuten.|Verwenden Sie diese Methode nur, wenn Sie eine Richtlinie zu Benutzerauthentifzierungen verwenden. Eine Richtlinie zu Benutzerauthentifizierungen ist nicht in einem Add-In für SharePoint verfügbar, sie kann jedoch in systemeigenen Geräte-Add-Ins, in Windows PowerShell- und Windows-Konsolenanwendungen verwendet werden.|SharePoint Server 2013, SharePoint Online|
 | Die **ContentStream**-Eigenschaft der **FileCreationInformation**-Klasse.|Keine Dateigrößenbeschränkungen. Zeitüberschreitung nach 30 Minuten.|Empfohlen für:<br/>- SharePoint Server 2013.<br/>- SharePoint Online, wenn die Datei kleiner als 10 MB ist.|SharePoint Server 2013, SharePoint Online|
 |Hochladen einer einzelnen Datei als Satz von Datenblöcken mithilfe der  **StartUpload**-,  **ContinueUpload**- und  **FinishUpload**-Methoden der **File**-Klasse.|Keine Dateigrößenbeschränkungen. Zeitüberschreitung nach 30 Minuten. Jeder Datenblock muss innerhalb von 30 Minuten nach Fertigstellung des vorherigen Blocks hochgeladen werden, um eine Zeitüberschreitung zu vermeiden. |Empfohlen für SharePoint Online, wenn die Datei größer als 10 MB ist.|SharePoint Online|
@@ -35,14 +35,15 @@ In der folgenden Tabelle werden die Methoden zum Hochladen von Dateien und deren
 ## <a name="before-you-begin"></a>Bevor Sie beginnen:
 <a name="sectionSection0"> </a>
 
-Laden Sie zunächst das [Core.LargeFileUpload](https://github.com/SharePoint/PnP/tree/master/Samples/Core.LargeFileUpload)-Beispiel-Add-In aus dem Projekt [Office 365-Entwicklermuster und -vorgehensweisen](https://github.com/SharePoint/PnP/tree/dev) auf GitHub herunter.
+Laden Sie zunächst das [Core.LargeFileUpload]((https://github.com/SharePoint/PnP/tree/master/Samples/Core.LargeFileUpload))-Beispiel-Add-In aus dem Projekt [Office 365-Entwicklermuster und -vorgehensweisen]((https://github.com/SharePoint/PnP/tree/dev)) auf GitHub herunter.
 
 ## <a name="using-the-corelargefileupload-sample-app"></a>Verwenden der Core.LargeFileUpload Beispiel-App
 <a name="sectionSection1"> </a>
 
 Beim Starten dieses Codebeispiels wird eine Konsolenanwendung geöffnet. Sie müssen eine SharePoint Online-Websitesammlungs-URL und Ihre Anmeldeinformationen für Office 365 angeben. Nach der Authentifizierung zeigt die Konsolenanwendung eine Ausnahme an. Die Ausnahme tritt auf, wenn die **UploadDocumentContent**-Methode in FileUploadService.cs versucht, die **FileCreationInformation.Content**-Eigenschaft zum Hochladen einer Datei zu verwenden, die größer als 2 MB ist. **UploadDocumentContent** erstellt außerdem eine Dokumentbibliothek **Dokumente**, wenn diese noch nicht vorhanden ist. Die Dokumentbibliothek **Dokumente** wird weiter unten in diesem Codebeispiel verwendet.
 
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
 
 ```C#
 public void UploadDocumentContent(ClientContext ctx, string libraryName, string filePath)
@@ -151,7 +152,8 @@ public void UploadDocumentContentStream(ClientContext ctx, string libraryName, s
     
     3. Ist die Blockgröße nicht gleich der Dateigröße, gibt es mehr als einen Datenblock, der aus der Datei zu lesen ist.  **File.StartUpload** wird aufgerufen, um den ersten Abschnitt hochladen. Das **fileoffset**-Objekt, das als Anfang des nächsten Datenblocks verwendet wird, wird dann auf die Anzahl der aus dem ersten Datenblock hochgeladenen Bytes festgelegt. Beim Lesen des nächsten Datenblocks wird, falls der letzte Block noch nicht erreicht wurde, **File.ContinueUpload** aufgerufen, um den nächsten Datenblock der Datei hochzuladen. Der Vorgang wird wiederholt, bis der letzte Block gelesen wurde. Beim Lesen des letzten Datenblocks lädt **File.FinishUpload** den letzten Block hoch und übergibt die Datei. Der Dateiinhalt wird dann geändert, wenn diese Methode ausgeführt wurde.
 
-**Hinweis:** Berücksichtigen die folgenden bewährten Methoden:
+> [!NOTE] 
+> Berücksichtigen die folgenden bewährten Methoden:
 - Verwenden Sie einen Wiederholungsmechanismus für den Fall, dass der Upload unterbrochen wird. Wenn das Hochladen einer Datei unterbrochen wird, wird die Datei „nicht fertig gestellte Datei“ genannt. Möglicherweise möchten Sie mit dem Hochladen einer nicht fertig gestellten Datei unmittelbar nach der Unterbrechung des Uploads erneut beginnen. Nicht fertig gestellte Dateien werden in dem Zeitraum zwischen 6 Stunden und 24 Stunden, nachdem das Hochladen der Datei unterbrochen wurde, auf dem Server entfernt. Dieser Zeitraum kann sich ohne vorherige Ankündigung ändern.
 - Beim Hochladen einer Datei in Datenblöcken in SharePoint Online, wird die Datei in SharePoint Online gesperrt. Wenn eine Unterbrechung auftritt, bleibt die Datei 15 Minuten gesperrt. Wird der nächste Datenblock der Datei nicht innerhalb von 15 Minuten in SharePoint Online hochgeladen, wird die Datei freigegeben. Nach der Freigabe können Sie mit dem Hochladen der Datei fortfahren, oder ein anderer Benutzer kann mit dem Hochladen der Datei beginnen. Beginnt ein anderer Benutzer mit dem Hochladen der Datei, wird die noch nicht fertig gestellte Datei aus SharePoint Online entfernt. Die Dauer, für die eine Datei gesperrt ist, nachdem das Hochladen unterbrochen wurde, kann sich ohne vorherige Ankündigung ändern.
 - Sie möchten die Blockgröße ggf. ändern. Es wird empfohlen, eine Blockgröße von 10 MB zu verwenden.
@@ -317,9 +319,9 @@ Datenblöcke müssen in einer sequenziellen Reihenfolge hochgeladen werden. Mehr
 
 Navigieren Sie nach Abschluss des Codebeispiels auf Ihrer Office 365-Website zu der Dokumentbibliothek **Dokumente**, indem Sie **Zuletzt verwendet** >  > **Dokumente** wählen. Überprüfen Sie, ob die Dokumentbibliothek **Dokumente** drei große Dateien enthält. 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Enterprise Content Management-Lösungen für SharePoint 2013 und SharePoint Online](Enterprise-Content-Management-solutions-for-SharePoint-2013-and-SharePoint-Online.md)
     
--  [Core.BulkDocumentUploader-Beispiel](https://github.com/SharePoint/PnP/tree/master/Samples/Core.BulkDocumentUploader)
+-  [Core.BulkDocumentUploader-Beispiel]((https://github.com/SharePoint/PnP/tree/master/Samples/Core.BulkDocumentUploader))

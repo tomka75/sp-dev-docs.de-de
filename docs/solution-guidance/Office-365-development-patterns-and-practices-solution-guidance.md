@@ -1,11 +1,11 @@
 ---
 title: "Lösungsleitfaden für Office 365-Entwicklung und SharePoint Patterns and Practices"
 ms.date: 11/03/2017
-ms.openlocfilehash: c3619b494f7ea633002e3a35a196a33d36ebd2fd
-ms.sourcegitcommit: 6cc109dd6921d4df24d8dedb500d9c639b48c4a0
+ms.openlocfilehash: 6fd8b41dc38257f67d9a8e09b4c3f28f4a1efe64
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="solution-guidance"></a>Lösungsleitfaden
 
@@ -34,9 +34,9 @@ _**Gilt für:** Office 365 | SharePoint 2016 | SharePoint 2013 | SharePoint Onli
 |[Framework für PnP-Remotezeitgeberauftrag](pnp-remote-timer-job-framework.md)|Mehr über Zeitgeberaufträge erfahren, bei denen es sich um Hintergrundaufgaben handelt, die auf Ihren SharePoint-Websites ausgeführt werden.|
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
--  [Office 365-Entwicklungsmuster und -übungen auf GitHub](https://github.com/SharePoint/PnP)
+-  [Office 365-Entwicklungsmuster und -übungen auf GitHub]((https://github.com/SharePoint/PnP))
     
--  [Entwickeln auf der Office 365-Plattform](http://msdn.microsoft.com/de-DE/office/office365/howto/platform-development-overview)
+-  [Entwickeln auf der Office 365-Plattform]((http://msdn.microsoft.com/de-DE/office/office365/howto/platform-development-overview))
