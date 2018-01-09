@@ -1,11 +1,11 @@
 ---
 title: "Legen Sie externe Freigabe für Websitesammlungen in Office 365"
 ms.date: 11/03/2017
-ms.openlocfilehash: d98140a1502efce34ebe60112dfc201aa3336785
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 77dcda34649a2d4d3a19e07b161c623d8db26de3
+ms.sourcegitcommit: 7b6ce94b477d9b587beaa059eb9aa7cd6235efde
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="set-external-sharing-on-site-collections-in-office-365"></a>Legen Sie externe Freigabe für Websitesammlungen in Office 365
 
@@ -34,11 +34,11 @@ Stellen Sie sicher, dass externe Freigabe Ihres Office 365-Abonnements zulässt.
 
 1. Öffnen Sie Ihre **Office 365 Administrationscenter**.
     
-2. Wählen Sie im linken Navigationsbereich auf **Externe Freigabe**.
+2. Wählen Sie im linken Navigationsbereich auf **SharePoint**aus.
     
-3. Wählen Sie die **Übersicht über das Freigeben**.
+3. Wählen Sie im linken Navigationsbereich auf **Freigabe**.
     
-4. In **Websites**stellen Sie sicher, dass **externe Benutzer Zugriff auf Ihre Websites** **aktiviert**ist.
+4. **Freigabe außerhalb Ihrer Organisation**sicher, dass **auf** **einladen und mit externen Benutzern authentifizierten Freigaben durch Benutzer zulassen** befindet.
     
 Prüfen Sie Ihre externe websiteeinstellungen auf Ihrer SharePoint-Websitesammlung. Dazu:
 
@@ -46,7 +46,7 @@ Prüfen Sie Ihre externe websiteeinstellungen auf Ihrer SharePoint-Websitesammlu
     
 2. Wählen Sie im linken Navigationsbereich auf **SharePoint** , um Ihre **SharePoint-Verwaltungskonsole**zu öffnen.
     
-3. Wählen Sie das Kontrollkästchen neben der URL der Websitesammlung, die Sie Ihre Einstellungen für externen Freigabe auf überprüfen möchten.
+3. Wählen Sie in der Liste Website-Auflistung das Kontrollkästchen neben der URL der Websitesammlung, die Sie Ihre Einstellungen für externen Freigabe auf überprüfen möchten.
     
 4. Wählen Sie die **Freigabe**, klicken Sie im Menüband.
     
@@ -54,7 +54,7 @@ Prüfen Sie Ihre externe websiteeinstellungen auf Ihrer SharePoint-Websitesammlu
     
 Wenn Sie dieses Codebeispiel ausführen, werden **Main** in Program.cs die folgenden Aufgaben ausgeführt:
 
-- Ruft die Office 365 Admin Center-URL.
+- Ruft die URL der SharePoint Admin Center an.
     
 - Ruft die URL der Websitesammlung so konfigurieren Sie Einstellungen für externe Freigabe auf.
     
@@ -71,7 +71,7 @@ Wenn Sie dieses Codebeispiel ausführen, werden **Main** in Program.cs die folge
 - Ruft die **SetSiteSharing**.
 
 > [!NOTE] 
-> Der Code in diesem Artikel wird als bereitgestellt-ist, ohne Garantie jeglicher Art, sei Sie ausdrücklich oder konkludent, einschließlich konkludente Garantien der Eignung für einen bestimmten Zweck, Makro- oder nichtverletzung.
+> Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
 
 ```C#
  static void Main(string[] args)
