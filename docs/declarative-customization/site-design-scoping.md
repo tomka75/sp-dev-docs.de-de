@@ -2,11 +2,11 @@
 title: "Bereichsdefinition für den Zugriff auf SharePoint-Websitedesigns"
 description: "Legen Sie den Bereich für SharePoint-Websitedesigns fest, um zu steuern, wer diese anzeigen und darauf zugreifen kann."
 ms.date: 12/14/2017
-ms.openlocfilehash: d6181e92cd76af2e16e847219bb7aaa129ddebb7
-ms.sourcegitcommit: 8e63066ad9591e51bbda419b1b9527452111081b
+ms.openlocfilehash: b7a29bbbd28f097e92364d9ab73d16d896ad3446
+ms.sourcegitcommit: 31f793b42ec75679f01e1a024d0375a2bc7b5ec7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="scoping-access-to-site-designs"></a>Bereichsdefinition für den Zugriff auf Websitedesigns
 
@@ -51,7 +51,7 @@ Nachfolgend finden Sie ein Beispiel, wie Anzeigeberechtigungen für ein Websited
 ```powershell
 PS C:\> Grant-SPOSiteDesignRights `
          -Identity 44252d09-62c4-4913-9eb0-a2a8b8d7f863 `
-         -Principals "nestorw@contoso.sharepoint.com" `
+         -Principals "nestorw@contoso.onmicrosoft.com" `
          -Rights View
 ```
 
@@ -66,7 +66,7 @@ PS C:\> Get-SPOSiteDesignRights 607aed52-6d61-490a-b692-c0f58a6981a1
 ```
 DisplayName  PrincipalName                                      Rights
 -----------  -------------                                      ------
-Nestor Wilke i:0#.f|membership|nestorw@contoso.sharepoint.com   View
+Nestor Wilke i:0#.f|membership|nestorw@contoso.onmicrosoft.com   View
 ```
 
 ## <a name="revoking-rights-from-a-site-design"></a>Widerrufen von Berechtigungen von einem Websitedesign

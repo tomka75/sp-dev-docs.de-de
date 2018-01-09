@@ -2,11 +2,11 @@
 title: JSON-Schema eines Websitedesigns
 description: "JSON-Schemareferenz zum Erstellen von Websitedesigns für SharePoint."
 ms.date: 12/14/2017
-ms.openlocfilehash: 0b1d0a0bd79d89e269744ca0646eb30b4ed0e731
-ms.sourcegitcommit: 8e63066ad9591e51bbda419b1b9527452111081b
+ms.openlocfilehash: 8fcc88c854b948c785db6181fa66e307128b343d
+ms.sourcegitcommit: 7b6ce94b477d9b587beaa059eb9aa7cd6235efde
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="site-design-json-schema"></a>JSON-Schema eines Websitedesigns
 
@@ -49,7 +49,7 @@ Beispiel:
     "templateType": 100,
     "subactions": [
         {
-            "verb": "SetDescription",
+            "verb": "setDescription",
             "description": "List of Customers and Orders"
          }
     ]
@@ -87,7 +87,7 @@ Beispiel:
 
 ```json
 {
-   "verb": "SetDescription",
+   "verb": "setDescription",
    "description": "List of Customers and Orders"
 }
 ```
