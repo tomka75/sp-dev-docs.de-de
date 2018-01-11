@@ -1,11 +1,11 @@
 ---
 title: SharePoint-Framework-Entwicklung mit SharePoint 2016 Feature Pack 2
-ms.date: 09/25/2017
-ms.openlocfilehash: 6841d1a2df002bdf7c7a280c76bb0f21bc7a1d26
-ms.sourcegitcommit: d68d6cf927d69696a3561f7d8ffe9a3ed9dbd03c
+ms.date: 1/2/2018
+ms.openlocfilehash: 40ed480d1784052aa75d375fdf586fd38a675cc5
+ms.sourcegitcommit: 469ce248552201a47ebea1b6c85bc5c90a97c7ac
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="sharepoint-framework-development-with-sharepoint-2016-feature-pack-2"></a>SharePoint-Framework-Entwicklung mit SharePoint 2016 Feature Pack 2
 
@@ -25,6 +25,9 @@ Wenn Sie die gleichen clientseitigen Webparts in SharePoint 2016 und in SharePoi
 
 Ab Version 1.3 bietet der SharePoint-Framework-Yeoman-Generator Unterstützung für die Erstellung von Lösungsgerüsten, die die neueste Version von SharePoint-Framework sowohl für die Verwendung mit SharePoint Online als auch mit lokalen SharePoint-Bereitstellungen auf der Grundlage von SharePoint-Framework v1.1.0 verwenden. Sie müssen keine separate Version des SharePoint-Framework-Yeoman-Generators für die Erstellung von Lösungsgerüsten für die Verwendung mit lokalen SharePoint-Bereitstellungen installieren.
 
+> [!IMPORTANT]
+> Ab Version 1.4 unterstützt der SharePoint-Framework-Yeoman-Generator ein neues Attribut von `includeClientSideAssets`, mit dem Sie angeben können, dass Objekte im *sppkg*-Paket enthalten werden sollen. Diese Funktion wird derzeit jedoch nur in SharePoint Online unterstützt. Wenn die Lösung für die lokale Bereitstellung bestimmt ist, sollte dieses Attribut in `package-solution.json` auf `false` festgelegt werden.
+
 ## <a name="hosting-your-sharepoint-framework-solution-for-on-premises-deployment"></a>Hosten der SharePoint-Framework-Lösung für die lokale Bereitstellung
 
 Für die Bereitstellung von clientseitiger SharePoint-Framework-Weboarts sind zwei unterschiedliche Aktionen erforderlich:
@@ -38,7 +41,7 @@ Sie können die JavaScript-Dateien an einem Speicherort hosten, der für Ihre Um
 - **Lokaler Server in Ihrem Netzwerk** – Ein Server, auf dem die JavaScript-Dateien für Ihr Unternehmensnetzwerk gehostet werden. Dies ist mit einer beliebigen Technologie möglich, solange auf die Dateien über HTTP-Anforderungen zugegriffen werden kann.
 - **SharePoint-2016** – Sie können auch Ihre Dateien in der lokalen SharePoint-Farm hosten. Sie können zum Beispiel eine standardisierte Website in der Farm definieren, in der alle SharePoint-Framework-Ressourcen gehostet werden. Beachten Sie jedoch, dass JSON-Dateien standardmäßig nicht in SharePoint 2016-Bibliotheken hochgeladen werden können. Aus diesem Grund müssen die Einstellungen der Farmebene für diese Option angepasst werden.
 
-> Weitere Informationen zu den gesperrten Dateitypen in SharePoint 2016 finden Sie im folgenden Support-Artikel: [Dateitypen, die einer Liste oder Bibliothek nicht hinzugefügt werden können](https://support.office.com/de-DE/article/Types-of-files-that-cannot-be-added-to-a-list-or-library-30be234d-e551-4c2a-8de8-f8546ffbf5b3#ID0EAADAAA=2016)
+> Weitere Informationen zu den gesperrten Dateitypen in SharePoint 2016 finden Sie im folgenden Support-Artikel: [Dateitypen, die einer Liste oder Bibliothek nicht hinzugefügt werden können](https://support.office.com/en-us/article/Types-of-files-that-cannot-be-added-to-a-list-or-library-30be234d-e551-4c2a-8de8-f8546ffbf5b3#ID0EAADAAA=2016)
 
 ## <a name="development-environment-considerations"></a>Überlegungen zur Entwicklungsumgebung
 

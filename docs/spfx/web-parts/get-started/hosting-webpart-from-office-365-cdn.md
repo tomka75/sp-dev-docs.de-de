@@ -1,12 +1,12 @@
 ---
 title: "Hosten clientseitiger Webparts in Office 365 CDN"
-ms.date: 12/11/2017
+ms.date: 1/2/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 3abc6748269fe9709678c6b02b514662cc156587
-ms.sourcegitcommit: 6018dbb696faef5f60ebf0f79f830385fab2a4d8
+ms.openlocfilehash: acc9e6249a8a0ae8cf8ea4a1a3a012d73a3c6a91
+ms.sourcegitcommit: 469ce248552201a47ebea1b6c85bc5c90a97c7ac
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="hosting-client-side-web-part-from-office-365-cdn-hello-world-part-4"></a>Hosten clientseitiger Webparts in Office 365 CDN (Hello Word, Teil 4)
 
@@ -14,6 +14,9 @@ In diesem Artikel wird beschrieben, wie Sie clientseitige Webparts in Office 36
 
 > [!NOTE]
 > Es gibt mehrere unterschiedliche Hostingoptionen für Webpart-Objekte. In diesem Lernprogramm steht die Option „Office 365 CDN“ im Vordergrund, Sie können jedoch auch das [Azure CDN](./deploy-web-part-to-cdn.md) verwenden oder einfach Ihre Objekte aus der SharePoint-Bibliothek aus dem Mandanten hosten. Im letzteren Fall würden Sie nicht von den CDN-Leistungssteigerungen profitieren, im Hinblick auf die Funktionalität wäre dies jedoch möglich. Technisch gesehen wäre jeder Ort zum Hosten der Objekte für Endbenutzer denkbar, auf den Endbenutzer über HTTP(S) zugreifen können.
+
+> [!IMPORTANT]
+> In diesem Artikel wird das `includeClientSideAssets`-Attribut verwendet, das in SPFx v1.4 eingeführt wurde. Diese Version wird mit **SharePoint 2016 Feature Pack 2** nicht unterstützt. Wenn Sie lokales Setup verwenden, müssen Sie den CDN-Hostingspeicherort separat festlegen. Sie können die JavaScript-Dateien auch einfach über die zentrale Bibliothek in Ihrer lokalen SharePoint-Umgebung hosten, auf die die Benutzer Zugriff haben. Siehe auch weitere Überlegungen in den [Anleitungen zu SharePoint 2016](../../sharepoint-2016-support.md).
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -36,7 +39,7 @@ Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in 
 Stellen Sie sicher, dass Sie die neueste Version der SharePoint Online-Verwaltungsshell verwenden. Herunterladen können Sie sie im [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=35588).
 
 > [!TIP]
-> Wenn Sie keinen Windows-Computer verwenden, können Sie die SPO-Verwaltungsshell nicht verwenden. Sie können diese Einstellungen jedoch über die [Office 365 CLI](https://sharepoint.github.io/office365-cli/) verwalten.
+> Wenn Sie keinen Windows-Computer verwenden, können Sie die SPO-Verwaltungsshell nicht verwenden. Sie können diese Einstellungen jedoch über die [Office 365 CLI]((https://sharepoint.github.io/office365-cli/)) verwalten.
 
 Verbinden Sie sich über eine PowerShell-Sitzung mit Ihrem SharePoint Online-Mandanten.
 ```
@@ -179,4 +182,4 @@ Ihr benutzerdefiniertes Webpart ist jetzt in SharePoint Online bereitgestellt u
 Sie können jQuery und jQueryUI laden und ein jQuery Accordion-Webpart erstellen. Lesen Sie die Informationen unter [Hinzufügen von jQueryUI Accordion zu Ihrem clientseitigen Webpart](./add-jqueryui-accordion-to-web-part.md), um fortzufahren.
 
 > [!NOTE]
-> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository](https://github.com/SharePoint/sp-dev-docs/issues). Vielen Dank im Voraus für Ihr Feedback.
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository]((https://github.com/SharePoint/sp-dev-docs/issues)). Vielen Dank im Voraus für Ihr Feedback.
