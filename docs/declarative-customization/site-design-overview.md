@@ -2,11 +2,11 @@
 title: "Übersicht über das SharePoint-Websitedesign und -Websiteskripts"
 description: Verwenden Sie SharePoint-Websiteskripts und -Websitedesigns, um die Bereitstellung neuer SharePoint-Websites mit neuen Konfigurationen zu automatisieren.
 ms.date: 12/14/2017
-ms.openlocfilehash: 0bb98ccfd79e6bf0fccf605570912ec6551cbcff
-ms.sourcegitcommit: 8e63066ad9591e51bbda419b1b9527452111081b
+ms.openlocfilehash: 5821c4a48ecccbfc23ff5eaaf1c7941c6026d06e
+ms.sourcegitcommit: 31f793b42ec75679f01e1a024d0375a2bc7b5ec7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="sharepoint-site-design-and-site-script-overview"></a>Übersicht über das SharePoint-Websitedesign und -Websiteskripts
 
@@ -28,7 +28,7 @@ Websitedesigns werden in SharePoint auf einer der modernen Vorlagenwebsites erst
 
 1. Wählen Sie **Kommunikationswebsite** aus.
 
-    Die Kommunikationswebsite weist das Feld **Design auswählen**, in dem die folgenden drei Websitedesigs vordefiniert zur Verfügung stehen.
+    Die Kommunikationswebsite weist das Feld **Design auswählen**, in dem die folgenden Websitedesigs zur Verfügung stehen.
 
     - Thema
     - Showcase
@@ -38,7 +38,7 @@ Dies sind die standardmäßigen Websitedesigns. Jedes Websitedesign weist einen 
 
 ![Titel, Beschreibung und Bild im standardmäßigen Websitedesign in der Kommunikationswebsite-Vorlage](images/site-designs-listed-on-communication-site-template.png)
 
-Wenn Sie die Vorlage für die Teamwebsite ausgewählt hätten, würde diese nur das standardmäßige Websitedesign mit dem Namen **Teamwebsite** enthalten. <!-- For additional information on how you can change the default site designs, see [Applying a site design to a default SharePoint template](site-design-apply-default-template.md). -->
+Wenn Sie die Vorlage für die Teamwebsite ausgewählt hätten, würde diese nur das standardmäßige Websitedesign mit dem Namen **Teamwebsite** enthalten. Weitere Informationen dazu, wie Sie die standardmäßigen Websitedesigns ändern können, finden Sie unter [Anpassen eines standardmäßigen Websitedesigns](customize-default-site-design.md).
 
 Nachdem ein Websitedesign ausgewählt wurde, erstellt SharePoint die neue Website und führt Websiteskripts für das Websitedesign aus. In den Websiteskripts ist die Arbeit wie z. B. das Erstellen neuer Listen oder das Anwenden eines Designs aufgeführt. Wenn die Aktionen in den Skripts abgeschlossen sind, zeigt SharePoint die ausführlichen Ergebnisse dieser Aktionen in einer Statusanzeige an.
 
@@ -234,13 +234,13 @@ Ein Websitedesign kann standardmäßig bei Erstellung von jeder Person angezeigt
 ```powershell
 Grant-SPOSiteDesignRights `
   -Identity 44252d09-62c4-4913-9eb0-a2a8b8d7f863 `
-  -Principals "nestorw@contoso.sharepoint.com" `
+  -Principals "nestorw@contoso.onmicrosoft.com" `
   -Rights View
 ```
 
 <!--
 ```javascript
-RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.GrantSiteDesignRights", {id:"44252d09-62c4-4913-9eb0-a2a8b8d7f863", principalNames:["nestorw@contoso.sharepoint.com”], grantedRights:1});
+RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.GrantSiteDesignRights", {id:"44252d09-62c4-4913-9eb0-a2a8b8d7f863", principalNames:["nestorw@contoso.onmicrosoft.com”], grantedRights:1});
 ```
 -->
 Weitere Informationen zum Arbeiten mit Bereichen finden Sie unter [Bereichsdefinition für den Zugriff auf Websitedesigns](site-design-scoping.md).
@@ -252,3 +252,4 @@ Weitere Informationen zum Arbeiten mit Bereichen finden Sie unter [Bereichsdefin
 - [JSON-Schema eines Websitedesigns](site-design-json-schema.md)
 - [PowerShell-Cmdlets für SharePoint-Websitedesigns und -Websiteskripts](site-design-powershell.md)
 - [REST-API von Websitedesigns und Websiteskripts](site-design-rest-api.md)
+- [Beispiele für die Websitedesign]((https://github.com/SharePoint/sp-dev-site-scripts))
