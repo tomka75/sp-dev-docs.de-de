@@ -3,85 +3,83 @@ title: Folgen von Personen mithilfe des JavaScript-Objektmodell in SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 2643c286-47c9-4a7a-9273-7474394477d6
-ms.openlocfilehash: 32f8d67f05048a15d3c1e2d0d1313f38945ff593
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 441c7e8085f28ddf58e627b8f8261d04a035c916
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="follow-people-by-using-the-javascript-object-model-in-sharepoint"></a><span data-ttu-id="aea39-102">Folgen von Personen mithilfe des JavaScript-Objektmodell in SharePoint</span><span class="sxs-lookup"><span data-stu-id="aea39-102">How to: Follow people by using the JavaScript object model in SharePoint</span></span>
+# <a name="follow-people-by-using-the-javascript-object-model-in-sharepoint"></a><span data-ttu-id="b92d3-102">Folgen von Personen mithilfe des JavaScript-Objektmodell in SharePoint</span><span class="sxs-lookup"><span data-stu-id="b92d3-102">How to: Follow people by using the JavaScript object model in SharePoint</span></span>
 
-<span data-ttu-id="aea39-103">In diesem Artikel erfahren Sie, wie Sie mithilfe des SharePoint JavaScript-Objektmodells mit Features zum Folgen von Personen arbeiten.</span><span class="sxs-lookup"><span data-stu-id="aea39-103">Learn how to work with Following People features by using the SharePoint JavaScript object model.</span></span>
+<span data-ttu-id="b92d3-103">In diesem Artikel erfahren Sie, wie Sie mithilfe des SharePoint JavaScript-Objektmodells mit Features zum Folgen von Personen arbeiten.</span><span class="sxs-lookup"><span data-stu-id="b92d3-103">Learn how to work with Following People features by using the SharePoint JavaScript object model.</span></span>
 
-## <a name="why-use-following-people-features-in-sharepoint"></a><span data-ttu-id="aea39-104">Gründe für die Verwendung von Features zum Folgen von Personen in SharePoint</span><span class="sxs-lookup"><span data-stu-id="aea39-104">Why use Following People features in SharePoint?</span></span>
-<span data-ttu-id="aea39-105"><a name="bk_FollowingPeopleFeatures"> </a></span><span class="sxs-lookup"><span data-stu-id="aea39-105"><a name="bk_FollowingPeopleFeatures"> </a></span></span>
+## <a name="why-use-following-people-features-in-sharepoint"></a><span data-ttu-id="b92d3-104">Gründe für die Verwendung von Features zum Folgen von Personen in SharePoint</span><span class="sxs-lookup"><span data-stu-id="b92d3-104">Why use Following People features in SharePoint?</span></span>
+<span data-ttu-id="b92d3-105"><a name="bk_FollowingPeopleFeatures"> </a></span><span class="sxs-lookup"><span data-stu-id="b92d3-105"><a name="bk_FollowingPeopleFeatures"> </a></span></span>
 
-<span data-ttu-id="aea39-106">In SharePoint helfen Features zum Folgen von Personen den Benutzern, miteinander verbunden zu bleiben.</span><span class="sxs-lookup"><span data-stu-id="aea39-106">In SharePoint, Following People features help users to stay connected with each other.</span></span> <span data-ttu-id="aea39-107">Wenn beispielsweise ein Benutzer einer Person folgt, werden die Beiträge und Aktivitäten dieser Person im Newsfeed des Benutzers angezeigt.</span><span class="sxs-lookup"><span data-stu-id="aea39-107">For example, when a user follows someone, that person's posts and activities show up in the user's newsfeed.</span></span> <span data-ttu-id="aea39-108">Indem Sie Features zum Folgen von Personen nutzen, damit sich Benutzer auf die Personen konzentrieren können, die für sie wichtig sind, können Sie die Relevanz Ihrer App oder Lösung verbessern.</span><span class="sxs-lookup"><span data-stu-id="aea39-108">By using Following People features to focus on the people who users care about, you can improve the relevance of your app or solution.</span></span> <span data-ttu-id="aea39-109">Im JavaScript-Objektmodell werden Personen, denen Sie folgen, durch [SocialActor](http://msdn.microsoft.com/library/4e369fd5-b9b0-9804-957e-b3e39c559cd4%28Office.15%29.aspx)-Objekte dargestellt.</span><span class="sxs-lookup"><span data-stu-id="aea39-109">In the JavaScript object model, people that you follow are represented by  [SocialActor](http://msdn.microsoft.com/library/4e369fd5-b9b0-9804-957e-b3e39c559cd4%28Office.15%29.aspx) objects.</span></span> <span data-ttu-id="aea39-110">Zum Durchführen der Hauptaufgaben zum Folgen von Personen im JavaScript-Objektmodel verwenden Sie das [SocialFollowingManager](http://msdn.microsoft.com/library/9ee1c0c0-b864-f0c3-f0cb-4dd4f1870dfa%28Office.15%29.aspx)-Objekt.</span><span class="sxs-lookup"><span data-stu-id="aea39-110">To perform core Following People tasks in the JavaScript object model, you use the [SocialFollowingManager](http://msdn.microsoft.com/library/9ee1c0c0-b864-f0c3-f0cb-4dd4f1870dfa%28Office.15%29.aspx) object.</span></span> <span data-ttu-id="aea39-111">In diesem Artikel erfahren Sie, wie Sie mithilfe des JavaScript-Objektmodells mit Features zum Folgen von Personen arbeiten.</span><span class="sxs-lookup"><span data-stu-id="aea39-111">This article shows how to use the JavaScript object model to work with Following People features.</span></span>
+<span data-ttu-id="b92d3-106">In SharePoint helfen Features zum Folgen von Personen den Benutzern, miteinander verbunden zu bleiben.</span><span class="sxs-lookup"><span data-stu-id="b92d3-106">In SharePoint, Following People features help users to stay connected with each other.</span></span> <span data-ttu-id="b92d3-107">Wenn beispielsweise ein Benutzer einer Person folgt, werden die Beiträge und Aktivitäten dieser Person im Newsfeed des Benutzers angezeigt.</span><span class="sxs-lookup"><span data-stu-id="b92d3-107">For example, when a user follows someone, that person's posts and activities show up in the user's newsfeed.</span></span> <span data-ttu-id="b92d3-108">Indem Sie Features zum Folgen von Personen nutzen, damit sich Benutzer auf die Personen konzentrieren können, die für sie wichtig sind, können Sie die Relevanz Ihrer App oder Lösung verbessern.</span><span class="sxs-lookup"><span data-stu-id="b92d3-108">By using Following People features to focus on the people who users care about, you can improve the relevance of your app or solution.</span></span> <span data-ttu-id="b92d3-109">Im JavaScript-Objektmodell werden Personen, denen Sie folgen, durch [SocialActor](http://msdn.microsoft.com/library/4e369fd5-b9b0-9804-957e-b3e39c559cd4%28Office.15%29.aspx)-Objekte dargestellt.</span><span class="sxs-lookup"><span data-stu-id="b92d3-109">In the JavaScript object model, people that you follow are represented by  [SocialActor](http://msdn.microsoft.com/library/4e369fd5-b9b0-9804-957e-b3e39c559cd4%28Office.15%29.aspx) objects.</span></span> <span data-ttu-id="b92d3-110">Zum Durchführen der Hauptaufgaben zum Folgen von Personen im JavaScript-Objektmodel verwenden Sie das [SocialFollowingManager](http://msdn.microsoft.com/library/9ee1c0c0-b864-f0c3-f0cb-4dd4f1870dfa%28Office.15%29.aspx)-Objekt.</span><span class="sxs-lookup"><span data-stu-id="b92d3-110">To perform core Following People tasks in the JavaScript object model, you use the [SocialFollowingManager](http://msdn.microsoft.com/library/9ee1c0c0-b864-f0c3-f0cb-4dd4f1870dfa%28Office.15%29.aspx) object.</span></span> <span data-ttu-id="b92d3-111">In diesem Artikel erfahren Sie, wie Sie mithilfe des JavaScript-Objektmodells mit Features zum Folgen von Personen arbeiten.</span><span class="sxs-lookup"><span data-stu-id="b92d3-111">This article shows how to use the JavaScript object model to work with Following People features.</span></span>
   
-    
-    
-> <span data-ttu-id="aea39-112">**Hinweis:**
-> [SocialFollowingManager](http://msdn.microsoft.com/library/9ee1c0c0-b864-f0c3-f0cb-4dd4f1870dfa%28Office.15%29.aspx) ist die empfohlene API zum Folgen von Personen und Inhalten.</span><span class="sxs-lookup"><span data-stu-id="aea39-112">**Note:**
-[SocialFollowingManager](http://msdn.microsoft.com/library/9ee1c0c0-b864-f0c3-f0cb-4dd4f1870dfa%28Office.15%29.aspx) is the recommended API to use for following people and content.</span></span> <span data-ttu-id="aea39-113">Das [PeopleManager](http://msdn.microsoft.com/library/985fd2df-0e31-6ece-b846-ba2ccb156d00%28Office.15%29.aspx)-Objekt enthält jedoch zusätzliche Funktionen zum Folgen von Personen, wie die Methode [amIFollowedBy](http://msdn.microsoft.com/library/3641c469-0063-054d-355d-e56697cb08ae%28Office.15%29.aspx) und Methoden, die den Folgen-Status anderer Benutzer abrufen.</span><span class="sxs-lookup"><span data-stu-id="aea39-113">However, the [PeopleManager](http://msdn.microsoft.com/library/985fd2df-0e31-6ece-b846-ba2ccb156d00%28Office.15%29.aspx) object contains additional functionality for following people, such as the [amIFollowedBy](http://msdn.microsoft.com/library/3641c469-0063-054d-355d-e56697cb08ae%28Office.15%29.aspx) method and methods that obtain the following status of other users.</span></span>
+> [!NOTE]
+> <span data-ttu-id="b92d3-112">[SocialFollowingManager](http://msdn.microsoft.com/library/9ee1c0c0-b864-f0c3-f0cb-4dd4f1870dfa%28Office.15%29.aspx) ist die empfohlene API zum Folgen von Personen und Inhalten.</span><span class="sxs-lookup"><span data-stu-id="b92d3-112">[Note:SocialFollowingManager](http://msdn.microsoft.com/library/9ee1c0c0-b864-f0c3-f0cb-4dd4f1870dfa%28Office.15%29.aspx) is the recommended API to use for following people and content.</span></span> <span data-ttu-id="b92d3-113">Das [PeopleManager](http://msdn.microsoft.com/library/985fd2df-0e31-6ece-b846-ba2ccb156d00%28Office.15%29.aspx)-Objekt enthält jedoch zusätzliche Funktionen zum Folgen von Personen, wie die Methode [amIFollowedBy](http://msdn.microsoft.com/library/3641c469-0063-054d-355d-e56697cb08ae%28Office.15%29.aspx) und Methoden, die den Folgen-Status anderer Benutzer abrufen.</span><span class="sxs-lookup"><span data-stu-id="b92d3-113">However, the [PeopleManager](http://msdn.microsoft.com/library/985fd2df-0e31-6ece-b846-ba2ccb156d00%28Office.15%29.aspx) object contains additional functionality for following people, such as the [amIFollowedBy](http://msdn.microsoft.com/library/3641c469-0063-054d-355d-e56697cb08ae%28Office.15%29.aspx) method and methods that obtain the following status of other users.</span></span>
   
     
     
 
 
-## <a name="prerequisites-for-setting-up-your-development-environment-to-work-with-following-people-features-by-using-the-sharepoint-javascript-object-model"></a><span data-ttu-id="aea39-114">Voraussetzungen für das Einrichten Ihrer Entwicklungsumgebung zum Arbeiten mit Features zum Folgen von Personen mithilfe des JavaScript-Objektmodells in SharePoint</span><span class="sxs-lookup"><span data-stu-id="aea39-114">Prerequisites for setting up your development environment to work with Following People features by using the SharePoint JavaScript object model</span></span>
-<span data-ttu-id="aea39-115"><a name="bk_Prereqs"> </a></span><span class="sxs-lookup"><span data-stu-id="aea39-115"><a name="bk_Prereqs"> </a></span></span>
+## <a name="prerequisites-for-setting-up-your-development-environment-to-work-with-following-people-features-by-using-the-sharepoint-javascript-object-model"></a><span data-ttu-id="b92d3-114">Voraussetzungen für das Einrichten Ihrer Entwicklungsumgebung zum Arbeiten mit Features zum Folgen von Personen mithilfe des JavaScript-Objektmodells in SharePoint</span><span class="sxs-lookup"><span data-stu-id="b92d3-114">Prerequisites for setting up your development environment to work with Following People features by using the SharePoint JavaScript object model</span></span>
+<span data-ttu-id="b92d3-115"><a name="bk_Prereqs"> </a></span><span class="sxs-lookup"><span data-stu-id="b92d3-115"><a name="bk_Prereqs"> </a></span></span>
 
-<span data-ttu-id="aea39-116">Zum Erstellen der Farmlösung, die das JavaScript-Objektmodell verwendet, um mit Features zum Folgen von Personen zu arbeiten, benötigen Sie:</span><span class="sxs-lookup"><span data-stu-id="aea39-116">To create the farm solution that uses the JavaScript object model to work with Following People features, you'll need:</span></span>
+<span data-ttu-id="b92d3-116">Zum Erstellen der Farmlösung, die das JavaScript-Objektmodell verwendet, um mit Features zum Folgen von Personen zu arbeiten, benötigen Sie:</span><span class="sxs-lookup"><span data-stu-id="b92d3-116">To create the farm solution that uses the JavaScript object model to work with Following People features, you'll need:</span></span>
   
     
     
 
-- <span data-ttu-id="aea39-117">SharePoint mit konfigurierter „Meine Website“ und mit Benutzerprofilen und persönlichen Websites für den aktuellen Benutzer und einen Zielbenutzer</span><span class="sxs-lookup"><span data-stu-id="aea39-117">SharePoint with My Site configured, and with user profiles and personal sites created for the current user and a target user</span></span>
+- <span data-ttu-id="b92d3-117">SharePoint mit konfigurierter „Meine Website“ und mit Benutzerprofilen und persönlichen Websites für den aktuellen Benutzer und einen Zielbenutzer</span><span class="sxs-lookup"><span data-stu-id="b92d3-117">SharePoint with My Site configured, and with user profiles and personal sites created for the current user and a target user</span></span>
     
   
-- <span data-ttu-id="aea39-118">Visual Studio 2012</span><span class="sxs-lookup"><span data-stu-id="aea39-118">Visual Studio 2012</span></span>
+- <span data-ttu-id="b92d3-118">Visual Studio 2012</span><span class="sxs-lookup"><span data-stu-id="b92d3-118">Visual Studio 2012</span></span>
     
   
-- <span data-ttu-id="aea39-119">Office Developer Tools für Visual Studio 2012</span><span class="sxs-lookup"><span data-stu-id="aea39-119">Office Developer Tools for Visual Studio 2012</span></span>
+- <span data-ttu-id="b92d3-119">Office Developer Tools für Visual Studio 2012</span><span class="sxs-lookup"><span data-stu-id="b92d3-119">Office Developer Tools for Visual Studio 2012</span></span>
     
   
-- <span data-ttu-id="aea39-120">**Vollzugriff auf die Benutzerprofildienst-Anwendung für den angemeldeten Benutzer**</span><span class="sxs-lookup"><span data-stu-id="aea39-120">**Full Control** access permissions to the User Profile service application for the logged-on user</span></span>
+- <span data-ttu-id="b92d3-120">**Vollzugriff auf die Benutzerprofildienst-Anwendung für den angemeldeten Benutzer**</span><span class="sxs-lookup"><span data-stu-id="b92d3-120">**Full Control** access permissions to the User Profile service application for the logged-on user</span></span>
     
   
-- <span data-ttu-id="aea39-121">Lokale Administratorberechtigungen für den angemeldeten Benutzer</span><span class="sxs-lookup"><span data-stu-id="aea39-121">Local administrator permissions for the logged-on user</span></span>
+- <span data-ttu-id="b92d3-121">Lokale Administratorberechtigungen für den angemeldeten Benutzer</span><span class="sxs-lookup"><span data-stu-id="b92d3-121">Local administrator permissions for the logged-on user</span></span>
     
   
 
-## <a name="create-a-farm-solution-and-application-page-in-visual-studio-2012"></a><span data-ttu-id="aea39-122">Erstellen einer Farm Solution und Anwendung Seite in Visual Studio 2012</span><span class="sxs-lookup"><span data-stu-id="aea39-122">Create a farm solution and application page in Visual Studio 2012</span></span>
-<span data-ttu-id="aea39-123"><a name="bk_CreateSolution"> </a></span><span class="sxs-lookup"><span data-stu-id="aea39-123"><a name="bk_CreateSolution"> </a></span></span>
+## <a name="create-a-farm-solution-and-application-page-in-visual-studio-2012"></a><span data-ttu-id="b92d3-122">Erstellen einer Farm Solution und Anwendung Seite in Visual Studio 2012</span><span class="sxs-lookup"><span data-stu-id="b92d3-122">Create a farm solution and application page in Visual Studio 2012</span></span>
+<span data-ttu-id="b92d3-123"><a name="bk_CreateSolution"> </a></span><span class="sxs-lookup"><span data-stu-id="b92d3-123"><a name="bk_CreateSolution"> </a></span></span>
 
 
-1. <span data-ttu-id="aea39-124">Führen Sie Visual Studio als Administrator aus, und wählen Sie **Datei**, **neu**, **Projekt**.</span><span class="sxs-lookup"><span data-stu-id="aea39-124">Run Visual Studio as administrator, and choose **File**, **New**, **Project**.</span></span>
+1. <span data-ttu-id="b92d3-124">Führen Sie Visual Studio als Administrator aus, und wählen Sie **Datei**, **neu**, **Projekt**.</span><span class="sxs-lookup"><span data-stu-id="b92d3-124">Run Visual Studio as administrator, and choose **File**, **New**, **Project**.</span></span>
     
   
-2. <span data-ttu-id="aea39-125">Wählen Sie im Dialogfeld **Neues Projekt** aus der Dropdownliste oben im Dialogfeld die Option **.NET Framework 4.5**.</span><span class="sxs-lookup"><span data-stu-id="aea39-125">In the **New Project** dialog box, choose **.NET Framework 4.5** from the drop-down list at the top of the dialog box.</span></span>
+2. <span data-ttu-id="b92d3-125">Wählen Sie im Dialogfeld **Neues Projekt** aus der Dropdownliste oben im Dialogfeld die Option **.NET Framework 4.5**.</span><span class="sxs-lookup"><span data-stu-id="b92d3-125">In the **New Project** dialog box, choose **.NET Framework 4.5** from the drop-down list at the top of the dialog box.</span></span>
     
   
-3. <span data-ttu-id="aea39-126">In **der Vorlagenliste** erweitern Sie **Office/SharePoint**, wählen Sie **SharePoint-Lösungen**, und wählen Sie dann die Vorlage **SharePoint - leeres Projekt**.</span><span class="sxs-lookup"><span data-stu-id="aea39-126">In the **Templates** list, expand **Office/SharePoint**, choose **SharePoint Solutions**, and then choose the **SharePoint - Empty Project** template.</span></span>
+3. <span data-ttu-id="b92d3-126">In **der Vorlagenliste** erweitern Sie **Office/SharePoint**, wählen Sie **SharePoint-Lösungen**, und wählen Sie dann die Vorlage **SharePoint - leeres Projekt**.</span><span class="sxs-lookup"><span data-stu-id="b92d3-126">In the **Templates** list, expand **Office/SharePoint**, choose **SharePoint Solutions**, and then choose the **SharePoint - Empty Project** template.</span></span>
     
   
-4. <span data-ttu-id="aea39-127">Nennen Sie das Projekt FollowPeopleJSOM, und wählen Sie dann auf die Schaltfläche **OK**.</span><span class="sxs-lookup"><span data-stu-id="aea39-127">Name the project FollowPeopleJSOM, and then choose the **OK** button.</span></span>
+4. <span data-ttu-id="b92d3-127">Nennen Sie das Projekt FollowPeopleJSOM, und wählen Sie dann auf die Schaltfläche **OK**.</span><span class="sxs-lookup"><span data-stu-id="b92d3-127">Name the project FollowPeopleJSOM, and then choose the **OK** button.</span></span>
     
   
-5. <span data-ttu-id="aea39-128">Wählen Sie in das Dialogfeld des **Assistenten zum Anpassen von SharePoint** **als farmlösung bereitstellen**, und wählen Sie dann auf die Schaltfläche **Fertig stellen**.</span><span class="sxs-lookup"><span data-stu-id="aea39-128">In the **SharePoint Customization Wizard** dialog box, choose **Deploy as a farm solution**, and then choose the **Finish** button.</span></span>
+5. <span data-ttu-id="b92d3-128">Wählen Sie in das Dialogfeld des **Assistenten zum Anpassen von SharePoint** **als farmlösung bereitstellen**, und wählen Sie dann auf die Schaltfläche **Fertig stellen**.</span><span class="sxs-lookup"><span data-stu-id="b92d3-128">In the **SharePoint Customization Wizard** dialog box, choose **Deploy as a farm solution**, and then choose the **Finish** button.</span></span>
     
   
-6. <span data-ttu-id="aea39-129">Im **Projektmappen-Explorer** das Kontextmenü für das Projekt **FollowPeopleJSOM** öffnen, und fügen Sie eine SharePoint "Layouts" Ordner zugeordnet.</span><span class="sxs-lookup"><span data-stu-id="aea39-129">In **Solution Explorer**, open the shortcut menu for the **FollowPeopleJSOM** project, and then add a SharePoint "Layouts" mapped folder.</span></span>
+6. <span data-ttu-id="b92d3-129">Im **Projektmappen-Explorer** das Kontextmenü für das Projekt **FollowPeopleJSOM** öffnen, und fügen Sie eine SharePoint "Layouts" Ordner zugeordnet.</span><span class="sxs-lookup"><span data-stu-id="b92d3-129">In **Solution Explorer**, open the shortcut menu for the **FollowPeopleJSOM** project, and then add a SharePoint "Layouts" mapped folder.</span></span>
     
   
-7. <span data-ttu-id="aea39-130">Öffnen Sie im Ordner **Layouts** das Kontextmenü für den Ordner **FollowPeopleJSOM**, und fügen Sie anschließend eine neue SharePoint-Anwendungsseite namens „FollowPeople.aspx“ hinzu.</span><span class="sxs-lookup"><span data-stu-id="aea39-130">In the **Layouts** folder, open the shortcut menu for the **FollowPeopleJSOM** folder, and then add a new SharePoint application page namedFollowPeople.aspx.</span></span>
+7. <span data-ttu-id="b92d3-130">Öffnen Sie im Ordner **Layouts** das Kontextmenü für den Ordner **FollowPeopleJSOM**, und fügen Sie anschließend eine neue SharePoint-Anwendungsseite namens „FollowPeople.aspx“ hinzu.</span><span class="sxs-lookup"><span data-stu-id="b92d3-130">In the **Layouts** folder, open the shortcut menu for the **FollowPeopleJSOM** folder, and then add a new SharePoint application page namedFollowPeople.aspx.</span></span>
     
-   > <span data-ttu-id="aea39-131">**Hinweis:** Die Codebeispiele in diesem Artikel legen benutzerdefinierten Code im Seitenmarkup fest, verwenden jedoch nicht die Code-Behind-Klasse, die Visual Studio für die Seite erstellt.</span><span class="sxs-lookup"><span data-stu-id="aea39-131">**Note:** The code examples in this article define custom code in the page markup but do not use the code-behind class that Visual Studio creates for the page.</span></span> 
+    > [!NOTE]
+    > <span data-ttu-id="b92d3-131">Die Codebeispiele in diesem Artikel definieren benutzerdefinierten Code im Seitenmarkup, verwenden jedoch keine Code-Behind-Klasse, die Visual Studio für die Seite erstellt.</span><span class="sxs-lookup"><span data-stu-id="b92d3-131">Note: The code examples in this article define custom code in the page markup but do not use the code-behind class that Visual Studio creates for the page.</span></span> 
 
-8. <span data-ttu-id="aea39-132">Öffnen Sie das Kontextmenü für die Seite „FollowPeople.aspx“, und wählen Sie dann **Als Startelement festlegen** aus.</span><span class="sxs-lookup"><span data-stu-id="aea39-132">Open the shortcut menu for the FollowPeople.aspx page, and then choose **Set as Startup Item**.</span></span>
+8. <span data-ttu-id="b92d3-132">Öffnen Sie das Kontextmenü für die Seite „FollowPeople.aspx“, und wählen Sie dann **Als Startelement festlegen** aus.</span><span class="sxs-lookup"><span data-stu-id="b92d3-132">Open the shortcut menu for the FollowPeople.aspx page, and then choose **Set as Startup Item**.</span></span>
     
   
-9. <span data-ttu-id="aea39-p103">Fügen Sie im Markup der Datei „FollowPeople.aspx“ den folgenden Code zwischen den **asp:Content**-Haupttags hinzu. Dieser Code definiert Steuerelemente und Skriptverweise.</span><span class="sxs-lookup"><span data-stu-id="aea39-p103">In the markup of the FollowPeople.aspx file, paste the following code between the "Main" **asp:Content** tags. This code defines controls and script references.</span></span>
+9. <span data-ttu-id="b92d3-p103">Fügen Sie im Markup der Datei „FollowPeople.aspx“ den folgenden Code zwischen den **asp:Content**-Haupttags hinzu. Dieser Code definiert Steuerelemente und Skriptverweise.</span><span class="sxs-lookup"><span data-stu-id="b92d3-p103">In the markup of the FollowPeople.aspx file, paste the following code between the "Main" **asp:Content** tags. This code defines controls and script references.</span></span>
     
 ```HTML
 <span id="followResults"></span><br/><br />
@@ -96,39 +94,41 @@ ms.lasthandoff: 11/15/2017
 </script>
 ```
 
-   > <span data-ttu-id="aea39-135">**Hinweis:** Im Beispiel „Abrufen von Followern und gefolgten Personen“ wird das Schaltflächen-Steuerelement oder das Formulardigest-Steuerelement nicht verwendet, da es nur für Vorgänge erforderlich ist, die Serverinhalte aktualisieren.</span><span class="sxs-lookup"><span data-stu-id="aea39-135">**Note:** The "Get followers and followed people" example doesn't use the button control or the form digest control, which is only required for operations that update server content.</span></span> <span data-ttu-id="aea39-136">Ein Formulardigest generiert einen Nachrichtenhash zur Sicherheitsprüfung. </span><span class="sxs-lookup"><span data-stu-id="aea39-136">A form digest generates a message digest used for security validation.</span></span> 
+    > [!NOTE]
+    > The "Get followers and followed people" example doesn't use the button control or the form digest control, which is only required for operations that update server content. A form digest generates a message digest used for security validation. 
 
-10. <span data-ttu-id="aea39-137">Ersetzen Sie den Kommentar zwischen den **script**-Tags durch den Beispielcode aus einem der folgenden Szenarios:</span><span class="sxs-lookup"><span data-stu-id="aea39-137">Replace the comment between the **script** tags with the code example from one of the following scenarios:</span></span>
+10. <span data-ttu-id="b92d3-135">Ersetzen Sie den Kommentar zwischen den **script**-Tags durch den Beispielcode aus einem der folgenden Szenarios:</span><span class="sxs-lookup"><span data-stu-id="b92d3-135">Replace the comment between the **script** tags with the code example from one of the following scenarios:</span></span>
     
-  -  [<span data-ttu-id="aea39-138">Starten oder Beenden von Personen folgen</span><span class="sxs-lookup"><span data-stu-id="aea39-138">Start or stop following people</span></span>](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_FollowPeople)  
-  -  [<span data-ttu-id="aea39-139">Nachfolgende Aktivitäten und beobachteter Personen heranziehen.</span><span class="sxs-lookup"><span data-stu-id="aea39-139">Get followers and followed people</span></span>](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_GetFollowers)
+  -  [<span data-ttu-id="b92d3-136">Starten oder Beenden von Personen folgen</span><span class="sxs-lookup"><span data-stu-id="b92d3-136">Start or stop following people</span></span>](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_FollowPeople)  
+  -  [<span data-ttu-id="b92d3-137">Nachfolgende Aktivitäten und beobachteter Personen heranziehen.</span><span class="sxs-lookup"><span data-stu-id="b92d3-137">Get followers and followed people</span></span>](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_GetFollowers)
     
-11. <span data-ttu-id="aea39-140">Wählen Sie zum Testen der Lösung auf der Menüleiste **Debuggen**, **Debuggen starten** aus.</span><span class="sxs-lookup"><span data-stu-id="aea39-140">To test the solution, on the menu bar, choose **Debug**, **Start Debugging**.</span></span>
-    
-  
-
-## <a name="code-example-start-or-stop-following-people-by-using-the-sharepoint-javascript-object-model"></a><span data-ttu-id="aea39-141">Codebeispiel: Starten oder beenden nach Personen, für die mithilfe der SharePoint JavaScript-Objektmodells</span><span class="sxs-lookup"><span data-stu-id="aea39-141">Code example: Start or stop following people by using the SharePoint JavaScript object model</span></span>
-<span data-ttu-id="aea39-142"><a name="bk_FollowPeople"> </a></span><span class="sxs-lookup"><span data-stu-id="aea39-142"><a name="bk_FollowPeople"> </a></span></span>
-
-<span data-ttu-id="aea39-p105">Im folgenden Codebeispiel wird der aktuelle Benutzer Start nach oder einen Zielbenutzer nach Beenden. Außerdem wird gezeigt, wie Sie:</span><span class="sxs-lookup"><span data-stu-id="aea39-p105">The following code example makes the current user start following or stop following a target user. It shows how to:</span></span>
-  
-    
-    
-
-- <span data-ttu-id="aea39-145">Überprüfen Sie, ob der aktuelle Benutzer einen Zielbenutzer folgt, mit der  [IsFollowed](http://msdn.microsoft.com/library/2c1f62e6-fb75-ad4d-c081-36408b418c21%28Office.15%29.aspx) -Methode.</span><span class="sxs-lookup"><span data-stu-id="aea39-145">Check whether the current user is following a target user by using the  [isFollowed](http://msdn.microsoft.com/library/2c1f62e6-fb75-ad4d-c081-36408b418c21%28Office.15%29.aspx) method.</span></span>
-    
-  
-- <span data-ttu-id="aea39-146">Rufen Sie die Anzahl der Personen, die der aktuelle Benutzer mithilfe der Methode  [GetFollowedCount](http://msdn.microsoft.com/library/97b53b4f-481a-cf41-1854-8f3ff860b2bb%28Office.15%29.aspx) folgt.</span><span class="sxs-lookup"><span data-stu-id="aea39-146">Get the count of people who the current user is following by using the  [getFollowedCount](http://msdn.microsoft.com/library/97b53b4f-481a-cf41-1854-8f3ff860b2bb%28Office.15%29.aspx) method.</span></span>
-    
-  
-- <span data-ttu-id="aea39-147">Starten Sie den Zielbenutzer mithilfe der Methode  [Führen Sie die](http://msdn.microsoft.com/library/40d14320-27ba-2941-b0e2-be3b5a407c89%28Office.15%29.aspx) folgenden.</span><span class="sxs-lookup"><span data-stu-id="aea39-147">Start following the target user by using the  [follow](http://msdn.microsoft.com/library/40d14320-27ba-2941-b0e2-be3b5a407c89%28Office.15%29.aspx) method.</span></span>
-    
-  
-- <span data-ttu-id="aea39-148">Beenden Sie das Folgen des Zielbenutzers mithilfe der [stopFollowing](http://msdn.microsoft.com/library/65b0e9be-dc5e-09fb-c57f-7a933de09a4c%28Office.15%29.aspx) -Methode.</span><span class="sxs-lookup"><span data-stu-id="aea39-148">Stop following the target user by using the  [stopFollowing](http://msdn.microsoft.com/library/65b0e9be-dc5e-09fb-c57f-7a933de09a4c%28Office.15%29.aspx) method.</span></span>
+11. <span data-ttu-id="b92d3-138">Wählen Sie zum Testen der Lösung auf der Menüleiste **Debuggen**, **Debuggen starten** aus.</span><span class="sxs-lookup"><span data-stu-id="b92d3-138">To test the solution, on the menu bar, choose **Debug**, **Start Debugging**.</span></span>
     
   
 
-> <span data-ttu-id="aea39-149">**Hinweis:** Fügen Sie den folgenden Code zwischen den **script**-Tags ein, die Sie im Verfahren [Erstellen einer Farmlösung und Anwendungsseite](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_CreateSolution) hinzugefügt haben.</span><span class="sxs-lookup"><span data-stu-id="aea39-149">**Note:** Paste the following code between the **script** tags that you added in the [Create a farm solution and application page](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_CreateSolution) procedure.</span></span> <span data-ttu-id="aea39-150">Ändern Sie dann den Platzhalterwert für die Variable **targetUser**, bevor Sie den Code ausführen.</span><span class="sxs-lookup"><span data-stu-id="aea39-150">Then, change the placeholder value for the **targetUser** variable before you run the code.</span></span>
+## <a name="code-example-start-or-stop-following-people-by-using-the-sharepoint-javascript-object-model"></a><span data-ttu-id="b92d3-139">Codebeispiel: Starten oder beenden nach Personen, für die mithilfe der SharePoint JavaScript-Objektmodells</span><span class="sxs-lookup"><span data-stu-id="b92d3-139">Code example: Start or stop following people by using the SharePoint JavaScript object model</span></span>
+<span data-ttu-id="b92d3-140"><a name="bk_FollowPeople"> </a></span><span class="sxs-lookup"><span data-stu-id="b92d3-140"></span></span>
+
+<span data-ttu-id="b92d3-p104">Im folgenden Codebeispiel wird der aktuelle Benutzer Start nach oder einen Zielbenutzer nach Beenden. Außerdem wird gezeigt, wie Sie:</span><span class="sxs-lookup"><span data-stu-id="b92d3-p104">The following code example makes the current user start following or stop following a target user. It shows how to:</span></span>
+  
+    
+    
+
+- <span data-ttu-id="b92d3-143">Überprüfen Sie, ob der aktuelle Benutzer einen Zielbenutzer folgt, mit der  [IsFollowed](http://msdn.microsoft.com/library/2c1f62e6-fb75-ad4d-c081-36408b418c21%28Office.15%29.aspx) -Methode.</span><span class="sxs-lookup"><span data-stu-id="b92d3-143">Check whether the current user is following a target user by using the  [isFollowed](http://msdn.microsoft.com/library/2c1f62e6-fb75-ad4d-c081-36408b418c21%28Office.15%29.aspx) method.</span></span>
+    
+  
+- <span data-ttu-id="b92d3-144">Rufen Sie die Anzahl der Personen, die der aktuelle Benutzer mithilfe der Methode  [GetFollowedCount](http://msdn.microsoft.com/library/97b53b4f-481a-cf41-1854-8f3ff860b2bb%28Office.15%29.aspx) folgt.</span><span class="sxs-lookup"><span data-stu-id="b92d3-144">Get the count of people who the current user is following by using the  [getFollowedCount](http://msdn.microsoft.com/library/97b53b4f-481a-cf41-1854-8f3ff860b2bb%28Office.15%29.aspx) method.</span></span>
+    
+  
+- <span data-ttu-id="b92d3-145">Starten Sie den Zielbenutzer mithilfe der Methode  [Führen Sie die](http://msdn.microsoft.com/library/40d14320-27ba-2941-b0e2-be3b5a407c89%28Office.15%29.aspx) folgenden.</span><span class="sxs-lookup"><span data-stu-id="b92d3-145">Start following the target user by using the  [follow](http://msdn.microsoft.com/library/40d14320-27ba-2941-b0e2-be3b5a407c89%28Office.15%29.aspx) method.</span></span>
+    
+  
+- <span data-ttu-id="b92d3-146">Beenden Sie das Folgen des Zielbenutzers mithilfe der [stopFollowing](http://msdn.microsoft.com/library/65b0e9be-dc5e-09fb-c57f-7a933de09a4c%28Office.15%29.aspx) -Methode.</span><span class="sxs-lookup"><span data-stu-id="b92d3-146">Stop following the target user by using the  [stopFollowing](http://msdn.microsoft.com/library/65b0e9be-dc5e-09fb-c57f-7a933de09a4c%28Office.15%29.aspx) method.</span></span>
+    
+  
+
+> [!NOTE]
+>  <span data-ttu-id="b92d3-147">Fügen Sie den folgenden Code zwischen den **script**-Tags ein, die Sie im Verfahren [Erstellen einer Farmlösung und Anwendungsseite](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_CreateSolution) hinzugefügt haben.</span><span class="sxs-lookup"><span data-stu-id="b92d3-147">Note: Paste the following code between the **script** tags that you added in the [Create a farm solution and application page](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_CreateSolution) procedure.</span></span> <span data-ttu-id="b92d3-148">Ändern Sie dann den Platzhalterwert für die Variable **targetUser**, bevor Sie den Code ausführen.</span><span class="sxs-lookup"><span data-stu-id="b92d3-148">Then, change the placeholder value for the **targetUser** variable before you run the code.</span></span>
   
     
     
@@ -205,25 +205,24 @@ function requestFailed(sender, args) {
 ```
 
 
-## <a name="code-example-get-followers-and-followed-people-by-using-the-sharepoint-javascript-object-model"></a><span data-ttu-id="aea39-151">Codebeispiel: Abrufen von Followern und gefolgten Personen mithilfe des JavaScript-Objektmodells in SharePoint</span><span class="sxs-lookup"><span data-stu-id="aea39-151">Code example: Get followers and followed people by using the SharePoint JavaScript object model</span></span>
-<span data-ttu-id="aea39-152"><a name="bk_GetFollowers"> </a></span><span class="sxs-lookup"><span data-stu-id="aea39-152"><a name="bk_GetFollowers"> </a></span></span>
+## <a name="code-example-get-followers-and-followed-people-by-using-the-sharepoint-javascript-object-model"></a><span data-ttu-id="b92d3-149">Codebeispiel: Abrufen von Followern und gefolgten Personen mithilfe des JavaScript-Objektmodells in SharePoint</span><span class="sxs-lookup"><span data-stu-id="b92d3-149">Code example: Get followers and followed people by using the SharePoint JavaScript object model</span></span>
+<span data-ttu-id="b92d3-150"><a name="bk_GetFollowers"> </a></span><span class="sxs-lookup"><span data-stu-id="b92d3-150"></span></span>
 
-<span data-ttu-id="aea39-p107">Das folgende Codebeispiel ruft die Personen, die der aktuelle Benutzer folgt und ruft die Personen, die vom aktuellen Benutzer eingehalten werden. Außerdem wird gezeigt, wie Sie:</span><span class="sxs-lookup"><span data-stu-id="aea39-p107">The following code example gets the people who the current user is following and gets the people who are followed by the current user. It shows how to:</span></span>
+<span data-ttu-id="b92d3-p106">Das folgende Codebeispiel ruft die Personen, die der aktuelle Benutzer folgt und ruft die Personen, die vom aktuellen Benutzer eingehalten werden. Außerdem wird gezeigt, wie Sie:</span><span class="sxs-lookup"><span data-stu-id="b92d3-p106">The following code example gets the people who the current user is following and gets the people who are followed by the current user. It shows how to:</span></span>
   
     
     
 
-- <span data-ttu-id="aea39-155">Rufen Sie die Personen, die der aktuelle Benutzer mithilfe der Methode  [GetFollowed](http://msdn.microsoft.com/library/432a7cec-6add-fdb1-a79f-a93414ee8cd3%28Office.15%29.aspx) folgt.</span><span class="sxs-lookup"><span data-stu-id="aea39-155">Get the people who the current user is following by using the  [getFollowed](http://msdn.microsoft.com/library/432a7cec-6add-fdb1-a79f-a93414ee8cd3%28Office.15%29.aspx) method.</span></span>
+- <span data-ttu-id="b92d3-153">Rufen Sie die Personen, die der aktuelle Benutzer mithilfe der Methode  [GetFollowed](http://msdn.microsoft.com/library/432a7cec-6add-fdb1-a79f-a93414ee8cd3%28Office.15%29.aspx) folgt.</span><span class="sxs-lookup"><span data-stu-id="b92d3-153">Get the people who the current user is following by using the  [getFollowed](http://msdn.microsoft.com/library/432a7cec-6add-fdb1-a79f-a93414ee8cd3%28Office.15%29.aspx) method.</span></span>
     
   
-- <span data-ttu-id="aea39-156">Rufen Sie die Personen, die den aktuellen Benutzer folgen, indem Sie mithilfe der Methode  [GetFollowers](http://msdn.microsoft.com/library/ae4a944b-c043-05fb-c74b-101d2ce4a813%28Office.15%29.aspx) und übergeben **1** **User** Actor Typen dargestellt.</span><span class="sxs-lookup"><span data-stu-id="aea39-156">Get the people who are following the current user by using the  [getFollowers](http://msdn.microsoft.com/library/ae4a944b-c043-05fb-c74b-101d2ce4a813%28Office.15%29.aspx) method and passing **1** to represent **User** actor types.</span></span>
+- <span data-ttu-id="b92d3-154">Rufen Sie die Personen, die den aktuellen Benutzer folgen, indem Sie mithilfe der Methode  [GetFollowers](http://msdn.microsoft.com/library/ae4a944b-c043-05fb-c74b-101d2ce4a813%28Office.15%29.aspx) und übergeben **1** **User** Actor Typen dargestellt.</span><span class="sxs-lookup"><span data-stu-id="b92d3-154">Get the people who are following the current user by using the  [getFollowers](http://msdn.microsoft.com/library/ae4a944b-c043-05fb-c74b-101d2ce4a813%28Office.15%29.aspx) method and passing **1** to represent **User** actor types.</span></span>
     
   
-- <span data-ttu-id="aea39-157">Iterieren Sie durch die Gruppen von Personen, und rufen Sie den Anzeigenamen, den persönlichen Website-URI und den Bild-URI jeder Person ab.</span><span class="sxs-lookup"><span data-stu-id="aea39-157">Iterate through the groups of people and get each person's display name, personal site URI, and picture URI.</span></span>
+- <span data-ttu-id="b92d3-155">Iterieren Sie durch die Gruppen von Personen, und rufen Sie den Anzeigenamen, den persönlichen Website-URI und den Bild-URI jeder Person ab.</span><span class="sxs-lookup"><span data-stu-id="b92d3-155">Iterate through the groups of people and get each person's display name, personal site URI, and picture URI.</span></span>
     
-  
-
-> <span data-ttu-id="aea39-158">**Hinweis:** Fügen Sie den folgenden Code zwischen den **script**-Tags ein, die Sie im Verfahren [Erstellen einer Farmlösung und Anwendungsseite](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_CreateSolution) hinzugefügt haben.</span><span class="sxs-lookup"><span data-stu-id="aea39-158">**Note:** Paste the following code between the **script** tags that you added in the [Create a farm solution and application page](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_CreateSolution) procedure.</span></span>
+> [!NOTE]
+> <span data-ttu-id="b92d3-156">Fügen Sie den folgenden Code zwischen den **script**-Tags ein, die Sie im Verfahren [Erstellen einer Farmlösung und Anwendungsseite](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_CreateSolution) hinzugefügt haben.</span><span class="sxs-lookup"><span data-stu-id="b92d3-156">Note: Paste the following code between the **script** tags that you added in the [Create a farm solution and application page](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_CreateSolution) procedure.</span></span>
   
     
     
@@ -292,14 +291,14 @@ function requestFailed(sender, args) {
 ```
 
 
-## <a name="additional-resources"></a><span data-ttu-id="aea39-159">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="aea39-159">Additional resources</span></span>
-<span data-ttu-id="aea39-160"><a name="bk_AdditionalResources"> </a></span><span class="sxs-lookup"><span data-stu-id="aea39-160"><a name="bk_AdditionalResources"> </a></span></span>
+## <a name="see-also"></a><span data-ttu-id="b92d3-157">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="b92d3-157">See also</span></span>
+<span data-ttu-id="b92d3-158"><a name="bk_AdditionalResources"> </a></span><span class="sxs-lookup"><span data-stu-id="b92d3-158"></span></span>
 
 
--  [<span data-ttu-id="aea39-161">Folgen von Personen in SharePoint</span><span class="sxs-lookup"><span data-stu-id="aea39-161">Follow people in SharePoint</span></span>](follow-people-in-sharepoint.md)
+-  [<span data-ttu-id="b92d3-159">Folgen von Personen in SharePoint</span><span class="sxs-lookup"><span data-stu-id="b92d3-159">Follow people in SharePoint</span></span>](follow-people-in-sharepoint.md)
     
   
--  [<span data-ttu-id="aea39-162">Vorgehensweise: führen Sie die Personen mithilfe des clientobjektmodells .NET SharePoint</span><span class="sxs-lookup"><span data-stu-id="aea39-162">How to: Follow people by using the .NET client object model in SharePoint</span></span>](how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint.md)
+-  [<span data-ttu-id="b92d3-160">Vorgehensweise: führen Sie die Personen mithilfe des clientobjektmodells .NET SharePoint</span><span class="sxs-lookup"><span data-stu-id="b92d3-160">How to: Follow people by using the .NET client object model in SharePoint</span></span>](how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint.md)
     
   
 

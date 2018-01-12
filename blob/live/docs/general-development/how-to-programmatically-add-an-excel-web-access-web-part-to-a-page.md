@@ -5,71 +5,70 @@ keywords: how to,howdoi,howto,webpart
 f1_keywords: how to,howdoi,howto,webpart
 ms.prod: sharepoint
 ms.assetid: 858bb0f6-654a-4f12-ba0b-4776bda5ff6d
-ms.openlocfilehash: 3b7a2529cfa7f79ccadd8ac2f78babe2682c54f1
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 940389dc1ff428ae01e932beb4c7c5d267490760
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="programmatically-add-an-excel-web-access-web-part-to-a-page"></a><span data-ttu-id="d8ee8-103">Programmgesteuertes Hinzufügen eines Excel Web Access-Webparts zu einer Seite</span><span class="sxs-lookup"><span data-stu-id="d8ee8-103">How to: Programmatically Add an Excel Web Access Web Part to a Page</span></span>
+# <a name="programmatically-add-an-excel-web-access-web-part-to-a-page"></a><span data-ttu-id="0d182-103">Programmgesteuertes Hinzufügen eines Excel Web Access-Webparts zu einer Seite</span><span class="sxs-lookup"><span data-stu-id="0d182-103">Programmatically add an Excel Web Access Web Part to a page</span></span>
 
-<span data-ttu-id="d8ee8-p101">This example shows how to programmatically add an Excel Web Access Web Part to a SharePoint page. It also shows you how to display an Excel workbook programmatically in an Excel Web Access Web Part.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-p101">This example shows how to programmatically add an Excel Web Access Web Part to a SharePoint page. It also shows you how to display an Excel workbook programmatically in an Excel Web Access Web Part.</span></span> 
+<span data-ttu-id="0d182-p101">This example shows how to programmatically add an Excel Web Access Web Part to a SharePoint page. It also shows you how to display an Excel workbook programmatically in an Excel Web Access Web Part.</span><span class="sxs-lookup"><span data-stu-id="0d182-p101">This example shows how to programmatically add an Excel Web Access Web Part to a SharePoint page. It also shows you how to display an Excel workbook programmatically in an Excel Web Access Web Part.</span></span> 
   
     
     
 
-<span data-ttu-id="d8ee8-106">Im folgenden Projekt wird Microsoft Visual Studio verwendet.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-106">The following project uses Microsoft Visual Studio.</span></span>
-> <span data-ttu-id="d8ee8-107">**Hinweis** Abhängig von der Visual Studio-Version und den Einstellungen der Visual Studio IDE (integrierte Entwicklungsumgebung) weichen der Prozess und die Schritte zum Erstellen eines Visual Studio-Projekts möglicherweise geringfügig von den in diesem Thema erläuterten Verfahren ab.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-107">**Note:** Depending on the Visual Studio version and the Visual Studio integrated development environment (IDE) settings that you are using, the process and steps to create a Visual Studio project could be slightly different from the procedures shown in this topic.</span></span> 
+<span data-ttu-id="0d182-106">Im folgenden Projekt wird Microsoft Visual Studio verwendet.</span><span class="sxs-lookup"><span data-stu-id="0d182-106">The following project uses Microsoft Visual Studio.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="0d182-107">Abhängig von der Visual Studio-Version und den Einstellungen der Visual Studio IDE (integrierte Entwicklungsumgebung) weichen der Prozess und die Schritte zum Erstellen eines Visual Studio-Projekts möglicherweise geringfügig von den in diesem Thema erläuterten Verfahren ab.</span><span class="sxs-lookup"><span data-stu-id="0d182-107">Note: Depending on the Visual Studio version and the Visual Studio integrated development environment (IDE) settings that you are using, the process and steps to create a Visual Studio project could be slightly different from the procedures shown in this topic.</span></span> 
   
-    
-    
-
-
-> <span data-ttu-id="d8ee8-108">**Hinweis:** Es wird vorausgesetzt, dass Sie bereits eine SharePoint-Dokumentbibliothek erstellt und diese als vertrauenswürdigen Speicherort definiert haben.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-108">**Note:** It is assumed that you have already created a SharePoint document library and made it a trusted location.</span></span> <span data-ttu-id="d8ee8-109">Weitere Informationen finden Sie unter [Vorgehensweise: Vertrauen zu einem Standort](how-to-trust-a-location.md).</span><span class="sxs-lookup"><span data-stu-id="d8ee8-109">For more information, see  [How to: Trust a Location](how-to-trust-a-location.md).</span></span> 
-  
-    
-    
-
-
-## <a name="adding-a-reference"></a><span data-ttu-id="d8ee8-110">Hinzufügen eines Verweises</span><span class="sxs-lookup"><span data-stu-id="d8ee8-110">Adding a Reference</span></span>
-
-<span data-ttu-id="d8ee8-p103">In den folgenden Schritten wird erläutert, wie Sie nach „Microsoft.Office.Excel.WebUI.dll“ suchen und einen Verweis darauf hinzufügen. Wiederholen Sie das Verfahren für „Microsoft.Office.Excel.WebUI.Internal.dll“ und „Microsoft.SharePoint.dll“.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-p103">The following steps show how to locate Microsoft.Office.Excel.WebUI.dll and how to add a reference to it. Repeat for Microsoft.Office.Excel.WebUI.Internal.dll and Microsoft.SharePoint.dll.</span></span>
-  
-    
-    
-
-> <span data-ttu-id="d8ee8-113">**Hinweis:** Es wird davon ausgegangen, dass Sie „Microsoft.Office.Excel.WebUI.dll“ und „Microsoft.Office.Excel.WebUI.Internal.dll“ bereits aus dem globalen Assemblycache in einen Ordner Ihrer Wahl kopiert haben.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-113">**Note:** It is assumed that you have already copied Microsoft.Office.Excel.WebUI.dll and Microsoft.Office.Excel.WebUI.Internal.dll from the global assembly cache to a folder of your choice.</span></span> <span data-ttu-id="d8ee8-114">Weitere Informationen zum Suchen und Kopieren von „Microsoft.Office.Excel.WebUI.dll“ und „Microsoft.Office.Excel.WebUI.Internal.dll“ finden Sie unter [Vorgehensweise: Suchen und Kopieren von „Microsoft.Office.Excel.WebUI.dll“ und „Microsoft.Office.Excel.WebUI.Internal.dll“](how-to-locate-and-copy-microsoft-office-excel-webui-dll-and-microsoft-office-exc.md).</span><span class="sxs-lookup"><span data-stu-id="d8ee8-114">For more information about how to locate and copy Microsoft.Office.Excel.WebUI.dll and Microsoft.Office.Excel.WebUI.Internal.dll, see  [How to: Locate and Copy Microsoft.Office.Excel.WebUI.dll and Microsoft.Office.Excel.WebUI.Internal.dll](how-to-locate-and-copy-microsoft-office-excel-webui-dll-and-microsoft-office-exc.md).</span></span> 
+> [!NOTE]
+> <span data-ttu-id="0d182-108">Es wird vorausgesetzt, dass Sie bereits eine SharePoint-Dokumentbibliothek erstellt und diese als vertrauenswürdigen Speicherort definiert haben.</span><span class="sxs-lookup"><span data-stu-id="0d182-108">Note: It is assumed that you have already created a SharePoint document library and made it a trusted location.</span></span> <span data-ttu-id="0d182-109">Weitere Informationen finden Sie unter [Vorgehensweise: Vertrauen zu einem Standort](how-to-trust-a-location.md).</span><span class="sxs-lookup"><span data-stu-id="0d182-109">For more information, see  [How to: Trust a Location](how-to-trust-a-location.md).</span></span> 
   
     
     
 
 
-### <a name="to-add-a-reference-to-microsoftofficeexcelwebuidll"></a><span data-ttu-id="d8ee8-115">So fügen Sie einen Verweis auf „Microsoft.Office.Excel.WebUI.dll“ hinzu</span><span class="sxs-lookup"><span data-stu-id="d8ee8-115">To add a reference to Microsoft.Office.Excel.WebUI.dll</span></span>
+## <a name="adding-a-reference"></a><span data-ttu-id="0d182-110">Hinzufügen eines Verweises</span><span class="sxs-lookup"><span data-stu-id="0d182-110">Adding a Reference</span></span>
+
+<span data-ttu-id="0d182-p103">In den folgenden Schritten wird erläutert, wie Sie nach „Microsoft.Office.Excel.WebUI.dll“ suchen und einen Verweis darauf hinzufügen. Wiederholen Sie das Verfahren für „Microsoft.Office.Excel.WebUI.Internal.dll“ und „Microsoft.SharePoint.dll“.</span><span class="sxs-lookup"><span data-stu-id="0d182-p103">The following steps show how to locate Microsoft.Office.Excel.WebUI.dll and how to add a reference to it. Repeat for Microsoft.Office.Excel.WebUI.Internal.dll and Microsoft.SharePoint.dll.</span></span>
+  
+> [!NOTE]
+> <span data-ttu-id="0d182-113">s wird davon ausgegangen, dass Sie „Microsoft.Office.Excel.WebUI.dll“ und „Microsoft.Office.Excel.WebUI.Internal.dll“ bereits aus dem globalen Assemblycache in einen Ordner Ihrer Wahl kopiert haben.</span><span class="sxs-lookup"><span data-stu-id="0d182-113">Note: It is assumed that you have already copied Microsoft.Office.Excel.WebUI.dll and Microsoft.Office.Excel.WebUI.Internal.dll from the global assembly cache to a folder of your choice.</span></span> <span data-ttu-id="0d182-114">Weitere Informationen zum Suchen und Kopieren von „Microsoft.Office.Excel.WebUI.dll“ und „Microsoft.Office.Excel.WebUI.Internal.dll“ finden Sie unter [Vorgehensweise: Suchen und Kopieren von „Microsoft.Office.Excel.WebUI.dll“ und „Microsoft.Office.Excel.WebUI.Internal.dll“](how-to-locate-and-copy-microsoft-office-excel-webui-dll-and-microsoft-office-exc.md).</span><span class="sxs-lookup"><span data-stu-id="0d182-114">For more information about how to locate and copy Microsoft.Office.Excel.WebUI.dll and Microsoft.Office.Excel.WebUI.Internal.dll, see  [How to: Locate and Copy Microsoft.Office.Excel.WebUI.dll and Microsoft.Office.Excel.WebUI.Internal.dll](how-to-locate-and-copy-microsoft-office-excel-webui-dll-and-microsoft-office-exc.md).</span></span> 
+  
+    
+    
 
 
-1. <span data-ttu-id="d8ee8-116">On the **Project** menu, click **Add Reference**.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-116">On the **Project** menu, click **Add Reference**.</span></span>
+### <a name="to-add-a-reference-to-microsoftofficeexcelwebuidll"></a><span data-ttu-id="0d182-115">So fügen Sie einen Verweis auf „Microsoft.Office.Excel.WebUI.dll“ hinzu</span><span class="sxs-lookup"><span data-stu-id="0d182-115">To add a reference to Microsoft.Office.Excel.WebUI.dll</span></span>
+
+
+1. <span data-ttu-id="0d182-116">On the **Project** menu, click **Add Reference**.</span><span class="sxs-lookup"><span data-stu-id="0d182-116">On the **Project** menu, click **Add Reference**.</span></span>
     
   
-2. <span data-ttu-id="d8ee8-117">Klicken Sie im Dialogfeld **Verweis hinzufügen** auf **Durchsuchen**.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-117">In the **Add Reference** dialog box, click **Browse**.</span></span>
+2. <span data-ttu-id="0d182-117">Klicken Sie im Dialogfeld **Verweis hinzufügen** auf **Durchsuchen**.</span><span class="sxs-lookup"><span data-stu-id="0d182-117">In the **Add Reference** dialog box, click **Browse**.</span></span>
     
-    > <span data-ttu-id="d8ee8-118">**Hinweis:** Sie können das Dialogfeld **Verweis hinzufügen** auch im Bereich **Projektmappen-Explorer** öffnen, indem Sie mit der rechten Maustaste auf **Verweise** klicken und **Verweis hinzufügen** auswählen.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-118">**Note:** You can also open the **Add Reference** dialog box in the **Solution Explorer** pane by right-clicking **References** and selecting **Add Reference**.</span></span> 
-3. <span data-ttu-id="d8ee8-119">Navigieren Sie zum Speicherort von „Microsoft.Office.Excel.WebUI.dll“.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-119">Browse to the location of Microsoft.Office.Excel.WebUI.dll.</span></span>
+    > [!NOTE]
+    > <span data-ttu-id="0d182-118">Sie können das Dialogfeld **Verweis hinzufügen** auch im Bereich **Projektmappen-Explorer** öffnen, indem Sie mit der rechten Maustaste auf **Verweise** klicken und **Verweis hinzufügen** auswählen.</span><span class="sxs-lookup"><span data-stu-id="0d182-118">You can also open the **Add Reference** dialog box in the **Solution Explorer** pane by right-clicking **References** and selecting **Add Reference**.</span></span> 
     
-  
-4. <span data-ttu-id="d8ee8-120">Select Microsoft.Office.Excel.WebUI.dll, and then click **OK**.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-120">Select Microsoft.Office.Excel.WebUI.dll, and then click **OK**.</span></span>
-    
-  
-5. <span data-ttu-id="d8ee8-p105">Click **Add Reference**. A reference to Microsoft.Office.Excel.WebUI.dll is added to your project.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-p105">Click **Add Reference**. A reference to Microsoft.Office.Excel.WebUI.dll is added to your project.</span></span>
+3. <span data-ttu-id="0d182-119">Navigieren Sie zum Speicherort von „Microsoft.Office.Excel.WebUI.dll“.</span><span class="sxs-lookup"><span data-stu-id="0d182-119">Browse to the location of Microsoft.Office.Excel.WebUI.dll.</span></span>
     
   
+4. <span data-ttu-id="0d182-120">Select Microsoft.Office.Excel.WebUI.dll, and then click **OK**.</span><span class="sxs-lookup"><span data-stu-id="0d182-120">Select Microsoft.Office.Excel.WebUI.dll, and then click **OK**.</span></span>
+    
+  
+5. <span data-ttu-id="0d182-p105">Click **Add Reference**. A reference to Microsoft.Office.Excel.WebUI.dll is added to your project.</span><span class="sxs-lookup"><span data-stu-id="0d182-p105">Click **Add Reference**. A reference to Microsoft.Office.Excel.WebUI.dll is added to your project.</span></span>
+    
+  
 
-## <a name="instantiating-a-web-part"></a><span data-ttu-id="d8ee8-123">Instantiating a Web Part</span><span class="sxs-lookup"><span data-stu-id="d8ee8-123">Instantiating a Web Part</span></span>
+## <a name="instantiating-a-web-part"></a><span data-ttu-id="0d182-123">Instantiating a Web Part</span><span class="sxs-lookup"><span data-stu-id="0d182-123">Instantiating a Web Part</span></span>
 
 
-### <a name="to-instantiate-the-excel-web-access-web-part"></a><span data-ttu-id="d8ee8-124">To instantiate the Excel Web Access Web Part</span><span class="sxs-lookup"><span data-stu-id="d8ee8-124">To instantiate the Excel Web Access Web Part</span></span>
+### <a name="to-instantiate-the-excel-web-access-web-part"></a><span data-ttu-id="0d182-124">To instantiate the Excel Web Access Web Part</span><span class="sxs-lookup"><span data-stu-id="0d182-124">To instantiate the Excel Web Access Web Part</span></span>
 
 
-1. <span data-ttu-id="d8ee8-125">Add the Microsoft.Office.Excel.WebUI namespace as a directive to your code, so that when you use the types in this namespace, you do not need to fully qualify them:</span><span class="sxs-lookup"><span data-stu-id="d8ee8-125">Add the Microsoft.Office.Excel.WebUI namespace as a directive to your code, so that when you use the types in this namespace, you do not need to fully qualify them:</span></span>
+1. <span data-ttu-id="0d182-125">Add the Microsoft.Office.Excel.WebUI namespace as a directive to your code, so that when you use the types in this namespace, you do not need to fully qualify them:</span><span class="sxs-lookup"><span data-stu-id="0d182-125">Add the Microsoft.Office.Excel.WebUI namespace as a directive to your code, so that when you use the types in this namespace, you do not need to fully qualify them:</span></span>
     
 ```cs
   
@@ -81,7 +80,7 @@ using Microsoft.Office.Excel.WebUI;
   Imports Microsoft.Office.Excel.WebUI
 ```
 
-2. <span data-ttu-id="d8ee8-126">Instantiate and initialize the Excel Web Access Web Part, as follows:</span><span class="sxs-lookup"><span data-stu-id="d8ee8-126">Instantiate and initialize the Excel Web Access Web Part, as follows:</span></span>
+2. <span data-ttu-id="0d182-126">Instantiate and initialize the Excel Web Access Web Part, as follows:</span><span class="sxs-lookup"><span data-stu-id="0d182-126">Instantiate and initialize the Excel Web Access Web Part, as follows:</span></span>
     
 ```cs
   
@@ -95,12 +94,12 @@ Dim ewaWebPart As New ExcelWebRenderer()
 ```
 
 
-### <a name="to-display-a-workbook-programmatically"></a><span data-ttu-id="d8ee8-127">To display a workbook programmatically</span><span class="sxs-lookup"><span data-stu-id="d8ee8-127">To display a workbook programmatically</span></span>
+### <a name="to-display-a-workbook-programmatically"></a><span data-ttu-id="0d182-127">To display a workbook programmatically</span><span class="sxs-lookup"><span data-stu-id="0d182-127">To display a workbook programmatically</span></span>
 
 
-1. <span data-ttu-id="d8ee8-p106">In this example, the **AddWebPart** method takes in the path to an Excel workbook location as an argument. The user provides the path by typing in a Windows Forms text box and clicking a button.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-p106">In this example, the **AddWebPart** method takes in the path to an Excel workbook location as an argument. The user provides the path by typing in a Windows Forms text box and clicking a button.</span></span>
+1. <span data-ttu-id="0d182-p106">In this example, the **AddWebPart** method takes in the path to an Excel workbook location as an argument. The user provides the path by typing in a Windows Forms text box and clicking a button.</span><span class="sxs-lookup"><span data-stu-id="0d182-p106">In this example, the **AddWebPart** method takes in the path to an Excel workbook location as an argument. The user provides the path by typing in a Windows Forms text box and clicking a button.</span></span>
     
-    <span data-ttu-id="d8ee8-130">**Beispielcode von:** Daniel Mullowney, Microsoft Corporation</span><span class="sxs-lookup"><span data-stu-id="d8ee8-130">**Sample code provided by:** Daniel Mullowney, Microsoft Corporation</span></span>
+    <span data-ttu-id="0d182-130">**Beispielcode von:** Daniel Mullowney, Microsoft Corporation</span><span class="sxs-lookup"><span data-stu-id="0d182-130">**Sample code provided by:** Daniel Mullowney, Microsoft Corporation</span></span>
     
 
 
@@ -150,9 +149,9 @@ End Sub
 
     > **Important:**
       > Ensure that the location where the workbook is saved is a trusted location. 
-2. <span data-ttu-id="d8ee8-131">Sie können eine Excel-Arbeitsmappe programmgesteuert mit dem folgenden Code anzeigen.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-131">You can display an Excel workbook programmatically by using the following code.</span></span>
+2. <span data-ttu-id="0d182-131">Sie können eine Excel-Arbeitsmappe programmgesteuert mit dem folgenden Code anzeigen.</span><span class="sxs-lookup"><span data-stu-id="0d182-131">You can display an Excel workbook programmatically by using the following code.</span></span>
     
-    <span data-ttu-id="d8ee8-132">**Sample code provided by:** Daniel Mullowney, Microsoft Corporation</span><span class="sxs-lookup"><span data-stu-id="d8ee8-132">**Sample code provided by:** Daniel Mullowney, Microsoft Corporation</span></span>
+    <span data-ttu-id="0d182-132">**Sample code provided by:** Daniel Mullowney, Microsoft Corporation</span><span class="sxs-lookup"><span data-stu-id="0d182-132">**Sample code provided by:** Daniel Mullowney, Microsoft Corporation</span></span>
     
 
 
@@ -203,17 +202,17 @@ End Try
 ```
 
 
-## <a name="example"></a><span data-ttu-id="d8ee8-133">Beispiel</span><span class="sxs-lookup"><span data-stu-id="d8ee8-133">Example</span></span>
+## <a name="example"></a><span data-ttu-id="0d182-133">Beispiel</span><span class="sxs-lookup"><span data-stu-id="0d182-133">Example</span></span>
 
-<span data-ttu-id="d8ee8-p107">The following example is a Windows Forms application that enables a user to enter information on a SharePoint site and display an Excel workbook saved in a trusted location programmatically. It programmatically creates an Excel Web Access Web Part on the default.aspx page of the specified site and displays the specified Excel workbook.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-p107">The following example is a Windows Forms application that enables a user to enter information on a SharePoint site and display an Excel workbook saved in a trusted location programmatically. It programmatically creates an Excel Web Access Web Part on the default.aspx page of the specified site and displays the specified Excel workbook.</span></span>
+<span data-ttu-id="0d182-p107">The following example is a Windows Forms application that enables a user to enter information on a SharePoint site and display an Excel workbook saved in a trusted location programmatically. It programmatically creates an Excel Web Access Web Part on the default.aspx page of the specified site and displays the specified Excel workbook.</span><span class="sxs-lookup"><span data-stu-id="0d182-p107">The following example is a Windows Forms application that enables a user to enter information on a SharePoint site and display an Excel workbook saved in a trusted location programmatically. It programmatically creates an Excel Web Access Web Part on the default.aspx page of the specified site and displays the specified Excel workbook.</span></span>
   
     
     
-<span data-ttu-id="d8ee8-p108">The code sample is the code from the Form1.cs and Form1.vb example files described in the previous procedures. The code sample uses two text boxes, a progress bar, and a button. The code is only a portion of the Windows Forms project. For example, the code involving the layout of the form is not shown.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-p108">The code sample is the code from the Form1.cs and Form1.vb example files described in the previous procedures. The code sample uses two text boxes, a progress bar, and a button. The code is only a portion of the Windows Forms project. For example, the code involving the layout of the form is not shown.</span></span> 
+<span data-ttu-id="0d182-p108">The code sample is the code from the Form1.cs and Form1.vb example files described in the previous procedures. The code sample uses two text boxes, a progress bar, and a button. The code is only a portion of the Windows Forms project. For example, the code involving the layout of the form is not shown.</span><span class="sxs-lookup"><span data-stu-id="0d182-p108">The code sample is the code from the Form1.cs and Form1.vb example files described in the previous procedures. The code sample uses two text boxes, a progress bar, and a button. The code is only a portion of the Windows Forms project. For example, the code involving the layout of the form is not shown.</span></span> 
   
     
     
- <span data-ttu-id="d8ee8-140">**Sample code provided by:** Daniel Mullowney, Microsoft Corporation</span><span class="sxs-lookup"><span data-stu-id="d8ee8-140">**Sample code provided by:** Daniel Mullowney, Microsoft Corporation</span></span>
+ <span data-ttu-id="0d182-140">**Sample code provided by:** Daniel Mullowney, Microsoft Corporation</span><span class="sxs-lookup"><span data-stu-id="0d182-140">**Sample code provided by:** Daniel Mullowney, Microsoft Corporation</span></span>
   
     
     
@@ -505,31 +504,31 @@ End Namespace
 ```
 
 
-## <a name="robust-programming"></a><span data-ttu-id="d8ee8-141">Robuste Programmierung</span><span class="sxs-lookup"><span data-stu-id="d8ee8-141">Robust programming</span></span>
+## <a name="robust-programming"></a><span data-ttu-id="0d182-141">Robuste Programmierung</span><span class="sxs-lookup"><span data-stu-id="0d182-141">Robust programming</span></span>
 
-<span data-ttu-id="d8ee8-142">The Excel workbook that you are using must be in a trusted location.</span><span class="sxs-lookup"><span data-stu-id="d8ee8-142">The Excel workbook that you are using must be in a trusted location.</span></span>
+<span data-ttu-id="0d182-142">The Excel workbook that you are using must be in a trusted location.</span><span class="sxs-lookup"><span data-stu-id="0d182-142">The Excel workbook that you are using must be in a trusted location.</span></span>
   
     
     
 
-## <a name="see-also"></a><span data-ttu-id="d8ee8-143">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="d8ee8-143">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0d182-143">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="0d182-143">See also</span></span>
 
 
-#### <a name="tasks"></a><span data-ttu-id="d8ee8-144">Aufgaben</span><span class="sxs-lookup"><span data-stu-id="d8ee8-144">Tasks</span></span>
-
-
-  
-    
-    
- [<span data-ttu-id="d8ee8-145">How to: Locate and Copy Microsoft.Office.Excel.WebUI.dll and Microsoft.Office.Excel.WebUI.Internal.dll</span><span class="sxs-lookup"><span data-stu-id="d8ee8-145">How to: Locate and Copy Microsoft.Office.Excel.WebUI.dll and Microsoft.Office.Excel.WebUI.Internal.dll</span></span>](how-to-locate-and-copy-microsoft-office-excel-webui-dll-and-microsoft-office-exc.md)
-#### <a name="concepts"></a><span data-ttu-id="d8ee8-146">Konzepte</span><span class="sxs-lookup"><span data-stu-id="d8ee8-146">Concepts</span></span>
+#### <a name="tasks"></a><span data-ttu-id="0d182-144">Aufgaben</span><span class="sxs-lookup"><span data-stu-id="0d182-144">Tasks</span></span>
 
 
   
     
     
- [<span data-ttu-id="d8ee8-147">Excel Services Alerts</span><span class="sxs-lookup"><span data-stu-id="d8ee8-147">Excel Services Alerts</span></span>](excel-services-alerts.md)
+ [<span data-ttu-id="0d182-145">How to: Locate and Copy Microsoft.Office.Excel.WebUI.dll and Microsoft.Office.Excel.WebUI.Internal.dll</span><span class="sxs-lookup"><span data-stu-id="0d182-145">How to: Locate and Copy Microsoft.Office.Excel.WebUI.dll and Microsoft.Office.Excel.WebUI.Internal.dll</span></span>](how-to-locate-and-copy-microsoft-office-excel-webui-dll-and-microsoft-office-exc.md)
+#### <a name="concepts"></a><span data-ttu-id="0d182-146">Konzepte</span><span class="sxs-lookup"><span data-stu-id="0d182-146">Concepts</span></span>
+
+
   
     
     
- [<span data-ttu-id="d8ee8-148">Excel Services Known Issues and Tips</span><span class="sxs-lookup"><span data-stu-id="d8ee8-148">Excel Services Known Issues and Tips</span></span>](excel-services-known-issues-and-tips.md)
+ [<span data-ttu-id="0d182-147">Excel Services Alerts</span><span class="sxs-lookup"><span data-stu-id="0d182-147">Excel Services Alerts</span></span>](excel-services-alerts.md)
+  
+    
+    
+ [<span data-ttu-id="0d182-148">Excel Services Known Issues and Tips</span><span class="sxs-lookup"><span data-stu-id="0d182-148">Excel Services Known Issues and Tips</span></span>](excel-services-known-issues-and-tips.md)
