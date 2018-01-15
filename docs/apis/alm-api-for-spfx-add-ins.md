@@ -1,3 +1,14 @@
+---
+title: Application Lifecycle Management (ALM)-APIs
+ms.date: 12/19/2017
+ms.prod: sharepoint
+ms.assetid: fdf7ecb2-8851-425b-b058-3285fba77b68
+ms.openlocfilehash: 6baa3e3aa2f29df62c20b30e8e2a392af5f278a7
+ms.sourcegitcommit: 31f793b42ec75679f01e1a024d0375a2bc7b5ec7
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 12/19/2017
+---
 # <a name="application-lifecycle-management-alm-apis"></a>Application Lifecycle Management (ALM)-APIs  
 
 ALM-APIs bieten einfache APIs für die Verwaltung der Bereitstellung Ihrer SharePoint-Framework-Lösungen und Add-Ins Ihres Mandanten. ALM-APIs unterstützen die folgenden Funktionen.
@@ -12,9 +23,12 @@ ALM-APIs bieten einfache APIs für die Verwaltung der Bereitstellung Ihrer Share
 ALM-APIs können verwendet werden, um genau die gleichen Operationen durchzuführen, die über die Benutzeroberfläche verfügbar sind. Wenn diese APIs verwendet werden, können alle typischen Aktionen ausgeführt werden. Nachfolgend finden Sie einige der Eigenschaften für ALM-APIs.
 
 - Installieren und Deinstallieren von Ereignissen werden für vom Anbieter gehostete Add-Ins ausgelöst, wenn entsprechende Vorgänge aufgetreten sind
-- ALM-APIs unterstützen nur app-basierte Vorgänge
+- ALM-APIs unterstützen Nur-App-basierte Vorgänge
 
-ALM-APIs systemeigen über REST-APIs bereitgestellt, aber es gibt auch zusätzliche CSOM-Erweiterungen und PowerShell-Commandlets über SharePoint Patterns and Practices 
+ALM-APIs werden systemeigen über REST-APIs bereitgestellt, aber es gibt auch zusätzliche CSOM-Erweiterungen und PowerShell-Commandlets über SharePoint Patterns and Practices.
+
+> [!NOTE] 
+> ALM-APIs werden derzeit für [Websitesammlungs-App-Katalog](../general-development/site-collection-app-catalog.md) nicht unterstützt. Die Unterstützung wird Anfang 2018 hinzugefügt.
 
 ## <a name="rest-api"></a>REST-API
 
@@ -112,7 +126,7 @@ method: POST
 
 ## <a name="sharepoint-pnp-powershell-cmdlets-to-programmatically-add-and-deploy-sharepoint-apps"></a>SharePoint PnP PowerShell-Cmdlets zum programmgesteuerten Hinzufügen und Bereitstellen von SharePoint-Apps
 
-Mit [PnP PowerShell](https://msdn.microsoft.com/de-DE/pnp_powershell/pnp-powershell-overview) können Sie die Bereitstellung, Veröffentlichung, Installation, Aktualisierung und das Zurückziehen Ihrer Apps automatisieren. Sehen Sie sich das Kapitel unten an, um mehr über Cmdlets zu erfahren.
+Mit [PnP PowerShell]((https://msdn.microsoft.com/de-DE/pnp_powershell/pnp-powershell-overview)) können Sie die Bereitstellung, Veröffentlichung, Installation, Aktualisierung und das Zurückziehen Ihrer Apps automatisieren. Sehen Sie sich das Kapitel unten an, um mehr über Cmdlets zu erfahren.
 
 ### <a name="adding-and-publishing-your-app-to-the-app-catalog"></a>Hinzufügen Ihrer App zum App-Katalog und Veröffentlichen Ihrer App im App-Katalog
 Sie müssen Ihre App (.sppkg-Datei, .app-Datei) zu Ihrem Mandanten-App-Katalog hinzufügen, damit Sie sie später auf Ihrer SharePoint-Seite zur Verfügung stellen können. Dieser Vorgang kann mit einem einfachen cmdlet durchgeführt werden:
