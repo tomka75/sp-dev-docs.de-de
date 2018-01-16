@@ -2,11 +2,11 @@
 title: Bereitstellen Ihres clientseitigen SharePoint-Webparts in einem CDN
 ms.date: 12/05/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 5999958169ec6d94d5e8eca29a4d8458a6a77dea
-ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
+ms.openlocfilehash: 2ac3b6e8b091fdbd8223e902aec70860ae25ecfd
+ms.sourcegitcommit: c57fc0e802661b0771f8b022964b6956ab4f6caf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="deploy-your-sharepoint-client-side-web-part-to-azure-cdn"></a>Bereitstellen Ihres clientseitigen SharePoint-Webparts im Azure CDN
 
@@ -19,11 +19,11 @@ Dieser Artikel enthält Informationen zum Erstellen eines neuen Beispielwebparts
 
 Konfigurieren Sie ein Azure-Speicherkonto, und integrieren Sie es in das CDN.
 
-Sie können die Anweisungen im Artikel [Integrieren eines Speicherkontos in CDN](https://azure.microsoft.com/de-DE/documentation/articles/cdn-create-a-storage-account-with-cdn/) zusammen mit den detaillierten Schritten in diesem Artikel verwenden, um ein Azure -Speicherkonto zu erstellen und dieses in das CDN zu integrieren. Sie benötigen die folgenden Informationen:
+Sie können die Anweisungen im Artikel [Integrieren eines Speicherkontos in CDN]((https://azure.microsoft.com/de-DE/documentation/articles/cdn-create-a-storage-account-with-cdn/)) zusammen mit den detaillierten Schritten in diesem Artikel verwenden, um ein Azure -Speicherkonto zu erstellen und dieses in das CDN zu integrieren. Sie benötigen die folgenden Informationen:
 
 ### <a name="storage-account-name"></a>Speicherkontoname
 
-Dies ist der Name, den Sie zum Erstellen des Speicherkontos verwendet haben, wie in [Schritt 1: Erstellen eines Speicherkontos](https://azure.microsoft.com/de-DE/documentation/articles/cdn-create-a-storage-account-with-cdn/#step-1-create-a-storage-account) beschrieben.
+Dies ist der Name, den Sie zum Erstellen des Speicherkontos verwendet haben, wie in [Schritt 1: Erstellen eines Speicherkontos]((https://azure.microsoft.com/de-DE/documentation/articles/cdn-create-a-storage-account-with-cdn/)#step-1-create-a-storage-account) beschrieben.
 
 Im folgenden Screenshot ist **spfxsamples** der Name des Speicherkontos.
 
@@ -55,13 +55,13 @@ Wählen Sie im Dashboard des Speicherkontos die Option **Tastenkombination** im 
 
 Erstellen Sie ein neues CDN-Profil, und weisen Sie den CDN-Endpunkt diesem BLOB-Container zu.
 
-Erstellen Sie ein neues CDN-Profil, wie unter [Schritt 2: Erstellen eines neuen CDN-Profils](https://azure.microsoft.com/de-DE/documentation/articles/cdn-create-a-storage-account-with-cdn/#step-2-create-a-new-cdn-profile) beschrieben.
+Erstellen Sie ein neues CDN-Profil, wie unter [Schritt 2: Erstellen eines neuen CDN-Profils]((https://azure.microsoft.com/de-DE/documentation/articles/cdn-create-a-storage-account-with-cdn/)#step-2-create-a-new-cdn-profile) beschrieben.
 
 Im folgenden Screenshot ist **spfxwebparts** der Name des CDN-Profils.
 
 ![Screenshot zur Erstellung eines neuen CDN-Profils](../../../images/deploy-create-cdn-profile.png)
 
-Erstellen Sie einen CND-Endpunkt, wie unter [Schritt 3: Erstellen eines neuen CDN-Endpunkts](https://azure.microsoft.com/de-DE/documentation/articles/cdn-create-a-storage-account-with-cdn/#step-3-create-a-new-cdn-endpoint) beschrieben.
+Erstellen Sie einen CND-Endpunkt, wie unter [Schritt 3: Erstellen eines neuen CDN-Endpunkts]((https://azure.microsoft.com/de-DE/documentation/articles/cdn-create-a-storage-account-with-cdn/)#step-3-create-a-new-cdn-endpoint) beschrieben.
 
 Im folgenden Screenshot ist **spfxsamples** beispielsweise der Endpunktname **Speicher** ist der Ursprungstyp, und **spfxsamples.blob.core.windows.net** ist das Speicherkonto.
 
@@ -125,7 +125,7 @@ code .
 
 ## <a name="configure-solution-not-to-use-default-settings"></a>Konfigurieren der Lösung für die Nichtverwendung der Standardeinstellungen
 
-Öffnen Sie **deploy-azure-storage.json** im Ordner **config**.
+Öffnen Sie **package-solution.json** im Ordner **config**.
 
 Hier werden die Lösungspakete gesteuert.
 
@@ -296,4 +296,4 @@ gulp bundle --ship
 Solange Sie die **cdnBasePath**-Eigenschaft entsprechend aktualisieren, werden Ihre Dateien ordnungsgemäß geladen.
 
 > [!NOTE]
-> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository](https://github.com/SharePoint/sp-dev-docs/issues). Vielen Dank im Voraus für Ihr Feedback.
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository]((https://github.com/SharePoint/sp-dev-docs/issues)). Vielen Dank im Voraus für Ihr Feedback.

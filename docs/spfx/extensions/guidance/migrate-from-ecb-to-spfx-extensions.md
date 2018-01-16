@@ -1,23 +1,28 @@
+---
+title: "Lernprogramm: Migrieren vom Edit Control Block-Menüelement (ECB) zur SharePoint-Framework-Erweiterung"
+ms.date: 12/19/2017
+ms.prod: sharepoint
+ms.openlocfilehash: f285cdbe3ac5e771b0afc0286dcaedd361e643e2
+ms.sourcegitcommit: bf4bc1e80c6ef1a0ff479039ef9ae0ee84d5f6b4
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 12/19/2017
+---
 # <a name="migrating-from-edit-control-block-ecb-menu-item-to-sharepoint-framework-extensions"></a>Migrieren vom Edit Control Block-Menüelement (ECB) zu SharePoint-Framework-Erweiterungen
 
-In den letzten Jahren haben die meisten Unternehmenslösungen, die auf Office 365 und SharePoint Online aufbauen, die Funktion _CustomAction_ des SharePoint-Feature-Framework genutzt, um die Benutzeroberfläche von Seiten zu erweitern. Heute stehen die meisten dieser Anpassungsmöglichkeiten in der „modernen“ Benutzeroberfläche von SharePoint Online jedoch nicht mehr zur Verfügung. Mit den neuen SharePoint-Framework-Erweiterungen können Sie jedoch fast die gleichen Funktionen auch in der modernen Benutzeroberfläche bereitstellen. In diesem Lernprogramm erfahren Sie, wie Sie von den älteren „klassischen“ Anpassungen zu dem neuen Modell migrieren, das auf SharePoint-Framework-Erweiterungen basiert.
-
-> [!IMPORTANT]
-> Das bedeutet nicht das Ende der Unterstützung für die klassische Benutzeroberfläche, es stehen weiterhin sowohl die klassische als auch die moderne Oberfläche zur Verfügung.
-
-_**Gilt für: **SharePoint Online_
+In den letzten Jahren haben die meisten Unternehmenslösungen, die auf Office 365 und SharePoint Online aufbauen, die Funktion _CustomAction_ des SharePoint-Feature-Framework genutzt, um die Benutzeroberfläche von Seiten zu erweitern. Heute stehen die meisten dieser Anpassungsmöglichkeiten in der „modernen“ Benutzeroberfläche von SharePoint Online jedoch nicht mehr zur Verfügung. Mit den neuen SharePoint-Framework-Erweiterungen können Sie jedoch fast die gleichen Funktionen auch in der modernen Benutzeroberfläche bereitstellen. In diesem Lernprogramm erfahren Sie, wie Sie die alten, klassischen Anpassungen zu dem neuen Modell basierend auf SharePoint-Framework-Erweiterungen migrieren können.
 
 ## <a name="understanding-sharepoint-framework-extensions"></a>Grundlegendes zu SharePoint-Framework-Erweiterungen
 <a name="spfxExtensions"> </a> Bei der Entwicklung von SharePoint-Framework-Erweiterungen sind folgende Optionen verfügbar:
 
-* **Application Customizer**: Erweiterung der systemeigenen modernen Benutzeroberfläche von SharePoint Online, indem benutzerdefinierte Elemente und clienseitiger Code den vordefinierten Platzhaltern der modernen Seiten hinzugefügt werden. Zu der Zeit, zu der dieser Artikel verfasst wurde, waren die verfügbaren Platzhalter die Kopf- und Fußzeile jeder modernen Seite.
+* **Application Customizer**: Erweiterung der nativen modernen Benutzeroberfläche von SharePoint Online, indem benutzerdefinierte Elemente und clientseitiger Code den vordefinierten Platzhaltern der modernen Seiten hinzugefügt werden. Zu der Zeit, zu der dieser Artikel verfasst wurde, waren die verfügbaren Platzhalter die Kopf- und Fußzeile jeder modernen Seite.
 * **Command Set**: Benutzerdefinierte ECB-Menüelemente oder benutzerdefinierte Schaltflächen können der Befehlsleiste einer Listenansicht für eine Liste oder Bibliothek hinzugefügt werden. Sie können diesen Befehlen eine JavaScript (TypeScript)-Aktion zuordnen.
 * **Field Customizer**: Anpassung der Darstellung eines Felds in einer Listenansicht mit benutzerdefinierten HTML-Elementen und clientseitigem Code.
 
 Wie bereits aus der obigen Beschreibung hervorgeht, ist die „Command Set“-Erweiterung die nützlichste in diesem Kontext.
 
 > [!NOTE]
-> Weitere Informationen zum Erstellen von SharePoint-Framework-Erweiterungen finden Sie im Artikel [Übersicht über SharePoint-Framework-Erweiterungen](https://docs.microsoft.com/de-DE/sharepoint/dev/spfx/extensions/overview-extensions).
+> Weitere Informationen zum Erstellen von SharePoint-Framework-Erweiterungen finden Sie im Artikel [Übersicht über SharePoint-Framework-Erweiterungen]((https://docs.microsoft.com/de-DE/sharepoint/dev/spfx/extensions/overview-extensions)).
 
 ## <a name="migrating-a-ecb-to-an-spfx-command-set"></a>Migrieren eines ECB zu einem Command Set von SPFx
 <a name="FromECBtoCommandSet"> </a> Angenommen Sie verfügen über eine _CustomAction_ in SharePoint Online, damit für Dokumente in einer Bibliothek ein benutzerdefiniertes ECB-Menü verfügbar ist. Die Funktion des ECB-Menüelements besteht darin, eine benutzerdefinierte Seite zu öffnen, auf der die Listen-ID und die Listenelement-ID des aktuell ausgewählten Elements in der Abfragezeichenfolge der Zielseite bereitgestellt wird.
@@ -49,7 +54,7 @@ Beachten Sie, dass das benutzerdefinierte ECB-Element des SharePoint-Feature-Fra
 Um die oben aufgeführte Lösung in das SharePoint-Framework zu migrieren, müssen Sie die folgenden Schritte ausführen.
 
 ### <a name="create-a-new-sharepoint-framework-solution"></a>Erstellen einer neuen SharePoint-Framework-Lösung
-<a name="CreateCommandSet"> </a> Nachdem Sie die Entwicklungsumgebung für SharePoint-Framework-Lösungen entsprechend den Anweisungen im Dokument [Einrichten Ihrer SharePoint-Entwicklungsumgebung für clientseitige Webparts](https://docs.microsoft.com/de-DE/sharepoint/dev/spfx/set-up-your-development-environment) eingerichtet haben, können Sie mit dem Erstellen einer SharePoint-Framework-Erweiterung beginnen.
+<a name="CreateCommandSet"> </a> Nachdem Sie die Entwicklungsumgebung für SharePoint-Framework-Lösungen entsprechend den Anweisungen im Dokument [Einrichten Ihrer SharePoint-Entwicklungsumgebung für clientseitige Webparts]((https://docs.microsoft.com/de-DE/sharepoint/dev/spfx/set-up-your-development-environment)) eingerichtet haben, können Sie mit dem Erstellen einer SharePoint-Framework-Erweiterung beginnen.
 
 1. Öffnen Sie ein beliebiges Befehlszeilentool (PowerShell, CMD.EXE, Cmder usw.), erstellen Sie einen neuen Ordner für die Lösung (mit dem Namen _spfx-ecb-extension_), und erstellen Sie eine neue SharePoint-Framework-Lösung, indem Sie den Yeoman-Generator mit dem folgenden Befehl ausführen:
 
@@ -155,7 +160,7 @@ Beachten Sie schließlich auch die Überschreiben der _OnListViewUpdated_-Method
 Die Umleitung an die Ziel-URL erfolgt durch die Verwendung von klassischem JavaScript-Code und der Funktion _window.location.replace_. Sie können natürlich jede Art von TypeScript-Code in die _OnExecute_-Methode schreiben. Um hier nur ein Beispiel zu nennen, können Sie das Dialog-Framework des SharePoint-Frameworks verwenden, um ein neues Dialogfeld zu öffnen und mit den Endbenutzern zu interagieren.
 
 > [!NOTE]
-> Weitere Informationen zum Dialog-Framework von SharePoint-Framework finden Sie im Dokument [Verwenden von benutzerdefinierten Dialogfeldern mit SharePoint Framework Extensions](https://docs.microsoft.com/de-DE/sharepoint/dev/spfx/extensions/guidance/using-custom-dialogs-with-spfx).
+> Weitere Informationen zum Dialog-Framework von SharePoint-Framework finden Sie im Dokument [Verwenden von benutzerdefinierten Dialogfeldern mit SharePoint Framework Extensions]((https://docs.microsoft.com/de-DE/sharepoint/dev/spfx/extensions/guidance/using-custom-dialogs-with-spfx)).
 
 Die folgende Abbildung zeigt die resultierende Ausgabe.
 
@@ -211,7 +216,7 @@ Der folgende Codeauszug gibt an, wie die Datei aussehen sollte.
 
 Wie Sie sehen, ähnelt sie der SharePoint-Feature-Framework-Datei des „klassischen“ Modells. Sie verwendet jedoch das Attribut _ClientSideComponentId_, um die _id_ der benutzerdefinierten Erweiterung zu referenzieren, sowie das Attribut _ClientSideComponentProperties_, um die benutzerdefinierten Konfigurationseigenschaften zu konfigurieren, die für die Erweiterung erforderlich sind.
 
-Öffnen Sie nun die Datei _package-solution.json_ im Ordner _/config_ der Lösung. Sie können sehen, dass sich in der Datei ein Verweis auf die _elements.xml_-Datei befindet, und zwar im Abschnitt _assets_.
+Öffnen Sie nun die Datei _package-solution.json_ im Ordner _/config_ der Lösung. In der Datei können Sie sehen, dass ein Verweis auf die _elements.xml_ im Abschnitt _assets_ vorhanden ist.
 
 ```JSON
 {

@@ -1,14 +1,20 @@
+---
+title: 'Lernprogramm: Migrieren von UserCustomAction zu SharePoint-Framework-Erweiterungen'
+ms.date: 12/19/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 3d1fea4d111eb3bd984d066b4457c5d55ee0f14f
+ms.sourcegitcommit: bf4bc1e80c6ef1a0ff479039ef9ae0ee84d5f6b4
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 12/19/2017
+---
 # <a name="migrating-from-usercustomaction-to-sharepoint-framework-extensions"></a>Migrieren von UserCustomAction zu SharePoint-Framework-Erweiterungen
 
 In den letzten Jahren profitierten die meisten auf Office 365 und SharePoint Online aufbauenden Enterprise-Lösungen von den _CustomAction_-Funktionen von SharePoint-Feature-Framework zur Erweiterung der Benutzeroberfläche von Seiten. Heutzutage stehen innerhalb der modernen Benutzeroberfläche von SharePoint Online die meisten dieser Anpassungen jedoch nicht mehr zur Verfügung. Mit den neuen SharePoint-Framework-Erweiterungen können Sie fast die gleichen Funktionen auf der modernen Benutzeroberfläche bereitstellen. In diesem Lernprogramm erfahren Sie, wie Sie die alten, klassischen Anpassungen zu dem neuen Modell basierend auf SharePoint-Framework-Erweiterungen migrieren können.
 
-> [!IMPORTANT]
-> Das bedeutet nicht das Ende der Unterstützung für die klassische Benutzeroberfläche, es stehen weiterhin sowohl die klassische als auch die moderne Oberfläche zur Verfügung.
-
-_**Gilt für: **SharePoint Online_
-
 ## <a name="understanding-sharepoint-framework-extensions"></a>Grundlegendes zu SharePoint-Framework-Erweiterungen
-<a name="spfxExtensions"> </a> Bei der Entwicklung von SharePoint-Framework-Erweiterungen sind folgende Optionen verfügbar:
+
+Bei der Entwicklung von SharePoint-Framework-Erweiterungen sind folgende Optionen verfügbar:
 
 * **Application Customizer**: Erweiterung der nativen modernen Benutzeroberfläche von SharePoint Online, indem benutzerdefinierte Elemente und clientseitiger Code den vordefinierten Platzhaltern der modernen Seiten hinzugefügt werden. Zu der Zeit, zu der dieser Artikel verfasst wurde, waren die verfügbaren Platzhalter die Kopf- und Fußzeile jeder modernen Seite.
 * **Command Set**: Benutzerdefinierte ECB-Menüelemente oder benutzerdefinierte Schaltflächen können der Befehlsleiste einer Listenansicht für eine Liste oder Bibliothek hinzugefügt werden. Sie können diesen Befehlen eine JavaScript (TypeScript)-Aktion zuordnen.
@@ -17,10 +23,11 @@ _**Gilt für: **SharePoint Online_
 Wie bereits aus der obigen Beschreibung hervorgeht, ist die „Application Customizer“-Erweiterung die nützlichste in diesem Kontext.
 
 > [!NOTE]
-> Weitere Informationen zum Erstellen von SharePoint-Framework-Erweiterungen finden Sie im Artikel [Übersicht über SharePoint-Framework-Erweiterungen](https://docs.microsoft.com/de-DE/sharepoint/dev/spfx/extensions/overview-extensions).
+> Weitere Informationen zum Erstellen von SharePoint-Framework-Erweiterungen finden Sie im Artikel [Übersicht über SharePoint-Framework-Erweiterungen]((https://docs.microsoft.com/de-DE/sharepoint/dev/spfx/extensions/overview-extensions)).
 
 ## <a name="migrating-a-usercustomaction-to-an-spfx-application-customizer"></a>Migrieren einer UserCustomAction zu einem SPFx Application Customizer
-<a name="FromUserCustomActionToApplicationCustomizer"> </a> Angenommen Sie verfügen über eine _CustomAction_ in SharePoint Online, damit alle Websiteseiten eine benutzerdefinierte Fußzeile enthalten.
+
+Angenommen Sie verfügen über eine _CustomAction_ in SharePoint Online, damit alle Websiteseiten eine benutzerdefinierte Fußzeile enthalten.
 Im folgenden Codeausschnitt ist der XML-Code enthalten, der _CustomAction_ mit dem SharePoint-Feature-Framework definiert.
 
 ```XML
@@ -139,7 +146,8 @@ In der folgenden Abbildung ist die Ausgabe der vorherigen benutzerdefinierten Ak
 Um die obige Lösung zu der modernen Benutzeroberfläche zu migrieren, müssen Sie die folgenden Schritte ausführen.
 
 ### <a name="create-a-new-sharepoint-framework-solution"></a>Erstellen einer neuen SharePoint-Framework-Lösung
-<a name="CreateApplicationCustomizer"> </a> Nachdem Sie die Entwicklungsumgebung für SharePoint-Framework-Lösungen entsprechend den Anweisungen im Dokument [Einrichten Ihrer SharePoint-Entwicklungsumgebung für clientseitige Webparts](https://docs.microsoft.com/de-DE/sharepoint/dev/spfx/set-up-your-development-environment) eingerichtet haben, können Sie mit dem Erstellen einer SharePoint-Framework-Erweiterung beginnen.
+
+ Nachdem Sie die Entwicklungsumgebung für SharePoint-Framework-Lösungen entsprechend den Anweisungen im Dokument [Einrichten Ihrer SharePoint-Entwicklungsumgebung für clientseitige Webparts]((https://docs.microsoft.com/de-DE/sharepoint/dev/spfx/set-up-your-development-environment)) eingerichtet haben, können Sie mit dem Erstellen einer SharePoint-Framework-Erweiterung beginnen.
 
 1. Öffnen Sie ein beliebiges Befehlszeilentool (PowerShell, CMD.EXE, Cmder usw.), erstellen Sie einen neuen Ordner für die Lösung (mit dem Namen _spfx-react-custom-footer_), und erstellen Sie eine neue SharePoint-Framework-Lösung, indem Sie den Yeoman-Generator mit dem folgenden Befehl ausführen:
 
@@ -177,10 +185,11 @@ code .
 ```
 
 ### <a name="define-the-new-ui-elements"></a>Definieren der neuen Benutzeroberflächenelemente
-<a name="DefineApplicationCustomizerUI"> </a> Die Benutzeroberflächenelemente der benutzerdefinierte Fußzeile werden mit React und einer benutzerdefinierten React-Komponente gerendert. Sie können die Benutzeroberflächenelemente der Beispielfußzeile mit einer beliebigen Technologie erstellen. In diesem Lernprogramm verwenden wir React, um die Office UI Fabric-Komponenten für React zu verwenden.
+
+Die Benutzeroberflächenelemente der benutzerdefinierte Fußzeile werden mit React und einer benutzerdefinierten React-Komponente gerendert. Sie können die Benutzeroberflächenelemente der Beispielfußzeile mit einer beliebigen Technologie erstellen. In diesem Lernprogramm verwenden wir React, um die Office UI Fabric-Komponenten für React zu verwenden.
 
 > [!NOTE]
-> Weitere Informationen zur Entwicklung von Lösungen mit React finden Sie im folgenden Lernprogramm: [Lernprogramm: Einführung in React](https://reactjs.org/tutorial/tutorial.html).
+> Weitere Informationen zur Entwicklung von Lösungen mit React finden Sie im folgenden Lernprogramm: [Lernprogramm: Einführung in React]((https://reactjs.org/tutorial/tutorial.html)).
 
 1. Öffnen Sie zunächst die Datei _CustomFooterApplicationCustomizer.manifest.json_ im Ordner _src/extensions/customFooter_. Kopieren Sie den Wert der _id_-Eigenschaft, und bewahren Sie ihn an einem sicheren Ort auf, da Sie ihn später benötigen.
 
@@ -317,14 +326,15 @@ Informationen zum Schreiben einer React-Komponente sind in diesem Dokument nicht
 Ferner wird in der _render_-Methode der Komponente die Ausgabe von _CustomFooter_ mit einigen Instanzen der _CommandButton_-Komponente für die Links in der Fußzeile definiert.
 Die HTML-Ausgabe ist in ein Rasterlayout von Office UI Fabric eingeschlossen.
 > [!NOTE]
-> Weitere Informationen über das Rasterlayout von Office UI Fabric finden Sie im Dokument [Dynamisches Layout](https://developer.microsoft.com/de-DE/fabric#/styles/layout).
+> Weitere Informationen über das Rasterlayout von Office UI Fabric finden Sie im Dokument [Dynamisches Layout](https://developer.microsoft.com/en-us/fabric#/styles/layout).
 
 In der folgenden Abbildung ist die resultierende Ausgabe enthalten.
 
 ![Die auf einer modernen Website gerenderte benutzerdefinierte Fußzeile](../../../images/spfx-react-custom-footer-output.png)
 
 ### <a name="test-the-solution-in-debug-mode"></a>Testen der Lösung im Debugmodus
-<a name="DebugApplicationCustomizer"> </a> Sie können jetzt die Lösung im Debugmodus testen. 
+
+Sie können die Lösung jetzt im Debugmodus testen. 
 
 1. Kehren Sie zum Konsolenfenster zurück, und führen Sie den folgenden Befehl aus:
 
@@ -343,10 +353,12 @@ Der oben angegebene Befehl erstellt die Lösung und führt den lokalen Node.js-S
 In der oben aufgeführten Abfragezeichenfolge müssen Sie die GUID durch den _id_-Wert aus der Datei _CustomFooterApplicationCustomizer.manifest.json_ ersetzen, den Sie gespeichert und aufbewahrt haben. Beachten Sie, dass beim Ausführen der Seitenanforderung ein Warnmeldungsfeld „Debugskripts zulassen?“ angezeigt wird, in dem Sie aus Sicherheitsgründen nach der Zustimmung für die Ausführung des Codes von Localhost gefragt werden. Wenn Sie lokal debuggen und testen möchten, müssen Sie das Laden von Debugskripts zulassen.
 
 ### <a name="package-and-host-the-solution"></a>Packen und Hosten der Lösung
-<a name="PackageAndHostApplicationCustomizer"> </a> Wenn Sie mit dem Ergebnis zufrieden sind, können Sie die Lösung nun packen und in der eigentlichen Hostinginfrastruktur hosten.
+
+Wenn Sie mit dem Ergebnis zufrieden sind, können Sie die Lösung nun packen und in der eigentlichen Hostinginfrastruktur hosten.
 Bevor Sie das Bundle und das Paket erstellen, müssen Sie eine XML-Feature Frameworkdatei deklarieren, um die Erweiterung bereitzustellen.
 
 #### <a name="review-feature-framework-elements"></a>Überprüfen von Feature-Framework-Elementen
+
 Öffnen Sie im Code-Editor den Unterordner _/sharepoint/assets_ der Lösung, und bearbeiten Sie die Datei _elements.xml_.
 Der folgende Codeauszug gibt an, wie die Datei aussehen sollte.
 
@@ -392,8 +404,8 @@ Wie Sie sehen können, ähnelt sie der SharePoint-Feature-Framework-Datei des kl
 }
 ```
 
-#### <a name="enable-the-cdn-in-your-office-365-tenant"></a>Aktivieren von CDN in Ihrem Office 365-Mandanten
-Sie müssen jetzt die Erweiterung in einer Hostingumgebung hosten. Office 365 CDN ist die einfachste Möglichkeit, SharePoint-Framework-Lösungen direkt von Ihrem Mandanten aus zu hosten und dabei weiterhin die Vorteile des CDN (Content Delivery Network) zum schnelleren Laden der Objekte zu nutzen.
+#### <a name="enable-the-cdn-in-your-office-365-tenant"></a>Aktivieren des CDN im Office 365-Mandanten
+Sie müssen die Erweiterung nun in einer Hostingumgebung hosten. Office 365 CDN ist die einfachste Möglichkeit, SharePoint-Framework-Lösungen direkt von Ihrem Mandanten aus zu hosten und dabei weiterhin die Vorteile des CDN (Content Delivery Network) zum schnelleren Laden der Objekte zu nutzen.
 
 1. Laden Sie die [SharePoint Online-Verwaltungsshell](https://www.microsoft.com/en-us/download/details.aspx?id=35588) herunter, um sicherzustellen, dass Sie die neueste Version verwenden.
 
@@ -435,14 +447,15 @@ Sie müssen jetzt die Erweiterung in einer Hostingumgebung hosten. Office 365 CD
     Get-SPOTenantCdnOrigins -CdnType Public
     ```
     
-Sie sehen, dass der neu hinzugefügte Ursprung als gültiger CDN-Ursprung aufgeführt ist. Die endgültige Konfiguration des Ursprungs dauert ca. 15 Minuten. Während Sie warten, können Sie mit der Bereitstellung der Erweiterung fortfahren, die nach Abschluss der Bereitstellung im Ursprung gehostet wird. 
+Sie sehen, dass der neu hinzugefügte Ursprung als gültiger CDN-Ursprung aufgeführt ist. Die endgültige Konfiguration des Ursprungs dauert ca. 15 Minuten. Während Sie warten, können Sie mit dem Bereitstellen der Erweiterung fortfahren, die anschließend im Ursprung gehostet wird. 
 
 ![Liste der öffentlichen Ursprünge im Mandanten](../../../images/ext-app-cdn-origins-pending.png)
 
 Sobald der Ursprung nicht mehr mit `(configuration pending)` gekennzeichnet ist, kann er in Ihrem Mandanten verwendet werden. Dieser Text weist auf laufende Konfigurationsaktivitäten zwischen SharePoint Online und dem CDN-System hin. 
 
-#### <a name="update-the-solution-settings-and-publish-it-on-the-cdn"></a>Aktualisieren von Einstellungen für die Lösung und Veröffentlichen im CDN
-Sie müssen nun die Lösung aktualisieren, um das soeben erstellte CDN als Hostingumgebung zu verwenden, sowie das Lösungsbundle im CDN veröffentlichen. Gehen Sie hierzu wie folgt vor:
+#### <a name="update-the-solution-settings-and-publish-it-on-the-cdn"></a>Aktualisieren der Lösungseinstellungen und Veröffentlichen im CDN
+
+Sie müssen die Lösung jetzt aktualisieren, damit Sie das gerade erstellte CDN als Hostingumgebung verwenden können. Sie müssen das Lösungsbundle im CDN veröffentlichen. Gehen Sie hierzu wie nachfolgend beschrieben vor.
 
 1. Kehren Sie zu der zuvor erstellten Lösung zurück, um die erforderliche URL-Updates auszuführen.
     
@@ -475,7 +488,8 @@ Sie müssen nun die Lösung aktualisieren, um das soeben erstellte CDN als Hosti
 7. Laden Sie die Dateien im Ordner _temp/deploy_ in den Ordner _CDN/customfooter_ hoch, den Sie zuvor erstellt haben. Sie können die Dateien auch mit Drag-and-Drop verschieben.
 
 ### <a name="install-and-run-the-solution"></a>Installieren und Ausführen der Lösung
-<a name="InstallApplicationCustomizer"> </a> Sie können jetzt die Lösung auf jeder modernen Zielwebsite installieren.
+
+Sie können die Lösung jetzt auf jeder modernen Zielwebsite installieren.
 
 1. Öffnen Sie den Browser, und navigieren Sie zu der gewünschten modernen Zielwebsite.
 

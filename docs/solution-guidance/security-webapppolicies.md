@@ -1,7 +1,7 @@
 # <a name="alternative-model-for-web-app-policies-in-sharepoint-online"></a>Alternatives Modell zum Web app-Richtlinien in SharePoint Online
 
 Richtlinien für die Web app sind ein Konzept, die SharePoint-Administratoren zum Erteilen oder Verweigern von Berechtigungen für Benutzer und Gruppen für alle Websites unter einer Webanwendung ermöglicht. Diese Berechtigung gewährt und verweigert Take Präferenz über Berechtigungen, die an den Standorten in der Webanwendung festgelegt und daher einen Mechanismus, die in der Regel in diesen Szenarien verwendet werden:
- - Gewähren Sie ein Dienstkonto Berechtigungen für alle Websites, da dieses Dienstkonto verwendet wird, um eine Hintergrund auszuführen, die zum Bearbeiten der Daten in allen Websites muss
+ - Erteilen Sie Berechtigungen für alle Websites ein Dienstkonto, da dieses Dienstkonto verwendet wird, um eine Hintergrund auszuführen, die zum Bearbeiten der Daten in allen Websites muss. Das Dienstkonto kann auch von einem Workflow verwendet werden wieder in SharePoint zu erreichen
  - Support Team schreibgeschützten Zugriff auf alle Websites gewähren, sodass der Supporttechniker über die Website mit dem Endbenutzer durchlaufen kann
  - Verweigern des Zugriffs auf den gesamten Inhalt Benutzer (z. B. nach verlassen das Unternehmen)
 

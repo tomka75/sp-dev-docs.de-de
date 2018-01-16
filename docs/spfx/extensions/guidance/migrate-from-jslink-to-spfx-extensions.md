@@ -1,14 +1,20 @@
+---
+title: 'Lernprogramm: Migrieren von JSLink zu SharePoint-Framework-Erweiterungen'
+ms.date: 12/19/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 85e6801645da5cc1de0d49505a35b5fa8b68b820
+ms.sourcegitcommit: bf4bc1e80c6ef1a0ff479039ef9ae0ee84d5f6b4
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 12/19/2017
+---
 # <a name="migrating-from-jslink-to-sharepoint-framework-extensions"></a>Migrieren von JSLink zu SharePoint-Framework-Erweiterungen
 
 Seit der Microsoft SharePoint-Version 2013 nutzen die meisten Unternehmenslösungen, die auf Office 365 und SharePoint Online aufbauen, die _JSLink_-Eigenschaft von Feldern und Listenansichten, um das Rendern von Feldern anzupassen. Heute stehen die meisten dieser Anpassungsmöglichkeiten in der „modernen“ Benutzeroberfläche von SharePoint Online jedoch nicht mehr zur Verfügung. Mit den neuen SharePoint-Framework-Erweiterungen können Sie fast die gleichen Funktionen auf der modernen Benutzeroberfläche bereitstellen. In diesem Lernprogramm erfahren Sie, wie Sie die alten, klassischen Anpassungen zu dem neuen Modell basierend auf SharePoint-Framework-Erweiterungen migrieren können.
 
-> [!IMPORTANT]
-> Das bedeutet nicht das Ende der Unterstützung für die klassische Benutzeroberfläche, es stehen weiterhin sowohl die klassische als auch die moderne Oberfläche zur Verfügung.
-
-_**Gilt für: **SharePoint Online_
-
 ## <a name="understanding-sharepoint-framework-extensions"></a>Grundlegendes zu SharePoint-Framework-Erweiterungen
-<a name="spfxExtensions"> </a> Bei der Entwicklung von SharePoint-Framework-Erweiterungen sind folgende Optionen verfügbar:
+
+Bei der Entwicklung von SharePoint-Framework-Erweiterungen sind folgende Optionen verfügbar:
 
 * **Application Customizer**: Erweiterung der nativen modernen Benutzeroberfläche von SharePoint Online, indem benutzerdefinierte Elemente und clientseitiger Code den vordefinierten Platzhaltern der modernen Seiten hinzugefügt werden. Zu der Zeit, zu der dieser Artikel verfasst wurde, waren die verfügbaren Platzhalter die Kopf- und Fußzeile jeder modernen Seite.
 * **Command Set**: Benutzerdefinierte ECB-Menüelemente oder benutzerdefinierte Schaltflächen können der Befehlsleiste einer Listenansicht für eine Liste oder Bibliothek hinzugefügt werden. Sie können diesen Befehlen eine JavaScript (TypeScript)-Aktion zuordnen.
@@ -17,10 +23,11 @@ _**Gilt für: **SharePoint Online_
 Wie bereits aus der obigen Beschreibung hervorgeht, ist die „Field Customizer“-Erweiterung die nützlichste in diesem Kontext.
 
 > [!NOTE]
-> Weitere Informationen zum Erstellen von SharePoint-Framework-Erweiterungen finden Sie im Artikel [Übersicht über SharePoint-Framework-Erweiterungen](https://docs.microsoft.com/de-DE/sharepoint/dev/spfx/extensions/overview-extensions).
+> Weitere Informationen zum Erstellen von SharePoint-Framework-Erweiterungen finden Sie im Artikel [Übersicht über SharePoint-Framework-Erweiterungen]((https://docs.microsoft.com/de-DE/sharepoint/dev/spfx/extensions/overview-extensions)).
 
 ## <a name="migrating-a-jslink-to-an-spfx-field-customizer"></a>Migrieren von JSLink zum Field Customizer von SPFx
-<a name="FromJSLinktoFieldCustomizer"> </a> Nehmen Sie an, dass Sie sich in SharePoint Online befinden und Sie über eine benutzerdefinierte Liste mit einem angepassten Feld mit der Bezeichnung „Color“ verfügen, das den Typ _Choice_ hat und die folgenden Werte übernehmen kann: _Red_, _Green_, _Blue_, _Yellow_. Nehmen Sie dann an, dass Sie einen benutzerdefinierten Wert für die _JSLink_-Eigenschaft des Webparts haben, das die Listenansicht der benutzerdefinierten Liste rendert. Im folgenden Codeausschnitt sehen Sie den JavaScript-Code, der von der _JSLink_-Eigenschaft (_customColorRendering.js_) referenziert wird.
+
+Nehmen Sie an, dass Sie sich in SharePoint Online befinden und Sie über eine benutzerdefinierte Liste mit einem angepassten Feld mit der Bezeichnung „Color“ verfügen, das den Typ _Choice_ hat und die folgenden Werte übernehmen kann: _Red_, _Green_, _Blue_, _Yellow_. Nehmen Sie dann an, dass Sie einen benutzerdefinierten Wert für die _JSLink_-Eigenschaft des Webparts haben, das die Listenansicht der benutzerdefinierten Liste rendert. Im folgenden Codeausschnitt sehen Sie den JavaScript-Code, der von der _JSLink_-Eigenschaft (_customColorRendering.js_) referenziert wird.
 
 ```JavaScript
 // Define a namespace for the custom rendering code
@@ -98,7 +105,8 @@ Wie Sie sehen können, rendern die Felder „Color“ auf der Elementebene ein f
 Um die oben aufgeführte Lösung in das SharePoint-Framework zu migrieren, müssen Sie die folgenden Schritte ausführen.
 
 ### <a name="create-a-new-sharepoint-framework-solution"></a>Erstellen einer neuen SharePoint-Framework-Lösung
-<a name="CreateFieldCustomizer"> </a> Nachdem Sie die Entwicklungsumgebung für SharePoint-Framework-Lösungen entsprechend den Anweisungen im Dokument [Einrichten Ihrer SharePoint-Entwicklungsumgebung für clientseitige Webparts](https://docs.microsoft.com/de-DE/sharepoint/dev/spfx/set-up-your-development-environment) eingerichtet haben, können Sie mit dem Erstellen einer SharePoint-Framework-Erweiterung beginnen.
+
+ Nachdem Sie die Entwicklungsumgebung für SharePoint-Framework-Lösungen entsprechend den Anweisungen im Dokument [Einrichten Ihrer SharePoint-Entwicklungsumgebung für clientseitige Webparts]((https://docs.microsoft.com/de-DE/sharepoint/dev/spfx/set-up-your-development-environment)) eingerichtet haben, können Sie mit dem Erstellen einer SharePoint-Framework-Erweiterung beginnen.
 
 1. Öffnen Sie ein beliebiges Befehlszeilentool (PowerShell, CMD.EXE, Cmder usw.), erstellen Sie einen neuen Ordner für die Lösung (mit dem Namen _spfx-custom-field-extension_), und erstellen Sie eine neue SharePoint-Framework-Lösung, indem Sie den Yeoman-Generator mit dem folgenden Befehl ausführen:
 
@@ -137,7 +145,8 @@ code .
 ```
 
 ### <a name="define-the-new-field-customizer-with-javascript"></a>Definieren des neuen Field Customizer mit JavaScript
-<a name="DefineFieldCustomizerWithJavaScript"> </a>Um das gleiche Verhalten beim Rendern des benutzerdefinierten _JSLink_-Felds zu reproduzieren, müssen Sie einfach die gleiche Logik mit clientseitigem Code innerhalb der neuen SharePoint-Framework-Lösung implementieren. Gehen Sie hierzu wie folgt vor:
+
+Um das gleiche Verhalten beim Rendern des benutzerdefinierten _JSLink_-Felds zu reproduzieren, müssen Sie einfach die gleiche Logik mit clientseitigem Code innerhalb der neuen SharePoint-Framework-Lösung implementieren. Gehen Sie hierzu wie folgt vor:
 
 1. Öffnen Sie zunächst die Datei _CustomColorFieldFieldCustomizer.manifest.json_ im Ordner _src/extensions/customColorField_. Kopieren Sie den Wert der Eigenschaft _id_, und bewahren Sie ihn an einem sicheren Ort auf, da Sie ihn später benötigen.
 
@@ -233,7 +242,8 @@ Die folgende Abbildung zeigt die resultierende Ausgabe.
 ![Der in einer modernen Liste gerenderte Field Customizer](../../../images/spfx-custom-field-extension-output.png)
 
 ### <a name="test-the-solution-in-debug-mode"></a>Testen der Lösung im Debugmodus
-<a name="DebugFieldCustomizer"> </a> Sie können die Lösung jetzt im Debugmodus testen. 
+
+Sie können die Lösung jetzt im Debugmodus testen. 
 
 1. Kehren Sie zum Konsolenfenster zurück, und führen Sie den folgenden Befehl aus:
 
@@ -254,7 +264,8 @@ In der oben aufgeführten Abfragezeichenfolge müssen Sie die GUID durch den _id
 Beachten Sie, dass beim Ausführen der Seitenanforderung ein Warnmeldungsfeld „Debugskripts zulassen?“ angezeigt wird, in dem Sie aus Sicherheitsgründen nach der Zustimmung für die Ausführung des Codes von Localhost gefragt werden. Wenn Sie lokal debuggen und testen möchten, müssen Sie das Laden von Debugskripts zulassen.
 
 ### <a name="define-the-new-field-customizer-with-typescript"></a>Definieren des neuen Field Customizer mit TypeScript
-<a name="DefineFieldCustomizerWithTypeScript"> </a> Sie können nun den JavaScript-Code durch TypeScript ersetzen, um die Vorteile von TypeScript optimal nutzen zu können.
+
+Sie können nun den JavaScript-Code durch TypeScript ersetzen, um die Vorteile von TypeScript optimal nutzen zu können.
 
 1. Öffnen Sie die Datei _CustomColorFieldFieldCustomizer.module.scss_ im Ordner _src/extensions/customColorField_. Diese Datei, eine Sassy CSS, stellt den Stil der Benutzeroberfläche für den Field Customizer dar. Ersetzen Sie den Inhalt der SCSS-Datei durch den folgenden:
 
@@ -335,7 +346,8 @@ Beachten Sie, dass die neue Methodenimplementierung einen vollständig typisiert
 3. Führen Sie den Field Customizer noch einmal im Debugmodus aus, und sehen Sie sich das Ergebnis an.
 
 ### <a name="package-and-host-the-solution"></a>Packen und Hosten der Lösung
-<a name="PackageAndHostCommandSet"> </a> Wenn Sie mit dem Ergebnis zufrieden sind, können Sie die Lösung nun packen und in der eigentlichen Hostinginfrastruktur hosten.
+
+Wenn Sie mit dem Ergebnis zufrieden sind, können Sie die Lösung nun packen und in der eigentlichen Hostinginfrastruktur hosten.
 Bevor Sie das Bundle und das Paket erstellen, müssen Sie eine XML-Feature Frameworkdatei deklarieren, um die Erweiterung bereitzustellen.
 
 #### <a name="review-feature-framework-elements"></a>Überprüfen von Feature-Framework-Elementen
@@ -389,6 +401,7 @@ Wie Sie sehen, ähnelt sie der SharePoint-Feature-Framework-Datei. Sie definiert
 ```
 
 #### <a name="enable-the-cdn-in-your-office-365-tenant"></a>Aktivieren des CDN im Office 365-Mandanten
+
 Sie müssen die Erweiterung nun in einer Hostingumgebung hosten. Office 365 CDN ist die einfachste Möglichkeit, SharePoint-Framework-Lösungen direkt von Ihrem Mandanten aus zu hosten und dabei weiterhin die Vorteile des CDN (Content Delivery Network) zum schnelleren Laden der Objekte zu nutzen.
 
 1. Laden Sie die [SharePoint Online-Verwaltungsshell](https://www.microsoft.com/en-us/download/details.aspx?id=35588) herunter, um sicherzustellen, dass Sie die neueste Version verwenden.
@@ -438,6 +451,7 @@ Sie sehen, dass der neu hinzugefügte Ursprung als gültiger CDN-Ursprung aufgef
 Sobald der Ursprung nicht mehr mit `(configuration pending)` gekennzeichnet ist, kann er in Ihrem Mandanten verwendet werden. Dieser Text weist auf laufende Konfigurationsaktivitäten zwischen SharePoint Online und dem CDN-System hin. 
 
 #### <a name="update-the-solution-settings-and-publish-it-on-the-cdn"></a>Aktualisieren der Lösungseinstellungen und Veröffentlichen im CDN
+
 Sie müssen die Lösung jetzt aktualisieren, damit Sie das gerade erstellte CDN als Hostingumgebung verwenden können. Sie müssen das Lösungsbundle im CDN veröffentlichen. Gehen Sie hierzu wie nachfolgend beschrieben vor.
 
 1. Kehren Sie zu der zuvor erstellten Lösung zurück, um die erforderliche URL-Updates auszuführen.
@@ -471,7 +485,8 @@ Sie müssen die Lösung jetzt aktualisieren, damit Sie das gerade erstellte CDN 
 7. Laden Sie die Dateien im Ordner _temp/deploy_ in den Ordner _CDN/customcolorfield_ hoch, den Sie zuvor erstellt haben. Sie können die Dateien auch mit Drag-and-Drop verschieben.
 
 ### <a name="install-and-run-the-solution"></a>Installieren und Ausführen der Lösung
-<a name="InstallFieldCustomizer"> </a> Sie können die Lösung jetzt auf jeder modernen Zielwebsite installieren.
+
+Sie können die Lösung jetzt auf jeder modernen Zielwebsite installieren.
 
 1. Öffnen Sie den Browser, und navigieren Sie zu der gewünschten modernen Zielwebsite.
 
