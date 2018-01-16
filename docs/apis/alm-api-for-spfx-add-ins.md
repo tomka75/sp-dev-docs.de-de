@@ -3,11 +3,11 @@ title: Application Lifecycle Management (ALM)-APIs
 ms.date: 12/19/2017
 ms.prod: sharepoint
 ms.assetid: fdf7ecb2-8851-425b-b058-3285fba77b68
-ms.openlocfilehash: 6baa3e3aa2f29df62c20b30e8e2a392af5f278a7
-ms.sourcegitcommit: 31f793b42ec75679f01e1a024d0375a2bc7b5ec7
+ms.openlocfilehash: 967ff4d456ee839f347c07605ec90adff7d3b2fc
+ms.sourcegitcommit: 6bc4c8e43c260deabc60d41d633586bfa3e6024a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 12/28/2017
 ---
 # <a name="application-lifecycle-management-alm-apis"></a>Application Lifecycle Management (ALM)-APIs  
 
@@ -186,5 +186,5 @@ Uninstall-PnPApp -Identity <app id>
 Sie können eine Liste der Apps abrufen, die zu der Website hinzugefügt werden können:
 
 ```PowerShell
-Get-PnPAvailableApp
+Get-PnPApp
 ```
