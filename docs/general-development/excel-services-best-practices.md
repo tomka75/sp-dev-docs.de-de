@@ -77,7 +77,7 @@ ms.lasthandoff: 12/07/2017
   
     
     
-<span data-ttu-id="936be-125">Weitere Informationen finden Sie unter [\<httpRuntime\>-Element]((http://msdn.microsoft.com/library/e9b81350-8aaf-47cc-9843-5f7d0c59f369.aspx)) und [\<maxRequestLength\>-Element]((http://msdn.microsoft.com/library/fd52b2c5-5014-4e6f-b869-4ea666dc83d6.aspx)).</span><span class="sxs-lookup"><span data-stu-id="936be-125">For more information, see  [\<httpRuntime\> Element]((http://msdn.microsoft.com/library/e9b81350-8aaf-47cc-9843-5f7d0c59f369.aspx)) and [\<maxRequestLength\> Element]((http://msdn.microsoft.com/library/fd52b2c5-5014-4e6f-b869-4ea666dc83d6.aspx)).</span></span>
+<span data-ttu-id="936be-125">Weitere Informationen finden Sie unter [\<httpRuntime\>-Element](http://msdn.microsoft.com/library/e9b81350-8aaf-47cc-9843-5f7d0c59f369.aspx) und [\<maxRequestLength\>-Element](http://msdn.microsoft.com/library/fd52b2c5-5014-4e6f-b869-4ea666dc83d6.aspx).</span><span class="sxs-lookup"><span data-stu-id="936be-125">For more information, see  [\<httpRuntime\> Element](http://msdn.microsoft.com/library/e9b81350-8aaf-47cc-9843-5f7d0c59f369.aspx) and [\<maxRequestLength\> Element](http://msdn.microsoft.com/library/fd52b2c5-5014-4e6f-b869-4ea666dc83d6.aspx).</span></span>
   
     
     
@@ -99,7 +99,7 @@ ms.lasthandoff: 12/07/2017
 - <span data-ttu-id="936be-132">Physically protect the relevant network if a custom application using Excel Web Services is running in a confined networkfor example, if Excel Web Services is deployed on a Web front-end computer within the enterprise.</span><span class="sxs-lookup"><span data-stu-id="936be-132">Physically protect the relevant network if a custom application using Excel Web Services is running in a confined network—for example, if Excel Web Services is deployed on a Web front-end computer within the enterprise.</span></span>
     
   
-<span data-ttu-id="936be-133">For more information, see  [Securing Your Network]((http://msdn.microsoft.com/library/af62ece0-0dd7-4b8e-ad12-4d13f2d60816.aspx)) and [SOAP Security]((http://msdn.microsoft.com/de-DE/library/aa912494.aspx)).</span><span class="sxs-lookup"><span data-stu-id="936be-133">For more information, see  [Securing Your Network]((http://msdn.microsoft.com/library/af62ece0-0dd7-4b8e-ad12-4d13f2d60816.aspx)) and [SOAP Security]((http://msdn.microsoft.com/de-DE/library/aa912494.aspx)).</span></span>
+<span data-ttu-id="936be-133">For more information, see  [Securing Your Network](http://msdn.microsoft.com/library/af62ece0-0dd7-4b8e-ad12-4d13f2d60816.aspx) and [SOAP Security](http://msdn.microsoft.com/de-DE/library/aa912494.aspx).</span><span class="sxs-lookup"><span data-stu-id="936be-133">For more information, see  [Securing Your Network](http://msdn.microsoft.com/library/af62ece0-0dd7-4b8e-ad12-4d13f2d60816.aspx) and [SOAP Security](http://msdn.microsoft.com/de-DE/library/aa912494.aspx).</span></span>
   
     
     
@@ -118,7 +118,7 @@ ms.lasthandoff: 12/07/2017
   
     
     
-<span data-ttu-id="936be-139">For more information, see  [Securing Your Network]((http://msdn.microsoft.com/library/af62ece0-0dd7-4b8e-ad12-4d13f2d60816.aspx)).</span><span class="sxs-lookup"><span data-stu-id="936be-139">For more information, see  [Securing Your Network]((http://msdn.microsoft.com/library/af62ece0-0dd7-4b8e-ad12-4d13f2d60816.aspx)).</span></span>
+<span data-ttu-id="936be-139">For more information, see  [Securing Your Network](http://msdn.microsoft.com/library/af62ece0-0dd7-4b8e-ad12-4d13f2d60816.aspx).</span><span class="sxs-lookup"><span data-stu-id="936be-139">For more information, see  [Securing Your Network](http://msdn.microsoft.com/library/af62ece0-0dd7-4b8e-ad12-4d13f2d60816.aspx).</span></span>
   
     
     
@@ -194,7 +194,7 @@ ms.lasthandoff: 12/07/2017
 
 ### <a name="naming-managed-code-dlls"></a><span data-ttu-id="936be-169">Naming Managed-Code DLLs</span><span class="sxs-lookup"><span data-stu-id="936be-169">Naming Managed-Code DLLs</span></span>
 
-<span data-ttu-id="936be-170">To ensure that your assembly names are unique, use the fully qualified class name, following the  [Namespace Naming Guidelines]((http://msdn.microsoft.com/library/c08bc0d8-9b3a-4564-9af6-71699f62e00d.aspx)).</span><span class="sxs-lookup"><span data-stu-id="936be-170">To ensure that your assembly names are unique, use the fully qualified class name, following the  [Namespace Naming Guidelines]((http://msdn.microsoft.com/library/c08bc0d8-9b3a-4564-9af6-71699f62e00d.aspx)).</span></span>
+<span data-ttu-id="936be-170">To ensure that your assembly names are unique, use the fully qualified class name, following the  [Namespace Naming Guidelines](http://msdn.microsoft.com/library/c08bc0d8-9b3a-4564-9af6-71699f62e00d.aspx).</span><span class="sxs-lookup"><span data-stu-id="936be-170">To ensure that your assembly names are unique, use the fully qualified class name, following the  [Namespace Naming Guidelines](http://msdn.microsoft.com/library/c08bc0d8-9b3a-4564-9af6-71699f62e00d.aspx).</span></span>
   
     
     

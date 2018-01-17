@@ -30,7 +30,7 @@ ms.lasthandoff: 12/07/2017
 1. <span data-ttu-id="d04fb-111">Erstellen Sie in Visual Studio 2012 ein Projekt **-Add-in für SharePoint**.</span><span class="sxs-lookup"><span data-stu-id="d04fb-111">In Visual Studio 2012, create an **Add-in for SharePoint** project.</span></span>
     
   
-2. <span data-ttu-id="d04fb-p102">Geben Sie die Add-in-Einstellungen, einschließlich der Add-in-Name die URL der Website für das Debuggen des Add-Ins und wie Sie das Add-in ( **automatisch gehostete**, **vom Anbieter gehostete** oder **SharePoint-Hosting** ) hosten möchten. Weitere Informationen finden Sie unter [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint]((http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx)).</span><span class="sxs-lookup"><span data-stu-id="d04fb-p102">Specify the add-in settings, including add-in name, the site URL for debugging the add-in, and how you want to host the add-in ( **Autohosted**, **Provider-hosted**, or **SharePoint-hosted**). For more information, see  [Choose patterns for developing and hosting your SharePoint Add-in]((http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx)).</span></span>
+2. <span data-ttu-id="d04fb-p102">Geben Sie die Add-in-Einstellungen, einschließlich der Add-in-Name die URL der Website für das Debuggen des Add-Ins und wie Sie das Add-in ( **automatisch gehostete**, **vom Anbieter gehostete** oder **SharePoint-Hosting** ) hosten möchten. Weitere Informationen finden Sie unter [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint](http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="d04fb-p102">Specify the add-in settings, including add-in name, the site URL for debugging the add-in, and how you want to host the add-in ( **Autohosted**, **Provider-hosted**, or **SharePoint-hosted**). For more information, see  [Choose patterns for developing and hosting your SharePoint Add-in](http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx).</span></span>
     
   
 3. <span data-ttu-id="d04fb-114">Wählen Sie auf **Fertig stellen**, um die app zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="d04fb-114">Choose **Finish** to create the app.</span></span>
@@ -46,7 +46,7 @@ ms.lasthandoff: 12/07/2017
     <span data-ttu-id="d04fb-119">Geben Sie einen Namen für die OData-Quelle an.</span><span class="sxs-lookup"><span data-stu-id="d04fb-119">Specify a name for your OData source.</span></span>
     
     > [!NOTE]
-    > <span data-ttu-id="d04fb-120">In diesem Beispiel verwenden Sie den Northwind-Dienst, der in der Hersteller-Liste auf der [OpenData Protocol-Website]((http://www.odata.org)) befindet.</span><span class="sxs-lookup"><span data-stu-id="d04fb-120">[Note:]((http://www.odata.org)) For this example, you will use the Northwind service that is available from the producers list located on the  Open Data Protocol website.</span></span> 
+    > <span data-ttu-id="d04fb-120">In diesem Beispiel verwenden Sie den Northwind-Dienst, der in der Hersteller-Liste auf der [OpenData Protocol-Website](http://www.odata.org) befindet.</span><span class="sxs-lookup"><span data-stu-id="d04fb-120">[Note:](http://www.odata.org) For this example, you will use the Northwind service that is available from the producers list located on the  Open Data Protocol website.</span></span> 
 
 6. <span data-ttu-id="d04fb-p104">Eine Liste wird angezeigt, mit Datenentitäten, die vom OData Service verfügbar gemacht werden. Wählen Sie eine oder mehrere Entitäten, und wählen Sie **Fertig stellen**.</span><span class="sxs-lookup"><span data-stu-id="d04fb-p104">A list appears showing data entities that are being exposed by the OData Service. Select one or more of the entities, and choose **Finish**.</span></span>
     
@@ -128,7 +128,7 @@ ms.lasthandoff: 12/07/2017
 -  [<span data-ttu-id="d04fb-147">Erste Schritte mit den Business Connectivity Services in SharePoint</span><span class="sxs-lookup"><span data-stu-id="d04fb-147">Get started with Business Connectivity Services in SharePoint</span></span>](get-started-with-business-connectivity-services-in-sharepoint.md)
     
   
--  <span data-ttu-id="d04fb-148">[Open Data Protocol]((http://www.odata.org))</span><span class="sxs-lookup"><span data-stu-id="d04fb-148">[Open Data Protocol]((http://www.odata.org))</span></span>
+-  <span data-ttu-id="d04fb-148">[Open Data Protocol](http://www.odata.org)</span><span class="sxs-lookup"><span data-stu-id="d04fb-148">[Open Data Protocol](http://www.odata.org)</span></span>
     
   
 

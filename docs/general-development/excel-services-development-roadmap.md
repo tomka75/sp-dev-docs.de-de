@@ -173,7 +173,7 @@ ms.lasthandoff: 12/07/2017
 
 ### <a name="using-udfs"></a><span data-ttu-id="c0478-165">Using UDFs</span><span class="sxs-lookup"><span data-stu-id="c0478-165">Using UDFs</span></span>
 
-<span data-ttu-id="c0478-166">For information about Excel Services UDF definitions, see the  [Microsoft.Office.Excel.Server.Udf]((https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.Udf.aspx)) namespace reference documentation.</span><span class="sxs-lookup"><span data-stu-id="c0478-166">For information about Excel Services UDF definitions, see the  [Microsoft.Office.Excel.Server.Udf]((https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.Udf.aspx)) namespace reference documentation.</span></span>
+<span data-ttu-id="c0478-166">For information about Excel Services UDF definitions, see the  [Microsoft.Office.Excel.Server.Udf](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.Udf.aspx) namespace reference documentation.</span><span class="sxs-lookup"><span data-stu-id="c0478-166">For information about Excel Services UDF definitions, see the  [Microsoft.Office.Excel.Server.Udf](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.Udf.aspx) namespace reference documentation.</span></span>
   
     
     
@@ -222,7 +222,7 @@ ms.lasthandoff: 12/07/2017
   
     
     
-<span data-ttu-id="c0478-183">For more information about the JavaScript object model in Excel Services, see the  [Ewa]((http://msdn.microsoft.com/library/6fe73191-3213-b986-1ad6-2c3b918a2241%28Office.15%29.aspx)) namespace reference documentation.</span><span class="sxs-lookup"><span data-stu-id="c0478-183">For more information about the JavaScript object model in Excel Services, see the  [Ewa]((http://msdn.microsoft.com/library/6fe73191-3213-b986-1ad6-2c3b918a2241%28Office.15%29.aspx)) namespace reference documentation.</span></span>
+<span data-ttu-id="c0478-183">For more information about the JavaScript object model in Excel Services, see the  [Ewa](http://msdn.microsoft.com/library/6fe73191-3213-b986-1ad6-2c3b918a2241%28Office.15%29.aspx) namespace reference documentation.</span><span class="sxs-lookup"><span data-stu-id="c0478-183">For more information about the JavaScript object model in Excel Services, see the  [Ewa](http://msdn.microsoft.com/library/6fe73191-3213-b986-1ad6-2c3b918a2241%28Office.15%29.aspx) namespace reference documentation.</span></span>
   
     
     
@@ -234,7 +234,7 @@ ms.lasthandoff: 12/07/2017
     
     
 
-- <span data-ttu-id="c0478-186">For more information about the JavaScript object model in Excel Services, see the  [Ewa]((http://msdn.microsoft.com/library/6fe73191-3213-b986-1ad6-2c3b918a2241%28Office.15%29.aspx)) namespace reference documentation.</span><span class="sxs-lookup"><span data-stu-id="c0478-186">For more information about the JavaScript object model in Excel Services, see the  [Ewa]((http://msdn.microsoft.com/library/6fe73191-3213-b986-1ad6-2c3b918a2241%28Office.15%29.aspx)) namespace reference documentation.</span></span>
+- <span data-ttu-id="c0478-186">For more information about the JavaScript object model in Excel Services, see the  [Ewa](http://msdn.microsoft.com/library/6fe73191-3213-b986-1ad6-2c3b918a2241%28Office.15%29.aspx) namespace reference documentation.</span><span class="sxs-lookup"><span data-stu-id="c0478-186">For more information about the JavaScript object model in Excel Services, see the  [Ewa](http://msdn.microsoft.com/library/6fe73191-3213-b986-1ad6-2c3b918a2241%28Office.15%29.aspx) namespace reference documentation.</span></span>
     
   
 - <span data-ttu-id="c0478-187">For an example of how to interact with the JavaScript object model in Excel Services by using the Content Editor Web Part, see  [Walkthrough: Developing Using the Content Editor Web Part](walkthrough-developing-using-the-content-editor-web-part.md).</span><span class="sxs-lookup"><span data-stu-id="c0478-187">For an example of how to interact with the JavaScript object model in Excel Services by using the Content Editor Web Part, see  [Walkthrough: Developing Using the Content Editor Web Part](walkthrough-developing-using-the-content-editor-web-part.md).</span></span>

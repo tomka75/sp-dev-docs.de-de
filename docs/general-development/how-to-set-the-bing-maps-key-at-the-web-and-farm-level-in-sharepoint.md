@@ -26,7 +26,7 @@ ms.lasthandoff: 12/07/2017
 - <span data-ttu-id="e5516-108">SharePoint, mit Administratorrechten.</span><span class="sxs-lookup"><span data-stu-id="e5516-108">SharePoint, with administrative privileges.</span></span>
     
   
-- <span data-ttu-id="e5516-109">Ein gültiger Bing Maps-Schlüssel, den Sie beim [Bing Maps-Kontocenter]((https://www.bingmapsportal.com/)) erhalten.</span><span class="sxs-lookup"><span data-stu-id="e5516-109">A valid Bing Maps key, which you can obtain from the  [Bing Maps Account Center]((https://www.bingmapsportal.com/)).</span></span>
+- <span data-ttu-id="e5516-109">Ein gültiger Bing Maps-Schlüssel, den Sie beim [Bing Maps-Kontocenter](https://www.bingmapsportal.com/) erhalten.</span><span class="sxs-lookup"><span data-stu-id="e5516-109">A valid Bing Maps key, which you can obtain from the  [Bing Maps Account Center](https://www.bingmapsportal.com/).</span></span>
     
     > <span data-ttu-id="e5516-110">**Wichtig:** Bitte beachten Sie, dass Sie für die Einhaltung der für Ihre Nutzung des Bing Maps-Schlüssels anwendbaren Geschäftsbedingungen und alle erforderlichen Veröffentlichungen gegenüber Benutzern Ihrer Anwendung bezüglich an den Bing Daten-Dienst übermittelter Daten verantwortlich sind.</span><span class="sxs-lookup"><span data-stu-id="e5516-110">**Important:** Please note that you are responsible for compliance with terms and conditions applicable to your use of the Bing Maps key, and any necessary disclosures to users of your application regarding data passed to the Bing Maps service.</span></span> 
 

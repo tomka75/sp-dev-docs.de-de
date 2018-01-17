@@ -248,13 +248,13 @@ ms.lasthandoff: 12/07/2017
 <span data-ttu-id="d7f1f-176"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="d7f1f-176"><a name="bk_addresources"> </a></span></span>
 
 
--  <span data-ttu-id="d7f1f-177">[Workflow in SharePoint]((http://technet.microsoft.com/de-DE/sharepoint/jj556245.aspx))</span><span class="sxs-lookup"><span data-stu-id="d7f1f-177">[Workflow in SharePoint]((http://technet.microsoft.com/de-DE/sharepoint/jj556245.aspx))</span></span>
+-  <span data-ttu-id="d7f1f-177">[Workflow in SharePoint](http://technet.microsoft.com/de-DE/sharepoint/jj556245.aspx)</span><span class="sxs-lookup"><span data-stu-id="d7f1f-177">[Workflow in SharePoint](http://technet.microsoft.com/de-DE/sharepoint/jj556245.aspx)</span></span>
     
   
--  <span data-ttu-id="d7f1f-178">[Neu in SharePoint-Workflows]((http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx))</span><span class="sxs-lookup"><span data-stu-id="d7f1f-178">[What's new in workflow in SharePoint]((http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx))</span></span>
+-  <span data-ttu-id="d7f1f-178">[Neu in SharePoint-Workflows](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)</span><span class="sxs-lookup"><span data-stu-id="d7f1f-178">[What's new in workflow in SharePoint](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)</span></span>
     
   
--  <span data-ttu-id="d7f1f-179">[Erste Schritte mit SharePoint-Workflows]((http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx))</span><span class="sxs-lookup"><span data-stu-id="d7f1f-179">[Getting started with SharePoint workflow]((http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx))</span></span>
+-  <span data-ttu-id="d7f1f-179">[Erste Schritte mit SharePoint-Workflows](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)</span><span class="sxs-lookup"><span data-stu-id="d7f1f-179">[Getting started with SharePoint workflow](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)</span></span>
     
   
 

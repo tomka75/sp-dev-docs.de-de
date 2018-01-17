@@ -24,7 +24,7 @@ ms.lasthandoff: 12/07/2017
 ### <a name="to-install-sharepoint-designer-2013"></a><span data-ttu-id="c58fb-108">So installieren Sie SharePoint Designer 2013</span><span class="sxs-lookup"><span data-stu-id="c58fb-108">To install SharePoint Designer 2013</span></span>
 
 
-1. <span data-ttu-id="c58fb-109">Öffnen Sie Ihren Webbrowser und navigieren Sie zum Microsoft Download Center:  [http://www.microsoft.com/download/]((http://www.microsoft.com/download.aspx)).</span><span class="sxs-lookup"><span data-stu-id="c58fb-109">Open your web browser and navigate to the Microsoft Download Center:  [http://www.microsoft.com/download]((http://www.microsoft.com/download.aspx)).</span></span> 
+1. <span data-ttu-id="c58fb-109">Öffnen Sie Ihren Webbrowser und navigieren Sie zum Microsoft Download Center:  [http://www.microsoft.com/download/](http://www.microsoft.com/download.aspx).</span><span class="sxs-lookup"><span data-stu-id="c58fb-109">Open your web browser and navigate to the Microsoft Download Center:  [http://www.microsoft.com/download](http://www.microsoft.com/download.aspx).</span></span> 
     
   
 2. <span data-ttu-id="c58fb-110">Geben Sie SharePoint Designer 2013 in das Suchfeld ein.</span><span class="sxs-lookup"><span data-stu-id="c58fb-110">Type SharePoint Designer 2013 in the search field.</span></span>
@@ -195,10 +195,10 @@ ms.lasthandoff: 12/07/2017
 <span data-ttu-id="c58fb-156"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="c58fb-156"><a name="bk_addresources"> </a></span></span>
 
 
--  <span data-ttu-id="c58fb-157">[Neuerungen in SharePoint-Workflows]((http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx))</span><span class="sxs-lookup"><span data-stu-id="c58fb-157">[What's new in workflow in SharePoint]((http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx))</span></span>
+-  <span data-ttu-id="c58fb-157">[Neuerungen in SharePoint-Workflows](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)</span><span class="sxs-lookup"><span data-stu-id="c58fb-157">[What's new in workflow in SharePoint](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)</span></span>
     
   
--  <span data-ttu-id="c58fb-158">[Erste Schritte mit SharePoint-Workflows]((http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx))</span><span class="sxs-lookup"><span data-stu-id="c58fb-158">[Getting started with SharePoint workflow]((http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx))</span></span>
+-  <span data-ttu-id="c58fb-158">[Erste Schritte mit SharePoint-Workflows](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)</span><span class="sxs-lookup"><span data-stu-id="c58fb-158">[Getting started with SharePoint workflow](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)</span></span>
     
   
 -  [<span data-ttu-id="c58fb-159">Workflowentwicklung in SharePoint Designer und Visio</span><span class="sxs-lookup"><span data-stu-id="c58fb-159">Workflow development in SharePoint Designer and Visio</span></span>](workflow-development-in-sharepoint-designer-and-visio.md)

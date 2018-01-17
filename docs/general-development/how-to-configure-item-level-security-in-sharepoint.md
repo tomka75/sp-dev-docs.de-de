@@ -198,7 +198,7 @@ unchecked((int)0xffffffffL), InheritanceFlags.None, PropagationFlags.None);
 -  [<span data-ttu-id="8131f-126">Connector Framework für die Suche in SharePoint</span><span class="sxs-lookup"><span data-stu-id="8131f-126">Search connector framework in SharePoint</span></span>](search-connector-framework-in-sharepoint.md)
     
   
--  <span data-ttu-id="8131f-127">[Implementieren von "BinarySecurityDescriptorAccessor"]((http://msdn.microsoft.com/library/6cf70490-dd3c-49cd-bb13-ed33e938435d%28Office.15%29.aspx))</span><span class="sxs-lookup"><span data-stu-id="8131f-127">[Implementing a BinarySecurityDescriptorAccessor]((http://msdn.microsoft.com/library/6cf70490-dd3c-49cd-bb13-ed33e938435d%28Office.15%29.aspx))</span></span>
+-  <span data-ttu-id="8131f-127">[Implementieren von "BinarySecurityDescriptorAccessor"](http://msdn.microsoft.com/library/6cf70490-dd3c-49cd-bb13-ed33e938435d%28Office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="8131f-127">[Implementing a BinarySecurityDescriptorAccessor](http://msdn.microsoft.com/library/6cf70490-dd3c-49cd-bb13-ed33e938435d%28Office.15%29.aspx)</span></span>
     
   
 -  [<span data-ttu-id="8131f-128">Optimieren der BDC-Modelldatei für die Suche in SharePoint</span><span class="sxs-lookup"><span data-stu-id="8131f-128">Enhancing the BDC model file for Search in SharePoint</span></span>](enhancing-the-bdc-model-file-for-search-in-sharepoint.md)

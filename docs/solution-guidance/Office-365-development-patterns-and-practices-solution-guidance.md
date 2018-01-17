@@ -37,6 +37,6 @@ ms.lasthandoff: 12/07/2017
 ## <a name="see-also"></a><span data-ttu-id="c2975-138">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="c2975-138">See also</span></span>
 <span data-ttu-id="c2975-139"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="c2975-139"></span></span>
 
--  <span data-ttu-id="c2975-140">[Office 365-Entwicklungsmuster und -übungen auf GitHub]((https://github.com/SharePoint/PnP))</span><span class="sxs-lookup"><span data-stu-id="c2975-140">[Office 365 Development Patterns and Practices on GitHub]((https://github.com/SharePoint/PnP))</span></span>
+-  <span data-ttu-id="c2975-140">[Office 365-Entwicklungsmuster und -übungen auf GitHub](https://github.com/SharePoint/PnP)</span><span class="sxs-lookup"><span data-stu-id="c2975-140">[Office 365 Development Patterns and Practices on GitHub](https://github.com/SharePoint/PnP)</span></span>
     
--  <span data-ttu-id="c2975-141">[Entwickeln auf der Office 365-Plattform]((http://msdn.microsoft.com/de-DE/office/office365/howto/platform-development-overview))</span><span class="sxs-lookup"><span data-stu-id="c2975-141">[Developing on the Office 365 platform]((http://msdn.microsoft.com/de-DE/office/office365/howto/platform-development-overview))</span></span>
+-  <span data-ttu-id="c2975-141">[Entwickeln auf der Office 365-Plattform](http://msdn.microsoft.com/de-DE/office/office365/howto/platform-development-overview)</span><span class="sxs-lookup"><span data-stu-id="c2975-141">[Developing on the Office 365 platform](http://msdn.microsoft.com/de-DE/office/office365/howto/platform-development-overview)</span></span>

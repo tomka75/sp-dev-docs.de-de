@@ -22,7 +22,7 @@ ms.lasthandoff: 12/07/2017
     
     
 
-<span data-ttu-id="bc4f7-p103">Bei dem Versuche eine Version von SharePoint Designer zu verwenden, die nicht mit der SharePoint-Farm übereinstimmt, können einige Probleme auftreten. Sehen Sie sich dazu beispielsweise den Artikel  [Sie haben Probleme mit Workflows oder erhalten Fehler in SharePoint Designer 2010]((http://support.microsoft.com/kb/2794961)) an.</span><span class="sxs-lookup"><span data-stu-id="bc4f7-p103">Trying to use a version of SharePoint Designer that does not match with the SharePoint farm can result in a number of issues. For example, see  [You have problems with workflows or receive errors in SharePoint Designer 2010]((http://support.microsoft.com/kb/2794961)).</span></span>
+<span data-ttu-id="bc4f7-p103">Bei dem Versuche eine Version von SharePoint Designer zu verwenden, die nicht mit der SharePoint-Farm übereinstimmt, können einige Probleme auftreten. Sehen Sie sich dazu beispielsweise den Artikel  [Sie haben Probleme mit Workflows oder erhalten Fehler in SharePoint Designer 2010](http://support.microsoft.com/kb/2794961) an.</span><span class="sxs-lookup"><span data-stu-id="bc4f7-p103">Trying to use a version of SharePoint Designer that does not match with the SharePoint farm can result in a number of issues. For example, see  [You have problems with workflows or receive errors in SharePoint Designer 2010](http://support.microsoft.com/kb/2794961).</span></span>
   
     
     
@@ -35,10 +35,10 @@ ms.lasthandoff: 12/07/2017
 <span data-ttu-id="bc4f7-115"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="bc4f7-115"><a name="bk_addresources"> </a></span></span>
 
 
--  <span data-ttu-id="bc4f7-116">[Neuerungen in SharePoint-Workflows]((http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx))</span><span class="sxs-lookup"><span data-stu-id="bc4f7-116">[What's new in workflow in SharePoint]((http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx))</span></span>
+-  <span data-ttu-id="bc4f7-116">[Neuerungen in SharePoint-Workflows](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)</span><span class="sxs-lookup"><span data-stu-id="bc4f7-116">[What's new in workflow in SharePoint](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)</span></span>
     
   
--  <span data-ttu-id="bc4f7-117">[Erste Schritte mit SharePoint-Workflows]((http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx))</span><span class="sxs-lookup"><span data-stu-id="bc4f7-117">[Getting started with SharePoint workflow]((http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx))</span></span>
+-  <span data-ttu-id="bc4f7-117">[Erste Schritte mit SharePoint-Workflows](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)</span><span class="sxs-lookup"><span data-stu-id="bc4f7-117">[Getting started with SharePoint workflow](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)</span></span>
     
   
 -  [<span data-ttu-id="bc4f7-118">Workflowentwicklung in SharePoint Designer und Visio</span><span class="sxs-lookup"><span data-stu-id="bc4f7-118">Workflow development in SharePoint Designer and Visio</span></span>](workflow-development-in-sharepoint-designer-and-visio.md)

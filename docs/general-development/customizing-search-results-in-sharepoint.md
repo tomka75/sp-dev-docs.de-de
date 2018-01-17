@@ -26,20 +26,20 @@ ms.lasthandoff: 12/07/2017
 - <span data-ttu-id="83f76-110">Dokumentenmappenreduzierung - hierbei wird nur ein Treffer für jede Dokumentbibliothek in SharePoint angezeigt.</span><span class="sxs-lookup"><span data-stu-id="83f76-110">Document set collapsing, where only one hit is displayed for each document library in SharePoint.</span></span>
     
   
-<span data-ttu-id="83f76-111">Sie können die Kriterien zum Reduzieren oder zum Entfernen von Duplikaten programmgesteuert mithilfe der folgenden  [KeywordQuery]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.aspx)) -Eigenschaften im Abfrageobjektmodell angeben:</span><span class="sxs-lookup"><span data-stu-id="83f76-111">You can specify the criteria for collapsing or duplicate trimming programmatically by using the following  [KeywordQuery]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.aspx)) properties within the Query object model:</span></span>
--  <span data-ttu-id="83f76-112">[CollapseSpecification]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.CollapseSpecification.aspx))</span><span class="sxs-lookup"><span data-stu-id="83f76-112">[CollapseSpecification]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.CollapseSpecification.aspx))</span></span>
+<span data-ttu-id="83f76-111">Sie können die Kriterien zum Reduzieren oder zum Entfernen von Duplikaten programmgesteuert mithilfe der folgenden  [KeywordQuery](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.aspx) -Eigenschaften im Abfrageobjektmodell angeben:</span><span class="sxs-lookup"><span data-stu-id="83f76-111">You can specify the criteria for collapsing or duplicate trimming programmatically by using the following  [KeywordQuery](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.aspx) properties within the Query object model:</span></span>
+-  <span data-ttu-id="83f76-112">[CollapseSpecification](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.CollapseSpecification.aspx)</span><span class="sxs-lookup"><span data-stu-id="83f76-112">[CollapseSpecification](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.CollapseSpecification.aspx)</span></span>
     
   
--  <span data-ttu-id="83f76-113">[TrimDuplicates]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.Query.TrimDuplicates.aspx))</span><span class="sxs-lookup"><span data-stu-id="83f76-113">[TrimDuplicates]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.Query.TrimDuplicates.aspx))</span></span>
+-  <span data-ttu-id="83f76-113">[TrimDuplicates](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.Query.TrimDuplicates.aspx)</span><span class="sxs-lookup"><span data-stu-id="83f76-113">[TrimDuplicates](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.Query.TrimDuplicates.aspx)</span></span>
     
   
--  <span data-ttu-id="83f76-114">[TrimDuplicatesOnProperty]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesOnProperty.aspx))</span><span class="sxs-lookup"><span data-stu-id="83f76-114">[TrimDuplicatesOnProperty]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesOnProperty.aspx))</span></span>
+-  <span data-ttu-id="83f76-114">[TrimDuplicatesOnProperty](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesOnProperty.aspx)</span><span class="sxs-lookup"><span data-stu-id="83f76-114">[TrimDuplicatesOnProperty](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesOnProperty.aspx)</span></span>
     
   
--  <span data-ttu-id="83f76-115">[TrimDuplicatesKeepCount]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesKeepCount.aspx))</span><span class="sxs-lookup"><span data-stu-id="83f76-115">[TrimDuplicatesKeepCount]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesKeepCount.aspx))</span></span>
+-  <span data-ttu-id="83f76-115">[TrimDuplicatesKeepCount](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesKeepCount.aspx)</span><span class="sxs-lookup"><span data-stu-id="83f76-115">[TrimDuplicatesKeepCount](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesKeepCount.aspx)</span></span>
     
   
--  <span data-ttu-id="83f76-116">[TrimDuplicatesIncludeId]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesIncludeId.aspx))</span><span class="sxs-lookup"><span data-stu-id="83f76-116">[TrimDuplicatesIncludeId]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesIncludeId.aspx))</span></span>
+-  <span data-ttu-id="83f76-116">[TrimDuplicatesIncludeId](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesIncludeId.aspx)</span><span class="sxs-lookup"><span data-stu-id="83f76-116">[TrimDuplicatesIncludeId](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.TrimDuplicatesIncludeId.aspx)</span></span>
     
   
 
@@ -282,10 +282,10 @@ using (var context = new ClientContext("http://localhost"))
 <span data-ttu-id="83f76-271"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="83f76-271"><a name="bk_addresources"> </a></span></span>
 
 
--  <span data-ttu-id="83f76-272">[KeywordQuery]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.aspx))</span><span class="sxs-lookup"><span data-stu-id="83f76-272">[KeywordQuery]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.aspx))</span></span>
+-  <span data-ttu-id="83f76-272">[KeywordQuery](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.aspx)</span><span class="sxs-lookup"><span data-stu-id="83f76-272">[KeywordQuery](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.aspx)</span></span>
     
   
--  <span data-ttu-id="83f76-273">[Übersicht über das Suchschema in SharePoint Server 2013]((http://technet.microsoft.com/de-DE/library/jj219669%28office.15%29.aspx))</span><span class="sxs-lookup"><span data-stu-id="83f76-273">[Overview of the search schema in SharePoint]((http://technet.microsoft.com/de-DE/library/jj219669%28office.15%29.aspx))</span></span>
+-  <span data-ttu-id="83f76-273">[Übersicht über das Suchschema in SharePoint Server 2013](http://technet.microsoft.com/de-DE/library/jj219669%28office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="83f76-273">[Overview of the search schema in SharePoint](http://technet.microsoft.com/de-DE/library/jj219669%28office.15%29.aspx)</span></span>
     
   
 

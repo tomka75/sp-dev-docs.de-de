@@ -17,7 +17,7 @@ ms.lasthandoff: 12/07/2017
 <span data-ttu-id="d6fce-p101">Visio 2013 und SharePoint Designer 2013 machen es Geschäftsanalysten, Prozessberatern und IT-Experten einfach, zusammenzuarbeiten und -Workflows zu erstellen. Sowohl Visio Professional 2013 als auch der Visual Designer in SharePoint Designer 2013 bieten eine optionale Darstellung von Workflows in einem Format, das für Benutzer mit und ohne Programmierkenntnisse gleichermaßen verständlich ist.</span><span class="sxs-lookup"><span data-stu-id="d6fce-p101">Visio 2013 and SharePoint Designer 2013 make it easy for business analysts, process consultants, and IT professionals to collaborate and build workflows. Both Visio Professional 2013 and the Visual Designer in SharePoint Designer 2013 provide a rich representation of workflows in a format that is understandable to programmers and non-programmers alike.</span></span>
   
 > [!NOTE] 
-> <span data-ttu-id="d6fce-108">Hinweise zur Einrichtung und Konfiguration von SharePoint und dem Workflow-Manager-Server finden Sie unter [Konfigurieren von Workflows in SharePoint]((http://technet.microsoft.com/de-DE/library/jj658586.aspx)).</span><span class="sxs-lookup"><span data-stu-id="d6fce-108">[Note:]((http://technet.microsoft.com/de-DE/library/jj658586.aspx)) For guidance on setting up and configuring SharePoint and the Workflow Manager server, see  Configure workflow in SharePoint.</span></span> 
+> <span data-ttu-id="d6fce-108">Hinweise zur Einrichtung und Konfiguration von SharePoint und dem Workflow-Manager-Server finden Sie unter [Konfigurieren von Workflows in SharePoint](http://technet.microsoft.com/de-DE/library/jj658586.aspx).</span><span class="sxs-lookup"><span data-stu-id="d6fce-108">[Note:](http://technet.microsoft.com/de-DE/library/jj658586.aspx) For guidance on setting up and configuring SharePoint and the Workflow Manager server, see  Configure workflow in SharePoint.</span></span> 
   
     
     
@@ -364,13 +364,13 @@ ms.lasthandoff: 12/07/2017
 -  [<span data-ttu-id="d6fce-270">Beheben von SharePoint Server 2013-Workflowvalidierungsfehlern in Visio 2013</span><span class="sxs-lookup"><span data-stu-id="d6fce-270">Troubleshooting SharePoint Server workflow validation errors in Visio</span></span>](troubleshooting-sharepoint-server-workflow-validation-errors-in-visio.md)
     
   
--  <span data-ttu-id="d6fce-271">[Erstellen, Importieren und Exportieren von SharePoint-Workflows in Visio]((http://office.microsoft.com/de-DE/visio-help/create-import-and-export-sharepoint-workflows-in-visio-HA101888007.aspx))</span><span class="sxs-lookup"><span data-stu-id="d6fce-271">[Create, import, and export SharePoint workflows in Visio 2010]((http://office.microsoft.com/de-DE/visio-help/create-import-and-export-sharepoint-workflows-in-visio-HA101888007.aspx))</span></span>
+-  <span data-ttu-id="d6fce-271">[Erstellen, Importieren und Exportieren von SharePoint-Workflows in Visio](http://office.microsoft.com/de-DE/visio-help/create-import-and-export-sharepoint-workflows-in-visio-HA101888007.aspx)</span><span class="sxs-lookup"><span data-stu-id="d6fce-271">[Create, import, and export SharePoint workflows in Visio 2010](http://office.microsoft.com/de-DE/visio-help/create-import-and-export-sharepoint-workflows-in-visio-HA101888007.aspx)</span></span>
     
   
--  <span data-ttu-id="d6fce-272">[SharePoint Developer Center]((http://msdn.microsoft.com/de-DE/sharepoint/default.aspx))</span><span class="sxs-lookup"><span data-stu-id="d6fce-272">[SharePoint Developer Center]((http://msdn.microsoft.com/de-DE/sharepoint/default.aspx))</span></span>
+-  <span data-ttu-id="d6fce-272">[SharePoint Developer Center](http://msdn.microsoft.com/de-DE/sharepoint/default.aspx)</span><span class="sxs-lookup"><span data-stu-id="d6fce-272">[SharePoint Developer Center](http://msdn.microsoft.com/de-DE/sharepoint/default.aspx)</span></span>
     
   
--  <span data-ttu-id="d6fce-273">[Visio Developer Center]((http://msdn.microsoft.com/de-DE/office/aa905478))</span><span class="sxs-lookup"><span data-stu-id="d6fce-273">[Visio Developer Center]((http://msdn.microsoft.com/de-DE/office/aa905478))</span></span>
+-  <span data-ttu-id="d6fce-273">[Visio Developer Center](http://msdn.microsoft.com/de-DE/office/aa905478)</span><span class="sxs-lookup"><span data-stu-id="d6fce-273">[Visio Developer Center](http://msdn.microsoft.com/de-DE/office/aa905478)</span></span>
     
   
 

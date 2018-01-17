@@ -164,30 +164,30 @@ ms.lasthandoff: 12/07/2017
   
     
     
-<span data-ttu-id="6d04b-p113">Ihre Seiten ASP.NET können auch die **Response.Output** -Methode zum Schreiben des Inhalts auf der Seite, der nicht in MDS zulässig ist. Stattdessen können Sie die folgenden MDS-kompatiblen Methoden der [SPHttpUtility]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.aspx)) -Klasse:</span><span class="sxs-lookup"><span data-stu-id="6d04b-p113">Your ASP.NET pages may also use the **Response.Output** method to write content to the page, which is not allowed in MDS. Instead, you can use the following MDS-compliant methods of the [SPHttpUtility]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.aspx)) class:</span></span>
+<span data-ttu-id="6d04b-p113">Ihre Seiten ASP.NET können auch die **Response.Output** -Methode zum Schreiben des Inhalts auf der Seite, der nicht in MDS zulässig ist. Stattdessen können Sie die folgenden MDS-kompatiblen Methoden der [SPHttpUtility](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.aspx) -Klasse:</span><span class="sxs-lookup"><span data-stu-id="6d04b-p113">Your ASP.NET pages may also use the **Response.Output** method to write content to the page, which is not allowed in MDS. Instead, you can use the following MDS-compliant methods of the [SPHttpUtility](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.aspx) class:</span></span>
   
     
     
 
--  <span data-ttu-id="6d04b-155">[WriteNoEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteNoEncode.aspx))</span><span class="sxs-lookup"><span data-stu-id="6d04b-155">[WriteNoEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteNoEncode.aspx))</span></span>
+-  <span data-ttu-id="6d04b-155">[WriteNoEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteNoEncode.aspx)</span><span class="sxs-lookup"><span data-stu-id="6d04b-155">[WriteNoEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteNoEncode.aspx)</span></span>
     
   
--  <span data-ttu-id="6d04b-156">[WriteHtmlEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlEncode.aspx))</span><span class="sxs-lookup"><span data-stu-id="6d04b-156">[WriteHtmlEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlEncode.aspx))</span></span>
+-  <span data-ttu-id="6d04b-156">[WriteHtmlEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlEncode.aspx)</span><span class="sxs-lookup"><span data-stu-id="6d04b-156">[WriteHtmlEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlEncode.aspx)</span></span>
     
   
--  <span data-ttu-id="6d04b-157">[WriteEcmaScriptStringLiteralEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteEcmaScriptStringLiteralEncode.aspx))</span><span class="sxs-lookup"><span data-stu-id="6d04b-157">[WriteEcmaScriptStringLiteralEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteEcmaScriptStringLiteralEncode.aspx))</span></span>
+-  <span data-ttu-id="6d04b-157">[WriteEcmaScriptStringLiteralEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteEcmaScriptStringLiteralEncode.aspx)</span><span class="sxs-lookup"><span data-stu-id="6d04b-157">[WriteEcmaScriptStringLiteralEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteEcmaScriptStringLiteralEncode.aspx)</span></span>
     
   
--  <span data-ttu-id="6d04b-158">[WriteHtmlEncodeAllowSimpleTextFormatting()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlEncodeAllowSimpleTextFormatting.aspx))</span><span class="sxs-lookup"><span data-stu-id="6d04b-158">[WriteHtmlEncodeAllowSimpleTextFormatting()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlEncodeAllowSimpleTextFormatting.aspx))</span></span>
+-  <span data-ttu-id="6d04b-158">[WriteHtmlEncodeAllowSimpleTextFormatting()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlEncodeAllowSimpleTextFormatting.aspx)</span><span class="sxs-lookup"><span data-stu-id="6d04b-158">[WriteHtmlEncodeAllowSimpleTextFormatting()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlEncodeAllowSimpleTextFormatting.aspx)</span></span>
     
   
--  <span data-ttu-id="6d04b-159">[WriteHtmlUrlAttributeEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlUrlAttributeEncode.aspx))</span><span class="sxs-lookup"><span data-stu-id="6d04b-159">[WriteHtmlUrlAttributeEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlUrlAttributeEncode.aspx))</span></span>
+-  <span data-ttu-id="6d04b-159">[WriteHtmlUrlAttributeEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlUrlAttributeEncode.aspx)</span><span class="sxs-lookup"><span data-stu-id="6d04b-159">[WriteHtmlUrlAttributeEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteHtmlUrlAttributeEncode.aspx)</span></span>
     
   
--  <span data-ttu-id="6d04b-160">[WriteUrlKeyValueEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteUrlKeyValueEncode.aspx))</span><span class="sxs-lookup"><span data-stu-id="6d04b-160">[WriteUrlKeyValueEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteUrlKeyValueEncode.aspx))</span></span>
+-  <span data-ttu-id="6d04b-160">[WriteUrlKeyValueEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteUrlKeyValueEncode.aspx)</span><span class="sxs-lookup"><span data-stu-id="6d04b-160">[WriteUrlKeyValueEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteUrlKeyValueEncode.aspx)</span></span>
     
   
--  <span data-ttu-id="6d04b-161">[WriteUrlPathEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteUrlPathEncode.aspx))</span><span class="sxs-lookup"><span data-stu-id="6d04b-161">[WriteUrlPathEncode()]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteUrlPathEncode.aspx))</span></span>
+-  <span data-ttu-id="6d04b-161">[WriteUrlPathEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteUrlPathEncode.aspx)</span><span class="sxs-lookup"><span data-stu-id="6d04b-161">[WriteUrlPathEncode()](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPHttpUtility.WriteUrlPathEncode.aspx)</span></span>
     
   
 <span data-ttu-id="6d04b-p114">Zusätzlich zum Verweisen auf JavaScript Dateien können Seiten ASP.NETJavaScript Inlinecode enthalten. Mit dem folgenden Muster stellen Sie das Skript blockiert MDS kompatibel.</span><span class="sxs-lookup"><span data-stu-id="6d04b-p114">Besides referencing JavaScript files, your ASP.NET pages can have inline JavaScript code. Use the following pattern to make your script blocks MDS compatible.</span></span>
@@ -220,7 +220,7 @@ namespace VisualWebPartProject2.VisualWebPart1
     // Rest of your control logic
 ```
 
-<span data-ttu-id="6d04b-p116">Darüber hinaus müssen die Steuerelemente und Webparts ihre Ressourcen mithilfe der Methoden in der Klasse  [SPPageContentManager]((https://msdn.microsoft.com/library/Microsoft.SharePoint.WebControls.SPPageContentManager.aspx)) zu registrieren. Die am häufigsten verwendeten Ressourcen sind JavaScript Snippets und versteckte mithilfe von der **RegisterClientScriptBlock** und **RegisterHiddenField**, registriert werden können.</span><span class="sxs-lookup"><span data-stu-id="6d04b-p116">Also, your controls and Web Parts need to register their resources using the methods in the  [SPPageContentManager]((https://msdn.microsoft.com/library/Microsoft.SharePoint.WebControls.SPPageContentManager.aspx)) class. The most common resources are JavaScript snippets and hidden files, which can be registered using the **RegisterClientScriptBlock** and **RegisterHiddenField**, respectively.</span></span>
+<span data-ttu-id="6d04b-p116">Darüber hinaus müssen die Steuerelemente und Webparts ihre Ressourcen mithilfe der Methoden in der Klasse  [SPPageContentManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.WebControls.SPPageContentManager.aspx) zu registrieren. Die am häufigsten verwendeten Ressourcen sind JavaScript Snippets und versteckte mithilfe von der **RegisterClientScriptBlock** und **RegisterHiddenField**, registriert werden können.</span><span class="sxs-lookup"><span data-stu-id="6d04b-p116">Also, your controls and Web Parts need to register their resources using the methods in the  [SPPageContentManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.WebControls.SPPageContentManager.aspx) class. The most common resources are JavaScript snippets and hidden files, which can be registered using the **RegisterClientScriptBlock** and **RegisterHiddenField**, respectively.</span></span>
   
     
     

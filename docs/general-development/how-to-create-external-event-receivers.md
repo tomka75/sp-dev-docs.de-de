@@ -18,7 +18,7 @@ ms.lasthandoff: 12/07/2017
     
     
 
-<span data-ttu-id="79951-p102">Zu diesem Artikel gehörende Codebeispiel  [SharePoint: erstellen ein remoteereignissempfängers für externe Daten]((http://code.msdn.microsoft.com/SharePoint-Create-a-095c594c)). Es veranschaulicht, wie alle Komponenten, die zum Konfigurieren und Verwenden von externen System ereignisbenachrichtigungen benötigt erstellen. In diesem Beispiel wird Folgendes:</span><span class="sxs-lookup"><span data-stu-id="79951-p102">This article accompanies the code sample  [SharePoint: Create a remote event receiver for external data]((http://code.msdn.microsoft.com/SharePoint-Create-a-095c594c)). It shows how to create all the components needed to configure and use external system event notifications. In this example, you will do the following:</span></span>
+<span data-ttu-id="79951-p102">Zu diesem Artikel gehörende Codebeispiel  [SharePoint: erstellen ein remoteereignissempfängers für externe Daten](http://code.msdn.microsoft.com/SharePoint-Create-a-095c594c). Es veranschaulicht, wie alle Komponenten, die zum Konfigurieren und Verwenden von externen System ereignisbenachrichtigungen benötigt erstellen. In diesem Beispiel wird Folgendes:</span><span class="sxs-lookup"><span data-stu-id="79951-p102">This article accompanies the code sample  [SharePoint: Create a remote event receiver for external data](http://code.msdn.microsoft.com/SharePoint-Create-a-095c594c). It shows how to create all the components needed to configure and use external system event notifications. In this example, you will do the following:</span></span>
   
     
     
@@ -99,11 +99,11 @@ ms.lasthandoff: 12/07/2017
   
     
     
-<span data-ttu-id="79951-140">Jedoch, wenn Sie keine Northwind installiert haben, finden Sie unter  [Installieren der Northwind-Beispieldatenbank]((http://msdn.microsoft.com/library/2f92cfc3-6310-4327-b2f2-8610f7385c86%28Office.15%29.aspx)).</span><span class="sxs-lookup"><span data-stu-id="79951-140">However, if you don't have Northwind installed, see  [Installing the Northwind Sample Database]((http://msdn.microsoft.com/library/2f92cfc3-6310-4327-b2f2-8610f7385c86%28Office.15%29.aspx)).</span></span>
+<span data-ttu-id="79951-140">Jedoch, wenn Sie keine Northwind installiert haben, finden Sie unter  [Installieren der Northwind-Beispieldatenbank](http://msdn.microsoft.com/library/2f92cfc3-6310-4327-b2f2-8610f7385c86%28Office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="79951-140">However, if you don't have Northwind installed, see  [Installing the Northwind Sample Database](http://msdn.microsoft.com/library/2f92cfc3-6310-4327-b2f2-8610f7385c86%28Office.15%29.aspx).</span></span>
   
     
     
-<span data-ttu-id="79951-141">Die Datenbank ist auch in das Codebeispiel enthalten:  [SharePoint: erstellen ein remoteereignissempfängers für externe Daten]((http://code.msdn.microsoft.com/SharePoint-Create-a-095c594c)).</span><span class="sxs-lookup"><span data-stu-id="79951-141">The database is also included with the code sample:  [SharePoint: Create a remote event receiver for external data]((http://code.msdn.microsoft.com/SharePoint-Create-a-095c594c)).</span></span>
+<span data-ttu-id="79951-141">Die Datenbank ist auch in das Codebeispiel enthalten:  [SharePoint: erstellen ein remoteereignissempfängers für externe Daten](http://code.msdn.microsoft.com/SharePoint-Create-a-095c594c).</span><span class="sxs-lookup"><span data-stu-id="79951-141">The database is also included with the code sample:  [SharePoint: Create a remote event receiver for external data](http://code.msdn.microsoft.com/SharePoint-Create-a-095c594c).</span></span>
   
     
     
@@ -382,7 +382,7 @@ GO
   
 5. <span data-ttu-id="79951-174">Verbinden Sie das Datenmodell mit der Datenbank, führen Sie einen der folgenden Schritte aus:</span><span class="sxs-lookup"><span data-stu-id="79951-174">Connect the data model to the database by doing one of the following steps:</span></span>
     
-1. <span data-ttu-id="79951-p113">Wenn Sie keine datenbankverbindung bereits konfiguriert haben, wählen Sie **Neue Verbindung** aus, und erstellen Sie eine neue Verbindung. Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen von Verbindungen mit SQL Server-Datenbanken]((http://msdn.microsoft.com/library/360c340d-e5a6-4a7e-a569-e95d500be43d%28Office.15%29.aspx)). Diese Instanz von SQL Server benötigen die Nordwind-Datenbank zugeordnet ist. Wählen Sie auf **Weiter**.</span><span class="sxs-lookup"><span data-stu-id="79951-p113">If you do not have a database connection already configured, choose **New Connection** and create a new connection. For more information, see [How to: Create Connections to SQL Server Databases]((http://msdn.microsoft.com/library/360c340d-e5a6-4a7e-a569-e95d500be43d%28Office.15%29.aspx)). This SQL Server instance must have the Northwind sample database attached. Choose **Next**.</span></span>
+1. <span data-ttu-id="79951-p113">Wenn Sie keine datenbankverbindung bereits konfiguriert haben, wählen Sie **Neue Verbindung** aus, und erstellen Sie eine neue Verbindung. Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen von Verbindungen mit SQL Server-Datenbanken](http://msdn.microsoft.com/library/360c340d-e5a6-4a7e-a569-e95d500be43d%28Office.15%29.aspx). Diese Instanz von SQL Server benötigen die Nordwind-Datenbank zugeordnet ist. Wählen Sie auf **Weiter**.</span><span class="sxs-lookup"><span data-stu-id="79951-p113">If you do not have a database connection already configured, choose **New Connection** and create a new connection. For more information, see [How to: Create Connections to SQL Server Databases](http://msdn.microsoft.com/library/360c340d-e5a6-4a7e-a569-e95d500be43d%28Office.15%29.aspx). This SQL Server instance must have the Northwind sample database attached. Choose **Next**.</span></span>
     
     <span data-ttu-id="79951-179">- oder -</span><span class="sxs-lookup"><span data-stu-id="79951-179">-or-</span></span>
     

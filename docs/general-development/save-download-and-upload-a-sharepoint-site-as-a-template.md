@@ -176,7 +176,7 @@ ms.lasthandoff: 12/07/2017
 <span data-ttu-id="a036f-188"><a name="bkmk_additionalresources"> </a></span><span class="sxs-lookup"><span data-stu-id="a036f-188"><a name="bkmk_additionalresources"> </a></span></span>
 
 
--  <span data-ttu-id="a036f-189">[Websitetypen: WebTemplates und Websitedefinitionen]((http://msdn.microsoft.com/de-DE/library/ms434313.aspx))</span><span class="sxs-lookup"><span data-stu-id="a036f-189">[Site Types: WebTemplates and Site Definitions]((http://msdn.microsoft.com/de-DE/library/ms434313.aspx))</span></span>
+-  <span data-ttu-id="a036f-189">[Websitetypen: WebTemplates und Websitedefinitionen](http://msdn.microsoft.com/de-DE/library/ms434313.aspx)</span><span class="sxs-lookup"><span data-stu-id="a036f-189">[Site Types: WebTemplates and Site Definitions](http://msdn.microsoft.com/de-DE/library/ms434313.aspx)</span></span>
     
   
 -  <span data-ttu-id="a036f-190">
@@ -187,13 +187,13 @@ ms.lasthandoff: 12/07/2017
   [Farmlösungen in SharePoint erstellen](http://msdn.microsoft.com/en-us/library/jj163902%28v=office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="a036f-191">[Build farm solutions in SharePoint](http://msdn.microsoft.com/en-us/library/jj163902%28v=office.15%29.aspx)</span></span>
     
   
--  <span data-ttu-id="a036f-192">[Kopieren oder Verschieben einer Liste mithilfe einer Listenvorlage]((http://office.com/redir/HA101782479.aspx))</span><span class="sxs-lookup"><span data-stu-id="a036f-192">[Copy or move lists by using list templates]((http://office.com/redir/HA101782479.aspx))</span></span>
+-  <span data-ttu-id="a036f-192">[Kopieren oder Verschieben einer Liste mithilfe einer Listenvorlage](http://office.com/redir/HA101782479.aspx)</span><span class="sxs-lookup"><span data-stu-id="a036f-192">[Copy or move lists by using list templates](http://office.com/redir/HA101782479.aspx)</span></span>
     
   
--  <span data-ttu-id="a036f-193">[Kopieren oder Verschieben einer Bibliothek mithilfe einer Bibliotheksvorlage]((http://office.com/redir/HA101814157.aspx))</span><span class="sxs-lookup"><span data-stu-id="a036f-193">[Copy or move a library by using a library template]((http://office.com/redir/HA101814157.aspx))</span></span>
+-  <span data-ttu-id="a036f-193">[Kopieren oder Verschieben einer Bibliothek mithilfe einer Bibliotheksvorlage](http://office.com/redir/HA101814157.aspx)</span><span class="sxs-lookup"><span data-stu-id="a036f-193">[Copy or move a library by using a library template](http://office.com/redir/HA101814157.aspx)</span></span>
     
   
--  <span data-ttu-id="a036f-194">[Kopieren oder Verschieben von Bibliotheksdateien mit "Öffnen" im Windows-Explorer]((http://office.com/redir/HA101811182.aspx))</span><span class="sxs-lookup"><span data-stu-id="a036f-194">[Copy or move library files by using Windows Explorer]((http://office.com/redir/HA101811182.aspx))</span></span>
+-  <span data-ttu-id="a036f-194">[Kopieren oder Verschieben von Bibliotheksdateien mit "Öffnen" im Windows-Explorer](http://office.com/redir/HA101811182.aspx)</span><span class="sxs-lookup"><span data-stu-id="a036f-194">[Copy or move library files by using Windows Explorer](http://office.com/redir/HA101811182.aspx)</span></span>
     
   
 

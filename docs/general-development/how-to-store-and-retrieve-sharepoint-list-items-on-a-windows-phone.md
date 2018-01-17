@@ -924,10 +924,10 @@ private void OnDraftsButtonClick(object sender, EventArgs e)
 -  [<span data-ttu-id="9158e-273">Erstellen von Windows Phone-Apps, die auf SharePoint zugreifen</span><span class="sxs-lookup"><span data-stu-id="9158e-273">Build Windows Phone apps that access SharePoint</span></span>](build-windows-phone-apps-that-access-sharepoint.md)
     
   
--  <span data-ttu-id="9158e-274">[Lokalen Datenspeicher für Windows Phone]((http://msdn.microsoft.com/library/fdf7e973-5de5-4cfa-bf63-1e65c90744cc%28Office.15%29.aspx))</span><span class="sxs-lookup"><span data-stu-id="9158e-274">[Local Data Storage for Windows Phone]((http://msdn.microsoft.com/library/fdf7e973-5de5-4cfa-bf63-1e65c90744cc%28Office.15%29.aspx))</span></span>
+-  <span data-ttu-id="9158e-274">[Lokalen Datenspeicher für Windows Phone](http://msdn.microsoft.com/library/fdf7e973-5de5-4cfa-bf63-1e65c90744cc%28Office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="9158e-274">[Local Data Storage for Windows Phone](http://msdn.microsoft.com/library/fdf7e973-5de5-4cfa-bf63-1e65c90744cc%28Office.15%29.aspx)</span></span>
     
   
--  <span data-ttu-id="9158e-275">[Vorgehensweise: beibehalten und Wiederherstellung Anwendungszustand für Windows Phone]((http://msdn.microsoft.com/library/342e97c1-ff92-4cb2-81fa-e46f87c3cfc2%28Office.15%29.aspx))</span><span class="sxs-lookup"><span data-stu-id="9158e-275">[How to: Preserve and Restore Application State for Windows Phone]((http://msdn.microsoft.com/library/342e97c1-ff92-4cb2-81fa-e46f87c3cfc2%28Office.15%29.aspx))</span></span>
+-  <span data-ttu-id="9158e-275">[Vorgehensweise: beibehalten und Wiederherstellung Anwendungszustand für Windows Phone](http://msdn.microsoft.com/library/342e97c1-ff92-4cb2-81fa-e46f87c3cfc2%28Office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="9158e-275">[How to: Preserve and Restore Application State for Windows Phone](http://msdn.microsoft.com/library/342e97c1-ff92-4cb2-81fa-e46f87c3cfc2%28Office.15%29.aspx)</span></span>
     
   
 -  [<span data-ttu-id="9158e-276">Windows Phone SDK 8.0</span><span class="sxs-lookup"><span data-stu-id="9158e-276">Windows Phone SDK 8.0</span></span>](http://www.microsoft.com/en-us/download/details.aspx?id=35471)

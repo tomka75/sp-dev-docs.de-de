@@ -78,9 +78,9 @@ ms.lasthandoff: 12/07/2017
 |:-----|:-----|
 | [<span data-ttu-id="ae09d-121">SelectProperties</span><span class="sxs-lookup"><span data-stu-id="ae09d-121">SelectProperties</span></span>](#bk_SelectProperties) <br/> |<span data-ttu-id="ae09d-122">string[]</span><span class="sxs-lookup"><span data-stu-id="ae09d-122">string[]</span></span>  <br/> |
 | [<span data-ttu-id="ae09d-123">RefinementFilters</span><span class="sxs-lookup"><span data-stu-id="ae09d-123">RefinementFilters</span></span>](#bk_RefinementFilters) <br/> |<span data-ttu-id="ae09d-124">string[]</span><span class="sxs-lookup"><span data-stu-id="ae09d-124">string[]</span></span>  <br/> |
-| [<span data-ttu-id="ae09d-125">SortList</span><span class="sxs-lookup"><span data-stu-id="ae09d-125">SortList</span></span>](#bk_SortList) <br/> | <span data-ttu-id="ae09d-126">[Sort]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Search.Query.Sort.aspx))</span><span class="sxs-lookup"><span data-stu-id="ae09d-126">[Sort]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Search.Query.Sort.aspx))</span></span> <br/> |
+| [<span data-ttu-id="ae09d-125">SortList</span><span class="sxs-lookup"><span data-stu-id="ae09d-125">SortList</span></span>](#bk_SortList) <br/> | <span data-ttu-id="ae09d-126">[Sort](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Search.Query.Sort.aspx)</span><span class="sxs-lookup"><span data-stu-id="ae09d-126">[Sort](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Search.Query.Sort.aspx)</span></span> <br/> |
 | [<span data-ttu-id="ae09d-127">HithighlightedProperties</span><span class="sxs-lookup"><span data-stu-id="ae09d-127">HithighlightedProperties</span></span>](#bk_HithighlightedProperties) <br/> |<span data-ttu-id="ae09d-128">string[]</span><span class="sxs-lookup"><span data-stu-id="ae09d-128">string[]</span></span>  <br/> |
-| [<span data-ttu-id="ae09d-129">Properties</span><span class="sxs-lookup"><span data-stu-id="ae09d-129">Properties</span></span>](#bk_Properties) <br/> | <span data-ttu-id="ae09d-130">[Microsoft.SharePoint.Client.Search.Query.KeywordQueryProperties]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Search.Query.KeywordQueryProperties.aspx))</span><span class="sxs-lookup"><span data-stu-id="ae09d-130">[Microsoft.SharePoint.Client.Search.Query.KeywordQueryProperties]((https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Search.Query.KeywordQueryProperties.aspx))</span></span> <br/> |
+| [<span data-ttu-id="ae09d-129">Properties</span><span class="sxs-lookup"><span data-stu-id="ae09d-129">Properties</span></span>](#bk_Properties) <br/> | <span data-ttu-id="ae09d-130">[Microsoft.SharePoint.Client.Search.Query.KeywordQueryProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Search.Query.KeywordQueryProperties.aspx)</span><span class="sxs-lookup"><span data-stu-id="ae09d-130">[Microsoft.SharePoint.Client.Search.Query.KeywordQueryProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Search.Query.KeywordQueryProperties.aspx)</span></span> <br/> |
    
 <span data-ttu-id="ae09d-131">Verwenden Sie **POST**-Anforderungen in den folgenden Szenarios:</span><span class="sxs-lookup"><span data-stu-id="ae09d-131">Use **POST** requests in the following scenarios:</span></span>
   
@@ -412,7 +412,7 @@ ms.lasthandoff: 12/07/2017
 ### <a name="culture"></a><span data-ttu-id="ae09d-205">Culture</span><span class="sxs-lookup"><span data-stu-id="ae09d-205">Culture</span></span>
 <span data-ttu-id="ae09d-206"><a name="bk_Culture"> </a></span><span class="sxs-lookup"><span data-stu-id="ae09d-206"><a name="bk_Culture"> </a></span></span>
 
-<span data-ttu-id="ae09d-207">Gebietsschema-ID (LCID) für die Abfrage (siehe  [Von Microsoft zugewiesene Gebietsschema-IDs]((http://msdn.microsoft.com/de-DE/goglobal/bb964664.aspx))).</span><span class="sxs-lookup"><span data-stu-id="ae09d-207">The locale ID (LCID) for the query (see  [Locale IDs Assigned by Microsoft]((http://msdn.microsoft.com/de-DE/goglobal/bb964664.aspx))).</span></span>
+<span data-ttu-id="ae09d-207">Gebietsschema-ID (LCID) für die Abfrage (siehe  [Von Microsoft zugewiesene Gebietsschema-IDs](http://msdn.microsoft.com/de-DE/goglobal/bb964664.aspx)).</span><span class="sxs-lookup"><span data-stu-id="ae09d-207">The locale ID (LCID) for the query (see  [Locale IDs Assigned by Microsoft](http://msdn.microsoft.com/de-DE/goglobal/bb964664.aspx)).</span></span>
   
     
     
@@ -1084,7 +1084,7 @@ ms.lasthandoff: 12/07/2017
 ```
 
 > [!NOTE]
-> <span data-ttu-id="ae09d-341">[QueryPropertyValueType]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.QueryPropertyValueType.aspx)) gibt den Typ der Eigenschaft an. Jeder Typ weist einen bestimmten Indexwert auf.</span><span class="sxs-lookup"><span data-stu-id="ae09d-341">[Note:]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.QueryPropertyValueType.aspx)) QueryPropertyValueType specifies the type for the property; each type has a specific index value.</span></span>
+> <span data-ttu-id="ae09d-341">[QueryPropertyValueType](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.QueryPropertyValueType.aspx) gibt den Typ der Eigenschaft an. Jeder Typ weist einen bestimmten Indexwert auf.</span><span class="sxs-lookup"><span data-stu-id="ae09d-341">[Note:](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.QueryPropertyValueType.aspx) QueryPropertyValueType specifies the type for the property; each type has a specific index value.</span></span>
   
     
     
@@ -1133,7 +1133,7 @@ ms.lasthandoff: 12/07/2017
   
     
     
-<span data-ttu-id="ae09d-p125">Im folgenden Beispiel bezieht sich  _MatchType_ auf [ReorderingRuleMatchType]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ReorderingRuleMatchType.aspx)) . Im folgenden Beispiel spezifiziert `'MatchType' : '0'` Folgendes: [ResultContainsKeyword]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ReorderingRuleMatchType.ResultContainsKeyword.aspx)) .</span><span class="sxs-lookup"><span data-stu-id="ae09d-p125">In the following example,  _MatchType_ refers to [ReorderingRuleMatchType]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ReorderingRuleMatchType.aspx)) . In the following example, `'MatchType' : '0'` specifies [ResultContainsKeyword]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ReorderingRuleMatchType.ResultContainsKeyword.aspx)) .</span></span>
+<span data-ttu-id="ae09d-p125">Im folgenden Beispiel bezieht sich  _MatchType_ auf [ReorderingRuleMatchType](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ReorderingRuleMatchType.aspx) . Im folgenden Beispiel spezifiziert `'MatchType' : '0'` Folgendes: [ResultContainsKeyword](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ReorderingRuleMatchType.ResultContainsKeyword.aspx) .</span><span class="sxs-lookup"><span data-stu-id="ae09d-p125">In the following example,  _MatchType_ refers to [ReorderingRuleMatchType](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ReorderingRuleMatchType.aspx) . In the following example, `'MatchType' : '0'` specifies [ResultContainsKeyword](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ReorderingRuleMatchType.ResultContainsKeyword.aspx) .</span></span>
   
     
     
@@ -1405,7 +1405,7 @@ QueryTemplatePropertiesUrl : 'spfile://webroot/queryparametertemplate.xml'
 ### <a name="uilanguage"></a><span data-ttu-id="ae09d-410">UIlanguage</span><span class="sxs-lookup"><span data-stu-id="ae09d-410">UIlanguage</span></span>
 <span data-ttu-id="ae09d-411"><a name="bk_ProcessPersonalFavorites"> </a></span><span class="sxs-lookup"><span data-stu-id="ae09d-411"><a name="bk_ProcessPersonalFavorites"> </a></span></span>
 
-<span data-ttu-id="ae09d-412">Gebietsschema-ID (LCID) der Benutzeroberfläche (siehe  [Von Microsoft zugewiesene Gebietsschema-IDs]((http://msdn.microsoft.com/de-DE/goglobal/bb964664))).</span><span class="sxs-lookup"><span data-stu-id="ae09d-412">The locale identifier (LCID) of the user interface (see  [Locale IDs Assigned by Microsoft]((http://msdn.microsoft.com/de-DE/goglobal/bb964664))).</span></span>
+<span data-ttu-id="ae09d-412">Gebietsschema-ID (LCID) der Benutzeroberfläche (siehe  [Von Microsoft zugewiesene Gebietsschema-IDs](http://msdn.microsoft.com/de-DE/goglobal/bb964664)).</span><span class="sxs-lookup"><span data-stu-id="ae09d-412">The locale identifier (LCID) of the user interface (see  [Locale IDs Assigned by Microsoft](http://msdn.microsoft.com/de-DE/goglobal/bb964664)).</span></span>
   
     
     
@@ -1541,7 +1541,7 @@ QueryTemplatePropertiesUrl : 'spfile://webroot/queryparametertemplate.xml'
 ### <a name="to-enable-anonymous-search-rest-queries"></a><span data-ttu-id="ae09d-439">So ermöglichen Sie anonyme Search-REST-Abfragen</span><span class="sxs-lookup"><span data-stu-id="ae09d-439">To enable anonymous Search REST queries</span></span>
 
 
-1. <span data-ttu-id="ae09d-p131">Ermöglichen Sie den anonymen Zugriff auf die Webanwendung und Veröffentlichungswebsite. Weitere Informationen erhalten Sie unter  [Verwalten von Berechtigungsrichtlinien für eine Webanwendung in SharePoint]((http://technet.microsoft.com/de-DE/library/ff608071.aspx)) und [Planen der Benutzerauthentifizierungsmethoden in SharePoint]((http://technet.microsoft.com/de-DE/library/cc262350.aspx)) in [TechNet]((http://technet.microsoft.com/de-DE/)).</span><span class="sxs-lookup"><span data-stu-id="ae09d-p131">Enable anonymous access on the web application and publishing site. For more information about how to do this, see  [Manage permission policies for a web application in SharePoint]((http://technet.microsoft.com/de-DE/library/ff608071.aspx)) and [Plan for user authentication methods in SharePoint]((http://technet.microsoft.com/de-DE/library/cc262350.aspx)) on [TechNet]((http://technet.microsoft.com/de-DE/)).</span></span>
+1. <span data-ttu-id="ae09d-p131">Ermöglichen Sie den anonymen Zugriff auf die Webanwendung und Veröffentlichungswebsite. Weitere Informationen erhalten Sie unter  [Verwalten von Berechtigungsrichtlinien für eine Webanwendung in SharePoint](http://technet.microsoft.com/de-DE/library/ff608071.aspx) und [Planen der Benutzerauthentifizierungsmethoden in SharePoint](http://technet.microsoft.com/de-DE/library/cc262350.aspx) in [TechNet](http://technet.microsoft.com/de-DE/).</span><span class="sxs-lookup"><span data-stu-id="ae09d-p131">Enable anonymous access on the web application and publishing site. For more information about how to do this, see  [Manage permission policies for a web application in SharePoint](http://technet.microsoft.com/de-DE/library/ff608071.aspx) and [Plan for user authentication methods in SharePoint](http://technet.microsoft.com/de-DE/library/cc262350.aspx) on [TechNet](http://technet.microsoft.com/de-DE/).</span></span>
     
   
 2. <span data-ttu-id="ae09d-442">Fügen Sie eine neue Dokumentbibliothek namens QueryPropertiesTemplate zur Veröffentlichungswebsite hinzu.</span><span class="sxs-lookup"><span data-stu-id="ae09d-442">Add a new document library named QueryPropertiesTemplate to the publishing site.</span></span>
@@ -1631,7 +1631,7 @@ QueryTemplatePropertiesUrl : 'spfile://webroot/queryparametertemplate.xml'
   
     
     
-<span data-ttu-id="ae09d-450">Enthält ein serialisiertes  [QueryProperties]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.QueryProperties.aspx)) -Objekt.</span><span class="sxs-lookup"><span data-stu-id="ae09d-450">Contains a serialized  [QueryProperties]((https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.QueryProperties.aspx)) object.</span></span>
+<span data-ttu-id="ae09d-450">Enthält ein serialisiertes  [QueryProperties](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.QueryProperties.aspx) -Objekt.</span><span class="sxs-lookup"><span data-stu-id="ae09d-450">Contains a serialized  [QueryProperties](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.QueryProperties.aspx) object.</span></span>
     
   
 - <span data-ttu-id="ae09d-451">Element **WhiteList**</span><span class="sxs-lookup"><span data-stu-id="ae09d-451">**WhiteList** element</span></span>
@@ -1660,13 +1660,13 @@ QueryTemplatePropertiesUrl : 'spfile://webroot/queryparametertemplate.xml'
 -  [<span data-ttu-id="ae09d-460">Suche in SharePoint</span><span class="sxs-lookup"><span data-stu-id="ae09d-460">Search in SharePoint</span></span>](search-in-sharepoint.md)
     
   
--  <span data-ttu-id="ae09d-461">[SharePoint: Verwenden des Search-REST-Diensts über eine App für SharePoint]((http://code.msdn.microsoft.com/sharepoint/SharePoint-Perform-a-1bf3e87d))</span><span class="sxs-lookup"><span data-stu-id="ae09d-461">[SharePoint: Using the search REST service from an app for SharePoint]((http://code.msdn.microsoft.com/sharepoint/SharePoint-Perform-a-1bf3e87d))</span></span>
+-  <span data-ttu-id="ae09d-461">[SharePoint: Verwenden des Search-REST-Diensts über eine App für SharePoint](http://code.msdn.microsoft.com/sharepoint/SharePoint-Perform-a-1bf3e87d)</span><span class="sxs-lookup"><span data-stu-id="ae09d-461">[SharePoint: Using the search REST service from an app for SharePoint](http://code.msdn.microsoft.com/sharepoint/SharePoint-Perform-a-1bf3e87d)</span></span>
     
   
 -  [<span data-ttu-id="ae09d-462">What's new in SharePoint-Suche für Entwickler</span><span class="sxs-lookup"><span data-stu-id="ae09d-462">What's new in SharePoint search for developers</span></span>](what-s-new-in-sharepoint-search-for-developers.md)
     
   
--  <span data-ttu-id="ae09d-463">[Programmieren mit dem SharePoint REST-Dienst]((http://msdn.microsoft.com/library/d4b5c277-ed50-420c-8a9b-860342284b72%28Office.15%29.aspx))</span><span class="sxs-lookup"><span data-stu-id="ae09d-463">[Use OData query operations in SharePoint REST requests]((http://msdn.microsoft.com/library/d4b5c277-ed50-420c-8a9b-860342284b72%28Office.15%29.aspx))</span></span>
+-  <span data-ttu-id="ae09d-463">[Programmieren mit dem SharePoint REST-Dienst](http://msdn.microsoft.com/library/d4b5c277-ed50-420c-8a9b-860342284b72%28Office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="ae09d-463">[Use OData query operations in SharePoint REST requests](http://msdn.microsoft.com/library/d4b5c277-ed50-420c-8a9b-860342284b72%28Office.15%29.aspx)</span></span>
     
   
 

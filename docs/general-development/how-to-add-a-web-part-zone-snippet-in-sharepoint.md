@@ -226,10 +226,10 @@ ms.lasthandoff: 12/07/2017
 -  [<span data-ttu-id="c7288-213">Codeausschnitte des SharePoint-Entwurfs-Managers</span><span class="sxs-lookup"><span data-stu-id="c7288-213">SharePoint Design Manager snippets</span></span>](sharepoint-design-manager-snippets.md)
     
   
--  <span data-ttu-id="c7288-214">[WebPartZone-Klasse]((http://msdn.microsoft.com/de-DE/library/system.web.ui.webcontrols.webparts.webpartzone.aspx))</span><span class="sxs-lookup"><span data-stu-id="c7288-214">[WebPartZone class]((http://msdn.microsoft.com/de-DE/library/system.web.ui.webcontrols.webparts.webpartzone.aspx))</span></span>
+-  <span data-ttu-id="c7288-214">[WebPartZone-Klasse](http://msdn.microsoft.com/de-DE/library/system.web.ui.webcontrols.webparts.webpartzone.aspx)</span><span class="sxs-lookup"><span data-stu-id="c7288-214">[WebPartZone class](http://msdn.microsoft.com/de-DE/library/system.web.ui.webcontrols.webparts.webpartzone.aspx)</span></span>
     
   
--  <span data-ttu-id="c7288-215">[WebPartZoneBase-Eigenschaften]((http://msdn.microsoft.com/de-DE/library/335sw9k3.aspx))</span><span class="sxs-lookup"><span data-stu-id="c7288-215">[WebPartZoneBase properties]((http://msdn.microsoft.com/de-DE/library/335sw9k3.aspx))</span></span>
+-  <span data-ttu-id="c7288-215">[WebPartZoneBase-Eigenschaften](http://msdn.microsoft.com/de-DE/library/335sw9k3.aspx)</span><span class="sxs-lookup"><span data-stu-id="c7288-215">[WebPartZoneBase properties](http://msdn.microsoft.com/de-DE/library/335sw9k3.aspx)</span></span>
     
   
 -  [<span data-ttu-id="c7288-216">Erstellen von Websites für SharePoint</span><span class="sxs-lookup"><span data-stu-id="c7288-216">Build sites for SharePoint</span></span>](build-sites-for-sharepoint.md)

@@ -138,9 +138,9 @@ ms.lasthandoff: 12/07/2017
 <span data-ttu-id="4ebba-225"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="4ebba-225"><a name="bk_addresources"> </a></span></span>
 
 -  [<span data-ttu-id="4ebba-226">Aktualisieren von Anpassungen für SharePoint-Websites</span><span class="sxs-lookup"><span data-stu-id="4ebba-226">Upgrade site customizations for SharePoint</span></span>](upgrade-site-customizations-for-sharepoint.md)
--  <span data-ttu-id="4ebba-227">[SharePoint 2010 und Webvorlagen]((http://blogs.msdn.com/b/vesku/archive/2010/10/14/sharepoint-2010-and-web-templates.aspx))</span><span class="sxs-lookup"><span data-stu-id="4ebba-227">[SharePoint 2010 and web templates]((http://blogs.msdn.com/b/vesku/archive/2010/10/14/sharepoint-2010-and-web-templates.aspx))</span></span> 
--  <span data-ttu-id="4ebba-228">[Planen eines Upgrades eine Websitesammlung]((https://technet.microsoft.com/de-DE/library/ff191199.aspx))</span><span class="sxs-lookup"><span data-stu-id="4ebba-228">[Plan to upgrade a site collection]((https://technet.microsoft.com/de-DE/library/ff191199.aspx))</span></span>
--  <span data-ttu-id="4ebba-229">[Planen von websitesammlungsupgrades in SharePoint]((http://technet.microsoft.com/de-DE/library/ff191199.aspx))</span><span class="sxs-lookup"><span data-stu-id="4ebba-229">[Plan for site collection upgrades in SharePoint]((http://technet.microsoft.com/de-DE/library/ff191199.aspx))</span></span>
+-  <span data-ttu-id="4ebba-227">[SharePoint 2010 und Webvorlagen](http://blogs.msdn.com/b/vesku/archive/2010/10/14/sharepoint-2010-and-web-templates.aspx)</span><span class="sxs-lookup"><span data-stu-id="4ebba-227">[SharePoint 2010 and web templates](http://blogs.msdn.com/b/vesku/archive/2010/10/14/sharepoint-2010-and-web-templates.aspx)</span></span> 
+-  <span data-ttu-id="4ebba-228">[Planen eines Upgrades eine Websitesammlung](https://technet.microsoft.com/de-DE/library/ff191199.aspx)</span><span class="sxs-lookup"><span data-stu-id="4ebba-228">[Plan to upgrade a site collection](https://technet.microsoft.com/de-DE/library/ff191199.aspx)</span></span>
+-  <span data-ttu-id="4ebba-229">[Planen von websitesammlungsupgrades in SharePoint](http://technet.microsoft.com/de-DE/library/ff191199.aspx)</span><span class="sxs-lookup"><span data-stu-id="4ebba-229">[Plan for site collection upgrades in SharePoint](http://technet.microsoft.com/de-DE/library/ff191199.aspx)</span></span>
     
   
 

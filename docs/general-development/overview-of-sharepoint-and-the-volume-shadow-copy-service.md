@@ -109,7 +109,7 @@ ms.lasthandoff: 12/07/2017
 -  [<span data-ttu-id="c5f78-141">Vorgehensweise: Sichern und Wiederherstellen eine Suchdienstanwendung in SharePoint mit VSS</span><span class="sxs-lookup"><span data-stu-id="c5f78-141">How to: Back up and restore a search service application in SharePoint using VSS</span></span>](how-to-back-up-and-restore-a-search-service-application-in-sharepoint-using.md)
     
   
--  <span data-ttu-id="c5f78-142">[Starting and Configuring the WSS Writer Service]((http://msdn.microsoft.com/library/c9243dd6-e61e-4783-9fef-48d0122f1c09.aspx))</span><span class="sxs-lookup"><span data-stu-id="c5f78-142">[Starting and Configuring the WSS Writer Service]((http://msdn.microsoft.com/library/c9243dd6-e61e-4783-9fef-48d0122f1c09.aspx))</span></span>
+-  <span data-ttu-id="c5f78-142">[Starting and Configuring the WSS Writer Service](http://msdn.microsoft.com/library/c9243dd6-e61e-4783-9fef-48d0122f1c09.aspx)</span><span class="sxs-lookup"><span data-stu-id="c5f78-142">[Starting and Configuring the WSS Writer Service](http://msdn.microsoft.com/library/c9243dd6-e61e-4783-9fef-48d0122f1c09.aspx)</span></span>
     
   
 -  <span data-ttu-id="c5f78-143">

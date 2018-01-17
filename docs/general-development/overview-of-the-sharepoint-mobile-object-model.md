@@ -64,7 +64,7 @@ public String Uri
 public UrlZone UrlZone
 ```
 
-<span data-ttu-id="1fd08-p102">Die UrlZone-Klasse ist die Client-Objektmodellversion der SPUrlZone-Klasse im Serverobjektmodell. Weitere Informationen hierzu finden Sie unter der  [SharePoint 2010 Software Development Kit (SDK)]((http://msdn.microsoft.com/de-DE/library/ee557253.aspx)).</span><span class="sxs-lookup"><span data-stu-id="1fd08-p102">The UrlZone class is the client object model version of the SPUrlZone class in the server object model. For more information about it, see the  [SharePoint 2010 Software Development Kit (SDK)]((http://msdn.microsoft.com/de-DE/library/ee557253.aspx)).</span></span>
+<span data-ttu-id="1fd08-p102">Die UrlZone-Klasse ist die Client-Objektmodellversion der SPUrlZone-Klasse im Serverobjektmodell. Weitere Informationen hierzu finden Sie unter der  [SharePoint 2010 Software Development Kit (SDK)](http://msdn.microsoft.com/de-DE/library/ee557253.aspx).</span><span class="sxs-lookup"><span data-stu-id="1fd08-p102">The UrlZone class is the client object model version of the SPUrlZone class in the server object model. For more information about it, see the  [SharePoint 2010 Software Development Kit (SDK)](http://msdn.microsoft.com/de-DE/library/ee557253.aspx).</span></span>
   
     
     
@@ -347,7 +347,7 @@ public NetworkCredential GetCredential(Uri uri, string authType)
 -  <span data-ttu-id="1fd08-170">_authType_ ist die Art der Authentifizierung angefordert.</span><span class="sxs-lookup"><span data-stu-id="1fd08-170">_authType_ is the type of authentication requested.</span></span>
     
   
-<span data-ttu-id="1fd08-p103">Diese Methode ist nur für die anonyme Authentifizierung verwendet. Wenn  _authType_ nicht "Basic" ist, wird ein leeres Objekt zurückgegeben. Weitere Informationen über die **NetworkCredential** -Klasse finden Sie unter [NetworkCredential-Klasse]((http://msdn.microsoft.com/de-DE/library/system.net.networkcredential.aspx)).</span><span class="sxs-lookup"><span data-stu-id="1fd08-p103">This method is only used for anonymous authentication. If  _authType_ is not "Basic", an empty object is returned. For more information about the **NetworkCredential** class, see [NetworkCredential Class]((http://msdn.microsoft.com/de-DE/library/system.net.networkcredential.aspx)).</span></span>
+<span data-ttu-id="1fd08-p103">Diese Methode ist nur für die anonyme Authentifizierung verwendet. Wenn  _authType_ nicht "Basic" ist, wird ein leeres Objekt zurückgegeben. Weitere Informationen über die **NetworkCredential** -Klasse finden Sie unter [NetworkCredential-Klasse](http://msdn.microsoft.com/de-DE/library/system.net.networkcredential.aspx).</span><span class="sxs-lookup"><span data-stu-id="1fd08-p103">This method is only used for anonymous authentication. If  _authType_ is not "Basic", an empty object is returned. For more information about the **NetworkCredential** class, see [NetworkCredential Class](http://msdn.microsoft.com/de-DE/library/system.net.networkcredential.aspx).</span></span>
   
     
     

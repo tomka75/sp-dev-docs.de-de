@@ -189,7 +189,7 @@ status = xlSrv.SetCellA1(sessionId, String.Empty, args[1], args[2]);
   
 
 > [!NOTE]
-> <span data-ttu-id="50fa3-157">Weitere Informationen zu Momentaufnahmen finden Sie unter [Gewusst wie: Abrufen einer kompletten Arbeitsmappe oder einer Momentaufnahme](how-to-get-an-entire-workbook-or-a-snapshot.md).</span><span class="sxs-lookup"><span data-stu-id="50fa3-157">For more information about snapshots, see [How to: Get an Entire Workbook or a Snapshot](how-to-get-an-entire-workbook-or-a-snapshot.md).</span></span> <span data-ttu-id="50fa3-158">Weitere Informationen zu der **SetCellA1**-Methode finden Sie in der Dokumentation der Excel-Webdienste.</span><span class="sxs-lookup"><span data-stu-id="50fa3-158">For more information about the **SetCellA1** method, see the Excel Web Services reference documentation.</span></span> <span data-ttu-id="50fa3-159">Der Namespace des Webdiensts ist [Microsoft.Office.Excel.Server.WebServices]((https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx)).</span><span class="sxs-lookup"><span data-stu-id="50fa3-159">The namespace of the Web service is [Microsoft.Office.Excel.Server.WebServices]((https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx)) .</span></span>
+> <span data-ttu-id="50fa3-157">Weitere Informationen zu Momentaufnahmen finden Sie unter [Gewusst wie: Abrufen einer kompletten Arbeitsmappe oder einer Momentaufnahme](how-to-get-an-entire-workbook-or-a-snapshot.md).</span><span class="sxs-lookup"><span data-stu-id="50fa3-157">For more information about snapshots, see [How to: Get an Entire Workbook or a Snapshot](how-to-get-an-entire-workbook-or-a-snapshot.md).</span></span> <span data-ttu-id="50fa3-158">Weitere Informationen zu der **SetCellA1**-Methode finden Sie in der Dokumentation der Excel-Webdienste.</span><span class="sxs-lookup"><span data-stu-id="50fa3-158">For more information about the **SetCellA1** method, see the Excel Web Services reference documentation.</span></span> <span data-ttu-id="50fa3-159">Der Namespace des Webdiensts ist [Microsoft.Office.Excel.Server.WebServices](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx).</span><span class="sxs-lookup"><span data-stu-id="50fa3-159">The namespace of the Web service is [Microsoft.Office.Excel.Server.WebServices](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx) .</span></span>
   
     
     
@@ -211,7 +211,7 @@ status = xlSrv.SetCellA1(sessionId, String.Empty, args[1], args[2]);
   
     
     
- <span data-ttu-id="50fa3-164">[Microsoft.Office.Excel.Server.WebServices]((https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx))</span><span class="sxs-lookup"><span data-stu-id="50fa3-164">[Microsoft.Office.Excel.Server.WebServices]((https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx))</span></span>
+ <span data-ttu-id="50fa3-164">[Microsoft.Office.Excel.Server.WebServices](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx)</span><span class="sxs-lookup"><span data-stu-id="50fa3-164">[Microsoft.Office.Excel.Server.WebServices](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx)</span></span>
 #### <a name="concepts"></a><span data-ttu-id="50fa3-165">Konzepte</span><span class="sxs-lookup"><span data-stu-id="50fa3-165">Concepts</span></span>
 
 

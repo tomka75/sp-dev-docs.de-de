@@ -22,12 +22,12 @@ ms.lasthandoff: 12/07/2017
   
     
     
-<span data-ttu-id="abaa4-112">Eine vollständige Beschreibung zum Konfigurieren einer funktionierenden Hybrid-Lösung finden Sie unter  [Hybridlösung für SharePoint]((http://technet.microsoft.com/de-DE/library/jj838715.aspx)).</span><span class="sxs-lookup"><span data-stu-id="abaa4-112">For a complete description of how to configure a working hybrid solution, see  [Hybrid for SharePoint]((http://technet.microsoft.com/de-DE/library/jj838715.aspx)).</span></span> <span data-ttu-id="abaa4-113">Diese Artikelreihe führt Sie durch alle Anforderungen der Konfiguration von Datenquellen, Reverseproxys, Suche, Sicherheit, Netzwerken und anderen Voraussetzungen zum Einrichten des End-to-End-Szenarios.</span><span class="sxs-lookup"><span data-stu-id="abaa4-113">This series of articles walks you through all the requirements of configuring data sources, reverse proxies, search, security, networking, and everything else needed to set up the end-to-end scenario.</span></span>
+<span data-ttu-id="abaa4-112">Eine vollständige Beschreibung zum Konfigurieren einer funktionierenden Hybrid-Lösung finden Sie unter  [Hybridlösung für SharePoint](http://technet.microsoft.com/de-DE/library/jj838715.aspx).</span><span class="sxs-lookup"><span data-stu-id="abaa4-112">For a complete description of how to configure a working hybrid solution, see  [Hybrid for SharePoint](http://technet.microsoft.com/de-DE/library/jj838715.aspx).</span></span> <span data-ttu-id="abaa4-113">Diese Artikelreihe führt Sie durch alle Anforderungen der Konfiguration von Datenquellen, Reverseproxys, Suche, Sicherheit, Netzwerken und anderen Voraussetzungen zum Einrichten des End-to-End-Szenarios.</span><span class="sxs-lookup"><span data-stu-id="abaa4-113">This series of articles walks you through all the requirements of configuring data sources, reverse proxies, search, security, networking, and everything else needed to set up the end-to-end scenario.</span></span>
   
     
     
 
-> <span data-ttu-id="abaa4-114">**Vorsicht:** Um eine SharePoint-Hybridumgebung zu konfigurieren, benötigen Sie eine Kombination aus Experten-Know-how und erheblicher praktischer Erfahrung mit SharePoint, SharePoint Online und verwandten Produkten und Technologien.</span><span class="sxs-lookup"><span data-stu-id="abaa4-114">**Caution:** To configure a hybrid SharePoint environment, you need a combination of expert skills and significant hands-on experience with SharePoint, SharePoint Online, and related products and technologies.</span></span> <span data-ttu-id="abaa4-115">Es wird empfohlen, bei Entwurf und Bereitstellung der Hybridumgebung technische Anleitung und Unterstützung durch die Microsoft Beratungsdienste in Anspruch zu nehmen.</span><span class="sxs-lookup"><span data-stu-id="abaa4-115">We recommend that you engage Microsoft Consulting Services to provide technical guidance and support during the design and deployment of your hybrid environment.</span></span> <span data-ttu-id="abaa4-116">Weitere Informationen finden Sie unter [Microsoft Services]((http://www.microsoft.com/de-DE/microsoftservices/deploy.aspx)).</span><span class="sxs-lookup"><span data-stu-id="abaa4-116">> For more information, see  [Microsoft Services]((http://www.microsoft.com/de-DE/microsoftservices/deploy.aspx)).</span></span> 
+> <span data-ttu-id="abaa4-114">**Vorsicht:** Um eine SharePoint-Hybridumgebung zu konfigurieren, benötigen Sie eine Kombination aus Experten-Know-how und erheblicher praktischer Erfahrung mit SharePoint, SharePoint Online und verwandten Produkten und Technologien.</span><span class="sxs-lookup"><span data-stu-id="abaa4-114">**Caution:** To configure a hybrid SharePoint environment, you need a combination of expert skills and significant hands-on experience with SharePoint, SharePoint Online, and related products and technologies.</span></span> <span data-ttu-id="abaa4-115">Es wird empfohlen, bei Entwurf und Bereitstellung der Hybridumgebung technische Anleitung und Unterstützung durch die Microsoft Beratungsdienste in Anspruch zu nehmen.</span><span class="sxs-lookup"><span data-stu-id="abaa4-115">We recommend that you engage Microsoft Consulting Services to provide technical guidance and support during the design and deployment of your hybrid environment.</span></span> <span data-ttu-id="abaa4-116">Weitere Informationen finden Sie unter [Microsoft Services](http://www.microsoft.com/de-DE/microsoftservices/deploy.aspx).</span><span class="sxs-lookup"><span data-stu-id="abaa4-116">> For more information, see  [Microsoft Services](http://www.microsoft.com/de-DE/microsoftservices/deploy.aspx).</span></span> 
   
     
     
@@ -120,10 +120,10 @@ ms.lasthandoff: 12/07/2017
     
     
 
--  <span data-ttu-id="abaa4-153">[Erste Schritte mit OData-Teil 1: Erstellen einer OData-Dienst]((http://msdn.microsoft.com/de-DE/data/gg601462))</span><span class="sxs-lookup"><span data-stu-id="abaa4-153">[Getting Started With OData Part 1: Building an OData Service]((http://msdn.microsoft.com/de-DE/data/gg601462))</span></span>
+-  <span data-ttu-id="abaa4-153">[Erste Schritte mit OData-Teil 1: Erstellen einer OData-Dienst](http://msdn.microsoft.com/de-DE/data/gg601462)</span><span class="sxs-lookup"><span data-stu-id="abaa4-153">[Getting Started With OData Part 1: Building an OData Service](http://msdn.microsoft.com/de-DE/data/gg601462)</span></span>
     
   
--  <span data-ttu-id="abaa4-154">[Schnellstart (WCF Data Services)]((http://msdn.microsoft.com/de-DE/library/cc668796.aspx))</span><span class="sxs-lookup"><span data-stu-id="abaa4-154">[Quickstart (WCF Data Services)]((http://msdn.microsoft.com/de-DE/library/cc668796.aspx))</span></span>
+-  <span data-ttu-id="abaa4-154">[Schnellstart (WCF Data Services)](http://msdn.microsoft.com/de-DE/library/cc668796.aspx)</span><span class="sxs-lookup"><span data-stu-id="abaa4-154">[Quickstart (WCF Data Services)](http://msdn.microsoft.com/de-DE/library/cc668796.aspx)</span></span>
     
   
 
@@ -202,10 +202,10 @@ ms.lasthandoff: 12/07/2017
     
     
 
--  <span data-ttu-id="abaa4-188">[Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen]((http://msdn.microsoft.com/library/d15a74a7-3c10-485a-9885-7ef11aaa0d90%28Office.15%29.aspx))</span><span class="sxs-lookup"><span data-stu-id="abaa4-188">[Deploying and installing SharePoint Add-ins: methods and options]((http://msdn.microsoft.com/library/d15a74a7-3c10-485a-9885-7ef11aaa0d90%28Office.15%29.aspx))</span></span>
+-  <span data-ttu-id="abaa4-188">[Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](http://msdn.microsoft.com/library/d15a74a7-3c10-485a-9885-7ef11aaa0d90%28Office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="abaa4-188">[Deploying and installing SharePoint Add-ins: methods and options](http://msdn.microsoft.com/library/d15a74a7-3c10-485a-9885-7ef11aaa0d90%28Office.15%29.aspx)</span></span>
     
   
--  <span data-ttu-id="abaa4-189">[Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio]((http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx))</span><span class="sxs-lookup"><span data-stu-id="abaa4-189">[Publish SharePoint Add-ins by using Visual Studio]((http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx))</span></span>
+-  <span data-ttu-id="abaa4-189">[Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio](http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="abaa4-189">[Publish SharePoint Add-ins by using Visual Studio](http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx)</span></span>
     
   
 <span data-ttu-id="abaa4-p114">Außerdem können Sie die BDCM-Datei für den externen Inhaltstyp erstellt und zu extrahieren, die auf jeder Ebene oberhalb der app verwendet werden. Dies ist in  [Vorgehensweise: Konvertieren ein Add-in-bezogenen externes Inhaltstyps in mandantenbereichsbezogenen](how-to-convert-an-add-in-scoped-external-content-type-to-tenant-scoped.md)veranschaulicht.</span><span class="sxs-lookup"><span data-stu-id="abaa4-p114">You can also take the BDCM file created for the external content type and extract that to be used at any level above the app. This is demonstrated in  [How to: Convert an add-in-scoped external content type to tenant-scoped](how-to-convert-an-add-in-scoped-external-content-type-to-tenant-scoped.md).</span></span>
@@ -217,7 +217,7 @@ ms.lasthandoff: 12/07/2017
 <span data-ttu-id="abaa4-193"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="abaa4-193"><a name="bk_addresources"> </a></span></span>
 
 
--  <span data-ttu-id="abaa4-194">[Hybridlösung für SharePoint]((http://technet.microsoft.com/de-DE/library/jj838715.aspx))</span><span class="sxs-lookup"><span data-stu-id="abaa4-194">[Hybrid for SharePoint]((http://technet.microsoft.com/de-DE/library/jj838715.aspx))</span></span>
+-  <span data-ttu-id="abaa4-194">[Hybridlösung für SharePoint](http://technet.microsoft.com/de-DE/library/jj838715.aspx)</span><span class="sxs-lookup"><span data-stu-id="abaa4-194">[Hybrid for SharePoint](http://technet.microsoft.com/de-DE/library/jj838715.aspx)</span></span>
     
   
 -  [<span data-ttu-id="abaa4-195">Business Connectivity Services in SharePoint</span><span class="sxs-lookup"><span data-stu-id="abaa4-195">Business Connectivity Services in SharePoint</span></span>](business-connectivity-services-in-sharepoint.md)
@@ -226,7 +226,7 @@ ms.lasthandoff: 12/07/2017
 -  [<span data-ttu-id="abaa4-196">Gewusst wie: Erstellen eines externen Inhaltstyps aus einer OData-Quelle in SharePoint</span><span class="sxs-lookup"><span data-stu-id="abaa4-196">How to: Create an external content type from an OData source in SharePoint</span></span>](how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint.md)
     
   
--  <span data-ttu-id="abaa4-197">[Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio]((http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx))</span><span class="sxs-lookup"><span data-stu-id="abaa4-197">[Publish SharePoint Add-ins by using Visual Studio]((http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx))</span></span>
+-  <span data-ttu-id="abaa4-197">[Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio](http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="abaa4-197">[Publish SharePoint Add-ins by using Visual Studio](http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx)</span></span>
     
   
 

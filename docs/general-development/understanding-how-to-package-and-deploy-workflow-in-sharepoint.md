@@ -30,7 +30,7 @@ ms.lasthandoff: 12/07/2017
    
 
 > [!NOTE] 
-> <span data-ttu-id="abffb-124">SharePoint enthält zwei verschiedene Workflowplattformen: die SharePoint 2010-Workflowplattform und die SharePoint-Workflowplattform.</span><span class="sxs-lookup"><span data-stu-id="abffb-124">Note: SharePoint contains two different workflow platforms: the SharePoint 2010 Workflow platform and the SharePoint Workflow platform.</span></span> <span data-ttu-id="abffb-125">Beide Plattformen stehen in SharePoint zur Verfügung.</span><span class="sxs-lookup"><span data-stu-id="abffb-125">Both platforms are available in SharePoint.</span></span> <span data-ttu-id="abffb-126">Weitere Informationen zu den beiden Workflows finden Sie unter [Erste Schritte mit SharePoint-Workflow.]((http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx))</span><span class="sxs-lookup"><span data-stu-id="abffb-126">For more information about the two workflow, see  [Getting started with SharePoint workflow.]((http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx))</span></span>
+> <span data-ttu-id="abffb-124">SharePoint enthält zwei verschiedene Workflowplattformen: die SharePoint 2010-Workflowplattform und die SharePoint-Workflowplattform.</span><span class="sxs-lookup"><span data-stu-id="abffb-124">Note: SharePoint contains two different workflow platforms: the SharePoint 2010 Workflow platform and the SharePoint Workflow platform.</span></span> <span data-ttu-id="abffb-125">Beide Plattformen stehen in SharePoint zur Verfügung.</span><span class="sxs-lookup"><span data-stu-id="abffb-125">Both platforms are available in SharePoint.</span></span> <span data-ttu-id="abffb-126">Weitere Informationen zu den beiden Workflows finden Sie unter [Erste Schritte mit SharePoint-Workflow.](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)</span><span class="sxs-lookup"><span data-stu-id="abffb-126">For more information about the two workflow, see  [Getting started with SharePoint workflow.](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)</span></span>
   
     
     
@@ -219,13 +219,13 @@ ms.lasthandoff: 12/07/2017
 <span data-ttu-id="abffb-179"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="abffb-179"><a name="bk_addresources"> </a></span></span>
 
 
--  <span data-ttu-id="abffb-180">[Workflows in SharePoint ]((http://technet.microsoft.com/de-DE/sharepoint/jj556245.aspx))</span><span class="sxs-lookup"><span data-stu-id="abffb-180">[Workflow in SharePoint ]((http://technet.microsoft.com/de-DE/sharepoint/jj556245.aspx))</span></span>
+-  <span data-ttu-id="abffb-180">[Workflows in SharePoint ](http://technet.microsoft.com/de-DE/sharepoint/jj556245.aspx)</span><span class="sxs-lookup"><span data-stu-id="abffb-180">[Workflow in SharePoint ](http://technet.microsoft.com/de-DE/sharepoint/jj556245.aspx)</span></span>
     
   
--  <span data-ttu-id="abffb-181">[Neuerungen bei SharePoint-Workflows]((http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx))</span><span class="sxs-lookup"><span data-stu-id="abffb-181">[What's new in workflow in SharePoint]((http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx))</span></span>
+-  <span data-ttu-id="abffb-181">[Neuerungen bei SharePoint-Workflows](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)</span><span class="sxs-lookup"><span data-stu-id="abffb-181">[What's new in workflow in SharePoint](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)</span></span>
     
   
--  <span data-ttu-id="abffb-182">[Erste Schritte mit SharePoint-Workflows]((http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx))</span><span class="sxs-lookup"><span data-stu-id="abffb-182">[Getting started with SharePoint workflow]((http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx))</span></span>
+-  <span data-ttu-id="abffb-182">[Erste Schritte mit SharePoint-Workflows](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)</span><span class="sxs-lookup"><span data-stu-id="abffb-182">[Getting started with SharePoint workflow](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)</span></span>
     
   
 -  [<span data-ttu-id="abffb-183">Workflowentwicklung in SharePoint Designer und Visio</span><span class="sxs-lookup"><span data-stu-id="abffb-183">Workflow development in SharePoint Designer and Visio</span></span>](workflow-development-in-sharepoint-designer-and-visio.md)
@@ -234,7 +234,7 @@ ms.lasthandoff: 12/07/2017
 -  [<span data-ttu-id="abffb-184">Kurzübersicht zu Workflowaktionen (SharePoint-Workflowplattform)</span><span class="sxs-lookup"><span data-stu-id="abffb-184">Workflow actions quick reference (SharePoint Workflow platform)</span></span>](workflow-actions-quick-reference-sharepoint-workflow-platform.md)
     
   
--  <span data-ttu-id="abffb-185">[Blogartikel des SharePoint Designer-Teams: Verpackungs- und Bereitstellungsszenario für Workflows]((http://blogs.msdn.com/b/sharepointdesigner/archive/2012/08/30/packaging-list-site-and-reusable-workflow-and-how-to-deploy-the-package.aspx))</span><span class="sxs-lookup"><span data-stu-id="abffb-185">[Blog article from the SharePoint Designer team: Workflow package and deploy scenario]((http://blogs.msdn.com/b/sharepointdesigner/archive/2012/08/30/packaging-list-site-and-reusable-workflow-and-how-to-deploy-the-package.aspx))</span></span>
+-  <span data-ttu-id="abffb-185">[Blogartikel des SharePoint Designer-Teams: Verpackungs- und Bereitstellungsszenario für Workflows](http://blogs.msdn.com/b/sharepointdesigner/archive/2012/08/30/packaging-list-site-and-reusable-workflow-and-how-to-deploy-the-package.aspx)</span><span class="sxs-lookup"><span data-stu-id="abffb-185">[Blog article from the SharePoint Designer team: Workflow package and deploy scenario](http://blogs.msdn.com/b/sharepointdesigner/archive/2012/08/30/packaging-list-site-and-reusable-workflow-and-how-to-deploy-the-package.aspx)</span></span>
     
   
 

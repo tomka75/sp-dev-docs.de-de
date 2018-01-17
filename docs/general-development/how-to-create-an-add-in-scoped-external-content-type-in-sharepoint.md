@@ -55,7 +55,7 @@ ms.lasthandoff: 12/07/2017
 2. <span data-ttu-id="45bdb-117">Erstellen Sie ein Projekt **-Add-in für SharePoint**.</span><span class="sxs-lookup"><span data-stu-id="45bdb-117">Create an **Add-in for SharePoint** project.</span></span>
     
   
-3. <span data-ttu-id="45bdb-p101">Geben Sie die Add-in-Einstellungen, einschließlich der Add-in-Name die URL der Website für das Debuggen des Add-Ins und wie Sie das Add-in (automatisch gehostet, vom Anbieter gehostete oder SharePoint-Hosting) hosten möchten. Weitere Informationen finden Sie unter  [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint]((http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx)).</span><span class="sxs-lookup"><span data-stu-id="45bdb-p101">Specify the add-in settings, including add-in name, the site URL for debugging the add-in, and how you would like to host the add-in (Autohosted, Provider-hosted, or SharePoint-hosted). For more information, see  [Choose patterns for developing and hosting your SharePoint Add-in]((http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx)).</span></span>
+3. <span data-ttu-id="45bdb-p101">Geben Sie die Add-in-Einstellungen, einschließlich der Add-in-Name die URL der Website für das Debuggen des Add-Ins und wie Sie das Add-in (automatisch gehostet, vom Anbieter gehostete oder SharePoint-Hosting) hosten möchten. Weitere Informationen finden Sie unter  [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint](http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="45bdb-p101">Specify the add-in settings, including add-in name, the site URL for debugging the add-in, and how you would like to host the add-in (Autohosted, Provider-hosted, or SharePoint-hosted). For more information, see  [Choose patterns for developing and hosting your SharePoint Add-in](http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx).</span></span>
     
   
 4. <span data-ttu-id="45bdb-120">Wählen Sie auf **Fertig stellen**, um die app zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="45bdb-120">Choose **Finish** to create the app.</span></span>
@@ -66,13 +66,13 @@ ms.lasthandoff: 12/07/2017
     
     
 
--  <span data-ttu-id="45bdb-122">[Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins]((http://msdn.microsoft.com/library/3038dd73-41ee-436f-8c78-ef8e6869bf7b%28Office.15%29.aspx))</span><span class="sxs-lookup"><span data-stu-id="45bdb-122">[Get started creating provider-hosted SharePoint Add-ins]((http://msdn.microsoft.com/library/3038dd73-41ee-436f-8c78-ef8e6869bf7b%28Office.15%29.aspx))</span></span>
+-  <span data-ttu-id="45bdb-122">[Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](http://msdn.microsoft.com/library/3038dd73-41ee-436f-8c78-ef8e6869bf7b%28Office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="45bdb-122">[Get started creating provider-hosted SharePoint Add-ins](http://msdn.microsoft.com/library/3038dd73-41ee-436f-8c78-ef8e6869bf7b%28Office.15%29.aspx)</span></span>
     
   
--  <span data-ttu-id="45bdb-123">[So geht's: Erstellen einer einfachen automatisch gehosteten App für SharePoint]((http://msdn.microsoft.com/library/0572894d-c437-4b7d-8ac6-8405496e2145%28Office.15%29.aspx))</span><span class="sxs-lookup"><span data-stu-id="45bdb-123">[How to: Create a basic autohosted app for SharePoint]((http://msdn.microsoft.com/library/0572894d-c437-4b7d-8ac6-8405496e2145%28Office.15%29.aspx))</span></span>
+-  <span data-ttu-id="45bdb-123">[So geht's: Erstellen einer einfachen automatisch gehosteten App für SharePoint](http://msdn.microsoft.com/library/0572894d-c437-4b7d-8ac6-8405496e2145%28Office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="45bdb-123">[How to: Create a basic autohosted app for SharePoint](http://msdn.microsoft.com/library/0572894d-c437-4b7d-8ac6-8405496e2145%28Office.15%29.aspx)</span></span>
     
   
--  <span data-ttu-id="45bdb-124">[Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins]((http://msdn.microsoft.com/library/1b992485-6efe-4ea4-a18c-221689b0b66f%28Office.15%29.aspx))</span><span class="sxs-lookup"><span data-stu-id="45bdb-124">[Get started creating SharePoint-hosted SharePoint Add-ins]((http://msdn.microsoft.com/library/1b992485-6efe-4ea4-a18c-221689b0b66f%28Office.15%29.aspx))</span></span>
+-  <span data-ttu-id="45bdb-124">[Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](http://msdn.microsoft.com/library/1b992485-6efe-4ea4-a18c-221689b0b66f%28Office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="45bdb-124">[Get started creating SharePoint-hosted SharePoint Add-ins](http://msdn.microsoft.com/library/1b992485-6efe-4ea4-a18c-221689b0b66f%28Office.15%29.aspx)</span></span>
     
   
 
@@ -89,7 +89,7 @@ ms.lasthandoff: 12/07/2017
     <span data-ttu-id="45bdb-130">Geben Sie einen Namen für die OData-Quelle an.</span><span class="sxs-lookup"><span data-stu-id="45bdb-130">Specify a name for your OData source.</span></span>
     
     > [!NOTE]
-    > <span data-ttu-id="45bdb-131">In diesem Beispiel verwenden Sie den Northwind-Dienst, der sich in der Hersteller-Liste auf der [OpenData Protocol-Website]((http://www.odata.org)) befindet.</span><span class="sxs-lookup"><span data-stu-id="45bdb-131">[Note:]((http://www.odata.org)) For this example, you will use the Northwind service that is available from the producers list located on the  Open Data Protocol website.</span></span> 
+    > <span data-ttu-id="45bdb-131">In diesem Beispiel verwenden Sie den Northwind-Dienst, der sich in der Hersteller-Liste auf der [OpenData Protocol-Website](http://www.odata.org) befindet.</span><span class="sxs-lookup"><span data-stu-id="45bdb-131">[Note:](http://www.odata.org) For this example, you will use the Northwind service that is available from the producers list located on the  Open Data Protocol website.</span></span> 
 
 3. <span data-ttu-id="45bdb-p103">Eine Liste wird angezeigt, mit Datenentitäten, die vom OData Service verfügbar gemacht werden. Wählen Sie eine oder mehrere Entitäten, und wählen Sie **Fertig stellen**.</span><span class="sxs-lookup"><span data-stu-id="45bdb-p103">A list appears showing data entities that are being exposed by the OData Service. Select one or more of the entities, and choose **Finish**.</span></span>
     
@@ -109,10 +109,10 @@ ms.lasthandoff: 12/07/2017
 -  [<span data-ttu-id="45bdb-138">Add-in-bezogenen externen Inhaltstypen in SharePoint</span><span class="sxs-lookup"><span data-stu-id="45bdb-138">Add-in-scoped external content types in SharePoint</span></span>](add-in-scoped-external-content-types-in-sharepoint.md)
     
   
--  <span data-ttu-id="45bdb-139">[Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint]((http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx))</span><span class="sxs-lookup"><span data-stu-id="45bdb-139">[Choose patterns for developing and hosting your SharePoint Add-in]((http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx))</span></span>
+-  <span data-ttu-id="45bdb-139">[Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint](http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="45bdb-139">[Choose patterns for developing and hosting your SharePoint Add-in](http://msdn.microsoft.com/library/05ce5435-0a03-4ddc-976b-c33b08d03457%28Office.15%29.aspx)</span></span>
     
   
--  <span data-ttu-id="45bdb-140">[SharePoint-Add-Ins]((http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx))</span><span class="sxs-lookup"><span data-stu-id="45bdb-140">[SharePoint Add-ins]((http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx))</span></span>
+-  <span data-ttu-id="45bdb-140">[SharePoint-Add-Ins](http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="45bdb-140">[SharePoint Add-ins](http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx)</span></span>
     
   
 -  [<span data-ttu-id="45bdb-141">Externe Inhaltstypen in SharePoint</span><span class="sxs-lookup"><span data-stu-id="45bdb-141">External content types in SharePoint</span></span>](external-content-types-in-sharepoint.md)

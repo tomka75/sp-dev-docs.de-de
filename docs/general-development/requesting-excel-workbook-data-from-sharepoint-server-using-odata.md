@@ -12,7 +12,7 @@ ms.lasthandoff: 12/07/2017
 # <a name="requesting-excel-workbook-data-from-sharepoint-server-using-odata"></a><span data-ttu-id="98c98-102">Anfordern von Excel-Arbeitsmappendaten von SharePoint Server mithilfe von OData</span><span class="sxs-lookup"><span data-stu-id="98c98-102">Requesting Excel workbook data from SharePoint Server using OData</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="98c98-103">Die Excel Services-REST-API kann in lokalen Bereitstellungen von SharePoint und SharePoint 2016 verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="98c98-103">Note: The Excel Services REST API applies to SharePoint and SharePoint 2016 on-premises.</span></span> <span data-ttu-id="98c98-104">Für Konten in Office 365 Education, Office 365 Business und Office 356 Enterprise müssen Sie die Excel-REST-APIs verwenden, die in den [Microsoft Graph]((http://graph.microsoft.io/de-DE/docs/api-reference/v1.0/resources/excel))-Endpunkt integriert sind.</span><span class="sxs-lookup"><span data-stu-id="98c98-104">For Office 365 Education, Business, and Enterprise accounts, use the Excel REST APIs that are part of the  [Microsoft Graph]((http://graph.microsoft.io/de-DE/docs/api-reference/v1.0/resources/excel)) endpoint.</span></span>
+> <span data-ttu-id="98c98-103">Die Excel Services-REST-API kann in lokalen Bereitstellungen von SharePoint und SharePoint 2016 verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="98c98-103">Note: The Excel Services REST API applies to SharePoint and SharePoint 2016 on-premises.</span></span> <span data-ttu-id="98c98-104">Für Konten in Office 365 Education, Office 365 Business und Office 356 Enterprise müssen Sie die Excel-REST-APIs verwenden, die in den [Microsoft Graph](http://graph.microsoft.io/de-DE/docs/api-reference/v1.0/resources/excel)-Endpunkt integriert sind.</span><span class="sxs-lookup"><span data-stu-id="98c98-104">For Office 365 Education, Business, and Enterprise accounts, use the Excel REST APIs that are part of the  [Microsoft Graph](http://graph.microsoft.io/de-DE/docs/api-reference/v1.0/resources/excel) endpoint.</span></span>
   
     
     
@@ -92,9 +92,9 @@ ms.lasthandoff: 12/07/2017
 -  [<span data-ttu-id="98c98-184">Verwenden von OData mit Excel Services-REST in SharePoint</span><span class="sxs-lookup"><span data-stu-id="98c98-184">Using OData with Excel Services REST in SharePoint</span></span>](using-odata-with-excel-services-rest-in-sharepoint.md)
     
   
--  <span data-ttu-id="98c98-185">[Was ist neu in Excel Services für Entwickler]((http://msdn.microsoft.com/library/09e96c8b-cb55-4fd1-a797-b50fbf0f9296.aspx))</span><span class="sxs-lookup"><span data-stu-id="98c98-185">[What's new in Excel Services for developers]((http://msdn.microsoft.com/library/09e96c8b-cb55-4fd1-a797-b50fbf0f9296.aspx))</span></span>
+-  <span data-ttu-id="98c98-185">[Was ist neu in Excel Services für Entwickler](http://msdn.microsoft.com/library/09e96c8b-cb55-4fd1-a797-b50fbf0f9296.aspx)</span><span class="sxs-lookup"><span data-stu-id="98c98-185">[What's new in Excel Services for developers](http://msdn.microsoft.com/library/09e96c8b-cb55-4fd1-a797-b50fbf0f9296.aspx)</span></span>
     
   
--  <span data-ttu-id="98c98-186">[Dokumentation für OData-Spezifikation]((http://www.odata.org))</span><span class="sxs-lookup"><span data-stu-id="98c98-186">[OData specification documentation]((http://www.odata.org))</span></span>
+-  <span data-ttu-id="98c98-186">[Dokumentation für OData-Spezifikation](http://www.odata.org)</span><span class="sxs-lookup"><span data-stu-id="98c98-186">[OData specification documentation](http://www.odata.org)</span></span>
     
   
