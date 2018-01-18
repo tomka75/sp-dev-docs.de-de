@@ -2,11 +2,11 @@
 title: "PowerShell-Cmdlets für SharePoint-Websitedesigns und -Websiteskripts"
 description: Verwenden Sie PowerShell-Cmdlets zum Erstellen, Abrufen und Entfernen von Websitedesigns und Websiteskripts.
 ms.date: 12/14/2017
-ms.openlocfilehash: d28a487c20970973cd11a26532068b54c095d939
-ms.sourcegitcommit: 8e63066ad9591e51bbda419b1b9527452111081b
+ms.openlocfilehash: e6f9f0324cb0879317d04aa9873ad168072073cc
+ms.sourcegitcommit: 6f2b3b5bd81c2de4f761e10ed5e2f0b9c3c485bf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="powershell-cmdlets-for-sharepoint-site-designs-and-site-scripts"></a>PowerShell-Cmdlets für SharePoint-Websitedesigns und -Websiteskripts
 
@@ -20,7 +20,7 @@ Verwenden Sie PowerShell-Cmdlets zum Erstellen, Abrufen und Entfernen von Websit
 Bevor Sie die PowerShell-Cmdlets ausführen können, müssen Sie Folgendes tun:
 
 1. Sie müssen die [SharePoint Online-Verwaltungsshell](https://www.microsoft.com/en-us/download/details.aspx?id=35588) herunterladen und installieren. Ist auf Ihrem System bereits eine frühere Version der Shell installiert, müssen Sie diese Version deinstallieren und anschließend die neueste Version installieren.
-1. Sie müssen eine Verbindung zu Ihrem SharePoint-Mandanten einrichten. Eine Anleitung finden Sie unter [Herstellen einer Verbindung mit SharePoint Online PowerShell]((https://technet.microsoft.com/de-DE/library/fp161372.aspx)).
+1. Sie müssen eine Verbindung zu Ihrem SharePoint-Mandanten einrichten. Eine Anleitung finden Sie unter [Herstellen einer Verbindung mit SharePoint Online PowerShell](https://technet.microsoft.com/de-DE/library/fp161372.aspx).
 
 Um die Einrichtung zu überprüfen, verwenden Sie das **Get-SPOSiteScript** zum Lesen der aktuellen Liste von Websiteskripts. Wenn das Cmdlet ausgeführt und ohne Fehler zurückgegeben wird, können Sie fortfahren.
 
@@ -71,7 +71,7 @@ Add-SPOSiteDesign
 |[-Description]         | Die Anzeigebeschreibung des Websitedesigns. |
 |[-PreviewImageUrl]     | Die URL eines Vorschaubilds. Wenn keine angegeben ist, verwendet SharePoint ein allgemeines Bild. |
 |[-PreviewImageAltText] | Die Alternativtextbeschreibung des Bilds für Barrierefreiheit. |
-|[-IsDefault]           | Eine Option, die das Websitedesign auf die Standardwebsitevorlage anwendet. <!-- For more information see [Applying a site design to a default SharePoint template](site-design-apply-default-template.md) --> |
+|[-IsDefault]           | Eine Option, die das Websitedesign auf die Standardwebsitevorlage anwendet. Weitere Informationen finden Sie unter [Anpassen eines standardmäßigen Websitedesigns](customize-default-site-design.md). |
 
 Nachfolgend finden Sie ein Beispiel für das Erstellen eines neues Websitedesigns.
 
@@ -82,13 +82,12 @@ C:\> Add-SPOSiteDesign `
   -SiteScripts "<ID>" `
   -Description "Tracks key customer data in a list" `
   -PreviewImageUrl "https://contoso.sharepoint.com/SiteAssets/site-preview.png" `
-  -PreviewImageAltText "site preview" `
-  -IsDefault $false
+  -PreviewImageAltText "site preview"
 ```
 
 ## <a name="add-spositescript"></a>**Add-SPOSiteScript**
 
-Lädt ein neues Websiteskript in den Katalog hoch, das entweder direkt oder in einem Websitedesign verwendet werden kann. Dieses Cmdlet unterstützt die Inline-Skriptdatei.
+Lädt ein neues Websiteskript hoch, das entweder direkt oder in einem Websitedesign verwendet werden kann.
 
 ```powershell
 Add-SPOSiteScript
@@ -139,9 +138,7 @@ Nachfolgend finden Sie ein Beispiel und eine Beispielantwort für das Abrufen vo
 
 ```powershell
 PS C:\> Get-SPOSiteDesign 44252d09-62c4-4913-9eb0-a2a8b8d7f863
-```
 
-```
 Id                  : 44252d09-62c4-4913-9eb0-a2a8b8d7f863
 Title               : Contoso - Team Project
 WebTemplate         : 64
@@ -170,12 +167,10 @@ Nachfolgend finden Sie ein Beispiel zum Abrufen der Berechtigungen für ein Webs
 
 ```powershell
 PS C:\> Get-SPOSiteDesignRights 607aed52-6d61-490a-b692-c0f58a6981a1
-```
 
-```
 DisplayName  PrincipalName                                      Rights
 -----------  -------------                                      ------
-Nestor Wilke i:0#.f|membership|nestorw@contoso.sharepoint.com   View
+Nestor Wilke i:0#.f|membership|nestorw@contoso.onmicrosoft.com   View
 ```
 
 ## <a name="get-spositescript"></a>Get-SPOSiteScript
@@ -193,6 +188,28 @@ Get-SPOSiteScript
 |Parameter     | Beschreibung  |
 |--------------|--------------|
 | [-Identity]  | Die ID des Websiteskripts, über das Informationen abgerufen werden sollen. |
+
+Nachfolgend finden Sie ein Beispiel dazu, wie Skriptinformationen für eine bestimmte Skript-ID abgerufen werden.
+
+```powershell
+PS C:\scripts> Get-SPOSiteScript 07702c07-0485-426f-b710-4704241caad9
+
+Id          : 07702c07-0485-426f-b710-4704241caad9
+Title       : Contoso theme
+Description :
+Content     : {
+                  "$schema": "schema.json",
+                      "actions": [
+                          {
+                             "verb": "applyTheme",
+                             "themeName": "Custom Cyan"
+                          }
+                      ],
+                          "bindata": { },
+                  "version": 1
+              }
+Version     : 1
+```
 
 ## <a name="grant-spositedesignrights"></a>Grant-SPOSiteDesignRights
 
@@ -219,7 +236,7 @@ Nachfolgend finden Sie ein Beispiel, wie Anzeigeberechtigungen für ein Websited
 ```powershell
 PS C:\> Grant-SPOSiteDesignRights `
          -Identity 44252d09-62c4-4913-9eb0-a2a8b8d7f863 `
-         -Principals "nestorw@contoso.sharepoint.com" `
+         -Principals "nestorw@contoso.onmicrosoft.com" `
          -Rights View
 ```
 
@@ -239,6 +256,12 @@ Entfernt ein Websitedesign. Dieses wird nicht mehr in der Benutzeroberfläche zu
 |--------------|--------------|
 | [-Identity]  | Die ID des zu entfernenden Websitedesigns. |
 
+Nachfolgend finden Sie ein Beispiel, in dem gezeigt wird, wie ein Websitedesign entfernt wird.
+
+```powershell
+
+```
+
 ## <a name="remove-spositescript"></a>Remove-SPOSiteScript
 
 Entfernt ein Websiteskripts. <!-- TBD how is dependency problem handled so you don't delete a script that a design depends on. this currently creates an error when running the design.) -->
@@ -254,6 +277,10 @@ Remove-SPOSiteScript
 |Parameter     | Beschreibung  |
 |--------------|--------------|
 | [-Identity]  | Die ID des zu entfernenden Websiteskripts. |
+
+```powershell
+C:\> Remove-SPOSiteDesign 21209d88-38de-4844-9823-f1f600a1179a
+```
 
 ## <a name="revoke-spositedesignrights"></a>Revoke-SPOSiteDesignRights
 
@@ -273,12 +300,20 @@ Revoke-SPOSiteDesignRights
 | [-Identity]  | Die ID des Websitedesigns, aus dem Berechtigungen widerrufen werden sollen. |
 | -Principals  | Mindestens ein Prinzipal zum Widerrufen von Berechtigungen im angegebenen Websitedesign. |
 
+Nachfolgend finden Sie ein Beispiel, in dem gezeigt wird, wie Berechtigungen für ein Websitedesign für einen Nestor widerrufen werden.
+
+```powershell
+PS C:\> Revoke-SPOSiteDesignRights 44252d09-62c4-4913-9eb0-a2a8b8d7f863 `
+   -Principals "nestorw@contoso.onmicrosoft.com"
+```
+
 <!--
 ## Set-SPOSiteDesign (TBD)
 
 ## Set-SPOSiteScript (TBD)
 -->
 
-Entwickler können zur Verwaltung von Designs außerdem die [REST-API](site-design-rest-api.md) verwenden.
+## <a name="see-also"></a>Siehe auch
 
-Informationen zur Definition und Speicherung von Designs finden Sie in der [JSON-Schemareferenz](site-design-json-schema.md).
+- [JSON-Schemareferenz](site-design-json-schema.md)
+- [REST-API-](site-design-rest-api.md) Anwenden eines Bereichs auf Ihr Websitedesign (site-design-scoping.md)
