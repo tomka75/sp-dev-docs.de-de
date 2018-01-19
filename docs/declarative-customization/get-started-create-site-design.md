@@ -2,11 +2,11 @@
 title: Erste Schritte mit dem Erstellen von SharePoint-Websitedesigns und -Websiteskripts
 description: Erste Schritte mit dem Erstellen von SharePoint-Websitedesigns und -Websiteskripts, aus denen Benutzer ihre eigenen Websites erstellen.
 ms.date: 12/14/2017
-ms.openlocfilehash: 81879d169c9f82aed3e93bf2eda598dacc184b5f
-ms.sourcegitcommit: 8e63066ad9591e51bbda419b1b9527452111081b
+ms.openlocfilehash: eddc4455695e014899b268456ee501e956639b98
+ms.sourcegitcommit: db303a21b5f83c8c2f9c2028a271c9aae0ac0515
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/07/2018
 ---
 # <a name="get-started-creating-site-designs-and-site-scripts"></a>Erste Schritte mit dem Erstellen von Websitedesigns und Websiteskripts
 
@@ -24,10 +24,10 @@ Ein Websitedesign ist eine Sammlung von Aktionen, die SharePoint beim Erstellen 
 Jede Aktion wird vom Wert „verb“ im JSON-Skript angegeben. Aktionen können auch Unteraktionen aufweisen, die auch „verb“-Werte sind. Im folgenden JSON-Code gibt das Skript an, dass eine neue Liste mit dem Namen „Kundenverfolgung“ erstellt werden sollen; Unteraktionen legen dann die Beschreibung fest und fügen mehrere Felder zum Definieren der Liste hinzu.
 
 1. Sie müssen die [SharePoint Online-Verwaltungsshell](https://www.microsoft.com/en-us/download/details.aspx?id=35588) herunterladen und installieren. Ist auf Ihrem System bereits eine frühere Version der Shell installiert, müssen Sie diese Version deinstallieren und anschließend die neueste Version installieren.
-1. Sie müssen eine Verbindung zu Ihrem SharePoint-Mandanten einrichten. Eine Anleitung finden Sie unter [Herstellen einer Verbindung mit SharePoint Online PowerShell]((https://technet.microsoft.com/de-DE/library/fp161372.aspx)).
+1. Sie müssen eine Verbindung zu Ihrem SharePoint-Mandanten einrichten. Eine Anleitung finden Sie unter [Herstellen einer Verbindung mit SharePoint Online PowerShell](https://technet.microsoft.com/de-DE/library/fp161372.aspx).
 1. Weisen Sie den JSON-Code, der das neue Skript beschreibt, einer Variablen zu, wie im folgenden PowerShell-Code dargestellt.
 
-```powershell
+ ```powershell
 $site_script = @'
 {
     "$schema": "schema.json",
@@ -77,7 +77,7 @@ $site_script = @'
 '@
 ```
 
-Das vorherige Skript erstellt eine neue SharePoint-Liste mit dem Namen „Kundenverfolgung“. Es legt die Beschreibung fest und fügt der Liste auch vier weitere Felder hinzu.
+Das vorherige Skript erstellt eine neue SharePoint-Liste mit dem Namen „Kundenverfolgung“. Es legt die Beschreibung fest und fügt der Liste auch vier weitere Felder hinzu. Beachten Sie, dass jedes dieser Felder als eine Aktion betrachtet wird. Websiteskripts sind auf 30 kumulierte Aktionen beschränkt (über ein oder mehrere Skripts, die in einem Websitedesign aufgerufen werden können).
 
 ## <a name="add-the-site-script"></a>Hinzufügen des Websiteskripts
 

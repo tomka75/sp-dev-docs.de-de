@@ -3,11 +3,11 @@ title: "Syntaxreferenz für die FAST Query Language (FQL)"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: bd98a41b-623c-41d4-a15d-26c0d4ba4311
-ms.openlocfilehash: 861199598dc650932416a5537dd3f5a3af47a1cd
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 345cfd53f535d49bee92377aa1191b82df83c40c
+ms.sourcegitcommit: 215ba2e6c1eb40cc5a4e07f87d11ade98df4ffd2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 12/29/2017
 ---
 # <a name="fast-query-language-fql-syntax-reference"></a>Syntaxreferenz für die FAST Query Language (FQL)
 In diesem Artikel erfahren Sie mehr über den Aufbau komplexer Suchabfragen für Suche in SharePoint mit FQL (FAST Query Language). In dieser Referenz sind die Elemente einer FQL-Abfrage beschrieben, und es wird erläutert, wie Eigenschaftsspezifikationen, Tokenausdrücke und Operatoren in FQL-Abfragen verwendet werden.
@@ -1170,11 +1170,11 @@ Verwenden Sie den Operator **RANGE** für numerische verwaltete Eigenschaften un
 
 #### <a name="examples"></a>Beispiele
 
-Der folgende Ausdruck gleicht eine Beschreibungseigenschaft ab, die mit der Phrase „Olympische Spiele" beginnt, die in Elementen mit einer Größe von mindestens 10.000 Byte angezeigt wird.
+Der folgende Ausdruck gleicht eine Beschreibungseigenschaft ab, die mit der Phrase „Große Errungenschaften" beginnt, die in Elementen mit einer Größe von mindestens 10.000 Byte angezeigt wird.
   
     
     
- `and(size:range(10000, max), description:starts-with("olympic games"))`
+ `and(size:range(10000, max), description:starts-with("big accomplishments"))`
   
     
     
