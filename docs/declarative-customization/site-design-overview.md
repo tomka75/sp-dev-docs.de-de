@@ -2,11 +2,11 @@
 title: "Übersicht über das SharePoint-Websitedesign und -Websiteskripts"
 description: Verwenden Sie SharePoint-Websiteskripts und -Websitedesigns, um die Bereitstellung neuer SharePoint-Websites mit neuen Konfigurationen zu automatisieren.
 ms.date: 12/14/2017
-ms.openlocfilehash: 5821c4a48ecccbfc23ff5eaaf1c7941c6026d06e
-ms.sourcegitcommit: 31f793b42ec75679f01e1a024d0375a2bc7b5ec7
+ms.openlocfilehash: 347be667a9b4bd7cfecdf8c8b962da7a1b98eefa
+ms.sourcegitcommit: db303a21b5f83c8c2f9c2028a271c9aae0ac0515
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/07/2018
 ---
 # <a name="sharepoint-site-design-and-site-script-overview"></a>Übersicht über das SharePoint-Websitedesign und -Websiteskripts
 
@@ -81,7 +81,7 @@ Bei Websiteskripts handelt es sich um JSON-Dateien, die eine sortierte Liste von
         },
         {
           "verb": "addSPField",
-          "fieldType": "User",
+           "fieldType": "User",
           "displayName": "Contact",
           "addToDefaultView": true,
           "isRequired": true
@@ -106,12 +106,11 @@ Verfügbare Aktionen umfassen:
 
 - Erstellen einer neuen Liste
 - Anwenden eines Designs
-- Erstellen einer Seite
 - Festlegen eines Websitelogos
 - Hinzufügen einer Nagivation
 - Auslösen eines Microsoft-Flusses
 
-Websiteskripts können nach der Bereitstellung erneut auf derselben Website ausgeführt werden. Dies kann nur programmgesteuert erfolgen. Websiteskripts sind nicht destruktiv, wenn sie also erneut ausgeführt werden, wird sichergestellt, dass die Website der Konfiguration im Skript entspricht. Wenn die Website beispielsweise bereits eine Liste mit demselben Namen aufweist, den das Websiteskript erstellt, fügt das Websiteskripts nur fehlende Felder zu der vorhandenen Liste hinzu.
+Websiteskripts können nach der Bereitstellung erneut auf derselben Website ausgeführt werden. Dies kann nur programmgesteuert erfolgen. Websiteskripts sind nicht destruktiv, wenn sie also erneut ausgeführt werden, wird sichergestellt, dass die Website der Konfiguration im Skript entspricht. Wenn die Website beispielsweise bereits eine Liste mit demselben Namen aufweist, den das Websiteskript erstellt, fügt das Websiteskripts nur fehlende Felder zu der vorhandenen Liste hinzu. Beachten Sie auch, dass Websiteskripts auf 30 kumulierte Aktionen beschränkt sind (über ein oder mehrere Skripts, die in einem Websitedesign aufgerufen werden können).
 
 ## <a name="using-powershell-or-rest-to-work-with-site-designs-and-site-scripts"></a>Verwenden von PowerShell oder REST zum Arbeiten mit Websitedesigns und Websiteskripts
 
@@ -188,7 +187,7 @@ var site_script = {
   "version": 1
 };
 
-RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.CreateSiteScript(Title=@title)?@title='Contoso theme and list'", site_script);
+RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.CreateSiteScript(Title=@title,Description=@desc)?@title='Contoso theme and list'&@desc='this script creates a list named customer tracking and sets the contoso explorers company theme'", site_script);
 
 RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.CreateSiteDesign",{
   info:{
@@ -252,4 +251,4 @@ Weitere Informationen zum Arbeiten mit Bereichen finden Sie unter [Bereichsdefin
 - [JSON-Schema eines Websitedesigns](site-design-json-schema.md)
 - [PowerShell-Cmdlets für SharePoint-Websitedesigns und -Websiteskripts](site-design-powershell.md)
 - [REST-API von Websitedesigns und Websiteskripts](site-design-rest-api.md)
-- [Beispiele für die Websitedesign]((https://github.com/SharePoint/sp-dev-site-scripts))
+- [Beispiele für die Websitedesign](https://github.com/SharePoint/sp-dev-site-scripts)

@@ -1,45 +1,48 @@
 ---
 title: Einrichten Ihrer SharePoint Framework-Entwicklungsumgebung
-ms.date: 12/11/2017
+description: "Verwenden Sie Visual Studio oder Ihre eigene benutzerdefinierte Entwicklungsumgebung, um SharePoint Framework-Lösungen zu erstellen. Sie können einen Mac, PC oder Linux verwenden."
+ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 1259ceae3b13efdd0d359734fef6d080696a2c6a
-ms.sourcegitcommit: 6018dbb696faef5f60ebf0f79f830385fab2a4d8
+ms.openlocfilehash: 0c849ef4ad13962ecb4e3cfd8dc34aec0baab523
+ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="set-up-your-sharepoint-framework-development-environment"></a>Einrichten Ihrer SharePoint Framework-Entwicklungsumgebung
 
 Sie können Visual Studio oder Ihre eigene benutzerdefinierte Entwicklungsumgebung verwenden, um SharePoint Framework-Lösungen zu erstellen. Sie können einen Mac, PC oder Linux verwenden.
 
->**Hinweis:** Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [Ihren Office 365-Mandanten einrichten](./set-up-your-developer-tenant.md).
+> [!NOTE] 
+> Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [Ihren Office 365-Mandanten einrichten](./set-up-your-developer-tenant.md).
 
-Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=WX9FL0BjE0I&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq) nachvollziehen:
+Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=WX9FL0BjE0I&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq) nachvollziehen.
 
 <a href="https://www.youtube.com/watch?v=WX9FL0BjE0I&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq"> <img src="../images/spfx-youtube-tutorial0.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 ## <a name="install-developer-tools"></a>Installieren von Entwicklertools
 
-### <a name="nodejs"></a>NodeJS
+### <a name="install-nodejs"></a>Installieren von NodeJS
 
-Installieren Sie die [NodeJS-Version 6.x]((https://nodejs.org/download/release/latest-v6.x/)). 
+Installieren Sie die [NodeJS-Version 6.x](https://nodejs.org/download/release/latest-v6.x/). 
 
-* Wenn Sie Windows verwenden, können Sie die MSI-Installationsprogramme in dem oben genannten Link verwenden, um NodeJS auf einfache Weise einzurichten.
-* Wenn Sie NodeJS bereits installiert haben, überprüfen Sie mit `node -v`, ob Sie die neueste Version verwenden. Es sollte die aktuelle [LTS-Version]((https://nodejs.org/en/download/)) zurückgegeben werden. 
-* Wenn Sie mit einem Mac arbeiten, empfehlen wir [Homebrew]((http://brew.sh/)) zur Installation und Verwaltung von NodeJS. 
+- Wenn Sie Windows verwenden, können Sie die MSI-Installationsprogramme in diesem Link verwenden, um NodeJS auf einfache Weise einzurichten.
+- Wenn Sie NodeJS bereits installiert haben, überprüfen Sie mit `node -v`, ob Sie die neueste Version verwenden. Es sollte die aktuelle [LTS-Version](https://nodejs.org/en/download/) zurückgegeben werden. 
+- Wenn Sie mit einem Mac arbeiten, empfehlen wir [Homebrew](http://brew.sh/) zur Installation und Verwaltung von NodeJS. 
 
->**Hinweis:** Die SharePoint-Framework-Buildpipeline unterstützt derzeit nicht die LTS-Version von Node.js. Laden Sie stattdessen die [Node.js-Version 6.11.5]((https://nodejs.org/download/release/latest-v6.x/)) herunter. So wird npm 3.10.10 installiert. Wenn Sie die Version v5.x von npm verwenden, müssen Sie zunächst ein Downgrade auf eine ältere Version von npm durchführen, indem Sie den folgenden Befehl ausführen: `npm install -g npm@3`.
+> [!NOTE] 
+> Die SharePoint-Framework-Buildpipeline unterstützt derzeit nicht die LTS-Version von Node.js. Laden Sie stattdessen die [Node.js-Version 6.11.5](https://nodejs.org/download/release/latest-v6.x/) herunter. So wird npm 3.10.10 installiert. Wenn Sie die Version v5.x von npm verwenden, müssen Sie zunächst ein Downgrade auf eine ältere Version von npm durchführen, indem Sie den folgenden Befehl ausführen: `npm install -g npm@3`.
 
-### <a name="code-editors"></a>Code-Editoren
+### <a name="install-a-code-editor"></a>Installieren eines Code-Editors
 
-Installieren Sie einen Code-Editor. Sie können einen beliebigen Code-Editor oder eine beliebige IDE verwenden, der bzw. die die clientseitige Entwicklung unterstützt, um Ihren Webpart zu erstellen, z. B.:
+Sie können einen beliebigen Code-Editor oder eine beliebige IDE verwenden, der bzw. die die clientseitige Entwicklung unterstützt, um Ihren Webpart zu erstellen, z. B.:
 
-* [Visual Studio Code]((https://code.visualstudio.com/))
-* [Atom]((https://atom.io))
-* [WebStorm]((https://www.jetbrains.com/webstorm))
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Atom](https://atom.io)
+- [WebStorm](https://www.jetbrains.com/webstorm)
 
-Die Schritte und Beispiele in dieser Dokumentation verwenden [Visual Studio Code]((https://code.visualstudio.com/)), aber Sie können einen beliebigen Editor verwenden.
+Die Schritte und Beispiele in dieser Dokumentation verwenden [Visual Studio Code](https://code.visualstudio.com/), aber Sie können einen beliebigen Editor verwenden.
 
 ### <a name="if-you-are-using-ubuntu"></a>Wenn Sie Ubuntu verwenden, gilt Folgendes:
 
@@ -59,7 +62,7 @@ sudo yum install make automake gcc gcc-c++ kernel-devel
 
 ## <a name="install-yeoman-and-gulp"></a>Installieren von Yeoman und Gulp
 
-[Yeoman]((http://yeoman.io/)) hilft Ihnen bei den ersten Schritten mit neuen Projekten und stellt bewährte Methoden und Tools bereit, mit denen Sie produktiv arbeiten können. Clientseitige SharePoint-Entwicklungstools umfassen einen Yeoman-Generator zum Erstellen neuer Webparts. Der Generator stellt allgemeine Buildtools, häufig verwendeten Boilerplate-Code und eine allgemeine Umgebungswebsite zum Hosten von Webparts für Tests bereit.
+[Yeoman](http://yeoman.io/) hilft Ihnen bei den ersten Schritten mit neuen Projekten und stellt bewährte Methoden und Tools bereit, mit denen Sie produktiv arbeiten können. Clientseitige SharePoint-Entwicklungstools umfassen einen Yeoman-Generator zum Erstellen neuer Webparts. Der Generator stellt allgemeine Buildtools, häufig verwendeten Boilerplate-Code und eine allgemeine Umgebungswebsite zum Hosten von Webparts für Tests bereit.
 
 Geben Sie den folgenden Befehl ein, um Yeoman und Gulp zu installieren:
 
@@ -87,15 +90,15 @@ npm install @microsoft/generator-sharepoint --save-dev
 
 Hier sind einige Tools, die auch nützlich sein können:
 
-* [Fiddler]((http://www.telerik.com/fiddler))
-* [Postman-Plug-In für Chrome]((https://www.getpostman.com/docs/introduction))
-* [Cmder für Windows]((http://cmder.net/))
-* [Oh My Zsh für Mac]((http://ohmyz.sh/))
-* [Git Source Control Tools]((https://git-scm.com/))
+* [Fiddler](https://www.telerik.com/fiddler)
+* [Postman-Plug-In für Chrome](https://www.getpostman.com/docs/postman/launching_postman/navigating_postman)
+* [Cmder für Windows](http://cmder.net/)
+* [Oh My Zsh für Mac](http://ohmyz.sh/)
+* [Git Source Control Tools](https://git-scm.com/)
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Sie können jetzt [Ihren ersten clientseitigen Webpart erstellen](web-parts/get-started/build-a-hello-world-web-part.md)!
+Sie können jetzt [Ihr erstes clientseitiges Webpart erstellen](web-parts/get-started/build-a-hello-world-web-part.md)!
 
 > [!NOTE]
-> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository]((https://github.com/SharePoint/sp-dev-docs/issues)). Vielen Dank im Voraus für Ihr Feedback.
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository](https://github.com/SharePoint/sp-dev-docs/issues). Vielen Dank im Voraus für Ihr Feedback.

@@ -1,23 +1,24 @@
 ---
-title: "Übersicht über das SharePoint Framework"
-ms.date: 09/25/2017
+title: "Übersicht über das SharePoint Framework (SPFx)"
+description: "SPFx ist ein Seiten- und Webpart-Modell, das vollständige Unterstützung für die clientseitige SharePoint-Entwicklung, einfache Integration in SharePoint-Daten und Unterstützung für Open-Source-Tools bietet."
+ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: e0614bc85a914178a01d0030748461901aa0b563
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 6d5b90093f66f71535236d37fc91e2ed340415a2
+ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="overview-of-the-sharepoint-framework"></a>Übersicht über das SharePoint-Framework
+# <a name="overview-of-the-sharepoint-framework"></a>Übersicht über das SharePoint Framework
 
 Das SharePoint Framework (SPFx) ist ein Seiten- und Webpart-Modell, das vollständige Unterstützung für die clientseitige SharePoint-Entwicklung, einfache Integration in SharePoint-Daten und Unterstützung für Open-Source-Tools bietet. Mit dem SharePoint Framework können Sie moderne Webtechnologien und -tools in Ihrer bevorzugten Entwicklungsumgebung verwenden, um produktive Erfahrungen zu ermöglichen und Apps zu erstellen, die vom ersten Tag an schnell reagieren und für Mobilgeräte geeignet sind. Das SharePoint Framework funktioniert für SharePoint Online und bald auch für das lokale SharePoint (SharePoint 2016 Feature Pack 2).
  
 Zu den wichtigsten Features von SharePoint Framework zählen:
 
-* Es wird im Kontext des aktuellen Benutzers und der aktuellen Verbindung im Browser ausgeführt. Die Anpassung läuft nicht über iFrames (JavaScript wird direkt in die Seite eingebettet).
+* Wird im Kontext des aktuellen Benutzers und der aktuellen Verbindung im Browser ausgeführt. Es gibt keine iFrames für die Anpassung (JavaScript wird direkt in die Seite eingebettet).
 * Die Steuerelemente werden im normalen Seiten-DOM gerendert.
 * Die Steuerelemente reagieren von sich aus, und der Zugriff ist sofort möglich.
-* Ermöglicht dem Entwickler den Zugriff auf den Lebenszyklus – einschließlich, zusätzlich zu **Rendern** -  **Laden**, **Serialisieren** und **Deserialisieren**, **Konfigurationsänderungen** und vieles mehr.
+* Ermöglicht dem Entwickler den Zugriff auf den Lebenszyklus – einschließlich, zusätzlich zu **Rendern**, **Laden**, **Serialisieren** und **Deserialisieren**, **Konfigurationsändernungen** und vieles mehr.
 * Es ist vom Framework unabhängig. Sie können ein beliebiges JavaScript-Framework verwenden: React, Handlebars, Knockout, Angular und weitere.
 * Die Toolchain basiert auf allgemeinen Open-Source-Cliententwicklungstools wie npm, TypeScript, Yeoman, Webpack und Gulp.
 * Die Leistung ist zuverlässig.
@@ -26,7 +27,7 @@ Zu den wichtigsten Features von SharePoint Framework zählen:
  
 Im Skript-Editor-Webpart wird das Laufzeitmodell verbessert. Es enthält einer stabile Client-API, ein HttpClient-Objekt, das die Authentifizierung bei SharePoint und Office 365 verarbeitet, Kontextinformationen, einfache Eigenschaftsdefinition und -konfiguration und mehr. 
 
-Wenn Sie hauptsächlich mit C# arbeiten, möchten Sie bestimmt etwas über clientseitige JavaScript-Entwicklung lernen. Die meisten Ihrer bereits vorhandenen JavaScript-Kenntnisse im Zusammenhang mit SharePoint sind vollständig übertragbar, da sich die Datenmodelle nicht geändert haben und Sie die gleichen [REST-Dienste](https://msdn.microsoft.com/de-DE/library/office/jj860569.aspx) oder [JavaScript Object Model (JSOM)](https://msdn.microsoft.com/de-DE/library/office/jj193034.aspx) verwenden – je nach Ihren Anforderungen. Wenn Sie ein C#-Entwickler sind, bietet TypeScript einen guten Übergang in die JavaScript-Welt. Die Wahl der IDE bleibt Ihnen überlassen. Viele Entwickler verwenden die plattformübergreifende IDE Visual Studio Code. Viele Entwickler verwenden auch Produkte wie Sublime und ATOM.
+Wenn Sie in erster Linie mit C# arbeiten, möchten Sie sicherlich mehr zur clientseitige JavaScript-Entwicklung erfahren. Der Großteil Ihrer JavaScript-Kenntnisse im Zusammenhang mit SharePoint ist jedoch vollständig übertragbar, da sich die Datenmodelle nicht geändert haben und Sie dieselben [REST-Dienste](https://msdn.microsoft.com/de-DE/library/office/jj860569.aspx) oder dasselbe [JavaScript Object Model (JSOM) ](https://msdn.microsoft.com/de-DE/library/office/jj193034.aspx), je nach Ihren Anforderungen, verwenden. Wenn Sie ein C#-Entwickler sind, bietet TypeScript einen guten Übergang in die JavaScript-Welt. Die Wahl der IDE bleibt Ihnen überlassen. Viele Entwickler verwenden die plattformübergreifende IDE Visual Studio Code. Viele Entwickler verwenden auch Produkte wie Sublime und ATOM. Verwenden Sie, was für Sie am besten geeignet ist.
 
 ## <a name="why-the-sharepoint-framework"></a>Warum SharePoint Framework?
 
@@ -38,13 +39,13 @@ Diese Architektur funktionierte gut in Umgebungen mit nur einem Unternehmen, kon
 
 Einer der beliebtesten Webparts in SharePoint Online ist der Skript-Editor. Sie können JavaScript in das Skript-Editor-Webpart einfügen und dieses JavaScript dann beim Rendern der Seite ausführen. Das ist einfach und rudimentär, aber effektiv. Die Ausführung erfolgt im gleichen Browserkontext wie die Seite und befindet sich in der gleichen DOM, damit eine Interaktion mit anderen Steuerelementen auf der Seite möglich ist.  Er ist auch relativ leistungsfähig und einfach zu verwenden. 
 
-Bei diesem Ansatz gibt es jedoch auch einige Nachteile. Während Sie Ihre Lösung packen können, damit Endbenutzer das Steuerelement auf der Seite ablegen können, können Sie Konfigurationsoptionen nur schwer bereitstellen. Außerdem kann der Endbenutzer die Seite bearbeiten und das Skript ändern, sodass das Webpart beschädigt werden kann. Ein weiteres großes Problem besteht darin, dass der Skript-Editor-Webpart nicht als **„Safe For Scripting“**  gekennzeichnet ist.  Die meisten Self-Service-Websitesammlungen (eigene Websites, Teamwebsites, Gruppenwebsites) haben ein Feature namens **„NoScript“** aktiviert. Technisch gesehen ist dies das Entfernen der Berechtigung „Add/Customize Pages“ (Hinzufügen/Anpassen von Seiten, ACP) in SharePoint. Dies bedeutet, dass der Skript-Editor-Webpart auf diesen Websites blockiert wird.  
+Bei diesem Ansatz gibt es jedoch auch einige Nachteile. Während Sie Ihre Lösung packen können, damit Endbenutzer das Steuerelement auf der Seite ablegen können, können Sie Konfigurationsoptionen nur schwer bereitstellen. Außerdem kann der Endbenutzer die Seite bearbeiten und das Skript ändern, sodass das Webpart beschädigt werden kann. Ein weiteres großes Problem besteht darin, dass der Skript-Editor-Webpart nicht als **„Safe For Scripting“**  gekennzeichnet ist.  Die meisten Self-Service-Websitesammlungen (eigene Websites, Teamwebsites, Gruppenwebsites) haben ein Feature namens **"NoScript"** aktiviert. Technisch gesehen ist dies das Entfernen der Berechtigung „Add/Customize Pages“ (Hinzufügen/Anpassen von Seiten, ACP) in SharePoint. Dies bedeutet, dass das Skript-Editor-Webpart auf diesen Websites blockiert wird.  
 
 ### <a name="sharepoint-add-in-model"></a>SharePoint-Add-In-Modell
 
 Die aktuelle Option für Lösungen, die auf NoScript-Websites ausgeführt werden, ist das Add-In-/App-Part-Modell. Diese Implementierung erstellt einen **iFrame**, wo sich das eigentliche Objekt befindet und ausgeführt wird. Der Vorteil besteht darin, dass es für Information Worker einfacher ist, zu vertrauen und bereitzustellen, da der iFrame für das System extern ist und keinen Zugriff auf den aktuellen DOM/die aktuelle Verbindung hat. Endbenutzer können Add-Ins auf NoScript-Websites installieren. 
 
-Auch bei diesem Ansatz gibt es einige Nachteile. Die Add-Ins werden in einem **iFrame** ausgeführt. iFrames sind langsamer als der Skript-Editor-Webpart, da er eine neue Anforderung für eine andere Seite erfordert. Die Seite muss Authentifizierung und Autorisierung durchlaufen, über eigene Aufrufe SharePoint-Daten abrufen, verschiedene JavaScript-Bibliotheken laden und vieles mehr. Ein Skript-Editor-Webpart braucht in der Regel z. B. 100 Millisekunden zum Laden und Rendern, während ein App-Part u. U. 2 Sekunden oder länger benötigt. Darüber hinaus wird es durch die **iFrame**-Grenze schwieriger, reaktive Designs zu erstellen und CSS- sowie Designinformationen zu vererben. iFrames besitzen eine erhöhte Sicherheit, was für Sie (der Zugriff auf Ihre Seite ist durch andere Steuerelemente auf der Seite nicht möglich) und den Endbenutzer (das Steuerelement hat keinen Zugriff auf die Verbindung mit Office 365) hilfreich sein kann.
+Auch bei diesem Ansatz gibt es einige Nachteile. Zunächst werden die Add-Ins in einem **iFrame** ausgeführt. iFrames sind langsamer als das Skript-Editor-Webpart, da es eine neue Anforderung für eine andere Seite erfordert. Die Seite muss Authentifizierung und Autorisierung durchlaufen, über eigene Aufrufe SharePoint-Daten abrufen, verschiedene JavaScript-Bibliotheken laden und vieles mehr. Ein Skript-Editor-Webpart braucht in der Regel z. B. 100 Millisekunden zum Laden und Rendern, während ein App-Part u. U. 2 Sekunden oder länger benötigt. Darüber hinaus wird es durch die **iFrame**-Grenze schwieriger, reaktive Designs zu erstellen und CSS- sowie Designinformationen zu vererben.  iFrames besitzen eine erhöhte Sicherheit, was für Sie (der Zugriff auf Ihre Seite ist durch andere Steuerelemente auf der Seite nicht möglich) und den Endbenutzer (das Steuerelement hat keinen Zugriff auf die Verbindung mit Office 365) hilfreich sein kann.
 
 
 ### <a name="sharepoint-framework"></a>SharePoint Framework 
@@ -53,15 +54,15 @@ In der Vergangenheit haben wir Webparts als voll vertrauenswürdige C#-Assemblys
 
 ## <a name="whats-next"></a>Nächste Schritte
 
-SharePoint-Framework-Webparts und -Erweiterungen haben nun die allgemeine Verfügbarkeit (GA) erreicht. Wir stellen nach und nach Updates und Optimierungen basierend auf Ihrem Feedback und Ihren Erfahrungen bereit. Bei allen zusätzlichen SharePoint Framework-Funktionen, die zunächst im Vorschaumodus gestartet werden, können gelegentlich grundlegende Änderungen an API-Namen, Abläufen und mehr auftreten. Zukünftige Updates für das SharePoint Framework werden abwärtskompatibel sein, damit Ihre Lösungen weiterhin funktionieren.
+SharePoint Framework-Webparts und -Erweiterungen haben nun die allgemeine Verfügbarkeit (GA) erreicht. Wir stellen nach und nach Updates und Optimierungen basierend auf Ihrem Feedback und Ihren Erfahrungen bereit. Bei allen zusätzlichen SharePoint Framework-Funktionen, die zunächst im Vorschaumodus gestartet werden, können gelegentlich grundlegende Änderungen an API-Namen, Abläufen und mehr auftreten. Zukünftige Updates für das SharePoint Framework werden abwärtskompatibel sein, damit Ihre Lösungen weiterhin funktionieren.
 
 ## <a name="sharepoint-framework-license"></a>SharePoint Framework-Lizenz
 
-Die SharePoint Framework-Komponenten werden unter dieser [Microsoft EULA](https://github.com/SharePoint/sp-dev-docs/blob/master/Microsoft%20Sharepoint%20Framework%20Preview%20EULA.DOCX) lizenziert.
+Die SharePoint Framework-Komponenten werden unter dieser [Microsoft EULA](https://github.com/SharePoint/sp-dev-docs/blob/master/LICENSE.md) lizenziert.
 
 ## <a name="questions"></a>Fragen?
 
-Wenn Sie noch Fragen haben, stellen Sie diese auf [SharePoint StackExchange](http://sharepoint.stackexchange.com/). Kennzeichnen Sie Ihre Fragen und Kommentare mit [#spfx](http://sharepoint.stackexchange.com/tags/spfx/), [#spfx-webparts](http://sharepoint.stackexchange.com/tags/spfx-webparts/) und [#spfx-tooling](http://sharepoint.stackexchange.com/tags/spfx-tooling/). 
+Wenn Sie noch Fragen haben, stellen Sie diese auf [SharePoint StackExchange](https://sharepoint.stackexchange.com/). Kennzeichnen Sie Ihre Fragen und Kommentare mit [#spfx](https://sharepoint.stackexchange.com/tags/spfx/), [#spfx-webparts](https://sharepoint.stackexchange.com/tags/spfx-webparts/) und [#spfx-tooling](https://sharepoint.stackexchange.com/tags/spfx-tooling/). 
 
 Sie können auch Probleme, Fragen oder Feedback zu den Dokumenten oder dem SharePoint Framework in unserem [GitHub-Repository](https://github.com/SharePoint/sp-dev-docs/issues) veröffentlichen.
 
@@ -69,3 +70,4 @@ Sie können auch Probleme, Fragen oder Feedback zu den Dokumenten oder dem Share
 
 - [Übersicht über clientseitige SharePoint-Webparts](./web-parts/overview-client-side-web-parts.md)
 - [Übersicht über SharePoint-Framework-Erweiterungen](./extensions/overview-extensions.md)
+- [SharePoint-Entwicklung](https://docs.microsoft.com/de-DE/sharepoint/dev/)
