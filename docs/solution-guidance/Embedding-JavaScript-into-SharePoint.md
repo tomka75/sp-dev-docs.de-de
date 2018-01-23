@@ -1,11 +1,11 @@
 ---
 title: Einbetten von JavaScript in SharePoint
 ms.date: 11/03/2017
-ms.openlocfilehash: efb690bf90fcba627287e6d25f8bb3bb0442752a
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 96fe07a44cb804be75cdc74f82455e95aa59f8bb
+ms.sourcegitcommit: 9f492519d4eeb3f62a1fddc71cdca79263651a56
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="embedding-javascript-into-sharepoint"></a>Einbetten von JavaScript in SharePoint
 
@@ -88,5 +88,5 @@ Dateien mit JSLink angefügt sind **nicht** auf MDS Navigation erneut ausgeführ
 ### <a name="resources"></a>Ressourcen:
 
 * [Wictor Wilén - ordnungsgemäße auszuführende Javascript-Funktionen in SharePoint MDS-fähige Websites](http://www.wictorwilen.se/the-correct-way-to-execute-javascript-functions-in-sharepoint-2013-mds-enabled-sites)
-* [Hugh Wood - Kontext-Entwicklung für SharePoint JavaScript - AsyncDeltaManager](https://www.spcaf.com/blog/sharepoint-javascript-context-development-part-4-the-way-of-the-async-delta-manager/)
+* [Hugh Wood - Kontext-Entwicklung für SharePoint JavaScript - AsyncDeltaManager](https://rencore.com/blog/sharepoint-javascript-context-development-part-4-the-way-of-the-async-delta-manager/)
 * [Marc Anderson - JavaScript ausführen nach MDS (Load neu)](http://blog.symprogress.com/2013/09/sharepoint-2013-execute-javascript-function-after-mds-load/)
