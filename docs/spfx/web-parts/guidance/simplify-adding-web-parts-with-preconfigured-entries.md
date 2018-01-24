@@ -1,25 +1,29 @@
 ---
 title: "Vereinfachen des Hinzufügens von Webparts mit vorkonfigurierten Einträgen"
-ms.date: 09/25/2017
+description: "Erfahren Sie, wie Sie Benutzern mithilfe vorkonfigurierter Einträge in Ihrem clientseitigen SharePoint-Framework-Webpart vorkonfigurierte Versionen des Webparts bereitstellen können."
+ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 2ed78b779392be0ca61fb7ce84b196760c18770a
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: a77add94c3a099dc8c81123a0a7defd8f9ee370a
+ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="simplify-adding-web-parts-with-preconfigured-entries"></a><span data-ttu-id="efcfb-102">Vereinfachen des Hinzufügens von Webparts mit vorkonfigurierten Einträgen</span><span class="sxs-lookup"><span data-stu-id="efcfb-102">Simplify adding web parts with preconfigured entries</span></span>
+# <a name="simplify-adding-web-parts-with-preconfigured-entries"></a><span data-ttu-id="75b69-103">Vereinfachen des Hinzufügens von Webparts mit vorkonfigurierten Einträgen</span><span class="sxs-lookup"><span data-stu-id="75b69-103">Simplify adding web parts with preconfigured entries</span></span>
 
-<span data-ttu-id="efcfb-p101">Komplexere clientseitige SharePoint Framework-Webparts können zahlreiche Eigenschaften haben, die vom Benutzer konfiguriert werden müssen. Sie können Benutzer unterstützen, indem Sie vorkonfigurierte Eigenschafteneinträge für bestimmte Szenarien hinzufügen. Ein vorkonfigurierte Eintrag initialisiert das Webpart mit vordefinierten Werten. In diesem Artikel erfahren Sie, wie Sie vorkonfigurierte Einträge in einem clientseitigen SharePoint Framework-Webpart verwenden, um Benutzern vorkonfigurierte Versionen Ihres Webparts bereitzustellen.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p101">More complex SharePoint Framework client-side web parts will likely have many properties that the user must configure. You can help users by adding preconfigured property entries for specific scenarios. A preconfigured entry will initialize the web part with preset values. In this article you will learn how you to use preconfigured entries in a SharePoint Framework client-side web part to provide users with preconfigured versions of your web part.</span></span>
+<span data-ttu-id="75b69-104">Komplexere clientseitige SharePoint-Framework-Webparts haben oft zahlreiche Eigenschaften, die von den Benutzern konfiguriert werden müssen.</span><span class="sxs-lookup"><span data-stu-id="75b69-104">More complex SharePoint Framework client-side web parts likely have many properties that the user must configure.</span></span> <span data-ttu-id="75b69-105">Sie können sie dabei unterstützen, indem Sie für bestimmte Szenarien vorkonfigurierte Eigenschafteneinträge hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="75b69-105">You can help users by adding preconfigured property entries for specific scenarios.</span></span> <span data-ttu-id="75b69-106">Ein vorkonfigurierter Eintrag initialisiert das Webpart mit vordefinierten Werten.</span><span class="sxs-lookup"><span data-stu-id="75b69-106">A preconfigured entry initializes the web part with pre-set values.</span></span>
 
 > [!NOTE] 
-> <span data-ttu-id="efcfb-107">Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment.md).</span><span class="sxs-lookup"><span data-stu-id="efcfb-107">[Note:](../../set-up-your-development-environment.md) Before following the steps in this article, be sure to set up your SharePoint client-side web part development environment.</span></span>
+> <span data-ttu-id="75b69-107">Bevor Sie die Schritte in diesem Artikel ausführen, müssen Sie [die Entwicklungsumgebung für Ihr clientseitiges SharePoint-Webpart einrichten](../../set-up-your-development-environment.md).</span><span class="sxs-lookup"><span data-stu-id="75b69-107">Before following the steps in this article, be sure to [set up your SharePoint client-side web part development environment](../../set-up-your-development-environment.md).</span></span>
 
-## <a name="what-are-web-part-preconfigured-entries"></a><span data-ttu-id="efcfb-108">Was sind vorkonfigurierte Einträge für Webparts?</span><span class="sxs-lookup"><span data-stu-id="efcfb-108">What are web part preconfigured entries</span></span>
+## <a name="web-part-preconfigured-entries"></a><span data-ttu-id="75b69-108">Vorkonfigurierte Einträge für Webparts</span><span class="sxs-lookup"><span data-stu-id="75b69-108">What are web part preconfigured entries</span></span>
 
-<span data-ttu-id="efcfb-109">Jedes clientseitige SharePoint Framework-Webpart besteht aus zwei Teilen: dem Manifest, das das Webpart beschreibt, und dem Webpartcode.</span><span class="sxs-lookup"><span data-stu-id="efcfb-109">Each SharePoint Framework client-side web part consists of two pieces: the manifest, that describes the web part, and the web part code.</span></span>
+<span data-ttu-id="75b69-109">Jedes clientseitige SharePoint-Framework-Webpart besteht aus zwei Komponenten:</span><span class="sxs-lookup"><span data-stu-id="75b69-109">Each SharePoint Framework client-side web part consists of two pieces: the manifest, that describes the web part, and the web part code.</span></span> 
 
-<span data-ttu-id="efcfb-110">Eine der im Webpartmanifest angegebenen Eigenschaften ist die **preconfiguredEntries**-Eigenschaft.</span><span class="sxs-lookup"><span data-stu-id="efcfb-110">One of the properties specified in the web part manifest is the **preconfiguredEntries** property.</span></span>
+- <span data-ttu-id="75b69-110">Dem Manifest, das das Webpart beschreibt</span><span class="sxs-lookup"><span data-stu-id="75b69-110">The manifest that describes the web part</span></span>
+- <span data-ttu-id="75b69-111">Dem Webpartcode</span><span class="sxs-lookup"><span data-stu-id="75b69-111">The web part code</span></span>
+
+<span data-ttu-id="75b69-112">Eine der im Webpartmanifest definierten Eigenschaften ist die Eigenschaft **preconfiguredEntries**.</span><span class="sxs-lookup"><span data-stu-id="75b69-112">One of the properties specified in the web part manifest is the **preconfiguredEntries** property.</span></span>
 
 ```json
 {
@@ -44,28 +48,32 @@ ms.lasthandoff: 12/07/2017
 }
 ```
 
-<span data-ttu-id="efcfb-p102">Die **preconfiguredEntries**-Eigenschaft enthält Informationen zu Ihrem Webpart zur Verwendung in der Webpart-Toolbox. Wenn Benutzer Webparts zu der Seite hinzufügen, werden die Informationen aus der **preconfiguredEntries**-Eigenschaft verwendet, um das Webpart in der Toolbox anzuzeigen und seine Standardeinstellungen zu definieren,wenn es zu der Seite hinzugefügt wird.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p102">The **preconfiguredEntries** property provides information about your web part for use in the web part toolbox. When users add web parts to the page, the information from the **preconfiguredEntries** property is used to display the web part in the toolbox and define its default settings when it's added to the page.</span></span>
+<span data-ttu-id="75b69-p102">Die **preconfiguredEntries**-Eigenschaft enthält Informationen zu Ihrem Webpart zur Verwendung in der Webpart-Toolbox. Wenn Benutzer Webparts zu der Seite hinzufügen, werden die Informationen aus der **preconfiguredEntries**-Eigenschaft verwendet, um das Webpart in der Toolbox anzuzeigen und seine Standardeinstellungen zu definieren,wenn es zu der Seite hinzugefügt wird.</span><span class="sxs-lookup"><span data-stu-id="75b69-p102">The **preconfiguredEntries** property provides information about your web part for use in the web part toolbox. When users add web parts to the page, the information from the **preconfiguredEntries** property is used to display the web part in the toolbox and define its default settings when it's added to the page.</span></span>
 
-<span data-ttu-id="efcfb-p103">Wenn Sie klassische Webparts mit vollständig vertrauenswürdigen Lösungen erstellt haben, können Sie sich jeden Eintrag im **preconfiguredEntries**-Array so vorstellen, dass er einer **.webpart**-Datei entspricht. Genau wie eine **.webpart**-Datei ist jeder Eintrag in der **preconfiguredEntries**-Eigenschaft mit dem Webpartcode verknüpft und gibt grundlegende Informationen zu dem Webpart an, z. B. den Titel oder die Beschreibung sowie Standardwerte für seine Eigenschaften.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p103">If you've built classic web parts with full-trust solutions, then you can think of each entry in the **preconfiguredEntries** array as corresponding to a **.webpart** file. Just like a **.webpart** file, each entry in the **preconfiguredEntries** property is linked to the web part code and specifies basic information about the web part such as its title or description as well as default values for its properties.</span></span>
+<span data-ttu-id="75b69-115">Wenn Sie bereits klassische Webparts mit voll vertrauenswürdigen Lösungen erstellt haben, können Sie sich jeden Eintrag im Array **preconfiguredEntries** wie eine Datei des Typs **.webpart** vorstellen.</span><span class="sxs-lookup"><span data-stu-id="75b69-115">If you've built classic web parts with full-trust solutions, you can think of each entry in the **preconfiguredEntries** array as corresponding to a **.webpart** file.</span></span> <span data-ttu-id="75b69-116">Ganz wie eine Datei des Typs **.webpart** ist jeder Eintrag in der Eigenschaft **preconfiguredEntries** mit dem Webpartcode verknüpft und definiert grundlegende Informationen zu dem Webpart, z. B. den Titel, die Beschreibung und Standardwerte für seine Eigenschaften.</span><span class="sxs-lookup"><span data-stu-id="75b69-116">If you've built classic web parts with full-trust solutions, then you can think of each entry in the preconfiguredEntries array as corresponding to a .webpart file. Just like a **.webpart** file, each entry in the **preconfiguredEntries** property is linked to the web part code and specifies basic information about the web part such as its title or description as well as default values for its properties.</span></span>
 
-### <a name="properties-of-a-preconfiguredentries-array-item"></a><span data-ttu-id="efcfb-115">Eigenschaften eines **preconfiguredEntries**-Arrayelements</span><span class="sxs-lookup"><span data-stu-id="efcfb-115">Properties of a **preconfiguredEntries** array item</span></span>
+### <a name="properties-of-a-preconfiguredentries-array-item"></a><span data-ttu-id="75b69-117">Eigenschaften von Elementen im Array **preconfiguredEntries**</span><span class="sxs-lookup"><span data-stu-id="75b69-117">Properties of a **preconfiguredEntries** array item</span></span>
 
-<span data-ttu-id="efcfb-p104">Jedes Element im **preconfiguredEntries**-Array umfasst mehrere Eigenschaften. In der folgenden Tabelle wird der Zweck jeder Eigenschaft erläutert.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p104">Each item in the **preconfiguredEntries** array consists of several properties. The following table explains the purpose of each property.</span></span>
+<span data-ttu-id="75b69-p104">Jedes Element im **preconfiguredEntries**-Array umfasst mehrere Eigenschaften. In der folgenden Tabelle wird der Zweck jeder Eigenschaft erläutert.</span><span class="sxs-lookup"><span data-stu-id="75b69-p104">Each item in the **preconfiguredEntries** array consists of several properties. The following table explains the purpose of each property.</span></span>
 
-<span data-ttu-id="efcfb-118">Eigenschaftsname</span><span class="sxs-lookup"><span data-stu-id="efcfb-118">Property name</span></span>           |<span data-ttu-id="efcfb-119">Werttyp</span><span class="sxs-lookup"><span data-stu-id="efcfb-119">Value type</span></span>      |<span data-ttu-id="efcfb-120">Erforderlich</span><span class="sxs-lookup"><span data-stu-id="efcfb-120">Required</span></span>|<span data-ttu-id="efcfb-121">Zweck</span><span class="sxs-lookup"><span data-stu-id="efcfb-121">Purpose</span></span>                                               |<span data-ttu-id="efcfb-122">Beispielwert</span><span class="sxs-lookup"><span data-stu-id="efcfb-122">Sample value</span></span>
-------------------------|----------------|:------:|------------------------------------------------------|------------
-<span data-ttu-id="efcfb-123">title</span><span class="sxs-lookup"><span data-stu-id="efcfb-123">title</span></span>                   |<span data-ttu-id="efcfb-124">ILocalizedString</span><span class="sxs-lookup"><span data-stu-id="efcfb-124">ILocalizedString</span></span>|<span data-ttu-id="efcfb-125">ja</span><span class="sxs-lookup"><span data-stu-id="efcfb-125">yes</span></span>     |<span data-ttu-id="efcfb-126">Der Webparttitel, der in der Toolbox angezeigt wird.</span><span class="sxs-lookup"><span data-stu-id="efcfb-126">The web part title that is displayed in the toolbox.</span></span>              |`"title": { "default": "Weather", "nl-nl": "Weerbericht" }`
-<span data-ttu-id="efcfb-127">description</span><span class="sxs-lookup"><span data-stu-id="efcfb-127">description</span></span>             |<span data-ttu-id="efcfb-128">ILocalizedString</span><span class="sxs-lookup"><span data-stu-id="efcfb-128">ILocalizedString</span></span>|<span data-ttu-id="efcfb-129">ja</span><span class="sxs-lookup"><span data-stu-id="efcfb-129">yes</span></span>     |<span data-ttu-id="efcfb-130">Die Webpartbeschreibung, die in den Toolbox-QuickInfos angezeigt wird.</span><span class="sxs-lookup"><span data-stu-id="efcfb-130">The web part description that is displayed in the toolbox tooltips.</span></span>|`"description": { "default": "Shows weather in the given location", "nl-nl": "Toont weerbericht voor de opgegeven locatie" } `
-<span data-ttu-id="efcfb-131">officeFabricIconFontName</span><span class="sxs-lookup"><span data-stu-id="efcfb-131">officeFabricIconFontName</span></span>|<span data-ttu-id="efcfb-132">string</span><span class="sxs-lookup"><span data-stu-id="efcfb-132">string</span></span>          |<span data-ttu-id="efcfb-133">nein</span><span class="sxs-lookup"><span data-stu-id="efcfb-133">no</span></span>      |<span data-ttu-id="efcfb-p105">Das Symbol für das Webpart, das in der Toolbox angezeigt wird. Dessen Wert muss einer der [Office UI Fabric-Symbolnamen](https://dev.office.com/fabric#/styles/icons) sein. Wenn diese Eigenschaft einen Wert hat, wird die **iconImageUrl**-Eigenschaft ignoriert.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p105">The icon for the web part that is displayed in the toolbox. Its value must be one of the [Office UI Fabric icon names](https://dev.office.com/fabric#/styles/icons). If this property has a value, the **iconImageUrl** property will be ignored.</span></span>|`"officeFabricIconFontName": "Sunny"`
-<span data-ttu-id="efcfb-137">iconImageUrl</span><span class="sxs-lookup"><span data-stu-id="efcfb-137">iconImageUrl</span></span>            |<span data-ttu-id="efcfb-138">string</span><span class="sxs-lookup"><span data-stu-id="efcfb-138">string</span></span>          |<span data-ttu-id="efcfb-139">nein</span><span class="sxs-lookup"><span data-stu-id="efcfb-139">no</span></span>      |<span data-ttu-id="efcfb-p106">Das Symbol für das Webpart, das in der Toolbox angezeigt und von einer Bild-URL dargestellt wird. Das Bild an der URL muss genau 40x28 px sein. Wenn die **officeFabricIconName**-Eigenschaft nicht über einen Wert verfügt, muss diese Eigenschaft einen Wert aufweisen.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p106">The icon for the web part that is displayed in the toolbox and is represented by an image URL. The image at the URL must be exactly 40 x 28 px. If the **officeFabricIconName** property does not have a value, this property must have a value.</span></span>|`"iconImageUrl": "https://cdn.contoso.com/weather.png"`
-<span data-ttu-id="efcfb-143">groupId</span><span class="sxs-lookup"><span data-stu-id="efcfb-143">groupId</span></span>                 |<span data-ttu-id="efcfb-144">string</span><span class="sxs-lookup"><span data-stu-id="efcfb-144">string</span></span>          |<span data-ttu-id="efcfb-145">ja</span><span class="sxs-lookup"><span data-stu-id="efcfb-145">yes</span></span>     |<span data-ttu-id="efcfb-146">Die Gruppen-ID, um zu ermitteln, welche moderne Gruppe das Webpart auf der modernen Seite enthält.</span><span class="sxs-lookup"><span data-stu-id="efcfb-146">The group id to determine which modern group contains the web part in modern site page.</span></span> <span data-ttu-id="efcfb-147">Das SharePoint Framework reserviert Gruppen-IDs für [vordefinierte Gruppen](#predefined-modern-groups).</span><span class="sxs-lookup"><span data-stu-id="efcfb-147">The SharePoint Framework reserves group ids for [predefined groups](#predefined-modern-groups).</span></span> <span data-ttu-id="efcfb-148">Der Entwickler kann eine dieser Gruppen auswählen.</span><span class="sxs-lookup"><span data-stu-id="efcfb-148">The developer can pick one of those groups.</span></span> <span data-ttu-id="efcfb-149">Wenn der Entwickler eine ID ausfüllt, die sich in den vordefinierten Gruppen befindet, wird wieder die Gruppe **Other** verwendet.</span><span class="sxs-lookup"><span data-stu-id="efcfb-149">If the developer fills an id not in the predefined groups, it falls back to **Other** group.</span></span>|`"groupId": "1edbd9a8-0bfb-4aa2-9afd-14b8c45dd489"`
-<span data-ttu-id="efcfb-150">Gruppe</span><span class="sxs-lookup"><span data-stu-id="efcfb-150">group</span></span>                   |<span data-ttu-id="efcfb-151">ILocalizedString</span><span class="sxs-lookup"><span data-stu-id="efcfb-151">ILocalizedString</span></span>|<span data-ttu-id="efcfb-152">nein</span><span class="sxs-lookup"><span data-stu-id="efcfb-152">no</span></span>      |<span data-ttu-id="efcfb-153">Der Gruppenname in der Webpartauswahl für das Webpart auf der klassischen Seite.</span><span class="sxs-lookup"><span data-stu-id="efcfb-153">The group name in web part picker to contain the web part in the classic page.</span></span> <span data-ttu-id="efcfb-154">Wenn kein Wert angegeben ist, wird das Webpart in der **Miscellaneous**-Gruppe angezeigt.</span><span class="sxs-lookup"><span data-stu-id="efcfb-154">The name of the group in the toolbox in which the web part will be displayed. If no value is provided, then the web part will be displayed in the **Custom** group.</span></span>|`"group": { "default": "Content", "nl-nl": "Inhoud" }`
-<span data-ttu-id="efcfb-155">dataVersion</span><span class="sxs-lookup"><span data-stu-id="efcfb-155">dataVersion</span></span>             |<span data-ttu-id="efcfb-156">string</span><span class="sxs-lookup"><span data-stu-id="efcfb-156">string</span></span>          |<span data-ttu-id="efcfb-157">nein</span><span class="sxs-lookup"><span data-stu-id="efcfb-157">no</span></span>      |<span data-ttu-id="efcfb-p109">Verwenden Sie dieses Feld, um die Datenversion der vorkonfigurierten Daten anzugeben, die dem Webpart bereitgestellt werden. Beachten Sie, dass sich die Datenversion vom Versionsfeld im Manifest unterscheidet. Die Manifestversion wird zum Steuern der Versionsverwaltung des Webpartcodes verwendet, die Datenversion wird hingegen zum Steuern der Versionsverwaltung der serialisierten Daten des Webparts verwendet. Weitere Informationen finden Sie im dataVersion-Feld Ihres Webparts. Unterstützte Werte: MAJOR.MINOR Version.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p109">Use this field to specify the data version of the pre-configured data provided to the web part. Note that data version is different from the version field in the manifest. The manifest version is used to control the versioning of the web part code, while data version is used to control the versioning of the serialized data of the web part. Refer to dataVersion field of your web part for more information. Supported values format: MAJOR.MINOR version</span></span>|`"dataVersion": "1.0"`
-<span data-ttu-id="efcfb-163">properties</span><span class="sxs-lookup"><span data-stu-id="efcfb-163">properties</span></span>              |<span data-ttu-id="efcfb-164">TProperties</span><span class="sxs-lookup"><span data-stu-id="efcfb-164">TProperties</span></span>     |<span data-ttu-id="efcfb-165">ja</span><span class="sxs-lookup"><span data-stu-id="efcfb-165">yes</span></span>     |<span data-ttu-id="efcfb-166">Ein Schlüssel-Wert-Paarobjekt mit Standardwerten für Webparteigenschaften.</span><span class="sxs-lookup"><span data-stu-id="efcfb-166">A Key-value pair object with default values for web part properties.</span></span>|`"properties": { "location": "Redmond", "numberOfDays": 3, "showIcon": true }`
+|<span data-ttu-id="75b69-120">Eigenschaftsname</span><span class="sxs-lookup"><span data-stu-id="75b69-120">Property name</span></span> |<span data-ttu-id="75b69-121">Werttyp</span><span class="sxs-lookup"><span data-stu-id="75b69-121">Value type</span></span> |<span data-ttu-id="75b69-122">Erforderlich</span><span class="sxs-lookup"><span data-stu-id="75b69-122">Required</span></span>  |<span data-ttu-id="75b69-123">Zweck</span><span class="sxs-lookup"><span data-stu-id="75b69-123">Purpose</span></span>  |<span data-ttu-id="75b69-124">Beispielwert</span><span class="sxs-lookup"><span data-stu-id="75b69-124">Sample value</span></span> |
+|:-------------|:----------|:--------:|:---------|:-------------|
+|<span data-ttu-id="75b69-125">title</span><span class="sxs-lookup"><span data-stu-id="75b69-125">title</span></span>         |<span data-ttu-id="75b69-126">ILocalizedString</span><span class="sxs-lookup"><span data-stu-id="75b69-126">ILocalizedString</span></span> |<span data-ttu-id="75b69-127">ja</span><span class="sxs-lookup"><span data-stu-id="75b69-127">yes</span></span> |<span data-ttu-id="75b69-128">Der Webparttitel, der in der Toolbox angezeigt wird.</span><span class="sxs-lookup"><span data-stu-id="75b69-128">The web part title that is displayed in the toolbox.</span></span> |`"title": { "default": "Weather", "nl-nl": "Weerbericht" }`|
+|<span data-ttu-id="75b69-129">description</span><span class="sxs-lookup"><span data-stu-id="75b69-129">description</span></span>             |<span data-ttu-id="75b69-130">ILocalizedString</span><span class="sxs-lookup"><span data-stu-id="75b69-130">ILocalizedString</span></span>|<span data-ttu-id="75b69-131">ja</span><span class="sxs-lookup"><span data-stu-id="75b69-131">yes</span></span>     |<span data-ttu-id="75b69-132">Die Webpartbeschreibung, die in den Toolbox-QuickInfos angezeigt wird.</span><span class="sxs-lookup"><span data-stu-id="75b69-132">The web part description that is displayed in the toolbox tooltips.</span></span>|`"description": { "default": "Shows weather in the given location", "nl-nl": "Toont weerbericht voor de opgegeven locatie" } `|
+|<span data-ttu-id="75b69-133">officeFabricIconFontName</span><span class="sxs-lookup"><span data-stu-id="75b69-133">officeFabricIconFontName</span></span>|<span data-ttu-id="75b69-134">string</span><span class="sxs-lookup"><span data-stu-id="75b69-134">string</span></span>          |<span data-ttu-id="75b69-135">nein</span><span class="sxs-lookup"><span data-stu-id="75b69-135">no</span></span>      |<span data-ttu-id="75b69-136">Das Symbol für das Webpart, das in der Toolbox angezeigt wird.</span><span class="sxs-lookup"><span data-stu-id="75b69-136">The web part title that is displayed in the toolbox.</span></span> <span data-ttu-id="75b69-137">Der Wert für die Eigenschaft muss einer der [Office UI Fabric-Symbolnamen](https://dev.office.com/fabric#/styles/icons) sein.</span><span class="sxs-lookup"><span data-stu-id="75b69-137">Its value must be one of the [Office UI Fabric icon names](https://dev.office.com/fabric#/styles/icons).</span></span> <span data-ttu-id="75b69-138">Ist für diese Eigenschaft ein Wert gesetzt, wird die Eigenschaft **iconImageUrl** ignoriert.</span><span class="sxs-lookup"><span data-stu-id="75b69-138">If this property has a value, the **iconImageUrl** property is ignored.</span></span>|`"officeFabricIconFontName": "Sunny"`|
+|<span data-ttu-id="75b69-139">iconImageUrl</span><span class="sxs-lookup"><span data-stu-id="75b69-139">iconImageUrl</span></span>            |<span data-ttu-id="75b69-140">string</span><span class="sxs-lookup"><span data-stu-id="75b69-140">string</span></span>          |<span data-ttu-id="75b69-141">nein</span><span class="sxs-lookup"><span data-stu-id="75b69-141">no</span></span>      |<span data-ttu-id="75b69-142">Das Symbol für das Webpart, das in der Toolbox angezeigt wird. Es wird als Bild-URL angegeben.</span><span class="sxs-lookup"><span data-stu-id="75b69-142">The icon for the web part that is displayed in the toolbox and is represented by an image URL.</span></span> <span data-ttu-id="75b69-143">Das unter der URL abrufbare Bild muss genau 40 × 28 px groß sein.</span><span class="sxs-lookup"><span data-stu-id="75b69-143">The image at the URL must be exactly 40x28 px.</span></span> <span data-ttu-id="75b69-144">Für diese Eigenschaft muss ein Wert angegeben werden, wenn für die Eigenschaft **officeFabricIconName** kein Wert angegeben ist.</span><span class="sxs-lookup"><span data-stu-id="75b69-144">If the **officeFabricIconName** property does not have a value, this property must have a value.</span></span>|`"iconImageUrl": "https://cdn.contoso.com/weather.png"`|
+|<span data-ttu-id="75b69-145">groupId</span><span class="sxs-lookup"><span data-stu-id="75b69-145">groupId</span></span>                 |<span data-ttu-id="75b69-146">string</span><span class="sxs-lookup"><span data-stu-id="75b69-146">string</span></span>          |<span data-ttu-id="75b69-147">Ja</span><span class="sxs-lookup"><span data-stu-id="75b69-147">yes</span></span>     |<span data-ttu-id="75b69-148">Die Gruppen-ID, die festlegt, in welcher modernen Gruppe auf einer modernen Website das Webpart enthalten sein soll.</span><span class="sxs-lookup"><span data-stu-id="75b69-148">The group id to determine which modern group contains the web part in modern site page.</span></span> <span data-ttu-id="75b69-149">Das SharePoint-Framework reserviert Gruppen-IDs für [vordefinierte Gruppen](#predefined-modern-groups).</span><span class="sxs-lookup"><span data-stu-id="75b69-149">The SharePoint Framework reserves group ids for [predefined groups](#predefined-modern-groups).</span></span> <span data-ttu-id="75b69-150">Der Entwickler kann eine dieser Gruppen auswählen.</span><span class="sxs-lookup"><span data-stu-id="75b69-150">The developer can pick one from those groups.</span></span> <span data-ttu-id="75b69-151">Wenn der Entwickler eine ID angibt, die nicht zu den vordefinierten Gruppen gehört, wird automatisch die Gruppe **Sonstiges** gewählt.</span><span class="sxs-lookup"><span data-stu-id="75b69-151">If the developer fills an id not in the predefined groups, it falls back to **Other** group.</span></span>|`"groupId": "1edbd9a8-0bfb-4aa2-9afd-14b8c45dd489"`|
+|<span data-ttu-id="75b69-152">group</span><span class="sxs-lookup"><span data-stu-id="75b69-152">group</span></span>                   |<span data-ttu-id="75b69-153">ILocalizedString</span><span class="sxs-lookup"><span data-stu-id="75b69-153">ILocalizedString</span></span>|<span data-ttu-id="75b69-154">Nein</span><span class="sxs-lookup"><span data-stu-id="75b69-154">no</span></span>      |<span data-ttu-id="75b69-155">Der Name der Gruppe in der Webpartauswahl einer klassischen Seite, in der das Webpart enthalten sein soll.</span><span class="sxs-lookup"><span data-stu-id="75b69-155">The group name in web part picker to contain the web part in the classic page.</span></span> <span data-ttu-id="75b69-156">Wird kein Wert angegeben, wird das Webpart in der Gruppe **Sonstiges** aufgeführt.</span><span class="sxs-lookup"><span data-stu-id="75b69-156">If no value is provided, then the web part will be displayed in the **Miscellaneous** group.</span></span>|`"group": { "default": "Content", "nl-nl": "Inhoud" }`|
+|<span data-ttu-id="75b69-157">dataVersion</span><span class="sxs-lookup"><span data-stu-id="75b69-157">dataVersion</span></span>             |<span data-ttu-id="75b69-158">string</span><span class="sxs-lookup"><span data-stu-id="75b69-158">string</span></span>          |<span data-ttu-id="75b69-159">Nein</span><span class="sxs-lookup"><span data-stu-id="75b69-159">no</span></span>      |<span data-ttu-id="75b69-160">In diesem Feld können Sie die Datenversion der vorkonfigurierten Daten angeben, die dem Webpart bereitgestellt werden.</span><span class="sxs-lookup"><span data-stu-id="75b69-160">Use this field to specify the data version of the pre-configured data provided to the web part.</span></span> <span data-ttu-id="75b69-161">Beachten Sie, dass sich die Datenversion vom Versionsfeld im Manifest unterscheidet.</span><span class="sxs-lookup"><span data-stu-id="75b69-161">Note that data version is different from the version field in the manifest.</span></span> <span data-ttu-id="75b69-162">Die Manifestversion wird zum Steuern der Versionsverwaltung des Webpartcodes verwendet, die Datenversion hingegen zum Steuern der Versionsverwaltung der serialisierten Daten des Webparts.</span><span class="sxs-lookup"><span data-stu-id="75b69-162">The manifest version is used to control the versioning of the web part code, while data version is used to control the versioning of the serialized data of the web part.</span></span> <span data-ttu-id="75b69-163">Weitere Informationen finden Sie in der Beschreibung des Felds „dataVersion“ für Webparts.</span><span class="sxs-lookup"><span data-stu-id="75b69-163">Refer to the dataVersion field of your web part for more information.</span></span> <span data-ttu-id="75b69-164">Unterstütztes Format für Werte: HAUPTVERSION.NEBENVERSION.</span><span class="sxs-lookup"><span data-stu-id="75b69-164">Supported values format: MAJOR.MINOR version</span></span>|`"dataVersion": "1.0"`|
+|<span data-ttu-id="75b69-165">properties</span><span class="sxs-lookup"><span data-stu-id="75b69-165">properties</span></span>              |<span data-ttu-id="75b69-166">TProperties</span><span class="sxs-lookup"><span data-stu-id="75b69-166">TProperties</span></span>     |<span data-ttu-id="75b69-167">Ja</span><span class="sxs-lookup"><span data-stu-id="75b69-167">yes</span></span>     |<span data-ttu-id="75b69-168">Gibt ein Schlüssel-Wert-Paar-Objekt mit Standardwerten für Webparteigenschaften an.</span><span class="sxs-lookup"><span data-stu-id="75b69-168">A Key-value pair object with default values for web part properties.</span></span>|`"properties": { "location": "Redmond", "numberOfDays": 3, "showIcon": true }`|
 
-<span data-ttu-id="efcfb-p110">Einige Webparteigenschaften weisen einen Wert vom Typ **ILocalizedString** auf. Dieser Typ ist ein Schlüssel-Wert-Paarobjekt, mit dem Entwickler Zeichenfolgen für die unterschiedlichen Gebietsschemas angeben können. Mindestens ein Wert vom Typ **ILocalizedString** muss den **Standardwert** enthalten. Entwickler können optional die Übersetzungen dieses Werts in die unterschiedlichen Gebietsschemas bereitstellen, die ihr Webpart unterstützt. Wenn das Webpart auf einer Seite in einem Gebietsschema platziert wird, das nicht in der lokalisierten Zeichenfolge aufgeführt ist, wird stattdessen der Standardwert verwendet.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p110">Some web part properties have a value of type **ILocalizedString**. This type is a key-value pair object that allows developers to specify strings for the different locales. At a minimum, a value of type **ILocalizedString** must contain the **default** value. Optionally developers can provide the translations of that value to the different locales that their web part supports. If the web part is placed on a page in a locale that isn't listed in the localized string, the default value is used instead.</span></span>
+<br/>
 
-<span data-ttu-id="efcfb-172">Gültige **ILocalizedString**-Werte:</span><span class="sxs-lookup"><span data-stu-id="efcfb-172">Valid **ILocalizedString** values:</span></span>
+<span data-ttu-id="75b69-169">Einige Webparteigenschaften weisen einen Wert vom Typ **ILocalizedString** auf.</span><span class="sxs-lookup"><span data-stu-id="75b69-169">Some web part properties have a value of type **ILocalizedString**.</span></span> <span data-ttu-id="75b69-170">Dieser Typ ist ein Schlüssel-Wert-Paar-Objekt, mit dem Entwickler Zeichenfolgen für die unterschiedlichen Gebietsschemas angeben können.</span><span class="sxs-lookup"><span data-stu-id="75b69-170">This type is a key-value pair object that allows developers to specify strings for the different locales.</span></span> <span data-ttu-id="75b69-171">Ein Wert des Typs **ILocalizedString** muss mindestens den Wert **default** enthalten.</span><span class="sxs-lookup"><span data-stu-id="75b69-171">At a minimum, a value of type **ILocalizedString** must contain the **default** value.</span></span> 
+
+<span data-ttu-id="75b69-172">Optional können Entwickler zusätzlich die Übersetzungen dieses Werts in die unterschiedlichen Gebietsschemas bereitstellen, die ihr Webpart unterstützt.</span><span class="sxs-lookup"><span data-stu-id="75b69-172">Optionally, developers can provide the translations of that value to the different locales that their web part supports.</span></span> <span data-ttu-id="75b69-173">Wenn das Webpart auf einer Seite in einem Gebietsschema platziert wird, das nicht in der lokalisierten Zeichenfolge aufgeführt ist, wird stattdessen der Standardwert verwendet.</span><span class="sxs-lookup"><span data-stu-id="75b69-173">If the web part is placed on a page in a locale that isn't listed in the localized string, the default value is used instead.</span></span>
+
+<span data-ttu-id="75b69-174">Gültige Werte für **ILocalizedString**:</span><span class="sxs-lookup"><span data-stu-id="75b69-174">Valid **ILocalizedString** values:</span></span>
 
 ```json
 "title": {
@@ -80,7 +88,9 @@ ms.lasthandoff: 12/07/2017
 }
 ```
 
-<span data-ttu-id="efcfb-173">Ein **ILocalizedString**-Wert, der nicht gültig ist, da der **default** -Schlüssel fehlt:</span><span class="sxs-lookup"><span data-stu-id="efcfb-173">A **ILocalizedString** value that is not valid because the **default** key is missing:</span></span>
+<br/>
+
+<span data-ttu-id="75b69-175">Ein Wert des Typs **ILocalizedString**, der ungültig ist, weil der Schlüssel **default** fehlt:</span><span class="sxs-lookup"><span data-stu-id="75b69-175">A **ILocalizedString** value that is not valid because the **default** key is missing:</span></span>
 
 ```json
 "title": {
@@ -88,488 +98,502 @@ ms.lasthandoff: 12/07/2017
 }
 ```
 
-### <a name="predefined-modern-groups"></a><span data-ttu-id="efcfb-174">Vordefinierte moderne Gruppen</span><span class="sxs-lookup"><span data-stu-id="efcfb-174">Predefined modern groups</span></span>
+### <a name="predefined-modern-groups"></a><span data-ttu-id="75b69-176">Vordefinierte moderne Gruppen</span><span class="sxs-lookup"><span data-stu-id="75b69-176">Predefined modern groups</span></span>
 
-<span data-ttu-id="efcfb-175">Wie in der folgenden Tabelle dargestellt, gibt es 7 sofort verwendbare Gruppen.</span><span class="sxs-lookup"><span data-stu-id="efcfb-175">There are 7 out of the box groups as shown in the following table.</span></span> <span data-ttu-id="efcfb-176">Verwenden Sie die Gruppen-ID in der `groupId`-Eigenschaft.</span><span class="sxs-lookup"><span data-stu-id="efcfb-176">Use the group ID in the `groupId` property.</span></span>
+<span data-ttu-id="75b69-177">Wie in der Tabelle unten ersichtlich, gibt es 7 vordefinierte Gruppen.</span><span class="sxs-lookup"><span data-stu-id="75b69-177">There are 7 out of the box groups as shown in the following table.</span></span> <span data-ttu-id="75b69-178">Die jeweilige Gruppen-ID wird in der Eigenschaft `groupId` angegeben.</span><span class="sxs-lookup"><span data-stu-id="75b69-178">Use the group ID in the `groupId` property.</span></span>
 
-| <span data-ttu-id="efcfb-177">Gruppenname</span><span class="sxs-lookup"><span data-stu-id="efcfb-177">Group Name</span></span>                      | <span data-ttu-id="efcfb-178">ID</span><span class="sxs-lookup"><span data-stu-id="efcfb-178">ID</span></span>                                     | <span data-ttu-id="efcfb-179">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="efcfb-179">Description</span></span>                                                                                                                |
-|---------------------------------|----------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
-| <span data-ttu-id="efcfb-180">Text, Medien und Inhalt</span><span class="sxs-lookup"><span data-stu-id="efcfb-180">Text, media, and content</span></span>        | `cf066440-0614-43d6-98ae-0b31cf14c7c3` | <span data-ttu-id="efcfb-181">Diese Gruppe enthält Webparts, die Text, Multimedia, Dokumente, Informationen aus dem Web und andere formatierte Inhalte anzeigen.</span><span class="sxs-lookup"><span data-stu-id="efcfb-181">This category includes web parts that display text, multi-media, documents, information from the web, and other rich content.</span></span> |
-| <span data-ttu-id="efcfb-182">Ermitteln</span><span class="sxs-lookup"><span data-stu-id="efcfb-182">Discover</span></span>                        | `1edbd9a8-0bfb-4aa2-9afd-14b8c45dd489` | <span data-ttu-id="efcfb-183">Diese Gruppe enthält Webparts, die Inhalte organisieren, gruppieren und filtern, um Benutzer bei der Suche nach Informationen zu helfen.</span><span class="sxs-lookup"><span data-stu-id="efcfb-183">This category includes web parts that organize, group, and filter content to help users discover information.</span></span>                 |
-| <span data-ttu-id="efcfb-184">Kommunikation und Zusammenarbeit</span><span class="sxs-lookup"><span data-stu-id="efcfb-184">Communication and collaboration</span></span> | `75e22ed5-fa14-4829-850a-c890608aca2d` | <span data-ttu-id="efcfb-185">Diese Gruppe enthält Webparts, die die gemeinsame Nutzung von Informationen, Teamarbeit und soziale Interaktionen vereinfachen.</span><span class="sxs-lookup"><span data-stu-id="efcfb-185">This category includes web parts that facilitate information sharing, team work, and social interactions.</span></span>                     |
-| <span data-ttu-id="efcfb-186">Planung und Durchführung</span><span class="sxs-lookup"><span data-stu-id="efcfb-186">Planning and process</span></span>            | `1bc7927e-4a5e-4520-b540-71305c79c20a` | <span data-ttu-id="efcfb-187">Diese Gruppe enthält Webparts, die die Produktivität im Team durch Verwendung von Planungs- und Durchführungstools fördern.</span><span class="sxs-lookup"><span data-stu-id="efcfb-187">This category includes web parts that empower team productivity with the use of planning and process tools.</span></span>                   |
-| <span data-ttu-id="efcfb-188">Business und Intelligence</span><span class="sxs-lookup"><span data-stu-id="efcfb-188">Business and intelligence</span></span>       | `4aca9e90-eff5-4fa1-bac7-728f5f157b66` | <span data-ttu-id="efcfb-189">Diese Gruppe enthält Webparts für das Nachverfolgen und Analysieren von Daten sowie für die Integration von geschäftlichen Abläufen in Seiten.</span><span class="sxs-lookup"><span data-stu-id="efcfb-189">This category includes web parts for tracking and analyzing data, and for integrating business flow with pages.</span></span>               |
-| <span data-ttu-id="efcfb-190">Websitetools</span><span class="sxs-lookup"><span data-stu-id="efcfb-190">Site tools</span></span>                      | `070951d7-94da-4db8-b06e-9d581f1f55b1` | <span data-ttu-id="efcfb-191">Diese Gruppe enthält Webparts für Websiteinformationen und -verwaltung.</span><span class="sxs-lookup"><span data-stu-id="efcfb-191">This category includes web parts for site information and management.</span></span>                                                         |
-| <span data-ttu-id="efcfb-192">Sonstiges</span><span class="sxs-lookup"><span data-stu-id="efcfb-192">Other</span></span>                           | `5c03119e-3074-46fd-976b-c60198311f70` | <span data-ttu-id="efcfb-193">Diese Gruppe umfasst Webparts, die sich nicht in anderen Gruppen befinden.</span><span class="sxs-lookup"><span data-stu-id="efcfb-193">This category includes web parts not in other categories.</span></span>                                                                         |
+| <span data-ttu-id="75b69-179">Name der Gruppe</span><span class="sxs-lookup"><span data-stu-id="75b69-179">Group Name</span></span>                      | <span data-ttu-id="75b69-180">ID</span><span class="sxs-lookup"><span data-stu-id="75b69-180">ID</span></span>                                     | <span data-ttu-id="75b69-181">Umfang der Gruppe</span><span class="sxs-lookup"><span data-stu-id="75b69-181">Group includes...</span></span> |   
+|---------------------------------|----------------------------------------|---------------|
+| <span data-ttu-id="75b69-182">Text, Medien und Inhalt</span><span class="sxs-lookup"><span data-stu-id="75b69-182">Text, media, and content</span></span>        | `cf066440-0614-43d6-98ae-0b31cf14c7c3` | <span data-ttu-id="75b69-183">Webparts, die Text, Multimediainhalte, Dokumente, Informationen aus dem Web und andere formatierte Inhalte anzeigen</span><span class="sxs-lookup"><span data-stu-id="75b69-183">This group includes web parts that display text, multi-media, documents, information from the web, and other rich content.</span></span> |
+| <span data-ttu-id="75b69-184">Ermittlung</span><span class="sxs-lookup"><span data-stu-id="75b69-184">Discover</span></span>                        | `1edbd9a8-0bfb-4aa2-9afd-14b8c45dd489` | <span data-ttu-id="75b69-185">Webparts, die Inhalte organisieren, gruppieren und filtern, um Benutzern bei der Suche nach Informationen zu helfen</span><span class="sxs-lookup"><span data-stu-id="75b69-185">This group includes web parts that organize, group, and filter content to help users discover information.</span></span>                 |
+| <span data-ttu-id="75b69-186">Kommunikation und Zusammenarbeit</span><span class="sxs-lookup"><span data-stu-id="75b69-186">Communication and collaboration</span></span> | `75e22ed5-fa14-4829-850a-c890608aca2d` | <span data-ttu-id="75b69-187">Webparts, die die Weitergabe von Informationen sowie die Teamarbeit und soziale Interaktionen vereinfachen</span><span class="sxs-lookup"><span data-stu-id="75b69-187">This group includes web parts that facilitate information sharing, team work, and social interactions.</span></span>                     |
+| <span data-ttu-id="75b69-188">Planung und Durchführung</span><span class="sxs-lookup"><span data-stu-id="75b69-188">Planning and process</span></span>            | `1bc7927e-4a5e-4520-b540-71305c79c20a` | <span data-ttu-id="75b69-189">Webparts, die Planungs- und Durchführungstools für höhere Teamproduktivität bereitstellen</span><span class="sxs-lookup"><span data-stu-id="75b69-189">This group includes web parts that empower team productivity with the use of planning and process tools.</span></span>                   |
+| <span data-ttu-id="75b69-190">Business und Intelligence</span><span class="sxs-lookup"><span data-stu-id="75b69-190">Business and intelligence</span></span>       | `4aca9e90-eff5-4fa1-bac7-728f5f157b66` | <span data-ttu-id="75b69-191">Webparts für das Nachverfolgen und Analysieren von Daten sowie für die Integration von Geschäftsabläufen in Seiten</span><span class="sxs-lookup"><span data-stu-id="75b69-191">This group includes web parts for tracking and analyzing data, and for integrating business flow with pages.</span></span>               |
+| <span data-ttu-id="75b69-192">Websitetools</span><span class="sxs-lookup"><span data-stu-id="75b69-192">Site tools</span></span>                      | `070951d7-94da-4db8-b06e-9d581f1f55b1` | <span data-ttu-id="75b69-193">Webparts mit Websiteinformationen und Tools zur Websiteverwaltung</span><span class="sxs-lookup"><span data-stu-id="75b69-193">This group includes web parts for site information and management.</span></span>                                                         |
+| <span data-ttu-id="75b69-194">Sonstiges</span><span class="sxs-lookup"><span data-stu-id="75b69-194">Other</span></span>                           | `5c03119e-3074-46fd-976b-c60198311f70` | <span data-ttu-id="75b69-195">Webparts, die in keine der anderen Gruppen passen</span><span class="sxs-lookup"><span data-stu-id="75b69-195">This group includes web parts not in other groups.</span></span>                                                                         |
 
-<span data-ttu-id="efcfb-194">Wenn der Entwickler eine ID ausfüllt, die sich nicht in der obigen Liste befindet, wird für das Webpart wieder die Gruppe **Other** verwendet.</span><span class="sxs-lookup"><span data-stu-id="efcfb-194">If the developer fills an id not in the above list, the web part will fall back to **Other** group.</span></span>
+<span data-ttu-id="75b69-196">Gibt der Entwickler eine ID an, die nicht in dieser Liste aufgeführt ist, wird das Webpart automatisch der Gruppe **Sonstiges** zugeordnet.</span><span class="sxs-lookup"><span data-stu-id="75b69-196">If the developer fills an id not in the above list, the web part will fall back to **Other** group.</span></span>
 
-## <a name="using-preconfigured-entries-in-web-parts"></a><span data-ttu-id="efcfb-195">Verwenden vorkonfigurierter Einträge in Webparts</span><span class="sxs-lookup"><span data-stu-id="efcfb-195">Using preconfigured entries in web parts</span></span>
+<span data-ttu-id="75b69-p113">Um anzuzeigen, wie Sie beim Erstellen von Webparts vorkonfigurierte Einträge verwenden können, erstellen Sie ein Beispiel-Katalog-Webpart. Benutzer können mithilfe mehrerer Eigenschaften dieses Webpart konfigurieren, um Elemente aus einer ausgewählten Liste auf eine bestimmte Weise anzuzeigen. Aus Platzgründen wird die eigentliche Implementierung der Webpartlogik ausgelassen, und Sie konzentrieren sich auf die Verwendung der **preconfiguredEntries**-Eigenschaft, um vorkonfigurierte Versionen des Katalog-Webparts bereitzustellen.</span><span class="sxs-lookup"><span data-stu-id="75b69-p113">To see how you can use preconfigured entries when building web parts, you will build a sample gallery web part. Using several properties, users can configure this web part to show items from a selected list in a specific way. For brevity, you will omit the actual implementation of the web part logic and will focus on using the **preconfiguredEntries** property to provide preconfigured versions of the gallery web part.</span></span>
 
-<span data-ttu-id="efcfb-p112">Um anzuzeigen, wie Sie beim Erstellen von Webparts vorkonfigurierte Einträge verwenden können, erstellen Sie ein Beispiel-Katalog-Webpart. Benutzer können mithilfe mehrerer Eigenschaften dieses Webpart konfigurieren, um Elemente aus einer ausgewählten Liste auf eine bestimmte Weise anzuzeigen. Aus Platzgründen wird die eigentliche Implementierung der Webpartlogik ausgelassen, und Sie konzentrieren sich auf die Verwendung der **preconfiguredEntries**-Eigenschaft, um vorkonfigurierte Versionen des Katalog-Webparts bereitzustellen.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p112">To see how you can use preconfigured entries when building web parts, you will build a sample gallery web part. Using several properties, users can configure this web part to show items from a selected list in a specific way. For brevity, you will omit the actual implementation of the web part logic and will focus on using the **preconfiguredEntries** property to provide preconfigured versions of the gallery web part.</span></span>
+![Webpart-Eigenschaftenbereich mit den verschiedenen Eigenschaften, die Benutzer konfigurieren müssen, damit das Webpart funktioniert](../../../images/preconfiguredentries-needs-configuration.png)
 
-![Webparteigenschaftenbereich, in dem die unterschiedlichen Eigenschaften angezeigt werden, die Benutzer konfigurieren müssen, damit das Webpart funktioniert](../../../images/preconfiguredentries-needs-configuration.png)
+## <a name="create-a-new-web-part-project"></a><span data-ttu-id="75b69-201">Erstellen eines neuen Webpartprojekts</span><span class="sxs-lookup"><span data-stu-id="75b69-201">Create a new web part project</span></span>
 
-### <a name="create-a-new-project"></a><span data-ttu-id="efcfb-200">Erstellen eines neuen Projekts</span><span class="sxs-lookup"><span data-stu-id="efcfb-200">Create a new project</span></span>
+1. <span data-ttu-id="75b69-202">Erstellen Sie zunächst einen neuen Ordner für Ihr Projekt.</span><span class="sxs-lookup"><span data-stu-id="75b69-202">Start by creating a new folder for your project.</span></span>
 
-<span data-ttu-id="efcfb-201">Erstellen Sie zunächst einen neuen Ordner für Ihr Projekt.</span><span class="sxs-lookup"><span data-stu-id="efcfb-201">Start by creating a new folder for your project.</span></span>
+  ```sh
+  md react-preconfiguredentries
+  ```
 
-```sh
-md react-preconfiguredentries
-```
+2. <span data-ttu-id="75b69-203">Wechseln Sie in den Projektordner.</span><span class="sxs-lookup"><span data-stu-id="75b69-203">Go to the project folder.</span></span>
 
-<span data-ttu-id="efcfb-202">Wechseln Sie zum Projektordner.</span><span class="sxs-lookup"><span data-stu-id="efcfb-202">Go to the project folder.</span></span>
+  ```sh
+  cd react-preconfiguredentries
+  ```
 
-```sh
-cd react-preconfiguredentries
-```
+3. <span data-ttu-id="75b69-204">Führen Sie im Projektordner den SharePoint-Framework-Yeoman-Generator aus, um ein Gerüst für ein neues SharePoint-Framework-Projekt zu erstellen:</span><span class="sxs-lookup"><span data-stu-id="75b69-204">In the project folder run the SharePoint Framework Yeoman generator to scaffold a new SharePoint Framework project.</span></span>
 
-<span data-ttu-id="efcfb-203">Führen Sie im Projektordner den SharePoint Framework-Yeoman-Generator aus, um ein Gerüst für ein neues SharePoint Framework-Projekt zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="efcfb-203">In the project folder run the SharePoint Framework Yeoman generator to scaffold a new SharePoint Framework project.</span></span>
+  ```sh
+  yo @microsoft/sharepoint
+  ```
 
-```sh
-yo @microsoft/sharepoint
-```
+4. <span data-ttu-id="75b69-205">Es werden verschiedene Eingabeaufforderungen angezeigt. Geben Sie jeweils die folgenden Werte an:</span><span class="sxs-lookup"><span data-stu-id="75b69-205">When prompted, enter the following values:</span></span>
 
-<span data-ttu-id="efcfb-204">Geben Sie die folgenden Werte ein, wenn Sie dazu aufgefordert werden:</span><span class="sxs-lookup"><span data-stu-id="efcfb-204">When prompted, enter the following values:</span></span>
+  - <span data-ttu-id="75b69-206">**react-preconfiguredentries** als Lösungsname</span><span class="sxs-lookup"><span data-stu-id="75b69-206">**react-preconfiguredentries** as your solution name</span></span>
+  - <span data-ttu-id="75b69-207">**Aktuellen Ordner verwenden** als Speicherort für die Dateien</span><span class="sxs-lookup"><span data-stu-id="75b69-207">**Use the current folder** for the location to place the files</span></span>
+  - <span data-ttu-id="75b69-208">**Katalog** als Name des Webparts</span><span class="sxs-lookup"><span data-stu-id="75b69-208">**Gallery** as your web part name</span></span>
+  - <span data-ttu-id="75b69-209">**Zeigt Elemente aus der ausgewählten Liste an** als Beschreibung Ihres Webparts</span><span class="sxs-lookup"><span data-stu-id="75b69-209">**Shows items from the selected list** as your web part description</span></span>
+  - <span data-ttu-id="75b69-210">**React** als Eintrittspunkt für die Webpart-Erstellung</span><span class="sxs-lookup"><span data-stu-id="75b69-210">**React** as the starting point to build the web part</span></span>
 
-- <span data-ttu-id="efcfb-205">**react-preconfiguredentries** als Lösungsname</span><span class="sxs-lookup"><span data-stu-id="efcfb-205">**react-preconfiguredentries** as your solution name</span></span>
-- <span data-ttu-id="efcfb-206">**Aktuellen Ordner verwenden** als Speicherort für die Dateien</span><span class="sxs-lookup"><span data-stu-id="efcfb-206">**Use the current folder** for the location to place the files</span></span>
-- <span data-ttu-id="efcfb-207">**Katalog** als Name des Webparts</span><span class="sxs-lookup"><span data-stu-id="efcfb-207">**Gallery** as your web part name</span></span>
-- <span data-ttu-id="efcfb-208">**Zeigt Elemente aus der ausgewählten Liste an** als Beschreibung Ihres Webparts</span><span class="sxs-lookup"><span data-stu-id="efcfb-208">**Shows items from the selected list** as your web part description</span></span>
-- <span data-ttu-id="efcfb-209">**React** als Eintrittspunkt für die Webpart-Erstellung</span><span class="sxs-lookup"><span data-stu-id="efcfb-209">**React** as the starting point to build the web part</span></span>
+  ![SharePoint-Framework-Yeoman-Generator mit den Standardoptionen](../../../images/preconfiguredentries-yeoman.png)
 
-![SharePoint Framework-Yeoman-Generator mit den Standardoptionen](../../../images/preconfiguredentries-yeoman.png)
+5. <span data-ttu-id="75b69-212">Warten Sie, bis das Gerüst erstellt wurde, und sperren Sie dann mithilfe des folgenden Befehls die Version der Projektabhängigkeiten:</span><span class="sxs-lookup"><span data-stu-id="75b69-212">After the scaffolding completes, lock down the version of the project dependencies by running the following command:</span></span>
 
-<span data-ttu-id="efcfb-211">Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:</span><span class="sxs-lookup"><span data-stu-id="efcfb-211">Once the scaffolding completes, lock down the version of the project dependencies by running the following command:</span></span>
+  ```sh
+  npm shrinkwrap
+  ```
 
-```sh
-npm shrinkwrap
-```
+6. <span data-ttu-id="75b69-213">Öffnen Sie den Projektordner in einem Code-Editor.</span><span class="sxs-lookup"><span data-stu-id="75b69-213">Next, open your project folder in your code editor.</span></span> <span data-ttu-id="75b69-214">In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch auch jeden beliebigen anderen Editor verwenden.</span><span class="sxs-lookup"><span data-stu-id="75b69-214">This article uses Visual Studio Code in the steps and screenshots, but you can use any editor you prefer.</span></span>
 
-<span data-ttu-id="efcfb-212">Öffnen Sie dann den Projektordner im Code-Editor.</span><span class="sxs-lookup"><span data-stu-id="efcfb-212">Next, open your project folder in your code editor.</span></span> <span data-ttu-id="efcfb-213">In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.</span><span class="sxs-lookup"><span data-stu-id="efcfb-213">This article uses Visual Studio Code in the steps and screenshots but you can use any editor you prefer.</span></span>
+  ![SharePoint-Framework-Projekt in Visual Studio Code](../../../images/preconfiguredentries-visual-studio-code.png)
 
-![SharePoint Framework-Projekt in Visual Studio Code](../../../images/preconfiguredentries-visual-studio-code.png)
+## <a name="add-web-part-properties"></a><span data-ttu-id="75b69-216">Hinzufügen von Webparteigenschaften</span><span class="sxs-lookup"><span data-stu-id="75b69-216">Add web part properties</span></span>
 
-### <a name="add-web-part-properties"></a><span data-ttu-id="efcfb-215">Hinzufügen von Webparteigenschaften</span><span class="sxs-lookup"><span data-stu-id="efcfb-215">Add web part properties</span></span>
+<span data-ttu-id="75b69-217">Fügen Sie im Webpartmanifest Webparteigenschaften hinzu, damit Benutzer das Katalog-Webpart konfigurieren können.</span><span class="sxs-lookup"><span data-stu-id="75b69-217">In the web part manifest, add web part properties so that users can configure the gallery web part. In the code editor, open the ./src/webparts/gallery/GalleryWebPart.manifest.json file. Replace the properties section with the following JSON:</span></span> 
 
-<span data-ttu-id="efcfb-p114">Fügen Sie im Webpartmanifest Webparteigenschaften hinzu, damit Benutzer das Katalog-Webpart konfigurieren können. Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/GalleryWebPart.manifest.json**. Ersetzen Sie den Abschnitt **Eigenschaften** durch den folgenden JSON-Code:</span><span class="sxs-lookup"><span data-stu-id="efcfb-p114">In the web part manifest, add web part properties so that users can configure the gallery web part. In the code editor, open the **./src/webparts/gallery/GalleryWebPart.manifest.json** file. Replace the **properties** section with the following JSON:</span></span>
+1. <span data-ttu-id="75b69-218">Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/GalleryWebPart.manifest.json**.</span><span class="sxs-lookup"><span data-stu-id="75b69-218">In the code editor, open the **./src/webparts/gallery/GalleryWebPart.manifest.json** file. Change the preconfiguredEntries property to:</span></span> 
 
-```json
-{
-  //...
-  "preconfiguredEntries": [{
+2. <span data-ttu-id="75b69-219">Ersetzen Sie den Abschnitt **properties** durch den folgenden JSON-Code:</span><span class="sxs-lookup"><span data-stu-id="75b69-219">Replace the **properties** section with the following JSON:</span></span>
+
+  ```json
+  {
     //...
-    "properties": {
-      "listName": "",
-      "order": "",
-      "numberOfItems": 10,
-      "style": ""
-    }
-  }]
-}
-```
-
-<span data-ttu-id="efcfb-p115">Die **listName**-Eigenschaft gibt den Namen der Liste an, aus der Listenelemente angezeigt werden sollen. Die **order**-Eigenschaft gibt die Reihenfolge an, in der Elemente angezeigt werden sollen, z. B. chronologisch oder umgekehrt chronologisch. Die **numberOfItems**-Eigenschaft gibt an, wie viele Elemente angezeigt werden sollen. Die **style**-Eigenschaft gibt schließlich an, wie die Elemente angezeigt werden sollen, z. B. als Miniaturansichten, was beim Anzeigen von Bildern hilfreich sein kann, oder als Liste, was für Dokumente besser geeignet ist.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p115">The **listName** property specifies the name of the list from which list items should be displayed. The **order** property specifies the order in which items should be shown, that is chronological, or reverse chronological order. The **numberOfItems** property specifies how many items should be displayed. Finally, the **style** property specifies how the items should be displayed, such as thumbnails, which is useful for showing images, or as a list which is more suitable for documents.</span></span>
-
-<span data-ttu-id="efcfb-p116">Webparteigenschaften, die im Manifest angegeben werden, müssen auch der Webparteigenschaften-Schnittstelle hinzugefügt werden. Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/IGalleryWebPartProps.ts**. Ändern Sie deren Code in Folgendes:</span><span class="sxs-lookup"><span data-stu-id="efcfb-p116">Web part properties specified in the manifest must also be added to the web part properties interface. In the code editor, open the **./src/webparts/gallery/IGalleryWebPartProps.ts** file. Change its code to:</span></span>
-
-```ts
-export interface IGalleryWebPartProps {
-  listName: string;
-  order: string;
-  numberOfItems: number;
-  style: string;
-}
-```
-
-<span data-ttu-id="efcfb-p117">Beim Erstellen von clientseitigen SharePoint Framework-Webparts mithilfe von React müssen Sie nach dem Ändern der Webparteigenschaften-Schnittstelle die **render**-Methode des Webparts aktualisieren, die diese Schnittstelle verwendet, um eine Instanz der React-Hauptkomponente zu erstellen Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/GalleryWebPart.ts**. Ändern Sie die **render**-Methode des Webparts in Folgendes:</span><span class="sxs-lookup"><span data-stu-id="efcfb-p117">When building SharePoint Framework client-side web parts using React, after changing the web part properties interface, you need to update the web part's **render** method that uses that interface to create an instance of the main React component. In the code editor, open the **./src/webparts/gallery/GalleryWebPart.ts** file. Change the web part **render** method to:</span></span>
-
-```ts
-export default class GalleryWebPart extends BaseClientSideWebPart<IGalleryWebPartProps> {
-  // ...
-  public render(): void {
-    const element: React.ReactElement<IGalleryProps> = React.createElement(Gallery, {
-      listName: this.properties.listName,
-      order: this.properties.order,
-      numberOfItems: this.properties.numberOfItems,
-      style: this.properties.style
-    });
-
-    ReactDom.render(element, this.domElement);
+    "preconfiguredEntries": [{
+      //...
+      "properties": {
+        "listName": "",
+        "order": "",
+        "numberOfItems": 10,
+        "style": ""
+      }
+    }]
   }
-  // ...
-}
-```
+  ```
 
-<span data-ttu-id="efcfb-p118">Aktualisieren Sie React-Hauptkomponente so, dass die Werte der Eigenschaften angezeigt werden. Wenn das Webpart nicht konfiguriert wurde, zeigen Sie den standardmäßigen Platzhalter für das Webpart an. Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/components/Gallery.tsx**, und ändern Sie ihren Code in Folgendes:</span><span class="sxs-lookup"><span data-stu-id="efcfb-p118">Update the main React component to display the values of the properties. If the web part hasn't been configured, show the standard web part placeholder. In the code editor, open the **./src/webparts/gallery/components/Gallery.tsx** file and change its code to:</span></span>
+  <span data-ttu-id="75b69-220">Zu diesem Code ist Folgendes anzumerken:</span><span class="sxs-lookup"><span data-stu-id="75b69-220">Note the following about this code:</span></span>
+  - <span data-ttu-id="75b69-221">Die Eigenschaft **listName** gibt den Namen der Liste an, deren Listenelemente angezeigt werden sollen.</span><span class="sxs-lookup"><span data-stu-id="75b69-221">The **listName** property specifies the name of the list from which list items should be displayed.</span></span> 
+  - <span data-ttu-id="75b69-222">Die Eigenschaft **order** gibt die Reihenfolge an, in der Elemente angezeigt werden sollen, z. B. chronologisch oder umgekehrt chronologisch.</span><span class="sxs-lookup"><span data-stu-id="75b69-222">The **order** property specifies the order in which items should be shown, that is chronological, or reverse chronological order.</span></span> 
+  - <span data-ttu-id="75b69-223">Die Eigenschaft **numberOfItems** gibt an, wie viele Elemente angezeigt werden sollen.</span><span class="sxs-lookup"><span data-stu-id="75b69-223">The **numberOfItems** property specifies how many items should be displayed.</span></span> 
+  - <span data-ttu-id="75b69-224">Die Eigenschaft **style** gibt an, wie die Elemente angezeigt werden sollen, ob z. B. als Miniaturansichten (geeignet zum Anzeigen von Bildern) oder als Liste (geeignet zum Anzeigen von Dokumenten).</span><span class="sxs-lookup"><span data-stu-id="75b69-224">The **style** property specifies how the items should be displayed, such as thumbnails, which is useful for showing images, or as a list, which is more suitable for documents.</span></span>
 
-```ts
-import * as React from 'react';
-import styles from './Gallery.module.scss';
-import { IGalleryProps } from './IGalleryProps';
+  <span data-ttu-id="75b69-225">Im Manifest angegebene Webparteigenschaften müssen außerdem der Webparteigenschaften-Schnittstelle hinzugefügt werden.</span><span class="sxs-lookup"><span data-stu-id="75b69-225">Web part properties specified in the manifest must also be added to the web part properties interface. In the code editor, open the ./src/webparts/gallery/IGalleryWebPartProps.ts file. Change its code to:</span></span> 
+  
+3. <span data-ttu-id="75b69-226">Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/IGalleryWebPartProps.ts**.</span><span class="sxs-lookup"><span data-stu-id="75b69-226">In the code editor, open the **./src/webparts/gallery/loc/mystrings.d.ts** file. Change its code to:</span></span> <span data-ttu-id="75b69-227">Ändern Sie deren Code in Folgendes:</span><span class="sxs-lookup"><span data-stu-id="75b69-227">Change its contents to:</span></span>
 
-export default class Gallery extends React.Component<IGalleryProps, void> {
-  public render(): JSX.Element {
-    if (this.needsConfiguration()) {
-      return <div className="ms-Grid" style={{ color: "#666", backgroundColor: "#f4f4f4", padding: "80px 0", alignItems: "center", boxAlign: "center" }}>
-        <div className="ms-Grid-row" style={{ color: "#333" }}>
-          <div className="ms-Grid-col ms-u-hiddenSm ms-u-md3"></div>
-          <div className="ms-Grid-col ms-u-sm12 ms-u-md6" style={{ height: "100%", whiteSpace: "nowrap", textAlign: "center" }}>
-            <i className="ms-fontSize-su ms-Icon ms-Icon--ThumbnailView" style={{ display: "inline-block", verticalAlign: "middle", whiteSpace: "normal" }}></i><span className="ms-fontWeight-light ms-fontSize-xxl" style={{ paddingLeft: "20px", display: "inline-block", verticalAlign: "middle", whiteSpace: "normal" }}>Gallery</span>
-          </div>
-          <div className="ms-Grid-col ms-u-hiddenSm ms-u-md3"></div>
-        </div>
-        <div className="ms-Grid-row" style={{ width: "65%", verticalAlign: "middle", margin: "0 auto", textAlign: "center" }}>
-          <span style={{ color: "#666", fontSize: "17px", display: "inline-block", margin: "24px 0", fontWeight: 100 }}>Show items from the selected list</span>
-        </div>
-        <div className="ms-Grid-row"></div>
-      </div>;
+  ```ts
+  export interface IGalleryWebPartProps {
+    listName: string;
+    order: string;
+    numberOfItems: number;
+    style: string;
+  }
+  ```
+
+  <span data-ttu-id="75b69-228">Beim Erstellen von clientseitigen SharePoint-Framework-Webparts mithilfe von React müssen Sie nach dem Ändern der Webparteigenschaften-Schnittstelle die Methode **render** des Webparts aktualisieren. Sie verwendet diese Schnittstelle zur Erstellung einer Instanz der React-Hauptkomponente.</span><span class="sxs-lookup"><span data-stu-id="75b69-228">When building SharePoint Framework client-side web parts using React, after changing the web part properties interface, you need to update the web part's **render** method that uses that interface to create an instance of the main React component. In the code editor, open the ./src/webparts/gallery/GalleryWebPart.ts file. Change the web part render method to:</span></span> 
+  
+4. <span data-ttu-id="75b69-229">Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/galleryWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="75b69-229">In the code editor open the **./src/webparts/toDo/ToDoWebPart.ts** file.</span></span> <span data-ttu-id="75b69-230">Ändern Sie die Methode **render** des Webparts wie folgt:</span><span class="sxs-lookup"><span data-stu-id="75b69-230">Change the **render** method to:</span></span>
+
+  ```ts
+  export default class GalleryWebPart extends BaseClientSideWebPart<IGalleryWebPartProps> {
+    // ...
+    public render(): void {
+      const element: React.ReactElement<IGalleryProps> = React.createElement(Gallery, {
+        listName: this.properties.listName,
+        order: this.properties.order,
+        numberOfItems: this.properties.numberOfItems,
+        style: this.properties.style
+      });
+
+      ReactDom.render(element, this.domElement);
     }
-    else {
-      return (
-        <div className={styles.gallery}>
-          <div className={styles.container}>
-            <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
-              <div className='ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1'>
-                <span className="ms-font-xl ms-fontColor-white">
-                  Welcome to SharePoint!
-                </span>
-                <p className='ms-font-l ms-fontColor-white'>
-                  Customize SharePoint experiences using Web Parts.
-                </p>
-                <p className='ms-font-l ms-fontColor-white'>
-                  List: {this.props.listName}<br />
-                  Order: {this.props.order}<br />
-                  Number of items: {this.props.numberOfItems}<br />
-                  Style: {this.props.style}
-                </p>
-                <a href="https://aka.ms/spfx" className={styles.button}>
-                  <span className={styles.label}>Learn more</span>
-                </a>
+    // ...
+  }
+  ```
+
+5. <span data-ttu-id="75b69-231">Aktualisieren Sie die React-Hauptkomponente so, dass die Werte der Eigenschaften angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="75b69-231">Update the main React component to display the values of the properties.</span></span> <span data-ttu-id="75b69-232">Wenn das Webpart nicht konfiguriert wurde, soll der standardmäßige Webpart-Platzhalter angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="75b69-232">If the web part hasn't been configured, show the standard web part placeholder.</span></span> <span data-ttu-id="75b69-233">Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/components/Gallery.tsx**, und ändern Sie den in der Datei enthaltenen Code wie folgt:</span><span class="sxs-lookup"><span data-stu-id="75b69-233">In the code editor, open the **./src/webparts/recentDocument/components/IRecentDocumentProps.ts** file and change its code to:</span></span>
+
+  ```ts
+  import * as React from 'react';
+  import styles from './Gallery.module.scss';
+  import { IGalleryProps } from './IGalleryProps';
+
+  export default class Gallery extends React.Component<IGalleryProps, void> {
+    public render(): JSX.Element {
+      if (this.needsConfiguration()) {
+        return <div className="ms-Grid" style={{ color: "#666", backgroundColor: "#f4f4f4", padding: "80px 0", alignItems: "center", boxAlign: "center" }}>
+          <div className="ms-Grid-row" style={{ color: "#333" }}>
+            <div className="ms-Grid-col ms-u-hiddenSm ms-u-md3"></div>
+            <div className="ms-Grid-col ms-u-sm12 ms-u-md6" style={{ height: "100%", whiteSpace: "nowrap", textAlign: "center" }}>
+              <i className="ms-fontSize-su ms-Icon ms-Icon--ThumbnailView" style={{ display: "inline-block", verticalAlign: "middle", whiteSpace: "normal" }}></i><span className="ms-fontWeight-light ms-fontSize-xxl" style={{ paddingLeft: "20px", display: "inline-block", verticalAlign: "middle", whiteSpace: "normal" }}>Gallery</span>
+            </div>
+            <div className="ms-Grid-col ms-u-hiddenSm ms-u-md3"></div>
+          </div>
+          <div className="ms-Grid-row" style={{ width: "65%", verticalAlign: "middle", margin: "0 auto", textAlign: "center" }}>
+            <span style={{ color: "#666", fontSize: "17px", display: "inline-block", margin: "24px 0", fontWeight: 100 }}>Show items from the selected list</span>
+          </div>
+          <div className="ms-Grid-row"></div>
+        </div>;
+      }
+      else {
+        return (
+          <div className={styles.gallery}>
+            <div className={styles.container}>
+              <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
+                <div className='ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1'>
+                  <span className="ms-font-xl ms-fontColor-white">
+                    Welcome to SharePoint!
+                  </span>
+                  <p className='ms-font-l ms-fontColor-white'>
+                    Customize SharePoint experiences using Web Parts.
+                  </p>
+                  <p className='ms-font-l ms-fontColor-white'>
+                    List: {this.props.listName}<br />
+                    Order: {this.props.order}<br />
+                    Number of items: {this.props.numberOfItems}<br />
+                    Style: {this.props.style}
+                  </p>
+                  <a href="https://aka.ms/spfx" className={styles.button}>
+                    <span className={styles.label}>Learn more</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      );
+        );
+      }
+    }
+
+    private needsConfiguration(): boolean {
+      return Gallery.isEmpty(this.props.listName) ||
+        Gallery.isEmpty(this.props.order) ||
+        Gallery.isEmpty(this.props.style);
+    }
+
+    private static isEmpty(value: string): boolean {
+      return value === undefined ||
+        value === null ||
+        value.length === 0;
     }
   }
+  ```
 
-  private needsConfiguration(): boolean {
-    return Gallery.isEmpty(this.props.listName) ||
-      Gallery.isEmpty(this.props.order) ||
-      Gallery.isEmpty(this.props.style);
+6. <span data-ttu-id="75b69-234">Aktualisieren Sie die Schnittstelle der React-Hauptkomponente so, dass sie der Webparteigenschaften-Schnittstelle entspricht. Dies ist notwendig, da sämtliche Webparteigenschaften an diese Komponente übergeben werden.</span><span class="sxs-lookup"><span data-stu-id="75b69-234">Update the main React component Interface to match on the web part property Interface, since we are bypassing all the web part properties to this component. In the code editor, open the ./src/webparts/gallery/components/IGalleryProps.ts file and change its code to:</span></span> <span data-ttu-id="75b69-235">Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/components/IGalleryProps.ts**, und ändern Sie den in der Datei enthaltenen Code wie folgt:</span><span class="sxs-lookup"><span data-stu-id="75b69-235">In the code editor, open the **./src/webparts/recentDocument/components/IRecentDocumentProps.ts** file and change its code to:</span></span>
+
+  ```ts
+  import { IGalleryWebPartProps } from '../IGalleryWebPartProps';
+
+  export interface IGalleryProps extends IGalleryWebPartProps {
+  }
+  ```
+
+## <a name="render-web-part-properties-in-the-property-pane"></a><span data-ttu-id="75b69-236">Rendern von Webparteigenschaften im Eigenschaftenbereich</span><span class="sxs-lookup"><span data-stu-id="75b69-236">Render web part properties in the property pane</span></span>
+
+<span data-ttu-id="75b69-237">Damit Benutzer die neu definierten Eigenschaft verwenden können, um das Webpart zu konfigurieren, müssen die Eigenschaften im Webparteigenschaftenbereich angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="75b69-237">For users to be able to use the newly defined properties to configure the web part, the properties must be displayed in the web part property pane. In the code editor, open the ./src/webparts/gallery/GalleryWebPart.ts file. In the top section of the file change the @microsoft/sp-webpart-base import statement to:</span></span> 
+
+1. <span data-ttu-id="75b69-238">Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/galleryWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="75b69-238">In the code editor open the **./src/webparts/toDo/ToDoWebPart.ts** file.</span></span> <span data-ttu-id="75b69-239">Ändern Sie im oberen Abschnitt der Datei die Importanweisung **@microsoft/sp-webpart-base** wie folgt:</span><span class="sxs-lookup"><span data-stu-id="75b69-239">In the top section of the file, change the **@microsoft/sp-webpart-base** import statement to:</span></span>
+
+  ```ts
+  import {
+    BaseClientSideWebPart,
+    IPropertyPaneConfiguration,
+    PropertyPaneDropdown,
+    PropertyPaneSlider,
+    PropertyPaneChoiceGroup
+  } from '@microsoft/sp-webpart-base';
+  ```
+
+2. <span data-ttu-id="75b69-240">Ändern Sie **propertyPaneSettings** wie folgt:</span><span class="sxs-lookup"><span data-stu-id="75b69-240">Change the **propertyPaneSettings** to:</span></span>
+
+  ```ts
+  export default class GalleryWebPart extends BaseClientSideWebPart<IGalleryWebPartProps> {
+    // ...
+    protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+      return {
+        pages: [
+          {
+            header: {
+              description: strings.PropertyPaneDescription
+            },
+            groups: [
+              {
+                groupName: strings.BasicGroupName,
+                groupFields: [
+                  PropertyPaneDropdown('listName', {
+                    label: strings.ListNameFieldLabel,
+                    options: [{
+                      key: 'Documents',
+                      text: 'Documents'
+                    },
+                    {
+                      key: 'Images',
+                      text: 'Images'
+                    }]
+                  }),
+                  PropertyPaneChoiceGroup('order', {
+                    label: strings.OrderFieldLabel,
+                    options: [{
+                      key: 'chronological',
+                      text: strings.OrderFieldChronologicalOptionLabel
+                    },
+                    {
+                      key: 'reversed',
+                      text: strings.OrderFieldReversedOptionLabel
+                    }]
+                  }),
+                  PropertyPaneSlider('numberOfItems', {
+                    label: strings.NumberOfItemsFieldLabel,
+                    min: 1,
+                    max: 10,
+                    step: 1
+                  }),
+                  PropertyPaneChoiceGroup('style', {
+                    label: strings.StyleFieldLabel,
+                    options: [{
+                      key: 'thumbnails',
+                      text: strings.StyleFieldThumbnailsOptionLabel
+                    },
+                    {
+                      key: 'list',
+                      text: strings.StyleFieldListOptionLabel
+                    }]
+                  })
+                ]
+              }
+            ]
+          }
+        ]
+      };
+    }
+  }
+  ```
+
+<br/>
+
+<span data-ttu-id="75b69-241">In einem realen Szenario würden Sie die Liste der Listen von der aktuellen SharePoint-Website abrufen.</span><span class="sxs-lookup"><span data-stu-id="75b69-241">In a real-life scenario, you would retrieve the list of lists from the current SharePoint site. For brevity, in this example you use a fixed list instead.</span></span> <span data-ttu-id="75b69-242">Aus Platzgründen verwenden Sie in diesem Beispiel stattdessen eine Liste mit fixer Elementanzahl.</span><span class="sxs-lookup"><span data-stu-id="75b69-242">For brevity, in this example, you use a fixed list instead.</span></span>
+
+## <a name="add-localization-labels"></a><span data-ttu-id="75b69-243">Hinzufügen von Lokalisierungsbezeichnungen</span><span class="sxs-lookup"><span data-stu-id="75b69-243">Add localization labels</span></span>
+
+1. <span data-ttu-id="75b69-p121">Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/loc/mystrings.d.ts**. Ändern Sie den in der Datei enthaltenen Code wie folgt:</span><span class="sxs-lookup"><span data-stu-id="75b69-p121">In the code editor, open the **./src/webparts/gallery/loc/mystrings.d.ts** file. Change its code to:</span></span>
+
+  ```ts
+  declare interface IGalleryStrings {
+    PropertyPaneDescription: string;
+    BasicGroupName: string;
+    ListNameFieldLabel: string;
+    OrderFieldLabel: string;
+    OrderFieldChronologicalOptionLabel: string;
+    OrderFieldReversedOptionLabel: string;
+    NumberOfItemsFieldLabel: string;
+    StyleFieldLabel: string;
+    StyleFieldThumbnailsOptionLabel: string;
+    StyleFieldListOptionLabel: string;
   }
 
-  private static isEmpty(value: string): boolean {
-    return value === undefined ||
-      value === null ||
-      value.length === 0;
+  declare module 'galleryStrings' {
+    const strings: IGalleryStrings;
+    export = strings;
   }
-}
-```
+  ```
 
-<span data-ttu-id="efcfb-p119">Aktualisieren Sie die Schnittstelle der zentralen React-Komponente so, dass sie der Schnittstelle der Webparteigenschaften entspricht. Dies ist nötig, da alle Webparteigenschaften an diese Komponente umgeleitet werden. Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/components/IGalleryProps.ts**, und ändern Sie den Code wie folgt:</span><span class="sxs-lookup"><span data-stu-id="efcfb-p119">Update the main React component Interface to match on the web part property Interface, since we are bypassing all the web part properties to this component. In the code editor, open the **./src/webparts/gallery/components/IGalleryProps.ts** file and change its code to:</span></span>
+2. <span data-ttu-id="75b69-246">Fügen Sie die fehlenden Ressourcenzeichenfolgen hinzu. Öffnen Sie dazu im Code-Editor die Datei **./src/webparts/gallery/loc/en-us.js**, und ändern Sie den in ihr enthaltenen Code wie folgt:</span><span class="sxs-lookup"><span data-stu-id="75b69-246">Add the missing resource strings by opening in the code editor the **./src/webparts/gallery/loc/en-us.js** file and changing its code to:</span></span>
 
-```ts
-import { IGalleryWebPartProps } from '../IGalleryWebPartProps';
-
-export interface IGalleryProps extends IGalleryWebPartProps {
-}
-```
-
-### <a name="render-web-part-properties-in-the-property-pane"></a><span data-ttu-id="efcfb-234">Rendern von Webparteigenschaften im Eigenschaftenbereich</span><span class="sxs-lookup"><span data-stu-id="efcfb-234">Render web part properties in the property pane</span></span>
-
-<span data-ttu-id="efcfb-p120">Damit Benutzer die neu definierten Eigenschaft verwenden können, um das Webpart zu konfigurieren, müssen die Eigenschaften im Webparteigenschaftenbereich angezeigt werden. Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/galleryWebPart.ts**. Ändern Sie im oberen Bereich der Datei die **@microsoft/sp-webpart-base**-Anweisung zum Importieren in Folgendes:</span><span class="sxs-lookup"><span data-stu-id="efcfb-p120">For users to be able to use the newly defined properties to configure the web part, the properties must be displayed in the web part property pane. In the code editor, open the **./src/webparts/gallery/GalleryWebPart.ts** file. In the top section of the file change the **@microsoft/sp-webpart-base** import statement to:</span></span>
-
-```ts
-import {
-  BaseClientSideWebPart,
-  IPropertyPaneConfiguration,
-  PropertyPaneDropdown,
-  PropertyPaneSlider,
-  PropertyPaneChoiceGroup
-} from '@microsoft/sp-webpart-base';
-```
-
-<span data-ttu-id="efcfb-238">Aktualisieren Sie dann den Code des **propertyPaneSettings**-Getters auf Folgendes:</span><span class="sxs-lookup"><span data-stu-id="efcfb-238">Next, change the **propertyPaneSettings** getter to:</span></span>
-
-```ts
-export default class GalleryWebPart extends BaseClientSideWebPart<IGalleryWebPartProps> {
-  // ...
-  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+  ```js
+  define([], function() {
     return {
-      pages: [
-        {
-          header: {
-            description: strings.PropertyPaneDescription
-          },
-          groups: [
-            {
-              groupName: strings.BasicGroupName,
-              groupFields: [
-                PropertyPaneDropdown('listName', {
-                  label: strings.ListNameFieldLabel,
-                  options: [{
-                    key: 'Documents',
-                    text: 'Documents'
-                  },
-                  {
-                    key: 'Images',
-                    text: 'Images'
-                  }]
-                }),
-                PropertyPaneChoiceGroup('order', {
-                  label: strings.OrderFieldLabel,
-                  options: [{
-                    key: 'chronological',
-                    text: strings.OrderFieldChronologicalOptionLabel
-                  },
-                  {
-                    key: 'reversed',
-                    text: strings.OrderFieldReversedOptionLabel
-                  }]
-                }),
-                PropertyPaneSlider('numberOfItems', {
-                  label: strings.NumberOfItemsFieldLabel,
-                  min: 1,
-                  max: 10,
-                  step: 1
-                }),
-                PropertyPaneChoiceGroup('style', {
-                  label: strings.StyleFieldLabel,
-                  options: [{
-                    key: 'thumbnails',
-                    text: strings.StyleFieldThumbnailsOptionLabel
-                  },
-                  {
-                    key: 'list',
-                    text: strings.StyleFieldListOptionLabel
-                  }]
-                })
-              ]
-            }
-          ]
-        }
-      ]
-    };
+      "PropertyPaneDescription": "Description",
+      "BasicGroupName": "Group Name",
+      "ListNameFieldLabel": "List",
+      "OrderFieldLabel": "Items order",
+      "OrderFieldChronologicalOptionLabel": "chronological",
+      "OrderFieldReversedOptionLabel": "reversed chronological",
+      "NumberOfItemsFieldLabel": "Number of items to show",
+      "StyleFieldLabel": "Items display style",
+      "StyleFieldThumbnailsOptionLabel": "thumbnails",
+      "StyleFieldListOptionLabel": "list"
+    }
+  });
+  ```
+
+3. <span data-ttu-id="75b69-247">Vergewissern Sie sich mithilfe des folgenden Befehls, dass das Projekt erstellt wird:</span><span class="sxs-lookup"><span data-stu-id="75b69-247">Confirm that the project is building by running the following command:</span></span>
+
+  ```sh
+  gulp serve
+  ```
+
+4. <span data-ttu-id="75b69-248">Fügen Sie das Webpart im Webbrowser zur Canvas hinzu, und öffnen Sie den Eigenschaftenbereich des Webparts.</span><span class="sxs-lookup"><span data-stu-id="75b69-248">In the web browser add the web part to the canvas and open its property pane. You should see all properties available for users to configure.</span></span> <span data-ttu-id="75b69-249">Es sollten alle Eigenschaften angezeigt werden, die Benutzer konfigurieren können.</span><span class="sxs-lookup"><span data-stu-id="75b69-249">You should see all the properties available for users to configure.</span></span>
+
+  ![Webpart-Eigenschaftenbereich mit den verschiedenen Eigenschaften, die Benutzer konfigurieren müssen, damit das Webpart funktioniert](../../../images/preconfiguredentries-needs-configuration.png)
+
+<span data-ttu-id="75b69-251">Da Sie für das Webpart keine Standardwerte angegeben haben, müssen Benutzer das Webpart immer zuerst konfigurieren, wenn sie es der Seite hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="75b69-251">Because you didn't specify any default values for the web part, every time users add the web part to the page they have to configure it first. You can simplify this experience by providing default values for the most common scenarios.</span></span> <span data-ttu-id="75b69-252">Sie können die Benutzererfahrung einfacher gestalten, indem Sie für die gängigsten Szenarien Standardwerte angeben.</span><span class="sxs-lookup"><span data-stu-id="75b69-252">You can simplify this experience by providing default values for the most common scenarios.</span></span>
+
+## <a name="specify-default-values-for-the-web-part"></a><span data-ttu-id="75b69-253">Angeben von Standardwerten für das Webpart</span><span class="sxs-lookup"><span data-stu-id="75b69-253">Specify default values for the web part</span></span>
+
+<span data-ttu-id="75b69-254">Nehmen wir an, Ihre Benutzer verwenden häufig das Katalog-Webpart, um die fünf zuletzt hinzugefügten Bilder anzuzeigen.</span><span class="sxs-lookup"><span data-stu-id="75b69-254">Imagine that users often use the gallery web part to show the five most recently added images. Rather than requiring users to configure the web part each time manually, you could provide them with a preconfigured version using correct settings.</span></span> <span data-ttu-id="75b69-255">Statt von den Benutzern zu verlangen, dass sie das Webpart jedes Mal manuell konfigurieren, könnten Sie ihnen eine vorkonfigurierte Version mit den korrekten Einstellungen bereitstellen.</span><span class="sxs-lookup"><span data-stu-id="75b69-255">Imagine that users often use the gallery web part to show the five most recently added images. Rather than requiring users to configure the web part each time manually, you could provide them with a preconfigured version using correct settings.</span></span>
+
+1. <span data-ttu-id="75b69-p125">Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/GalleryWebPart.manifest.json**. Ändern Sie den vorhandenen Eintrag in der Eigenschaft **preconfiguredEntries** wie folgt:</span><span class="sxs-lookup"><span data-stu-id="75b69-p125">In the code editor, open the **./src/webparts/gallery/GalleryWebPart.manifest.json** file. Change the existing entry in the **preconfiguredEntries** property to:</span></span>
+
+  ```json
+  {
+    // ...
+    "preconfiguredEntries": [{
+      "groupId": "6737645a-4443-4210-a70e-e5e2a219133a",
+      "group": { "default": "Content" },
+      "title": { "default": "Recent images" },
+      "description": { "default": "Shows 5 most recent images" },
+      "officeFabricIconFontName": "Picture",
+      "properties": {
+        "listName": "Images",
+        "order": "reversed",
+        "numberOfItems": 5,
+        "style": "thumbnails"
+      }
+    }]
   }
-}
-```
+  ```
 
-<span data-ttu-id="efcfb-p121">In einem realen Szenario würden Sie die Liste von Elementen von der aktuellen SharePoint-Website abrufen. Aus Platzgründen verwenden Sie in diesem Beispiel stattdessen eine feste Liste.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p121">In a real-life scenario, you would retrieve the list of lists from the current SharePoint site. For brevity, in this example you use a fixed list instead.</span></span>
+2. <span data-ttu-id="75b69-258">Starten Sie das Debuggen des Projekts, indem Sie den folgenden Befehl ausführen:</span><span class="sxs-lookup"><span data-stu-id="75b69-258">Start debugging the project by running the following command:</span></span>
 
-### <a name="add-localization-labels"></a><span data-ttu-id="efcfb-241">Hinzufügen von Lokalisierungsbezeichnungen</span><span class="sxs-lookup"><span data-stu-id="efcfb-241">Add localization labels</span></span>
+  ```sh
+  gulp serve
+  ```
 
-<span data-ttu-id="efcfb-p122">Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/loc/mystrings.d.ts**. Ändern Sie deren Code in Folgendes:</span><span class="sxs-lookup"><span data-stu-id="efcfb-p122">In the code editor, open the **./src/webparts/gallery/loc/mystrings.d.ts** file. Change its code to:</span></span>
+  > [!NOTE] 
+  > <span data-ttu-id="75b69-259">Falls das Debuggen bereits läuft: Stoppen Sie den Prozess, und starten Sie ihn erneut.</span><span class="sxs-lookup"><span data-stu-id="75b69-259">If you were debugging the project previously, stop debugging and start it again.</span></span> <span data-ttu-id="75b69-260">Änderungen am Webpartmanifest werden beim Debuggen nicht automatisch in die Workbench übernommen. Sie müssen das Projekt neu erstellen, um sie sehen zu können.</span><span class="sxs-lookup"><span data-stu-id="75b69-260">Changes made to the web part manifest are not automatically reflected in the workbench while debugging, and you have to rebuild the project in order to see them.</span></span>
 
-```ts
-declare interface IGalleryStrings {
-  PropertyPaneDescription: string;
-  BasicGroupName: string;
-  ListNameFieldLabel: string;
-  OrderFieldLabel: string;
-  OrderFieldChronologicalOptionLabel: string;
-  OrderFieldReversedOptionLabel: string;
-  NumberOfItemsFieldLabel: string;
-  StyleFieldLabel: string;
-  StyleFieldThumbnailsOptionLabel: string;
-  StyleFieldListOptionLabel: string;
-}
+3. <span data-ttu-id="75b69-261">Sobald Sie die Webpart-Toolbox öffnen, um das Webpart zur Canvas hinzuzufügen, werden Sie sehen, dass sich Name und Symbol geändert haben. Sie entsprechen nun den vorkonfigurierten Einstellungen.</span><span class="sxs-lookup"><span data-stu-id="75b69-261">When you open the web part toolbox to add the web part to the canvas, you will see that its name and icon changed to reflect the preconfigured settings.</span></span>
 
-declare module 'galleryStrings' {
-  const strings: IGalleryStrings;
-  export = strings;
-}
-```
+  ![Webpart-Toolbox mit der vorkonfigurierten Version des Webparts](../../../images/preconfiguredentries-recent-images-toolbox.png)
 
-<span data-ttu-id="efcfb-244">Fügen Sie die fehlenden Ressourcenzeichenfolgen hinzu, indem Sie im Code-Editor die Datei **./src/webparts/gallery/loc/en-us.js** öffnen und ihren Code in Folgendes ändern:</span><span class="sxs-lookup"><span data-stu-id="efcfb-244">Add the missing resource strings by opening in the code editor the **./src/webparts/gallery/loc/en-us.js** file and changing its code to:</span></span>
+4. <span data-ttu-id="75b69-263">Sobald das Webpart zur Seite hinzugefügt wird, funktioniert es unmittelbar und verwendet die vorkonfigurierten Einstellungen.</span><span class="sxs-lookup"><span data-stu-id="75b69-263">After adding the web part to the page, it works immediately using the preconfigured settings.</span></span>
 
-```js
-define([], function() {
-  return {
-    "PropertyPaneDescription": "Description",
-    "BasicGroupName": "Group Name",
-    "ListNameFieldLabel": "List",
-    "OrderFieldLabel": "Items order",
-    "OrderFieldChronologicalOptionLabel": "chronological",
-    "OrderFieldReversedOptionLabel": "reversed chronological",
-    "NumberOfItemsFieldLabel": "Number of items to show",
-    "StyleFieldLabel": "Items display style",
-    "StyleFieldThumbnailsOptionLabel": "thumbnails",
-    "StyleFieldListOptionLabel": "list"
+  ![Vorkonfiguriertes Webpart, das sofort funktioniert, wenn es der Seite hinzugefügt wird](../../../images/preconfiguredentries-recent-images-canvas.png)
+
+## <a name="specify-multiple-preconfigured-web-part-entries"></a><span data-ttu-id="75b69-265">Eingeben mehrerer vorkonfigurierter Webparteinträge</span><span class="sxs-lookup"><span data-stu-id="75b69-265">Specify multiple preconfigured web part entries</span></span>
+
+<span data-ttu-id="75b69-p127">Stellen Sie sich vor, dass eine andere Gruppe von Benutzern häufig Ihr Katalog-Webpart verwendet, um Dokumente anzuzeigen, die kürzlich ihrer Website hinzugefügt wurden. Damit diese Ihr Webpart verwenden können, können Sie einen weiteren Satz von Voreinstellungen hinzufügen, die deren Konfigurationsanforderungen entsprechen.</span><span class="sxs-lookup"><span data-stu-id="75b69-p127">Imagine that another group of users often uses your gallery web part to show documents recently added to their site. To help them use your web part, you can add another set of presets that addresses their configuration needs.</span></span>
+
+1. <span data-ttu-id="75b69-p128">Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/GalleryWebPart.manifest.json**. Ändern Sie die Eigenschaft **preconfiguredEntries** wie folgt:</span><span class="sxs-lookup"><span data-stu-id="75b69-p128">In the code editor, open the **./src/webparts/gallery/GalleryWebPart.manifest.json** file. Change the **preconfiguredEntries** property to:</span></span>
+
+  ```json
+  {
+    // ...
+    "preconfiguredEntries": [{
+      "groupId": "6737645a-4443-4210-a70e-e5e2a219133a",
+      "group": { "default": "Content" },
+      "title": { "default": "Recent images" },
+      "description": { "default": "Shows 5 most recent images" },
+      "officeFabricIconFontName": "Picture",
+      "properties": {
+        "listName": "Images",
+        "order": "reversed",
+        "numberOfItems": 5,
+        "style": "thumbnails"
+      }
+    },
+    {
+      "groupId": "6737645a-4443-4210-a70e-e5e2a219133a",
+      "group": { "default": "Content" },
+      "title": { "default": "Recent documents" },
+      "description": { "default": "Shows 10 most recent documents" },
+      "officeFabricIconFontName": "Documentation",
+      "properties": {
+        "listName": "Documents",
+        "order": "reversed",
+        "numberOfItems": 10,
+        "style": "list"
+      }
+    }]
   }
-});
-```
+  ```
 
-<span data-ttu-id="efcfb-245">Stellen Sie sicher, dass das Projekt erstellt wird, indem Sie den folgenden Befehl ausführen:</span><span class="sxs-lookup"><span data-stu-id="efcfb-245">Confirm that the project is building by running the following command:</span></span>
+2. <span data-ttu-id="75b69-270">Wie Sie sehen, behalten Sie den bisherigen vorkonfigurierten Eintrag bei und fügen einen weiteren hinzu, mit anderen Werten für die Eigenschaften.</span><span class="sxs-lookup"><span data-stu-id="75b69-270">Notice how you keep the previous preconfigured entry intact and add another one beside it using different values for properties.</span></span>
 
-```sh
-gulp serve
-```
+3. <span data-ttu-id="75b69-271">Starten Sie mit dem folgenden Befehl das Debuggen des Projekts, um das Ergebnis zu sehen:</span><span class="sxs-lookup"><span data-stu-id="75b69-271">To see the result start debugging the project by running the following command:</span></span>
 
-<span data-ttu-id="efcfb-p123">Fügen Sie im Webbrowser das Webpart zum Zeichenbereich hinzu, und öffnen Sie dessen Eigenschaftenbereich. Sie sollten alle Eigenschaften sehen, die von Benutzern konfiguriert werden können.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p123">In the web browser add the web part to the canvas and open its property pane. You should see all properties available for users to configure.</span></span>
+  ```sh
+  gulp serve
+  ```
 
-![Webparteigenschaftenbereich, in dem die unterschiedlichen Eigenschaften angezeigt werden, die Benutzer konfigurieren müssen, damit das Webpart funktioniert](../../../images/preconfiguredentries-needs-configuration.png)
+4. <span data-ttu-id="75b69-272">Sobald Sie die Webpart-Toolbox öffnen, um das Webpart der Canvas hinzuzufügen, werden zwei Webparts zur Auswahl angezeigt.</span><span class="sxs-lookup"><span data-stu-id="75b69-272">When you open the web part toolbox to add the web part to the canvas, you will see that there are two web parts for you to choose from.</span></span>
 
-<span data-ttu-id="efcfb-p124">Da Sie für das Webpart keine Standardwerte angegeben haben, müssen Benutzer jedes Mal, wenn sie das Webpart der Seite hinzufügen, dieses zuerst konfigurieren. Sie können dies vereinfachen, indem Sie für die häufigsten Szenarien Standardwerte angeben.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p124">Because you didn't specify any default values for the web part, every time users add the web part to the page they have to configure it first. You can simplify this experience by providing default values for the most common scenarios.</span></span>
+  ![Webpart-Toolbox mit der vorkonfigurierten Version des Webparts](../../../images/preconfiguredentries-multiple-web-parts-toolbox.png)
 
-### <a name="specify-default-values-for-the-web-part"></a><span data-ttu-id="efcfb-251">Angeben von Standardwerten für das Webpart</span><span class="sxs-lookup"><span data-stu-id="efcfb-251">Specify default values for the web part</span></span>
+5. <span data-ttu-id="75b69-274">Das Webpart **Zuletzt verwendete Dokumente** funktioniert sofort, wenn es der Seite hinzugefügt wird, und arbeitet dabei mit den festgelegten vorkonfigurierten Einstellungen.</span><span class="sxs-lookup"><span data-stu-id="75b69-274">After adding the **Recent documents** web part to the page, it works immediately using its specific preconfigured settings.</span></span>
 
-<span data-ttu-id="efcfb-p125">Stellen Sie sich vor, dass Benutzer häufig das Katalog-Webpart verwenden, um die fünf zuletzt hinzugefügten Bilder anzuzeigen. Anstatt zu verlangen, dass Benutzer das Webpart jedes Mal manuell konfigurieren, könnten Sie ihnen eine vorkonfigurierte Version mit korrekten Einstellungen bereitstellen. </span><span class="sxs-lookup"><span data-stu-id="efcfb-p125">Imagine that users often use the gallery web part to show the five most recently added images. Rather than requiring users to configure the web part each time manually, you could provide them with a preconfigured version using correct settings.</span></span>
+  ![Vorkonfiguriertes Webpart „Zuletzt verwendete Dokumente“, das sofort funktioniert, wenn es der Seite hinzugefügt wird](../../../images/preconfiguredentries-recent-documents-canvas.png)
 
-<span data-ttu-id="efcfb-p126">Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/GalleryWebPart.manifest.json**. Ändern Sie den vorhandenen Eintrag in der **preconfiguredEntries**-Eigenschaft in Folgendes:</span><span class="sxs-lookup"><span data-stu-id="efcfb-p126">In the code editor, open the **./src/webparts/gallery/GalleryWebPart.manifest.json** file. Change the existing entry in the **preconfiguredEntries** property to:</span></span>
+## <a name="specify-an-unconfigured-instance-of-the-web-part"></a><span data-ttu-id="75b69-276">Angeben einer nicht konfigurierten Instanz des Webparts</span><span class="sxs-lookup"><span data-stu-id="75b69-276">Specify an unconfigured instance of the web part</span></span>
 
-```json
-{
-  // ...
-  "preconfiguredEntries": [{
-    "groupId": "6737645a-4443-4210-a70e-e5e2a219133a",
-    "group": { "default": "Content" },
-    "title": { "default": "Recent images" },
-    "description": { "default": "Shows 5 most recent images" },
-    "officeFabricIconFontName": "Picture",
-    "properties": {
-      "listName": "Images",
-      "order": "reversed",
-      "numberOfItems": 5,
-      "style": "thumbnails"
-    }
-  }]
-}
-```
+<span data-ttu-id="75b69-277">Beim Erstellen von Webparts gibt es häufig spezielle Szenarien, die das Webpart unterstützen soll.</span><span class="sxs-lookup"><span data-stu-id="75b69-277">When building web parts there are often specific scenarios that the web part should support. Providing preconfigured entries for those scenarios makes it easier for users to use the web part.</span></span> <span data-ttu-id="75b69-278">Das Bereitstellen vorkonfigurierter Einträge für diese Szenarien erleichtert Benutzern die Arbeit mit dem Webpart.</span><span class="sxs-lookup"><span data-stu-id="75b69-278">When building web parts there are often specific scenarios that the web part should support. Providing preconfigured entries for those scenarios makes it easier for users to use the web part.</span></span>
 
-<span data-ttu-id="efcfb-256">Starten Sie das Debuggen des Projekts, indem Sie den folgenden Befehl ausführen:</span><span class="sxs-lookup"><span data-stu-id="efcfb-256">Start debugging the project by running the following command:</span></span>
+<span data-ttu-id="75b69-279">Je nachdem, wie Sie das Webpart erstellen, könnte es möglicherweise auch andere Szenarien unterstützen, die Sie nicht vorab eingeplant haben.</span><span class="sxs-lookup"><span data-stu-id="75b69-279">Depending on how you build your web part, it could be possible that the web part can support other unforeseen scenarios as well.</span></span> <span data-ttu-id="75b69-280">Wenn Sie nur ganz bestimmte vorkonfigurierte Einträge bereitstellen, ist für Benutzer möglicherweise nicht klar, dass sie Ihr Webpart für ein anderes Szenario verwenden können.</span><span class="sxs-lookup"><span data-stu-id="75b69-280">If you only provide specific preconfigured entries, users might not realize they can use your web part for a different scenario.</span></span> <span data-ttu-id="75b69-281">Es empfiehlt sich daher, auch eine allgemeine, nicht konfigurierte Variante des Webparts bereitzustellen.</span><span class="sxs-lookup"><span data-stu-id="75b69-281">It might be a good idea to provide a generic unconfigured variant of your web part as well.</span></span>
 
-```sh
-gulp serve
-```
+1. <span data-ttu-id="75b69-p131">Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/GalleryWebPart.manifest.json**. Ändern Sie die Eigenschaft **preconfiguredEntries** wie folgt:</span><span class="sxs-lookup"><span data-stu-id="75b69-p131">In the code editor, open the **./src/webparts/gallery/GalleryWebPart.manifest.json** file. Change the **preconfiguredEntries** property to:</span></span>
 
-> [!NOTE] 
-> <span data-ttu-id="efcfb-257">Wenn Sie das Projekt zuvor bereits gedebuggt haben, stoppen Sie das Debuggen, und starten Sie es erneut.</span><span class="sxs-lookup"><span data-stu-id="efcfb-257">If you were debugging the project previously, stop debugging and start it again.</span></span> <span data-ttu-id="efcfb-258">Änderungen, die am Webpartmanifest vorgenommen wurden, werden beim Debuggen nicht automatisch in der Workbench widergespiegelt, und Sie müssen das Projekt neu erstellen, um diese zu sehen.</span><span class="sxs-lookup"><span data-stu-id="efcfb-258">Note: If you were debugging the project previously, stop debugging and start it again. Changes made to the web part manifest are not automatically reflected in the workbench while debugging, and you have to rebuild the project in order to see them.</span></span>
-
-<span data-ttu-id="efcfb-259">Wenn Sie die Webpart-Toolbox öffnen, um das Webpart zum Zeichenbereich hinzuzufügen, werden Sie sehen, dass sich der Name und das Symbol geändert haben und nun die vorkonfigurierten Einstellungen widerspiegeln.</span><span class="sxs-lookup"><span data-stu-id="efcfb-259">When you open the web part toolbox to add the web part to the canvas, you will see that its name and icon changed to reflect the preconfigured settings.</span></span>
-
-![Webpart-Toolbox mit der vorkonfigurierten Version des Webparts](../../../images/preconfiguredentries-recent-images-toolbox.png)
-
-<span data-ttu-id="efcfb-261">Nach dem Hinzufügen des Webparts zu der Seite funktioniert dieses sofort mit den vorkonfigurierten Einstellungen.</span><span class="sxs-lookup"><span data-stu-id="efcfb-261">After adding the web part to the page, it works immediately using the preconfigured settings.</span></span>
-
-![Vorkonfiguriertes Webpart, das sofort funktioniert, nachdem es der Seite hinzugefügt wurde](../../../images/preconfiguredentries-recent-images-canvas.png)
-
-### <a name="specify-multiple-preconfigured-web-part-entries"></a><span data-ttu-id="efcfb-263">Eingeben mehrerer vorkonfigurierter Webparteinträge</span><span class="sxs-lookup"><span data-stu-id="efcfb-263">Specify multiple preconfigured web part entries</span></span>
-
-<span data-ttu-id="efcfb-p128">Stellen Sie sich vor, dass eine andere Gruppe von Benutzern häufig Ihr Katalog-Webpart verwendet, um Dokumente anzuzeigen, die kürzlich ihrer Website hinzugefügt wurden. Damit diese Ihr Webpart verwenden können, können Sie einen weiteren Satz von Voreinstellungen hinzufügen, die deren Konfigurationsanforderungen entsprechen.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p128">Imagine that another group of users often uses your gallery web part to show documents recently added to their site. To help them use your web part, you can add another set of presets that addresses their configuration needs.</span></span>
-
-<span data-ttu-id="efcfb-p129">Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/GalleryWebPart.manifest.json**. Ändern Sie die **preconfiguredEntries**-Eigenschaft in Folgendes:</span><span class="sxs-lookup"><span data-stu-id="efcfb-p129">In the code editor, open the **./src/webparts/gallery/GalleryWebPart.manifest.json** file. Change the **preconfiguredEntries** property to:</span></span>
-
-```json
-{
-  // ...
-  "preconfiguredEntries": [{
-    "groupId": "6737645a-4443-4210-a70e-e5e2a219133a",
-    "group": { "default": "Content" },
-    "title": { "default": "Recent images" },
-    "description": { "default": "Shows 5 most recent images" },
-    "officeFabricIconFontName": "Picture",
-    "properties": {
-      "listName": "Images",
-      "order": "reversed",
-      "numberOfItems": 5,
-      "style": "thumbnails"
-    }
-  },
+  ```json
   {
-    "groupId": "6737645a-4443-4210-a70e-e5e2a219133a",
-    "group": { "default": "Content" },
-    "title": { "default": "Recent documents" },
-    "description": { "default": "Shows 10 most recent documents" },
-    "officeFabricIconFontName": "Documentation",
-    "properties": {
-      "listName": "Documents",
-      "order": "reversed",
-      "numberOfItems": 10,
-      "style": "list"
-    }
-  }]
-}
-```
+    // ...
+    "preconfiguredEntries": [{
+      "groupId": "6737645a-4443-4210-a70e-e5e2a219133a",
+      "group": { "default": "Content" },
+      "title": { "default": "Recent images" },
+      "description": { "default": "Shows 5 most recent images" },
+      "officeFabricIconFontName": "Picture",
+      "properties": {
+        "listName": "Images",
+        "order": "reversed",
+        "numberOfItems": 5,
+        "style": "thumbnails"
+      }
+    },
+    {
+      "groupId": "6737645a-4443-4210-a70e-e5e2a219133a",
+      "group": { "default": "Content" },
+      "title": { "default": "Recent documents" },
+      "description": { "default": "Shows 10 most recent documents" },
+      "officeFabricIconFontName": "Documentation",
+      "properties": {
+        "listName": "Documents",
+        "order": "reversed",
+        "numberOfItems": 10,
+        "style": "list"
+      }
+    },
+    {
+      "groupId": "6737645a-4443-4210-a70e-e5e2a219133a",
+      "group": { "default": "Content" },
+      "title": { "default": "Gallery" },
+      "description": { "default": "Shows items from the selected list" },
+      "officeFabricIconFontName": "CustomList",
+      "properties": {
+        "listName": "",
+        "order": "",
+        "numberOfItems": 5,
+        "style": ""
+      }
+    }]
+  }
+  ```
 
-<span data-ttu-id="efcfb-268">Beachten Sie, dass der zuvor vorkonfigurierte Eintrag intakt bleibt und Sie einen weiteren Eintrag daneben unter Verwendung anderer Werte für Eigenschaften hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="efcfb-268">Notice how you keep the previous preconfigured entry intact and add another one beside it using different values for properties.</span></span>
+2. <span data-ttu-id="75b69-284">Wie Sie sehen, wird die allgemeine, nicht konfigurierte Version des Webparts zusätzlich zu den Konfigurationen hinzugefügt, die auf bestimmte Szenarien abzielen.</span><span class="sxs-lookup"><span data-stu-id="75b69-284">Notice that the generic unconfigured version of the web part is added next to the configurations that target specific scenarios.</span></span> <span data-ttu-id="75b69-285">Entspricht keine der vorab definierten Konfigurationen den Anforderungen der Benutzer, können sie jederzeit die allgemeine Version verwenden und entsprechend ihren Bedürfnissen konfigurieren.</span><span class="sxs-lookup"><span data-stu-id="75b69-285">The generic unconfigured version of the web part is added beside the configurations that target specific scenarios. This way, if there is no specific configuration addressing users' needs, they can always use the generic version and configure it according to their requirements.</span></span>
 
-<span data-ttu-id="efcfb-269">Um das Ergebnis zu sehen, starten Sie das Debuggen des Projekts, indem Sie den folgenden Befehl ausführen:</span><span class="sxs-lookup"><span data-stu-id="efcfb-269">To see the result start debugging the project by running the following command:</span></span>
+3. <span data-ttu-id="75b69-286">Starten Sie mit dem folgenden Befehl das Debuggen des Projekts, um das Ergebnis zu sehen:</span><span class="sxs-lookup"><span data-stu-id="75b69-286">To see the result start debugging the project by running the following command:</span></span>
 
-```sh
-gulp serve
-```
+  ```sh
+  gulp serve
+  ```
 
-<span data-ttu-id="efcfb-270">Wenn Sie die Webpart-Toolbox öffnen, um das Webpart dem Zeichenbereich hinzuzufügen, werden Sie sehen, dass es zwei Webparts gibt, aus denen Sie auswählen können.</span><span class="sxs-lookup"><span data-stu-id="efcfb-270">When you open the web part toolbox to add the web part to the canvas, you will see that there are two web parts for you to choose from.</span></span>
+4. <span data-ttu-id="75b69-287">Sobald Sie die Webpart-Toolbox öffnen, um das Webpart der Canvas hinzuzufügen, werden drei Webparts angezeigt, aus denen die Benutzer wählen können.</span><span class="sxs-lookup"><span data-stu-id="75b69-287">When you open the web part toolbox to add the web part to the canvas, you will see that there are now three web parts that users can choose from.</span></span>
 
-![Webpart-Toolbox mit der vorkonfigurierten Version des Webparts](../../../images/preconfiguredentries-multiple-web-parts-toolbox.png)
-
-<span data-ttu-id="efcfb-272">Nach dem Hinzufügen des Webparts **Zuletzt verwendete Dokumente** zu der Seite verwendet dieses sofort die spezifischen vorkonfigurierten Einstellungen.</span><span class="sxs-lookup"><span data-stu-id="efcfb-272">After adding the **Recent documents** web part to the page, it works immediately using its specific preconfigured settings.</span></span>
-
-![Vorkonfiguriertes Webpart für zuletzt verwendete Dokumente, das sofort funktioniert, nachdem es der Seite hinzugefügt wurde](../../../images/preconfiguredentries-recent-documents-canvas.png)
-
-### <a name="specify-an-unconfigured-instance-of-the-web-part"></a><span data-ttu-id="efcfb-274">Angeben einer nicht konfigurierten Instanz des Webparts</span><span class="sxs-lookup"><span data-stu-id="efcfb-274">Specify an unconfigured instance of the web part</span></span>
-
-<span data-ttu-id="efcfb-p130">Beim Erstellen von Webparts gibt es häufig spezielle Szenarien, die das Webpart unterstützen sollte. Das Bereitstellen vorkonfigurierter Einträge für diese Szenarien erleichtert Benutzern die Verwendung des Webparts.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p130">When building web parts there are often specific scenarios that the web part should support. Providing preconfigured entries for those scenarios makes it easier for users to use the web part.</span></span>
-
-<span data-ttu-id="efcfb-p131">Je nachdem, wie Sie das Webpart erstellen, könnte das Webpart möglicherweise auch andere unvorhergesehene Szenarien unterstützen. Wenn Sie nur bestimmte vorkonfigurierte Einträge bereitstellen, ist für Benutzer möglicherweise nicht klar, dass sie Ihr Webpart für ein anderes Szenario verwenden können. Es bietet sich an, auch eine allgemeine, nicht konfigurierte Variante Ihres Webparts bereitzustellen.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p131">Depending how you build your web part, it could be possible that the web part can support other unforeseen scenarios as well. If you only provide specific preconfigured entries, users might not realize they can use your web part for a different scenario. It might be a good idea to provide a generic unconfigured variant of your web part as well.</span></span>
-
-<span data-ttu-id="efcfb-p132">Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/GalleryWebPart.manifest.json**. Ändern Sie die **preconfiguredEntries**-Eigenschaft in Folgendes:</span><span class="sxs-lookup"><span data-stu-id="efcfb-p132">In the code editor, open the **./src/webparts/gallery/GalleryWebPart.manifest.json** file. Change the **preconfiguredEntries** property to:</span></span>
-
-```json
-{
-  // ...
-  "preconfiguredEntries": [{
-    "groupId": "6737645a-4443-4210-a70e-e5e2a219133a",
-    "group": { "default": "Content" },
-    "title": { "default": "Recent images" },
-    "description": { "default": "Shows 5 most recent images" },
-    "officeFabricIconFontName": "Picture",
-    "properties": {
-      "listName": "Images",
-      "order": "reversed",
-      "numberOfItems": 5,
-      "style": "thumbnails"
-    }
-  },
-  {
-    "groupId": "6737645a-4443-4210-a70e-e5e2a219133a",
-    "group": { "default": "Content" },
-    "title": { "default": "Recent documents" },
-    "description": { "default": "Shows 10 most recent documents" },
-    "officeFabricIconFontName": "Documentation",
-    "properties": {
-      "listName": "Documents",
-      "order": "reversed",
-      "numberOfItems": 10,
-      "style": "list"
-    }
-  },
-  {
-    "groupId": "6737645a-4443-4210-a70e-e5e2a219133a",
-    "group": { "default": "Content" },
-    "title": { "default": "Gallery" },
-    "description": { "default": "Shows items from the selected list" },
-    "officeFabricIconFontName": "CustomList",
-    "properties": {
-      "listName": "",
-      "order": "",
-      "numberOfItems": 5,
-      "style": ""
-    }
-  }]
-}
-```
-
-<span data-ttu-id="efcfb-p133">Die allgemeine, nicht konfigurierte Version des Webparts wird zusätzlich zu den Konfigurationen hinzugefügt, die auf bestimmte Szenarien abzielen. Wenn es keine spezifische Konfiguration gibt, die auf die Anforderungen der Benutzer abzielt, können diese so die allgemeine Version verwenden und diese gemäß ihren Anforderungen konfigurieren.</span><span class="sxs-lookup"><span data-stu-id="efcfb-p133">The generic unconfigured version of the web part is added beside the configurations that target specific scenarios. This way, if there is no specific configuration addressing users' needs, they can always use the generic version and configure it according to their requirements.</span></span>
-
-<span data-ttu-id="efcfb-284">Um das Ergebnis zu sehen, starten Sie das Debuggen des Projekts, indem Sie den folgenden Befehl ausführen:</span><span class="sxs-lookup"><span data-stu-id="efcfb-284">To see the result start debugging the project by running the following command:</span></span>
-
-```sh
-gulp serve
-```
-
-<span data-ttu-id="efcfb-285">Wenn Sie die Webpart-Toolbox öffnen, um das Webpart dem Zeichenbereich hinzuzufügen, werden Sie sehen, dass es nun drei Webparts gibt, aus denen Benutzer auswählen können.</span><span class="sxs-lookup"><span data-stu-id="efcfb-285">When you open the web part toolbox to add the web part to the canvas, you will see that there are now three web parts that users can choose from.</span></span>
-
-![Webpart-Toolbox mit der vorkonfigurierten Version des Webparts](../../../images/preconfiguredentries-three-configurations-toolbox.png)
+  ![Webpart-Toolbox mit der vorkonfigurierten Version des Webparts](../../../images/preconfiguredentries-three-configurations-toolbox.png)
