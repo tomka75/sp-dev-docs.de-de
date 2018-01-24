@@ -1,17 +1,15 @@
 ---
 title: Gemeinsame Verwendung von Daten zwischen clientseitigen Webparts
-ms.date: 09/25/2017
+description: "Ansätze, die Sie verwenden können, um Daten freizugeben und abgerufene Daten auf mehreren Webparts in SharePoint zu speichern"
+ms.date: 01/10/2018
 ms.prod: sharepoint
-ms.openlocfilehash: e21c37fa4d02497d4b0303ffb456d31b5ef0fd82
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 0d058b7f87b29f49683c9aec62d3d569d47c0d80
+ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="share-data-between-client-side-web-parts"></a>Gemeinsame Verwendung von Daten zwischen clientseitigen Webparts
-
-> [!NOTE] 
-> Wir konnten noch nicht überprüfen, ob sich die Anleitung in diesem Artikel mit der allgemein verfügbaren SPFx-Version (GA-Version) umsetzen lässt. Möglicherweise treten Probleme auf, wenn Sie die neueste Version für dieses Tutorial verwenden.
 
 Wenn Sie bei der Erstellung von clientseitigen Webparts Daten nur einmal laden und anschließend in den verschiedenen Webparts jeweils wiederverwenden, verbessert das die Leistung Ihrer Seiten und reduziert die Last in Ihrem Netzwerk. In diesem Artikel stellen wir Ihnen verschiedene Möglichkeiten vor, wie Webparts Daten gemeinsam verwenden können.
 
@@ -20,6 +18,8 @@ Wenn Sie bei der Erstellung von clientseitigen Webparts Daten nur einmal laden u
 Bei Webpartprojekten ist es häufig der Fall, dass auf einer einzigen Seite mehrere Webparts eingesetzt werden sollen. Wenn Sie dabei jedes Webpart als unabhängigen Teil der Seite behandeln, kann es passieren, dass einander ähnliche Datasets oder sogar ein und dasselbe Dataset mehrfach auf der Seite geladen werden. Das verlangsamt das Laden der Seite unnötig und erhöht das Datenverkehrsaufkommen in Ihrem Netzwerk.
 
 ![Zwei Webparts auf einer einzigen Seite, die jeweils separat einander ähnliche Datensätze laden](../../../images/guidance-sharingdata-loading-data-separately.png)
+
+<br/>
 
 Ein Beispieldienst für das Laden von Daten könnte wie folgt aussehen:
 
@@ -42,6 +42,8 @@ export class DocumentsService {
     }
 }
 ```
+
+<br/>
 
 Clientseitige SharePoint Framework-Webparts würden diesen Dienst über den folgenden Code nutzen:
 
@@ -71,15 +73,18 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
+<br/>
+
 Sie können Ihre Webparts so konfigurieren, dass sie die Daten nur ein einziges Mal laden. Das beschleunigt das Laden der Seite und reduziert den Datenverkehr in Ihrem Netzwerk. Wann immer eines der Webparts auf der Seite ein spezifisches Dataset anfordert, verwendet es wenn möglich die zuvor geladenen Daten wieder.
 
-## <a name="store-the-retrieved-data-in-a-globally-scoped-variable"></a>Speichern der abgerufenen Daten in einer Variable mit globaler Bereichsdefinition
+## <a name="store-the-retrieved-data-in-a-globally-scoped-variable"></a>Speichern der abgerufenen Daten in einer Variablen mit globaler Bereichsdefinition
 
-> Hinweis: In der Regel sollten Sie keine Variablen mit globaler Bereichsdefinition verwenden. Wir verwenden Sie hier jedoch zur Veranschaulichung und aus Gründen der Einfachheit als „Democode“. Es gibt viele Muster, um dieses Problem zu umgehen, beispielsweise den Import/Export von Modulen mithilfe von TypeScript-Konzepten.
+> [!NOTE] 
+> In der Regel sollten Sie keine Variablen mit globaler Bereichsdefinition verwenden. Wir verwenden Sie hier jedoch zur Veranschaulichung und aus Gründen der Einfachheit als „Democode“. Es gibt viele Muster, um dieses Problem zu umgehen, beispielsweise den Import/Export von Modulen mithilfe von TypeScript-Konzepten.
 
 Webparts, die mit SharePoint Framework erstellt werden, werden in separaten Modulen voneinander isoliert. Daher kann ein Webpart nicht direkt auf Daten und Eigenschaften zugreifen, die von einem anderen Webpart gespeichert werden. Eine Möglichkeit, diese Designstruktur zu umgehen und die von einem Webpart geladenen Daten auch für andere Webparts auf derselben Seite verfügbar zu machen: Sie können die abgerufenen Daten einer Variable mit globaler Bereichsdefinition zuweisen.
 
-Der oben beschriebene Datenzugriffsdienst könnte dazu wie folgt angepasst werden:
+Der zuvor beschriebene Datenzugriffsdienst könnte dazu wie folgt angepasst werden:
 
 ```ts
 import { IDocument } from './IDocument';
@@ -133,15 +138,21 @@ export class DocumentsService {
 }
 ```
 
+<br/>
+
 Wie Sie sehen, wurde das Laden der Daten aus den spezifischen Methoden in die Methode `ensureRecentDocuments` verlagert. Falls die Daten bereits vorher geladen wurden, löst die Methode die Zusage auf und gibt sofort die zuvor geladenen Dokumente zurück. Werden die Daten gerade erst geladen, wartet die Methode 100 ms und versucht dann erneut, die Zusage aufzulösen.
 
 Ein Blick in das Protokoll in den Entwicklertools zeigt, dass die Remote-API jetzt nur noch ein einziges Mal aufgerufen wird.
 
 ![Ein einziger Protokolleintrag über das Laden der Daten, für beide Webparts](../../../images/guidance-sharingdata-reusing-data-global-variable-loading-message.png)
 
+<br/>
+
 Wenn Sie sich die Informationsmeldungen durchlesen, bemerken Sie Folgendes: Sobald das zweite Webpart versucht, die Daten zu laden, erkennt es, dass diese bereits geladen werden. Nachdem die Daten geladen wurden, verwendet es diese bereits vorhandenen Daten wieder, statt sie selbst nochmals zu laden.
 
 ![Informationsmeldung aus dem Protokoll, die dokumentiert, dass das zweite Webpart gewartet hat, bis die Daten geladen wurden](../../../images/guidance-sharingdata-reusing-data-global-variable-waiting-message.png)
+
+<br/>
 
 Eine Variable mit globaler Bereichsdefinition ist der einfachste Weg, Daten zwischen verschiedenen Webparts auf ein und derselben Seite auszutauschen. Ein Nachteil dieser Methode: Die Daten sind nicht nur für Webparts verfügbar, sondern auch für alle übrigen Elemente auf der Seite. Dadurch könnte es passieren, dass andere Elemente auf der Seite dieselbe Variable zur Datenspeicherung verwenden. Ihre Daten würden dann schlussendlich überschrieben werden.
 
@@ -210,19 +221,27 @@ export class DocumentsService {
 }
 ```
 
-Im Beispiel oben wird das Paket [js-cookie](https://www.npmjs.com/package/js-cookie) verwendet, um das Arbeiten mit Cookies zu vereinfachen. Mithilfe der an die Methode `Cookies.set()` übergebenen Parameter können Sie festlegen, für welche Seiten die abgerufenen Daten verfügbar sein sollen und wie lange sie verfügbar sein sollen.
+<br/>
+
+Im vorherigen Beispiel wird das Paket [js-cookie](https://www.npmjs.com/package/js-cookie) verwendet, um das Arbeiten mit Cookies zu vereinfachen. Mithilfe der an die Methode `Cookies.set()` übergebenen Parameter können Sie festlegen, für welche Seiten die abgerufenen Daten verfügbar sein sollen und wie lange sie verfügbar sein sollen.
 
 Wenn Sie die Seite das erste Mal in Microsoft Edge laden, werden die Daten ein einziges Mal abgerufen und dann von beiden Webparts wiederverwendet.
 
 ![Protokollnachrichten, die dokumentieren, dass die Daten ein einziges Mal geladen wurden und dass das jeweils andere Webpart gewartet hat, bis die Daten von der ersten Anforderung in Microsoft Edge geladen wurden](../../../images/guidance-sharingdata-cookie-edge-first-request.png)
 
+<br/>
+
 Bei nachfolgenden Anforderungen können Webparts die zuvor geladenen Daten direkt wiederverwenden, ohne zuerst die Remote-API aufrufen zu müssen.
 
 ![Protokollnachricht, die dokumentiert, dass die Daten bei nachfolgenden Anforderungen in Microsoft Edge direkt geladen wurden, ohne vorherigen Aufruf der Remote-API](../../../images/guidance-sharingdata-cookie-edge-subsequent-request.png)
 
+<br/>
+
 Wenn Sie die Seite in Google Chrome laden, könnte es sein, dass die Daten zweimal über die Remote-API geladen werden und überhaupt nicht zwischengespeichert werden.
 
 ![Protokollnachricht, die dokumentiert, dass die Daten zweimal über die Remote-API geladen wurden, obwohl Cookies verwendet wurden](../../../images/guidance-sharingdata-cookie-chrome.png)
+
+<br/>
 
 Die verschiedenen Webbrowser haben jeweils unterschiedliche Limits bezüglich der Datenmenge, die in einem Cookie gespeichert werden darf. In diesem Beispiel überschreiten die abgerufenen Daten die maximale Datenlänge, die Google Chrome in einem Cookie akzeptiert. Als Konsequenz wird kein Cookie gesetzt, und die Daten werden zweimal geladen.
 
@@ -293,13 +312,13 @@ export class DocumentsService {
 }
 ```
 
+<br/>
+
 Die Implementierung eines solchen Diensts ähnelt der Implementierung der auf Cookies basierenden Variante sehr. Beachten Sie jedoch Folgendes: Der Browserspeicher kann vom Benutzer deaktiviert werden. Sie sollten also immer prüfen, ob er auch verfügbar ist, bevor Sie Vorgänge auf ihn anwenden. Ebenso wie Cookies wird auch der lokale Speicher dauerhaft im Webbrowser aufbewahrt und sollte nicht für vertrauliche Informationen verwendet werden.
 
-## <a name="share-data-through-a-sharepoint-framework-service"></a>Gemeinsame Verwendung von Daten über einen SharePoint Framework-Dienst
+## <a name="share-data-through-a-sharepoint-framework-service"></a>Gemeinsam Verwendung von Daten über einen SharePoint Framework-Dienst
 
 Als weitere Variante für die gemeinsame Verwendung von Daten zwischen Webparts können Sie einen SharePoint Framework-Dienst erstellen, der Daten zentral lädt und verwaltet. SharePoint Framework-Dienste sind eigenständige Komponenten, die separat von Webparts erstellt werden und als separate Node-Pakete verteilt werden. SharePoint Framework-Webparts können Dienste referenzieren und sie verwenden, um bestimmte von diesen Diensten unterstützte Vorgänge auszuführen, beispielsweise das Laden von Daten.
-
-> Weitere Informationen zu SharePoint Framework-Diensten finden Sie unter [https://github.com/SharePoint/sp-dev-docs/wiki/Tech-Note:-ServiceScope-API](https://github.com/SharePoint/sp-dev-docs/wiki/Tech-Note:-ServiceScope-API).
 
 Der in den oben beschriebenen Beispielen demonstrierte Dienst lässt sich mit nur wenigen Modifizierungen in einen SharePoint Framework-Dienst umwandeln.
 
@@ -316,7 +335,9 @@ export class DocumentsService implements IDocumentsService {
 }
 ```
 
-Anschließend muss der Dienst einen [Dienstschlüssel](https://dev.office.com/sharepoint/reference/spfx/sp-core-library/servicekey) festlegen, über den er in SharePoint Framework registriert und von Webparts genutzt wird.
+<br/>
+
+Anschließend muss der Dienst einen [Dienstschlüssel](https://docs.microsoft.com/de-DE/javascript/api/sp-core-library/servicekey) festlegen, über den er in SharePoint Framework registriert und von Webparts genutzt wird.
 
 ```ts
 import { ServiceScope, ServiceKey } from '@microsoft/sp-core-library';
@@ -332,7 +353,9 @@ export class DocumentsService implements IDocumentsService {
 }
 ```
 
-Zudem muss jeder SharePoint Framework-Dienst einen Konstruktor haben, der eine Instanz der Klasse [ServiceScope](https://dev.office.com/sharepoint/reference/spfx/sp-core-library/servicescope) als Parameter akzeptiert.
+<br/>
+
+Zudem muss jeder SharePoint Framework-Dienst einen Konstruktor haben, der eine Instanz der Klasse [ServiceScope](https://docs.microsoft.com/de-DE/javascript/api/sp-core-library/servicescope) als Parameter akzeptiert.
 
 SharePoint Framework-Dienste können mithilfe desselben Projekt-Buildsystems erstellt werden wie clientseitige SharePoint Framework-Webparts. Ganz wie ein clientseitiges Webpart hat auch ein SharePoint Framework-Dienst ein Manifest. Der Hauptunterschied zu einem Webpartmanifest besteht darin, dass die Eigenschaft `componentType` auf `Library` gesetzt ist:
 
@@ -348,7 +371,9 @@ SharePoint Framework-Dienste können mithilfe desselben Projekt-Buildsystems er
 }
 ```
 
-Sobald der SharePoint Framework-Dienst bereit ist, können Sie ihn über ein Webpart nutzen, indem Sie sein Paket referenzieren und ihn dann über seinen Schlüssel abrufen.
+<br/>
+
+Wenn der SharePoint Framework-Dienst bereit ist, können Sie ihn über ein Webpart nutzen, indem Sie sein Paket referenzieren und ihn dann über seinen Schlüssel abrufen.
 
 ```ts
 // ...
@@ -388,4 +413,12 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
-Selbst wenn mehrere Webparts auf der Seite den Dienst referenzieren, wird das Dienstpaket nur ein einziges Mal heruntergeladen, und SharePoint Framework erstellt nur eine einzige Instanz des Dienstes auf der Seite. Damit haben Sie einen komfortablen Mechanismus für die zentrale Verarbeitung und Speicherung von Daten auf einer Seite zur Verfügung. Zwar ist der Einsatz von SharePoint Framework-Diensten komplexer als die zuvor in diesem Artikel beschriebenen Methoden; ein großer Vorteil ist jedoch, dass Sie die Daten von anderen Komponenten auf der Seite isolieren können und damit die Datenintegrität besser gewährleisten können.
+<br/>
+
+Selbst wenn mehrere Webparts auf der Seite den Dienst referenzieren, wird das Dienstpaket nur ein einziges Mal heruntergeladen, und SharePoint Framework erstellt nur eine einzige Instanz des Dienstes auf der Seite. Damit haben Sie einen komfortablen Mechanismus für die zentrale Verarbeitung und Speicherung von Daten auf einer Seite zur Verfügung. 
+
+Zwar ist der Einsatz von SharePoint Framework-Diensten komplexer als die zuvor in diesem Artikel beschriebenen Methoden; ein großer Vorteil ist jedoch, dass Sie die Daten von anderen Komponenten auf der Seite isolieren können und damit die Datenintegrität besser gewährleisten können.
+
+## <a name="see-also"></a>Siehe auch
+
+- [Tutorial: Gemeinsame Verwendung von Daten zwischen Webparts mithilfe einer globalen Variable](./tutorial-share-data-between-web-parts-global-variable.md)

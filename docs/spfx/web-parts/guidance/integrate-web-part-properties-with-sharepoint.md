@@ -1,34 +1,40 @@
 ---
 title: Integrieren von Webparteigenschaften in SharePoint
-ms.date: 09/25/2017
+description: Verwenden Sie Funktionen, die die Verwaltung von Webparteigenschaftswerten vereinfachen, und integrieren Sie diese bei der Erstellung von clientseitigen SharePoint-Framework-Webparts mit der SharePoint-Suche.
+ms.date: 01/10/2018
 ms.prod: sharepoint
-ms.openlocfilehash: b21a56e28143e798459bb319a31f9690716d5465
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 381ccc6862088e9388df61283175c12835781ccb
+ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="integrate-web-part-properties-with-sharepoint"></a>Integrieren von Webparteigenschaften in SharePoint
 
-Beim Erstellen von klassischen Webparts waren Webparteigenschaften von SharePoint isoliert und ihre Werte wurden von Endbenutzern verwaltet. SharePoint Framework bietet Ihnen einen neuen Satz von Funktionen, die die Verwaltung der Werte von Webparteigenschaften vereinfachen und diese in die SharePoint-Suche integrieren. In diesem Artikel wird erläutert, wie Sie diese Funktionen beim Erstellen von clientseitigen SharePoint Framework-Webparts verwenden können.
+Wenn Sie klassische Webparts erstellen, werden Webparteigenschaften aus SharePoint isoliert und deren Werte von Endbenutzern verwaltet. SharePoint-Framework bietet neue Funktionen, die die Verwaltung von Webparteigenschaftswerten vereinfachen und diese in die SharePoint-Suche integrieren. In diesem Artikel wird erläutert, wie Sie diese Funktionen beim Erstellen von clientseitigen SharePoint-Framework-Webparts verwenden können.
 
-> **Wichtig:** Der folgende Leitfaden gilt nur für clientseitige SharePoint Framework-Webparts, die auf modernen SharePoint-Seiten platziert werden. In diesem Artikel beschriebene Funktionen gelten nicht für klassische Webparts oder clientseitige SharePoint Framework-Webparts auf klassischen Seiten.
+> [!IMPORTANT] 
+> Der folgende Leitfaden gilt nur für clientseitige SharePoint-Framework-Webparts, die auf modernen SharePoint-Seiten platziert werden. Die in diesem Artikel beschriebenen Funktionen gelten nicht für klassische Webparts oder clientseitige SharePoint-Framework-Webparts, die auf klassischen Seiten platziert werden.
 
 ## <a name="client-side-web-part-properties"></a>Eigenschaften von clientseitigen Webparts
 
 Wenn Sie clientseitige SharePoint Framework-Webparts erstellen, können Sie Eigenschaften definieren, die von Benutzern konfiguriert werden können. Durch Verwendung von Eigenschaften anstelle von festen Werte werden Webparts flexibler und eignen sich für viele unterschiedliche Szenarios.
 
-Im Vergleich zu klassischen Webparts gibt es einige Unterschiede dahingehend, wie das SharePoint Framework Webparteigenschaften behandelt. Im folgenden Schema wird veranschaulicht, wie Werte von Webparteigenschaften durch die unterschiedlichen Ebenen von SharePoint fließen.
+Im Vergleich zu klassischen Webparts gibt es einige Unterschiede hinsichtlich der Verarbeitung von Webparteigenschaften mit dem SharePoint-Framework. Das folgende Schema veranschaulicht, wie Webpart-Eigenschaftswerte die verschiedenen Ebenen von SharePoint durchlaufen.
 
-![Schema, in dem veranschaulicht wird, wie das SharePoint Framework Webparteigenschaften behandelt](../../../images/integrate-webpart-properties-schema.png)
+![Schema, in dem veranschaulicht wird, wie das SharePoint-Framework Webparteigenschaften behandelt](../../../images/integrate-webpart-properties-schema.png)
 
-Bevor Werte für Webparteigenschaften von Endbenutzern akzeptiert werden, sollten Sie diese immer [überprüfen](./validate-web-part-property-values.md). Auf diese Weise können Sie nicht nur sicherstellen, dass Ihre Webparts benutzerfreundlich sind, Sie können auch verhindern, dass ungültige Daten in der Webpartkonfiguration gespeichert werden. Außerdem sollten Sie berücksichtigen, dass das SharePoint Framework keine Personalisierung unterstützt und alle Benutzer dieselbe Konfiguration des jeweiligen Webparts sehen.
+<br/>
+
+Bevor Sie Werte für Webparteigenschaften von Endbenutzern annehmen, sollten Sie diese immer [überprüfen](./validate-web-part-property-values.md). Auf diese Weise können Sie nicht nur sicherstellen, dass Ihre Webparts benutzerfreundlich sind, sondern auch verhindern, dass ungültige Daten in der Webpartkonfiguration gespeichert werden. 
+
+Darüber hinaus sollten Sie berücksichtigen, dass das SharePoint-Framework keine Anpassung unterstützt und alle Benutzer die gleiche Konfiguration des entsprechenden Webparts sehen.
 
 ## <a name="specify-web-part-property-value-type"></a>Angeben des Typs von Webpart-Eigenschaftswerten
 
 In klassischen SharePoint-Webparts waren Werte von Webpart-Eigenschaftswerten von SharePoint isoliert. Wenn Sie eine Webparteigenschaft mit einer URL einer Datei in SharePoint gespeichert hatten, mussten Sie manuell sicherstellen, dass diese URL gültig war und auf ein korrektes Dokument verwies, falls es verschoben oder umbenannt wurde. Wenn Benutzer Text eingeben konnten, der im Webpart angezeigt wurde, wurde dieser Text von der SharePoint-Suche auch nicht indiziert.
 
-Beim Erstellen von Webparts können Sie in SharePoint Framework angeben, welche Art von Wert die jeweilige Webparteigenschaft verwendet. Diese Konfiguration bestimmt, wie SharePoint den Wert behandelt. In Abhängigkeit von der angegebenen Dokumentation kann SharePoint den Wert der jeweiligen Eigenschaft in den Suchindex aufnehmen, unsichere HTML entfernen und Links zu in SharePoint gespeicherten Dokumente auf dem aktuellen Stand halten, falls eine Datei verschoben oder umbenannt wird.
+Wenn Sie Webparts erstellen, können Sie mit SharePoint-Framework bestimmen, welche Art von Wert die jeweilige Webparteigenschaft enthalten soll. Diese Konfiguration bestimmt, wie SharePoint den Wert verarbeitet. Abhängig von der angegebenen Konfiguration kann SharePoint den Wert der jeweiligen Eigenschaft im Suchindex enthalten, unsichere HTML-Inhalte entfernen und sogar Links zu Dokumenten in SharePoint auf dem neuesten Stand speichern, falls eine Datei verschoben oder umbenannt wird.
 
 Um die Konfiguration für Ihre Webparteigenschaften anzugeben, setzen Sie in der Webpartklasse den **propertiesMetadata**-Getter außer Kraft:
 
@@ -56,9 +62,13 @@ export default class ArticleLinkWebPart extends BaseClientSideWebPart<IArticleLi
 }
 ```
 
-Die **propertiesMetadata**-Methode gibt ein Objekt zurück, wobei die Eigenschaft eine Zeichenfolge ist und den Namen der Webparteigenschaft angibt, und der Wert ein Objekt ist, das angibt, wie SharePoint diese spezielle Eigenschaft behandeln soll. Beim Außerkraftsetzen der **propertiesMetadata**-Methode müssen Sie nicht alle Webparteigenschaften auflisten. Standardmäßig werden Werte von Webparteigenschaften nicht von SharePoint verarbeitet, und Sie sollten nur die Eigenschaften einschließen, die verarbeitet werden sollen.
+Die **PropertiesMetadata**-Methode gibt ein Objekt zurück, in dem die Eigenschaft eine Zeichenfolge ist, und gibt den Namen der Webparteigenschaft an, und der Wert ist ein Objekt, das angibt, wie SharePoint die jeweilige Eigenschaft behandeln soll. 
+
+Wenn Sie die **PropertiesMetadata**-Methode überschreiben, müssen Sie nicht alle Webparteigenschaften auflisten. Standardmäßig werden die Werte der Webparteigenschaften nicht von SharePoint verarbeitet, und Sie sollten nur diejenigen Eigenschaften einschließen, die verarbeitet werden sollen.
 
 Nachfolgend finden Sie eine Liste möglicher Werte, die in den Metadaten der Eigenschaften festgelegt werden können, sowie deren Auswirkungen darauf, wie der Wert der Webparteigenschaft von SharePoint verarbeitet wird.
+
+<br/>
 
 Metadatenwert|Durchsuchbar|Linkkorrektur|Unsichere HTM entfernen
 --------------|:--------:|:--------:|:----------------:
@@ -68,12 +78,15 @@ Keine (Standard)|nein|nein|nein
 `isImageSource`|ja|ja|nein
 `isLink`|ja|ja|nein
 
-> **Wichtig:** Wenn Sie die Konfiguration für die Webparteigenschaften definieren, sollten Sie nur eine der oben genannten Eigenschaften für jede Webparteigenschaft verwenden. Das Festlegen mehrerer Eigenschaften führt mit großer Wahrscheinlichkeit zu unerwünschten Ergebnissen und sollte vermieden werden.
+<br/>
+
+> [!IMPORTANT] 
+> Wenn Sie die Konfiguration für Ihre Webparteigenschaften definieren, sollten Sie jeweils nur eine der in der Tabelle aufgeführten Eigenschaften für jede Webparteigenschaft verwenden. Das Festlegen mehrerer Eigenschaften wird wahrscheinlich zu unerwünschten Ergebnissen führen und sollte daher vermieden werden.
 
 Standardmäßig wird der Wert einer Webparteigenschaft nicht von der SharePoint-Suche indiziert und in keiner Weise von SharePoint verarbeitet. Er wird genau so an das Webpart übergeben, wie er vom Benutzer eingegeben wurde, der das Webpart konfiguriert.
 
-Wenn Sie die Webparteigenschaft als `isSearchablePlainText` angeben, wird diese in den Index für die Volltextsuche eingeschlossen. Immer dann, wenn Benutzer nach Schlüsselwörtern suchen, die in dem Wert dieser Eigenschaft enthalten sind, gibt die SharePoint-Suche die Seite mit dem Webpart in den Suchergebnissen zurück. Wenn der Wert einen Link zu einem in SharePoint gespeicherten Dokument enthält, wird dieser Link nicht aktualisiert, wenn das Dokument, auf das verwiesen wird, verschoben oder umbenannt wird. Außerdem wird HTML, die von Benutzern eingegeben wird, intakt gehalten. Wenn Sie mit dem Wert einer solchen Eigenschaft arbeiten, sollten Sie diese als Nur-Text behandeln und HTML, die möglicherweise von Benutzern eingegeben wird, mit Escapezeichen versehen, bevor diese auf der Seite gerendert wird, um eine Skript-Einfügung zu verhindern.
+Wenn Sie die Webparteigenschaft als `isSearchablePlainText` angeben, wird sie in den Index für die Volltextsuche integriert. Wenn Benutzer nach beliebigen, im Wert dieser Eigenschaft inbegriffenen Schlüsselwörtern suchen, gibt die SharePoint-Suche die Seite mit dem Webpart in den Suchergebnissen zurück. Wenn der Wert einen Link zu einem in SharePoint gespeicherten Dokument enthält, wird dieser Link nicht aktualisiert, wenn das Dokument, auf das verwiesen wird, verschoben oder umbenannt wird. Darüber hinaus bleibt jeglicher vom Benutzer eingegebener HTML-Code erhalten. Wenn Sie mit dem Wert einer solchen Eigenschaft arbeiten, sollten Sie diesen als Nur-Text- und escape-HTML-Code behandeln, der vor dem Rendern auf der Seite von Benutzern eingegeben werden kann, um Skripteinschleusung zu vermeiden.
 
-Wenn eine Webparteigenschaft als `isHtmlString` definiert ist, entfernt SharePoint zunächst unsichere HTML, z. B. `script`-Tags, aus dem Eigenschaftswert. Der verbleibende HTML-Code kann sicher auf einer Seite gerendert werden. Wenn der Wert URLs enthält, die auf in SharePoint gespeicherte Dateien zeigen, aktualisiert SharePoint die in der Webparteigenschaft gespeicherte URL sofort, wenn eine dieser Dateien umbenannt oder verschoben wird. Dadurch wird das Verwalten von URLs über alle Webparts und Seiten in Ihrem Mandanten hinweg wesentlich erleichtert. HTML-Webparteigenschaften können auch durchsucht werden, sodass Benutzer nach Schlüsselwörtern suchen können, die im Eigenschaftswert enthalten sind.
+Wenn eine Webparteigenschaft als `isHtmlString` definiert ist, entfernt SharePoint zuerst alle unsicheren HTML-Elemente, wie z. B. `script`-Tags, aus dem Eigenschaftswert. Der verbleibende HTML-Code kann für das Rendering auf einer Seite als sicher eingestuft werden. Wenn der Wert URLs enthält, die auf in SharePoint gespeicherte Dateien hinweisen, aktualisiert SharePoint automatisch die in die Eigenschaft des Webparts gespeicherte URL, sobald eine der Dateien umbenannt oder verschoben wird. Dies erleichtert das Verwalten von URLs für alle Webparts und Seiten in Ihrem Mandanten erheblich. HTML-Webparteigenschaften können auch durchsucht werden, sodass Benutzer nach allen im Eigenschaftswert enthaltenen Schlüsselwörtern suchen können.
 
-Die Typen `isImageSource` und `isLink` von Eigenschaftswerten sind für die Verwendung für Webparteigenschaften gedacht, die nur einen Link zu einem Bild oder zu einer in SharePoint gespeicherten Datei enthalten. In beiden Fällen schließt die SharePoint-Suche den Inhalt in den Index der Volltextsuche ein und hält die angegebene URL auf dem aktuellen Stand, falls die Datei, auf die verwiesen wird, umbenannt oder verschoben wird. Außerdem werden Bildquellen möglicherweise weiter verarbeitet, damit Bilder schneller heruntergeladen werden können. Wenn die Seite über ein Titelbild verfügt, und das Bild befindet sich unter den ersten fünf Bildern auf der Seite oder in der ersten oder zweiten Zeile der Seite, so wird das Bild vorab geladen.
+Die Eigenschaftswerttypen `isImageSource` und `isLink` sind für die Verwendung mit Webparteigenschaften gedacht, die nur einen Link zu einem Bild oder einer in SharePoint gespeicherten Datei enthalten. In beiden Fällen schließt die SharePoint-Suche den Inhalt in den Volltext-Index ein und hält die angegebene URL auf dem neuesten Stand, falls die Datei, auf die verwiesen wird, umbenannt oder verschoben wird. Darüber hinaus durchlaufen Bildquellen möglicherweise eine zusätzliche Verarbeitung, damit Bilder schneller herunterladen werden können. Wenn eine Seite ein Titelbild enthält und dieses Bild zu den ersten fünf Bildern der Seite gehört oder sich in den ersten beiden Zeilen auf der Seite befindet, wird das Bild vorab geladen.

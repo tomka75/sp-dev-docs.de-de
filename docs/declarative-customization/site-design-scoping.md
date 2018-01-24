@@ -2,26 +2,26 @@
 title: "Bereichsdefinition für den Zugriff auf SharePoint-Websitedesigns"
 description: "Legen Sie den Bereich für SharePoint-Websitedesigns fest, um zu steuern, wer diese anzeigen und darauf zugreifen kann."
 ms.date: 12/14/2017
-ms.openlocfilehash: b7a29bbbd28f097e92364d9ab73d16d896ad3446
-ms.sourcegitcommit: 31f793b42ec75679f01e1a024d0375a2bc7b5ec7
+ms.openlocfilehash: c0896cab28a4c9cba3f74fbad8120061311004a2
+ms.sourcegitcommit: d9372f6009de1c1e48e272fd3629a99aed7fef9f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="scoping-access-to-site-designs"></a>Bereichsdefinition für den Zugriff auf Websitedesigns
 
 > [!NOTE]
 > Websitedesigns und Websiteskripts befinden sich derzeit in der Vorschau und können ohne vorherige Ankündigung geändert werden. Sie werden in Produktionsumgebungen derzeit nicht unterstützt.
 
-Websitedesigns stehen standardmäßig für alle Personen zur Verfügung. Sie können den Bereich von Websitedesigns jedoch so festlegen, dass diese nur für bestimmte Benutzer oder Gruppen verfügbar sind. Die Buchhaltungsabteilung verfügt beispielsweise über spezielle Websitedesigns, es macht aber vielleicht keinen Sinn, diese Websitedesigns für alle Personen freizugeben. In diesem Artikel wird erläutert, wie Sie steuern können, welche Benutzer und Gruppen bestimmte Websitedesigns anzeigen können.
+Websitedesigns stehen standardmäßig allen Benutzern zur Verfügung. Sie können den Bereich von Websitedesigns jedoch so festlegen, dass diese nur für bestimmte Benutzer oder Gruppen verfügbar sind. Die Buchhaltungsabteilung verfügt beispielsweise über spezielle Websitedesigns, es macht aber vielleicht keinen Sinn, diese Websitedesigns für alle Personen freizugeben. In diesem Artikel wird erläutert, wie Sie steuern können, welche Benutzer und Gruppen bestimmte Websitedesigns anzeigen können.
 
 ## <a name="granting-rights-to-a-site-design"></a>Erteilen von Berechtigungen für ein Websitedesign
 
-Bei der Erstellung eines Websitedesigns ist dieses zunächst für alle Personen verfügbar. Sie können **View**-Berechtigungen für das Websitedesign erteilen. Nachdem Berechtigungen erteilt wurden, haben nur die angegebenen Benutzer oder Gruppen (Prinzipale) Zugriff. Mit nachfolgenden API-Aufrufen können Sie weiteren Prinzipalen Berechtigungen erteilen.
+Bei der Erstellung eines Websitedesigns ist dieses zunächst für alle Benutzer verfügbar. Sie können Berechtigungen des Typs **Anzeigen** für das Websitedesign erteilen. Sobald Berechtigungen erteilt wurden, haben nur die angegebenen Benutzer oder Gruppen (Prinzipale) Zugriff. Mit nachfolgenden API-Aufrufen können Sie weiteren Prinzipalen Berechtigungen erteilen.
 
 ## <a name="granting-rights-to-security-groups"></a>Erteilen von Berechtigungen für Sicherheitsgruppen
 
-Nachfolgend finden Sie ein Beispiel, wie der Bereich eines vorhandenen Websitedesigns so festgelegt wird, dass nur die E-Mail-aktivierte Sicherheitsgruppe **Buchhaltung** das Websitedesign anzeigen und dieses verwenden kann.
+Nachfolgend finden Sie ein Beispiel, wie der Bereich eines vorhandenen Websitedesigns so festgelegt werden kann, dass nur die E-Mail-aktivierte Sicherheitsgruppe **accounting** das Websitedesign anzeigen und verwenden kann.
 
 ```powershell
 Grant-SPOSiteDesignRights `
@@ -30,7 +30,7 @@ Grant-SPOSiteDesignRights `
   -Rights View
 ```
 
-Vielleicht möchten Sie ein neues Websitedesign erstellen und gleichzeitig Berechtigungen erteilen, wie im nächsten Beispiel dargestellt.
+Vielleicht möchten Sie Berechtigungen auch direkt bei der Erstellung eines Websitedesigns erteilen. Das funktioniert wie in diesem Beispiel demonstriert:
 
 ```powershell
 Add-SPOSiteDesign `
@@ -46,7 +46,7 @@ Add-SPOSiteDesign `
 
 ## <a name="granting-rights-to-users"></a>Erteilen von Berechtigungen für Benutzer
 
-Nachfolgend finden Sie ein Beispiel, wie Anzeigeberechtigungen für ein Websitedesign für einen Nestor (ein Benutzer auf der fiktiven Contoso-Website) erteilt werden.
+Im folgenden Beispiel wird gezeigt, wie Sie einem Benutzer (Nestor) auf der fiktiven Contoso-Website Anzeigeberechtigungen für ein Websitedesign erteilen können.
 
 ```powershell
 PS C:\> Grant-SPOSiteDesignRights `
@@ -71,9 +71,9 @@ Nestor Wilke i:0#.f|membership|nestorw@contoso.onmicrosoft.com   View
 
 ## <a name="revoking-rights-from-a-site-design"></a>Widerrufen von Berechtigungen von einem Websitedesign
 
-Sie können Berechtigungen für alle Prinzipale widerrufen. Wenn Sie Berechtigungen für alle Prinzipale widerrufen, steht das Websitedesign wieder für alle Personen zur Verfügung.
+Sie können die Berechtigungen jedes Prinzipals jederzeit widerrufen. Wenn Sie die Anzeigeberechtigungen für alle Prinzipale widerrufen, steht das Websitedesign wieder für alle Benutzer zur Verfügung.
 
-Nachfolgend finden Sie ein Beispiel dafür, wie der Zugriff für die E-Mail-aktivierte Sicherheitsgruppe „Buchhaltung“ und den Nestor widerrufen wird.
+Nachfolgend finden Sie ein Beispiel dafür, wie sich die Zugriffsberechtigungen der E-Mail-aktivierten Sicherheitsgruppe „accounting“ und des Benutzers „Nestor“ widerrufen lassen.
 
 ```powershell
 Revoke-SPOSiteDesignRights `

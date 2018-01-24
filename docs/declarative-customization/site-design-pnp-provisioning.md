@@ -2,50 +2,54 @@
 title: "Erstellen eines vollständigen SharePoint-Websitedesigns mithilfe des PnP-Bereitstellungsmoduls"
 description: "Erstellen eines vollständigen SharePoint-Websitedesigns mithilfe des PnP-Bereitstellungsmoduls"
 ms.date: 12/14/2017
-ms.openlocfilehash: 303aca9f0103634e247ec75a0323321a77709113
-ms.sourcegitcommit: 28690b54f1ef7c811d64393d2eaaff0a8635cc72
+ms.openlocfilehash: 028a028822c234dcbbbad290c642ec03dd4b6392
+ms.sourcegitcommit: d9372f6009de1c1e48e272fd3629a99aed7fef9f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/09/2018
 ---
-# <a name="calling-the-pnp-provisioning-engine-from-a-site-script"></a>Aufrufen des PnP-Bereitstellungsmoduls aus einem Websiteskript
+# <a name="calling-the-pnp-provisioning-engine-from-a-site-script"></a>Aufrufen des PnP-Bereitstellungsmoduls über ein Websiteskript
 
 > [!NOTE]
-> Websitedesigns und Websiteskripts befinden sich derzeit in der Vorschau und können ohne vorherige Ankündigung geändert werden. Sie werden in Produktionsumgebungen derzeit nicht unterstützt.
+> Websitedesigns und Websiteskripts befinden sich derzeit in der Preview-Phase und können jederzeit geändert verwenden. Sie werden in Produktionsumgebungen derzeit nicht unterstützt.
 
-Websitedesigns bieten eine hervorragende Möglichkeit, das Aussehen und Verhalten Ihrer Websitesammlungen zu standardisieren. Wenn Sie jedoch noch einen Schritt weitergehen möchten, indem Sie beispielsweise jeder Seite eine Fußzeile hinzufügen, werden Sie feststellen, dass Websitedesigns diese Option nicht bieten. Mit dem PnP-Bereitstellungsmodul können Sie eine Vorlage erstellen, mit der Sie einen Application Customizer für eine Website bereitstellen können. Dieser Application Customizer kann dann auf jeder Seite eine Fußzeile registrieren. In diesem Artikel erfahren Sie, wie ein Websitedesign erstellt wird, das eine PnP-Bereitstellungsvorlage auf eine Website anwendet, die wiederum einen Application Customier zum Rendern einer Fußzeile hinzufügt.
+Websitedesigns sind eine hervorragende Möglichkeit, das Aussehen und Verhalten Ihrer Websitesammlungen zu standardisieren. Bestimmte Dinge lassen sich mit Websitedesigns jedoch nicht umsetzen. Beispielsweise ist es nicht möglich, jeder Seite eine Fußzeile hinzuzufügen. Mit dem PnP-Bereitstellungsmodul können Sie eine Vorlage erstellen, mit der Sie einen Application Customizer auf einer Website bereitstellen können. Ein solcher Application Customizer kann das Seitendesign aktualisieren und so beispielsweise eine Fußzeile auf jeder Seite registrieren. 
 
-In unserem Setup werden die folgenden Komponenten verwendet:
+In diesem Artikel wird beschrieben, wie Sie ein Websitedesign erstellen können, das eine PnP-Bereitstellungsvorlage auf eine Website anwendet. Die Vorlage wird einen Application Customizer hinzufügen, der eine Fußzeile rendert.
 
-1. Ein Websitedesign und ein Websiteskript
-1. Ein Microsoft-Fluss
-1. Eine Azure-Speicherwarteschlange
-1. Eine Azure-Funktion
-1. Eine SPFX-Lösung
-1. Eine PnP-Bereitstellungsvorlage
-1. Ein PnP-PowerShell-Skript
-1. Eine AppID und ein AppSecret mit Verwaltungsrechten auf Ihrem Mandanten.
+In der Anleitung in diesem Artikel verwenden wir die folgenden Komponenten:
 
-Wir benötigen alle diese Komponenten, damit wir den PnP-Bereitstellungscode in kontrollierter Weise auslösen können, direkt nachdem die Website erstellt und das Websitedesign angewendet wurde.
+- Ein Websitedesign und ein Websiteskript
+- Microsoft Flow
+- Azure Queue-Speicher
+- Eine Azure-Funktion
+- Eine SharePoint-Framework-Lösung (SPFx-Lösung)
+- Eine PnP-Bereitstellungsvorlage
+- Ein PnP-PowerShell-Skript
+- Eine App-ID und einen geheimen App-Schlüssel mit Administratorrechten in Ihrem Mandanten
 
-## <a name="setting-up-app-only-access-to-your-tenant"></a>Einrichten des Nur-App-Zugriffs auf Ihren Mandanten
+Mithilfe dieser Komponenten wird der PnP-Bereitstellungscode ausgelöst, sobald Sie die Website erstellt und das Websitedesign angewendet haben.
 
-Hierfür müssen Sie zwei unterschiedliche Seiten auf Ihrem Mandanten öffnen, eine, die sich in einer normalen Website befindet, und eine andere, die sich in Ihrer SharePoint-Administrationswebsite befindet.
+## <a name="set-up-app-only-access-to-your-tenant"></a>Einrichten von App-exklusivem Zugriff auf Ihren Mandanten
 
-1. Navigieren Sie zu der folgenden URL in Ihrem Mandanten: https://[IhrMandant].sharepoint.com/_layouts/appregnew.aspx (Sie können zu einer beliebigen Website navigieren, aber vorerst sollten Sie die Stammwebsite auswählen).
-1. Klicken Sie auf die beiden Schaltflächen **Generieren**.
-1. Geben Sie einen Titel für Ihre App ein, z. B. „Websitebereitstellung“.
-1. Geben Sie als App-Domäne **localhost** ein.
-1. Geben Sie für den Umleitungs-URI **https://localhost** ein.
+Zur Einrichtung von App-exklusivem Zugriff benötigen Sie zwei unterschiedliche Seiten in Ihrem Mandanten: eine Seite auf der regulären Website und eine Seite auf Ihrer SharePoint-Administrationswebsite.
 
-    ![App erstellen](images/pnpprovisioning-createapponly.png)
+1. Rufen Sie in Ihrem Mandanten die folgende URL auf: `https://[yourtenant].sharepoint.com/_layouts/appregnew.aspx`. (Sie können jede beliebige Seite aufrufen; für dieses Tutorial verwenden wir hier die Stammwebsite.)
+1. Klicken Sie neben den Feldern **Client-ID** und **Geheimer Clientschlüssel** jeweils auf die Schaltfläche **Generieren**.
+1. Geben Sie einen Titel für Ihre App ein, beispielsweise „Site Provisioning“.
+1. Geben Sie in das Feld **App-Domäne** die Zeichenfolge **localhost** ein.
+1. Geben Sie in das Feld **Umleitungs-URI** die Adresse **https://localhost** ein.
 
-1. Klicken Sie auf **Erstellen**, und kopieren Sie die Werte für **Client-ID** und **Geheimer Clientschlüssel**, da Sie diese später benötigen.
+    ![Seite „App erstellen“ mit den Feldern „Client-ID“, „Geheimer Clientschlüssel“, „Titel“, „App-Domäne“ und „Umleitungs-URI“](images/pnpprovisioning-createapponly.png)
 
-Nun vertrauen wir dieser App, dass sie über den entsprechenden Zugriff auf Ihren Mandanten verfügt:
-1. Navigieren Sie zu „https://[IhrMandant]-admin.sharepoint.com/_layouts/appinv.aspx“ (beachten Sie den Abschnitt „-admin“ in der URL).
-1. Fügen Sie die oben kopierte Client-ID in das Feld **App-ID**, und wählen Sie **Nachschlagen** aus.
-1. Fügen Sie den folgenden XML-Code in das Feld **Berechtigungsanforderungs-XML** ein.
+1. Klicken Sie auf **Erstellen**. 
+1. Notieren Sie sich die Werte für **Client-ID** und **Geheimer Clientschlüssel**. Sie werden sie später noch brauchen.
+
+Stufen Sie nun die App als vertrauenswürdig ein, damit Sie die entsprechenden Zugriffsrechte für Ihren Mandanten hat:
+
+1. Rufen Sie `https://[yourtenant]-admin.sharepoint.com/_layouts/appinv.aspx` auf. (Wichtig hierbei ist der Teil `-admin` in der URL.)
+1. Fügen Sie in das Feld **App-ID** die **Client-ID** ein, die Sie sich notiert haben, und klicken Sie auf **Lookup**.
+1. Fügen Sie den folgenden XML-Code in das Feld **Berechtigungsanforderungs-XML** ein:
 
     ```xml
     <AppPermissionRequests AllowAppOnlyPolicy="true" >
@@ -53,30 +57,32 @@ Nun vertrauen wir dieser App, dass sie über den entsprechenden Zugriff auf Ihre
     </AppPermissionRequests>
     ```
 
-1. Wählen Sie **Erstellen** aus.
-1. Es wird die Frage angezeigt, ob Sie der App vertrauen möchten. Bestätigen Sie dies, indem Sie **Vertrauen** auswählen.
+1. Klicken Sie auf **Erstellen**.
+1. Bestätigen Sie mit einem Klick auf **Trust It**, dass Sie der App vertrauen.
 
 
-## <a name="creating-the-azure-storage-queue"></a>Erstellen der Azure-Speicherwarteschlange
+## <a name="create-the-azure-queue-storage"></a>Erstellen des Azure Queue-Speichers
 
-In diesem Szenario verwenden wir eine Azure-Speicherwarteschlange, um Nachrichten von einem Microsoft-Flow zu empfangen. Jedes Mal, wenn eine Nachricht in der Speicherwarteschlange angezeigt wird, wird eine Azure-Funktion zum Ausführen eines PowerShell-Skripts ausgelöst. Lassen Sie uns aber zunächst die Speicherwarteschlange einrichten:
+In diesem Szenario verwenden wir Azure Queue-Speicher als Empfänger für Microsoft Flow-Nachrichten. Wann immer eine Nachricht im Queue-Speicher angezeigt wird, wird eine Azure-Funktion ausgelöst, die ein PowerShell-Skript ausführt. 
 
-1. Navigieren Sie zum Azure-Portal unter „https://portal.azure.com“, und melden Sie sich an.
-1. Wählen Sie **+Neu** aus.
-1. Wählen Sie aus den Azure Marketplace-Angeboten **Speicher** aus, und wählen Sie in der Spalte „Unterstützt“ **Speicherkonto – Blob, Datei, Tabelle, Warteschlange**
-1. Geben Sie für die erforderlichen Felder entsprechende Werte ein. Wählen Sie unbedingt **An Dashboard anheften** aus, um die Option später leichter zu finden, und klicken Sie auf **Erstellen**. Das Speicherkonto wird erstellt. Das kann einige Minuten dauern.
-1. Öffnen Sie das Speicherkonto, nachdem es erstellt wurde, und navigieren Sie in der Navigation zu **Warteschlangen**
-1. Wählen Sie oben im Hauptbereich des Bildschirms **+ Warteschlange** aus.
-1. Geben Sie **pnpprovisioningqueue** als Name ein, oder geben Sie einen eigenen Namen gemäß dem erzwungenen Benennungsstandard ein. Notieren Sie sich den Warteschlangennamen, da Sie diesen Wert später beim Erstellen der Azure-Funktion benötigen.
-1. Navigieren Sie zu **Zugriffsschlüssel**, und notieren Sie sich den **Speicherkontonamen** und den **key1-Schlüsselwert**, da Sie diese Werte im nächsten Schritt beim Erstellen des Flusses benötigen.
+So richten Sie den Azure Queue-Speicher ein
+
+1. Rufen Sie das [Azure-Portal](https://portal.azure.com) auf, und melden Sie sich an.
+1. Klicken Sie auf **+ Neu**.
+1. Wählen Sie aus den Azure Marketplace-Angeboten die Option **Storage** aus. Klicken Sie in der Spalte „Empfohlen“ auf **Speicherkonto – Blob, Datei, Tabelle, Warteschlange**.
+1. Tragen Sie Werte in die Pflichtfelder ein. Klicken Sie auf **Pin to dashboard** und anschließend auf **Erstellen**. Es kann einige Minuten dauern, bis das Speicherkonto erstellt wird.
+1. Öffnen Sie das Speicherkonto, und klicken Sie auf **Warteschlangen**.
+1. Klicken Sie oben im Bildschirm auf **+ Warteschlange**.
+1. Geben Sie als Namen **pnpprovisioningqueue** oder einen eigenen Wert ein. Beachten Sie dabei auf jeden Fall die Namenskonvention. Notieren Sie sich den Namen der Warteschlange; Sie benötigen diesen Wert, wenn Sie die Azure-Funktion erstellen.
+1. Klicken Sie auf **Zugriffsschlüssel**, und notieren Sie sich die Werte für **Speicherkontoname** sowie **key1 Key value**. Sie benötigen diese Werte, wenn Sie den Flow erstellen.
 
 
-## <a name="the-flow"></a>Der Fluss
+## <a name="create-the-flow"></a>Erstellen des Flows
 
-Um eine Nachricht in der Warteschlange zu platzieren, müssen Sie einen Fluss erstellen. 
+Damit Nachrichten in die Warteschlange gestellt werden können, müssen Sie zunächst einen Flow erstellen. 
 
-1. Navigieren Sie zu **https://flow.microsoft.com**, melden Sie sich an, und erstellen Sie einen neuen Fluss, indem Sie oben auf  **Ohne Vorlage erstellen** klicken.
-1. Klicken Sie auf **Hunderte von Connectors und Triggern durchsuchen**, um den Auslöser auszuwählen.
+1. Rufen Sie die [Microsoft Flow](https://flow.microsoft.com)-Website auf, melden Sie sich an, und klicken Sie oben auf der Seite auf **Create from Blank**.
+1. Klicken Sie auf **Hunderte von Connectors und Triggern durchsuchen**, um einen Trigger auszuwählen.
 1. Suchen Sie nach **Anforderung**, und wählen Sie **Anforderung - Beim Empfang einer HTTP-Anforderung** aus.
 1. Geben Sie den folgenden JSON-Code als Anforderungstext ein:
 
@@ -102,44 +108,42 @@ Um eine Nachricht in der Warteschlange zu platzieren, müssen Sie einen Fluss er
     }
     ``` 
 
-1. Wählen Sie **+ Neuer Schritt** aus, und klicken Sie dann auf **Aktion hinzufügen**.
+1. Klicken Sie auf **+ Neuer Schritt** und anschließend auf **Aktion hinzufügen**.
 1. Suchen Sie nach **Azure-Warteschlangen**, und wählen Sie **Azure-Warteschlangen - Nachricht in einer Warteschlange ablegen** aus.
-1. Geben Sie einen beliebigen aussagekräftigen Namen für die Verbindung ein. 
-1. Geben Sie den Speicherkontonamen ein, den Sie im vorherigen Abschnitt kopiert haben.
-1. Geben Sie den freigegebenen Speicherschlüssel ein, bei dem es sich um den Wert des **Key1-Schlüsselwerts** Ihres Speicherkontos handelt.
+1. Geben Sie einen aussagekräftigen Namen für die Verbindung ein.
+1. Geben Sie den Namen des Speicherkontos ein, den Sie sich im vorherigen Abschnitt notiert haben.
+1. Geben Sie den freigegebenen Speicherschlüssel ein, also den Wert aus dem Feld **Key1 key value** in Ihrem Speicherkonto.
 1. Klicken Sie auf **Erstellen**.
-1. Wählen Sie **pnpprovisioningqueue** als Warteschlangenname aus.
-1. In dem in Schritt 4 angegebenen Text haben wir einen eingehenden Parameter mit dem Namen „webUrl“ angegeben. Wir werden den Wert dieses Parameters in der Warteschlange ablegen. Klicken Sie in das Feld **Nachricht**, und wählen Sie aus der Auswahl für dynamische Inhalte **webUrl** aus.
-1. Klicken Sie auf **Flow speichern**. Daraufhin wird die URL generiert, die wir im nächsten Schritt kopieren werden.
-1. Klicken Sie auf den ersten Schritt in Ihrem Flow („Beim Empfang einer HTTP-Anforderung), und kopieren Sie die URL. Wir benötigen diese, um zum späteren Testen in unserem Websitedesign.
+1. Geben Sie **pnpprovisioningqueue** als Namen für die Warteschlange ein.
+1. Im Anforderungstext haben Sie einen Eingangsparameter *webUrl* angegeben. Der Wert dieses Felds soll in die Warteschlange gestellt werden. Klicken Sie dazu in das Feld **Nachricht**, und wählen Sie aus der dynamischen Inhaltsauswahl die Option **webUrl** aus.
+1. Klicken Sie auf **Flow speichern**. Es wird eine URL generiert. Diese URL notieren Sie sich im nächsten Schritt.
+1. Klicken Sie auf den ersten Schritt in Ihrem Flow („Beim Empfang einer HTTP-Anforderung“), und notieren Sie sich die URL.
 1. Speichern Sie Ihren Flow.
 
-Dieser sollte wie folgt aussehen:
+Ihr Flow sollte in etwa wie folgt aussehen:
 
-![Hyperion](images/pnpprovisioning-flow-overview.png)
+![Screenshot eines Flows mit dem Namen „Beim Empfang einer HTTP-Anforderung“, mit den Feldern „URL“, „Anforderungstext“, „Warteschlangenname“ und „Nachricht“](images/pnpprovisioning-flow-overview.png)
 
-## <a name="testing-the-flow"></a>Testen des Flows
+## <a name="test-the-flow"></a>Testen des Flows
 
-Um Ihren Flow zu testen, müssen Sie eine POST-Anforderung stellen. Am einfachsten ist hierfür auf einem Windows-Computer die Verwendung von PowerShell:
+Zum Testen Ihres Flows müssen Sie eine POST-Anforderung senden. Das können Sie über die PowerShell tun, wie im Beispiel unten demonstriert:
 
 ```powershell
-$uri = "[the URI you copied in step 8 when creating the flow]"
+$uri = "[the URI you copied in step 14 when creating the flow]"
 $body = "{webUrl:'somesiteurl'}
 Invoke-RestMethod -Uri $uri -Method Post -ContentType "application/json" -Body $body
 ```
 
-Wenn Sie nun zum Hauptbildschirm des Flows navigieren, sehen Sie einen Ausführungsverlauf. Wenn alles ordnungsgemäß verlief, sollte dieser „Succeeded“ lauten.
-Navigieren Sie nun zur Warteschlange, die Sie soeben in Azure erstellt haben, und klicken Sie auf **Aktualisieren**. Es sollte ein Eintrag vorhanden sein, der angibt, dass Sie den Flow korrekt aufgerufen haben.
+Wenn Sie zum Hauptbildschirm des Flows navigieren, sehen Sie einen Ausführungsverlauf. Wurde Ihr Flow korrekt ausgeführt, wird `Succeeded` angezeigt.
+Navigieren Sie nun zu der Warteschlange, die Sie soeben in Azure erstellt haben, und klicken Sie auf **Aktualisieren**. Sie sollten nun einen Eintrag sehen. Ist das der Fall, wurde der Flow korrekt aufgerufen.
 
-## <a name="provision-the-spfx-solution"></a>Bereitstellen der SPFX-Lösung
+## <a name="provision-the-spfx-solution"></a>Bereitstellen der SPFx-Lösung
 
-Für diese exemplarische Vorgehensweise verwenden wir eine vorhandene SPFX-Lösung, die unter „https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-application-regions-footer“ verfügbar ist.
+In diesem Abschnitt verwenden Sie eine vorhandene SPFx-Lösung, den [Regions Footer Application Customizer](https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-application-regions-footer). Befolgen Sie die Anleitung in der Datei [Readme](https://github.com/SharePoint/sp-dev-fx-extensions/blob/master/samples/react-application-regions-footer/README.md) im Beispielrepository, um die Lösung zu erstellen und bereitzustellen.
 
-Befolgen Sie die Schritte wie in der „README.MD“, die in diesem Repository verfügbar ist, um die Lösung zu erstellen und bereitzustellen.
+## <a name="create-a-pnp-provisioning-template"></a>Erstellen einer PnP-Bereitstellungsvorlage
 
-# <a name="create-a-pnp-provisioning-template"></a>Erstellen einer PnP-Bereitstellungsvorlage
-
-Kopieren Sie den folgenden XML-Code in eine neue Datei, und speichern Sie die Datei als „FlowDemoTemplate.xml“
+Kopieren Sie die folgende XML-Bereitstellungsvorlage in eine neue Datei, und speichern Sie die Datei als „FlowDemoTemplate.xml“.
 
 ```xml
 <?xml version="1.0"?>
@@ -153,87 +157,89 @@ Kopieren Sie den folgenden XML-Code in eine neue Datei, und speichern Sie die Da
         </pnp:WebCustomActions>
       </pnp:CustomActions>
     </pnp:ProvisioningTemplate>
+  </pnp:Templates>
 </pnp:Provisioning>
 ```
 
 > [!NOTE]
-> Die Vorlage fügt eine benutzerdefinierte Aktion zu dem Web hinzu, auf das sie angewendet wird. Sie verweist auf „ClientSideComponentId“, die aus der SPFX-Lösung stammt, die Sie zuvor bereitgestellt haben. Wenn Sie diese Demo mit Ihrer eigenen SPFX-Lösung ausführen, müssen Sie die „ClientSideComponentId“ und optional die Attributwerte „ClientSideComponentProperties“ in der XML ändern.
+> Die Bereitstellungsvorlage fügt einer Lösung eine benutzerdefinierte Aktion hinzu. Dabei ist **ClientSideComponentId** mit dem [Regions Footer Application Customizer](https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-application-regions-footer) verknüpft, den Sie zuvor bereitgestellt haben. Wenn Sie diese Demo mit einer eigenen SPFx-Lösung ausführen, müssen Sie im XML-Code den Wert von **ClientSideComponentId** und optional auch die Attributwerte von **ClientSideComponentProperties** ändern.
 
 ## <a name="create-the-azure-function"></a>Erstellen der Azure-Funktion
 
-1. Navigieren Sie zum Azure-Portal unter „https://portal.azure.com“.
-1. Suchen Sie nach „Funktionen-App“, und erstellen Sie eine neue Funktionen-App. Wählen Sie im Feld **Speicher** die Option, dass das vorhandene Speicherkonto ****verwendet wird, und wählen Sie das zuvor erstellte Speicherkonto aus. Legen Sie die anderen Werte wie erforderlich fest.
-1. Nachdem die Funktionen-App erstellt wurde, öffnen Sie sie, und wählen Sie **Funktionen** und dann **Neue Funktion** aus.
+1. Rufen Sie das [Azure-Portal](https://portal.azure.com) auf.
+1. Suchen Sie nach **Funktionen-App**, und erstellen Sie eine neue Funktionen-App. Wählen Sie im Feld **Speicher** die Option **Use existing** aus. Wählen Sie dann das Speicherkonto aus, das Sie zuvor erstellt haben. Legen Sie die anderen Werte wie erforderlich fest.
+1. Öffnen Sie die Funktionen-App, und klicken Sie auf **Funktionen** > **Neue Funktion**.
 
-  ![Erstellen einer neuen Funktion](images/pnpprovisioning-create-function.png)
+    ![Screenshot des Azure-Portals mit hervorgehobener Option „Neue Funktion“](images/pnpprovisioning-create-function.png)
 
-1. Wählen Sie aus der Dropdownliste „Sprache“ die Option **PowerShell** aus.
+1. Wählen Sie aus dem Dropdownfeld „Sprache“ die Option **PowerShell** aus.
 1. Wählen Sie **QueueTrigger - PowerShell** aus.
 1. Geben Sie der Funktion den Namen **ApplyPnPProvisioningTemplate**. 
-1. Geben Sie den Namen der Warteschlange ein, die Sie in den vorherigen Schritten erstellt haben.
-1. Wählen Sie **Erstellen** aus.
-1. Es wird ein Editor angezeigt, in dem Sie PowerShell-Cmdlets eingeben können. Wir laden nun das PnP-PowerShell-Modul hoch, damit wir es in der Azure-Funktion verwenden können.
+1. Geben Sie den Namen der Warteschlange ein, die Sie zuvor erstellt haben.
+1. Klicken Sie auf **Erstellen**. Es wird ein Editor geöffnet, in den Sie PowerShell-Cmdlets eingeben können. 
 
-## <a name="uploading-pnp-powershell-for-your-azure-function"></a>Hochladen von PnP-PowerShell für Ihre Azure-Funktion
+Im nächsten Schritt laden Sie das PnP-PowerShell-Modul hoch, damit Sie es in der Azure-Funktion verwenden können.
 
-Wir müssen zuerst das PnP-PowerShell-Modul herunterladen, damit es später einfach hochgeladen werden kann.
+## <a name="upload-the-pnp-powershell-module-for-your-azure-function"></a>Hochladen des PnP-PowerShell-Moduls für Ihre Azure-Funktion
+
+Sie müssen das PnP-PowerShell-Modul zunächst herunterladen, bevor Sie es für Ihre Azure-Funktion hochladen können.
 
 1. Erstellen sie einen temporären Ordner auf Ihrem Computer.
-1. Starten Sie PowerShell.
+1. Starten Sie PowerShell, und geben Sie den folgenden Befehl ein:
     ```powershell
     Save-Module -Name SharePointPnPPowerShellOnline -Path [pathtoyourfolder]
     ```
-1. Die PowerShell-Moduldateien werden in einen Ordner innerhalb des soeben ausgewählten Ordners heruntergeladen. 
+Die Dateien des PowerShell-Moduls werden in einen Unterordner des von Ihnen erstellten Ordners heruntergeladen. 
 
-Nun können Sie diese Dateien hochladen, damit die Azure-Funktion das Modul verwenden kann.
+Als Nächstes laden Sie die Dateien hoch, damit Ihre Azure-Funktion das Modul verwenden kann.
 
-1. Navigieren Sie zur Hauptseite der Funktionen-App, und wählen Sie **Plattformfeatures** aus.
+1. Navigieren Sie zur Hauptseite Ihrer Funktionen-App, und klicken Sie auf **Plattformfeatures**.
 
-    ![Navigieren Sie zu „Plattformfeatures“.](images/pnpprovisioning-platform-features.png)
+    ![Screenshot der Funktionen-App mit hervorgehobener Option „Plattformfeatures“](images/pnpprovisioning-platform-features.png)
 
-1. Wählen Sie **Erweiterte Tools (Kudu)** aus.
+1. Klicken Sie auf **Erweiterte Tools (Kudu)**.
 
-    ![Wählen Sie „Erweiterte Tools (Kudu)“ aus.](images/pnpprovisioning-select-kudu.png)
+    ![Screenshot der Liste „Entwicklungstools“ mit hervorgehobener Option „Erweiterte Tools (Kudu)“](images/pnpprovisioning-select-kudu.png)
 
-1. Wählen Sie auf der Kudu-Hauptseite **Debugging-Konsole** aus, und klicken Sie entweder auf **CMD** oder auf **PowerShell**.
-1. Im oberen Teil der Seite wird ein Datei-Explorer angezeigt. Navigieren Sie zu **site\wwwroot\\[NameIhrerAzure-Funktion]**
-1. Erstellen Sie einen neuen Ordner, und geben Sie diesem den Namen **modules**.
+1. Klicken Sie auf der Kudu-Hauptseite auf **Debugging-Konsole**, und wählen Sie entweder **CMD** oder **PowerShell** aus.
+1. Klicken Sie in den Datei-Explorer oben auf der Seite, und rufen Sie **site\wwwroot\\[NameIhrerAzureFunktion]** auf.
+1. Erstellen Sie einen neuen Ordner mit dem Namen **modules**.
     
-    ![Neuen Ordner erstellen](images/pnpprovisioning-kudu-create-folder.png)
+    ![Screenshot mit der hervorgehobenen Option „Neuer Ordner“](images/pnpprovisioning-kudu-create-folder.png)
 
-1. Erstellen Sie in diesem Ordner einen weiteren Ordner mit dem Namen **SharePointPnPPowerShellOnline**, und navigieren Sie zu dem Ordner.
-1. Navigieren Sie im Datei-Explorer auf Ihrem Computer zu dem Ordner, aus dem Sie alle PnP-PowerShell-Moduldateien heruntergeladen haben. Öffnen Sie den Ordner **SharePointPnPPowerShellOnline\2.20.1711.0** (beachten Sie, dass die Versionsnummer anders sein kann, wenn Sie diese exemplarische Vorgehensweise befolgen).
-1. Laden Sie alle Dateien in diesen Ordner hoch, indem Sie alle Dateien aus dem Ordner in den Ordner in Kudu ziehen und dort ablegen.
+1. Erstellen Sie im Ordner „modules“ einen Ordner mit dem Namen **SharePointPnPPowerShellOnline**, und wechseln Sie in diesen Ordner.
+1. Navigieren Sie im Datei-Explorer auf Ihrem Computer zu dem Ordner, in den Sie die Dateien des PnP-PowerShell-Moduls heruntergeladen haben. Öffnen Sie den Ordner **SharePointPnPPowerShellOnline\2.20.1711.0**. (Die Versionsnummer ist möglicherweise eine andere.)
+1. Ziehen Sie alle Dateien aus diesem Ordner per Drag-and-Drop in den Ordner in Kudu, um sie hochzuladen.
 
-   ![Neuen Ordner erstellen](images/pnpprovisioning-module-files-uploaded.png)
+   ![Screenshot des Kudu-Ordners mit 40 hinzugefügten Dateien](images/pnpprovisioning-module-files-uploaded.png)
 
-## <a name="finishing-the-azure-function"></a>Abschließen der Azure-Funktion
+## <a name="finish-the-azure-function"></a>Fertigstellen der Azure-Funktion
 
-1. Navigieren Sie zurück zur Azure-Funktion, und erweitern Sie die Registerkarte „Dateien“ rechts.
+1. Wechseln Sie wieder zu Ihrer Azure-Funktion, und erweitern Sie die Registerkarte mit den Dateien.
 
-    ![Dateien anzeigen](images/pnpprovisioning-view-files.png)
+    ![Screenshot der Registerkarte „Dateien anzeigen“](images/pnpprovisioning-view-files.png)
 
-1. Klicken Sie auf **Hochladen**, und laden Sie Ihre Bereitstellungsvorlagendatei hoch, die Sie zuvor erstellt haben.
-1. Ersetzen Sie das PowerShell-Skript durch Folgendes:
+1. Klicken Sie auf **Hochladen**, und laden Sie die Bereitstellungsvorlagendatei hoch, die Sie zuvor erstellt haben.
+1. Ersetzen Sie das PowerShell-Skript durch folgenden Code:
 
-```powershell
-$in = Get-Content $triggerInput -Raw
-Write-Output "Incoming request for '$in'"
-Connect-PnPOnline -AppId $env:SPO_AppId -AppSecret $env:SPO_AppSecret -Url $in
-Write-Output "Connected to site"
-Apply-PnPProvisioningTemplate -Path D:\home\site\wwwroot\ApplyPnPProvisioningTemplate\FlowDemoTemplate.xml
-```
+    ```powershell
+    $in = Get-Content $triggerInput -Raw
+    Write-Output "Incoming request for '$in'"
+    Connect-PnPOnline -AppId $env:SPO_AppId -AppSecret $env:SPO_AppSecret -Url $in
+    Write-Output "Connected to site"
+    Apply-PnPProvisioningTemplate -Path D:\home\site\wwwroot\ApplyPnPProvisioningTemplate\FlowDemoTemplate.xml
+    ```
 
-Beachten Sie, dass wir zwei Umgebungsvariablen verwenden, eine mit dem Namen ```SPO_AppId```, die andere mit dem Namen ```SPO_AppSecret```. Um diese Variablen festzulegen, navigieren Sie zur Hauptseite der Funktionen-App in Ihrem Azure-Portal, wählen Sie **Anwendungseinstellungen** aus, und fügen Sie zwei neue Anwendungseinstellungen hinzu:
+Wie Sie sehen, verwenden Sie zwei Umgebungsvariablen: ```SPO_AppId``` und ```SPO_AppSecret```. Zum Festlegen dieser Variablen navigieren Sie zur Hauptseite der Funktionen-App im Azure-Portal, klicken auf **Anwendungseinstellungen** und fügen zwei neue Anwendungseinstellungen hinzu:
 
-1. ```SPO_AppId```: Legen Sie den Wert auf die im ersten Schritt beim Erstellen der App auf dem Mandanten kopierte Client-ID fest.
-2. ```SPO_AppSecret```: Legen Sie den Wert auf den im ersten Schritt beim Erstellen der App auf dem Mandanten kopierten geheimen Clientschlüssel fest.
+1. ```SPO_AppId```: Tragen Sie hier als Wert die Client-ID ein, die Sie sich im ersten Schritt notiert haben, als Sie die App auf Ihrem Mandanten erstellt haben.
+2. ```SPO_AppSecret```: Tragen Sie hier als Wert den geheimen Clientschlüssel ein, den Sie sich im ersten Schritt notiert haben, als Sie die App auf Ihrem Mandanten erstellt haben.
 
-## <a name="creating-the-site-design"></a>Erstellen des Websitedesigns
+## <a name="create-the-site-design"></a>Erstellen des Websitedesigns
 
-Öffnen Sie PowerShell, und vergewissern Sie sich, dass Sie die Microsoft Office 365-Verwaltungsshell installiert haben.
+Öffnen Sie PowerShell, und vergewissern Sie sich, dass Sie die Microsoft Office 365-Verwaltungsshell installiert haben.
 
-Stellen Sie zuerst über Connect-SPOService eine Verbindung zu Ihrem Mandanten her:
+Stellen Sie über **Connect-SPOService** eine Verbindung zu Ihrem Mandanten her.
 
 ```powershell
 Connect-SPOService -Url https://[yourtenant]-admin.sharepoint.com
@@ -245,30 +251,33 @@ Nun können Sie die vorhandenen Websitedesigns abrufen.
 Get-SPOSiteDesign
 ```
 
-Um ein Websitedesign zu erstellen, müssen Sie zuerst ein Websiteskript erstellen. Ein Websitedesign können Sie sich als Container vorstellen, der auf ein oder mehrere Webskripts verweist.
-1. Kopieren Sie den folgenden JSON-Code in die Zwischenablage, und ändern Sie ihn. Legen Sie die url-Eigenschaft auf den beim Erstellen des Flows kopierten Wert fest. Die URL sieht wie `https://prod-27.westus.logic.azure.com:443/workflows/ef7434cf0d704dd48ef5fb6...oke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun` aus.
+Bevor Sie ein Websitedesign erstellen können, müssen Sie zuerst ein Websiteskript erstellen. Ein Websitedesign ist ein Container, der ein oder mehrere Websiteskripts referenziert.
 
-    ```json
-    {
-        "$schema": "schema.json",
-        "actions": [
-           {
-                "verb": "triggerFlow",
-                "url": "[paste the workflow trigger URL here]",
-                "name": "Apply Template",
-                "parameters": {
-                    "event":"",
-                    "product":""
-                }
-           }
-        ],
-        "bindata": {},
-        "version": 1
-    }
-    ```
+1. Kopieren Sie den folgenden JSON-Code in die Zwischenablage, und ändern Sie ihn. Geben Sie für die Eigenschaft **url** den Wert ein, den Sie sich bei der Erstellung des Flows notiert haben. Die URL sieht in etwa wie folgt aus:
 
-1. Nach dem Bearbeiten des JSON-Codes durch Einfügen der korrekten URL zum Auslösen des Flows, wählen Sie alles aus, und kopieren alles erneut in die Zwischenablage.
-1. Öffnen Sie PowerShell, und geben Sie Folgendes ein, um das Skript in eine Variable zu kopieren und das Websiteskript zu erstellen.
+    `https://prod-27.westus.logic.azure.com:443/workflows/ef7434cf0d704dd48ef5fb6...oke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun`
+
+        ```json
+        {
+            "$schema": "schema.json",
+            "actions": [
+            {
+                    "verb": "triggerFlow",
+                    "url": "[paste the workflow trigger URL here]",
+                    "name": "Apply Template",
+                    "parameters": {
+                        "event":"",
+                        "product":""
+                    }
+            }
+            ],
+            "bindata": {},
+            "version": 1
+        }
+        ```
+
+1. Markieren Sie den JSON-Code erneut, und kopieren Sie ihn nochmals in die Zwischenablage.
+1. Öffnen Sie PowerShell, und geben Sie Folgendes ein, um das Skript in eine Variable zu kopieren und das Websiteskript zu erstellen:
 
     ```powershell
     $script = Get-Clipboard -Raw
@@ -276,20 +285,19 @@ Um ein Websitedesign zu erstellen, müssen Sie zuerst ein Websiteskript erstelle
     Get-SPOSiteScript
     ```
 
-1. Es sollte eine Liste mit einem oder mehreren Skripts angezeigt werden, einschließlich des soeben erstellten Websiteskripts.
-1. Wählen Sie die ID des soeben erstellten Websiteskripts aus, und kopieren Sie sie in die Zwischenablage.
-1. Erstellen Sie das Websitedesigns:
+1. Es wird eine Liste mit einem oder mehreren Skripts angezeigt, einschließlich des soeben erstellten Websiteskripts. Markieren Sie die ID des Websiteskripts, das Sie soeben erstellt haben, und kopieren Sie sie in die Zwischenablage.
+1. Erstellen Sie mithilfe des folgenden Befehls das Websitedesign:
 
     ```powershell
     Add-SPOSiteDesign -Title "Site with footer" -SiteScripts [Paste the ID of the Site Script here] -WebTemplate "64"
     ```
 
-Durch „ Add-SPOSiteDesign“ wird das Websitedesign der Teamwebsite zugewiesen. Wenn Sie das Design einer Kommunikationswebsite zuweisen möchten, verwenden Sie „68“.
+Das Cmdlet **Add-SPOSiteDesign** verknüpft das Websitedesign mit der Teamwebsite. Wenn Sie das Design mit einer Kommunikationswebsite verknüpfen möchten, müssen Sie den Wert „68“ verwenden.
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="verify-the-results"></a>Überprüfen der Ergebnisse
 
-Nachdem Sie die Speicherwarteschlange erstellt haben, haben Sie die App-ID für den Nur-App-Zugriff erstellt. Anschließend haben Sie die Azure-Funktion und das Websitedesign erstellt und den korrekten Microsoft-Flow vom Websitedesign ausgelöst. Sie sind jetzt startklar! 
+Nachdem Sie Ihren Azure Queue-Speicher erstellt haben, haben Sie eine App-ID für App-exklusiven Zugriff, die Azure-Funktion und das Websitedesign erstellt. Anschließend haben Sie über das Websitedesign Microsoft Flow ausgelöst. 
 
-Versuchen Sie, eine neue Website zu erstellen, indem Sie zu Ihrem SharePoint-Mandanten navigieren. Wählen Sie **SharePoint**, **Website erstellen** und **Teamwebsite** aus. Ihr neu erstelltes Websitedesign sollte nun als mögliche Designoption angezeigt werden. Erstellen Sie Ihre Website, und beachten Sie das Websitedesign, das angewendet wird, nachdem die Website erstellt wurde.  Wenn Sie alles korrekt konfiguriert haben, sollte Ihr Flow nun ausgelöst werden. Sie können den Ausführungsverlauf des Flows überprüfen, um zu sehen, ob er korrekt ausgeführt wurde.  Da es etwas dauern kann, bis die PnP-Bereitstellungsvorlage angewendet wird, kann es sein, dass die Fußzeile nicht sofort angezeigt wird. Warten Sie einen Moment, und laden Sie die Website erneut.
+Um die Ergebnisse zu testen, müssen Sie nun eine neue Website erstellen. Klicken Sie in Ihrem SharePoint-Mandanten auf **SharePoint** > **Website erstellen** > **Teamwebsite**. Ihr neues Websitedesign sollte als Designoption angezeigt werden. Dabei ist zu beachten, dass das Websitedesign nach der Erstellung der Website angewendet wird. Wenn Sie es ordnungsgemäß konfiguriert haben, wird Ihr Flow ausgelöst. Ob der Flow korrekt ausgeführt wurde, können Sie in seinem Ausführungsverlauf überprüfen. Die Fußzeile wird möglicherweise nicht sofort angezeigt. Falls sie nicht angezeigt wird: Warten Sie eine Minute, und laden Sie Ihre Website neu, um es nochmals zu versuchen.
 
 
