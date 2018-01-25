@@ -3,11 +3,11 @@ title: Konfigurieren des Webpartsymbols
 description: "Die verfügbaren Optionen zum Konfigurieren für Ihre clientseitigen SharePoint-Webparts."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 084a5b3aebcaa500c8e7a8c321e2f1e07428983b
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: b7bcb7f91d78ce8b82f0b13b105b0e0ffeb79e88
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="configure-web-part-icon"></a>Konfigurieren des Webpartsymbols
 
@@ -171,7 +171,7 @@ Online steht eine Reihe von Diensten zur Verfügung, die Sie zum Codieren Ihres 
 
 <br/>
 
-Base64-Codierung kann sowohl für Bitmapbilder, zum Beispiel PNG, sowie für Vektor-basierte SVG-Bilder verwendet werden. Der große Vorteil der base64-Codierung von Bildern ist, dass Sie das Webpartsymbolbild nicht separat bereitstellen müssen.
+Base64-Codierung kann sowohl für Bitmapbilder, zum Beispiel PNG, als auch für Vektor-basierte SVG-Bilder verwendet werden. Der große Vorteil der base64-Codierung von Bildern ist, dass Sie das Webpart-Symbolbild nicht separat bereitstellen müssen.
 
 ![Base64-codiertes Bild als Webpartsymbol in der Toolbox](../../../images/webparticon_toolbox_base64.png)
 

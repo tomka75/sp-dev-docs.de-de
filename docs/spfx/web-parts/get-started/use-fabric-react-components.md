@@ -3,11 +3,11 @@ title: "Verwenden von Office UI Fabric React-Komponenten in clientseitigen Sh
 description: "Erstellen Sie ein einfaches Webpart, das die DocumentCard-Komponente von Office UI Fabric React verwendet."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: b36054c7d0cfebbf306fe63f40c982c9fefa7a24
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 6dca176399de46565511ba6ae252408f22e515ef
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="use-office-ui-fabric-react-components-in-your-sharepoint-client-side-web-part"></a>Verwenden von Office UI Fabric React-Komponenten in clientseitigen SharePoint-Webparts
 
@@ -46,17 +46,17 @@ Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in 
     
 4. Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
-  * Übernehmen Sie den Standardnamen **documentcardexample-webpart** als Lösungsnamen, und drücken Sie die **EINGABETASTE**.
-  * Wählen Sie **SharePoint Online only (latest)** und drücken Sie die **EINGABETASTE**.
+  * Übernehmen Sie den Standardnamen **documentcardexample-webpart** als Lösungsnamen, und drücken Sie die EINGABETASTE.
+  * Wählen Sie **SharePoint Online only (latest)**, und drücken Sie die EINGABETASTE.
   * Wählen Sie als Speicherort für die Dateien die Option **Use the current folder** aus.
   * Wählen Sie **N**, damit die Erweiterung auf jeder Website explizit installiert werden muss, wenn sie verwendet wird. 
   * Wählen Sie **Webpart** als den zu erstellenden Typ von clientseitiger Komponente aus. 
 
 5. Über die nächsten Eingabeaufforderungen werden spezifische Informationen zum Webpart abgefragt:
 
-  * Verwenden Sie **DocumentCardExample** als Namen des Webparts, und drücken Sie die **EINGABETASTE**.
-  * Akzeptieren Sie den Standardnamen **DocumentCardExample - Beschreibung**, und drücken Sie die **EINGABETASTE**.
-  * Wählen Sie **React** als Framework aus, und drücken Sie die**EINGABETASTE**.
+  * Verwenden Sie **DocumentCardExample** als Namen des Webparts, und drücken Sie die EINGABETASTE.
+  * Akzeptieren Sie die standardmäßige **Beschreibung für DocumentCardExample**, und drücken Sie die EINGABETASTE.
+  * Wählen Sie **React** als Framework aus, und drücken Sie die EINGABETASTE.
 
   An diesem Punkt installiert Yeoman die erforderlichen Abhängigkeiten und erstellt ein Gerüst für die Lösungsdateien. Das kann einige Minuten dauern. Yeoman erstellt ein Gerüst für das Projekt, um auch das DocumentCardExample-Webpart einzuschließen.
 

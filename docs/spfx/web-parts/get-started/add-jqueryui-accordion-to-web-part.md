@@ -3,11 +3,11 @@ title: "Hinzufügen von jQueryUI Accordion zu Ihrem clientseitigen SharePoint-We
 description: "Wenn Sie jQueryUI Accordion zu Ihrem Webpartprojekt hinzufügen möchten, müssen Sie ein neues Webpart erstellen."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: ed2283cfe37d93231eb3f46a293c8cac76f5c305
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: ac0eb1ca71d3aca2a948ed1f46c5896f975687bc
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="add-jqueryui-accordion-to-your-sharepoint-client-side-web-part"></a>Hinzufügen von jQueryUI Accordion zu Ihrem clientseitigen SharePoint-Webpart
 
@@ -57,19 +57,19 @@ Die Entwicklertoolkette verwendet Webpack, SystemJS und CommonJS zum Bündeln de
 
 4. Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
-  * Akzeptieren Sie den Standardnamen **jquery-webpart** als Lösungsnamen. Drücken Sie die **EINGABETASTE**.
-  * Wählen Sie **SharePoint Online only (latest)**, und drücken Sie die **EINGABETASTE**.
+  * Akzeptieren Sie den Standardnamen **jquery-webpart** als Lösungsnamen. Drücken Sie die EINGABETASTE.
+  * Wählen Sie **SharePoint Online only (latest)**, und drücken Sie die EINGABETASTE.
   * Wählen Sie als Speicherort für die Dateien die Option **Use the current folder** aus.
   * Wählen Sie **N**, damit die Erweiterung auf jeder Website explizit installiert werden muss, wenn sie verwendet wird. 
   * Wählen Sie **Webpart** als den zu erstellenden Typ von clientseitiger Komponente aus. 
 
 5. Über die nächsten Eingabeaufforderungen werden spezifische Informationen zum Webpart abgefragt:
 
-  * Geben Sie **jQuery** als Webpartnamen ein, und drücken Sie die **EINGABETASTE**.
-  * Geben Sie**jQuery-Webpart** als Beschreibung des Webparts ein, und drücken Sie die **EINGABETASTE**. 
-  * Akzeptieren Sie die Standardeinstellung **No JavaScript framework** als Framework, und drücken Sie die **EINGABETASTE**, um fortzufahren.
+  * Geben Sie **jQuery** als Webpartnamen ein, und drücken Sie die EINGABETASTE.
+  * Geben Sie **jQuery-Webpart** als Beschreibung des Webparts ein, und drücken Sie die EINGABETASTE. 
+  * Akzeptieren Sie die Standardeinstellung **No JavaScript framework** als Framework, und drücken Sie die EINGABETASTE, um fortzufahren.
 
-  An diesem Punkt installiert Yeoman die erforderlichen Abhängigkeiten und erstellt ein Gerüst für die Lösungsdateien. Das kann einige Minuten dauern. Yeoman erstellt ein Gerüst für das Projekt, um auch das **jQueryWebPart** einzuschließen.
+  An diesem Punkt installiert Yeoman die erforderlichen Abhängigkeiten und erstellt ein Gerüst für die Lösungsdateien. Dies kann einige Minuten dauern. Yeoman erstellt ein Gerüst für das Projekt, um auch das **jQueryWebPart** einzuschließen.
 
 6. Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 

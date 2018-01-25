@@ -3,11 +3,11 @@ title: "Bereitstellen des clientseitigen SharePoint-Webparts auf einer SharePoin
 description: "Stellen Sie Ihr clientseitiges Webpart in SharePoint bereit, und sehen Sie sich an, wie es auf einer klassischen SharePoint-Seite ausgeführt wird."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: f367785ffb940c15e64f368b3e07fad221776df8
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 1dc46ad5656db9d542c8de33092ec051874aeeaa
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="deploy-your-client-side-web-part-to-a-sharepoint-page-hello-world-part-3"></a>Bereitstellen des clientseitigen SharePoint-Webparts auf einer SharePoint-Seite („Hello World“ Teil 3)
 
@@ -106,7 +106,7 @@ Als Nächstes müssen Sie das Paket, das generiert wurde, im App-Katalog bereits
 
 2. Klicken Sie auf der oberen Navigationsleiste rechts auf das Zahnradsymbol und anschließend auf **App hinzufügen**, um Ihre Apps-Seite aufzurufen.
 
-3. Geben Sie in das Feld **Suchen** die Zeichenfolge **helloworld** ein, und drücken Sie die **Eingabetaste**, um Ihre Apps zu filtern.
+3. Geben Sie in das Feld **Suchen** die Zeichenfolge **helloworld** ein, und drücken Sie die EINGABETASTE, um Ihre Apps zu filtern.
     
   ![Hinzufügen der App zur Website](../../../images/install-app-your-site.png)
     
