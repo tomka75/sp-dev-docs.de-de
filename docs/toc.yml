@@ -3,8 +3,6 @@
 - name: SharePoint-Framework
   href: spfx/sharepoint-framework-overview.md
   items:
-    - name: Übersicht
-      href: spfx/sharepoint-framework-overview.md
     - name: Erste Schritte
       href: spfx/set-up-your-developer-tenant.md
       items:
@@ -12,84 +10,27 @@
           href: spfx/set-up-your-developer-tenant.md
         - name: Einrichten der Entwicklungsumgebung
           href: spfx/set-up-your-development-environment.md
-        - name: Erstellen von Webparts
-          href: spfx/web-parts/get-started/build-a-hello-world-web-part.md
-        - name: Erstellen von Erweiterungen
-          href: spfx/extensions/get-started/build-a-hello-world-extension.md
-    - name: Grundlagen
-      items:
-        - name: Debugging
-          href: spfx/debug-in-vscode.md
-        - name: Herstellen einer Verbindung zu APIs
-          items:
-            - name: Microsoft Graph
-              href: spfx/overview-graphhttpclient.md
-              items:
-                - name: Übersicht
-                  href: spfx/overview-graphhttpclient.md
-                - name: Lernprogramm
-                  href: spfx/call-microsoft-graph-using-graphhttpclient.md
-    - name: Erweiterungen
-      href: spfx/extensions/overview-extensions.md
-      items:
-        - name: Übersicht
-          href: spfx/extensions/overview-extensions.md
-        - name: Erste Schritte
-          href: spfx/extensions/get-started/build-a-hello-world-extension.md
-          items:
-            - name: Erstellen Ihrer ersten Erweiterung
-              href: spfx/extensions/get-started/build-a-hello-world-extension.md
-            - name: Verwenden von Seitenplatzhaltern
-              href: spfx/extensions/get-started/using-page-placeholder-with-extensions.md
-            - name: Bereitstellen Ihrer Erweiterung in SharePoint
-              href: spfx/extensions/get-started/serving-your-extension-from-sharepoint.md
-            - name: Hosten von Erweiterungen aus einem CDN
-              href: spfx/extensions/get-started/hosting-extension-from-office365-cdn.md
-            - name: "Erstellen des Field\_Customizer"
-              href: spfx/extensions/get-started/building-simple-field-customizer.md
-            - name: Erstellen von Erweiterungen des Typs „ListView Command Set“
-              href: spfx/extensions/get-started/building-simple-cmdset-with-dialog-api.md
-        - name: Grundlagen
-          items:
-            - name: Konfigurieren des Erweiterungssymbols
-              href: spfx/extensions/basics/configure-extension-icon.md
-        - name: Konzepte
-          items:
-            - name: Migrieren vorhandener Anpassungen
-              items:
-                - name: Clientseitiges Rendering (JSLink)
-                  href: spfx/extensions/guidance/migrate-jslink-to-spfx-extensions.md
-                - name: JavaScript-Einbettung (UserCustomAction)
-                  href: spfx/extensions/guidance/migrate-user-customactions-to-spfx-extensions.md
-                - name: Menüelement „Edit Control Block (ECB)“ – Lernprogramm
-                  href: spfx/extensions/guidance/migrate-from-ecb-to-spfx-extensions.md
-                - name: Clientseitiges Rendering (JSLink) – Lernprogramm
-                  href: spfx/extensions/guidance/migrate-from-jslink-to-spfx-extensions.md
-                - name: JavaScript-Einbettung (UserCustomAction) – Lernprogramm
-                  href: spfx/extensions/guidance/migrate-from-usercustomactions-to-spfx-extensions.md
     - name: Webparts
       href: spfx/web-parts/overview-client-side-web-parts.md
       items:
-        - name: Übersicht
-          href: spfx/web-parts/overview-client-side-web-parts.md
         - name: Erste Schritte
           href: spfx/web-parts/get-started/build-a-hello-world-web-part.md
           items:
             - name: Erstellen Ihres ersten Webparts
               href: spfx/web-parts/get-started/build-a-hello-world-web-part.md
-            - name: Verbinden mit SharePoint
+            - name: Verbinden des Webparts mit SharePoint
               href: spfx/web-parts/get-started/connect-to-sharepoint.md
             - name: Bereitstellen des Webparts auf einer SharePoint-Seite
               href: spfx/web-parts/get-started/serve-your-web-part-in-a-sharepoint-page.md
-            - name: "Bereitstellen in Office\_365\_CDN"
+            - name: Hosten des Webparts in Office 365 CDN
               href: spfx/web-parts/get-started/hosting-webpart-from-office-365-cdn.md
-            - name: "Hinzufügen eines jQuery\_UI-Akkordeons"
+            - name: "Hinzufügen von jQuery\_UI Accordion zum Webpart"
               href: spfx/web-parts/get-started/add-jqueryui-accordion-to-web-part.md
-            - name: "Verwenden von Office\_UI\_Fabric\_React-Komponenten"
+            - name: "Verwenden von Office\_UI\_Fabric\_React-Komponenten im Webpart"
               href: spfx/web-parts/get-started/use-fabric-react-components.md
-            - name: Bereitstellen von Objekten aus der Lösung
+            - name: Bereitstellen von Objekten aus dem Webpart
               href: spfx/web-parts/get-started/provision-sp-assets-from-package.md
-            - name: Bereitstellen in einem Azure-CDN
+            - name: Bereitstellen des Webparts in einem Azure-CDN
               href: spfx/web-parts/get-started/deploy-web-part-to-cdn.md
         - name: Grundlagen
           items:
@@ -105,10 +46,6 @@
           items:
             - name: Migrieren vorhandener Anpassungen
               items:
-                - name: Arbeiten mit __REQUESTDIGEST
-                  href: spfx/web-parts/basics/working-with-requestdigest.md
-                - name: Verwenden von JSOM
-                  href: spfx/web-parts/guidance/connect-to-sharepoint-using-jsom.md
                 - name: Skript-Editor-Webpart
                   href: spfx/web-parts/guidance/migrate-script-editor-web-part-customizations.md
                 - name: jQuery und DataTables
@@ -117,26 +54,55 @@
                   href: spfx/web-parts/guidance/migrate-jquery-fullcalendar-script-to-spfx.md
                 - name: AngularJS-Anwendungen
                   href: spfx/web-parts/guidance/migrate-angular-1-x-applications-to-sharepoint-framework.md
-            - name: Leistung
+                - name: Arbeiten mit __REQUESTDIGEST
+                  href: spfx/web-parts/basics/working-with-requestdigest.md
+                - name: Verwenden von JSOM
+                  href: spfx/web-parts/guidance/connect-to-sharepoint-using-jsom.md
+            - name: Gemeinsame Verwendung von Daten zwischen Webparts
+              href: spfx/web-parts/guidance/share-data-between-web-parts.md
               items:
-                - name: Gemeinsame Verwendung von Daten zwischen Webparts
-                  href: spfx/web-parts/guidance/share-data-between-web-parts.md
-                  items:
-                    - name: Übersicht
-                      href: spfx/web-parts/guidance/share-data-between-web-parts.md
-                    - name: Lernprogramm
-                      href: spfx/web-parts/guidance/tutorial-share-data-between-web-parts-global-variable.md
-            - name: SharePoint-Integration
+                - name: Lernprogramm
+                  href: spfx/web-parts/guidance/tutorial-share-data-between-web-parts-global-variable.md
+            - name: Integrieren von Eigenschaften in SharePoint
               href: spfx/web-parts/guidance/integrate-web-part-properties-with-sharepoint.md
-              items:
-                - name: Integrieren von Eigenschaften in SharePoint
-                  href: spfx/web-parts/guidance/integrate-web-part-properties-with-sharepoint.md
             - name: Erweitern des Eigenschaftenbereichs
               items:
                 - name: Erstellen benutzerdefinierter Steuerelemente
                   href: spfx/web-parts/guidance/build-custom-property-pane-controls.md
                 - name: Verwenden überlappender Dropdownmenüs
                   href: spfx/web-parts/guidance/use-cascading-dropdowns-in-web-part-properties.md
+    - name: Erweiterungen
+      href: spfx/extensions/overview-extensions.md
+      items:
+        - name: Erste Schritte
+          href: spfx/extensions/get-started/build-a-hello-world-extension.md
+          items:
+            - name: Erstellen Ihrer ersten Erweiterung
+              href: spfx/extensions/get-started/build-a-hello-world-extension.md
+            - name: Verwenden von Seitenplatzhaltern
+              href: spfx/extensions/get-started/using-page-placeholder-with-extensions.md
+            - name: Bereitstellen Ihrer Erweiterung in SharePoint
+              href: spfx/extensions/get-started/serving-your-extension-from-sharepoint.md
+            - name: Hosten von Erweiterungen aus einem CDN
+              href: spfx/extensions/get-started/hosting-extension-from-office365-cdn.md
+            - name: "Erstellen des Field\_Customizer"
+              href: spfx/extensions/get-started/building-simple-field-customizer.md
+            - name: Erstellen von Erweiterungen des Typs „ListView Command Set“
+              href: spfx/extensions/get-started/building-simple-cmdset-with-dialog-api.md
+        - name: Konfigurieren des Erweiterungssymbols
+          href: spfx/extensions/basics/configure-extension-icon.md
+        - name: Migrieren vorhandener Anpassungen
+          items:
+            - name: Clientseitiges Rendering (JSLink)
+              href: spfx/extensions/guidance/migrate-jslink-to-spfx-extensions.md
+            - name: JavaScript-Einbettung (UserCustomAction)
+              href: spfx/extensions/guidance/migrate-user-customactions-to-spfx-extensions.md
+            - name: Menüelement „Edit Control Block (ECB)“ – Lernprogramm
+              href: spfx/extensions/guidance/migrate-from-ecb-to-spfx-extensions.md
+            - name: Clientseitiges Rendering (JSLink) – Lernprogramm
+              href: spfx/extensions/guidance/migrate-from-jslink-to-spfx-extensions.md
+            - name: JavaScript-Einbettung (UserCustomAction) – Lernprogramm
+              href: spfx/extensions/guidance/migrate-from-usercustomactions-to-spfx-extensions.md
     - name: Konzepte
       items:
         - name: Richtlinien
@@ -165,11 +131,13 @@
               href: spfx/web-parts/guidance/connect-to-api-secured-with-aad.md
             - name: "Aufrufen der Microsoft\_Graph-API mithilfe von OAuth"
               href: spfx/web-parts/guidance/call-microsoft-graph-from-your-web-part.md
-        - name: Leistung
+            - name: Microsoft Graph
+              href: spfx/overview-graphhttpclient.md
+              items:
+                - name: Lernprogramm
+                  href: spfx/call-microsoft-graph-using-graphhttpclient.md
+        - name: Optimieren von Builds für die Produktion
           href: spfx/toolchain/optimize-builds-for-production.md
-          items:
-            - name: Optimieren von Builds für die Produktion
-              href: spfx/toolchain/optimize-builds-for-production.md
         - name: Setup und Bereitstellung
           items:
             - name: Paketlösung
@@ -186,35 +154,30 @@
               href: spfx/sharepoint-2016-support.md
             - name: Bereitstellen von SharePoint-Objekten
               href: spfx/toolchain/provision-sharepoint-assets.md
-        - name: Benutzeroberfläche
+        - name: Designrichtlinien
           href: design/design-guidance-overview.md
           items:
-            - name: Designrichtlinien
-              href: design/design-guidance-overview.md
+            - name: Erstellen von Seiten
+              href: design/authoring-pages.md
+            - name: Entwerfen eines Webparts
+              href: design/design-a-web-part.md
               items:
-                - name: Übersicht
-                  href: design/design-guidance-overview.md
-                - name: Erstellen von Seiten
-                  href: design/authoring-pages.md
-                - name: Entwerfen eines Webparts
-                  href: design/design-a-web-part.md
-                  items:
-                    - name: Reaktive und nicht-reaktive Webparts
-                      href: design/reactive-and-nonreactive-web-parts.md
-                    - name: Dynamisches Designs
-                      href: design/grid-and-responsive-design.md
-                    - name: Titel und Beschreibungen
-                      href: design/web-part-titles-and-descriptions.md
-                    - name: Benutzeroberflächentext
-                      href: design/ui-text-for-web-parts.md
-                    - name: Designs und Farben
-                      href: design/themes-colors.md
-                    - name: Platzhalter und Fallbacks
-                      href: design/placeholders-and-fallbacks.md
-                    - name: Barrierefreiheit
-                      href: design/accessibility.md
-                    - name: Demonstrieren des Webparts
-                      href: design/showcase-web-part.md
+                - name: Reaktive und nicht-reaktive Webparts
+                  href: design/reactive-and-nonreactive-web-parts.md
+                - name: Dynamisches Designs
+                  href: design/grid-and-responsive-design.md
+                - name: Titel und Beschreibungen
+                  href: design/web-part-titles-and-descriptions.md
+                - name: Benutzeroberflächentext
+                  href: design/ui-text-for-web-parts.md
+                - name: Designs und Farben
+                  href: design/themes-colors.md
+                - name: Platzhalter und Fallbacks
+                  href: design/placeholders-and-fallbacks.md
+                - name: Barrierefreiheit
+                  href: design/accessibility.md
+                - name: Demonstrieren des Webparts
+                  href: design/showcase-web-part.md
             - name: Designüberlegungen
               href: spfx/web-parts/basics/design-considerations-for-web-parts.md
             - name: Benutzerdefinierte Dialogfelder
@@ -227,21 +190,18 @@
               href: spfx/office-ui-fabric-integration.md
         - name: Lokalisierung
           href: spfx/web-parts/guidance/localize-web-parts.md
-        - name: Integrieren in SharePoint
-          items:
-            - name: Mandanteneigenschaften
-              href: spfx/tenant-properties.md
+        - name: Mandanteneigenschaften
+          href: spfx/tenant-properties.md
     - name: Frameworkarchitektur
       items:
         - name: Tools und Bibliotheken
           href: spfx/tools-and-libraries.md
         - name: Toolkette
           href: spfx/toolchain/sharepoint-framework-toolchain.md
-          items:
-            - name: Übersicht
-              href: spfx/toolchain/sharepoint-framework-toolchain.md
-            - name: Yeoman-Generator von SharePoint Framework
-              href: spfx/toolchain/scaffolding-projects-using-yeoman-sharepoint-generator.md
+        - name: Yeoman-Generator
+          href: spfx/toolchain/scaffolding-projects-using-yeoman-sharepoint-generator.md
+    - name: Debugging
+      href: spfx/debug-in-vscode.md
     - name: Roadmap
       href: spfx/roadmap.md
     - name: Bekannte Probleme und häufig gestellte Fragen
@@ -1620,6 +1580,8 @@
         - name: Erste Schritte mit WebJobs („Zeitgeberaufträgen“)
           href: solution-guidance/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites.md
     - name: Referenz zur Kern-API für PnP-Websites
-      href: 'https://msdn.microsoft.com/en-us/pnp_sites_core/pnp-sites-core-overview'
+      href: 'https://docs.microsoft.com/en-us/dotnet/api/?term=Officedevpnp'
+    - name: Referenz zur Kern-API für PnP-Websites – Erweiterungsmethoden
+      href: 'https://docs.microsoft.com/en-us/dotnet/api/?term=microsoft.sharepoint'
     - name: PnP-PowerShell-Referenz
-      href: 'https://msdn.microsoft.com/en-us/pnp_powershell/pnp-powershell-overview'
+      href: 'https://docs.microsoft.com/en-us/powershell/sharepoint/sharepoint-pnp/sharepoint-pnp-cmdlets?view=sharepoint-ps'
