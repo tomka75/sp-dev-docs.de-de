@@ -2,18 +2,18 @@
 title: Erste Schritte mit dem Erstellen von SharePoint-Websitedesigns und -Websiteskripts
 description: Erste Schritte mit dem Erstellen von SharePoint-Websitedesigns und -Websiteskripts, aus denen Benutzer ihre eigenen Websites erstellen.
 ms.date: 12/14/2017
-ms.openlocfilehash: eddc4455695e014899b268456ee501e956639b98
-ms.sourcegitcommit: db303a21b5f83c8c2f9c2028a271c9aae0ac0515
+ms.openlocfilehash: 4b4e0c6c1a374599448aa5eb87ace311398c3593
+ms.sourcegitcommit: d9372f6009de1c1e48e272fd3629a99aed7fef9f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/07/2018
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="get-started-creating-site-designs-and-site-scripts"></a>Erste Schritte mit dem Erstellen von Websitedesigns und Websiteskripts
 
 > [!NOTE]
 > Websitedesigns und Websiteskripts befinden sich derzeit in der Vorschau und können ohne vorherige Ankündigung geändert werden. Sie werden in Produktionsumgebungen derzeit nicht unterstützt.
 
-Erstellen Sie Websitedesigns, um wiederverwendbare Listen, Designs, Layouts, Seiten oder benutzerdefinierte Aktionen bereitzustellen, damit Ihre Benutzer schnell neue SharePoint-Websites mit den benötigten Features erstellen können. In diesem Artikel erstellen Sie ein einfaches Websitedesign, das eine SharePoint-Liste zum Nachverfolgen von Kundenbestellungen hinzufügt. Sie verwenden dann das Websitedesign, um eine neue SharePoint-Website mit der benutzerdefinierten Liste zu erstellen.
+Sie können Websitedesigns erstellen, um wiederverwendbare Listen, Designs, Layouts, Seiten oder benutzerdefinierte Aktionen bereitzustellen, damit Ihre Benutzer schnell neue SharePoint-Websites mit den benötigten Features erstellen können. In diesem Artikel wird beschrieben, wie Sie ein einfaches Websitedesign erstellen, das eine SharePoint-Liste zum Nachverfolgen von Kundenbestellungen hinzufügt. Sie verwenden das Websitedesign, um eine neue SharePoint-Website mit der benutzerdefinierten Liste zu erstellen.
 
 In diesem Artikel wird gezeigt, wie Sie PowerShell-Cmdlets in SharePoint zum Erstellen von Websiteskripts und Websitedesigns verwenden. Sie können auch REST-API für dieselben Aktionen verwenden. Die entsprechenden REST-Aufrufe sind zur Referenz in jedem Schritt dargestellt.
 

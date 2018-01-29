@@ -2,11 +2,11 @@
 title: "PowerShell-Cmdlets für SharePoint-Websitedesigns und -Websiteskripts"
 description: Verwenden Sie PowerShell-Cmdlets zum Erstellen, Abrufen und Entfernen von Websitedesigns und Websiteskripts.
 ms.date: 12/14/2017
-ms.openlocfilehash: e6f9f0324cb0879317d04aa9873ad168072073cc
-ms.sourcegitcommit: 6f2b3b5bd81c2de4f761e10ed5e2f0b9c3c485bf
+ms.openlocfilehash: 81048173e6fa8933a9cfdcb668f0c8ba362d2e86
+ms.sourcegitcommit: d9372f6009de1c1e48e272fd3629a99aed7fef9f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="powershell-cmdlets-for-sharepoint-site-designs-and-site-scripts"></a>PowerShell-Cmdlets für SharePoint-Websitedesigns und -Websiteskripts
 
@@ -73,7 +73,7 @@ Add-SPOSiteDesign
 |[-PreviewImageAltText] | Die Alternativtextbeschreibung des Bilds für Barrierefreiheit. |
 |[-IsDefault]           | Eine Option, die das Websitedesign auf die Standardwebsitevorlage anwendet. Weitere Informationen finden Sie unter [Anpassen eines standardmäßigen Websitedesigns](customize-default-site-design.md). |
 
-Nachfolgend finden Sie ein Beispiel für das Erstellen eines neues Websitedesigns.
+Im folgenden Beispiel wird ein neues Websitedesign erstellt.
 
 ```powershell
 C:\> Add-SPOSiteDesign `
@@ -105,7 +105,7 @@ Add-SPOSiteScript
 | -Content     | JSON-Wert, der das Skript beschreibt. Weitere Informationen finden Sie unter [JSON-Referenz](site-design-json-schema.md).|
 | -Description | Eine Beschreibung des Skripts. |
 
-Nachfolgend finden Sie ein Beispiel für das Hinzufügen einer neuen Website aus dem folgenden Skript zu einer Datei.
+Im folgenden Beispiel wird eine neue Website aus dem folgenden Skript in einer Datei hinzugefügt.
 
 ```json
 {
@@ -134,7 +134,7 @@ Get-SPOSiteDesign
 |--------------|--------------|
 | [-Identity]  | Die ID des abzurufenden Websitedesigns. |
 
-Nachfolgend finden Sie ein Beispiel und eine Beispielantwort für das Abrufen von Websitedesigndetails.
+Das folgende Beispiel und die Beispielantwort zeigen, wie Sie Details zum Design der Website erhalten.
 
 ```powershell
 PS C:\> Get-SPOSiteDesign 44252d09-62c4-4913-9eb0-a2a8b8d7f863
@@ -163,7 +163,7 @@ Get-SPOSiteDesignRights
 |--------------|--------------|
 | [-Identity]  | Die ID des Websitedesigns zum Abrufen von Bereichsinformationen. |
 
-Nachfolgend finden Sie ein Beispiel zum Abrufen der Berechtigungen für ein Websitedesign.
+Im folgenden Beispiel werden die Rechte für ein Websitedesign abgerufen.
 
 ```powershell
 PS C:\> Get-SPOSiteDesignRights 607aed52-6d61-490a-b692-c0f58a6981a1
@@ -189,7 +189,7 @@ Get-SPOSiteScript
 |--------------|--------------|
 | [-Identity]  | Die ID des Websiteskripts, über das Informationen abgerufen werden sollen. |
 
-Nachfolgend finden Sie ein Beispiel dazu, wie Skriptinformationen für eine bestimmte Skript-ID abgerufen werden.
+Das folgende Beispiel zeigt, wie Skriptinformationen für eine bestimmte Skript-ID abgerufen werden.
 
 ```powershell
 PS C:\scripts> Get-SPOSiteScript 07702c07-0485-426f-b710-4704241caad9
@@ -231,7 +231,7 @@ Grant-SPOSiteDesignRights
 | -Principals  | Eine oder mehrere Prinzipale, für die Berechtigungen hinzugefügt werden sollen. |
 | -Rights      | Ist immer auf den Wert **View** festgelegt. Alle Benutzer oder Gruppen mit Anzeigeberechtigungen können das Websitedesign anzeigen und verwenden. |
 
-Nachfolgend finden Sie ein Beispiel, wie Anzeigeberechtigungen für ein Websitedesign für einen Nestor (ein Benutzer auf der fiktiven Contoso-Website) erteilt werden.
+Im folgenden Beispiel wird gezeigt, wie Sie einem Benutzer (Nestor) auf der fiktiven Contoso-Website Anzeigeberechtigungen für ein Websitedesign erteilen können.
 
 ```powershell
 PS C:\> Grant-SPOSiteDesignRights `
@@ -256,7 +256,7 @@ Entfernt ein Websitedesign. Dieses wird nicht mehr in der Benutzeroberfläche zu
 |--------------|--------------|
 | [-Identity]  | Die ID des zu entfernenden Websitedesigns. |
 
-Nachfolgend finden Sie ein Beispiel, in dem gezeigt wird, wie ein Websitedesign entfernt wird.
+Das folgende Beispiel zeigt, wie Sie ein Websitedesign entfernen.
 
 ```powershell
 
@@ -300,7 +300,7 @@ Revoke-SPOSiteDesignRights
 | [-Identity]  | Die ID des Websitedesigns, aus dem Berechtigungen widerrufen werden sollen. |
 | -Principals  | Mindestens ein Prinzipal zum Widerrufen von Berechtigungen im angegebenen Websitedesign. |
 
-Nachfolgend finden Sie ein Beispiel, in dem gezeigt wird, wie Berechtigungen für ein Websitedesign für einen Nestor widerrufen werden.
+Das folgende Beispiel zeigt, wie Sie Berechtigungen für ein Websitedesign für Nestor widerrufen.
 
 ```powershell
 PS C:\> Revoke-SPOSiteDesignRights 44252d09-62c4-4913-9eb0-a2a8b8d7f863 `
@@ -313,7 +313,8 @@ PS C:\> Revoke-SPOSiteDesignRights 44252d09-62c4-4913-9eb0-a2a8b8d7f863 `
 ## Set-SPOSiteScript (TBD)
 -->
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Artikel
 
 - [JSON-Schemareferenz](site-design-json-schema.md)
-- [REST-API-](site-design-rest-api.md) Anwenden eines Bereichs auf Ihr Websitedesign (site-design-scoping.md)
+- [REST API](site-design-rest-api.md)
+- [Anwenden eines Bereichs auf Ihr Websitedesign](site-design-scoping.md)

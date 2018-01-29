@@ -1,33 +1,32 @@
 ---
-title: Bereitstellen Ihres clientseitigen SharePoint-Webparts in einem CDN
-ms.date: 12/05/2017
+title: Bereitstellen Ihres clientseitigen SharePoint-Webparts im Azure CDN
+description: "Erstellen Sie ein neues Beispielwebpart, und stellen Sie seine Objekte in einem Azure CDN bereit, statt das Office 365 CDN als Hostinglösung zu verwenden."
+ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 2ac3b6e8b091fdbd8223e902aec70860ae25ecfd
-ms.sourcegitcommit: c57fc0e802661b0771f8b022964b6956ab4f6caf
+ms.openlocfilehash: 2fe92081817625758c480b1ac7d0af3ac92aa8f1
+ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="deploy-your-sharepoint-client-side-web-part-to-azure-cdn"></a>Bereitstellen Ihres clientseitigen SharePoint-Webparts im Azure CDN
 
-Dieser Artikel enthält Informationen zum Erstellen eines neuen Beispielwebparts und zum Bereitstellen der zugehörigen Objekte in einem Azure CDN als Hostinglösung, anstelle des standardmäßigen Office 365 CDN. Sie verwenden ein Azure-Speicherkonto, das in ein CDN integriert ist, um Ihre Ressourcen bereitzustellen. Die Buildtools von SharePoint Framework bieten eine sofort nutzbare Unterstützung für die Bereitstellung auf einem Azure-Speicherkonto. Sie können die Dateien jedoch auch manuell an einen CDN-Anbieter Ihrer Wahl oder nach SharePoint hochladen.
+Erstellen Sie ein neues Beispielwebpart, und stellen Sie seine Objekte in einem Azure Content Delivery Network (CDN) bereit, statt das Office 365 CDN als Hostinglösung zu verwenden. Sie verwenden ein Azure-Speicherkonto, das in ein CDN integriert ist, um Ihre Ressourcen bereitzustellen. Die Buildtools von SharePoint Framework bieten eine sofort nutzbare Unterstützung für die Bereitstellung auf einem Azure-Speicherkonto. Sie können die Dateien jedoch auch manuell an einen CDN-Anbieter Ihrer Wahl oder nach SharePoint hochladen.
 
 > [!NOTE]
 > Es gibt mehrere unterschiedliche Hostingoptionen für Webpart-Objekte. In diesem Lernprogramm steht die Option „Azure CDN“ im Vordergrund, Sie können jedoch auch das [Office 365 CDN](./hosting-webpart-from-office-365-cdn.md) verwenden oder einfach Ihre Objekt aus der SharePoint-Bibliothek aus dem Mandanten hosten. Im letzteren Fall würden Sie nicht von den CDN-Leistungssteigerungen profitieren, im Hinblick auf die Funktionalität wäre dies jedoch möglich. Technisch gesehen wäre jeder Ort zum Hosten der Objekte für Endbenutzer denkbar, auf den Endbenutzer über HTTP zugreifen können.
 
-## <a name="configure-azure-storage-account"></a>Konfigurieren eines Azure-Speicherkontos
+## <a name="configure-an-azure-storage-account"></a>Konfigurieren eines Azure-Speicherkontos
 
-Konfigurieren Sie ein Azure-Speicherkonto, und integrieren Sie es in das CDN.
-
-Sie können die Anweisungen im Artikel [Integrieren eines Speicherkontos in CDN]((https://azure.microsoft.com/de-DE/documentation/articles/cdn-create-a-storage-account-with-cdn/)) zusammen mit den detaillierten Schritten in diesem Artikel verwenden, um ein Azure -Speicherkonto zu erstellen und dieses in das CDN zu integrieren. Sie benötigen die folgenden Informationen:
+Um ein Azure-Speicherkonto zu konfigurieren und in das CDN zu integrieren, befolgen Sie die Anweisungen unter [Integrieren eines Azure-Speicherkontos in CDN](https://docs.microsoft.com/de-DE/azure/cdn/cdn-create-a-storage-account-with-cdn) sowie die detaillierten Schritte in diesem Artikel. 
 
 ### <a name="storage-account-name"></a>Speicherkontoname
 
-Dies ist der Name, den Sie zum Erstellen des Speicherkontos verwendet haben, wie in [Schritt 1: Erstellen eines Speicherkontos]((https://azure.microsoft.com/de-DE/documentation/articles/cdn-create-a-storage-account-with-cdn/)#step-1-create-a-storage-account) beschrieben.
+Dies ist der Name, den Sie zum Erstellen des Speicherkontos verwendet haben, wie in [Schritt 1: Erstellen eines Speicherkontos](https://docs.microsoft.com/de-DE/azure/cdn/cdn-create-a-storage-account-with-cdn#step-1-create-a-storage-account) beschrieben.
 
 Im folgenden Screenshot ist **spfxsamples** der Name des Speicherkontos.
 
-![Screenshots, auf dem die Seite „Erstellen eines neues Speicherkontos“ dargestellt ist](../../../images/deploy-create-storage-account.png)
+![Screenshot, auf dem die Seite „Erstellen eines neues Speicherkontos“ dargestellt ist](../../../images/deploy-create-storage-account.png)
 
 Auf diese Weise wird der neue Speicherkontoendpunkt **spfxsamples.blob.core.windows.net** erstellt. 
 
@@ -55,239 +54,237 @@ Wählen Sie im Dashboard des Speicherkontos die Option **Tastenkombination** im 
 
 Erstellen Sie ein neues CDN-Profil, und weisen Sie den CDN-Endpunkt diesem BLOB-Container zu.
 
-Erstellen Sie ein neues CDN-Profil, wie unter [Schritt 2: Erstellen eines neuen CDN-Profils]((https://azure.microsoft.com/de-DE/documentation/articles/cdn-create-a-storage-account-with-cdn/)#step-2-create-a-new-cdn-profile) beschrieben.
+1. Erstellen Sie ein neues CDN-Profil, wie unter [Schritt 2: Aktivieren von CDN für das Speicherkonto](https://docs.microsoft.com/de-DE/azure/cdn/cdn-create-a-storage-account-with-cdn#step-2-enable-cdn-for-the-storage-account) beschrieben (Scrollen Sie in Schritt 2 nach unten zu **So erstellen Sie ein neues CDN-Profil**).
 
-Im folgenden Screenshot ist **spfxwebparts** der Name des CDN-Profils.
+  Im folgenden Screenshot ist **spfxwebparts** der Name des CDN-Profils.
 
-![Screenshot zur Erstellung eines neuen CDN-Profils](../../../images/deploy-create-cdn-profile.png)
+  ![Screenshot zur Erstellung eines neuen CDN-Profils](../../../images/deploy-create-cdn-profile.png)
 
-Erstellen Sie einen CND-Endpunkt, wie unter [Schritt 3: Erstellen eines neuen CDN-Endpunkts]((https://azure.microsoft.com/de-DE/documentation/articles/cdn-create-a-storage-account-with-cdn/)#step-3-create-a-new-cdn-endpoint) beschrieben.
+2. Erstellen Sie einen CDN-Endpunkt, wie unter [Schritt 2: Aktivieren von CDN für das Speicherkonto](https://docs.microsoft.com/de-DE/azure/cdn/cdn-create-a-storage-account-with-cdn#step-2-enable-cdn-for-the-storage-account) beschrieben. Der CDN-Endpunkt wird mit der folgenden URL erstellt:`http://spfxsamples.azureedge.net`
 
-Im folgenden Screenshot ist **spfxsamples** beispielsweise der Endpunktname **Speicher** ist der Ursprungstyp, und **spfxsamples.blob.core.windows.net** ist das Speicherkonto.
+  Im folgenden Screenshot ist **spfxsamples** beispielsweise der Endpunktname **Speicher** ist der Ursprungstyp, und **spfxsamples.blob.core.windows.net** ist das Speicherkonto.
 
-![Screenshot zum Erstellen eines CDN-Endpunkts](../../../images/deploy-create-cdn-endpoint.png)
+  <img alt="Screenshot of create CDN endpoint" src="../../../images/deploy-create-cdn-endpoint.png" width="700">
 
-Der CDN-Endpunkt wird mit folgender URL erstellt: http://spfxsamples.azureedge.net
-
-Da Sie den CDN-Endpunkt dem Speicherkonto zugewiesen haben, können Sie auch unter der folgenden URL auf den BLOB-Container zugreifen: http://spfxsamples.azureedge.net/azurehosted-webpart/
+Da Sie den CDN-Endpunkt dem Speicherkonto zugeordnet haben, können Sie auch unter der folgenden URL auf den BLOB-Container zugreifen: `http://spfxsamples.azureedge.net/azurehosted-webpart/`
 
 Beachten Sie jedoch, dass Sie die Dateien noch nicht bereitgestellt haben.
 
-## <a name="creating-a-new-web-part-project"></a>Erstellen eines neuen Webpartprojekts
+## <a name="create-a-new-web-part-project"></a>Erstellen eines neuen Webpart-Projekts
 
-Erstellen Sie an einem Speicherort Ihrer Wahl ein neues Projektverzeichnis:
+1. Erstellen Sie an einem Speicherort Ihrer Wahl ein neues Projektverzeichnis:
 
-```
-md azurehosted-webpart
-```
+  ```
+  md azurehosted-webpart
+  ```
 
-Wechseln Sie in das Projektverzeichnis:
+2. Wechseln Sie in das Projektverzeichnis:
 
-```
-cd azurehosted-webpart
-```
+  ```
+  cd azurehosted-webpart
+  ```
 
-Führen Sie den Yeoman-SharePoint-Generator aus, um eine neue SharePoint Framework-Lösung zu erstellen:
+3. Führen Sie den Yeoman-SharePoint-Generator aus, um eine neue SharePoint Framework-Lösung zu erstellen:
 
-```
-yo @microsoft/sharepoint
-```
+  ```
+  yo @microsoft/sharepoint
+  ```
     
-Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
+4. Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
-* Akzeptieren Sie den Standardnamen **azurehosted-webpart** als Lösungsnamen, und drücken Sie die **EINGABETASTE**.
-* Wählen Sie **SharePoint Online only (latest)**, und drücken Sie die **EINGABETASTE**.
-* Wählen Sie als Speicherort für die Dateien die Option **Use the current folder** aus.
-* Wählen Sie **y**, um die mandatenweite Bereitstellung zu verwenden, mit der das Webpart auf allen Websites zur Verfügung steht, sobald es bereitgestellt wird. 
-* Wählen Sie **Webpart** als den zu erstellenden Typ von clientseitiger Komponente aus. 
+  * Akzeptieren Sie den Standardnamen **azurehosted-webpart** als Lösungsnamen, und drücken Sie die **EINGABETASTE**.
+  * Wählen Sie **SharePoint Online only (latest)**aus, und drücken Sie die **EINGABETASTE**.
+  * Wählen Sie als Speicherort für die Dateien die Option **Use the current folder** aus.
+  * Wählen Sie **y** aus, um die mandantenweite Bereitstellung zu verwenden, mit der das Webpart auf allen Websites zur Verfügung steht, sobald es bereitgestellt wird. 
+  * Wählen Sie **Webpart** als den zu erstellenden Typ von clientseitiger Komponente aus. 
 
-Über die nächsten Eingabeaufforderungen werden spezifische Informationen zum Webpart abgefragt:
+5. Über die nächsten Eingabeaufforderungen werden spezifische Informationen zum Webpart abgefragt:
 
-* Verwenden Sie **AzureCDN** als Namen des Webparts, und drücken Sie die **EINGABETASTE**.
-* Akzeptieren Sie die Standardbeschreibung **AzureCDN description** als Beschreibung für Ihr Webpart, und drücken Sie die **EINGABETASTE**.
-* Akzeptieren Sie die Standardeinstellung **No javaScript web framework** als das zu verwendende Framework, und drücken Sie die **EINGABETASTE**.
+  * Verwenden Sie **AzureCDN** als Namen des Webparts, und drücken Sie die **EINGABETASTE**.
+  * Akzeptieren Sie die Standardbeschreibung **AzureCDN description** als Beschreibung für Ihr Webpart, und drücken Sie die **EINGABETASTE**.
+  * Akzeptieren Sie die Standardeinstellung **No javaScript web framework** als das zu verwendende Framework, und drücken Sie dann die **EINGABETASTE**.
 
-![Yeoman-Generator-Fragen für das neu erstellte Webpart](../../../images/cdn-azure-create-webpart-yo.png)
+  ![Yeoman-Generator-Fragen für das neu erstellte Webpart](../../../images/cdn-azure-create-webpart-yo.png)
 
-An diesem Punkt erstellt Yeoman ein Gerüst für die Lösungsdateien und installiert die erforderlichen Abhängigkeiten. Das kann einige Minuten dauern. Yeoman nimmt auch Ihr benutzerdefiniertes Webpart in das Projektgerüst auf.
+  An diesem Punkt erstellt Yeoman ein Gerüst für die Lösungsdateien und installiert die erforderlichen Abhängigkeiten. Das kann einige Minuten dauern. Yeoman nimmt auch Ihr benutzerdefiniertes Webpart in das Projektgerüst auf.
 
-Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
+6. Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 
-```sh
-npm shrinkwrap
-```
+  ```sh
+  npm shrinkwrap
+  ```
 
-Geben Sie Folgendes ein, um das Webpart-Projekt in Visual Studio Code zu öffnen:
+7. Geben Sie Folgendes ein, um das Webpart-Projekt in Visual Studio Code zu öffnen:
 
-```
-code .
-```
+  ```
+  code .
+  ```
 
-## <a name="configure-solution-not-to-use-default-settings"></a>Konfigurieren der Lösung für die Nichtverwendung der Standardeinstellungen
+## <a name="configure-the-solution-not-to-use-default-settings"></a>Konfigurieren der Lösung für die Nichtverwendung der Standardeinstellungen
 
-Öffnen Sie **package-solution.json** im Ordner **config**.
+1. Öffnen Sie **package-solution.json** im Ordner **config**.
 
-Hier werden die Lösungspakete gesteuert.
+  Hier werden die Lösungspakete gesteuert.
 
-Ändern Sie den `includeClientSideAssets`-Wert zu **false**, damit clientseitige Objekte nicht in die .sppkg-Datei gepackt werden, was dem Standardverhalten entspricht. Da Objekte aus dem externen CDN gehostet werden, sollen sie nicht im dem Lösungspaket enthalten sein. Die Konfiguration könnte wie folgt aussehen.
+2. Ändern Sie den `includeClientSideAssets`-Wert zu **false**, damit clientseitige Objekte nicht in die .sppkg-Datei gepackt werden, was dem Standardverhalten entspricht. Da Objekte aus einem externen CDN gehostet werden, sollen sie nicht im Lösungspaket enthalten sein. Die Konfiguration sollte etwa wie folgt aussehen.
 
-``` json
-{
-  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
-  "solution": {
-    "name": "azurehosted-webpart-client-side-solution",
-    "id": "a4e95ed1-d096-4573-8a57-d0cc3b52da6a",
-    "version": "1.0.0.0",
-    "includeClientSideAssets": false,
-    "skipFeatureDeployment": true
-  },
-  "paths": {
-    "zippedPackage": "solution/azurehosted-webpart.sppkg"
+  ``` json
+  {
+    "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+      "name": "azurehosted-webpart-client-side-solution",
+      "id": "a4e95ed1-d096-4573-8a57-d0cc3b52da6a",
+      "version": "1.0.0.0",
+      "includeClientSideAssets": false,
+      "skipFeatureDeployment": true
+    },
+    "paths": {
+      "zippedPackage": "solution/azurehosted-webpart.sppkg"
+    }
   }
-}
-```
+  ```
 
-> [!NOTE]
-> `skipFeatureDeployment`-Einstellung lautet **true**, da die Antwort für die mandantenweite Bereitstellung in dem Yeoman-Ablauf „y“ lautete. Dies bedeutet, dass Sie die Lösung erst auf der Website installieren müssen, wenn das Webpart verfügbar ist. Die Bereitstellung und Genehmigung des Lösungspakets in dem App-Katalog des Mandanten reicht aus, damit das Webpart auf allen Websites in dem jeweiligen Mandanten zur Verfügung steht.
+  > [!NOTE]
+  > Die `skipFeatureDeployment`-Einstellung lautet **true**, da die Antwort für die mandantenweite Bereitstellung in dem Yeoman-Ablauf „y“ lautete. Dies bedeutet, dass Sie die Lösung erst auf der Website installieren müssen, wenn das Webpart verfügbar ist. Die Bereitstellung und Genehmigung des Lösungspakets in dem App-Katalog des Mandanten reicht aus, damit das Webpart auf allen Websites in dem jeweiligen Mandanten zur Verfügung steht.
 
 
 ## <a name="configure-azure-storage-account-details"></a>Konfigurieren der Details eines Azure-Speicherkontos
 
-Öffnen Sie **deploy-azure-storage.json** im Ordner **config**.
+1. Öffnen Sie **deploy-azure-storage.json** im Ordner **config**.
 
-Das ist die Datei, die die Details zu Ihrem Speicherkonto enthält.
+  Das ist die Datei, die die Details zu Ihrem Speicherkonto enthält.
 
-```json
-{
-  "$schema": "https://dev.office.com/json-schemas/spfx-build/deploy-azure-storage.schema.json",
-  "workingDir": "./temp/deploy/",
-  "account": "<!-- STORAGE ACCOUNT NAME -->",
-  "container": "azurehosted-webpart",
-  "accessKey": "<!-- ACCESS KEY -->"
-}
-```
+  ```json
+  {
+    "$schema": "https://dev.office.com/json-schemas/spfx-build/deploy-azure-storage.schema.json",
+    "workingDir": "./temp/deploy/",
+    "account": "<!-- STORAGE ACCOUNT NAME -->",
+    "container": "azurehosted-webpart",
+    "accessKey": "<!-- ACCESS KEY -->"
+  }
+  ```
 
-Ersetzen Sie **Konto**, **Container** und **accessKey** jeweils mit dem Speicherkontonamen, dem BLOB-Container und der Tastenkombination für das Speicherkonto.
+2. Ersetzen Sie **account**, **container** und **accessKey** jeweils mit dem Speicherkontonamen, dem BLOB-Container und der Tastenkombination für das Speicherkonto.
 
-**workingDir** ist das Verzeichnis, in dem sich die Webpartressourcen befinden.
+  **workingDir** ist das Verzeichnis, in dem sich die Webpartressourcen befinden.
 
-In diesem Beispiel sieht diese Datei mit dem zuvor erstellten Speicherkonto wie folgt aus:
+  In diesem Beispiel sieht diese Datei mit dem zuvor erstellten Speicherkonto wie folgt aus:
 
-```json
-{
-  "workingDir": "./temp/deploy/",
-  "account": "spfxsamples",
-  "container": "azurehosted-webpart",
-  "accessKey": "q1UsGWocj+CnlLuv9ZpriOCj46ikgBbDBCaQ0FfE8+qKVbDTVSbRGj41avlG73rynbvKizZpIKK9XpnpA=="
-}
-```
+  ```json
+  {
+    "workingDir": "./temp/deploy/",
+    "account": "spfxsamples",
+    "container": "azurehosted-webpart",
+    "accessKey": "q1UsGWocj+CnlLuv9ZpriOCj46ikgBbDBCaQ0FfE8+qKVbDTVSbRGj41avlG73rynbvKizZpIKK9XpnpA=="
+  }
+  ```
 
-Speichern Sie die Datei.
+3. Speichern Sie die Datei.
 
-## <a name="configuring-web-part-to-load-from-cdn"></a>Konfigurieren von Webparts, die aus dem CDN geladen werden
+## <a name="configure-the-web-part-to-load-from-cdn"></a>Konfigurieren des Webparts für das Laden aus dem CDN
 
 Damit das Webpart aus Ihrem CDN geladen wird, müssen Sie ihm den CDN-Pfad mitteilen.
 
-Wechseln Sie zu Visual Studio Code, und öffnen Sie **write-manifests.json** aus dem Ordner **config**.
+1. Wechseln Sie zu Visual Studio Code, und öffnen Sie **write-manifests.json** aus dem Ordner **config**.
 
-Geben Sie den Pfad der CDN-Basis für die **cdnBasePath**-Eigenschaft ein.
+2. Geben Sie den Pfad der CDN-Basis für die **cdnBasePath**-Eigenschaft ein.
 
-```json
-{
-  "cdnBasePath": "<!-- PATH TO CDN -->"
-}
-```
+  ```json
+  {
+    "cdnBasePath": "<!-- PATH TO CDN -->"
+  }
+  ```
 
-In diesem Beispiel sieht diese Datei mit dem zuvor erstellten CDN-Profil wie folgt aus:
+  In diesem Beispiel sieht diese Datei mit dem zuvor erstellten CDN-Profil wie folgt aus:
 
-```json
-{
-  "cdnBasePath": "https://spfxsamples.azureedge.net/azurehosted-webpart/"
-}
-```
+  ```json
+  {
+    "cdnBasePath": "https://spfxsamples.azureedge.net/azurehosted-webpart/"
+  }
+  ```
 
-> [!NOTE]
-> Der CDN-Basispfad ist der CDN-Endpunkt mit dem BLOB-Container.
+  > [!NOTE]
+  > Der CDN-Basispfad ist der CDN-Endpunkt mit dem BLOB-Container.
 
-Speichern Sie die Datei.
+3. Speichern Sie die Datei.
 
 
-## <a name="prepare-web-part-assets-to-deploy"></a>Vorbereiten der bereitzustellenden Webpartressourcen
+## <a name="prepare-the-web-part-assets-to-deploy"></a>Vorbereiten der bereitzustellenden Webpartressourcen
 
 Bevor Sie die Ressourcen in das CDN hochladen, müssen Sie sie erstellen.
 
-Wechseln Sie zur Konsole, und führen Sie die folgenden `gulp`-Aufgabe aus:
+1. Wechseln Sie zur Konsole, und führen Sie die folgende `gulp`-Aufgabe aus:
 
-```
-gulp bundle --ship
-```
+  ```
+  gulp bundle --ship
+  ```
 
-Dadurch werden die minimierten Ressourcen erstellt, die zum Hochladen an den CDN-Anbieter erforderlich sind. In `--ship` ist das Buildtool zum Erstellen für die Verteilung dargestellt. Beachten Sie außerdem die Ausgabe der Buildtools, die angibt, dass das Build-Ziel SHIP ist.
+  Dadurch werden die minimierten Ressourcen erstellt, die zum Hochladen an den CDN-Anbieter erforderlich sind. In `--ship` ist das Buildtool zum Erstellen für die Verteilung dargestellt. Beachten Sie außerdem, dass die Ausgabe der Buildtools angibt, dass das Build-Ziel SHIP ist.
 
-```
-Build target: SHIP
-[21:23:01] Using gulpfile ~/apps/azurehosted-webpart/gulpfile.js
-[21:23:01] Starting gulp
-[21:23:01] Starting 'default'...
-```
+  ```
+  Build target: SHIP
+  [21:23:01] Using gulpfile ~/apps/azurehosted-webpart/gulpfile.js
+  [21:23:01] Starting gulp
+  [21:23:01] Starting 'default'...
+  ```
 
-Die minimierten Ressourcen befinden sich im `temp\deploy`-Verzeichnis.
+  Die minimierten Ressourcen befinden sich im `temp\deploy`-Verzeichnis.
 
 ## <a name="deploy-assets-to-azure-storage"></a>Bereitstellen von Ressourcen für Azure Storage
 
-Wechseln Sie zur Konsole des **azurehosted-webpart**-Projektverzeichnisses.
+1. Wechseln Sie zur Konsole des **azurehosted-webpart**-Projektverzeichnisses.
 
-Geben Sie die gulp-Aufgabe an, um die Ressourcen in Ihrem Speicherkonto bereitzustellen:
+2. Geben Sie die gulp-Aufgabe ein, um die Ressourcen in Ihrem Speicherkonto bereitzustellen:
 
-```
-gulp deploy-azure-storage
-```
+  ```
+  gulp deploy-azure-storage
+  ```
 
-Dadurch wird das Webpartbundle zusammen mit anderen Ressourcen wie JavaScript- und CSS-Dateien im CDN bereitgestellt.
+  Dadurch wird das Webpartbundle zusammen mit anderen Ressourcen wie JavaScript- und CSS-Dateien im CDN bereitgestellt.
 
 ## <a name="deploy-the-updated-package"></a>Bereitstellen des aktualisierten Pakets
 
-### <a name="package-the-solution"></a>Verpacken der Lösung
+### <a name="to-package-the-solution"></a>So verpacken Sie die Lösung
 
 Da Sie das Webpartbundle geändert haben, müssen Sie das Paket erneut im App-Katalog bereitstellen. Sie haben **--ship** verwendet, um minimierte Ressourcen für die Verteilung zu generieren.
 
-Wechseln Sie zur Konsole des **azurehosted-webpart**-Projektverzeichnisses.
+1. Wechseln Sie zur Konsole des **azurehosted-webpart**-Projektverzeichnisses.
 
-Geben Sie die gulp-Aufgabe zum Verpacken der clientseitigen Lösung an, dieses Mal mit gesetztem `--ship`-Flag. Dadurch wird die Aufgabe gezwungen, den im vorherigen Schritt konfigurierten CDN-Basispfad aufzugreifen:
+2. Geben Sie die gulp-Aufgabe zum Verpacken der clientseitigen Lösung an, dieses Mal mit gesetztem `--ship`-Flag. Dadurch wird die Aufgabe gezwungen, den im vorherigen Schritt konfigurierten CDN-Basispfad aufzugreifen:
 
-```
-gulp package-solution --ship
-```
+  ```
+  gulp package-solution --ship
+  ```
 
-Dadurch wird das aktualisierte clientseitige Lösungspaket im Ordner **sharepoint\solution** erstellt.
+  Dadurch wird das aktualisierte clientseitige Lösungspaket im Ordner **sharepoint\solution** erstellt.
 
-### <a name="upload-to-your-app-catalog"></a>Hochladen in den App-Katalog
+### <a name="to-upload-to-your-app-catalog"></a>So laden Sie in den App-Katalog hoch
 
-Laden Sie das clientseitige Lösungspaket in den App-Catalog hoch, oder verwenden Sie Drag & Drop. Beachten Sie, dass die URL auf die in den vorherigen Schritten konfigurierte URL des Azure CDN verweist. 
+1. Laden Sie das clientseitige Lösungspaket in den App-Catalog hoch, oder verwenden Sie Drag & Drop. Beachten Sie, dass die URL auf die in den vorherigen Schritten konfigurierte URL des Azure CDN verweist. 
 
-**Aktivieren Sie das Kontrollkästchen**, das angibt, dass die Lösung automatisch auf allen Websites in der Organisation bereitgestellt werden soll.
+2. Aktivieren Sie das Kontrollkästchen, um anzugeben, dass die Lösung automatisch auf allen Websites in der Organisation bereitgestellt werden kann.
 
-![Screenshot der Aufforderung für die Vertrauensstellung zum clientseitigen Lösungspaket](../../../images/cdn-azure-trust-hosted-app-catalog.png)
+  ![Screenshot der Aufforderung für die Vertrauensstellung zum clientseitigen Lösungspaket](../../../images/cdn-azure-trust-hosted-app-catalog.png)
 
-Wählen Sie **Bereitstellen** aus.
+3. Wählen Sie **Bereitstellen**.
 
-Der App-Katalog verfügt nun über das clientseitige Lösungspaket, in das das Webpartbundle aus dem CDN geladen wird.
+  Der App-Katalog verfügt nun über das clientseitige Lösungspaket, in das das Webpartbundle aus dem CDN geladen wird.
 
 ## <a name="test-the-helloworld-web-part"></a>Testen des HelloWorld-Webparts
 
-Wechseln Sie zu einer beliebigen SharePoint-Website in Ihrem Mandanten, und wählen Sie **Seite hinzufügen** in dem Menü mit dem *Zahnrad*.
+1. Wechseln Sie zu einer beliebigen SharePoint-Website in Ihrem Mandanten, und wählen Sie **Seite hinzufügen** in dem Menü mit dem *Zahnrad* aus.
 
-**Bearbeiten** Sie die Seite, und wählen Sie das **AzureCDN**-Webpart in der Webpartauswahl, um zu bestätigen, dass die Bereitstellung erfolgreich war.
+2. **Bearbeiten** Sie die Seite, und wählen Sie das **AzureCDN**-Webpart in der Webpartauswahl aus, um zu bestätigen, dass die Bereitstellung erfolgreich war.
 
-![Screenshot der Aufforderung für die Vertrauensstellung zum clientseitigen Lösungspaket](../../../images/cdn-azure-picker-selection-page.png)
+  ![Screenshot der Aufforderung für die Vertrauensstellung zum clientseitigen Lösungspaket](../../../images/cdn-azure-picker-selection-page.png)
 
-Beachten Sie, dass **gulp serve** nicht ausgeführt wird und dass deshalb nichts von **localhost** kommt. Inhalt wird vom Azure CDN bereitgestellt. Sie können dies auch prüfen, indem Sie in Ihrem Browser F12 drücken und sicherstellen, dass das Azure CDN als Quelle für die Seitenobjekte angezeigt wird.
+3. Beachten Sie, dass **gulp serve** nicht ausgeführt wird und dass deshalb nichts von **localhost** kommt. Inhalt wird vom Azure CDN bereitgestellt. Sie können dies auch prüfen, indem Sie in Ihrem Browser F12 drücken und sicherstellen, dass das Azure CDN als Quelle für die Seitenobjekte angezeigt wird.
 
-![Quellen mit der URL des Azure CDN](../../../images/cdn-azure-sources-browser-dev-tools.png)
+  ![Quellen mit der URL des Azure CDN](../../../images/cdn-azure-sources-browser-dev-tools.png)
 
-## <a name="deploying-to-other-cdns"></a>Bereitstellen auf anderen CDNs
+## <a name="deploy-to-other-cdns"></a>Bereitstellen auf anderen CDNs
 
-Um die Ressourcen auf Ihrem bevorzugten CDN-Anbieter bereitzustellen, können Sie die Dateien aus dem Ordner **tmp\deploy** kopieren. Zum Generieren der Ressourcen für die Verteilung führen Sie den folgenden gulp-Befehl so aus wie zuvor den **--ship**-Parameter:
+Um die Ressourcen auf Ihrem bevorzugten CDN-Anbieter bereitzustellen, können Sie die Dateien aus dem Ordner **tmp\deploy** kopieren. Zum Generieren der Ressourcen für die Verteilung führen Sie den folgenden gulp-Befehl wie zuvor mit dem Parameter **--ship** aus:
 
 ```
 gulp bundle --ship
@@ -296,4 +293,8 @@ gulp bundle --ship
 Solange Sie die **cdnBasePath**-Eigenschaft entsprechend aktualisieren, werden Ihre Dateien ordnungsgemäß geladen.
 
 > [!NOTE]
-> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository]((https://github.com/SharePoint/sp-dev-docs/issues)). Vielen Dank im Voraus für Ihr Feedback.
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository](https://github.com/SharePoint/sp-dev-docs/issues). Vielen Dank im Voraus für Ihr Feedback.
+
+## <a name="see-also"></a>Weitere Artikel
+
+- [Erstellen des ersten clientseitigen SharePoint-Webparts](build-a-hello-world-web-part.md)
