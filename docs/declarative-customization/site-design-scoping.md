@@ -1,17 +1,17 @@
 ---
 title: "Bereichsdefinition für den Zugriff auf SharePoint-Websitedesigns"
 description: "Legen Sie den Bereich für SharePoint-Websitedesigns fest, um zu steuern, wer diese anzeigen und darauf zugreifen kann."
-ms.date: 12/14/2017
-ms.openlocfilehash: c0896cab28a4c9cba3f74fbad8120061311004a2
-ms.sourcegitcommit: d9372f6009de1c1e48e272fd3629a99aed7fef9f
+ms.date: 01/08/2018
+ms.openlocfilehash: c4f69a020b5bda02aee56ade6b55a025e40b0088
+ms.sourcegitcommit: 9f492519d4eeb3f62a1fddc71cdca79263651a56
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="scoping-access-to-site-designs"></a>Bereichsdefinition für den Zugriff auf Websitedesigns
 
 > [!NOTE]
-> Websitedesigns und Websiteskripts befinden sich derzeit in der Vorschau und können ohne vorherige Ankündigung geändert werden. Sie werden in Produktionsumgebungen derzeit nicht unterstützt.
+> Websitedesigns und Websiteskripts befinden sich in der Vorschau und können ohne vorherige Ankündigung geändert werden. Sie werden derzeit nur für Produktionsumgebungen im Zielrelease unterstützt.
 
 Websitedesigns stehen standardmäßig allen Benutzern zur Verfügung. Sie können den Bereich von Websitedesigns jedoch so festlegen, dass diese nur für bestimmte Benutzer oder Gruppen verfügbar sind. Die Buchhaltungsabteilung verfügt beispielsweise über spezielle Websitedesigns, es macht aber vielleicht keinen Sinn, diese Websitedesigns für alle Personen freizugeben. In diesem Artikel wird erläutert, wie Sie steuern können, welche Benutzer und Gruppen bestimmte Websitedesigns anzeigen können.
 

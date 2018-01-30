@@ -1,11 +1,11 @@
 ---
 title: "Bewährte Methoden für SharePoint Online Webportal branding"
 ms.date: 11/03/2017
-ms.openlocfilehash: 9d56f027541f69f12c1d487f2a97b1dd47c61373
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 05579098b87cafdcdee5cc68dc4fe1d5486e82d8
+ms.sourcegitcommit: 86625a7b8efe74f2ace5c32a301197c5b7ee695f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="proven-practices-for-sharepoint-online-portal-branding"></a>Bewährte Methoden für SharePoint Online Webportal branding
 
@@ -44,7 +44,7 @@ In den folgenden Abschnitten besprechen wir, wie diese Anforderungen zu behandel
 <a name="sectionSection1"></a> Die folgenden allgemeinen Richtlinien sollten beim branding Portalen in einer SharePoint Online-Umgebung beachtet werden:
 1. Im SharePoint Online-Dienst ist ständig verbessern. Mit dem Dienst bereitgestellten Updates beeinträchtigen DOM-Struktur, von der im Feld Seiten und den Inhalt von der Feld-Dateien (z. B. Gestaltungsvorlagen). Entwickler müssen beachten Sie dies und darf nicht als nicht unterstützte anpassungsansätze (beispielsweise Position von bestimmten Element in DOM-Struktur der Seite) abhängig.
 2. Vermeiden Sie das Anpassen von Gestaltungsvorlagen. Wie bereits erwähnt, kann Updates auf den Dienst, die Struktur der Nutzung der Masterseiten Feld auswirken. Wenn Sie eine benutzerdefinierte Gestaltungsvorlage Kopieren des Inhalts der außerhalb der Gestaltungsvorlage Feld implementiert haben, müssen Sie weiter überwachen, wenn dies der Gestaltungsvorlage Feld in der nicht aktualisiert wird, und diese Änderungen in Ihre benutzerdefinierte Gestaltungsvorlage erneut zu implementieren. Andernfalls kann einige Funktionen von SharePoint starten falsch, verhält, wenn Ihre benutzerdefinierte Gestaltungsvorlage verwendet wird. Aus diesem Grund Anpassen von Gestaltungsvorlagen führt zu zusätzlichen Risiken und Wartungskosten wird, und es wird empfohlen, dies möglichst vermeiden.
-3. Individuelles branding persönlicher Websites (OneDrive for Business-Websites) wird **nicht** unterstützt. Es ist zulässig, benutzerdefinierte Farbschemas über Office 365-Mandanten Ebene branding-Einstellungen ([Anpassen der Office 365-Design für Ihre Organisation](https://support.office.com/en-us/article/Customize-the-Office-365-theme-for-your-organization-8275da91-7a48-4591-94ab-3123a3f79530)) anwenden
+3. Individuelles branding persönlicher Websites (OneDrive for Business-Websites) wird **nicht** unterstützt. Es ist zulässig, benutzerdefinierte Farbschemas über Office 365-Mandanten Ebene branding-Einstellungen ([Anpassen der Office 365-Design für Ihre Organisation](https://support.office.com/en-us/article/Customize-the-Office-365-theme-for-your-organization-8275da91-7a48-4591-94ab-3123a3f79530)) anwenden. *Beachten Sie* , die für die standardmäßige modernen Funktionen von OneDrive für Unternehmen gilt.
 4. SharePoint Online-Portale müssen als Teil der gesamten Office 365-Ökosystem berücksichtigt werden. Deshalb jedes Portal verfügt nun über Office 365-Suite-Leiste und anpassen, es ist **nicht** unterstützte (Siehe den Abschnitt **Office 365-Suite Leiste** unten).
 5. Bei der Planung von branding und die Struktur der Navigationskomponente ist es wichtig, denen Sie im [Portal Navigation Artikel](portal-navigation.md)beschriebenen Empfehlungen folgen.
 6. Beim Erweitern Portal Funktionalität über benutzerdefinierte Steuerelemente (Webparts) ist es wichtig, um Empfehlungen von [Portal Leistung Artikel](portal-performance.md)folgen.

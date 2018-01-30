@@ -1,19 +1,19 @@
 ---
 title: "Erstellen eines vollständigen SharePoint-Websitedesigns mithilfe des PnP-Bereitstellungsmoduls"
 description: "Erstellen eines vollständigen SharePoint-Websitedesigns mithilfe des PnP-Bereitstellungsmoduls"
-ms.date: 12/14/2017
-ms.openlocfilehash: 028a028822c234dcbbbad290c642ec03dd4b6392
-ms.sourcegitcommit: d9372f6009de1c1e48e272fd3629a99aed7fef9f
+ms.date: 01/08/2018
+ms.openlocfilehash: 102eec9fa09afa28bbdc5b40f73a9e254dd52bce
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="calling-the-pnp-provisioning-engine-from-a-site-script"></a>Aufrufen des PnP-Bereitstellungsmoduls über ein Websiteskript
 
 > [!NOTE]
 > Websitedesigns und Websiteskripts befinden sich derzeit in der Preview-Phase und können jederzeit geändert verwenden. Sie werden in Produktionsumgebungen derzeit nicht unterstützt.
 
-Websitedesigns sind eine hervorragende Möglichkeit, das Aussehen und Verhalten Ihrer Websitesammlungen zu standardisieren. Bestimmte Dinge lassen sich mit Websitedesigns jedoch nicht umsetzen. Beispielsweise ist es nicht möglich, jeder Seite eine Fußzeile hinzuzufügen. Mit dem PnP-Bereitstellungsmodul können Sie eine Vorlage erstellen, mit der Sie einen Application Customizer auf einer Website bereitstellen können. Ein solcher Application Customizer kann das Seitendesign aktualisieren und so beispielsweise eine Fußzeile auf jeder Seite registrieren. 
+Websitedesigns sind eine hervorragende Möglichkeit, das Aussehen und Verhalten Ihrer Websitesammlungen zu standardisieren. Bestimmte Dinge lassen sich mit Websitedesigns jedoch nicht umsetzen. Beispielsweise ist es nicht möglich, jeder Seite eine Fußzeile hinzuzufügen. Mit dem PnP-Bereitstellungsmodul können Sie eine Vorlage erstellen, mit der Sie einen Application Customizer für eine Website bereitstellen können. Ein solcher Application Customizer kann das Seitendesign aktualisieren und so beispielsweise eine Fußzeile auf jeder Seite registrieren. 
 
 In diesem Artikel wird beschrieben, wie Sie ein Websitedesign erstellen können, das eine PnP-Bereitstellungsvorlage auf eine Website anwendet. Die Vorlage wird einen Application Customizer hinzufügen, der eine Fußzeile rendert.
 

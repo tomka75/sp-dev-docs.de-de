@@ -3,11 +3,11 @@ title: Bereitstellen von SharePoint-Ressourcen aus Ihrem clientseitigen SharePoi
 description: "SharePoint-Objekte können im Rahmen der SharePoint Framework-Lösung bereitgestellt werden und werden auf SharePoint-Websites bereitgestellt, wenn die Lösung darauf installiert wird."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 73fc74a900be49b6647506f84ed04b06286bad8c
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 48a5262c322c74028abc10054b321bff104a3b24
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="provision-sharepoint-assets-from-your-sharepoint-client-side-web-part"></a>Bereitstellen von SharePoint-Ressourcen aus Ihrem clientseitigen SharePoint-Webpart
 
@@ -47,17 +47,17 @@ Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in 
 
 4. Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
-  * Akzeptieren Sie den Standardnamen **asset-deployment-webpart** als Lösungsnamen, und drücken Sie die **EINGABETASTE**.
-  * Wählen Sie **SharePoint Online only (latest)**, und drücken Sie dann die **EINGABETASTE**.
-  * Wählen Sie **Aktuellen Ordner verwenden** als Speicherort für die Dateien aus.
+  * Akzeptieren Sie den Standardnamen **asset-deployment-webpart** als Lösungsnamen, und drücken Sie die EINGABETASTE.
+  * Wählen Sie **SharePoint Online only (latest)** aus, und drücken Sie die EINGABETASTE.
+  * Wählen Sie die Option **Use the current folder** als Speicherort für die Dateien aus.
   * Wählen Sie **N**, damit die Erweiterung auf jeder Website explizit installiert werden muss, wenn sie verwendet wird. 
   * Wählen Sie **Webpart** als den zu erstellenden Typ von clientseitiger Komponente aus. 
 
 5. Über die nächsten Eingabeaufforderungen werden spezifische Informationen zum Webpart abgefragt:
 
-  * Geben Sie **AssetDeployment** als Webpartnamen ein, und drücken Sie die **EINGABETASTE**.
-  * Geben Sie**AssetDeployment-Webpart** als Beschreibung des Webparts ein, und drücken Sie die **EINGABETASTE**. 
-  * Akzeptieren Sie die Standardeinstellung **No javascript web framework** als Framework, und drücken Sie dann die **EINGABETASTE**, um fortzufahren.
+  * Geben Sie **AssetDeployment** als Namen des Webparts ein, und drücken Sie die EINGABETASTE.
+  * Geben Sie **AssetDeployment-Webpart** als Beschreibung des Webparts ein, und drücken Sie die EINGABETASTE. 
+  * Akzeptieren Sie die Standardeinstellung **No javascript web framework** als Framework, und drücken Sie dann die EINGABETASTE, um fortzufahren.
 
   ![Yeoman-Eingabeaufforderungen](../../../images/asset-deployment-yeoman.png)
 
@@ -314,7 +314,7 @@ Jetzt sind Sie bereit, die Lösung in SharePoint bereitzustellen. Da wir Ressour
 
 7. Klicken Sie auf der oberen Navigationsleiste rechts auf das Zahnradsymbol und anschließend auf **App hinzufügen**, um Ihre Apps-Seite aufzurufen.
 
-8. Geben Sie in das **Suchfeld** die Zeichenfolge **deployment** ein, und drücken Sie die **EINGABETASTE**, um Ihre Apps zu filtern.
+8. Geben Sie in das **Suchfeld** die Zeichenfolge **deployment** ein, und drücken Sie die EINGABETASTE, um Ihre Apps zu filtern.
 
   ![Suchen nach der App auf der Website](../../../images/tutorial-feature-solution-add-app.png)
 

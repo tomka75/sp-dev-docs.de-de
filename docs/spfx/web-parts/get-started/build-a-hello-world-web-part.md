@@ -3,11 +3,11 @@ title: "Erstellen Ihres ersten clientseitigen SharePoint-Webparts („Hello Worl
 description: Erstellen Sie ein neues Webpart-Projekt und zeigen Sie es in der Vorschau an.
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: e5d7f7c23d788638fba4df4a3c62cda243723d8a
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 454611f051ea34072a9196b42da41632cb993c4d
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="build-your-first-sharepoint-client-side-web-part-hello-world-part-1"></a>Erstellen Ihres ersten clientseitigen SharePoint-Webparts („Hello World“ Teil 1)
 
@@ -52,17 +52,17 @@ Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in 
     
 4. Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
-  - Akzeptieren Sie den Standardnamen **helloworld-webpart** als Lösungsnamen und wählen Sie die **EINGABETASTE**.
-  - Wählen Sie **SharePoint Online only (latest)** und wählen Sie die **EINGABETASTE**.
-  - Wählen Sie als Speicherort für die Dateien die Option **Use the current folder** aus.
+  - Akzeptieren Sie den Standardnamen **helloworld-webpart** als Lösungsnamen, und drücken Sie die EINGABETASTE.
+  - Wählen Sie **SharePoint Online only (latest)** aus, und drücken Sie die EINGABETASTE.
+  - Wählen Sie die Option **Use the current folder** als Speicherort für die Dateien aus.
   - Wählen Sie **N**, damit die Erweiterung auf jeder Website explizit installiert werden muss, wenn sie verwendet wird. 
   - Wählen Sie **Webpart** als den zu erstellenden Typ von clientseitiger Komponente aus. 
 
 5. Über die nächsten Eingabeaufforderungen werden spezifische Informationen zum Webpart abgefragt:
 
-  - Akzeptieren Sie den Standardnamen **HelloWorld** als Namen für Ihr Webpart und wählen Sie dann die **EINGABETASTE**.
-  - Akzeptieren Sie die Standardbeschreibung **HelloWorld description** als Beschreibung für Ihr Webpart und wählen Sie dann die **EINGABETASTE**.
-  - Akzeptieren Sie die Standardeinstellung **No javaScript web framework** als das zu verwendende Framework und wählen Sie dann die **EINGABETASTE**.
+  - Akzeptieren Sie den Standardnamen **HelloWorld** als Namen für Ihr Webpart, und drücken Sie die EINGABETASTE.
+  - Akzeptieren Sie die Standardbeschreibung **HelloWorld description** als Beschreibung für Ihr Webpart, und drücken Sie die EINGABETASTE.
+  - Akzeptieren Sie die Standardeinstellung **No javaScript web framework** als das zu verwendende Framework, und drücken Sie die EINGABETASTE.
 
   ![Eingabeaufforderungen im Yeoman-SharePoint-Generator zur Erstellung einer clientseitigen Webpart-Lösung](../../../images/yeoman-sp-prompts.png)
 

@@ -3,11 +3,11 @@ title: "Hosten clientseitiger Webparts in Office 365 CDN (Hello Word, Teil 4)"
 description: "Eine einfache Lösung, mit der Sie Ihre Ressourcen direkt in Ihrem eigenen Office 365-Mandanten hosten können. Es können beliebige statische Ressourcen gehostet werden, die in SharePoint Online verwendet werden."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 8185ed59e443fc33c263ca227da437da373ff618
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 3a17c4004724a21857e542bd5eb6fb73d84f2a7d
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="host-your-client-side-web-part-from-office-365-cdn-hello-world-part-4"></a>Hosten clientseitiger Webparts in Office 365 CDN (Hello Word, Teil 4)
 
@@ -61,9 +61,9 @@ Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in 
   Set-SPOTenantCdnEnabled -CdnType Public
   ```
 
-5. Bestätigen Sie Einstellungen, indem Sie `Y` und dann die **EINGABETASTE** wählen.
+5. Bestätigen Sie Einstellungen, indem Sie `Y` auswählen und dann die EINGABETASTE drücken.
 
-  ![Aktivieren Sie öffentliche CDNs im Mandanten](../../../images/cdn-enable-o365-public-cdn.png)
+  ![Aktivieren Sie öffentliche CDNs im Mandanten.](../../../images/cdn-enable-o365-public-cdn.png)
 
   Jetzt sind öffentliche CDNs mit der Standardkonfiguration für zulässige Dateitypen im Mandanten aktiviert. Dies bedeutet, dass die folgenden Dateitypen unterstützt werden: CSS, EOT, GIF, ICO, JPEG, JPG, JS, MAP, PNG, SVG, TTF und WOFF.
 

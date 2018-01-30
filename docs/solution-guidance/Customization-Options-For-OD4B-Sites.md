@@ -1,16 +1,19 @@
 ---
 title: "Anpassung von OneDrive für Unternehmen Websites #"
 ms.date: 11/03/2017
-ms.openlocfilehash: 82fe71f4974ce83d7d08e78d8835e5ace8e8d219
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 493c4a8f265127bcf647967374d1b7fb6d7d65a8
+ms.sourcegitcommit: 86625a7b8efe74f2ace5c32a301197c5b7ee695f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="customization-of-onedrive-for-business-sites"></a>Anpassung von OneDrive for Business-Websites #
 
 ### <a name="summary"></a>Summary ###
 OneDrive for Business-Websites kann in Office 365 oder mit app-Modell im Allgemeinen angepasst werden basierend auf Unternehmens-Anforderungen. Tatsächliche Techniken zum Ausführen diese Anpassung unterscheiden sich in der lokalen, da nur app-Modell Techniken verwendet werden können. Diese Seite enthält Details über die tatsächliche Muster die mit app-Mdoel zum Anpassen von OneDrive for Business-Websites verwendet werden kann. 
+
+> [!IMPORTANT]
+> Diese **nur** gilt für *klassische* OneDrive for Business-Erfahrung in SharePoint Online. Wenn Sie die Standardeinstellung "neue Oberfläche" verwenden, ist dies nicht unterstützt. Benutzerdefiniertes branding modernen oder neue Erfahrungen von OneDrive für Unternehmen nicht unterstützt. Mandantenadministratoren können die Standard-Erfahrung von Einstellungen für die SharePoint Online steuern.
 
 # <a name="why-would-you-customize-onedrive-for-business-sites"></a>Warum würde OneDrive for Business-Websites werden angepasst? #
 
