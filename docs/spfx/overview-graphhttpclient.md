@@ -40,7 +40,7 @@ So senden Sie eine Anforderung an Microsoft Graph
 - Geben Sie als Parameter die Microsoft Graph-API an, die Sie aufrufen möchten (beginnen Sie mit der API-Version ohne führenden Schrägstrich `/`), gefolgt von der **GraphHttpClient**-Konfiguration.
 - Optional können Sie zusätzliche Anforderungsheader angeben, die mit den von **GraphHttpClient** (`'Accept': 'application/json'`, `'Authorization': 'Bearer [token]'` und `'Content-Type': 'application/json; charset=utf-8'`) festgelegten Standardheadern zusammengeführt werden.
 
-## <a name="considerations-for-using-the-graphhttpclient-class"></a>Überlegungen zu der Verwendung der **GraphHttpClient**-Klasse
+## <a name="considerations-for-using-the-graphhttpclient-class"></a>Überlegungen zur Verwendung der **GraphHttpClient**-Klasse
 
 Die **GraphHttpClient**-Klasse ist eine komfortable Möglichkeit für die Kommunikation mit Microsoft Graph, da sie den Autorisierungsfluss und die Verwaltung von Zugriffstoken abstrahiert. Da **GraphHttpClient** sich derzeit in der Entwicklervorschau befindet, gibt es einige Aspekte, die Sie vor der Verwendung berücksichtigen sollten.
 
