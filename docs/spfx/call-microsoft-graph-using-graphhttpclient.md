@@ -36,7 +36,7 @@ Sie können die **get()**-Methode verwenden, um einen REST-Aufruf an Microsoft G
   * Wählen Sie **Webpart** als Typ der zu erstellenden clientseitigen Komponente aus.
   * Geben Sie **HelloGraph** als Webpartnamen ein.
   * Geben Sie als Beschreibung des Webparts **Calls the Microsoft Graph Groups API** (Ruft die Microsoft Graph Groups-API) ein.
-  * Übernehmen Sie die Standardeinstellung **No javaScript web framework** aus, und drücken Sie die **EINGABETASTE**.
+  * Übernehmen Sie die Standardeinstellung **No javaScript web framework** als Framework, und drücken Sie die EINGABETASTE.
 
   ![In der Befehlszeile einzugebende GraphHttpClient-Werte](../images/graphhttpclient-web-part-create.jpg)
 

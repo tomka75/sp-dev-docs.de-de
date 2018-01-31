@@ -1,6 +1,17 @@
+---
+title: Hostingerweiterung von Office 365 CDN (Hello World, Teil 4)
+description: "Bereitstellen Ihres SharePoint-Framework Application Customizer für das Hosting über Office 365 CDN und Bereitstellen über SharePoint für Endbenutzer."
+ms.date: 01/11/2018
+ms.prod: sharepoint
+ms.openlocfilehash: 95bf41477668d5848fccaafa586491fd36f2a7ca
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 01/18/2018
+---
 # <a name="host-extension-from-office-365-cdn-hello-world-part-4"></a>Hostingerweiterung von Office 365 CDN (Hello World, Teil 4)
 
-In diesem Artikel wird beschrieben, wie Sie den SharePoint-Framework Application Customizer über Office 365 CDN bereitstellen und wie dieser über SharePoint für Endbenutzer bereitgestellt wird. In diesem Artikel wird weiterhin die Hello World-Erweiterung aus dem vorherigen Artikel [Bereitstellen Ihrer Erweiterung in SharePoint (Hello World, Teil 3)](./serving-your-extension-from-sharepoint.md) verwendet, in dem der Customizer weitherhin von localhost gehostet wurde.
+In diesem Artikel wird beschrieben, wie Sie den SharePoint-Framework Application Customizer über Office 365 CDN bereitstellen und wie dieser über SharePoint für Endbenutzer bereitgestellt wird. 
 
 Stellen Sie sicher, dass Sie die Verfahren in den folgenden Artikeln abgeschlossen haben, bevor Sie beginnen:
 
@@ -15,19 +26,20 @@ Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in 
 </a>
 
 ## <a name="enable-the-cdn-in-your-office-365-tenant"></a>Aktivieren von CDN in Ihrem Office 365-Mandanten
+
 Office 365 CDN ist die einfachste Möglichkeit, SharePoint-Framework-Lösungen direkt von Ihrem Mandanten aus zu hosten und dabei weiterhin die Vorteile des CDN (Content Delivery Network) zum schnelleren Laden der Objekte zu nutzen.
 
 1. Laden Sie die [SharePoint Online-Verwaltungsshell](https://www.microsoft.com/en-us/download/details.aspx?id=35588) herunter, um sicherzustellen, dass Sie die neueste Version verwenden.
 
 2. Verbinden Sie sich über PowerShell mit Ihrem SharePoint Online-Mandanten:
     
-    ```
+    ```powershell
     Connect-SPOService -Url https://contoso-admin.sharepoint.com
     ```
     
 3. Führen Sie nacheinander die folgenden Befehle aus, um den aktuellen Status der auf Mandantenebene festgelegten Einstellungen für öffentliche CDNs abzurufen: 
     
-    ```
+    ```powershell
     Get-SPOTenantCdnEnabled -CdnType Public
     Get-SPOTenantCdnOrigins -CdnType Public
     Get-SPOTenantCdnPolicies -CdnType Public
@@ -35,7 +47,7 @@ Office 365 CDN ist die einfachste Möglichkeit, SharePoint-Framework-Lösungen d
     
 4. Aktivieren Sie öffentliche CDNs im Mandanten:
     
-    ```
+    ```powershell
     Set-SPOTenantCdnEnabled -CdnType Public
     ```
     
@@ -51,21 +63,21 @@ Office 365 CDN ist die einfachste Möglichkeit, SharePoint-Framework-Lösungen d
     
 7. Fügen Sie in der PowerShell-Konsole einen neuen CDN-Ursprung hinzu. In diesem Fall legen Sie als Ursprung `*/cdn` fest; auf diese Weise fungieren alle relativen Ordner mit dem Namen **cdn** als ein CDN-Ursprung.
     
-    ```
+    ```powershell
     Add-SPOTenantCdnOrigin -CdnType Public -OriginUrl */cdn
     ```
     
 8. Führen Sie den folgenden Befehl aus, um eine Liste aller CDN-Ursprünge von Ihrem Mandanten abzurufen:
     
-    ```
+    ```powershell
     Get-SPOTenantCdnOrigins -CdnType Public
     ```
     
-Sie sehen, dass der neu hinzugefügte Ursprung als gültiger CDN-Ursprung aufgeführt ist. Die endgültige Konfiguration des Ursprungs dauert ca. 15 Minuten. Während Sie warten, können Sie eine Testerweiterung erstellen, die nach Abschluss der Bereitstellung im Ursprung gehostet wird. 
+    Sie sehen, dass der neu hinzugefügte Ursprung als gültiger CDN-Ursprung aufgeführt ist. Die endgültige Konfiguration des Ursprungs dauert ca. 15 Minuten. Während Sie warten, können Sie eine Testerweiterung erstellen, die nach Abschluss der Bereitstellung im Ursprung gehostet wird. 
 
-![Liste der öffentlichen Ursprünge im Mandanten](../../../images/ext-app-cdn-origins-pending.png)
+    ![Liste der öffentlichen Ursprünge im Mandanten](../../../images/ext-app-cdn-origins-pending.png)
 
-Sobald der Ursprung nicht mehr mit `(configuration pending)` gekennzeichnet ist, kann er in Ihrem Mandanten verwendet werden. Dieser Text weist auf laufende Konfigurationsaktivitäten zwischen SharePoint Online und dem CDN-System hin. 
+    Sobald der Ursprung nicht mehr mit `(configuration pending)` gekennzeichnet ist, kann er in Ihrem Mandanten verwendet werden. Dieser Text weist auf laufende Konfigurationsaktivitäten zwischen SharePoint Online und dem CDN-System hin. 
 
 ## <a name="update-your-solution-project-for-the-cdn-urls"></a>Aktualisieren des Lösungsprojekts für die CDN-URLs
 
@@ -73,7 +85,7 @@ Sobald der Ursprung nicht mehr mit `(configuration pending)` gekennzeichnet ist,
     
 2. Aktualisieren Sie die Datei **write-manifests.json** (im Ordner **config**) wie unten dargestellt, damit sie auf Ihren CDN-Endpunkt verweist. Verwenden Sie `publiccdn.sharepointonline.com` als Präfix, und erweitern Sie dann die URL um den tatsächlichen Pfad Ihres Mandanten. Die CDN-URL hat folgendes Format:
     
-    ```
+    ```json
     https://publiccdn.sharepointonline.com/<tenant host name>/sites/site/library/folder
     ```
     
@@ -87,7 +99,7 @@ Sobald der Ursprung nicht mehr mit `(configuration pending)` gekennzeichnet ist,
     gulp bundle --ship
     ```
     
-5. Führen Sie die folgende Aufgaben aus, um Ihre Lösung zu packen. Dieser Befehl erstellt ein Paket namens **app-extension.sppkg** im Ordner **sharepoint/solution** und bereitet außerdem die Ressourcen im Ordner **temp/deploy** für die Bereitstellung im CDN vor.
+5. Führen Sie die folgende Aufgabe aus, um Ihre Lösung zu packen. Dieser Befehl erstellt ein Paket namens **app-extension.sppkg** im Ordner **sharepoint/solution** und bereitet die Ressourcen im Ordner **temp/deploy** für die Bereitstellung im CDN vor.
     
     ```
     gulp package-solution --ship
@@ -108,4 +120,10 @@ Sobald der Ursprung nicht mehr mit `(configuration pending)` gekennzeichnet ist,
 Herzlichen Glückwunsch! Sie haben ein öffentliches CDN in Ihrem Office 365-Mandanten aktiviert und es in der Lösung genutzt.
 
 > [!NOTE]
-> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository]((https://github.com/SharePoint/sp-dev-docs/issues)). Vielen Dank im Voraus für Ihr Feedback.
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository](https://github.com/SharePoint/sp-dev-docs/issues). Vielen Dank im Voraus für Ihr Feedback.
+
+## <a name="see-also"></a>Siehe auch
+
+- [Erstellen Ihrer ersten Erweiterung des Typs „ListView Command Set“](./building-simple-cmdset-with-dialog-api.md)
+- [Erstellen Ihrer ersten Field Customizer-Erweiterung](./building-simple-field-customizer.md)
+- [Übersicht über SharePoint-Framework-Erweiterungen](../overview-extensions.md)

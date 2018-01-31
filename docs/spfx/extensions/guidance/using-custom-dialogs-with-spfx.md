@@ -1,12 +1,13 @@
 ---
 title: 'Lernprogramm: Verwenden von benutzerdefinierten Dialogfeldern mit SharePoint-Framework-Erweiterungen'
-ms.date: 12/19/2017
+description: 
+ms.date: 01/11/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 0d79aac6e1765e08cc6e950a321f96f8c61fa0ce
-ms.sourcegitcommit: bf4bc1e80c6ef1a0ff479039ef9ae0ee84d5f6b4
+ms.openlocfilehash: db766ec08568781b119cf9688c3e89b042a8f20b
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="use-custom-dialog-boxes-with-sharepoint-framework-extensions"></a>Verwenden von benutzerdefinierten Dialogfeldern mit SharePoint-Framework-Erweiterungen
 
@@ -14,11 +15,11 @@ Benutzerdefinierte Dialogfelder können im Kontext von SharePoint Framework-Erw
 
 In diesem Artikel wird beschrieben, wie Sie ein benutzerdefiniertes Dialogfeld erstellen und im Kontext einer Erweiterung des Typs „ListView Command Set“ verwenden können.
 
-Den Beispielcode, auf den in diesem Artikel Bezug genommen wird, finden Sie in unserem [sp-dev-fx-extensions]((https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-command-dialog))-Repository.
+Den Beispielcode, auf den in diesem Artikel Bezug genommen wird, finden Sie in unserem [sp-dev-fx-extensions](https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-command-dialog)-Repository.
 
 ## <a name="set-up-your-development-environment"></a>Einrichten der Entwicklungsumgebung
 
-Zur Erstellung eines benutzerdefinierten Dialogfelds müssen Sie zunächst die Schritt-für-Schritt-Anleitung im Artikel zum Thema [Einrichten Ihrer Entwicklungsumgebung]((https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment)) befolgen. Stellen Sie sicher, dass Sie die neuesten SharePoint Framework-Yeoman-Vorlagen verwenden.
+Zur Erstellung eines benutzerdefinierten Dialogfelds müssen Sie zunächst die Schritt-für-Schritt-Anleitung im Artikel zum Thema [Einrichten Ihrer Entwicklungsumgebung](https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment) befolgen. Stellen Sie sicher, dass Sie die neuesten SharePoint Framework-Yeoman-Vorlagen verwenden.
 
 ## <a name="create-a-new-project"></a>Erstellen eines neuen Projekts
 
@@ -42,17 +43,17 @@ yo @microsoft/sharepoint
 
 Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
-* Übernehmen Sie den Standardwert **dialog-cmd** als Namen der Lösung, und drücken Sie die **EINGABETASTE**.
-* Wählen Sie **SharePoint Online only (latest)**, und drücken Sie die **EINGABETASTE**.
-* Wählen Sie **Use the current folder (Aktuellen Ordner verwenden)** aus, und drücken Sie die **EINGABETASTE**.
+* Übernehmen Sie den Standardwert **dialog-cmd** als Namen der Lösung, und drücken Sie die EINGABETASTE.
+* Wählen Sie **SharePoint Online only (latest)**, und drücken Sie die EINGABETASTE.
+* Wählen Sie **Use the current folder** aus, und drücken Sie die EINGABETASTE.
 * Wählen Sie **N**, damit die Erweiterung auf jeder Website explizit installiert werden muss, wenn diese verwendet wird.
 * Wählen Sie **Extension** als den zu erstellenden Typ von clientseitiger Komponente aus. 
 * Wählen Sie **ListView Command Set** als den zu erstellenden Typ von Erweiterung aus.
 
 Über die nächsten Eingabeaufforderungen werden spezifische Informationen zu der Erweiterung abgefragt:
 
-* Übernehmen Sie den Wert **DialogDemo** als Namen für Ihre Erweiterung, und drücken Sie die **EINGABETASTE**.
-* Übernehmen Sie den Standardwert **DialogDemo description** als Beschreibung Ihrer Erweiterung, und drücken Sie die **EINGABETASTE**.
+* Übernehmen Sie den Wert **DialogDemo** als Namen für Ihre Erweiterung, und drücken Sie die EINGABETASTE.
+* Übernehmen Sie den Standardwert **DialogDemo description** als Beschreibung Ihrer Erweiterung, und drücken Sie die EINGABETASTE.
 
 ![Yeoman-SharePoint-Generator mit Eingabeaufforderungen zur Erstellung einer Erweiterungslösung](../../../images/ext-com-dialog-yeoman-prompts.png)
 
@@ -287,4 +288,8 @@ Wählen Sie in der *Farbauswahl* eine Farbe aus, und klicken Sie auf **OK**, um 
 ![Dialogfeld mit Details zur ausgewählten Farbe](../../../images/ext-com-dialog-oob-alert-dialog.png)
 
 > [!NOTE]
-> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository]((https://github.com/SharePoint/sp-dev-docs/issues)). Vielen Dank im Voraus für Ihr Feedback.
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository](https://github.com/SharePoint/sp-dev-docs/issues). Vielen Dank im Voraus für Ihr Feedback.
+
+## <a name="see-also"></a>Siehe auch
+
+- [Übersicht über SharePoint-Framework-Erweiterungen](../overview-extensions.md)

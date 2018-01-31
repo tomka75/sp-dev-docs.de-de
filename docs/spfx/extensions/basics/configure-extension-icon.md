@@ -1,18 +1,17 @@
 ---
-title: Konfigurieren des Erweiterungssymbols
-ms.date: 11/20/2017
+title: Konfigurieren des Erweiterungssymbols in SharePoint-Framework (SPFx)-Erweiterungen
+description: "Optionen zum Konfigurieren des Symbols für die Befehle in SharePoint-Framework (SPFx)-Erweiterungen."
+ms.date: 01/11/2018
 ms.prod: sharepoint
-ms.openlocfilehash: d20f2317e160fa46b0b48902cc9bc40970173470
-ms.sourcegitcommit: 3276e9b281b227fb2f1a131ab4ac54ae212ce5cf
+ms.openlocfilehash: 1dcbef078f8985de00614f8ebfbf3dd1030439d6
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/24/2017
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="configure-extension-icon"></a>Konfigurieren des Erweiterungssymbols
 
-Die Verwendung eines Symbols, das den Zweck des benutzerdefinierten Befehls darstellt, erleichtert Benutzern die Suche nach Ihrem Befehl unter anderen Optionen, die in der Symbolleiste oder im Kontextmenü angezeigt werden. In diesem Artikel werden die verschiedenen Optionen erläutert, die beim Konfigurieren des Symbols für Ihre Befehle zur Verfügung stehen.
-
-## <a name="extension-types-that-support-icons"></a>Erweiterungstypen, die Symbole unterstützen
+Die Verwendung eines Symbols, das den Zweck des benutzerdefinierten Befehls darstellt, in SharePoint-Framework erleichtert Benutzern die Suche nach Ihrem Befehl unter anderen Optionen, die in der Symbolleiste oder im Kontextmenü angezeigt werden. Das Angeben eines Symbols für einen Befehl ist optional. Wenn Sie kein Symbol angeben, wird nur der Befehlstitel in der Befehlsleiste angezeigt.
 
 SharePoint-Framework unterstützt die folgenden Erweiterungstypen:
 
@@ -20,17 +19,24 @@ SharePoint-Framework unterstützt die folgenden Erweiterungstypen:
 - Field Customizer
 - Befehlssatz
 
-Befehlssatz ist der einzige SharePoint-Framework-Erweiterungstyp, in dem Symbole konfiguriert werden können.
+Der Befehlssatz ist der einzige SharePoint-Framework-Erweiterungstyp, in dem Symbole konfiguriert werden können.
 
-## <a name="defining-command-set-locations"></a>Definieren der Position des Befehlssatzes
+Wenn Sie Befehlssätze bereitstellen, können Sie festlegen, wo die Befehle angezeigt werden sollen:
 
-Wenn Sie Befehlssätze bereitstellen, können Sie festlegen, ob die Befehle auf der Befehlsleiste (`location: ClientSideExtension.ListViewCommandSet.CommandBar`), im Kontextmenü (`location: ClientSideExtension.ListViewCommandSet.ContextMenu`) oder sowohl auf der Befehlsleiste als auch im Kontextmenü (`location: ClientSideExtension.ListViewCommandSet`) angezeigt werden sollen. Symbole, die für andere Befehle definiert werden, werden nur für Befehle auf der Befehlsleiste angezeigt.
+- Auf der Befehlsleiste (`location: ClientSideExtension.ListViewCommandSet.CommandBar`)
 
-## <a name="configuring-command-set-icons"></a>Konfigurieren von Symbolen für Befehlssätze
+- Im Kontextmenü (`location: ClientSideExtension.ListViewCommandSet.ContextMenu`)
 
-SharePoint-Framework bietet zwei Möglichkeiten zum Definieren des Symbols für Ihre Erweiterung.
+- Oder beides (`location: ClientSideExtension.ListViewCommandSet`)
 
-### <a name="using-an-external-icon-image"></a>Verwenden eines externen Symbolbilds
+Symbole, die für andere Befehle definiert werden, werden nur für Befehle auf der Befehlsleiste angezeigt.
+
+SharePoint-Framework bietet zwei Möglichkeiten zum Definieren des Symbols für Ihre Erweiterung:
+
+- Verwenden eines externen Symbolbilds
+- Verwenden eines base64-codierten Bilds
+
+## <a name="use-an-external-icon-image"></a>Verwenden eines externen Symbolbilds
 
 Beim Erstellen von Befehlssätzen des SharePoint-Framework können Sie für jeden Befehl ein Symbol angeben, indem Sie in der **iconImageUrl**-Eigenschaft eine absolute URL angeben, die auf das Symbolbild im Erweiterungsmanifest verweist.
 
@@ -62,17 +68,21 @@ Beim Erstellen von Befehlssätzen des SharePoint-Framework können Sie für jede
 }
 ```
 
+<br/>
+
 Das auf der Befehlsleiste angezeigte Befehlssymbol weist eine Größe von 16 x 16 Pixel auf. Wenn das Bild größer ist, wird seine Größe proportional entsprechend dieser Größe angepasst.
 
-![Das auf der Befehlsleiste als Befehlssymbol verwendetes benutzerdefiniertes Bild](../../../images/extensionicon_commandbar_imagepng.png)
+![Auf der Befehlsleiste als Befehlssymbol verwendetes benutzerdefiniertes Bild](../../../images/extensionicon_commandbar_imagepng.png)
+
+<br/>
 
 Während Sie mit benutzerdefinierten Bildern von mehr Flexibilität bei der Wahl eines Symbols für Ihren Befehl profitieren, müssen Sie diese zusammen mit anderen Erweiterungsressourcen bereitzustellen. Darüber hinaus kann es zum Qualitätsverlust kommen, wenn das Bild mit höheren DPI-Werten oder bestimmten Barrierefreiheitseinstellungen angezeigt wird. Um Qualitätsverlust zu vermeiden, können Sie Vektor-basierte SVG-Bilder verwenden, die auch von SharePoint-Framework unterstützt werden.
 
-### <a name="using-a-base64-encoded-image"></a>Verwenden eines base64-codierten Bilds
+## <a name="use-a-base64-encoded-image"></a>Verwenden eines base64-codierten Bilds
 
 Wenn Sie ein benutzerdefiniertes Bild verwenden, statt eine absolute URL zu der mit anderen Erweiterungsressourcen gehosteten Bilddatei anzugeben, können Sie ein base64-codiertes Bild und die base64-Zeichenfolge anstelle der URL verwenden.
 
-> Im Internet sind zahlreiche Dienste verfügbar, die Sie für die base64-Codierung von Bildern verwenden können, zum Beispiel [https://www.base64-image.de](https://www.base64-image.de).
+Online steht eine Reihe von Diensten zur Verfügung, die Sie zum Codieren Ihres Bilds mit base64 verwenden können, zum Beispiel [Konvertieren Ihrer Bilder mit Base64](https://www.base64-image.de).
 
 Kopieren Sie nach dem Codieren des Bilds die base64-Zeichenfolge, und verwenden Sie sie als Wert für die **iconImageUrl**-Eigenschaft im Manifest des Webparts.
 
@@ -104,10 +114,12 @@ Kopieren Sie nach dem Codieren des Bilds die base64-Zeichenfolge, und verwenden 
 }
 ```
 
+<br/>
+
+Base64-Codierung kann sowohl für Bitmapbilder, zum Beispiel PNG, als auch für Vektor-basierte SVG-Bilder verwendet werden. Der große Vorteil der base64-Codierung von Bildern ist, dass Sie das Webpart-Symbolbild nicht separat bereitstellen müssen.
+
 ![Base64-codiertes Bild als Webpartsymbol in der Toolbox](../../../images/extensionicon_commandbar_base64.png)
 
-Base64-Codierung kann sowohl für BItmapbilder, zum Beispiel PNG, sowie für Vektor-basierte SVG-Bilder verwendet werden. Der große Vorteil der base64-Codierung von Bildern ist, dass Sie das Webpartsymbolbild nicht separat bereitstellen müssen.
+## <a name="see-also"></a>Siehe auch
 
-## <a name="additional-considerations"></a>Zusätzliche Überlegungen
-
-Das Angeben eines Symbols für einen Befehl ist optional. Wenn Sie kein Symbol angeben, wird nur der Befehlstitel auf der Befehlsleiste angezeigt.
+- [Übersicht über SharePoint-Framework-Erweiterungen](../overview-extensions.md)

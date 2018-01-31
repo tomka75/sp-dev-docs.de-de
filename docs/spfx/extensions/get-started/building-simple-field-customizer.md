@@ -1,8 +1,19 @@
+---
+title: Erstellen Ihrer ersten Field Customizer-Erweiterung
+description: Erstellen Sie ein Erweiterungsprojekt, und codieren und debuggen Sie dann Ihre Erweiterung mithilfe von SharePoint-Framework (SPFx)-Erweiterungen.
+ms.date: 01/11/2018
+ms.prod: sharepoint
+ms.openlocfilehash: 42387ca54e230bb843d327f31a130d8c5395c558
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 01/18/2018
+---
 # <a name="build-your-first-field-customizer-extension"></a>Erstellen Ihrer ersten Field Customizer-Erweiterung
 
 Erweiterungen sind clientseitige Komponenten, die im Kontext einer SharePoint-Website ausgeführt werden. Erweiterungen lassen sich auf SharePoint Online bereitstellen und auch mithilfe aktueller JavaScript-Tools und -Bibliotheken erstellen.
 
-In diesem Artikel wird beschrieben, wie Sie Ihre erste Field Customizer-Erweiterung erstellen. Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=fijOzUmlXrY&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV) nachvollziehen: 
+Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=fijOzUmlXrY&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV) nachvollziehen. 
 
 <a href="https://www.youtube.com/watch?v=4wgZy5tm4yo">
 <img src="../../../images/spfx-ext-youtube-tutorialfield.png" alt="Screenshot of the YouTube video player for this tutorial" />
@@ -40,10 +51,10 @@ In diesem Artikel wird beschrieben, wie Sie Ihre erste Field Customizer-Erweiter
 5. Über die nächsten Eingabeaufforderungen werden spezifische Informationen zu der Erweiterung abgefragt:
      
     * Übernehmen Sie den Standardwert **HelloWorld** als Namen für Ihre Erweiterung, und drücken Sie die EINGABETASTE.
+
     * Übernehmen Sie den Standardwert **HelloWorld description** als Beschreibung Ihrer Erweiterung, und drücken Sie die EINGABETASTE.
+
     * Übernehmen Sie den Standardwert **No JavaScript Framework** als Frameworkauswahl, und drücken Sie die EINGABETASTE. 
-    
-    <br/>
     
     ![Yeoman-SharePoint-Generator mit Eingabeaufforderungen zur Erstellung einer Erweiterungslösung](../../../images/ext-field-yeoman-prompts.png)
     
@@ -97,7 +108,7 @@ import {
 
 Die Logik für den Field Customizer befindet sich in den Methoden **OnInit()**, **onRenderCell()** und **onDisposeCell()**.
 
-* In **onInit():** müssen Sie jegliches Setup vornehmen, das für die Erweiterung erforderlich ist. Dieses Ereignis tritt auf, nachdem `this.context` und `this.properties` zugewiesen wurden, jedoch bevor das Seiten-DOM bereit ist. Wie bei Webparts gibt `onInit()` eine Zusage zurück, die Sie verwenden können, um asynchrone Vorgänge durchzuführen; `onRenderCell()` wird erst dann aufgerufen, wenn die Zusage erfüllt wurde. Wenn Sie dies nicht benötigen, geben Sie einfach `Promise.resolve<void>();` zurück.
+* In **onInit()** müssen Sie jegliches Setup vornehmen, das für die Erweiterung erforderlich ist. Dieses Ereignis tritt auf, nachdem `this.context` und `this.properties` zugewiesen wurden, jedoch bevor das Seiten-DOM bereit ist. Wie bei Webparts gibt `onInit()` eine Zusage zurück, die Sie verwenden können, um asynchrone Vorgänge durchzuführen; `onRenderCell()` wird erst dann aufgerufen, wenn die Zusage erfüllt wurde. Wenn Sie dies nicht benötigen, geben Sie einfach `Promise.resolve<void>();` zurück.
 * **onRenderCell()** tritt auf, wenn jede Zelle gerendert wird. Die Methode bietet ein `event.domElement`-HTML-Element, in das der Code den Inhalt schreiben kann.
 * **onDisposeCell()** tritt unmittelbar vor dem Löschen von `event.cellDiv` auf. Die Methode kann zum Freigeben von Ressourcen verwendet werden, die beim Feldrendering zugeordnet wurden. Wenn `onRenderCell()` ein React-Element bereitgestellt hat, muss `onDisposeCell()` zum Freigeben verwendet werden; anderenfalls würde ein Ressourcenverlust auftreten. 
 
@@ -123,7 +134,8 @@ Nachfolgend finden Sie den Inhalt von **onRenderCell()** und **onDisposeCell()**
   }
 ```
 
-## <a name="debug-your-field-customizer-using-gulp-serve-and-query-string-parameters"></a>Debuggen Ihres Field Customizer mit gulp serve- und Abfragezeichenfolgenparametern
+## <a name="debug-your-field-customizer"></a>Debuggen des Field Customizers
+
 SharePoint-Framework-Erweiterungen können derzeit nicht mit der lokalen Workbench getestet werden. Sie müssen sie direkt mit einer SharePoint Online-Live-Website testen und bereitstellen. Hierzu ist es nicht erforderlich, die Anpassung im App-Katalog bereitzustellen, was das Debugging vereinfacht und beschleunigt.
 
 1. Zunächst führen Sie den folgenden Befehl aus, um den Code zu kompilieren und die Dateien auf Ihrem lokalen Computer zu hosten:
@@ -132,7 +144,7 @@ SharePoint-Framework-Erweiterungen können derzeit nicht mit der lokalen Workben
     gulp serve --nobrowser
     ```
     
-    Sie verwenden die Option `--nobrowser`, da ein Start der lokalen Workbench nicht nötig ist, weil Erweiterungen nicht lokal gedebuggt werden können.
+    Sie verwenden die Option `--nobrowser`, da ein Start der lokalen Workbench nicht nötig ist, weil Erweiterungen nicht lokal debuggt werden können.
 
     Wenn der Code ohne Fehler kompiliert wurde, verarbeitet er das resultierende Manifest von https://localhost:4321.
 
@@ -174,8 +186,6 @@ SharePoint-Framework-Erweiterungen können derzeit nicht mit der lokalen Workben
 
     Die vollständige URL sollte in etwa wie folgt aussehen, abhängig von der URL Ihres Mandanten und dem Speicherort der neu erstellte Liste:
     
-    <br/>
-    
     ```
     contoso.sharepoint.com/Lists/Orders/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&fieldCustomizers={"Percent":{"id":"45a1d299-990d-4917-ba62-7cb67158be16","properties":{"sampleText":"Hello!"}}}
     ```
@@ -201,6 +211,7 @@ SharePoint-Framework-Erweiterungen können derzeit nicht mit der lokalen Workben
 <br/>
 
 ## <a name="enhance-the-field-customizer-rendering"></a>Verbessern der Darstellung des Field Customizer
+
 Da wir nun den sofort einsetzbaren Anfangspunkt des Field Customizer erfolgreich getestet haben, ändern wir die Logik ein wenig, um den Feldwert noch schöner darzustellen. 
 
 1. Öffnen Sie die Datei **HelloWorld.module.scss** im Ordner **src\extensions\helloWorld**, und aktualisieren Sie die Stildefinition wie folgt.
@@ -248,11 +259,14 @@ Da wir nun den sofort einsetzbaren Anfangspunkt des Field Customizer erfolgreich
 
     ![Akzeptieren des Ladens der Debugskripte](../../../images/ext-field-accept-debug-scripts.png)
 
+    <br/>
+
     Beachten Sie, dass sich die Felddarstellung komplett geändert hat. Der Feldwert wird grafisch dargestellt.
 
     ![Grafische Darstellung der Prozentwerte](../../../images/ext-field-percent-field-graphic.png)
 
 ## <a name="add-the-field-definition-to-the-solution-package-for-deployment"></a>Hinzufügen der Felddefinition zum Lösungspaket für die Bereitstellung
+
 Wir haben die Lösung nun ordnungsgemäß im Debuggingmodus getestet und können sie als Paket bereitstellen, das automatisch als Teil des Lösungspakets auf den Websites bereitgestellt wird. 
 
 1. Installieren Sie das Lösungspaket auf der Website, auf der es installiert sein soll, damit das Erweiterungsmanifest für die Ausführung freigegeben wird.
@@ -300,7 +314,7 @@ Beachte Sie die folgende XML-Struktur in **elements.xml**.  Für die Eigenschaft
 
 ### <a name="ensure-that-definitions-are-taken-into-account-within-the-build-pipeline"></a>Gewährleisten der Berücksichtigung von Definitionen in der Buildpipeline
 
-Öffnen Sie die Datei **package-solution.json** im Ordner **config**. Die Datei **package-solution.json** enthält die Paketmetadaten, definiert wie folgt:
+Öffnen Sie **package-solution.json** im Ordner **config**. Die Datei **package-solution.json** definiert die Paketmetadaten, wie im folgenden Code dargestellt. Um sicherzustellen, dass die Datei **element.xml** beim Packen der Lösung berücksichtigt wird, hat das Standardgerüst die benötigte Konfiguration hinzugefügt, um eine Framework-Featuredefinition für das Lösungspaket zu definieren.
 
 ```json
 {
@@ -327,8 +341,6 @@ Beachte Sie die folgende XML-Struktur in **elements.xml**.  Für die Eigenschaft
 }
 
 ```
-
-Um sicherzustellen, dass die Datei **element.xml** beim Packen der Lösung berücksichtigt wird, hat das Standardgerüst die benötigte Konfiguration hinzugefügt, um eine Framework-Featuredefinition für das Lösungspaket zu definieren.
 
 
 ## <a name="deploy-the-field-to-sharepoint-online-and-host-javascript-from-local-host"></a>Bereitstellen des Felds in SharePoint Online und Hosten des JavaScript-Codes über Localhost
@@ -357,7 +369,7 @@ Sie können die Lösung jetzt auf einer SharePoint-Website bereitstellen, wobei 
 
 4. Laden Sie das Paket `field-extension.sppkg`, das sich im Ordner **sharepoint/solution** befindet, in den App-Katalog hoch, oder platzieren Sie es dort per Drag & Drop. In SharePoint wird ein Dialogfeld angezeigt, und Sie werden aufgefordert, der clientseitigen Lösung zu vertrauen.
 
-    Da wir die Host-URLs der Lösung für diese Bereitstellung nicht aktualisiert haben, verweist die URL immer noch auf https://localhost:4321. 
+    Da wir die Host-URLs der Lösung für diese Bereitstellung nicht aktualisiert haben, verweist die URL immer noch auf `https://localhost:4321`. 
     
 5. Klicken Sie auf die Schaltfläche **Bereitstellen**.
 
@@ -371,7 +383,7 @@ Sie können die Lösung jetzt auf einer SharePoint-Website bereitstellen, wobei 
 
     ![Installieren von Field Customizer auf der Website](../../../images/ext-field-install-solution-to-site.png)
 
-9. Wählen Sie die App **field-extension-client-side-solution**, um die Lösung auf der Website zu installieren. Wenn die Installation abgeschlossen ist, aktualisieren Sie die Seite, indem Sie **F5** drücken.
+9. Wählen Sie die App **field-extension-client-side-solution**, um die Lösung auf der Website zu installieren. Wenn die Installation abgeschlossen ist, aktualisieren Sie die Seite, indem Sie F5 drücken.
 
 10. Klicken Sie nach dem Installieren der Lösung auf **Neu** in der Symbolleiste auf der Seite **Websiteinhalte**, und wählen Sie **Liste**.
 
@@ -404,4 +416,9 @@ In diesem Fall hosten wir den JavaScript-Code weiterhin von Localhost. Sie könn
 Die Vorgehensweise für die Veröffentlichung Ihrer App ist für alle Erweiterungstypen identisch. Sie können die folgenden Schritte für die Veröffentlichung befolgen, um die im CDN gehosteten Objekte zu aktualisieren: [Hosten von Erweiterungen in einem Office 365 CDN](./hosting-extension-from-office365-cdn.md).
 
 > [!NOTE]
-> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository]((https://github.com/SharePoint/sp-dev-docs/issues)). Vielen Dank im Voraus für Ihr Feedback.
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository](https://github.com/SharePoint/sp-dev-docs/issues). Vielen Dank im Voraus für Ihr Feedback.
+
+## <a name="see-also"></a>Siehe auch
+
+- [Erstellen Ihrer ersten Erweiterung des Typs „ListView Command Set“](./building-simple-cmdset-with-dialog-api.md)
+- [Übersicht über SharePoint-Framework-Erweiterungen](../overview-extensions.md)

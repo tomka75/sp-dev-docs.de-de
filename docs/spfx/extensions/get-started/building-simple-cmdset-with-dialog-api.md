@@ -1,8 +1,19 @@
+---
+title: "Erstellen Ihrer ersten Erweiterung des Typs „ListView Command Set“"
+description: Erstellen Sie ein Erweiterungsprojekt, und codieren und debuggen Sie dann Ihre Erweiterung mithilfe von SharePoint-Framework (SPFx)-Erweiterungen.
+ms.date: 01/11/2018
+ms.prod: sharepoint
+ms.openlocfilehash: 5c6936f980669b09335e88ce31240fea1924dd6d
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 01/18/2018
+---
 # <a name="build-your-first-listview-command-set-extension"></a>Erstellen Ihrer ersten Erweiterung des Typs „ListView Command Set“
 
 Erweiterungen sind clientseitige Komponenten, die im Kontext einer SharePoint-Website ausgeführt werden. Erweiterungen lassen sich auf SharePoint Online bereitstellen und auch mithilfe aktueller JavaScript-Tools und -Bibliotheken erstellen.
 
-In diesem Artikel wird beschrieben, wie Sie Ihre erste Erweiterung vom Typ „ListView Command Set“ erstellen. Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=iW0LQQqAY0Y&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV) nachvollziehen: 
+Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in unserem [YouTube-Kanal „SharePoint Patterns & Practices“](https://www.youtube.com/watch?v=iW0LQQqAY0Y&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV) nachvollziehen. 
 
 <a href="https://www.youtube.com/watch?v=JBhgdSgWgdM">
 <img src="../../../images/spfx-ext-youtube-tutorialcommand.png" alt="Screenshot of the YouTube video player for this tutorial" />
@@ -103,7 +114,7 @@ Das Verhalten Ihrer benutzerdefinierten Schaltflächen wird in den Methoden **on
 
 Das **onListViewUpdated()**-Ereignis tritt für jeden Befehl separat auf (z. B. ein Menüelement), wenn eine Änderung an ListView vorgenommen wurde und die Benutzeroberfläche erneut gerendert werden muss. Der `event`-Funktionsparameter gibt Informationen über den angezeigten Befehl an. Der Handler kann mithilfe dieser Informationen den Titel oder die Sichtbarkeit anpassen, beispielsweise wenn ein Befehl nur angezeigt werden soll, wenn eine bestimmte Anzahl von Elementen in der Listenansicht ausgewählt ist. Dies ist die Standardimplementierung.
 
-Wenn Sie die `tryGetCommand`-Methode verwenden, erhalten Sie ein Command-Objekt, das den auf der Benutzeroberfläche angezeigten Befehl angibt. Sie können die zugehörigen Werte wie `title`, oder `visible` ändern, um das Benutzeroberflächenelement zu ändern. SPFx verwendet diese Informationen, wenn die Befehle neu gerendert werden müssen. Diese Objekte speichern den Status des letzten Renderings. Wenn ein Befehl zum Beispiel auf `visible = false` festgelegt wurde, wird er erst eingeblendet, wenn er wieder auf `visible = true` festgelegt wurde.
+Wenn Sie die `tryGetCommand`-Methode verwenden, erhalten Sie ein Command-Objekt, das den auf der Benutzeroberfläche angezeigten Befehl angibt. Sie können die zugehörigen Werte wie `title` oder `visible` ändern, um das Benutzeroberflächenelement zu ändern. SPFx verwendet diese Informationen, wenn die Befehle neu gerendert werden müssen. Diese Objekte speichern den Status des letzten Renderings. Wenn ein Befehl zum Beispiel auf `visible = false` festgelegt wurde, wird er erst eingeblendet, wenn er wieder auf `visible = true` festgelegt wurde.
 
 ```ts
   @override
@@ -136,7 +147,7 @@ Die **OnExecute()**-Methode definiert die Aktion beim Ausführen eines Befehls (
 ```
 
 
-## <a name="debug-your-listview-command-set-using-gulp-serve-and-query-string-parameters"></a>Debuggen Ihrer Erweiterung des Typs „ListView Command Set“ mit gulp serve und Abfragezeichenfolgeparametern
+## <a name="debug-your-listview-command-set"></a>Debuggen Ihrer Erweiterung des Typs „ListView Command Set“
 
 SharePoint-Framework-Erweiterungen können derzeit nicht mit der lokalen Workbench getestet werden. Sie müssen sie direkt mit einer SharePoint Online-Live-Website testen und bereitstellen. Hierzu ist es nicht erforderlich, die Anpassung im App-Katalog bereitzustellen, was das Debugging vereinfacht und beschleunigt. 
 
@@ -146,7 +157,7 @@ SharePoint-Framework-Erweiterungen können derzeit nicht mit der lokalen Workben
     gulp serve --nobrowser
     ```
 
-    Sie verwenden die Option `--nobrowser`, da ein Start der lokalen Workbench nicht nötig ist, weil Erweiterungen nicht lokal gedebuggt werden können.
+    Sie verwenden die Option `--nobrowser`, da ein Start der lokalen Workbench nicht nötig ist, weil Erweiterungen nicht lokal debuggt werden können.
 
     Wenn der Code ohne Fehler kompiliert wurde, verarbeitet er das resultierende Manifest von https://localhost:4321.
 
@@ -190,9 +201,9 @@ SharePoint-Framework-Erweiterungen können derzeit nicht mit der lokalen Workben
 - **customActions** simuliert eine benutzerdefinierte Aktion. Sie können zahlreiche Eigenschaften für dieses `CustomAction`-Objekt festlegen, die sich auf die Darstellung und den Ort der Schaltfläche auswirken. Diese werden zu einem späteren Zeitpunkt erläutert.
     - **Key**: die GUID der Erweiterung
     - **Location:**: Ort, wo die Befehle angezeigt werden sollen. Die folgenden Werte sind möglich:
-        - **ClientSideExtension.ListViewCommandSet.ContextMenu:** im Kontextmenü der Elemente
-        - **ClientSideExtension.ListViewCommandSet.CommandBar:** im oberen Befehlssatzmenü in einer Liste oder Bibliothek
-        - **ClientSideExtension.ListViewCommandSet:** sowohl im Kontextmenü als auch auf der Befehlsleiste (entspricht SPUserCustomAction.Location="CommandUI.Ribbon")
+        - **ClientSideExtension.ListViewCommandSet.ContextMenu**: im Kontextmenü der Elemente.
+        - **ClientSideExtension.ListViewCommandSet.CommandBar**: im oberen Befehlssatzmenü in einer Liste oder Bibliothek.
+        - **ClientSideExtension.ListViewCommandSet**: sowohl im Kontextmenü als auch auf der Befehlsleiste (entspricht SPUserCustomAction.Location="CommandUI.Ribbon")
     - **Properties:**: ein optionales JSON-Objekt mit Eigenschaften, die über den Member `this.properties` verfügbar gemacht werden.
 
 <br/>
@@ -239,11 +250,11 @@ Für die Standardlösung nutzen wir eine neue Dialogfeld-API, mit der Sie über 
 
 8. Klicken Sie bei Aufforderung auf **Debugskripts laden**, um das Laden der Debugmanifeste zu akzeptieren.
 
-    ![Akzeptieren des Ladens der Debugskripte](../../../images/ext-com-accept-debug-scripts.png)
+    ![Akzeptieren des Ladens der Debugskripts](../../../images/ext-com-accept-debug-scripts.png)
 
     Auf der Symbolleiste werden weiterhin dieselben Schaltflächen angezeigt, sie verhalten sich nun jedoch anders, wenn sie einzeln ausgewählt werden. Wir verwenden jetzt die neue Dialogfeld-API, die sogar für komplexe Szenarien problemlos verwendet werden kann. 
 
-    ![Akzeptieren des Ladens der Debugskripte](../../../images/ext-com-show-adv-dialog-input.png)
+    ![Schaltfläche OK für das Akzeptieren des Ladens der Debugskripts](../../../images/ext-com-show-adv-dialog-input.png)
 
 
 ## <a name="add-a-listview-command-set-to-a-solution-package-for-deployment"></a>Hinzufügen einer Erweiterung des Typs „ListView Command Set“ zu einem Lösungspaket zwecks Bereitstellung
@@ -287,7 +298,7 @@ Für eine Erweiterung des Typs „ListView Command Set“ können Sie folgende
 
 ### <a name="ensure-that-definitions-are-taken-into-account-within-the-build-pipeline"></a>Gewährleisten der Berücksichtigung von Definitionen in der Buildpipeline
 
-Öffnen Sie die Datei **package-solution.json** im Ordner **config**. Die Datei **package-solution.json** enthält die Paketmetadaten, definiert wie folgt:
+Öffnen Sie **package-solution.json** im Ordner **config**. Die Datei **package-solution.json** definiert die Paketmetadaten, wie im folgenden Code dargestellt. Um sicherzustellen, dass die Datei **element.xml** beim Packen der Lösung berücksichtigt wird, hat das Standardgerüst die benötigte Konfiguration hinzugefügt, um eine Framework-Featuredefinition für das Lösungspaket zu definieren.
 
 ```json
 {
@@ -316,8 +327,6 @@ Für eine Erweiterung des Typs „ListView Command Set“ können Sie folgende
 }
 ```
 
-Um sicherzustellen, dass die Datei **element.xml** beim Packen der Lösung berücksichtigt wird, hat das Standardgerüst die benötigte Konfiguration hinzugefügt, um eine Framework-Featuredefinition für das Lösungspaket zu definieren.
-
 ## <a name="deploy-the-extension-to-sharepoint-online-and-host-javascript-from-local-host"></a>Bereitstellen der Erweiterung in SharePoint Online und Hosten des JavaScript-Codes über Localhost
 
 Nun können Sie die Lösung auf einer SharePoint-Website bereitstellen und das Objekt `CustomAction` automatisch auf Website-Ebene verknüpfen.
@@ -340,11 +349,11 @@ Nun können Sie die Lösung auf einer SharePoint-Website bereitstellen und das O
     command-extension.sppkg
     ```
     
-3. Als Nächstes müssen Sie das Paket, das generiert wurde, im App-Katalog bereitstellen. Wechseln Sie dazu zum **App-Katalog** Ihres Mandanten, und öffnen Sie die Bibliothek **Apps für SharePoint**.
+3. Stellen Sie das Paket, das generiert wurde, im App-Katalog bereit. Wechseln Sie dazu zum **App-Katalog** Ihres Mandanten, und öffnen Sie die Bibliothek **Apps für SharePoint**.
 
 4. Laden Sie das Paket `command-extension.sppkg`, das sich im Ordner **sharepoint/solution** befindet, in den App-Katalog hoch, oder platzieren Sie es dort per Drag & Drop. In SharePoint wird ein Dialogfeld angezeigt, und Sie werden aufgefordert, der clientseitigen Lösung zu vertrauen.
 
-    Da wir die Host-URLs der Lösung für diese Bereitstellung nicht aktualisiert haben, verweist die URL immer noch auf https://localhost:4321. 
+    Da wir die Host-URLs der Lösung für diese Bereitstellung nicht aktualisiert haben, verweist die URL immer noch auf `https://localhost:4321`. 
     
 5. Klicken Sie auf die Schaltfläche **Bereitstellen**.
 
@@ -364,7 +373,7 @@ Nun können Sie die Lösung auf einer SharePoint-Website bereitstellen und das O
 
     ![Installieren einer Erweiterung des Typs „ListView Command Set“ auf einer Website](../../../images/ext-com-install-solution-to-site.png)
 
-10. Wählen Sie die App **command-extension-client-side-solution**, um die Lösung auf der Website zu installieren. Wenn die Installation abgeschlossen ist, aktualisieren Sie die Seite, indem Sie **F5** drücken.
+10. Wählen Sie die App **command-extension-client-side-solution**, um die Lösung auf der Website zu installieren. Wenn die Installation abgeschlossen ist, aktualisieren Sie die Seite, indem Sie F5 drücken.
 
 11. Klicken Sie nach der Installation der Anwendung auf der Symbolleiste auf der Seite **Websiteinhalte** auf **Neu**, und wählen Sie die Option **Liste** aus.
 
@@ -377,4 +386,9 @@ Nun können Sie die Lösung auf einer SharePoint-Website bereitstellen und das O
     ![Symbolleiste mit zusätzlichen Schaltflächen](../../../images/ext-com-dialog-visible-deployment.png)
 
 > [!NOTE]
-> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository]((https://github.com/SharePoint/sp-dev-docs/issues)). Vielen Dank im Voraus für Ihr Feedback.
+> Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository](https://github.com/SharePoint/sp-dev-docs/issues). Vielen Dank im Voraus für Ihr Feedback.
+
+## <a name="see-also"></a>Siehe auch
+
+- [Erstellen Ihrer ersten Field Customizer-Erweiterung](./building-simple-field-customizer.md)
+- [Übersicht über SharePoint-Framework-Erweiterungen](../overview-extensions.md)
