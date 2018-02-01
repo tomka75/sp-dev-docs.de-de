@@ -989,6 +989,8 @@
       href: general-development/code-samples-for-sharepoint.md
     - name: Auswählen des richtigen API-Satzes
       href: general-development/choose-the-right-api-set-in-sharepoint.md
+    - name: Verwenden des Office 365 Content Delivery Network (CDN)
+      href: general-development/office-365-cdn.md
     - name: Verwenden des Websitesammlungs-App-Katalogs
       href: general-development/site-collection-app-catalog.md
     - name: Wartungsmodus für clientseitige Webparts
