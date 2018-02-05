@@ -1,17 +1,17 @@
 ---
 title: "Übersicht über das SharePoint-Websitedesign und -Websiteskripts"
 description: Verwenden Sie SharePoint-Websiteskripts und -Websitedesigns, um die Bereitstellung neuer SharePoint-Websites mit neuen Konfigurationen zu automatisieren.
-ms.date: 12/14/2017
-ms.openlocfilehash: 347be667a9b4bd7cfecdf8c8b962da7a1b98eefa
-ms.sourcegitcommit: db303a21b5f83c8c2f9c2028a271c9aae0ac0515
+ms.date: 01/08/2018
+ms.openlocfilehash: cbc11ec54bb48fab15269ac66e9a311ad4dd5bc1
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/07/2018
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="sharepoint-site-design-and-site-script-overview"></a>Übersicht über das SharePoint-Websitedesign und -Websiteskripts
 
 > [!NOTE]
-> Websitedesigns und Websiteskripts befinden sich derzeit in der Vorschau und können ohne vorherige Ankündigung geändert werden. Sie werden in Produktionsumgebungen derzeit nicht unterstützt.
+> Websitedesigns und Websiteskripts befinden sich in der Vorschau und können ohne vorherige Ankündigung geändert werden. Sie werden derzeit nur für Produktionsumgebungen im Zielrelease unterstützt.Sie werden derzeit nur für Produktionsumgebungen im Zielrelease unterstützt.
 
 Verwenden Sie Websiteskripts und Websitedesigns, um die Bereitstellung neuer SharePoint-Websites mit Ihren eigenen benutzerdefinierten Konfigurationen zu automatisieren. Wenn Personen in Ihrem Unternehmen neue SharePoint-Websites erstellen, müssen Sie häufig ein gewisses Maß an Konsistenz sicherstellen. Vielleicht benötigen Sie für jede neue Website ein entsprechendes Branding und passende Designs. Vielleicht haben Sie auch detaillierte Bereitstellungsskripts, z. B. die Verwendung des PnP-Bereitstellungsmoduls, die immer dann angewendet werden müssen, wenn eine neue Website erstellt wird. In diesem Artikel wird beschrieben, wie Sie Websitedesigns und Websiteskripts verwenden können, um benutzerdefinierte Konfigurationen bereitzustellen, die angewendet werden, wenn neue Websites erstellt werden.
 
@@ -40,7 +40,7 @@ Dies sind die standardmäßigen Websitedesigns. Jedes Websitedesign weist einen 
 
 Wenn Sie die Vorlage für die Teamwebsite ausgewählt hätten, würde diese nur das standardmäßige Websitedesign mit dem Namen **Teamwebsite** enthalten. Weitere Informationen dazu, wie Sie die standardmäßigen Websitedesigns ändern können, finden Sie unter [Anpassen eines standardmäßigen Websitedesigns](customize-default-site-design.md).
 
-Nachdem ein Websitedesign ausgewählt wurde, erstellt SharePoint die neue Website und führt Websiteskripts für das Websitedesign aus. In den Websiteskripts ist die Arbeit wie z. B. das Erstellen neuer Listen oder das Anwenden eines Designs aufgeführt. Wenn die Aktionen in den Skripts abgeschlossen sind, zeigt SharePoint die ausführlichen Ergebnisse dieser Aktionen in einer Statusanzeige an.
+Nachdem ein Websitedesign ausgewählt wurde, erstellt SharePoint die neue Website und führt Websiteskripts für das Websitedesign aus. In den Websiteskripts wird die Arbeit wie z. B. das Erstellen neuer Listen oder das Anwenden eines Designs im Detail aufgeführt. Wenn die Aktionen in den Skripts abgeschlossen sind, zeigt SharePoint die ausführlichen Ergebnisse dieser Aktionen in einer Statusanzeige an.
 
 ![Statusanzeige, in der die abgeschlossenen Aktionen in einem Websitedesign aufgeführt sind](images/progress-pane.png)
 
@@ -202,7 +202,7 @@ Im vorherigen Beispiel gibt das Cmdlet **Add-SPOSiteScript** oder die REST-API *
 Der auf den Wert „64“ festgelegte Parameter **WebTemplate** gibt an, dass das Websitedesign bei der Teamwebsitevorlage registriert werden soll. Der Wert „68“ würde auf die Kommunikationswebsitevorlage hinweisen. Die Parameter **Title** und **Description** werden angezeigt, wenn ein Benutzer Websitedesigns beim Erstellen einer neuen Teamwebsite ansieht.
 
 > [!NOTE]
-> Ein Websitedesign kann mehrere Skripts ausführen. Die Skript-IDs werden in einem Array übergeben und werden in der aufgeführten Reihenfolge ausgeführt.
+> Ein Websitedesign kann mehrere Skripts ausführen. Die Skript-IDs werden in einem Array übergeben und in der aufgeführten Reihenfolge ausgeführt.
 
 Schrittweise Anweisungen zum Erstellen eines Websitedesigns finden Sie unter [Erste Schritte mit dem Erstellen von Websitedesigns](get-started-create-site-design.md).
 
@@ -221,7 +221,7 @@ Dieser Prozess funktioniert folgendermaßen:
 1. Die Nachricht löst einen Aufruf einer Azure-Funktion aus, die Sie konfiguriert haben.
 1. Die Azure-Funktion führt Ihr benutzerdefiniertes Skript aus, z. B. das PnP-Bereitstellungsmoduls, um Ihre benutzerdefinierten Konfigurationen anzuwenden.
 
-Ein schrittweises Lernprogramm zum Konfigurieren Ihres eigenen Microsoft-Flusses mit der PnP-Bereitstellung finden Sie unter [Erstellen eines vollständigen Websitedesigns mithilfe des PnP-Bereitstellungsmoduls](site-design-pnp-provisioning.md)
+Ein schrittweises Lernprogramm zum Konfigurieren Ihres eigenen Microsoft-Flusses mit PnP-Bereitstellung finden Sie unter [Erstellen eines vollständigen Websitedesigns mithilfe des PnP-Bereitstellungsmoduls](site-design-pnp-provisioning.md).
 
 ## <a name="scoping"></a>Bereichsdefinition
 

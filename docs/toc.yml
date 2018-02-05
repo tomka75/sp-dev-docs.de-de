@@ -136,8 +136,6 @@
               items:
                 - name: Lernprogramm
                   href: spfx/call-microsoft-graph-using-graphhttpclient.md
-        - name: Optimieren von Builds für die Produktion
-          href: spfx/toolchain/optimize-builds-for-production.md
         - name: Setup und Bereitstellung
           items:
             - name: Paketlösung
@@ -154,48 +152,49 @@
               href: spfx/sharepoint-2016-support.md
             - name: Bereitstellen von SharePoint-Objekten
               href: spfx/toolchain/provision-sharepoint-assets.md
-        - name: Designrichtlinien
-          href: design/design-guidance-overview.md
-          items:
-            - name: Erstellen von Seiten
-              href: design/authoring-pages.md
-            - name: Entwerfen eines Webparts
-              href: design/design-a-web-part.md
-              items:
-                - name: Reaktive und nicht-reaktive Webparts
-                  href: design/reactive-and-nonreactive-web-parts.md
-                - name: Dynamisches Designs
-                  href: design/grid-and-responsive-design.md
-                - name: Titel und Beschreibungen
-                  href: design/web-part-titles-and-descriptions.md
-                - name: Benutzeroberflächentext
-                  href: design/ui-text-for-web-parts.md
-                - name: Designs und Farben
-                  href: design/themes-colors.md
-                - name: Platzhalter und Fallbacks
-                  href: design/placeholders-and-fallbacks.md
-                - name: Barrierefreiheit
-                  href: design/accessibility.md
-                - name: Demonstrieren des Webparts
-                  href: design/showcase-web-part.md
-            - name: Designüberlegungen
-              href: spfx/web-parts/basics/design-considerations-for-web-parts.md
-            - name: Benutzerdefinierte Dialogfelder
-              href: spfx/extensions/guidance/using-custom-dialogs-with-spfx.md
-            - name: Arbeiten mit CSS
-              href: spfx/css-recommendations.md
-            - name: Verwenden von Designs
-              href: spfx/use-theme-colors-in-your-customizations.md
-            - name: "Office\_UI\_Fabric-Integration"
-              href: spfx/office-ui-fabric-integration.md
+        - name: Optimieren von Builds für die Produktion
+          href: spfx/toolchain/optimize-builds-for-production.md
         - name: Lokalisierung
           href: spfx/web-parts/guidance/localize-web-parts.md
         - name: Mandanteneigenschaften
           href: spfx/tenant-properties.md
-    - name: Frameworkarchitektur
+    - name: Entwerfen
+      href: design/design-guidance-overview.md
       items:
-        - name: Tools und Bibliotheken
-          href: spfx/tools-and-libraries.md
+        - name: Entwerfen eines Webparts
+          href: design/design-a-web-part.md
+          items:
+            - name: Reaktive und nicht-reaktive Webparts
+              href: design/reactive-and-nonreactive-web-parts.md
+            - name: Dynamisches Designs
+              href: design/grid-and-responsive-design.md
+            - name: Titel und Beschreibungen
+              href: design/web-part-titles-and-descriptions.md
+            - name: Benutzeroberflächentext
+              href: design/ui-text-for-web-parts.md
+            - name: Designs und Farben
+              href: design/themes-colors.md
+            - name: Platzhalter und Fallbacks
+              href: design/placeholders-and-fallbacks.md
+            - name: Barrierefreiheit
+              href: design/accessibility.md
+            - name: Demonstrieren des Webparts
+              href: design/showcase-web-part.md
+        - name: Erstellen von Seiten
+          href: design/authoring-pages.md
+        - name: Überlegungen zum Entwurf
+          href: spfx/web-parts/basics/design-considerations-for-web-parts.md
+        - name: Benutzerdefinierte Dialogfelder
+          href: spfx/extensions/guidance/using-custom-dialogs-with-spfx.md
+        - name: Arbeiten mit CSS
+          href: spfx/css-recommendations.md
+        - name: Verwenden von Designs
+          href: spfx/use-theme-colors-in-your-customizations.md
+        - name: "Office\_UI\_Fabric-Integration"
+          href: spfx/office-ui-fabric-integration.md
+    - name: Tools und Bibliotheken
+      href: spfx/tools-and-libraries.md
+      items:
         - name: Toolkette
           href: spfx/toolchain/sharepoint-framework-toolchain.md
         - name: Yeoman-Generator

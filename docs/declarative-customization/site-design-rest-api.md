@@ -2,16 +2,16 @@
 title: REST-API von SharePoint-Websitedesigns
 description: "Verwenden Sie SharePoint-Websitedesigns über die SharePoint-REST-Schnittstelle, um grundlegende CRUD-Operationen (Create, Read, Update, Delete, also Erstellen, Lesen, Aktualisieren und Löschen) auszuführen."
 ms.date: 12/14/2017
-ms.openlocfilehash: 618f8b0bb7eed7a3bf60bdd86363e095fb0a8221
-ms.sourcegitcommit: 6f2b3b5bd81c2de4f761e10ed5e2f0b9c3c485bf
+ms.openlocfilehash: 978a5c2b58e418ae9f7d99783a95352cdd3977a5
+ms.sourcegitcommit: 9f492519d4eeb3f62a1fddc71cdca79263651a56
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="site-design-and-site-script-rest-api"></a>REST-API von SharePoint-Websitedesigns und Websiteskripts
 
 > [!NOTE]
-> Websitedesigns und Websiteskripts befinden sich derzeit in der Vorschau und können ohne vorherige Ankündigung geändert werden. Sie werden in Produktionsumgebungen derzeit nicht unterstützt.
+> Websitedesigns und Websiteskripts befinden sich in der Vorschau und können ohne vorherige Ankündigung geändert werden. Sie werden derzeit nur für Produktionsumgebungen im Zielrelease unterstützt.
 
 Mithilfe der SharePoint-REST-Schnittstelle können Sie grundlegende CRUD-Operationen ausführen, d. h: Erstellen, Lesen, Aktualisieren und Löschen (Create, Read, Update, Delete).
 

@@ -2,11 +2,11 @@
 title: SharePoint Framework-Roadmap
 ms.date: 12/15/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 23629009d1322634c7e5855e3e590694f4caed74
-ms.sourcegitcommit: 6f2b3b5bd81c2de4f761e10ed5e2f0b9c3c485bf
+ms.openlocfilehash: e467c80920855fabcd7e76f174073127139f9795
+ms.sourcegitcommit: d24c7dd063a417382e8d0efa83238f08dc349c2c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="sharepoint-framework-roadmap"></a>SharePoint-Framework-Roadmap
 
@@ -17,7 +17,7 @@ Die Erstveröffentlichung von SharePoint-Framework enthielt nur Unterstützung f
 - [SharePoint-Framework-Erweiterungen](./extensions/overview-extensions.md)
 - [Mandanteneigenschaften](./tenant-properties.md)
 - [ALM-APIs für SPFx-Lösungen und -Add-Ins](../apis/alm-api-for-spfx-add-ins.md)
-- [Unterstützung für Office UI Fabric Core](((https://dev.office.com/blogs)/improved-support-for-office-ui-fabric-core))
+- [Unterstützung für Office UI Fabric Core](https://dev.office.com/blogs/improved-support-for-office-ui-fabric-core)
 - [Verpacken von Objekten und Websitesammlungs-App-Katalog](../general-development/site-collection-app-catalog.md)
 
 
@@ -29,6 +29,7 @@ Die Erstveröffentlichung von SharePoint-Framework enthielt nur Unterstützung f
 - Einfacher Zugriff auf die Graph-API zum Zugreifen auf benutzerspezifische Informationen (GraphHttpClient in der Vorschau)
 - Webhooks auf Website-Ebene
 - Textabschnitt zum Store mit Unterstützung für SharePoint-Framework aktualisiert
+- Textabschnitt zum Store für SharePoint-Framework-Lösungen mit einfachem Vertriebskanal für ISVs 
 
 ## <a name="client-side-web-parts-and-add-ins"></a>Clientseitige Webparts und Add-Ins
 
@@ -89,5 +90,5 @@ In den folgenden Kapiteln werden ältere Elemente auf der Roadmap-Seite erläute
 ## <a name="see-also"></a>Siehe auch
 Verwenden Sie die folgenden Ressourcen, um über die neuen Versionen und Funktionen auf dem Laufenden zu bleiben, die für SharePoint Framework veröffentlicht werden.
 
-* [dev.office.com-Blog]((https://dev.office.com/blogs))
-* [OfficeDev-Twitterkonto]((https://twitter.com/officedev))
+* [dev.office.com-Blog](https://dev.office.com/blogs)
+* [OfficeDev-Twitterkonto](https://twitter.com/officedev)

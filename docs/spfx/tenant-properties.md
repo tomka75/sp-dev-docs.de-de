@@ -1,9 +1,6 @@
 # <a name="sharepoint-online-tenant-properties"></a>Eigenschaften des SharePoint Online-Mandanten
 
-> [!NOTE]
-> Mandanteneigenschaften sind derzeit in der Vorschau in der ersten Version verfügbar und können geändert werden. Sie werden in Produktionsumgebungen derzeit nicht unterstützt.
-
-Mit Mandanteneigenschaften können Administratoren Eigenschaften im App-Katalog hinzufügen, die von verschiedenen SharePoint-Framework-Komponenten gelesen werden können. Mandanteneigenschaften werden von Mandantenadministratoren mithilfe der [Microsoft SharePoint Online-Verwaltungsshell]((https://technet.microsoft.com/de-DE/library/fp161372.aspx)) verwaltet, die ein PowerShell-Modul zum Verwalten des SharePoint Online-Abonnements in Office 365 darstellt.
+Mit Mandanteneigenschaften können Mandantenadministratoren Eigenschaften im App-Katalog hinzufügen, die von verschiedenen SharePoint-Framework-Komponenten gelesen werden können. Mandanteneigenschaften werden von Mandantenadministratoren mithilfe der [Microsoft SharePoint Online-Verwaltungsshell](https://technet.microsoft.com/de-DE/library/fp161372.aspx) verwaltet, die ein PowerShell-Modul zum Verwalten des SharePoint Online-Abonnements in Office 365 darstellt.
 
 ## <a name="manage-tenant-properties"></a>Verwalten von Mandanteneigenschaften
 

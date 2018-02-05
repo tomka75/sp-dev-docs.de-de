@@ -2,18 +2,18 @@
 title: JSON-Schema eines Websitedesigns
 description: "JSON-Schemareferenz zum Erstellen von Websitedesigns für SharePoint."
 ms.date: 12/14/2017
-ms.openlocfilehash: 8fcc88c854b948c785db6181fa66e307128b343d
-ms.sourcegitcommit: 7b6ce94b477d9b587beaa059eb9aa7cd6235efde
+ms.openlocfilehash: e5495608c10bac18ee98f858736d117a02c5f2a5
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="site-design-json-schema"></a>JSON-Schema eines Websitedesigns
 
 > [!NOTE]
-> Websitedesigns und Websiteskripts befinden sich derzeit in der Vorschau und können ohne vorherige Ankündigung geändert werden. Sie werden in Produktionsumgebungen derzeit nicht unterstützt.
+> Websitedesigns und Websiteskripts befinden sich in der Vorschau und können ohne vorherige Ankündigung geändert werden. Sie werden derzeit nur für Produktionsumgebungen im Zielrelease unterstützt.
 
-Das Websitedesign besteht aus einer Liste von Aktionen. Für komplexere Aktionen, z. B. das Erstellen einer Liste, gibt es auch Unteraktionen. Jede Aktion wird durch den Wert „verb“ angegeben. Verb-Aktionen werden in der Reihenfolge ausgeführt, in der Sie im JSON-Skript angezeigt werden.
+Das Websitedesign besteht aus einer Liste von Aktionen. Für komplexere Aktionen, z. B. das Erstellen einer Liste, gibt es auch Unteraktionen. Jede Aktion wird durch den Wert „verb“ angegeben. Verb-Aktionen werden in der Reihenfolge ausgeführt, in der sie im JSON-Skript angezeigt werden. Nur die hier aufgeführten Verb-Aktionen können verwendet werden. Andernfalls wird ein Fehler vom Typ „Aktion kann nicht verarbeitet werden“ ausgelöst, wenn Sie versuchen, ein Websiteskript hochzuladen. Weitere Aktionen werden im Laufe der Zeit hinzugefügt. 
 
 Die allgemeine JSON-Struktur wird wie folgt angegeben:
 
@@ -37,7 +37,7 @@ Verwenden Sie das Verb **createSPList**, um eine neue SharePoint-Liste zu erstel
 JSON-Werte:
 
 - **listName** - Der Name der Liste, anhand der Benutzer diese identifzieren können.
-- **templateType** - Welche Vorlage auf die Liste angewendet werden soll. In der Regel wird der Wert „100“ verwendet. Vorlagentypwerte sind in [SPListTemplateType-Enumeration]((https://msdn.microsoft.com/de-DE/library/microsoft.sharepoint.splisttemplatetype.aspx)) dokumentiert.
+- **templateType** - Welche Vorlage auf die Liste angewendet werden soll. In der Regel wird der Wert „100“ verwendet. Vorlagentypwerte sind in [SPListTemplateType-Enumeration](https://msdn.microsoft.com/de-DE/library/microsoft.sharepoint.splisttemplatetype.aspx) dokumentiert.
 - **subactions** - Ein Array von Aktionen, die in der aufgeführten Reihenfolge ausgeführt werden, um Ihre Liste zu erstellen.
 
 Beispiel:

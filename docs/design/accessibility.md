@@ -1,11 +1,11 @@
 ---
 title: Barrierefreiheit im SharePoint-Webpartdesign
 ms.date: 11/21/2017
-ms.openlocfilehash: b1c2e0819d15e470d1502deee79f8d6ab9254213
-ms.sourcegitcommit: 068729a51c9e2c1a83e7e33d28149ab79bfbd06e
+ms.openlocfilehash: f308f8d1cbe1fabc274e8c83af9cf1b6e8d43177
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/18/2018
 ---
 <!--Based on how rough this content is in it's current state, i'm going to pull it from this initial release so we can edit and better prepare. -->
 
@@ -88,7 +88,7 @@ Verwenden Sie die Leertaste oder deaktivieren Sie das derzeit gewählte Element 
 
 ### <a name="run-a-control"></a>Ausführen eines Steuerelements
 
-Drücken Sie die **Eingabetaste**, um ein Steuerelement auszuführen.
+Drücken Sie die EINGABETASTE, um ein Steuerelement auszuführen.
 
 *Abbildung 4: Drücken der EINGABETASTE zum Ausführen eines Steuerelements*
 

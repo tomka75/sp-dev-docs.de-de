@@ -2,11 +2,11 @@
 title: "Integrieren von gulp-Tasks in die SharePoint Framework-Toolkette"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 6dd97e3d939228969c86e0ab7272008b40c3bf31
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bbcda74a98b91e02ab681d0d3777cf6c7e5be869
+ms.sourcegitcommit: e4bf60eabffe63dc07f96824167d249c0678db82
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="integrate-gulp-tasks-in-sharepoint-framework-toolchain"></a>Integrieren von gulp-Tasks in die SharePoint Framework-Toolkette
 
@@ -89,13 +89,13 @@ Sie können auch festlegen, dass das hinzugefügte benutzerdefinierte Task vor o
 Die SharePoint Framework-Tasks stehen in der Standard-Buildrig zur Verfügung. Die Buildrig ist eine Sammlung von Tasks, die für einen bestimmten Zweck definiert wurden, in unserem Fall also für die Erstellung clientseitiger Pakete. Sie können über das Objekt `build.rig` auf diese Standardrig sowie die Pre-Task- und Post-Task-Funktionen zugreifen:
  
 ```js
-//execute before the typescript subtask
+// execute before the TypeScript subtask
 build.rig.addPreBuildTask(helloWorldTask);
 
-// execute after TypeScript task
+// execute after TypeScript subtask
 build.rig.addPostTypescriptTask(helloWorldTask);
 
-//execute after all tasks
+// execute after all tasks
 build.rig.addPostBuildTask(helloWorldTask);
 ```
 

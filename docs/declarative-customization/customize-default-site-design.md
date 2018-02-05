@@ -2,16 +2,16 @@
 title: "Anpassen der standardmäßigen Websitedesigns in SharePoint"
 description: "Anpassen der standardmäßigen Websitedesigns auf der SharePoint-Teamwebsite oder auf der Kommunikations-Websitevorlage"
 ms.date: 12/18/2017
-ms.openlocfilehash: 8b5506877f5e7938c16ce2d2dacb928ae57e24f9
-ms.sourcegitcommit: 31f793b42ec75679f01e1a024d0375a2bc7b5ec7
+ms.openlocfilehash: 34107e7028400cec62b0f6454f3474b92ca288be
+ms.sourcegitcommit: 9f492519d4eeb3f62a1fddc71cdca79263651a56
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="customize-a-default-site-design"></a>Anpassen eines standardmäßigen Websitedesigns
 
 > [!NOTE]
-> Websitedesigns und Websiteskripts befinden sich derzeit in der Vorschau und können ohne vorherige Ankündigung geändert werden. Sie werden in Produktionsumgebungen derzeit nicht unterstützt.
+> Websitedesigns und Websiteskripts befinden sich in der Vorschau und können ohne vorherige Ankündigung geändert werden. Sie werden derzeit nur für Produktionsumgebungen im Zielrelease unterstützt.
 
 SharePoint enthält zahlreiche Websitedesigns, die bereits in den SharePoint Online-Websitevorlagen verfügbar sind. Dies sind die standardmäßigen Websitedesigns. Sie können diese mit PowerShell oder den REST-APIs so ändern, dass sie die gesamte Websitebereitstellung steuern. Sie können zum Beispiel sicherstellen, dass das Unternehmensdesign auf jede Website angewendet wird, die erstellt wird. Sie können auch sicherstellen, dass ein Protokollierungsmechanismus immer ausgeführt wird, unabhängig davon, welcher Websitedesign ausgewählt wird.
 
