@@ -3,11 +3,11 @@ title: Application Lifecycle Management (ALM)-APIs
 ms.date: 12/19/2017
 ms.prod: sharepoint
 ms.assetid: fdf7ecb2-8851-425b-b058-3285fba77b68
-ms.openlocfilehash: 967ff4d456ee839f347c07605ec90adff7d3b2fc
-ms.sourcegitcommit: 6bc4c8e43c260deabc60d41d633586bfa3e6024a
+ms.openlocfilehash: 59d930854720f75879d38449d93811bfd80e1cc7
+ms.sourcegitcommit: e4bf60eabffe63dc07f96824167d249c0678db82
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/28/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="application-lifecycle-management-alm-apis"></a>Application Lifecycle Management (ALM)-APIs  
 
@@ -37,7 +37,7 @@ ALM-APIs werden systemeigen über REST-APIs bereitgestellt, aber es gibt auch zu
 Fügen Sie eine Lösung zum Mandanten-App-Katalog hinzu. Diese API wird im Kontext der Mandanten-App-Katalogwebsite ausgeführt.
 
 ```
-/_api/web/tenantappcatalog/Add(overwrite=true, url='test.txt')";
+url: /_api/web/tenantappcatalog/Add(overwrite=true, url='test.txt')
 method: POST
 binaryStringRequestBody: true
 body: 'byte array of the file'
@@ -48,7 +48,7 @@ body: 'byte array of the file'
 Aktivieren Sie die Lösung, damit Sie für die Installation in eine bestimmte Website zur Verfügung steht. Diese API wird im Kontext der Mandanten-App-Katalogwebsite ausgeführt.
 
 ```
-/_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Deploy";
+url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Deploy
 ```
 
 > [!NOTE]
@@ -59,7 +59,7 @@ Aktivieren Sie die Lösung, damit Sie für die Installation in eine bestimmte We
 Ziehen Sie Lösungen zurück, sodass diese nicht mehr auf Websites zur Verfügung stehen. Diese API wird im Kontext der Mandanten-App-Katalogwebsite ausgeführt.
 
 ```
-/_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Retract";
+url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Retract
 ```
 
 > [!NOTE]
@@ -70,7 +70,7 @@ Ziehen Sie Lösungen zurück, sodass diese nicht mehr auf Websites zur Verfügun
 Entfernen Sie das Lösungspaket aus dem Mandanten-App-Katalog. Diese API wird im Kontext der Mandanten-App-Katalogwebsite ausgeführt.
 
 ```
-/_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Remove";
+url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Remove
 ```
 
 > [!NOTE]
@@ -99,7 +99,7 @@ method: GET
 Integrieren Sie ein Lösungspaket mit bestimmten Bezeichnern aus einem Mandanten-App-Katalog in eine auf URL-Kontext basierende Website. Dieser REST-Aufruf kann im Kontext der Website ausgeführt werden, für die der Installationsvorgang ausgeführt werden soll.
 
 ```
-url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Install";
+url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Install
 method: POST
 ```
 
@@ -108,7 +108,7 @@ method: POST
 Aktualisieren Sie ein Lösungspaket der Seite auf eine neuere, im Mandanten-App-Katalog verfügbare Version. Dieser REST-Aufruf kann im Kontext der Website ausgeführt werden, für die der Aktualisierungsvorgang ausgeführt werden soll.
 
 ```
-url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Upgrade";
+url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Upgrade
 method: POST
 ```
 
@@ -117,7 +117,7 @@ method: POST
 Deinstallieren Sie ein Lösungspaket von einer SharePoint-Website. Dieser REST-Aufruf kann im Kontext der Website ausgeführt werden, für die der Deinstallationsvorgang ausgeführt werden soll.
 
 ```
-url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Uninstall";
+url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Uninstall
 method: POST
 ```
 > [!NOTE]
@@ -126,13 +126,13 @@ method: POST
 
 ## <a name="sharepoint-pnp-powershell-cmdlets-to-programmatically-add-and-deploy-sharepoint-apps"></a>SharePoint PnP PowerShell-Cmdlets zum programmgesteuerten Hinzufügen und Bereitstellen von SharePoint-Apps
 
-Mit [PnP PowerShell]((https://msdn.microsoft.com/de-DE/pnp_powershell/pnp-powershell-overview)) können Sie die Bereitstellung, Veröffentlichung, Installation, Aktualisierung und das Zurückziehen Ihrer Apps automatisieren. Sehen Sie sich das Kapitel unten an, um mehr über Cmdlets zu erfahren.
+Mit [PnP PowerShell](https://msdn.microsoft.com/de-DE/pnp_powershell/pnp-powershell-overview) können Sie die Bereitstellung, Veröffentlichung, Installation, Aktualisierung und das Zurückziehen Ihrer Apps automatisieren. Sehen Sie sich das Kapitel unten an, um mehr über Cmdlets zu erfahren.
 
 ### <a name="adding-and-publishing-your-app-to-the-app-catalog"></a>Hinzufügen Ihrer App zum App-Katalog und Veröffentlichen Ihrer App im App-Katalog
 Sie müssen Ihre App (.sppkg-Datei, .app-Datei) zu Ihrem Mandanten-App-Katalog hinzufügen, damit Sie sie später auf Ihrer SharePoint-Seite zur Verfügung stellen können. Dieser Vorgang kann mit einem einfachen cmdlet durchgeführt werden:
 
 ```PowerShell
-Add-PnPApp -Path ./myapp.sppkg"
+Add-PnPApp -Path ./myapp.sppkg
 ```
 
 Nachdem Sie die App hinzugefügt haben, müssen Sie sie veröffentlichen, damit sie von anderen Benutzern Ihres Mandanten verwendet werden kann. Unter PnP PowerShell-Cmdlets finden Sie die entsprechende Vorgehensweise:

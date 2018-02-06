@@ -2,11 +2,11 @@
 title: "Erstellen eines vollständigen SharePoint-Websitedesigns mithilfe des PnP-Bereitstellungsmoduls"
 description: "Erstellen eines vollständigen SharePoint-Websitedesigns mithilfe des PnP-Bereitstellungsmoduls"
 ms.date: 01/08/2018
-ms.openlocfilehash: 102eec9fa09afa28bbdc5b40f73a9e254dd52bce
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: da2c12a0a4dcbe4f6a9e2e8674139e9244e1cebf
+ms.sourcegitcommit: e4bf60eabffe63dc07f96824167d249c0678db82
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="calling-the-pnp-provisioning-engine-from-a-site-script"></a>Aufrufen des PnP-Bereitstellungsmoduls über ein Websiteskript
 
@@ -189,6 +189,7 @@ Sie müssen das PnP-PowerShell-Modul zunächst herunterladen, bevor Sie es für 
     ```powershell
     Save-Module -Name SharePointPnPPowerShellOnline -Path [pathtoyourfolder]
     ```
+
 Die Dateien des PowerShell-Moduls werden in einen Unterordner des von Ihnen erstellten Ordners heruntergeladen. 
 
 Als Nächstes laden Sie die Dateien hoch, damit Ihre Azure-Funktion das Modul verwenden kann.
@@ -257,24 +258,24 @@ Bevor Sie ein Websitedesign erstellen können, müssen Sie zuerst ein Websiteskr
 
     `https://prod-27.westus.logic.azure.com:443/workflows/ef7434cf0d704dd48ef5fb6...oke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun`
 
-        ```json
+    ```json
+    {
+        "$schema": "schema.json",
+        "actions": [
         {
-            "$schema": "schema.json",
-            "actions": [
-            {
-                    "verb": "triggerFlow",
-                    "url": "[paste the workflow trigger URL here]",
-                    "name": "Apply Template",
-                    "parameters": {
-                        "event":"",
-                        "product":""
-                    }
-            }
-            ],
-            "bindata": {},
-            "version": 1
+                "verb": "triggerFlow",
+                "url": "[paste the workflow trigger URL here]",
+                "name": "Apply Template",
+                "parameters": {
+                    "event":"",
+                    "product":""
+                }
         }
-        ```
+        ],
+        "bindata": {},
+        "version": 1
+    }
+    ```
 
 1. Markieren Sie den JSON-Code erneut, und kopieren Sie ihn nochmals in die Zwischenablage.
 1. Öffnen Sie PowerShell, und geben Sie Folgendes ein, um das Skript in eine Variable zu kopieren und das Websiteskript zu erstellen:
