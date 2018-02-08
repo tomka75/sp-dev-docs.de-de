@@ -3,11 +3,11 @@ title: "Designrichtlinien für die Benutzerfreundlichkeit von Add-Ins für Share
 description: "Hier erhalten Sie Informationen über allgemeine, auf das Benutzungserlebnis bzw. die User Experience (UX) ausgerichtete Entwurfsrichtlinien für Add-Ins in SharePoint, darunter die Wahl des Chrom, die Verwendung des CSS, das Verwalten von Benutzerlizenzen und andere Entwurfsaufgaben."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: d003241959f5619937331197e33bea11c720040b
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: eecbc52f516bf73aa2076c2ac247334384c27e9c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-add-ins-ux-design-guidelines"></a>Designrichtlinien für die Benutzerfreundlichkeit von Add-Ins für SharePoint
 
@@ -529,7 +529,7 @@ Aufgrund von Aktualisierungen oder Wartungsarbeiten an der Website kann sich Sha
 
    `{hostWebUrl}/_api/site/ReadOnly`
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins.md)

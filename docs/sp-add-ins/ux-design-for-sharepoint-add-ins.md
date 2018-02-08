@@ -3,11 +3,11 @@ title: "Design für die Benutzerfreundlichkeit für Add-Ins in SharePoint"
 description: "UX-Optionen (User eXperience, Benutzerumgebung) beim Erstellen von Add-Ins in Share Point, einschließlich UX-Szenarien für in der Cloud gehostete Add-Ins und in SharePoint gehostete Add-Ins."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 5ea61be47617322028714ca46990d2096650413f
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: a3f8a82a843769376a90a73948c5cafbb9599dcf
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="ux-design-for-sharepoint-add-ins"></a>UX-Design für SharePoint-Add-Ins
 
@@ -77,7 +77,7 @@ Abbildung 3 zeigt die Ressourcen im Modell für SharePoint-Add-Ins zum Verbinden
 
 ![Add-In-UX-Ressourcen für das Hostweb](../images/AppUX_hostweb.png)
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15_UXdesignapps_addresources"> </a>
 
 -  [Entwerfen von SharePoint-Add-Ins](design-sharepoint-add-ins.md)

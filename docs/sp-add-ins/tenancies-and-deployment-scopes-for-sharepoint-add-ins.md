@@ -3,11 +3,11 @@ title: "Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint"
 description: "Bereitstellen von SharePoint-Add-Ins für SharePoint-Mandanten mit Mandantenbereichen und Webbereichen."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: ecd8176cb3cfd69b9264444fbcb6d34704372e6a
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 459df536d9d6ea5185d7804c71bdddfc981a53fb
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="tenancies-and-deployment-scopes-for-sharepoint-add-ins"></a>Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint
 
@@ -83,7 +83,7 @@ Add-Ins aus dem Office Store oder aus einem Add-In-Katalog können von Mandanten
 3. Wenn Sie zur Genehmigung der Berechtigungsanforderungen des Add-Ins aufgefordert werden, wählen Sie **Vertrauen** aus.   
  
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15tenancies_addlresources"> </a>
 
 -  [Veröffentlichen von SharePoint-Add-Ins](publish-sharepoint-add-ins.md)    

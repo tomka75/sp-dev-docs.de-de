@@ -3,11 +3,11 @@ title: "Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 
 description: "Hier erfahren Sie, wie Sie Visual Studio installieren und sich für eine Office 365-Entwicklerwebsite registrieren können."
 ms.date: 11/03/2017
 ms.prod: sharepoint
-ms.openlocfilehash: a418b485bcbec95abe3c1b9bd68d27e409d49892
-ms.sourcegitcommit: 074f3a7983a7b253f56f8c670a0290c27bb7734b
+ms.openlocfilehash: 50f4544f10342d75f926ce9f4154f375416afca7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="set-up-a-development-environment-for-sharepoint-add-ins-on-office-365"></a>Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365
 
@@ -35,7 +35,7 @@ Gehen Sie wie folgt vor, wenn Sie die ausführliche Protokollierung aktivieren m
 In zukünftigen Versionen von Visual Studio wird ein anderer Registrierungspfad verwendet werden.
 
 <a name="o365_signup"> </a>
-## <a name="sign-up-for-an-office-365-developer-site"></a>Registrieren für eine Office 365-Entwicklerwebsite
+## <a name="sign-up-for-an-office-365-developer-site"></a>Registrieren für eine Office 365-Entwicklerwebsite
 
 > [!NOTE]
 > Möglicherweise haben Sie bereits Zugriff auf eine Office 365-Entwicklerwebsite: 
@@ -56,7 +56,7 @@ Sie haben drei Möglichkeiten, einen Office 365-Plan zu erhalten:
 
 1. Die erste Seite des Registrierungsformulars ist selbsterklärend. Geben Sie die geforderten Informationen ein, und klicken Sie anschließend auf **Next**.
     
-2. Geben Sie auf der zweiten Seite (siehe Abbildung 1) eine Benutzer-ID für den Administrator des Abonnements ein.
+2. Geben Sie auf der zweiten Seite, die in Abbildung 1 gezeigt ist, eine Benutzer-ID für den Administrator des Abonnements an.
     
    *Abbildung 1: Domänenname der Office 365-Entwicklerwebsite*
 
@@ -79,18 +79,18 @@ Sie haben drei Möglichkeiten, einen Office 365-Plan zu erhalten:
 
    ![Screenshot mit dem Office 365 Admin Center](../images/SP15_Office365AdminInset_border.png)
 
-5. Warten Sie, bis die Entwicklerwebsite eingerichtet ist. Aktualisieren Sie die Admin Center-Seite in Ihrem Browser, sobald die Bereitstellung abgeschlossen ist.
+5. Warten Sie, bis der Einrichtungsprozess für Ihre Entwicklerwebsite abgeschlossen ist. Nach Abschluss der Bereitstellung aktualisieren Sie die Admin Center-Seite im Browser.
     
 6. Klicken Sie oben links auf der Seite auf **Build Add-ins**, um Ihre Entwicklerwebsite zu öffnen. Nun sollten Sie eine Website sehen, die wie Abbildung 3 aussieht. Dass die Liste **Add-ins in Testing** auf der Seite angezeigt wird, ist der Beleg dafür, dass die Website auf Basis der Vorlage für SharePoint-Entwicklerwebsites erstellt wurde. Falls stattdessen eine normale Teamwebsite angezeigt wird: Warten Sie einige Minuten, und starten Sie dann die Website neu.
  
-7. Notieren Sie sich die URL der Website. Sie benötigen sie, um SharePoint-Add-In-Projekte in Visual Studio zu erstellen.
+7. Notieren Sie die URL der Website. Diese wird verwendet, wenn Sie SharePoint-Add-Ins-Projekte in Visual Studio erstellen.
 
    *Abb. 3: Die Startseite Ihrer Entwicklerwebsite mit der Liste der Add-Ins im Test*
 
    ![Screenshot, auf dem die Entwicklerwebsite-Startseite angezeigt ist](../images/SP15_DeveloperSiteHome_border.png)
  
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15SetupSPO365_bk_addlresources"> </a>
 
 - [SharePoint-Add-Ins](sharepoint-add-ins.md)

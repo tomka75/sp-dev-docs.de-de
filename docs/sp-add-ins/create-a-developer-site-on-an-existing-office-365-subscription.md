@@ -3,11 +3,11 @@ title: Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnem
 description: "Richten Sie eine Office 365-Entwicklerwebsite für SharePoint-Add-Ins ein."
 ms.date: 11/03/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 00dab905fc61250c775fb2156a0f2bf76728539f
-ms.sourcegitcommit: 074f3a7983a7b253f56f8c670a0290c27bb7734b
+ms.openlocfilehash: aeebd4b5b59388e5d4240d623ecd18862e98b68d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-a-developer-site-on-an-existing-office-365-subscription"></a>Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnement
 
@@ -67,7 +67,7 @@ Weitere Informationen zu den Office 365 Enterprise-Angeboten finden Sie unter [P
 
    ![Bereitstellung der neuen Websitesammlung](../images/SPAdminCenter_newSiteCollection_provisioning.png)
  
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [SharePoint-Add-Ins](sharepoint-add-ins.md)

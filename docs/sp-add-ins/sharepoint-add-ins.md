@@ -3,11 +3,11 @@ title: SharePoint-Add-Ins
 description: "Erstellen Sie eigenständige Erweiterungen von SharePoint-Websites, so genannte SharePoint-Add-Ins, die ohne benutzerdefinierten Code auf dem SharePoint-Server ausgeführt werden."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 72fb617cab6cd08d664f0627df1fc3bd2e5f5d5b
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 7feaf728fce0dee563d8b134f110b02806cb519c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-add-ins"></a>SharePoint-Add-Ins
 
@@ -24,7 +24,7 @@ Es gibt zwei grundlegende Arten von SharePoint-Add-Ins: von SharePoint gehostet 
  
 - **Fast alle Haupttypen von SharePoint-Komponenten kann Teil einer SharePoint-Add-In** sein, einschließlich Seiten, Listen, Workflows, benutzerdefinierte Inhaltstypen, Listenvorlagen, Webparts und vieles mehr.
     
-- **Die SharePoint-Websites, für die SharePoint-Add-Ins installiert sind und von denen aus Benutzer sie starten, heißen Hostweb.** Die SharePoint-Komponenten befinden sich jedoch in der Regel in einem speziellen untergeordneten Web des Hostwebs, das als Add-In-Webpart bezeichnet wird.   
+- **Die SharePoint-Websites, für die SharePoint-Add-Ins installiert sind und von denen aus Benutzer sie starten, heißen Hostweb.** Die SharePoint-Komponenten befinden sich jedoch in der Regel in einem speziellen untergeordneten Web des Hostwebs, das als Add-In-Web bezeichnet wird.   
  
 - **SharePoint-Add-Ins können auf verschiedene Weise in eine SharePoint-Website integriert werden**:
     
@@ -37,7 +37,7 @@ Es gibt zwei grundlegende Arten von SharePoint-Add-Ins: von SharePoint gehostet 
 
 -  **Alle SharePoint-Add-Ins, die Benutzer installieren, erhalten eine Kachel auf der Seite „Websiteinhalte“ der SharePoint-Website.** Beim Klicken auf die Kachel wird das Add-In ausgeführt.
 
-- **Ein SharePoint-Add-In wird durch ein _Add-In-Manifest_** konfiguriert. Dies ist eine XML-Datei, in der deklariert wird, welche grundlegenden Eigenschaften das Add-In hat, wo es ausgeführt wird und welche Aktion SharePoint beim Starten des Add-Ins ausführen soll. Das Manifest kann unter anderem festlegen, welche Sprachen das Add-In unterstützt, von welchen SharePoint-Diensten und -Funktionen es abhängt und welche Berechtigungen für das Hostweb erforderlich sind, das vom Add-In benötigt wird. (SharePoint-Add-Ins haben Vollzugriff auf ihr eigenes Add-In-Web.)   
+- **Ein SharePoint-Add-In wird durch ein _Add-In-Manifest_** konfiguriert. Dies ist eine XML-Datei, in der deklariert wird, welche grundlegenden Eigenschaften das Add-In hat, wo es ausgeführt wird und welche Aktion SharePoint beim Starten des Add-Ins ausführen soll. Das Manifest kann unter anderem festlegen, welche Sprachen das Add-In unterstützt, von welchen SharePoint-Diensten und -Funktionen es abhängt und welche Berechtigungen für das Hostweb das Add-In benötigt. (SharePoint-Add-Ins haben Vollzugriff auf ihr eigenes Add-In-Web.)   
  
 - **Sie verteilen SharePoint-Add-Ins in Add-In-Paketen**, die immer mindestens das Add-In-Manifest enthalten. (Wenn keine SharePoint-Komponenten vorhanden sind, enthält das Add-In-Paket möglicherweise nur das Add-In-Manifest.) Wenn das Add-In SharePoint-Komponenten in einem Add-In-Web hat, sind diese im Paket als ein Satz von XML-Dateien enthalten. Remotekomponenten, die außerhalb von SharePoint gehostet werden, z. B. eine Remotewebanwendung oder eine Datenbank, sind dagegen nicht im Paket enthalten und werden separat vom Add-In-Paket bereitgestellt. (Das Add-In-Manifest gibt jedoch die URLs der Remotekomponenten an.)
  
@@ -88,7 +88,7 @@ Die gesamte Geschäftslogik in einem von SharePoint gehosteten Add-In verwendet 
  
 Benutzerdefinierte Seiten in einem von SharePoint gehosteten Add-In sind in der Regel ASP.NET-Seiten (ASPX), die deklarativ ASP.NET- und enthaltene SharePoint-Steuerelemente referenzieren können, wobei kein Code-Behind vorhanden sein kann. Sie können die SharePoint-Steuerelemente jedoch über eine clientseitige Renderingoption und benutzerdefiniertes JavaScript anpassen.
 
-Das JavaScript in von SharePoint gehosteten Add-Ins kann auf Daten und Ressourcen, die sich außerhalb des Add-In-Webparts befinden, mithilfe einer von zwei Techniken für das sichere Umgehen der Richtlinie des Browsers zum selben Ursprung zugreifen: eine spezielle domänenübergreifende JavaScript-Bibliothek oder eine bestimmte JavaScript-WebProxy-Klasse. Mithilfe dieser Techniken kann ein von SharePoint gehostetes Add-In mit Daten im Hostweb, dem übergeordneten Abonnement oder einem beliebigen Standort im Internet arbeiten.
+Das JavaScript in von SharePoint gehosteten Add-Ins kann auf Daten und Ressourcen, die sich außerhalb des Add-In-Webs befinden, mithilfe einer von zwei Techniken für das sichere Umgehen der Richtlinie des Browsers zum selben Ursprung zugreifen: eine spezielle domänenübergreifende JavaScript-Bibliothek oder eine bestimmte JavaScript-WebProxy-Klasse. Mithilfe dieser Techniken kann ein von SharePoint gehostetes Add-In mit Daten im Hostweb, dem übergeordneten Abonnement oder einem beliebigen Standort im Internet arbeiten.
 
 ### <a name="provider-hosted-sharepoint-add-ins"></a>Vom Anbieter gehostete SharePoint-Add-Ins
 
@@ -146,6 +146,6 @@ Sind Sie bereit zu beginnen?
 > [!NOTE]
 > Wenn Sie Anfänger in der SharePoint- und Webentwicklung sind, profitieren Sie am meisten, wenn Sie mit dem kostenlosen Kurs der Microsoft Virtual Academy oder einem Buch zur SharePoint-Entwicklung beginnen.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 
 [Entwickeln von Microsoft SharePoint Server 2013-Kernlösungen - Schnellstart](http://www.microsoftvirtualacademy.com/training-courses/developing-microsoft-sharepoint-server-core-solutions-jump-start)

@@ -3,11 +3,11 @@ title: "Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins"
 description: "Erstellen und verwenden Sie einen Handler und wenden Sie Rollbacklogik für das Updateereignis eines SharePoint-Add-Ins an."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 52d88501ca0918a676588115b81807df4a61bc9b
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 8c781f0c03b6d2fa46a2def5ed9eef8026771b1d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-a-handler-for-the-update-event-in-sharepoint-add-ins"></a>Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins
 
@@ -202,9 +202,9 @@ Kehren Sie zu [Wichtige Schritte beim Aktualisieren eines Add-Ins](update-sharep
 -  [Aktualisieren von Hostwebkomponenten in SharePoint](update-host-web-components-in-sharepoint.md)
 -  [Aktualisieren von Remotekomponenten in SharePoint-Add-Ins](update-remote-components-in-sharepoint-add-ins.md)
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 
--  [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins.md)
+-  [Aktualisieren von Add-Ins für SharePoint](update-sharepoint-add-ins.md)
 -  [UpgradedEventEndpoint-Element (PropertiesDefinition ComplexType) (SharePoint-Add-In-Manifest)](http://msdn.microsoft.com/library/09a93d44-d295-47bb-f91c-d243178b0f53%28Office.15%29.aspx)
 -  [Behandeln von Ereignissen in SharePoint-Add-Ins](handle-events-in-sharepoint-add-ins.md)
 -  [Erstellen eines Add-In-Ereignisempfängers in SharePoint-Add-Ins](create-an-add-in-event-receiver-in-sharepoint-add-ins.md)

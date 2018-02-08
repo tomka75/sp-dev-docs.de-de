@@ -3,11 +3,11 @@ title: "Aktualisierungsprozess von Add-Ins für SharePoint"
 description: Informationen zum Aktualisieren und Migrieren von SharePoint-Add-Ins.
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: c165f6861aa30e181db998c5e198edb614d7962d
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: adfc516328e5c20cbd8c6a7da82a158b6df9d2c9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-add-ins-update-process"></a>Aktualisierungsprozess von Add-Ins für SharePoint
 
@@ -79,7 +79,7 @@ Im Prinzip können Sie eine externe Datenquelle, Rechenkomponente oder eine ande
 
 Wenn sowohl das alte als auch das neue Add-In jeweils ein Add-In-Web enthalten, müssen Sie berücksichtigen, dass das neue Add-In-Web während der Installation des neuen Add-Ins erstellt wird. Verwenden Sie daher nicht das zum Update gehörige XML-Markup im SharePoint-Featureschema. Dieses Markup funktioniert nicht, weil Sie keine vorhandenen SharePoint-Komponenten aktualisieren, sondern ein altes Add-In durch ein neues Add-In ersetzen.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15appupgrade_addlresources"> </a>
 
 -  [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins.md)

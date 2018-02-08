@@ -3,11 +3,11 @@ title: "Drei Methoden für Entwurfsoptionen für SharePoint-Add-Ins"
 description: "Übersicht über die Entwurfs- und Architekturoptionen, die in SharePoint-Add-Ins verfügbar sind."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 1ae0c7a5bdbbfba488db8d7cca6b567c47aea7b2
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 452200e1f76d8aeeda28a3abf082ca5ea6dfef0b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="three-ways-to-think-about-design-options-for-sharepoint-add-ins"></a>Drei Methoden für Entwurfsoptionen für SharePoint-Add-Ins
 
@@ -40,7 +40,7 @@ Beim Entwerfen eines SharePoint-Add-Ins sind im Wesentlichen drei Kategorien von
     
    - Ein SharePoint-Add-In kann auch auf externe Daten über Business Connectivity Services (BCS) oder einen Webdienstproxy zugreifen. Weitere Informationen finden Sie unter [Business Connectivity Services in SharePoint](http://msdn.microsoft.com/library/64b7d032-4b83-4e9e-bc08-f0a161af5457%28Office.15%29.aspx) und [Abfragen eines Remotediensts mithilfe des Webproxys in SharePoint](query-a-remote-service-using-the-web-proxy-in-sharepoint.md).
 
-   Weitere Informationen zu Datenspeicherung und -zugriff in SharePoint-Add-Ins finden Sie unter [Datenspeicher in Add-Ins für SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape.md#Data), [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md) und [Arbeiten mit externen Daten in SharePoint](work-with-external-data-in-sharepoint.md).
+   Weitere Informationen zu Datenspeicherung und -zugriff in SharePoint-Add-Ins finden Sie unter [Datenspeicher in Add-Ins für SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md#data-storage-in-sharepoint-add-ins), [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md) und [Arbeiten mit externen Daten in SharePoint](work-with-external-data-in-sharepoint.md).
 
 - **Benutzeroberfläche:** Eine SharePoint-Add-In kann auf drei Arten in SharePoint dargestellt werden: Alle Add-Ins werden zumindest auf einer vollständigen Webseite dargestellt. Optional kann ein Add-In auch durch ein Add-In-Webpart und durch ein Menüelement oder eine Menübandschaltfläche dargestellt werden. Weitere Informationen finden Sie unter [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins.md).
     
@@ -96,7 +96,7 @@ Das SharePoint-Add-In-Modell bietet so viele Entwurfsmöglichkeiten, dass sich k
 
 - Sie sollten auch Ihre vorhandenen Fachkenntnisse und Erfahrungen bzw. die Ihres Entwicklungspersonals berücksichtigen. Sind Sie beispielsweise ein erfahrener ASP.NET-Entwickler, spricht dies für das Erstellen einer Remotewebanwendung und die Darstellung von SharePoint-Listendaten in einem Rastersteuerelement auf einer ASP.NET-Seite. Sind Sie dagegen ein erfahrener SharePoint-Entwickler, ist dies ein Argument für die Verwendung einer benutzerdefinierten SharePoint-Liste und -Websiteseite mit JavaScript zur Verarbeitung.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="AdditionalResources"> </a>
 
 -  [Entwerfen von SharePoint-Add-Ins](design-sharepoint-add-ins.md)

@@ -3,11 +3,11 @@ title: Hostwebsites, Add-In-Websites und SharePoint-Komponenten in SharePoint
 description: "Sie erfahren, welche SharePoint-Komponenten eines Add-Ins für SharePoint hinzugefügt werden können, welche für das Hostweb oder das Add-In-Web bereitgestellt werden und wie das Add-In-Web in einer isolierten Domäne bereitgestellt wird."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: a22b66a30a04c1a8ae2ad456c458b5dcf0e37f2a
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 71012cfa78c88ce62f1da0023c9510aa5658d746
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="host-webs-add-in-webs-and-sharepoint-components-in-sharepoint"></a>Hostwebsites, Add-In-Websites und SharePoint-Komponenten in SharePoint
 
@@ -120,7 +120,7 @@ Im folgenden finden Sie einige Vorsichtsmaßnahmen und Details in Bezug auf die 
 
    Weitere Informationen zu Websitedefinitionskonfigurationen und Webvorlagen finden Sie unter [Arbeiten mit Websitevorlagen und Definitionen](http://msdn.microsoft.com/library/1edf6d4d-eddb-4cb5-9034-ed394e8a3e01%28Office.15%29.aspx).
     
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15hostedwebs_bk_addlresources"> </a>
 
 - [Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)

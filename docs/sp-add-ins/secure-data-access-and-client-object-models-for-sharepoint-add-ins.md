@@ -3,11 +3,11 @@ title: "Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins"
 description: "Konnektivitätsoptionen für den Zugriff auf Daten in SharePoint und in externen Systemen und verfügbare APIs für den Zugriff auf Daten aus Ihrem Add-In."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 6ef987bd1a55ba2f110ae68fb0634213c97dd26c
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: d60b87c774ee9df0d711f3233576b59c1cd0d6ba
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="secure-data-access-and-client-object-models-for-sharepoint-add-ins"></a>Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins
 
@@ -113,7 +113,7 @@ Für den Zugriff auf SharePoint-Daten von Ihrem Add-In aus stehen Ihnen die folg
     
 Möglicherweise gibt es weitere APIs, die Sie mit SharePoint-Add-In verwenden können, wenn Sie auf externe Daten zugreifen. Dies hängt aber von den Schnittstellen der externen Dienste und Systeme ab Sie sollten diese Schnittstellen auch bei Ihrem Entwurf berücksichtigen.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15_dataaccessoptions_addResources"> </a>
 
 -  [Autorisierung und Authentifizierung für Add-Ins in SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md)

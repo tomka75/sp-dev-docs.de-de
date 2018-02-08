@@ -3,11 +3,11 @@ title: "Kritische Aspekte der Architektur und der Entwicklungslandschaft für Sh
 description: "Die Architektur von und das Modell für SharePoint-Add-Ins, einschließlich Hostingoptionen für Add-Ins, Benutzeroberflächenoptionen, das Bereitstellungssystem, das Sicherheitssystem und der Lebenszyklus."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: d401f031535aca9d022fd74b1a1d6210c80d456e
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 62e9b707b65f1f954aa01cf5696e04b13373c3b8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape"></a>Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins
 
@@ -208,7 +208,7 @@ Dies ist ein Beispiel für eine Rohversion des **AppPrerequisites**-Markups, mit
 - [Auswählen von Mustern für die Entwicklung und das Hosting Ihres Add-Ins für SharePoint](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in.md)
 - [Hostwebs, Add-In-Webs und SharePoint-Komponenten in SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md)
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SPAppModelArch_AdditionalResources"> </a>
 
 -  [SharePoint-Add-Ins](sharepoint-add-ins.md)

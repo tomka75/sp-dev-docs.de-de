@@ -3,11 +3,11 @@ title: "Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins"
 description: "Installieren Sie ein Betriebssystem sowie die erforderlichen Komponenten und konfigurieren Sie Dienste sowie eine isolierte Add-In-Domäne."
 ms.date: 11/03/2017
 ms.prod: sharepoint
-ms.openlocfilehash: fb44b2809e6af3b66f7069d2dd1d7a875214ab71
-ms.sourcegitcommit: 074f3a7983a7b253f56f8c670a0290c27bb7734b
+ms.openlocfilehash: 9d5ed586e02b108ada842518f54a90df6513f1f7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="set-up-an-on-premises-development-environment-for-sharepoint-add-ins"></a>Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins
 
@@ -113,17 +113,17 @@ Stellen Sie sicher, dass mindestens ein Profil in der **Benutzerprofildienst-Anw
 
 - Visual Studio umfasst die **Microsoft Office Developer Tools für Visual Studio**, manchmal wird eine Version der Tools jedoch zwischen Updates von Visual Studio veröffentlicht. Um sicherzustellen, dass Sie über die neueste Version der Tools verfügen, führen Sie das [Installationsprogramm für Office Developer Tools für Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013) oder das [Installationsprogramm für Office Developer Tools für Visual Studio 2015](http://aka.ms/OfficeDevToolsForVS2015) aus.
 
-### <a name="verbose-logging-in-visual-studio"></a>Ausführliche Protokollierung in Visual Studio
+### <a name="verbose-logging-in-visual-studio"></a>Ausführliche Protokollierung in Visual Studio
 
-Führen Sie die folgenden Schritte aus, wenn Sie die ausführliche Protokollierung aktivieren möchten:
+Gehen Sie wie folgt vor, wenn Sie die ausführliche Protokollierung aktivieren möchten:
 
-1. Öffnen Sie die Registrierung und greifen Sie auf **HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\ _nn.n_\SharePointTools** zu, wobei _nn.n_ die Version von Visual Studio ist, z. B. 12.0 oder 14.0.
+1. Öffnen Sie die Registrierung, und navigieren Sie zu **HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\ _nn.n_\SharePointTools**. Dabei ist _nn.n_ die Version von Visual Studio, beispielsweise 12.0 oder 14.0.
 
 2. Fügen Sie einen DWORD-Schlüssel mit dem Namen **EnableDiagnostics** hinzu.
 
 3. Geben Sie dem Schlüssel den Wert **1**.
 
-Der Registrierungspfad wird sich in kommenden Versionen von Visual Studio ändern.
+In zukünftigen Versionen von Visual Studio wird ein anderer Registrierungspfad verwendet werden.
 
 <a name="SP15appdevonprem_bk_configure"> </a>
 ## <a name="configure-an-isolated-add-in-domain-in-sharepoint"></a>Konfigurieren einer isolierten Add-In-Domäne in SharePoint
@@ -224,7 +224,7 @@ Weitere Informationen über die verfügbaren Optionen für die Bereitstellung Ih
 > Nachdem Sie eine von SharePoint gehostete Add-In in Ihrer Installation bereitgestellt haben, werden Sie möglicherweise beim Start der Add-In aufgefordert, sich mit Ihren Anmeldeinformationen anzumelden. Sie müssen die Loopbacküberprüfung deaktivieren, um diese Aufforderungen auszuschalten. Informationen zum Deaktivieren der Loopbacküberprüfung finden Sie unter [ Anzeige des Fehlers 401.1 beim Durchsuchen einer Website, die die integrierte Authentifizierung verwendet und mit IIS 5.1 oder einer höheren Version gehostet wird](http://support.microsoft.com/kb/896861).
  
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15SetupSPO365_bk_addlresources"> </a>
 
 - [SharePoint-Add-Ins](sharepoint-add-ins.md)

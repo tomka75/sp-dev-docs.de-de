@@ -3,11 +3,11 @@ title: Aktualisieren von SharePoint-Hostwebkomponenten
 description: Aktualisieren Sie benutzerdefinierte Aktionen und Add-In-Webparts im Hostweb eines SharePoint-Add-Ins.
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 5f7c24eb69e1107f9b3271edce6e6f07ae7db059
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 88396b03d4c45385c866947388fadc71966ff815
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="update-host-web-components-in-sharepoint"></a>Aktualisieren von Hostwebkomponenten in SharePoint
 
@@ -30,7 +30,7 @@ Wechseln Sie zu [Wichtige Schritte beim Aktualisieren eines Add-Ins](update-shar
 -  [Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md)
 -  [Aktualisieren von Remotekomponenten in SharePoint-Add-Ins](update-remote-components-in-sharepoint-add-ins.md)
  
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Aktualisieren von SharePoint-Add-Ins](update-sharepoint-add-ins.md)

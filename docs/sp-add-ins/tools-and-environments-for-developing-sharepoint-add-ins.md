@@ -3,11 +3,11 @@ title: "Tools und Umgebungen für die Entwicklung von SharePoint-Add-Ins"
 description: "Hier erfahren Sie, wie Sie auf einer SharePoint Online-Website oder in einer lokalen Farm eine Entwicklungsumgebung für SharePoint-Add-Ins erstellen können."
 ms.date: 11/03/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 22c5a3cdff4d7d829a401edd1b170aafd6ca577d
-ms.sourcegitcommit: 074f3a7983a7b253f56f8c670a0290c27bb7734b
+ms.openlocfilehash: 62690d8c3e0949129dd09b57e772911333aa99fd
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="tools-and-environments-for-developing-sharepoint-add-ins"></a>Tools und Umgebungen für die Entwicklung von SharePoint-Add-Ins
 
@@ -37,7 +37,7 @@ Eine Anleitung zur **Erstellung einer lokalen Umgebung** finden Sie im Artikel [
 > Wenn Sie Entwicklungsprojekte beider Typen umsetzen möchten, sollten Sie mit letzterem Artikel beginnen und anschließend den Artikel [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md) lesen. Dort finden Sie weitere erforderliche Schritte für die Entwicklung von SharePoint-Add-Ins.
 
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 - [SharePoint Add-ins](sharepoint-add-ins.md)

@@ -3,11 +3,11 @@ title: Entwerfen von SharePoint-Add-Ins
 description: "In diesem Artikel finden Sie einen Überblick über die in SharePoint-Add-Ins verfügbaren Entwurfs- und Architekturoptionen. Außerdem erfahren Sie, wie Sie die richtigen Entscheidungen treffen können, um sich die Entwicklung Ihres SharePoint-Add-Ins einfacher zu machen."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: e33f97d9d19d277020094c739ada08133b53d297
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 72d5553510f60dad83afecde04be7218a233b228
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="design-sharepoint-add-ins"></a>Entwerfen von SharePoint-Add-Ins
 
@@ -58,7 +58,7 @@ Sie haben einen soliden Entwurf für Ihr Add-In erarbeitet? Dann können Sie das
 - [Entwickeln von SharePoint-Add-Ins](develop-sharepoint-add-ins.md): In diesem Artikel stellen wir Ihnen weiterführende Konzepte und Funktionen des Add-In-Modells vor.
 - [Veröffentlichen von SharePoint-Add-Ins](publish-sharepoint-add-ins.md): In diesem Artikel erfahren Sie, wie Sie SharePoint-Add-Ins veröffentlichen können und welche Voraussetzungen hierfür zu erfüllen sind.
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="SP15Design_AddRes"> </a>
 
 -  [Beispielpaket für SharePoint-Add-Ins](http://code.msdn.microsoft.com/office/Apps-for-SharePoint-sample-64c80184)
