@@ -1,11 +1,12 @@
 ---
 title: Designs und Farben in SharePoint
-ms.date: 09/25/2017
-ms.openlocfilehash: 072e48ae55f23177249f8eac4bb8c2038c73ca18
-ms.sourcegitcommit: 74ae53a85592d95f0ec67dcf1e3afb9539e2f96c
+description: "Design-Prinzipien, die die Grundlage der aktuell in SharePoint verfügbaren Designs und Farbpaletten bilden:"
+ms.date: 01/24/2018
+ms.openlocfilehash: bf31b09716763e8c3cbca837cfd82d4937c69256
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="sharepoint-themes-and-colors"></a>Designs und Farben in SharePoint
 
@@ -19,29 +20,23 @@ Ganz wie die Microsoft-Markenpalette orientieren sich die SharePoint-Designs am 
 
 Die aktuell in SharePoint verfügbaren Designs und Farbpaletten wurden auf Grundlage der folgenden Designprinzipien entwickelt:
 
-**Geführt**
+**Geführt** Unser Designsystem greift global. Aktualisierungen lassen sich konsistent auf sämtliche Websites anwenden. So können Benutzer Ihre Websites mühelos optimieren. Unser Designsystem arbeitet innerhalb einer gesteuerten Umgebung, sodass sich Designs schnell und erfolgreich optimieren lassen.
 
-Unser Designsystem greift global. Aktualisierungen lassen sich konsistent auf sämtliche Websites anwenden. So können Benutzer Ihre Websites mühelos optimieren.
+**Intelligent und effizient** Unser Designsystem erstellt anhand intelligenter Algorithmen Optionen für maximale Attraktivität. Das beschleunigt die Websiteerstellung.
 
-Unser Designsystem arbeitet innerhalb einer gesteuerten Umgebung, sodass sich Designs schnell und erfolgreich optimieren lassen.
+**Professionell**. Unsere Designs stehen für professionelles Aussehen und Verhalten. Sie gewährleisten Konsistenz und ermöglichen es unseren Unternehmenskunden, ihre Markenidentität optimal zu kommunizieren.
 
-**Intelligent und effizient**
-
-Unser Designsystem erstellt anhand intelligenter Algorithmen Optionen für maximale Attraktivität. Das beschleunigt die Websiteerstellung.
-
-**Professionell**
-
-Unsere Designs stehen für professionelles Aussehen und Verhalten. Sie gewährleisten Konsistenz und ermöglichen es unseren Unternehmenskunden, ihre Markenidentität optimal zu kommunizieren.
-
-**Barrierefrei**
-
-Unsere integrierte Barrierefreiheitsprüfung gewährleistet, dass unsere Standarddesigns in jeder Hinsicht einheitlich und universell einsetzbar sind. Für Benutzer, die Anpassungen vornehmen möchten, stellen wir hilfreiche Richtlinien bereit, mit denen sie Barrierefreiheit sicherstellen können.
+**Barrierefrei** Unsere integrierte Barrierefreiheitsprüfung gewährleistet, dass unsere Standarddesigns in jeder Hinsicht einheitlich und universell einsetzbar sind. Für Benutzer, die Anpassungen vornehmen möchten, stellen wir hilfreiche Richtlinien bereit, mit denen sie Barrierefreiheit sicherstellen können.
 
 ## <a name="colors"></a>Farben
 
 Die SharePoint-Farbpalette wurde für eine optimale Darstellung auf verschiedenen Geräten und Bildschirmgrößen optimiert. Gleichzeitig bietet sie genügend Flexibilität für eine optimale Anpassung an Ihre Marke. Die von SharePoint bereitgestellten Farben gewährleisten zudem die Barrierefreiheit und gute Lesbarkeit Ihrer Oberflächen.
 
 ### <a name="red"></a>Rot
+
+![SharePoint-Farbpalette Rot D1343](../images/themes-colors-red-theme.png)
+
+<br/>
 
 <table>
 <tr>
@@ -90,6 +85,10 @@ Die SharePoint-Farbpalette wurde für eine optimale Darstellung auf verschiedene
 <br/>
 
 ### <a name="orange"></a>Orange
+
+![SharePoint-Farbpalette Orange CA5010](../images/themes-colors-orange-theme.png)
+
+<br/>
 
 <table>
 <tr>
@@ -140,6 +139,10 @@ Die SharePoint-Farbpalette wurde für eine optimale Darstellung auf verschiedene
 
 ### <a name="green"></a>Grün
 
+![SharePoint-Farbpalette Grün 10893E](../images/themes-colors-green-theme.png)
+
+<br/>
+
 <table>
 <tr>
 <td style="color:white; background-color:#094c23">themeDarker: #094c23</td>
@@ -188,6 +191,10 @@ Die SharePoint-Farbpalette wurde für eine optimale Darstellung auf verschiedene
 <br/>
 
 ### <a name="blue"></a>Blau
+
+![SharePoint-Farbpalette Blau 0078D7](../images/themes-colors-blue-theme.png)
+
+<br/>
 
 <table>
 <tr>
@@ -238,6 +245,10 @@ Die SharePoint-Farbpalette wurde für eine optimale Darstellung auf verschiedene
 
 ### <a name="purple"></a>Violett
 
+![SharePoint-Farbpalette Violett 6B69D6](../images/themes-colors-purple-theme.png)
+
+<br/>
+
 <table>
 <tr>
 <td style="color:white; background-color:#27268a">themeDarker: #27268a</td>
@@ -287,6 +298,10 @@ Die SharePoint-Farbpalette wurde für eine optimale Darstellung auf verschiedene
 
 ### <a name="gray"></a>Grau
 
+![SharePoint-Farbpalette Grau 5D5A5B](../images/themes-colors-gray-theme.png)
+
+<br/>
+
 <table>
 <tr>
 <td style="color:white; background-color:#323130">themeDarker: #323130</td>
@@ -334,3 +349,7 @@ Die SharePoint-Farbpalette wurde für eine optimale Darstellung auf verschiedene
 
 <br/>
 
+## <a name="see-also"></a>Siehe auch
+
+- [Barrierefreiheit](accessibility.md)
+- [Entwerfen von benutzerfreundlichen SharePoint-Umgebungen](design-guidance-overview.md)

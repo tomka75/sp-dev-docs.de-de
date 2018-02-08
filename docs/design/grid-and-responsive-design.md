@@ -1,17 +1,18 @@
 ---
 title: Rasterdesigns und dynamische Designs in SharePoint
-ms.date: 9/25/2017
-ms.openlocfilehash: cb3fc7476188614e5cc49cd560ab4aeb86e813ca
-ms.sourcegitcommit: 3276e9b281b227fb2f1a131ab4ac54ae212ce5cf
+description: "Das zugrunde liegende Seitenrastersystem und die Haltepunkte, d. h. die Bildschirmgrößen, bei denen das Seitenlayout angepasst wird."
+ms.date: 01/23/2018
+ms.openlocfilehash: b94980b57682e519091272bcf3801fcffcf854ff
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/24/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="sharepoint-grid-and-responsive-design"></a>Rasterdesigns und dynamische Designs in SharePoint
  
 Dynamische Benutzeroberflächen skalieren nahtlos für verschiedene Geräte, sodass Ihre Inhalte passend für die jeweilige Bildschirmgröße dargestellt werden. Dank dynamischer Designs entfällt zudem die Notwendigkeit, für unterschiedliche Geräte jeweils eigene Versionen der Seiten auf Ihrer Website zu erstellen.  
 
-Die Designrichtlinien für dynamische Seiten in der SharePoint-Erstellungsumgebung beinhalten ein dynamisches Rastersystem, das auf [Office UI Fabric](https://dev.office.com/fabric) basiert. In diesem Artikel werden das zugrunde liegende Seitenrastersystem und die Haltepunkte beschrieben, d. h. die Bildschirmgrößen, bei denen das Seitenlayout angepasst wird. 
+Die Designrichtlinien für dynamische Seiten in der SharePoint-Erstellungsumgebung beinhalten ein dynamisches Rastersystem, das auf [Office UI Fabric](https://developer.microsoft.com/de-DE/fabric) basiert. In diesem Artikel werden das zugrunde liegende Seitenrastersystem und die Haltepunkte beschrieben, d. h. die Bildschirmgrößen, bei denen das Seitenlayout angepasst wird. 
 
 
 ![SharePoint-Seite auf verschiedenen Geräten](../images/design-grid-responsive-overview.png)
@@ -27,13 +28,15 @@ In den folgenden Abschnitt zeigen wir Ihnen, wie die grundlegende Rasterstruktur
 
 ![Abbildung eines Rasters mit 12 Spalten](../images/design-grid_diagram.png)
 
-
+<br/>
 
 ### <a name="team-sites"></a>Teamwebsites
 
 Der Inhaltsbereich einer Teamwebsite ist linksbündig fixiert. Der Navigationsbereich befindet sich auf Teamwebsites links. Die Bereichswebparts belegen daher das Raster, und beim dynamischen Umbruch wird der für die Navigation reservierte Bereich berücksichtigt. Die maximale Breite des Inhaltsbereichs einer Teamwebsite beträgt 1.204 Pixel, die minimale Größe 320 Pixel für eine optimale Darstellung auf Mobilgeräten.
 
 ![Teamwebsite](../images/design-grid-team-site.png)
+
+<br/>
 
 Die folgenden Beispiele demonstrieren, wie das Raster an den jeweiligen Haupthaltepunkten auf einer Teamwebsite angepasst wird.
 
@@ -42,31 +45,42 @@ Das kleine Raster besteht aus einem einzelnen zentrierten Spaltenbereich mit ein
 
 ![Teamwebsite (kleines Raster)](../images/design-grid-Team-site-S-Canvas-no-column.png)
 
+<br/>
+
 #### <a name="medium-480-x-854"></a>Mittel (480 × 854)
 Das mittelgroße Raster besteht aus 12 Spalten mit Bundstegen von je 16 Pixel.
 
 ![Teamwebsite (mittelgroßes Raster)](../images/design-grid-Team-site-M-Canvas-16px-gutters.png)
+
+<br/>
 
 #### <a name="large-640-x-1024"></a>Groß (640 × 1.024)
 Das große Raster besteht aus 12 Spalten mit Bundstegen von je 24 Pixel.
 
 ![Teamwebsite (großes Raster)](../images/design-grid-Team-site-L-Canvas-24px-gutters.png)
 
+<br/>
+
 #### <a name="xl-1024-x-768"></a>XL (1.024 × 768)
 Das XL-Raster besteht aus 12 Spalten mit Bundstegen von je 24 Pixel.
 
 ![Teamwebsite (XL-Raster)](../images/design-grid-Team-site-XL-Canvas-24px-gutters.png)
 
+<br/>
+
 #### <a name="xxl-1366-x-768"></a>XXL (1.366 × 768)
-Das XXL-Raster besteht aus 12 Spalten mit Bundstegen von je 32 Pixel.
+Das XXL-Raster besteht aus 12 Spalten mit Bundstegen von je 32 Pixel.
 
 ![Teamwebsite (XXL-Raster)](../images/design-grid-Team-site-XXL-Canvas-32px-gutters.png)
 
+<br/>
 
 #### <a name="xxxl-1920-x-1080"></a>XXXL (1.920 × 1.080)
-Das XXXL-Raster besteht aus 12 Spalten mit Bundstegen von je 32.
+Das XXXL-Raster besteht aus 12 Spalten mit Bundstegen von je 32 Pixel.
 
 ![Teamwebsite (XXXL-Raster)](../images/design-grid-Team-site-XXXL-Canvas-32px-gutters-maxwidth-1204.png)
+
+<br/>
 
 #### <a name="team-site-multicolumn-pages-and-web-parts"></a>Teamwebsite mit mehrspaltigen Seiten und Webparts
 Webparts werden je nach Seitenlayout horizontal skaliert. Das folgende Beispiel veranschaulicht, wie die Größe eines Webparts an die Größe des linken Navigationsbereichs angepasst wird.
@@ -80,6 +94,8 @@ Kommunikationswebsites verfügen über eine Navigationsleiste oben auf der Seite
 
 ![Kommunikationswebsite](../images/design-grid-communication_site.png)
 
+<br/>
+
 Die folgenden Beispiele zeigen, wie das Raster an den jeweiligen Haupthaltepunkten auf einer Kommunikationswebsite angepasst wird.
 
 #### <a name="small-320-x-568"></a>Klein (320 × 568)
@@ -87,32 +103,42 @@ Das kleine Raster besteht aus einem einzelnen zentrierten Spaltenbereich mit ein
 
 ![Kommunikationswebsite (kleines Raster)](../images/design-grid-Communication-site-S-Canvas-no-column.png)
 
+<br/>
+
 #### <a name="medium-480-x-854"></a>Mittel (480 × 854)
 Das mittelgroße Raster besteht aus 12 Spalten mit Bundstegen von je 16 Pixel.
 
 ![Kommunikationswebsite (mittelgroßes Raster)](../images/design-grid-Communication-site-M-Canvas-16px-gutters.png)
+
+<br/>
 
 #### <a name="large-640-x-1024"></a>Groß (640 × 1.024)
 Das große Raster besteht aus 12 Spalten mit Bundstegen von je 24 Pixel.
 
 ![Kommunikationswebsite (großes Raster)](../images/design-grid-Communication-site-L-Canvas-24px-gutters.png)
 
+<br/>
+
 #### <a name="xl-1024-x-768"></a>XL (1.024 × 768)
 Das XL-Raster besteht aus 12 Spalten mit Bundstegen von je 24 Pixel.
 
 ![Kommunikationswebsite (XL-Raster)](../images/design-grid-Communication-site-XL-Canvas-24px-gutters.png)
 
+<br/>
 
 #### <a name="xxl-1366-x-768"></a>XXL (1.366 × 768)
 Das XXL-Raster besteht aus 12 Spalten mit Bundstegen von je 32 Pixel.
 
 ![Kommunikationswebsite (XXL-Raster)](../images/design-grid-Communication-site-XXL-Canvas-32px-gutters-maxwidth-1204.png)
 
+<br/>
 
 #### <a name="xxxl-1920-x-1080"></a>XXXL (1.920 × 1.080)
 Das XXXL-Raster besteht aus 12 Spalten mit Bundstegen von je 32 Pixel.
 
 ![Kommunikationswebsite (XXXL-Raster)](../images/design-grid-Communication-site-XXXL-Canvas-32px-gutters-maxwidth-1204.png)
+
+<br/>
 
 #### <a name="communication-site-multicolumn-pages-and-web-parts"></a>Kommunikationswebsite mit mehrspaltigen Seiten und Webparts
 Webparts werden je nach Seitenlayout horizontal skaliert. Das Beispiel unten veranschaulicht eine Kommunikationswebsite und Webparts in einem Layout mit einer bis drei Spalten.
@@ -125,23 +151,24 @@ Webparts werden je nach Seitenlayout horizontal skaliert. Das Beispiel unten ver
 
 Damit die Oberfläche sich nahtlos an unterschiedliche Bildschirmgrößen anpasst, sollte die SharePoint-UI das Layout an den folgenden Haltepunktbreiten anpassen: 
 
-- 320
-- 1.024
-- 1.366
-- 1.920
+- 320 px
+- 1024 px
+- 1366 px
+- 1920 px
  
 Dabei sollten Sie bedenken, wie Ihre Inhalte sich zwischen diesen Haltepunkten verändern, wenn die Größe des Darstellungsbereichs an den nächstgelegenen Haltepunkt angepasst wird. Die Abbildung unten dient lediglich der Veranschaulichung und ist nicht pixelgenau.
 
 
 ![SharePoint-Diagramm mit Haltepunkten](../images/design-grid-breakpoints.png)
 
+<br/>
 
 Das dynamische Raster für Teamwebsites und Kommunikationswebsites passt sich bei der Umstellung von einem der großen Haltepunkte an einen Mobilgeräte-Haltepunkt an. Dadurch wird die Website optimal an das jeweilige Geräte und die jeweilige Bildschirmgröße angepasst. In der folgenden Tabelle finden Sie einen Überblick über die Rastergrößen an verschiedenen Haltepunkten, basierend auf den Bildschirmgrößen gängiger Geräte.
 
 
 
 | Fensterbreite | Gerät                  | Haltepunkt | Spalten | Bundsteg | Maximale Anzahl von Spalten pro Abschnitt |
-|--------------|-------------------------|------------|---------|--------|-------------------------|
+|:-------------|:------------------------|:-----------|:-------:|:------:|:-----------------------:|
 | 320          | iPhone 5/SE (320 ×568)     | Small      | 1       | -    | 1                       |
 | 480          | 6-Zoll-Gerät               | Medium     | 1       | -    | 1                       |
 | 640          | 8-Zoll-Gerät               | Large      | 12      | 16     | 2                       |
@@ -152,8 +179,11 @@ Das dynamische Raster für Teamwebsites und Kommunikationswebsites passt sich be
 | 1.600         | Web (1.600 × 900)            | XX-Large   | 12      | 32     | 3                       |
 | 1.920         | Web (1.920 x 1.080)           | XXX-Large  | 12      | 32     | 3                       |
 
+<br/>
+
 ## <a name="see-also"></a>Weitere Artikel
 
 - [Design Toolkit & Assets](https://developer.microsoft.com/de-DE/fabric#/resources)
+- [Entwerfen von benutzerfreundlichen SharePoint-Umgebungen](design-guidance-overview.md)
 
 

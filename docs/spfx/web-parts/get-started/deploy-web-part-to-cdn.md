@@ -3,11 +3,11 @@ title: Bereitstellen Ihres clientseitigen SharePoint-Webparts im Azure CDN
 description: "Erstellen Sie ein neues Beispielwebpart, und stellen Sie seine Objekte in einem Azure CDN bereit, statt das Office 365 CDN als Hostinglösung zu verwenden."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 2fe92081817625758c480b1ac7d0af3ac92aa8f1
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 4a2ab89f2eb24fbf318d880e1df07f4d51d45648
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="deploy-your-sharepoint-client-side-web-part-to-azure-cdn"></a>Bereitstellen Ihres clientseitigen SharePoint-Webparts im Azure CDN
 
@@ -92,17 +92,17 @@ Beachten Sie jedoch, dass Sie die Dateien noch nicht bereitgestellt haben.
     
 4. Es werden verschiedene Eingabeaufforderungen angezeigt. Gehen Sie wie folgt vor:
 
-  * Akzeptieren Sie den Standardnamen **azurehosted-webpart** als Lösungsnamen, und drücken Sie die **EINGABETASTE**.
-  * Wählen Sie **SharePoint Online only (latest)**aus, und drücken Sie die **EINGABETASTE**.
+  * Übernehmen Sie den Standardnamen **azurehosted-webpart** als Lösungsnamen, und drücken Sie die EINGABETASTE.
+  * Wählen Sie **SharePoint Online only (latest)**, und drücken Sie die EINGABETASTE.
   * Wählen Sie als Speicherort für die Dateien die Option **Use the current folder** aus.
   * Wählen Sie **y** aus, um die mandantenweite Bereitstellung zu verwenden, mit der das Webpart auf allen Websites zur Verfügung steht, sobald es bereitgestellt wird. 
   * Wählen Sie **Webpart** als den zu erstellenden Typ von clientseitiger Komponente aus. 
 
 5. Über die nächsten Eingabeaufforderungen werden spezifische Informationen zum Webpart abgefragt:
 
-  * Verwenden Sie **AzureCDN** als Namen des Webparts, und drücken Sie die **EINGABETASTE**.
-  * Akzeptieren Sie die Standardbeschreibung **AzureCDN description** als Beschreibung für Ihr Webpart, und drücken Sie die **EINGABETASTE**.
-  * Akzeptieren Sie die Standardeinstellung **No javaScript web framework** als das zu verwendende Framework, und drücken Sie dann die **EINGABETASTE**.
+  * Verwenden Sie **AzureCDN** als Namen des Webparts, und drücken Sie die EINGABETASTE.
+  * Akzeptieren Sie die Standardbeschreibung **AzureCDN description** als Beschreibung für Ihr Webpart, und drücken Sie die EINGABETASTE.
+  * Akzeptieren Sie die Standardeinstellung **No javaScript web framework** als das zu verwendende Framework, und drücken Sie dann die EINGABETASTE.
 
   ![Yeoman-Generator-Fragen für das neu erstellte Webpart](../../../images/cdn-azure-create-webpart-yo.png)
 
@@ -295,6 +295,6 @@ Solange Sie die **cdnBasePath**-Eigenschaft entsprechend aktualisieren, werden I
 > [!NOTE]
 > Wenn Sie einen Fehler in der Dokumentation oder im SharePoint-Framework finden, melden Sie ihn an das SharePoint Engineering unter Verwendung der [Fehlerliste im sp-dev-docs-Repository](https://github.com/SharePoint/sp-dev-docs/issues). Vielen Dank im Voraus für Ihr Feedback.
 
-## <a name="see-also"></a>Weitere Artikel
+## <a name="see-also"></a>Siehe auch
 
 - [Erstellen des ersten clientseitigen SharePoint-Webparts](build-a-hello-world-web-part.md)

@@ -1,17 +1,17 @@
 ---
 title: Erste Schritte mit dem Erstellen von SharePoint-Websitedesigns und -Websiteskripts
 description: Erste Schritte mit dem Erstellen von SharePoint-Websitedesigns und -Websiteskripts, aus denen Benutzer ihre eigenen Websites erstellen.
-ms.date: 12/14/2017
-ms.openlocfilehash: 4b4e0c6c1a374599448aa5eb87ace311398c3593
-ms.sourcegitcommit: d9372f6009de1c1e48e272fd3629a99aed7fef9f
+ms.date: 01/08/2018
+ms.openlocfilehash: 5781898dc7c2b7a8905003f8584a62470ef1fb9c
+ms.sourcegitcommit: 9f492519d4eeb3f62a1fddc71cdca79263651a56
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="get-started-creating-site-designs-and-site-scripts"></a>Erste Schritte mit dem Erstellen von Websitedesigns und Websiteskripts
 
 > [!NOTE]
-> Websitedesigns und Websiteskripts befinden sich derzeit in der Vorschau und können ohne vorherige Ankündigung geändert werden. Sie werden in Produktionsumgebungen derzeit nicht unterstützt.
+> Websitedesigns und Websiteskripts befinden sich in der Vorschau und können ohne vorherige Ankündigung geändert werden. Sie werden derzeit nur für Produktionsumgebungen im Zielrelease unterstützt.Sie werden derzeit nur für Produktionsumgebungen im Zielrelease unterstützt.
 
 Sie können Websitedesigns erstellen, um wiederverwendbare Listen, Designs, Layouts, Seiten oder benutzerdefinierte Aktionen bereitzustellen, damit Ihre Benutzer schnell neue SharePoint-Websites mit den benötigten Features erstellen können. In diesem Artikel wird beschrieben, wie Sie ein einfaches Websitedesign erstellen, das eine SharePoint-Liste zum Nachverfolgen von Kundenbestellungen hinzufügt. Sie verwenden das Websitedesign, um eine neue SharePoint-Website mit der benutzerdefinierten Liste zu erstellen.
 

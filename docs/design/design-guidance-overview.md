@@ -1,43 +1,48 @@
 ---
 title: Entwerfen von benutzerfreundlichen SharePoint-Umgebungen
-ms.date: 9/25/2017
-ms.openlocfilehash: 20e38c855b6a63db9f3c3bb3e670082127e2c2f6
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+description: "Erstellen Sie ansprechende SharePoint-Oberflächen und kommunizieren Sie Ihre Marke und Ihre Markenbotschaft effektiv an Ihre Zielgruppe."
+ms.date: 1/23/2018
+ms.openlocfilehash: fdd6a281bb3bd14314da982eb9c9b84ff3261b13
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="designing-great-sharepoint-experiences"></a>Entwerfen von benutzerfreundlichen SharePoint-Umgebungen
 
-SharePoint ist eine Plattform, die Inhalte für mehr als 200.000 Organisationen und 190 Millionen Personen weltweit bietet. Dieser SharePoint-Designleitfaden unterstützt Sie dabei, noch überzeugendere SharePoint-Umgebungen zu erstellen sowie Ihre Marke und Botschaft effizient zu kommunizieren. Er unterstützt Sie dabei, die leistungsstarken Tools in SharePoint besser zu nutzen und gleichzeitig Ihre eigenen angepassten und optimierten Umgebungen zu erstellen. Wir freuen uns über Ihr Feedback und Ihre Rückmeldungen, sodass wir diesen Leitfaden verbessern können.
+SharePoint ist eine Plattform, die Inhalte an mehr als 200.000 Organisationen und 190 Millionen Personen weltweit ausliefert. Dieser SharePoint-Designleitfaden hilft Ihnen, noch attraktivere SharePoint-Umgebungen zu erstellen sowie Ihre Marke und Markenbotschaft wirkungsvoll zu kommunizieren. Darüber hinaus können Sie mit dem Leitfaden die leistungsstarken Tools in SharePoint besser nutzen und gleichzeitig Ihre eigenen angepassten und optimierten Umgebungen erstellen. Wir freuen uns über Ihr Feedback und Ihre Rückmeldungen. So helfen Sie uns, diesen Leitfaden weiter zu verbessern.
 
 <!-- Seems like you should tell them how you'd like to receive feedback - i.e. via issues in the repo? -->
 
-![SharePoint-Kommunikationswebsite auf mehreren Geräten](../images/design-guidance-overview.png)
+![SharePoint-Kommunikationswebsite auf verschiedenen Geräten](../images/design-guidance-overview.png)
 
 
 ## <a name="sharepoint-design-principles"></a>SharePoint-Designprinzipien 
 
-SharePoint setzt auf den Designprinzipien auf, die die Office- und Microsoft-Produktfamilien formen. Diese Prinzipien sorgen dafür, dass das Design unseren Produktzielen und den Benutzeranforderungen entspricht.
+SharePoint setzt auf denselben Designprinzipien auf, die wir auch in den Office-Produkten und anderen Microsoft-Produkten verwenden. Diese Prinzipien sorgen dafür, dass das Design unseren Produktzielen und den Benutzeranforderungen entspricht.
 
-**Optimistisch und schnell**
+### <a name="optimistic-and-fast"></a>Optimistisch und schnell
 
-SharePoint unterstützt die Benutzer, alles zu erreichen, was sie möchten, indem sie über die erforderliche Plattform und den erforderlichen Support verfügen. Wir sind schnell und agil – und wir passen unsere Produktumgebung basierend auf Feedback und Rückmeldungen an.
+SharePoint inspiriert seine Benutzer. Wir wissen, dass Sie alles erreichen können, wenn Sie nur die richtige Plattform und die nötige Unterstützung haben. Wir sind schnell und agil – und wir passen unsere Produkte basierend auf Feedback und Rückmeldungen an.
 
-**Dynamisch und aktiv**
+### <a name="dynamic-and-alive"></a>Dynamisch und aktiv
 
-Wir fördern Dynamik und sind begeistert davon, wie Veränderungen zu neuen Möglichkeiten führen können. Wir haben keine Angst, uns neu zu erfinden, und möchten uns ständig weiterentwickeln, um die Anforderungen der Menschen und Unternehmen besser zu erfüllen, die die Welt um uns herum verändern.
+Die Dynamik der heutigen Zeit begeistert uns. Wir lieben es, wie Veränderungen neue Möglichkeiten eröffnen können. Wir haben keine Angst, uns neu zu erfinden, und möchten uns ständig weiterentwickeln, um die Anforderungen der Menschen und Unternehmen besser zu erfüllen, die die Welt um uns herum verändern.
 
-**Authentisch und praktisch**
+### <a name="authentic-and-useful"></a>Authentisch und praxistauglich
 
-Unsere Leidenschaft besteht darin, unsere Kunden zu unterstützen, und das seit mehr als 30 Jahren. Wir tun dies wie kein anderes Unternehmen. Wir sind uns der Bedeutung unserer Kunden bewusst und stellen sicher, dass SharePoint durch Authentizität und Echtheit relevant und praktisch bleibt.
+Unsere Leidenschaft ist es, Kunden bei der Umsetzung ihrer Ziele zu helfen, und das seit mehr als 30 Jahren. Wir tun dies wie kein anderes Unternehmen. Wir wissen, wie wichtig unsere Kunden sind, und bleiben immer authentisch und ehrlich. So stellen wir sicher, dass SharePoint Ihnen jederzeit das bietet, was Sie benötigen.
 
-**Zukunftsorientiert**
+### <a name="forward-thinking"></a>Zukunftsorientiert
 
-Wir möchten herausfinden, was über die aktuelle Vorgehensweise hinaus möglich ist. Uns treibt all das an, was unsere Kunden erreichen können, und möchten dies durch unsere Plattform unterstützen und optimieren. Wir interessieren uns für die Anforderungen unserer Kunden – nicht nur heute, sondern auch in der Zukunft, indem wir antizipieren, was und wie sie es erreichen möchten. Deshalb entwickeln wir unsere Technologie dahingehend, wer sie sein und was sie  erreichen können.
+Wir geben uns nicht mit dem Status quo zufrieden und möchten immer herausfinden, was noch möglich ist. Das Leistungspotenzial unserer Kunden inspiriert uns, und wir möchten ihnen mit unserer Plattform helfen, noch mehr zu erreichen. Die Anforderungen unserer Kunden sind uns wichtig: die aktuellen ebenso wie die zukünftigen. Wir antizipieren, was sie wie umsetzen möchten. Deshalb entwickeln wir unsere Technologie mit dem Blick auf das weiter, was sie in Zukunft sein und erreichen können.
 
-**Zugänglich und optimiert**
+### <a name="accessible-and-optimized"></a>Barrierefrei und optimiert
 
-Barrierefreiheit bedeutet die Entwicklung einer Umgebung für alle Anwender, die individuell anpassbar ist, um spezielle visuelle, auditive, sensorische, kognitive und sprachliche Anforderungen zu erfüllen. SharePoint unterstützt das Konzept, jedem überall zugängliche Umgebungen bereitzustellen und unsere Umgebungen zu optimieren, um die Anforderungen all unserer Kunden widerzuspiegeln.
+Barrierefreiheit bedeutet die Entwicklung einer Umgebung für alle Anwender, die individuell anpassbar ist, um spezielle visuelle, auditive, sensorische, kognitive und sprachliche Anforderungen zu erfüllen. Mit SharePoint möchten wir jedem überall barrierefreie Umgebungen bereitstellen. Dabei optimieren wir unsere Umgebungen kontinuierlich, um den Anforderungen aller unserer Kunden gerecht zu werden.
 
 <!-- These seem like fairly high-level principles; it would be good to think about how to convey how these principles manifest in the design. Can you add a design example to each section that illustrate the principle? --> 
+
+## <a name="see-also"></a>Siehe auch
+
+- [Übersicht über das SharePoint Framework](../spfx/sharepoint-framework-overview.md)

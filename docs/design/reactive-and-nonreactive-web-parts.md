@@ -1,42 +1,51 @@
 ---
-title: Dynamische und nicht dynamische SharePoint-Webparts
-ms.date: 9/25/2017
-ms.openlocfilehash: 33f46f3582555690ba5e9f7e08e7a0bce8c5b505
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+title: Reaktive und nicht-reaktive SharePoint-Webparts
+description: "Reaktive Webparts sind vollständig clientseitige Webparts, während nicht-reaktive Webparts Elemente enthalten, die eine Interaktion mit einem Server erfordern."
+ms.date: 01/23/2018
+ms.openlocfilehash: 74d1ccfd1ed882d5efbdd8181ac44ceb1a1674eb
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 01/29/2018
 ---
-# <a name="reactive-and-nonreactive-sharepoint-web-parts"></a>Dynamische und nicht dynamische SharePoint-Webparts
+# <a name="reactive-and-nonreactive-sharepoint-web-parts"></a>Reaktive und nicht-reaktive SharePoint-Webparts
 
-Dynamische Webparts sind nur clientseitig; nicht dynamische Webparts enthalten Elemente, für die ein Server benötigt ist. Es wird empfohlen, dynamische SharePoint-Webparts erstellen, da diese am besten für das UX-Modell und die WYSIWYG-Prinzipien für die Erstellung geeignet sind. Es ist jedoch in manchen Fällen ggf. nicht möglich oder zu kostspielig, dynamische Webparts zu erstellen.
-
-
-## <a name="reactive-web-parts"></a>Dynamische Webparts
-
-Bei dynamischen Webparts handelt es sich vollständig um clientseitige Webparts. Dies bedeutet, dass für jede Komponente, die im Eigenschaftenbereich konfiguriert wird, die vorgenommene Änderung innerhalb des Webparts auf der Seite angepasst wird. Wenn Sie beispielsweise im Aufgabenlisten-Webpart die Option „Abgeschlossene Aufgaben“ deaktivieren, wird diese Ansicht im Webpart ausgeblendet.
-
-![Dynamische Webparts](../images/design-reactive-01.png)
+Reaktive Webparts sind vollständig clientseitige Webparts, während nicht-reaktive Webparts Elemente enthalten, die eine Interaktion mit einem Server erfordern. Wir empfehlen für SharePoint-Webparts ein reaktives Design, da ein solches Design dem UX-Modell und den WYSIWYG-Erstellungsprinzipien am besten gerecht wird. Es ist jedoch nicht immer möglich oder kosteneffizient, reaktive Webparts zu erstellen.
 
 
-## <a name="nonreactive-web-parts"></a>Nicht dynamische Webparts
-Nicht dynamische Webparts sind nicht vollständig clientseitig, und in der Regel muss mindestens eine Eigenschaft einen Aufruf ausführen, um Daten auf einem Server festzulegen/abzurufen oder zu speichern. Sie sollten für nicht dynamische Webparts die Schaltfläche **Übernehmen** unten im Eigenschaftenbereich aktivieren.
+## <a name="reactive-web-parts"></a>Reaktive Webparts
 
-Sie können auch die Schaltfläche **Übernehmen** anpassen, damit diese eine bestimmte Aktion aufweist. <!-- Is this a reference to an image? (design-wp-pp-non-reactive.png) -->
+Bei reaktiven Webparts handelt es sich um vollständig clientseitige Webparts. Das bedeutet: Jede im Eigenschaftenbereich konfigurierte Komponente wird angepasst, sobald der Benutzer auf der Seite Änderungen im Webpart vornimmt. Deaktiviert der Benutzer beispielsweise im Aufgabenlisten-Webpart die Option „Completed Tasks“, wird die zugehörige Ansicht im Webpart ausgeblendet.
 
-![Ein nicht dynamisches Webpart mit den Schaltflächen „Übernehmen“ und „Abbrechen“](../images/design-reactive-02.png)
+<img alt="A reactive web part" src="../images/design-reactive-01.png" width="850">
 
+## <a name="nonreactive-web-parts"></a>Nicht-reaktive Webparts
+Nicht-reaktive Webparts sind nicht vollständig clientseitig. In der Regel müssen eine oder mehrere Eigenschaften Aufrufe senden, um Werte auf einem Server festzulegen oder von einem Server abzurufen oder Daten auf einem Server zu speichern. In nicht-reaktiven Webparts sollten Sie unten im Eigenschaftenbereich eine **Apply**-Schaltfläche einfügen.
 
-Die folgenden Beispiele zeigen nicht dynamische Webparts im Kontext der [drei Strukturen der Eigenschaftenbereiche](design-a-web-part.md).
+Sie können diese **Apply**-Schaltfläche auch so anpassen, dass sie eine spezifischere Aktion ausführt. <!-- Is this a reference to an image? (design-wp-pp-non-reactive.png) -->
 
-**Beispiel für einen einzelnen Bereich**
+<img alt="A nonreactive web part with Apply and Cancel buttons" src="../images/design-reactive-02.png" width="850">
 
-![Ein nicht dynamisches Webpart mit einem einzelnen Bereich](../images/design-reactive-03.png)
+<br/>
 
-**Beispiel für Accordion-Gruppen**
+In den folgenden Beispielen sehen Sie nicht-reaktive Webparts im Kontext der [drei verfügbaren Strukturen für Eigenschaftenbereiche](design-a-web-part.md).
 
-![Ein nicht dynamisches Webpart mit einem Eigenschaftenbereich „Gruppen“](../images/design-reactive-04.png)
+**Beispiel mit einem einzigen Bereich**
 
-**Beispiel für Bereich „Gruppen“**
+<img alt="A nonreactive web part with a single pane property structure" src="../images/design-reactive-03.png" width="850">
 
-![Ein nicht dynamisches Webpart mit einem Eigenschaftenbereich „Schritte“](../images/design-reactive-05.png)
+<br/>
+
+**Beispiel mit Akkordeon-Gruppen**
+
+<img alt="A nonreactive web part with an according groups pane property structure" src="../images/design-reactive-04.png" width="850">
+
+<br/>
+
+**Beispiel mit einem Bereich mit mehreren Schritten**
+
+<img alt="A nonreactive web part with a steps pane property structure" src="../images/design-reactive-05.png" width="850">
+
+## <a name="see-also"></a>Siehe auch
+
+- [Entwerfen von benutzerfreundlichen SharePoint-Umgebungen](design-guidance-overview.md)
