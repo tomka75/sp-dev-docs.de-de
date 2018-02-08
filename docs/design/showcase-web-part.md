@@ -1,70 +1,110 @@
 ---
-title: "Showcase für SharePoint-Webpartentwurf: Erstellen eines Eigenschaftenbereichs für Aufgabenlisten"
-ms.date: 09/25/2017
-ms.openlocfilehash: e2005e1f3b02fb0d6bc89fbf0fe8e701cf52985a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+title: "Showcase Entwerfen von SharePoint-Webparts: Erstellen eines Eigenschaftenbereichs des Typs „Aufgabenliste“"
+description: Erstellen Sie ein Aufgabenlisten-Webpart, das einen einzelnen Bereich verwendet und reaktiv ist.
+ms.date: 01/23/2018
+ms.openlocfilehash: a3df418a3143fb638210dfde4e5b39841b71444b
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 01/29/2018
 ---
-# <a name="sharepoint-web-part-design-showcase-create-a-to-do-list-property-pane"></a><span data-ttu-id="da7b1-102">Showcase für SharePoint-Webpartentwurf: Erstellen eines Eigenschaftenbereichs für Aufgabenlisten</span><span class="sxs-lookup"><span data-stu-id="da7b1-102">SharePoint web part design showcase: Create a To-Do list property pane</span></span>
+# <a name="sharepoint-web-part-design-showcase-create-a-to-do-list-property-pane"></a><span data-ttu-id="8ebf1-103">Showcase Entwerfen von SharePoint-Webparts: Erstellen eines Eigenschaftenbereichs des Typs „Aufgabenliste“</span><span class="sxs-lookup"><span data-stu-id="8ebf1-103">SharePoint web part design showcase: Create a To-Do list property pane</span></span>
 
-<span data-ttu-id="da7b1-103">In diesem Artikel wird beschrieben, wie Sie ein Aufgabenlisten-Webpart erstellen.</span><span class="sxs-lookup"><span data-stu-id="da7b1-103">This article describes how to create a To-Do list web part.</span></span> <span data-ttu-id="da7b1-104">Dieses Beispiel verwendet den [Eigenschaftenbereichstyp](design-a-web-part.md) mit einem Bereich, ist [reaktiv](reactive-and-nonreactive-web-parts.md) und basiert auf dem dynamischen Raster von [Office UI Fabric](https://dev.office.com/fabric#/).</span><span class="sxs-lookup"><span data-stu-id="da7b1-104">This example uses the single pane [property pane type](design-a-web-part.md) and is [reactive](reactive-and-nonreactive-web-parts.md) and based on the [Office UI Fabric](https://dev.office.com/fabric#/) responsive grid.</span></span>
+<span data-ttu-id="8ebf1-104">In diesem Artikel erfahren Sie, wie Sie ein Aufgabenlisten-Webpart erstellen.</span><span class="sxs-lookup"><span data-stu-id="8ebf1-104">This article describes how to create a To-Do list web part.</span></span> <span data-ttu-id="8ebf1-105">Unser Beispiel verwendet den [Eigenschaftenbereichstyp](design-a-web-part.md) mit einem einzigen Bereich, ist [reaktiv](reactive-and-nonreactive-web-parts.md) und basiert auf dem dynamischen Raster von [Office UI Fabric](https://developer.microsoft.com/de-DE/fabric).</span><span class="sxs-lookup"><span data-stu-id="8ebf1-105">This example uses the single pane [property pane type](design-a-web-part.md) and is [reactive](reactive-and-nonreactive-web-parts.md) and based on the [Office UI Fabric](https://developer.microsoft.com/de-DE/fabric) responsive grid.</span></span>
 
 
-1. <span data-ttu-id="da7b1-105">Fügen Sie eine Beschreibung hinzu, damit Benutzer mehr über das Webpart und seine Eigenschaften erfahren.</span><span class="sxs-lookup"><span data-stu-id="da7b1-105">Add a description to help users understand more about the web part and its properties.</span></span>
+## <a name="create-a-to-do-list-web-part"></a><span data-ttu-id="8ebf1-106">Erstellen eines Aufgabenlisten-Webparts</span><span class="sxs-lookup"><span data-stu-id="8ebf1-106">Create a To-Do list web part</span></span>
 
-    <span data-ttu-id="da7b1-106">In diesem Beispiel lautet die Beschreibung „Select a source for your to-dos and customize the display for the list of tasks“.</span><span class="sxs-lookup"><span data-stu-id="da7b1-106">In this example, the description is "Select a source for your to-dos and customize the display for the list of tasks."</span></span>
+1. <span data-ttu-id="8ebf1-107">Fügen Sie eine Beschreibung hinzu, die Benutzer über das Webpart und seine Eigenschaften informiert.</span><span class="sxs-lookup"><span data-stu-id="8ebf1-107">Add a description to help users understand more about the web part and its properties.</span></span>
+
+    <span data-ttu-id="8ebf1-108">In diesem Beispiel haben wir als Wert für die Beschreibung „Select a source for your to-dos and customize the display for the list of tasks.“ angegeben.</span><span class="sxs-lookup"><span data-stu-id="8ebf1-108">In this example, the description is "Select a source for your to-dos and customize the display for the list of tasks."</span></span>
     
     ![Hinzufügen einer Beschreibung](../images/design-showcase-01.png)
 
-2. <span data-ttu-id="da7b1-108">Fügen Sie eine Fabric-[Dropdown-Komponente](http://dev.office.com/fabric#/components/dropdown) hinzu, die mit einer Liste verbunden ist.</span><span class="sxs-lookup"><span data-stu-id="da7b1-108">Add a Fabric [drop-down component](http://dev.office.com/fabric#/components/dropdown) connected to a list.</span></span>
+    <br/>
 
-    ![Hinzufügen einer Fabric-Dropdown-Komponente](../images/design-showcase-02.png)
+2. <span data-ttu-id="8ebf1-110">Fügen Sie eine Fabric-[Dropdownkomponente](https://developer.microsoft.com/de-DE/fabric#/components/dropdown) hinzu, die mit einer Liste verknüpft ist.</span><span class="sxs-lookup"><span data-stu-id="8ebf1-110">Add a Fabric [drop-down component](https://developer.microsoft.com/de-DE/fabric#/components/dropdown) connected to a list.</span></span>
 
-3. <span data-ttu-id="da7b1-110">Fügen Sie eine Fabric-[Checkbox-Komponente](http://dev.office.com/fabric#/components/checkbox) (Kontrollkästchen) zur Anzeige abgeschlossener Aufgaben hinzu.</span><span class="sxs-lookup"><span data-stu-id="da7b1-110">Add a Fabric [checkbox component](http://dev.office.com/fabric#/components/checkbox) to display completed tasks.</span></span>
+    ![Hinzufügen einer Fabric-Dropdownkomponente](../images/design-showcase-02.png)
 
-    ![Hinzufügen einer Fabric-Checkbox-Komponente](../images/design-showcase-03.png)
+    <br/>
 
-4. <span data-ttu-id="da7b1-112">Fügen Sie zwei weitere Kontrollkästchen zum Steuern von Anzeigeoptionen hinzu.</span><span class="sxs-lookup"><span data-stu-id="da7b1-112">Add two more checkboxes to control display options.</span></span>
+3. <span data-ttu-id="8ebf1-112">Fügen Sie eine Fabric-[Kontrollkästchenkomponente](https://developer.microsoft.com/de-DE/fabric#/components/checkbox) hinzu, über die abgeschlossene Aufgaben angezeigt werden können.</span><span class="sxs-lookup"><span data-stu-id="8ebf1-112">Add a Fabric [checkbox component](https://developer.microsoft.com/de-DE/fabric#/components/checkbox) to display completed tasks.</span></span>
 
-    ![Hinzufügen von zwei weiteren Fabric-Checkbox-Komponenten](../images/design-showcase-04.png)
+    ![Hinzufügen einer Fabric-Kontrollkästchenkomponente](../images/design-showcase-03.png)
 
-5. <span data-ttu-id="da7b1-114">Fügen Sie eine Fabric-[Slider-Komponente](http://dev.office.com/fabric#/components/slider) (Schieberegler) für die maximale Anzahl von anzuzeigenden Elementen hinzu.</span><span class="sxs-lookup"><span data-stu-id="da7b1-114">Add a Fabric [slider](http://dev.office.com/fabric#/components/slider) for the maximum number of items to display.</span></span>
+    <br/>
 
-    ![Hinzufügen einer Fabric-Slider-Komponente](../images/design-showcase-05.png)
+4. <span data-ttu-id="8ebf1-114">Fügen Sie zwei weitere Kontrollkästchen hinzu, mit denen der Benutzer die Anzeigeoptionen steuern kann.</span><span class="sxs-lookup"><span data-stu-id="8ebf1-114">Add two more checkboxes to control display options.</span></span>
 
-6. <span data-ttu-id="da7b1-116">Als Nächstes wählt der Autor der Seite eine Liste aus oder fügt manuell Aufgaben hinzu, um das Aufgabenlisten-Webpart vorab auszufüllen.</span><span class="sxs-lookup"><span data-stu-id="da7b1-116">Next, the author of the page selects a list or manually adds tasks to prepopulate the To-Do list web part.</span></span>
+    ![Hinzufügen von zwei weiteren Fabric-Kontrollkästchenkomponenten](../images/design-showcase-04.png)
 
-    <span data-ttu-id="da7b1-117">![Auswählen einer Liste im Bereich](../images/design-showcase-06.png) ![Auswählen einer Liste im Bereich (erweitert)](../images/design-showcase-07.png) ![Manuelles Hinzufügen von Aufgaben zur Liste](../images/design-showcase-08.png)</span><span class="sxs-lookup"><span data-stu-id="da7b1-117">![Select a list in pane](../images/design-showcase-06.png) ![Select a list in pane expanded](../images/design-showcase-07.png) ![Manual addition of tasks to list](../images/design-showcase-08.png)</span></span>
+    <br/>
 
-7. <span data-ttu-id="da7b1-118">Das Webpart zeigt einen Indikator für Elemente, die auf die Seite geladen werden.</span><span class="sxs-lookup"><span data-stu-id="da7b1-118">The web part shows an indicator of items loading onto the page.</span></span>
+5. <span data-ttu-id="8ebf1-116">Fügen Sie eine Fabric-[Schiebereglerkomponente](https://developer.microsoft.com/de-DE/fabric#/components/slider) hinzu, über die der Benutzer festlegen kann, wie viele Elemente maximal angezeigt werden sollen.</span><span class="sxs-lookup"><span data-stu-id="8ebf1-116">Add a Fabric [slider](https://developer.microsoft.com/de-DE/fabric#/components/slider) for the maximum number of items to display.</span></span>
+
+    ![Hinzufügen einer Fabric-Schiebereglerkomponente](../images/design-showcase-05.png)
+
+    <br/>
+
+6. <span data-ttu-id="8ebf1-118">Als Nächstes wählen Sie eine Liste aus, die automatisch im Aufgabenlisten-Webpart angezeigt werden soll. Sie können auch manuell Aufgaben hinzufügen, die automatisch angezeigt werden sollen.</span><span class="sxs-lookup"><span data-stu-id="8ebf1-118">Next, the author of the page selects a list or manually adds tasks to prepopulate the To-Do list web part.</span></span>
+
+    ![Liste im Bereich auswählen](../images/design-showcase-06.png)
+
+    <br/>
+
+    ![Liste im erweiterten Bereich auswählen](../images/design-showcase-07.png)
+
+    <br/>
+
+    ![Manuelles Hinzufügen von Aufgaben zur Liste](../images/design-showcase-08.png)
+
+    <br/>
+
+7. <span data-ttu-id="8ebf1-122">Das Webpart zeigt einen Indikator für Elemente an, die auf der Seite geladen werden.</span><span class="sxs-lookup"><span data-stu-id="8ebf1-122">The web part shows an indicator of items loading onto the page.</span></span>
 
     ![Indikator für Elemente](../images/design-showcase-09.png)
 
-8. <span data-ttu-id="da7b1-120">Elemente aus der Liste werden geladen.</span><span class="sxs-lookup"><span data-stu-id="da7b1-120">Items from the list load.</span></span>
+    <br/>
 
-    ![Listenelemente werden geladen](../images/design-showcase-10.png)
+8. <span data-ttu-id="8ebf1-124">Die Elemente aus der Liste werden geladen.</span><span class="sxs-lookup"><span data-stu-id="8ebf1-124">Items from the list load.</span></span>
 
-    <span data-ttu-id="da7b1-122">Wenn die neuen Aufgaben geladen werden, werden sie mithilfe von Animationskomponenten aus Office UI Fabric eingeblendet.</span><span class="sxs-lookup"><span data-stu-id="da7b1-122">When the new tasks are loaded the fade into view using animation styles from Office UI Fabric Web part with fabric animations</span></span>
+    ![Laden der Listenelemente](../images/design-showcase-10.png)
 
-    ![Neue Aufgaben geladen](../images/design-showcase-11.png)
+    <br/>
 
-9. <span data-ttu-id="da7b1-124">Der Eigenschaftenbereich steuert die Benutzeroberfläche.</span><span class="sxs-lookup"><span data-stu-id="da7b1-124">The property pane controls the UI.</span></span> <span data-ttu-id="da7b1-125">Aufgaben mit aktivierten Pivots werden über die Kontrollkästchen „Anzeigen“ im Eigenschaftenbereich angezeigt.</span><span class="sxs-lookup"><span data-stu-id="da7b1-125">Tasks with pivots enabled are displayed via the Display checkboxes in the property pane.</span></span> 
+    <span data-ttu-id="8ebf1-126">Sobald die neuen Aufgaben geladen wurden, werden sie mithilfe von Animationskomponenten aus Office UI Fabric eingeblendet.</span><span class="sxs-lookup"><span data-stu-id="8ebf1-126">When the new tasks are loaded, they fade into view using animation components from Office UI Fabric.</span></span>
 
-    ![Eigenschaftenbereich, der Webpartelemente steuert](../images/design-showcase-12.png)
+    ![Geladene neue Aufgaben](../images/design-showcase-11.png)
 
-## <a name="responsive-views"></a><span data-ttu-id="da7b1-127">Dynamische Ansichten</span><span class="sxs-lookup"><span data-stu-id="da7b1-127">Responsive views</span></span>
+    <br/>
 
-<span data-ttu-id="da7b1-128">Das folgende Beispiel zeigt die 2/3-Spaltenansicht des Webparts.</span><span class="sxs-lookup"><span data-stu-id="da7b1-128">The following example shows the 2/3 column view of the web part.</span></span>
+9. <span data-ttu-id="8ebf1-128">Der Eigenschaftenbereich steuert die Benutzeroberfläche.</span><span class="sxs-lookup"><span data-stu-id="8ebf1-128">The property pane controls the UI.</span></span> <span data-ttu-id="8ebf1-129">Es werden alle Aufgaben mit aktivierter Navigationssteuerung angezeigt, basierend auf den unter „Display“ im Eigenschaftenbereich aktivierten Kontrollkästchen.</span><span class="sxs-lookup"><span data-stu-id="8ebf1-129">Tasks with pivots enabled are displayed via the Display checkboxes in the property pane.</span></span> 
 
-![2/3-Spaltenansicht](../images/design-showcase-13.png)
+    ![Eigenschaftenbereich, der die Webpartelemente steuert](../images/design-showcase-12.png)
 
-<span data-ttu-id="da7b1-130">Das folgende Beispiel zeigt die 1/3 Spaltenansicht des Webparts.</span><span class="sxs-lookup"><span data-stu-id="da7b1-130">The following example shows the 1/3 column view of the web part.</span></span>
+    <br/>
 
+## <a name="responsive-views"></a><span data-ttu-id="8ebf1-131">Dynamische Ansichten</span><span class="sxs-lookup"><span data-stu-id="8ebf1-131">Responsive views</span></span>
 
-![1/3-Spaltenansicht](../images/design-showcase-14.png)
+<span data-ttu-id="8ebf1-132">Im Beispiel unten füllt das Webpart zwei Drittel der Spaltenbreite.</span><span class="sxs-lookup"><span data-stu-id="8ebf1-132">The following example shows the 2/3 column view of the web part.</span></span>
 
-<span data-ttu-id="da7b1-132">Das folgende Beispiel zeigt die mobile (schreibgeschützte) Ansicht des Webparts.</span><span class="sxs-lookup"><span data-stu-id="da7b1-132">The following example shows the mobile (read-only) view of the web part.</span></span>
+![Webpartdarstellung auf zwei Dritteln der Spaltenbreite](../images/design-showcase-13.png)
 
-![Mobile Ansicht des Aufgabenlisten-Webparts](../images/design-showcase-15.png)
+<br/>
+
+<span data-ttu-id="8ebf1-134">Im folgenden Beispiel füllt das Webpart ein Drittel der Spaltenbreite.</span><span class="sxs-lookup"><span data-stu-id="8ebf1-134">The following example shows the 1/3 column view of the web part.</span></span>
+
+![Webpartdarstellung auf einem Drittel der Spaltenbreite](../images/design-showcase-14.png)
+
+<br/>
+
+<span data-ttu-id="8ebf1-136">Unten sehen Sie schließlich, wie das Webpart auf Mobilgeräten angezeigt wird (schreibgeschützte Ansicht).</span><span class="sxs-lookup"><span data-stu-id="8ebf1-136">The following example shows the mobile (read-only) view of the web part.</span></span>
+
+![Mobilgeräteansicht des Aufgabenlisten-Webparts](../images/design-showcase-15.png)
+
+<br/>
+
+## <a name="see-also"></a><span data-ttu-id="8ebf1-138">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="8ebf1-138">See also</span></span>
+
+- [<span data-ttu-id="8ebf1-139">Entwerfen von benutzerfreundlichen SharePoint-Umgebungen</span><span class="sxs-lookup"><span data-stu-id="8ebf1-139">Designing great SharePoint experiences</span></span>](design-guidance-overview.md)
