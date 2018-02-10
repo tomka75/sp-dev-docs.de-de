@@ -1,13 +1,7 @@
+ ---
+title: Anpassen eines standardmäßigen Websitedesigns bei SharePoint description: Anpassen eines standardmäßigen Websitedesigns in einer Vorlage einer SharePoint-Teamwebsite oder Kommunikationswebsite ms.date: 18.12.2017
 ---
-title: "Anpassen der standardmäßigen Websitedesigns in SharePoint"
-description: "Anpassen der standardmäßigen Websitedesigns auf der SharePoint-Teamwebsite oder auf der Kommunikations-Websitevorlage"
-ms.date: 12/18/2017
-ms.openlocfilehash: 34107e7028400cec62b0f6454f3474b92ca288be
-ms.sourcegitcommit: 9f492519d4eeb3f62a1fddc71cdca79263651a56
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 01/19/2018
----
+
 # <a name="customize-a-default-site-design"></a>Anpassen eines standardmäßigen Websitedesigns
 
 > [!NOTE]
@@ -17,7 +11,9 @@ SharePoint enthält zahlreiche Websitedesigns, die bereits in den SharePoint Onl
 
 ## <a name="apply-a-site-design-to-the-default-site-designs"></a>Anwenden eines Websitedesigns auf die standardmäßigen Websitedesigns
 
-Um die standardmäßigen Websitedesigns anzupassen, wenden Sie ein neues Design mit dem Powershell-Cmdlet **Add-SPOSiteDesign** oder der REST-API **CreateSiteDesign**. Geben Sie die Option **IsDefault** an, damit das Websitedesign standardmäßig angewendet wird.
+Um die standardmäßigen Websitedesigns anzupassen, wenden Sie ein neues Design mit dem Powershell-Cmdlet **Add-SPOSiteDesign** oder der REST-API **CreateSiteDesign**. Geben Sie die Option **IsDefault** an, damit das Websitedesign standardmäßig angewendet wird. 
+
+Die WebTemplate-ID für eine mit einer Gruppe verknüpfte Teamwebsite lautet 64, für eine Kommunikationswebsite 68.
 
 Das folgende Beispiel zeigt, wie Sie mithilfe der **IsDefault**-Option das Contoso-Unternehmensdesign auf die standardmäßigen Websitedesigns anwenden. Das Website-Skript, auf das durch die ID verwiesen wird, enthält das JSON-Skript zum Anwenden des richtigen Designs.
 

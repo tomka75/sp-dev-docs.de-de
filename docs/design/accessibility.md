@@ -1,13 +1,14 @@
 ---
 title: Barrierefreiheit im SharePoint-Webpartdesign
-ms.date: 11/21/2017
-ms.openlocfilehash: f308f8d1cbe1fabc274e8c83af9cf1b6e8d43177
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+description: "Richtlinien für Barrierefreiheit in Webparts"
+ms.date: 01/23/2018
+ms.openlocfilehash: 0a1b4aa88771b07b9f4060906ddf4062d2281dcd
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 01/29/2018
 ---
-<!--Based on how rough this content is in it's current state, i'm going to pull it from this initial release so we can edit and better prepare. -->
+<!--Based on how rough this content is in its current state, i'm going to pull it from this initial release so we can edit and better prepare. -->
 
 # <a name="accessibility-in-sharepoint-web-part-design"></a>Barrierefreiheit im SharePoint-Webpartdesign
 
@@ -21,7 +22,7 @@ Alle Microsoft-Produkte müssen die [Microsoft-Eingabehilfenstandards](https://m
 
 <!-- Fabric components are not designed to be accessible already? And, shouldn't components that aren't based on Fabric also be accessible? -->
 
-Wenn Sie ein Dialogfeld, eine Dateiauswahl oder eine beliebige andere [Office-UI-Fabric](https://dev.office.com/fabric#/components)-Komponente erstellen, befolgen Sie die Anleitungen in diesem Artikel, um sicherzustellen, dass Ihre Inhalte barrierefrei sind. 
+Wenn Sie ein Dialogfeld, eine Dateiauswahl oder eine beliebige andere [Office-UI-Fabric](https://developer.microsoft.com/de-DE/fabric#/components)-Komponente erstellen, befolgen Sie die Anleitungen in diesem Artikel, um sicherzustellen, dass Ihre Inhalte barrierefrei sind. 
 
 <!-- Not sure why we have that link? It currently goes to the OneNote file. Where is the Common UI Controls content? Is that related to accessibility? [v-licapu] - I agree; we shouldn't be linking to this unless it's live to external audiences; even I can't access it. I moved it to within the comment: 
 [Common UI Controls](https://microsoft.sharepoint.com/teams/STS/_layouts/OneNote.aspx?id=%2Fteams%2FSTS%2FShared%20Documents%2FSP%20Accessibility%2FAccessibility%20Guidance&wd=target%28Accessibility%20101.one%7C0005C142-938C-4411-B543-B9F4199E19B3%2FEverything%20you%20need%20to%20know%20about%20Accessibility%7CE099AFE3-8804-4E1F-BA50-99493AB8A3D0%2F%29 "Link to Common UI Controls") -->
@@ -30,7 +31,7 @@ Wenn Sie ein Dialogfeld, eine Dateiauswahl oder eine beliebige andere [Office-UI
 
 <!-- FYI, I added links. Can we assume that our target audience uses the Edge browser? -->
 
-Testen Sie Ihr Webpart zunächst mit [Narrator](https://support.microsoft.com/de-DE/help/22798/windows-10-narrator-get-started) und Microsoft Edge, und überprüfen Sie dann das barrierefrei Erlebnis mit [JAWS](http://www.freedomscientific.com/Products/Blindness/JAWS).
+Testen Sie Ihr Webpart zunächst mit [Narrator](https://support.microsoft.com/de-DE/help/22798/windows-10-narrator-get-started) und Microsoft Edge, und überprüfen Sie dann das barrierefreie Erlebnis mit [JAWS](http://www.freedomscientific.com/Products/Blindness/JAWS).
 
 Narrator und Microsoft Edge entsprechen den Standards. Wenn Sie die Überprüfung auf diese Weise vornehmen, können Sie Probleme leichter aufdecken und feststellen, ob Ihre Seite die Eingabehilfenstandards erfüllt. 
 
@@ -64,9 +65,10 @@ The second tab is the command.
 The third tab is the navigation.
 -->
 
-*Abbildung 1: Tabstopps einer SharePoint-Seite*
 
 ![Darstellung der Tabstopps einer SharePoint-Seite](https://i.imgur.com/Vn3VosN.png)
+
+<br/>
 
 ### <a name="navigation-within-a-control"></a>Navigation innerhalb eines Steuerelements
 
@@ -74,50 +76,47 @@ Sie können die Pfeiltasten verwenden, um zu Objekten eines Steuerelements, z. B
 
 <!-- This image is not very clear. Do you need to have the "blank" list box on the left? -->
 
-*Abbildung 2: Verwenden der Pfeiltasten zum Navigieren innerhalb eines Steuerelements*
-
 ![Verwenden der Pfeiltasten zum Navigieren innerhalb eines Steuerelements](https://i.imgur.com/vF0Nk73.png)
+
+<br/>
 
 ### <a name="selecting-the-current-item"></a>Auswählen des aktuellen Elements
 
 Verwenden Sie die Leertaste oder deaktivieren Sie das derzeit gewählte Element in einem Steuerelement.
 
-*Abbildung 3: Verwenden der Leertaste zum Auswählen eines Elements in einer Liste*
-
 ![Verwenden der Leertaste zum Auswählen eines Elements in einer Liste](https://i.imgur.com/j3fBKPl.png)
+
+<br/>
 
 ### <a name="run-a-control"></a>Ausführen eines Steuerelements
 
 Drücken Sie die EINGABETASTE, um ein Steuerelement auszuführen.
 
-*Abbildung 4: Drücken der EINGABETASTE zum Ausführen eines Steuerelements*
-
 ![Drücken der EINGABTASTE zum Ausführen eines Steuerelements](https://i.imgur.com/s0nMPdT.png)
+
+<br/>
 
 ### <a name="leave-a-control"></a>Verlassen eines Steuerelements
 
 Drücken Sie die **ESC-Taste**, um ein Steuerelement zu verlassen und zum Container zurückkehren.
 
-*Abbildung 5: Drücken der ESC-Taste zum Verlassen eines Steuerelements und zum Zurückkehren zum Container*
-
 ![Drücken der ESC-Taste zum Verlassen eines Steuerelements und zum Zurückkehren zum Container](https://i.imgur.com/uD99zIX.png)
+
+<br/>
 
 ### <a name="go-to-the-first-or-last-item"></a>Wechseln zum ersten bzw. letzten Element
 
 Drücken Sie **POS1** oder **Ende**, um direkt zum ersten oder letzten Element einer Liste, eines Menüs usw. zu springen.
 
-*Abbildung 6: Drücken von POS1 oder Ende, um zum ersten oder letzten Element einer Liste zu springen*
-
 ![Drücken von POS1 oder Ende, um zum ersten oder letzten Element einer Liste zu springen](https://i.imgur.com/gGKsh74.png)
 
+<br/>
 
 ## <a name="screen-reader-navigation"></a>Navigation per Sprachausgabe
 
 Benutzer mit Sehschwächen navigieren die Benutzeroberfläche der Website per Sprachausgabe 
 
 <!-- Narrator isn't a third-party product. This image needs more text/explanation; please also clarify the alt text. Is this section important, or can it be removed, given the previous mention of testing with Narrator and JAWS? Again, the intent/target audience for this information isn't clear - is it for the user, or the designer? Can you explain why this information is important from the designer's POV? -->
-
-*Abbildung 7: Navigation per Sprachausgabe einer SharePoint-Website*
 
 ![Navigation per Sprachausgabe einer SharePoint-Website](https://i.imgur.com/ar23o3X.png)
 
@@ -133,12 +132,15 @@ Um eine vollständige Konformität mit den Eingabehilfenstandards zu erreichen, 
 
 Ein minimaler Kontrast ist dringend erforderlich, damit Benutzer mit Sehschwächen die Inhalte der Seite erfassen können. Dies ist ebenfalls wichtig, um eine Lesbarkeit bei schwacher Beleuchtung oder störenden Effekten wie Blendung zu gewährleisten. 
 
-<!-- Convert this image into a table, for accessibility. ;) -->
-<!-- ![Neutral, Theme, and Alert colors for minimum readable contrast](https://i.imgur.com/L7pSF1w.png)-->
+<!--Original image ![Neutral, Theme, and Alert colors for minimum readable contrast](https://i.imgur.com/L7pSF1w.png)-->
 
 ![Farben für Lesbarkeit durch Kontrast](../images/wcag-2aa-compliance-colors.png)
 
-### <a name="theme-colors-blue-and-neutral-colors"></a>Designfarben (Blau) und neutrale Farben
+### <a name="theme-colors-blue-with-neutral-colors-followed-by-alert-colors"></a>Designfarben (Blau) mit neutralen Farben gefolgt von Warnfarben
+
+![Designfarben (Blau) mit neutralen Farben und Warnfarben](../images/accessibility-blue-theme-and-alert-colors.png)
+
+<br/>
 
 <table>
 <tr>
@@ -185,7 +187,7 @@ Ein minimaler Kontrast ist dringend erforderlich, damit Benutzer mit Sehschwäch
 </tr>
 </table>
 
-### <a name="alert-colors"></a>Farben für Warnungen
+<br/>
 
 <table>
 <tr>
@@ -210,17 +212,21 @@ Ein minimaler Kontrast ist dringend erforderlich, damit Benutzer mit Sehschwäch
 </tr>
 </table>
 
+
 ## <a name="high-contrast"></a>Hoher Kontrast
 
 Verwenden Sie Farben mit hohem Kontrast für die Auswahl von Komponenten und Merkmalen im Internet. Windows-Computer können nur erkennen, ob ein PC mit der Einstellung „Hoher Kontrast“ oder „Hoher Kontrast Weiß“ ausgeführt wird. Verwenden Sie aus diesem Grund die standardmäßige Einstellung „Hoher Kontrast Schwarz“ für alle kontrastreichen, nicht weißen Designs.
 
 <!-- In the left part of the image, I think the title should be "High Contrast Black". -->
 
-*Abbildung 8: Einstellungen „Hoher Kontrast Schwarz“ und „Hoher Kontrast Weiß“*
-
 ![Einstellungen „Hoher Kontrast Schwarz“ und „Hoher Kontrast Weiß“](https://i.imgur.com/qvTFzd4.png)
 
+<br/>
 
+## <a name="see-also"></a>Siehe auch
+
+- [Designs und Farben in SharePoint](themes-colors.md)
+- [Entwerfen von benutzerfreundlichen SharePoint-Umgebungen](design-guidance-overview.md)
 
 
 

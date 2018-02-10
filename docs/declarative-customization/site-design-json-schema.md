@@ -2,11 +2,11 @@
 title: JSON-Schema eines Websitedesigns
 description: "JSON-Schemareferenz zum Erstellen von Websitedesigns für SharePoint."
 ms.date: 12/14/2017
-ms.openlocfilehash: e5495608c10bac18ee98f858736d117a02c5f2a5
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: ed952df480601945f1214282658c55d5eb63b5a9
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="site-design-json-schema"></a>JSON-Schema eines Websitedesigns
 
@@ -209,7 +209,7 @@ Beispiel:
 
 ## <a name="apply-a-theme"></a>Anwenden eines Designs
 
-Verwenden Sie das Verb **applyTheme**, um der Website ein Design hinzuzufügen. Weitere Informationen zu Designs finden Sie unter [SharePoint-Websitedesign](site-theming/sharepoint-site-theming-overview.md).
+Verwenden Sie das Verb **applyTheme**, um der Website ein benutzerdefiniertes Design hinzuzufügen. Weitere Informationen zum Erstellen und Hochladen von Designs finden Sie unter [SharePoint-Websitedesign](site-theming/sharepoint-site-theming-overview.md). Beachten Sie, dass diese Websiteaktion nur für das Anwenden benutzerdefinierter Designs funktioniert. Um ein SharePoint-Produktdesign anzuwenden, müssen Sie eine Kopie eines benutzerdefinierten Designs erstellen und auf dieses Design verweisen.
 
 JSON-Wert:
 

@@ -2,11 +2,11 @@
 title: REST-API von SharePoint-Websitedesigns
 description: "Verwenden Sie SharePoint-Websitedesigns über die SharePoint-REST-Schnittstelle, um grundlegende CRUD-Operationen (Create, Read, Update, Delete, also Erstellen, Lesen, Aktualisieren und Löschen) auszuführen."
 ms.date: 12/14/2017
-ms.openlocfilehash: 978a5c2b58e418ae9f7d99783a95352cdd3977a5
-ms.sourcegitcommit: 9f492519d4eeb3f62a1fddc71cdca79263651a56
+ms.openlocfilehash: 7a1079bbf620f5a2fe5997b176507bd26b63ab46
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="site-design-and-site-script-rest-api"></a>REST-API von SharePoint-Websitedesigns und Websiteskripts
 
@@ -176,7 +176,7 @@ Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **G
 
 ## <a name="updatesitescript"></a>UpdateSiteScript
 
-Aktualisieren eines Websiteskripts mit neuen Werten.
+Aktualisieren eines Websiteskripts mit neuen Werten. In dem REST-Aufruf sind alle Parameter mit Ausnahme der Website-Skript-ID optional.
 
 ### <a name="parameters"></a>Parameter
 
@@ -373,7 +373,7 @@ Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **G
 
 ## <a name="updatesitedesign"></a>UpdateSiteDesign
 
-Aktualisieren eines Websitedesigns mit neuen Werten.
+Aktualisieren eines Websitedesigns mit neuen Werten. In dem REST-Aufruf sind mit Ausnahme der Website-Skript-ID optional. Hinweis: Wenn Sie zuvor den IsDefault-Parameter auf „true“ festgelegt haben und sie diese Einstellung beibehalten möchten, müssen Sie diesen Parameter erneut übergeben (andernfalls wird er auf „false“ zurückgesetzt). 
 
 ### <a name="parameters"></a>Parameter
 
