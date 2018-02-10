@@ -2,47 +2,47 @@
 title: REST-API von SharePoint-Websitedesigns
 description: "Verwenden Sie SharePoint-Websitedesigns über die SharePoint-REST-Schnittstelle, um grundlegende CRUD-Operationen (Create, Read, Update, Delete, also Erstellen, Lesen, Aktualisieren und Löschen) auszuführen."
 ms.date: 12/14/2017
-ms.openlocfilehash: 978a5c2b58e418ae9f7d99783a95352cdd3977a5
-ms.sourcegitcommit: 9f492519d4eeb3f62a1fddc71cdca79263651a56
+ms.openlocfilehash: 7a1079bbf620f5a2fe5997b176507bd26b63ab46
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/29/2018
 ---
-# <a name="site-design-and-site-script-rest-api"></a><span data-ttu-id="ed413-103">REST-API von SharePoint-Websitedesigns und Websiteskripts</span><span class="sxs-lookup"><span data-stu-id="ed413-103">Site design and site script REST API</span></span>
+# <a name="site-design-and-site-script-rest-api"></a><span data-ttu-id="a0147-103">REST-API von SharePoint-Websitedesigns und Websiteskripts</span><span class="sxs-lookup"><span data-stu-id="a0147-103">Site design and site script REST API</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ed413-104">Websitedesigns und Websiteskripts befinden sich in der Vorschau und können ohne vorherige Ankündigung geändert werden.</span><span class="sxs-lookup"><span data-stu-id="ed413-104">Site designs and site scripts are currently in preview and are subject to change.</span></span> <span data-ttu-id="ed413-105">Sie werden derzeit nur für Produktionsumgebungen im Zielrelease unterstützt.</span><span class="sxs-lookup"><span data-stu-id="ed413-105">They are currently only supported for use in production environments in Targeted Release.</span></span>
+> <span data-ttu-id="a0147-104">Websitedesigns und Websiteskripts befinden sich in der Vorschau und können ohne vorherige Ankündigung geändert werden.</span><span class="sxs-lookup"><span data-stu-id="a0147-104">Site designs and site scripts are currently in preview and are subject to change.</span></span> <span data-ttu-id="a0147-105">Sie werden derzeit nur für Produktionsumgebungen im Zielrelease unterstützt.</span><span class="sxs-lookup"><span data-stu-id="a0147-105">They are currently only supported for use in production environments in Targeted Release.</span></span>
 
-<span data-ttu-id="ed413-106">Mithilfe der SharePoint-REST-Schnittstelle können Sie grundlegende CRUD-Operationen ausführen, d. h: Erstellen, Lesen, Aktualisieren und Löschen (Create, Read, Update, Delete).</span><span class="sxs-lookup"><span data-stu-id="ed413-106">You can use the the SharePoint REST interface to perform basic create, read, update, and delete (CRUD) operations on site designs and site scripts.</span></span>
+<span data-ttu-id="a0147-106">Mithilfe der SharePoint-REST-Schnittstelle können Sie grundlegende CRUD-Operationen ausführen, d. h: Erstellen, Lesen, Aktualisieren und Löschen (Create, Read, Update, Delete).</span><span class="sxs-lookup"><span data-stu-id="a0147-106">You can use the the SharePoint REST interface to perform basic create, read, update, and delete (CRUD) operations on site designs and site scripts.</span></span>
 
-<span data-ttu-id="ed413-107">Der REST-Dienst in SharePoint Online (sowie in lokalen Bereitstellungen von SharePoint 2016 und höher) erlaubt die Zusammenfassung mehrerer Anforderungen in einem einzigen Aufruf an den Service mittels der ODATA-Abfrageoption „$batch“.</span><span class="sxs-lookup"><span data-stu-id="ed413-107">The SharePoint Online (and SharePoint 2016 and later on-premises) REST service supports combining multiple requests into a single call to the service by using the OData $batch query option.</span></span> <span data-ttu-id="ed413-108">Einzelheiten und Links zu Codebeispielen finden Sie unter [Durchführen von Batchanforderungen mit den REST-APIs](https://dev.office.com/sharepoint/docs/apis/rest/make-batch-requests-with-the-rest-apis.md).</span><span class="sxs-lookup"><span data-stu-id="ed413-108">For details and links to code samples, see [Make batch requests with the REST APIs](https://dev.office.com/sharepoint/docs/apis/rest/make-batch-requests-with-the-rest-apis.md).</span></span>
+<span data-ttu-id="a0147-107">Der REST-Dienst in SharePoint Online (sowie in lokalen Bereitstellungen von SharePoint 2016 und höher) erlaubt die Zusammenfassung mehrerer Anforderungen in einem einzigen Aufruf an den Service mittels der ODATA-Abfrageoption „$batch“.</span><span class="sxs-lookup"><span data-stu-id="a0147-107">The SharePoint Online (and SharePoint 2016 and later on-premises) REST service supports combining multiple requests into a single call to the service by using the OData $batch query option.</span></span> <span data-ttu-id="a0147-108">Einzelheiten und Links zu Codebeispielen finden Sie unter [Durchführen von Batchanforderungen mit den REST-APIs](https://dev.office.com/sharepoint/docs/apis/rest/make-batch-requests-with-the-rest-apis.md).</span><span class="sxs-lookup"><span data-stu-id="a0147-108">For details and links to code samples, see [Make batch requests with the REST APIs](https://dev.office.com/sharepoint/docs/apis/rest/make-batch-requests-with-the-rest-apis.md).</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="ed413-109">Voraussetzungen</span><span class="sxs-lookup"><span data-stu-id="ed413-109">Prerequisites</span></span>
-<span data-ttu-id="ed413-110">Lesen Sie vor der Umsetzung der Beispiele in diesem Artikel zunächst die folgenden Artikel:</span><span class="sxs-lookup"><span data-stu-id="ed413-110">Before you get started, make sure that you're familiar with the following:</span></span>
-- [<span data-ttu-id="ed413-111">Grundlegendes zum SharePoint-REST-Dienst</span><span class="sxs-lookup"><span data-stu-id="ed413-111">Get to know the SharePoint REST service</span></span>](https://dev.office.com/sharepoint/docs/apis/rest/get-to-know-the-sharepoint-rest-service.md) 
-- [<span data-ttu-id="ed413-112">Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten</span><span class="sxs-lookup"><span data-stu-id="ed413-112">Complete basic operations using SharePoint REST endpoints</span></span>](https://dev.office.com/sharepoint/docs/apis/rest/complete-basic-operations-using-sharepoint-rest-endpoints.md)
+## <a name="prerequisites"></a><span data-ttu-id="a0147-109">Voraussetzungen</span><span class="sxs-lookup"><span data-stu-id="a0147-109">Prerequisites</span></span>
+<span data-ttu-id="a0147-110">Lesen Sie vor der Umsetzung der Beispiele in diesem Artikel zunächst die folgenden Artikel:</span><span class="sxs-lookup"><span data-stu-id="a0147-110">Before you get started, make sure that you're familiar with the following:</span></span>
+- [<span data-ttu-id="a0147-111">Grundlegendes zum SharePoint-REST-Dienst</span><span class="sxs-lookup"><span data-stu-id="a0147-111">Get to know the SharePoint REST service</span></span>](https://dev.office.com/sharepoint/docs/apis/rest/get-to-know-the-sharepoint-rest-service.md) 
+- [<span data-ttu-id="a0147-112">Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten</span><span class="sxs-lookup"><span data-stu-id="a0147-112">Complete basic operations using SharePoint REST endpoints</span></span>](https://dev.office.com/sharepoint/docs/apis/rest/complete-basic-operations-using-sharepoint-rest-endpoints.md)
 
-## <a name="rest-commands"></a><span data-ttu-id="ed413-113">REST-Befehle</span><span class="sxs-lookup"><span data-stu-id="ed413-113">REST commands</span></span>
+## <a name="rest-commands"></a><span data-ttu-id="a0147-113">REST-Befehle</span><span class="sxs-lookup"><span data-stu-id="a0147-113">REST commands</span></span>
 
-<span data-ttu-id="ed413-114">Für Websitedesigns und Websiteskripts stehen die folgenden REST-Befehle zur Verfügung:</span><span class="sxs-lookup"><span data-stu-id="ed413-114">The following REST commands are available for working with site designs and site scripts:</span></span>
+<span data-ttu-id="a0147-114">Für Websitedesigns und Websiteskripts stehen die folgenden REST-Befehle zur Verfügung:</span><span class="sxs-lookup"><span data-stu-id="a0147-114">The following REST commands are available for working with site designs and site scripts:</span></span>
 
-- <span data-ttu-id="ed413-115">**CreateSiteScript** &mdash; Erstellen eines neuen Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="ed413-115">**CreateSiteScript** &mdash; Creates a new site script.</span></span>
-- <span data-ttu-id="ed413-116">**GetSiteScripts** &mdash; Abrufen einer Liste von Informationen zu vorhandenen Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="ed413-116">**GetSiteScripts** &mdash; Gets a list of information on existing site scripts.</span></span>
-- <span data-ttu-id="ed413-117">**GetSiteScriptMetadata** &mdash; Abrufen von Informationen zu einem bestimmten Websiteskript.</span><span class="sxs-lookup"><span data-stu-id="ed413-117">**GetSiteScriptMetadata** &mdash; Gets information about a specific site script.</span></span>
-- <span data-ttu-id="ed413-118">**UpdateSiteScript** &mdash; Aktualisieren eines Websiteskripts mit neuen Werten.</span><span class="sxs-lookup"><span data-stu-id="ed413-118">**UpdateSiteScript** &mdash; Updates a site script with new values.</span></span>
-- <span data-ttu-id="ed413-119">**DeleteSiteScript** &mdash; Löschen eines Websitekripts.</span><span class="sxs-lookup"><span data-stu-id="ed413-119">**DeleteSiteScript** &mdash; Deletes a site script.</span></span>
-- <span data-ttu-id="ed413-120">**CreateSiteDesign** &mdash; Erstellen eines Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="ed413-120">**CreateSiteDesign** &mdash; Creates a site design.</span></span>
-- <span data-ttu-id="ed413-121">**GetSiteDesigns** &mdash; Abrufen einer Liste von Informationen zu vorhandenen Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="ed413-121">**GetSiteDesigns** &mdash; Gets a list of information on existing site designs.</span></span>
-- <span data-ttu-id="ed413-122">**GetSiteDesignMetadata** &mdash; Abrufen von Informationen zu einem bestimmten Websitedesign.</span><span class="sxs-lookup"><span data-stu-id="ed413-122">**GetSiteDesignMetadata** &mdash; Gets information about a sepcific site design.</span></span>
-- <span data-ttu-id="ed413-123">**UpdateSiteDesign** &mdash; Aktualisieren eines Websitedesigns mit neuen Werten.</span><span class="sxs-lookup"><span data-stu-id="ed413-123">**UpdateSiteDesign** &mdash; Updates a site design with new values.</span></span>
-- <span data-ttu-id="ed413-124">**DeleteSiteDesign** &mdash; Löschen eines Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="ed413-124">**DeleteSiteDesign** &mdash; Deletes a site design.</span></span>
-- <span data-ttu-id="ed413-125">**GetSiteDesignRights** &mdash; Abrufen einer Liste von Prinzipalen, die Zugriff auf ein Websitedesign haben.</span><span class="sxs-lookup"><span data-stu-id="ed413-125">**GetSiteDesignRights** &mdash; Gets a list of principals that have access to a site design.</span></span>
-- <span data-ttu-id="ed413-126">**GrantSiteDesignRights** &mdash; Erteilen von Zugriff auf ein Websitedesign für einen oder mehrere Prinzipale.</span><span class="sxs-lookup"><span data-stu-id="ed413-126">**GrantSiteDesignRights** &mdash; Grants access to a site design for one or more principals.</span></span>
-- <span data-ttu-id="ed413-127">**RevokeSiteDesignRights** &mdash; Widerrufen des Zugriffs auf ein Websitedesign für einen oder mehrere Prinzipale.</span><span class="sxs-lookup"><span data-stu-id="ed413-127">**RevokeSiteDesignRights** &mdash; Revokes access from a site design for one or more principals.</span></span>
+- <span data-ttu-id="a0147-115">**CreateSiteScript** &mdash; Erstellen eines neuen Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="a0147-115">**CreateSiteScript** &mdash; Creates a new site script.</span></span>
+- <span data-ttu-id="a0147-116">**GetSiteScripts** &mdash; Abrufen einer Liste von Informationen zu vorhandenen Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="a0147-116">**GetSiteScripts** &mdash; Gets a list of information on existing site scripts.</span></span>
+- <span data-ttu-id="a0147-117">**GetSiteScriptMetadata** &mdash; Abrufen von Informationen zu einem bestimmten Websiteskript.</span><span class="sxs-lookup"><span data-stu-id="a0147-117">**GetSiteScriptMetadata** &mdash; Gets information about a specific site script.</span></span>
+- <span data-ttu-id="a0147-118">**UpdateSiteScript** &mdash; Aktualisieren eines Websiteskripts mit neuen Werten.</span><span class="sxs-lookup"><span data-stu-id="a0147-118">**UpdateSiteScript** &mdash; Updates a site script with new values.</span></span>
+- <span data-ttu-id="a0147-119">**DeleteSiteScript** &mdash; Löschen eines Websitekripts.</span><span class="sxs-lookup"><span data-stu-id="a0147-119">**DeleteSiteScript** &mdash; Deletes a site script.</span></span>
+- <span data-ttu-id="a0147-120">**CreateSiteDesign** &mdash; Erstellen eines Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="a0147-120">**CreateSiteDesign** &mdash; Creates a site design.</span></span>
+- <span data-ttu-id="a0147-121">**GetSiteDesigns** &mdash; Abrufen einer Liste von Informationen zu vorhandenen Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="a0147-121">**GetSiteDesigns** &mdash; Gets a list of information on existing site designs.</span></span>
+- <span data-ttu-id="a0147-122">**GetSiteDesignMetadata** &mdash; Abrufen von Informationen zu einem bestimmten Websitedesign.</span><span class="sxs-lookup"><span data-stu-id="a0147-122">**GetSiteDesignMetadata** &mdash; Gets information about a sepcific site design.</span></span>
+- <span data-ttu-id="a0147-123">**UpdateSiteDesign** &mdash; Aktualisieren eines Websitedesigns mit neuen Werten.</span><span class="sxs-lookup"><span data-stu-id="a0147-123">**UpdateSiteDesign** &mdash; Updates a site design with new values.</span></span>
+- <span data-ttu-id="a0147-124">**DeleteSiteDesign** &mdash; Löschen eines Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="a0147-124">**DeleteSiteDesign** &mdash; Deletes a site design.</span></span>
+- <span data-ttu-id="a0147-125">**GetSiteDesignRights** &mdash; Abrufen einer Liste von Prinzipalen, die Zugriff auf ein Websitedesign haben.</span><span class="sxs-lookup"><span data-stu-id="a0147-125">**GetSiteDesignRights** &mdash; Gets a list of principals that have access to a site design.</span></span>
+- <span data-ttu-id="a0147-126">**GrantSiteDesignRights** &mdash; Erteilen von Zugriff auf ein Websitedesign für einen oder mehrere Prinzipale.</span><span class="sxs-lookup"><span data-stu-id="a0147-126">**GrantSiteDesignRights** &mdash; Grants access to a site design for one or more principals.</span></span>
+- <span data-ttu-id="a0147-127">**RevokeSiteDesignRights** &mdash; Widerrufen des Zugriffs auf ein Websitedesign für einen oder mehrere Prinzipale.</span><span class="sxs-lookup"><span data-stu-id="a0147-127">**RevokeSiteDesignRights** &mdash; Revokes access from a site design for one or more principals.</span></span>
 
-## <a name="create-a-function-to-send-rest-requests"></a><span data-ttu-id="ed413-128">Erstellen einer Funktion zum Senden von REST-Anforderungen</span><span class="sxs-lookup"><span data-stu-id="ed413-128">Create a function to send REST requests</span></span>
+## <a name="create-a-function-to-send-rest-requests"></a><span data-ttu-id="a0147-128">Erstellen einer Funktion zum Senden von REST-Anforderungen</span><span class="sxs-lookup"><span data-stu-id="a0147-128">Create a function to send REST requests</span></span>
 
-<span data-ttu-id="ed413-129">Zum Arbeiten mit der REST-API wird empfohlen, eine Hilfsfunktion für die REST-Aufrufe zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="ed413-129">To work with the REST API we recommend creating a helper function to make the REST calls.</span></span> <span data-ttu-id="ed413-130">Die folgende **RestRequest**-Funktion ruft die im **url**-Parameter angegebene REST-Methode auf und übergibt die weiteren Parameter in **params**.</span><span class="sxs-lookup"><span data-stu-id="ed413-130">The following **RestRequest** function will call the REST method specified in the **url** parameter and pass the additional parameters in **params**.</span></span>
+<span data-ttu-id="a0147-129">Zum Arbeiten mit der REST-API wird empfohlen, eine Hilfsfunktion für die REST-Aufrufe zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="a0147-129">To work with the REST API we recommend creating a helper function to make the REST calls.</span></span> <span data-ttu-id="a0147-130">Die folgende **RestRequest**-Funktion ruft die im **url**-Parameter angegebene REST-Methode auf und übergibt die weiteren Parameter in **params**.</span><span class="sxs-lookup"><span data-stu-id="a0147-130">The following **RestRequest** function will call the REST method specified in the **url** parameter and pass the additional parameters in **params**.</span></span>
 
 ```javascript
 function RestRequest(url,params) {
@@ -65,18 +65,18 @@ function RestRequest(url,params) {
 }
 ```
 
-## <a name="createsitescript"></a><span data-ttu-id="ed413-131">CreateSiteScript</span><span class="sxs-lookup"><span data-stu-id="ed413-131">CreateSiteScript</span></span>
+## <a name="createsitescript"></a><span data-ttu-id="a0147-131">CreateSiteScript</span><span class="sxs-lookup"><span data-stu-id="a0147-131">CreateSiteScript</span></span>
 
-<span data-ttu-id="ed413-132">Erstellt ein neues Websiteskript.</span><span class="sxs-lookup"><span data-stu-id="ed413-132">Creates a new site script.</span></span>
+<span data-ttu-id="a0147-132">Erstellt ein neues Websiteskript.</span><span class="sxs-lookup"><span data-stu-id="a0147-132">Creates a new site script.</span></span>
 
-### <a name="parameters"></a><span data-ttu-id="ed413-133">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-133">Parameters</span></span>
+### <a name="parameters"></a><span data-ttu-id="a0147-133">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-133">Parameters</span></span>
 
-|<span data-ttu-id="ed413-134">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-134">Parameter</span></span>     | <span data-ttu-id="ed413-135">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="ed413-135">Description</span></span>  |
+|<span data-ttu-id="a0147-134">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-134">Parameter</span></span>     | <span data-ttu-id="a0147-135">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="a0147-135">Description</span></span>  |
 |--------------|--------------|
-| <span data-ttu-id="ed413-136">Titel</span><span class="sxs-lookup"><span data-stu-id="ed413-136">Title</span></span>       | <span data-ttu-id="ed413-137">Der Anzeigename des Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="ed413-137">The display name of the site design.</span></span> |
-| <span data-ttu-id="ed413-138">Inhalt</span><span class="sxs-lookup"><span data-stu-id="ed413-138">Content</span></span>     | <span data-ttu-id="ed413-139">JSON-Wert, der das Skript beschreibt.</span><span class="sxs-lookup"><span data-stu-id="ed413-139">JSON value that describes the script.</span></span> <span data-ttu-id="ed413-140">Weitere Informationen finden Sie unter [JSON-Referenz](site-design-json-schema.md).</span><span class="sxs-lookup"><span data-stu-id="ed413-140">For more information, see [JSON reference](site-design-json-schema.md).</span></span>|
+| <span data-ttu-id="a0147-136">Titel</span><span class="sxs-lookup"><span data-stu-id="a0147-136">Title</span></span>       | <span data-ttu-id="a0147-137">Der Anzeigename des Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="a0147-137">The display name of the site design.</span></span> |
+| <span data-ttu-id="a0147-138">Inhalt</span><span class="sxs-lookup"><span data-stu-id="a0147-138">Content</span></span>     | <span data-ttu-id="a0147-139">JSON-Wert, der das Skript beschreibt.</span><span class="sxs-lookup"><span data-stu-id="a0147-139">JSON value that describes the script.</span></span> <span data-ttu-id="a0147-140">Weitere Informationen finden Sie unter [JSON-Referenz](site-design-json-schema.md).</span><span class="sxs-lookup"><span data-stu-id="a0147-140">For more information, see [JSON reference](site-design-json-schema.md).</span></span>|
 
-<span data-ttu-id="ed413-141">Im folgenden Beispiel wird ein neues Websiteskript erstellt, das ein benutzerdefiniertes Design anwendet.</span><span class="sxs-lookup"><span data-stu-id="ed413-141">The following example creates a new site script that applies a custom theme.</span></span>
+<span data-ttu-id="a0147-141">Im folgenden Beispiel wird ein neues Websiteskript erstellt, das ein benutzerdefiniertes Design anwendet.</span><span class="sxs-lookup"><span data-stu-id="a0147-141">The following example creates a new site script that applies a custom theme.</span></span>
 
 ```javascript
 var site_script = 
@@ -95,7 +95,7 @@ var site_script =
 RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.CreateSiteScript(Title=@title)?@title='Contoso theme script'", site_script);
 ```
 
-<span data-ttu-id="ed413-142">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **CreateSiteScript** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="ed413-142">Here is an example of the JSON returned after calling **CreateSiteScript**.</span></span> <span data-ttu-id="ed413-143">Er enthält die ID des neuen Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="ed413-143">It contains the ID of the new site script.</span></span>
+<span data-ttu-id="a0147-142">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **CreateSiteScript** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="a0147-142">Here is an example of the JSON returned after calling **CreateSiteScript**.</span></span> <span data-ttu-id="a0147-143">Er enthält die ID des neuen Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="a0147-143">It contains the ID of the new site script.</span></span>
 
 ```json
 {
@@ -108,21 +108,21 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
 }
 ```
 
-## <a name="getsitescripts"></a><span data-ttu-id="ed413-144">GetSiteScripts</span><span class="sxs-lookup"><span data-stu-id="ed413-144">GetSiteScripts</span></span>
+## <a name="getsitescripts"></a><span data-ttu-id="a0147-144">GetSiteScripts</span><span class="sxs-lookup"><span data-stu-id="a0147-144">GetSiteScripts</span></span>
 
-<span data-ttu-id="ed413-145">Abrufen einer Liste von Informationen zu allen vorhandenen Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="ed413-145">Gets a list of information on all existing site scripts.</span></span>
+<span data-ttu-id="a0147-145">Abrufen einer Liste von Informationen zu allen vorhandenen Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="a0147-145">Gets a list of information on all existing site scripts.</span></span>
 
-### <a name="parameters"></a><span data-ttu-id="ed413-146">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-146">Parameters</span></span>
+### <a name="parameters"></a><span data-ttu-id="a0147-146">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-146">Parameters</span></span>
 
-<span data-ttu-id="ed413-147">Keine</span><span class="sxs-lookup"><span data-stu-id="ed413-147">None.</span></span>
+<span data-ttu-id="a0147-147">Keine</span><span class="sxs-lookup"><span data-stu-id="a0147-147">None.</span></span>
 
-<span data-ttu-id="ed413-148">Im folgenden Beispiel werden die Websiteskriptinformationen für alle Websiteskripts abgerufen.</span><span class="sxs-lookup"><span data-stu-id="ed413-148">The following example gets the site script information for all site scripts.</span></span>
+<span data-ttu-id="a0147-148">Im folgenden Beispiel werden die Websiteskriptinformationen für alle Websiteskripts abgerufen.</span><span class="sxs-lookup"><span data-stu-id="a0147-148">The following example gets the site script information for all site scripts.</span></span>
 
 ```javascript
 RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.GetSiteScripts");
 ```
 
-<span data-ttu-id="ed413-149">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **GetSiteScripts** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="ed413-149">Here is an example of the JSON returned after calling **GetSiteScripts**.</span></span>
+<span data-ttu-id="a0147-149">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **GetSiteScripts** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="a0147-149">Here is an example of the JSON returned after calling **GetSiteScripts**.</span></span>
 
 ```json
 {
@@ -146,22 +146,22 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
 }
 ```
 
-## <a name="getsitescriptmetadata"></a><span data-ttu-id="ed413-150">GetSiteScriptMetadata</span><span class="sxs-lookup"><span data-stu-id="ed413-150">GetSiteScriptMetadata</span></span>
+## <a name="getsitescriptmetadata"></a><span data-ttu-id="a0147-150">GetSiteScriptMetadata</span><span class="sxs-lookup"><span data-stu-id="a0147-150">GetSiteScriptMetadata</span></span>
 
-<span data-ttu-id="ed413-151">Abrufen von Informationen zu einem bestimmten Websiteskript.</span><span class="sxs-lookup"><span data-stu-id="ed413-151">Gets information about a specific site script.</span></span> <span data-ttu-id="ed413-152">Es wird auch der JSON-Code des Skripts zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="ed413-152">It also returns the JSON of the script.</span></span>
+<span data-ttu-id="a0147-151">Abrufen von Informationen zu einem bestimmten Websiteskript.</span><span class="sxs-lookup"><span data-stu-id="a0147-151">Gets information about a specific site script.</span></span> <span data-ttu-id="a0147-152">Es wird auch der JSON-Code des Skripts zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="a0147-152">It also returns the JSON of the script.</span></span>
 
-### <a name="parameters"></a><span data-ttu-id="ed413-153">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-153">Parameters</span></span>
+### <a name="parameters"></a><span data-ttu-id="a0147-153">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-153">Parameters</span></span>
 
-|<span data-ttu-id="ed413-154">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-154">Parameter</span></span>     | <span data-ttu-id="ed413-155">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="ed413-155">Description</span></span>  |
+|<span data-ttu-id="a0147-154">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-154">Parameter</span></span>     | <span data-ttu-id="a0147-155">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="a0147-155">Description</span></span>  |
 |--------------|--------------|
-| <span data-ttu-id="ed413-156">id</span><span class="sxs-lookup"><span data-stu-id="ed413-156">id</span></span>    | <span data-ttu-id="ed413-157">Die ID des Websiteskripts, über das Informationen abgerufen werden sollen.</span><span class="sxs-lookup"><span data-stu-id="ed413-157">The ID of the site script to get information about.</span></span> |
+| <span data-ttu-id="a0147-156">id</span><span class="sxs-lookup"><span data-stu-id="a0147-156">id</span></span>    | <span data-ttu-id="a0147-157">Die ID des Websiteskripts, über das Informationen abgerufen werden sollen.</span><span class="sxs-lookup"><span data-stu-id="a0147-157">The ID of the site script to get information about.</span></span> |
 
 ```javascript
 RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.GetSiteScriptMetadata",
 {id:"07702c07-0485-426f-b710-4704241caad9"});
 ```
 
-<span data-ttu-id="ed413-158">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **GetSiteScriptMetadata** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="ed413-158">Here is an example of the JSON returned after calling **GetSiteScriptMetadata**.</span></span>
+<span data-ttu-id="a0147-158">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **GetSiteScriptMetadata** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="a0147-158">Here is an example of the JSON returned after calling **GetSiteScriptMetadata**.</span></span>
 
 ```json
 {
@@ -174,21 +174,21 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
 }
 ```
 
-## <a name="updatesitescript"></a><span data-ttu-id="ed413-159">UpdateSiteScript</span><span class="sxs-lookup"><span data-stu-id="ed413-159">UpdateSiteScript</span></span>
+## <a name="updatesitescript"></a><span data-ttu-id="a0147-159">UpdateSiteScript</span><span class="sxs-lookup"><span data-stu-id="a0147-159">UpdateSiteScript</span></span>
 
-<span data-ttu-id="ed413-160">Aktualisieren eines Websiteskripts mit neuen Werten.</span><span class="sxs-lookup"><span data-stu-id="ed413-160">Updates a site script with new values.</span></span>
+<span data-ttu-id="a0147-160">Aktualisieren eines Websiteskripts mit neuen Werten.</span><span class="sxs-lookup"><span data-stu-id="a0147-160">Updates a site script with new values.</span></span> <span data-ttu-id="a0147-161">In dem REST-Aufruf sind alle Parameter mit Ausnahme der Website-Skript-ID optional.</span><span class="sxs-lookup"><span data-stu-id="a0147-161">In the REST call all parameters are optional except the site script Id.</span></span>
 
-### <a name="parameters"></a><span data-ttu-id="ed413-161">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-161">Parameters</span></span>
+### <a name="parameters"></a><span data-ttu-id="a0147-162">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-162">Parameters</span></span>
 
-|<span data-ttu-id="ed413-162">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-162">Parameter</span></span>   | <span data-ttu-id="ed413-163">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="ed413-163">Description</span></span>  |
+|<span data-ttu-id="a0147-163">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-163">Parameter</span></span>   | <span data-ttu-id="a0147-164">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="a0147-164">Description</span></span>  |
 |------------|--------------|
-| <span data-ttu-id="ed413-164">Id</span><span class="sxs-lookup"><span data-stu-id="ed413-164">Id</span></span>         | <span data-ttu-id="ed413-165">Die ID des zu aktualisierenden Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="ed413-165">The ID of the site script to update.</span></span> |
-|<span data-ttu-id="ed413-166">Titel</span><span class="sxs-lookup"><span data-stu-id="ed413-166">Title</span></span>       | <span data-ttu-id="ed413-167">(optional) Der neue Anzeigename des Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="ed413-167">(optional) The new display name of the site script.</span></span> |
-|<span data-ttu-id="ed413-168">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="ed413-168">Description</span></span> | <span data-ttu-id="ed413-169">(Optional) Die neue Beschreibung des Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="ed413-169">(Optional) The new description of the site script.</span></span> |
-| <span data-ttu-id="ed413-170">Version</span><span class="sxs-lookup"><span data-stu-id="ed413-170">Version</span></span>    | <span data-ttu-id="ed413-171">(Optional) Die neue Versionsnummer des Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="ed413-171">(Optional) The new version number of the site script.</span></span> |
-| <span data-ttu-id="ed413-172">Inhalt</span><span class="sxs-lookup"><span data-stu-id="ed413-172">Content</span></span>    | <span data-ttu-id="ed413-173">(Optional) Ein neues JSON-Skript, das die Skriptaktionen definiert.</span><span class="sxs-lookup"><span data-stu-id="ed413-173">(Optional) A new JSON script defining the script actions.</span></span> <span data-ttu-id="ed413-174">Weitere Informationen finden Sie unter [JSON-Schema eines Websitedesigns](site-design-json-schema.md).</span><span class="sxs-lookup"><span data-stu-id="ed413-174">For more information, see [Site design JSON schema](site-design-json-schema.md)</span></span> |
+| <span data-ttu-id="a0147-165">Id</span><span class="sxs-lookup"><span data-stu-id="a0147-165">Id</span></span>         | <span data-ttu-id="a0147-166">Die ID des zu aktualisierenden Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="a0147-166">The ID of the site script to update.</span></span> |
+|<span data-ttu-id="a0147-167">Titel</span><span class="sxs-lookup"><span data-stu-id="a0147-167">Title</span></span>       | <span data-ttu-id="a0147-168">(optional) Der neue Anzeigename des Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="a0147-168">(optional) The new display name of the site script.</span></span> |
+|<span data-ttu-id="a0147-169">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="a0147-169">Description</span></span> | <span data-ttu-id="a0147-170">(Optional) Die neue Beschreibung des Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="a0147-170">(Optional) The new description of the site script.</span></span> |
+| <span data-ttu-id="a0147-171">Version</span><span class="sxs-lookup"><span data-stu-id="a0147-171">Version</span></span>    | <span data-ttu-id="a0147-172">(Optional) Die neue Versionsnummer des Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="a0147-172">(Optional) The new version number of the site script.</span></span> |
+| <span data-ttu-id="a0147-173">Inhalt</span><span class="sxs-lookup"><span data-stu-id="a0147-173">Content</span></span>    | <span data-ttu-id="a0147-174">(Optional) Ein neues JSON-Skript, das die Skriptaktionen definiert.</span><span class="sxs-lookup"><span data-stu-id="a0147-174">(Optional) A new JSON script defining the script actions.</span></span> <span data-ttu-id="a0147-175">Weitere Informationen finden Sie unter [JSON-Schema eines Websitedesigns](site-design-json-schema.md).</span><span class="sxs-lookup"><span data-stu-id="a0147-175">For more information, see [Site design JSON schema](site-design-json-schema.md)</span></span> |
 
-<span data-ttu-id="ed413-175">Nachfolgend finden Sie ein Beispiel des Aktualisierens eines vorhandenen Websiteskripts mit einem neuen JSON-Skript und neuen Werten.</span><span class="sxs-lookup"><span data-stu-id="ed413-175">Here's an example of updating an existing site script with a new JSON script and values.</span></span>
+<span data-ttu-id="a0147-176">Nachfolgend finden Sie ein Beispiel des Aktualisierens eines vorhandenen Websiteskripts mit einem neuen JSON-Skript und neuen Werten.</span><span class="sxs-lookup"><span data-stu-id="a0147-176">Here's an example of updating an existing site script with a new JSON script and values.</span></span>
 
 ```javascript
 var updated_site_script = 
@@ -214,7 +214,7 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
   Content: JSON.stringify(updated_site_script)}});
 ```
 
-<span data-ttu-id="ed413-176">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **UpdateSiteScript** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="ed413-176">Here is an example of the JSON returned after calling **UpdateSiteScript**.</span></span>
+<span data-ttu-id="a0147-177">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **UpdateSiteScript** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="a0147-177">Here is an example of the JSON returned after calling **UpdateSiteScript**.</span></span>
 
 ```json
 {
@@ -227,40 +227,40 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
 }
 ```
 
-## <a name="deletesitescript"></a><span data-ttu-id="ed413-177">DeleteSiteScript</span><span class="sxs-lookup"><span data-stu-id="ed413-177">DeleteSiteScript</span></span>
+## <a name="deletesitescript"></a><span data-ttu-id="a0147-178">DeleteSiteScript</span><span class="sxs-lookup"><span data-stu-id="a0147-178">DeleteSiteScript</span></span>
 
-<span data-ttu-id="ed413-178">Löschen eines Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="ed413-178">Deletes a site script.</span></span>
+<span data-ttu-id="a0147-179">Löschen eines Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="a0147-179">Deletes a site script.</span></span>
 
-### <a name="parameters"></a><span data-ttu-id="ed413-179">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-179">Parameters</span></span>
+### <a name="parameters"></a><span data-ttu-id="a0147-180">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-180">Parameters</span></span>
 
-|<span data-ttu-id="ed413-180">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-180">Parameter</span></span>   | <span data-ttu-id="ed413-181">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="ed413-181">Description</span></span>  |
+|<span data-ttu-id="a0147-181">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-181">Parameter</span></span>   | <span data-ttu-id="a0147-182">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="a0147-182">Description</span></span>  |
 |------------|--------------|
-| <span data-ttu-id="ed413-182">id</span><span class="sxs-lookup"><span data-stu-id="ed413-182">id</span></span>         | <span data-ttu-id="ed413-183">Die ID des zu löschenden Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="ed413-183">The ID of the site script to delete.</span></span> |
+| <span data-ttu-id="a0147-183">id</span><span class="sxs-lookup"><span data-stu-id="a0147-183">id</span></span>         | <span data-ttu-id="a0147-184">Die ID des zu löschenden Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="a0147-184">The ID of the site script to delete.</span></span> |
 
-<span data-ttu-id="ed413-184">Nachfolgend finden Sie ein Beispiel zum Löschen eines Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="ed413-184">Here's an example of deleting a site script.</span></span>
+<span data-ttu-id="a0147-185">Nachfolgend finden Sie ein Beispiel zum Löschen eines Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="a0147-185">Here's an example of deleting a site script.</span></span>
 
 ```javascript
 RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.DeleteSiteScript", 
 {id:"07702c07-0485-426f-b710-4704241caad9"});
 ```
 
-## <a name="createsitedesign"></a><span data-ttu-id="ed413-185">CreateSiteDesign</span><span class="sxs-lookup"><span data-stu-id="ed413-185">CreateSiteDesign</span></span>
+## <a name="createsitedesign"></a><span data-ttu-id="a0147-186">CreateSiteDesign</span><span class="sxs-lookup"><span data-stu-id="a0147-186">CreateSiteDesign</span></span>
 
-<span data-ttu-id="ed413-186">Erstellen eines neues Websitedesigns, das für Benutzer beim Erstellen einer neuen Website von der SharePoint-Startseite verfügbar ist.</span><span class="sxs-lookup"><span data-stu-id="ed413-186">Creates a new site design available to users when they create a new site from the SharePoint home page.</span></span>
+<span data-ttu-id="a0147-187">Erstellen eines neues Websitedesigns, das für Benutzer beim Erstellen einer neuen Website von der SharePoint-Startseite verfügbar ist.</span><span class="sxs-lookup"><span data-stu-id="a0147-187">Creates a new site design available to users when they create a new site from the SharePoint home page.</span></span>
 
-### <a name="parameters"></a><span data-ttu-id="ed413-187">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-187">Parameters</span></span>
+### <a name="parameters"></a><span data-ttu-id="a0147-188">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-188">Parameters</span></span>
 
-|<span data-ttu-id="ed413-188">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-188">Parameter</span></span>  | <span data-ttu-id="ed413-189">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="ed413-189">Description</span></span>  |
+|<span data-ttu-id="a0147-189">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-189">Parameter</span></span>  | <span data-ttu-id="a0147-190">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="a0147-190">Description</span></span>  |
 |-----------|--------------|
-|<span data-ttu-id="ed413-190">Titel</span><span class="sxs-lookup"><span data-stu-id="ed413-190">Title</span></span>                 | <span data-ttu-id="ed413-191">Der Anzeigename des Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="ed413-191">The display name of the site design.</span></span> |
-|<span data-ttu-id="ed413-192">WebTemplate</span><span class="sxs-lookup"><span data-stu-id="ed413-192">WebTemplate</span></span>           | <span data-ttu-id="ed413-193">Identifiziert, zu welcher Basisvorlage das Design hinzugefügt werden soll.</span><span class="sxs-lookup"><span data-stu-id="ed413-193">Identifies which base template to add the design to.</span></span> <span data-ttu-id="ed413-194">Verwenden Sie den Wert **64** für die Teamwebsite-Vorlage und den Wert **68** für die Kommunikationswebsitevorlage.</span><span class="sxs-lookup"><span data-stu-id="ed413-194">Use the value **64** for the Team site template, and the value **68** for the Communication site template.</span></span> |
-|<span data-ttu-id="ed413-195">SiteScripts</span><span class="sxs-lookup"><span data-stu-id="ed413-195">SiteScripts</span></span>           | <span data-ttu-id="ed413-196">Ein Array von einem oder mehreren Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="ed413-196">An array of one or more site scripts.</span></span> <span data-ttu-id="ed413-197">Jedes wird durch eine ID identifziert.</span><span class="sxs-lookup"><span data-stu-id="ed413-197">Each is identified by an ID.</span></span> <span data-ttu-id="ed413-198">Die Skripts werden in der aufgeführten Reihenfolge ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="ed413-198">The scripts will run in the order listed.</span></span> |
-|<span data-ttu-id="ed413-199">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="ed413-199">Description</span></span>         | <span data-ttu-id="ed413-200">(Optional) Die Anzeigebeschreibung des Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="ed413-200">(Optional) The display description of site design.</span></span> |
-|<span data-ttu-id="ed413-201">PreviewImageUrl</span><span class="sxs-lookup"><span data-stu-id="ed413-201">PreviewImageUrl</span></span>     | <span data-ttu-id="ed413-202">(optional) Die URL eines Vorschaubilds.</span><span class="sxs-lookup"><span data-stu-id="ed413-202">(Optional) The URL of a preview image.</span></span> <span data-ttu-id="ed413-203">Wenn keine angegeben ist, verwendet SharePoint ein allgemeines Bild.</span><span class="sxs-lookup"><span data-stu-id="ed413-203">If none is specified SharePoint will use a generic image.</span></span> |
-|<span data-ttu-id="ed413-204">PreviewImageAltText</span><span class="sxs-lookup"><span data-stu-id="ed413-204">PreviewImageAltText</span></span> | <span data-ttu-id="ed413-205">(Optional) Die Alternativtextbeschreibung des Bilds für Barrierefreiheit.</span><span class="sxs-lookup"><span data-stu-id="ed413-205">(Optional) The alt text description of the image for accessibility.</span></span> |
-|<span data-ttu-id="ed413-206">IsDefault</span><span class="sxs-lookup"><span data-stu-id="ed413-206">IsDefault</span></span>           | <span data-ttu-id="ed413-207">(Optional) **True**, wenn das Websitedesign als Standarddesign der Website angewendet wird; andernfalls **False**.</span><span class="sxs-lookup"><span data-stu-id="ed413-207">(Optional) **true** if the site design is applied as the default site design; otherwise, **false**.</span></span> <span data-ttu-id="ed413-208">Weitere Informationen finden Sie unter [Anpassen eines standardmäßigen Websitedesigns](customize-default-site-design.md).</span><span class="sxs-lookup"><span data-stu-id="ed413-208">For more information see [Customize a default site design](customize-default-site-design.md)</span></span> |
+|<span data-ttu-id="a0147-191">Titel</span><span class="sxs-lookup"><span data-stu-id="a0147-191">Title</span></span>                 | <span data-ttu-id="a0147-192">Der Anzeigename des Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="a0147-192">The display name of the site design.</span></span> |
+|<span data-ttu-id="a0147-193">WebTemplate</span><span class="sxs-lookup"><span data-stu-id="a0147-193">WebTemplate</span></span>           | <span data-ttu-id="a0147-194">Identifiziert, zu welcher Basisvorlage das Design hinzugefügt werden soll.</span><span class="sxs-lookup"><span data-stu-id="a0147-194">Identifies which base template to add the design to.</span></span> <span data-ttu-id="a0147-195">Verwenden Sie den Wert **64** für die Teamwebsite-Vorlage und den Wert **68** für die Kommunikationswebsitevorlage.</span><span class="sxs-lookup"><span data-stu-id="a0147-195">Use the value **64** for the Team site template, and the value **68** for the Communication site template.</span></span> |
+|<span data-ttu-id="a0147-196">SiteScripts</span><span class="sxs-lookup"><span data-stu-id="a0147-196">SiteScripts</span></span>           | <span data-ttu-id="a0147-197">Ein Array von einem oder mehreren Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="a0147-197">An array of one or more site scripts.</span></span> <span data-ttu-id="a0147-198">Jedes wird durch eine ID identifziert.</span><span class="sxs-lookup"><span data-stu-id="a0147-198">Each is identified by an ID.</span></span> <span data-ttu-id="a0147-199">Die Skripts werden in der aufgeführten Reihenfolge ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="a0147-199">The scripts will run in the order listed.</span></span> |
+|<span data-ttu-id="a0147-200">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="a0147-200">Description</span></span>         | <span data-ttu-id="a0147-201">(Optional) Die Anzeigebeschreibung des Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="a0147-201">(Optional) The display description of site design.</span></span> |
+|<span data-ttu-id="a0147-202">PreviewImageUrl</span><span class="sxs-lookup"><span data-stu-id="a0147-202">PreviewImageUrl</span></span>     | <span data-ttu-id="a0147-203">(optional) Die URL eines Vorschaubilds.</span><span class="sxs-lookup"><span data-stu-id="a0147-203">(Optional) The URL of a preview image.</span></span> <span data-ttu-id="a0147-204">Wenn keine angegeben ist, verwendet SharePoint ein allgemeines Bild.</span><span class="sxs-lookup"><span data-stu-id="a0147-204">If none is specified SharePoint will use a generic image.</span></span> |
+|<span data-ttu-id="a0147-205">PreviewImageAltText</span><span class="sxs-lookup"><span data-stu-id="a0147-205">PreviewImageAltText</span></span> | <span data-ttu-id="a0147-206">(Optional) Die Alternativtextbeschreibung des Bilds für Barrierefreiheit.</span><span class="sxs-lookup"><span data-stu-id="a0147-206">(Optional) The alt text description of the image for accessibility.</span></span> |
+|<span data-ttu-id="a0147-207">IsDefault</span><span class="sxs-lookup"><span data-stu-id="a0147-207">IsDefault</span></span>           | <span data-ttu-id="a0147-208">(Optional) **True**, wenn das Websitedesign als Standarddesign der Website angewendet wird; andernfalls **False**.</span><span class="sxs-lookup"><span data-stu-id="a0147-208">(Optional) **true** if the site design is applied as the default site design; otherwise, **false**.</span></span> <span data-ttu-id="a0147-209">Weitere Informationen finden Sie unter [Anpassen eines standardmäßigen Websitedesigns](customize-default-site-design.md).</span><span class="sxs-lookup"><span data-stu-id="a0147-209">For more information see [Customize a default site design](customize-default-site-design.md)</span></span> |
 
-<span data-ttu-id="ed413-209">Nachfolgend finden Sie ein Beispiel für das Erstellen eines neuen Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="ed413-209">Here's an example of creating a new site design.</span></span>
+<span data-ttu-id="a0147-210">Nachfolgend finden Sie ein Beispiel für das Erstellen eines neuen Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="a0147-210">Here's an example of creating a new site design.</span></span>
 
 ```javascript
 RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.CreateSiteDesign",{
@@ -275,7 +275,7 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
   });
 ```
 
-<span data-ttu-id="ed413-210">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **CreateSiteDesign** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="ed413-210">Here is an example of the JSON returned after calling **CreateSiteDesign**.</span></span> <span data-ttu-id="ed413-211">Er enthält die ID des neuen Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="ed413-211">It contains the ID of the new site design.</span></span>
+<span data-ttu-id="a0147-211">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **CreateSiteDesign** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="a0147-211">Here is an example of the JSON returned after calling **CreateSiteDesign**.</span></span> <span data-ttu-id="a0147-212">Er enthält die ID des neuen Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="a0147-212">It contains the ID of the new site design.</span></span>
 
 ```json
 {
@@ -291,21 +291,21 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
 }
 ```
 
-## <a name="getsitedesigns"></a><span data-ttu-id="ed413-212">GetSiteDesigns</span><span class="sxs-lookup"><span data-stu-id="ed413-212">GetSiteDesigns</span></span>
+## <a name="getsitedesigns"></a><span data-ttu-id="a0147-213">GetSiteDesigns</span><span class="sxs-lookup"><span data-stu-id="a0147-213">GetSiteDesigns</span></span>
 
-<span data-ttu-id="ed413-213">Abrufen einer Liste von Informationen zu vorhandenen Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="ed413-213">Gets a list of information on existing site designs.</span></span>
+<span data-ttu-id="a0147-214">Abrufen einer Liste von Informationen zu vorhandenen Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="a0147-214">Gets a list of information on existing site designs.</span></span>
 
-### <a name="parameters"></a><span data-ttu-id="ed413-214">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-214">Parameters</span></span>
+### <a name="parameters"></a><span data-ttu-id="a0147-215">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-215">Parameters</span></span>
 
-<span data-ttu-id="ed413-215">Keine</span><span class="sxs-lookup"><span data-stu-id="ed413-215">None</span></span>
+<span data-ttu-id="a0147-216">Keine</span><span class="sxs-lookup"><span data-stu-id="a0147-216">None</span></span>
 
-<span data-ttu-id="ed413-216">Nachfolgend finden Sie ein Beispiel zum Abrufen aller Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="ed413-216">Here's an example of getting all the site designs.</span></span>
+<span data-ttu-id="a0147-217">Nachfolgend finden Sie ein Beispiel zum Abrufen aller Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="a0147-217">Here's an example of getting all the site designs.</span></span>
 
 ```javascript
 RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.GetSiteDesigns");
 ```
 
-<span data-ttu-id="ed413-217">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **GetSiteDesigns** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="ed413-217">Here is an example of the JSON returned after calling **GetSiteDesigns**.</span></span>
+<span data-ttu-id="a0147-218">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **GetSiteDesigns** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="a0147-218">Here is an example of the JSON returned after calling **GetSiteDesigns**.</span></span>
 
 ```json
 {
@@ -337,24 +337,24 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
 }
 ```
 
-## <a name="getsitedesignmetadata"></a><span data-ttu-id="ed413-218">GetSiteDesignMetadata</span><span class="sxs-lookup"><span data-stu-id="ed413-218">GetSiteDesignMetadata</span></span>
+## <a name="getsitedesignmetadata"></a><span data-ttu-id="a0147-219">GetSiteDesignMetadata</span><span class="sxs-lookup"><span data-stu-id="a0147-219">GetSiteDesignMetadata</span></span>
 
-<span data-ttu-id="ed413-219">Abrufen von Informationen zu einem bestimmten Websitedesign.</span><span class="sxs-lookup"><span data-stu-id="ed413-219">Gets information about a specific site design.</span></span>
+<span data-ttu-id="a0147-220">Abrufen von Informationen zu einem bestimmten Websitedesign.</span><span class="sxs-lookup"><span data-stu-id="a0147-220">Gets information about a specific site design.</span></span>
 
-### <a name="parameters"></a><span data-ttu-id="ed413-220">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-220">Parameters</span></span>
+### <a name="parameters"></a><span data-ttu-id="a0147-221">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-221">Parameters</span></span>
 
-|<span data-ttu-id="ed413-221">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-221">Parameter</span></span>   | <span data-ttu-id="ed413-222">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="ed413-222">Description</span></span>  |
+|<span data-ttu-id="a0147-222">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-222">Parameter</span></span>   | <span data-ttu-id="a0147-223">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="a0147-223">Description</span></span>  |
 |------------|--------------|
-| <span data-ttu-id="ed413-223">id</span><span class="sxs-lookup"><span data-stu-id="ed413-223">id</span></span>         | <span data-ttu-id="ed413-224">Die ID des Websitedesigns, über das Informationen abgerufen werden sollen.</span><span class="sxs-lookup"><span data-stu-id="ed413-224">The ID of the site design to get information about.</span></span> |
+| <span data-ttu-id="a0147-224">id</span><span class="sxs-lookup"><span data-stu-id="a0147-224">id</span></span>         | <span data-ttu-id="a0147-225">Die ID des Websitedesigns, über das Informationen abgerufen werden sollen.</span><span class="sxs-lookup"><span data-stu-id="a0147-225">The ID of the site design to get information about.</span></span> |
 
-<span data-ttu-id="ed413-225">Nachfolgend finden Sie ein Beispiel zum Abrufen von Informationen zu einem bestimmten Websitedesign nach ID.</span><span class="sxs-lookup"><span data-stu-id="ed413-225">Here's an example of getting information about a specific site design by ID.</span></span>
+<span data-ttu-id="a0147-226">Nachfolgend finden Sie ein Beispiel zum Abrufen von Informationen zu einem bestimmten Websitedesign nach ID.</span><span class="sxs-lookup"><span data-stu-id="a0147-226">Here's an example of getting information about a specific site design by ID.</span></span>
 
 ```javascript
 RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.GetSiteDesignMetadata", 
 {id:"614f9b28-3e85-4ec9-a961-5971ea086cca"});
 ```
 
-<span data-ttu-id="ed413-226">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **GetSiteDesignMetadata** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="ed413-226">Here is an example of the JSON returned after calling **GetSiteDesignMetadata**.</span></span>
+<span data-ttu-id="a0147-227">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **GetSiteDesignMetadata** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="a0147-227">Here is an example of the JSON returned after calling **GetSiteDesignMetadata**.</span></span>
 
 ```json
 {
@@ -371,24 +371,24 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
 }
 ```
 
-## <a name="updatesitedesign"></a><span data-ttu-id="ed413-227">UpdateSiteDesign</span><span class="sxs-lookup"><span data-stu-id="ed413-227">UpdateSiteDesign</span></span>
+## <a name="updatesitedesign"></a><span data-ttu-id="a0147-228">UpdateSiteDesign</span><span class="sxs-lookup"><span data-stu-id="a0147-228">UpdateSiteDesign</span></span>
 
-<span data-ttu-id="ed413-228">Aktualisieren eines Websitedesigns mit neuen Werten.</span><span class="sxs-lookup"><span data-stu-id="ed413-228">Updates a site design with new values.</span></span>
+<span data-ttu-id="a0147-229">Aktualisieren eines Websitedesigns mit neuen Werten.</span><span class="sxs-lookup"><span data-stu-id="a0147-229">Updates a site design with new values.</span></span> <span data-ttu-id="a0147-230">In dem REST-Aufruf sind mit Ausnahme der Website-Skript-ID optional. Hinweis: Wenn Sie zuvor den IsDefault-Parameter auf „true“ festgelegt haben und sie diese Einstellung beibehalten möchten, müssen Sie diesen Parameter erneut übergeben (andernfalls wird er auf „false“ zurückgesetzt).</span><span class="sxs-lookup"><span data-stu-id="a0147-230">In the REST call all parameters are optional except the site script Id. NOTE: if you had previously set the IsDefault parameter to TRUE and wish it to remain true, you must pass in this parameter again (otherwise it will be reset to FALSE).</span></span> 
 
-### <a name="parameters"></a><span data-ttu-id="ed413-229">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-229">Parameters</span></span>
+### <a name="parameters"></a><span data-ttu-id="a0147-231">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-231">Parameters</span></span>
 
-|<span data-ttu-id="ed413-230">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-230">Parameter</span></span>  | <span data-ttu-id="ed413-231">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="ed413-231">Description</span></span>  |
+|<span data-ttu-id="a0147-232">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-232">Parameter</span></span>  | <span data-ttu-id="a0147-233">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="a0147-233">Description</span></span>  |
 |-----------|--------------|
-|<span data-ttu-id="ed413-232">Id</span><span class="sxs-lookup"><span data-stu-id="ed413-232">Id</span></span>         | <span data-ttu-id="ed413-233">Die ID des zu aktualisierenden Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="ed413-233">The ID of the site design to update.</span></span> |
-|<span data-ttu-id="ed413-234">Titel</span><span class="sxs-lookup"><span data-stu-id="ed413-234">Title</span></span>                 |  <span data-ttu-id="ed413-235">(Optional) Der neue Anzeigename des aktualisierten Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="ed413-235">(optional) The new display name of the updated site design.</span></span> |
-|<span data-ttu-id="ed413-236">WebTemplate</span><span class="sxs-lookup"><span data-stu-id="ed413-236">WebTemplate</span></span>           | <span data-ttu-id="ed413-237">(Optional) Die neue Vorlage, der das Websitedesign hinzugefügt werden soll.</span><span class="sxs-lookup"><span data-stu-id="ed413-237">(optional) The new template to add the site design to.</span></span> <span data-ttu-id="ed413-238">Verwenden Sie den Wert **64** für die Teamwebsite-Vorlage und den Wert **68** für die Kommunikationswebsitevorlage.</span><span class="sxs-lookup"><span data-stu-id="ed413-238">Use the value **64** for the Team site template, and the value **68** for the Communication site template.</span></span> |
-|<span data-ttu-id="ed413-239">SiteScripts</span><span class="sxs-lookup"><span data-stu-id="ed413-239">SiteScripts</span></span>           | <span data-ttu-id="ed413-240">(Optional) Ein neues Array von einem oder mehreren Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="ed413-240">(optional) A new array of one or more site scripts.</span></span> <span data-ttu-id="ed413-241">Jedes wird durch eine ID identifziert.</span><span class="sxs-lookup"><span data-stu-id="ed413-241">Each is identified by an ID.</span></span> <span data-ttu-id="ed413-242">Die Skripts werden in der aufgeführten Reihenfolge ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="ed413-242">The scripts will run in the order listed.</span></span> |
-|<span data-ttu-id="ed413-243">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="ed413-243">Description</span></span>         | <span data-ttu-id="ed413-244">(Optional) Die neue Anzeigebeschreibung des aktualisierten Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="ed413-244">(Optional) The new display description of updated site design.</span></span> |
-|<span data-ttu-id="ed413-245">PreviewImageUrl</span><span class="sxs-lookup"><span data-stu-id="ed413-245">PreviewImageUrl</span></span>     | <span data-ttu-id="ed413-246">(Optional) Die neue URL eines Vorschaubilds.</span><span class="sxs-lookup"><span data-stu-id="ed413-246">(Optional) The new URL of a preview image.</span></span> |
-|<span data-ttu-id="ed413-247">PreviewImageAltText</span><span class="sxs-lookup"><span data-stu-id="ed413-247">PreviewImageAltText</span></span> | <span data-ttu-id="ed413-248">(Optional) Die neue Alternativtextbeschreibung des Bilds für Barrierefreiheit.</span><span class="sxs-lookup"><span data-stu-id="ed413-248">(Optional) The new alt text description of the image for accessibility.</span></span> |
-|<span data-ttu-id="ed413-249">IsDefault</span><span class="sxs-lookup"><span data-stu-id="ed413-249">IsDefault</span></span>           | <span data-ttu-id="ed413-250">(Optional) **True**, wenn das Websitedesign als Standarddesign der Website angewendet wird; andernfalls **False**.</span><span class="sxs-lookup"><span data-stu-id="ed413-250">(Optional) **true** if the site design is applied as the default site design; otherwise, **false**.</span></span> <span data-ttu-id="ed413-251">Weitere Informationen finden Sie unter [Anpassen eines standardmäßigen Websitedesigns](customize-default-site-design.md).</span><span class="sxs-lookup"><span data-stu-id="ed413-251">For more information see [Customize a default site design](customize-default-site-design.md)</span></span> |
+|<span data-ttu-id="a0147-234">Id</span><span class="sxs-lookup"><span data-stu-id="a0147-234">Id</span></span>         | <span data-ttu-id="a0147-235">Die ID des zu aktualisierenden Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="a0147-235">The ID of the site design to update.</span></span> |
+|<span data-ttu-id="a0147-236">Titel</span><span class="sxs-lookup"><span data-stu-id="a0147-236">Title</span></span>                 |  <span data-ttu-id="a0147-237">(Optional) Der neue Anzeigename des aktualisierten Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="a0147-237">(optional) The new display name of the updated site design.</span></span> |
+|<span data-ttu-id="a0147-238">WebTemplate</span><span class="sxs-lookup"><span data-stu-id="a0147-238">WebTemplate</span></span>           | <span data-ttu-id="a0147-239">(Optional) Die neue Vorlage, der das Websitedesign hinzugefügt werden soll.</span><span class="sxs-lookup"><span data-stu-id="a0147-239">(optional) The new template to add the site design to.</span></span> <span data-ttu-id="a0147-240">Verwenden Sie den Wert **64** für die Teamwebsite-Vorlage und den Wert **68** für die Kommunikationswebsitevorlage.</span><span class="sxs-lookup"><span data-stu-id="a0147-240">Use the value **64** for the Team site template, and the value **68** for the Communication site template.</span></span> |
+|<span data-ttu-id="a0147-241">SiteScripts</span><span class="sxs-lookup"><span data-stu-id="a0147-241">SiteScripts</span></span>           | <span data-ttu-id="a0147-242">(Optional) Ein neues Array von einem oder mehreren Websiteskripts.</span><span class="sxs-lookup"><span data-stu-id="a0147-242">(optional) A new array of one or more site scripts.</span></span> <span data-ttu-id="a0147-243">Jedes wird durch eine ID identifziert.</span><span class="sxs-lookup"><span data-stu-id="a0147-243">Each is identified by an ID.</span></span> <span data-ttu-id="a0147-244">Die Skripts werden in der aufgeführten Reihenfolge ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="a0147-244">The scripts will run in the order listed.</span></span> |
+|<span data-ttu-id="a0147-245">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="a0147-245">Description</span></span>         | <span data-ttu-id="a0147-246">(Optional) Die neue Anzeigebeschreibung des aktualisierten Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="a0147-246">(Optional) The new display description of updated site design.</span></span> |
+|<span data-ttu-id="a0147-247">PreviewImageUrl</span><span class="sxs-lookup"><span data-stu-id="a0147-247">PreviewImageUrl</span></span>     | <span data-ttu-id="a0147-248">(Optional) Die neue URL eines Vorschaubilds.</span><span class="sxs-lookup"><span data-stu-id="a0147-248">(Optional) The new URL of a preview image.</span></span> |
+|<span data-ttu-id="a0147-249">PreviewImageAltText</span><span class="sxs-lookup"><span data-stu-id="a0147-249">PreviewImageAltText</span></span> | <span data-ttu-id="a0147-250">(Optional) Die neue Alternativtextbeschreibung des Bilds für Barrierefreiheit.</span><span class="sxs-lookup"><span data-stu-id="a0147-250">(Optional) The new alt text description of the image for accessibility.</span></span> |
+|<span data-ttu-id="a0147-251">IsDefault</span><span class="sxs-lookup"><span data-stu-id="a0147-251">IsDefault</span></span>           | <span data-ttu-id="a0147-252">(Optional) **True**, wenn das Websitedesign als Standarddesign der Website angewendet wird; andernfalls **False**.</span><span class="sxs-lookup"><span data-stu-id="a0147-252">(Optional) **true** if the site design is applied as the default site design; otherwise, **false**.</span></span> <span data-ttu-id="a0147-253">Weitere Informationen finden Sie unter [Anpassen eines standardmäßigen Websitedesigns](customize-default-site-design.md).</span><span class="sxs-lookup"><span data-stu-id="a0147-253">For more information see [Customize a default site design](customize-default-site-design.md)</span></span> |
 
-<span data-ttu-id="ed413-252">Nachfolgend finden Sie ein Beispiel, in dem jeder Wert in einem vorhandenen Websitedesign aktualisiert wird.</span><span class="sxs-lookup"><span data-stu-id="ed413-252">Here's an example that updates every value on an existing site design.</span></span>
+<span data-ttu-id="a0147-254">Nachfolgend finden Sie ein Beispiel, in dem jeder Wert in einem vorhandenen Websitedesign aktualisiert wird.</span><span class="sxs-lookup"><span data-stu-id="a0147-254">Here's an example that updates every value on an existing site design.</span></span>
 
 ```javascript
 RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.UpdateSiteDesign",
@@ -404,7 +404,7 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
    IsDefault: false}});
 ```
 
-<span data-ttu-id="ed413-253">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **UpdateSiteDesign** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="ed413-253">Here is an example of the JSON returned after calling **UpdateSiteDesign**.</span></span>
+<span data-ttu-id="a0147-255">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **UpdateSiteDesign** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="a0147-255">Here is an example of the JSON returned after calling **UpdateSiteDesign**.</span></span>
 
 ```json{
   "@odata.context": "https://contoso.sharepoint.com/_api/$metadata#Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata",
@@ -420,42 +420,42 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
 }
 ```
 
-## <a name="deletesitedesign"></a><span data-ttu-id="ed413-254">DeleteSiteDesign</span><span class="sxs-lookup"><span data-stu-id="ed413-254">DeleteSiteDesign</span></span>
+## <a name="deletesitedesign"></a><span data-ttu-id="a0147-256">DeleteSiteDesign</span><span class="sxs-lookup"><span data-stu-id="a0147-256">DeleteSiteDesign</span></span>
 
-<span data-ttu-id="ed413-255">Löscht ein Websitedesign.</span><span class="sxs-lookup"><span data-stu-id="ed413-255">Deletes a site design.</span></span>
+<span data-ttu-id="a0147-257">Löscht ein Websitedesign.</span><span class="sxs-lookup"><span data-stu-id="a0147-257">Deletes a site design.</span></span>
 
-### <a name="parameters"></a><span data-ttu-id="ed413-256">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-256">Parameters</span></span>
+### <a name="parameters"></a><span data-ttu-id="a0147-258">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-258">Parameters</span></span>
 
-|<span data-ttu-id="ed413-257">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-257">Parameter</span></span>   | <span data-ttu-id="ed413-258">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="ed413-258">Description</span></span>  |
+|<span data-ttu-id="a0147-259">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-259">Parameter</span></span>   | <span data-ttu-id="a0147-260">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="a0147-260">Description</span></span>  |
 |------------|--------------|
-| <span data-ttu-id="ed413-259">id</span><span class="sxs-lookup"><span data-stu-id="ed413-259">id</span></span>         | <span data-ttu-id="ed413-260">Die ID des zu löschenden Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="ed413-260">The ID of the site design to delete.</span></span> |
+| <span data-ttu-id="a0147-261">id</span><span class="sxs-lookup"><span data-stu-id="a0147-261">id</span></span>         | <span data-ttu-id="a0147-262">Die ID des zu löschenden Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="a0147-262">The ID of the site design to delete.</span></span> |
 
-<span data-ttu-id="ed413-261">Nachfolgend finden Sie ein Beispiel zum Löschen eines Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="ed413-261">Here's an example of deleting a site design.</span></span>
+<span data-ttu-id="a0147-263">Nachfolgend finden Sie ein Beispiel zum Löschen eines Websitedesigns.</span><span class="sxs-lookup"><span data-stu-id="a0147-263">Here's an example of deleting a site design.</span></span>
 
 ```javascript
 RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.DeleteSiteDesign", 
 {id:"f9e76746-5076-4bd2-bad3-e611c488fa85"});
 ```
 
-## <a name="getsitedesignrights"></a><span data-ttu-id="ed413-262">GetSiteDesignRights</span><span class="sxs-lookup"><span data-stu-id="ed413-262">GetSiteDesignRights</span></span>
+## <a name="getsitedesignrights"></a><span data-ttu-id="a0147-264">GetSiteDesignRights</span><span class="sxs-lookup"><span data-stu-id="a0147-264">GetSiteDesignRights</span></span>
 
-<span data-ttu-id="ed413-263">Abrufen einer Liste von Prinzipalen, die Zugriff auf ein Websitedesign haben.</span><span class="sxs-lookup"><span data-stu-id="ed413-263">Gets a list of principals that have access to a site design.</span></span>
+<span data-ttu-id="a0147-265">Abrufen einer Liste von Prinzipalen, die Zugriff auf ein Websitedesign haben.</span><span class="sxs-lookup"><span data-stu-id="a0147-265">Gets a list of principals that have access to a site design.</span></span>
 
 
-### <a name="parameters"></a><span data-ttu-id="ed413-264">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-264">Parameters</span></span>
+### <a name="parameters"></a><span data-ttu-id="a0147-266">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-266">Parameters</span></span>
 
-|<span data-ttu-id="ed413-265">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-265">Parameter</span></span>   | <span data-ttu-id="ed413-266">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="ed413-266">Description</span></span>  |
+|<span data-ttu-id="a0147-267">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-267">Parameter</span></span>   | <span data-ttu-id="a0147-268">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="a0147-268">Description</span></span>  |
 |------------|--------------|
-| <span data-ttu-id="ed413-267">id</span><span class="sxs-lookup"><span data-stu-id="ed413-267">id</span></span>         | <span data-ttu-id="ed413-268">Die ID des Websitedesigns, über das Berechtigungsinformationen abgerufen werden sollen.</span><span class="sxs-lookup"><span data-stu-id="ed413-268">The ID of the site design to get rights information from.</span></span> |
+| <span data-ttu-id="a0147-269">id</span><span class="sxs-lookup"><span data-stu-id="a0147-269">id</span></span>         | <span data-ttu-id="a0147-270">Die ID des Websitedesigns, über das Berechtigungsinformationen abgerufen werden sollen.</span><span class="sxs-lookup"><span data-stu-id="a0147-270">The ID of the site design to get rights information from.</span></span> |
 
-<span data-ttu-id="ed413-269">Nachfolgend finden Sie ein Beispiel zum Abrufen der Anzeigeberechtigungen für ein bestimmtes Websitedesign.</span><span class="sxs-lookup"><span data-stu-id="ed413-269">Here's an example of getting view rights for a specific site design.</span></span>
+<span data-ttu-id="a0147-271">Nachfolgend finden Sie ein Beispiel zum Abrufen der Anzeigeberechtigungen für ein bestimmtes Websitedesign.</span><span class="sxs-lookup"><span data-stu-id="a0147-271">Here's an example of getting view rights for a specific site design.</span></span>
 
 ```javascript
 RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.GetSiteDesignRights", 
 {id:"dc076f7b-6c15-4d76-8f85-948a17f5dd18"});
 ```
 
-<span data-ttu-id="ed413-270">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **GetSiteDesignRights** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="ed413-270">Here is an example of the JSON returned after calling **GetSiteDesignRights**.</span></span>
+<span data-ttu-id="a0147-272">Nachfolgend sehen Sie ein Beispiel des JSON-Codes, der nach dem Aufrufen von **GetSiteDesignRights** zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="a0147-272">Here is an example of the JSON returned after calling **GetSiteDesignRights**.</span></span>
 
 ```json
 {
@@ -481,19 +481,19 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
 }
 ```
 
-## <a name="grantsitedesignrights"></a><span data-ttu-id="ed413-271">GrantSiteDesignRights</span><span class="sxs-lookup"><span data-stu-id="ed413-271">GrantSiteDesignRights</span></span>
+## <a name="grantsitedesignrights"></a><span data-ttu-id="a0147-273">GrantSiteDesignRights</span><span class="sxs-lookup"><span data-stu-id="a0147-273">GrantSiteDesignRights</span></span>
 
-<span data-ttu-id="ed413-272">Erteilen von Zugriff auf ein Websitedesign für einen oder mehrere Prinzipale.</span><span class="sxs-lookup"><span data-stu-id="ed413-272">Grants access to a site design for one or more principals.</span></span>
+<span data-ttu-id="a0147-274">Erteilen von Zugriff auf ein Websitedesign für einen oder mehrere Prinzipale.</span><span class="sxs-lookup"><span data-stu-id="a0147-274">Grants access to a site design for one or more principals.</span></span>
 
-### <a name="parameters"></a><span data-ttu-id="ed413-273">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-273">Parameters</span></span>
+### <a name="parameters"></a><span data-ttu-id="a0147-275">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-275">Parameters</span></span>
 
-|<span data-ttu-id="ed413-274">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-274">Parameter</span></span>   | <span data-ttu-id="ed413-275">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="ed413-275">Description</span></span>  |
+|<span data-ttu-id="a0147-276">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-276">Parameter</span></span>   | <span data-ttu-id="a0147-277">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="a0147-277">Description</span></span>  |
 |------------|--------------|
-| <span data-ttu-id="ed413-276">id</span><span class="sxs-lookup"><span data-stu-id="ed413-276">id</span></span>         | <span data-ttu-id="ed413-277">Die ID des Websitedesigns, für das Berechtigungen gewährt werden sollen.</span><span class="sxs-lookup"><span data-stu-id="ed413-277">The ID of the site design to grant rights on.</span></span> |
-| <span data-ttu-id="ed413-278">principalNames</span><span class="sxs-lookup"><span data-stu-id="ed413-278">principalNames</span></span> | <span data-ttu-id="ed413-279">Ein Array von einem oder mehreren Prinzipalen, denen Anzeigeberechtigungen gewährt werden sollen.</span><span class="sxs-lookup"><span data-stu-id="ed413-279">An array of one or more principals to grant view rights.</span></span> <span data-ttu-id="ed413-280">Prinzipale können Benutzer oder E-Mail-aktivierte Sicherheitsgruppen in der Form „Alias“ oder „Alias@\<*Domänenname*\>.com“ sein.</span><span class="sxs-lookup"><span data-stu-id="ed413-280">Principals can be users or mail-enabled security groups in the form of "alias" or "alias@\<*domain name*\>.com"</span></span> |
-| <span data-ttu-id="ed413-281">grantedRights</span><span class="sxs-lookup"><span data-stu-id="ed413-281">grantedRights</span></span> | <span data-ttu-id="ed413-282">Stets auf **1** festgelegt.</span><span class="sxs-lookup"><span data-stu-id="ed413-282">Always set to **1**.</span></span> <span data-ttu-id="ed413-283">Dies steht für die Berechtigung **View**.</span><span class="sxs-lookup"><span data-stu-id="ed413-283">This represents the **View** right.</span></span> |
+| <span data-ttu-id="a0147-278">id</span><span class="sxs-lookup"><span data-stu-id="a0147-278">id</span></span>         | <span data-ttu-id="a0147-279">Die ID des Websitedesigns, für das Berechtigungen gewährt werden sollen.</span><span class="sxs-lookup"><span data-stu-id="a0147-279">The ID of the site design to grant rights on.</span></span> |
+| <span data-ttu-id="a0147-280">principalNames</span><span class="sxs-lookup"><span data-stu-id="a0147-280">principalNames</span></span> | <span data-ttu-id="a0147-281">Ein Array von einem oder mehreren Prinzipalen, denen Anzeigeberechtigungen gewährt werden sollen.</span><span class="sxs-lookup"><span data-stu-id="a0147-281">An array of one or more principals to grant view rights.</span></span> <span data-ttu-id="a0147-282">Prinzipale können Benutzer oder E-Mail-aktivierte Sicherheitsgruppen in der Form „Alias“ oder „Alias@\<*Domänenname*\>.com“ sein.</span><span class="sxs-lookup"><span data-stu-id="a0147-282">Principals can be users or mail-enabled security groups in the form of "alias" or "alias@\<*domain name*\>.com"</span></span> |
+| <span data-ttu-id="a0147-283">grantedRights</span><span class="sxs-lookup"><span data-stu-id="a0147-283">grantedRights</span></span> | <span data-ttu-id="a0147-284">Stets auf **1** festgelegt.</span><span class="sxs-lookup"><span data-stu-id="a0147-284">Always set to **1**.</span></span> <span data-ttu-id="a0147-285">Dies steht für die Berechtigung **View**.</span><span class="sxs-lookup"><span data-stu-id="a0147-285">This represents the **View** right.</span></span> |
 
-<span data-ttu-id="ed413-284">Nachfolgend finden Sie ein Beispiel zum Gewähren von Anzeigeberechtigungen für ein Websitedesign für Nestor und Patti (fiktive Benutzer bei Contoso).</span><span class="sxs-lookup"><span data-stu-id="ed413-284">Here's an example of granting view rights to a site design for Nestor and Patti (fictional users at Contoso.)</span></span>
+<span data-ttu-id="a0147-286">Nachfolgend finden Sie ein Beispiel zum Gewähren von Anzeigeberechtigungen für ein Websitedesign für Nestor und Patti (fiktive Benutzer bei Contoso).</span><span class="sxs-lookup"><span data-stu-id="a0147-286">Here's an example of granting view rights to a site design for Nestor and Patti (fictional users at Contoso.)</span></span>
 
 ```javascript
 RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.GrantSiteDesignRights", {
@@ -503,18 +503,18 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
 });
 ```
 
-## <a name="revokesitedesignrights"></a><span data-ttu-id="ed413-285">RevokeSiteDesignRights</span><span class="sxs-lookup"><span data-stu-id="ed413-285">RevokeSiteDesignRights</span></span>
+## <a name="revokesitedesignrights"></a><span data-ttu-id="a0147-287">RevokeSiteDesignRights</span><span class="sxs-lookup"><span data-stu-id="a0147-287">RevokeSiteDesignRights</span></span>
 
-<span data-ttu-id="ed413-286">Widerrufen des Zugriffs auf ein Websitedesign für einen oder mehrere Prinzipale.</span><span class="sxs-lookup"><span data-stu-id="ed413-286">Revokes access from a site design for one or more principals.</span></span>
+<span data-ttu-id="a0147-288">Widerrufen des Zugriffs auf ein Websitedesign für einen oder mehrere Prinzipale.</span><span class="sxs-lookup"><span data-stu-id="a0147-288">Revokes access from a site design for one or more principals.</span></span>
 
-### <a name="parameters"></a><span data-ttu-id="ed413-287">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-287">Parameters</span></span>
+### <a name="parameters"></a><span data-ttu-id="a0147-289">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-289">Parameters</span></span>
 
-|<span data-ttu-id="ed413-288">Parameter</span><span class="sxs-lookup"><span data-stu-id="ed413-288">Parameter</span></span>   | <span data-ttu-id="ed413-289">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="ed413-289">Description</span></span>  |
+|<span data-ttu-id="a0147-290">Parameter</span><span class="sxs-lookup"><span data-stu-id="a0147-290">Parameter</span></span>   | <span data-ttu-id="a0147-291">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="a0147-291">Description</span></span>  |
 |------------|--------------|
-| <span data-ttu-id="ed413-290">id</span><span class="sxs-lookup"><span data-stu-id="ed413-290">id</span></span>         | <span data-ttu-id="ed413-291">Die ID des Websitedesigns, von dem Berechtigungen widerrufen werden sollen.</span><span class="sxs-lookup"><span data-stu-id="ed413-291">The ID of the site design to revoke rights from.</span></span> |
-| <span data-ttu-id="ed413-292">principalNames</span><span class="sxs-lookup"><span data-stu-id="ed413-292">principalNames</span></span> | <span data-ttu-id="ed413-293">Ein Array von einem oder mehreren Prinzipalen, von denen Anzeigeberechtigungen widerrufen werden sollen.</span><span class="sxs-lookup"><span data-stu-id="ed413-293">An array of one or more principals to revoke view rights from.</span></span> <span data-ttu-id="ed413-294">Wenn für alle Prinzipale Berechtigungen für das Websitedesign widerrufen werden, ist die Seite für jeden sichtbar.</span><span class="sxs-lookup"><span data-stu-id="ed413-294">If all principals have rights revoked on the site design, the site design becomes viewable to everyone.</span></span> |
+| <span data-ttu-id="a0147-292">id</span><span class="sxs-lookup"><span data-stu-id="a0147-292">id</span></span>         | <span data-ttu-id="a0147-293">Die ID des Websitedesigns, von dem Berechtigungen widerrufen werden sollen.</span><span class="sxs-lookup"><span data-stu-id="a0147-293">The ID of the site design to revoke rights from.</span></span> |
+| <span data-ttu-id="a0147-294">principalNames</span><span class="sxs-lookup"><span data-stu-id="a0147-294">principalNames</span></span> | <span data-ttu-id="a0147-295">Ein Array von einem oder mehreren Prinzipalen, von denen Anzeigeberechtigungen widerrufen werden sollen.</span><span class="sxs-lookup"><span data-stu-id="a0147-295">An array of one or more principals to revoke view rights from.</span></span> <span data-ttu-id="a0147-296">Wenn für alle Prinzipale Berechtigungen für das Websitedesign widerrufen werden, ist die Seite für jeden sichtbar.</span><span class="sxs-lookup"><span data-stu-id="a0147-296">If all principals have rights revoked on the site design, the site design becomes viewable to everyone.</span></span> |
 
-<span data-ttu-id="ed413-295">Nachfolgend finden Sie ein Beispiel zum Widerrufen von Anzeigeberechtigungen für ein Websitedesign für Patti (fiktiver Benutzer bei Contoso).</span><span class="sxs-lookup"><span data-stu-id="ed413-295">Here's an example of revoking view rights from a site design for Patti (fictional user at Contoso.)</span></span>
+<span data-ttu-id="a0147-297">Nachfolgend finden Sie ein Beispiel zum Widerrufen von Anzeigeberechtigungen für ein Websitedesign für Patti (fiktiver Benutzer bei Contoso).</span><span class="sxs-lookup"><span data-stu-id="a0147-297">Here's an example of revoking view rights from a site design for Patti (fictional user at Contoso.)</span></span>
 
 ```javascript
 RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.RevokeSiteDesignRights", 
