@@ -1,7 +1,13 @@
- ---
-title: Anpassen eines standardmäßigen Websitedesigns bei SharePoint description: Anpassen eines standardmäßigen Websitedesigns in einer Vorlage einer SharePoint-Teamwebsite oder Kommunikationswebsite ms.date: 18.12.2017
 ---
-
+title: "Anpassen der standardmäßigen Websitedesigns in SharePoint"
+description: "Anpassen der standardmäßigen Websitedesigns auf der SharePoint-Teamwebsite oder auf der Kommunikations-Websitevorlage"
+ms.date: 12/18/2017
+ms.openlocfilehash: b4e9b4bb4d9bbcab01d5514d498045016d51a4c8
+ms.sourcegitcommit: e4bf60eabffe63dc07f96824167d249c0678db82
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 01/30/2018
+---
 # <a name="customize-a-default-site-design"></a>Anpassen eines standardmäßigen Websitedesigns
 
 > [!NOTE]

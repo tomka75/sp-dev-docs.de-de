@@ -2,11 +2,11 @@
 title: REST-API von SharePoint-Websitedesigns
 description: "Verwenden Sie SharePoint-Websitedesigns über die SharePoint-REST-Schnittstelle, um grundlegende CRUD-Operationen (Create, Read, Update, Delete, also Erstellen, Lesen, Aktualisieren und Löschen) auszuführen."
 ms.date: 12/14/2017
-ms.openlocfilehash: 7a1079bbf620f5a2fe5997b176507bd26b63ab46
-ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
+ms.openlocfilehash: 03170b69718946d97901de8277433ff58543f43e
+ms.sourcegitcommit: e4bf60eabffe63dc07f96824167d249c0678db82
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="site-design-and-site-script-rest-api"></a>REST-API von SharePoint-Websitedesigns und Websiteskripts
 
@@ -15,12 +15,12 @@ ms.lasthandoff: 01/29/2018
 
 Mithilfe der SharePoint-REST-Schnittstelle können Sie grundlegende CRUD-Operationen ausführen, d. h: Erstellen, Lesen, Aktualisieren und Löschen (Create, Read, Update, Delete).
 
-Der REST-Dienst in SharePoint Online (sowie in lokalen Bereitstellungen von SharePoint 2016 und höher) erlaubt die Zusammenfassung mehrerer Anforderungen in einem einzigen Aufruf an den Service mittels der ODATA-Abfrageoption „$batch“. Einzelheiten und Links zu Codebeispielen finden Sie unter [Durchführen von Batchanforderungen mit den REST-APIs](https://dev.office.com/sharepoint/docs/apis/rest/make-batch-requests-with-the-rest-apis.md).
+Der REST-Dienst in SharePoint Online (sowie in lokalen Bereitstellungen von SharePoint 2016 und höher) erlaubt die Zusammenfassung mehrerer Anforderungen in einem einzigen Aufruf an den Service mittels der ODATA-Abfrageoption „$batch“. Einzelheiten und Links zu Codebeispielen finden Sie unter [Durchführen von Batchanforderungen mit den REST-APIs](https://docs.microsoft.com/de-DE/sharepoint/dev/sp-add-ins/make-batch-requests-with-the-rest-apis).
 
 ## <a name="prerequisites"></a>Voraussetzungen
 Lesen Sie vor der Umsetzung der Beispiele in diesem Artikel zunächst die folgenden Artikel:
-- [Grundlegendes zum SharePoint-REST-Dienst](https://dev.office.com/sharepoint/docs/apis/rest/get-to-know-the-sharepoint-rest-service.md) 
-- [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten](https://dev.office.com/sharepoint/docs/apis/rest/complete-basic-operations-using-sharepoint-rest-endpoints.md)
+- [Grundlegendes zum SharePoint-REST-Dienst](https://docs.microsoft.com/de-DE/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service) 
+- [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint-REST-Endpunkten](https://docs.microsoft.com/de-DE/sharepoint/dev/apis/rest/complete-basic-operations-using-sharepoint-rest-endpoints)
 
 ## <a name="rest-commands"></a>REST-Befehle
 
