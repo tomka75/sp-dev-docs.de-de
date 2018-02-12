@@ -3,78 +3,78 @@ title: "Überprüfen von Webpart-Eigenschaftswerten"
 description: "Überprüfen Sie Eigenschaftswerte in clientseitigen SharePoint-Framework-Webparts, indem Sie den Wert direkt im Code eines Webparts überprüfen oder eine externe API aufrufen."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 99c5c09899a826c2cbabc2b9b3d3ee08f6847b42
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: fc0fded963d11143c628fb0a3bfb09760299e471
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/05/2018
 ---
-# <a name="validate-web-part-property-values"></a><span data-ttu-id="5c5ac-103">Überprüfen von Webpart-Eigenschaftswerten</span><span class="sxs-lookup"><span data-stu-id="5c5ac-103">Validate web part property values</span></span>
+# <a name="validate-web-part-property-values"></a><span data-ttu-id="dba88-103">Überprüfen von Webpart-Eigenschaftswerten</span><span class="sxs-lookup"><span data-stu-id="dba88-103">Validate web part property values</span></span>
 
-<span data-ttu-id="5c5ac-104">Wenn Sie mit clientseitigen SharePoint-Framework-Webparts arbeiten, können Benutzer diese mithilfe der Eigenschaften entsprechend der jeweiligen Bedürfnisse konfigurieren.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-104">When working with SharePoint Framework client-side web parts, users can configure them to meet their needs by using their properties.</span></span> <span data-ttu-id="5c5ac-105">Überprüfen Sie die bereitgestellten Konfigurationswerte und erleichtern Sie es Benutzern auf diese Weise, den Webpart zu konfigurieren und das Arbeiten mit dem Webpart insgesamt zu verbessern.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-105">When working with web parts, users can configure them to meet their needs using their properties. By validating the provided configuration values you can make it easier for users to configure the web part and improve the overall user experience of working with your web part. In this article you will learn how to validate web part property values in SharePoint Framework client-side web parts.</span></span> 
+<span data-ttu-id="dba88-104">Wenn Sie mit clientseitigen SharePoint-Framework-Webparts arbeiten, können Benutzer diese mithilfe der Eigenschaften entsprechend der jeweiligen Bedürfnisse konfigurieren.</span><span class="sxs-lookup"><span data-stu-id="dba88-104">When working with SharePoint Framework client-side web parts, users can configure them to meet their needs by using their properties.</span></span> <span data-ttu-id="dba88-105">Überprüfen Sie die bereitgestellten Konfigurationswerte und erleichtern Sie es Benutzern auf diese Weise, den Webpart zu konfigurieren und das Arbeiten mit dem Webpart insgesamt zu verbessern.</span><span class="sxs-lookup"><span data-stu-id="dba88-105">By validating the provided configuration values, you can make it easier for users to configure the web part and improve the overall user experience of working with your web part.</span></span> 
 
 > [!NOTE] 
-> <span data-ttu-id="5c5ac-106">Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment.md), in der Sie SharePoint-Framework-Lösungen erstellen können.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-106">Before following the steps in this article, be sure to [set up your development environment](../../set-up-your-development-environment.md) for building SharePoint Framework solutions.</span></span>
+> <span data-ttu-id="dba88-106">Bevor Sie die Schritte in diesem Artikel durchführen, müssen Sie [eine Entwicklungsumgebung einrichten](../../set-up-your-development-environment.md), in der Sie SharePoint-Framework-Lösungen erstellen können.</span><span class="sxs-lookup"><span data-stu-id="dba88-106">Before following the steps in this article, be sure to [set up your development environment](../../set-up-your-development-environment.md) for building SharePoint Framework solutions.</span></span>
 
-## <a name="create-a-new-web-part-project"></a><span data-ttu-id="5c5ac-107">Erstellen eines neuen Webpart-Projekts</span><span class="sxs-lookup"><span data-stu-id="5c5ac-107">Create a new web part project</span></span>
+## <a name="create-a-new-web-part-project"></a><span data-ttu-id="dba88-107">Erstellen eines neuen Webpart-Projekts</span><span class="sxs-lookup"><span data-stu-id="dba88-107">Create a new web part project</span></span>
 
-1. <span data-ttu-id="5c5ac-108">Erstellen Sie zunächst einen neuen Ordner für Ihr Projekt.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-108">Start by creating a new folder for your project.</span></span>
+1. <span data-ttu-id="dba88-108">Erstellen Sie zunächst einen neuen Ordner für Ihr Projekt.</span><span class="sxs-lookup"><span data-stu-id="dba88-108">Start by creating a new folder for your project.</span></span>
 
   ```sh
   md react-listinfo
   ```
 
-2. <span data-ttu-id="5c5ac-109">Wechseln Sie zum Projektordner.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-109">Go to the project folder.</span></span>
+2. <span data-ttu-id="dba88-109">Wechseln Sie zum Projektordner.</span><span class="sxs-lookup"><span data-stu-id="dba88-109">Go to the project folder.</span></span>
 
   ```sh
   cd react-listinfo
   ```
 
-3. <span data-ttu-id="5c5ac-110">Führen Sie im Projektordner den SharePoint Framework-Yeoman-Generator aus, um ein Gerüst für ein neues SharePoint-Framework-Projekt zu erstellen:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-110">In the project folder run the SharePoint Framework Yeoman generator to scaffold a new SharePoint Framework project.</span></span>
+3. <span data-ttu-id="dba88-110">Führen Sie im Projektordner den SharePoint-Framework-Yeoman-Generator aus, um ein Gerüst für ein neues SharePoint-Framework-Projekt zu erstellen:</span><span class="sxs-lookup"><span data-stu-id="dba88-110">In the project folder, run the SharePoint Framework Yeoman generator to scaffold a new SharePoint Framework project.</span></span>
 
   ```sh
   yo @microsoft/sharepoint
   ```
 
-4. <span data-ttu-id="5c5ac-111">Geben Sie die folgenden Werte ein, wenn Sie dazu aufgefordert werden:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-111">When prompted, enter the following values:</span></span>
+4. <span data-ttu-id="dba88-111">Geben Sie die folgenden Werte ein, wenn Sie dazu aufgefordert werden:</span><span class="sxs-lookup"><span data-stu-id="dba88-111">When prompted, enter the following values:</span></span>
 
-  - <span data-ttu-id="5c5ac-112">**react-listinfo** als Name der Lösung</span><span class="sxs-lookup"><span data-stu-id="5c5ac-112">**react-listinfo** as your solution name</span></span>
-  - <span data-ttu-id="5c5ac-113">**Use the current folder** als Speicherort für die Dateien</span><span class="sxs-lookup"><span data-stu-id="5c5ac-113">**Use the current folder** for the location to place the files</span></span>
-  - <span data-ttu-id="5c5ac-114">**React** als Startpunkt für die Webparterstellung</span><span class="sxs-lookup"><span data-stu-id="5c5ac-114">**React** as the starting point to build the web part</span></span>
-  - <span data-ttu-id="5c5ac-115">**List Info** als Namen des Webparts</span><span class="sxs-lookup"><span data-stu-id="5c5ac-115">**List info** as your web part name</span></span>
-  - <span data-ttu-id="5c5ac-116">**Shows information about the selected list** als Beschreibung Ihres Webparts</span><span class="sxs-lookup"><span data-stu-id="5c5ac-116">**Shows information about the selected list** as your web part description</span></span>
+  - <span data-ttu-id="dba88-112">**react-listinfo** als Name der Lösung</span><span class="sxs-lookup"><span data-stu-id="dba88-112">**react-listinfo** as your solution name</span></span>
+  - <span data-ttu-id="dba88-113">**Use the current folder** als Speicherort für die Dateien</span><span class="sxs-lookup"><span data-stu-id="dba88-113">**Use the current folder** for the location to place the files</span></span>
+  - <span data-ttu-id="dba88-114">**React** als Startpunkt für die Webparterstellung</span><span class="sxs-lookup"><span data-stu-id="dba88-114">**React** as the starting point to build the web part</span></span>
+  - <span data-ttu-id="dba88-115">**List Info** als Namen des Webparts</span><span class="sxs-lookup"><span data-stu-id="dba88-115">**List info** as your web part name</span></span>
+  - <span data-ttu-id="dba88-116">**Shows information about the selected list** als Beschreibung Ihres Webparts</span><span class="sxs-lookup"><span data-stu-id="dba88-116">**Shows information about the selected list** as your web part description</span></span>
 
   ![SharePoint-Framework-Yeoman-Generator mit den Standardoptionen](../../../images/property-validation-yeoman-generator.png)
 
-5. <span data-ttu-id="5c5ac-118">Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-118">After the scaffolding completes, lock down the version of the project dependencies by running the following command:</span></span>
+5. <span data-ttu-id="dba88-118">Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:</span><span class="sxs-lookup"><span data-stu-id="dba88-118">After the scaffolding completes, lock down the version of the project dependencies by running the following command:</span></span>
 
   ```sh
   npm shrinkwrap
   ```
 
-6. <span data-ttu-id="5c5ac-119">Öffnen Sie den Projektordner im Code-Editor.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-119">Next, open your project folder in your code editor.</span></span> <span data-ttu-id="5c5ac-120">In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-120">This article uses Visual Studio Code in the steps and screenshots, but you can use any editor that you prefer.</span></span>
+6. <span data-ttu-id="dba88-119">Öffnen Sie den Projektordner in einem Code-Editor.</span><span class="sxs-lookup"><span data-stu-id="dba88-119">Open your project folder in your code editor.</span></span> <span data-ttu-id="dba88-120">In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch auch jeden beliebigen anderen Editor verwenden.</span><span class="sxs-lookup"><span data-stu-id="dba88-120">This article uses Visual Studio Code in the steps and screenshots, but you can use any editor that you prefer.</span></span>
 
   ![SharePoint-Framework-Projekt in Visual Studio Code](../../../images/property-validation-visual-studio-code.png)
 
 <br/>
 
-## <a name="options-for-validating-web-part-properties"></a><span data-ttu-id="5c5ac-122">Optionen zum Überprüfen von Webparteigenschaften</span><span class="sxs-lookup"><span data-stu-id="5c5ac-122">Options for validating web part properties</span></span>
+## <a name="options-for-validating-web-part-properties"></a><span data-ttu-id="dba88-122">Optionen zum Überprüfen von Webparteigenschaften</span><span class="sxs-lookup"><span data-stu-id="dba88-122">Options for validating web part properties</span></span>
 
-<span data-ttu-id="5c5ac-123">SharePoint Framework bietet Entwicklern zwei Methoden zum Überprüfen der Werte von Webpart-Eigenschaften.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-123">SharePoint Framework offers developers two ways to validate values of web part properties.</span></span> <span data-ttu-id="5c5ac-124">Sie können den Wert direkt innerhalb des Webpart-Codes überprüfen oder eine externe API zum Durchführen der Überprüfung aufrufen.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-124">You can validate the value directly, inside a web part's code, or you can call an external API to perform the validation there.</span></span> 
+<span data-ttu-id="dba88-123">SharePoint Framework bietet Entwicklern zwei Methoden zum Überprüfen der Werte von Webpart-Eigenschaften.</span><span class="sxs-lookup"><span data-stu-id="dba88-123">SharePoint Framework offers developers two ways to validate values of web part properties.</span></span> <span data-ttu-id="dba88-124">Sie können den Wert direkt innerhalb des Webpart-Codes überprüfen oder eine externe API zum Durchführen der Überprüfung aufrufen.</span><span class="sxs-lookup"><span data-stu-id="dba88-124">You can validate the value directly, inside a web part's code, or you can call an external API to perform the validation there.</span></span> 
 
-<span data-ttu-id="5c5ac-125">Die Inline-Überprüfung eignet sich zur Durchführung einfacher Überprüfungen wie z. B. auf minimale/maximale Länge, erforderliche Eigenschaften oder zur Erkennung einfacher Muster, wie z. B. Postleitzahlen.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-125">Validating values inline is useful for performing simple validations such as minimal/maximum length, required properties, or simple pattern recognition, like a zip code.</span></span> <span data-ttu-id="5c5ac-126">Bei auf Geschäftslogik basierenden Überprüfungen, z. B. der Sozialversicherungsnummer oder Mitgliedschaft in Sicherheitsgruppen, ist das Aufrufen externer APIs der bessere Ansatz.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-126">Whenever the validation is based on business logic, such as checking a social security number or a security group membership, calling external APIs is a better approach.</span></span>
+<span data-ttu-id="dba88-125">Die Inline-Überprüfung eignet sich zur Durchführung einfacher Überprüfungen wie z. B. auf minimale/maximale Länge, erforderliche Eigenschaften oder zur Erkennung einfacher Muster, wie z. B. Postleitzahlen.</span><span class="sxs-lookup"><span data-stu-id="dba88-125">Validating values inline is useful for performing simple validations such as minimal/maximum length, required properties, or simple pattern recognition, like a zip code.</span></span> <span data-ttu-id="dba88-126">Bei auf Geschäftslogik basierenden Überprüfungen, z. B. der Sozialversicherungsnummer oder Mitgliedschaft in Sicherheitsgruppen, ist das Aufrufen externer APIs der bessere Ansatz.</span><span class="sxs-lookup"><span data-stu-id="dba88-126">Whenever the validation is based on business logic, such as checking a social security number or a security group membership, calling external APIs is a better approach.</span></span>
 
-<span data-ttu-id="5c5ac-127">Um den Wert einer Webpart-Eigenschaft zu überprüfen, müssen Sie den Ereignishandler für das Ereignis **onGetErrorMessage** der jeweiligen Eigenschaft implementieren.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-127">To validate the value of a web part property, you have to implement the event handler for the **onGetErrorMessage** event of that particular property.</span></span> <span data-ttu-id="5c5ac-128">Bei der Inline-Überprüfung sollte der Ereignishandler eine Zeichenfolge mit dem Fehler oder eine leere Zeichenfolge zurückgeben, wenn der angegebene Wert gültig ist.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-128">For inline validation, the event handler should return a string with the validation error or an empty string if the provided value is valid.</span></span> 
+<span data-ttu-id="dba88-127">Um den Wert einer Webpart-Eigenschaft zu überprüfen, müssen Sie den Ereignishandler für das Ereignis **onGetErrorMessage** der jeweiligen Eigenschaft implementieren.</span><span class="sxs-lookup"><span data-stu-id="dba88-127">To validate the value of a web part property, you have to implement the event handler for the **onGetErrorMessage** event of that particular property.</span></span> <span data-ttu-id="dba88-128">Bei der Inline-Überprüfung sollte der Ereignishandler eine Zeichenfolge mit dem Fehler oder eine leere Zeichenfolge zurückgeben, wenn der angegebene Wert gültig ist.</span><span class="sxs-lookup"><span data-stu-id="dba88-128">For inline validation, the event handler should return a string with the validation error or an empty string if the provided value is valid.</span></span> 
 
-<span data-ttu-id="5c5ac-129">Für die Überprüfung mithilfe von Remote-APIs gibt der Ereignishandler eine Zusage der Zeichenfolge zurück.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-129">For validation using remote APIs, the event handler returns a promise of string.</span></span> <span data-ttu-id="5c5ac-130">Wenn der angegebene Wert ungültig ist, wird die Zusage mit der Fehlermeldung aufgelöst.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-130">If the provided value is invalid, the promise resolves with the error message.</span></span> <span data-ttu-id="5c5ac-131">Ist der angegebene Wert gültig, wird die Zusage mit einer leeren Zeichenfolge aufgelöst.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-131">If the provided value is valid, the promise resolves with an empty string.</span></span>
+<span data-ttu-id="dba88-129">Für die Überprüfung mithilfe von Remote-APIs gibt der Ereignishandler eine Zusage der Zeichenfolge zurück.</span><span class="sxs-lookup"><span data-stu-id="dba88-129">For validation using remote APIs, the event handler returns a promise of string.</span></span> <span data-ttu-id="dba88-130">Wenn der angegebene Wert ungültig ist, wird die Zusage mit der Fehlermeldung aufgelöst.</span><span class="sxs-lookup"><span data-stu-id="dba88-130">If the provided value is invalid, the promise resolves with the error message.</span></span> <span data-ttu-id="dba88-131">Ist der angegebene Wert gültig, wird die Zusage mit einer leeren Zeichenfolge aufgelöst.</span><span class="sxs-lookup"><span data-stu-id="dba88-131">If the provided value is valid, the promise resolves with an empty string.</span></span>
 
-## <a name="validate-web-part-property-values-inline"></a><span data-ttu-id="5c5ac-132">Inline-Überprüfung von Webpart-Eigenschaftswerten</span><span class="sxs-lookup"><span data-stu-id="5c5ac-132">Validate web part property values inline</span></span>
+## <a name="validate-web-part-property-values-inline"></a><span data-ttu-id="dba88-132">Inline-Überprüfung von Webpart-Eigenschaftswerten</span><span class="sxs-lookup"><span data-stu-id="dba88-132">Validate web part property values inline</span></span>
 
-<span data-ttu-id="5c5ac-133">In diesem Schritt überprüfen Sie, dass die Webpart-Eigenschaft einer Beschreibung angegeben ist und ihr Wert nicht mehr als 40 Zeichen beträgt.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-133">In this step you will verify that the description web part property is specified and its value is not longer than 40 characters. You will do this using the inline validation process.</span></span> <span data-ttu-id="5c5ac-134">Dazu verwenden Sie das Inline-Überprüfungsverfahren.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-134">You do this by using the inline validation process.</span></span>
+<span data-ttu-id="dba88-133">In diesem Schritt überprüfen Sie, dass die Webpart-Eigenschaft einer Beschreibung angegeben ist und ihr Wert nicht mehr als 40 Zeichen beträgt.</span><span class="sxs-lookup"><span data-stu-id="dba88-133">In this step you verify that the description web part property is specified and its value is not longer than 40 characters.</span></span> <span data-ttu-id="dba88-134">Dazu verwenden Sie das Inline-Überprüfungsverfahren.</span><span class="sxs-lookup"><span data-stu-id="dba88-134">You do this by using the inline validation process.</span></span>
 
-1. <span data-ttu-id="5c5ac-135">Öffnen Sie im Code-Editor die Datei **./src/webparts/listInfo/ListInfoWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-135">In the code editor open the **./src/webparts/listInfo/ListInfoWebPart.ts** file and add the following references:</span></span> <span data-ttu-id="5c5ac-136">Fügen Sie in der Klasse **ListInfoWebPart** die Methode **validateDescription** mit dem folgenden Code hinzu:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-136">In the code editor open the **./src/webparts/listInfo/ListInfoWebPart.ts file. In the ListInfoWebPart** class, add the **validateDescription** method with the following code:</span></span>
+1. <span data-ttu-id="dba88-135">Öffnen Sie im Code-Editor die Datei **./src/webparts/listInfo/ListInfoWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="dba88-135">In the code editor, open the **./src/webparts/listInfo/ListInfoWebPart.ts** file.</span></span> <span data-ttu-id="dba88-136">Fügen Sie in der Klasse **ListInfoWebPart** die Methode **validateDescription** mit dem folgenden Code hinzu:</span><span class="sxs-lookup"><span data-stu-id="dba88-136">In the **ListInfoWebPart** class, add the **validateDescription** method with the following code:</span></span>
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 
@@ -93,11 +93,11 @@ ms.lasthandoff: 01/10/2018
   }
   ```
 
-  <span data-ttu-id="5c5ac-137">Mit der Methode **validateDescription** wird überprüft, ob die Beschreibung angegeben wurde und 40 Zeichen nicht überschreitet.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-137">The **validateDescription** method checks if the description is provided, and if it isn't longer than 40 characters.</span></span> <span data-ttu-id="5c5ac-138">Ist die bereitgestellte Beschreibung ungültig, gibt die Methode eine Fehlermeldung zurück, die dem Überprüfungsfehler entspricht.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-138">If the provided description is invalid, the method returns an error message corresponding to the validation error.</span></span> <span data-ttu-id="5c5ac-139">Ist der angegebene Wert korrekt, wird eine leere Zeichenfolge zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-139">If the provided value is correct, it returns an empty string.</span></span>
+  <span data-ttu-id="dba88-137">Mit der Methode **validateDescription** wird überprüft, ob die Beschreibung angegeben wurde und 40 Zeichen nicht überschreitet.</span><span class="sxs-lookup"><span data-stu-id="dba88-137">The **validateDescription** method checks if the description is provided, and if it isn't longer than 40 characters.</span></span> <span data-ttu-id="dba88-138">Ist die bereitgestellte Beschreibung ungültig, gibt die Methode eine Fehlermeldung zurück, die dem Überprüfungsfehler entspricht.</span><span class="sxs-lookup"><span data-stu-id="dba88-138">If the provided description is invalid, the method returns an error message corresponding to the validation error.</span></span> <span data-ttu-id="dba88-139">Ist der angegebene Wert korrekt, wird eine leere Zeichenfolge zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="dba88-139">If the provided value is correct, it returns an empty string.</span></span>
 
-2. <span data-ttu-id="5c5ac-140">Ordnen Sie die Methode **validateDescription** der Webpart-Eigenschaft **description** zu.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-140">Associate the **validateDescription** method with the **description** web part property.</span></span> <span data-ttu-id="5c5ac-141">Ändern Sie in der Klasse **ListInfoWebPart** die Implementierung der Methode **getPropertyPaneConfiguration** in:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-141">Next, you have to associate the validateDescription method with the description web part property. In the **ListInfoWebPart** class change the implementation of the **getPropertyPaneConfiguration** method to:</span></span>
+2. <span data-ttu-id="dba88-140">Ordnen Sie die Methode **validateDescription** der Webpart-Eigenschaft **description** zu.</span><span class="sxs-lookup"><span data-stu-id="dba88-140">Associate the **validateDescription** method with the **description** web part property.</span></span> <span data-ttu-id="dba88-141">Ändern Sie in der Klasse **ListInfoWebPart** die Implementierung der Methode **getPropertyPaneConfiguration** in:</span><span class="sxs-lookup"><span data-stu-id="dba88-141">In the **ListInfoWebPart** class, change the implementation of the **getPropertyPaneConfiguration** method to:</span></span>
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 
@@ -128,35 +128,35 @@ ms.lasthandoff: 01/10/2018
   }
   ```
 
-  <span data-ttu-id="5c5ac-142">Sie haben die Definition des Webparts **description** durch Definieren der Methode **validateDescription** als Ereignishandler für das Ereignis **onGetErrorMessage** erweitert.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-142">You have extended the definition of the **description** web part with defining the **validateDescription** method as the event handler for the **onGetErrorMessage** event.</span></span>
+  <span data-ttu-id="dba88-142">Sie haben die Definition des Webparts **description** durch Definieren der Methode **validateDescription** als Ereignishandler für das Ereignis **onGetErrorMessage** erweitert.</span><span class="sxs-lookup"><span data-stu-id="dba88-142">You have extended the definition of the **description** web part by defining the **validateDescription** method as the event handler for the **onGetErrorMessage** event.</span></span>
 
-3. <span data-ttu-id="5c5ac-143">Führen Sie den folgenden Befehl aus, um das Ergebnis der Überprüfung zu sehen:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-143">Run the following command to see the result of the validation:</span></span>
+3. <span data-ttu-id="dba88-143">Führen Sie den folgenden Befehl aus, um das Ergebnis der Überprüfung zu sehen:</span><span class="sxs-lookup"><span data-stu-id="dba88-143">Run the following command to see the result of the validation:</span></span>
 
   ```sh
   gulp serve
   ```
 
-4. <span data-ttu-id="5c5ac-144">Fügen Sie in der Workbench den Webpart zum Zeichenbereich hinzu und öffnen Sie dessen Eigenschaften.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-144">In the SharePoint workbench add the web part to the page and open its configuration.</span></span> <span data-ttu-id="5c5ac-145">Wenn Sie die Beschreibung entfernen, sollte der erste Fehler angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-145">In the workbench, add the web part to canvas and open its properties. If you remove the description you should see the first validation error.</span></span>
+4. <span data-ttu-id="dba88-144">Fügen Sie in der Workbench den Webpart zum Zeichenbereich hinzu und öffnen Sie dessen Eigenschaften.</span><span class="sxs-lookup"><span data-stu-id="dba88-144">In the Workbench, add the web part to the canvas and open its properties.</span></span> <span data-ttu-id="dba88-145">Wenn Sie die Beschreibung entfernen, sollte der erste Fehler angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="dba88-145">If you remove the description, you should see the first validation error.</span></span>
 
   ![Angezeigter Überprüfungsfehler in einer erforderlichen Eigenschaft ohne angegebenen Wert](../../../images/property-validation-empty-description-error.png)
 
-5. <span data-ttu-id="5c5ac-147">Geben Sie einen Wert an, der länger als 40 Zeichen ist.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-147">Provide a value that's longer than 40 characters.</span></span> <span data-ttu-id="5c5ac-148">Unterhalb des Textfelds sollte ein weiterer Überprüfungsfehler angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-148">Next, try providing a value that's longer than 40 characters. You should see another validation error displayed below the text field.</span></span>
+5. <span data-ttu-id="dba88-147">Geben Sie einen Wert an, der länger als 40 Zeichen ist.</span><span class="sxs-lookup"><span data-stu-id="dba88-147">Provide a value that's longer than 40 characters.</span></span> <span data-ttu-id="dba88-148">Unterhalb des Textfelds sollte ein weiterer Überprüfungsfehler angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="dba88-148">You should see another validation error displayed under the text field.</span></span>
 
   ![Angezeigter Überprüfungsfehler, wenn der angegebene Wert länger als zulässig ist](../../../images/property-validation-description-too-long-error.png)
 
-6. <span data-ttu-id="5c5ac-150">Beachten Sie, dass bei Angabe eines ungültigen Werts der Webpart mit dem letzten gültigen Wert gerendert wird.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-150">Notice that when providing an invalid value, the web part is rendered showing the last valid value.</span></span> <span data-ttu-id="5c5ac-151">Darüber hinaus wird im nichtreaktiven Modus des Eigenschaftenbereichs bei Ungültigkeit einer Webpart-Eigenschaft die Schaltfläche **Apply** deaktiviert, damit die ungültige Konfiguration nicht vom Benutzer angewendet werden kann.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-151">Notice, that when providing an invalid value, the web part is rendered showing the last valid value. Additionally, in the non-reactive property pane mode, if one of the web part properties is invalid, the **Apply** button is disabled, preventing the user from applying the invalid configuration.</span></span>
+6. <span data-ttu-id="dba88-150">Beachten Sie, dass bei Angabe eines ungültigen Werts der Webpart mit dem letzten gültigen Wert gerendert wird.</span><span class="sxs-lookup"><span data-stu-id="dba88-150">Notice that when providing an invalid value, the web part is rendered showing the last valid value.</span></span> <span data-ttu-id="dba88-151">Darüber hinaus wird im nichtreaktiven Modus des Eigenschaftenbereichs bei Ungültigkeit einer Webpart-Eigenschaft die Schaltfläche **Apply** deaktiviert, damit die ungültige Konfiguration nicht vom Benutzer angewendet werden kann.</span><span class="sxs-lookup"><span data-stu-id="dba88-151">Additionally, in the non-reactive property pane mode, if one of the web part properties is invalid, the **Apply** button is disabled, preventing the user from applying the invalid configuration.</span></span>
 
   ![Als deaktiviert gerenderte Apply-Schaltfläche, wenn eine Webpart-Eigenschaft einen ungültigen Wert aufweist.](../../../images/property-validation-description-error-apply-disabled.png)
 
-## <a name="validate-web-part-property-values-using-remote-apis"></a><span data-ttu-id="5c5ac-153">Überprüfung von Webpart-Eigenschaftswerten mithilfe von Remote-APIs</span><span class="sxs-lookup"><span data-stu-id="5c5ac-153">Validate web part property values using remote APIs</span></span>
+## <a name="validate-web-part-property-values-using-remote-apis"></a><span data-ttu-id="dba88-153">Überprüfung von Webpart-Eigenschaftswerten mithilfe von Remote-APIs</span><span class="sxs-lookup"><span data-stu-id="dba88-153">Validate web part property values using remote APIs</span></span>
 
-<span data-ttu-id="5c5ac-154">In einigen Szenarien kann das Überprüfen von Webpart-Eigenschaftswerten komplexer sein und möglicherweise eine bestimmte Geschäftslogik erfordern.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-154">In some scenarios, validating web part property values can be more complex and may require specific business logic.</span></span> <span data-ttu-id="5c5ac-155">In solchen Fällen kann es effizienter sein, den Wert mit einer vorhandenen API zu überprüfen, anstatt die Geschäftslogik im Webpart zu implementieren und aufrechtzuerhalten.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-155">In some scenarios, validating web part property values can be more complex and require specific business logic. In such cases it might be more efficient for you to validate the value using an existing API rather than implementing and maintaining the business logic in the web part.</span></span>
+<span data-ttu-id="dba88-154">In einigen Szenarien kann das Überprüfen von Webpart-Eigenschaftswerten komplexer sein und möglicherweise eine bestimmte Geschäftslogik erfordern.</span><span class="sxs-lookup"><span data-stu-id="dba88-154">In some scenarios, validating web part property values can be more complex and may require specific business logic.</span></span> <span data-ttu-id="dba88-155">In solchen Fällen kann es effizienter sein, den Wert mit einer vorhandenen API zu überprüfen, anstatt die Geschäftslogik im Webpart zu implementieren und aufrechtzuerhalten.</span><span class="sxs-lookup"><span data-stu-id="dba88-155">In such cases, it might be more efficient for you to validate the value by using an existing API rather than implementing and maintaining the business logic in the web part.</span></span>
 
-<span data-ttu-id="5c5ac-156">In diesem Schritt implementieren Sie eine Validierungslogik, die überprüft, ob die Liste mit dem in den Webpart-Eigenschaften angegebenen Namen auf der aktuellen SharePoint-Website vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-156">In this step you will implement validation logic that checks if the list with the name specified in the web part properties exists in the current SharePoint site.</span></span>
+<span data-ttu-id="dba88-156">In diesem Schritt implementieren Sie eine Validierungslogik, die überprüft, ob die Liste mit dem in den Webpart-Eigenschaften angegebenen Namen auf der aktuellen SharePoint-Website vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="dba88-156">In this step, you implement validation logic that checks if the list with the name specified in the web part properties exists in the current SharePoint site.</span></span>
 
-### <a name="add-the-listname-web-part-property"></a><span data-ttu-id="5c5ac-157">Hinzufügen der Webpart-Eigenschaft listName</span><span class="sxs-lookup"><span data-stu-id="5c5ac-157">Add the listName web part property</span></span>
+### <a name="add-the-listname-web-part-property"></a><span data-ttu-id="dba88-157">Hinzufügen der Webpart-Eigenschaft listName</span><span class="sxs-lookup"><span data-stu-id="dba88-157">Add the listName web part property</span></span>
 
-1. <span data-ttu-id="5c5ac-158">Öffnen Sie im Code-Editor die Datei **./src/webparts/listInfo/ListInfoWebPart.manifest.json**.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-158">In the code editor, open the **./src/webparts/listInfo/ListInfoWebPart.manifest.json** file.</span></span> <span data-ttu-id="5c5ac-159">Fügen Sie in der Eigenschaft **properties** eine neue Eigenschaft mit dem Namen **listName** hinzu, deren Standardwert auf eine leere Zeichenfolge festgelegt ist:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-159">In the code editor open the **./src/webparts/listInfo/ListInfoWebPart.manifest.json file. In the properties** property add a new property named **listName** with the default value set to an empty string:</span></span>
+1. <span data-ttu-id="dba88-158">Öffnen Sie im Code-Editor die Datei **./src/webparts/listInfo/ListInfoWebPart.manifest.json**.</span><span class="sxs-lookup"><span data-stu-id="dba88-158">In the code editor, open the **./src/webparts/listInfo/ListInfoWebPart.manifest.json** file.</span></span> <span data-ttu-id="dba88-159">Fügen Sie in der Eigenschaft **properties** eine neue Eigenschaft mit dem Namen **listName** hinzu, deren Standardwert auf eine leere Zeichenfolge festgelegt ist:</span><span class="sxs-lookup"><span data-stu-id="dba88-159">In the **properties** property, add a new property named **listName** with the default value set to an empty string:</span></span>
 
   ```json
   {
@@ -187,18 +187,18 @@ ms.lasthandoff: 01/10/2018
   }
   ```
 
-2. <span data-ttu-id="5c5ac-160">Öffnen Sie im Code-Editor die Datei **./src/webparts/listInfo/IListInfoWebPartProps.ts** und erweitern Sie die Schnittstellendefinition mit der Typzeichenfolgen-Eigenschaft **listName**.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-160">Next, in the code editor open the **./src/webparts/listInfo/IListInfoWebPartProps.ts** file and extend the interface definition with the **listName** property of type string.</span></span>
+2. <span data-ttu-id="dba88-160">Öffnen Sie im Code-Editor die Datei **./src/webparts/listInfo/IListInfoWebPartProps.ts** und erweitern Sie die Schnittstellendefinition mit der Typzeichenfolgen-Eigenschaft **listName**.</span><span class="sxs-lookup"><span data-stu-id="dba88-160">In the code editor, open the **./src/webparts/listInfo/IListInfoWebPartProps.ts** file, and extend the interface definition with the **listName** property of type string.</span></span>
 
-  ```ts
+  ```typescript
   export interface IListInfoWebPartProps {
     description: string;
     listName: string;
   }
 ```
 
-3. <span data-ttu-id="5c5ac-161">Fügen Sie als Letztes die neue Webpart-Eigenschaft hinzu, indem Sie die Datei **./src/webparts/listInfo/ListInfoWebPart.ts** im Code-Editor öffnen und die Implementation der Methode **getPropertyPaneConfiguration** wie folgt ändern:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-161">Finish adding the new web part property, by opening in the code editor the **./src/webparts/listInfo/ListInfoWebPart.ts** file and changing the implementation of the **getPropertyPaneConfiguration** method to:</span></span>
+3. <span data-ttu-id="dba88-161">Fügen Sie als Letztes die neue Webpart-Eigenschaft hinzu, indem Sie die Datei **./src/webparts/listInfo/ListInfoWebPart.ts** im Code-Editor öffnen und die Implementation der Methode **getPropertyPaneConfiguration** wie folgt ändern:</span><span class="sxs-lookup"><span data-stu-id="dba88-161">Finish adding the new web part property by opening the **./src/webparts/listInfo/ListInfoWebPart.ts** file in the code editor, and changing the implementation of the **getPropertyPaneConfiguration** method to:</span></span>
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 
@@ -232,9 +232,9 @@ ms.lasthandoff: 01/10/2018
   }
   ```
 
-4. <span data-ttu-id="5c5ac-162">Fügen Sie die fehlende Ressourcenzeichenfolge **ListNameFieldLabel** hinzu, indem Sie den Code der Datei **./src/webparts/listInfo/loc/mystrings.d.ts** wie folgt ändern:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-162">Add the missing **ListNameFieldLabel** resource string by changing the code of the **./src/webparts/listInfo/loc/mystrings.d.ts** file to:</span></span>
+4. <span data-ttu-id="dba88-162">Fügen Sie die fehlende Ressourcenzeichenfolge **ListNameFieldLabel** hinzu, indem Sie den Code der Datei **./src/webparts/listInfo/loc/mystrings.d.ts** wie folgt ändern:</span><span class="sxs-lookup"><span data-stu-id="dba88-162">Add the missing **ListNameFieldLabel** resource string by changing the code of the **./src/webparts/listInfo/loc/mystrings.d.ts** file to:</span></span>
 
-  ```ts
+  ```typescript
   declare interface IListInfoStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -248,7 +248,7 @@ ms.lasthandoff: 01/10/2018
   }
   ```
 
-5. <span data-ttu-id="5c5ac-163">Ändern Sie den Code der Datei **./src/webparts/listInfo/loc/en-us.js** in:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-163">and the code of the **./src/webparts/listInfo/loc/en-us.js** to:</span></span>
+5. <span data-ttu-id="dba88-163">Ändern Sie den Code der Datei **./src/webparts/listInfo/loc/en-us.js** in:</span><span class="sxs-lookup"><span data-stu-id="dba88-163">Change the code of the **./src/webparts/listInfo/loc/en-us.js** file to:</span></span>
 
   ```js
   define([], function() {
@@ -261,7 +261,7 @@ ms.lasthandoff: 01/10/2018
   });
   ```
 
-6. <span data-ttu-id="5c5ac-164">Führen Sie den folgenden Befehl aus, um zu überprüfen, ob das Projekt ausgeführt wird und die neu hinzugefügte Listennameneigenschaft im Eigenschaftenbereich des Webparts angezeigt wird:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-164">Run the following command to verify that the project is running and that the newly added list name property is displayed in the web part property pane:</span></span>
+6. <span data-ttu-id="dba88-164">Führen Sie den folgenden Befehl aus, um zu überprüfen, ob das Projekt ausgeführt wird und die neu hinzugefügte Listennameneigenschaft im Eigenschaftenbereich des Webparts angezeigt wird:</span><span class="sxs-lookup"><span data-stu-id="dba88-164">Run the following command to verify that the project is running and that the newly added list name property is displayed in the web part property pane:</span></span>
 
   ```sh
   gulp serve
@@ -271,20 +271,20 @@ ms.lasthandoff: 01/10/2018
 
   ![Im Eigenschaftenbereich des Webparts angezeigte Listennameneigenschaft](../../../images/property-validation-list-name-property.png)
 
-### <a name="validate-the-name-of-the-list-by-using-the-sharepoint-rest-api"></a><span data-ttu-id="5c5ac-166">Überprüfen des Listennamens mithilfe der SharePoint REST-API</span><span class="sxs-lookup"><span data-stu-id="5c5ac-166">Validate the name of the list using the SharePoint REST API</span></span>
+### <a name="validate-the-name-of-the-list-by-using-the-sharepoint-rest-api"></a><span data-ttu-id="dba88-166">Überprüfen des Listennamens mithilfe der SharePoint REST-API</span><span class="sxs-lookup"><span data-stu-id="dba88-166">Validate the name of the list by using the SharePoint REST API</span></span>
 
-<span data-ttu-id="5c5ac-167">In diesem Schritt überprüfen Sie den angegebenen Namen der Liste und prüfen, ob dieser einer vorhandenen Liste auf der aktuellen SharePoint-Website entspricht.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-167">In this step you will validate the provided list name and check if it corresponds to an existing list in the current SharePoint site.</span></span>
+<span data-ttu-id="dba88-167">In diesem Schritt überprüfen Sie den angegebenen Namen der Liste und prüfen, ob dieser einer vorhandenen Liste auf der aktuellen SharePoint-Website entspricht.</span><span class="sxs-lookup"><span data-stu-id="dba88-167">In this step, you validate the provided list name and check if it corresponds to an existing list on the current SharePoint site.</span></span>
 
-1. <span data-ttu-id="5c5ac-168">Öffnen Sie im Code-Editor die Datei **./src/webparts/listInfo/ListInfoWebPart.ts** und fügen Sie die folgenden Referenzen hinzu:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-168">In the code editor open the **./src/webparts/listInfo/ListInfoWebPart.ts** file and add the following references:</span></span>
+1. <span data-ttu-id="dba88-168">Öffnen Sie im Code-Editor die Datei **./src/webparts/listInfo/ListInfoWebPart.ts** und fügen Sie die folgenden Referenzen hinzu:</span><span class="sxs-lookup"><span data-stu-id="dba88-168">In the code editor, open the **./src/webparts/listInfo/ListInfoWebPart.ts** file, and add the following references:</span></span>
 
-  ```ts
+  ```typescript
   import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
   import { escape } from '@microsoft/sp-lodash-subset';
   ```
 
-2. <span data-ttu-id="5c5ac-169">Fügen Sie in der Klasse **ListInfoWebPart** die Methode **validateListName** mit dem folgenden Code hinzu:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-169">Next, to the **ListInfoWebPart** class add the **validateListName** method with the following code:</span></span>
+2. <span data-ttu-id="dba88-169">Fügen Sie in der Klasse **ListInfoWebPart** die Methode **validateListName** mit dem folgenden Code hinzu:</span><span class="sxs-lookup"><span data-stu-id="dba88-169">In the **ListInfoWebPart** class, add the **validateListName** method with the following code:</span></span>
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 
@@ -319,17 +319,17 @@ ms.lasthandoff: 01/10/2018
   }
   ```
 
-  <span data-ttu-id="5c5ac-p116">Zuerst überprüft die Methode **validateListName**, ob ein Listenname bereitgestellt wurde. Wenn dies nicht der Fall ist, wird die Zusage mit dem entsprechenden Überprüfungsfehler aufgelöst. Hat der Benutzer einen Listennamen angegeben, verwendet die Methode **validateListName** den **SPHttpClient**, um die SharePoint REST-API aufzurufen und zu überprüfen, ob eine Liste mit diesem Namen existiert.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-p116">First, the **validateListName** method checks if a list name has been provided. If not, it resolves the promise with a relevant validation error. If the user has provided a list name, the **validateListName** method uses the **SPHttpClient** to call the SharePoint REST API and check if the list with the specified name exists.</span></span>
+  <span data-ttu-id="dba88-p116">Zuerst überprüft die Methode **validateListName**, ob ein Listenname bereitgestellt wurde. Wenn dies nicht der Fall ist, wird die Zusage mit dem entsprechenden Überprüfungsfehler aufgelöst. Hat der Benutzer einen Listennamen angegeben, verwendet die Methode **validateListName** den **SPHttpClient**, um die SharePoint REST-API aufzurufen und zu überprüfen, ob eine Liste mit diesem Namen existiert.</span><span class="sxs-lookup"><span data-stu-id="dba88-p116">First, the **validateListName** method checks if a list name has been provided. If not, it resolves the promise with a relevant validation error. If the user has provided a list name, the **validateListName** method uses the **SPHttpClient** to call the SharePoint REST API and check if the list with the specified name exists.</span></span>
 
-  <span data-ttu-id="5c5ac-173">Wenn die Liste mit dem angegebenen Namen auf der aktuellen Website vorhanden ist, wird der Statuscode „200 OK“ zurückgegeben und die Methode **validateListName** löst die Zusage mit einer leeren Zeichenfolge auf, die bestätigt, dass der angegebene Wert eine gültige Liste darstellt.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-173">If the list with the specified name exists on the current site, the response returns a 200 OK status code, and the **validateListName** method resolves the promise with an empty string, confirming that the provided value represents a valid list.</span></span> 
+  <span data-ttu-id="dba88-173">Wenn die Liste mit dem angegebenen Namen auf der aktuellen Website vorhanden ist, wird der Statuscode „200 OK“ zurückgegeben und die Methode **validateListName** löst die Zusage mit einer leeren Zeichenfolge auf, die bestätigt, dass der angegebene Wert eine gültige Liste darstellt.</span><span class="sxs-lookup"><span data-stu-id="dba88-173">If the list with the specified name exists on the current site, the response returns a 200 OK status code, and the **validateListName** method resolves the promise with an empty string, confirming that the provided value represents a valid list.</span></span> 
   
-  <span data-ttu-id="5c5ac-174">Ist die Liste mit dem angegebenen Namen nicht vorhanden, wird als Antwort ein anderer Code zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-174">If the list with the specified name doesn't exist, the response returns a different code.</span></span> <span data-ttu-id="5c5ac-175">In der Regel lautet die Antwort „404 Not Found“; es kann jedoch auch ein anderer Statuscode zurückgegeben werden, wenn bei der Anforderung auf andere Weise ein Fehler aufgetreten ist.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-175">Typically, it is a 404 Not Found response, but if the request failed in some other way, a different status code can be returned.</span></span> <span data-ttu-id="5c5ac-176">In beiden Fällen zeigt die Methode **validateListName** dem Benutzer die entsprechende Fehlermeldung an.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-176">In both cases, the **validateListName** method displays a relevant error message to the user.</span></span>
+  <span data-ttu-id="dba88-174">Ist die Liste mit dem angegebenen Namen nicht vorhanden, wird als Antwort ein anderer Code zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="dba88-174">If the list with the specified name doesn't exist, the response returns a different code.</span></span> <span data-ttu-id="dba88-175">In der Regel lautet die Antwort „404 Not Found“; es kann jedoch auch ein anderer Statuscode zurückgegeben werden, wenn bei der Anforderung auf andere Weise ein Fehler aufgetreten ist.</span><span class="sxs-lookup"><span data-stu-id="dba88-175">Typically, it is a 404 Not Found response, but if the request failed in some other way, a different status code can be returned.</span></span> <span data-ttu-id="dba88-176">In beiden Fällen zeigt die Methode **validateListName** dem Benutzer die entsprechende Fehlermeldung an.</span><span class="sxs-lookup"><span data-stu-id="dba88-176">In both cases, the **validateListName** method displays a relevant error message to the user.</span></span>
 
-  <span data-ttu-id="5c5ac-177">Nach dem Definieren der Überprüfungsmethode für den Listennamen wird diese im nächsten Schritt als Validierungshandler für die Webpart-Eigenschaft **listName** konfiguriert.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-177">With the list name validation method defined, the next step is to configure it as the validation handler for the **listName** web part property. In the ListInfoWebPart class replace the code of the getPropertyPaneConfiguration method with:</span></span> 
+  <span data-ttu-id="dba88-177">Nach dem Definieren der Überprüfungsmethode für den Listennamen wird diese im nächsten Schritt als Validierungshandler für die Webpart-Eigenschaft **listName** konfiguriert.</span><span class="sxs-lookup"><span data-stu-id="dba88-177">With the list name validation method defined, the next step is to configure it as the validation handler for the **listName** web part property.</span></span> 
   
-3. <span data-ttu-id="5c5ac-178">Ersetzen Sie in der Klasse **ListInfoWebPart** den Code der Methode **getPropertyPaneConfiguration** durch:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-178">In the **ListInfoWebPart** class, replace the code of the **getPropertyPaneConfiguration** method with:</span></span>
+3. <span data-ttu-id="dba88-178">Ersetzen Sie in der Klasse **ListInfoWebPart** den Code der Methode **getPropertyPaneConfiguration** durch:</span><span class="sxs-lookup"><span data-stu-id="dba88-178">In the **ListInfoWebPart** class, replace the code of the **getPropertyPaneConfiguration** method with:</span></span>
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 
@@ -364,43 +364,43 @@ ms.lasthandoff: 01/10/2018
   }
   ```
 
-4. <span data-ttu-id="5c5ac-179">Führen Sie den folgenden Befehl aus, um das Ergebnis der Überprüfung zu sehen:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-179">Run the following command to see the result of the validation:</span></span>
+4. <span data-ttu-id="dba88-179">Führen Sie den folgenden Befehl aus, um das Ergebnis der Überprüfung zu sehen:</span><span class="sxs-lookup"><span data-stu-id="dba88-179">Run the following command to see the result of the validation:</span></span>
 
   ```sh
   gulp serve --nobrowser
   ```
 
-  <span data-ttu-id="5c5ac-180">Da die Listennamen-Überprüfungsmethode mit der SharePoint REST-API kommuniziert, müssen Sie den Webpart in der gehosteten Version der SharePoint-Workbench testen.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-180">Because the list name validation method communicates with the SharePoint REST API, you have to test the web part in the hosted version of the SharePoint workbench.</span></span>
+  <span data-ttu-id="dba88-180">Da die Listennamen-Überprüfungsmethode mit der SharePoint REST-API kommuniziert, müssen Sie den Webpart in der gehosteten Version der SharePoint-Workbench testen.</span><span class="sxs-lookup"><span data-stu-id="dba88-180">Because the list name validation method communicates with the SharePoint REST API, you have to test the web part in the hosted version of the SharePoint workbench.</span></span>
 
-5. <span data-ttu-id="5c5ac-181">Fügen Sie den Webpart zum Zeichenbereich hinzu und öffnen Sie dessen Eigenschaften.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-181">Add the web part to the canvas and open its properties.</span></span> <span data-ttu-id="5c5ac-182">Da Sie keinen Standardwert für den Listennamen angegeben haben, dies aber eine erforderliche Eigenschaft ist, wird Ihnen ein Überprüfungsfehler angezeigt.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-182">Add the web part to the canvas and open its properties. Because you haven't specified a default value for the list name, which is a required property, you will see a validation error.</span></span>
+5. <span data-ttu-id="dba88-181">Fügen Sie den Webpart zum Zeichenbereich hinzu und öffnen Sie dessen Eigenschaften.</span><span class="sxs-lookup"><span data-stu-id="dba88-181">Add the web part to the canvas and open its properties.</span></span> <span data-ttu-id="dba88-182">Da Sie keinen Standardwert für den Listennamen angegeben haben, dies aber eine erforderliche Eigenschaft ist, wird Ihnen ein Überprüfungsfehler angezeigt.</span><span class="sxs-lookup"><span data-stu-id="dba88-182">Because you haven't specified a default value for the list name, which is a required property, you see a validation error.</span></span>
 
   ![Angezeigter Überprüfungsfehler in einer erforderlichen Eigenschaft ohne angegebenen Wert](../../../images/property-validation-empty-list-name-error.png)
 
   <br/>
 
-  <span data-ttu-id="5c5ac-184">Wenn Sie einen nicht vorhandenen Listennamen angeben, zeigt der Webpart einen Überprüfungsfehler an, der besagt, dass die angegebene Liste auf der aktuellen Website nicht vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-184">If you provide a name of a list that doesn't exist, the web part will display a validation error stating that the list you specified doesn't exist in the current site.</span></span>
+  <span data-ttu-id="dba88-184">Wenn Sie einen nicht vorhandenen Listennamen angeben, zeigt der Webpart einen Überprüfungsfehler an, der besagt, dass die angegebene Liste auf der aktuellen Website nicht vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="dba88-184">If you provide the name of a list that doesn't exist, the web part displays a validation error stating that the list you specified doesn't exist in the current site.</span></span>
 
   ![Angezeigter Überprüfungsfehler nach Angabe des Namens einer Liste, die auf der aktuellen Website nicht vorhanden ist](../../../images/property-validation-invalid-list-name-error.png)
 
   <br/>
 
-  <span data-ttu-id="5c5ac-186">Wenn Sie den Namen einer vorhandenen Liste angeben, wird der Validierungsfehler ausgeblendet.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-186">If you specify a name of an existing list, the validation error will disappear.</span></span>
+  <span data-ttu-id="dba88-186">Wenn Sie den Namen einer vorhandenen Liste angeben, wird der Validierungsfehler ausgeblendet.</span><span class="sxs-lookup"><span data-stu-id="dba88-186">If you specify the name of an existing list, the validation error disappears.</span></span>
 
   ![Kein Fehler angezeigt bei gültigem Listennamen](../../../images/property-validation-valid-list-name.png)
 
-### <a name="optimize-validation-using-remote-apis"></a><span data-ttu-id="5c5ac-188">Optimieren der Überprüfung mithilfe von Remote-APIs</span><span class="sxs-lookup"><span data-stu-id="5c5ac-188">Optimize validation using remote APIs</span></span>
+### <a name="optimize-validation-using-remote-apis"></a><span data-ttu-id="dba88-188">Optimieren der Überprüfung mithilfe von Remote-APIs</span><span class="sxs-lookup"><span data-stu-id="dba88-188">Optimize validation using remote APIs</span></span>
 
-<span data-ttu-id="5c5ac-189">Beim Überprüfen von Webpart-Eigenschaften mit Remote-APIs überwacht SharePoint Framework Änderungen an den Steuerelementen des Eigenschaftenbereichs und sendet die aktualisierten Werte zur Überprüfung an den angegebenen Überprüfungshandler.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-189">When validating web part properties using remote APIs, SharePoint Framework monitors changes in the property pane controls and sends updated values for validation to the specified validation handler.</span></span> <span data-ttu-id="5c5ac-190">Standardmäßig wartet SharePoint Framework 200 ms, bevor das Überprüfungsverfahren ausgelöst wird.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-190">By default, the SharePoint Framework waits 200 ms before triggering the validation process.</span></span> <span data-ttu-id="5c5ac-191">Wenn der Benutzer den Wert von 200 ms nicht geändert hat, wird das Überprüfungsverfahren von SharePoint Framework gestartet.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-191">If the user hasn't changed the particular value for 200 ms, the SharePoint Framework starts the validation process.</span></span> <span data-ttu-id="5c5ac-192">Wenn der Überprüfungshandler eine Remote-API verwendet, sendet diese Methode bei jedem Start des Überprüfungsverfahrens eine Webanforderung an die API, um den angegebenen Wert zu überprüfen.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-192">When the validation handler uses a remote API, each time the validation process starts, that method issues a web request to the API to validate the specified value.</span></span> <span data-ttu-id="5c5ac-193">Schreibt der Benutzer nicht schnell genug, werden nur teilweise fertiggestellte Werte zur Überprüfung gesendet, was eine unnötige Belastung für das Netzwerk und die API darstellt.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-193">If users don't type fast enough, this results in partially completed values being sent over for validation, unnecessarily stressing the network and the API.</span></span> <span data-ttu-id="5c5ac-194">In solchen Fällen sollten Sie die Verzögerung der Überprüfung erhöhen.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-194">In such cases, you should consider increasing the validation delay.</span></span>
+<span data-ttu-id="dba88-189">Beim Überprüfen von Webpart-Eigenschaften mit Remote-APIs überwacht SharePoint Framework Änderungen an den Steuerelementen des Eigenschaftenbereichs und sendet die aktualisierten Werte zur Überprüfung an den angegebenen Überprüfungshandler.</span><span class="sxs-lookup"><span data-stu-id="dba88-189">When validating web part properties using remote APIs, SharePoint Framework monitors changes in the property pane controls and sends updated values for validation to the specified validation handler.</span></span> <span data-ttu-id="dba88-190">Standardmäßig wartet SharePoint Framework 200 ms, bevor das Überprüfungsverfahren ausgelöst wird.</span><span class="sxs-lookup"><span data-stu-id="dba88-190">By default, the SharePoint Framework waits 200 ms before triggering the validation process.</span></span> <span data-ttu-id="dba88-191">Wenn der Benutzer den Wert von 200 ms nicht geändert hat, wird das Überprüfungsverfahren von SharePoint Framework gestartet.</span><span class="sxs-lookup"><span data-stu-id="dba88-191">If the user hasn't changed the particular value for 200 ms, the SharePoint Framework starts the validation process.</span></span> <span data-ttu-id="dba88-192">Wenn der Überprüfungshandler eine Remote-API verwendet, sendet diese Methode bei jedem Start des Überprüfungsverfahrens eine Webanforderung an die API, um den angegebenen Wert zu überprüfen.</span><span class="sxs-lookup"><span data-stu-id="dba88-192">When the validation handler uses a remote API, each time the validation process starts, that method issues a web request to the API to validate the specified value.</span></span> <span data-ttu-id="dba88-193">Schreibt der Benutzer nicht schnell genug, werden nur teilweise fertiggestellte Werte zur Überprüfung gesendet, was eine unnötige Belastung für das Netzwerk und die API darstellt.</span><span class="sxs-lookup"><span data-stu-id="dba88-193">If users don't type fast enough, this results in partially completed values being sent over for validation, unnecessarily stressing the network and the API.</span></span> <span data-ttu-id="dba88-194">In solchen Fällen sollten Sie die Verzögerung der Überprüfung erhöhen.</span><span class="sxs-lookup"><span data-stu-id="dba88-194">In such cases, you should consider increasing the validation delay.</span></span>
 
 ![Netzwerktools in Microsoft Edge zeigen Webanforderungen mit unvollständigen Listennamen, die zur Überprüfung gesendet werden](../../../images/property-validation-partial-list-name-validation.png)
 
-<span data-ttu-id="5c5ac-196">Sie können die Überprüfungsverzögerung für jede Eigenschaft separat konfigurieren, je nach dem Typ des Werts, den der Benutzer angeben muss.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-196">You can configure the validation delay for each property separately, depending on the type of value that users need to provide. Following steps illustrate how to increase the validation delay for the listName property.</span></span> 
+<span data-ttu-id="dba88-196">Sie können die Überprüfungsverzögerung für jede Eigenschaft separat konfigurieren, je nach dem Typ des Werts, den der Benutzer angeben muss.</span><span class="sxs-lookup"><span data-stu-id="dba88-196">You can configure the validation delay for each property separately, depending on the type of value that users need to provide.</span></span> 
 
-#### <a name="to-increase-the-validation-delay-for-the-listname-property"></a><span data-ttu-id="5c5ac-197">Erhöhen der Überprüfungsverzögerung für die listName-Eigenschaft</span><span class="sxs-lookup"><span data-stu-id="5c5ac-197">To increase the validation delay for the listName property</span></span>
+#### <a name="to-increase-the-validation-delay-for-the-listname-property"></a><span data-ttu-id="dba88-197">Erhöhen der Überprüfungsverzögerung für die listName-Eigenschaft</span><span class="sxs-lookup"><span data-stu-id="dba88-197">To increase the validation delay for the listName property</span></span>
 
-1. <span data-ttu-id="5c5ac-p120">Öffnen Sie im Code-Editor die Datei **./src/webparts/listInfo/ListInfoWebPart.ts**. Ändern Sie den Code der Methode **getPropertyPaneConfiguration** in:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-p120">In the code editor open the **./src/webparts/listInfo/ListInfoWebPart.ts** file. Change the code of the **getPropertyPaneConfiguration** method to:</span></span>
+1. <span data-ttu-id="dba88-p120">Öffnen Sie im Code-Editor die Datei **./src/webparts/listInfo/ListInfoWebPart.ts**. Ändern Sie den Code der Methode **getPropertyPaneConfiguration** in:</span><span class="sxs-lookup"><span data-stu-id="dba88-p120">In the code editor, open the **./src/webparts/listInfo/ListInfoWebPart.ts** file. Change the code of the **getPropertyPaneConfiguration** method to:</span></span>
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 
@@ -437,9 +437,9 @@ ms.lasthandoff: 01/10/2018
 
   ```
 
-2. <span data-ttu-id="5c5ac-200">Die Eigenschaft **deferredValidationTime** gibt die Anzahl Millisekunden an, die das SharePoint Framework abwartet, bevor es den Überprüfungsprozess startet.</span><span class="sxs-lookup"><span data-stu-id="5c5ac-200">The **deferredValidationTime** property specifies the number of milliseconds that the SharePoint Framework will wait before starting the validation process.</span></span>
+2. <span data-ttu-id="dba88-200">Die Eigenschaft **deferredValidationTime** gibt die Anzahl Millisekunden an, die das SharePoint Framework abwartet, bevor es den Überprüfungsprozess startet.</span><span class="sxs-lookup"><span data-stu-id="dba88-200">The **deferredValidationTime** property specifies the number of milliseconds that the SharePoint Framework waits before starting the validation process.</span></span>
 
-3. <span data-ttu-id="5c5ac-201">Überprüfen Sie mit dem folgenden Befehl, ob die angewandte Verzögerung wie erwartet funktioniert:</span><span class="sxs-lookup"><span data-stu-id="5c5ac-201">Run the following command to see that the applied delay is working as expected:</span></span>
+3. <span data-ttu-id="dba88-201">Überprüfen Sie mit dem folgenden Befehl, ob die angewandte Verzögerung wie erwartet funktioniert:</span><span class="sxs-lookup"><span data-stu-id="dba88-201">Run the following command to see that the applied delay is working as expected:</span></span>
 
   ```sh
   gulp serve --nobrowser
