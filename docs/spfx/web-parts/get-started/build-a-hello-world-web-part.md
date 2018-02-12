@@ -3,11 +3,11 @@ title: "Erstellen Ihres ersten clientseitigen SharePoint-Webparts („Hello Worl
 description: Erstellen Sie ein neues Webpart-Projekt und zeigen Sie es in der Vorschau an.
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 454611f051ea34072a9196b42da41632cb993c4d
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: 259689c87365b6e1c70686b1cd1108549318f9b0
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="build-your-first-sharepoint-client-side-web-part-hello-world-part-1"></a>Erstellen Ihres ersten clientseitigen SharePoint-Webparts („Hello World“ Teil 1)
 
@@ -172,7 +172,7 @@ Die Webpart-Klasse ist dabei so definiert, dass sie den Eigenschaftentyp **IHell
 
 Der Eigenschaftentyp ist als Schnittstelle vor der **HelloWorldWebPart**-Klasse in der Datei **HelloWorldWebPart.ts** definiert.
 
-```ts
+```typescript
 export interface IHelloWorldWebPartProps {
     description: string;
 }
@@ -183,7 +183,7 @@ Anhand dieser Eigenschaftendefinition definieren Sie benutzerdefinierte Eigensch
 #### <a name="web-part-render-method"></a>Webpart-Rendermethode
 Das DOM-Element, in dem das Webpart gerendert werden soll, wird in der Methode **render** spezifiziert. Mithilfe dieser Methode wird das Webpart in dem angegebenen DOM-Element gerendert. Im Webpart **HelloWorld** ist als DOM-Element ein DIV festgelegt. Zu den Parametern der Methode gehören der Anzeigemodus (entweder „Read“ oder „Edit“) sowie etwaige konfigurierte Webpart-Eigenschaften: 
 
-```ts
+```typescript
   public render(): void {
     this.domElement.innerHTML = `
       <div class="${ styles.helloWorld }">
@@ -211,7 +211,7 @@ Der Eigenschaftenbereich wird in der Klasse **HelloWorldWebPart** definiert, und
 
 Sobald Sie die gewünschten Eigenschaften definiert haben, können Sie sie per `this.properties.<property-value>` im Webpart aufrufen. Hier ein Beispiel dafür in der Methode **render**:
 
-```ts
+```typescript
 <p class="${styles.description}">${escape(this.properties.description)}</p>
 ```
 
@@ -221,7 +221,7 @@ Fügen wir nun einige weitere Eigenschaften zum Eigenschaftenbereich hinzu: ein 
 
 1. Scrollen Sie zum Anfang der Datei, und tragen Sie Folgendes in den Abschnitt für den Import aus `@microsoft/sp-webpart-base` ein:
 
-  ```ts
+  ```typescript
   PropertyPaneCheckbox,
   PropertyPaneDropdown,
   PropertyPaneToggle
@@ -229,7 +229,7 @@ Fügen wir nun einige weitere Eigenschaften zum Eigenschaftenbereich hinzu: ein 
 
   Der vollständige Importabschnitt sieht dann wie folgt aus:
 
-  ```ts
+  ```typescript
   import {
     BaseClientSideWebPart,
     IPropertyPaneConfiguration,
@@ -244,7 +244,7 @@ Fügen wir nun einige weitere Eigenschaften zum Eigenschaftenbereich hinzu: ein 
 
 3. Ersetzen Sie die **IHelloWorldWebPartProps**-Schnittstelle mit dem folgenden Code.
 
-  ```ts
+  ```typescript
   export interface IHelloWorldWebPartProps {
       description: string;
       test: string;
@@ -258,7 +258,7 @@ Fügen wir nun einige weitere Eigenschaften zum Eigenschaftenbereich hinzu: ein 
 
 5. Ersetzen Sie die Methode **getPropertyPaneConfiguration** durch den folgenden Code, der die neuen Felder des Eigenschaftenbereichs hinzufügt und den jeweiligen typisierten Objekten zuordnet.
 
-  ```ts
+  ```typescript
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
@@ -304,7 +304,7 @@ Fügen wir nun einige weitere Eigenschaften zum Eigenschaftenbereich hinzu: ein 
 
 6. Nachdem Sie die Eigenschaften zu den Webpart-Eigenschaften hinzugefügt haben, können Sie nun genauso auf sie zugreifen, wie Sie zuvor auf die **description**-Eigenschaft zugegriffen haben:
 
-  ```ts
+  ```typescript
   <p class="${ styles.description }">${escape(this.properties.test)}</p>
   ```
 
@@ -312,7 +312,7 @@ Fügen wir nun einige weitere Eigenschaften zum Eigenschaftenbereich hinzu: ein 
 
 7. Öffnen Sie `HelloWorldWebPart.manifest.json`, und ändern Sie `properties` wie folgt:
 
-  ```ts
+  ```typescript
   "properties": {
     "description": "HelloWorld",
     "test": "Multi-line text field",

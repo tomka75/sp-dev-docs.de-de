@@ -3,11 +3,11 @@ title: "Überprüfen von Webpart-Eigenschaftswerten"
 description: "Überprüfen Sie Eigenschaftswerte in clientseitigen SharePoint-Framework-Webparts, indem Sie den Wert direkt im Code eines Webparts überprüfen oder eine externe API aufrufen."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 99c5c09899a826c2cbabc2b9b3d3ee08f6847b42
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: fc0fded963d11143c628fb0a3bfb09760299e471
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="validate-web-part-property-values"></a>Überprüfen von Webpart-Eigenschaftswerten
 
@@ -30,7 +30,7 @@ Wenn Sie mit clientseitigen SharePoint-Framework-Webparts arbeiten, können Benu
   cd react-listinfo
   ```
 
-3. Führen Sie im Projektordner den SharePoint Framework-Yeoman-Generator aus, um ein Gerüst für ein neues SharePoint-Framework-Projekt zu erstellen:
+3. Führen Sie im Projektordner den SharePoint-Framework-Yeoman-Generator aus, um ein Gerüst für ein neues SharePoint-Framework-Projekt zu erstellen:
 
   ```sh
   yo @microsoft/sharepoint
@@ -52,7 +52,7 @@ Wenn Sie mit clientseitigen SharePoint-Framework-Webparts arbeiten, können Benu
   npm shrinkwrap
   ```
 
-6. Öffnen Sie den Projektordner im Code-Editor. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+6. Öffnen Sie den Projektordner in einem Code-Editor. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch auch jeden beliebigen anderen Editor verwenden.
 
   ![SharePoint-Framework-Projekt in Visual Studio Code](../../../images/property-validation-visual-studio-code.png)
 
@@ -74,7 +74,7 @@ In diesem Schritt überprüfen Sie, dass die Webpart-Eigenschaft einer Beschreib
 
 1. Öffnen Sie im Code-Editor die Datei **./src/webparts/listInfo/ListInfoWebPart.ts**. Fügen Sie in der Klasse **ListInfoWebPart** die Methode **validateDescription** mit dem folgenden Code hinzu:
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 
@@ -97,7 +97,7 @@ In diesem Schritt überprüfen Sie, dass die Webpart-Eigenschaft einer Beschreib
 
 2. Ordnen Sie die Methode **validateDescription** der Webpart-Eigenschaft **description** zu. Ändern Sie in der Klasse **ListInfoWebPart** die Implementierung der Methode **getPropertyPaneConfiguration** in:
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 
@@ -189,7 +189,7 @@ In diesem Schritt implementieren Sie eine Validierungslogik, die überprüft, ob
 
 2. Öffnen Sie im Code-Editor die Datei **./src/webparts/listInfo/IListInfoWebPartProps.ts** und erweitern Sie die Schnittstellendefinition mit der Typzeichenfolgen-Eigenschaft **listName**.
 
-  ```ts
+  ```typescript
   export interface IListInfoWebPartProps {
     description: string;
     listName: string;
@@ -198,7 +198,7 @@ In diesem Schritt implementieren Sie eine Validierungslogik, die überprüft, ob
 
 3. Fügen Sie als Letztes die neue Webpart-Eigenschaft hinzu, indem Sie die Datei **./src/webparts/listInfo/ListInfoWebPart.ts** im Code-Editor öffnen und die Implementation der Methode **getPropertyPaneConfiguration** wie folgt ändern:
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 
@@ -234,7 +234,7 @@ In diesem Schritt implementieren Sie eine Validierungslogik, die überprüft, ob
 
 4. Fügen Sie die fehlende Ressourcenzeichenfolge **ListNameFieldLabel** hinzu, indem Sie den Code der Datei **./src/webparts/listInfo/loc/mystrings.d.ts** wie folgt ändern:
 
-  ```ts
+  ```typescript
   declare interface IListInfoStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -277,14 +277,14 @@ In diesem Schritt überprüfen Sie den angegebenen Namen der Liste und prüfen, 
 
 1. Öffnen Sie im Code-Editor die Datei **./src/webparts/listInfo/ListInfoWebPart.ts** und fügen Sie die folgenden Referenzen hinzu:
 
-  ```ts
+  ```typescript
   import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
   import { escape } from '@microsoft/sp-lodash-subset';
   ```
 
 2. Fügen Sie in der Klasse **ListInfoWebPart** die Methode **validateListName** mit dem folgenden Code hinzu:
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 
@@ -329,7 +329,7 @@ In diesem Schritt überprüfen Sie den angegebenen Namen der Liste und prüfen, 
   
 3. Ersetzen Sie in der Klasse **ListInfoWebPart** den Code der Methode **getPropertyPaneConfiguration** durch:
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 
@@ -400,7 +400,7 @@ Sie können die Überprüfungsverzögerung für jede Eigenschaft separat konfigu
 
 1. Öffnen Sie im Code-Editor die Datei **./src/webparts/listInfo/ListInfoWebPart.ts**. Ändern Sie den Code der Methode **getPropertyPaneConfiguration** in:
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 

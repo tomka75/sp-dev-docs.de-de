@@ -3,11 +3,11 @@ title: Integrieren von Webparteigenschaften in SharePoint
 description: Verwenden Sie Funktionen, die die Verwaltung von Webparteigenschaftswerten vereinfachen, und integrieren Sie diese bei der Erstellung von clientseitigen SharePoint-Framework-Webparts mit der SharePoint-Suche.
 ms.date: 01/10/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 381ccc6862088e9388df61283175c12835781ccb
-ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
+ms.openlocfilehash: 17beb9335654f7f5a35209005b101e5fca287d4c
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="integrate-web-part-properties-with-sharepoint"></a>Integrieren von Webparteigenschaften in SharePoint
 
@@ -38,7 +38,7 @@ Wenn Sie Webparts erstellen, können Sie mit SharePoint-Framework bestimmen, wel
 
 Um die Konfiguration für Ihre Webparteigenschaften anzugeben, setzen Sie in der Webpartklasse den **propertiesMetadata**-Getter außer Kraft:
 
-```ts
+```typescript
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,

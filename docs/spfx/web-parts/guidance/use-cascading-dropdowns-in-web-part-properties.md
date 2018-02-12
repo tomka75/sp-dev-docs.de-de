@@ -3,11 +3,11 @@ title: Verwenden von kaskadierenden Dropdowns in Webparteigenschaften
 description: "Erfahren Sie, wie Sie kaskadierende Dropdown-Steuerelemente im Eigenschaftenbereich von clientseitigen SharePoint-Webparts erstellen können, ohne ein benutzerdefiniertes Steuerelement für den Eigenschaftenbereich zu programmieren."
 ms.date: 01/10/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 284c5747a95efd3a9149226827195d9b38a22105
-ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
+ms.openlocfilehash: 5c163108968bdf45b4847c3487bf275b371b1380
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="use-cascading-dropdowns-in-web-part-properties"></a>Verwenden von kaskadierenden Dropdowns in Webparteigenschaften
 
@@ -50,7 +50,7 @@ Der Quellcode des Webparts, mit dem wir arbeiten, steht auf GitHub zur Verfügun
 
   ![SharePoint-Framework-Yeoman-Generator mit den Standardoptionen](../../../images/react-cascading-dropdowns-yo-sharepoint.png)
 
-5. Warten Sie, bis das Gerüst erstellt wurde, und sperren Sie dann mithilfe des folgenden Befehls die Version der Projektabhängigkeiten:
+5. Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 
   ```sh
   npm shrinkwrap
@@ -70,7 +70,7 @@ In diesem Tutorial erstellen Sie ein Webpart, in dem Listenelemente aus einer au
 
 2. Öffnen Sie die Datei **src/webparts/listItems/IListItemsWebPartProps.ts**, und ersetzen Sie den in ihr enthaltenen Code durch folgenden Code:
 
-  ```ts
+  ```typescript
   export interface IListItemsWebPartProps {
     listName: string;
   }
@@ -78,7 +78,7 @@ In diesem Tutorial erstellen Sie ein Webpart, in dem Listenelemente aus einer au
 
 3. Ändern Sie in der Datei **src/webparts/listItems/ListItemsWebPart.ts** die Methode **render** wie folgt:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     public render(): void {
@@ -94,7 +94,7 @@ In diesem Tutorial erstellen Sie ein Webpart, in dem Listenelemente aus einer au
 
 4. Aktualisieren Sie **propertyPaneSettings** wie folgt:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -124,7 +124,7 @@ In diesem Tutorial erstellen Sie ein Webpart, in dem Listenelemente aus einer au
 
 5. Ändern Sie in der Datei **src/webparts/listItems/loc/mystrings.d.ts** die Schnittstelle **IListItemsStrings** wie folgt:
 
-  ```ts
+  ```typescript
   declare interface IListItemsStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -171,7 +171,7 @@ In diesem Tutorial erstellen Sie ein Webpart, in dem Listenelemente aus einer au
 
 8. Ändern Sie in der Datei **src/webparts/listItems/components/IListItemsProps.ts** die **IListItemsProps**-Oberfläche in:
 
-  ```ts
+  ```typescript
   export interface IListItemsProps {
     listName: string;
   }
@@ -197,7 +197,7 @@ An diesem Punkt gibt der Benutzer an, welche Liste das Webpart verwenden soll. H
 
 1. Fügen Sie in der Klasse **ListItemsWebPart** einen Verweis auf die Klasse **PropertyPaneDropdown** im oberen Bereich des Webparts hinzu. Ersetzen Sie die Importklausel, von der die Klasse **PropertyPaneTextField** geladen wird, durch folgenden Code:
 
-  ```ts
+  ```typescript
   import {
     BaseClientSideWebPart,
     IPropertyPaneConfiguration,
@@ -209,7 +209,7 @@ An diesem Punkt gibt der Benutzer an, welche Liste das Webpart verwenden soll. H
 
 2. Fügen Sie in der Klasse **ListItemsWebPart** eine neue Variable mit dem Namen **lists** hinzu, in der Informationen über alle auf der aktuellen Website verfügbaren Liste gespeichert werden:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     private lists: IPropertyPaneDropdownOption[];
     // ...
@@ -218,7 +218,7 @@ An diesem Punkt gibt der Benutzer an, welche Liste das Webpart verwenden soll. H
 
 3. Fügen Sie eine neue Klassenvariable mit dem Namen **listsDropdownDisabled** hinzu. Diese Variable legt fest, ob das Listendropdown aktiviert ist oder nicht. Das Dropdown sollte solange deaktiviert sein, bis das Webpart die Informationen zu den auf der aktuellen Website verfügbaren Listen abgerufen hat.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     private listsDropdownDisabled: boolean = true;
@@ -228,7 +228,7 @@ An diesem Punkt gibt der Benutzer an, welche Liste das Webpart verwenden soll. H
 
 4. Ändern Sie den Getter **propertyPaneSettings** so, dass er zum Rendern der Eigenschaft **listName** das Dropdown-Steuerelement verwendet:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected get propertyPaneSettings(): IPropertyPaneSettings {
@@ -272,7 +272,7 @@ Im vorangegangenen Schritt haben Sie das Dropdown-Steuerelement der Eigenschaft 
 
 1. Fügen Sie in der Klasse **ListItemsWebPart** eine Methode zum Laden aller verfügbaren Listen hinzu. Hier verwenden Sie simulierte Daten; Sie können aber auch die SharePoint-REST-API aufrufen, um die Liste aller im aktuellen Web verfügbaren Listen abzurufen. Um das Laden aus einem externen Dienst zu simulieren, implementiert die Methode eine Verzögerung von 2 Sekunden.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     private loadLists(): Promise<IPropertyPaneDropdownOption[]> {
@@ -294,7 +294,7 @@ Im vorangegangenen Schritt haben Sie das Dropdown-Steuerelement der Eigenschaft 
 
 2. Laden Sie Informationen zu den verfügbaren Listen in das Listendropdown. Überschreiben Sie dazu in der Klasse **ListItemsWebPart**die Methode **onPropertyPaneConfigurationStart** mit dem folgenden Code:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected onPropertyPaneConfigurationStart(): void {
@@ -371,7 +371,7 @@ Beim Erstellen von Webparts müssen Sie es Benutzern häufig ermöglichen, eine 
 
 2. Ändern Sie den Code in der Datei **src/webparts/listItems/IListItemsWebPartProps.ts** in Folgendes:
 
-  ```ts
+  ```typescript
   export interface IListItemsWebPartProps {
     listName: string;
     itemName: string;
@@ -380,7 +380,7 @@ Beim Erstellen von Webparts müssen Sie es Benutzern häufig ermöglichen, eine 
 
 3. Ändern Sie den Code in der Datei **src/webparts/listItems/components/IListItemsProps.ts** in Folgendes:
 
-  ```ts
+  ```typescript
   export interface IListItemsProps {
     listName: string;
     itemName: string;
@@ -389,7 +389,7 @@ Beim Erstellen von Webparts müssen Sie es Benutzern häufig ermöglichen, eine 
 
 4. Ändern Sie in der Datei **src/webparts/listItems/ListItemsWebPart.ts** den Code der **render**-Methode in:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     public render(): void {
@@ -406,7 +406,7 @@ Beim Erstellen von Webparts müssen Sie es Benutzern häufig ermöglichen, eine 
 
 5. Ändern Sie in der Datei **src/webparts/listItems/loc/mystrings.d.ts** die **IListItemsStrings**-Schnittstelle in Folgendes:
 
-  ```ts
+  ```typescript
   declare interface IListItemsStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -462,7 +462,7 @@ export default class ListItems extends React.Component<IListItemsProps, {}> {
 
 1. Fügen Sie in der Klasse **ListItemsWebPart** eine neue Variable mit dem Namen **items** hinzu, in der die Informationen zu allen in der aktuell ausgewählten Liste verfügbaren Elementen gespeichert werden:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     private items: IPropertyPaneDropdownOption[];
@@ -472,7 +472,7 @@ export default class ListItems extends React.Component<IListItemsProps, {}> {
 
 2. Fügen Sie eine neue Klassenvariable mit dem Namen **itemsDropdownDisabled** hinzu. Diese Variable legt fest, ob das Elementdropdown aktiviert ist oder nicht. Benutzer sollten erst dann ein Element auswählen können, nachdem sie eine Liste ausgewählt haben.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     private itemsDropdownDisabled: boolean = true;
@@ -482,7 +482,7 @@ export default class ListItems extends React.Component<IListItemsProps, {}> {
 
 3. Ändern Sie den **propertyPaneSettings**-Getter im Dropdown-Steuerelement, um die **itemName**-Eigenschaft zu rendern.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -532,7 +532,7 @@ Im vorangegangenen Abschnitt haben Sie ein Dropdown-Steuerelement definiert, das
 
 1. Fügen Sie eine Methode zum Laden der Listenelemente hinzu. Fügen Sie hierzu in der Datei **src/webparts/listItems/ListItemsWebPart.ts** in der Klasse **ListItemsWebPart** eine neue Methode zum Laden der verfügbaren Listenelemente aus der ausgewählten Liste hinzu (wie auch bei der Methode zum Laden der verfügbaren Listen verwenden Sie hier simulierte Daten):
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     private loadItems(): Promise<IPropertyPaneDropdownOption[]> {
@@ -578,7 +578,7 @@ Im vorangegangenen Abschnitt haben Sie ein Dropdown-Steuerelement definiert, das
 
 2. Laden Sie die Informationen zu den verfügbaren Elementen in das Elementdropdown. Erweitern Sie hierzu in der Klasse **ListItemsWebPart** die Methode **onPropertyPaneConfigurationStart** so, dass sie Elemente aus der ausgewählten Liste lädt:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected onPropertyPaneConfigurationStart(): void {
@@ -628,7 +628,7 @@ Im vorangegangenen Abschnitt haben Sie ein Dropdown-Steuerelement definiert, das
 
   Überschreiben Sie in der Datei **ListItemsWebPart.ts** in der Klasse **ListItemsWebPart** die Methode **onPropertyPaneFieldChanged** mit dem folgenden Code:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void {

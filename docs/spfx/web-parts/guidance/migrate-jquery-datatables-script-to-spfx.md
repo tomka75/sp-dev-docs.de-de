@@ -3,11 +3,11 @@ title: "Migrieren von jQuery- und DataTables-Lösungen, die mit Script Editor-We
 description: "Migrieren Sie eine SharePoint-Anpassung mithilfe von DataTables, um leistungsstarke Datenübersichten mit Daten zu erstellen, die von SharePoint und externen APIs stammen."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 49f57f5019fd0380525ff891fc46341bbc78fb39
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: eae130d79f29e1bf29cd309895d0ebddd41ffc9b
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="migrate-jquery-and-datatables-solution-built-using-script-editor-web-part-to-sharepoint-framework"></a>Migrieren von jQuery- und DataTables-Lösungen, die mit Script Editor-Webpart erstellt wurden, in SharePoint Framework
 
@@ -202,7 +202,7 @@ Das Umwandeln dieser Anpassung in das SharePoint-Framework bietet eine Reihe von
 
 2. Öffnen Sie die Datei **./src/webparts/itRequests/ItRequestsWebPart.ts**, und fügen Sie nach der letzten **import**-Anweisung Folgendes hinzu:
 
-    ```ts
+    ```typescript
     import 'jquery';
     import 'datatables.net';
     import 'moment';
@@ -214,7 +214,7 @@ Wie bei der ursprünglichen Lösung besteht der nächste Schritt darin, die Stru
 
 Öffnen Sie im Code-Editor die Datei **./src/webparts/itRequests/ItRequestsWebPart.ts**, und ändern Sie die **render**-Methode in:
 
-```ts
+```typescript
     export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequestsWebPartProps> {
     public render(): void {
         this.domElement.innerHTML = `
@@ -301,7 +301,7 @@ Der nächste Schritt besteht darin, das Moment.js-Plug-In für DataTables zu def
 
 2. Damit das Webpart das Plug-In lädt, muss es auf die neu erstellte Datei **plugin.js-Moment** verweisen. Öffnen Sie im Code-Editor die Datei **./src/webparts/itRequests/ItRequestsWebPart.ts**, und fügen Sie nach der letzten **import**-Anweisung Folgendes hinzu:
 
-    ```ts
+    ```typescript
     import './moment-plugin';
     ```
 
@@ -343,7 +343,7 @@ Der letzte Schritt besteht darin, den Code einzuschließen, der die Datentabelle
 
 2. Um auf diese Datei im Webpart zu verweisen, öffnen Sie im Code-Editor die Datei **./src/webparts/itRequests/ItRequestsWebPart.ts**, und ändern Sie die **render**-Methode in:
 
-    ```ts
+    ```typescript
     export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequestsWebPartProps> {
     public render(): void {
         this.domElement.innerHTML = `
@@ -391,7 +391,7 @@ Die folgenden Schritte veranschaulichen, wie Sie die vorhanden Lösung erweitern
 
 2. Aktualisieren Sie die Webparteigenschaften, um die Änderungen im Manifest widerzuspiegeln. Öffnen Sie im Code-Editor die Datei **./src/webparts/itRequests/IItRequestsWebPartProps.ts**, und ändern Sie den Inhalt in:
 
-    ```ts
+    ```typescript
     export interface IItRequestsWebPartProps {
     listName: string;
     }
@@ -399,7 +399,7 @@ Die folgenden Schritte veranschaulichen, wie Sie die vorhanden Lösung erweitern
 
 3. Aktualisieren die Anzeigebezeichnung für die **listName**-Eigenschaft. Öffnen Sie als Nächstes die Datei **./src/webparts/itRequests/loc/mystrings.d.ts**, und ändern Sie den Inhalt in:
 
-    ```ts
+    ```typescript
     declare interface IItRequestsStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -426,7 +426,7 @@ Die folgenden Schritte veranschaulichen, wie Sie die vorhanden Lösung erweitern
 
 5. Aktualisieren Sie das Webpart so, dass die neu definierte Eigenschaft verwendet wird. Öffnen Sie im Code-Editor die Datei **./src/webparts/itRequests/ItRequestsWebPart.ts**, und ändern Sie die **getPropertyPaneConfiguration**-Methode in:
 
-    ```ts
+    ```typescript
     export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequestsWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -465,7 +465,7 @@ Zunächst wurde der Name der Liste, aus der die Daten geladen werden sollen, in 
 
 1. Öffnen Sie im Code-Editor die Datei **./src/webparts/itRequests/ItRequestsWebPart.ts**, und ändern Sie die **render**-Methode in:
 
-    ```ts
+    ```typescript
     var $: any = (window as any).$;
 
     export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequestsWebPartProps> {
@@ -561,13 +561,13 @@ Um Typen von den installierten Typdefinitionen zu verwenden, müssen Sie ändern
 
 1. Öffnen Sie im Code-Editor die Datei **./src/webparts/itRequests/ItRequestsWebPart.ts**, und ändern Sie die `import 'jquery';`-Anweisung in:
 
-    ```ts
+    ```typescript
     import * as $ from 'jquery';
     ```
 
 2. Da Sie **$** als jQuery definiert haben, können Sie nun die lokale Definition von **$** entfernen, die Sie zuvor hinzugefügt hatten:
 
-    ```ts
+    ```typescript
     var $: any = (window as any).$;
     ```
 
@@ -598,7 +598,7 @@ Da jetzt die Typdefinitionen für alle im Projekt installierten Bibliotheken vor
 
 1. Definieren Sie eine Schnittstelle für die IT-Anfrageinformationen, die Sie aus der SharePoint-Liste abrufen. Öffnen Sie im Code-Editor die Datei **./src/webparts/itRequests/ItRequestsWebPart.ts**, und fügen Sie direkt über der Webpartklasse den folgenden Codeausschnitt hinzu:
 
-    ```ts
+    ```typescript
     interface IRequestItem {
     ID: number;
     BusinessUnit: string;
@@ -611,7 +611,7 @@ Da jetzt die Typdefinitionen für alle im Projekt installierten Bibliotheken vor
 
 2. Ändern Sie als Nächstes die **render**-Methode in:
 
-    ```ts
+    ```typescript
     export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequestsWebPartProps> {
     public render(): void {
         this.domElement.innerHTML = `
@@ -669,7 +669,7 @@ Der letzte Teil dieser Lösung, der in TypeScript umgewandelt werden muss, ist d
 
 2. Öffnen Sie im Code-Editor die Datei **moment-plugin.ts**, und ersetzen Sie den Inhalt durch:
 
-    ```ts
+    ```typescript
     import * as $ from 'jquery';
     import * as moment from 'moment';
 

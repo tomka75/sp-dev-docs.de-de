@@ -3,11 +3,11 @@ title: "Erstellen Ihrer ersten Erweiterung des Typs „ListView Command Set“"
 description: Erstellen Sie ein Erweiterungsprojekt, und codieren und debuggen Sie dann Ihre Erweiterung mithilfe von SharePoint-Framework (SPFx)-Erweiterungen.
 ms.date: 01/11/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 5c6936f980669b09335e88ce31240fea1924dd6d
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: b5faa39c3d81178e067ddf5ebe933f593385a77d
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="build-your-first-listview-command-set-extension"></a>Erstellen Ihrer ersten Erweiterung des Typs „ListView Command Set“
 
@@ -98,7 +98,7 @@ Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in 
 
 Wie Sie sehen, wird die Basisklasse Ihrer Erweiterung des Typs „ListView Command Set“ aus dem Paket **sp-listview-extensibility** importiert. Es enthält SharePoint-Framework-Code, der von „ListView Command Set“ benötigt wird.
 
-```ts
+```typescript
 import { override } from '@microsoft/decorators';
 import { Log } from '@microsoft/sp-core-library';
 import {
@@ -116,7 +116,7 @@ Das **onListViewUpdated()**-Ereignis tritt für jeden Befehl separat auf (z. B. 
 
 Wenn Sie die `tryGetCommand`-Methode verwenden, erhalten Sie ein Command-Objekt, das den auf der Benutzeroberfläche angezeigten Befehl angibt. Sie können die zugehörigen Werte wie `title` oder `visible` ändern, um das Benutzeroberflächenelement zu ändern. SPFx verwendet diese Informationen, wenn die Befehle neu gerendert werden müssen. Diese Objekte speichern den Status des letzten Renderings. Wenn ein Befehl zum Beispiel auf `visible = false` festgelegt wurde, wird er erst eingeblendet, wenn er wieder auf `visible = true` festgelegt wurde.
 
-```ts
+```typescript
   @override
   public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void {
     const compareOneCommand: Command = this.tryGetCommand('COMMAND_1');
@@ -130,7 +130,7 @@ Wenn Sie die `tryGetCommand`-Methode verwenden, erhalten Sie ein Command-Objekt,
 Die **OnExecute()**-Methode definiert die Aktion beim Ausführen eines Befehls (wenn z. B. das Menüelement ausgewählt ist). In der Standardimplementierung werden je nach ausgewählter Schaltfläche unterschiedliche Meldungen angezeigt. 
 
 
-```ts
+```typescript
   @override
   public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
     switch (event.itemId) {
@@ -222,7 +222,7 @@ Für die Standardlösung nutzen wir eine neue Dialogfeld-API, mit der Sie über 
 
 5. Aktualisieren Sie die Methode **onExecute** wie folgt:
     
-    ```ts
+    ```typescript
       @override
       public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
         switch (event.commandId) {

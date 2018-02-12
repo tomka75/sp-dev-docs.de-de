@@ -3,11 +3,11 @@ title: Migrieren vorhandener Skript-Editor-Webpart-Anpassungen zu SharePoint-Fra
 description: "Hier erfahren Sie alles über die Vorteile einer Migration vorhandener clientseitiger Anpassungen zum SharePoint-Framework und können nachlesen, was es bei der Migrationsplanung zu bedenken gilt."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 5bd6bce189bf56ce892ba066974fa4b2cdd59bd3
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 815827ad2e3d201444c29c92ab67d684d07e65cc
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="migrate-existing-script-editor-web-part-customizations-to-the-sharepoint-framework"></a>Migrieren vorhandener Skript-Editor-Webpart-Anpassungen zum SharePoint-Framework
 
@@ -188,7 +188,7 @@ module.exports = {
 
 Anschließend können Sie in der Webpartklasse auf das Skript verweisen und die Funktion **greeting** aufrufen:
 
-```ts
+```typescript
 public render(): void {  
   this.domElement.innerHTML = `
     <input type="button" value="Click me"/>`;
@@ -204,7 +204,7 @@ Viele clientseitige Anpassungen verwenden jQuery zur Ausführung von AJAX-Anford
 
 SharePoint Framework bietet zwei Typen von HTTP-Clients: [SPHttpClient](https://docs.microsoft.com/de-DE/javascript/api/sp-application-base) zur Ausführung von Anforderungen an die SharePoint-REST-API und [HttpClient](https://docs.microsoft.com/de-DE/javascript/api/sp-application-base) zur Ausgabe von Webanforderungen an andere REST-APIs. Einen Aufruf mit SPHttpClient zum Abrufen des Titels der aktuellen SharePoint-Website würden Sie wie folgt ausführen:
 
-```ts
+```typescript
 this.context.spHttpClient.get(`${this.context.pageContext.web.absoluteUrl}/_api/web?$select=Title`,
 SPHttpClient.configurations.v1,
 {

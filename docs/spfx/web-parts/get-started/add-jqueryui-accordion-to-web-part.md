@@ -3,11 +3,11 @@ title: "Hinzufügen von jQueryUI Accordion zu Ihrem clientseitigen SharePoint-We
 description: "Wenn Sie jQueryUI Accordion zu Ihrem Webpartprojekt hinzufügen möchten, müssen Sie ein neues Webpart erstellen."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: ac0eb1ca71d3aca2a948ed1f46c5896f975687bc
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: 3c692687133db378dd23842d1ef28ad202e733eb
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="add-jqueryui-accordion-to-your-sharepoint-client-side-web-part"></a>Hinzufügen von jQueryUI Accordion zu Ihrem clientseitigen SharePoint-Webpart
 
@@ -59,7 +59,7 @@ Die Entwicklertoolkette verwendet Webpack, SystemJS und CommonJS zum Bündeln de
 
   * Akzeptieren Sie den Standardnamen **jquery-webpart** als Lösungsnamen. Drücken Sie die EINGABETASTE.
   * Wählen Sie **SharePoint Online only (latest)**, und drücken Sie die EINGABETASTE.
-  * Wählen Sie als Speicherort für die Dateien die Option **Use the current folder** aus.
+  * Wählen Sie die Option **Use the current folder** als Speicherort für die Dateien aus.
   * Wählen Sie **N**, damit die Erweiterung auf jeder Website explizit installiert werden muss, wenn sie verwendet wird. 
   * Wählen Sie **Webpart** als den zu erstellenden Typ von clientseitiger Komponente aus. 
 
@@ -244,7 +244,7 @@ Der vollständige Inhalt der config.json-Datei ist derzeit wie folgt:
 
 2. Fügen Sie am Anfang der Datei, wo sich auch andere Importe befinden, den folgenden Import hinzu:
 
-  ```ts
+  ```typescript
   import MyAccordionTemplate from './MyAccordionTemplate';
   ```
 
@@ -252,20 +252,20 @@ Der vollständige Inhalt der config.json-Datei ist derzeit wie folgt:
 
 1. Sie können jQuery auf die gleiche Weise in Ihr Webpart importieren, wie Sie „MyAccordionTemplate“ importiert haben. Fügen Sie am Anfang der Datei, wo sich auch andere Importe befinden, die folgenden Importe hinzu:
 
-  ```ts
+  ```typescript
   import * as jQuery from 'jquery';
   import 'jqueryui';
   ```
 
 2. Laden Sie einige externe CSS-Dateien mithilfe des Modulladeprogramms. Fügen Sie den folgenden Import hinzu:
 
-  ```ts
+  ```typescript
   import { SPComponentLoader } from '@microsoft/sp-loader';
   ```
 
 3. Laden Sie die jQueryUI-Formatvorlagen in der `JQueryWebPart`-Webpartklasse, indem Sie einen Konstruktor hinzufügen und den neu importierten SPComponentLoader verwenden. Fügen Sie den folgenden Konstruktor zu Ihrem Webpart hinzu. 
 
-  ```ts
+  ```typescript
     public constructor() {
       super();
 
@@ -285,13 +285,13 @@ Der vollständige Inhalt der config.json-Datei ist derzeit wie folgt:
 
 2. Legen Sie die innere HTML des Webparts so fest, dass die Accordion-HTML wiedergegeben wird:
 
-  ```ts
+  ```typescript
   this.domElement.innerHTML = MyAccordionTemplate.templateHtml;
   ```
 
 3. jQueryUI Accordion weist einige Optionen auf, die Sie zum Anpassen des Accordions festlegen können. Definieren Sie einige Optionen für Ihr Accordion direkt unter `this.domElement.innerHTML = MyAccordionTemplate.templateHtml;`:
 
-  ```ts
+  ```typescript
   const accordionOptions: JQueryUI.AccordionOptions = {
     animate: true,
     collapsible: false,
@@ -308,7 +308,7 @@ Der vollständige Inhalt der config.json-Datei ist derzeit wie folgt:
 
 4. Initialisieren Sie schließlich das Accordion:
 
-  ```ts
+  ```typescript
   jQuery('.accordion', this.domElement).accordion(accordionOptions);
   ```
 
@@ -316,7 +316,7 @@ Der vollständige Inhalt der config.json-Datei ist derzeit wie folgt:
 
   Die vollständige `render`-Methodenklasse sieht wie folgt aus:
 
-  ```ts
+  ```typescript
   public render(): void {
     this.domElement.innerHTML = MyAccordionTemplate.templateHtml;
 

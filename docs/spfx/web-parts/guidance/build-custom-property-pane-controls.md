@@ -3,11 +3,11 @@ title: "Erstellen benutzerdefinierter Steuerelemente für den Eigenschaftenberei
 description: "Erfahren Sie, wie Sie ein benutzerdefiniertes Dropdown-Steuerelement erstellen können, das seine Daten asynchron aus einem externen Dienst lädt, ohne die Benutzeroberfläche Ihres clientseitigen SharePoint-Webparts zu blockieren."
 ms.date: 01/10/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 0e17ad3d494ec24608ff167539018919591c9688
-ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
+ms.openlocfilehash: e4b38566a0e6425db8756288c98d8c88f6d89780
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="build-custom-controls-for-the-property-pane"></a>Erstellen benutzerdefinierter Steuerelemente für den Eigenschaftenbereich
 
@@ -52,7 +52,7 @@ Der Quellcode des Webparts, mit dem wir arbeiten, steht auf GitHub zur Verfügun
 
   ![SharePoint-Framework-Yeoman-Generator mit den Standardoptionen](../../../images/custom-property-pane-control-yeoman.png)
 
-5. Warten Sie, bis das Gerüst erstellt wurde, und sperren Sie dann mithilfe des folgenden Befehls die Version der Projektabhängigkeiten:
+5. Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 
   ```sh
   npm shrinkwrap
@@ -72,7 +72,7 @@ In dem Webpart, das Sie erstellen, werden Listenelemente aus der jeweils ausgew�
 
 2. Öffnen Sie die Datei **src/webparts/listItems/IListItemsWebPartProps.ts**, und ersetzen Sie den in ihr enthaltenen Code durch folgenden Code:
 
-  ```ts
+  ```typescript
   export interface IListItemsWebPartProps {
     listName: string;
   }
@@ -80,7 +80,7 @@ In dem Webpart, das Sie erstellen, werden Listenelemente aus der jeweils ausgew�
 
 3. Ändern Sie in der Datei **src/webparts/listItems/ListItemsWebPart.ts** die Methode **render** wie folgt:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     public render(): void {
@@ -96,7 +96,7 @@ In dem Webpart, das Sie erstellen, werden Listenelemente aus der jeweils ausgew�
 
 4. Aktualisieren Sie die Methode **getPropertyPaneConfiguration** wie folgt:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -126,7 +126,7 @@ In dem Webpart, das Sie erstellen, werden Listenelemente aus der jeweils ausgew�
 
 5. Ändern Sie in der Datei **src/webparts/listItems/loc/mystrings.d.ts** die Schnittstelle **IListItemsWebPartStrings** wie folgt:
 
-  ```ts
+  ```typescript
   declare interface IListItemsWebPartStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -173,7 +173,7 @@ In dem Webpart, das Sie erstellen, werden Listenelemente aus der jeweils ausgew�
 
 8. Öffnen Sie die Datei **src/webparts/listItems/components/IListItemsProps.ts**, und ersetzen Sie den in ihr enthaltenen Code durch folgenden Code:
 
-  ```ts
+  ```typescript
   export interface IListItemsProps {
     listName: string;
   }
@@ -217,7 +217,7 @@ Wenn Sie ein benutzerdefiniertes Eigenschaftenbereichssteuerelement erstellen, d
 
 2. Definieren Sie die Eigenschaften der asynchronen React-basierten Dropdownkomponente. Erstellen Sie dazu im Ordner **src/controls/PropertyPaneAsyncDropdown/components** eine neue Datei mit dem Namen **IAsyncDropdownProps.ts**, und geben Sie folgenden Code in die Datei ein:
 
-  ```ts
+  ```typescript
   import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
 
   export interface IAsyncDropdownProps {
@@ -240,7 +240,7 @@ Wenn Sie ein benutzerdefiniertes Eigenschaftenbereichssteuerelement erstellen, d
 
 3. Definieren Sie die Schnittstelle der asynchronen React-basierten Dropdownkomponente. Erstellen Sie hierzu im Ordner **src/controls/PropertyPaneAsyncDropdown/components** eine neue Datei mit dem Namen **IAsyncDropdownState.ts**, und geben Sie den folgenden Code in die Datei ein:
 
-  ```ts
+  ```typescript
   import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
 
   export interface IAsyncDropdownState {
@@ -257,7 +257,7 @@ Wenn Sie ein benutzerdefiniertes Eigenschaftenbereichssteuerelement erstellen, d
 
 4. Definieren Sie die asynchrone React-basierte Dropdownkomponente. Erstellen Sie hierzu im Ordner **src/controls/PropertyPaneAsyncDropdown/components** eine neue Datei mit dem Namen **AsyncDropdown.tsx**, und geben Sie folgenden Code in die Datei ein:
 
-  ```tsx
+  ```typescriptx
   import * as React from 'react';
   import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
   import { Spinner } from 'office-ui-fabric-react/lib/components/Spinner';
@@ -369,7 +369,7 @@ Der nächste Schritt besteht darin, das benutzerdefinierte Steuerelement für de
 
 2. Definieren Sie die öffentlichen Eigenschaften des asynchronen Dropdown-Steuerelements für den Eigenschaftenbereich. Erstellen Sie hierzu im Ordner **src/controls/PropertyPaneAsyncDropdown** eine neue Datei mit dem Namen **IPropertyPaneAsyncDropdownProps.ts**, und geben Sie den folgenden Code in die Datei ein:
 
-  ```ts
+  ```typescript
   import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
 
   export interface IPropertyPaneAsyncDropdownProps {
@@ -390,7 +390,7 @@ Der nächste Schritt besteht darin, das benutzerdefinierte Steuerelement für de
 
 3. Definieren Sie die internen Eigenschaften des asynchronen Dropdown-Steuerelements für den Eigenschaftenbereich. Erstellen Sie hierzu im Ordner **src/controls/PropertyPaneAsyncDropdown** eine neue Datei mit dem Namen **IPropertyPaneAsyncDropdownInternalProps.ts**, und geben Sie den folgenden Code in die Datei ein:
 
-  ```ts
+  ```typescript
   import { IPropertyPaneCustomFieldProps } from '@microsoft/sp-webpart-base';
   import { IPropertyPaneAsyncDropdownProps } from './IPropertyPaneAsyncDropdownProps';
 
@@ -402,7 +402,7 @@ Der nächste Schritt besteht darin, das benutzerdefinierte Steuerelement für de
 
 4. Definieren Sie das asynchrone Dropdown-Steuerelement für den Eigenschaftenbereich. Erstellen Sie hierzu im Ordner **src/controls/PropertyPaneAsyncDropdown** eine neue Datei mit dem Namen **PropertyPaneAsyncDropdown.ts**, und geben Sie den folgenden Code in die Datei ein:
 
-  ```ts
+  ```typescript
   import * as React from 'react';
   import * as ReactDom from 'react-dom';
   import {
@@ -483,7 +483,7 @@ Sobald das asynchrone Dropdown-Steuerelement für den Eigenschaftenbereich berei
 
 Um Informationen zu verfügbaren Listen auf konsistente Art und Weise zu übergeben, definieren Sie eine Schnittstelle, die Informationen zu einer Liste darstellt. Erstellen Sie hierzu im Ordner **src/webparts/listItems** eine neue Datei mit dem Namen **IListInfo.ts** , und geben Sie den folgenden Code in die Datei ein:
 
-```ts
+```typescript
 export interface IListInfo {
   Id: string;
   Title: string;
@@ -494,13 +494,13 @@ export interface IListInfo {
 
 1. Referenzieren Sie die erforderlichen Typen. Importieren Sie hierzu im oberen Teil der Datei **src/webparts/listItems/ListItemsWebPart.ts** die zuvor erstellte Klasse **PropertyPaneAsyncDropdown**, indem Sie folgenden Code hinzufügen:
 
-  ```ts
+  ```typescript
   import { PropertyPaneAsyncDropdown } from '../../controls/PropertyPaneAsyncDropdown/PropertyPaneAsyncDropdown';
   ```
 
 2. Fügen Sie unter diesem Code einen Verweis auf die Schnittstelle **IDropdownOption** und zwei Hilfsfunktionen hinzu, die für die Arbeit mit Webparteigenschaften erforderlich sind:
 
-  ```ts
+  ```typescript
   import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
   import { update, get } from '@microsoft/sp-lodash-subset';
   ```
@@ -511,7 +511,7 @@ export interface IListInfo {
 
 3. Fügen Sie eine Methode zum Laden der verfügbaren Listen hinzu. Dazu fügen Sie in der Klasse **ListItemsWebPart** eine Methode zum Laden der verfügbaren Listen hinzu. In diesem Artikel verwenden Sie simulierte Daten; Sie können aber auch die SharePoint-REST-API aufrufen, um die Liste der verfügbaren Listen aus dem aktuellen Web abzurufen. Um das Laden aus einem externen Dienst zu simulieren, implementiert die Methode eine Verzögerung von 2 Sekunden.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     private loadLists(): Promise<IDropdownOption[]> {
@@ -533,7 +533,7 @@ export interface IListInfo {
 
 4. Fügen Sie eine Methode hinzu, die Wertänderungen im Dropdown verarbeitet. Fügen Sie hierzu in der Klasse **ListItemsWebPart** eine neue Methode mit dem Namen**onListChange** hinzu.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     private onListChange(propertyPath: string, newValue: any): void {
@@ -550,7 +550,7 @@ export interface IListInfo {
 
 5. Rendern Sie die Webparteigenschaft „listName“ mithilfe des asynchronen Dropdown-Steuerelements für den Eigenschaftenbereich. Ändern Sie hierzu in der Klasse **ListItemsWebPart** die Methode **getPropertyPaneConfiguration** so ab, dass sie das asynchrone Dropdown-Steuerelement für den Eigenschaftenbereich zum Rendern der Webparteigenschaft **listName** verwendet.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -603,7 +603,7 @@ Beim Erstellen von SharePoint-Framework-Webparts müssen Sie möglicherweise ein
 
 1. Öffnen Sie im Code-Editor die Datei **src/webparts/listItems/ListItemsWebPart.manifest.json**. Fügen Sie im Abschnitt **properties** eine neue Eigenschaft mit dem Namen **item** hinzu. Der Code sollte wie folgt aussehen:
 
-  ```ts
+  ```typescript
   // ...
   "properties": {
     "listName": "",
@@ -618,7 +618,7 @@ Beim Erstellen von SharePoint-Framework-Webparts müssen Sie möglicherweise ein
 
 2. Ändern Sie den Code in der Datei **src/webparts/listItems/IListItemsWebPartProps.ts** in Folgendes:
 
-  ```ts
+  ```typescript
   export interface IListItemsWebPartProps {
     listName: string;
     item: string;
@@ -627,7 +627,7 @@ Beim Erstellen von SharePoint-Framework-Webparts müssen Sie möglicherweise ein
 
 3. Ändern Sie den Inhalt der Datei **src/webparts/listItems/components/IListItemsProps.ts** in Folgendes:
 
-  ```ts
+  ```typescript
   export interface IListItemsProps {
     listName: string;
     item: string;
@@ -636,7 +636,7 @@ Beim Erstellen von SharePoint-Framework-Webparts müssen Sie möglicherweise ein
 
 4. Ändern Sie in der Datei **src/webparts/listItems/ListItemsWebPart.ts** den Code der Methode **render** wie folgt:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     public render(): void {
@@ -653,7 +653,7 @@ Beim Erstellen von SharePoint-Framework-Webparts müssen Sie möglicherweise ein
 
 5. Ändern Sie in der Datei **src/webparts/listItems/loc/mystrings.d.ts** die Schnittstelle **IListItemsWebPartStrings** wie folgt:
 
-  ```ts
+  ```typescript
   declare interface IListItemsWebPartStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -707,7 +707,7 @@ export default class ListItems extends React.Component<IListItemsProps, {}> {
 
 Fügen Sie in der Datei **src/webparts/listItems/ListItemsWebPart.ts** in der Klasse **ListItemsWebPart** eine neue Methode zum Laden der verfügbaren Listenelemente aus der ausgewählten Liste hinzu. Wie auch bei der Methode zum Laden der verfügbaren Listen verwenden Sie hier simulierte Daten. In Abhängigkeit von der zuvor ausgewählten Liste gibt die Methode **loadItems** simulierte Listenelemente zurück. Wenn keine Liste ausgewählt wurde, löst die Methode die Zusage ohne Daten.
 
-```ts
+```typescript
 export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
   // ...
   private loadItems(): Promise<IDropdownOption[]> {
@@ -755,7 +755,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 
 Fügen Sie in der Klasse **ListItemsWebPart** eine neue Methode mit dem Namen**onListItemChange** hinzu. Nach Auswahl eines Elements in der Element-Dropdownliste sollte das Webpart den neuen Wert in den Webparteigenschaften speichern und das Webpart erneut rendern, um die Änderungen in der Benutzeroberfläche widerzuspiegeln.
 
-```ts
+```typescript
 export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
   // ...
   private onListItemChange(propertyPath: string, newValue: any): void {
@@ -773,7 +773,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 
 1. Fügen Sie in der Klasse **ListItemsWebPart** eine neue Klasseneigenschaft mit dem Namen **itemsDropdown** hinzu:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     private itemsDropDown: PropertyPaneAsyncDropdown;
     // ...
@@ -782,7 +782,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 
 2. Ändern Sie den Code der Methode **getPropertyPaneConfiguration** wie folgt:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -832,7 +832,7 @@ Zu Beginn, wenn keine Liste ausgewählt ist, ist das Elementdropdown deaktiviert
 
 1. Um diese Logik zu implementieren, erweitern Sie die zuvor definierte Methode **onListChange** wie folgt:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     private onListChange(propertyPath: string, newValue: any): void {

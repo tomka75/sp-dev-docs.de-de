@@ -3,11 +3,11 @@ title: "Verbinden Ihres clientseitigen Webparts mit SharePoint („Hello World�
 description: "Greien Sie auf SharePoint-Funktionalitäten und -Daten in SharePoint zu, und bieten Sie Endbenutzern eine stärker integrierte Erfahrung."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 123c1478a415fc30b788409e119286ecc2dcb802
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 04cd665f9bb3c09373de297d56a730220be5be78
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="connect-your-client-side-web-part-to-sharepoint-hello-world-part-2"></a>Verbinden Ihres clientseitigen Webparts mit SharePoint („Hello World“ Teil 2)
 
@@ -44,7 +44,7 @@ Wenn Sie die Workbench jedoch in SharePoint hosten, haben Sie Zugang zum Seitenk
 
 1. Verwenden Sie die folgende Variable in Ihrer Webpart-Klasse:
 
-  ```ts
+  ```typescript
   this.context.pageContext
   ```
 
@@ -105,7 +105,7 @@ Wenn Sie mit SharePoint-Listendaten arbeiten möchten, benötigen Sie ein Listen
 
 2. Definieren Sie die folgenden Modelle des Typs `interface` direkt oberhalb der Klasse **HelloWorldWebPart**:
 
-  ```ts
+  ```typescript
   export interface ISPLists {
     value: ISPList[];
   }
@@ -128,7 +128,7 @@ Für die Tests in der lokalen Workbench benötigen Sie einen simulierten Speiche
 
 2. Kopieren Sie den folgenden Code in die Datei **MockHttpClient.ts**:
 
-  ```ts
+  ```typescript
   import { ISPList } from './HelloWorldWebPart';
 
   export default class MockHttpClient  {
@@ -162,13 +162,13 @@ Jetzt können Sie die Klasse **MockHttpClient** in der Klasse **HelloWorldWebPar
 
 2. Kopieren Sie den folgenden Code, und fügen Sie ihn direkt unter `import * as strings from 'HelloWorldWebPartStrings';` ein.
 
-  ```ts
+  ```typescript
   import MockHttpClient from './MockHttpClient';
   ```
  
 3. Fügen Sie die folgende private Methode in der Klasse **HelloWorldWebPart** hinzu, um den Listenabruf zu simulieren:
 
-  ```ts
+  ```typescript
     private _getMockListData(): Promise<ISPLists> {
       return MockHttpClient.get()
         .then((data: ISPList[]) => {
@@ -192,7 +192,7 @@ SharePoint-Framework umfasst die Hilfsklasse **spHttpClient**, um REST-API-Anfor
 
 2. Kopieren Sie den folgenden Code, und fügen Sie ihn direkt unter `import MockHttpClient from './MockHttpClient';` ein:
 
-  ```ts
+  ```typescript
   import {
     SPHttpClient,
     SPHttpClientResponse   
@@ -201,7 +201,7 @@ SharePoint-Framework umfasst die Hilfsklasse **spHttpClient**, um REST-API-Anfor
 
 3. Fügen Sie die folgende private Methode in der Klasse **HelloWorldWebPart** hinzu, um Listen von SharePoint abzurufen:
 
-  ```ts
+  ```typescript
   private _getListData(): Promise<ISPLists> {
     return this.context.spHttpClient.get(this.context.pageContext.web.absoluteUrl + `/_api/web/lists?$filter=Hidden eq false`, SPHttpClient.configurations.v1)
       .then((response: SPHttpClientResponse) => {
@@ -278,7 +278,7 @@ SharePoint Workbench bietet Ihnen die Möglichkeit, Webparts entweder in Ihrer l
 
 1. Importieren Sie die Module **Environment** und ***EnvironmentType** aus dem Bundle **@microsoft/sp-core-library**. Fügen Sie es zum Abschnitt **import** oben auf der Seite hinzu, wie im folgenden Code dargestellt:
 
-  ```ts
+  ```typescript
   import {
     Environment,
     EnvironmentType
@@ -287,7 +287,7 @@ SharePoint Workbench bietet Ihnen die Möglichkeit, Webparts entweder in Ihrer l
 
 2. Fügen Sie die folgende private Methode in der Klasse **HelloWorldWebPart** hinzu, um die entsprechenden Methoden zum Abrufen der Listendaten aufzurufen:
 
-  ```ts
+  ```typescript
     private _renderListAsync(): void {
       // Local environment
       if (Environment.type === EnvironmentType.Local) {
@@ -316,7 +316,7 @@ SharePoint Workbench bietet Ihnen die Möglichkeit, Webparts entweder in Ihrer l
 
 4. Fügen Sie die folgende private Methode in der Klasse **HelloWorldWebPart** hinzu:
 
-  ```ts
+  ```typescript
     private _renderList(items: ISPList[]): void {
       let html: string = '';
       items.forEach((item: ISPList) => {
@@ -342,7 +342,7 @@ SharePoint Workbench bietet Ihnen die Möglichkeit, Webparts entweder in Ihrer l
 
 1. Navigieren Sie zur **render**-Methode, und ersetzen Sie den Code in der Methode durch den folgenden Code:
 
-  ```ts
+  ```typescript
       this.domElement.innerHTML = `
         <div class="${ styles.helloWorld }">
           <div class="${ styles.container }">

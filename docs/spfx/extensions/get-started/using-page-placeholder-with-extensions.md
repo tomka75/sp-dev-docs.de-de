@@ -3,11 +3,11 @@ title: Verwenden von Seitenplatzhaltern aus dem Anwendungsanpasser (Hello World,
 description: Erweitern Sie Ihre Hello World-Erweiterung, um mithilfe von SharePoint-Framework (SPFx)-Erweiterungen Seitenplatzhalter zu nutzen.
 ms.date: 01/11/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 8957a230f2ed649dca25725cdb6af4ed2795f71c
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: bb3782a816f0d3038f8e96d7eefe0c0d45aa6b7d
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="use-page-placeholders-from-application-customizer-hello-world-part-2"></a>Verwenden von Seitenplatzhaltern aus dem Anwendungsanpasser (Hello World, Teil 2)
 
@@ -27,7 +27,7 @@ Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in 
 
 Anwendungsanpasser-Erweiterungen werden bei `Site`-, `Web`- und `List`-Bereichen unterstützt. Sie können den Bereich steuern, indem Sie entscheiden, wo und wie der Anwendungsanpasser in Ihrem SharePoint-Mandanten registriert wird. Wenn der Anwendungsanpasser in dem Bereich vorhanden ist und gerendert wird, können Sie die folgende Methode verwenden, um Zugriff auf den Platzhalter zu erhalten. 
 
-```ts
+```typescript
     // Handling the Bottom placeholder
     if (!this._bottomPlaceholder) {
       this._bottomPlaceholder =
@@ -48,7 +48,7 @@ Beachten Sie, dass Sie einen bekannten Platzhalter mithilfe des entsprechenden b
 
 2. Fügen Sie `PlaceholderContent` und `PlaceholderName` zum Import aus `@microsoft/sp-application-base` hinzu, indem Sie die Importanweisung wie folgt aktualisieren:
 
-    ```ts
+    ```typescript
         import {
             BaseApplicationCustomizer, 
             PlaceholderContent,
@@ -58,7 +58,7 @@ Beachten Sie, dass Sie einen bekannten Platzhalter mithilfe des entsprechenden b
     
     Fügen Sie außerdem die folgenden Importanweisungen nach dem `strings`-Import oben in der Datei hinzu:
 
-    ```ts
+    ```typescript
         import styles from './AppCustomizer.module.scss';
         import { escape } from '@microsoft/sp-lodash-subset'; 
     ```
@@ -101,7 +101,7 @@ Beachten Sie, dass Sie einen bekannten Platzhalter mithilfe des entsprechenden b
     > [!NOTE] 
     > Wenn Ihr Befehlssatz die JSON-Eingabe „ClientSideComponentProperties“ verwendet, wird sie in das Objekt `BaseExtension.properties` deserialisiert. Sie können eine Benutzeroberfläche definieren, um sie zu beschreiben.
 
-    ```ts
+    ```typescript
         export interface IHelloWorldApplicationCustomizerProperties {
             Top: string;
             Bottom: string;
@@ -110,7 +110,7 @@ Beachten Sie, dass Sie einen bekannten Platzhalter mithilfe des entsprechenden b
 
 6. Fügen Sie die folgenden privaten Variablen innerhalb der **HelloWorldApplicationCustomizer**-Klasse hinzu. In diesem Szenario können dies nur lokale Variablen in einer `onRender`-Methode sein, wenn Sie sie jedoch für andere Objekte freigeben möchten, definieren Sie sie als private Variablen. 
 
-    ```ts
+    ```typescript
         export default class HelloWorldApplicationCustomizer
             extends BaseApplicationCustomizer<IHelloWorldApplicationCustomizerProperties> {
 
@@ -122,7 +122,7 @@ Beachten Sie, dass Sie einen bekannten Platzhalter mithilfe des entsprechenden b
 
 7. Aktualisieren Sie den Code der `onInit`-Methode wie folgt:
 
-    ```ts
+    ```typescript
             @override
             public onInit(): Promise<void> {
                 Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
@@ -138,7 +138,7 @@ Beachten Sie, dass Sie einen bekannten Platzhalter mithilfe des entsprechenden b
 
 8. Erstellen Sie eine neue private `_renderPlaceHolders`-Methode mit dem folgenden Code:
 
-    ```ts
+    ```typescript
         private _renderPlaceHolders(): void {
 
           console.log('HelloWorldApplicationCustomizer._renderPlaceHolders()');
@@ -217,7 +217,7 @@ Beachten Sie, dass Sie einen bekannten Platzhalter mithilfe des entsprechenden b
 
 9. Fügen Sie nach der `_renderPlaceHolders`-Methode die folgende Methode hinzu. In diesem Fall geben Sie eine einfache Konsolenmeldung aus, wenn die Erweiterung von der Seite entfernt wird. 
 
-    ```ts
+    ```typescript
         private _onDispose(): void {
           console.log('[HelloWorldApplicationCustomizer._onDispose] Disposed custom top and bottom placeholders.');
         }

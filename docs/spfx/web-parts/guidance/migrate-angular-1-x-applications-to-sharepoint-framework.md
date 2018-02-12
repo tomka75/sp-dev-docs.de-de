@@ -3,11 +3,11 @@ title: Migrieren von AngularJS-Anwendungen zu SharePoint-Framework
 description: "Erfahren Sie, wie Sie eine vorhandene AngularJS-Anwendung mit ngOfficeUIFabric-Formatvorlagen zu einem clientseitigen SharePoint-Framework-Webpart migrieren können."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 637a35881870b84303b052cdb5564fef26adff4b
-ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
+ms.openlocfilehash: e97a3728e6adf7bb2b9e740b686c1de35670fc34
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="migrate-angularjs-applications-to-sharepoint-framework"></a>Migrieren von AngularJS-Anwendungen zum SharePoint-Framework
 
@@ -56,13 +56,13 @@ Vor der Migration Ihrer AngularJS-Anwendung müssen Sie ein neues SharePoint-Fra
 
   ![SharePoint-Framework-Yeoman-Generator mit den Standardoptionen](../../../images/ng-migration-yeoman-generator.png)
 
-5. Warten Sie, bis das Gerüst erstellt wurde, und sperren Sie dann mithilfe des folgenden Befehls die Version der Projektabhängigkeiten:
+5. Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 
   ```sh
   npm shrinkwrap
   ```
 
-6. Öffnen Sie den Projektordner in einem Code-Editor. In diesem Tutorial verwenden Sie Visual Studio Code.
+6. Öffnen Sie den Projektordner in einem Code-Editor. In diesem Tutorial verwenden Sie Visual Studio Code.
 
   ![SharePoint-Framework-Projekt in Visual Studio Code](../../../images/ng-migration-project-visual-studio-code.png)
 
@@ -121,14 +121,14 @@ Erstellen Sie auf Ihrer SharePoint-Website eine neue Liste namens **Todo**. Füg
 
 1. Öffnen Sie im Code-Editor die Datei **./src/webparts/toDo/ToDoWebPart.ts**. Fügen Sie hinter der letzten Anweisung des Typs `import` folgenden Code ein:
 
-  ```ts
+  ```typescript
   import * as angular from 'angular';
   import 'ng-office-ui-fabric';
   ```
 
 2. Ändern Sie den Code der Methode **render** wie folgt:
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     // ...
     public render(): void {
@@ -251,7 +251,7 @@ Obwohl das Webpart ordnungsgemäß funktioniert, sieht es nicht so aus wie die u
 
 2. Ändern Sie in der Datei **./src/webparts/toDo/ToDoWebPart.ts** in der Methode **render** die Vorlage für das Anwendungsrendering so, dass sie die neuen Office UI Fabric-Symbole verwendet.
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     // ...
     public render(): void {
@@ -310,7 +310,7 @@ Die ursprüngliche AngularJS-Anwendung ist in einfachem JavaScript geschrieben, 
 
 Benennen Sie in Ihrem Projekt die Datei **./src/webparts/toDo/app/app.config.js** um in `app.config.ts`. Ändern Sie den Code in der Datei wie folgt:
 
-```ts
+```typescript
 import * as angular from 'angular';
 
 export default function() {
@@ -325,7 +325,7 @@ export default function() {
 
 Benennen Sie in Ihrem Projekt die Datei **./src/webparts/toDo/app/data.service.js** um in `DataService.ts`. Ändern Sie den Code in der Datei wie folgt:
 
-```ts
+```typescript
 import * as angular from 'angular';
 
 export interface ITodo {
@@ -516,7 +516,7 @@ export default class DataService implements IDataService {
 
 Benennen Sie in Ihrem Projekt die Datei **./src/webparts/toDo/app/home.controller.js** um in `HomeController.ts`. Ändern Sie den Code in der Datei wie folgt:
 
-```ts
+```typescript
 import * as angular from 'angular';
 import { IDataService, ITodo } from './DataService';
 
@@ -613,7 +613,7 @@ export default class HomeController {
 
 Benennen Sie in Ihrem Projekt die Datei **./src/webparts/toDo/app/app.module.js** um in `app.module.ts`. Ändern Sie den Code in der Datei wie folgt:
 
-```ts
+```typescript
 import * as angular from 'angular';
 import config from './app.config';
 import HomeController from './HomeController';
@@ -639,7 +639,7 @@ Da die AngularJS-Anwendung jetzt auf TypeScript-Basis erstellt wird und sich ihr
 
 1. Öffnen Sie im Code-Editor die Datei **./src/webparts/toDo/ToDoWebPart.ts**. Ändern Sie die Methode **render** wie folgt:
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     // ...
     public render(): void {
@@ -710,7 +710,7 @@ An diesem Punkt arbeitet die AngularJS-Anwendung korrekt und ist in ein clientse
 
 2. Ändern Sie in der Datei **./src/webparts/toDo/ToDoWebPart.ts** die Definition der Schnittstelle `IToDoWebPartProps` wie folgt:
 
-  ```ts
+  ```typescript
   export interface IToDoWebPartProps {
     todoListName: string;
     hideFinishedTasks: boolean;
@@ -719,7 +719,7 @@ An diesem Punkt arbeitet die AngularJS-Anwendung korrekt und ist in ein clientse
 
 3. Ändern Sie in der Datei **./src/webparts/toDo/ToDoWebPart.ts** die erste Importanweisung wie folgt:
 
-  ```ts
+  ```typescript
   import {
     BaseClientSideWebPart,
     IPropertyPaneSettings,
@@ -730,7 +730,7 @@ An diesem Punkt arbeitet die AngularJS-Anwendung korrekt und ist in ein clientse
 
 4. Ändern Sie in derselben Datei die Methode **getPropertyPaneConfiguration** wie folgt:
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -763,7 +763,7 @@ An diesem Punkt arbeitet die AngularJS-Anwendung korrekt und ist in ein clientse
 
 5. Fügen Sie die fehlenden Ressourcenzeichenfolgen hinzu. Ändern Sie hierzu den Code in der Datei **./src/webparts/toDo/loc/mystrings.d.ts** wie folgt:
 
-  ```ts
+  ```typescript
   declare interface IToDoWebPartStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -802,7 +802,7 @@ Löschen Sie in Ihrem Projekt die Datei **./src/webparts/toDo/app/app.config.ts*
 
 Entfernen Sie in der Datei **./src/webparts/toDo/app/app.module.ts** den Verweis auf die AngularJS-Konfiguration. Ändern Sie hierzu den Code wie folgt:
 
-```ts
+```typescript
 import * as angular from 'angular';
 import HomeController from './HomeController';
 import DataService from './DataService';
@@ -825,7 +825,7 @@ Der Datendienst ruft seine Konfiguration ursprünglich aus den in der Datei **ap
 
 Öffnen Sie im Code-Editor die Datei **./src/webparts/toDo/app/DataService.ts**, und ändern Sie den Code in der Datei wie folgt:
 
-```ts
+```typescript
 import * as angular from 'angular';
 
 export interface ITodo {
@@ -1014,7 +1014,7 @@ export default class DataService implements IDataService {
 
 1. Fügen Sie in der Datei **./src/webparts/toDo/ToDoWebPart.ts** zur Klasse **ToDoWebPart** eine neue Eigenschaft namens `$injector` hinzu:
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     private $injector: angular.auto.IInjectorService;
     // ...
@@ -1023,7 +1023,7 @@ export default class DataService implements IDataService {
 
 2. Aktualisieren Sie in derselben Datei die Methode **render** wie folgt:
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     // ...
     public render(): void {
@@ -1094,7 +1094,7 @@ export default class DataService implements IDataService {
 
 1. Öffnen Sie im Code-Editor die Datei **./src/webparts/toDo/app/HomeController.ts**. Fügen Sie in der Klasse **HomeController** die folgenden Eigenschaften hinzu:
 
-  ```ts
+  ```typescript
   export default class HomeController {
     // ...
     private sharePointApi: string = undefined;
@@ -1107,7 +1107,7 @@ export default class DataService implements IDataService {
 
 2. Erweitern Sie den Konstruktor der Klasse **HomeController** durch Injektion des Stammbereichsdiensts, und ändern Sie den Code wie folgt:
 
-  ```ts
+  ```typescript
   export default class HomeController {
     // ...
     public static $inject: string[] = ['DataService', '$window', '$rootScope'];
@@ -1135,7 +1135,7 @@ export default class DataService implements IDataService {
 
 3. Fügen Sie der Klasse **HomeController** die Methode **init** hinzu:
 
-  ```ts
+  ```typescript
   export default class HomeController {
     // ...
     private init(sharePointApi: string, todoListName: string, hideFinishedTasks?: boolean): void {
@@ -1157,7 +1157,7 @@ export default class DataService implements IDataService {
 
 4. Aktualisieren Sie alle übrigen Methoden in der Klasse **HomeController** so, dass sie die Konfigurationswerte der Klasseneigenschaften verwenden:
 
-  ```ts
+  ```typescript
   export default class HomeController {
     // ...
     private loadTodos(): void {

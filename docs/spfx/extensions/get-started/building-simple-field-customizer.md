@@ -3,11 +3,11 @@ title: Erstellen Ihrer ersten Field Customizer-Erweiterung
 description: Erstellen Sie ein Erweiterungsprojekt, und codieren und debuggen Sie dann Ihre Erweiterung mithilfe von SharePoint-Framework (SPFx)-Erweiterungen.
 ms.date: 01/11/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 42387ca54e230bb843d327f31a130d8c5395c558
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: 127c2290ab4379aca35f950bc46b2be48aa7ff9c
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="build-your-first-field-customizer-extension"></a>Erstellen Ihrer ersten Field Customizer-Erweiterung
 
@@ -97,7 +97,7 @@ Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in 
 
 Beachten Sie, dass die Basisklasse für den Field Customizer aus dem **sp-listview-extensibility**-Paket importiert wird, das den SharePoint-Frameworkcode enthält, der für den Field Customizer erforderlich ist.
 
-```ts
+```typescript
 import { Log } from '@microsoft/sp-core-library';
 import { override } from '@microsoft/decorators';
 import {
@@ -114,7 +114,7 @@ Die Logik für den Field Customizer befindet sich in den Methoden **OnInit()**, 
 
 Nachfolgend finden Sie den Inhalt von **onRenderCell()** und **onDisposeCell()** in der Standardlösung:
 
-```ts
+```typescript
 @override
   public onRenderCell(event: IFieldCustomizerCellEventParameters): void {
     // Use this method to perform your custom cell rendering.
@@ -231,7 +231,7 @@ Da wir nun den sofort einsetzbaren Anfangspunkt des Field Customizer erfolgreich
     
 2. Öffnen Sie die Datei **HelloWorldFieldCustomizer.ts** im Ordner **src\extensions\helloWorld**, und aktualisieren Sie die **onRednerCell**-Methode wie folgt.
 
-    ```ts
+    ```typescript
         @override
         public onRenderCell(event: IFieldCustomizerCellEventParameters): void {
 

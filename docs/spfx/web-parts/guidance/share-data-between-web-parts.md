@@ -3,11 +3,11 @@ title: Gemeinsame Verwendung von Daten zwischen clientseitigen Webparts
 description: "Ansätze, die Sie verwenden können, um Daten freizugeben und abgerufene Daten auf mehreren Webparts in SharePoint zu speichern"
 ms.date: 01/10/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 0d058b7f87b29f49683c9aec62d3d569d47c0d80
-ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
+ms.openlocfilehash: a9b423c5bf55ebe14f1b7c77c92b2c532750707e
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="share-data-between-client-side-web-parts"></a>Gemeinsame Verwendung von Daten zwischen clientseitigen Webparts
 
@@ -23,7 +23,7 @@ Bei Webpartprojekten ist es häufig der Fall, dass auf einer einzigen Seite mehr
 
 Ein Beispieldienst für das Laden von Daten könnte wie folgt aussehen:
 
-```ts
+```typescript
 import { IDocument } from './IDocument';
 
 export class DocumentsService {
@@ -47,7 +47,7 @@ export class DocumentsService {
 
 Clientseitige SharePoint Framework-Webparts würden diesen Dienst über den folgenden Code nutzen:
 
-```ts
+```typescript
 import { DocumentsService, IDocument } from '../../services';
 
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -86,7 +86,7 @@ Webparts, die mit SharePoint Framework erstellt werden, werden in separaten Mod
 
 Der zuvor beschriebene Datenzugriffsdienst könnte dazu wie folgt angepasst werden:
 
-```ts
+```typescript
 import { IDocument } from './IDocument';
 
 export class DocumentsService {
@@ -162,7 +162,7 @@ Eine weitere Möglichkeit, Daten zwischen unterschiedlichen Webparts auszutausch
 
 Die Datenspeicherung in einem Cookie lässt sich fast genauso implementieren wie die Speicherung in einer Variable mit globaler Bereichsdefinition. Dass die eigentlichen Daten in einem Cookie gespeichert werden, ist im Grunde genommen der einzige Unterschied.
 
-```ts
+```typescript
 import { IDocument } from './IDocument';
 import * as Cookies from 'js-cookie';
 
@@ -255,7 +255,7 @@ Sollen die Daten nur für die Dauer der aktuellen Sitzung gespeichert werden, so
 
 Der oben implementierte Datenzugriffsdienst auf Basis von Cookies lässt sich ganz einfach so anpassen, dass stattdessen der lokale Speicher verwendet wird:
 
-```ts
+```typescript
 import { IDocument } from './IDocument';
 
 export class DocumentsService {
@@ -324,7 +324,7 @@ Der in den oben beschriebenen Beispielen demonstrierte Dienst lässt sich mit nu
 
 Zunächst muss der Dienst eine Schnittstelle implementieren, die die von ihm unterstützten Vorgänge und Eigenschaften darstellt:
 
-```ts
+```typescript
 export interface IDocumentsService {
     getRecentDocument(): Promise<IDocument>;
     getRecentDocuments(startFrom: number): Promise<IDocument[]>;
@@ -339,7 +339,7 @@ export class DocumentsService implements IDocumentsService {
 
 Anschließend muss der Dienst einen [Dienstschlüssel](https://docs.microsoft.com/de-DE/javascript/api/sp-core-library/servicekey) festlegen, über den er in SharePoint Framework registriert und von Webparts genutzt wird.
 
-```ts
+```typescript
 import { ServiceScope, ServiceKey } from '@microsoft/sp-core-library';
 
 export class DocumentsService implements IDocumentsService {
@@ -375,7 +375,7 @@ SharePoint Framework-Dienste können mithilfe desselben Projekt-Buildsystems er
 
 Wenn der SharePoint Framework-Dienst bereit ist, können Sie ihn über ein Webpart nutzen, indem Sie sein Paket referenzieren und ihn dann über seinen Schlüssel abrufen.
 
-```ts
+```typescript
 // ...
 import { DocumentsService, IDocumentsService, IDocument } from 'react-recentdocuments-service';
 import { ServiceScope } from '@microsoft/sp-core-library';

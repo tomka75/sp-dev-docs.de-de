@@ -3,11 +3,11 @@ title: "Verwenden von Office UI Fabric React-Komponenten in clientseitigen Sh
 description: "Erstellen Sie ein einfaches Webpart, das die DocumentCard-Komponente von Office UI Fabric React verwendet."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 6dca176399de46565511ba6ae252408f22e515ef
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: b9db6665c214b81bf24d1a225a00ffb85b62b224
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="use-office-ui-fabric-react-components-in-your-sharepoint-client-side-web-part"></a>Verwenden von Office UI Fabric React-Komponenten in clientseitigen SharePoint-Webparts
 
@@ -48,7 +48,7 @@ Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in 
 
   * Übernehmen Sie den Standardnamen **documentcardexample-webpart** als Lösungsnamen, und drücken Sie die EINGABETASTE.
   * Wählen Sie **SharePoint Online only (latest)**, und drücken Sie die EINGABETASTE.
-  * Wählen Sie als Speicherort für die Dateien die Option **Use the current folder** aus.
+  * Wählen Sie die Option **Use the current folder** als Speicherort für die Dateien aus.
   * Wählen Sie **N**, damit die Erweiterung auf jeder Website explizit installiert werden muss, wenn sie verwendet wird. 
   * Wählen Sie **Webpart** als den zu erstellenden Typ von clientseitiger Komponente aus. 
 
@@ -78,7 +78,7 @@ Sie können die nachfolgend beschriebene Anleitung auch anhand dieses Videos in 
 
   Wie Sie sehen können, erstellt die`render`-Methode ein React-Element und rendert es im Webpart-DOM.
 
-  ```ts
+  ```typescript
     public render(): void {
       const element: React.ReactElement<IDocumentCardExampleProps > = React.createElement(
         DocumentCardExample,
@@ -131,7 +131,7 @@ Da wir bei der Erstellung der Lösung React als Framework ausgewählt haben, hat
 
 2. Fügen Sie die folgende `import`-Anweisung am Anfang der Datei hinzu, um React-Komponenten der Fabric zu importieren, die verwendet werden sollen.
 
-  ```ts
+  ```typescript
   import {
     DocumentCard,
     DocumentCardPreview,
@@ -143,7 +143,7 @@ Da wir bei der Erstellung der Lösung React als Framework ausgewählt haben, hat
 
 3. Löschen Sie die aktuelle `render`-Methode, und fügen Sie die folgende aktualisierte `render`-Methode hinzu:
 
-  ```ts
+  ```typescript
     public render(): JSX.Element {
       const previewProps: IDocumentCardPreviewProps = {
         previewImages: [

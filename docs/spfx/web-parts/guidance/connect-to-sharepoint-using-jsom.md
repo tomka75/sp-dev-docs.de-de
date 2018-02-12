@@ -3,11 +3,11 @@ title: Verbinden mit SharePoint mithilfe des JavaScript-Objektmodells (JSOM)
 description: "Verwendung von SharePoint JSOM beim Erstellen von Lösungen auf dem SharePoint Framework."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 9baa9eff13769a93239eb56bdda50139ecf391a4
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: df37c25ce3e2fabb82c44a90e0e7391226e07c9a
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="connect-to-sharepoint-using-the-javascript-object-model-jsom"></a>Verbinden mit SharePoint mithilfe des JavaScript-Objektmodells (JSOM)
 
@@ -55,13 +55,13 @@ Jeder dieser Ansätze hat seine Vor- und Nachteile, die Sie unbedingt kennen sol
 
   ![Der SharePoint-Framework-Yeoman-Generator mit den Standardoptionen](../../../images/tutorial-spjsom-yo-sharepoint.png)
 
-5. Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
+5. Warten Sie, bis das Gerüst erstellt wurde, und sperren Sie dann mithilfe des folgenden Befehls die Version der Projektabhängigkeiten:
 
   ```sh
   npm shrinkwrap
   ```
 
-6. Öffnen Sie den Projektordner im Code-Editor. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
+6. Öffnen Sie den Projektordner in einem Code-Editor. In diesem Artikel wird Visual Studio Code in den Schritten und Screenshots verwendet, Sie können jedoch einen beliebigen Editor verwenden.
 
   ![Das SharePoint-Framework-Projekt in Visual Studio-Code](../../../images/tutorial-spjsom-vscode.png)
 
@@ -155,7 +155,7 @@ Um die SharePoint JSOM-Skripts in die SPFx-Komponente zu laden, müssen Sie auf 
 
 Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Fügen Sie den folgenden Code hinter der letzten `import`-Anweisung ein:
 
-```ts
+```typescript
   require('sp-init');
   require('microsoft-ajax');
   require('sp-runtime');
@@ -172,7 +172,7 @@ Damit Sie sich mit SharePoint verbinden können, muss die React-Komponente die U
 
 1. Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/ISharePointListsProps.ts**, und fügen Sie der Schnittstelle `ISharePointListsProps` die `siteUrl`-Eigenschaft hinzu:
 
-  ```ts
+  ```typescript
   export interface ISharePointListsProps {
     description: string;
     siteUrl: string;
@@ -181,7 +181,7 @@ Damit Sie sich mit SharePoint verbinden können, muss die React-Komponente die U
 
 2. Um die URL der aktuellen Website an die Komponente zu übergeben, öffnen Sie die Datei **./src/webparts/sharePointLists/SharePointListsWebPart.ts** im Code-Editor, und ändern Sie die `render`-Methode in:
 
-  ```ts
+  ```typescript
   export default class SharePointListsWebPart extends BaseClientSideWebPart<ISharePointListsWebPartProps> {
     public render(): void {
       const element: React.ReactElement<ISharePointListsProps > = React.createElement(
@@ -205,7 +205,7 @@ Die React-Komponente lädt Daten aus SharePoint, um sie für den Benutzer wieder
 
 Erstellen Sie im Code-Editor im Ordner **./src/webparts/sharePointLists/components** eine neue Daten namens **ISharePointListsState.ts**, und fügen Sie folgenden Inhalt ein:
 
-```ts
+```typescript
 export interface ISharePointListsState {
     listTitles: string[];
     loadingLists: boolean;
@@ -219,13 +219,13 @@ Nachdem Sie die Schnittstelle definiert haben, indem Sie die Form des Komponente
 
 1. Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Fügen Sie unter den vorhandenen `import` -Anweisungen Folgendes hinzu:
 
-  ```ts
+  ```typescript
   import { ISharePointListsState } from './ISharePointListsState';
   ```
 
 2. Im nächsten Schritt ändern Sie die Signatur der `SharePointLists`-Klasse in:
 
-  ```ts
+  ```typescript
   export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
     // ...
   }
@@ -233,7 +233,7 @@ Nachdem Sie die Schnittstelle definiert haben, indem Sie die Form des Komponente
 
 3. Fügen Sie in der `SharePointLists`-Klasse einen Konstruktor mit dem Standardstatuswert hinzu:
 
-  ```ts
+  ```typescript
   export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
     constructor(props?: ISharePointListsProps, context?: any) {
       super();
@@ -257,7 +257,7 @@ Das clientseitige Webpart, das in diesem Artikel als Beispiel verwendet wurde, l
 
 1. Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Fügen Sie in der `SharePointLists`-Klasse eine neue Methode mit dem Namen`getListsTitles` hinzu.
 
-  ```ts
+  ```typescript
   export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
     constructor(props?: ISharePointListsProps, context?: any) {
       super();
@@ -280,7 +280,7 @@ Das clientseitige Webpart, das in diesem Artikel als Beispiel verwendet wurde, l
 
 2. Um die richtigen Bereichsdefinition der Methode sicherzustellen, binden wir sie im Konstruktor an das Webpart. Verwenden Sie in der `getListsTitles`-Methode SharePoint JSOM, um die Titel der SharePoint-Listen auf die aktuelle Website zu laden:
 
-  ```ts
+  ```typescript
   export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
     // ...
     private getListsTitles(): void {
@@ -424,7 +424,7 @@ Um dies zu unterstützen, erweitern Sie den Status der React-Komponente um eine 
 
 1. Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/ISharePointListsState.ts**, und fügen Sie folgenden Code ein:
 
-  ```ts
+  ```typescript
   export interface ISharePointListsState {
       listTitles: string[];
       loadingLists: boolean;
@@ -435,7 +435,7 @@ Um dies zu unterstützen, erweitern Sie den Status der React-Komponente um eine 
 
 2. Fügen Sie die neu hinzugefügte Eigenschaft zu den Statusdefinitionen in der React-Komponente hinzu. Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Aktualisieren Sie den Konstruktor auf den folgenden Code:
 
-  ```ts
+  ```typescript
   export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
     constructor(props?: ISharePointListsProps, context?: any) {
       super();
@@ -455,7 +455,7 @@ Um dies zu unterstützen, erweitern Sie den Status der React-Komponente um eine 
 
 3. Aktualisieren Sie in der gleichen Datei die `getListsTitles`-Methode auf den folgenden Code:
 
-  ```ts
+  ```typescript
   export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
     // ...
     private getListsTitles(): void {
@@ -558,7 +558,7 @@ SPFx-Komponenten sollten SharePoint JSOM-Skripts nur einmal laden. In diesem Bei
 
 1. Öffnen Sie im Code-Editor die Datei **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Fügen Sie im oberen Bereich der Datei eine `import`-Anweisung hinzu, die auf `SPComponentLoader` verweist. Fügen Sie die `SharePointLists`-Klasse der `componentDidMount`-Methode hinzu.
 
-  ```ts
+  ```typescript
   import { SPComponentLoader } from '@microsoft/sp-loader';
 
   export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {

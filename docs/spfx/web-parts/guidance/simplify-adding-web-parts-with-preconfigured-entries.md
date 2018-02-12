@@ -3,11 +3,11 @@ title: "Vereinfachen des Hinzufügens von Webparts mit vorkonfigurierten Einträ
 description: "Erfahren Sie, wie Sie Benutzern mithilfe vorkonfigurierter Einträge in Ihrem clientseitigen SharePoint-Framework-Webpart vorkonfigurierte Versionen des Webparts bereitstellen können."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: a77add94c3a099dc8c81123a0a7defd8f9ee370a
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 68ba1a0501a4a9154874ea15d01859369ab05577
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="simplify-adding-web-parts-with-preconfigured-entries"></a>Vereinfachen des Hinzufügens von Webparts mit vorkonfigurierten Einträgen
 
@@ -126,7 +126,7 @@ Um anzuzeigen, wie Sie beim Erstellen von Webparts vorkonfigurierte Einträge ve
   md react-preconfiguredentries
   ```
 
-2. Wechseln Sie in den Projektordner.
+2. Wechseln Sie zum Projektordner.
 
   ```sh
   cd react-preconfiguredentries
@@ -148,7 +148,7 @@ Um anzuzeigen, wie Sie beim Erstellen von Webparts vorkonfigurierte Einträge ve
 
   ![SharePoint-Framework-Yeoman-Generator mit den Standardoptionen](../../../images/preconfiguredentries-yeoman.png)
 
-5. Warten Sie, bis das Gerüst erstellt wurde, und sperren Sie dann mithilfe des folgenden Befehls die Version der Projektabhängigkeiten:
+5. Sobald das Gerüst abgeschlossen ist, sperren Sie die Version der Projektabhängigkeiten, indem Sie den folgenden Befehl ausführen:
 
   ```sh
   npm shrinkwrap
@@ -191,7 +191,7 @@ Fügen Sie im Webpartmanifest Webparteigenschaften hinzu, damit Benutzer das Kat
   
 3. Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/IGalleryWebPartProps.ts**. Ändern Sie deren Code in Folgendes:
 
-  ```ts
+  ```typescript
   export interface IGalleryWebPartProps {
     listName: string;
     order: string;
@@ -204,7 +204,7 @@ Fügen Sie im Webpartmanifest Webparteigenschaften hinzu, damit Benutzer das Kat
   
 4. Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/galleryWebPart.ts**. Ändern Sie die Methode **render** des Webparts wie folgt:
 
-  ```ts
+  ```typescript
   export default class GalleryWebPart extends BaseClientSideWebPart<IGalleryWebPartProps> {
     // ...
     public render(): void {
@@ -223,7 +223,7 @@ Fügen Sie im Webpartmanifest Webparteigenschaften hinzu, damit Benutzer das Kat
 
 5. Aktualisieren Sie die React-Hauptkomponente so, dass die Werte der Eigenschaften angezeigt werden. Wenn das Webpart nicht konfiguriert wurde, soll der standardmäßige Webpart-Platzhalter angezeigt werden. Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/components/Gallery.tsx**, und ändern Sie den in der Datei enthaltenen Code wie folgt:
 
-  ```ts
+  ```typescript
   import * as React from 'react';
   import styles from './Gallery.module.scss';
   import { IGalleryProps } from './IGalleryProps';
@@ -290,7 +290,7 @@ Fügen Sie im Webpartmanifest Webparteigenschaften hinzu, damit Benutzer das Kat
 
 6. Aktualisieren Sie die Schnittstelle der React-Hauptkomponente so, dass sie der Webparteigenschaften-Schnittstelle entspricht. Dies ist notwendig, da sämtliche Webparteigenschaften an diese Komponente übergeben werden. Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/components/IGalleryProps.ts**, und ändern Sie den in der Datei enthaltenen Code wie folgt:
 
-  ```ts
+  ```typescript
   import { IGalleryWebPartProps } from '../IGalleryWebPartProps';
 
   export interface IGalleryProps extends IGalleryWebPartProps {
@@ -303,7 +303,7 @@ Damit Benutzer die neu definierten Eigenschaft verwenden können, um das Webpart
 
 1. Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/galleryWebPart.ts**. Ändern Sie im oberen Abschnitt der Datei die Importanweisung **@microsoft/sp-webpart-base** wie folgt:
 
-  ```ts
+  ```typescript
   import {
     BaseClientSideWebPart,
     IPropertyPaneConfiguration,
@@ -315,7 +315,7 @@ Damit Benutzer die neu definierten Eigenschaft verwenden können, um das Webpart
 
 2. Ändern Sie **propertyPaneSettings** wie folgt:
 
-  ```ts
+  ```typescript
   export default class GalleryWebPart extends BaseClientSideWebPart<IGalleryWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -386,7 +386,7 @@ In einem realen Szenario würden Sie die Liste der Listen von der aktuellen Shar
 
 1. Öffnen Sie im Code-Editor die Datei **./src/webparts/gallery/loc/mystrings.d.ts**. Ändern Sie den in der Datei enthaltenen Code wie folgt:
 
-  ```ts
+  ```typescript
   declare interface IGalleryStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
