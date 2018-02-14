@@ -1,11 +1,11 @@
 ---
 title: "Hinzufügen eines benutzerdefinierten Menüband zu Ihrer SharePoint-Website"
 ms.date: 11/03/2017
-ms.openlocfilehash: 371711f55879477a62cd891c04e86e8aa2101db0
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 3f7d212ca1b263d61f17e26092618753c9daa70e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="add-a-custom-ribbon-to-your-sharepoint-site"></a>Hinzufügen eines benutzerdefinierten Menübands zu Ihrer SharePoint-Website
 
@@ -13,18 +13,19 @@ Hinzufügen oder Entfernen eines benutzerdefinierten Menübands zu bzw. von Ihre
 
 _**Gilt für:** Add-Ins für SharePoint | SharePoint 2013 | SharePoint Online_
 
-Das [Core.RibbonCommands](https://github.com/SharePoint/PnP/tree/master/Samples/Core.RibbonCommands)-Codebeispiel zeigt, wie Sie ein benutzerdefiniertes Menüband zu Ihrer SharePoint-Website hinzufügen. Verwenden Sie diese Lösung, wenn Folgendes auf Sie zutrifft:
+Das [Core.RibbonCommands]((https://github.com/SharePoint/PnP/tree/master/Samples/Core.RibbonCommands))-Codebeispiel zeigt, wie Sie ein benutzerdefiniertes Menüband zu Ihrer SharePoint-Website hinzufügen. Verwenden Sie diese Lösung, wenn Folgendes auf Sie zutrifft:
 
 - Sie möchten ein benutzerdefiniertes Menüband, eine Gruppe oder eine Schaltfläche zu Ihrer SharePoint-Website oder -Liste hinzufügen.
     
 - Sie möchten ein benutzerdefiniertes Menüband für bestimmte Inhaltstypen, Websites oder Listen anzeigen.
 
-**Hinweis**: In diesem Codebeispiel wird gezeigt, wie Sie die JavaScript-Funktionen aufrufen, die Ereignisse behandeln, die von den Schaltflächen des Menübands ausgelöst wurden. Dieses Codebeispiel stellt nicht die Implementierung der JavaScript-Ereignishandlerfunktionen für die Schaltflächen des Menübands bereit. Um die JavaScript-Ereignishandlerfunktionen zu implementieren, verwenden Sie die eingebettete JavaScript-Technik zum Einbetten der JavaScript-Ereignishandlerfunktionen auf allen Seiten, auf denen das benutzerdefinierte Menüband angezeigt wird. Weitere Informationen zum Einbetten von JavaScript finden Sie unter [Anpassen der Benutzeroberfläche Ihrer SharePoint-Website mithilfe von JavaScript](Customize-your-SharePoint-site-UI-by-using-JavaScript.md).
+> [!NOTE] 
+> In diesem Codebeispiel wird gezeigt, wie Sie die JavaScript-Funktionen aufrufen, die Ereignisse behandeln, die von den Schaltflächen des Menübands ausgelöst wurden. Dieses Codebeispiel stellt nicht die Implementierung der JavaScript-Ereignishandlerfunktionen für die Schaltflächen des Menübands bereit. Um die JavaScript-Ereignishandlerfunktionen zu implementieren, verwenden Sie die eingebettete JavaScript-Technik zum Einbetten der JavaScript-Ereignishandlerfunktionen auf allen Seiten, auf denen das benutzerdefinierte Menüband angezeigt wird. Weitere Informationen zum Einbetten von JavaScript finden Sie unter [Anpassen der Benutzeroberfläche Ihrer SharePoint-Website mithilfe von JavaScript](Customize-your-SharePoint-site-UI-by-using-JavaScript.md).
 
 ## <a name="before-you-begin"></a>Bevor Sie beginnen:
 <a name="sectionSection0"> </a>
 
-Laden Sie zunächst das [Core.RibbonCommands](https://github.com/SharePoint/PnP/tree/master/Samples/Core.RibbonCommands)-Beispiel-Add-In aus dem Projekt [Office 365-Entwicklermuster und -vorgehensweisen](https://github.com/SharePoint/PnP/tree/dev) auf GitHub herunter.
+Laden Sie zunächst das [Core.RibbonCommands]((https://github.com/SharePoint/PnP/tree/master/Samples/Core.RibbonCommands))-Beispiel-Add-In aus dem Projekt [Office 365-Entwicklermuster und -vorgehensweisen]((https://github.com/SharePoint/PnP/tree/dev)) auf GitHub herunter.
 
 ## <a name="using-the-coreribboncommands-app"></a>Verwenden der Core.RibbonCommands-App
 <a name="sectionSection1"> </a>
@@ -35,7 +36,8 @@ In diesem Codebeispiel wird ein benutzerdefiniertes Menüband mithilfe von „Mo
 
 Das benutzerdefinierte Menüband wird aufgrund von **RegistrationId="0x01"** und **RegistrationType="ContentType"** auf allen Websites und Listen im Hostweb angezeigt.  **RegistrationId="0x01"** und **RegistrationType="ContentType"** geben an, dass das Menüband für alle Inhaltstypen angezeigt wird, die vom Typ **"0x01"** erben, bei denen es sich um Inhaltstypen handelt, die von der  **Item**-Klasse erben. Um Ihr Menüband auf einen benutzerdefinierten Inhaltstyp anzuwenden, ersetzen Sie "0x01" durch die ID Ihres benutzerdefinierten Inhaltstyps. Um das Menüband auf eine Liste anzuwenden, ändern Sie den Wert von RegistrationType in **List**. 
 
-**Hinweis** Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
+> [!NOTE] 
+> Der Code in diesem Artikel wird wie besehen und ohne jegliche Garantie zur Verfügung gestellt, gleich ob ausdrücklich oder konkludent, einschließlich jedweder stillschweigenden Gewährleistung der Eignung für einen bestimmten Zweck, Marktgängigkeit oder Nichtverletzung von Rechten.
 
 ```XML
 <?xml version="1.0" encoding="utf-8" ?>
@@ -241,7 +243,8 @@ Das benutzerdefinierte Menüband wird aufgrund von **RegistrationId="0x01"** und
 </Elements>
 ```
 
-**Hinweis** Wenn Sie die eingebettete JavaScript-Methode verwenden, um die Ereignisbehandlung für die Schaltflächen Ihrer Menübänder zu implementieren, muss die JavaScript-Datei die in den **CommandUIHandler**-Elementen definierten Methoden definieren. Die eingebettete JavaScript-Datei sollte beispielsweise Funktionen wie **GetCurrentItem** und **AddNewCustom** implementieren.
+> [!NOTE] 
+> Wenn Sie die eingebettete JavaScript-Methode verwenden, um die Ereignisbehandlung für die Schaltflächen Ihrer Menübänder zu implementieren, muss die JavaScript-Datei die in den **CommandUIHandler**-Elementen definierten Methoden definieren. Die eingebettete JavaScript-Datei sollte beispielsweise Funktionen wie **GetCurrentItem** und **AddNewCustom** implementieren.
 
 **InitializeButton_Click** in Default.aspx führt die folgenden Aufgaben aus:
 
@@ -304,7 +307,7 @@ Das benutzerdefinierte Menüband wird aufgrund von **RegistrationId="0x01"** und
         }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Siehe auch
 <a name="bk_addresources"> </a>
 
 -  [Lösungsleitfaden für Office 365-Entwicklungsmuster und -Vorgehensweisen](Office-365-development-patterns-and-practices-solution-guidance.md)

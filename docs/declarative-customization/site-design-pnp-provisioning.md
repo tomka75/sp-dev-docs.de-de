@@ -2,11 +2,11 @@
 title: "Erstellen eines vollständigen SharePoint-Websitedesigns mithilfe des PnP-Bereitstellungsmoduls"
 description: "Erstellen eines vollständigen SharePoint-Websitedesigns mithilfe des PnP-Bereitstellungsmoduls"
 ms.date: 01/08/2018
-ms.openlocfilehash: da2c12a0a4dcbe4f6a9e2e8674139e9244e1cebf
-ms.sourcegitcommit: e4bf60eabffe63dc07f96824167d249c0678db82
+ms.openlocfilehash: a26e587cc274be1b49625e313b3e393e76bdba3f
+ms.sourcegitcommit: 217fdf16ad7359a36c49a56b13278e26a178a11a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="calling-the-pnp-provisioning-engine-from-a-site-script"></a>Aufrufen des PnP-Bereitstellungsmoduls über ein Websiteskript
 
@@ -130,7 +130,7 @@ Zum Testen Ihres Flows müssen Sie eine POST-Anforderung senden. Das können Sie
 
 ```powershell
 $uri = "[the URI you copied in step 14 when creating the flow]"
-$body = "{webUrl:'somesiteurl'}
+$body = "{webUrl:'somesiteurl'}"
 Invoke-RestMethod -Uri $uri -Method Post -ContentType "application/json" -Body $body
 ```
 
