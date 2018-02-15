@@ -1,20 +1,21 @@
 ---
 title: Teambasierte Entwicklung mit dem SharePoint-Framework
-ms.date: 09/25/2017
+description: "Vorbereiten der Entwicklungsumgebung, Arbeiten mit internen Paketen, Sicherstellen von Codekonsistenz und Qualität und Aktualisieren von Projekten."
+ms.date: 01/25/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 47ec75d99928e3f71ffd6222dc83570203f3afae
-ms.sourcegitcommit: d68d6cf927d69696a3561f7d8ffe9a3ed9dbd03c
+ms.openlocfilehash: ccc71e7ee2f132bddc88e6da040be489eeddb17a
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="team-based-development-on-the-sharepoint-framework"></a>Teambasierte Entwicklung mit dem SharePoint-Framework
 
 SharePoint Framework ist ein neues Entwicklungsmodell zum Erstellen von SharePoint-Anpassungen. Im Gegensatz zu anderen bisher verfügbaren SharePoint-Entwicklungsmodellen konzentriert sich das SharePoint Framework auf die clientseitige Entwicklung und basiert auf beliebten Open Source-Tools, wie z. B. gulp und webpack. Ein wesentlicher Vorteil dieser Änderung besteht darin, dass Entwickler SharePoint-Anpassungen auf einer beliebigen Plattform erstellen können.
 
-SharePoint Framework ist ein Entwicklungsmodell, und trotz der Unterschiede in der zugrunde liegenden Technologie gelten die gleichen Konzepte bei der Verwendung des Modells zum Erstellen von Lösungen wie auch bei anderen Entwicklungsmodellen, die bisher von SharePoint-Entwicklern verwendet wurden. Entwickler verwenden die Toolkette von SharePoint Framework, um ihre Lösungen zu erstellen und zu testen. Wenn sie fertig sind, übergeben Sie das Lösungspaket, das auf dem SharePoint-Mandanten bereitgestellt werden soll, für weitere Tests und zur Veröffentlichung.
+SharePoint-Framework ist ein Entwicklungsmodell, und trotz der Unterschiede in der zugrunde liegenden Technologie gelten die gleichen Konzepte bei der Verwendung des Modells zum Erstellen von Lösungen wie auch bei anderen Entwicklungsmodellen, die bisher von SharePoint-Entwicklern verwendet wurden. Entwickler verwenden die Toolkette von SharePoint-Framework, um ihre Lösungen zu erstellen und zu testen. Wenn sie fertig sind, übergeben sie das Lösungspaket, das auf dem SharePoint-Mandanten bereitgestellt werden soll, für weitere Tests und zur Veröffentlichung.
 
-SharePoint Framework besteht aus ein paar unterschiedlichen Paketen. Aus diesen Paketen (jedes in seiner eigenen spezifischen Version) besteht eine Version des SharePoint Framework. Release Candidate (RC0) des SharePoint Framework besteht beispielsweise aus den folgenden Paketversionen:
+SharePoint Framework besteht aus ein paar unterschiedlichen Paketen. Aus diesen Paketen (jedes in seiner eigenen spezifischen Version) besteht eine Version von SharePoint-Framework. Die allgemein verfügbare SharePoint-Framework-Version besteht beispielsweise aus den folgenden Paketversionen:
 
 - @microsoft/sp-client-base v1.0.0
 - @microsoft/sp-core-library v1.0.0
@@ -23,7 +24,7 @@ SharePoint Framework besteht aus ein paar unterschiedlichen Paketen. Aus diesen 
 - @microsoft/sp-module-interfaces v1.0.0
 - @microsoft/sp-webpart-workbench v1.0.0
 
-Damit ein Projekt auf eine bestimmte Version von SharePoint Framework abzielt, muss es auf all die unterschiedlichen Pakete in der korrekten Version verweisen. Beim Erstellen von Gerüsten für neue Projekte fügt der Yeoman-Generator von SharePoint Framework automatisch die erforderlichen Verweise auf das Paket aus der entsprechenden Version von SharePoint Framework hinzu. Wenn das Projekt allerdings auf eine neuere Version von SharePoint Framework aktualisiert wird, müssen Entwickler besonders darauf Acht geben, die Versionsnummern der SharePoint Framework-Pakete korrekt zu aktualisieren.
+Damit ein Projekt auf eine bestimmte SharePoint-Framework-Version abzielt, muss es auf all die unterschiedlichen Pakete in der korrekten Version verweisen. Beim Erstellen von Gerüsten für neue Projekte fügt der Yeoman-Generator von SharePoint-Framework automatisch die erforderlichen Verweise auf das Paket aus der entsprechenden SharePoint-Framework-Version hinzu. Wenn das Projekt allerdings auf eine neuere SharePoint-Framework-Version aktualisiert wird, müssen Entwickler besonders darauf Acht geben, die Versionsnummern der SharePoint-Framework-Pakete korrekt zu aktualisieren.
 
 ## <a name="preparing-the-development-environment"></a>Vorbereiten der Entwicklungsumgebung
 
@@ -39,11 +40,11 @@ Zum Erstellen von SharePoint Framework-Lösungen müssen Entwickler eine bestimm
 
 Für SharePoint Framework muss Node.js auf dem Entwicklercomputer installiert sein. Node.js wird als Laufzeit für Entwurfszeittools verwendet, die zum Erstellen und Verpacken des Projekts verwendet werden. Node.js wird global auf dem Entwicklercomputer installiert, und es gibt Lösungen, die bei Bedarf das parallele Ausführen mehrerer Versionen von Node.js unterstützen.
 
-> Lesen Sie den Artikel zum [Installieren von Node.js und den unterstützten Versionen](./set-up-your-development-environment.md).
+Weitere Informationen finden Sie unter [Installieren von Node.js und den unterstützten Versionen](./set-up-your-development-environment.md).
 
 #### <a name="npm"></a>npm
 
-npm entspricht NuGet in .NET Projekten: Es ermöglicht Entwicklern, Pakete zur Verwendung in SharePoint Framework-Projekten zu erwerben und zu installieren. Npm wird auch zum Installieren der SharePoint Framework-Toolkette verwendet. Entwickler verwenden in der Regel die neueste Version von npm und installieren es global auf ihrem Computer. npm selbst ist ein Node.js-Paket, wenn Sie also mehrere Versionen von Node.js parallel ausführen, installiert jedes Paket seine eigene Version von npm.
+npm entspricht NuGet in .NET Projekten: Es ermöglicht Entwicklern, Pakete zur Verwendung in SharePoint-Framework-Projekten zu erwerben und zu installieren. npm wird auch zum Installieren der SharePoint-Framework-Toolkette verwendet. Entwickler verwenden in der Regel die neueste Version von npm und installieren es global auf ihrem Computer. npm selbst ist ein Node.js-Paket, wenn Sie also mehrere Versionen von Node.js parallel ausführen, installiert jedes Paket seine eigene Version von npm.
 
 #### <a name="gulp"></a>gulp
 
@@ -111,7 +112,8 @@ Ein neues SharePoint Framework-Projekt, für das mit dem Yeoman-Generator von Sh
 
 Eine allgemeine Lösung für Projekte, die auf der Open Source-Toolkette basieren, mit der das Risiko minimiert werden kann, dass sich Abhängigkeiten während des Projekts ändern, besteht darin, die Version aller Abhängigkeiten zu sperren. Beim Hinzufügen einer Abhängigkeit zum Projekt können Entwickler die Abhängigkeit mit einer bestimmten Version und nicht mit einem Versionsbereich installieren, indem sie den `npm install`-Befehl mit dem `--save-exact`-Argument aufrufen. Dies hat jedoch keine Auswirkungen auf die untergeordneten Abhängigkeiten des jeweiligen Projekts. Um die Version aller Abhängigkeiten und deren untergeordnete Elemente im Projekt effektiv zu sperren, können Entwickler den `npm shrinkwrap`-Befehl verwenden. Sobald dieser ausgeführt wird, wird eine Liste aller Abhängigkeiten und ihrer Versionen zum Zeitpunkt der Ausführung erstellt und in der Datei **npm-shrinkwrap.json** aufgezeichnet, die in die Quellcodeverwaltung aufgenommen werden sollte. Beim Wiederherstellen von Abhängigkeiten verwendet npm die genauen Versionen aus dieser Datei anstelle der neuesten Version, sodass der jeweilige Versionsbereich erfüllt wird.
 
-> Hinweis: Wenn Sie im Ordner **node_modules** Pakete installiert haben, die nicht als Abhängigkeiten in der Datei **package.json** aufgeführt sind oder keine Abhängigkeit eines der Pakete darstellen, wird beim Erstellen der Datei **npm-shrinkwrap.json** mit großer Wahrscheinlichkeit ein Fehler angezeigt. In diesem Fall können Sie entweder die Pakete sehen, die den Fehler verursachen und diese der Datei **package.json** hinzufügen oder sie aus dem Ordner **node_modules** entfernen, oder Sie löschen den Ordner **node_modules** komplett, stellen alle Abhängigkeiten wieder her, und generieren dann die shrinkwrap-Datei.
+> [!NOTE] 
+> Wenn Sie im Ordner **node\_modules** Pakete installiert haben, die nicht als Abhängigkeiten in der Datei **package.json** aufgeführt sind oder keine Abhängigkeit eines der Pakete darstellen, wird beim Generieren der Datei **npm-shrinkwrap.json** mit großer Wahrscheinlichkeit ein Fehler angezeigt. In diesem Fall können Sie entweder die Pakete sehen, die den Fehler verursachen, und diese der Datei **package.json** hinzufügen oder sie aus dem Ordner **node\_modules** entfernen; alternativ löschen Sie den Ordner **node_modules** komplett, stellen alle Abhängigkeiten wieder her, und generieren dann die shrinkwrap-Datei.
 
 ### <a name="add-the-project-to-source-control"></a>Hinzufügen des Projekts zur Quellcodeverwaltung
 
@@ -119,13 +121,14 @@ Damit das restliche Team an demselben Projekt arbeiten kann, fügen Sie es dem Q
 
 Gerüste für SharePoint Framework-Projekte werden mit der Datei **.gitignore** erstellt, die beschreibt, welche Dateien von der Quellcodeverwaltung ausgeschlossen werden sollten. Wenn Ihr Team ein anderes Quellcodeverwaltungssystem als Git verwendet (z. B. Visual Studio Team System mit Team Foundation System-Repositorys), sollten Sie sicherstellen, dass Sie die korrekten Dateien aus dem Projekt in die Quellcodeverwaltung einschließen. Durch Ausschließen der Abhängigkeiten und automatisch generierten Dateien während des Buildprozesses können Sie auch sicherstellen, dass Ihr Team effizient arbeitet.
 
-Insbesondere den Ordner **node_modules** sollten Entwickler nicht in die Quellcodeverwaltung einschließen. Dieser Ordner enthält Pakete, von denen das Paket abhängig ist und die automatisch beim Wiederherstellen von Abhängigkeiten mithilfe des `npm install`-Befehl installiert werden. Einige Pakete werden zu Binärdateien kompiliert, und der Kompilierungsprozess ist vom Betriebssystem abhängig. Wenn das Team auf unterschiedlichen Betriebssystemen arbeitet, kann durch Einschließen des Ordners **node_modules** in die Quellcodeverwaltung der Buildvorgang für einige Teammitglieder unterbrochen werden.
+Insbesondere den Ordner **node\_modules** sollten Entwickler nicht in die Quellcodeverwaltung einschließen. Dieser Ordner enthält Pakete, von denen das Paket abhängig ist und die automatisch beim Wiederherstellen von Abhängigkeiten mithilfe des `npm install`-Befehls installiert werden. Einige Pakete werden zu Binärdateien kompiliert, wobei der Kompilierungsprozess vom Betriebssystem abhängig ist. Wenn das Team auf unterschiedlichen Betriebssystemen arbeitet, kann durch Einschließen des Ordners **node\_modules** in die Quellcodeverwaltung der Buildvorgang für einige Teammitglieder unterbrochen werden.
 
 ### <a name="get-the-project-from-source-control"></a>Abrufen des Projekts aus der Quellcodeverwaltung
 
 Wenn Sie das Projekt zum ersten Mal aus der Quellcodeverwaltung abrufen, rufen Sie den Quellcode des Projekts, aber keine SharePoint Framework-Bibliotheken ab, die zum Erstellen des Projekts erforderlich sind. Ähnlich wie beim Arbeiten mit .NET-Projekten und der Verwendung von NuGet-Paketen, müssen Sie zuerst Abhängigkeiten wiederherstellen. In SharePoint Framework-Projekten erfolgt dies, ähnlich wie bei allen anderen Projekten, die auf Node.js basieren, indem Sie `npm install` in der Befehlszeile ausführen. npm verwendet die Informationen aus der Datei **package.json** in Kombination mit den Informationen aus der Datei **npm-shrinkwrap.json** und installiert alle Pakete.
 
-> Hinweis: In der Regel ist für das Wiederherstellen der Abhängigkeiten mithilfe des `npm install`-Befehls eine Verbindung zum Internet erforderlich, da Pakete von _registry.npmjs.org_ heruntergeladen werden. Wenn Probleme mit der Netzwerkkonnektivität auftreten oder die npmjs-Registrierung nicht verfügbar ist, schlägt der Build fehl. Es gibt mehrere Möglichkeiten, um diese Einschränkung zu umgehen. Eine besteht darin, [shrinkpack](https://github.com/JamieMason/shrinkpack) zu verwenden, um Tarballs aller Abhängigkeiten herunterzuladen und diese in der Quellcodeverwaltung zu speichern. Shrinkpack aktualisiert automatisch die Datei „npm-shrinkwrap.json“, um die lokalen Tarballs zu verwenden, sodass eine Offlineinstallation der Projektabhängigkeiten möglich ist.
+> [!NOTE] 
+> In der Regel ist für die Wiederherstellung von Abhängigkeiten mithilfe des `npm install`-Befehls eine Internetverbindung erforderlich, da Pakete von _registry.npmjs.org_ heruntergeladen werden. Der Build schlägt fehl, wenn Probleme mit der Netzwerkkonnektivität auftreten oder die npmjs-Registrierung nicht verfügbar ist. Es gibt mehrere Möglichkeiten, um diese Einschränkung zu umgehen. Eine besteht darin, [shrinkpack](https://github.com/JamieMason/shrinkpack) zu verwenden, um Tarballs aller Abhängigkeiten herunterzuladen und diese in der Quellcodeverwaltung zu speichern. Shrinkpack aktualisiert automatisch die Datei „npm-shrinkwrap.json“, um die lokalen Tarballs zu verwenden, sodass eine Offlineinstallation der Projektabhängigkeiten möglich ist.
 
 Einige der Pakete werden während des Installationsvorgangs in Binärdateien kompiliert. Dieser Kompilierungsvorgang ist von der Architektur und dem Betriebssystem abhängig. Wenn Sie Abhängigkeiten beispielsweise in einem Docker-Container wiederherstellen würden, in dem Linux ausgeführt wird, und Sie würden dann versuchen, das Projekt in Ihrem Windows-host zu erstellen, so würde eine Fehlermeldung angezeigt, die Sie auf den Konflikt in dem Umgebungstyp hinweist, der zum Erstellen und Ausführen der Binärdateien verwendet wurde.
 
@@ -135,7 +138,8 @@ Während der Entwicklung der Lösung durch das Team werden möglicherweise neue 
 
 Sie können produktiver arbeiten, wenn Sie vorhandene Pakete verwenden, um bestimmte Aufgaben zu erledigen. npmjs.com ist eine öffentliche Registrierung von Paketen, die Sie in Ihrem Projekt verwenden können.
 
-> **Wichtig:** Da es keinen formalen Überprüfungsprozess gibt, bevor ein Paket in „npmjs.com“ veröffentlicht wird, sollten Sie besonders sorgfältig prüfen, ob Sie das bestimmte Paket sowohl bezüglich seiner Inhalte als auch der Lizenzen verwenden können.
+> [!IMPORTANT] 
+> Da es keinen formalen Überprüfungsprozess gibt, bevor ein Paket auf „npmjs.com“ veröffentlicht wird, sollten Sie besonders sorgfältig prüfen, ob Sie das bestimmte Paket sowohl bezüglich seiner Inhalte als auch der Lizenzen verwenden können.
 
 Um ein Paket zu Ihrem SharePoint Framework-Projekt hinzuzufügen, führen Sie den Befehl `npm install <package> --save` oder `npm install <package> --save-dev` in der Befehlszeile aus, z. B. `npm install angular --save`. Durch Verwendung des Arguments `--save` oder `--save-dev` wird sichergestellt, dass das Paket der Datei **package.json** hinzugefügt wird und dass andere Entwickler in Ihrem Team dieses beim Wiederherstellen von Abhängigkeiten auch erhalten. Ohne dieses Argument tritt beim Erstellen des Projekts auf einem anderen Computer als Ihrem eigenen ein Fehler auf. Beim Hinzufügen von Paketen, für Ihre Lösung oder Laufzeit erforderlich sind, z. B. Angular oder jQuery, sollten Sie das `--save`-Argument verwenden. Pakete, die für den Buildvorgang erforderlich sind, z. B. zusätzliche gulp-Aufgaben, sollten mit dem `--save-dev`-Argument installiert werden.
 
@@ -155,7 +159,8 @@ Mit einer privaten Paketregistrierung können Organisationen gemeinsamen Code ze
 
 Organisationen, die Visual Studio Team Services oder Team Foundation Server verwenden, können bequem [eine private npm-Registrierung direkt in VSTS/TFS erstellen](https://docs.microsoft.com/de-DE/vsts/package/overview). Organisationen, die andere Quellcodeverwaltungssysteme verwenden, können andere Lösungen für das Hosten ihrer Pakete verwenden. [npm Enterprise](https://www.npmjs.com/enterprise) ist eine beliebte private Registrierung, die in der Cloud gehostet wird. Organisationen, die daran interessiert sind, ihre Registrierung selbst zu hosten, können aus einer Reihe von Open Source-Implementierungen wie [Sinopia](https://github.com/rlidwka/sinopia) oder Abspaltungen wie [Verdaccio](https://github.com/verdaccio/verdaccio) oder [Nexus](https://www.sonatype.com/nexus-repository-oss) wählen.
 
-> Hinweis: Unterschiedliche Module zum Hosten privater Paketregistrierungen befinden sich in unterschiedlichen Entwicklungsstufen. Sie sollten sorgfältig prüfen, dass das jeweilige Modul Ihren Anforderungen in Hinblick auf Funktionalität, Lizenz und Support entspricht.
+> [!NOTE] 
+> Unterschiedliche Module zum Hosten privater Paketregistrierungen befinden sich in unterschiedlichen Entwicklungsstufen. Sie sollten sorgfältig prüfen, ob das jeweilige Modul Ihren Anforderungen in Hinblick auf Funktionalität, Lizenz und Support entspricht.
 
 Zur Vereinfachung der Installation und Verwaltung einer privaten Paketregistierung bietet die meisten Module einsatzbereite Docker-Images. 
 
@@ -223,7 +228,8 @@ Das Bereitstellen einer SharePoint-Anpassung in der Produktion stellt in der Reg
 
 SharePoint Framework verwendet mit wenigen Ausnahmen die semantische Versionsverwaltung (SemVer) für die Nachverfolgung von Versionsnummern. Die semantische Versionsverwaltung ist ein Versionsverwaltungsmuster, mit dem Softwareentwickler weltweit arbeiten. Eine SemVer-Nummer besteht aus den drei Zahlen MAJOR.MINOR.PATCH und optionalen Bezeichnungen, z. b. 1.0.1.
 
-> Hinweis: SharePoint Framework unterstützt derzeit nur für die Verwendung der drei Zahlen ohne Bezeichnungen.
+> [!NOTE] 
+> SharePoint-Framework unterstützt derzeit nur die Verwendung der drei Zahlen ohne Bezeichnungen.
 
 Unterschiedliche Teile einer SemVer-Zahl werden je nach Typ der Änderung, der auf die Lösung angewendet wird, erhöht:
 
@@ -247,13 +253,15 @@ Ein SharePoint Framework-Paket ist wie ein Node.js-Paket strukturiert. Alle zuge
 
 SharePoint Framework-Lösungen werden mithilfe einer **.sppkg**-Datei bereitgestellt, die im App-Katalog eines SharePoint-Mandanten installiert wird. Eine **.sppkg**-Datei ist vergleichbar mit einem SharePoint-Add-In-Paket und folgt denselben Versionsverwaltungskonventionen. Die aktuelle Version des **.sppkg**-Pakets wird unter Verwendung einer vierteiligen Zahl (MAJOR.MINOR.REVISION.BUILD) definiert, die in der Datei **config/package-solution.json** gespeichert wird. Aus Gründen der Übersichtlichkeit sollten Entwickler diese Nummer synchron mit der Versionsnummer in der Datei **package.json** halten, da beide Nummern auf die Version des Projekts als Ganzes verweisen.
 
-> Hinweis: Das Erhöhen der Versionsnummer in der Datei „package-solution.json“ zwischen den einzelnen Versionen ist erforderlich, damit die neue Version des Pakets in SharePoint korrekt bereitgestellt wird.
+> [!NOTE] 
+> Das Erhöhen der Versionsnummer in der Datei „package-solution.json“ zwischen den einzelnen Versionen ist erforderlich, damit die neue Version des Pakets in SharePoint korrekt bereitgestellt wird.
 
 ### <a name="update-dependencies"></a>Aktualisieren von Abhängigkeiten
 
 Einer der Gründe für eine Aktualisierung eines SharePoint Framework-Projekts kann eine Änderung an einer der zugrunde liegenden Abhängigkeiten sein, z. B. eine neue Version von Angular mit Fehlerkorrekturen und Leistungsverbesserungen. Wenn Ihr Team den empfohlenen Ansatz verwendet, bei dem npm shrinkwrap zum Sperren der Abhängigkeitenversionen verwendet wird, so würden Sie den `npm install <package>@<version> --save`-Befehl verwenden, um Ihre Abhängigkeit auf die bestimmte Version zu aktualisieren und Ihr Projekt testen, um zu überprüfen, ob es wie erwartet mit den neuesten Updates funktioniert. Je nachdem, welche Auswirkungen die Änderungen an den zugrunde liegenden Abhängigkeiten auf das Projekt haben, kann das gesamte Projektupdate von einem Patch bin zu einer vollständigen Hauptversion reichen.
 
-> **Wichtig:** Ändern Sie die Versionsnummern von Abhängigkeiten in der Datei **package.json** nicht manuell. Wenn Sie eine Sperrdatei wie npm shrinkwrap verwenden, werden manuell an der Datei „package.json“ vorgenommene Änderungen ignoriert, und es werden stattdessen die in den Sperrdateien erfassten Versionsnummern verwendet, was es das Nachverfolgen von Fehlern in dem Projekt schwierig macht.
+> [!IMPORTANT] 
+> Ändern Sie die Versionsnummern von Abhängigkeiten in der Datei **package.json** nicht manuell. Wenn Sie eine Sperrdatei wie npm shrinkwrap verwenden, werden manuell an der Datei „package.json“ vorgenommene Änderungen ignoriert, und es werden stattdessen die in den Sperrdateien erfassten Versionsnummern verwendet, was es das Nachverfolgen von Fehlern in dem Projekt schwierig macht.
 
 #### <a name="mind-project-structure-changes"></a>Projektstrukturänderungen
 
@@ -273,6 +281,7 @@ Nachdem Sie überprüft haben, dass die Lösung wie erwartet funktioniert, erste
 
 Nach dem Erstellen und Verpacken des Projekts besteht der nächste Schritte darin, das Projekt bereitzustellen. Stellen Sie zuerst die aktualisierten Webpartbundle bereit, die sich im Ordner **./temp/deploy** in Ihrem Projekt befinden. Veröffentlichen Sie die Dateien neben Webpartbundles der früheren Version Ihrer Lösung.
 
-> Hinweis: Sie sollten die früheren Versionen Ihrer Lösung nicht entfernen, solange aktive Instanzen von Webparts diese verwenden. Jede Version der Bundledateien hat einen eindeutigen Namen, und durch Entfernen früherer Versionen vor dem Aktualisieren von Webparts werden diese Webparts zerstört.
+> [!NOTE] 
+> Sie sollten die früheren Versionen Ihrer Lösung nicht entfernen, solange aktive Instanzen von Webparts diese verwenden. Jede Version der Bundledateien hat einen eindeutigen Namen, und durch Entfernen früherer Versionen vor dem Aktualisieren von Webparts werden diese Webparts beschädigt.
 
 Stellen Sie als Nächstes das neue Lösungspaket im SharePoint-App-Katalog bereit. Dies ist erforderlich, um SharePoint über die neue Version der Lösung zu benachrichtigen, die angewendet werden soll.
