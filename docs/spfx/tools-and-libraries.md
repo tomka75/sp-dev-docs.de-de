@@ -3,11 +3,11 @@ title: "Entwicklungstools und -bibliotheken für das SharePoint Framework"
 description: "Verwenden Sie clientseitige JavaScript-Bibliotheken, um Ihre Lösungen zu erstellen und clientseitige Webparts zu entwickeln."
 ms.date: 01/12/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 929d7abd3fa99573e5df2baa6af44c93b91b17de
-ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
+ms.openlocfilehash: 5c256aae2c4fb4453f1b6a2b5fb4e91ede8ce78f
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="sharepoint-framework-development-tools-and-libraries"></a>Entwicklungstools und -bibliotheken für das SharePoint-Framework
 
@@ -116,6 +116,6 @@ Die Initiative[Office Dev Patterns and Practices/SharePoint Pattern and Practice
 
 ## <a name="see-also"></a>Siehe auch
 
-* [SharePoint-Framework-Toolkette](toolchain/sharepoint-framework-toolchain.md)
-* [Erstellen eines clientseitigen Hallo Welt-Webparts](web-parts/get-started/build-a-hello-world-web-part.md)
-* [Übersicht über das SharePoint-Framework](sharepoint-framework-overview.md)
+- [SharePoint-Framework-Toolkette](toolchain/sharepoint-framework-toolchain.md)
+- [Erstellen eines clientseitigen Hallo Welt-Webparts](web-parts/get-started/build-a-hello-world-web-part.md)
+- [Übersicht über das SharePoint-Framework](sharepoint-framework-overview.md)
