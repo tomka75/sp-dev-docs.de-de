@@ -2,18 +2,18 @@
 title: "PowerShell-Cmdlets für SharePoint-Websitedesigns und -Websiteskripts"
 description: Verwenden Sie PowerShell-Cmdlets zum Erstellen, Abrufen und Entfernen von Websitedesigns und Websiteskripts.
 ms.date: 01/08/2018
-ms.openlocfilehash: 2c6ca90ee37c978a715e708e16e027dff52f82c1
-ms.sourcegitcommit: 9f492519d4eeb3f62a1fddc71cdca79263651a56
+ms.openlocfilehash: 24c49a9b7e6ae19cd6118573d11720803adc4c94
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="powershell-cmdlets-for-sharepoint-site-designs-and-site-scripts"></a>PowerShell-Cmdlets für SharePoint-Websitedesigns und -Websiteskripts
 
 > [!NOTE]
 > Websitedesigns und Websiteskripts befinden sich in der Vorschau und können ohne vorherige Ankündigung geändert werden. Sie werden derzeit nur für Produktionsumgebungen im Zielrelease unterstützt.Sie werden derzeit nur für Produktionsumgebungen im Zielrelease unterstützt.
 
-Verwenden Sie PowerShell-Cmdlets zum Erstellen, Abrufen und Entfernen von Websitedesigns und Websiteskripts.
+Verwenden Sie PowerShell-Cmdlets zum Erstellen, Abrufen, Aktualisieren und Entfernen von Websitedesigns und Websiteskripts.
 
 ## <a name="getting-started"></a>Erste Schritte
 
@@ -37,10 +37,8 @@ Zur Verwaltung von Websitedesigns und Websiteskripts über die PowerShell stehen
 - **Remove-SPOSiteDesign**
 - **Remove-SPOSiteScript**
 - **Revoke-SPOSiteDesignRights**
-<!--
 - **Set-SPOSiteDesign**
 - **Set-SPOSiteScript**
--->
 
 <!-- TBD document pipe bind parameters -->
 
@@ -84,7 +82,7 @@ C:\> Add-SPOSiteDesign `
   -PreviewImageAltText "site preview"
 ```
 
-## <a name="add-spositescript"></a>**Add-SPOSiteScript**
+## <a name="add-spositescript"></a>Add-SPOSiteScript
 
 Lädt ein neues Websiteskript hoch, das entweder direkt oder in einem Websitedesign verwendet werden kann.
 
@@ -312,6 +310,99 @@ Updates a previously uploaded site design.
 ## Set-SPOSiteScript (TBD)
 Updates a previously uploaded site script.
 -->
+
+## <a name="set-spositedesign"></a>Set-SPOSiteDesign
+
+Ein zuvor hochgeladenes Websitedesign wird aktualisiert. 
+
+```powershell
+Set-SPOSiteDesign
+  -Identity <SPOSiteDesignPipeBind[]>
+  [-Title <string>]
+  [-WebTemplate <string>]
+  [-SiteScripts <SPOSiteScriptPipeBind[]>]
+  [-Description <string>]
+  [-PreviewImageUrl <string>]
+  [-PreviewImageAltText <string>]
+  [-IsDefault]
+  [<CommonParameters>]
+```
+
+### <a name="parameters"></a>Parameter
+
+|Parameter  | Beschreibung  |
+|-----------|--------------|
+|-Title                 | Der Anzeigename des Websitedesigns. |
+|-WebTemplate           | Identifiziert, zu welcher Basisvorlage das Design hinzugefügt werden soll. Verwenden Sie den Wert **64** für die Teamwebsite-Vorlage und den Wert **68** für die Kommunikationswebsitevorlage. |
+|-SiteScripts           | Ein Array von einem oder mehreren Websiteskripts. Jedes wird durch eine ID identifziert. Die Skripts werden in der aufgeführten Reihenfolge ausgeführt. |
+|[-Description]         | Die Anzeigebeschreibung des Websitedesigns. |
+|[-PreviewImageUrl]     | Die URL eines Vorschaubilds. Wenn keine angegeben ist, verwendet SharePoint ein allgemeines Bild. |
+|[-PreviewImageAltText] | Die Alternativtextbeschreibung des Bilds für Barrierefreiheit. |
+|[-IsDefault]           | Eine Option, die das Websitedesign auf die Standardwebsitevorlage anwendet. Weitere Informationen finden Sie unter [Anpassen eines standardmäßigen Websitedesigns](customize-default-site-design.md). |
+
+Im folgende Beispiel wird ein zuvor erstelltes Websitedesign aktualisiert.
+
+```powershell
+C:\> Set-SPOSiteDesign `
+  -Title "Contoso customer tracking - version 2" `
+  -WebTemplate "68" `
+  -Description "Updated site design for list schema that tracks key customer data in a list" `
+  -PreviewImageUrl "https://contoso.sharepoint.com/SiteAssets/site-preview.png" `
+  -PreviewImageAltText "site preview - version 2"
+```
+## <a name="set-spositescript"></a>Set-SPOSiteScript
+
+Ein zuvor hochgeladenes Websiteskript wird aktualisiert.
+
+```powershell
+Set-SPOSiteScript
+  -Title <string>
+  -Content <string>
+  [-Description <string>]
+  [<CommonParameters>]
+```
+
+### <a name="parameters"></a>Parameter
+
+|Parameter     | Beschreibung  |
+|--------------|--------------|
+| -Title       | Der Anzeigename des Websitedesigns. |
+| -Content     | JSON-Wert, der das Skript beschreibt. Weitere Informationen finden Sie unter [JSON-Referenz](site-design-json-schema.md).|
+| -Description | Eine Beschreibung des Skripts. |
+
+Im folgenden Beispiel wird ein zuvor erstelltes Websiteskript aktualisiert. Alle Websitedesigns, die darauf verweisen, führen das aktualisierte Skript aus. 
+
+```json
+{
+    "$schema": "schema.json",
+        "actions": [
+            {
+                "verb": "addNavLink",
+                "url": "/Custom Library",
+                "displayName": "Custom Library Updated",
+                "isWebRelative": true
+            },
+            {
+                "verb": "addNavLink",
+                "url": "/Lists/Custom List",
+                "displayName": "Custom List Updated",
+                "isWebRelative": true
+            },
+            {
+                "verb": "applyTheme",
+                themeName: "Contoso Explorers"
+            }
+        ],
+            "bindata": { },
+    "version": 2
+}
+```
+In Zwischenablage kopieren
+
+```powershell
+C:\> $script = Get-Clipboard -Raw
+C:\> Set-SPOSiteScript -Identity 7647d3d6-1046-41fe-a798-4ff66b099d12 -Content $script -Description "Update site script to change links and apply Contoso Explorers theme"
+```
 
 ## <a name="see-also"></a>Weitere Artikel
 

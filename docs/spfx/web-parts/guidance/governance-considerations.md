@@ -1,12 +1,13 @@
 ---
 title: "Sharepoint Framework-Lösungen – Überlegungen zum Thema Governance"
-ms.date: 09/25/2017
+description: "Um die Vorteile von SharePoint-Framework-Lösungen optimal nutzen zu können, sollte Ihr Unternehmen über einen umsetzbaren Governanceplan verfügen, der die wichtigsten Überlegungen zur Projektverwaltung abdeckt."
+ms.date: 01/26/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 2fa5399cd2a6b36ca51991bc1abe9ed95c5f7a0f
-ms.sourcegitcommit: 8384d549db4ff023aacac273d74786928ebdeece
+ms.openlocfilehash: 7e00979261ba23a58352d6f963e8cddd6dfc1357
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="sharepoint-framework-solutions-governance-considerations"></a>Sharepoint Framework-Lösungen – Überlegungen zum Thema Governance
 
@@ -16,7 +17,7 @@ Mithilfe des SharePoint-Frameworks können Organisationen problemlos Lösungen e
 
 ![Diagramm zum Aufbau von SharePoint Framework-Lösungen](../../../images/guidance-governance-spfx-structure-schema.png)
 
-SharePoint Framework-Lösungen bestehen aus zwei Teilen: Code (häufig als Webpart-Paket bezeichnet), der einer URL bereitgestellt wird, und einer SPPKG-Datei mit dem Webpart-Manifest und einer URL, die auf den Speicherort verweist, an dem der Code für das Webpart bereitgestellt wird. Es gibt keine spezifischen Einschränkungen im Hinblick auf den Bereitstellungsort des Codes, solange Benutzer, die mit dem Webpart arbeiten, auf den Webpart-Code zugreifen können. Organisationen können ihre Webparts z. B. im [öffentlichen Office 365-CDN]((https://dev.office.com/blogs/office-365-public-cdn-developer-preview-release)), in [Azure Storage](../get-started/deploy-web-part-to-cdn.md) oder auf einem privaten Webserver bereitstellen.
+SharePoint Framework-Lösungen bestehen aus zwei Teilen: Code (häufig als Webpart-Paket bezeichnet), der einer URL bereitgestellt wird, und einer SPPKG-Datei mit dem Webpart-Manifest und einer URL, die auf den Speicherort verweist, an dem der Code für das Webpart bereitgestellt wird. Es gibt keine spezifischen Einschränkungen im Hinblick auf den Bereitstellungsort des Codes, solange Benutzer, die mit dem Webpart arbeiten, auf den Webpart-Code zugreifen können. Organisationen können ihre Webparts z. B. im [öffentlichen Office 365-CDN](https://dev.office.com/blogs/office-365-public-cdn-developer-preview-release), in [Azure Storage](../get-started/deploy-web-part-to-cdn.md) oder auf einem privaten Webserver bereitstellen.
 
 ## <a name="web-part-code-hosting-location-considerations"></a>Überlegungen zum Hostingspeicherort von Webpart-Code
 

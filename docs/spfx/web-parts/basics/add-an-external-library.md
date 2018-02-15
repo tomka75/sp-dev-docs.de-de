@@ -1,59 +1,60 @@
 ---
 title: "Hinzufügen einer externen Bibliothek zu Ihrem clientseitigen SharePoint-Webpart"
-ms.date: 09/25/2017
+description: "Bündeln einer externen JavaScript-Bibliothek und Freigeben von Bibliotheken."
+ms.date: 01/29/2018
 ms.prod: sharepoint
-ms.openlocfilehash: c811190ac84b97273f16cafea60ca0882846be2d
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 7b5091f531ad16127aa71299f9c1951cbb2c853c
+ms.sourcegitcommit: e4bf60eabffe63dc07f96824167d249c0678db82
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="add-an-external-library-to-your-sharepoint-client-side-web-part"></a>Hinzufügen einer externen Bibliothek zu Ihrem clientseitigen SharePoint-Webpart
 
 Vielleicht möchten Sie eine oder mehrere JavaScript-Bibliotheken in Ihr Webpart einfügen. In diesem Artikel wird gezeigt, wie Sie eine externe Bibliothek bündeln und Bibliotheken freigeben.
 
-## <a name="bundling-a-script"></a>Bündeln eines Skripts
+## <a name="bundle-a-script"></a>Bündeln eines Skripts
 
-Der Webpart-Bundler schließt standardmäßig automatisch jede Bibliothek ein, die eine Abhängigkeit des Webpartmoduls. Dies bedeutet, dass die Bibliothek in derselben JavaScript-Bundledatei wie Ihr Webpart bereitgestellt wird. Dies ist bei kleineren Bibliotheken hilfreich, die nicht in mehreren Webparts verwendet werden.
+Der Webpart-Bundler schließt standardmäßig automatisch jede Bibliothek ein, die eine Abhängigkeit des Webpartmoduls aufweist. Dies bedeutet, dass die Bibliothek in derselben JavaScript-Bundledatei wie Ihr Webpart bereitgestellt wird. Dies ist bei kleineren Bibliotheken hilfreich, die nicht in mehreren Webparts verwendet werden.
 
 ### <a name="example"></a>Beispiel
 
-Schließen Sie die Zeichenfolge, die das [validator](https://www.npmjs.com/package/validator)-Paket der Bibliothek überprüft, in ein Webpart ein.
+1. Schließen Sie die Zeichenfolge, die das [validator](https://www.npmjs.com/package/validator)-Paket der Bibliothek überprüft, in ein Webpart ein.
 
-Laden Sie das validator-Paket von npm herunter:
+2. Laden Sie das validator-Paket von npm herunter:
 
-```sh
-npm install validator --save
-```
+    ```sh
+    npm install validator --save
+    ```
 
-> [!NOTE] 
-> Da Sie TypeScript verwenden, benötigen Sie für das Paket, das Sie hinzufügen, Eingaben. Dies ist wichtig, wenn Sie Code schreiben, da TypeScript nur eine Obermenge von JavaScript ist. Der gesamte TypeScript-Code wird beim Kompilieren nach wie vor in JavaScript-Code konvertiert. Sie können mithilfe von **npm** nach Eingaben suchen, beispielsweise: `npm install @types/{package} --save`
+    > [!NOTE] 
+    > Da Sie TypeScript verwenden, benötigen Sie für das Paket, das Sie hinzufügen, Eingaben. Dies ist wichtig, wenn Sie Code schreiben, da TypeScript nur eine Obermenge von JavaScript ist. Der gesamte TypeScript-Code wird beim Kompilieren nach wie vor in JavaScript-Code konvertiert. Sie können mithilfe von **npm** nach Eingaben suchen, beispielsweise: `npm install @types/{package} --save`
 
-Erstellen Sie im Ordner Ihres Webparts eine Datei mit dem Namen `validator.d.ts`, und fügen Sie den nachfolgenden Code in die Datei ein:
+3. Erstellen Sie im Ordner Ihres Webparts eine Datei mit dem Namen `validator.d.ts`, und fügen Sie den nachfolgenden Code in die Datei ein:
 
-> [!NOTE] 
-> Einige Bibliotheken verfügen nicht über Eingaben. Zwar gibt es für die Bibliothek „Validator“ eine von der [Community bereitgestellte Eingabendatei](https://www.npmjs.com/package/@types/validator); in diesem Artikel gehen wir aber davon aus, dass keine solche Datei existiert. In einem solchen Fall müssen Sie eine eigene Eingabendefinitionsdatei `.d.ts` für die Bibliothek erstellen. Der Code unten ist hierfür ein Beispiel.
+    ```typescript
+    declare module "validator" {
+        export function isEmail(email: string): boolean;
+        export function isAscii(text: string): boolean;
+    }
+    ```
 
-```typescript
-declare module "validator" {
-    export function isEmail(email: string): boolean;
-    export function isAscii(text: string): boolean;
-}
-```
+    > [!NOTE] 
+    > Manche Bibliotheken verfügen nicht über Eingaben. Die validator-Bibliothek verfügt zwar über eine [von der Community bereitgestellte Eingabendatei](https://www.npmjs.com/package/@types/validator), in diesem Szenario wird aber davon ausgegangen, dass dies nicht der Fall ist. In diesem Fall müssen Sie Ihre eigene `.d.ts`-Datei für die Eingabedefinition für die Bibliothek definieren. Im vorherigen Code ist ein Beispiel dargestellt:
 
-Importieren Sie die Eingaben in Ihre Webpartdatei:
+4. Importieren Sie die Eingaben in Ihre Webpartdatei:
 
-```typescript
-import * as validator from 'validator';
-```
+    ```typescript
+    import * as validator from 'validator';
+    ```
 
-Verwenden Sie die validator-Bibliothek im Webpartcode:
+5. Verwenden Sie die validator-Bibliothek im Webpartcode:
 
-```typescript
-validator.isEmail('someone@example.com');
-```
+    ```typescript
+    validator.isEmail('someone@example.com');
+    ```
 
-## <a name="sharing-a-library-among-multiple-webparts"></a>Freigeben einer Bibliothek zwischen mehreren WebParts
+## <a name="share-a-library-among-multiple-web-parts"></a>Freigeben einer Bibliothek zwischen mehreren Webparts
 
 Ihre clientseitige Lösung umfasst möglicherweise mehrere Webparts. Diese Webparts müssen möglicherweise die gleiche Bibliothek importieren oder freigeben. In solchen Fällen sollten Sie die Bibliothek in eine separate JavaScript-Datei einschließen, anstatt sie zu bündeln, um Leistung und Zwischenspeicherung zu verbessern. Dies gilt besonders für größere Bibliotheken.
 
@@ -61,73 +62,74 @@ Ihre clientseitige Lösung umfasst möglicherweise mehrere Webparts. Diese Webpa
 
 In diesem Beispiel geben Sie das [marked](https://www.npmjs.com/package/marked)-Paket - einen Markdown-Compiler - in einem separaten Bundle frei.
 
-Herunterladen des **marked**-Pakets von npm:
+1. Herunterladen des **marked**-Pakets von npm:
 
-```sh
-npm install marked --save
-```
+    ```sh
+    npm install marked --save
+    ```
 
-Herunterladen der Eingaben:
+2. Herunterladen der Eingaben:
 
-```
-npm install @types/marked --save
-```
+    ```sh
+    npm install @types/marked --save
+    ```
 
-Bearbeiten Sie **config/config.json**, und fügen Sie einen Eintrag zur Zuordnung **externals** hinzu. Dadurch wird dem Bundler mitgeteilt, dies in einer separaten Datei zu platzieren. Dadurch wird verhindert, dass der Bundler diese Bibliothek bündelt:
+3. Bearbeiten Sie **config/config.json**, und fügen Sie einen Eintrag zur Zuordnung **externals** hinzu. Dadurch wird dem Bundler mitgeteilt, dies in einer separaten Datei zu platzieren. Dadurch wird verhindert, dass der Bundler diese Bibliothek bündelt:
 
-```json
-"marked": "node_modules/marked/marked.min.js"
-```
+    ```json
+    "marked": "node_modules/marked/marked.min.js"
+    ```
 
-Fügen Sie die Anweisung zum Importieren der `marked`-Bibliothek nun in das Webpart ein, nachdem Sie das Paket und die Eingaben für die Bibliothek hinzugefügt haben:
+4. Fügen Sie die Anweisung zum Importieren der `marked`-Bibliothek nun in das Webpart ein, nachdem Sie das Paket und die Eingaben für die Bibliothek hinzugefügt haben:
 
-```typescript
-import * as marked from 'marked';
-```
+    ```typescript
+    import * as marked from 'marked';
+    ```
 
-Verwenden der Bibliothek im Webpart:
+5. Verwenden der Bibliothek im Webpart:
 
-```typescript
-console.log(marked('I am using __markdown__.'));
-```
+    ```typescript
+    console.log(marked('I am using __markdown__.'));
+    ```
 
-## <a name="loading-a-script-from-a-cdn"></a>Laden eines Skripts aus einem CDN
+## <a name="load-a-script-from-a-cdn"></a>Laden eines Skripts aus einem CDN
 
-Anstatt die Bibliothek aus einem npm-Paket zu laden, können Sie ein Skript aus einem CDN laden. Bearbeiten Sie hierzu die **config.json**-Datei, um die Bibliothek von ihrer CDN-URL zu laden.
+Anstatt die Bibliothek aus einem npm-Paket zu laden, können Sie ein Skript aus einem Content Delivery Network (CDN) laden. Bearbeiten Sie hierzu die **config.json**-Datei, um die Bibliothek von ihrer CDN-URL zu laden.
 
 ### <a name="example"></a>Beispiel
 
 In diesem Beispiel laden Sie jQuery aus einem CDN. Sie müssen nicht das npm-Paket installieren. Sie müssen jedoch die Eingaben installieren.
 
-Installieren der Eingaben für jQuery:
+1. Installieren der Eingaben für jQuery:
 
-```sh
-npm install --save @types/jquery
-```
+    ```sh
+    npm install --save @types/jquery
+    ```
 
-Aktualisieren Sie `config.json` im Ordner `config`, um jQuery aus einem CDN zu laden. Hinzufügen eines Eintrags zum `externals`-Feld:
+2. Aktualisieren Sie `config.json` im Ordner `config`, um jQuery aus einem CDN zu laden. Hinzufügen eines Eintrags zum `externals`-Feld:
 
-```json
-"jquery": "https://code.jquery.com/jquery-3.1.0.min.js"
-```
+    ```json
+    "jquery": "https://code.jquery.com/jquery-3.1.0.min.js"
+    ```
 
-Importieren von jQuery in das Webpart:
+3. Importieren von jQuery in das Webpart:
 
-```typescript
-import * as $ from 'jquery';
-```
+    ```typescript
+    import * as $ from 'jquery';
+    ```
 
-Verwenden von jQuery in das Webpart:
+4. Verwenden von jQuery im Webpart:
 
-```javascript
-alert( $('#foo').val() );
-```
+    ```javascript
+    alert( $('#foo').val() );
+    ```
 
-## <a name="loading-a-non-amd-module"></a>Laden eines Nicht-AMD-Moduls
+## <a name="load-a-non-amd-module"></a>Laden eines Nicht-AMD-Moduls
 
-Einige Skripts folgen dem veralteten JavaScript-Muster des Speicherns der Bibliothek im globalen Namespace. Dieses Muster wurde nun durch [Universal Modul Definitions (UMD)](https://github.com/umdjs/umd), /[Asynchronous Module Definitions (AMD)](https://en.wikipedia.org/wiki/Asynchronous_module_definition) oder [ES6-Module](https://github.com/lukehoban/es6features/blob/master/README.md#modules) ersetzt. Möglicherweise müssen Sie solche Bibliotheken jedoch in das Webpart laden.
+Einige Skripts folgen dem veralteten JavaScript-Muster des Speicherns der Bibliothek im globalen Namespace. Dieses Muster wurde nun durch [Universal Modul Definitions (UMD)](https://github.com/umdjs/umd),  / [Asynchronous Module Definitions (AMD)](https://en.wikipedia.org/wiki/Asynchronous_module_definition) oder [ES6-Module](https://github.com/lukehoban/es6features/blob/master/README.md#modules) ersetzt. Möglicherweise müssen Sie solche Bibliotheken jedoch in das Webpart laden.
 
-> **Tipp:** Es ist schwierig, manuell zu ermitteln, ob das Skript, das Sie versuchen zu laden, ein AMD- oder ein Nicht-AMD-Skript ist. Dies trifft insbesondere dann zu, wenn das Skript, das Sie laden möchten, minimiert ist. Wenn das Skript auf einer öffentlich zugänglichen URL gehostet wird, können Sie das kostenlose Tool [Rencore SharePoint Framework Script Check](https://rencore.com/sharepoint-framework/script-check/) verwenden, um den Skripttyp zu ermitteln. Außerdem stellt das Tool fest, ob der Hostingspeicherort, von dem Sie das Skript laden, ordnungsgemäß konfiguriert ist.
+> [!TIP] 
+> Es ist schwierig, manuell ermitteln, ob das Skript, das Sie laden möchten, ein AMD- oder ein Nicht-AMD-Skript ist. Dies ist insbesondere dann der Fall, wenn das Skript minimiert ist. Wenn das Skript auf einer öffentlich zugänglichen URL gehostet wird, können Sie das kostenlose Tool [Rencore SharePoint Framework Script Check](https://rencore.com/sharepoint-framework/script-check/) verwenden, um die Art des Skripts zu ermitteln. Dieses Tool teilt Ihnen außerdem mit, ob der Hostingspeicherort, vom dem aus Sie das Skript laden, korrekt konfiguriert ist.
 
 Um ein Nicht-AMD-Modul zu laden, fügen Sie eine zusätzliche Eigenschaft zu dem Eintrag in der **config.json**-Datei hinzu.
 
@@ -144,47 +146,50 @@ var ContosoJS = {
 };
 ```
 
-Erstellen von Eingaben für das Skript in einer Datei mit dem Namen **contoso.d.ts** im Webpartordner.
+<br/>
 
-```typescript
-declare module "contoso" {
-    interface IContoso {
-        say(text: string): void;
-        sayHello(name: string): void;
+1. Erstellen von Eingaben für das Skript in einer Datei mit dem Namen **contoso.d.ts** im Webpartordner.
+
+    ```typescript
+    declare module "contoso" {
+        interface IContoso {
+            say(text: string): void;
+            sayHello(name: string): void;
+        }
+        var contoso: IContoso;
+        export = contoso;
     }
-    var contoso: IContoso;
-    export = contoso;
-}
-```
+    ```
 
-Aktualisieren der **config.json**-Datei derart, dass dieses Skript eingeschlossen wird. Hinzufügen eines Eintrags zur **externals**-Zuordnung:
+2. Aktualisieren der **config.json**-Datei derart, dass dieses Skript eingeschlossen wird. Hinzufügen eines Eintrags zur **externals**-Zuordnung:
 
-```json
-{
-    "contoso": {
-        "path": "https://contoso.com/contoso.js",
-        "globalName": "ContosoJS"
+    ```json
+    {
+        "contoso": {
+            "path": "https://contoso.com/contoso.js",
+            "globalName": "ContosoJS"
+        }
     }
-}
-```
+    ```
 
-Hinzufügen eines Imports zum Webpartcode:
+3. Hinzufügen eines Imports zum Webpartcode:
 
-```typescript
-import contoso from 'contoso';
-```
+    ```typescript
+    import contoso from 'contoso';
+    ```
 
-Verwenden der Contoso-Bibliothek im Code:
+4. Verwenden der Contoso-Bibliothek im Code:
 
-```typescript
-contoso.sayHello(username);
-```
+    ```typescript
+    contoso.sayHello(username);
+    ```
 
-## <a name="loading-a-library-that-has-a-dependency-on-another-library"></a>Laden einer Bibliothek, die eine Abhängigkeit von einer anderen Bibliothek aufweist
+## <a name="load-a-library-that-has-a-dependency-on-another-library"></a>Laden einer Bibliothek, die eine Abhängigkeit von einer anderen Bibliothek aufweist
 
 Viele Bibliotheken weisen Abhängigkeiten von einer anderen Bibliothek auf. Sie können solche Abhängigkeiten in der **config.json**-Datei mithilfe der **globalDependencies**-Eigenschaft angeben.
 
-> **Wichtig:** Beachten Sie, dass Sie dieses Feld für AMD-Module nicht angeben müssen; diese importieren sich ordnungsgemäß gegenseitig. Ein Nicht-AMD-Modul kann jedoch kein AMD-Modul als Abhängigkeit aufweisen. In einigen Fällen kann ein AMD-Skript als Nicht-AMD-Skript geladen werden. Dies ist häufig erforderlich, wenn mit jQuery (selbst ein AMD-Skript) und jQuery-Plug-Ins gearbeitet wird, die meistens als Nicht-AMD-Skripts verteilt werden und von jQuery abhängig sind.
+> [!IMPORTANT] 
+> Beachten Sie, dass Sie dieses Feld für AMD-Module nicht angeben müssen; diese importieren sich gegenseitig ordnungsgemäß. Ein Nicht-AMD-Modul kann jedoch kein AMD-Modul als Abhängigkeit aufweisen. In einigen Fällen ist es möglich, ein AMD-Skript als Nicht-AMD-Skript zu laden. Dies ist häufig bei der Arbeit mit jQuery (selbst ein AMD-Skript) und jQuery-Plug-Ins erforderlich, die meistens als Nicht-AMD-Skripts verteilt werden und von jQuery abhängig sind.
 
 Hierfür gibt es zwei Beispiele.
 
@@ -215,109 +220,114 @@ var Contoso = {
 };
 ```
 
-Fügen Sie Eingaben für diese Klasse hinzu, oder erstellen Sie sie. In diesem Fall erstellen Sie `Contoso.d.ts` mit Eingaben für beide JavaScript-Dateien.
+<br/>
 
-**contoso.d.ts**
+1. Fügen Sie Eingaben für diese Klasse hinzu, oder erstellen Sie sie. In diesem Fall erstellen Sie `Contoso.d.ts` mit Eingaben für beide JavaScript-Dateien.
 
-```typescript
-declare module "contoso" {
-    interface IEventList {
-        alert(): void;
+    **contoso.d.ts**
+
+    ```typescript
+    declare module "contoso" {
+        interface IEventList {
+            alert(): void;
+        }
+        interface IContoso {
+            getEvents(): string[];
+            EventList: IEventList;
+        }
+        var contoso: IContoso;
+        export = contoso;
     }
-    interface IContoso {
-        getEvents(): string[];
-        EventList: IEventList;
+    ```
+
+2. Aktualisieren Sie die **config.json**-Datei. Hinzufügen von zwei Einträgen zu **externals**:
+
+    ```json
+    {
+        "contoso": {
+            "path": "/src/ContosoCore.js",
+            "globalName": "Contoso"
+        },
+        "contoso-ui": {
+            "path": "/src/ContosoUI.js",
+            "globalName": "Contoso",
+            "globalDependencies": ["contoso"]
+        }
     }
-    var contoso: IContoso;
-    export = contoso;
-}
-```
+    ```
 
-Aktualisieren Sie die **config.json**-Datei. Hinzufügen von zwei Einträgen zu **externals**:
+3. Hinzufügen von Importen für Contoso und ContosoUI:
 
-```json
-{
-     "contoso": {
-         "path": "/src/ContosoCore.js",
-         "globalName": "Contoso"
-     },
-     "contoso-ui": {
-         "path": "/src/ContosoUI.js",
-         "globalName": "Contoso",
-         "globalDependencies": ["contoso"]
-     }
-}
-```
+    ```typescript
+    import contoso = require('contoso');
+    require('contoso-ui');
+    ```
 
-Hinzufügen von Importen für Contoso und ContosoUI:
+4. Verwenden der Bibliotheken im Code:
 
-```typescript
-import contoso = require('contoso');
-require('contoso-ui');
-```
+    ```typescript
+    contoso.EventList.alert();
+    ```
 
-Verwenden der Bibliotheken im Code:
-
-```typescript
-contoso.EventList.alert();
-```
-
-## <a name="loading-sharepoint-jsom"></a>Laden von SharePoint JSOM
+## <a name="load-sharepoint-jsom"></a>Laden von SharePoint JSOM
 
 Das Laden von SharePoint JSOM ist im Wesentlichen das gleiche Szenario wie das Laden von Nicht-AMD-Skripts, die Abhängigkeiten haben. Hierfür wird sowohl die Option **globalName** als auch die Option **globalDependency** verwendet.
 
-> **Wichtig:** Beachten Sie, dass bei dem folgenden Ansatz Fehler in klassischen SharePoint-Seiten verursacht werden, auf denen SharePoint JSOM bereits geladen ist. Wenn Sie möchten, dass Ihr Webpart sowohl mit klassischen als auch mit modernen Seiten funktioniert, sollten Sie zuerst prüfen, ob SharePoint JSOM bereits verfügbar ist. Falls nicht, laden Sie es dynamisch mithilfe von **SPComponentLoader**.
+> [!IMPORTANT] 
+> Beachten Sie, dass der folgende Ansatz auf klassischen SharePoint-Seiten Fehler verursacht, auf denen SharePoint JSOM bereits geladen ist. Wenn Ihr Webpart sowohl mit klassischen als auch mit modernen Seiten arbeiten soll, sollten Sie zuerst überprüfen, ob SharePoint JSOM bereits verfügbar ist. Ist dies nicht der fall, laden Sie es dynamisch mithilfe von **SPComponentLoader**.
 
-Installieren von Eingaben für Microsoft Ajax (Abhängigkeit für JSOM-Eingaben):
+<br/>
 
-```sh
-npm install @types/microsoft-ajax --save
-```
+1. Installieren von Eingaben für Microsoft Ajax (Abhängigkeit für JSOM-Eingaben):
 
-Installieren von Eingaben für JSOM:
+    ```sh
+    npm install @types/microsoft-ajax --save
+    ```
 
-```sh
-npm install @types/sharepoint --save
-```
+2. Installieren von Eingaben für JSOM:
 
-Hinzufügen von Einträgen zu `config.json`:
+    ```sh
+    npm install @types/sharepoint --save
+    ```
 
-```json
-{
-    "sp-init": {
-        "path": "https://CONTOSO.sharepoint.com/_layouts/15/init.js",
-        "globalName": "$_global_init"
-    },
-    "microsoft-ajax": {
-        "path": "https://CONTOSO.sharepoint.com/_layouts/15/MicrosoftAjax.js",
-        "globalName": "Sys",
-        "globalDependencies": [ "sp-init" ]
-    },
-    "sp-runtime": {
-        "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.Runtime.js",
-        "globalName": "SP",
-        "globalDependencies": [ "microsoft-ajax" ]
-    },
-    "sharepoint": {
-        "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.js",
-        "globalName": "SP",
-        "globalDependencies": [ "sp-runtime" ]
+3. Hinzufügen von Einträgen zu `config.json`:
+
+    ```json
+    {
+        "sp-init": {
+            "path": "https://CONTOSO.sharepoint.com/_layouts/15/init.js",
+            "globalName": "$_global_init"
+        },
+        "microsoft-ajax": {
+            "path": "https://CONTOSO.sharepoint.com/_layouts/15/MicrosoftAjax.js",
+            "globalName": "Sys",
+            "globalDependencies": [ "sp-init" ]
+        },
+        "sp-runtime": {
+            "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.Runtime.js",
+            "globalName": "SP",
+            "globalDependencies": [ "microsoft-ajax" ]
+        },
+        "sharepoint": {
+            "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.js",
+            "globalName": "SP",
+            "globalDependencies": [ "sp-runtime" ]
+        }
     }
-}
-```
+    ```
 
-Fügen Sie in Ihrem Webpart die require-Anweisungen hinzu:
+4. Fügen Sie in Ihrem Webpart die `require`-Anweisungen hinzu:
 
-```typescript
-require('sp-init');
-require('microsoft-ajax');
-require('sp-runtime');
-require('sharepoint');
-```
+    ```typescript
+    require('sp-init');
+    require('microsoft-ajax');
+    require('sp-runtime');
+    require('sharepoint');
+    ```
 
 ## <a name="load-localized-resources"></a>Laden lokalisierter Ressourcen
 
-Es gibt eine Zuordnung in **config.json** mit dem Namen **localizedResources**, mit der Sie beschreiben können, wie lokalisierte Ressourcen geladen werden. Pfade in dieser Zuordnung sind relativ zum **lib**-Ordner und dürfen keinen vorangestellten Schrägstrich (**/**) enthalten.
+Sie können eine Zuordnung in **config.json** mit dem Namen **localizedResources** verwenden, um zu beschreiben, wie lokalisierte Ressourcen geladen werden. Pfade in dieser Zuordnung sind relativ zum **lib**-Ordner und dürfen keinen vorangestellten Schrägstrich (**/**) enthalten.
 
 In diesem Beispiel haben Sie den Ordner **src/strings/**. In diesem Ordner befinden sich mehrere JavaScript-Dateien mit Namen wie **en-us.js**, **fr-fr.js**, **de-de.js**. Da jede dieser Dateien vom Modulladeprogramm geladen werden muss, müssen sie einen CommonJS-Wrapper enthalten. In **en-us.js** beispielsweise:
 
@@ -331,37 +341,43 @@ In diesem Beispiel haben Sie den Ordner **src/strings/**. In diesem Ordner befin
   });
 ```
 
-Bearbeiten Sie die **config.json**-Datei. Fügen Sie einen Eintrag zu **localizedResources** hinzu. **{locale}** ist ein Platzhaltertoken für den Gebietsschemanamen:
+<br/>
 
-```json
-{
-    "strings": "strings/{locale}.js"
-}
-```
+1. Bearbeiten Sie die **config.json**-Datei. Fügen Sie einen Eintrag zu **localizedResources** hinzu. `{locale}` ist ein Platzhaltertoken für den Gebietsschemanamen:
 
-Fügen Sie Eingaben für Ihre Zeichenfolgen hinzu. In diesem Fall haben Sie die Datei **MyStrings.d.ts**:
+    ```json
+    {
+        "strings": "strings/{locale}.js"
+    }
+    ```
 
-```typescript
-declare interface IStrings {
-    webpartTitle: string;
-    initialPrompt: string;
-    exitPrompt: string;
-}
+2. Fügen Sie Eingaben für Ihre Zeichenfolgen hinzu. In diesem Fall haben Sie die Datei **MyStrings.d.ts**:
 
-declare module 'mystrings' {
-    const strings: IStrings;
-    export = strings;
-}
-```
+    ```typescript
+    declare interface IStrings {
+        webpartTitle: string;
+        initialPrompt: string;
+        exitPrompt: string;
+    }
 
-Hinzufügen von Importen für die Zeichenfolgen in Ihrem Projekt:
+    declare module 'mystrings' {
+        const strings: IStrings;
+        export = strings;
+    }
+    ```
 
-```typescript
-import * as strings from 'mystrings';
-```
+3. Hinzufügen von Importen für die Zeichenfolgen in Ihrem Projekt:
 
-Verwenden der Zeichenfolgen in Ihrem Projekt:
+    ```typescript
+    import * as strings from 'mystrings';
+    ```
 
-```typescript
-alert(strings.initialPrompt);
-```
+4. Verwenden der Zeichenfolgen in Ihrem Projekt:
+
+    ```typescript
+    alert(strings.initialPrompt);
+    ```
+
+## <a name="see-also"></a>Weitere Artikel
+
+- [SharePoint Framework-Übersicht](../../sharepoint-framework-overview.md)

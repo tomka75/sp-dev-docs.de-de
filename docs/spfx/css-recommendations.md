@@ -1,28 +1,29 @@
 ---
 title: "Empfehlungen für das Arbeiten mit CSS in SharePoint-Framework-Lösungen"
-ms.date: 11/18/2017
+description: "Mit CSS können Sie das Aussehen und das Verhalten von SharePoint-Framework-Anpassungen definieren."
+ms.date: 1/24/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 0e65926fda0ff1a788388e23d1d7df2e4b9ea32a
-ms.sourcegitcommit: 0350850e0f46841a7eaadcc69d0fb90739fcd654
+ms.openlocfilehash: 2258d163f47b5961555f9362aa87a9c1ab82ba39
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="recommendations-for-working-with-css-in-sharepoint-framework-solutions"></a>Empfehlungen für das Arbeiten mit CSS in SharePoint-Framework-Lösungen
 
-Wenn Sie SharePoint-Framework Lösungen erstellen, können Sie CSS verwenden, um zu definieren, wie sich Ihre Anpassung verhalten und aussehen soll. In diesem Artikel wird beschrieben, wie Sie die mit dem SharePoint Framework bereitgestellten Funktionen am besten nutzen und Ihre CSS-Formatvorlagen stabil erstellen.
+Bei der Erstellung von SharePoint-Framework-Lösungen können Sie mithilfe von CSS definieren, wie Ihre Anpassungen aussehen und wie sie sich verhalten sollen. In diesem Artikel wird beschrieben, wie Sie die vom SharePoint-Framework bereitgestellten Funktionen optimal nutzen und stabile CSS-Formatvorlagen erstellen können.
 
-## <a name="sharepoint-framework-customizations-are-part-of-the-page"></a>SharePoint Framework-Anpassungen sind Teil der Seite
+## <a name="sharepoint-framework-customizations-are-part-of-the-page"></a>SharePoint-Framework-Anpassungen als Teil der Seite
 
-Wenn Sie SharePoint-Anpassungen mit dem Add-In-Modell erstellen, ist die Lösung von anderen Elementen auf der Seite isoliert. Der Code wird entweder in einem Iframe, als Add-In-Bestandteil oder als immersive Anwendung ausgeführt, die die Kontrolle übe die gesamte Seite übernimmt. In beiden Fällen wird der Code nicht von anderen Elementen und Formatvorlagen beeinträchtigt, die auf der Seite definiert sind.
+Wenn Sie SharePoint-Anpassungen mithilfe des Add-In-Modells erstellen, ist Ihre Lösung von anderen Elementen auf der Seite isoliert. Ihr Code kann als Add-In-Webpart in einem iFrame ausgeführt werden oder als immersive Anwendung, von der die gesamte Seite gesteuert wird. In beiden Fällen haben andere Elemente und Formatvorlagen, die auf der Seite definiert sind, keine Auswirkungen auf den Code.
 
-SharePoint Framework-Lösungen sind Teil der Seite und können vollständig in das DOM der Seite integriert werden. Dabei wird eine Reihe von Einschränkungen entfernt, die in dem Add-In-Modell enthalten sind, wodurch Ihre Lösung einem Risiko ausgesetzt wird. Da es sich um einen Teil der Seite handelt, gelten alle auf der Seite vorhandenen CSS-Formatvorlagen dafür, sofern diese nicht isoliert sind, was möglicherweise zu einer anderen Erfahrung als der beabsichtigten führt. Um derartige Risiken zu verhindern, sollten Sie Ihre CSS-Formatvorlagen so definieren, dass sie sich nicht auf andere Elemente auf der Seite, sondern nur auf die Anpassung auswirken.
+SharePoint-Framework-Lösungen sind Teil der Seite und vollständig in das DOM der Seite integriert. Dadurch fallen zwar verschiedene Einschränkungen des Add-In-Modells weg, es entstehen jedoch auch Risiken für die Lösung. Da sie Teil der Seite ist, gilt: Solange Sie die Lösung nicht explizit isolieren, werden sämtliche auf der Seite definierten CSS-Vorlagen auf sie angewendet. Das kann dazu führen, dass die Oberfläche anders aussieht als von Ihnen vorgesehen. Um das zu vermeiden, sollten Sie Ihre CSS-Formatvorlagen so definieren, dass sie sich ausschließlich auf Ihre Anpassung auswirken, nicht jedoch auf andere Seitenelemente.
 
 ## <a name="organize-css-files-in-your-solution"></a>Organisieren von CSS-Dateien in Ihrer Lösung
 
-Die Benutzeroberfläche Ihrer Lösung besteht häufig aus mehreren Bausteinen. In vielen JavaScript-Bibliotheken werden diese Bausteine als Komponenten bezeichnet. Eine Komponente kann einfach sein und nur die Präsentation definieren, oder sie kann komplexer sein und den Status sowie andere Komponenten umfassen. Durch Aufteilen der Lösung in mehrere Komponenten können Sie den Entwicklungsprozess vereinfachen und das Testen und Wiederverwenden in Ihrer Lösung erleichtern.
+Oft besteht die Benutzeroberfläche einer Lösung aus mehreren Bausteinen. In vielen JavaScript-Bibliotheken werden diese Bausteine als Komponenten bezeichnet. Eine Komponente kann einfach sein und nur die Darstellungsweise definieren, oder sie kann komplexer sein und sowohl den Status als auch andere Komponenten enthalten. Wenn Sie Ihre Lösung in mehrere Komponenten unterteilen, vereinfacht das den Entwicklungsprozess und macht es leichter, die Komponenten zu testen und in Ihrer Lösung wiederzuverwenden.
 
-Da Komponenten über eine Präsentation verfügen, erfordern sie häufig CSS-Formatvorlagen. Im Idealfall sind Komponenten isoliert und können eigenständig verwendet werden. Angesichts dessen ist es sinnvoll, CSS-Formatvorlagen für die jeweilige Komponente mit allen anderen Ressourcendateien neben der Komponente zu speichern. Nachfolgend finden Sie eine Beispielstruktur einer React-Anwendung mit einer Reihe von Komponenten, die jeweils über ihre eigene CSS-Datei verfügen.
+Da Komponenten visuell dargestellt werden, sind für sie oftmals CSS-Formatvorlagen erforderlich. Im Idealfall sollten Komponenten isoliert werden und eigenständig nutzbar sein. Um das zu erreichen, ist es sinnvoll, die CSS-Formatvorlagen einer Komponente zusammen mit allen anderen Objektdateien der Komponente zu speichern. Unten sehen Sie eine Beispielstruktur einer React-Anwendung mit verschiedenen Komponenten, die jeweils eine eigene CSS-Datei haben.
 
 ```text
 todoWebPart\components
@@ -36,13 +37,17 @@ todoWebPart\components
 
 ## <a name="use-sass"></a>Verwenden von Sass
 
-Im SharePoint-Framework können Sie sowohl CSS und Sass verwenden. Sass ist eine Obermenge von CSS und bietet Ihnen eine Reihe von Funktionen, z. B. das Verwenden von Variablen, das Verschachteln von Selektoren oder die Verwendung von Mixins, die alle das Arbeiten mit und das Verwalten von CSS-Formatvorlagen langfristig vereinfachen. Eine vollständigen Satz von Funktionen finden Sie auf der [Sass-Website](http://sass-lang.com). Gültige CSS ist ebenfalls gültige Sass, was sehr hilfreich ist, wenn Sie noch nicht mit Sass gearbeitet haben und sich an die Funktionen herantasten möchten.
+Im SharePoint-Framework können Sie sowohl CSS als auch Sass verwenden. Sass ist eine CSS übergeordnete Sprache und bietet eine Reihe von Funktionen, die die Arbeit mit und die Verwaltung von CSS-Formatvorlagen langfristig einfacher machen. Zu diesen Funktionen gehören beispielsweise Variablen, Schachtelungsselektoren und Mixins. 
 
-## <a name="avoid-using-ids-in-markup"></a>Vermeiden der Verwendung von IDs in Markup
+Eine umfassende Übersicht über alle Funktionen finden Sie auf der [Sass-Website](http://sass-lang.com). Jeder gültige CSS-Code ist auch gültiger Sass-Code. Das ist sehr nützlich, falls Sie bisher noch nicht mit Sass gearbeitet haben und sich Schritt für Schritt mit den Funktionen der Sprache vertraut machen möchten.
 
-Mithilfe von SharePoint Framework erstellen Sie Anpassungen, die Endbenutzer zu SharePoint hinzufügen. Es kann vorab festgestellt werden, ob die jeweilige Anpassung nur einmal auf einer Seite verwendet wird oder ob es mehrere Instanzen davon gibt. Um Probleme zu verhindern, sollten Sie immer davon ausgehen, dass es mehrere Instanzen Ihrer Anpassung auf derselben Seite gibt. Angesichts dieser Tatsache sollten Sie keine IDs in Ihrem Markup verwenden. IDs sollen auf einer Seite eindeutig sein, und wenn ein Benutzer Ihr Webpart der Seite zweimal hinzugefügt hat, würde dies einen Verstoß gegen diese Voraussetzung bedeuten, was zu Fehlern führen kann.
+## <a name="avoid-using-ids-in-markup"></a>Vermeiden der Verwendung von IDs im Markup
 
-**Nicht zu empfehlen:**
+Wenn Sie mit dem SharePoint-Framework arbeiten, erstellen Sie Anpassungen, die Endbenutzer SharePoint hinzufügen. Vorab lässt sich unmöglich voraussehen, ob auf einer Seite nur eine einzige Instanz einer Anpassung implementiert wird oder ob mehrere Instanzen verwendet werden. 
+
+Um Probleme zu vermeiden, sollten Sie immer davon ausgehen, dass auf einer Seite mehrere Instanzen Ihrer Anpassung verwendet werden. Daher sollten Sie keine IDs in Ihrem Markup verwenden. IDs müssen auf einer Seite immer eindeutig sein; fügt ein Benutzer zwei Instanzen Ihres Webparts zu einer Seite hinzu, wird damit gegen diese Vorgabe verstoßen, und es kann zu Fehlern kommen.
+
+#### <a name="bad-practice"></a>Nicht zu empfehlen:
 
 ```ts
 // ...
@@ -60,7 +65,9 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
 }
 ```
 
-**Zu empfehlen:**
+<br/>
+
+#### <a name="good-practice"></a>Zu empfehlen:
 
 ```ts
 // ...
@@ -82,11 +89,11 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
 
 SharePoint Framework-Lösungen sind Teil der Seite. Um sicherzustellen, dass CSS-Formatvorlagen für eine Komponente keine Auswirkungen auf andere Elemente auf der Seite haben, sollten Sie Ihre CSS-Selektoren so verwenden, dass sie nur für das DOM Ihrer Lösung gelten. Bei manueller Ausführung ist dies mühsam und fehleranfällig, in SharePoint Framework kann dies jedoch automatisch ausgeführt werden.
 
-Um Formatkonflikte zu vermeiden, verwendet SharePoint Framework [CSS-Module](https://github.com/css-modules/css-modules). Beim Erstellen des Projekts verarbeitet die SharePoint Framework-Toolkette alle Dateien mit der Erweiterung **. module.scss**. Alle Klassenselektoren werden für jede Datei gelesen und diesen wird ein eindeutiger Hashwert angefügt. Nach Abschluss werden die aktualisierten Selektoren in Zwischen-CSS-Dateien geschrieben, die im generierten Webpartpaket enthalten sind.
+Das SharePoint-Framework verwendet [CSS-Module](https://github.com/css-modules/css-modules), um Formatkonflikte zu vermeiden. Wenn Sie ein Projekt erstellen, verarbeitet die SharePoint-Framework-Toolkette alle Dateien mit der Dateiendung **.module.scss**. Sie liest die Klassenselektoren jeder Datei und fügt ihnen jeweils einen eindeutigen Hashwert an. Anschließend werden die aktualisierten Selektoren in CSS-Zwischendateien geschrieben, die in das generierte Webpartpaket gepackt werden.
 
-Gehen Sie gemäß dem obigen Beispiel davon aus, dass Sie über die beiden folgenden Sass-Dateien verfügen:
+Nehmen wir das oben angeführte Beispiel, und gehen wir davon aus, wir arbeiten mit den folgenden beiden Sass-Dateien:
 
-**todoList.module.scss:**
+#### <a name="todolistmodulescss"></a>todoList.module.scss
 
 ```scss
 .todoList {
@@ -99,7 +106,9 @@ Gehen Sie gemäß dem obigen Beispiel davon aus, dass Sie über die beiden folge
 }
 ```
 
-**todoItem.module.scss:**
+<br/>
+
+#### <a name="todoitemmodulescss"></a>todoItem.module.scss
 
 ```scss
 .todoItem {
@@ -111,9 +120,11 @@ Gehen Sie gemäß dem obigen Beispiel davon aus, dass Sie über die beiden folge
 }
 ```
 
+<br/>
+
 Nach dem Erstellen des Projekts würden Sie im Ordner **lib** die folgenden beiden generierten CSS-Dateien sehen (Zeilenumbrüche und Einzüge wurden zur besseren Lesbarkeit hinzugefügt):
 
-**todoList.module.css:**
+#### <a name="todolistmodulecss"></a>todoList.module.css
 
 ```css
 .todoList_3e9d35f0 {
@@ -126,7 +137,9 @@ Nach dem Erstellen des Projekts würden Sie im Ordner **lib** die folgenden beid
 }
 ```
 
-**todoItem.module.css:**
+<br/>
+
+#### <a name="todoitemmodulecss"></a>todoItem.module.css
 
 ```css
 .todoItem_f7081cc4 {
@@ -138,11 +151,13 @@ Nach dem Erstellen des Projekts würden Sie im Ordner **lib** die folgenden beid
 }
 ```
 
+<br/>
+
 Obwohl eine **.text**-Klasse in beiden Sass-Dateien definiert wurde, werden Sie feststellen, dass in den generierten CSS-Dateien zwei Hashes angefügt wurden, sodass ein eindeutiger Klassenname entsteht, der für jede Komponente spezifisch ist.
 
 Die CSS-Klassennamen in CSS-Modulen werden dynamisch generiert, sodass Sie nicht direkt im Code auf diese verweisen können. Stattdessen generiert die SharePoint Framework-Toolkette beim Verarbeiten von CSS-Modulen eine JavaScript-Datei mit Verweisen auf die generierten Klassennamen.
 
-**todoList.module.scss.js:**
+#### <a name="todolistmodulescssjs"></a>todoList.module.scss.js
 
 ```js
 "use strict";
@@ -159,7 +174,9 @@ exports.default = styles;
 //# sourceMappingURL=todoList.module.scss.js.map
 ```
 
-Um die generierten Klassennamen in Ihrem Code zu verwenden, importieren Sie zunächst die Formatvorlagen Ihrer Komponente, und verwenden Sie dann die Eigenschaft, die auf die jeweilige Klasse zeigt:
+<br/>
+
+Um die generierten Klassennamen in Ihrem Code verwenden zu können, müssen Sie zunächst die Formatvorlagen Ihrer Komponente importieren. Anschließend verwenden Sie die Eigenschaft, die auf die betreffende Klasse zeigt:
 
 ```ts
 import styles from './todoList.module.scss';
@@ -176,19 +193,23 @@ export default class TodoList extends React.Component<ITodoListProps, void> {
 }
 ```
 
-Damit die CSS-Module ordnungsgemäß funktionieren, müssen Sie die folgenden Bedingungen erfüllen:
+<br/>
 
-* Die Sass-Dateien müssen die Erweiterung **.module.scss** aufweisen. Wenn Sie die Erweiterung **.scss** ohne **.module** verwenden, wird beim Erstellungsprozess eine Warnung angezeigt. Die Sass-Datei wird in eine Zwischen-CSS-Datei übertragen, die Klassennamen **werden aber nicht eindeutig gemacht**. Dies kann in Fällen, in denen Sie CSS-Formatvorlagen von Drittanbietern außer Kraft setzen müssen, beabsichtigt sein.
-* Die CSS-Klassennamen müssen gültige JavaScript-Variablennamen sein, sie dürfen also zum Beispiel keine Bindestriche enthalten: `todoList` ist richtig, `todo-list` jedoch nicht.
-* camelCase-Benennung für Klassen wird empfohlen, wird aber nicht erzwungen
+Damit die CSS-Module korrekt funktionieren, müssen die folgenden Bedingungen erfüllt sein:
 
-## <a name="wrap-your-css-styles-in-a-class-named-after-the-component"></a>Verpacken Sie Ihre CSS-Formatvorlagen in einer Klasse, die nach der Komponente benannt ist
+* Ihre Sass-Dateien müssen die Dateiendung **.module.scss** haben. Wenn Sie die Dateiendung **.scss** ohne **.module** verwenden, wird während des Erstellungsprozesses eine Warnmeldung angezeigt. Die Sass-Datei wird in eine CSS-Zwischendatei transpiliert, wobei die Klassennamen jedoch *nicht eindeutig gemacht werden*. Falls Sie CSS-Formatvorlagen von Drittanbietern überschreiben müssen, ist dies möglicherweise gewollt.
 
-Durch Kombinieren von CSS-Modulen mit der Unterstützung von Sass zum Verschachteln von Regelsätzen können Sie Ihre CSS-Formatvorlagen vereinfachen und sicherstellen, dass diese keine Auswirkungen auf andere Elemente auf der Seite haben.
+* Alle CSS-Klassennamen müssen gültige JavaScript-Variablennamen sein. Sie dürfen beispielsweise keine Bindestriche enthalten: `todoList` ist korrekt, `todo-list` jedoch nicht.
 
-Verpacken Sie beim Erstellen von CSS-Formatvorlagen für eine Komponente diese in einer Klasse, die nach der Komponente benannt ist. Weisen Sie diese Klassen dann in der Komponente dem Stammelement der Komponente zu.
+* Wir empfehlen die CamelCase-Notation für die Benennung von Klassen. Obligatorisch ist die Verwendung dieser Notation jedoch nicht.
 
-**todoList.module.scss:**
+## <a name="wrap-your-css-styles-in-a-class-named-after-the-component"></a>Einbetten von CSS-Formatvorlagen in eine nach der Komponente benannten Klasse
+
+Wenn Sie CSS-Module und die Sass-Unterstützung für die Schachtelung von Regelsätzen miteinander kombinieren, können Sie Ihre CSS-Formatvorlagen vereinfachen und sicherstellen, dass sie keine Auswirkungen auf andere Seitenelemente haben.
+
+Betten Sie dazu die CSS-Formatvorlagen Ihrer Komponente bei der Erstellung in eine Klasse ein, die nach der Komponente benannt ist. In der Komponente selbst muss die Klasse dem Stammelement der Komponente zugewiesen werden.
+
+#### <a name="todolistmodulescss"></a>todoList.module.scss
 
 ```scss
 .todoList {
@@ -198,7 +219,9 @@ Verpacken Sie beim Erstellen von CSS-Formatvorlagen für eine Komponente diese i
 }
 ```
 
-**TodoList.tsx:**
+<br/>
+
+#### <a name="todolisttsx"></a>TodoList.tsx
 
 ```tsx
 // ...
@@ -214,7 +237,9 @@ export default class TodoList extends React.Component<ITodoListProps, void> {
 }
 ```
 
-Nach der Übertragung sieht die generierte CSS-Datei in etwa wie folgt aus:
+<br/>
+
+Nach der Transpilierung sieht die generierte CSS-Datei in etwa wie folgt aus:
 
 ```css
 .todoList_3e9d35f0 a {
@@ -222,12 +247,13 @@ Nach der Übertragung sieht die generierte CSS-Datei in etwa wie folgt aus:
 }
 ```
 
-Da der Selektor mit dem eindeutigen Klassennamen beginnt, der spezifisch für die Komponente ist, gilt die alternative Präsentation nur für Hyperlinks innerhalb der Komponenten.
+Da der Selektor mit dem eindeutigen Klassennamen beginnt, der spezifisch für die Komponente ist, gilt die alternative Darstellung nur für Links innerhalb der Komponente.
 
-## <a name="handling-of-css-vendor-prefix"></a>Verwenden von CSS-Anbieterpräfixen
-In SPFx sind keine Formatvorlagen mit Anbieterpräfix in SASS- oder CSS-Dateien eines Projekts erforderlich. Wenn für einige Browser mit SPFx-Unterstützung Präfixe erforderlich sind, wurden diese automatisch nach der Kompilierung von SASS zu CSS hinzugefügt. Diese Methode wird auch als automatisches Voranstellen von Präfixen bezeichnet und ist grundlegender Bestandteil der CSS-Buildkette in SPFx.
+## <a name="handling-of-css-vendor-prefix"></a>Verarbeiten von CSS-Anbieterpräfixen
 
-Falls ein Webpart das neue Flexboxmodell verwenden sollte, das von der `display: flex`-Deklaration definiert wird. Für einige ältere WebKit-basierte und Internet Explorer-Versionen muss ein bestimmtes Anbieterpräfix in der CSS-Datei definiert sein.
+Im SharePoint-Framework müssen in den Sass- oder CSS-Dateien von Projekten nicht zwingend Formateigenschaften mit Anbieterpräfix verwendet werden. Für den Fall, dass einige der vom SharePoint-Framework unterstützten Browser Präfixe fordern, werden diese automatisch nach der Kompilierung von Sass zu CSS hinzugefügt. Diese Methode wird auch als automatische Voranstellung von Präfixen (Prefixing) bezeichnet und ist grundlegender Bestandteil der CSS-Buildkette im SharePoint-Framework.
+
+Falls Ihr Webpart das neue Flex-Box-Modell verwendet (definiert durch die Deklaration `display: flex`), erfordern einige ältere WebKit-basierte Browser und Internet Explorer-Versionen einen bestimmten Anbieterpräfix im CSS-Code.
 
 ```css
 .container{
@@ -235,7 +261,9 @@ Falls ein Webpart das neue Flexboxmodell verwenden sollte, das von der `display:
 }
 ```
 
-Im SASS-Code des SPFx-Artefakts müssen keine Anbieterpräfixe enthalten sein. Nach der Kompilierung von SASS zu CSS wurden diese automatisch hinzugefügt, sodass die CSS-Deklaration wie folgt aussieht.
+<br/>
+
+Der Sass-Code des SharePoint-Framework-Artefakts muss keine Anbieterpräfixes enthalten. Nach der Kompilierung von Sass zu CSS werden diese automatisch hinzugefügt, sodass die CSS-Deklaration wie folgt aussieht:
 
 ```css
 .container_7e976ae1 {
@@ -245,10 +273,13 @@ Im SASS-Code des SPFx-Artefakts müssen keine Anbieterpräfixe enthalten sein. N
 }
 ```
 
-Durch das Entfernen bereits angewendeter Präfixe wird der Code des Artefakts nicht nur übersichtlicher. Er wird auch lesbarer und zukunftsorientiert. Dieser Vorgang wird auch konfiguriert, um nur Browser mit SPFx-Unterstützung zu unterstützen, und sorgt für weniger Fehler.
-Falls ein Webpart bereits Anbieterpräfixe in den SASS-Dateien enthält, die nicht mehr benötigt werden, werden diese Deklarationen mit demselben Vorgang automatisch entfernt.
+<br/>
 
-Im folgenden Beispiel wird die `border-radius`-Eigenschaft verwendet. Eine Eigenschaft, für die keine Anbieterpräfixe auf den unterstützten Systemen erforderlich sind.
+Durch das Entfernen bereits angewendeter Präfixe wird der Artefaktcode nicht nur übersichtlicher, sondern auch einfacher lesbar und zukunftssicherer. Darüber hinaus ist dieser Prozess so konfiguriert, dass nur vom SharePoint-Framework unterstützte Browser unterstützt werden. Das sichert effektiver gegen Fehler ab.
+
+Falls die Sass-Dateien eines Webparts bereits Anbieterpräfixe enthalten, die nicht mehr benötigt werden, werden diese Deklarationen über denselben Prozess automatisch entfernt.
+
+Im nachfolgenden Beispiel wird die Eigenschaft `border-radius` verwendet, die keine Anbieterpräfixe auf den unterstützten Systemen erfordert.
 
 ```css
 .container {
@@ -261,7 +292,9 @@ Im folgenden Beispiel wird die `border-radius`-Eigenschaft verwendet. Eine Eigen
 }
 ```
 
-Die resultierende CSS-Datei in dem Paket wird in den folgenden Code konvertiert.
+<br/>
+
+Der resultierende CSS-Code im Paket wird in den folgenden Code umgewandelt:
 
 ```css
 .container_9e54c0b0 {
@@ -269,12 +302,22 @@ Die resultierende CSS-Datei in dem Paket wird in den folgenden Code konvertiert.
 }
 ```
 
-Weitere Informationen zum automatischen Voranstellen von Präfixen finden Sie in der Dokumentation im GitHub-Repository unter „[autoprefix](https://github.com/postcss/autoprefixer)“. Die Datenbank während des gesamten Prozesses ist unter [caniuse.com](https://caniuse.com) verfügbar.
+Weitere Informationen zum automatischen Prefixing finden Sie im GitHub-Repository [autoprefixer](https://github.com/postcss/autoprefixer). Die Datenbank für diesen Prozess ist auf [Can I use__?](https://caniuse.com) verfügbar.
 
-## <a name="integrate-office-ui-fabric"></a>Integration von Office UI Fabric
+## <a name="integrate-office-ui-fabric"></a>Integrieren von Office UI Fabric
 
-Indem Sie dafür sorgen, dass Ihre Anpassungen wie die Standardfunktionen von SharePoint und Office 365 aussehen und sich so verhalten, können Sie Endbenutzern das Arbeiten damit erleichtern. Office UI Fabric bietet Ihnen eine Reihe von Steuerelementen und Formatvorlagen, die Sie in Ihren Anpassungen verwenden können, um eine nahtlose Integration in die vorhandene Benutzeroberfläche zu gewährleisten. Weitere Informationen zur Verwendung von Office UI Fabric im SharePoint Framework finden Sie im [Office UI Fabric-Integrationsleitfaden](./office-ui-fabric-integration.md).
+Wenn Sie Ihre Anpassung so gestalten, dass sie in puncto Aussehen und Verhalten den Standardfunktionen von SharePoint und Office 365 entspricht, machen Sie es Endbenutzern einfacher, mit ihr zu arbeiten. Office UI Fabric bietet eine Reihe von Steuerelementen und Formatvorlagen für Anpassungen, mit denen eine nahtlose Integration in die vorhandene Benutzeroberfläche möglich ist. 
 
-## <a name="use-theme-colors"></a>Verwenden von Designfarben
+Weitere Informationen zur Verwendung von Office UI Fabric im SharePoint-Framework finden Sie unter [Verwenden von Office UI Fabric Core und Fabric React im SharePoint-Framework](./office-ui-fabric-integration.md).
 
-In SharePoint können Benutzer die Designfarbe für Ihre Websites auswählen. In Ihren SharePoint Framework-Anpassungen sollten Sie dasselbe Design verwenden, das von den Benutzern ausgewählt wurde, damit Ihre Anpassung wie ein fester Bestandteil der Website aussieht und nicht unnötig hervorsticht. Da das Design von Benutzern auf deren Website festgelegt wird, können Sie nicht vorab festlegen, welche Farben Ihre Anpassung verwenden sollte, in SharePoint Framework kann das derzeit aktive Farbschema jedoch dynamisch und automatisch für Sie geladen werden. Weitere Informationen zu dieser Funktion finden Sie im [Leitfaden zur Verwendung von Designfarben](./use-theme-colors-in-your-customizations.md).
+## <a name="use-theme-colors"></a>Verwenden von Farbdesigns
+
+SharePoint ermöglicht es Benutzern, ein Farbdesign für ihre Website auszuwählen. Damit Ihre SharePoint-Framework-Anpassung wie ein integraler Bestandteil der Website aussieht und nicht unnötig heraussticht, sollte sie jeweils das vom Benutzer ausgewählte Design verwenden. 
+
+Da die Benutzer selbst das Design für eine Website festlegen, wissen Sie vorab nicht, welche Farben Ihre Anpassung verwenden sollte. Das SharePoint-Framework kann das aktuell aktive Farbdesign jedoch automatisch dynamisch für Sie laden. 
+
+Weitere Informationen zu dieser Funktion finden Sie unter [Verwenden von Designfarben in Ihren SharePoint-Framework-Anpassungen](./use-theme-colors-in-your-customizations.md).
+
+
+
+

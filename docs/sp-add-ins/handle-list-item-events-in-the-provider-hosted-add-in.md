@@ -1,27 +1,17 @@
 ---
 title: Verarbeiten von Listenelementereignissen im vom Anbieter gehosteten Add-In
 description: "Stellen Sie programmgesteuert eine Liste bereit, erstellen und registrieren Sie den Listenelement-Ereignisempfänger, führen Sie das vom Anbieter gehostete SharePoint-Add-In aus und testen Sie den Empfänger. "
-ms.date: 11/02/2017
+ms.date: 12/04/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 4ed8702b51d387920fcde48a8f2848c8e8502ccc
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 86238eba8d6ff9c506f8d6162295b26004a673cd
+ms.sourcegitcommit: df82c72574631093a93f8a75ecbcb79cff765ea7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/28/2017
 ---
-# <a name="handle-list-item-events-in-the-provider-hosted-add-in"></a>Verarbeiten von Listenelementereignissen im vom Anbieter gehosteten Add-In
+# <a name="handle-list-item-events-in-the-provider-hosted-add-in"></a>Verarbeiten von Listenelementereignissen in anbietergehosteten Add-Ins
 
-Dies ist der zehnte in einer Reihe von Artikeln über die Grundlagen der Entwicklung von vom Anbieter gehosteten SharePoint-Add-Ins. Sie sollten sich zuerst mit [SharePoint Add-Ins](sharepoint-add-ins.md) und den vorherigen Artikeln in dieser Reihe vertraut machen:
-
--  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
--  [Übertragen des SharePoint-Aussehens und -Verhaltens auf Ihr vom Anbieter gehostetes Add-In](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md)
--  [Einfügen einer benutzerdefinierten Schaltfläche in das vom Anbieter gehostete Add-In](include-a-custom-button-in-the-provider-hosted-add-in.md)
--  [Schnelle Übersicht über das SharePoint-Objektmodell](get-a-quick-overview-of-the-sharepoint-object-model.md)
--  [Hinzufügen von SharePoint-Schreibvorgängen zum vom Anbieter gehosteten Add-In](add-sharepoint-write-operations-to-the-provider-hosted-add-in.md)
--  [Einfügen eines Add-In-Webparts in das vom Anbieter gehostete Add-In](include-an-add-in-part-in-the-provider-hosted-add-in.md)
--  [Verarbeiten von Add-In-Ereignissen im vom Anbieter gehosteten Add-In](handle-add-in-events-in-the-provider-hosted-add-in.md)
--  [Hinzufügen der Logik für die erste Ausführung zum vom Anbieter gehosteten Add-In](add-first-run-logic-to-the-provider-hosted-add-in.md)
--  [Programmgesteuertes Bereitstellen einer benutzerdefinierten Schaltfläche in anbietergehosteten Add-Ins](programmatically-deploy-a-custom-button-in-the-provider-hosted-add-in.md)
+Dies ist der zehnte einer Reihe von Artikeln über die Grundlagen der Entwicklung von vom Anbieter gehosteten SharePoint-Add-Ins. Machen Sie sich zunächst mit [SharePoint-Add-Ins](sharepoint-add-ins.md) und den vorherigen Artikeln dieser Reihe vertraut, die Sie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md#SP15createprovider_nextsteps) finden. 
 
 > [!NOTE]
 > Wenn Sie unsere Artikelreihe zum Thema anbietergehostete Add-Ins durchgearbeitet haben, haben Sie bereits eine Visual Studio-Lösung, die Sie für diesen Artikel verwenden können. Sie können auch das Repository unter [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) herunterladen und die Datei BeforeRER.sln öffnen.
@@ -254,7 +244,7 @@ Die Office Developer Tools für Visual Studio enthalten eine **Remote-Ereignisem
 
 10. Es gibt fünf Spalten in der **Lieferung erwartet**-Liste, aber bei den meisten Arten der Updates möchten wir nicht, dass der Handler reagiert. Wenn ein Benutzer z.B. die Schreibweise des Namens eines Lieferanten korrigiert, wird das Elementaktualisierungsereignis ausgelöst, aber unser Handler sollte nicht reagieren. Der Handler sollte nur reagieren, wenn das **Angekommen**-Feld auf **Ja** gesetzt wurde. 
     
-    Es gibt eine weitere Bedingung, die getestet werden muss. Nehmen wir einmal an, **Angekommen** wurde auf **Ja** festgelegt und das Produkt im Element wird zum Bestand hinzugefügt (und **Zum Bestand hinzugefügt** ist auf **Ja**) festgelegt. Später ändert ein Benutzer jedoch versehentlich das **Angekommen**-Feld einer Lieferung zurück auf **Nein**. Später behebt er den Fehler, indem er es erneut auf **Angekommen** setzt. Sowohl der Fehler als auch die Korrektur lösen das Elementaktualisierungsereignis aus. Der Handler reagiert nicht auf den Fehler, da er nur reagiert, wenn **Angekommen** auf **Ja** festgelegt ist, aber er reagiert auf die Korrektur, bei der **Angekommen** zurück auf **Ja** gesetzt wird, sodass das gleiche Produkt und die gleiche Menge ein zweites Mal zum Bestand hinzugefügt würden. Aus diesem Grund sollte der Handler nur reagieren, wenn der Wert **Zum Bestand hinzugefügt** auf **Nein** festgelegt ist. 
+    Es gibt eine weitere Bedingung, die getestet werden muss. Nehmen wir einmal an, **Angekommen** wurde auf **Ja** festgelegt und das Produkt im Element wird zum Bestand hinzugefügt (und **Zum Bestand hinzugefügt** ist auf **Ja**) festgelegt. Später ändert ein Benutzer jedoch versehentlich das **Angekommen**-Feld einer Lieferung zurück auf **Nein**. Später behebt er den Fehler, indem er es erneut auf **Ja** setzt. Sowohl der Fehler als auch die Korrektur lösen das Elementaktualisierungsereignis aus. Der Handler reagiert nicht auf den Fehler, da er nur reagiert, wenn **Angekommen** auf **Ja** festgelegt ist, aber er reagiert auf die Korrektur, bei der **Angekommen** zurück auf **Ja** gesetzt wird, sodass das gleiche Produkt und die gleiche Menge ein zweites Mal zum Bestand hinzugefügt würden. Aus diesem Grund sollte der Handler nur reagieren, wenn der Wert **Zum Bestand hinzugefügt** auf **Nein** festgelegt ist. 
     
     Daher muss der Handler wissen, welche Werte diese Felder besitzen, nachdem der Benutzer das Element aktualisiert hat. Das **SPRemoteEventProperties**-Objekt verfügt über die **ItemEventProperties**-Eigenschaft. Es enthält aber auch eine indizierte **AfterProperties**-Eigenschaft mit den Werten der Felder des aktualisierten Elements. Der folgende Code verwendet diese Eigenschaften, um zu testen, ob der Handler reagieren soll. Setzen Sie dies an die Stelle von `TODO14`.
 

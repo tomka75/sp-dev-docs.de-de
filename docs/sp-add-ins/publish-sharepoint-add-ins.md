@@ -3,11 +3,11 @@ title: "Veröffentlichen von SharePoint-Add-Ins"
 description: "Entscheiden Sie, wo Ihre SharePoint-Add-Ins veröffentlicht werden sollen."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 90932407a963cae54511ff2c28967e5b0fd99c57
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 49d66a8b82272537d92bdab40e361f9794914ee9
+ms.sourcegitcommit: 843caaf543cdc2cf43fbb783e95164fbf99a586a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="publish-sharepoint-add-ins"></a>Veröffentlichen von SharePoint-Add-Ins
 
@@ -52,18 +52,15 @@ In der folgenden Tabelle wird die Veröffentlichung im Office Store mit der Ver�
 |Das Add-In-Paket wird von Microsoft auf die Einhaltung technischer und Inhaltsrichtlinien geprüft.|Die Überprüfung des Add-In-Pakets wird beim Hochladen von SharePoint durchgeführt.|
 |Sie müssen beim Microsoft Seller Dashboard angemeldet sein, um Add-Ins hochladen zu können.|Es ist keine Registrierung bei Microsoft erforderlich.|
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Weitere Artikel
 <a name="bk_addresources"> </a>
 
--  [Erstellen oder Aktualisieren von Client-IDs und geheimen Clientschlüsseln im Verkäuferdashboard](http://msdn.microsoft.com/library/create-or-update-client-ids-and-secrets-in-the-seller-dashboard%28Office.15%29.aspx)
--  [Verwenden des Verkäuferdashboards zum Übermitteln von Office- und SharePoint-Add-Ins und Office 365-Apps an den Office Store](http://msdn.microsoft.com/library/use-the-seller-dashboard-to-submit-office-and-sharepoint-add-ins-and-office-365-apps-to-the-office-store%28Office.15%29.aspx)
--  [Validierungsrichtlinien für an den Office Store übermittelte Apps und Add-Ins (Version 2.1)](http://msdn.microsoft.com/library/validation-policies-for-apps-and-add-ins-submitted-to-the-office-store-version-2-1%28Office.15%29.aspx)
+-  [Erstellen oder Aktualisieren von Client-IDs und geheimen Clientschlüsseln im Verkäuferdashboard](https://docs.microsoft.com/de-DE/office/dev/store/create-or-update-client-ids-and-secrets)
+-  [Verwenden des Verkäuferdashboards zum Übermitteln von Office- und SharePoint-Add-Ins und Office 365-Apps an den Office Store](https://docs.microsoft.com/de-DE/office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store)
+-  [Validierungsrichtlinien für an den Office Store übermittelte Apps und Add-Ins](https://docs.microsoft.com/de-DE/office/dev/store/validation-policies)
 -  [Office-Entwicklung](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea.aspx)
--  [Lizenzieren von Office- und SharePoint-Add-Ins](http://msdn.microsoft.com/library/license-your-office-and-sharepoint-add-ins%28Office.15%29.aspx)
+-  [Lizenzieren von Office- und SharePoint-Add-Ins](https://docs.microsoft.com/de-DE/office/dev/store/license-your-add-ins)
 -  [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen](deploying-and-installing-sharepoint-add-ins-methods-and-options.md)
 -  [Mandantschaften und Bereitstellungsbereiche von SharePoint- Add-Ins](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md)
 -  [Veröffentlichen von SharePoint-Add-Ins mithilfe von Visual Studio](publish-sharepoint-add-ins-by-using-visual-studio.md)
--  [Veröffentlichen von Add-Ins für den Office Store](http://social.msdn.microsoft.com/Forums/de-DE/officestore)
-    
- 
-
+-  [Übermitteln Ihrer Lösungen an den Office Store](https://docs.microsoft.com/de-DE/office/dev/store/submit-to-the-office-store)

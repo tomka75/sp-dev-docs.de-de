@@ -594,6 +594,51 @@ Dieses Beispiel basiert auf zwei Zahlenfeldern (`Before` und `After`), deren Wer
 }
 ```
 
+## <a name="create-a-button-to-launch-a-flow"></a>Erstellen einer Schaltfläche zum Starten eines Flusses
+Der folgende Screenshot zeigt eine Liste mit einer Fluss-Schaltfläche, die zur Aktion-Spalte hinzugefügt wird:
+
+![Screenshot des Beispiels](../images/sp-columnformatting-flow.png)
+
+Sie können die Spaltenformatierung verwenden, um Schaltflächen zu erstellen, die Abläufe für das entsprechende Listenelemente ausführen, wenn Sie darauf klicken.  Wenn der Fluss vor der Ausführung für das Sammeln von Daten des Endbenutzers konfiguriert wurde, wird die Fluss-Startleiste nach dem Klicken auf die Schaltfläche angezeigt.  Andernfalls wird der Fluss lediglich ausgeführt.
+
+Wenn Sie das folgende Beispiel verwenden möchten, müssen Sie die ID des Flusses, den Sie ausführen möchten, ersetzen.  Diese ID ist im `customRowAction`-Attribut des `button`-Elements enthalten.  Abrufen einer Fluss-ID:
+
+1. Klicken Sie auf Fluss > Zeigen Sie Ihre Flüsse in der SharePoint-Liste an, in der der Fluss konfiguriert ist.
+2. Klicken Sie auf Fluss, den Sie ausführen möchten.
+3. Kopieren Sie die ID am Ende der URL.  
+
+```JSON
+{
+    "$schema": "http://columnformatting.sharepointpnp.com/columnFormattingSchema.json",
+    "elmType": "span",
+    "style": {
+        "color": "#0078d7"
+    },
+    "children": [
+    {
+        "elmType": "span",
+        "attributes": {
+            "iconName": "Flow"
+        }
+    },
+    {
+        "elmType": "button",
+        "style": {
+            "border": "none",
+            "background-color": "transparent",        
+            "color": "#0078d7",    
+            "cursor": "pointer"
+        },
+        "txtContent": "Send to Manager",
+        "customRowAction": {
+            "action": "executeFlow",
+            "actionParams": "{\"id\": \"183bedd4-6f2b-4264-855c-9dc7617b4dbe\"}"
+        }          
+    }        
+  ]
+}
+```
+
 ## <a name="supported-column-types"></a>Unterstützte Spaltentypen
 Spaltenformatierungen können auf folgende Spaltentypen angewendet werden:
 * Eine Textzeile 
@@ -667,6 +712,7 @@ Gibt an, welcher Typ von Element erstellt werden soll. Folgende Elemente sind g�
 - img
 - svg
 - path
+- button
 
 Bei allen anderen Werten wird ein Fehler zurückgegeben.
 
