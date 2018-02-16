@@ -3,11 +3,11 @@ title: "Empfehlungen für das Arbeiten mit CSS in SharePoint-Framework-Lösungen
 description: "Mit CSS können Sie das Aussehen und das Verhalten von SharePoint-Framework-Anpassungen definieren."
 ms.date: 1/24/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 2258d163f47b5961555f9362aa87a9c1ab82ba39
-ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
+ms.openlocfilehash: 38d74b4a84187b16a3085354a6dda19b60e2eb56
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="recommendations-for-working-with-css-in-sharepoint-framework-solutions"></a>Empfehlungen für das Arbeiten mit CSS in SharePoint-Framework-Lösungen
 
@@ -49,7 +49,7 @@ Um Probleme zu vermeiden, sollten Sie immer davon ausgehen, dass auf einer Seite
 
 #### <a name="bad-practice"></a>Nicht zu empfehlen:
 
-```ts
+```typescript
 // ...
 
 export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorldWebPartProps> {
@@ -69,7 +69,7 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
 
 #### <a name="good-practice"></a>Zu empfehlen:
 
-```ts
+```typescript
 // ...
 
 export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorldWebPartProps> {
@@ -178,7 +178,7 @@ exports.default = styles;
 
 Um die generierten Klassennamen in Ihrem Code verwenden zu können, müssen Sie zunächst die Formatvorlagen Ihrer Komponente importieren. Anschließend verwenden Sie die Eigenschaft, die auf die betreffende Klasse zeigt:
 
-```ts
+```typescript
 import styles from './todoList.module.scss';
 // ...
 

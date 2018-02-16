@@ -3,11 +3,11 @@ title: 'Lernprogramm: Verwenden von benutzerdefinierten Dialogfeldern mit ShareP
 description: "Erstellen eines benutzerdefinierten Dialogfelds und Verwenden im Kontext einer Erweiterung des Typs „ListView Command Set“."
 ms.date: 01/24/2018
 ms.prod: sharepoint
-ms.openlocfilehash: da4680145b34cff093057f98f8c53d8c2a24b5ea
-ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
+ms.openlocfilehash: f1b5209dcffea4be96c3478e650b3661a4ef8335
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="use-custom-dialog-boxes-with-sharepoint-framework-extensions"></a>Verwenden von benutzerdefinierten Dialogfeldern mit SharePoint-Framework-Erweiterungen
 
@@ -102,7 +102,7 @@ Konfigurieren Sie die Erweiterung im Erweiterungsmanifest so, dass sie nur eine 
 
 2. Fügen Sie die folgenden Importanweisungen oben in der neu erstellten Datei hinzu: Sie erstellen Ihr benutzerdefiniertes Dialogfeld mithilfe der [React-Komponenten der Office UI Fabric](https://developer.microsoft.com/de-DE/fabric#/components), die Implementierung erfolgt daher in React. 
 
-  ```ts
+  ```typescript
   import * as React from 'react';
   import * as ReactDOM from 'react-dom';
   import { BaseDialog, IDialogConfiguration } from '@microsoft/sp-dialog';
@@ -119,7 +119,7 @@ Konfigurieren Sie die Erweiterung im Erweiterungsmanifest so, dass sie nur eine 
 
 3. Fügen Sie die folgende Schnittstellendefinition direkt unterhalb den Importanweisungen hinzu: Diese wird verwendet, um Informationen und Funktionen zwischen den Erweiterung des Typs „ListView Command Set“ und Ihrem benutzerdefinierten Dialogfeld zu übergeben.
 
-  ```ts
+  ```typescript
   interface IColorPickerDialogContentProps {
     message: string;
     close: () => void;
@@ -130,7 +130,7 @@ Konfigurieren Sie die Erweiterung im Erweiterungsmanifest so, dass sie nur eine 
 
 4. Fügen Sie die folgende Klasse direkt unterhalb der Schnittstellendefinition hinzu: Diese React-Klasse ist für das Rendern der Benutzeroberflächen innerhalb des benutzerdefinierten Dialogfelds verantwortlich. Beachten Sie, dass die React-Komponenten der Office UI Fabric für das tatsächliche Rendern verwendet wird und die erforderlichen Eigenschaften nur übergeben werden.  
 
-  ```ts
+  ```typescript
   class ColorPickerDialogContent extends React.Component<IColorPickerDialogContentProps, {}> {
     private _pickedColor: string;
 
@@ -164,7 +164,7 @@ Konfigurieren Sie die Erweiterung im Erweiterungsmanifest so, dass sie nur eine 
 
 5. Fügen Sie die folgende Klassendefinition für Ihr benutzerdefiniertes Dialogfeld unter der `ColorPickerDialogContent` -Klasse hinzu, die Sie soeben hinzugefügt haben. Dies ist das tatsächliche benutzerdefinierte Dialogfeld, das durch Klicken auf die Schaltfläche „ListView Command Set“ aufgerufen und von `BaseDialog` geerbt wird.
 
-  ```ts
+  ```typescript
   export default class ColorPickerDialog extends BaseDialog {
     public message: string;
     public colorCode: string;
@@ -200,13 +200,13 @@ Zur Verknüpfung des benutzerdefinierten Dialogfelds mit Ihrer benutzerdefiniert
 
 2. Fügen Sie die nachfolgenden Importanweisungen unter der bereits vorhandenen **strings**-Importanweisung hinzu. Über die neuen Importanweisungen kann das benutzerdefinierte Dialogfeld im Kontext der Erweiterung des Typs „ListView Command Set“ verwendet werden. 
 
-  ```ts
+  ```typescript
   import ColorPickerDialog from './ColorPickerDialog';
   ```
 
 3. Fügen Sie die nachfolgende Variablendefinition `_colorCode` oberhalb der Funktion `onInit` in die Klasse `DialogDemoCommandSet` ein. Sie speichert den Rückgabewert aus dem Farbauswahl-Dialogfeld.
 
-  ```ts
+  ```typescript
     private _colorCode: string;
   ```
 
@@ -219,7 +219,7 @@ Zur Verknüpfung des benutzerdefinierten Dialogfelds mit Ihrer benutzerdefiniert
   * Er empfängt und speichert den Rückgabewert des Dialogfelds.
   * Er zeigt den empfangenen Wert mithilfe der Funktion `Dialog.alert()` in einem Standarddialogfeld an.
 
-  ```ts
+  ```typescript
     @override
     public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
       switch (event.itemId) {
