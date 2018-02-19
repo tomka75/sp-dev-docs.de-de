@@ -3,11 +3,11 @@ title: "Aktualisieren von Add-Ins für SharePoint"
 description: "Erstellen und Bereitstellen eines Updates für ein SharePoint-Add-In"
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 31c1194450d8169cf61fe9cfab57c7203437546e
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: a1ff2202cba1fd9c85203ee335848f8894051f59
+ms.sourcegitcommit: c57fc0e802661b0771f8b022964b6956ab4f6caf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="update-sharepoint-add-ins"></a>Aktualisieren von Add-Ins für SharePoint
 
@@ -34,8 +34,6 @@ Bevor Sie ein SharePoint-Add-In aktualisieren, benötigen Sie Folgendes:
 ### <a name="core-concepts-to-know-to-update-a-sharepoint-add-in"></a>Kernkonzepte für das Aktualisieren eines SharePoint-Add-Ins
 
 Lesen Sie die Konzepte in der folgenden Tabelle, bevor Sie das Add-In aktualisieren.
-
-**Tabelle 1. Kernkonzepte für das Aktualisieren eines SharePoint-Add-Ins**
 
 |**Titel des Artikels**|**Beschreibung**|
 |:-----|:-----|
@@ -145,7 +143,7 @@ Fahren Sie mit dem nächsten Aufzählungspunkt im Abschnitt [Wichtige Schritte b
 -  [Erstellen eines Handlers für das Updateereignis in SharePoint-Add-Ins](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md)
 -  [Aktualisieren von Remotekomponenten in SharePoint-Add-Ins](update-remote-components-in-sharepoint-add-ins.md)
     
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Weitere Artikel
 <a name="bk_addresources"> </a>
 
 -  [Entwickeln von SharePoint-Add-ins](develop-sharepoint-add-ins.md)

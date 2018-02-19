@@ -1,27 +1,27 @@
 ---
 title: Erste Schritte beim Erstellen von SharePoint gehosteten SharePoint-Add-Ins
 description: "Hier erfahren Sie, wie Sie eine Entwicklungsumgebung einrichten und Ihr erstes SharePoint-gehostetes SharePoint-Add-In erstellen können."
-ms.date: 11/02/2017
+ms.date: 12/04/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 7cf441bb18f0c4b6658a57be4e949eafce9a3260
-ms.sourcegitcommit: 074f3a7983a7b253f56f8c670a0290c27bb7734b
+ms.openlocfilehash: 6a2ed95aa06db5d6e4c6d9364cfcbfa8dc1b9f36
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="get-started-creating-sharepoint-hosted-sharepoint-add-ins"></a>Erste Schritte zum Erstellen SharePoint-gehosteter SharePoint-Add-Ins
 
 SharePoint-gehostete Add-Ins sind einer der zwei Haupttypen von SharePoint-Add-Ins. Einen Überblick über SharePoint-Add-Ins und die zwei Add-In-Typen finden Sie unter [SharePoint Add-ins](sharepoint-add-ins.md). Hier die wichtigsten Punkte zu SharePoint-gehosteten Add-Ins:
 
 - Sie enthalten SharePoint-Listen, Webparts, Workflows, benutzerdefinierte Seiten und andere Komponenten, die auf einer Unterwebsite mit der Bezeichnung Add-In-Web der SharePoint-Website installiert sind, wo das Add-In installiert ist.
-
 - Sie bestehen ausschließlich aus JavaScript-Code auf benutzerdefinierten SharePoint-Seiten.
 
-- Schritt 1: Einrichten der Entwicklungsumgebung 
+In diesem Artikel führen Sie die folgenden Schritte aus:
 
-- Schritt 2: Erstellen des App-Projekts 
-
-- Schritt 3: Programmieren der App
+- Einrichten der Entwicklungsumgebung
+- Erstellen des Add-In-Projekts
+- Codieren Ihres Add-Ins
+- Ausführen des Add-Ins und Testen der Liste
 
 <a name="Setup"> </a>
 ## <a name="set-up-your-dev-environment"></a>Einrichten der Entwicklungsumgebung
@@ -32,10 +32,12 @@ Es gibt zahlreiche verschiedene Möglichkeiten, eine Entwicklungsumgebung für S
 
 - Falls Sie **Visual Studio 2013** oder höher noch nicht installiert haben: Installieren Sie es mithilfe der Anweisungen unter [Installieren von Visual Studio](https://docs.microsoft.com/de-DE/visualstudio/install/install-visual-studio). Wir empfehlen die Verwendung der [aktuellen Version aus dem Microsoft Download Center](https://www.visualstudio.com/downloads/download-visual-studio-vs).
 
-- Visual Studio umfasst die **Microsoft Office Developer Tools für Visual Studio**. Gelegentlich wird jedoch zwischen zwei Updates von Visual Studio eine neue Version der Tools veröffentlicht. Führen Sie das [Installationsprogramm für Office Developer Tools für Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013) oder das [Installationsprogramm für Office Developer Tools für Visual Studio 2015](http://aka.ms/OfficeDevToolsForVS2015) aus, um sicherzustellen, dass Sie die aktuelle Version der Tools haben. 
+- Visual Studio umfasst die **Microsoft Office Developer Tools für Visual Studio**. Gelegentlich wird jedoch zwischen zwei Updates von Visual Studio eine neue Version der Tools veröffentlicht. Führen Sie das [Installationsprogramm für Office Developer Tools für Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013) oder das [Installationsprogramm für Office Developer Tools für Visual Studio 2015](http://aka.ms/OfficeDevToolsForVS2015) aus, um sicherzustellen, dass Sie die aktuelle Version der Tools haben.
+
+Als Referenz dienen [frühere Versionen von Visual Studio](http://msdn.microsoft.com/library/da049020-cfda-40d7-8ff4-7492772b620f.aspx) oder andere [Visual Studio-Dokumentation](https://docs.microsoft.com/de-DE/visualstudio/).
 
 <a name="o365_signup"> </a>
-### <a name="sign-up-for-an-office-365-developer-site"></a>Registrieren für eine Office 365-Entwicklerwebsite
+### <a name="sign-up-for-an-office-365-developer-site"></a>Registrieren für eine Office 365-Entwicklerwebsite
 
 > [!NOTE]
 > Möglicherweise haben Sie bereits Zugriff auf eine Office 365-Entwicklerwebsite:
@@ -55,13 +57,13 @@ Sie haben drei Möglichkeiten, einen Office 365-Plan zu erhalten:
 
 1. Die erste Seite des Registrierungsformulars ist selbsterklärend. Geben Sie die geforderten Informationen ein, und klicken Sie anschließend auf **Next**.
 
-2. Geben Sie auf der zweiten Seite (siehe Abbildung 1) eine Benutzer-ID für den Administrator des Abonnements ein.
+2. Geben Sie auf der zweiten Seite, die in Abbildung 1 gezeigt ist, eine Benutzer-ID für den Administrator des Abonnements an.
    
    *Abbildung 1: Domänenname der Office 365-Entwicklerwebsite*
 
    ![Seite 2 des Registrierungsformulars für ein Office 365-Konto](../images/ff384c69-56bf-4ceb-81c3-8b874e2407f0.png)
    
-3. Erstellen Sie eine Unterdomäne von **.onmicrosoft.com**, zum Beispiel „contoso.onmicrosoft.com“.
+3. Erstellen Sie eine Unterdomäne von **.onmicrosoft.com**, zum Beispiel contoso.onmicrosoft.com.
     
    Sobald die Registrierung abgeschlossen ist, können Sie sich mit den daraus resultierenden Anmeldeinformationen (im Format *Benutzer-ID@ihredomäne.onmicrosoft.com*) bei Ihrer Office 365-Portalwebsite anmelden und dort Ihr Konto verwalten. Ihre SharePoint Online-Entwicklerwebsite wird in Ihrer neuen Domäne eingerichtet: `http://yourdomain.sharepoint.com`.
     
@@ -78,15 +80,15 @@ Sie haben drei Möglichkeiten, einen Office 365-Plan zu erhalten:
 
    ![Screenshot mit dem Office 365 Admin Center](../images/SP15_Office365AdminInset_border.png)
  
-5. Warten Sie, bis die Entwicklerwebsite eingerichtet ist. Aktualisieren Sie die Admin Center-Seite in Ihrem Browser, sobald die Bereitstellung abgeschlossen ist.
+5. Warten Sie, bis der Einrichtungsprozess für Ihre Entwicklerwebsite abgeschlossen ist. Nach Abschluss der Bereitstellung aktualisieren Sie die Admin Center-Seite im Browser.
 
 6. Klicken Sie oben links auf der Seite auf **Build Add-ins**, um Ihre Entwicklerwebsite zu öffnen. Nun sollten Sie eine Website sehen, die wie Abbildung 3 aussieht. Dass die Liste **Add-ins in Testing** auf der Seite angezeigt wird, ist der Beleg dafür, dass die Website auf Basis der Vorlage für SharePoint-Entwicklerwebsites erstellt wurde. Falls stattdessen eine normale Teamwebsite angezeigt wird: Warten Sie einige Minuten, und starten Sie dann die Website neu.
 
-7. Notieren Sie sich die URL der Website. Sie benötigen sie, um SharePoint-Add-In-Projekte in Visual Studio zu erstellen.
+7. Notieren Sie die URL der Website. Diese wird verwendet, wenn Sie SharePoint-Add-Ins-Projekte in Visual Studio erstellen.
 
    *Abb. 3: Die Startseite Ihrer Entwicklerwebsite mit der Liste der Add-Ins im Test*
 
-   ![Screenshot der Entwicklerwebsite-Startseite](../images/SP15_DeveloperSiteHome_border.png)
+   ![Screenshot, auf dem die Entwicklerwebsite-Startseite angezeigt ist](../images/SP15_DeveloperSiteHome_border.png)
 
 <a name="Create"> </a>
 ## <a name="create-the-add-in-project"></a>Erstellen des Add-In-Projekts
@@ -241,13 +243,20 @@ In Ihr erstes SharePoint-gehostetes SharePoint-Add-In integrieren wir die klassi
 
 5. Da Sie mit diesem Add-In und dieser Visual Studio-Lösung auch in anderen Artikeln arbeiten werden, empfiehlt es sich, das Add-In ein letztes Mal zurückzuziehen, sobald Sie eine Weile nicht mehr an ihm arbeiten werden. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie die Option **Zurückziehen** aus.
 
-## <a name="additional-resources"></a>Weitere Ressourcen
-
-- [Installieren älterer Versionen von Visual Studio](http://msdn.microsoft.com/library/da049020-cfda-40d7-8ff4-7492772b620f.aspx)
-- [Visual Studio-Dokumentation](https://docs.microsoft.com/de-DE/visualstudio/)
-
-## <a name="next-steps"></a>Nächste Schritte
 <a name="Nextsteps"> </a>
+## <a name="next-steps"></a>Nächste Schritte
 
-Aktuell enthält die Liste noch nicht sehr viele Orientierungsinformationen. Wir werden in den noch folgenden Artikeln dieser Reihe Informationen hinzufügen. Zunächst machen wir jedoch eine kleine Programmierpause und beschäftigen uns mit der Bereitstellung von SharePoint-Add-Ins, im Artikel [Bereitstellung und Installation eines von SharePoint gehosteten SharePoint-Add-Ins](deploy-and-install-a-sharepoint-hosted-sharepoint-add-in.md).
- 
+Um Ihre Add-Ins zu erstellen, führen Sie die folgenden Schritte in der folgenden Reihenfolge aus:
+
+1.  [Bereitstellung und Installation eines von SharePoint gehosteten SharePoint-Add-Ins](deploy-and-install-a-sharepoint-hosted-sharepoint-add-in.md)
+2.  [Hinzufügen von Spalten zu einem von SharePoint gehosteten SharePoint-Add-In](add-custom-columns-to-a-sharepoint-hosted-sharepoint-add-in.md)
+3.  [Hinzufügen eines benutzerdefinierten Inhaltstyps zu einem von SharePoint gehosteten SharePoint-Add-In](add-a-custom-content-type-to-a-sharepoint-hosted-sharepoint-add-in.md)
+4.  [Hinzufügen eines Webparts zu einer Seite in einem von SharePoint gehosteten SharePoint-Add-In](add-a-web-part-to-a-page-in-a-sharepoint-hosted-sharepoint-add-in.md)
+5.  [Hinzufügen eines Workflows zu einem von SharePoint gehosteten Add-In für SharePoint](add-a-workflow-to-a-sharepoint-hosted-sharepoint-add-in.md)
+6.  [Hinzufügen einer benutzerdefinierten Seite und Formatvorlage zu einem von SharePoint gehosteten Add-In für SharePoint](add-a-custom-page-and-style-to-a-sharepoint-hosted-sharepoint-add-in.md)
+7.  [Hinzufügen des benutzerdefinierten clientseitigen Renderings für ein von SharePoint-gehostetes SharePoint Add-In](add-custom-client-side-rendering-to-a-sharepoint-hosted-sharepoint-add-in.md)
+8.  [Erstellen einer benutzerdefinierten Menübandschaltfläche im Hostweb eines SharePoint-Add-Ins](create-a-custom-ribbon-button-in-the-host-web-of-a-sharepoint-add-in.md)
+9.  [Verwenden von SharePoint-JavaScript-APIs zum Arbeiten mit SharePoint-Daten](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data.md)
+10. [Arbeiten mit Hostwebdaten aus JavaScript im Add-In-Web](work-with-host-web-data-from-javascript-in-the-add-in-web.md)
+
+

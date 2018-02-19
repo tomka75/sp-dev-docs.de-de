@@ -1,17 +1,17 @@
 ---
 title: Implementieren von SharePoint-Verhalten und -Aussehen in anbietergehosteten Add-Ins
 description: "Einführung in das Basis-Add-In, Konfigurieren von Visual Studio derart, dass die Unternehmensdatenbank neu erstellt wird, Hinzufügen der SharePoint-Chrome- und oberen Leiste zur Startseite, Ausführen des Add-Ins und Testen der neuen Benutzeroberfläche."
-ms.date: 11/02/2017
+ms.date: 12/04/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 9f0913baf84563bc79bfd016d8d1d42e9320973c
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 95d6c24272e445f78ab63a6a4e4210f5d3f485e7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="give-your-provider-hosted-add-in-the-sharepoint-look-and-feel"></a>Implementieren von SharePoint-Verhalten und -Aussehen in anbietergehosteten Add-Ins
 
-Dies ist der zweite in einer Reihe von Artikeln über die Grundlagen der Entwicklung von vom Anbieter gehosteten SharePoint-Add-Ins. Sie sollten sich zuerst mit [SharePoint Add-Ins](sharepoint-add-ins.md) und den vorherigen Artikeln in dieser Reihe vertraut machen:
+Dies ist der zweite in einer Reihe von Artikeln über die Grundlagen der Entwicklung von vom Anbieter gehosteten SharePoint-Add-Ins. Sie sollten sich zuerst mit [SharePoint Add-Ins](sharepoint-add-ins.md) und dem Übersichtsartikel in dieser Reihe vertraut machen:
 
 -  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
@@ -54,7 +54,7 @@ Wir werden Sie in dieser Reihe nicht mit der Programmierung in ASP.NET oder T-SQ
  
 5. Stellen Sie sicher, dass alle drei Projekte in der Spalte **Aktion** auf **Start** festgelegt sind.
     
-6. Verwenden Sie die F5-Taste, um Ihr Add-In bereitzustellen und auszuführen. Visual Studio hostet die Remotewebanwendung in IIS Express und die SQL-Datenbank in SQL Express. Visual Studio führt zudem eine temporäre Installation des Add-Ins auf Ihrer SharePoint-Testwebsite durch und führt das Add-In sofort aus. Sie werden aufgefordert, Berechtigungen für das Add-In zu erteilen, bevor die Startseite geöffnet wird.
+6. Verwenden Sie die F5-Taste, um Ihr Add-In bereitzustellen und auszuführen. Visual Studio hostet die Remotewebanwendung in IIS Express und die SQL-Datenbank in SQL Express. Zudem installiert Visual Studio das Add-In vorübergehend auf Ihrer SharePoint-Testwebsite und führt es sofort aus. Sie werden aufgefordert, Berechtigungen für das Add-In zu erteilen, bevor die Startseite geöffnet wird.
     
 7. Die Startseite des Add-Ins sieht wie in Abbildung 2 aus. Ganz oben befindet sich der Name der SharePoint-Website, auf der das Add-In installiert ist. Dies ist ein Nebeneffekt von manchen Beispielcodes, die von den Office-Entwicklertools für Visual Studio generiert werden. Sie ändern dies in einem späteren Schritt. Die Seite weist Bereiche auf, auf der Daten aus den SQL-Datenbanktabellen **Bestellungen**, **Inventar** und **Mitarbeiter** des Unternehmens zu sehen sind. Diese Tabellen sind anfangs leer.
   
@@ -239,7 +239,7 @@ In einigen Szenarien sollen Ihre Remoteseiten ihr eigenes Branding haben, aber i
 
 ## <a name="run-the-add-in-and-test-the-new-sharepoint-ui"></a>Ausführen des Add-Ins und Testen der neuen SharePoint-UI
 
-1. Verwenden Sie die F5-Taste, um Ihr Add-In bereitzustellen und auszuführen. Visual Studio hostet die Remotewebanwendung in IIS Express und die SQL-Datenbank in SQL Express. Visual Studio führt zudem eine temporäre Installation des Add-Ins auf Ihrer SharePoint-Testwebsite durch und führt das Add-In sofort aus. Sie werden aufgefordert, Berechtigungen für das Add-In zu erteilen, bevor die Startseite geöffnet wird.
+1. Verwenden Sie die F5-Taste, um Ihr Add-In bereitzustellen und auszuführen. Visual Studio hostet die Remotewebanwendung in IIS Express und die SQL-Datenbank in SQL Express. Zudem installiert Visual Studio das Add-In vorübergehend auf Ihrer SharePoint-Testwebsite und führt es sofort aus. Sie werden aufgefordert, Berechtigungen für das Add-In zu erteilen, bevor die Startseite geöffnet wird.
     
 2. Wenn die Startseite des Add-Ins geöffnet wird, sieht diese nun wie eine SharePoint-Seite aus. Klicken Sie auf den Link **Bestellformular**. Dieses sieht nun auch wie ein SharePoint-Formular aus.
   
@@ -275,7 +275,7 @@ In einigen Szenarien sollen Ihre Remoteseiten ihr eigenes Branding haben, aber i
 
 12. Schließen Sie zum Beenden der Debugsitzung das Browserfenster, oder beenden Sie das Debuggen in Visual Studio. Jedes Mal, wenn Sie F5 drücken, zieht Visual Studio die vorherige Version des Add-Ins zurück und installiert die neueste.
 
-13. Da Sie mit diesem Add-In und dieser Visual Studio-Lösung in anderen Artikeln arbeiten werden, hat es sich bewährt, das Add-In ein letztes Mal zurückzuziehen, wenn Sie Ihre Arbeit daran für eine Weile abgeschlossen haben. Klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer**, und wählen Sie **Zurückziehen** aus.
+13. Da Sie mit diesem Add-In und dieser Visual Studio-Lösung in anderen Artikeln arbeiten werden, hat es sich bewährt, das Add-In ein letztes Mal zurückzuziehen, wenn Sie Ihre Arbeit daran für eine Weile abgeschlossen haben. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie die Option **Zurückziehen** aus.
 
 ## <a name="next-steps"></a>Nächste Schritte
 <a name="Nextsteps"> </a>

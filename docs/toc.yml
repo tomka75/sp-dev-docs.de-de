@@ -142,9 +142,9 @@
               href: spfx/web-parts/basics/notes-on-solution-packaging.md
             - name: Erstellen benutzerdefinierter Buildtasks
               href: spfx/toolchain/integrate-gulp-tasks-in-build-pipeline.md
-            - name: Bündelung
+            - name: Erweitern des Webpacks
               href: spfx/toolchain/extending-webpack-in-build-pipeline.md
-            - name: Aktualisieren von SharePoint-Framework-Paketen
+            - name: Aktualisieren der Pakete
               href: spfx/toolchain/update-latest-packages.md
             - name: Mandantenweite Bereitstellung
               href: spfx/tenant-scoped-deployment.md

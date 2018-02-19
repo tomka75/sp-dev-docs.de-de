@@ -3,11 +3,11 @@ title: Erstellen von SharePoint-Add-Ins in Visual Studio
 description: "Entwickeln von SharePoint-Add-Ins mithilfe von Vorlagen für Projekte und Projektelemente in Visual Studio"
 ms.date: 11/03/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 3155405b4cc07fadc4743d2deadb618da27aa39e
-ms.sourcegitcommit: 074f3a7983a7b253f56f8c670a0290c27bb7734b
+ms.openlocfilehash: 826498c45f6cb8a7cff0bd7c07a6ff3ebd339928
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-sharepoint-add-ins-in-visual-studio"></a>Erstellen von SharePoint-Add-Ins in Visual Studio
 
@@ -33,12 +33,6 @@ Erstellt ein SharePoint-Add-In basierend auf den Informationen, die Sie in einem
 - Der Typ des Add-Ins, das Sie erstellen möchten: von einem Provider gehostet oder von SharePoint gehostet. 
 
 Weitere Informationen finden Sie unter [SharePoint-Add-Ins](sharepoint-add-ins.md).
-
-### <a name="cloud-business-add-in"></a>Cloud-Business-Add-In
-
-Mithilfe der Vorlage **Cloud-Business-Add-In** in Visual Studio können Sie ein in SharePoint gehostetes Add-In erstellen, in dem mobile Benutzer an einem Remotestandort mithilfe moderner Geräte wie Smartphones und Tablet-PCs mit Toucheingabe Daten anzeigen, hinzufügen und aktualisieren können. 
-
-Weitere Informationen finden Sie unter [Erstellen von Cloud-Geschäfts-Add-Ins](create-cloud-business-add-ins.md).
 
 <a name="SP15Projecttemplates_items"> </a>
 ## <a name="project-item-templates"></a>Projektelementvorlagen
@@ -141,7 +135,7 @@ Fügt dem SharePoint-Add-In ein Projektelement für eine benutzerdefinierte Work
 
 Weitere Informationen finden Sie unter [Workflows in SharePoint](http://msdn.microsoft.com/library/e0602371-ae22-44be-8a7e-9e47e9f046d6%28Office.15%29.aspx).
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Weitere Artikel
 <a name="SP15Projecttemplates_addlresources"> </a>
 
 - [Tools und Umgebungen für die Entwicklung von SharePoint-Add-Ins](tools-and-environments-for-developing-sharepoint-add-ins.md)

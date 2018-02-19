@@ -1,17 +1,17 @@
 ---
 title: Bereitstellung und Installation eines von SharePoint gehosteten SharePoint-Add-Ins
 description: "Erstellen Sie einen Add-In-Katalog, packen Sie das Add-In, laden Sie es in den Katalog hoch, installieren Sie es und löschen Sie es."
-ms.date: 11/02/2017
+ms.date: 12/04/2017
 ms.prod: sharepoint
-ms.openlocfilehash: c11fb37232d433d41866d42d18322431902257ae
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 58a1810d34d06b76a7e0e12b21792200bfe1bc93
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="deploy-and-install-a-sharepoint-hosted-sharepoint-add-in"></a>Bereitstellung und Installation eines von SharePoint gehosteten SharePoint-Add-Ins
+# <a name="deploy-and-install-a-sharepoint-hosted-sharepoint-add-in"></a>Bereitstellen und Installieren eines in SharePoint gehosteten SharePoint-Add-Ins
 
-Dies ist der zweite in einer Reihe von Artikeln über die Grundlagen der Entwicklung von von SharePoint gehosteten SharePoint-Add-Ins. Sie sollten sich zuerst mit [SharePoint Add-Ins](sharepoint-add-ins.md) und den vorherigen Artikeln in dieser Reihe vertraut machen:
+Dies ist der zweite in einer Reihe von Artikeln über die Grundlagen der Entwicklung von von SharePoint gehosteten SharePoint-Add-Ins. Sie sollten sich zuerst mit [SharePoint Add-Ins](sharepoint-add-ins.md) und dem Übersichtsartikel in dieser Reihe vertraut machen:
 
 -  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
     

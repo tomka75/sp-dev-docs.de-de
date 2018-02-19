@@ -1,24 +1,20 @@
 ---
 title: "Schnelle Übersicht über das SharePoint-Objektmodell"
 description: "Einführung in die Inhaltshierarchie sowie die clientseitige Runtime und Batchverarbeitung"
-ms.date: 11/02/2017
+ms.date: 12/04/2017
 ms.prod: sharepoint
-ms.openlocfilehash: eedec2c5116d1844ff0d2e052aa83a64b14a411e
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 6ba56b1f8cfd114844d36506090e97a2fc17808b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="get-a-quick-overview-of-the-sharepoint-object-model"></a>Schnelle Übersicht über das SharePoint-Objektmodell
+# <a name="get-a-quick-overview-of-the-sharepoint-object-model"></a>Kurzübersicht über das SharePoint-Objektmodell
 
-Dies ist der vierte in einer Reihe von Artikeln über die Grundlagen der Entwicklung von vom Anbieter gehosteten SharePoint-Add-Ins. Sie sollten sich zuerst mit [SharePoint Add-Ins](sharepoint-add-ins.md) und den vorherigen Artikeln in dieser Reihe vertraut machen:
-
--  [Erste Schritte beim Erstellen von vom Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
--  [Übertragen des SharePoint-Aussehens und -Verhaltens auf Ihr vom Anbieter gehostetes Add-In](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md)
--  [Einfügen einer benutzerdefinierten Schaltfläche in das vom Anbieter gehostete Add-In](include-a-custom-button-in-the-provider-hosted-add-in.md)
+Dies ist der vierte einer Reihe von Artikeln über die Grundlagen der Entwicklung von vom Anbieter gehosteten SharePoint-Add-Ins. Machen Sie sich zunächst mit [SharePoint-Add-Ins](sharepoint-add-ins.md) und den vorherigen Artikeln dieser Reihe vertraut, die Sie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md#SP15createprovider_nextsteps) finden. 
  
 > [!NOTE]
-> Wenn Sie diese Reihe zu vom Anbieter gehosteten Add-Ins durchgearbeitet haben, können Sie das Thema mit einer Visual Studio-Lösung weiter vertiefen. Sie können auch das Repository unter [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) herunterladen und die Datei BeforeSharePointWriteOps.sln öffnen.
+> Wenn Sie unsere Artikelreihe zum Thema anbietergehostete Add-Ins durchgearbeitet haben, haben Sie bereits eine Visual Studio-Lösung, die Sie für diesen Artikel verwenden können. Sie können auch das Repository unter [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) herunterladen und die Datei BeforeSharePointWriteOps.sln öffnen.
 
 In diesem Artikel legen Sie eine kurze Pause vom Codieren ein, um einen schnellen Überblick über das SharePoint-Clientobjektmodell (CSOM) zu erhalten. Dieses Modell ist durch Referenzthemen, Vorgehensweisen und Codebeispiele ausführlich und gut in MSDN dokumentiert. In diesem Artikel können wir nur einen ganz kurzen Einblick liefern. Doch selbst eine sehr kurze Einführung wird bewirken, dass Ihnen ein Großteil des Codes dieser Reihe weitaus weniger rätselhaft erscheint. 
 

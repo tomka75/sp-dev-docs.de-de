@@ -1,22 +1,17 @@
 ---
 title: "Hinzufügen von SharePoint-Schreibvorgängen zum vom Anbieter gehosteten Add-In"
 description: "Hier erfahren Sie, wie anbietergehostete SharePoint-Add-Ins Daten in SharePoint schreiben können, wie Sie Spaltenwerte in Listenelementen ändern, wie Sie Schreibberechtigungen anfordern, wie Sie neue benutzerdefinierte Listen erstellen und Elemente in solche Listen einfügen und wie Sie auf gelöschte Komponenten prüfen können."
-ms.date: 11/02/2017
+ms.date: 12/04/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 263d0feabbe9918309bc9f8ae4767428d2470785
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: cfbba658bcb297c3ae07b55246c9fe06b994c6ba
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="add-sharepoint-write-operations-to-the-provider-hosted-add-in"></a>Hinzufügen von SharePoint-Schreibvorgängen zu anbietergehosteten Add-Ins
+# <a name="add-sharepoint-write-operations-to-the-provider-hosted-add-in"></a>Hinzufügen von SharePoint-Schreibvorgängen zu einem anbietergehosteten Add-In
 
-Dies ist der fünfte Artikel in unserer Artikelreihe über die Grundlagen der Entwicklung von anbietergehosteten SharePoint-Add-Ins. Vor der Lektüre dieses Artikels sollten Sie sich zunächst mit [SharePoint-Add-Ins](sharepoint-add-ins.md) vertraut machen und die vorherigen Artikel der Reihe lesen:
-
--  [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
--  [Übertragen des SharePoint-Aussehens und -Verhaltens auf Ihr vom Anbieter gehostetes Add-In](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md)
--  [Einfügen einer benutzerdefinierten Schaltfläche in das vom Anbieter gehostete Add-In](include-a-custom-button-in-the-provider-hosted-add-in.md)
--  [Schnelle Übersicht über das SharePoint-Objektmodell](get-a-quick-overview-of-the-sharepoint-object-model.md)
+Dies ist der fünfte einer Reihe von Artikeln über die Grundlagen der Entwicklung von vom Anbieter gehosteten SharePoint-Add-Ins. Machen Sie sich zunächst mit [SharePoint-Add-Ins](sharepoint-add-ins.md) und den vorherigen Artikeln dieser Reihe vertraut, die Sie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md#SP15createprovider_nextsteps) finden. 
 
 > [!NOTE]
 > Wenn Sie unsere Artikelreihe zum Thema anbietergehostete Add-Ins durchgearbeitet haben, haben Sie bereits eine Visual Studio-Lösung, die Sie für diesen Artikel verwenden können. Alternativ können Sie das Repository unter [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) herunterladen und die Datei „BeforeSharePointWriteOps.sln“ öffnen.

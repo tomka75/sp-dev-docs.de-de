@@ -3,11 +3,11 @@ title: "Auswählen von Mustern für die Entwicklung und das Hosten Ihres SharePo
 description: "Stimmen Sie Ihr Hostingmuster mit Entwicklungszielen ab, wählen Sie ein Muster für von einem Anbieter gehostete Add-Ins aus, kombinieren Sie Anbieterhosting und SharePoint-Hosting, und verwenden Sie Add-Ins in Azure-Webrollen."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 90afbb113a01054d447ad544b49458e3a8594605
-ms.sourcegitcommit: 4ceb9b0dd0a9974df6180ca9959a1e9f452c7518
+ms.openlocfilehash: f0a383a62f6fa60e9249f3024e1e37361e3ac4ad
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="choose-patterns-for-developing-and-hosting-your-sharepoint-add-in"></a>Auswählen von Mustern für die Entwicklung und das Hosten Ihres SharePoint-Add-Ins
 
@@ -155,7 +155,7 @@ Wenn Sie bereits ein vom Anbieter gehostetes SharePoint-Add-In haben, das Sie au
 
 Wenn Sie bereits eine Webrolle in einem Azure-Clouddienst haben, den Sie als Host für ein vom Anbieter gehostetes SharePoint-Add-In verwenden möchten, öffnen Sie das Azure-Cloudprojekt in Visual Studio, und wählen Sie dann im **Projektmappen-Explorer** das Webrollenprojekt aus. Klicken Sie in der Menüleiste auf **Projekt** > **SharePoint-Add-In-Projekt hinzufügen**. Ein Projekt für ein vom Anbieter gehostetes SharePoint-Add-In mit der Bezeichnung _NameOfTheWebAppProject_.Azure wird erstellt und zur Projektmappe hinzugefügt. Visual Studio verweist auf die Azure-Webrolle als Web-Projekthost für das SharePoint-Add-In.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Weitere Artikel
 <a name="SPAppModelArch_AdditionalResources"> </a>
 
 -  [Kritische Aspekte der Architektur und der Entwicklungslandschaft für SharePoint-Add-Ins](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)

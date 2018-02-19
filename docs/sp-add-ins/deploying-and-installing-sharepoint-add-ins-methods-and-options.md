@@ -3,11 +3,11 @@ title: "Bereitstellen und Installieren von SharePoint-Add-Ins – Methoden und O
 description: "Informationen zum Veröffentlichen, Installieren und Deinstallieren eines SharePoint-Add-Ins."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: fdf17615e9019947da82102ecae4dce9a16e589e
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: ad167642401e4bef300897b6d26b4f56bda6624d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="deploying-and-installing-sharepoint-add-ins-methods-and-options"></a>Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Optionen
 
@@ -68,7 +68,7 @@ Außerdem werden die Berechtigungen des Add-Ins beim Entfernen (Recyceln) des Ad
 
 Der Webdienst [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx), falls er im Add-In-Manifest des Add-Ins registriert ist, wird zu Beginn des Deinstallationsvorgangs ausgeführt (tritt auf, wenn das Add-In aus dem endgültigen Papierkorb entfernt wird). Sie sollten den Webdienst [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) installiert haben, wenn Sie gleichzeitig auch [InstalledEventEndpoint](http://msdn.microsoft.com/library/af9f83d8-8325-3ede-d7b0-bb82c0445eb9%28Office.15%29.aspx) installiert haben. Sie sollten auch den Dienst [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) entwerfen, um eventuell Schritte im [InstalledEventEndpoint](http://msdn.microsoft.com/library/af9f83d8-8325-3ede-d7b0-bb82c0445eb9%28Office.15%29.aspx)-Dienst rückgängig machen zu können. Weitere Informationen finden Sie unter [Behandeln von Ereignissen in SharePoint-Add-Ins](handle-events-in-sharepoint-add-ins.md).
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="see-also"></a>Weitere Artikel
 <a name="SP15deployinstallapps_addlresources"> </a>
 
 -  [Veröffentlichen von SharePoint-Add-Ins](publish-sharepoint-add-ins.md)
