@@ -1,11 +1,11 @@
 ---
 title: Entwickeln mit dem Mandanten Berechtigungen mit App-Only in SharePoint Online
 ms.date: 11/03/2017
-ms.openlocfilehash: fb603d082296cd7a9793c6958bdd8b44befe05d1
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 713483e18a9fa4248c4509c29c368863923c3854
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="developing-using-tenant-permissions-with-app-only-in-sharepoint-online"></a>Entwickeln mit dem Mandanten Berechtigungen mit App-Only in SharePoint Online
 
@@ -49,7 +49,7 @@ Geben Sie die **Client-ID** und ** Clientgeheimnis ** in Schritt 1 erstellt habe
 Da Sie das Add-in debuggen möchten, müssen sicherstellen Sie, dass Sie https://localhost.com einschließlich des Ports, wie folgt angeben.
 ![](http://i.imgur.com/nQmSbPC.png)
 
-Nun das Add-in in der App-Katalog-Website bereitstellen.
+Nun das Add-in in der app-Katalog-Website bereitstellen.
 
 ### <a name="step-5-install-your-add-in-in-your-developer-site-collection"></a>Schritt 5: Installieren der add-Ins in Ihrer Websitesammlung für Entwickler
 
@@ -58,7 +58,7 @@ Navigieren Sie zu der Entwicklerwebsite für und fügen Sie die app hinzu. Klick
 
 Wenn Sie auf die Kachel app geklickt haben, müssen Sie auf klicken auf "**erfahren Sie, warum**" und Ihre app anfordern![](http://i.imgur.com/DwWUkG0.png)
 
-Nachdem die Anforderung gesendet wurde werden der Status in aussteht, bis der SharePoint-Administrator oder den App-Katalog-Administrator die Anforderung genehmigt hat. Um die Anforderung zu genehmigen, navigieren Sie zu den app-Katalog, App-Anforderungen und Genehmigen der Anforderung.
+Nachdem die Anforderung gesendet wurde der Status kann in aussteht, bis der SharePoint-Administrator oder der app-Katalog Administrator genehmigt die Anforderung. Um die Anforderung zu genehmigen, navigieren Sie zu den app-Katalog, App-Anforderungen und Genehmigen der Anforderung.
 
 ![](http://i.imgur.com/yZ8vNEc.png)
 

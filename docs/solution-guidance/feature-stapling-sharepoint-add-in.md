@@ -1,11 +1,11 @@
 ---
 title: Feature Heften in der SharePoint-add-in-Objektmodell
 ms.date: 11/03/2017
-ms.openlocfilehash: 0d88f1e87bb41a6e27883128fbaa6adcf1d34158
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 204f53d47256b51ef6c2495deae4c69ce810fa23
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 02/19/2018
 ---
 <a name="feature-stapling-in-the-sharepoint-add-in-model"></a>Feature Heften in der SharePoint-add-in-Objektmodell
 ===============================================
@@ -55,12 +55,12 @@ Im folgende Artikel beschreibt die Funktionen, die in einer Websitedefinition he
 
 <a name="staple-add-ins"></a>Heften-Add-ins
 --------------
-In diesem Muster stellen Sie in der App-Katalog bestimmte Websitesammlungen, verwaltete Pfade und Websitevorlagen gespeicherten-Add-ins bereit.
+In diesem Muster stellen Sie in der app-Katalog bestimmte Websitesammlungen, verwaltete Pfade und Websitevorlagen gespeicherten-Add-ins bereit.
 
 - Finden Sie unter der [SharePoint 2013-App-Bereitstellung über ' App Heften ' (MSDN-Blogartikel - Richard DiZerega)](http://blogs.msdn.com/b/richard_dizeregas_blog/archive/2013/09/18/10399333.aspx) ausführliche Informationen zum Anordnen-Modell-Add-in.
 - Da das Add-in von einem Administrator abgelegt ist, werden Websitebesitzer werden nicht an das Add-in aus einer Website zu entfernen, die die Bereitstellungskriterien erfüllt.  Nicht auch ein Websitesammlungsadministrator kann das Add-in entfernen.
-- Diese zentralisierte Bereitstellung freigegeben dieselben zentralisierten Add-in-Ressourcen (Web-Add-in und Remotewebsite).  Im Wesentlichen ist das Add-in bereitgestellt, aber nicht auf den Websites installiert.  Alle Websites werden die Add-Ins Web und die Remotewebsite aus der Instanz in der App-Katalog installiert nutzen.
-- Aufgrund von zentrale Bereitstellung werden remote Ereignisse wie "Handle App Installed", 'Behandeln App deinstalliert' und 'Behandeln App Upgrade' nur einmal ausgelöst werden (wenn das Add-in in der App-Katalog installiert ist).
+- Diese zentralisierte Bereitstellung freigegeben dieselben zentralisierten Add-in-Ressourcen (Web-Add-in und Remotewebsite).  Im Wesentlichen ist das Add-in bereitgestellt, aber nicht auf den Websites installiert.  Alle Websites werden die Add-Ins Web und die Remotewebsite aus der Instanz in der app-Katalog installiert nutzen.
+- Aufgrund von zentrale Bereitstellung werden remote Ereignisse wie "Handle App Installed", 'Behandeln App deinstalliert' und 'Behandeln App Upgrade' nur einmal ausgelöst werden (wenn das Add-in in der app-Katalog installiert ist).
     + Dies kann erschweren Heften-Muster-Add-in verwenden, um automatisch Änderungen auf Websites angewendet, auf dem sie bereitgestellt wird, da diese Ereignisse nicht ausgelöst werden, wenn es Websites bereitgestellt wird.
 - Add-in-Komponenten werden bei-Add-ins auf Websites geheftet werden nicht unterstützt.
 - Dieses Muster erfordert die manuelle Benutzeraktionen zum Bereitstellen von Add-Ins.
