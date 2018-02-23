@@ -34,6 +34,8 @@
               href: spfx/web-parts/get-started/deploy-web-part-to-cdn.md
         - name: Grundlagen
           items:
+            - name: Integrieren von Eigenschaften in SharePoint
+              href: spfx/web-parts/guidance/integrate-web-part-properties-with-sharepoint.md
             - name: Konfigurieren von benutzerdefinierten Eigenschaften
               href: spfx/web-parts/basics/integrate-with-property-pane.md
             - name: Konfigurieren des Webpartsymbols
@@ -42,35 +44,31 @@
               href: spfx/web-parts/guidance/simplify-adding-web-parts-with-preconfigured-entries.md
             - name: Überprüfen von Eigenschaften
               href: spfx/web-parts/guidance/validate-web-part-property-values.md
-        - name: Konzepte
-          items:
-            - name: Migrieren vorhandener Anpassungen
-              items:
-                - name: Skript-Editor-Webpart
-                  href: spfx/web-parts/guidance/migrate-script-editor-web-part-customizations.md
-                - name: jQuery und DataTables
-                  href: spfx/web-parts/guidance/migrate-jquery-datatables-script-to-spfx.md
-                - name: jQuery und FullCalendar
-                  href: spfx/web-parts/guidance/migrate-jquery-fullcalendar-script-to-spfx.md
-                - name: AngularJS-Anwendungen
-                  href: spfx/web-parts/guidance/migrate-angular-1-x-applications-to-sharepoint-framework.md
-                - name: Arbeiten mit __REQUESTDIGEST
-                  href: spfx/web-parts/basics/working-with-requestdigest.md
-                - name: Verwenden von JSOM
-                  href: spfx/web-parts/guidance/connect-to-sharepoint-using-jsom.md
             - name: Gemeinsame Verwendung von Daten zwischen Webparts
               href: spfx/web-parts/guidance/share-data-between-web-parts.md
               items:
                 - name: Lernprogramm
                   href: spfx/web-parts/guidance/tutorial-share-data-between-web-parts-global-variable.md
-            - name: Integrieren von Eigenschaften in SharePoint
-              href: spfx/web-parts/guidance/integrate-web-part-properties-with-sharepoint.md
             - name: Erweitern des Eigenschaftenbereichs
               items:
                 - name: Erstellen benutzerdefinierter Steuerelemente
                   href: spfx/web-parts/guidance/build-custom-property-pane-controls.md
                 - name: Verwenden überlappender Dropdownmenüs
                   href: spfx/web-parts/guidance/use-cascading-dropdowns-in-web-part-properties.md
+        - name: Migrieren vorhandener Anpassungen
+          items:
+            - name: Skript-Editor-Webpart
+              href: spfx/web-parts/guidance/migrate-script-editor-web-part-customizations.md
+            - name: jQuery und DataTables
+              href: spfx/web-parts/guidance/migrate-jquery-datatables-script-to-spfx.md
+            - name: jQuery und FullCalendar
+              href: spfx/web-parts/guidance/migrate-jquery-fullcalendar-script-to-spfx.md
+            - name: AngularJS-Anwendungen
+              href: spfx/web-parts/guidance/migrate-angular-1-x-applications-to-sharepoint-framework.md
+            - name: Arbeiten mit __REQUESTDIGEST
+              href: spfx/web-parts/basics/working-with-requestdigest.md
+            - name: Verwenden von JSOM
+              href: spfx/web-parts/guidance/connect-to-sharepoint-using-jsom.md
     - name: Erweiterungen
       href: spfx/extensions/overview-extensions.md
       items:
@@ -85,12 +83,12 @@
               href: spfx/extensions/get-started/serving-your-extension-from-sharepoint.md
             - name: Hosten von Erweiterungen aus einem CDN
               href: spfx/extensions/get-started/hosting-extension-from-office365-cdn.md
+            - name: Konfigurieren des Erweiterungssymbols
+              href: spfx/extensions/basics/configure-extension-icon.md
             - name: "Erstellen des Field\_Customizer"
               href: spfx/extensions/get-started/building-simple-field-customizer.md
             - name: Erstellen von Erweiterungen des Typs „ListView Command Set“
               href: spfx/extensions/get-started/building-simple-cmdset-with-dialog-api.md
-        - name: Konfigurieren des Erweiterungssymbols
-          href: spfx/extensions/basics/configure-extension-icon.md
         - name: Migrieren vorhandener Anpassungen
           items:
             - name: Clientseitiges Rendering (JSLink)
@@ -103,61 +101,59 @@
               href: spfx/extensions/guidance/migrate-from-jslink-to-spfx-extensions.md
             - name: JavaScript-Einbettung (UserCustomAction) – Lernprogramm
               href: spfx/extensions/guidance/migrate-from-usercustomactions-to-spfx-extensions.md
-    - name: Konzepte
+    - name: Richtlinien
       items:
-        - name: Richtlinien
+        - name: Enterprise-Leitfaden
+          href: spfx/enterprise-guidance.md
+        - name: Teambasierte Entwicklung
+          href: spfx/team-based-development-on-sharepoint-framework.md
+        - name: Governance-Aspekte
+          href: spfx/web-parts/guidance/governance-considerations.md
+    - name: Externe Bibliotheken
+      items:
+        - name: Hinzufügen externer Bibliotheken
+          href: spfx/web-parts/basics/add-an-external-library.md
+        - name: JavaScript-Bibliotheken
+          href: spfx/web-parts/guidance/use-existing-javascript-libraries.md
+        - name: CSS-Formate
+          href: spfx/web-parts/guidance/reference-third-party-css-styles.md
+        - name: SP PnP JS
+          href: spfx/web-parts/guidance/use-sp-pnp-js-with-spfx-web-parts.md
+        - name: AngularJS
+          href: spfx/web-parts/guidance/build-client-side-web-parts-with-angular-1-x.md
+    - name: Verbinden mit AD DS
+      items:
+        - name: 'Verbinden mit APIs, die mit Azure AD gesichert sind'
+          href: spfx/web-parts/guidance/connect-to-api-secured-with-aad.md
+        - name: "Aufrufen der Microsoft\_Graph-API mithilfe von OAuth"
+          href: spfx/web-parts/guidance/call-microsoft-graph-from-your-web-part.md
+        - name: Microsoft Graph
+          href: spfx/overview-graphhttpclient.md
           items:
-            - name: Enterprise-Leitfaden
-              href: spfx/enterprise-guidance.md
-            - name: Teambasierte Entwicklung
-              href: spfx/team-based-development-on-sharepoint-framework.md
-            - name: Governance-Aspekte
-              href: spfx/web-parts/guidance/governance-considerations.md
-        - name: Externe Bibliotheken
-          items:
-            - name: Hinzufügen externer Bibliotheken
-              href: spfx/web-parts/basics/add-an-external-library.md
-            - name: JavaScript-Bibliotheken
-              href: spfx/web-parts/guidance/use-existing-javascript-libraries.md
-            - name: CSS-Formate
-              href: spfx/web-parts/guidance/reference-third-party-css-styles.md
-            - name: SP PnP JS
-              href: spfx/web-parts/guidance/use-sp-pnp-js-with-spfx-web-parts.md
-            - name: AngularJS
-              href: spfx/web-parts/guidance/build-client-side-web-parts-with-angular-1-x.md
-        - name: Verbinden mit AD DS
-          items:
-            - name: 'Verbinden mit APIs, die mit Azure AD gesichert sind'
-              href: spfx/web-parts/guidance/connect-to-api-secured-with-aad.md
-            - name: "Aufrufen der Microsoft\_Graph-API mithilfe von OAuth"
-              href: spfx/web-parts/guidance/call-microsoft-graph-from-your-web-part.md
-            - name: Microsoft Graph
-              href: spfx/overview-graphhttpclient.md
-              items:
-                - name: Lernprogramm
-                  href: spfx/call-microsoft-graph-using-graphhttpclient.md
-        - name: Setup und Bereitstellung
-          items:
-            - name: Paketlösung
-              href: spfx/web-parts/basics/notes-on-solution-packaging.md
-            - name: Erstellen benutzerdefinierter Buildtasks
-              href: spfx/toolchain/integrate-gulp-tasks-in-build-pipeline.md
-            - name: Erweitern des Webpacks
-              href: spfx/toolchain/extending-webpack-in-build-pipeline.md
-            - name: Aktualisieren der Pakete
-              href: spfx/toolchain/update-latest-packages.md
-            - name: Mandantenweite Bereitstellung
-              href: spfx/tenant-scoped-deployment.md
-            - name: "Unterstützte Versionen in SharePoint\_2016"
-              href: spfx/sharepoint-2016-support.md
-            - name: Bereitstellen von SharePoint-Objekten
-              href: spfx/toolchain/provision-sharepoint-assets.md
-        - name: Optimieren von Builds für die Produktion
-          href: spfx/toolchain/optimize-builds-for-production.md
-        - name: Lokalisierung
-          href: spfx/web-parts/guidance/localize-web-parts.md
+            - name: Lernprogramm
+              href: spfx/call-microsoft-graph-using-graphhttpclient.md
+    - name: Setup und Bereitstellung
+      items:
+        - name: Paketlösung
+          href: spfx/web-parts/basics/notes-on-solution-packaging.md
+        - name: Erstellen benutzerdefinierter Buildtasks
+          href: spfx/toolchain/integrate-gulp-tasks-in-build-pipeline.md
+        - name: Erweitern des Webpacks
+          href: spfx/toolchain/extending-webpack-in-build-pipeline.md
+        - name: Aktualisieren der Pakete
+          href: spfx/toolchain/update-latest-packages.md
+        - name: Mandantenweite Lösungsbereitstellung
+          href: spfx/tenant-scoped-deployment.md
         - name: Mandanteneigenschaften
           href: spfx/tenant-properties.md
+        - name: Bereitstellen von SharePoint-Objekten
+          href: spfx/toolchain/provision-sharepoint-assets.md
+        - name: Optimieren von Builds für die Produktion
+          href: spfx/toolchain/optimize-builds-for-production.md
+        - name: Lokalisieren der Webparts
+          href: spfx/web-parts/guidance/localize-web-parts.md
+        - name: "Unterstützte Versionen in SharePoint\_2016"
+          href: spfx/sharepoint-2016-support.md
     - name: Entwerfen
       href: design/design-guidance-overview.md
       items:
