@@ -1,13 +1,13 @@
 ---
 title: Erste Schritte beim Erstellen von einem Anbieter gehosteten SharePoint-Add-Ins
 description: Richten Sie eine Entwicklungsumgebung ein und erstellen Sie Ihr erstes, von einem Anbieter gehostetes SharePoint-Add-In.
-ms.date: 11/02/2017
+ms.date: 12/04/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 8dfd0b77765d9dd6305fc6bb282c52bb5fb1dd02
-ms.sourcegitcommit: 074f3a7983a7b253f56f8c670a0290c27bb7734b
+ms.openlocfilehash: 5e104ab3d408edc87e9e1dcb0216af3eb0b2db52
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="get-started-creating-provider-hosted-sharepoint-add-ins"></a>Erste Schritte beim Erstellen eines von einem Anbieter gehosteten SharePoint-Add-Ins
 
@@ -16,25 +16,26 @@ Vom Anbieter gehostete Add-Ins sind eine der zwei Haupttypen von SharePoint-Add-
 Es folgt eine Zusammenfassung zu vom Anbieter gehosteten Add-Ins:
 
 - Sie enthalten Webanwendungen, Dienste oder Datenbanken, die extern über eine SharePoint-Farm oder ein SharePoint Online-Abonnement gehostet werden. Sie können auch SharePoint-Komponenten enthalten. Sie können die externen Komponenten in einem beliebigen Webhostingstapel, einschließlich des LAMP-Stapels (Linux, Apache, MySQL und PHP) hosten.
-
 - Die benutzerdefinierte Geschäftslogik im Add-In muss entweder in den externen Komponenten oder in JavaScript auf benutzerdefinierten SharePoint-Seiten ausgeführt werden.
-    
-- Schritt 1: Einrichten der Entwicklungsumgebung
 
-- Schritt 2: Erstellen des App-Projekts
+In diesem Artikel führen Sie die folgenden Schritte aus:
 
-- Schritt 3: Programmieren der App
+- Einrichten der Entwicklungsumgebung
+- Erstellen des Add-In-Projekts
+- Programmieren des Add-Ins
 
 <a name="Setup"> </a>
 ## <a name="set-up-your-dev-environment"></a>Einrichten der Entwicklungsumgebung
 
-Es gibt verschiedene Möglichkeiten zum Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins. In diesem Abschnitt wird die einfachste Möglichkeit erläutert. Alternativen finden Sie unter  [Zusätzliche Ressourcen](#bk_addresources).
+Es gibt zahlreiche verschiedene Möglichkeiten, eine Entwicklungsumgebung für SharePoint-Add-Ins einzurichten. In diesem Abschnitt wird die einfachste von ihnen beschrieben. Informationen zu Alternativen, z. B. Einrichten einer lokalen Umgebung, finden Sie unter [Tools](tools-and-environments-for-developing-sharepoint-add-ins.md).
 
-### <a name="get-the-tools"></a>Abrufen der Tools
+### <a name="get-the-tools"></a>Installieren der Tools
 
 - Falls Sie **Visual Studio 2013** oder höher noch nicht installiert haben: Installieren Sie es mithilfe der Anweisungen unter [Installieren von Visual Studio](https://docs.microsoft.com/de-DE/visualstudio/install/install-visual-studio). Wir empfehlen die Verwendung der [aktuellen Version aus dem Microsoft Download Center](https://www.visualstudio.com/downloads/download-visual-studio-vs).
  
 - Visual Studio umfasst die **Microsoft Office Developer Tools für Visual Studio**. Gelegentlich wird jedoch zwischen zwei Updates von Visual Studio eine neue Version der Tools veröffentlicht. Führen Sie das [Installationsprogramm für Office Developer Tools für Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013) oder das [Installationsprogramm für Office Developer Tools für Visual Studio 2015](http://aka.ms/OfficeDevToolsForVS2015) aus, um sicherzustellen, dass Sie die aktuelle Version der Tools haben. 
+
+Als Referenz dienen [frühere Versionen von Visual Studio](http://msdn.microsoft.com/library/da049020-cfda-40d7-8ff4-7492772b620f.aspx) oder andere [Visual Studio-Dokumentation](https://docs.microsoft.com/de-DE/visualstudio/).
 
 <a name="o365_signup"> </a>
 ### <a name="sign-up-for-an-office-365-developer-site"></a>Registrieren für eine Office 365-Entwicklerwebsite
@@ -50,7 +51,7 @@ Sie haben drei Möglichkeiten, einen Office 365-Plan zu erhalten:
 
 - Sie können ein [Office 365-Entwicklerabonnement](https://portal.microsoftonline.com/Signup/MainSignUp.aspx?OfferId=C69E7747-2566-4897-8CBA-B998ED3BAB88&amp;DL=DEVELOPERPACK) erwerben. 
 
-- Sie können sich über das Office 365-Entwicklerprogramm für ein kostenloses Office 365-Entwicklerkonto mit einem Jahr Laufzeit registrieren. Weitere Informationen finden Sie [hier](http://dev.office.com/devprogram). Alternativ können Sie direkt das [Registrierungsformular](https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170) ausfüllen. Nach der Registrierung für das Entwicklerprogramm erhalten Sie eine E-Mail mit einem Link, unter dem Sie sich für ein Entwicklerkonto registrieren können. Nachfolgend finden Sie eine Anleitung.
+- Sie können sich über das Office 365-Entwicklerprogramm für ein Office 365-Entwicklerkonto mit einem Jahr Laufzeit registrieren. Weitere Informationen finden Sie [hier](http://dev.office.com/devprogram). Alternativ können Sie direkt das [Registrierungsformular](https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170) ausfüllen. Nach der Registrierung für das Entwicklerprogramm erhalten Sie eine E-Mail mit einem Link, unter dem Sie sich für ein Entwicklerkonto registrieren können. Nachfolgend finden Sie eine Anleitung.
 
 > [!TIP]
 > Öffnen Sie diese Links in einem anderen Fenster oder auf einer anderen Registerkarte, damit Sie die Anleitung jederzeit einsehen können.
@@ -429,16 +430,22 @@ Sie haben drei Möglichkeiten, einen Office 365-Plan zu erhalten:
 
    ![Startseite der selbst gehosteten Basis-App](../images/SP15_basicself-hostedapp.gif)
  
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
-<a name="bk_addresources"> </a>
 
-- Andere Möglichkeiten zum Einrichten einer Entwicklungsumgebung, beispielsweise einer „rein lokalen“ Umgebung, finden Sie im Abschnitt [Tools](tools-and-environments-for-developing-sharepoint-add-ins.md).
-- [Installieren älterer Versionen von Visual Studio](https://msdn.microsoft.com/library/da049020-cfda-40d7-8ff4-7492772b620f.aspx)
-- [Visual Studio-Dokumentation](https://docs.microsoft.com/de-DE/visualstudio/)
-    
+<a name="SP15createprovider_nextsteps"> </a>    
 ## <a name="next-steps"></a>Nächste Schritte
-<a name="SP15createprovider_nextsteps"> </a>
 
-Um zu erfahren, wie Sie ein Add-In in das Benutzeroberflächenschema von SharePoint integrieren, lesen Sie bitte [Erteilen des Aussehens und Verhaltens von SharePoint für Ihr von einem Anbieter gehostetes Add-In](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md).
+Um Ihre Add-Ins zu erstellen, führen Sie die folgenden Schritte in der folgenden Reihenfolge aus:
+ 
+1.  [Übertragen des SharePoint-Aussehens und -Verhaltens auf Ihr vom Anbieter gehostetes Add-In](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md)
+2.  [Einfügen einer benutzerdefinierten Schaltfläche in das vom Anbieter gehostete Add-In](include-a-custom-button-in-the-provider-hosted-add-in.md)
+3.  [Schnelle Übersicht über das SharePoint-Objektmodell](get-a-quick-overview-of-the-sharepoint-object-model.md)
+4.  [Hinzufügen von SharePoint-Schreibvorgängen zum vom Anbieter gehosteten Add-In](add-sharepoint-write-operations-to-the-provider-hosted-add-in.md)
+5.  [Einfügen eines Add-In-Webparts in das vom Anbieter gehostete Add-In](include-an-add-in-part-in-the-provider-hosted-add-in.md)
+6.  [Verarbeiten von Add-In-Ereignissen im vom Anbieter gehosteten Add-In](handle-add-in-events-in-the-provider-hosted-add-in.md)
+7.  [Hinzufügen der Logik für die erste Ausführung zum vom Anbieter gehosteten Add-In](add-first-run-logic-to-the-provider-hosted-add-in.md)
+8.  [Programmgesteuertes Bereitstellen einer benutzerdefinierten Schaltfläche in anbietergehosteten Add-Ins](programmatically-deploy-a-custom-button-in-the-provider-hosted-add-in.md)
+9.  [Verarbeiten von Listenelementereignissen in anbietergehosteten Add-Ins](handle-list-item-events-in-the-provider-hosted-add-in.md)
+
+
 
 

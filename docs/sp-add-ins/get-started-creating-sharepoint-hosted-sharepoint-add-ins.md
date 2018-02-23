@@ -3,11 +3,11 @@ title: Erste Schritte beim Erstellen von SharePoint gehosteten SharePoint-Add-In
 description: "Hier erfahren Sie, wie Sie eine Entwicklungsumgebung einrichten und Ihr erstes SharePoint-gehostetes SharePoint-Add-In erstellen können."
 ms.date: 12/04/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 6a2ed95aa06db5d6e4c6d9364cfcbfa8dc1b9f36
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 35610e3d95841efa0d50c27e7b3751ff4f654bdf
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="get-started-creating-sharepoint-hosted-sharepoint-add-ins"></a>Erste Schritte zum Erstellen SharePoint-gehosteter SharePoint-Add-Ins
 
@@ -50,7 +50,7 @@ Sie haben drei Möglichkeiten, einen Office 365-Plan zu erhalten:
 
 - Sie können ein [Office 365-Entwicklerabonnement](https://portal.microsoftonline.com/Signup/MainSignUp.aspx?OfferId=C69E7747-2566-4897-8CBA-B998ED3BAB88&amp;DL=DEVELOPERPACK) erwerben. 
 
-- Sie können sich über das Office 365-Entwicklerprogramm für ein kostenloses Office 365-Entwicklerkonto mit einem Jahr Laufzeit registrieren. Weitere Informationen finden Sie [hier](http://dev.office.com/devprogram). Alternativ können Sie direkt das [Registrierungsformular](https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170) ausfüllen. Nach der Registrierung für das Entwicklerprogramm erhalten Sie eine E-Mail mit einem Link, unter dem Sie sich für ein Entwicklerkonto registrieren können. Nachfolgend finden Sie eine Anleitung.
+- Sie können sich über das Office 365-Entwicklerprogramm für ein Office 365-Entwicklerkonto mit einem Jahr Laufzeit registrieren. Weitere Informationen finden Sie [hier](http://dev.office.com/devprogram). Alternativ können Sie direkt das [Registrierungsformular](https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170) ausfüllen. Nach der Registrierung für das Entwicklerprogramm erhalten Sie eine E-Mail mit einem Link, unter dem Sie sich für ein Entwicklerkonto registrieren können. Nachfolgend finden Sie eine Anleitung.
 
 > [!TIP]
 > Öffnen Sie diese Links in einem anderen Fenster oder auf einer anderen Registerkarte, damit Sie die Anleitung jederzeit einsehen können.
